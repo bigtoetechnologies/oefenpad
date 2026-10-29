@@ -82,3 +82,13 @@ game that happens to suit learners rather than a learning game. Link to it from
 here once it exists. Do not call it "Story Cubes": `RORY'S STORY CUBES` is a
 registered US trademark owned by Asmodee. The dice-as-story-prompt mechanic is
 free (US Copyright Office FL-108), the name is not.
+
+## Naming conflict to settle
+
+Three names exist for the same two games. `Concept.md`'s website module list
+calls them **Preposition Playground** and **Word Order Workshop**; the concept
+board (`quickwinsindutch_concept.png`) calls the decks **Preposition Paths**
+and **Sentence Builder**. This doc currently uses the `Concept.md` names.
+
+One game, one name, on the site and on the box. The board's names are the
+better ones.
