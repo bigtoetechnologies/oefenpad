@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story Machine</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="machine">
+
+    <header class="machine-top">
+        <h1>Story Machine</h1>
+        <p class="tagline">Pull the handle. Tell the story.</p>
+    </header>
+
+    <div class="controls">
+        <label class="control">
+            <span>Reels</span>
+            <input type="range" id="reel-count" min="2" max="6" value="3" step="1">
+            <output id="reel-count-out">3</output>
+        </label>
+
+        <label class="control control-check">
+            <input type="checkbox" id="lang-nl" checked>
+            <span>Nederlands</span>
+        </label>
+    </div>
+
+    <div class="cabinet">
+        <div class="window" id="window"></div>
+
+        <button class="lever" id="lever" aria-label="Pull the handle">
+            <span class="lever-stick"></span>
+            <span class="lever-knob"></span>
+        </button>
+    </div>
+
+    <div class="cards" id="cards"></div>
+
+    <p class="held-hint">Tap a reel to hold it, then pull again. Turn a card for the word.</p>
+
+    <p class="sr-only" id="announce" aria-live="polite"></p>
+
+</main>
+
+<script src="reels.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
