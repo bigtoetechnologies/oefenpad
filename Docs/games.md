@@ -12,24 +12,40 @@ Dutch and are worth nothing in a Ukrainian build.
 
 ## The two first games
 
-### Preposition Playground (🟠 Pillar 5)
+### Voorzetselpaden (🟠 Pillar 5)
 
-Drag a verb to the preposition it takes — *wachten* **op**, *denken* **aan**,
-*zorgen* **voor**. These are the part of Dutch that cannot be reasoned out and
-has to be drilled, which is exactly what a game is for.
+The first game is no longer a verb-to-preposition matching drill. Matching tests
+whether the learner remembers a pair; it does not teach what the chunk means.
+`uitkijken naar` is not "uitkijken + naar" — it means *look forward to*, and
+`uitkijken voor` means something else. The activity therefore teaches the chunk
+through a situation and a contrast, then asks for the form, including the
+separable prefix.
+
+One dataset, four stops on the path:
+
+| Stop | What the learner does | Mode |
+|---|---|---|
+| Ontdek | Sees a scene + sentence + gloss, unscored | R |
+| Kies het beeld | Picks the scene that matches a sentence | R |
+| Klopt de zin? | Says whether a sentence fits a scene; the false item is the contrast partner | R |
+| Bouw de zin | Builds the sentence from tiles, with the separable prefix at the end | P |
+
+Optional warm-up: **Hetzelfde of anders?** — two sentences, same verb, different
+preposition; same meaning or different?
+
+Optional extension: **Krimp** — rewrite a sentence with `er` + preposition
+(*Ik denk aan jou* → *Ik denk eraan*).
 
 | | |
 |---|---|
-| Effort | Low-Medium. Two columns, drag-to-pair, a check pass |
-| Data | `prepositions`: verb, preposition, English gloss, one example sentence |
-| Done when | The common fifty are in, each with a plausible distractor |
+| Effort | Medium. The tile tray is shared with Zinsbouwer; the new work is scenes, contrast pairs and the split-sentence check |
+| Data | `frames`: frame, verb, separable, prefix, prep, English gloss, scene, sentence, pronominal form, contrast partner, concept questions |
+| Done when | Four contrast pairs, one separable single and one pronominal scene work through all four stops without English |
 
-Design notes: distractors must be prepositions a learner would *actually*
-guess, usually the English-calque one (*wachten voor*, from "waiting for"), or
-the drill teaches nothing. Reveal the example sentence on a correct pair, not
-before. Order sets by frequency.
+The full spec, including the data shape, feedback rules and the pilot image
+list, is in `prepositions.md` and `prepositions-art.md`.
 
-### Word Order Workshop (🔵 Pillar 7)
+### Zinsbouwer (🔵 Pillar 7)
 
 The game deals a verb, a tense and a subject — *eten* · past · *wij* — and the
 player builds the sentence from a tray of word tiles. Check it, and the tiles
@@ -54,8 +70,8 @@ rule are the levels, not a lesson.
 
 | # | What | Why |
 |---|---|---|
-| 1 | Preposition Playground | Smallest data set, and Pillar 5 is already written up with examples |
-| 2 | Word Order Workshop | Reuses the tile tray; needs the verb table |
+| 1 | Voorzetselpaden | Smallest dataset, and Pillar 5 is already written up; the pilot is ten frames |
+| 2 | Zinsbouwer | Reuses the tile tray; needs the verb table |
 | 3 | Everything else in `Concept.md` | Only after one game has been in front of a stranger |
 
 `mvp.md` says one page, no backend, no accounts, deployed free, and shared into
@@ -70,9 +86,14 @@ object on `window`, loaded before the game script, with a checker script that
 fails if an entry is incomplete. Without the checker the bank rots silently.
 
 ```js
-{ verb: 'wachten', prep: 'op',  en: 'to wait for',
-  example: { nl: 'Ik wacht op de bus.', en: 'I am waiting for the bus.' } }
+{ frame: 'uitkijken naar', verb: 'uitkijken', separable: true, prefix: 'uit',
+  prep: 'naar', en: 'to look forward to', scene: 'uitkijken-naar-vakantie',
+  example: { nl: 'Ik kijk uit naar de vakantie.',
+             en: 'I am looking forward to the holiday.' } }
 ```
+
+The full frame shape, including `contrast`, `pronominal` and `conceptQuestions`,
+is in `prepositions.md`.
 
 ## Not here
 
@@ -83,12 +104,8 @@ here once it exists. Do not call it "Story Cubes": `RORY'S STORY CUBES` is a
 registered US trademark owned by Asmodee. The dice-as-story-prompt mechanic is
 free (US Copyright Office FL-108), the name is not.
 
-## Naming conflict to settle
+## Naming
 
-Three names exist for the same two games. `Concept.md`'s website module list
-calls them **Preposition Playground** and **Word Order Workshop**; the concept
-board (`quickwinsindutch_concept.png`) calls the decks **Preposition Paths**
-and **Sentence Builder**. This doc currently uses the `Concept.md` names.
-
-One game, one name, on the site and on the box. The board's names are the
-better ones.
+`designguide.md` and `game-catalogue.md` are canonical: **Voorzetselpaden**
+(Preposition Paths) and **Zinsbouwer** (Sentence Builder). This doc previously
+used Preposition Playground and Word Order Workshop; those names are retired.

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2B50C8">
+    <title>Woordzoeker — Oefenpad</title>
+    <meta name="description" content="Zoek de verborgen Nederlandse woorden in het rooster.">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/site/oefenpad.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="../../assets/site/oefenpad.js"></script>
+    <script src="../shared/i18n.js"></script>
+    <script src="../shared/common.js"></script>
+    <script src="../shared/words.js"></script>
+    <script src="../shared/wordimages.js"></script>
+    <script>
+        // Site-wide dark mode — applies before paint, persists to localStorage
+        (function () {
+            var KEY = 'oefenpad-theme';
+            function apply(saved) {
+                var dark = saved === 'dark' || (saved !== 'light' &&
+                    window.matchMedia('(prefers-color-scheme: dark)').matches);
+                document.documentElement.classList.toggle('dark', dark);
+            }
+            var saved = null;
+            try { saved = localStorage.getItem(KEY); } catch (e) { /* private mode */ }
+            apply(saved);
+            window.toggleSiteTheme = function () {
+                var dark = !document.documentElement.classList.contains('dark');
+                document.documentElement.classList.toggle('dark', dark);
+                try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+                document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+            };
+            document.addEventListener('click', function (e) {
+                var t = e.target;
+                var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+                if (btn) toggleSiteTheme();
+            });
+            window.addEventListener('storage', function (e) {
+                if (e.key === KEY && e.newValue) {
+                    apply(e.newValue);
+                    document.dispatchEvent(new CustomEvent('themechange',
+                        { detail: { dark: document.documentElement.classList.contains('dark') } }));
+                }
+            });
+        })();
+    </script>
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div class="splash-screen" id="splashScreen">
+        <img class="splash-logo" src="../../assets/logo/logo_128px.png" alt="Oefenpad">
+        <div class="splash-title" data-i18n="ws-title">Word Search</div>
+    </div>
+
+    <div class="app-container">
+        <header>
+            <div class="header-brand">
+                <img src="../../assets/logo/logo_128px.png" alt="" class="header-logo">
+                <div class="header-text">
+                    <h1 data-i18n="ws-title">Word Search</h1>
+                </div>
+            </div>
+            <div class="header-right">
+                <a class="btn-icon" href="../../index.html" aria-label="Terug naar Oefenpad">←</a>
+                <button class="btn-icon" onclick="openSettings()" title="Settings" data-i18n-title="settings-tip" aria-label="Settings" data-i18n-aria-label="settings-tip">⚙️</button>
+            </div>
+        </header>
+
+        <div class="difficulty-bar" id="difficultyBar" role="group" aria-label="Difficulty" data-i18n-aria-label="a11y-difficulty">
+            <button class="diff-btn active" data-diff="beginner" data-i18n="diff-beginner" aria-pressed="true">Beginner</button>
+            <button class="diff-btn" data-diff="easy" data-i18n="diff-easy" aria-pressed="false">Easy</button>
+            <button class="diff-btn" data-diff="medium" data-i18n="diff-medium" aria-pressed="false">Medium</button>
+            <button class="diff-btn" data-diff="hard" data-i18n="diff-hard" aria-pressed="false">Hard</button>
+            <button class="diff-btn" data-diff="master" data-i18n="diff-master" aria-pressed="false">Master</button>
+            <button class="diff-btn" data-diff="insane" data-i18n="diff-insane" aria-pressed="false">Insane</button>
+        </div>
+
+        <div class="status-row" aria-live="polite" aria-atomic="false">
+            <span data-i18n="found-label">Found:</span> <span id="foundCount">0</span> / <span id="totalCount">0</span>
+            <span id="timerDisplay" style="margin-left:12px;">⏱ 0:00</span>
+            &nbsp;|&nbsp; <span data-i18n="hints-label">💡 Hints:</span> <span id="hintsLeft">3</span>
+        </div>
+
+        <div class="game-layout">
+            <div class="grid-panel">
+                <div class="grid-wrapper">
+                    <canvas id="selectionCanvas"></canvas>
+                    <div class="grid" id="grid"></div>
+                </div>
+            </div>
+            <div class="word-list-panel" id="wordListPanel">
+                <h3 data-i18n="words-title">Words to Find</h3>
+                <ul class="word-list" id="wordList"></ul>
+            </div>
+        </div>
+
+        <div class="controls-bar">
+            <button class="ctrl-btn" id="btnHint" onclick="useHint()"><span data-i18n="btn-hint">💡 Hint</span> (<span id="hintCount">3</span>)</button>
+            <button class="ctrl-btn primary" onclick="newGame()" data-i18n="btn-new">🎲 New Game</button>
+        </div>
+    </div>
+
+    <!-- Celebration Overlay -->
+    <div class="celebration-overlay hidden" id="celebrationOverlay" role="dialog" aria-modal="true" aria-labelledby="celebrationOverlayTitle">
+        <div class="confetti-container" id="confettiContainer"></div>
+        <div class="celebration-card">
+            <div class="trophy"><img src="../../assets/logo/logo_128px.png" alt="Oefenpad" class="trophy-logo"></div>
+            <h2 id="celebrationOverlayTitle" data-i18n="cele-title">All Words Found!</h2>
+            <p style="color: var(--grijs); font-size: 14px;" data-i18n="cele-msg">Great job! You found every word.</p>
+            <p style="color: var(--grijs); font-size: 14px;"><span data-i18n="time-label">Time:</span> <span id="celeTime">0:00</span></p>
+            <button onclick="closeCelebration()" style="margin-right:8px;background:var(--papier);color:var(--inkt);box-shadow:inset 0 0 0 2px var(--inkt);" data-i18n="btn-close">✕ Close</button>
+            <button onclick="closeCelebration();newGame();" data-i18n="btn-new">🎲 New Game</button>
+        </div>
+    </div>
+
+    <!-- Settings Overlay -->
+    <div class="settings-overlay hidden" id="settingsOverlay" role="dialog" aria-modal="true" aria-labelledby="settingsOverlayTitle">
+        <div class="settings-modal">
+            <h2 id="settingsOverlayTitle" data-i18n="settings-title">⚙️ Settings</h2>
+            <div class="settings-row">
+                <span class="settings-label" data-i18n="sound-effects">🔊 Sound Effects</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="settingSoundEffects" onchange="updateSetting('soundEffects', this.checked)">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+
+            <div class="settings-row">
+                <span class="settings-label" data-i18n="translate-label">🌍 Translate words</span>
+                <select id="settingTranslateTo" class="settings-select" onchange="setTranslateTo(this.value)"></select>
+            </div>
+            <p class="settings-note" data-i18n="translate-hint">Tap or hover a word in the list to see it in your language. Only words that have a translation are used.</p>
+
+            <button class="settings-close-btn" onclick="closeSettings()" data-i18n="close">Close</button>
+        </div>
+    </div>
+
+    <!-- Category Selection Overlay -->
+    <div class="settings-overlay hidden" id="categoryOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryOverlayTitle">
+        <div class="settings-modal" style="max-width:520px;">
+            <h2 id="categoryOverlayTitle" data-i18n="cat-title">Choose a Category</h2>
+            <p style="font-size:13px;color:var(--grijs);margin-bottom:8px;" data-i18n="cat-subtitle">Select a theme for your word search puzzle:</p>
+            <div class="category-grid" id="categoryGrid"></div>
+            <button class="settings-close-btn" onclick="closeCategoryPicker()" style="margin-top:10px;" data-i18n="close">Close</button>
+        </div>
+    </div>
+
+    <!-- About Overlay -->
+    <div class="settings-overlay hidden" id="aboutOverlay" role="dialog" aria-modal="true" aria-labelledby="aboutOverlayTitle">
+        <div class="settings-modal" style="text-align:center;">
+            <h2 id="aboutOverlayTitle" data-i18n="about">Over dit spel</h2>
+            <img src="../../assets/logo/logo_128px.png" alt="Oefenpad" style="width:100px;margin:16px auto;display:block;">
+            <div style="font-size:22px;font-weight:700;color:var(--inkt);" data-i18n="ws-title">Woordzoeker</div>
+            <p style="color:var(--grijs);font-size:13px;margin-top:16px;line-height:1.6;" data-i18n="about-text">
+                Zes moeilijkheidsgraden, van Beginner tot Insane, met roosters
+                van 10×10 tot 20×20. Kies uit de woordcategorieën en zoek alle
+                verborgen Nederlandse woorden.
+            </p>
+            <button class="settings-close-btn" onclick="closeAbout()" style="margin-top:14px;" data-i18n="close">Sluiten</button>
+        </div>
+    </div>
+
+    <!-- Changing the translation setting rebuilds the puzzle -->
+    <div class="settings-overlay hidden" id="langConfirmOverlay" role="dialog" aria-modal="true" aria-labelledby="langConfirmOverlayTitle">
+        <div class="settings-modal" style="max-width:340px;text-align:center;">
+            <h2 id="langConfirmOverlayTitle">Instelling wijzigen?</h2>
+            <p style="color:var(--grijs);font-size:14px;">De puzzel begint opnieuw. Je huidige voortgang gaat verloren.</p>
+            <div style="display:flex;gap:10px;justify-content:center;margin-top:14px;">
+                <button onclick="cancelLangChange()" style="background:var(--papier);color:var(--inkt);box-shadow:inset 0 0 0 2px var(--inkt);border:none;border-radius:0;padding:10px 18px;cursor:pointer;font-weight:600;">Annuleren</button>
+                <button onclick="confirmLangChange()" style="background:var(--oranje);color:var(--papier);border:none;border-radius:0;padding:10px 18px;cursor:pointer;font-weight:600;">Opnieuw beginnen</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

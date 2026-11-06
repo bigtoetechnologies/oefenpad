@@ -54,9 +54,9 @@ Central interactive hub. Pattern recognition via active exercises with instant f
 - 🟡 **Ending Matcher** — drag-and-drop `-tion/-tie` style endings (Pillar 2)
 - 🟢 **Pattern Builder** — assemble verb/noun/adjective families, prefixes, diminutives (Pillar 3)
 - 🔴 **False Friend Lab** — multiple choice + "trap" mode (Pillar 4)
-- 🟠 **Preposition Playground** — fill-in-the-blank scenario dialogues (Pillar 5)
+- 🟠 **Voorzetselpaden** — meaning-first scenes, minimal pairs and sentence building (Pillar 5)
 - 🟣 **Irregular Verb Trainer** — conjugation puzzles, pattern prediction (Pillar 6)
-- 🔵 **Word Order Workshop** — re-order sentence fragments (Pillar 7)
+- 🔵 **Zinsbouwer** — re-order sentence fragments (Pillar 7)
 - 🟤 **Survival Phrasebook** — pronunciation + everyday phrase drills (Pillar 8)
 - **Progress Dashboard** — mastery, streaks, weakest areas
 
@@ -69,7 +69,7 @@ Central interactive hub. Pattern recognition via active exercises with instant f
 Micro-learning companion for 5–10 minute daily sessions. Shares content + progress with the website.
 
 - Swipe-to-match verb ↔ noun
-- Tap correct preposition in a sentence
+- Choose the scene that matches a sentence, then build the sentence
 - Digital memory-match (mirrors physical decks)
 - Streak reminders & push notifications
 - Offline mode for travel
@@ -87,7 +87,7 @@ Tactile reinforcement — a series of color-coded decks playable solo, in pairs,
 | Ending Patterns | 🟡 2 | `-tion ↔ -tie` family | Sort by ending |
 | Word Families (Lego) | 🟢 3 | `werken ↔ werker ↔ werkzaam` | Build-the-family |
 | False Friends | 🔴 4 | `winkel ↔ shop` | Match + "trap the false friend" |
-| Fixed Prepositions | 🟠 5 | `wachten ↔ op` | Fill-the-gap mini cards |
+| Fixed Prepositions | 🟠 5 | `uitkijken naar` ↔ holiday scene | Match scene to chunk |
 | Irregular Verbs | 🟣 6 | `lopen ↔ liep ↔ gelopen` | 3-card sequence match |
 | Word Order | 🔵 7 | sentence fragments | Re-order race |
 | Survival Phrases | 🟤 8 | greeting / ordering pairs | Memory match |
@@ -144,8 +144,13 @@ Ubiquitous in real-life Dutch; worth its own short module across book/app/cards.
 
 Because fixed prepositions are idiomatic, teach them as **clusters and chunks**, never as isolated words:
 
+- **Meaning first** — a chunk is learned from a situation, not a translation. Show the scene, ask what is happening, then give the gloss.
+- **Minimal pairs** — teach `uitkijken naar` next to `uitkijken voor`, `denken aan` next to `denken over`. The preposition carries meaning; one verb is not one chunk.
 - **Verb + preposition chunks** — memorise `wachten op`, `denken aan`, `zorgen voor`, `geloven in` as single units.
 - **Mnemonic mini-sentences** — "Ik wacht op de bus", "Ik denk aan jou". Brain remembers scenarios, not lists.
+- **Concept questions** — after the scene, ask *positief of negatief?*, *nu of later?*, *wie doet het?*; a correct preposition does not prove understanding.
+- **Separable verbs** — show the prefix moving to the end: *Ik kijk **uit** naar de vakantie.*
+- **Pronominal forms** — `eraan denken`, `ernaar uitkijken`, `Waar denk je aan?`
 - **Group by theme** — spatial (`in, op, onder, boven, naast`), temporal (`sinds, voor, na, tijdens`), cause/effect (`door, vanwege, dankzij`).
 - **Preposition + article combos** — learn `op de`, `in het`, `aan het` as fixed chunks.
 - **Spaced repetition** — 5–10 new combos/day via flashcards with context (`wachten ___ de bus` → `op`).
@@ -155,7 +160,7 @@ Because fixed prepositions are idiomatic, teach them as **clusters and chunks**,
 
 - **Recognition vs Production** — every tip is tagged as either "recognise when reading/listening" or "use when speaking", to prevent overwhelm.
 - **Patterns, not rules** — shortcuts that work *most* of the time; explicit warnings where they break (e.g. `bouwen → gebouw`, not `bouwing`).
-- **Prepositions as a survival kit** — teach the top 30–50 verb+preposition clusters (`wachten op`, `denken aan`, `zorgen voor`) via mini-sentences and scenarios, not exhaustive tables. Flag the rest as unpredictable.
+- **Prepositions as a survival kit** — teach the top 30–50 verb+preposition clusters (`wachten op`, `denken aan`, `zorgen voor`) via scenes, mini-sentences and contrast pairs, not exhaustive tables. Flag the rest as unpredictable.
 - **Biggest risk to avoid:** becoming a messy collection of tips instead of a coherent system.
 
 ## Roadmap
