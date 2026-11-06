@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B50C8">
+<title>Privacybeleid — Oefenpad</title>
+<meta name="description" content="Privacybeleid van Oefenpad: welke gegevens wij verwerken, welke cookies worden geplaatst en welke keuzes u heeft.">
+<link rel="icon" type="image/png" href="assets/logo/logo_32px.png">
+<script>
+/* Donkere modus — zet de klasse voordat er iets getekend wordt, en onthoudt
+   de keuze. Gelijk aan het blok in de oefeningen; sleutel oefenpad-theme. */
+(function () {
+  var KEY = 'oefenpad-theme';
+  function apply(saved) {
+    var dark = saved === 'dark' || (saved !== 'light' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', dark);
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { /* privemodus */ }
+  apply(saved);
+  window.toggleSiteTheme = function () {
+    var dark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+    if (btn) toggleSiteTheme();
+  });
+  window.addEventListener('storage', function (e) {
+    if (e.key === KEY && e.newValue) {
+      apply(e.newValue);
+      document.dispatchEvent(new CustomEvent('themechange',
+        { detail: { dark: document.documentElement.classList.contains('dark') } }));
+    }
+  });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site/oefenpad.css">
+<style>
+  .inhoud{display:grid;grid-template-columns:repeat(12,1fr)}
+  .inhoud .zij{grid-column:span 4;border-left:var(--rand);padding:clamp(20px,2.4vw,40px) 0 0 clamp(14px,1.6vw,26px)}
+  .inhoud .zij h2{font-size:15px;font-weight:800;margin-bottom:10px}
+  .inhoud .zij a{display:block;font-size:14px;font-weight:600;color:var(--inkt);text-decoration:none;padding:5px 0}
+  .inhoud .zij a:hover,.inhoud .zij a[aria-current]{color:var(--kobalt)}
+  @media(max-width:900px){.inhoud .zij{grid-column:span 12;border-left:0;border-top:var(--rand);padding-left:0;margin-top:20px}}
+</style>
+</head>
+<body>
+<div class="vel">
+
+  <nav class="balk">
+    <a class="merk" href="index.html"><img src="assets/logo/logo_128px.png" alt=""><span>Oefenpad</span></a>
+    <a class="link" href="index.html">Oefeningen</a>
+    <a class="link" href="#">Over</a>
+    <a class="link" href="#">Contact</a>
+    <a class="link" href="#">Inloggen</a>
+  </nav>
+
+  <header class="kop">
+    <h1>Privacy&shy;beleid</h1>
+    <div class="kant"><p>Wat wij met uw gegevens doen, en vooral wat niet.</p></div>
+  </header>
+
+  <main class="inhoud">
+    <article class="lees">
+    <p class="bijgewerkt">Laatst bijgewerkt: november 2026</p>
+    <p>Oefenpad ("wij", "onze" of "ons") beheert de website oefenpad.nl (de "Service").
+    Op deze pagina informeren wij u over ons beleid met betrekking tot het verzamelen,
+    gebruiken en delen van persoonsgegevens wanneer u onze Service gebruikt.</p>
+    <h2>1. Informatie die wij verzamelen</h2>
+    <p>Wij verzamelen, bewaren of verwerken <strong>geen</strong> persoonlijk identificeerbare
+    informatie van onze gebruikers. Voor onze oefeningen en website is geen account nodig en wij
+    vragen niet om namen, e-mailadressen, telefoonnummers of andere persoonlijke gegevens.</p>
+    <p>Voor uw eigen voorkeuren en uw voortgang in de oefeningen gebruiken wij de lokale opslag
+    van uw browser, geen cookies. Deze informatie blijft op uw apparaat en wordt nooit naar ons
+    verzonden. Over de cookies die derden via onze site plaatsen leest u meer in artikel 2 en 3.</p>
+    <h2>2. Advertenties &amp; cookies</h2>
+    <p>Wij gebruiken Google AdSense om advertenties op onze website weer te geven. Google en andere
+    externe aanbieders gebruiken cookies om advertenties te tonen op basis van uw eerdere bezoeken
+    aan onze site en andere websites. Dankzij de advertentiecookies van Google kunnen Google en zijn
+    partners advertenties tonen op basis van uw bezoek aan onze site en/of andere sites op het
+    internet.</p>
+    <p>U kunt gepersonaliseerde advertenties uitschakelen via
+    <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener">Google Ads-instellingen</a>.
+    U kunt cookies van externe aanbieders ook uitschakelen via de
+    <a href="https://thenai.org/opt-out/" target="_blank" rel="noopener">opt-outpagina van het Network Advertising Initiative</a>.</p>
+    <p>Wij gebruiken ook een cookiebanner om uw toestemming te vragen voordat niet-essentiële
+    cookies op uw apparaat worden opgeslagen. Bij uw eerste bezoek aan onze site kunt u cookies
+    accepteren of weigeren, en u kunt uw keuze daarna altijd wijzigen.</p>
+    <h2>3. Google Analytics</h2>
+    <p>Onze website gebruikt Google Analytics, een webanalysedienst van Google LLC. Google Analytics
+    gebruikt cookies om ons inzicht te geven in hoe bezoekers omgaan met onze site, bijvoorbeeld
+    welke pagina's worden bezocht en hoe lang gebruikers daarop blijven. Deze informatie wordt
+    geanonimiseerd en geaggregeerd; u bent er niet persoonlijk mee te identificeren.</p>
+    <p>Google Analytics kan informatie verzamelen zoals uw IP-adres, browsertype, apparaattype en
+    surfgedrag. De mogelijkheden van Google om door Google Analytics verzamelde informatie te
+    gebruiken en te delen vallen onder het
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacybeleid van Google</a>.
+    U kunt Google Analytics uitschakelen door de
+    <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out-browserextensie</a>
+    te installeren.</p>
+    <h2>4. Betalingen</h2>
+    <p>Oefenpad is gratis te gebruiken en kent geen aankopen in de app. Wij verzamelen of bewaren
+    geen gegevens van uw betaalkaart, factuuradres of andere financiële informatie, en hebben daar
+    ook geen toegang toe.</p>
+    <h2>5. Privacy van kinderen</h2>
+    <p>Onze Service is bedoeld voor een algemeen publiek en verzamelt niet bewust persoonlijke
+    informatie van kinderen onder de 13 jaar. Omdat wij in het geheel geen persoonsgegevens
+    verzamelen, geldt dit ook voor kinderen. Bent u ouder of voogd en heeft u toch een vraag of
+    zorg, neem dan contact met ons op.</p>
+    <h2>6. Links van derden</h2>
+    <p>Onze Service kan links bevatten naar websites of diensten van derden die niet door ons
+    worden beheerd. Wij hebben geen controle over en aanvaarden geen verantwoordelijkheid voor de
+    inhoud, het privacybeleid of de werkwijze van sites van derden.</p>
+    <h2>7. Uw rechten</h2>
+    <p>Onder de Algemene verordening gegevensbescherming (AVG) heeft u recht op inzage, correctie
+    en verwijdering van uw persoonsgegevens. Wij zelf houden geen gebruikersadministratie aan, dus
+    wij hebben van u niets in te zien, te corrigeren of te verwijderen. Gegevens die Google via
+    AdSense en Google Analytics verwerkt, vallen onder het
+    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacybeleid van Google</a>;
+    uw keuzes daarover maakt u via de links in artikel 2 en 3. De gegevens die op uw apparaat staan,
+    wist u zelf door de lokale opslag en cookies van uw browser voor deze site te legen.</p>
+    <h2>8. Wijzigingen in dit beleid</h2>
+    <p>Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken. Wij stellen u op de hoogte van
+    wijzigingen door het nieuwe Privacybeleid op deze pagina te plaatsen. Wijzigingen worden
+    onmiddellijk na publicatie van kracht.</p>
+    <h2>9. Contact opnemen</h2>
+    <p>Heeft u vragen over dit Privacybeleid? Neem dan contact met ons op via:</p>
+    <ul>
+    <li>E-mail: <a href="mailto:info@oefenpad.nl">info@oefenpad.nl</a></li>
+    </ul>
+    </article>
+    <aside class="zij">
+      <h2>Ook hier</h2>
+      <a href="voorwaarden.html">Algemene voorwaarden</a>
+      <a href="privacy.html" aria-current="page">Privacybeleid</a>
+      <a href="index.html">Terug naar de oefeningen</a>
+    </aside>
+  </main>
+
+  <footer class="voet">
+    <div class="links">Woorden uit <em>Quick Wins in Dutch</em></div>
+    <div class="rechts">
+      <a href="voorwaarden.html">Voorwaarden</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script defer src="assets/site/oefenpad.js"></script>
+</body>
+</html>

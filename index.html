@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="nl" data-taal="nl"
+      data-titel-nl="Oefenpad — tien minuten Nederlands per dag"
+      data-titel-en="Oefenpad — ten minutes of Dutch a day">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B50C8">
+<title>Oefenpad — tien minuten Nederlands per dag</title>
+<meta name="description" content="Korte oefeningen met de woorden die je in Nederland elke dag tegenkomt. Geen account nodig.">
+<link rel="icon" type="image/png" href="assets/logo/logo_32px.png">
+<script>
+/* Kies de taal voordat er iets getekend wordt: geen flits.
+   Een eerdere keuze van de bezoeker wint van de browsertaal. */
+(function () {
+  try {
+    var el = document.documentElement, t = null;
+    try { t = localStorage.getItem('oefenpad-taal'); } catch (e) {}
+    if (t !== 'nl' && t !== 'en') {
+      var l = navigator.languages || [navigator.language || 'nl'];
+      t = 'nl';
+      for (var i = 0; i < l.length; i++) {
+        if (/^nl\b/i.test(l[i])) { t = 'nl'; break; }
+        if (/^en\b/i.test(l[i])) { t = 'en'; break; }
+      }
+    }
+    el.setAttribute('data-taal', t);
+    el.setAttribute('lang', t);
+    var titel = el.getAttribute('data-titel-' + t);
+    if (titel) document.title = titel;
+  } catch (e) { /* dan blijft het Nederlands */ }
+})();
+</script>
+<script>
+/* Donkere modus — zet de klasse voordat er iets getekend wordt, en onthoudt
+   de keuze. Gelijk aan het blok in de oefeningen; sleutel oefenpad-theme. */
+(function () {
+  var KEY = 'oefenpad-theme';
+  function apply(saved) {
+    var dark = saved === 'dark' || (saved !== 'light' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', dark);
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { /* privemodus */ }
+  apply(saved);
+  window.toggleSiteTheme = function () {
+    var dark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+    if (btn) toggleSiteTheme();
+  });
+  window.addEventListener('storage', function (e) {
+    if (e.key === KEY && e.newValue) {
+      apply(e.newValue);
+      document.dispatchEvent(new CustomEvent('themechange',
+        { detail: { dark: document.documentElement.classList.contains('dark') } }));
+    }
+  });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site/oefenpad.css">
+<style>
+  .raster{grid-auto-rows:minmax(132px,auto);flex:1}
+  .mod.groot{grid-column:span 6;grid-row:span 2}
+  .mod.groot .naam{font-size:clamp(32px,4.2vw,58px)}
+  .mod.groot .om{font-size:16px;max-width:34ch}
+  .mod.b2{grid-column:span 3}
+  .mod.b3{grid-column:span 3}
+  .mod.b4{grid-column:span 4}
+  .mod.b5{grid-column:span 2}
+  @media(max-width:900px){
+    .mod.groot{grid-column:span 12;grid-row:auto}
+    .mod.b2,.mod.b3,.mod.b4,.mod.b5{grid-column:span 6}
+  }
+</style>
+</head>
+<body>
+<div class="vel">
+
+  <nav class="balk">
+    <a class="merk" href="index.html"><img src="assets/logo/logo_128px.png" alt=""><span>Oefenpad</span></a>
+    <a class="link" href="index.html" aria-current="page"><span lang="nl">Oefeningen</span><span lang="en">Exercises</span></a>
+    <a class="link" href="#"><span lang="nl">Over</span><span lang="en">About</span></a>
+    <a class="link" href="#">Contact</a>
+    <div class="rechts">
+      <div class="taal" role="group" aria-label="Taal / Language">
+        <button type="button" data-taal-knop="nl" aria-pressed="true">NL</button>
+        <button type="button" data-taal-knop="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="kop">
+    <h1>
+      <span lang="nl">Nederlands,<br>tien minuten<br>per dag.</span>
+      <span lang="en">Dutch,<br>ten minutes<br>a day.</span>
+    </h1>
+    <div class="kant">
+      <p>
+        <span lang="nl">Korte oefeningen met de woorden die je in Nederland elke dag tegenkomt. Je begint meteen — geen account.</span>
+        <span lang="en">Short exercises using the words you meet every day in the Netherlands. Start straight away — no account.</span>
+      </p>
+      <div class="telling">
+        <b>4</b>
+        <span lang="nl">dagen<br>op rij</span>
+        <span lang="en">days<br>in a row</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="meter">
+    <i class="gedaan"></i><i class="gedaan"></i><i class="gedaan"></i><i class="gedaan"></i>
+    <i class="nu"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <main class="raster">
+    <a class="mod groot geverfd kobalt" data-verf="kobalt" data-zaad="11" href="src/woordzoeker/index.html">
+      <div>
+        <div class="naam">Woordzoeker</div>
+        <div class="om zacht">
+          <span lang="nl">Vind de verstopte woorden in het rooster. Je was gebleven bij <em>op het station</em>.</span>
+          <span lang="en">Find the hidden words in the grid. You left off at <em>op het station</em>.</span>
+        </div>
+      </div>
+      <div class="et"><span lang="nl">Verder waar je stopte</span><span lang="en">Pick up where you left off</span></div>
+    </a>
+
+    <a class="mod b2 geverfd diep" data-verf="diep" data-zaad="23" href="src/storymachine/index.html">
+      <div>
+        <div class="naam">Verhaal&shy;machine</div>
+        <div class="om zacht">
+          <span lang="nl">Draai de rollen, vertel het verhaal hardop.</span>
+          <span lang="en">Spin the reels, tell the story out loud.</span>
+        </div>
+      </div>
+      <div class="et"><span lang="nl">Spreken</span><span lang="en">Speaking</span></div>
+    </a>
+
+    <a class="mod b3 geverfd licht" data-verf="licht" data-zaad="37" href="src/geheugen/index.html">
+      <div>
+        <div class="naam">Geheugen</div>
+        <div class="om zacht">
+          <span lang="nl">Zoek de paren: één woord, één plaatje.</span>
+          <span lang="en">Find the pairs: one word, one picture.</span>
+        </div>
+      </div>
+      <div class="et"><span lang="nl">Woorden</span><span lang="en">Words</span></div>
+    </a>
+
+    <a class="mod b4 kaal" href="src/koppelen/index.html">
+      <div>
+        <div class="naam">Koppelen</div>
+        <div class="om zacht">
+          <span lang="nl">Koppel elk woord aan het juiste plaatje.</span>
+          <span lang="en">Match each word to the right picture.</span>
+        </div>
+      </div>
+      <div class="et" style="color:var(--kobalt)"><span lang="nl">Woorden</span><span lang="en">Words</span></div>
+    </a>
+
+    <a class="mod b5 kaal" href="src/galgje/index.html">
+      <div>
+        <div class="naam">Galgje</div>
+        <div class="om zacht">
+          <span lang="nl">Raad het woord, letter voor letter.</span>
+          <span lang="en">Guess the word, letter by letter.</span>
+        </div>
+      </div>
+      <div class="et" style="color:var(--kobalt)">Spelling</div>
+    </a>
+  </main>
+
+  <footer class="voet">
+    <div class="links">
+      <span lang="nl">Woorden uit <em>Quick Wins in Dutch</em></span>
+      <span lang="en">Words from <em>Quick Wins in Dutch</em></span>
+    </div>
+    <div class="rechts">
+      <a href="voorwaarden.html"><span lang="nl">Voorwaarden</span><span lang="en">Terms</span></a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script defer src="assets/site/oefenpad.js"></script>
+</body>
+</html>

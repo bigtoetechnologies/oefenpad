@@ -113,6 +113,7 @@ and N taking H's frames into the exercise itself.
 | 7 | **Option G, rolled out to all pages and all games** | 16:25 | The grid gives every game equal, scannable weight; the paint supplies warmth without a picture to decode |
 | 8 | Drop C's primary red and yellow | with 7 | De Stijl primaries fight the orange-means-act-now rule. G keeps cobalt, deep cobalt and orange only |
 | 9 | Bilingual home page, NL default | 18:40 | English browser gets English, everything else gets Dutch. Verified against `en-GB`, `nl-NL`, and with JS off |
+| 10 | The Geheugen tile becomes light cobalt | 6 Nov | The home page carried two oranges — that tile and the live bar in the week meter — which breaks the rule that orange marks one thing. The meter keeps the orange because it is the actual current step |
 
 ### Why G and not F
 

@@ -1,0 +1,253 @@
+/* ==========================================================================
+   Oefenpad — gedeeld ontwerpsysteem
+   Strak raster, zware grotesk, geschilderde kleurvlakken in de kleuren van
+   het logo. Eén bestand voor de hele site en alle oefeningen.
+   ========================================================================== */
+
+:root{
+  /* kleur */
+  --kobalt:#2B50C8;
+  --kobalt-diep:#15307F;
+  --kobalt-licht:#7E9BE0;
+  --oranje:#E8601F;
+  --oranje-diep:#C44A12;
+  --inkt:#101522;
+  --papier:#FFFFFF;
+  --raster:#DFE2E8;
+  --raster-zacht:#F2F4F7;
+  --grijs:#5C6578;
+  --zacht:#8A91A1;
+  --goed:#1F7A4D;
+  --fout:#C4342A;
+
+  /* maat */
+  --rand:1px solid var(--raster);
+  --rand-hard:1px solid var(--inkt);
+  --kolom:clamp(16px,2vw,30px);
+  --radius:0;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  background:var(--papier);
+  color:var(--inkt);
+  min-height:100vh;
+  line-height:1.45;
+}
+img{max-width:100%;display:block}
+a{color:var(--kobalt)}
+
+/* ---------- vel: het raster waarin alles staat ---------- */
+.vel{
+  max-width:1420px;margin:0 auto;min-height:100vh;
+  display:flex;flex-direction:column;
+  padding:0 var(--kolom);
+  border-left:var(--rand);border-right:var(--rand);
+}
+
+/* ---------- balk ---------- */
+.balk{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  border-bottom:var(--rand-hard);align-items:center;
+}
+.balk .merk{
+  grid-column:span 4;display:flex;align-items:center;gap:11px;
+  font-weight:900;font-size:clamp(17px,1.7vw,22px);letter-spacing:-.035em;
+  padding:10px 0;text-decoration:none;color:var(--inkt);
+}
+.balk .merk img{width:clamp(34px,3.2vw,44px);height:clamp(34px,3.2vw,44px);flex:none}
+.balk a.link{
+  grid-column:span 2;font-size:13px;font-weight:600;color:var(--inkt);
+  text-decoration:none;padding:13px 0;
+}
+.balk a.link:hover{color:var(--kobalt)}
+.balk a.link[aria-current="page"]{color:var(--kobalt)}
+.balk .rechts{grid-column:11/-1;display:flex;justify-content:flex-end;align-items:center;gap:10px}
+
+/* ---------- koppen ---------- */
+.kop{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:var(--rand-hard)}
+.kop h1{
+  grid-column:span 8;font-weight:900;letter-spacing:-.048em;line-height:.88;
+  font-size:clamp(34px,6.4vw,96px);
+  padding:clamp(16px,1.9vw,30px) 0 clamp(18px,2.2vw,36px);
+}
+.kop .kant{
+  grid-column:span 4;border-left:var(--rand);
+  padding:clamp(16px,1.9vw,30px) 0 0 clamp(14px,1.4vw,20px);
+  display:flex;flex-direction:column;
+}
+.kop .kant p{font-size:15px;line-height:1.45;font-weight:500;color:var(--grijs);max-width:30ch}
+.kop .kant .telling{margin-top:auto;padding-bottom:16px;display:flex;align-items:flex-end;gap:11px}
+.kop .kant .telling b{font-size:clamp(34px,3.6vw,50px);font-weight:900;line-height:.84;letter-spacing:-.045em}
+.kop .kant .telling span{font-size:13px;font-weight:600;color:var(--grijs);padding-bottom:3px}
+
+h1,h2,h3{letter-spacing:-.035em;line-height:1.05}
+h2{font-size:clamp(21px,2.1vw,30px);font-weight:900}
+h3{font-size:clamp(17px,1.6vw,22px);font-weight:800}
+
+/* ---------- geschilderde vlakken ---------- */
+/* Een .verf-svg ligt achter de inhoud van een blok en wordt door
+   oefenpad.js gevuld; valt terug op een egale kleur zonder JS.         */
+svg.verf{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.geverfd{position:relative;overflow:hidden}
+.geverfd > *:not(.verf){position:relative;z-index:1}
+.geverfd > svg.verf{position:absolute}
+.geverfd.kobalt{background:var(--kobalt);color:var(--papier)}
+.geverfd.diep{background:var(--kobalt-diep);color:var(--papier)}
+.geverfd.oranje{background:var(--oranje);color:var(--papier)}
+.geverfd.licht{background:var(--kobalt-licht);color:var(--inkt)}
+.geverfd.kobalt .zacht,.geverfd.diep .zacht,.geverfd.oranje .zacht{color:rgba(255,255,255,.82)}
+.geverfd.licht .zacht{color:rgba(16,21,34,.88)}
+
+/* ---------- knoppen ---------- */
+.knop{
+  position:relative;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;
+  gap:10px;font:inherit;font-weight:800;font-size:clamp(15px,1.3vw,17px);
+  padding:14px 26px;border:0;border-radius:var(--radius);cursor:pointer;
+  background:var(--kobalt);color:var(--papier);text-decoration:none;min-height:46px;
+}
+.knop:hover{background:var(--kobalt-diep)}
+.knop:focus-visible{outline:3px solid var(--oranje);outline-offset:3px}
+.knop.oranje{background:var(--oranje)}
+.knop.oranje:hover{background:var(--oranje-diep)}
+.knop.leeg{background:none;color:var(--inkt);box-shadow:inset 0 0 0 2px var(--inkt)}
+.knop.leeg:hover{background:var(--raster-zacht)}
+.knop[disabled]{opacity:.4;cursor:not-allowed}
+.knop.klein{padding:9px 16px;font-size:14px;min-height:38px}
+
+/* ---------- modules: de rasterblokken ---------- */
+.raster{display:grid;grid-template-columns:repeat(12,1fr)}
+.mod{
+  position:relative;overflow:hidden;text-decoration:none;color:var(--inkt);
+  border-right:var(--rand);border-bottom:var(--rand);
+  padding:clamp(15px,1.6vw,22px) clamp(16px,1.7vw,24px);
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.mod > *:not(.verf){position:relative;z-index:1}
+.mod .naam{font-weight:800;font-size:clamp(18px,1.9vw,28px);letter-spacing:-.032em;line-height:1.02}
+.mod .om{font-size:14px;font-weight:500;line-height:1.35;margin-top:6px;max-width:32ch}
+.mod .et{font-size:12px;font-weight:700;margin-top:13px}
+.mod:focus-visible{outline:4px solid var(--kobalt);outline-offset:-4px}
+.mod.kaal:hover{background:var(--raster-zacht)}
+
+/* ---------- weekmeter ---------- */
+.meter{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:var(--rand-hard)}
+.meter i{display:block;height:26px;border-right:2px solid var(--papier);position:relative;overflow:hidden;background:var(--raster)}
+.meter i:last-child{border-right:0}
+.meter i.gedaan{background:var(--kobalt)}
+.meter i.nu{background:var(--oranje)}
+
+/* ---------- tekstpagina's ---------- */
+.lees{
+  grid-column:span 8;padding:clamp(20px,2.4vw,40px) clamp(14px,1.6vw,26px) clamp(30px,3vw,56px) 0;
+  max-width:72ch;
+}
+.lees h2{margin:clamp(24px,2.4vw,38px) 0 9px}
+.lees h2:first-child{margin-top:0}
+.lees p,.lees li{font-size:15.5px;line-height:1.65;font-weight:450;color:var(--grijs);margin-bottom:11px}
+.lees strong{color:var(--inkt);font-weight:700}
+.lees ul{padding-left:20px;margin-bottom:16px}
+.lees a{color:var(--oranje);font-weight:600}
+.lees a:hover{color:var(--oranje-diep)}
+.lees .bijgewerkt{font-size:13px;color:var(--zacht);font-weight:600;margin-bottom:24px}
+
+/* ---------- voet ---------- */
+.voet{
+  display:grid;grid-template-columns:repeat(12,1fr);border-top:var(--rand-hard);
+  padding:14px 0;font-size:12px;font-weight:500;color:var(--grijs);margin-top:auto;gap:10px;
+}
+.voet .links{grid-column:span 6}
+.voet .rechts{grid-column:span 6;display:flex;justify-content:flex-end;gap:18px;flex-wrap:wrap}
+.voet a{color:inherit;text-decoration:none}
+.voet a:hover{color:var(--kobalt)}
+
+/* ---------- oefenpagina's (de spellen) ---------- */
+.spel{display:flex;flex-direction:column;flex:1;padding:clamp(14px,1.8vw,26px) 0}
+.spel-kop{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  padding-bottom:clamp(12px,1.4vw,18px);border-bottom:var(--rand-hard);margin-bottom:clamp(14px,1.8vw,26px);
+}
+.spel-kop h1{font-size:clamp(24px,2.8vw,40px);font-weight:900;letter-spacing:-.04em}
+.spel-kop .stand{display:flex;align-items:center;gap:clamp(12px,1.6vw,24px);font-size:13px;font-weight:600;color:var(--grijs)}
+.spel-kop .stand b{font-size:19px;font-weight:900;color:var(--inkt);letter-spacing:-.03em}
+.werkvlak{display:flex;flex-direction:column;align-items:center;gap:clamp(14px,1.8vw,26px);flex:1}
+.balkje{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:center}
+
+/* vakje: een cel met een harde rand, de basis voor letters en kaarten */
+.vakje{
+  position:relative;overflow:hidden;display:grid;place-items:center;
+  background:var(--papier);box-shadow:inset 0 0 0 2px var(--inkt);
+  font-weight:900;letter-spacing:-.02em;color:var(--inkt);
+}
+.vakje.vol{box-shadow:inset 0 0 0 2px var(--kobalt)}
+.vakje.goed{background:var(--goed);color:var(--papier);box-shadow:none}
+.vakje.fout{background:var(--fout);color:var(--papier);box-shadow:none}
+.vakje.nu{box-shadow:inset 0 0 0 3px var(--oranje)}
+
+
+/* ---------- taal ----------
+   De pagina bevat beide talen. Een klein script in de <head> zet
+   data-taal voordat er iets getekend wordt, dus er is geen flits.
+   Zonder JS blijft data-taal="nl" staan en is de site Nederlands. */
+html[data-taal="nl"] [lang="en"]{display:none}
+html[data-taal="en"] [lang="nl"]{display:none}
+
+.taal{display:flex;gap:0;box-shadow:inset 0 0 0 2px var(--inkt)}
+.taal button{
+  font:inherit;font-weight:800;font-size:12px;letter-spacing:.01em;
+  padding:6px 11px;border:0;background:none;color:var(--grijs);cursor:pointer;min-height:32px;
+}
+.taal button[aria-pressed="true"]{background:var(--inkt);color:var(--papier)}
+.taal button:focus-visible{outline:3px solid var(--oranje);outline-offset:2px}
+
+/* ---------- hulpklassen ---------- */
+.zacht{color:var(--grijs)}
+.klein{font-size:13px}
+.mono-cijfer{font-variant-numeric:tabular-nums}
+.verborgen{display:none !important}
+.alleen-lezer{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- mobiel ---------- */
+@media(max-width:900px){
+  .vel{border-left:0;border-right:0}
+  .balk{grid-template-columns:repeat(4,1fr)}
+  .balk .merk{grid-column:span 4;padding-bottom:4px}
+  .balk a.link{grid-column:span 1;font-size:12.5px;padding:11px 0}
+  .balk .rechts{grid-column:span 4;justify-content:flex-start;padding-bottom:8px}
+  .kop h1{grid-column:span 12}
+  .kop .kant{grid-column:span 12;border-left:0;border-top:var(--rand);padding-left:0}
+  .lees{grid-column:span 12;padding-right:0}
+  .voet .links,.voet .rechts{grid-column:span 12}
+  .voet .rechts{justify-content:flex-start}
+  .mod{border-right:0}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+
+/* ---------- donkere modus ----------
+   De oefeningen zetten zelf `dark` op <html>; galgje leest die klasse ook
+   vanuit JS om de tekening de juiste kleur te geven. Niet weghalen.      */
+html.dark{
+  --kobalt:#5C7DEB;
+  --kobalt-diep:#8FA8F2;
+  --kobalt-licht:#3A57A8;
+  --oranje:#FF7A3D;
+  --oranje-diep:#FF9666;
+  --inkt:#ECEFF5;
+  --papier:#0E1117;
+  --raster:#262C38;
+  --raster-zacht:#171C25;
+  --grijs:#A3ACBD;
+  --zacht:#788295;
+  --goed:#3FA873;
+  --fout:#E8625A;
+}
+html.dark body{background:var(--papier);color:var(--inkt)}
+html.dark .geverfd.kobalt,html.dark .geverfd.diep,html.dark .geverfd.oranje{color:#0E1117}
+html.dark .geverfd.kobalt .zacht,html.dark .geverfd.diep .zacht,
+html.dark .geverfd.oranje .zacht{color:rgba(14,17,23,.78)}
+html.dark .geverfd.licht .zacht{color:rgba(236,239,245,.9)}
+html.dark .vakje{background:var(--raster-zacht)}

@@ -113,7 +113,7 @@ filters for bristle grain and edge displacement.
 | `data-verf-klein` | Uses the tighter `#op-verf-klein` filter, for small elements |
 
 The element also needs class `geverfd` plus the matching colour class
-(`kobalt`, `diep`, `oranje`). That class sets a flat CSS background in the same
+(`kobalt`, `diep`, `oranje`, `licht`). That class sets a flat CSS background in the same
 colour, so a page with JS disabled or still loading shows a solid block rather
 than nothing. The painted SVG then lands on top. This fallback is the reason
 the colour is specified twice; keep both in sync.
@@ -202,8 +202,18 @@ script, so they stay light. That is an inconsistency, not a decision.
 | Language | `lang` is updated on `<html>` with every toggle, not only `data-taal` |
 | Screen-reader text | `.alleen-lezer` clips without hiding |
 
-Not yet verified: contrast of `--grijs` on `--papier` in dark mode, and whether
-a 12-bar week meter is understandable without a label. Both are open.
+Measured on the home page, 6 November 2026, sampling the rendered pixels:
+
+| Pair | Light | Dark |
+|---|---|---|
+| `.zacht` on a `licht` painted tile | 5.56:1 | 4.92:1 |
+
+Both clear AA for normal text. The painted tiles are the awkward case because
+the fill is mid-tone; `kobalt`, `diep` and `oranje` all carry white or
+near-black text and are not close to the line.
+
+Still unverified: `--grijs` on `--papier` in dark mode, and whether a 12-bar
+week meter is understandable without a label.
 
 ## What this design does not do
 

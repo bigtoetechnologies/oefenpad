@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B50C8">
+<title>Algemene voorwaarden — Oefenpad</title>
+<meta name="description" content="Algemene voorwaarden voor het gebruik van oefenpad.nl en de oefeningen daarop.">
+<link rel="icon" type="image/png" href="assets/logo/logo_32px.png">
+<script>
+/* Donkere modus — zet de klasse voordat er iets getekend wordt, en onthoudt
+   de keuze. Gelijk aan het blok in de oefeningen; sleutel oefenpad-theme. */
+(function () {
+  var KEY = 'oefenpad-theme';
+  function apply(saved) {
+    var dark = saved === 'dark' || (saved !== 'light' &&
+      window.matchMedia('(prefers-color-scheme: dark)').matches);
+    document.documentElement.classList.toggle('dark', dark);
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { /* privemodus */ }
+  apply(saved);
+  window.toggleSiteTheme = function () {
+    var dark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+    if (btn) toggleSiteTheme();
+  });
+  window.addEventListener('storage', function (e) {
+    if (e.key === KEY && e.newValue) {
+      apply(e.newValue);
+      document.dispatchEvent(new CustomEvent('themechange',
+        { detail: { dark: document.documentElement.classList.contains('dark') } }));
+    }
+  });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site/oefenpad.css">
+<style>
+  .inhoud{display:grid;grid-template-columns:repeat(12,1fr)}
+  .inhoud .zij{grid-column:span 4;border-left:var(--rand);padding:clamp(20px,2.4vw,40px) 0 0 clamp(14px,1.6vw,26px)}
+  .inhoud .zij h2{font-size:15px;font-weight:800;margin-bottom:10px}
+  .inhoud .zij a{display:block;font-size:14px;font-weight:600;color:var(--inkt);text-decoration:none;padding:5px 0}
+  .inhoud .zij a:hover,.inhoud .zij a[aria-current]{color:var(--kobalt)}
+  @media(max-width:900px){.inhoud .zij{grid-column:span 12;border-left:0;border-top:var(--rand);padding-left:0;margin-top:20px}}
+</style>
+</head>
+<body>
+<div class="vel">
+
+  <nav class="balk">
+    <a class="merk" href="index.html"><img src="assets/logo/logo_128px.png" alt=""><span>Oefenpad</span></a>
+    <a class="link" href="index.html">Oefeningen</a>
+    <a class="link" href="#">Over</a>
+    <a class="link" href="#">Contact</a>
+    <a class="link" href="#">Inloggen</a>
+  </nav>
+
+  <header class="kop">
+    <h1>Algemene voorwaarden</h1>
+    <div class="kant"><p>De afspraken die gelden als u Oefenpad gebruikt.</p></div>
+  </header>
+
+  <main class="inhoud">
+    <article class="lees">
+    <p class="bijgewerkt">Laatst bijgewerkt: november 2026</p>
+    <p>Deze voorwaarden gelden voor het gebruik van de website oefenpad.nl en de
+    oefeningen daarop (de "Service"). Door de Service te gebruiken gaat u akkoord met deze
+    voorwaarden. Gaat u er niet mee akkoord, gebruik de Service dan niet.</p>
+    <h2>1. Over de Service</h2>
+    <p>Oefenpad biedt korte oefeningen waarmee u Nederlands oefent: woorden, zinnen en verhalen.
+    De Service is gratis, werkt in uw browser en vereist geen account.</p>
+    <h2>2. Gebruik van de Service</h2>
+    <p>U mag de Service gebruiken voor eigen, niet-commercieel gebruik, en voor onderwijs in de
+    klas. U mag niet:</p>
+    <ul>
+    <li>de Service of delen daarvan kopiëren, doorverkopen of als eigen dienst aanbieden;</li>
+    <li>proberen de Service te verstoren, te overbelasten of ongeautoriseerd toegang te krijgen
+    tot onderliggende systemen;</li>
+    <li>geautomatiseerd grote hoeveelheden inhoud van de site ophalen.</li>
+    </ul>
+    <h2>3. Geen account, geen gegevens</h2>
+    <p>De Service kent geen registratie en bewaart geen persoonsgegevens. Uw voortgang staat in de
+    lokale opslag van uw browser. Wist u die opslag, verandert u van browser of van apparaat, dan
+    is uw voortgang weg. Wij kunnen die niet herstellen.</p>
+    <h2>4. Intellectuele eigendom</h2>
+    <p>De teksten, illustraties, woordafbeeldingen, het logo en de code van Oefenpad zijn eigendom
+    van Oefenpad of worden met toestemming gebruikt. U mag ze niet zonder voorafgaande schriftelijke
+    toestemming overnemen, behalve waar een open licentie dat uitdrukkelijk toestaat.</p>
+    <p>De woorden en zinnen in de oefeningen komen deels uit <em>Quick Wins in Dutch</em>.</p>
+    <h2>5. Geen garantie</h2>
+    <p>De Service wordt aangeboden "zoals die is", zonder enige garantie. Wij garanderen niet dat de
+    Service foutloos of ononderbroken werkt, en evenmin dat alle taalkundige inhoud volledig juist
+    is. Oefenpad is lesmateriaal, geen vervanging van een docent, examen of officiële
+    taaltoets.</p>
+    <h2>6. Aansprakelijkheid</h2>
+    <p>Voor zover de wet dat toestaat, zijn wij niet aansprakelijk voor indirecte schade,
+    gevolgschade of verlies van gegevens die voortvloeit uit het gebruik van of de
+    onmogelijkheid tot gebruik van de Service. Niets in deze voorwaarden beperkt onze
+    aansprakelijkheid voor opzet of bewuste roekeloosheid.</p>
+    <h2>7. Links van derden</h2>
+    <p>De Service kan links bevatten naar websites van derden. Wij hebben geen controle over die
+    sites en aanvaarden geen verantwoordelijkheid voor de inhoud of werkwijze daarvan.</p>
+    <h2>8. Beschikbaarheid en wijzigingen</h2>
+    <p>Wij mogen de Service op elk moment wijzigen, opschorten of beëindigen, geheel of
+    gedeeltelijk, zonder voorafgaande kennisgeving. Oefeningen kunnen worden toegevoegd of
+    verdwijnen.</p>
+    <h2>9. Wijzigingen in deze voorwaarden</h2>
+    <p>Wij kunnen deze voorwaarden van tijd tot tijd bijwerken. De nieuwe versie plaatsen wij op
+    deze pagina en die wordt onmiddellijk na publicatie van kracht. Blijft u de Service gebruiken,
+    dan aanvaardt u de gewijzigde voorwaarden.</p>
+    <h2>10. Toepasselijk recht</h2>
+    <p>Op deze voorwaarden is Nederlands recht van toepassing. Geschillen worden voorgelegd aan de
+    bevoegde rechter in Nederland.</p>
+    <h2>11. Contact opnemen</h2>
+    <p>Heeft u vragen over deze voorwaarden? Neem dan contact met ons op via:</p>
+    <ul>
+    <li>E-mail: <a href="mailto:info@oefenpad.nl">info@oefenpad.nl</a></li>
+    </ul>
+    </article>
+    <aside class="zij">
+      <h2>Ook hier</h2>
+      <a href="voorwaarden.html" aria-current="page">Algemene voorwaarden</a>
+      <a href="privacy.html">Privacybeleid</a>
+      <a href="index.html">Terug naar de oefeningen</a>
+    </aside>
+  </main>
+
+  <footer class="voet">
+    <div class="links">Woorden uit <em>Quick Wins in Dutch</em></div>
+    <div class="rechts">
+      <a href="voorwaarden.html">Voorwaarden</a>
+      <a href="privacy.html">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script defer src="assets/site/oefenpad.js"></script>
+</body>
+</html>
