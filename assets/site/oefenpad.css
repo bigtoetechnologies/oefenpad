@@ -202,6 +202,21 @@ html[data-taal="en"] [lang="nl"]{display:none}
 .taal button[aria-pressed="true"]{background:var(--inkt);color:var(--papier)}
 .taal button:focus-visible{outline:3px solid var(--oranje);outline-offset:2px}
 
+/* licht/donker: zelfde doos als de taalknop, pictogram zonder tekst */
+.thema{
+  display:grid;place-items:center;width:34px;min-height:32px;padding:0;
+  border:0;background:none;cursor:pointer;color:var(--inkt);
+  box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.thema svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.9;
+  stroke-linecap:round;grid-area:1/1}
+.thema .maan{fill:currentColor;stroke:none}
+.thema .zon{display:none}
+html.dark .thema .zon{display:block}
+html.dark .thema .maan{display:none}
+.thema:hover{background:var(--raster-zacht)}
+.thema:focus-visible{outline:3px solid var(--oranje);outline-offset:2px}
+
 /* ---------- hulpklassen ---------- */
 .zacht{color:var(--grijs)}
 .klein{font-size:13px}

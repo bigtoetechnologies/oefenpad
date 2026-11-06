@@ -200,13 +200,19 @@ The switch is an inline script at the top of each page's `<head>`, before
 |---|---|
 | Stored choice | `localStorage['oefenpad-theme']`, values `dark` or `light` |
 | No stored choice | Follows `prefers-color-scheme` |
-| Toggle | Any element with `id="theme-toggle"`; delegated click handler |
+| Toggle | `oefenpad.js` injects a `#theme-toggle` button into the nav on every page; a delegated click handler in the head script does the switching |
 | Across tabs | A `storage` listener re-applies the new value |
 | Canvas and JS drawing | Listen for the `themechange` event; `galgje/script.js` reads the class to colour its drawing |
 
-Carried by four of the five games — galgje, geheugen, koppelen, woordzoeker.
-The Story Machine, the home page and the two legal pages do not have the
-script, so they stay light. That is an inconsistency, not a decision.
+All eight pages carry it. The button is injected rather than written into
+each page's markup, because the four BigToe-derived games still use a
+`.header-right` nav rather than `.balk .rechts`; the injection targets both.
+Without JS there is no dark mode at all, so a JS-injected control loses
+nothing.
+
+The site therefore opens dark for a visitor whose system is set to dark.
+That is deliberate, but it means most visitors never see the white-paper
+design unless they press the button.
 
 ## Accessibility
 

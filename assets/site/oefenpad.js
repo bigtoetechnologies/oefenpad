@@ -128,6 +128,40 @@
     }
   }
 
+  /* ---------- licht/donker-knop ----------
+     De schakelaar zelf staat in het inline-blok boven in elke pagina; die
+     luistert naar een klik op #theme-toggle. Hier staat alleen de knop, want
+     zonder JS is er ook geen donkere modus, dus dan hoeft hij er niet te zijn.
+     Het pictogram toont waar je heen gaat: maan in het licht, zon in het donker. */
+  var ZON = '<svg class="zon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<circle cx="12" cy="12" r="4.4"/><path d="M12 2.4v2.6M12 19v2.6M2.4 12h2.6M19 12h2.6' +
+    'M5.2 5.2l1.9 1.9M16.9 16.9l1.9 1.9M18.8 5.2l-1.9 1.9M7.1 16.9l-1.9 1.9"/></svg>';
+  var MAAN = '<svg class="maan" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<path d="M20.5 14.8A8.8 8.8 0 0 1 9.2 3.5a7.9 7.9 0 1 0 11.3 11.3Z"/></svg>';
+
+  function themaKnop() {
+    if (document.getElementById('theme-toggle')) return;
+    /* .balk is de eigen navigatiebalk; .header-right hoort bij de vier spellen
+       die nog de oude kop van BigToe hebben. */
+    var doel = document.querySelector('.balk .rechts') ||
+               document.querySelector('.header-right');
+    if (!doel) {
+      var balk = document.querySelector('.balk');
+      if (!balk) return;
+      doel = document.createElement('div');
+      doel.className = 'rechts';
+      balk.appendChild(doel);
+    }
+    var knop = document.createElement('button');
+    knop.type = 'button';
+    knop.id = 'theme-toggle';
+    knop.className = 'thema';
+    knop.innerHTML = ZON + MAAN +
+      '<span class="alleen-lezer" lang="nl">Licht of donker</span>' +
+      '<span class="alleen-lezer" lang="en">Light or dark</span>';
+    doel.appendChild(knop);
+  }
+
   function alles() {
     var lijst = document.querySelectorAll('[data-verf]');
     for (var i = 0; i < lijst.length; i++) verf(lijst[i]);
@@ -139,6 +173,7 @@
       houder.innerHTML = DEFS;
       document.body.insertBefore(houder.firstChild, document.body.firstChild);
     }
+    themaKnop();
     taalKnoppen();
     alles();
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(alles);
