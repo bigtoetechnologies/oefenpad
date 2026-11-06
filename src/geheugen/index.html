@@ -19,9 +19,9 @@
         (function () {
             var KEY = 'oefenpad-theme';
             function apply(saved) {
-                var dark = saved === 'dark' || (saved !== 'light' &&
-                    window.matchMedia('(prefers-color-scheme: dark)').matches);
-                document.documentElement.classList.toggle('dark', dark);
+                /* Altijd licht, tenzij de bezoeker zelf donker koos. De systeemvoorkeur
+                   telt niet mee: wit papier met penseelvlakken is het ontwerp. */
+                document.documentElement.classList.toggle('dark', saved === 'dark');
             }
             var saved = null;
             try { saved = localStorage.getItem(KEY); } catch (e) { /* private mode */ }

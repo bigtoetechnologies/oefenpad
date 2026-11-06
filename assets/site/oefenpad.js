@@ -176,13 +176,11 @@
     themaKnop();
     taalKnoppen();
     alles();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(alles);
-    /* De donkere modus wisselt de kleurvariabelen; de vlakken moeten opnieuw. */
+    /* De donkere modus wisselt de kleurvariabelen; de vlakken moeten opnieuw.
+       Herschilderen bij resize of na het laden van het lettertype hoeft niet:
+       de viewBox ligt vast, dus de verf rekt gewoon mee. */
     document.addEventListener('themechange', alles);
   }
-
-  var t;
-  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(alles, 150); });
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();

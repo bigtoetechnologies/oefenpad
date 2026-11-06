@@ -141,8 +141,9 @@ Constraints:
   seed get the same silhouette and the eye catches it.
 - Paint a minority of blocks. On the home page, three of five tiles are
   painted and two are plain. All five painted reads as a toy.
-- The filter re-runs on resize (debounced 150 ms) and after
-  `document.fonts.ready`. Do not call `Oefenpad.verfAlles()` in a loop.
+- The paint is repainted only on `themechange`, because the theme swaps the
+  colour tokens. Resizing needs nothing: the viewBox is fixed, so the fill
+  stretches with the element. Do not call `Oefenpad.verfAlles()` in a loop.
 - Painted text is `--papier` at full strength; secondary text inside a painted
   block uses `.zacht`, which becomes `rgba(255,255,255,.82)`.
 
@@ -199,7 +200,7 @@ The switch is an inline script at the top of each page's `<head>`, before
 | Step | Behaviour |
 |---|---|
 | Stored choice | `localStorage['oefenpad-theme']`, values `dark` or `light` |
-| No stored choice | Follows `prefers-color-scheme` |
+| No stored choice | Opens light. The system `prefers-color-scheme` is deliberately ignored |
 | Toggle | `oefenpad.js` injects a `#theme-toggle` button into the nav on every page; a delegated click handler in the head script does the switching |
 | Across tabs | A `storage` listener re-applies the new value |
 | Canvas and JS drawing | Listen for the `themechange` event; `galgje/script.js` reads the class to colour its drawing |
@@ -210,9 +211,10 @@ each page's markup, because the four BigToe-derived games still use a
 Without JS there is no dark mode at all, so a JS-injected control loses
 nothing.
 
-The site therefore opens dark for a visitor whose system is set to dark.
-That is deliberate, but it means most visitors never see the white-paper
-design unless they press the button.
+The site always opens light, whatever the visitor's system is set to. Dark is
+a choice the visitor makes with the button, and it is then remembered. The
+reason is that brush on white paper is the design; following the system would
+mean most visitors never saw it.
 
 ## Accessibility
 
