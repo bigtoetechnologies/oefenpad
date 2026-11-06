@@ -49,6 +49,12 @@
 
   function ruis(n) { var x = Math.sin(n * 127.1) * 43758.5453; return x - Math.floor(x); }
 
+  /* De verf wordt in een vaste, kleine ruimte getekend en daarna uitgerekt
+     (preserveAspectRatio="none"). Dat moet zo: het filter is op deze maten
+     afgestemd. Tekenen we op ware grootte, dan vallen de borstelsporen onder
+     een pixel en wordt het vlak egaal. */
+  var RUIT = { groot: [300, 150], klein: [100, 30] };
+
   /* Een vlak met licht onregelmatige randen: de kwast raakt het papier niet
      overal even strak. w en h zijn de viewBox-maten, niet pixels. */
   function vlak(w, h, zaad) {
@@ -68,8 +74,8 @@
     var oud = el.querySelector(':scope > svg.verf');
     if (oud) oud.parentNode.removeChild(oud);
 
-    var r = el.getBoundingClientRect();
-    var w = Math.max(10, Math.round(r.width)), h = Math.max(10, Math.round(r.height));
+    var maat = klein ? RUIT.klein : RUIT.groot;
+    var w = maat[0], h = maat[1];
 
     var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.setAttribute('class', 'verf');
@@ -80,6 +86,12 @@
     svg.innerHTML = '<g filter="url(#op-verf' + (klein ? '-klein' : '') + ')">' +
       '<path d="' + vlak(w, h, zaad) + '" fill="' + kleur + '"/></g>';
     el.insertBefore(svg, el.firstChild);
+
+    /* De egale achtergrond is alleen de terugval voor "geen JS". Hij moet weg
+       zodra er geschilderd is, anders vult hij de borstelsporen op en is het
+       vlak weer egaal. Pas na het invoegen, zodat een mislukte verf geen
+       onzichtbare tegel oplevert. */
+    el.style.backgroundColor = 'transparent';
   }
 
 

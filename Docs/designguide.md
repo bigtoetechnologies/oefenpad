@@ -44,8 +44,10 @@ orange acts on it. Nothing else is allowed to signal.
 
 Rules:
 
-1. Orange marks exactly one thing per screen — the live step or the primary
-   button. A second orange makes both meaningless.
+1. Orange marks one *idea* per screen: what to do now. It may land on more
+   than one element when those elements say the same thing — on the home page
+   the live bar in the week meter and the tile it points at are both the
+   current step. A second, unrelated orange is what makes orange meaningless.
 2. Pure white is the page, not a surface. There is no second elevation.
 3. Dark mode is a token swap on `html.dark`, nothing more. Never write a
    second rule set.
@@ -117,6 +119,21 @@ The element also needs class `geverfd` plus the matching colour class
 colour, so a page with JS disabled or still loading shows a solid block rather
 than nothing. The painted SVG then lands on top. This fallback is the reason
 the colour is specified twice; keep both in sync.
+
+Two rules keep the brush visible. Both were broken in the first
+implementation and the result was flat rectangles, indistinguishable from
+plain CSS backgrounds:
+
+1. **The SVG draws into a fixed, small user space** — 300 × 150, or 100 × 30
+   with `data-verf-klein` — and is stretched by `preserveAspectRatio="none"`.
+   The filter's `baseFrequency` is tuned to those units. Setting the viewBox
+   to the element's real pixel size puts the bristles below one pixel and the
+   fill averages out to a solid colour.
+2. **The flat CSS background is cleared once the paint lands.** `verf()` sets
+   `backgroundColor: transparent` on the element after inserting the SVG. The
+   painted layer is deliberately semi-transparent, between about 0.3 and 1
+   alpha, so an opaque background behind it fills in every bristle gap and
+   the texture disappears.
 
 Constraints:
 
@@ -202,15 +219,16 @@ script, so they stay light. That is an inconsistency, not a decision.
 | Language | `lang` is updated on `<html>` with every toggle, not only `data-taal` |
 | Screen-reader text | `.alleen-lezer` clips without hiding |
 
-Measured on the home page, 6 November 2026, sampling the rendered pixels:
+Measured 6 November 2026 by sampling rendered pixels. The `licht` fill is the
+awkward one, because it is mid-tone rather than clearly dark or light:
 
 | Pair | Light | Dark |
 |---|---|---|
 | `.zacht` on a `licht` painted tile | 5.56:1 | 4.92:1 |
 
-Both clear AA for normal text. The painted tiles are the awkward case because
-the fill is mid-tone; `kobalt`, `diep` and `oranje` all carry white or
-near-black text and are not close to the line.
+Both clear AA. `kobalt`, `diep` and `oranje` carry white or near-black text
+and are nowhere near the line. The `licht` class is defined and safe to use;
+nothing on the home page uses it today.
 
 Still unverified: `--grijs` on `--papier` in dark mode, and whether a 12-bar
 week meter is understandable without a label.
