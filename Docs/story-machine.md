@@ -66,6 +66,24 @@ with a path is the only change the game needs.
 Proposed layout: `src/storymachine/art/<reel-id>/<tile-id>.svg`, so
 `art/who/fox.svg`. Tile ids are stable; treat them as filenames.
 
+## The words
+
+Every tile word must be one word that a picture can show. A player turns
+a card to check the word against the tile's image, so a word the image
+cannot carry teaches nothing.
+
+| Rule | Why |
+|------|-----|
+| One word per tile — a noun or a verb | A phrase has no single picture. `de tijd raakt op` cannot be drawn; `de klok` can |
+| No prepositions, anywhere | `in het bos` makes the tile teach `in`, which no image shows. The reel's slot already supplies the sense |
+| Nouns carry `de` or `het`, never `een` | The article is the gender, and the gender is the thing worth learning. `een sleutel` teaches nothing |
+| No reflexive pronouns, adverbs or participles | `verstopt zich`, `weer thuis`, `wegzwevend` — none of them is one drawable idea |
+| Verbs are infinitives, both languages | `to run` / `rennen`. The tile names an action; the player conjugates it aloud |
+
+The sentence the reels suggest is therefore a skeleton the player speaks
+aloud, not one the machine writes. The prepositions and joins live in the
+speaking, which is where the exercise is.
+
 ## What is not built
 
 - No scoring, no timer, no progress. It is a prompt, not a test.

@@ -18,12 +18,27 @@
    path, and nothing else in the game changes. Keep `id` stable —
    it is the filename the art will be keyed by.
 
+   RULES for the words, from Docs/story-machine.md:
+     1. One word per tile, a noun or a verb. A phrase has no picture.
+     2. No prepositions. The reel's slot already supplies the sense.
+     3. Dutch nouns carry `de` or `het`, never `een` — the article is
+        the gender, and the gender is the thing worth learning. Every
+        one is checked against woordenlijst.org (Nederlandse Taalunie).
+     4. English nouns take `the`, English verbs take `to`, so the
+        column says which part of speech a tile is.
+     5. Verbs are infinitives in both languages — `to run` / `rennen`.
+        A reel tile names an action; the player conjugates it aloud.
+
    RULES for the art, repeated from Docs/story-machine.md:
      1. No text baked into the image, ever. One set, every language.
      2. One idea per tile, readable as a silhouette at 64px.
      3. Vague beats specific. "A door", not "a red door with a
         letterbox" — the player supplies the story.
      4. Flat and bold. Reels are read while moving.
+
+   `verdwaald` and `met lege handen` were dropped from the `end` reel
+   because neither can be shown as a picture; `het nest` and `de ster`
+   took their places. Nothing in script.js assumes a reel length.
    ================================================================= */
 
 window.REELS = [
@@ -31,54 +46,54 @@ window.REELS = [
         id: 'who',
         label: { en: 'Who', nl: 'Wie' },
         tiles: [
-            { id: 'fox',     art: '🦊', en: 'the fox',       nl: 'de vos' },
-            { id: 'owl',     art: '🦉', en: 'the owl',       nl: 'de uil' },
-            { id: 'child',   art: '🧒', en: 'the child',     nl: 'het kind' },
-            { id: 'robot',   art: '🤖', en: 'the robot',     nl: 'de robot' },
-            { id: 'ghost',   art: '👻', en: 'the ghost',     nl: 'het spook' },
-            { id: 'king',    art: '🤴', en: 'the king',      nl: 'de koning' },
-            { id: 'fish',    art: '🐟', en: 'the fish',      nl: 'de vis' },
-            { id: 'dog',     art: '🐕', en: 'the dog',       nl: 'de hond' },
-            { id: 'bird',    art: '🐦', en: 'the bird',      nl: 'de vogel' },
-            { id: 'granny',  art: '👵', en: 'the old woman', nl: 'de oude vrouw' },
-            { id: 'cat',     art: '🐈', en: 'the cat',       nl: 'de kat' },
-            { id: 'bear',    art: '🐻', en: 'the bear',      nl: 'de beer' }
+            { id: 'fox',     art: '🦊', en: 'the fox',         nl: 'de vos' },
+            { id: 'owl',     art: '🦉', en: 'the owl',         nl: 'de uil' },
+            { id: 'child',   art: '🧒', en: 'the child',       nl: 'het kind' },
+            { id: 'robot',   art: '🤖', en: 'the robot',       nl: 'de robot' },
+            { id: 'ghost',   art: '👻', en: 'the ghost',       nl: 'het spook' },
+            { id: 'king',    art: '🤴', en: 'the king',        nl: 'de koning' },
+            { id: 'fish',    art: '🐟', en: 'the fish',        nl: 'de vis' },
+            { id: 'dog',     art: '🐕', en: 'the dog',         nl: 'de hond' },
+            { id: 'bird',    art: '🐦', en: 'the bird',        nl: 'de vogel' },
+            { id: 'oma',     art: '👵', en: 'the grandmother', nl: 'de oma' },
+            { id: 'cat',     art: '🐈', en: 'the cat',         nl: 'de kat' },
+            { id: 'bear',    art: '🐻', en: 'the bear',        nl: 'de beer' }
         ]
     },
     {
         id: 'does',
         label: { en: 'Does what', nl: 'Doet wat' },
         tiles: [
-            { id: 'runs',    art: '🏃', en: 'runs',   nl: 'rent' },
-            { id: 'hides',   art: '🙈', en: 'hides',  nl: 'verstopt zich' },
-            { id: 'digs',    art: '⛏️', en: 'digs',   nl: 'graaft' },
-            { id: 'flies',   art: '🛫', en: 'flies',  nl: 'vliegt' },
-            { id: 'sleeps',  art: '😴', en: 'sleeps', nl: 'slaapt' },
-            { id: 'sings',   art: '🎤', en: 'sings',  nl: 'zingt' },
-            { id: 'steals',  art: '🥷', en: 'steals', nl: 'steelt' },
-            { id: 'builds',  art: '🔨', en: 'builds', nl: 'bouwt' },
-            { id: 'seeks',   art: '🔍', en: 'searches', nl: 'zoekt' },
-            { id: 'falls',   art: '🤸', en: 'falls',  nl: 'valt' },
-            { id: 'opens',   art: '🔓', en: 'opens',  nl: 'opent' },
-            { id: 'follows', art: '👣', en: 'follows', nl: 'volgt' }
+            { id: 'runs',     art: '🏃', en: 'to run',     nl: 'rennen' },
+            { id: 'shelters', art: '🫣', en: 'to shelter', nl: 'schuilen' },
+            { id: 'digs',     art: '⛏️', en: 'to dig',     nl: 'graven' },
+            { id: 'flies',    art: '🛫', en: 'to fly',     nl: 'vliegen' },
+            { id: 'sleeps',   art: '😴', en: 'to sleep',   nl: 'slapen' },
+            { id: 'sings',    art: '🎤', en: 'to sing',    nl: 'zingen' },
+            { id: 'steals',   art: '🥷', en: 'to steal',   nl: 'stelen' },
+            { id: 'builds',   art: '🔨', en: 'to build',   nl: 'bouwen' },
+            { id: 'seeks',    art: '🔍', en: 'to search',  nl: 'zoeken' },
+            { id: 'falls',    art: '🤸', en: 'to fall',    nl: 'vallen' },
+            { id: 'opens',    art: '🔓', en: 'to open',    nl: 'openen' },
+            { id: 'climbs',   art: '🧗', en: 'to climb',   nl: 'klimmen' }
         ]
     },
     {
         id: 'where',
         label: { en: 'Where', nl: 'Waar' },
         tiles: [
-            { id: 'forest',  art: '🌲', en: 'in the forest',  nl: 'in het bos' },
-            { id: 'boat',    art: '⛵', en: 'on a boat',      nl: 'op een boot' },
-            { id: 'tower',   art: '🗼', en: 'in a tower',     nl: 'in een toren' },
-            { id: 'bridge',  art: '🌉', en: 'on a bridge',    nl: 'op een brug' },
-            { id: 'island',  art: '🏝️', en: 'on an island',   nl: 'op een eiland' },
-            { id: 'market',  art: '🏪', en: 'at the market',  nl: 'op de markt' },
-            { id: 'moon',    art: '🌙', en: 'on the moon',    nl: 'op de maan' },
-            { id: 'desert',  art: '🏜️', en: 'in the desert',  nl: 'in de woestijn' },
-            { id: 'river',   art: '🏞️', en: 'by the river',   nl: 'bij de rivier' },
-            { id: 'attic',   art: '🏚️', en: 'in the attic',   nl: 'op zolder' },
-            { id: 'castle',  art: '🏰', en: 'in a castle',    nl: 'in een kasteel' },
-            { id: 'cave',    art: '⛰️', en: 'in a cave',      nl: 'in een grot' }
+            { id: 'forest',  art: '🌲', en: 'the forest',  nl: 'het bos' },
+            { id: 'boat',    art: '⛵', en: 'the boat',    nl: 'de boot' },
+            { id: 'tower',   art: '🗼', en: 'the tower',   nl: 'de toren' },
+            { id: 'bridge',  art: '🌉', en: 'the bridge',  nl: 'de brug' },
+            { id: 'island',  art: '🏝️', en: 'the island',  nl: 'het eiland' },
+            { id: 'market',  art: '🏪', en: 'the market',  nl: 'de markt' },
+            { id: 'moon',    art: '🌙', en: 'the moon',    nl: 'de maan' },
+            { id: 'desert',  art: '🏜️', en: 'the desert',  nl: 'de woestijn' },
+            { id: 'river',   art: '🏞️', en: 'the river',   nl: 'de rivier' },
+            { id: 'attic',   art: '🏚️', en: 'the attic',   nl: 'de zolder' },
+            { id: 'castle',  art: '🏰', en: 'the castle',  nl: 'het kasteel' },
+            { id: 'cave',    art: '⛰️', en: 'the cave',    nl: 'de grot' }
         ]
     },
     {
@@ -86,18 +101,18 @@ window.REELS = [
         label: { en: 'With what', nl: 'Waarmee' },
         join: { en: 'with', nl: 'met', comma: false },
         tiles: [
-            { id: 'key',      art: '🔑', en: 'a key',      nl: 'een sleutel' },
-            { id: 'rope',     art: '🪢', en: 'a rope',     nl: 'een touw' },
-            { id: 'lamp',     art: '🏮', en: 'a lamp',     nl: 'een lamp' },
-            { id: 'book',     art: '📖', en: 'a book',     nl: 'een boek' },
-            { id: 'egg',      art: '🥚', en: 'an egg',     nl: 'een ei' },
-            { id: 'mirror',   art: '🪞', en: 'a mirror',   nl: 'een spiegel' },
-            { id: 'bell',     art: '🔔', en: 'a bell',     nl: 'een bel' },
-            { id: 'coin',     art: '🪙', en: 'a coin',     nl: 'een munt' },
-            { id: 'ladder',   art: '🪜', en: 'a ladder',   nl: 'een ladder' },
-            { id: 'umbrella', art: '☂️', en: 'an umbrella', nl: 'een paraplu' },
-            { id: 'sword',    art: '🗡️', en: 'a sword',    nl: 'een zwaard' },
-            { id: 'seed',     art: '🌱', en: 'a seed',     nl: 'een zaadje' }
+            { id: 'key',      art: '🔑', en: 'the key',      nl: 'de sleutel' },
+            { id: 'rope',     art: '🪢', en: 'the rope',     nl: 'het touw' },
+            { id: 'lamp',     art: '🏮', en: 'the lamp',     nl: 'de lamp' },
+            { id: 'book',     art: '📖', en: 'the book',     nl: 'het boek' },
+            { id: 'egg',      art: '🥚', en: 'the egg',      nl: 'het ei' },
+            { id: 'mirror',   art: '🪞', en: 'the mirror',   nl: 'de spiegel' },
+            { id: 'bell',     art: '🔔', en: 'the bell',     nl: 'de bel' },
+            { id: 'coin',     art: '🪙', en: 'the coin',     nl: 'de munt' },
+            { id: 'ladder',   art: '🪜', en: 'the ladder',   nl: 'de ladder' },
+            { id: 'umbrella', art: '☂️', en: 'the umbrella', nl: 'de paraplu' },
+            { id: 'sword',    art: '🗡️', en: 'the sword',    nl: 'het zwaard' },
+            { id: 'seed',     art: '🌱', en: 'the seed',     nl: 'het zaadje' }
         ]
     },
     {
@@ -105,18 +120,18 @@ window.REELS = [
         label: { en: 'But then', nl: 'Maar dan' },
         join: { en: 'but then', nl: 'maar dan', comma: true },
         tiles: [
-            { id: 'storm',     art: '⛈️', en: 'a storm',        nl: 'een storm' },
-            { id: 'door',      art: '🚪', en: 'a locked door',  nl: 'een deur op slot' },
-            { id: 'hole',      art: '🕳️', en: 'a hole',         nl: 'een gat' },
-            { id: 'eye',       art: '👁️', en: 'someone watching', nl: 'iemand kijkt' },
-            { id: 'fire',      art: '🔥', en: 'fire',           nl: 'vuur' },
-            { id: 'crash',     art: '💥', en: 'a crash',        nl: 'een klap' },
-            { id: 'fog',       art: '🌫️', en: 'fog',            nl: 'mist' },
-            { id: 'stranger',  art: '🕵️', en: 'a stranger',     nl: 'een vreemdeling' },
-            { id: 'snake',     art: '🐍', en: 'a snake',        nl: 'een slang' },
-            { id: 'time',      art: '⏳', en: 'time runs out',  nl: 'de tijd raakt op' },
-            { id: 'crowd',     art: '👥', en: 'a crowd',        nl: 'een menigte' },
-            { id: 'shadow',    art: '🌑', en: 'a shadow',       nl: 'een schaduw' }
+            { id: 'storm',     art: '⛈️', en: 'the storm',     nl: 'de storm' },
+            { id: 'lock',      art: '🔒', en: 'the lock',      nl: 'het slot' },
+            { id: 'hole',      art: '🕳️', en: 'the hole',      nl: 'het gat' },
+            { id: 'eye',       art: '👁️', en: 'the eye',       nl: 'het oog' },
+            { id: 'fire',      art: '🔥', en: 'the fire',      nl: 'het vuur' },
+            { id: 'wall',      art: '🧱', en: 'the wall',      nl: 'de muur' },
+            { id: 'fog',       art: '🌫️', en: 'the fog',       nl: 'de mist' },
+            { id: 'stranger',  art: '🕵️', en: 'the stranger',  nl: 'de vreemdeling' },
+            { id: 'snake',     art: '🐍', en: 'the snake',     nl: 'de slang' },
+            { id: 'clock',     art: '⏰', en: 'the clock',     nl: 'de klok' },
+            { id: 'crowd',     art: '👥', en: 'the crowd',     nl: 'de menigte' },
+            { id: 'shadow',    art: '🌑', en: 'the shadow',    nl: 'de schaduw' }
         ]
     },
     {
@@ -125,18 +140,18 @@ window.REELS = [
         join: { en: 'and in the end', nl: 'en uiteindelijk', comma: true },
         wildcard: true,
         tiles: [
-            { id: 'laughing', art: '😂', en: 'laughing',     nl: 'lachen' },
-            { id: 'crying',   art: '😢', en: 'crying',       nl: 'huilen' },
-            { id: 'asleep',   art: '💤', en: 'fast asleep',  nl: 'in slaap' },
-            { id: 'home',     art: '🏠', en: 'home again',   nl: 'weer thuis' },
-            { id: 'lost',     art: '❓', en: 'lost',         nl: 'verdwaald' },
-            { id: 'friends',  art: '🤝', en: 'friends',      nl: 'vrienden' },
-            { id: 'treasure', art: '💎', en: 'treasure',     nl: 'een schat' },
-            { id: 'balloon',  art: '🎈', en: 'floating away', nl: 'wegzwevend' },
-            { id: 'rainbow',  art: '🌈', en: 'a rainbow',    nl: 'een regenboog' },
-            { id: 'sunrise',  art: '🌅', en: 'sunrise',      nl: 'zonsopgang' },
-            { id: 'empty',    art: '🤲', en: 'empty handed', nl: 'met lege handen' },
-            { id: 'party',    art: '🎉', en: 'a party',      nl: 'een feest' }
+            { id: 'smile',    art: '😊', en: 'the smile',    nl: 'de glimlach' },
+            { id: 'tear',     art: '💧', en: 'the tear',     nl: 'de traan' },
+            { id: 'bed',      art: '🛏️', en: 'the bed',      nl: 'het bed' },
+            { id: 'house',    art: '🏠', en: 'the house',    nl: 'het huis' },
+            { id: 'nest',     art: '🪹', en: 'the nest',     nl: 'het nest' },
+            { id: 'friend',   art: '🤝', en: 'the friend',   nl: 'de vriend' },
+            { id: 'treasure', art: '💎', en: 'the treasure', nl: 'de schat' },
+            { id: 'balloon',  art: '🎈', en: 'the balloon',  nl: 'de ballon' },
+            { id: 'rainbow',  art: '🌈', en: 'the rainbow',  nl: 'de regenboog' },
+            { id: 'star',     art: '⭐', en: 'the star',     nl: 'de ster' },
+            { id: 'sunrise',  art: '🌅', en: 'the sunrise',  nl: 'de zonsopgang' },
+            { id: 'party',    art: '🎉', en: 'the party',    nl: 'het feest' }
         ]
     }
 ];
