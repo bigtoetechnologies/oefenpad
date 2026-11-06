@@ -72,7 +72,7 @@ and they are not negotiable:
 | 2 | A mascot, and whether to have one | A heron was proposed: patient, in every Dutch canal, steps deliberately, survives 16px, draws in flat cobalt. It would never speak and never nag. Undecided |
 | 3 | The tegeltje as the unit of content | One phrase learned is one tile; a finished pillar is a panel the learner built. Proposed, undecided |
 | 4 | Where the free/premium line falls | Needs the feature list, not the name |
-| 5 | A git remote | The repo is local only. Three commits, no backup off this disk |
+| 5 | A git remote | Exists: `git@github.com:bigtoetechnologies/oefenpad.git`. As of 6 Nov 2026 `main` is 8 commits ahead and unpushed, so the redesign has no backup off this disk |
 | 6 | Pillar 8 (pronunciation) needs audio | Nothing exists. Blocks the Listening Drill |
 | 7 | Grammar data | `grammar.js` does not exist yet. Both specced games need it — see `games.md` |
 
