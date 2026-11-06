@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — richting A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cobalt:#0B2E8A;
+  --cobalt-deep:#061C57;
+  --porcelain:#F2F4FA;
+  --white:#FFFFFF;
+  --glaze:#E8541E;
+  --ink:#0A0A0A;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter Tight',system-ui,sans-serif;
+  background:var(--white);color:var(--ink);
+  display:grid;grid-template-columns:minmax(0,42fr) minmax(0,58fr);
+  min-height:100vh;
+}
+/* ---------- left panel ---------- */
+.panel{
+  background:var(--cobalt);color:var(--white);
+  position:relative;overflow:hidden;
+  padding:clamp(28px,3.4vw,56px);
+  display:flex;flex-direction:column;
+}
+.motif{
+  position:absolute;right:-30%;top:-18%;
+  width:112%;opacity:.22;pointer-events:none;
+}
+.panel > *:not(.motif){position:relative;z-index:2}
+.wordmark{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:clamp(26px,2.3vw,34px);
+  letter-spacing:-.035em;line-height:1;
+}
+.panel-mid{margin-top:auto}
+.state{
+  display:flex;align-items:center;gap:10px;
+  font-size:14px;font-weight:500;color:#A9BEF2;margin-bottom:18px;
+}
+.pips{display:flex;gap:5px}
+.pip{width:11px;height:11px;background:#365BB0;transform:rotate(45deg)}
+.pip.on{background:var(--white)}
+.pip.now{background:var(--glaze)}
+.panel h1{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;font-size:clamp(38px,4.2vw,62px);
+  line-height:.92;letter-spacing:-.04em;margin-bottom:18px;
+}
+.panel p{
+  font-size:clamp(15px,1.15vw,18px);line-height:1.5;
+  color:#C9D7F6;max-width:30ch;margin-bottom:30px;
+}
+.go{
+  display:inline-flex;align-items:center;gap:14px;
+  background:var(--glaze);color:var(--white);
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;
+  padding:17px 26px;text-decoration:none;align-self:flex-start;
+}
+.go:hover{background:#CE4512}
+.go:focus-visible{outline:3px solid var(--white);outline-offset:3px}
+.go .tile{width:15px;height:15px;background:var(--white);transform:rotate(45deg)}
+.panel-foot{
+  margin-top:38px;padding-top:20px;border-top:1px solid #35569F;
+  display:flex;gap:26px;font-size:13px;
+}
+.panel-foot a{color:#A9BEF2;text-decoration:none}
+.panel-foot a:hover{color:#fff}
+/* ---------- right list ---------- */
+.list{padding:clamp(28px,3.4vw,56px) clamp(24px,3.4vw,64px);display:flex;flex-direction:column}
+.list-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding-bottom:14px;border-bottom:2px solid var(--ink);
+}
+.list-head span{font-size:14px;font-weight:600}
+.list-head em{font-style:normal;color:#6A7183;font-size:14px}
+.row{
+  display:grid;grid-template-columns:28px 1fr auto;gap:20px;align-items:baseline;
+  padding:clamp(18px,2vw,26px) 0;border-bottom:1px solid #DDE1EC;
+  text-decoration:none;color:inherit;
+}
+.row:hover .row-name{color:var(--cobalt)}
+.row:focus-visible{outline:3px solid var(--cobalt);outline-offset:2px}
+.mark{width:14px;height:14px;background:#C3CBDE;transform:rotate(45deg);margin-top:8px}
+.row-name{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:700;
+  font-size:clamp(22px,2vw,30px);letter-spacing:-.025em;line-height:1.1;
+}
+.row-desc{font-size:15px;color:#5C6478;margin-top:5px;max-width:46ch}
+.row-meta{font-size:13px;color:#8A91A3;white-space:nowrap}
+.row.today{background:linear-gradient(90deg,#FFF3EC 0%,rgba(255,243,236,0) 70%);
+  margin:0 calc(-1 * clamp(24px,3.4vw,64px));padding-left:clamp(24px,3.4vw,64px);padding-right:clamp(24px,3.4vw,64px)}
+.row.today .mark{background:var(--glaze)}
+.row.today .row-name{font-size:clamp(28px,2.7vw,40px)}
+.row.today .row-meta{color:var(--glaze);font-weight:600}
+.list-foot{margin-top:auto;padding-top:34px;font-size:13px;color:#8A91A3}
+@media(max-width:900px){
+  body{grid-template-columns:1fr}
+  .panel-mid{padding-top:36px}
+  .row.today{background:#FFF3EC}
+}
+</style>
+</head>
+<body>
+  <section class="panel">
+    <svg class="motif" viewBox="0 0 200 200" fill="none" aria-hidden="true">
+      <g stroke="#fff" stroke-width="1.6" fill="none">
+        <circle cx="100" cy="100" r="16" fill="#fff"/>
+        <g>
+          <path d="M100 84c-9-22-2-44 0-52 2 8 9 30 0 52z" fill="#fff"/>
+          <path d="M100 116c-9 22-2 44 0 52 2-8 9-30 0-52z" fill="#fff"/>
+          <path d="M84 100c-22-9-44-2-52 0 8 2 30 9 52 0z" fill="#fff"/>
+          <path d="M116 100c22-9 44-2 52 0-8 2-30 9-52 0z" fill="#fff"/>
+          <path d="M88 88C72 71 50 66 42 64c4 7 15 28 46 24z" fill="#fff"/>
+          <path d="M112 112c16 17 38 22 46 24-4-7-15-28-46-24z" fill="#fff"/>
+          <path d="M112 88c17-16 22-38 24-46-7 4-28 15-24 46z" fill="#fff"/>
+          <path d="M88 112c-17 16-22 38-24 46 7-4 28-15 24-46z" fill="#fff"/>
+        </g>
+        <circle cx="100" cy="100" r="74"/>
+        <circle cx="100" cy="100" r="88"/>
+      </g>
+    </svg>
+
+    <div class="wordmark">Oefenpad</div>
+
+    <div class="panel-mid">
+      <div class="state">
+        <div class="pips">
+          <i class="pip on"></i><i class="pip on"></i><i class="pip on"></i>
+          <i class="pip on"></i><i class="pip now"></i><i class="pip"></i><i class="pip"></i>
+        </div>
+        <span>Vier dagen op rij</span>
+      </div>
+      <h1>Tien minuten<br>Nederlands<br>per dag.</h1>
+      <p>Korte oefeningen met de woorden die je hier echt nodig hebt. Geen account, geen uitleg vooraf.</p>
+      <a class="go" href="#"><i class="tile"></i>Verder met Woordzoeker</a>
+      <div class="panel-foot">
+        <a href="#">Over Oefenpad</a><a href="#">Contact</a><a href="#">Privacy</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="list">
+    <div class="list-head"><span>Vijf oefeningen</span><em>vandaag · dinsdag</em></div>
+
+    <a class="row today" href="#">
+      <i class="mark"></i>
+      <div><div class="row-name">Woordzoeker</div>
+        <div class="row-desc">Vind de verstopte woorden in het rooster. Je was gebleven bij <strong>op het station</strong>.</div></div>
+      <div class="row-meta">halverwege</div>
+    </a>
+    <a class="row" href="#">
+      <i class="mark"></i>
+      <div><div class="row-name">Verhaalmachine</div>
+        <div class="row-desc">Draai de rollen en vertel het verhaal hardop.</div></div>
+      <div class="row-meta">spreken</div>
+    </a>
+    <a class="row" href="#">
+      <i class="mark"></i>
+      <div><div class="row-name">Geheugen</div>
+        <div class="row-desc">Zoek de paren: één woord, één plaatje.</div></div>
+      <div class="row-meta">woorden</div>
+    </a>
+    <a class="row" href="#">
+      <i class="mark"></i>
+      <div><div class="row-name">Koppelen</div>
+        <div class="row-desc">Koppel elk woord aan het juiste plaatje.</div></div>
+      <div class="row-meta">woorden</div>
+    </a>
+    <a class="row" href="#">
+      <i class="mark"></i>
+      <div><div class="row-name">Galgje</div>
+        <div class="row-desc">Raad het woord, letter voor letter.</div></div>
+      <div class="row-meta">spelling</div>
+    </a>
+
+    <div class="list-foot">De woorden komen uit Quick Wins in Dutch.</div>
+  </section>
+</body>
+</html>

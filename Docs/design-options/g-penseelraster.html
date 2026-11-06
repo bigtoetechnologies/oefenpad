@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — richting G</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kobalt:#2B50C8;
+  --kobalt-diep:#15307F;
+  --oranje:#E8601F;
+  --inkt:#101522;
+  --papier:#FFFFFF;
+  --raster:#DFE2E8;
+  --grijs:#5C6578;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Archivo',system-ui,sans-serif;background:var(--papier);color:var(--inkt);min-height:100vh}
+.vel{max-width:1420px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;
+  padding:0 clamp(16px,2vw,30px);border-left:1px solid var(--raster);border-right:1px solid var(--raster)}
+
+.balk{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--inkt);align-items:center}
+.balk .merk{grid-column:span 4;display:flex;align-items:center;gap:11px;font-weight:900;font-size:19px;letter-spacing:-.03em;padding:11px 0}
+.balk .merk img{width:40px;height:40px;display:block}
+.balk a{grid-column:span 2;font-size:13px;font-weight:600;color:inherit;text-decoration:none;padding:14px 0}
+.balk a:hover{color:var(--kobalt)}
+
+.kop{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--inkt)}
+.kop h1{grid-column:span 8;font-weight:900;font-size:clamp(40px,7vw,104px);line-height:.88;letter-spacing:-.048em;
+  padding:clamp(18px,2vw,32px) 0 clamp(20px,2.4vw,38px)}
+.kop .kant{grid-column:span 4;border-left:1px solid var(--raster);padding:clamp(18px,2vw,32px) 0 0 20px;
+  display:flex;flex-direction:column}
+.kop .kant p{font-size:15px;line-height:1.45;font-weight:500;max-width:30ch;color:var(--grijs)}
+.kop .kant .telling{margin-top:auto;padding-bottom:16px;display:flex;align-items:flex-end;gap:12px}
+.kop .kant .telling b{font-size:46px;font-weight:900;line-height:.85;letter-spacing:-.045em}
+.kop .kant .telling span{font-size:13px;font-weight:600;color:var(--grijs);padding-bottom:3px}
+
+/* week als geschilderde halen in het raster */
+.week{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--inkt);align-items:stretch}
+.week i{display:block;height:30px;border-right:1px solid var(--papier);position:relative}
+.week i svg{position:absolute;inset:0;width:100%;height:100%}
+
+/* modules met geschilderde vlakken */
+.raster{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(126px,auto);flex:1}
+.mod{position:relative;text-decoration:none;color:var(--inkt);overflow:hidden;
+  border-right:1px solid var(--raster);border-bottom:1px solid var(--raster);
+  padding:17px 19px;display:flex;flex-direction:column;justify-content:space-between}
+.mod .verf{position:absolute;inset:0;width:100%;height:100%;z-index:0}
+.mod .tekst{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;height:100%}
+.mod .naam{font-weight:800;font-size:clamp(19px,1.9vw,29px);letter-spacing:-.032em;line-height:1.02}
+.mod .om{font-size:14px;font-weight:500;line-height:1.35;margin-top:6px;max-width:30ch}
+.mod .et{font-size:12px;font-weight:700;margin-top:12px}
+.mod:focus-visible{outline:4px solid var(--kobalt);outline-offset:-4px}
+
+.mod.groot{grid-column:span 6;grid-row:span 2;color:var(--papier)}
+.mod.groot .naam{font-size:clamp(34px,4.3vw,60px)}
+.mod.groot .om{font-size:16px;max-width:33ch}
+.mod.b2{grid-column:span 3;color:var(--papier)}
+.mod.b3{grid-column:span 3}
+.mod.b4{grid-column:span 4}
+.mod.b5{grid-column:span 2}
+.mod.leeg:hover{background:#F5F6F8}
+
+.voet{display:grid;grid-template-columns:repeat(12,1fr);border-top:1px solid var(--inkt);padding:13px 0;font-size:12px;font-weight:500;color:var(--grijs)}
+.voet div:first-child{grid-column:span 6}
+.voet a{color:inherit;text-decoration:none;margin-right:18px}
+@media(max-width:880px){
+  .kop h1{grid-column:span 12}
+  .kop .kant{grid-column:span 12;border-left:0;border-top:1px solid var(--raster);padding-left:0}
+  .balk .merk{grid-column:span 12}
+  .balk a{grid-column:span 3}
+  .mod.groot{grid-column:span 12;grid-row:auto}
+  .mod.b2,.mod.b3,.mod.b4,.mod.b5{grid-column:span 6}
+}
+
+/* ---- mobiel: expliciete maten en fatsoenlijke raakvlakken ---- */
+.dag svg,.dag .kader,.dag .vink,.vak .kader,.hok > svg,.ltr > svg,.rest a .kader{
+  width:100%;height:100%;
+}
+.regel .som .mark{width:auto;height:13px}
+@media(max-width:860px){
+  nav a,.top nav a,.balk nav a{padding:9px 0;display:inline-block}
+  .foot a,.voet a,.footer-col a{padding:10px 0;display:inline-block}
+  .leg,.legenda .leg{padding:6px 0}
+  .hulp button{padding:7px 11px}
+}
+@media(max-width:560px){
+  .balk nav,.top nav{gap:16px;row-gap:0}
+}
+</style>
+</head>
+<body>
+<div class="vel">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="verfH" x="-4%" y="-10%" width="108%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.004 0.6" numOctaves="2" seed="5" result="n"/>
+    <feColorMatrix in="n" type="luminanceToAlpha" result="a"/>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope="1.25" intercept="0.3"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="a2" operator="in" result="s"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.05" numOctaves="2" seed="1" result="d"/>
+    <feDisplacementMap in="s" in2="d" scale="6" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="verfKlein" x="-10%" y="-14%" width="120%" height="128%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.01 0.9" numOctaves="2" seed="7" result="n"/>
+    <feColorMatrix in="n" type="luminanceToAlpha" result="a"/>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope="1.25" intercept="0.3"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="a2" operator="in" result="s"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.03 0.08" numOctaves="2" seed="3" result="d"/>
+    <feDisplacementMap in="s" in2="d" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs></svg>
+
+  <nav class="balk">
+    <div class="merk"><img src="logo.png" alt=""><span>Oefenpad</span></div>
+    <a href="#">Oefeningen</a><a href="#">Over</a><a href="#">Contact</a><a href="#">Inloggen</a>
+  </nav>
+
+  <header class="kop">
+    <h1>Nederlands,<br>tien minuten<br>per dag.</h1>
+    <div class="kant">
+      <p>Korte oefeningen met de woorden die je in Nederland elke dag tegenkomt. Je begint meteen.</p>
+      <div class="telling"><b>4</b><span>dagen<br>op rij</span></div>
+    </div>
+  </header>
+
+  <div class="week" aria-label="Deze week: vier dagen gedaan">
+    <i><svg viewBox="0 0 100 30" preserveAspectRatio="none"><g filter="url(#verfKlein)"><path d="M2 5 L98 3 L99 26 L1 28 Z" fill="#2B50C8"/></g></svg></i>
+    <i><svg viewBox="0 0 100 30" preserveAspectRatio="none"><g filter="url(#verfKlein)"><path d="M1 4 L99 5 L98 27 L2 25 Z" fill="#2B50C8"/></g></svg></i>
+    <i><svg viewBox="0 0 100 30" preserveAspectRatio="none"><g filter="url(#verfKlein)"><path d="M2 6 L98 4 L99 25 L1 27 Z" fill="#2B50C8"/></g></svg></i>
+    <i><svg viewBox="0 0 100 30" preserveAspectRatio="none"><g filter="url(#verfKlein)"><path d="M1 3 L99 6 L98 26 L2 24 Z" fill="#2B50C8"/></g></svg></i>
+    <i><svg viewBox="0 0 100 30" preserveAspectRatio="none"><g filter="url(#verfKlein)"><path d="M2 4 L98 5 L99 27 L1 26 Z" fill="#E8601F"/></g></svg></i>
+    <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <main class="raster">
+    <a class="mod groot" href="#">
+      <svg class="verf" viewBox="0 0 600 300" preserveAspectRatio="none" aria-hidden="true">
+        <g filter="url(#verfH)"><path d="M-4 6 L598 -2 L602 292 L2 298 Z" fill="#2B50C8"/></g>
+      </svg>
+      <div class="tekst">
+        <div>
+          <div class="naam">Woordzoeker</div>
+          <div class="om">Vind de verstopte woorden in het rooster. Je was gebleven bij op het station.</div>
+        </div>
+        <div class="et">Verder waar je stopte</div>
+      </div>
+    </a>
+
+    <a class="mod b2" href="#">
+      <svg class="verf" viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true">
+        <g filter="url(#verfH)"><path d="M-2 4 L299 -1 L301 146 L1 149 Z" fill="#15307F"/></g>
+      </svg>
+      <div class="tekst">
+        <div><div class="naam">Verhaal&shy;machine</div><div class="om">Draai de rollen, vertel het verhaal hardop.</div></div>
+        <div class="et">Spreken</div>
+      </div>
+    </a>
+
+    <a class="mod b3" href="#">
+      <svg class="verf" viewBox="0 0 300 150" preserveAspectRatio="none" aria-hidden="true">
+        <g filter="url(#verfH)"><path d="M-1 3 L300 5 L299 148 L2 145 Z" fill="#E8601F" opacity=".92"/></g>
+      </svg>
+      <div class="tekst">
+        <div><div class="naam">Geheugen</div><div class="om">Zoek de paren: één woord, één plaatje.</div></div>
+        <div class="et">Woorden</div>
+      </div>
+    </a>
+
+    <a class="mod b4 leeg" href="#">
+      <div class="tekst">
+        <div><div class="naam">Koppelen</div><div class="om">Koppel elk woord aan het juiste plaatje.</div></div>
+        <div class="et">Woorden</div>
+      </div>
+    </a>
+
+    <a class="mod b5 leeg" href="#">
+      <div class="tekst">
+        <div><div class="naam">Galgje</div><div class="om">Raad het woord, letter voor letter.</div></div>
+        <div class="et">Spelling</div>
+      </div>
+    </a>
+  </main>
+
+  <footer class="voet">
+    <div>Woorden uit Quick Wins in Dutch</div>
+    <div><a href="#">Voorwaarden</a><a href="#">Privacy</a></div>
+  </footer>
+</div>
+</body>
+</html>

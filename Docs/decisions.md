@@ -51,7 +51,11 @@ and they are not negotiable:
 
 ## Settled
 
-- Colours, logo, tile language, typography: see `designguide.md`.
+- Colours, logo, tile language, typography: see `designguide.md`. Rewritten
+  on 4 November 2026: the Delftware direction below was dropped as dated and
+  replaced by option G, a painted grid. The reasoning, the fifteen options
+  and what each one tried are in `design-process.md`; the old guide is at
+  `archive/designguide-delft-2026-10-31.md`.
 - Blue says what a thing is. Orange says act on it now, and nothing else.
 - The eight pillars are distinguished by **motif**, not colour, so they work
   for someone who cannot read the label. Pillar colours in `Concept.md` belong

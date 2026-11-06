@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — richting N</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-diep:#15307F; --oranje:#E8601F;
+  --inkt:#101522; --papier:#FFFFFF; --grijs:#5C6578; --zacht:#8A91A1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Archivo',system-ui,sans-serif;background:var(--papier);color:var(--inkt);min-height:100vh}
+.vel{max-width:1440px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column;
+  padding:0 clamp(16px,2.2vw,34px) clamp(10px,1.2vw,18px)}
+
+.balk{display:flex;justify-content:space-between;align-items:center;gap:clamp(12px,2vw,28px);flex-wrap:wrap;padding:clamp(12px,1.4vw,20px) 0}
+.merk{display:flex;align-items:center;gap:11px;font-weight:900;font-size:clamp(18px,1.7vw,24px);letter-spacing:-.035em}
+.merk img{width:clamp(38px,3.4vw,48px);height:clamp(38px,3.4vw,48px);display:block}
+.balk nav{display:flex;gap:clamp(13px,1.7vw,26px);font-size:13.5px;font-weight:600}
+.balk nav a{color:inherit;text-decoration:none;opacity:.72}
+.balk nav a:hover{opacity:1;color:var(--kobalt)}
+.streep{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--grijs)}
+.dag{position:relative;width:22px;height:22px;flex:none}
+.dag svg{position:absolute;inset:0;overflow:visible}
+
+/* ---- de oefening zelf is de pagina ---- */
+.oefen{display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,330px);gap:clamp(24px,3.4vw,64px);
+  align-items:start;flex:1;padding:clamp(10px,1.6vw,26px) 0}
+.doen{display:flex;flex-direction:column;align-items:center;gap:clamp(16px,2.2vw,32px)}
+.vraag{font-size:13px;font-weight:700;color:var(--grijs);align-self:flex-start}
+.plaatje{width:100%;max-width:clamp(320px,40vw,560px)}
+.plaatje svg{display:block;width:100%;height:auto}
+.woord{display:flex;gap:clamp(6px,.8vw,12px);align-items:flex-end;flex-wrap:wrap;justify-content:center}
+.hok{position:relative;width:clamp(46px,4.6vw,68px);height:clamp(58px,5.8vw,84px);flex:none;
+  display:grid;place-items:center}
+.hok svg{position:absolute;inset:0;overflow:visible}
+.hok span{position:relative;z-index:1;font-weight:900;font-size:clamp(24px,2.6vw,38px);letter-spacing:-.02em}
+.hok.leeg span{color:transparent}
+.hok.spatie{width:clamp(14px,1.4vw,22px)}
+.hok.spatie svg{display:none}
+.letters{display:flex;gap:clamp(5px,.7vw,10px);flex-wrap:wrap;justify-content:center;max-width:min(100%,620px)}
+.ltr{position:relative;width:clamp(38px,3.6vw,52px);height:clamp(44px,4.2vw,60px);flex:none;
+  display:grid;place-items:center;background:none;border:0;cursor:pointer;font:inherit}
+.ltr svg{position:absolute;inset:0;overflow:visible}
+.ltr span{position:relative;z-index:1;font-weight:800;font-size:clamp(17px,1.7vw,24px)}
+.ltr:hover span{color:var(--kobalt)}
+.ltr:focus-visible{outline:3px solid var(--kobalt);outline-offset:3px}
+.hint{font-size:13px;font-weight:600;color:var(--zacht)}
+.hint b{color:var(--grijs);font-weight:700}
+
+/* ---- rechterkolom: de rest, rustig ---- */
+.rest{display:flex;flex-direction:column;gap:clamp(10px,1.2vw,16px)}
+.rest .et{font-size:12.5px;font-weight:700;color:var(--grijs)}
+.rest a{position:relative;display:block;text-decoration:none;color:var(--inkt);padding:clamp(11px,1.2vw,16px) clamp(13px,1.4vw,18px)}
+.rest a .kader{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.rest a .nm{position:relative;z-index:1;font-weight:800;font-size:clamp(15px,1.4vw,19px);letter-spacing:-.025em}
+.rest a .om{position:relative;z-index:1;font-size:12.5px;font-weight:500;color:var(--grijs);margin-top:2px}
+.rest a:hover .nm{color:var(--kobalt)}
+.rest a:focus-visible{outline:3px solid var(--kobalt);outline-offset:3px}
+
+.voet{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:clamp(10px,1.4vw,20px);
+  font-size:12px;font-weight:500;color:var(--grijs)}
+.voet a{color:inherit;text-decoration:none;margin-right:16px}
+@media(max-width:900px){ .oefen{grid-template-columns:1fr} }
+
+/* ---- mobiel: expliciete maten en fatsoenlijke raakvlakken ---- */
+.dag svg,.dag .kader,.dag .vink,.vak .kader,.hok > svg,.ltr > svg,.rest a .kader{
+  width:100%;height:100%;
+}
+.regel .som .mark{width:auto;height:13px}
+@media(max-width:860px){
+  nav a,.top nav a,.balk nav a{padding:9px 0;display:inline-block}
+  .foot a,.voet a,.footer-col a{padding:10px 0;display:inline-block}
+  .leg,.legenda .leg{padding:6px 0}
+  .hulp button{padding:7px 11px}
+}
+@media(max-width:560px){
+  .balk nav,.top nav{gap:16px;row-gap:0}
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <filter id="lijn" x="-10%" y="-10%" width="120%" height="120%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.013 0.5" numOctaves="2" seed="6" result="n"/>
+    <feColorMatrix in="n" type="luminanceToAlpha" result="a"/>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope="1.1" intercept="0.5"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="a2" operator="in" result="s"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.02 0.04" numOctaves="2" seed="2" result="d"/>
+    <feDisplacementMap in="s" in2="d" scale="3.2" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+  <filter id="haar" x="-14%" y="-14%" width="128%" height="128%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.012 0.55" numOctaves="2" seed="5" result="n"/>
+    <feColorMatrix in="n" type="luminanceToAlpha" result="a"/>
+    <feComponentTransfer in="a" result="a2"><feFuncA type="linear" slope="1.15" intercept="0.42"/></feComponentTransfer>
+    <feComposite in="SourceGraphic" in2="a2" operator="in" result="s"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.035 0.06" numOctaves="2" seed="2" result="d"/>
+    <feDisplacementMap in="s" in2="d" scale="2.6" xChannelSelector="R" yChannelSelector="G"/>
+  </filter>
+</defs></svg>
+
+<div class="vel">
+
+  <div class="balk">
+    <div class="merk"><img src="logo.png" alt=""><span>Oefenpad</span></div>
+    <nav><a href="#">Oefeningen</a><a href="#">Over</a><a href="#">Contact</a><a href="#">Inloggen</a></nav>
+    <div class="streep">
+      <div class="dag" data-vink="1" data-seed="3"><svg class="kader"></svg><svg class="vink"></svg></div>
+      <div class="dag" data-vink="1" data-seed="8"><svg class="kader"></svg><svg class="vink"></svg></div>
+      <div class="dag" data-vink="1" data-seed="14"><svg class="kader"></svg><svg class="vink"></svg></div>
+      <div class="dag" data-vink="1" data-seed="21"><svg class="kader"></svg><svg class="vink"></svg></div>
+      <div class="dag" data-nu="1" data-seed="27"><svg class="kader"></svg><svg class="vink"></svg></div>
+      <span>4 op rij</span>
+    </div>
+  </div>
+
+  <main class="oefen">
+    <div class="doen">
+      <div class="vraag">Welk woord is dit?</div>
+
+      <div class="plaatje">
+        <svg viewBox="0 0 440 210" role="img" aria-label="Tekening van een fiets">
+          <g filter="url(#lijn)" fill="none" stroke="#2B50C8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="104" cy="140" r="54"/><circle cx="330" cy="140" r="54"/>
+            <path d="M104 140 L168 44 L256 44 L330 140 M168 44 L238 44 M196 92 L292 92"/>
+            <path d="M160 36 L196 30"/>
+            <path d="M238 38 L238 24 L268 24"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="woord">
+        <div class="hok" data-seed="201"><svg></svg><span>d</span></div>
+        <div class="hok" data-seed="207"><svg></svg><span>e</span></div>
+        <div class="hok spatie"><svg></svg><span></span></div>
+        <div class="hok leeg" data-seed="213"><svg></svg><span>f</span></div>
+        <div class="hok" data-seed="219"><svg></svg><span>i</span></div>
+        <div class="hok" data-seed="225"><svg></svg><span>e</span></div>
+        <div class="hok leeg" data-seed="231"><svg></svg><span>t</span></div>
+        <div class="hok leeg" data-seed="237"><svg></svg><span>s</span></div>
+      </div>
+
+      <div class="letters">
+        <button class="ltr" data-seed="301"><svg></svg><span>f</span></button>
+        <button class="ltr" data-seed="307"><svg></svg><span>t</span></button>
+        <button class="ltr" data-seed="313"><svg></svg><span>s</span></button>
+        <button class="ltr" data-seed="319"><svg></svg><span>k</span></button>
+        <button class="ltr" data-seed="325"><svg></svg><span>n</span></button>
+        <button class="ltr" data-seed="331"><svg></svg><span>r</span></button>
+        <button class="ltr" data-seed="337"><svg></svg><span>w</span></button>
+        <button class="ltr" data-seed="343"><svg></svg><span>p</span></button>
+      </div>
+
+      <div class="hint">Oefening 1 van 8 &nbsp;·&nbsp; <b>Galgje</b></div>
+    </div>
+
+    <aside class="rest">
+      <div class="et">Liever iets anders?</div>
+      <a href="#" data-seed="401"><svg class="kader"></svg><div class="nm">Woordzoeker</div><div class="om">Je was gebleven bij op het station.</div></a>
+      <a href="#" data-seed="409"><svg class="kader"></svg><div class="nm">Verhaalmachine</div><div class="om">Vertel het verhaal hardop.</div></a>
+      <a href="#" data-seed="417"><svg class="kader"></svg><div class="nm">Geheugen</div><div class="om">Zoek de paren.</div></a>
+      <a href="#" data-seed="425"><svg class="kader"></svg><div class="nm">Koppelen</div><div class="om">Woord bij plaatje.</div></a>
+    </aside>
+  </main>
+
+  <footer class="voet">
+    <div>Woorden uit Quick Wins in Dutch</div>
+    <div><a href="#">Voorwaarden</a><a href="#">Privacy</a></div>
+  </footer>
+</div>
+
+<script>
+(function(){
+  var KOBALT='#2B50C8', ORANJE='#E8601F';
+  function rnd(s){ var x=Math.sin(s*127.1)*43758.5453; return x-Math.floor(x); }
+  function haal(x0,y0,x1,y1,dik,seed){
+    var dx=x1-x0, dy=y1-y0, L=Math.hypot(dx,dy); if(!L) return '';
+    var ux=dx/L, uy=dy/L, nx=-uy, ny=ux, N=9, bo=[], on=[];
+    for(var i=0;i<=N;i++){
+      var t=i/N, taper=Math.pow(Math.sin(Math.PI*t),0.42);
+      var h=dik*(0.58+0.40*rnd(seed+i*3.7))*taper, w=(rnd(seed+i*9.1)-0.5)*dik*0.6;
+      var px=x0+dx*t+nx*w, py=y0+dy*t+ny*w;
+      bo.push([px+nx*h,py+ny*h]); on.push([px-nx*h,py-ny*h]);
+    }
+    return vl(bo.concat(on.reverse()));
+  }
+  function vl(p){
+    var d='M '+((p[0][0]+p[p.length-1][0])/2).toFixed(1)+' '+((p[0][1]+p[p.length-1][1])/2).toFixed(1);
+    for(var i=0;i<p.length;i++){ var a=p[i], b=p[(i+1)%p.length];
+      d+=' Q '+a[0].toFixed(1)+' '+a[1].toFixed(1)+' '+((a[0]+b[0])/2).toFixed(1)+' '+((a[1]+b[1])/2).toFixed(1); }
+    return d+' Z';
+  }
+  function kader(svg,w,h,dik,kleur,seed,zijden){
+    var o=function(k){ return (rnd(seed+k)*2-0.6)*dik*2.6; }, m=dik*1.25, p=[];
+    if(!zijden||zijden==='alle'){
+      p=[haal(m-o(1),m,w-m+o(2),m,dik,seed+1), haal(w-m,m-o(3),w-m,h-m+o(4),dik,seed+2),
+         haal(w-m+o(5),h-m,m-o(6),h-m,dik,seed+3), haal(m,h-m+o(7),m,m-o(8),dik,seed+4)];
+    } else { p=[haal(m-o(1),h-m,w-m+o(2),h-m,dik,seed+3)]; }
+    svg.setAttribute('viewBox','0 0 '+w+' '+h); svg.setAttribute('preserveAspectRatio','none');
+    svg.innerHTML='<g filter="url(#haar)" fill="'+kleur+'">'+p.map(function(d){return '<path d="'+d+'"/>';}).join('')+'</g>';
+  }
+  function vink(svg,w,h,kleur,seed){
+    svg.setAttribute('viewBox','0 0 '+w+' '+h); svg.setAttribute('preserveAspectRatio','none');
+    svg.innerHTML='<g filter="url(#haar)" fill="'+kleur+'"><path d="'+haal(w*0.26,h*0.52,w*0.45,h*0.72,w*0.07,seed+11)+
+      '"/><path d="'+haal(w*0.44,h*0.73,w*0.76,h*0.3,w*0.07,seed+12)+'"/></g>';
+  }
+  function teken(){
+    document.querySelectorAll('.dag').forEach(function(el){
+      var r=el.getBoundingClientRect(), s=+el.dataset.seed, nu=el.dataset.nu==='1', g=el.dataset.vink==='1';
+      kader(el.querySelector('.kader'), r.width, r.height, 2, nu?ORANJE:KOBALT, s);
+      var v=el.querySelector('.vink'); if(g) vink(v,r.width,r.height,KOBALT,s); else v.innerHTML='';
+    });
+    document.querySelectorAll('.hok:not(.spatie)').forEach(function(el){
+      var r=el.getBoundingClientRect(), s=+el.dataset.seed, leeg=el.classList.contains('leeg');
+      kader(el.querySelector('svg'), r.width, r.height, leeg?3.2:2.4, leeg?ORANJE:'#C6CEE2', s, leeg?'alle':'onder');
+    });
+    document.querySelectorAll('.ltr').forEach(function(el){
+      var r=el.getBoundingClientRect(), s=+el.dataset.seed;
+      kader(el.querySelector('svg'), r.width, r.height, 2.6, KOBALT, s);
+    });
+    document.querySelectorAll('.rest a').forEach(function(el){
+      var r=el.getBoundingClientRect(), s=+el.dataset.seed;
+      kader(el.querySelector('.kader'), r.width, r.height, 3, KOBALT, s);
+    });
+  }
+  var t; function later(){ clearTimeout(t); t=setTimeout(teken,140); }
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(teken); else teken();
+  teken(); window.addEventListener('resize',later);
+})();
+</script>
+</body>
+</html>

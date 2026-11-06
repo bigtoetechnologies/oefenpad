@@ -1,43 +1,216 @@
-Core identity
+# Oefenpad design guide
 
-Logo: Rounded-corner square tile with thick loose cobalt brush border. Inside: large closed circular O and overlapping P with long descending stem, both in visible pressure-sensitive brush strokes. Small orange brush accent lower-right of the P. Wordmark “oefenpad” in dark geometric lowercase sans-serif sits beside or below it.Meaning: Single tile = one practice step. The monogram works at large size and collapses cleanly to a recognisable square at 16 px.Style: Modern, sparse Delftware. Clean geometry carrying hand-painted detail. Lots of warm white. No windmills, clogs, tulips, canals, cheese, bicycles or any souvenir imagery.Colour system
+The rules for every Oefenpad page. This describes option **G, penseelraster** —
+the direction chosen on 4 November 2026 and implemented in
+`assets/site/oefenpad.css` and `assets/site/oefenpad.js`.
 
+For how we got here and what was rejected, see `design-process.md`. The earlier
+Delftware guide is kept at `archive/designguide-delft-2026-10-31.md` and no
+longer applies.
 
+## The idea in one line
 
-RoleHexUsageDelft cobalt#1B3A6BBrand, borders, all content marks, text accentsWarm white#FBF8F2Glaze / page backgroundDutch orange#E8761AOnly the active/current step or primary button — never decorationDark text#1A1A1A or near-blackBody and wordmarkBlue describes what a thing is. Orange says “act on it now”.Typography
+A hard editorial grid, heavy grotesk type, and colour applied as if painted —
+brush texture carried only in the fill of a block, never in its border.
 
-Wordmark and headlines: clean geometric sans-serif, lowercase for the brand name.
+Three claims follow from that, and the rest of this guide is their detail:
 
-Body: highly readable sans-serif, generous line-height.
+| Claim | Consequence |
+|---|---|
+| The grid is the structure | Hairline rules, no cards, no shadows, no rounded corners |
+| The type is the decoration | Weight 900, tight tracking, large sizes; no ornament |
+| The paint is the warmth | Texture lives in the SVG fill, applied to a minority of blocks |
 
-No decorative or script faces.Tile language
+## Colour
 
-All icons and decorative elements live inside or as square tiles.
+Four colours carry meaning; the greys are structure. Cobalt names a thing,
+orange acts on it. Nothing else is allowed to signal.
 
-Borders: loose cobalt brush strokes, rounded corners preferred for the master mark; sharper or thinner for supporting tiles.
+| Token | Light | Dark | Use |
+|---|---|---|---|
+| `--kobalt` | `#2B50C8` | `#5C7DEB` | Brand, links, painted blocks, done days |
+| `--kobalt-diep` | `#15307F` | `#8FA8F2` | Second painted block, button hover |
+| `--kobalt-licht` | `#7E9BE0` | `#3A57A8` | Tints only, never text |
+| `--oranje` | `#E8601F` | `#FF7A3D` | The current step, the primary action, focus rings |
+| `--oranje-diep` | `#C44A12` | `#FF9666` | Orange hover |
+| `--inkt` | `#101522` | `#ECEFF5` | Body text, hard rules, the language toggle |
+| `--papier` | `#FFFFFF` | `#0E1117` | Page |
+| `--raster` | `#DFE2E8` | `#262C38` | Hairline rules |
+| `--raster-zacht` | `#F2F4F7` | `#171C25` | Hover wash on plain tiles |
+| `--grijs` | `#5C6578` | `#A3ACBD` | Secondary text |
+| `--zacht` | `#8A91A1` | `#788295` | Tertiary text, timestamps |
+| `--goed` | `#1F7A4D` | `#3FA873` | Correct answer |
+| `--fout` | `#C4342A` | `#E8625A` | Wrong answer |
 
-Motifs: abstract, brush-painted, no lettering except the OP monogram itself.
+Rules:
 
-Eight pillar tiles and activity icons follow the same brush weight and orange-accent rule as the logo.Layout principles
+1. Orange marks exactly one thing per screen — the live step or the primary
+   button. A second orange makes both meaningless.
+2. Pure white is the page, not a surface. There is no second elevation.
+3. Dark mode is a token swap on `html.dark`, nothing more. Never write a
+   second rule set.
 
-Generous warm-white space.
+The old Delft cobalt `#1B3A6B` and warm white `#FBF8F2` are retired.
+`design-process.md` lists the four files still carrying them.
 
-Delicate (not heavy) Delft border or corner ornaments on page edges.
+## Typography
 
-Hero always pairs the headline “Stap voor stap” with a sparse path-of-tiles or single-tile illustration.
+One family, **Archivo**, loaded from Google Fonts at weights 400–900. The
+system stack `system-ui, -apple-system, 'Segoe UI', sans-serif` is the
+fallback and is close enough that a failed font load is not a broken page.
 
-Orange appears only on the current step, primary CTA (“Begin met oefenen”), or active card.
+| Role | Size | Weight | Tracking |
+|---|---|---|---|
+| Hero `h1` | `clamp(34px, 6.4vw, 96px)` | 900 | `-.048em`, line-height `.88` |
+| Game page `h1` | `clamp(24px, 2.8vw, 40px)` | 900 | `-.04em` |
+| `h2` | `clamp(21px, 2.1vw, 30px)` | 900 | `-.035em` |
+| `h3` | `clamp(17px, 1.6vw, 22px)` | 800 | `-.035em` |
+| Tile name `.naam` | `clamp(18px, 1.9vw, 28px)` | 800 | `-.032em` |
+| Body / reading `.lees p` | `15.5px` | 450 | line-height `1.65` |
+| Tile blurb `.om` | `14px` | 500 | max `32ch` |
+| Label `.et` | `12px` | 700 | — |
 
-Navigation: Home, Over ons, Contact, Inloggen (and similar).16 px / favicon cut
+Headlines break by hand with `<br>`, because the line break is a composition
+decision. Negative tracking is what makes the heavy weights read as designed
+rather than as shouting; do not drop it when adding a new heading.
 
-Solid cobalt square containing a simplified white or light OP (or just the circular O with a short stem). No orange at this size.Master generation prompt
+## Grid
 
-Use this (or close variants) for any new asset so the logo and style stay consistent:Modern sparse Delftware design for Oefenpad. Warm white #FBF8F2 background. Exact logo: rounded-corner square tile with thick loose cobalt #1B3A6B brush border, large closed circular O and overlapping P with long descending stem painted in visible brush strokes, small orange #E8761A accent lower-right of the P. Wordmark “oefenpad” in dark geometric lowercase. Delicate thin cobalt brush borders and small corner ornaments on edges. Orange used only for the active step or primary button. Clean geometry carrying hand-painted detail, lots of white space, no gradients, no shadows, no windmills, clogs, tulips or souvenir Dutch imagery. Flat vector feel.Homepage content structure (Dutch)
+Twelve columns, everywhere, with no gutters. The column count is the only
+layout vocabulary the site has.
 
-Header: logo + nav (Home, Over ons, Contact, Inloggen)
+`.vel` is the sheet: `max-width: 1420px`, centred, with `--kolom` of
+`clamp(16px, 2vw, 30px)` side padding and a hairline border left and right.
+Those side borders disappear below 900px.
 
-Hero: “Stap voor stap” + “Dagelijks oefenen dat blijvende herinnering bouwt. Een klein stapje per keer.” + orange button “Begin met oefenen” + sparse tile-path illustration
+| Region | Class | Columns |
+|---|---|---|
+| Nav bar | `.balk` | brand 4, each link 2, right group `11/-1` |
+| Hero | `.kop` | headline 8, side panel 4 |
+| Week meter | `.meter` | 12 bars of 1 |
+| Tile grid | `.raster` | spans set per tile |
+| Reading column | `.lees` | 8, max `72ch` |
+| Footer | `.voet` | 6 + 6 |
 
-Activity grid (titles only): Verhaalmachine, Geheugen, Koppelen, Woordzoeker, Galgje, Voorzetselpaden, Zinsbouwer, Uitgangsmatcher, Lego-woorden, Valse vrienden, Flitskaarten, Vul de leegte, Luisteroefening
+Below 900px the nav collapses to a 4-column grid, the hero stacks to full
+width with the side panel moving under a top rule, and tiles drop their right
+border. Nothing is hidden at small sizes.
 
-Footer with matching delicate border and secondary linksThis guide and prompt keep every future image, icon and page locked to the refined logo.
+## The painted fill
+
+Colour arrives as paint, not as a flat swatch. `assets/site/oefenpad.js`
+inserts an SVG behind any element carrying `data-verf`, filling it with a
+four-point path whose corners are jittered, run through two `feTurbulence`
+filters for bristle grain and edge displacement.
+
+<details>
+<summary>How to use it, and the constraints</summary>
+
+| Attribute | Meaning |
+|---|---|
+| `data-verf="kobalt \| diep \| oranje \| licht"` | Which paint, matching the JS `KLEUR` map |
+| `data-zaad="<n>"` | Seed for the corner jitter; fixes the shape across reloads |
+| `data-verf-klein` | Uses the tighter `#op-verf-klein` filter, for small elements |
+
+The element also needs class `geverfd` plus the matching colour class
+(`kobalt`, `diep`, `oranje`). That class sets a flat CSS background in the same
+colour, so a page with JS disabled or still loading shows a solid block rather
+than nothing. The painted SVG then lands on top. This fallback is the reason
+the colour is specified twice; keep both in sync.
+
+Constraints:
+
+- Give every painted element a distinct `data-zaad`. Two blocks with the same
+  seed get the same silhouette and the eye catches it.
+- Paint a minority of blocks. On the home page, three of five tiles are
+  painted and two are plain. All five painted reads as a toy.
+- The filter re-runs on resize (debounced 150 ms) and after
+  `document.fonts.ready`. Do not call `Oefenpad.verfAlles()` in a loop.
+- Painted text is `--papier` at full strength; secondary text inside a painted
+  block uses `.zacht`, which becomes `rgba(255,255,255,.82)`.
+
+</details>
+
+## Components
+
+| Class | What it is | Notes |
+|---|---|---|
+| `.vel` | Page sheet | The outer frame; everything sits inside it |
+| `.balk` | Nav bar | Hard `--inkt` rule beneath, logo + wordmark at 900 |
+| `.kop` | Hero | Headline 8 cols, side panel 4 with a hairline left border |
+| `.meter` | Week strip | 12 bars: `.gedaan` cobalt, `.nu` orange, rest grey |
+| `.raster` / `.mod` | Tile grid | `.geverfd` painted or `.kaal` plain; `.kaal:hover` washes |
+| `.knop` | Button | Square, weight 800, min-height 46px; `.oranje`, `.leeg`, `.klein` |
+| `.vakje` | Cell | Letters and cards; `2px` inset shadow, states `vol/goed/fout/nu` |
+| `.taal` | NL/EN toggle | Inset `2px` ink box, pressed state filled ink |
+| `.lees` | Text column | Legal and prose pages; links are orange here |
+| `.spel` / `.spel-kop` / `.werkvlak` | Exercise page frame | Title left, score right, hard rule under |
+| `.voet` | Footer | Hard top rule, 6+6, pushed down by `margin-top:auto` |
+
+The home page adds its own span classes (`.groot`, `.b2`–`.b5`) inline, because
+the tile arrangement is specific to that page. Other pages should not copy
+them; set spans for the layout you actually have.
+
+## Bilingual pages
+
+Every page ships both languages in the markup. An inline script in `<head>`
+sets `data-taal` on `<html>` before first paint, so nothing flashes in the
+wrong language.
+
+Order of precedence: a stored choice in `localStorage['oefenpad-taal']`, then
+the first entry in `navigator.languages` matching `nl` or `en`, then Dutch.
+Dutch is also what a no-JS visitor gets, because `data-taal="nl"` is in the
+static attribute.
+
+CSS does the switching: `html[data-taal="nl"] [lang="en"]{display:none}` and
+its mirror. To add translated text, wrap each version in a `<span lang="nl">`
+and `<span lang="en">`. Page titles use `data-titel-nl` and `data-titel-en`
+on `<html>`.
+
+This covers Dutch and English only. Per `decisions.md` the product does not
+translate into learners' own languages; meaning travels in pictures.
+
+## Dark mode
+
+A `dark` class on `<html>` swaps the tokens listed above. No component has a
+second rule set, and nothing outside `:root` and `html.dark` should name a
+colour literally.
+
+The switch is an inline script at the top of each page's `<head>`, before
+`oefenpad.css` loads, so the page never paints light and then flips:
+
+| Step | Behaviour |
+|---|---|
+| Stored choice | `localStorage['oefenpad-theme']`, values `dark` or `light` |
+| No stored choice | Follows `prefers-color-scheme` |
+| Toggle | Any element with `id="theme-toggle"`; delegated click handler |
+| Across tabs | A `storage` listener re-applies the new value |
+| Canvas and JS drawing | Listen for the `themechange` event; `galgje/script.js` reads the class to colour its drawing |
+
+Carried by four of the five games — galgje, geheugen, koppelen, woordzoeker.
+The Story Machine, the home page and the two legal pages do not have the
+script, so they stay light. That is an inconsistency, not a decision.
+
+## Accessibility
+
+| Requirement | How it is met |
+|---|---|
+| Focus visible | `.knop` and `.taal` take a 3px orange outline; `.mod` a 4px inset cobalt |
+| Hit size | Buttons `min-height: 46px`, small variant 38px, toggle 32px |
+| Reduced motion | `prefers-reduced-motion` kills animation and transition durations |
+| Decorative SVG | Every painted layer is `aria-hidden` and `focusable="false"` |
+| Language | `lang` is updated on `<html>` with every toggle, not only `data-taal` |
+| Screen-reader text | `.alleen-lezer` clips without hiding |
+
+Not yet verified: contrast of `--grijs` on `--papier` in dark mode, and whether
+a 12-bar week meter is understandable without a label. Both are open.
+
+## What this design does not do
+
+- No cards, shadows, gradients, or rounded corners. `--radius` is `0` and is
+  not a knob to turn.
+- No second typeface, and no script or display face.
+- No souvenir Dutch imagery — windmills, clogs, tulips, canals, cheese.
+- No text inside artwork, ever. One art set serves every learner.
+- No colour-coded meaning that a reader must have been taught. Motif
+  distinguishes, colour does not.

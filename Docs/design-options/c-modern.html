@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — richting C</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rood:#E3262F;
+  --blauw:#0047BB;
+  --geel:#FFC600;
+  --zwart:#111111;
+  --papier:#FFFFFF;
+  --raster:#E2E2DE;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Archivo',system-ui,sans-serif;
+  background:var(--papier);color:var(--zwart);
+  min-height:100vh;
+}
+.sheet{
+  max-width:1360px;margin:0 auto;padding:0 clamp(16px,2vw,32px);
+  border-left:1px solid var(--raster);border-right:1px solid var(--raster);
+  min-height:100vh;display:flex;flex-direction:column;
+}
+.bar{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  border-bottom:1px solid var(--zwart);
+}
+.bar .cell{padding:16px 0;font-size:13px;font-weight:600;letter-spacing:.01em}
+.bar .cell:first-child{grid-column:span 4;font-weight:900;font-size:19px;letter-spacing:-.02em}
+.bar .cell.n{grid-column:span 2}
+.bar a{color:inherit;text-decoration:none}
+.bar a:hover{color:var(--blauw)}
+
+.hero{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  gap:0;border-bottom:1px solid var(--zwart);
+}
+.hero h1{
+  grid-column:span 9;
+  font-weight:900;font-size:clamp(46px,8.6vw,128px);
+  line-height:.86;letter-spacing:-.045em;
+  padding:clamp(22px,2.4vw,40px) 0 clamp(26px,2.8vw,46px);
+  text-transform:none;
+}
+.hero .side{
+  grid-column:span 3;border-left:1px solid var(--raster);
+  padding:clamp(22px,2.4vw,40px) 0 0 20px;
+  display:flex;flex-direction:column;
+}
+.hero .side p{font-size:15px;line-height:1.45;font-weight:500;max-width:28ch}
+.hero .side .count{margin-top:auto;padding-bottom:18px}
+.hero .side .count b{display:block;font-size:54px;font-weight:900;line-height:1;letter-spacing:-.04em}
+.hero .side .count span{font-size:13px;font-weight:600}
+
+.meter{display:grid;grid-template-columns:repeat(12,1fr);border-bottom:1px solid var(--zwart)}
+.meter i{height:26px;border-right:1px solid var(--papier);background:var(--raster)}
+.meter i.done{background:var(--blauw)}
+.meter i.now{background:var(--rood)}
+.meter i:last-child{border-right:0}
+
+.grid{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:minmax(132px,auto);flex:1}
+.mod{
+  text-decoration:none;color:var(--zwart);
+  border-right:1px solid var(--raster);border-bottom:1px solid var(--raster);
+  padding:18px 20px;display:flex;flex-direction:column;justify-content:space-between;
+}
+.mod:focus-visible{outline:4px solid var(--blauw);outline-offset:-4px}
+.mod .name{font-weight:800;font-size:clamp(20px,2vw,30px);letter-spacing:-.03em;line-height:1.02}
+.mod .desc{font-size:14px;font-weight:500;line-height:1.35;margin-top:7px;max-width:30ch}
+.mod .tag{font-size:12px;font-weight:700;margin-top:14px}
+.mod.big{grid-column:span 6;grid-row:span 2;background:var(--rood);color:#fff;border-right-color:var(--rood)}
+.mod.big .name{font-size:clamp(34px,4.4vw,62px)}
+.mod.big .desc{font-size:16px;max-width:34ch}
+.mod.b2{grid-column:span 3;background:var(--blauw);color:#fff}
+.mod.b3{grid-column:span 3;background:var(--geel)}
+.mod.b4{grid-column:span 4}
+.mod.b5{grid-column:span 2}
+.mod:not(.big):not(.b2):not(.b3):hover{background:#F4F4F0}
+.foot{display:grid;grid-template-columns:repeat(12,1fr);border-top:1px solid var(--zwart);padding:14px 0;font-size:12px;font-weight:500}
+.foot div:first-child{grid-column:span 6}
+.foot a{color:inherit;text-decoration:none;margin-right:18px}
+@media(max-width:860px){
+  .bar{grid-template-columns:repeat(4,1fr)}
+  .bar .cell:first-child{grid-column:span 4;padding-bottom:4px}
+  .bar .cell.n{grid-column:span 1;font-size:12.5px}
+  .hero h1{grid-column:span 12}
+  .hero .side{grid-column:span 12;border-left:0;border-top:1px solid var(--raster);padding-left:0}
+  .mod.big{grid-column:span 12;grid-row:auto}
+  .mod.b2,.mod.b3,.mod.b4,.mod.b5{grid-column:span 6}
+}
+
+/* ---- mobiel: expliciete maten en fatsoenlijke raakvlakken ---- */
+.dag svg,.dag .kader,.dag .vink,.vak .kader,.hok > svg,.ltr > svg,.rest a .kader{
+  width:100%;height:100%;
+}
+.regel .som .mark{width:auto;height:13px}
+@media(max-width:860px){
+  nav a,.top nav a,.balk nav a{padding:9px 0;display:inline-block}
+  .foot a,.voet a,.footer-col a{padding:10px 0;display:inline-block}
+  .leg,.legenda .leg{padding:6px 0}
+  .hulp button{padding:7px 11px}
+}
+@media(max-width:560px){
+  .balk nav,.top nav{gap:16px;row-gap:0}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <nav class="bar">
+    <div class="cell">Oefenpad</div>
+    <div class="cell n"><a href="#">Oefeningen</a></div>
+    <div class="cell n"><a href="#">Over</a></div>
+    <div class="cell n"><a href="#">Contact</a></div>
+    <div class="cell n"><a href="#">Inloggen</a></div>
+  </nav>
+
+  <header class="hero">
+    <h1>Nederlands,<br>tien minuten<br>per dag.</h1>
+    <div class="side">
+      <p>Korte oefeningen met de woorden die je in Nederland elke dag tegenkomt. Je begint meteen.</p>
+      <div class="count"><b>4</b><span>dagen op rij</span></div>
+    </div>
+  </header>
+
+  <div class="meter" aria-label="Deze week">
+    <i class="done"></i><i class="done"></i><i class="done"></i><i class="done"></i>
+    <i class="now"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <main class="grid">
+    <a class="mod big" href="#">
+      <div>
+        <div class="name">Woordzoeker</div>
+        <div class="desc">Vind de verstopte woorden in het rooster. Je was gebleven bij op het station.</div>
+      </div>
+      <div class="tag">Verder waar je stopte</div>
+    </a>
+    <a class="mod b2" href="#">
+      <div><div class="name">Verhaal&shy;machine</div>
+      <div class="desc">Draai de rollen, vertel het verhaal hardop.</div></div>
+      <div class="tag">Spreken</div>
+    </a>
+    <a class="mod b3" href="#">
+      <div><div class="name">Geheugen</div>
+      <div class="desc">Zoek de paren: één woord, één plaatje.</div></div>
+      <div class="tag">Woorden</div>
+    </a>
+    <a class="mod b4" href="#">
+      <div><div class="name">Koppelen</div>
+      <div class="desc">Koppel elk woord aan het juiste plaatje.</div></div>
+      <div class="tag">Woorden</div>
+    </a>
+    <a class="mod b5" href="#">
+      <div><div class="name">Galgje</div>
+      <div class="desc">Raad het woord, letter voor letter.</div></div>
+      <div class="tag">Spelling</div>
+    </a>
+  </main>
+
+  <footer class="foot">
+    <div>Woorden uit Quick Wins in Dutch</div>
+    <div><a href="#">Voorwaarden</a><a href="#">Privacy</a></div>
+  </footer>
+</div>
+</body>
+</html>

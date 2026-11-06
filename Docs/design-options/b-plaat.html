@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — richting B</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#16232E;
+  --brick:#C4472B;
+  --ochre:#E6A32F;
+  --moss:#2E6152;
+  --sky:#8FC2D4;
+  --paper:#FFFDF7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hanken Grotesk',system-ui,sans-serif;background:var(--paper);color:var(--ink);min-height:100vh}
+.wrap{max-width:1500px;margin:0 auto;padding:clamp(16px,2vw,30px);display:flex;flex-direction:column;min-height:100vh}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:clamp(14px,1.6vw,22px)}
+.brand{font-weight:900;font-size:clamp(22px,2vw,30px);letter-spacing:-.03em}
+.top nav{display:flex;gap:clamp(14px,1.8vw,28px);font-size:14px;font-weight:600}
+.top nav a{color:var(--ink);text-decoration:none}
+.top nav a:hover{color:var(--brick)}
+
+/* ---- the plate ---- */
+.plate{position:relative;border:3px solid var(--ink);background:var(--sky);overflow:hidden}
+.plate svg{display:block;width:100%;height:auto}
+.hot{position:absolute;text-decoration:none;color:var(--ink)}
+.hot b{
+  display:inline-block;background:var(--paper);border:2px solid var(--ink);
+  font-weight:800;font-size:clamp(12px,1.05vw,16px);padding:5px 11px;white-space:nowrap;
+}
+.hot i{display:block;position:absolute;background:var(--ink)}
+.hot:hover b{background:var(--ochre)}
+.hot:focus-visible b{outline:3px solid var(--brick);outline-offset:2px}
+/* elk label wijst naar het ding dat het benoemt */
+.hot.h1{left:4.5%;top:35.5%}  .hot.h1 i{width:2px;height:28px;left:28px;top:26px}   /* fiets, links */
+.hot.h2{left:21%;top:17%}     .hot.h2 i{width:2px;height:34px;left:26px;top:26px}   /* huizenrij */
+.hot.h3{left:41.5%;top:72%}   .hot.h3 i{width:2px;height:24px;left:28px;top:-24px}  /* brug */
+.hot.h4{left:68%;top:80%}     .hot.h4 i{width:2px;height:0;left:0;top:0}            /* gracht, op het water */
+.hot.h5{left:24%;top:88%}     .hot.h5 i{width:2px;height:0;left:0;top:0}            /* boot */
+.hot.now b{background:var(--brick);color:var(--paper);border-color:var(--ink)}
+
+.caption{
+  display:flex;justify-content:space-between;align-items:flex-end;gap:24px;
+  border-top:3px solid var(--ink);margin-top:-3px;padding:clamp(16px,1.8vw,26px) clamp(14px,1.6vw,22px);
+  background:var(--paper);border-left:3px solid var(--ink);border-right:3px solid var(--ink);
+  border-bottom:3px solid var(--ink);flex-wrap:wrap;
+}
+.caption h1{font-weight:900;font-size:clamp(28px,3.6vw,54px);line-height:.98;letter-spacing:-.035em;max-width:16ch}
+.caption p{font-size:clamp(14px,1.1vw,17px);font-weight:500;line-height:1.45;max-width:38ch;margin-top:10px}
+.cta{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.days{display:flex;gap:4px}
+.days i{width:16px;height:16px;border:2px solid var(--ink);background:var(--paper)}
+.days i.on{background:var(--moss)}
+.days i.now{background:var(--brick)}
+.go{
+  display:inline-block;background:var(--ochre);border:3px solid var(--ink);
+  box-shadow:5px 5px 0 var(--ink);
+  font-weight:800;font-size:17px;padding:14px 24px;text-decoration:none;color:var(--ink);
+}
+.go:hover{transform:translate(2px,2px);box-shadow:3px 3px 0 var(--ink)}
+.go:focus-visible{outline:3px solid var(--brick);outline-offset:3px}
+.legend{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:clamp(10px,1.2vw,18px);margin-top:clamp(14px,1.6vw,22px);
+}
+.leg{display:flex;gap:10px;align-items:flex-start;text-decoration:none;color:var(--ink)}
+.leg b{font-weight:900;font-size:15px;background:var(--ink);color:var(--paper);width:22px;height:22px;
+  display:grid;place-items:center;flex:0 0 22px}
+.leg span{font-size:13.5px;font-weight:500;line-height:1.35}
+.leg strong{display:block;font-weight:800;font-size:15px;margin-bottom:1px}
+.leg:hover strong{color:var(--brick)}
+.foot{margin-top:auto;padding-top:22px;font-size:12.5px;font-weight:500;color:#5B6B77;display:flex;gap:20px}
+.foot a{color:inherit;text-decoration:none}
+@media(max-width:800px){ .hot{display:none} .caption{flex-direction:column;align-items:flex-start} .cta{align-items:flex-start} }
+
+/* ---- mobiel: expliciete maten en fatsoenlijke raakvlakken ---- */
+.dag svg,.dag .kader,.dag .vink,.vak .kader,.hok > svg,.ltr > svg,.rest a .kader{
+  width:100%;height:100%;
+}
+.regel .som .mark{width:auto;height:13px}
+@media(max-width:860px){
+  nav a,.top nav a,.balk nav a{padding:9px 0;display:inline-block}
+  .foot a,.voet a,.footer-col a{padding:10px 0;display:inline-block}
+  .leg,.legenda .leg{padding:6px 0}
+  .hulp button{padding:7px 11px}
+}
+@media(max-width:560px){
+  .balk nav,.top nav{gap:16px;row-gap:0}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="top">
+    <div class="brand">Oefenpad</div>
+    <nav><a href="#">Oefeningen</a><a href="#">Over</a><a href="#">Contact</a><a href="#">Inloggen</a></nav>
+  </div>
+
+  <div class="plate">
+    <svg viewBox="0 0 1200 420" role="img" aria-label="Nederlandse straat met gracht, huizen en fietsen">
+      <rect width="1200" height="420" fill="#8FC2D4"/>
+      <!-- clouds -->
+      <g fill="#FFFDF7" opacity=".85">
+        <ellipse cx="170" cy="62" rx="74" ry="26"/><ellipse cx="226" cy="56" rx="50" ry="20"/>
+        <ellipse cx="880" cy="48" rx="88" ry="24"/><ellipse cx="946" cy="44" rx="54" ry="18"/>
+      </g>
+      <!-- far trees -->
+      <g fill="#2E6152" opacity=".45">
+        <circle cx="60" cy="214" r="34"/><circle cx="1150" cy="208" r="40"/>
+      </g>
+      <!-- houses -->
+      <g stroke="#16232E" stroke-width="3">
+        <path d="M120 240v-92l34-30 34 30v92z" fill="#C4472B"/>
+        <path d="M188 240v-106l32-28 32 28v106z" fill="#E6A32F"/>
+        <path d="M252 240v-80l30-26 30 26v80z" fill="#FFFDF7"/>
+        <path d="M312 240v-100l34-30 34 30v100z" fill="#2E6152"/>
+        <path d="M380 240v-74l28-24 28 24v74z" fill="#C4472B"/>
+        <path d="M640 240v-96l36-32 36 32v96z" fill="#FFFDF7"/>
+        <path d="M712 240v-82l30-26 30 26v82z" fill="#E6A32F"/>
+        <path d="M772 240v-110l34-30 34 30v110z" fill="#C4472B"/>
+        <path d="M840 240v-70l26-22 26 22v70z" fill="#2E6152"/>
+        <g fill="#16232E" opacity=".75" stroke="none">
+          <rect x="138" y="178" width="14" height="20"/><rect x="160" y="178" width="14" height="20"/>
+          <rect x="206" y="166" width="14" height="22"/><rect x="230" y="166" width="14" height="22"/>
+          <rect x="266" y="190" width="13" height="18"/><rect x="288" y="190" width="13" height="18"/>
+          <rect x="330" y="172" width="14" height="22"/><rect x="354" y="172" width="14" height="22"/>
+          <rect x="658" y="172" width="15" height="22"/><rect x="684" y="172" width="15" height="22"/>
+          <rect x="728" y="184" width="14" height="20"/><rect x="752" y="184" width="14" height="20"/>
+          <rect x="790" y="160" width="15" height="24"/><rect x="816" y="160" width="15" height="24"/>
+        </g>
+      </g>
+      <!-- quay -->
+      <rect x="0" y="238" width="1200" height="34" fill="#D9C9A8" stroke="#16232E" stroke-width="3"/>
+      <!-- canal -->
+      <rect x="0" y="272" width="1200" height="148" fill="#4E8FA8"/>
+      <g stroke="#FFFDF7" stroke-width="3" opacity=".55" fill="none">
+        <path d="M40 310h120M220 334h150M470 300h120M700 340h140M940 312h130"/>
+      </g>
+      <!-- bridge -->
+      <g stroke="#16232E" stroke-width="3">
+        <path d="M470 272c40-46 110-46 150 0z" fill="#D9C9A8"/>
+        <path d="M470 272h150" fill="none"/>
+      </g>
+      <!-- boat -->
+      <g stroke="#16232E" stroke-width="3">
+        <path d="M250 352h150l-16 28H266z" fill="#FFFDF7"/>
+        <rect x="292" y="330" width="64" height="22" fill="#C4472B"/>
+      </g>
+      <!-- bikes -->
+      <g stroke="#16232E" stroke-width="3.5" fill="none">
+        <g transform="translate(86 196) scale(.9)">
+          <circle cx="16" cy="30" r="15"/><circle cx="62" cy="30" r="15"/>
+          <path d="M16 30l16-26h18l12 26M32 4h14M39 16h20"/>
+        </g>
+        <g transform="translate(560 196) scale(.9)">
+          <circle cx="16" cy="30" r="15"/><circle cx="62" cy="30" r="15"/>
+          <path d="M16 30l16-26h18l12 26M32 4h14M39 16h20"/>
+        </g>
+        <g transform="translate(1010 196) scale(.9)">
+          <circle cx="16" cy="30" r="15"/><circle cx="62" cy="30" r="15"/>
+          <path d="M16 30l16-26h18l12 26M32 4h14M39 16h20"/>
+        </g>
+      </g>
+      <!-- lamp posts -->
+      <g stroke="#16232E" stroke-width="3" fill="#16232E">
+        <path d="M466 238v-62M462 176h8" fill="none"/><rect x="458" y="162" width="16" height="16"/>
+        <path d="M934 238v-62M930 176h8" fill="none"/><rect x="926" y="162" width="16" height="16"/>
+      </g>
+    </svg>
+
+    <a class="hot h1" href="#"><i></i><b>de fiets</b></a>
+    <a class="hot h2" href="#"><i></i><b>het huis</b></a>
+    <a class="hot h3 now" href="#"><i></i><b>de brug</b></a>
+    <a class="hot h4" href="#"><i></i><b>de gracht</b></a>
+    <a class="hot h5" href="#"><i></i><b>de boot</b></a>
+  </div>
+
+  <div class="caption">
+    <div>
+      <h1>Leer de woorden die buiten je deur staan.</h1>
+      <p>Tien minuten per dag, met de dingen die je in Nederland elke dag ziet. Geen account nodig.</p>
+    </div>
+    <div class="cta">
+      <div class="days" aria-label="Vier dagen op rij">
+        <i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i></i><i></i>
+      </div>
+      <a class="go" href="#">Verder met Woordzoeker</a>
+    </div>
+  </div>
+
+  <div class="legend">
+    <a class="leg" href="#"><b>1</b><span><strong>Woordzoeker</strong>Vind de verstopte woorden.</span></a>
+    <a class="leg" href="#"><b>2</b><span><strong>Verhaalmachine</strong>Vertel het verhaal hardop.</span></a>
+    <a class="leg" href="#"><b>3</b><span><strong>Geheugen</strong>Zoek de paren.</span></a>
+    <a class="leg" href="#"><b>4</b><span><strong>Koppelen</strong>Woord bij plaatje.</span></a>
+    <a class="leg" href="#"><b>5</b><span><strong>Galgje</strong>Letter voor letter.</span></a>
+  </div>
+
+  <div class="foot"><span>Woorden uit Quick Wins in Dutch</span><a href="#">Voorwaarden</a><a href="#">Privacy</a></div>
+</div>
+</body>
+</html>
