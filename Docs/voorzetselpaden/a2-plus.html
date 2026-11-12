@@ -1,0 +1,1301 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voorzetselpaden — A2+</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.batch{margin:26px 0 0;padding-top:12px;border-top:2px solid var(--kobalt)}
+.batch h2{margin:0;font-size:19px;letter-spacing:-.01em}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.kaart.sev-nonsense{border-color:var(--rood);border-width:2px}
+.kaart.sev-wrong-dutch{border-color:var(--oranje)}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.oordeel{margin-top:11px;padding:9px 11px;border-radius:8px;background:#f6f7fb;font-size:13px}
+.oordeel.nonsense{background:#fdeceb}
+.oordeel.wrong-dutch{background:#fdf4e6}
+.oordeel .kop{font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.05em}
+.oordeel.nonsense .kop{color:var(--rood)}
+.oordeel.wrong-dutch .kop{color:var(--oranje)}
+.oordeel p{margin:4px 0 0}
+.oordeel .fix{color:var(--kobalt)}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+details.prompt{margin-top:10px;font-size:13px}
+details.prompt summary{cursor:pointer;color:var(--kobalt)}
+details.prompt pre{white-space:pre-wrap;background:#f6f7fb;border:1px solid var(--lijn);
+  border-radius:8px;padding:12px;font-size:12px;overflow-x:auto}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Voorzetselpaden — A2+</h1>
+<p class="lead">Eighty frames: the spatial set, the adjective and noun chunks, and the pronominal adverbs. Roadmap batches 5–8.</p>
+<p class="lead">Dit bestand is de bron. De oude <code>.md</code>-plannen zijn hierdoor vervangen;
+de spelgegevens worden hieruit gegenereerd.</p>
+<div class="sum"><span>80 kaarten</span><span>0 getekend</span>
+<span class="waarschuwing">51 gemarkeerd</span>
+<span class="waarschuwing">7 onzin</span></div>
+<nav class="banden"><a href="index.html">overzicht</a><a href="a0-a2.html">A0–A2</a><a href="a2-pairs.html">A2 pairs (4b)</a><a href="a2-plus.html" class="hier">A2+</a><a href="b1.html">B1</a><a href="b1-plus.html">B1+</a><a href="b2.html">B2</a></nav>
+<details class="prompt plan"><summary>Plan en kaders (uit het oude Markdown-bestand)</summary>
+<pre class="planprose"># Voorzetselpaden — image plan, A2+
+
+Status: planning document, 10 November 2026. This is the **A2+** band of the
+image plan: the frames between the shipped A0–A2 set and the B1 verb band. It
+covers roadmap batches 5–8 of `prepositions-roadmap.md`.
+
+The plan was split on 10 November 2026. What used to be one 200-frame B1 file is
+now two — **A2+** (this file, 80 frames, batches 5–8) and **B1**
+(`prepositions-art-b1.md`, 120 frames, batches 9–13). Nothing was added or cut
+in the split. The seam is the one the old file&#x27;s own theme table already drew:
+the spatial, adjective, noun and pronominal themes here, the verb chunks there.
+
+Scope: **80 new frames**, planned as **8 self-contained Grok batches of ten**,
+numbered A2+-01 to A2+-08. The artwork comes back as 80 separate 2:3 PNGs, one
+worldless clue per frame, in the house style of `game-art.md`.
+
+What is excluded, and must not be redrawn or duplicated:
+
+- The **30 pilot scenes** already in `assets/voorzetselpaden/` and described in
+  `prepositions-art.md`: `wachten`, `denken`, `praten`, `ophouden`, `uitkijken`,
+  `werken`, `klaar`, `vragen`, `zorgen`, `meedoen`, `zoeken`, `last hebben`,
+  `blij`, `boos`, `klagen`, `houden van`, `zin in`, `bang voor`, `eraan denken`.
+- The **20 A0–A2 frames** planned in `prepositions-art-a0-a2.md` (batch 4):
+  `zeggen tegen`, `vertellen aan`, `praten tegen`, `beschermen tegen`,
+  `komen door`, `komen uit`, `kijken door`, `kijken uit`, `doorgeven aan`,
+  `doorbrengen met`, `stappen uit`, `drinken uit`, `vallen uit`,
+  `letten op`, `bezig zijn met`, `geïnteresseerd zijn in`, `tevreden zijn met`,
+  `bedanken voor`, `feliciteren met`, `uitnodigen voor`.
+- The **16 batch-4b frames** in `prepositions-art-a2-pairs.md`.
+- The **120 B1 frames** in `prepositions-art-b1.md`.
+- Free spatial and temporal use (`op tafel`, `in de kast`, `na de les`). That is
+  grammar, not a chunk — see `prepositions-roadmap.md` §11.
+
+No frame in this file repeats a pilot frame, an A0–A2 frame, a batch-4b frame,
+a B1 frame or another frame in this file. Where a chunk that already has a pilot
+image comes back, it does so in a visibly different situation and the tracker
+says which; the chunk list deliberately stays broader than the pilot&#x27;s twenty.
+
+## How to use this file
+
+Each batch section is a single fenced text block. Paste **one block at a time**
+into Grok. Grok has no file access, so every block repeats the task, the style,
+the format and its ten subjects; nothing outside the block is assumed and no
+block depends on another having been sent first. Ask for the ten images, then
+process the result as described in `game-art.md` under *Delivered raster art*
+and ship at 512 × 763.
+
+Two rules make the set teach rather than decorate:
+
+- **Contrast before single.** Where two frames share a verb, adjective or noun
+  and differ only in the preposition, they are a pair and are drawn in the same
+  sitting: same camera, same scale, one meaningful difference. The pair is the
+  thing that teaches, so a pair is kept inside one batch wherever the
+  ten-frame rhythm allows it. Where a pair spans two batches the blocks say so,
+  and the second half names its partner file.
+- **Concrete over abstract.** A chunk like `rustig aan` or `eraan toe zijn` has
+  no honest silhouette. Those frames get a concrete everyday situation, and the
+  gloss carries the abstraction. The tracker column marks them `gloss-picture`.
+  `prepositions-roadmap.md` §9 predicts this; this file is the honest version of
+  it at A2+.
+
+The house style is the bold brush-pen sketch defined in `game-art.md`: cobalt
+`#2B50C8` only, wide-nib contour with directional hatching, 2:3 portrait, one
+idea per image, no text. The prompts repeat those rules because the generator
+cannot read `game-art.md`.
+
+## What A2+ adds
+
+Eighty frames in four themes. The spatial set, the core adjective chunks, the
+core noun chunks and the pronominal group are speculative in the sense that the
+repo has no frequency list. Re-cut any batch around a frequency list when one
+arrives, per `prepositions-roadmap.md` §12.1; the art plan survives a re-cut
+because each frame stands alone.
+
+New prepositions governed as frames by the end of A2+: `tussen, onder, boven,
+naast, achter, langs, binnen, buiten, na, rond, vanaf` on top of the ten shipped
+and the five A2 ones. The roadmap&#x27;s remaining core prepositions — `sinds,
+tijdens, volgens, wegens, ondanks, behalve` from phase C onward — are not in
+this file.
+
+Sections:
+
+- A2+-01 – A2+-02: the spatial set, two batches, 14 paired frames and 6 singles.
+  The first batch fixes the axes — between, under, above, beside, behind,
+  past/along, around, from; the second turns to the boundary and time words
+  `binnen, buiten, na, rond, vanaf`, plus `om` and the extended `door`.
+- A2+-03 – A2+-04: adjective chunks, 16 paired frames and 4 singles. A pair is
+  the same adjective on two objects of feeling, or two prepositions on the same
+  adjective stem; the singles are the ones the language has only once.
+- A2+-05 – A2+-06: noun chunks, 14 paired frames and 6 singles. Here the noun
+  carries the meaning and the preposition is fixed; pairs are the same noun on
+  two situations, so the preposition is what the learner confirms.
+- A2+-07 – A2+-08: pronominal adverbs (`er…`, `daar…`, `waar…`) in A2+-07, and
+  in A2+-08 the high-frequency everyday chunks the whole set turned out to be
+  missing (`hopen op`, `uitgeven aan`, `bellen met`, …). Twelve paired frames and
+  eight singles. No letters appear in any frame: the situation and the person
+  carry `erover`, `eraan`, `daar…aan`, `waar…naartoe`. A2+-08 was originally ten
+  separable-prefix verbs; a separable
+  verb governs no preposition, so on 10 November 2026 those ten and nineteen
+  more elsewhere in the old B1 file were replaced and the prefix material moved
+  to the **Uit Elkaar** game idea in `suggestions.md`.
+
+### Chunk overlap with batch 4b
+
+Three A2+-08 frames use a chunk that `prepositions-art-a2-pairs.md` already
+draws in a different scene:
+
+Both plans agree that a frequent chunk is worth two scenes, because a chunk is
+met in more than one situation. Batch 4b&#x27;s `kiezen voor` scene is a cake taken
+over an apple, with no vehicle of any kind, so only the chunk overlaps there and
+the two drawings cannot be mistaken for each other. The other two pairs differ
+only in place or object and are the ones to watch. But the two frames must not
+end up in levels that the Klopt step confuses, and `prepositions-roadmap.md` §5
+records that batch 8 &quot;drops them and needs three replacements&quot;. Decide one of the
+following before drawing A2+-08 and record it in the tracker:
+
+1. Keep the second scenes and place each chunk in a level separate from its
+   batch-4b partner. Costs nothing and needs no new art.
+2. Drop the three A2+ rows and plan three replacements from the chunk lists in
+   `prepositions-art-b1.md` and `prepositions-art-b1-plus.md`, keeping the band
+   at 80 frames.
+3. Point the three rows at the batch-4b scene and reuse that art, which turns
+   them into documentation rather than new frames.
+
+Until one is chosen the three rows stay `needed`, marked *same chunk as batch
+4b*, and A2+-08 keeps its ten planned images.
+
+Status values in the tracker: `needed` (not drawn), `drawn` (delivered and
+processed), `gloss-picture` in the note column (see above).
+
+## Tracker
+
+All 80 frames, in batch order. The file column is the Grok filename and the
+shipped scene id. &quot;Pair/note&quot; names the partner file for a pair, or `single`.
+
+## Batch A2+-01 — images 1–10
+
+## Batch A2+-02 — images 11–20
+
+## Batch A2+-03 — images 21–30
+
+## Batch A2+-04 — images 31–40
+
+## Batch A2+-05 — images 41–50
+
+## Batch A2+-06 — images 51–60
+
+## Batch A2+-07 — images 61–70
+
+## Batch A2+-08 — images 71–80
+
+## After delivery
+
+When the ten PNGs for a batch come back:
+
+1. **Process the PNGs** as described in `game-art.md` under *Delivered raster
+   art*: trim to the cobalt mass, keep the 2:3 frame, save into
+   `assets/voorzetselpaden/` under the filename in this file, and build the
+   alpha mask at 512 × 763.
+2. **Add the scenes to `server/Oefenpad.Resources/Games/Data/prepositions.json`** — one scene per frame,
+   with the Dutch chunk exactly as written in this file, the English gloss
+   matching the tracker, and the frame filename.
+3. **Wire the pair.** For a frame marked as a pair, point `contrast` at the
+   partner filename. For a single, set `contrast` to `null`.
+4. **Write a second `bouw` sentence** for every single. A pair already has two
+   sentences to its credit, one on each half; a single needs a second sentence
+   that uses the same chunk in a different situation, so the learner meets the
+   preposition twice.
+5. **Update the tracker.** Change `needed` to `drawn` in the Status column and
+   write the delivery date beside it.
+6. **Check at 64 px in the game.** Open the scene at thumbnail size in
+   `client/src/games/prepositions/`; if the idea is no longer nameable, redraw the frame
+   rather than adding a caption. Report the redraw in this file&#x27;s tracker.
+
+Nothing else in the plan changes. Frames that come back wrong can be redrawn
+from the same subject text without touching the other nine in the batch.</pre></details>
+<div class="filters">
+<button data-filter="alles" aria-pressed="true">alles</button>
+<button data-filter="gemarkeerd">gemarkeerd</button>
+<button data-filter="nonsense">onzin</button>
+<button data-filter="wrong-dutch">fout Nederlands</button>
+<button data-filter="weak-picture">zwak beeld</button>
+<button data-filter="minor">klein</button>
+</div>
+</header>
+<main>
+<section class="batch" data-batch="Batch A2+-01 — images 1–10" data-kind="frame">
+<h2>Batch A2+-01 — images 1–10</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch chunk built on a preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `tussen-twee-mensen.png` — Dutch chunk: tussen (between).
+   Scene: two people stand a step apart, facing the viewer; a third, smaller figure strides through the gap between them, one hand forward. The two are a gate; the third passes through it.
+   Must read: one person walking between two others.
+   Avoid: someone peeking from behind a wall or doorway; three people side by side walking the same way; a crowd.
+
+2. `onder-de-tafel.png` — Dutch chunk: onder (under).
+   Scene: a plain table seen from the side, legs visible; beneath it a cat sits upright, while a hand above the table holds a plate. The empty space under the table is where the cat sits.
+   Must read: the cat is underneath the table.
+   Avoid: a cat on the table top; a cat climbing the leg; a floor mat or rug.
+
+3. `boven-de-wolken.png` — Dutch chunk: boven (above).
+   Scene: a small aeroplane, seen in profile and flying to the right, crosses the top of the frame; a flat band of rounded clouds runs below it. The gaps of white paper between plane and clouds carry the height.
+   Must read: a plane flying above the clouds.
+   Avoid: a bird; a plane on a runway; a person pointing up.
+
+4. `naast-elkaar.png` — Dutch chunk: naast (next to).
+   Scene: two people sit side by side on a simple bench, both facing the viewer, shoulders level, an easy shared smile; one holds a cup. Their two outlines are the composition.
+   Must read: two people sitting next to each other.
+   Avoid: people facing each other talking (that is opposite); a person alone; a sofa or living room.
+
+5. `achter-het-hek.png` — Dutch chunk: achter (behind).
+   Scene: a low garden fence runs across the lower third of the image; behind it, further back and drawn slightly smaller, a child waves with one arm raised. The fence is in front of the child.
+   Must read: someone standing behind a fence.
+   Avoid: a person leaning on the fence in front of it; a wall with a window; a garden with plants.
+
+6. `achter-de-ander-aan.png` — Dutch chunk: achter … aan (following behind).
+   Scene: two people walk in single file to the right, both seen from behind; the nearer one has just started, the far one is mid-stride ahead of them. A single loose ground stroke under their feet suggests the path.
+   Must read: one person walking behind another.
+   Avoid: a race or running; a queue standing still; a person hiding.
+
+7. `langs-het-huis-lopen.png` — Dutch chunk: langs (past).
+   Scene: a simple house stands at the left edge; one person walks past it towards the right, still glancing back at the wall, body sideways to the door. The house is behind the walker, not in front.
+   Must read: walking past a building.
+   Avoid: a person entering the door; a person standing still in front of the house; a street with several houses.
+
+8. `langs-het-water-wandelen.png` — Dutch chunk: langs (along).
+   Scene: two people stroll along a winding path; on one side of the path runs a wavy line of water with a few short wave strokes. The pair walk parallel to the water, towards the top of the frame.
+   Must read: walking alongside water.
+   Avoid: people swimming; a boat; a bridge.
+
+9. `rond-de-tafel-zitten.png` — Dutch chunk: rond (around).
+   Scene: seen from slightly above, four people sit on chairs around a round table, each facing the middle, a large open book on it. The table is a circle; the people are evenly spaced.
+   Must read: a group seated around a round table.
+   Avoid: a meeting with a speaker at the head (that is at the front); a square table with people on one side; a dining plate.
+
+10. `vanaf-de-brug-zien.png` — Dutch chunk: vanaf (from).
+    Scene: a raised bridge deck is in the lower part of the frame; one person stands on it, leaning on the rail, looking down and out across a river; a small boat lies far below. The viewer looks with the person, from high to low.
+    Must read: a view from the top of a bridge.
+    Avoid: a person on the bank looking up at the bridge; a person jumping; a person on a bus (that reads as getting off).
+
+CONTRAST PAIRS
+1 and 2 are a positional pair: same camera and scale, vertical space. In #1 the gap is between two upright bodies; in #2 it is under a horizontal surface. #1 must not read as two people standing in front of someone, #2 must not read as a person crawling.
+3 and 4 are a pair on the vertical axis: above and beside. Same camera. #3 is landscape and horizontal, #4 is portrait and vertical, so the two are distinguishable at 64 px.
+5 and 6 are a pair on the depth axis behind a person. Same camera and scale. In #5 the fence is nearer the viewer than the child; in #6 the nearer walker is nearer than the far walker and both face away.
+7 and 8 are both `langs`, and are the pair that matters most in this batch: #7 crosses an object, #8 runs alongside one. Draw them with the same walking figures and the same ground line; change only the crossing versus the parallel relation.
+9 and 10 are singles.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Is the preposition obvious from the layout of shapes, not from a caption?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart sev-minor" data-id="tussen-twee-mensen" data-band="a2-plus" data-kind="frame" data-row="1" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">tussen</h3><p class="gloss">between</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people stand a step apart, facing the viewer; a third, smaller figure strides through the gap between them, one hand forward. The two are a gate; the third passes through it.</dd><dt>Must read</dt><dd class="must">one person walking between two others.</dd><dt>Avoid</dt><dd class="avoid">someone peeking from behind a wall or doorway; three people side by side walking the same way; a crowd.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>onder-de-tafel</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">A figure striding through the gap reads as <code>door</code>.</p><p class="fix">Three people on a bench; the middle one is the subject.</p></div><p class="id">tussen-twee-mensen.png · rij 1 · herkomst Docs/prepositions-art-a2-plus.md:152 (git)</p></article>
+<article class="kaart" data-id="onder-de-tafel" data-band="a2-plus" data-kind="frame" data-row="2" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">onder</h3><p class="gloss">under</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a plain table seen from the side, legs visible; beneath it a cat sits upright, while a hand above the table holds a plate. The empty space under the table is where the cat sits.</dd><dt>Must read</dt><dd class="must">the cat is underneath the table.</dd><dt>Avoid</dt><dd class="avoid">a cat on the table top; a cat climbing the leg; a floor mat or rug.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>tussen-twee-mensen</code></dd></dl><p class="id">onder-de-tafel.png · rij 2 · herkomst Docs/prepositions-art-a2-plus.md:153 (git)</p></article>
+<article class="kaart" data-id="boven-de-wolken" data-band="a2-plus" data-kind="frame" data-row="3" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">boven</h3><p class="gloss">above</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a small aeroplane, seen in profile and flying to the right, crosses the top of the frame; a flat band of rounded clouds runs below it. The gaps of white paper between plane and clouds carry the height.</dd><dt>Must read</dt><dd class="must">a plane flying above the clouds.</dd><dt>Avoid</dt><dd class="avoid">a bird; a plane on a runway; a person pointing up.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>naast-elkaar</code></dd></dl><p class="id">boven-de-wolken.png · rij 3 · herkomst Docs/prepositions-art-a2-plus.md:154 (git)</p></article>
+<article class="kaart" data-id="naast-elkaar" data-band="a2-plus" data-kind="frame" data-row="4" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">naast</h3><p class="gloss">next to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people sit side by side on a simple bench, both facing the viewer, shoulders level, an easy shared smile; one holds a cup. Their two outlines are the composition.</dd><dt>Must read</dt><dd class="must">two people sitting next to each other.</dd><dt>Avoid</dt><dd class="avoid">people facing each other talking (that is opposite); a person alone; a sofa or living room.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>boven-de-wolken</code></dd></dl><p class="id">naast-elkaar.png · rij 4 · herkomst Docs/prepositions-art-a2-plus.md:155 (git)</p></article>
+<article class="kaart" data-id="achter-het-hek" data-band="a2-plus" data-kind="frame" data-row="5" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">achter</h3><p class="gloss">behind</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a low garden fence runs across the lower third of the image; behind it, further back and drawn slightly smaller, a child waves with one arm raised. The fence is in front of the child.</dd><dt>Must read</dt><dd class="must">someone standing behind a fence.</dd><dt>Avoid</dt><dd class="avoid">a person leaning on the fence in front of it; a wall with a window; a garden with plants.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>achter-de-ander-aan</code></dd></dl><p class="id">achter-het-hek.png · rij 5 · herkomst Docs/prepositions-art-a2-plus.md:156 (git)</p></article>
+<article class="kaart" data-id="achter-de-ander-aan" data-band="a2-plus" data-kind="frame" data-row="6" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">achter … aan</h3><p class="gloss">following behind</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people walk in single file to the right, both seen from behind; the nearer one has just started, the far one is mid-stride ahead of them. A single loose ground stroke under their feet suggests the path.</dd><dt>Must read</dt><dd class="must">one person walking behind another.</dd><dt>Avoid</dt><dd class="avoid">a race or running; a queue standing still; a person hiding.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>achter-het-hek</code></dd></dl><p class="id">achter-de-ander-aan.png · rij 6 · herkomst Docs/prepositions-art-a2-plus.md:157 (git)</p></article>
+<article class="kaart" data-id="langs-het-huis-lopen" data-band="a2-plus" data-kind="frame" data-row="7" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">langs</h3><p class="gloss">past</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a simple house stands at the left edge; one person walks past it towards the right, still glancing back at the wall, body sideways to the door. The house is behind the walker, not in front.</dd><dt>Must read</dt><dd class="must">walking past a building.</dd><dt>Avoid</dt><dd class="avoid">a person entering the door; a person standing still in front of the house; a street with several houses.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>langs-het-water-wandelen</code></dd></dl><p class="id">langs-het-huis-lopen.png · rij 7 · herkomst Docs/prepositions-art-a2-plus.md:158 (git)</p></article>
+<article class="kaart" data-id="langs-het-water-wandelen" data-band="a2-plus" data-kind="frame" data-row="8" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">langs</h3><p class="gloss">along</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people stroll along a winding path; on one side of the path runs a wavy line of water with a few short wave strokes. The pair walk parallel to the water, towards the top of the frame.</dd><dt>Must read</dt><dd class="must">walking alongside water.</dd><dt>Avoid</dt><dd class="avoid">people swimming; a boat; a bridge.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>langs-het-huis-lopen</code></dd></dl><p class="id">langs-het-water-wandelen.png · rij 8 · herkomst Docs/prepositions-art-a2-plus.md:159 (git)</p></article>
+<article class="kaart" data-id="rond-de-tafel-zitten" data-band="a2-plus" data-kind="frame" data-row="9" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">rond</h3><p class="gloss">around</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">seen from slightly above, four people sit on chairs around a round table, each facing the middle, a large open book on it. The table is a circle; the people are evenly spaced.</dd><dt>Must read</dt><dd class="must">a group seated around a round table.</dd><dt>Avoid</dt><dd class="avoid">a meeting with a speaker at the head (that is at the front); a square table with people on one side; a dining plate.</dd><dt>Paar / notitie</dt><dd class="note">Single; positional <code>rond</code></dd></dl><p class="id">rond-de-tafel-zitten.png · rij 9 · herkomst Docs/prepositions-art-a2-plus.md:160 (git)</p></article>
+<article class="kaart" data-id="vanaf-de-brug-zien" data-band="a2-plus" data-kind="frame" data-row="10" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vanaf</h3><p class="gloss">from</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a raised bridge deck is in the lower part of the frame; one person stands on it, leaning on the rail, looking down and out across a river; a small boat lies far below. The viewer looks with the person, from high to low.</dd><dt>Must read</dt><dd class="must">a view from the top of a bridge.</dd><dt>Avoid</dt><dd class="avoid">a person on the bank looking up at the bridge; a person jumping; a person on a bus (that reads as getting off).</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>vanaf</code>, view from a point</dd></dl><p class="id">vanaf-de-brug-zien.png · rij 10 · herkomst Docs/prepositions-art-a2-plus.md:161 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-02 — images 11–20" data-kind="frame">
+<h2>Batch A2+-02 — images 11–20</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch chunk built on a preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `binnen-onder-de-parasol.png` — Dutch chunk: binnen (inside, indoors).
+   Scene: a tent or large parasol shape covers the upper half; underneath it a person sits cross-legged on a small mat, warm and settled, a cup beside them; rain falls outside the edges of the cover.
+   Must read: a person sheltered indoors or under cover.
+   Avoid: a person under an open umbrella standing (that is a different chunk, protected against the rain); a person at a window; a hot summer scene.
+
+2. `buiten-in-de-tuin.png` — Dutch chunk: buiten (outside).
+   Scene: the same cover as #1, same camera; now the person stands in the open beside it, on the grass, arms spread, no rain. A simple house wall with one window is the boundary behind them.
+   Must read: a person is outdoors.
+   Avoid: someone standing under the cover (that is #1); a garden with flowers; a bench and a terrace.
+
+3. `na-de-maaltijd.png` — Dutch chunk: na (after).
+   Scene: a plain table with an empty plate, a used cup and crumpled napkin; one person pushes their chair back and pats their stomach, satisfied; nobody is eating.
+   Must read: the meal is already over.
+   Avoid: a full plate or food being eaten (that is during); a clock; dishes being washed.
+
+4. `na-de-vergadering.png` — Dutch chunk: na (after).
+   Scene: a meeting room, two people pushing their chairs back from a table; a third is already at the door with a coat over the arm. The table holds only a closed folder. Everyone is leaving.
+   Must read: people leaving a meeting that has ended.
+   Avoid: people still seated and listening; a whiteboard with readable marks; a party.
+
+5. `rond-etenstijd-thuis.png` — Dutch chunk: rond (around).
+   Scene: a person comes through the front door, coat still on, bag in hand; behind them in the kitchen the oven glow is drawn as a small plain flame shape and a plain wall clock with hands but no numbers points to roughly seven. The arrival happens near that hour.
+   Must read: arriving home roughly at dinner time.
+   Avoid: readable numbers or times; a person asleep; a person eating at a table (that is during).
+
+6. `rond-de-stad-fietsen.png` — Dutch chunk: rond (around).
+   Scene: seen from above, a person on a bicycle follows a large loop path drawn as one bold curved stroke; inside the loop sit three simple house roofs and a small tree shape. The path returns to where it started.
+   Must read: riding a loop around a town.
+   Avoid: a straight road; a bicycle race with a finish line; a rider standing still.
+
+7. `vanaf-vandaag-stoppen.png` — Dutch chunk: vanaf vandaag (from today).
+   Scene: a person stands with an open calendar page that is blank except for one heavy black dot at its top left; one hand is raised on the dot. Everything after it is paper. No numbers, no letters.
+   Must read: counting from this day onwards.
+   Avoid: a wristwatch; a date with numbers; a start line for a race.
+
+8. `vanaf-de-eerste-dag.png` — Dutch chunk: vanaf (from).
+   Scene: an empty staircase rises from bottom left to top right; a person stands on the lowest step and looks up; on the top step, far away, sits a small chair. The distance is the idea.
+   Must read: starting from the very bottom.
+   Avoid: a person descending; a person at the top; a mountain with a flag.
+
+9. `om-de-tafel-rennen.png` — Dutch chunk: om (around).
+   Scene: seen from above, a round table with four chairs; a child runs along a circular path drawn around the outside of the table, arms swinging. The table stays in the centre.
+   Must read: running around the table.
+   Avoid: a person sitting at the table (that is seated around); a person running on a straight track; a gift being handed over (that is a different `om` chunk).
+
+10. `de-hele-dag-door-werken.png` — Dutch chunk: de hele dag door (all day long).
+    Scene: one person at a desk, bent over a laptop, sleeves pushed up; behind them a tall wall clock with hands only, no numbers, and a window that shows a crescent moon at the top and a lifted sun shape lower down. The worker stays at the desk.
+    Must read: working through the whole day.
+    Avoid: a person asleep; numbers or readable time; a coffee break with others.
+
+CONTRAST PAIRS
+1 and 2 are a pair: same tent or parasol, same camera, same ground line. Change only whether the person is under the cover or out in the open, and the rain. At 64 px the cover must be the obvious difference, and neither may read as the other.
+3 and 4 are both `na`: same idea of &quot;after&quot;, two different events. Draw them as situations, not as copies; #3 has one person and a table, #4 has three people and a door.
+5 and 7 are both temporal and both use one marked point in time; keep them apart by object (a clock on a wall versus a calendar page with a dot).
+6 and 9 are both `rond`/`om` loops seen from above; use the same camera and the same bold loop stroke, but a bicycle in #6 and a running child in #9, around a roof group in one and a table in the other.
+8 and 10 are singles.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Is the temporal or spatial relation obvious from the layout, not from a caption?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check the pairs side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart sev-wrong-dutch" data-id="binnen-onder-de-parasol" data-band="a2-plus" data-kind="frame" data-row="11" data-status="needed" data-severity="wrong-dutch"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">binnen</h3><p class="gloss">inside, indoors</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a tent or large parasol shape covers the upper half; underneath it a person sits cross-legged on a small mat, warm and settled, a cup beside them; rain falls outside the edges of the cover.</dd><dt>Must read</dt><dd class="must">a person sheltered indoors or under cover.</dd><dt>Avoid</dt><dd class="avoid">a person under an open umbrella standing (that is a different chunk, protected against the rain); a person at a window; a hot summer scene.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>buiten-in-de-tuin</code></dd></dl><div class="oordeel wrong-dutch" data-severity="wrong-dutch"><span class="kop">fout Nederlands</span><p class="wat">Under a parasol or a tent is not <code>binnen</code>.</p><p class="fix">Cut-away house in rain, person dry inside at a table; row 12 keeps the same house with the person in the garden.</p></div><p class="id">binnen-onder-de-parasol.png · rij 11 · herkomst Docs/prepositions-art-a2-plus.md:162 (git)</p></article>
+<article class="kaart" data-id="buiten-in-de-tuin" data-band="a2-plus" data-kind="frame" data-row="12" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">buiten</h3><p class="gloss">outside</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">the same cover as #1, same camera; now the person stands in the open beside it, on the grass, arms spread, no rain. A simple house wall with one window is the boundary behind them.</dd><dt>Must read</dt><dd class="must">a person is outdoors.</dd><dt>Avoid</dt><dd class="avoid">someone standing under the cover (that is #1); a garden with flowers; a bench and a terrace.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>binnen-onder-de-parasol</code></dd></dl><p class="id">buiten-in-de-tuin.png · rij 12 · herkomst Docs/prepositions-art-a2-plus.md:163 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="na-de-maaltijd" data-band="a2-plus" data-kind="frame" data-row="13" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">na</h3><p class="gloss">after</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a plain table with an empty plate, a used cup and crumpled napkin; one person pushes their chair back and pats their stomach, satisfied; nobody is eating.</dd><dt>Must read</dt><dd class="must">the meal is already over.</dd><dt>Avoid</dt><dd class="avoid">a full plate or food being eaten (that is during); a clock; dishes being washed.</dd><dt>Paar / notitie</dt><dd class="note">Single; temporal <code>na</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">An empty plate and a patted stomach is <code>klaar met eten</code> and matches appendix row 136 <code>tevreden zijn met eten</code>. People leaving a room is <code>weggaan</code>. A still cannot show &quot;after&quot;.</p><p class="fix">Drop 14. Keep 13 only as a sentence-led card.</p></div><p class="id">na-de-maaltijd.png · rij 13 · herkomst Docs/prepositions-art-a2-plus.md:164 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="na-de-vergadering" data-band="a2-plus" data-kind="frame" data-row="14" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">na</h3><p class="gloss">after</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a meeting room, two people pushing their chairs back from a table; a third is already at the door with a coat over the arm. The table holds only a closed folder. Everyone is leaving.</dd><dt>Must read</dt><dd class="must">people leaving a meeting that has ended.</dd><dt>Avoid</dt><dd class="avoid">people still seated and listening; a whiteboard with readable marks; a party.</dd><dt>Paar / notitie</dt><dd class="note">Single; temporal <code>na</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">An empty plate and a patted stomach is <code>klaar met eten</code> and matches appendix row 136 <code>tevreden zijn met eten</code>. People leaving a room is <code>weggaan</code>. A still cannot show &quot;after&quot;.</p><p class="fix">Drop 14. Keep 13 only as a sentence-led card.</p></div><p class="id">na-de-vergadering.png · rij 14 · herkomst Docs/prepositions-art-a2-plus.md:165 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="rond-etenstijd-thuis" data-band="a2-plus" data-kind="frame" data-row="15" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">rond</h3><p class="gloss">around</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a person comes through the front door, coat still on, bag in hand; behind them in the kitchen the oven glow is drawn as a small plain flame shape and a plain wall clock with hands but no numbers points to roughly seven. The arrival happens near that hour.</dd><dt>Must read</dt><dd class="must">arriving home roughly at dinner time.</dd><dt>Avoid</dt><dd class="avoid">readable numbers or times; a person asleep; a person eating at a table (that is during).</dd><dt>Paar / notitie</dt><dd class="note">Single; temporal <code>rond</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat">&quot;Roughly at dinner time&quot; asks the learner to read a numberless clock as seven and to know seven is dinner.</p><p class="fix">Drop. <code>rond</code> survives in row 9.</p></div><p class="id">rond-etenstijd-thuis.png · rij 15 · herkomst Docs/prepositions-art-a2-plus.md:166 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="rond-de-stad-fietsen" data-band="a2-plus" data-kind="frame" data-row="16" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">rond</h3><p class="gloss">around</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">seen from above, a person on a bicycle follows a large loop path drawn as one bold curved stroke; inside the loop sit three simple house roofs and a small tree shape. The path returns to where it started.</dd><dt>Must read</dt><dd class="must">riding a loop around a town.</dd><dt>Avoid</dt><dd class="avoid">a straight road; a bicycle race with a finish line; a rider standing still.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>om-de-tafel-rennen</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat"><code>rond</code> and <code>om</code> mean the same here. A contrast pair on two synonyms teaches a difference that does not exist.</p><p class="fix">Present as a same-meaning pair, or cut 16; row 9 already has <code>rond de tafel</code>.</p></div><p class="id">rond-de-stad-fietsen.png · rij 16 · herkomst Docs/prepositions-art-a2-plus.md:167 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="vanaf-vandaag-stoppen" data-band="a2-plus" data-kind="frame" data-row="17" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vanaf vandaag</h3><p class="gloss">from today</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a person stands with an open calendar page that is blank except for one heavy black dot at its top left; one hand is raised on the dot. Everything after it is paper. No numbers, no letters.</dd><dt>Must read</dt><dd class="must">counting from this day onwards.</dd><dt>Avoid</dt><dd class="avoid">a wristwatch; a date with numbers; a start line for a race.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>vanaf-de-eerste-dag</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat">A blank calendar page with one dot and a hand on it cannot say &quot;from this day onward&quot;; the filename adds <code>stoppen</code> and the scene stops nothing.</p><p class="fix">Drop. <code>vanaf</code> survives in row 10 (<code>vanaf de brug</code>).</p></div><p class="id">vanaf-vandaag-stoppen.png · rij 17 · herkomst Docs/prepositions-art-a2-plus.md:168 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="vanaf-de-eerste-dag" data-band="a2-plus" data-kind="frame" data-row="18" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vanaf</h3><p class="gloss">from</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">an empty staircase rises from bottom left to top right; a person stands on the lowest step and looks up; on the top step, far away, sits a small chair. The distance is the idea.</dd><dt>Must read</dt><dd class="must">starting from the very bottom.</dd><dt>Avoid</dt><dd class="avoid">a person descending; a person at the top; a mountain with a flag.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>vanaf-vandaag-stoppen</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat">The scene is a person on the bottom step of a staircase with a chair at the top; Must read is &quot;starting from the very bottom&quot;. Nothing in it is a first day.</p><p class="fix">Drop.</p></div><p class="id">vanaf-de-eerste-dag.png · rij 18 · herkomst Docs/prepositions-art-a2-plus.md:169 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="om-de-tafel-rennen" data-band="a2-plus" data-kind="frame" data-row="19" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">om</h3><p class="gloss">around</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">seen from above, a round table with four chairs; a child runs along a circular path drawn around the outside of the table, arms swinging. The table stays in the centre.</dd><dt>Must read</dt><dd class="must">running around the table.</dd><dt>Avoid</dt><dd class="avoid">a person sitting at the table (that is seated around); a person running on a straight track; a gift being handed over (that is a different <code>om</code> chunk).</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>rond-de-stad-fietsen</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat"><code>rond</code> and <code>om</code> mean the same here. A contrast pair on two synonyms teaches a difference that does not exist.</p><p class="fix">Present as a same-meaning pair, or cut 16; row 9 already has <code>rond de tafel</code>.</p></div><p class="id">om-de-tafel-rennen.png · rij 19 · herkomst Docs/prepositions-art-a2-plus.md:170 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="de-hele-dag-door-werken" data-band="a2-plus" data-kind="frame" data-row="20" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">de hele dag door</h3><p class="gloss">all day long</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person at a desk, bent over a laptop, sleeves pushed up; behind them a tall wall clock with hands only, no numbers, and a window that shows a crescent moon at the top and a lifted sun shape lower down. The worker stays at the desk.</dd><dt>Must read</dt><dd class="must">working through the whole day.</dd><dt>Avoid</dt><dd class="avoid">a person asleep; numbers or readable time; a coffee break with others.</dd><dt>Paar / notitie</dt><dd class="note">Single; temporal <code>door</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A window with a moon at the top and a sun below is not a possible view, and the frame is an adverbial, not a governed chunk.</p><p class="fix">Drop.</p></div><p class="id">de-hele-dag-door-werken.png · rij 20 · herkomst Docs/prepositions-art-a2-plus.md:171 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-03 — images 21–30" data-kind="frame">
+<h2>Batch A2+-03 — images 21–30</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch adjective plus a fixed preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `trots-op-baan.png` — Dutch chunk: trots op (proud of).
+   Scene: one person stands square to the viewer, chin up, one hand on the chest, a warm smile; beside them a simple framed certificate shape, blank, hung on a plain wall. The frame is plain, no letters.
+   Must read: pride in an achievement.
+   Avoid: a person looking at another person (that is proud of someone); a trophy cup as the main mass; a crowd.
+
+2. `trots-op-dochter.png` — Dutch chunk: trots op (proud of).
+   Scene: same camera as #1; now the person stands to the left, one hand on the shoulder of a child at their side, both facing the viewer; the child holds a small plain medal. The pride points at the child.
+   Must read: pride in another person.
+   Avoid: a certificate on the wall (that is #1); a graduation cap with tassel detail and a motto; a party.
+
+3. `afhankelijk-van-auto.png` — Dutch chunk: afhankelijk van (dependent on).
+   Scene: one person stands at the open bonnet of a small car, tools in hand and a worried posture, one hand on the bodywork; the car is the only vehicle and the road ahead is empty.
+   Must read: depending on a machine to get anywhere.
+   Avoid: a bus stop; a person waiting at a garage counter; a bicycle.
+
+4. `afhankelijk-van-weer.png` — Dutch chunk: afhankelijk van (dependent on).
+   Scene: one person at a plain window, forehead to the glass, looking out at rain; behind them a bicycle leans unused and a coat hangs with an umbrella beside it. The weather decides their day.
+   Must read: plans that depend on the weather.
+   Avoid: a person already wearing the coat and going out; a weather map with symbols; a phone app.
+
+5. `gewend-aan-vroeg-opstaan.png` — Dutch chunk: gewend aan (used to).
+   Scene: one person stands easily in a kitchen, stretching, a cup steaming on the counter, a wall clock with hands but no numbers showing the small hours; the posture is relaxed, not tired.
+   Must read: an early start that is now routine.
+   Avoid: a person yawning in bed; numbers on the clock; a sunrise over a landscape.
+
+6. `gewend-aan-kou.png` — Dutch chunk: gewend aan (used to).
+   Scene: one person outside in falling snow, coat open, scarf loose, hands relaxed at the sides, face calm; another person in the background is hunched and wrapped up, small. The contrast is the idea.
+   Must read: someone accustomed to cold.
+   Avoid: a person shivering (that is not used to it); a snowy landscape with trees; a snowman.
+
+7. `tevreden-met-resultaat.png` — Dutch chunk: tevreden met (satisfied with).
+   Scene: one person leans back from a table, hands behind the head, looking at a large drawing on the table; a gentle smile. The drawing is plain, with only a few loose strokes.
+   Must read: pleased with the result of work.
+   Avoid: a person frowning at the work; a celebration with others; readable plans or charts.
+
+8. `klaar-met-studeren.png` — Dutch chunk: klaar met (finished with).
+   Scene: one person drops a heavy book onto a tall stack of books, one hand still pushing it down, the other lifting a cup; body turned away from the desk, done.
+   Must read: finished with study.
+   Avoid: a person reading on; a graduation with a hat and readable banner; a library shelf.
+
+9. `ergens-goed-in-zijn.png` — Dutch chunk: goed in (good at).
+   Scene: one person plays a guitar, fingers spread, relaxed and confident, a single musical curve of brush strokes rising from the instrument; nobody else in the frame.
+   Must read: skilful at something.
+   Avoid: a music stand with readable notes; a stage and audience; a person frowning at the instrument.
+
+10. `boos-over-de-rekening.png` — Dutch chunk: boos over (angry about).
+    Scene: one person holds up a long paper receipt, frowning, one finger tapping it; the receipt is a blank strip with a ragged edge and no marks. No second person.
+    Must read: angry about a bill or a situation.
+    Avoid: a cashier or a queue; readable prices or numbers; a red stamp shape.
+
+CONTRAST PAIRS
+1 and 2 are a pair: same person, same camera. Change only the object of pride — a blank wall certificate versus a child at the side. At 64 px the second figure must be obvious in #2.
+3 and 4 are a pair: same person, same camera distance, opposite postures of dependence — a broken thing in front of them versus weather beyond a window.
+5 and 6 are a pair: the same calm posture of routine, with the early hour versus the cold as the difference. Same camera and scale; #6 adds the second, hunched figure as the visual counterweight.
+7 and 8 are a contrast on `klaar` and on the mood of finishing: #7 is pleased with the thing, #8 is finished and leaving it. Make the posture the difference, not the objects.
+9 and 10 are singles.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Does the posture carry the feeling, rather than a symbol?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart" data-id="trots-op-baan" data-band="a2-plus" data-kind="frame" data-row="21" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">trots op</h3><p class="gloss">proud of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands square to the viewer, chin up, one hand on the chest, a warm smile; beside them a simple framed certificate shape, blank, hung on a plain wall. The frame is plain, no letters.</dd><dt>Must read</dt><dd class="must">pride in an achievement.</dd><dt>Avoid</dt><dd class="avoid">a person looking at another person (that is proud of someone); a trophy cup as the main mass; a crowd.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>trots-op-dochter</code></dd></dl><p class="id">trots-op-baan.png · rij 21 · herkomst Docs/prepositions-art-a2-plus.md:172 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="trots-op-dochter" data-band="a2-plus" data-kind="frame" data-row="22" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">trots op</h3><p class="gloss">proud of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">same camera as #1; now the person stands to the left, one hand on the shoulder of a child at their side, both facing the viewer; the child holds a small plain medal. The pride points at the child.</dd><dt>Must read</dt><dd class="must">pride in another person.</dd><dt>Avoid</dt><dd class="avoid">a certificate on the wall (that is #1); a graduation cap with tassel detail and a motto; a party.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>trots-op-baan</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Parent with a hand on the chest beside a child holding a medal repeats batch 4b <code>trots-op-kind</code>. <code>trots op</code> now has four rows here and three more later.</p><p class="fix">Cut.</p></div><p class="id">trots-op-dochter.png · rij 22 · herkomst Docs/prepositions-art-a2-plus.md:173 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="afhankelijk-van-auto" data-band="a2-plus" data-kind="frame" data-row="23" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">afhankelijk van</h3><p class="gloss">dependent on</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at the open bonnet of a small car, tools in hand and a worried posture, one hand on the bodywork; the car is the only vehicle and the road ahead is empty.</dd><dt>Must read</dt><dd class="must">depending on a machine to get anywhere.</dd><dt>Avoid</dt><dd class="avoid">a bus stop; a person waiting at a garage counter; a bicycle.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>afhankelijk-van-weer</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A person at an open bonnet with tools reads as <code>pech hebben</code> or <code>werken aan de auto</code>.</p><p class="fix">Person walking with a guide dog in harness: <code>afhankelijk van de hond</code>.</p></div><p class="id">afhankelijk-van-auto.png · rij 23 · herkomst Docs/prepositions-art-a2-plus.md:174 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="afhankelijk-van-weer" data-band="a2-plus" data-kind="frame" data-row="24" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">afhankelijk van</h3><p class="gloss">dependent on</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person at a plain window, forehead to the glass, looking out at rain; behind them a bicycle leans unused and a coat hangs with an umbrella beside it. The weather decides their day.</dd><dt>Must read</dt><dd class="must">plans that depend on the weather.</dd><dt>Avoid</dt><dd class="avoid">a person already wearing the coat and going out; a weather map with symbols; a phone app.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>afhankelijk-van-auto</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Forehead on the glass in rain reads as <code>balen van</code> or <code>last hebben van</code>.</p><p class="fix">Cut; one frame is enough for A2+.</p></div><p class="id">afhankelijk-van-weer.png · rij 24 · herkomst Docs/prepositions-art-a2-plus.md:175 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="gewend-aan-vroeg-opstaan" data-band="a2-plus" data-kind="frame" data-row="25" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">gewend aan</h3><p class="gloss">used to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands easily in a kitchen, stretching, a cup steaming on the counter, a wall clock with hands but no numbers showing the small hours; the posture is relaxed, not tired.</dd><dt>Must read</dt><dd class="must">an early start that is now routine.</dd><dt>Avoid</dt><dd class="avoid">a person yawning in bed; numbers on the clock; a sunrise over a landscape.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>gewend-aan-kou</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">The meaning depends on reading &quot;small hours&quot; from a numberless clock.</p><p class="fix"><code>gewend-aan-lawaai</code>: person reading calmly while a neighbour drills through the wall.</p></div><p class="id">gewend-aan-vroeg-opstaan.png · rij 25 · herkomst Docs/prepositions-art-a2-plus.md:176 (git)</p></article>
+<article class="kaart" data-id="gewend-aan-kou" data-band="a2-plus" data-kind="frame" data-row="26" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">gewend aan</h3><p class="gloss">used to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person outside in falling snow, coat open, scarf loose, hands relaxed at the sides, face calm; another person in the background is hunched and wrapped up, small. The contrast is the idea.</dd><dt>Must read</dt><dd class="must">someone accustomed to cold.</dd><dt>Avoid</dt><dd class="avoid">a person shivering (that is not used to it); a snowy landscape with trees; a snowman.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>gewend-aan-vroeg-opstaan</code></dd></dl><p class="id">gewend-aan-kou.png · rij 26 · herkomst Docs/prepositions-art-a2-plus.md:177 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="tevreden-met-resultaat" data-band="a2-plus" data-kind="frame" data-row="27" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">tevreden met</h3><p class="gloss">satisfied with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person leans back from a table, hands behind the head, looking at a large drawing on the table; a gentle smile. The drawing is plain, with only a few loose strokes.</dd><dt>Must read</dt><dd class="must">pleased with the result of work.</dd><dt>Avoid</dt><dd class="avoid">a person frowning at the work; a celebration with others; readable plans or charts.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>klaar-met-studeren</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Same chunk and same noun as the shipped frame; the pose (leaning back, hands behind the head) is the pilot <code>klaar met werk</code>, and its partner here is <code>klaar met</code>.</p><p class="fix">Cut 27 and 28. Both chunks are already shipped with three variants each.</p></div><p class="id">tevreden-met-resultaat.png · rij 27 · herkomst Docs/prepositions-art-a2-plus.md:178 (git)</p></article>
+<article class="kaart" data-id="klaar-met-studeren" data-band="a2-plus" data-kind="frame" data-row="28" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">klaar met</h3><p class="gloss">finished with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person drops a heavy book onto a tall stack of books, one hand still pushing it down, the other lifting a cup; body turned away from the desk, done.</dd><dt>Must read</dt><dd class="must">finished with study.</dd><dt>Avoid</dt><dd class="avoid">a person reading on; a graduation with a hat and readable banner; a library shelf.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>tevreden-met-resultaat</code></dd></dl><p class="id">klaar-met-studeren.png · rij 28 · herkomst Docs/prepositions-art-a2-plus.md:179 (git)</p></article>
+<article class="kaart sev-minor" data-id="ergens-goed-in-zijn" data-band="a2-plus" data-kind="frame" data-row="29" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">goed in</h3><p class="gloss">good at</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person plays a guitar, fingers spread, relaxed and confident, a single musical curve of brush strokes rising from the instrument; nobody else in the frame.</dd><dt>Must read</dt><dd class="must">skilful at something.</dd><dt>Avoid</dt><dd class="avoid">a music stand with readable notes; a stage and audience; a person frowning at the instrument.</dd><dt>Paar / notitie</dt><dd class="note">Single; gloss-picture</dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Playing the guitar is <code>gitaar spelen</code>.</p><p class="fix">Player keeping a ball in the air on one foot while two others watch with open mouths.</p></div><p class="id">ergens-goed-in-zijn.png · rij 29 · herkomst Docs/prepositions-art-a2-plus.md:180 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="boos-over-de-rekening" data-band="a2-plus" data-kind="frame" data-row="30" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">boos over</h3><p class="gloss">angry about</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person holds up a long paper receipt, frowning, one finger tapping it; the receipt is a blank strip with a ragged edge and no marks. No second person.</dd><dt>Must read</dt><dd class="must">angry about a bill or a situation.</dd><dt>Avoid</dt><dd class="avoid">a cashier or a queue; readable prices or numbers; a red stamp shape.</dd><dt>Paar / notitie</dt><dd class="note">Single; contrasts with shipped <code>boos op</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Identical to appendix row 73.</p><p class="fix">Cut one.</p></div><p class="id">boos-over-de-rekening.png · rij 30 · herkomst Docs/prepositions-art-a2-plus.md:181 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-04 — images 31–40" data-kind="frame">
+<h2>Batch A2+-04 — images 31–40</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch adjective plus a fixed preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `verliefd-op-persoon.png` — Dutch chunk: verliefd op (in love with).
+   Scene: two people face each other close, one leaning in and smiling, hands nearly touching; a soft ring of short strokes around their heads. The other person smiles back.
+   Must read: romantic feelings for someone.
+   Avoid: a heart with an arrow or readable symbols; a wedding ring; a party.
+
+2. `jaloers-op-collega.png` — Dutch chunk: jaloers op (jealous of).
+   Scene: one person stands slightly turned away, arms crossed, sideways glance at a colleague who is showing a new phone to a third person; the jealous person is the largest figure and clearly left out.
+   Must read: jealousy of another person.
+   Avoid: an argument; a gift; someone crying.
+
+3. `bezorgd-over-de-toekomst.png` — Dutch chunk: bezorgd over (worried about).
+   Scene: one person sits at a table with a blank letter and a pen, head lowered onto the palm, brow drawn as a single short line; a plain road shape continues out of the frame behind them, leading nowhere yet.
+   Must read: worry about what is coming.
+   Avoid: a person crying; readable documents; a clock.
+
+4. `tevreden-met-huis.png` — Dutch chunk: tevreden met (satisfied with).
+   Scene: one person stands in the doorway of a small plain house, one hand on the frame, looking back over the room inside with an easy smile; a suitcase sits closed by the door.
+   Must read: content with a home, settled.
+   Avoid: a person packing to leave; a large villa; a crowd.
+
+5. `verantwoordelijk-voor-team.png` — Dutch chunk: verantwoordelijk voor (responsible for).
+   Scene: one person stands at the front of a small group of three seated colleagues, one arm open towards them; a plain clipboard is held in the other hand. The standing person is clearly the one who answers for them.
+   Must read: being the one in charge of a group.
+   Avoid: a person handing out paperwork to one other; a teacher at a blackboard (that is teaching); readable charts.
+
+6. `verantwoordelijk-voor-fout.png` — Dutch chunk: verantwoordelijk voor (responsible for).
+   Scene: one person stands beside a fallen stack of papers on the floor, head lowered, one hand raised as if admitting it; nobody else in the room, but a plain door stands open behind them.
+   Must read: owning up to a mistake.
+   Avoid: a person angry at someone; a broken window; readable papers.
+
+7. `nieuwsgierig-naar-antwoord.png` — Dutch chunk: nieuwsgierig naar (curious about).
+   Scene: one person leans forward over a sealed envelope, both hands flat on the table around it, eyes wide; the envelope is plain with a blank flap.
+   Must read: wanting to know what is inside.
+   Avoid: the envelope already open; a person yawning; a hand pulling out a letter.
+
+8. `trots-op-huis.png` — Dutch chunk: trots op (proud of).
+   Scene: one person stands in front of a freshly built plain house, dusting off both hands, chest out and smiling; a ladder leans against the wall and a small paint pot sits by the door; the tool belt is still on.
+   Must read: pride in something you made.
+   Avoid: a certificate (that is #1 in the previous batch); a builder crew; a for-sale sign with letters.
+
+9. `gewend-aan-de-drukte.png` — Dutch chunk: gewend aan (used to).
+   Scene: one person stands calm at the centre of a busy street, arms relaxed; around them several smaller figures hurry in different directions with bags and phones; the calm figure is larger and still.
+   Must read: someone at ease in a busy place.
+   Avoid: a person covering their ears or holding their head; a traffic jam with cars; readable street signs.
+
+10. `kwaad-op-de-buurman.png` — Dutch chunk: kwaad op (angry at).
+    Scene: one person stands on their side of a low fence, one hand raised and pointing across it; a second person on the far side turns away with a shrug. The fence separates them.
+    Must read: anger at a neighbour.
+    Avoid: a fight; a broken window (that is anger about a thing); a wall with a drill.
+
+CONTRAST PAIRS
+1 and 2 are the same `op` with two feelings: a warm attachment to a person, and a resentful one at a colleague. Same camera and two figures; #1 leans in smiling, #2 stands turned away with arms folded.
+3 and 7 are the worry/curiosity pair: both lean forward into the unknown. #3 is still and heavy, #7 is eager and open. Same camera and scale.
+4 and 9 are both `tevreden met` and `gewend aan`: being at ease with what is around you. #4 is a house, #9 is a busy street; keep the posture relaxed in both.
+5 and 6 are both `verantwoordelijk voor`: one is standing for a team, one is standing for a mistake. Use the same standing figure and the same camera; change only the group beside them versus the mess behind them.
+8 and 10 are singles: pride in a home, and anger at a neighbour.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Does the posture carry the feeling, rather than a symbol?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart" data-id="verliefd-op-persoon" data-band="a2-plus" data-kind="frame" data-row="31" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">verliefd op</h3><p class="gloss">in love with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people face each other close, one leaning in and smiling, hands nearly touching; a soft ring of short strokes around their heads. The other person smiles back.</dd><dt>Must read</dt><dd class="must">romantic feelings for someone.</dd><dt>Avoid</dt><dd class="avoid">a heart with an arrow or readable symbols; a wedding ring; a party.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>jaloers-op-collega</code></dd></dl><p class="id">verliefd-op-persoon.png · rij 31 · herkomst Docs/prepositions-art-a2-plus.md:182 (git)</p></article>
+<article class="kaart" data-id="jaloers-op-collega" data-band="a2-plus" data-kind="frame" data-row="32" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">jaloers op</h3><p class="gloss">jealous of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands slightly turned away, arms crossed, sideways glance at a colleague who is showing a new phone to a third person; the jealous person is the largest figure and clearly left out.</dd><dt>Must read</dt><dd class="must">jealousy of another person.</dd><dt>Avoid</dt><dd class="avoid">an argument; a gift; someone crying.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>verliefd-op-persoon</code></dd></dl><p class="id">jaloers-op-collega.png · rij 32 · herkomst Docs/prepositions-art-a2-plus.md:183 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="bezorgd-over-de-toekomst" data-band="a2-plus" data-kind="frame" data-row="33" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">bezorgd over</h3><p class="gloss">worried about</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits at a table with a blank letter and a pen, head lowered onto the palm, brow drawn as a single short line; a plain road shape continues out of the frame behind them, leading nowhere yet.</dd><dt>Must read</dt><dd class="must">worry about what is coming.</dd><dt>Avoid</dt><dd class="avoid">a person crying; readable documents; a clock.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>nieuwsgierig-naar-antwoord</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">&quot;A road leading nowhere yet&quot; is a metaphor, not a scene. The figure reads as tired.</p><p class="fix">Cut; row 76 teaches the same meaning with bills on a table.</p></div><p class="id">bezorgd-over-de-toekomst.png · rij 33 · herkomst Docs/prepositions-art-a2-plus.md:184 (git)</p></article>
+<article class="kaart sev-minor" data-id="tevreden-met-huis" data-band="a2-plus" data-kind="frame" data-row="34" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">tevreden met</h3><p class="gloss">satisfied with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands in the doorway of a small plain house, one hand on the frame, looking back over the room inside with an easy smile; a suitcase sits closed by the door.</dd><dt>Must read</dt><dd class="must">content with a home, settled.</dd><dt>Avoid</dt><dd class="avoid">a person packing to leave; a large villa; a crowd.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>trots-op-huis</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">The closed suitcase by the door reads as leaving.</p><p class="fix">Remove the suitcase.</p></div><p class="id">tevreden-met-huis.png · rij 34 · herkomst Docs/prepositions-art-a2-plus.md:185 (git)</p></article>
+<article class="kaart sev-minor" data-id="verantwoordelijk-voor-team" data-band="a2-plus" data-kind="frame" data-row="35" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">verantwoordelijk voor</h3><p class="gloss">responsible for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at the front of a small group of three seated colleagues, one arm open towards them; a plain clipboard is held in the other hand. The standing person is clearly the one who answers for them.</dd><dt>Must read</dt><dd class="must">being the one in charge of a group.</dd><dt>Avoid</dt><dd class="avoid">a person handing out paperwork to one other; a teacher at a blackboard (that is teaching); readable charts.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>verantwoordelijk-voor-fout</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Standing before a seated group reads as <code>presenteren</code>; admitting a fallen stack overlaps <code>schaamte over</code> (47) and <code>schuld</code> (58).</p><p class="fix">35: adult counting a line of children in vests at a crossing. 36 can stay.</p></div><p class="id">verantwoordelijk-voor-team.png · rij 35 · herkomst Docs/prepositions-art-a2-plus.md:186 (git)</p></article>
+<article class="kaart sev-minor" data-id="verantwoordelijk-voor-fout" data-band="a2-plus" data-kind="frame" data-row="36" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">verantwoordelijk voor</h3><p class="gloss">responsible for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands beside a fallen stack of papers on the floor, head lowered, one hand raised as if admitting it; nobody else in the room, but a plain door stands open behind them.</dd><dt>Must read</dt><dd class="must">owning up to a mistake.</dd><dt>Avoid</dt><dd class="avoid">a person angry at someone; a broken window; readable papers.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>verantwoordelijk-voor-team</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Standing before a seated group reads as <code>presenteren</code>; admitting a fallen stack overlaps <code>schaamte over</code> (47) and <code>schuld</code> (58).</p><p class="fix">35: adult counting a line of children in vests at a crossing. 36 can stay.</p></div><p class="id">verantwoordelijk-voor-fout.png · rij 36 · herkomst Docs/prepositions-art-a2-plus.md:187 (git)</p></article>
+<article class="kaart" data-id="nieuwsgierig-naar-antwoord" data-band="a2-plus" data-kind="frame" data-row="37" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">nieuwsgierig naar</h3><p class="gloss">curious about</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person leans forward over a sealed envelope, both hands flat on the table around it, eyes wide; the envelope is plain with a blank flap.</dd><dt>Must read</dt><dd class="must">wanting to know what is inside.</dd><dt>Avoid</dt><dd class="avoid">the envelope already open; a person yawning; a hand pulling out a letter.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>bezorgd-over-de-toekomst</code></dd></dl><p class="id">nieuwsgierig-naar-antwoord.png · rij 37 · herkomst Docs/prepositions-art-a2-plus.md:188 (git)</p></article>
+<article class="kaart" data-id="trots-op-huis" data-band="a2-plus" data-kind="frame" data-row="38" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">trots op</h3><p class="gloss">proud of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands in front of a freshly built plain house, dusting off both hands, chest out and smiling; a ladder leans against the wall and a small paint pot sits by the door; the tool belt is still on.</dd><dt>Must read</dt><dd class="must">pride in something you made.</dd><dt>Avoid</dt><dd class="avoid">a certificate (that is #1 in the previous batch); a builder crew; a for-sale sign with letters.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>tevreden-met-huis</code></dd></dl><p class="id">trots-op-huis.png · rij 38 · herkomst Docs/prepositions-art-a2-plus.md:189 (git)</p></article>
+<article class="kaart" data-id="gewend-aan-de-drukte" data-band="a2-plus" data-kind="frame" data-row="39" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">gewend aan</h3><p class="gloss">used to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands calm at the centre of a busy street, arms relaxed; around them several smaller figures hurry in different directions with bags and phones; the calm figure is larger and still.</dd><dt>Must read</dt><dd class="must">someone at ease in a busy place.</dd><dt>Avoid</dt><dd class="avoid">a person covering their ears or holding their head; a traffic jam with cars; readable street signs.</dd><dt>Paar / notitie</dt><dd class="note">Single; gloss-picture</dd></dl><p class="id">gewend-aan-de-drukte.png · rij 39 · herkomst Docs/prepositions-art-a2-plus.md:190 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="kwaad-op-de-buurman" data-band="a2-plus" data-kind="frame" data-row="40" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">kwaad op</h3><p class="gloss">angry at</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands on their side of a low fence, one hand raised and pointing across it; a second person on the far side turns away with a shrug. The fence separates them.</dd><dt>Must read</dt><dd class="must">anger at a neighbour.</dd><dt>Avoid</dt><dd class="avoid">a fight; a broken window (that is anger about a thing); a wall with a drill.</dd><dt>Paar / notitie</dt><dd class="note">Single; contrasts with shipped <code>boos op</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat"><code>kwaad</code> is a synonym of <code>boos</code>; the drawing is appendix row 72 <code>boos-op-buur</code>.</p><p class="fix">Cut, or put <code>kwaad op</code> in the sentence of the <code>boos op</code> card.</p></div><p class="id">kwaad-op-de-buurman.png · rij 40 · herkomst Docs/prepositions-art-a2-plus.md:191 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-05 — images 41–50" data-kind="frame">
+<h2>Batch A2+-05 — images 41–50</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch noun plus a fixed preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `behoefte-aan-rust.png` — Dutch chunk: behoefte aan (need for).
+   Scene: one person sits slumped on a simple chair, eyes closed, head back, shoes kicked off and a cup untouched beside them; the room is bare. There is only one figure and it is worn out.
+   Must read: a plain need for rest.
+   Avoid: a bed and sleepwear (that is differently read as going to bed); a doctor; a checklist.
+
+2. `behoefte-aan-een-pauze.png` — Dutch chunk: behoefte aan (need for).
+   Scene: one person stands with both hands pressed to their lower back, looking across the room at an open door with daylight beyond it; a closed laptop and a stack of folders sit on the desk behind them.
+   Must read: a strong need for a break.
+   Avoid: a person packing up and leaving (that is finished with); a beach or holiday postcard; a clock.
+
+3. `kans-op-regen.png` — Dutch chunk: kans op (chance of).
+   Scene: one person at an open door, holding a small closed umbrella in one hand and squinting up at a large single cloud overhead; a bright empty stretch of pavement runs in front of them.
+   Must read: weather that may turn.
+   Avoid: someone dry under an umbrella in the rain; a weather chart with symbols; several clouds filling the sky.
+
+4. `kans-op-werk.png` — Dutch chunk: kans op (chance of).
+   Scene: one person stands at a plain noticeboard where a single blank sheet hangs; they read it with one hand raised to the chin, hopeful; a small bag on the ground beside them.
+   Must read: a possible job opening.
+   Avoid: a job interview with a desk and two people (that is later in the process); a readable noticeboard.
+
+5. `moeite-met-opstaan.png` — Dutch chunk: moeite met (difficulty with).
+   Scene: one person sits on the edge of the bed with both hands on the mattress, pushing up slowly, one leg out; the posture shows effort, not injury. No clock.
+   Must read: finding it hard to get up in the morning.
+   Avoid: a person stretching happily (that is used to it); a person asleep; a hospital.
+
+6. `moeite-met-namen-ontvangen.png` — Dutch chunk: moeite met (difficulty with).
+   Scene: one person strains to lift one end of a long plank while a second person holds the other end, red-faced but wordless; bends in both knees; the plank is the main mass.
+   Must read: struggling to carry something with someone else.
+   Avoid: a person lifting alone with ease; a forklift; a broken plank.
+
+7. `schaamte-over-de-fout.png` — Dutch chunk: schaamte over (shame over).
+   Scene: one person stands with both hands in front of the face, shoulders drawn in and turned slightly away; on the table beside them a plain sheet lies face up with a single loose cross on it. No other person.
+   Must read: embarrassment about a mistake.
+   Avoid: a person crying loudly; anger at someone; readable documents or grades.
+
+8. `honger-naar-eten.png` — Dutch chunk: honger naar (hunger for).
+   Scene: one person sits at a table with an empty plate, fork raised, eyes on an open kitchen door through which a steaming pot shape is visible; the posture is eager and waiting.
+   Must read: real hunger before a meal.
+   Avoid: a full plate being eaten; a supermarket; a person looking at a menu with letters.
+
+9. `zin-in-een-wandeling.png` — Dutch chunk: zin in (feel like).
+   Scene: one person stands at the open door, one hand on the handle, looking out at a simple winding path with trees drawn only as trunks and round crowns; a coat on but unbuttoned.
+   Must read: feeling like a walk.
+   Avoid: a coffee cup (used by the pilot); a person already far along the path; rain.
+
+10. `gebrek-aan-tijd.png` — Dutch chunk: gebrek aan (lack of).
+    Scene: one person runs while holding a pile of folders, one shoe half off, hair drawn as a single loose stroke swept back; a wall clock with hands but no numbers behind them, and the clock itself is small and plain.
+    Must read: not enough time.
+    Avoid: numbers or readable times; a person sitting calmly; a traffic jam.
+
+CONTRAST PAIRS
+1 and 2 are the same chunk, `behoefte aan`, twice: a body that has run out, and a back that needs a break from work. Same camera and one figure; #1 is slumped and still, #2 is upright and looking at a door.
+3 and 4 are the same chunk, `kans op`, an open possibility: a cloud overhead and an umbrella in the hand, versus a noticeboard with one blank sheet. In both the figure looks up or out; the umbrella of #3 must not appear in #4.
+5 and 6 are both `moeite met`: effort in a body, and effort in a load. Same camera; #5 is one figure and a bed, #6 is two figures and a plank. Show the effort in the posture, not in sweat drops or strain lines.
+7 is the counterpart of `kritiek op` in the next batch: the same plain sheet, but with the person turned away and hiding their face. Keep the sheet present in both, since the sheet is what the shame is about.
+8, 9 and 10 are singles: hunger, a wish for a walk, and a clock that will not wait.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Is the noun&#x27;s idea carried by the object or situation, not by a caption?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart sev-weak-picture" data-id="behoefte-aan-rust" data-band="a2-plus" data-kind="frame" data-row="41" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">behoefte aan</h3><p class="gloss">need for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits slumped on a simple chair, eyes closed, head back, shoes kicked off and a cup untouched beside them; the room is bare. There is only one figure and it is worn out.</dd><dt>Must read</dt><dd class="must">a plain need for rest.</dd><dt>Avoid</dt><dd class="avoid">a bed and sleepwear (that is differently read as going to bed); a doctor; a checklist.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>behoefte-aan-een-pauze</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Four drawings of a tired person on or near a chair. Rows 41 and 70 are the same picture. Row 59 (laptop shut, stretching) is the pilot <code>klaar met werk</code>.</p><p class="fix">Keep 41. Cut 42. Row 59: kettle boiling, hand reaching for a cup. Row 70: chunk <code>toe zijn aan vakantie</code>, person at a desk staring at a beach photo pinned up.</p></div><p class="id">behoefte-aan-rust.png · rij 41 · herkomst Docs/prepositions-art-a2-plus.md:192 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="behoefte-aan-een-pauze" data-band="a2-plus" data-kind="frame" data-row="42" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">behoefte aan</h3><p class="gloss">need for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands with both hands pressed to their lower back, looking across the room at an open door with daylight beyond it; a closed laptop and a stack of folders sit on the desk behind them.</dd><dt>Must read</dt><dd class="must">a strong need for a break.</dd><dt>Avoid</dt><dd class="avoid">a person packing up and leaving (that is finished with); a beach or holiday postcard; a clock.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>behoefte-aan-rust</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Four drawings of a tired person on or near a chair. Rows 41 and 70 are the same picture. Row 59 (laptop shut, stretching) is the pilot <code>klaar met werk</code>.</p><p class="fix">Keep 41. Cut 42. Row 59: kettle boiling, hand reaching for a cup. Row 70: chunk <code>toe zijn aan vakantie</code>, person at a desk staring at a beach photo pinned up.</p></div><p class="id">behoefte-aan-een-pauze.png · rij 42 · herkomst Docs/prepositions-art-a2-plus.md:193 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="kans-op-regen" data-band="a2-plus" data-kind="frame" data-row="43" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">kans op</h3><p class="gloss">chance of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person at an open door, holding a small closed umbrella in one hand and squinting up at a large single cloud overhead; a bright empty stretch of pavement runs in front of them.</dd><dt>Must read</dt><dd class="must">weather that may turn.</dd><dt>Avoid</dt><dd class="avoid">someone dry under an umbrella in the rain; a weather chart with symbols; several clouds filling the sky.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>kans-op-werk</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Person at a door with a closed umbrella looking at one cloud is batch 4b <code>rekenen met regen</code>.</p><p class="fix">Cut.</p></div><p class="id">kans-op-regen.png · rij 43 · herkomst Docs/prepositions-art-a2-plus.md:194 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="kans-op-werk" data-band="a2-plus" data-kind="frame" data-row="44" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">kans op</h3><p class="gloss">chance of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at a plain noticeboard where a single blank sheet hangs; they read it with one hand raised to the chin, hopeful; a small bag on the ground beside them.</dd><dt>Must read</dt><dd class="must">a possible job opening.</dd><dt>Avoid</dt><dd class="avoid">a job interview with a desk and two people (that is later in the process); a readable noticeboard.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>kans-op-regen</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Reading a noticeboard is <code>zoeken naar werk</code>. &quot;Chance&quot; has no picture.</p><p class="fix">Cut; teach <code>kans op</code> at B1 by sentence.</p></div><p class="id">kans-op-werk.png · rij 44 · herkomst Docs/prepositions-art-a2-plus.md:195 (git)</p></article>
+<article class="kaart" data-id="moeite-met-opstaan" data-band="a2-plus" data-kind="frame" data-row="45" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">moeite met</h3><p class="gloss">difficulty with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits on the edge of the bed with both hands on the mattress, pushing up slowly, one leg out; the posture shows effort, not injury. No clock.</dd><dt>Must read</dt><dd class="must">finding it hard to get up in the morning.</dd><dt>Avoid</dt><dd class="avoid">a person stretching happily (that is used to it); a person asleep; a hospital.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>moeite-met-namen-ontvangen</code></dd></dl><p class="id">moeite-met-opstaan.png · rij 45 · herkomst Docs/prepositions-art-a2-plus.md:196 (git)</p></article>
+<article class="kaart sev-wrong-dutch" data-id="moeite-met-namen-ontvangen" data-band="a2-plus" data-kind="frame" data-row="46" data-status="needed" data-severity="wrong-dutch"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">moeite met</h3><p class="gloss">difficulty with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person strains to lift one end of a long plank while a second person holds the other end, red-faced but wordless; bends in both knees; the plank is the main mass.</dd><dt>Must read</dt><dd class="must">struggling to carry something with someone else.</dd><dt>Avoid</dt><dd class="avoid">a person lifting alone with ease; a forklift; a broken plank.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>moeite-met-opstaan</code></dd></dl><div class="oordeel wrong-dutch" data-severity="wrong-dutch"><span class="kop">fout Nederlands</span><p class="wat">The filename phrase is not Dutch (probably a garbled <code>namen onthouden</code>); the scene is two people straining to lift a plank. The second lifter makes it <code>helpen met</code>.</p><p class="fix"><code>moeite-met-tillen</code>: one person, knees bent, failing to lift a heavy box.</p></div><p class="id">moeite-met-namen-ontvangen.png · rij 46 · herkomst Docs/prepositions-art-a2-plus.md:197 (git)</p></article>
+<article class="kaart" data-id="schaamte-over-de-fout" data-band="a2-plus" data-kind="frame" data-row="47" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">schaamte over</h3><p class="gloss">shame over</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands with both hands in front of the face, shoulders drawn in and turned slightly away; on the table beside them a plain sheet lies face up with a single loose cross on it. No other person.</dd><dt>Must read</dt><dd class="must">embarrassment about a mistake.</dd><dt>Avoid</dt><dd class="avoid">a person crying loudly; anger at someone; readable documents or grades.</dd><dt>Paar / notitie</dt><dd class="note">Single; counterpart of <code>kritiek op</code></dd></dl><p class="id">schaamte-over-de-fout.png · rij 47 · herkomst Docs/prepositions-art-a2-plus.md:198 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="honger-naar-eten" data-band="a2-plus" data-kind="frame" data-row="48" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">honger naar</h3><p class="gloss">hunger for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits at a table with an empty plate, fork raised, eyes on an open kitchen door through which a steaming pot shape is visible; the posture is eager and waiting.</dd><dt>Must read</dt><dd class="must">real hunger before a meal.</dd><dt>Avoid</dt><dd class="avoid">a full plate being eaten; a supermarket; a person looking at a menu with letters.</dd><dt>Paar / notitie</dt><dd class="note">Single; noun + <code>naar</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat"><code>honger naar</code> is figurative (<code>honger naar kennis</code>); for food Dutch says <code>honger hebben</code> or <code>trek in</code>. The scene is also the <code>wachten op eten</code> and <code>zin in eten</code> variant drawing.</p><p class="fix">Drop. If a noun + <code>naar</code> is wanted: <code>heimwee naar</code> — person holding a photo of a house and family, looking out of a window.</p></div><p class="id">honger-naar-eten.png · rij 48 · herkomst Docs/prepositions-art-a2-plus.md:199 (git)</p></article>
+<article class="kaart sev-minor" data-id="zin-in-een-wandeling" data-band="a2-plus" data-kind="frame" data-row="49" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">zin in</h3><p class="gloss">feel like</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at the open door, one hand on the handle, looking out at a simple winding path with trees drawn only as trunks and round crowns; a coat on but unbuttoned.</dd><dt>Must read</dt><dd class="must">feeling like a walk.</dd><dt>Avoid</dt><dd class="avoid">a coffee cup (used by the pilot); a person already far along the path; rain.</dd><dt>Paar / notitie</dt><dd class="note">Single; same chunk as shipped <code>zin in</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Person at the door in a coat, path outside, matches appendix row 146 <code>uitnodigen voor wandeling</code>.</p><p class="fix">Person lacing walking boots, looking out at the path.</p></div><p class="id">zin-in-een-wandeling.png · rij 49 · herkomst Docs/prepositions-art-a2-plus.md:200 (git)</p></article>
+<article class="kaart sev-minor" data-id="gebrek-aan-tijd" data-band="a2-plus" data-kind="frame" data-row="50" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">gebrek aan</h3><p class="gloss">lack of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person runs while holding a pile of folders, one shoe half off, hair drawn as a single loose stroke swept back; a wall clock with hands but no numbers behind them, and the clock itself is small and plain.</dd><dt>Must read</dt><dd class="must">not enough time.</dd><dt>Avoid</dt><dd class="avoid">numbers or readable times; a person sitting calmly; a traffic jam.</dd><dt>Paar / notitie</dt><dd class="note">Single; noun + <code>aan</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Running with folders reads as <code>haast hebben</code>.</p><p class="fix"><code>gebrek-aan-geld</code>: both trouser pockets pulled inside out.</p></div><p class="id">gebrek-aan-tijd.png · rij 50 · herkomst Docs/prepositions-art-a2-plus.md:201 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-06 — images 51–60" data-kind="frame">
+<h2>Batch A2+-06 — images 51–60</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch noun plus a fixed preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `kritiek-op-het-ontwerp.png` — Dutch chunk: kritiek op (criticism of).
+   Scene: one person stands pointing at a large plain drawing on a wall, one finger up and a frown; a second person beside them listens with arms folded. The drawing is plain, marked only with a single loose cross.
+   Must read: criticism of a piece of work.
+   Avoid: anger at a person (that is a different chunk); a speech bubble; readable charts.
+
+2. `vraag-om-hulp.png` — Dutch chunk: vraag om (request for).
+   Scene: one person holds out an open hand towards a neighbour; the neighbour hands over a ladder, both hands on the rungs. The ladder is the main mass.
+   Must read: asking for help with a task.
+   Avoid: two people just talking; a phone; money.
+
+3. `vertrouwen-in-de-toekomst.png` — Dutch chunk: vertrouwen in (confidence in, trust).
+   Scene: one person walks up a path towards a distant plain house, upright, unhurried, a bag on their shoulder; the path is one broad stroke from bottom to a point on the horizon. No worry in the body.
+   Must read: quiet confidence about what is ahead.
+   Avoid: a person running away; a person looking down; a horizon full of objects.
+
+4. `vertrouwen-in-de-baas.png` — Dutch chunk: vertrouwen in (trust in a person).
+   Scene: two people shake hands firmly, both standing square and looking at each other, smiles easy; the nearer handshake is the centre of the image. No documents.
+   Must read: mutual trust between people.
+   Avoid: a handshake at a sales counter with papers; a firm handshake with a hidden knife or trick; a crowd.
+
+5. `oplossing-voor-het-probleem.png` — Dutch chunk: oplossing voor (solution to).
+   Scene: one person at a table with a broken bicycle wheel in front of them; both hands are raised in a satisfied gesture, and a small plain tool lies beside the wheel. A single clean loose stroke connects the broken part to the tool.
+   Must read: a fix for a concrete problem.
+   Avoid: a light bulb or idea symbol; a person still struggling; a workshop full of tools.
+
+6. `voorbereiding-op-het-examen.png` — Dutch chunk: voorbereiding op (preparation for).
+   Scene: one person sits at a desk with an open book, a pile of notes and a pen, focused; a plain wall calendar beside them with one day marked by a black dot and no numbers.
+   Must read: getting ready for an exam.
+   Avoid: a person taking the exam with a paper and no numbers; a graduation hat; readable notes.
+
+7. `gevolg-van-de-val.png` — Dutch chunk: gevolg van (consequence of).
+   Scene: a person sits on the ground with one leg stretched out and one hand on a swollen ankle; a plain bicycle lies on its side a couple of steps away. The fall and its result are in one image.
+   Must read: the aftermath of an accident.
+   Avoid: a hospital bed; the moment of falling; readable warning signs.
+
+8. `schuld-aan-de-buurman.png` — Dutch chunk: schuld aan (blame for).
+   Scene: one person points a thumb back at themselves while looking down, then a second person beside them points at them too; a broken flower pot lies on the ground between them. No speech bubbles.
+   Must read: responsibility for a fault.
+   Avoid: a fight; a courtroom; a person running away.
+
+9. `tijd-voor-een-pauze.png` — Dutch chunk: tijd voor (time for).
+   Scene: one person sets a cup down on a table and pushes the laptop lid closed with the other hand, stretching; a plain clock with hands and tick marks but no numbers stands on the desk.
+   Must read: the moment a break begins.
+   Avoid: a person still working; readable numbers on the clock; a plate of food.
+
+10. `schrik-van-het-geluid.png` — Dutch chunk: schrik van (fright at).
+    Scene: one person jumps back with both hands raised, eyes wide, mouth a short open line; in front of them a plain loudspeaker on a stand with three short strokes of sound leaving it. Only one figure.
+    Must read: being startled by a sudden noise.
+    Avoid: a person afraid of a dog (used by the pilot); a monster; readable music notes.
+
+CONTRAST PAIRS
+1 and 2 are both about saying what is needed: a pointed critique of work versus a request for help. Same camera, one or two figures; the relation is the difference.
+3 and 4 are both `vertrouwen in`: a place and a person. #3 uses the path and the horizon, #4 uses the handshake; keep the postures upright in both.
+5 and 6 are both about being ready: a solution found and a preparation under way. Same desk, same camera; change the object — a broken wheel and a tool versus a book and a marked day.
+7 and 8 are both about responsibility for a result: #7 is the result of an accident, #8 is blame between people. In #7 there is no other person, in #8 two people are present.
+9 and 10 are singles: a pause with time to spare, and a sudden fright at a loud sound.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Is the noun&#x27;s idea carried by the object or situation, not by a caption?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart" data-id="kritiek-op-het-ontwerp" data-band="a2-plus" data-kind="frame" data-row="51" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">kritiek op</h3><p class="gloss">criticism of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands pointing at a large plain drawing on a wall, one finger up and a frown; a second person beside them listens with arms folded. The drawing is plain, marked only with a single loose cross.</dd><dt>Must read</dt><dd class="must">criticism of a piece of work.</dd><dt>Avoid</dt><dd class="avoid">anger at a person (that is a different chunk); a speech bubble; readable charts.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>vraag-om-hulp</code></dd></dl><p class="id">kritiek-op-het-ontwerp.png · rij 51 · herkomst Docs/prepositions-art-a2-plus.md:202 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="vraag-om-hulp" data-band="a2-plus" data-kind="frame" data-row="52" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vraag om</h3><p class="gloss">request for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person holds out an open hand towards a neighbour; the neighbour hands over a ladder, both hands on the rungs. The ladder is the main mass.</dd><dt>Must read</dt><dd class="must">asking for help with a task.</dd><dt>Avoid</dt><dd class="avoid">two people just talking; a phone; money.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>kritiek-op-het-ontwerp</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A neighbour handing over a ladder is <code>lenen van</code>. The noun chunk also cannot be told from the pilot verb <code>vragen om</code>.</p><p class="fix">Cut.</p></div><p class="id">vraag-om-hulp.png · rij 52 · herkomst Docs/prepositions-art-a2-plus.md:203 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="vertrouwen-in-de-toekomst" data-band="a2-plus" data-kind="frame" data-row="53" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vertrouwen in</h3><p class="gloss">confidence in, trust</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person walks up a path towards a distant plain house, upright, unhurried, a bag on their shoulder; the path is one broad stroke from bottom to a point on the horizon. No worry in the body.</dd><dt>Must read</dt><dd class="must">quiet confidence about what is ahead.</dd><dt>Avoid</dt><dd class="avoid">a person running away; a person looking down; a horizon full of objects.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>vertrouwen-in-de-baas</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat">A person walking up a path to a house is the <code>gaan naar</code> drawing, used again in row 61 and in batch 4b. &quot;The future&quot; has no picture.</p><p class="fix">Drop. Keep row 54 with a new scene.</p></div><p class="id">vertrouwen-in-de-toekomst.png · rij 53 · herkomst Docs/prepositions-art-a2-plus.md:204 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="vertrouwen-in-de-baas" data-band="a2-plus" data-kind="frame" data-row="54" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vertrouwen in</h3><p class="gloss">trust in a person</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people shake hands firmly, both standing square and looking at each other, smiles easy; the nearer handshake is the centre of the image. No documents.</dd><dt>Must read</dt><dd class="must">mutual trust between people.</dd><dt>Avoid</dt><dd class="avoid">a handshake at a sales counter with papers; a firm handshake with a hidden knife or trick; a crowd.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>vertrouwen-in-de-toekomst</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A handshake is <code>afspreken met</code> or <code>feliciteren met</code>.</p><p class="fix">Patient with a relaxed arm held out to a nurse preparing a syringe: <code>vertrouwen in de dokter</code>.</p></div><p class="id">vertrouwen-in-de-baas.png · rij 54 · herkomst Docs/prepositions-art-a2-plus.md:205 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="oplossing-voor-het-probleem" data-band="a2-plus" data-kind="frame" data-row="55" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">oplossing voor</h3><p class="gloss">solution to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person at a table with a broken bicycle wheel in front of them; both hands are raised in a satisfied gesture, and a small plain tool lies beside the wheel. A single clean loose stroke connects the broken part to the tool.</dd><dt>Must read</dt><dd class="must">a fix for a concrete problem.</dd><dt>Avoid</dt><dd class="avoid">a light bulb or idea symbol; a person still struggling; a workshop full of tools.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>voorbereiding-op-het-examen</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A &quot;clean stroke connecting the broken part to the tool&quot; is a diagram line; the scene reads as <code>repareren</code>.</p><p class="fix">Dripping ceiling, bucket placed under it, person stepping back satisfied.</p></div><p class="id">oplossing-voor-het-probleem.png · rij 55 · herkomst Docs/prepositions-art-a2-plus.md:206 (git)</p></article>
+<article class="kaart" data-id="voorbereiding-op-het-examen" data-band="a2-plus" data-kind="frame" data-row="56" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">voorbereiding op</h3><p class="gloss">preparation for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits at a desk with an open book, a pile of notes and a pen, focused; a plain wall calendar beside them with one day marked by a black dot and no numbers.</dd><dt>Must read</dt><dd class="must">getting ready for an exam.</dd><dt>Avoid</dt><dd class="avoid">a person taking the exam with a paper and no numbers; a graduation hat; readable notes.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>oplossing-voor-het-probleem</code></dd></dl><p class="id">voorbereiding-op-het-examen.png · rij 56 · herkomst Docs/prepositions-art-a2-plus.md:207 (git)</p></article>
+<article class="kaart" data-id="gevolg-van-de-val" data-band="a2-plus" data-kind="frame" data-row="57" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">gevolg van</h3><p class="gloss">consequence of</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a person sits on the ground with one leg stretched out and one hand on a swollen ankle; a plain bicycle lies on its side a couple of steps away. The fall and its result are in one image.</dd><dt>Must read</dt><dd class="must">the aftermath of an accident.</dd><dt>Avoid</dt><dd class="avoid">a hospital bed; the moment of falling; readable warning signs.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>schuld-aan-de-buurman</code></dd></dl><p class="id">gevolg-van-de-val.png · rij 57 · herkomst Docs/prepositions-art-a2-plus.md:208 (git)</p></article>
+<article class="kaart sev-wrong-dutch" data-id="schuld-aan-de-buurman" data-band="a2-plus" data-kind="frame" data-row="58" data-status="needed" data-severity="wrong-dutch"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">schuld aan</h3><p class="gloss">blame for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person points a thumb back at themselves while looking down, then a second person beside them points at them too; a broken flower pot lies on the ground between them. No speech bubbles.</dd><dt>Must read</dt><dd class="must">responsibility for a fault.</dd><dt>Avoid</dt><dd class="avoid">a fight; a courtroom; a person running away.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>gevolg-van-de-val</code></dd></dl><div class="oordeel wrong-dutch" data-severity="wrong-dutch"><span class="kop">fout Nederlands</span><p class="wat"><code>schuld hebben aan</code> takes the event; the neighbour belongs to <code>de schuld geven aan</code>. The row mixes the two. The Scene also says &quot;then&quot;, which is two moments.</p><p class="fix"><code>de schuld geven aan</code> (to blame): person points at the neighbour&#x27;s child, who stands beside a broken flower pot with a ball.</p></div><p class="id">schuld-aan-de-buurman.png · rij 58 · herkomst Docs/prepositions-art-a2-plus.md:209 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="tijd-voor-een-pauze" data-band="a2-plus" data-kind="frame" data-row="59" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">tijd voor</h3><p class="gloss">time for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sets a cup down on a table and pushes the laptop lid closed with the other hand, stretching; a plain clock with hands and tick marks but no numbers stands on the desk.</dd><dt>Must read</dt><dd class="must">the moment a break begins.</dd><dt>Avoid</dt><dd class="avoid">a person still working; readable numbers on the clock; a plate of food.</dd><dt>Paar / notitie</dt><dd class="note">Single; noun + <code>voor</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Four drawings of a tired person on or near a chair. Rows 41 and 70 are the same picture. Row 59 (laptop shut, stretching) is the pilot <code>klaar met werk</code>.</p><p class="fix">Keep 41. Cut 42. Row 59: kettle boiling, hand reaching for a cup. Row 70: chunk <code>toe zijn aan vakantie</code>, person at a desk staring at a beach photo pinned up.</p></div><p class="id">tijd-voor-een-pauze.png · rij 59 · herkomst Docs/prepositions-art-a2-plus.md:210 (git)</p></article>
+<article class="kaart sev-wrong-dutch" data-id="schrik-van-het-geluid" data-band="a2-plus" data-kind="frame" data-row="60" data-status="needed" data-severity="wrong-dutch"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">schrik van</h3><p class="gloss">fright at</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person jumps back with both hands raised, eyes wide, mouth a short open line; in front of them a plain loudspeaker on a stand with three short strokes of sound leaving it. Only one figure.</dd><dt>Must read</dt><dd class="must">being startled by a sudden noise.</dd><dt>Avoid</dt><dd class="avoid">a person afraid of a dog (used by the pilot); a monster; readable music notes.</dd><dt>Paar / notitie</dt><dd class="note">Single; contrasts with shipped <code>bang voor</code></dd></dl><div class="oordeel wrong-dutch" data-severity="wrong-dutch"><span class="kop">fout Nederlands</span><p class="wat">The noun chunk is not how Dutch says it.</p><p class="fix">Verb chunk <code>schrikken van</code> (to be startled by). The scene is good.</p></div><p class="id">schrik-van-het-geluid.png · rij 60 · herkomst Docs/prepositions-art-a2-plus.md:211 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-07 — images 61–70" data-kind="frame">
+<h2>Batch A2+-07 — images 61–70</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch chunk in which a preposition is carried inside a short word: er…, daar… or waar… . The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image. These chunks are grammatical shorthand for a thing, not letters on paper: show the situation and the person, never letters or symbols.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `ergens-naar-toe-gaan.png` — Dutch chunk: ergens naartoe (to somewhere).
+   Scene: one person walks towards a small plain building in the middle distance, back to the viewer, one hand holding a bag; a single broad path sweeps from the bottom edge to the door.
+   Must read: heading towards a place.
+   Avoid: a person standing still; a map or pin; a building with readable signs.
+
+2. `ergens-vandaan-komen.png` — Dutch chunk: ergens vandaan (from somewhere).
+   Scene: one person has just come out of a doorway on the left and is now walking towards the viewer, one hand shielding their eyes; the open door is behind them, the path ahead is empty.
+   Must read: having come from a place.
+   Avoid: a person entering the door (that reads as going in); a suitcase with stickers; a road map.
+
+3. `ergens-mee-bezig-zijn.png` — Dutch chunk: ergens mee bezig (busy with).
+   Scene: one person is halfway inside a cupboard, one arm reaching, a second arm holding a cloth; the cupboard door hangs open. Nothing else in the room.
+   Must read: occupied with a task right now.
+   Avoid: a person sitting and reading; a checklist; another person.
+
+4. `daar-komt-hij-aan.png` — Dutch chunk: daar komt hij aan (here he comes).
+   Scene: one person stands waiting on a pavement, one hand raised in greeting, smile; a second person approaches in the distance on a bicycle, drawn small. The near figure looks towards the arriving one.
+   Must read: someone arriving and being welcomed.
+   Avoid: a person leaving and waving goodbye (that is a different chunk); a bus; a crowd.
+
+5. `daar-gaat-het-over.png` — Dutch chunk: daar gaat het over (that is what it&#x27;s about).
+   Scene: two people sit at a table, one holding up a plain square card; the other leans in, pointing at the card. Both speech bubbles are blank and small. The card is the topic.
+   Must read: this object is the subject of the conversation.
+   Avoid: two people just chatting (used by the pilot); readable cards; a question mark.
+
+6. `waar-ga-je-naartoe.png` — Dutch chunk: waar … naartoe (where to).
+   Scene: one person stands at a crossroads drawn as a bold branching stroke; a second person beside them points at one branch and raises the eyebrows. A bag on the ground. No signs.
+   Must read: choosing a destination.
+   Avoid: a compass with letters; arrows on posts; a map with marks.
+
+7. `waar-kom-je-vandaan.png` — Dutch chunk: waar … vandaan (where from).
+   Scene: one person stands over a suitcase that is still open on the floor, one hand on the lid, looking up at a second person who is asking; the second person&#x27;s palms are open.
+   Must read: asking about a place of origin.
+   Avoid: a suitcase pulled by a taxi; a globe with continents; two people arguing.
+
+8. `er-is-nog-tijd-voor.png` — Dutch chunk: er is nog tijd voor (there is still time for).
+   Scene: one person sits at a table and pushes back a plate; a plain clock with hands and no numbers stands beside them, and one hand of the clock is still well before the top; the person smiles and lifts a cup.
+   Must read: time left for one more thing.
+   Avoid: readable times; a person asleep; a person running.
+
+9. `erover-nadenken.png` — Dutch chunk: erover nadenken (think it over).
+   Scene: one person sits at a table with a large plain card flat in front of them, chin on one hand, eyes on the card; a small blank thought bubble drifts above. Only one option on the table.
+   Must read: thinking about one thing.
+   Avoid: two options side by side (that is choosing between things); a question mark; two people.
+
+10. `eraan-toe-zijn.png` — Dutch chunk: eraan toe zijn (to be ready for it, to need it).
+    Scene: one person sits heavily on a simple chair, bag still on the shoulder and coat still on, head tipped back, eyes half closed; the whole posture says that rest is overdue.
+    Must read: badly needing a rest.
+    Avoid: a person sleeping in bed; a person with a medical bandage; a second person.
+
+CONTRAST PAIRS
+1 and 2 are a pair: the same path stroke and the same building, same camera. In #1 the person walks away towards the building; in #2 the person walks towards the viewer from an open door. The direction of the figure is the only real change.
+6 and 7 are a pair: the same two figures, same camera. In #6 a fork is drawn on the ground and one person points; in #7 there is no road at all and a suitcase is open on the floor. Neither may contain the other&#x27;s prop.
+4 and 10 are both arrival and exhaustion but not a pair; keep the postures opposite — upright and open versus collapsed and closed.
+3, 5, 8 and 9 are singles. #9 must be visually distinct from the pilot&#x27;s thinking-about-a-choice scene: one object, not two.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Are you showing the situation and the person, not letters, arrows or symbols?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart sev-weak-picture" data-id="ergens-naar-toe-gaan" data-band="a2-plus" data-kind="frame" data-row="61" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">ergens naartoe</h3><p class="gloss">to somewhere</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person walks towards a small plain building in the middle distance, back to the viewer, one hand holding a bag; a single broad path sweeps from the bottom edge to the door.</dd><dt>Must read</dt><dd class="must">heading towards a place.</dd><dt>Avoid</dt><dd class="avoid">a person standing still; a map or pin; a building with readable signs.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>ergens-vandaan-komen</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">They are the <code>gaan naar gebouw</code> and <code>komen uit huis</code> drawings again. &quot;Somewhere&quot; cannot be drawn when the building is in the picture.</p><p class="fix">Cut both, or reuse the existing art and teach the pronominal form on the card text.</p></div><p class="id">ergens-naar-toe-gaan.png · rij 61 · herkomst Docs/prepositions-art-a2-plus.md:212 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="ergens-vandaan-komen" data-band="a2-plus" data-kind="frame" data-row="62" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">ergens vandaan</h3><p class="gloss">from somewhere</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person has just come out of a doorway on the left and is now walking towards the viewer, one hand shielding their eyes; the open door is behind them, the path ahead is empty.</dd><dt>Must read</dt><dd class="must">having come from a place.</dd><dt>Avoid</dt><dd class="avoid">a person entering the door (that reads as going in); a suitcase with stickers; a road map.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>ergens-naar-toe-gaan</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">They are the <code>gaan naar gebouw</code> and <code>komen uit huis</code> drawings again. &quot;Somewhere&quot; cannot be drawn when the building is in the picture.</p><p class="fix">Cut both, or reuse the existing art and teach the pronominal form on the card text.</p></div><p class="id">ergens-vandaan-komen.png · rij 62 · herkomst Docs/prepositions-art-a2-plus.md:213 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="ergens-mee-bezig-zijn" data-band="a2-plus" data-kind="frame" data-row="63" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">ergens mee bezig</h3><p class="gloss">busy with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person is halfway inside a cupboard, one arm reaching, a second arm holding a cloth; the cupboard door hangs open. Nothing else in the room.</dd><dt>Must read</dt><dd class="must">occupied with a task right now.</dd><dt>Avoid</dt><dd class="avoid">a person sitting and reading; a checklist; another person.</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>er…mee</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A person cleaning a cupboard is <code>bezig zijn met</code>, shipped with three variants.</p><p class="fix">Cut.</p></div><p class="id">ergens-mee-bezig-zijn.png · rij 63 · herkomst Docs/prepositions-art-a2-plus.md:214 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="daar-komt-hij-aan" data-band="a2-plus" data-kind="frame" data-row="64" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">daar komt hij aan</h3><p class="gloss">here he comes</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands waiting on a pavement, one hand raised in greeting, smile; a second person approaches in the distance on a bicycle, drawn small. The near figure looks towards the arriving one.</dd><dt>Must read</dt><dd class="must">someone arriving and being welcomed.</dd><dt>Avoid</dt><dd class="avoid">a person leaving and waving goodbye (that is a different chunk); a bus; a crowd.</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>daar…aan</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat">This is locative <code>daar</code> plus separable <code>aankomen</code>, not the pronominal adverb <code>daaraan</code>. <code>prepositions-art-a2-pairs.md</code> lists <code>aankomen</code> as &quot;not a frame&quot;. It teaches a false pattern.</p><p class="fix">Drop. A real <code>daar…aan</code>: <code>daar heb ik niets aan</code> (that is no use to me).</p></div><p class="id">daar-komt-hij-aan.png · rij 64 · herkomst Docs/prepositions-art-a2-plus.md:215 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="daar-gaat-het-over" data-band="a2-plus" data-kind="frame" data-row="65" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">daar gaat het over</h3><p class="gloss">that is what it&#x27;s about</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">two people sit at a table, one holding up a plain square card; the other leans in, pointing at the card. Both speech bubbles are blank and small. The card is the topic.</dd><dt>Must read</dt><dd class="must">this object is the subject of the conversation.</dd><dt>Avoid</dt><dd class="avoid">two people just chatting (used by the pilot); readable cards; a question mark.</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>daar…over</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Two people and a card between them is the pilot <code>praten over</code>.</p><p class="fix">Reuse the <code>praten over</code> art.</p></div><p class="id">daar-gaat-het-over.png · rij 65 · herkomst Docs/prepositions-art-a2-plus.md:216 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="waar-ga-je-naartoe" data-band="a2-plus" data-kind="frame" data-row="66" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">waar … naartoe</h3><p class="gloss">where to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at a crossroads drawn as a bold branching stroke; a second person beside them points at one branch and raises the eyebrows. A bag on the ground. No signs.</dd><dt>Must read</dt><dd class="must">choosing a destination.</dd><dt>Avoid</dt><dd class="avoid">a compass with letters; arrows on posts; a map with marks.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>waar-kom-je-vandaan</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A question cannot be drawn without a question mark. An open suitcase reads as <code>uitpakken</code>.</p><p class="fix">Cut; pronominal question forms belong in the Bouw step.</p></div><p class="id">waar-ga-je-naartoe.png · rij 66 · herkomst Docs/prepositions-art-a2-plus.md:217 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="waar-kom-je-vandaan" data-band="a2-plus" data-kind="frame" data-row="67" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">waar … vandaan</h3><p class="gloss">where from</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands over a suitcase that is still open on the floor, one hand on the lid, looking up at a second person who is asking; the second person&#x27;s palms are open.</dd><dt>Must read</dt><dd class="must">asking about a place of origin.</dd><dt>Avoid</dt><dd class="avoid">a suitcase pulled by a taxi; a globe with continents; two people arguing.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>waar-ga-je-naartoe</code></dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A question cannot be drawn without a question mark. An open suitcase reads as <code>uitpakken</code>.</p><p class="fix">Cut; pronominal question forms belong in the Bouw step.</p></div><p class="id">waar-kom-je-vandaan.png · rij 67 · herkomst Docs/prepositions-art-a2-plus.md:218 (git)</p></article>
+<article class="kaart sev-nonsense" data-id="er-is-nog-tijd-voor" data-band="a2-plus" data-kind="frame" data-row="68" data-status="needed" data-severity="nonsense"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">er is nog tijd voor</h3><p class="gloss">there is still time for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits at a table and pushes back a plate; a plain clock with hands and no numbers stands beside them, and one hand of the clock is still well before the top; the person smiles and lifts a cup.</dd><dt>Must read</dt><dd class="must">time left for one more thing.</dd><dt>Avoid</dt><dd class="avoid">readable times; a person asleep; a person running.</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>er…voor</code></dd></dl><div class="oordeel nonsense" data-severity="nonsense"><span class="kop">onzin — schrappen</span><p class="wat"><code>er</code> here is existential, not <code>ervoor</code>; the chunk is <code>tijd voor</code>, which is row 59. The clock hand &quot;well before the top&quot; is unreadable.</p><p class="fix">Drop.</p></div><p class="id">er-is-nog-tijd-voor.png · rij 68 · herkomst Docs/prepositions-art-a2-plus.md:219 (git)</p></article>
+<article class="kaart sev-minor" data-id="erover-nadenken" data-band="a2-plus" data-kind="frame" data-row="69" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">erover nadenken</h3><p class="gloss">think it over</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits at a table with a large plain card flat in front of them, chin on one hand, eyes on the card; a small blank thought bubble drifts above. Only one option on the table.</dd><dt>Must read</dt><dd class="must">thinking about one thing.</dd><dt>Avoid</dt><dd class="avoid">two options side by side (that is choosing between things); a question mark; two people.</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>er…over</code>, distinct from shipped <code>denken over</code></dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Chin on hand over a card is the <code>denken over</code> drawing with one object removed.</p><p class="fix">Accept; it confirms <code>nadenken over</code> is the right verb for pilot row 4.</p></div><p class="id">erover-nadenken.png · rij 69 · herkomst Docs/prepositions-art-a2-plus.md:220 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="eraan-toe-zijn" data-band="a2-plus" data-kind="frame" data-row="70" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">eraan toe zijn</h3><p class="gloss">to be ready for it, to need it</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sits heavily on a simple chair, bag still on the shoulder and coat still on, head tipped back, eyes half closed; the whole posture says that rest is overdue.</dd><dt>Must read</dt><dd class="must">badly needing a rest.</dd><dt>Avoid</dt><dd class="avoid">a person sleeping in bed; a person with a medical bandage; a second person.</dd><dt>Paar / notitie</dt><dd class="note">Single; <code>er…aan toe</code>; gloss-picture</dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Four drawings of a tired person on or near a chair. Rows 41 and 70 are the same picture. Row 59 (laptop shut, stretching) is the pilot <code>klaar met werk</code>.</p><p class="fix">Keep 41. Cut 42. Row 59: kettle boiling, hand reaching for a cup. Row 70: chunk <code>toe zijn aan vakantie</code>, person at a desk staring at a beach photo pinned up.</p></div><p class="id">eraan-toe-zijn.png · rij 70 · herkomst Docs/prepositions-art-a2-plus.md:221 (git)</p></article>
+</div></section>
+<section class="batch" data-batch="Batch A2+-08 — images 71–80" data-kind="frame">
+<h2>Batch A2+-08 — images 71–80</h2>
+<details class="prompt"><summary>Grok-prompt, letterlijk</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or attachment. Everything you need is in this message.
+
+TASK
+Generate ten separate images for a Dutch practice game called Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch chunk built on a preposition. The learner sees the image, recognises the everyday situation, and connects it to the chunk. A Dutch speaker must be able to name the situation from the drawing alone, without a caption. The Dutch and English below are context for you only. None of those words may appear in the image.
+
+STYLE — DO NOT DEVIATE
+- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
+  chisel marker, thick pressure-varying strokes with dry-brush streaks and
+  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
+  photorealistic, 3D or soft-shaded.
+- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
+  tone or full colour.
+- Plain pure white background. No gradients, soft shading, stippling, drop
+  shadows, glow, blur, grain, paper texture, border, frame, card or white
+  plate.
+- Contour plus hatching. Important edges are drawn twice, a few pixels off,
+  and corners may stay open. At 784 px wide: most lines 4–8 px, boldest
+  contours 9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5).
+  Ink covers 14–22% of the canvas, up to 27% for a scene with two figures
+  and furniture.
+- Hatching is wanted: quick, dense, directional strokes on the shadow side of
+  folds and under objects, with white paper still visible between them. Never
+  cross-hatch.
+- Fill hair only, plus one or two small accents. Clothing, furniture and
+  background stay white inside the contour.
+- One idea per image. The scene spans 90–100% of the width and the person
+  35–55%; it may touch the left or right edge, with paper kept at top and
+  bottom. Must still be nameable at 64×64 px.
+- People have adult proportions, profile or three-quarter view, facing right:
+  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
+  finger lines. No cartoon faces, open mouths or motion lines.
+- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
+  readable signs. Signs and speech bubbles are blank shapes.
+- No Dutch souvenir imagery: no windmills, clogs, tulips, canals or cheese.
+- Posture and objects carry the meaning. If it needs a caption, simplify.
+
+FORMAT
+- Ten separate images, one per subject.
+- 2:3 portrait, 1024×1536 px, same camera and scale across the ten.
+- Raster PNG, no SVG, no contact sheet, no extra images.
+- Return in numbered order. Put the filename in chat text, never inside the
+  image.
+
+THE TEN SUBJECTS
+
+1. `gaan-naar-het-werk.png` — Dutch chunk: gaan naar (to go to).
+   Scene: a tall plain block of window squares stands at the left edge; one person in profile strides away from it to the right, bag over the shoulder, towards a low flat-roofed building at the far right edge. One broad ground stroke joins the two buildings.
+   Must read: going to work.
+   Avoid: a person entering a front door (that is leaving home); a bus or bicycle ride; a building with readable signs.
+
+2. `wonen-in-een-flat.png` — Dutch chunk: wonen in (to live in).
+   Scene: the same tall block of window squares, now filling the left two-thirds of the frame; one window is open and a person leans out on both elbows, a small plant pot on the sill. Every other window is plain and closed.
+   Must read: someone who lives in a flat.
+   Avoid: a person looking at rain through glass; a house with a garden; a crane or building site.
+
+3. `kiezen-voor-de-fiets.png` — Dutch chunk: kiezen voor (to choose, to opt for).
+   Scene: one person stands front-on between a bicycle on the left and a small plain car on the right, both the same size; one hand grips the bicycle handlebar and the body turns towards it. The car stands empty and the bicycle&#x27;s front wheel already points away.
+   Must read: choosing the bicycle over the car.
+   Avoid: a person riding the bicycle; a crossroads; a car park with many vehicles.
+
+4. `twijfelen-tussen-twee-jassen.png` — Dutch chunk: twijfelen tussen (to waver between).
+   Scene: one person stands front-on between two coats hanging on two wall pegs, the same size on each side; one hand hovers in mid-air between them, a finger on the chin of the other, head tilted. Neither coat is touched.
+   Must read: unable to decide between two coats.
+   Avoid: a person trying on a coat; a shop rail with many coats; a doorway with two identical rooms.
+
+5. `hopen-op-goed-nieuws.png` — Dutch chunk: hopen op (to hope for).
+   Scene: one person stands at a small hall table beside the front door, hands clasped under the chin, one hand with crossed fingers raised; a single thin envelope is dropping through the letterbox. The table is bare and the face is bright.
+   Must read: hoping for good news in the post.
+   Avoid: a person reading the letter; a person at a phone waiting; a party or gift.
+
+6. `zich-zorgen-maken-over-de-rekening.png` — Dutch chunk: zich zorgen maken over (to worry about).
+   Scene: the same hall table and door; now three thick envelopes are piled on the table beside a flat, empty open purse with two coins. The person stands hunched, one hand pressed to the stomach and the other to the forehead.
+   Must read: worrying about the bills.
+   Avoid: a long receipt held up in anger (that is `boos over`); a person at a desk with a calculator; a person crying.
+
+7. `betalen-voor-de-boodschappen.png` — Dutch chunk: betalen voor (to pay for).
+   Scene: one person stands at the end of a plain counter, an open palm held out over it with a small stack of coins; on the counter a paper bag with a long loaf and a bottle neck sticking out. A bare hand enters from the frame edge, palm up, to receive.
+   Must read: paying for shopping.
+   Avoid: a supermarket trolley; a card machine with a screen; a till receipt.
+
+8. `uitgeven-aan-de-huur.png` — Dutch chunk: uitgeven aan (to spend on).
+   Scene: the same counter and the same person, with the same held-out handful of coins; on the counter, where the bag was, stands a small simple house shape with one door and one window, and a bigger stack of coins is already gone from the palm.
+   Must read: spending money on rent for a home.
+   Avoid: a for-sale sign; a key being handed over; a wallet with banknotes.
+
+9. `vertrouwen-op-een-collega.png` — Dutch chunk: vertrouwen op (to rely on).
+   Scene: one person in a coat with a bag at the door, one open hand raised in a relaxed goodbye, shoulders loose; behind them a colleague sits at a desk piled with folders and lifts a hand back. The leaver does not look worried.
+   Must read: leaving the work with a colleague without worry.
+   Avoid: a firm handshake; a hand from a ladder holding someone&#x27;s weight; a meeting room with a table.
+
+10. `bellen-met-de-huisarts.png` — Dutch chunk: bellen met (to be on the phone with).
+    Scene: one person stands at a table with an old-fashioned handset to one ear, the other hand raised, a coiled cord looping down; the cord runs across the lower frame to the right where a smaller figure with a loop of stethoscope round the neck holds a matching handset, head tilted, listening. Both are on their own side of white space.
+    Must read: talking on the phone with a doctor.
+    Avoid: two people face to face in a consulting room (that is `praten met de dokter`); a mobile phone with a screen; a person talking to nobody.
+
+CONTRAST PAIRS
+1 and 2 are the same block of flats: one figure walks away from it towards a low building, one leans out of its window. Same camera and scale; the block is the constant and the figure&#x27;s position is the only change.
+3 and 4 are choosing and not choosing: a hand gripping one of two objects, and a hand hovering between two. Same centred figure, two objects of equal size; in #4 nothing is touched.
+5 and 6 are the same hall table and front door: one thin envelope arriving with clasped hands, and a pile of thick ones with a hand on the forehead. Keep the table and the door identical.
+7 and 8 are the same counter and the same handful of coins: once over a bag of food, once over a small house shape. Change only what stands on the counter.
+9 and 10 are singles. #10 must not read as two people in one room: the cord and the band of white between them carry the call.
+
+VALIDATION
+For every image:
+- Downscale mentally or actually to 64×64: is the idea still nameable?
+- Is the preposition obvious from the layout of shapes, not from a caption?
+- Is it cobalt only, with no orange, grey or second blue?
+- Is there any text, letter, number, logo, emoji, punctuation, arrow or readable sign? Remove it.
+- Is the background plain white, with no border, card, shadow or scenery?
+- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
+Then check each pair side by side. If either image suggests the other&#x27;s chunk, redraw it.
+
+When finished, list the ten filenames and name any image whose 64 px silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<div class="kaarten">
+<article class="kaart" data-id="gaan-naar-het-werk" data-band="a2-plus" data-kind="frame" data-row="71" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">gaan naar</h3><p class="gloss">to go to</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">a tall plain block of window squares stands at the left edge; one person in profile strides away from it to the right, bag over the shoulder, towards a low flat-roofed building at the far right edge. One broad ground stroke joins the two buildings.</dd><dt>Must read</dt><dd class="must">going to work.</dd><dt>Avoid</dt><dd class="avoid">a person entering a front door (that is leaving home); a bus or bicycle ride; a building with readable signs.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>wonen-in-een-flat</code>; same block and camera, figure outside and moving — same chunk as batch 4b (<code>gaan-naar-gebouw</code>); see *Chunk overlap with batch 4b*.</dd></dl><p class="id">gaan-naar-het-werk.png · rij 71 · herkomst Docs/prepositions-art-a2-plus.md:222 (git)</p></article>
+<article class="kaart" data-id="wonen-in-een-flat" data-band="a2-plus" data-kind="frame" data-row="72" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">wonen in</h3><p class="gloss">to live in</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">the same tall block of window squares, now filling the left two-thirds of the frame; one window is open and a person leans out on both elbows, a small plant pot on the sill. Every other window is plain and closed.</dd><dt>Must read</dt><dd class="must">someone who lives in a flat.</dd><dt>Avoid</dt><dd class="avoid">a person looking at rain through glass; a house with a garden; a crane or building site.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>gaan-naar-het-werk</code>; same block and camera, figure inside and staying</dd></dl><p class="id">wonen-in-een-flat.png · rij 72 · herkomst Docs/prepositions-art-a2-plus.md:223 (git)</p></article>
+<article class="kaart" data-id="kiezen-voor-de-fiets" data-band="a2-plus" data-kind="frame" data-row="73" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">kiezen voor</h3><p class="gloss">to choose, to opt for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands front-on between a bicycle on the left and a small plain car on the right, both the same size; one hand grips the bicycle handlebar and the body turns towards it. The car stands empty and the bicycle&#x27;s front wheel already points away.</dd><dt>Must read</dt><dd class="must">choosing the bicycle over the car.</dd><dt>Avoid</dt><dd class="avoid">a person riding the bicycle; a crossroads; a car park with many vehicles.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>twijfelen-tussen-twee-jassen</code>; here one hand grips, there the hand hangs in mid-air — same chunk as batch 4b (<code>kiezen-voor-taart</code>), a different scene; see *Chunk overlap with batch 4b*.</dd></dl><p class="id">kiezen-voor-de-fiets.png · rij 73 · herkomst Docs/prepositions-art-a2-plus.md:224 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="twijfelen-tussen-twee-jassen" data-band="a2-plus" data-kind="frame" data-row="74" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">twijfelen tussen</h3><p class="gloss">to waver between</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands front-on between two coats hanging on two wall pegs, the same size on each side; one hand hovers in mid-air between them, a finger on the chin of the other, head tilted. Neither coat is touched.</dd><dt>Must read</dt><dd class="must">unable to decide between two coats.</dd><dt>Avoid</dt><dd class="avoid">a person trying on a coat; a shop rail with many coats; a doorway with two identical rooms.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>kiezen-voor-de-fiets</code>; same camera and layout, hand off both objects</dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Finger on the chin between two things is the pilot <code>denken over</code> scene and its three variants.</p><p class="fix">Person holding one coat on a hanger in each hand, head turning.</p></div><p class="id">twijfelen-tussen-twee-jassen.png · rij 74 · herkomst Docs/prepositions-art-a2-plus.md:225 (git)</p></article>
+<article class="kaart sev-minor" data-id="hopen-op-goed-nieuws" data-band="a2-plus" data-kind="frame" data-row="75" data-status="needed" data-severity="minor"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">hopen op</h3><p class="gloss">to hope for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at a small hall table beside the front door, hands clasped under the chin, one hand with crossed fingers raised; a single thin envelope is dropping through the letterbox. The table is bare and the face is bright.</dd><dt>Must read</dt><dd class="must">hoping for good news in the post.</dd><dt>Avoid</dt><dd class="avoid">a person reading the letter; a person at a phone waiting; a party or gift.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>zich-zorgen-maken-over-de-rekening</code>; same door, hall table and camera</dd></dl><div class="oordeel minor" data-severity="minor"><span class="kop">klein</span><p class="wat">Crossed fingers are an English gesture; the Dutch one is <code>duimen</code>.</p><p class="fix">Clasped hands only.</p></div><p class="id">hopen-op-goed-nieuws.png · rij 75 · herkomst Docs/prepositions-art-a2-plus.md:226 (git)</p></article>
+<article class="kaart" data-id="zich-zorgen-maken-over-de-rekening" data-band="a2-plus" data-kind="frame" data-row="76" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">zich zorgen maken over</h3><p class="gloss">to worry about</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">the same hall table and door; now three thick envelopes are piled on the table beside a flat, empty open purse with two coins. The person stands hunched, one hand pressed to the stomach and the other to the forehead.</dd><dt>Must read</dt><dd class="must">worrying about the bills.</dd><dt>Avoid</dt><dd class="avoid">a long receipt held up in anger (that is <code>boos over</code>); a person at a desk with a calculator; a person crying.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>hopen-op-goed-nieuws</code>; swap the thin envelope for the pile</dd></dl><p class="id">zich-zorgen-maken-over-de-rekening.png · rij 76 · herkomst Docs/prepositions-art-a2-plus.md:227 (git)</p></article>
+<article class="kaart" data-id="betalen-voor-de-boodschappen" data-band="a2-plus" data-kind="frame" data-row="77" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">betalen voor</h3><p class="gloss">to pay for</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at the end of a plain counter, an open palm held out over it with a small stack of coins; on the counter a paper bag with a long loaf and a bottle neck sticking out. A bare hand enters from the frame edge, palm up, to receive.</dd><dt>Must read</dt><dd class="must">paying for shopping.</dd><dt>Avoid</dt><dd class="avoid">a supermarket trolley; a card machine with a screen; a till receipt.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>uitgeven-aan-de-huur</code>; same counter and handful of coins, food on the counter — same chunk as batch 4b (<code>betalen-voor-kassa</code>); see *Chunk overlap with batch 4b*.</dd></dl><p class="id">betalen-voor-de-boodschappen.png · rij 77 · herkomst Docs/prepositions-art-a2-plus.md:228 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="uitgeven-aan-de-huur" data-band="a2-plus" data-kind="frame" data-row="78" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">uitgeven aan</h3><p class="gloss">to spend on</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">the same counter and the same person, with the same held-out handful of coins; on the counter, where the bag was, stands a small simple house shape with one door and one window, and a bigger stack of coins is already gone from the palm.</dd><dt>Must read</dt><dd class="must">spending money on rent for a home.</dd><dt>Avoid</dt><dd class="avoid">a for-sale sign; a key being handed over; a wallet with banknotes.</dd><dt>Paar / notitie</dt><dd class="note">Pair with <code>betalen-voor-de-boodschappen</code>; swap the food bag for the small house shape</dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">A small house standing on a shop counter is a symbol. Against <code>betalen voor</code>, the learner attaches <code>aan</code> to &quot;house&quot; and <code>voor</code> to &quot;food&quot;.</p><p class="fix">Person leaving a shop with four full bags and a purse turned inside out: <code>geld uitgeven aan kleren</code>.</p></div><p class="id">uitgeven-aan-de-huur.png · rij 78 · herkomst Docs/prepositions-art-a2-plus.md:229 (git)</p></article>
+<article class="kaart sev-weak-picture" data-id="vertrouwen-op-een-collega" data-band="a2-plus" data-kind="frame" data-row="79" data-status="needed" data-severity="weak-picture"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">vertrouwen op</h3><p class="gloss">to rely on</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person in a coat with a bag at the door, one open hand raised in a relaxed goodbye, shoulders loose; behind them a colleague sits at a desk piled with folders and lifts a hand back. The leaver does not look worried.</dd><dt>Must read</dt><dd class="must">leaving the work with a colleague without worry.</dd><dt>Avoid</dt><dd class="avoid">a firm handshake; a hand from a ladder holding someone&#x27;s weight; a meeting room with a table.</dd><dt>Paar / notitie</dt><dd class="note">Single. Relying on someone who carries on while you go</dd></dl><div class="oordeel weak-picture" data-severity="weak-picture"><span class="kop">zwak beeld</span><p class="wat">Waving goodbye at the door reads as <code>naar huis gaan</code>.</p><p class="fix">Climber on a rope held by a partner below.</p></div><p class="id">vertrouwen-op-een-collega.png · rij 79 · herkomst Docs/prepositions-art-a2-plus.md:230 (git)</p></article>
+<article class="kaart" data-id="bellen-met-de-huisarts" data-band="a2-plus" data-kind="frame" data-row="80" data-status="needed" data-severity=""><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">bellen met</h3><p class="gloss">to be on the phone with</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person stands at a table with an old-fashioned handset to one ear, the other hand raised, a coiled cord looping down; the cord runs across the lower frame to the right where a smaller figure with a loop of stethoscope round the neck holds a matching handset, head tilted, listening. Both are on their own side of white space.</dd><dt>Must read</dt><dd class="must">talking on the phone with a doctor.</dd><dt>Avoid</dt><dd class="avoid">two people face to face in a consulting room (that is <code>praten met de dokter</code>); a mobile phone with a screen; a person talking to nobody.</dd><dt>Paar / notitie</dt><dd class="note">Single. The cord gives the far end of the call</dd></dl><p class="id">bellen-met-de-huisarts.png · rij 80 · herkomst Docs/prepositions-art-a2-plus.md:231 (git)</p></article>
+</div></section>
+</main>
+<script>
+(function(){
+  var bar=document.querySelector('.filters'); if(!bar) return;
+  var cards=[].slice.call(document.querySelectorAll('.kaart'));
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var want=b.dataset.filter;
+    [].forEach.call(bar.querySelectorAll('button'),function(x){
+      x.setAttribute('aria-pressed', String(x===b)); });
+    cards.forEach(function(c){
+      c.hidden = !(want==='alles' || (want==='gemarkeerd' ? c.dataset.severity : c.dataset.severity===want));
+    });
+    [].forEach.call(document.querySelectorAll('.batch'),function(s){
+      var any=[].some.call(s.querySelectorAll('.kaart'),function(c){return !c.hidden;});
+      s.hidden=!any;
+    });
+  });
+})();
+</script>
+</body>
+</html>

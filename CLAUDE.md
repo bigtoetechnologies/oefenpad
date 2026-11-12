@@ -19,8 +19,8 @@ static server and it runs. The account pages need the server in `server/`.
 | `Docs/accounts-handover.md` | Why the account solution is shaped this way, plus the architecture and file-by-file code map |
 | `Docs/game-art.md` | How game images are drawn: brush line, cobalt only, 512 px |
 | `Docs/prepositions-roadmap.md` | The Voorzetselpaden plan to 710 frames, and what "B2" means |
-| `Docs/prepositions-art-a0-a2.md`, `Docs/prepositions-art-a2-pairs.md`, `Docs/prepositions-art-a2-plus.md`, `Docs/prepositions-art-b1.md`, `Docs/prepositions-art-b1-plus.md`, `Docs/prepositions-art-b2.md` | The scene images still to be drawn, in copy-paste Grok batches by CEFR band (A0–A2, A2 pairs, A2+, B1, B1+, B2) |
-| `Docs/prepositions-art.md` | The thirty pilot scene briefs, the shared frame rule and the checks for editing a plan |
+| `Docs/voorzetselpaden/index.html` | Every Voorzetselpaden frame, one card each, by CEFR band. **The master.** Open it in a browser |
+| `Docs/voorzetselpaden/a0-a2.html` … `b2.html` | The six band pages: the chunk, the gloss, the scene brief, Must read, Avoid, the review verdict, and the verbatim Grok prompt per batch |
 | `Docs/design-process.md` | Which designs were rejected and why, so you don't re-propose them |
 | `Docs/game-catalogue.md` | What each game is and what exists |
 | `Docs/games-backend.md` | How the games get their data from the API, and how the React app is built and run |
@@ -159,7 +159,20 @@ levels — ten contrast sets (nine pairs and one set of three) and eight single
 frames — and the only game whose art is raster. Its thirty scene images are
 alpha masks drawn on a cobalt block, so they need no second file for dark mode. `Docs/game-art.md` has the art
 technique; `Docs/prepositions-implementation.md` describes how the game is
-built, and `Docs/prepositions.md` is the spec behind it. It is also the only
+built, and `Docs/prepositions.md` is the spec behind it.
+
+**The scene plans are HTML now, and they are the master.** The seven Markdown
+plans were replaced on 12 November 2026 by six pages under
+`Docs/voorzetselpaden/`, one per CEFR band, 876 cards in all. A card holds the
+chunk, the gloss, the scene brief, Must read, Avoid, the review verdict and —
+for the fifty frames that are in the game — the example sentence, the build
+sentence and the control question. Each batch keeps its Grok prompt verbatim in
+a collapsible block, so a batch is still one copy-paste. The old Markdown prose
+is preserved on each page under *Plan en kaders*. Edit the HTML, not
+`prepositions.json`: the game data is generated from these pages. The originals
+are in git at `80e688c`.
+
+It is also the only
 game with a gate: the first three levels are free, the next six need an
 account, and the remaining nine need a paid plan, which is not built yet (so
 that slice is shut). Within a tier a level opens only when the learner has
@@ -194,6 +207,9 @@ and the docs that describe it. Push only when the owner asks.
 | 8 | Production config: `Email:SmtpHost` is unset, so mail goes to `server/Oefenpad.WebUI/email-sink/`. Choose a provider. Set `App:BaseUrl` (mandatory outside Development — the app refuses to start without it) and `App:KnownProxies` when behind a TLS-terminating proxy, and persist the Data Protection keys. `Docs/accounts.md` lists the required values |
 | 9 | The games now need the server. No offline play was accepted by the owner on 2026-11-09. The client build is wired into `dotnet build`/`publish` (`-p:SkipClientBuild=true` to skip it), so that half is closed |
 | 10 | The game rounds are in memory, so a restart ends them and a second instance cannot share them. Fine for one host; a shared store is needed before scaling out |
+| 11 | The content review of 12 Nov 2026 flagged 510 of the 876 Voorzetselpaden cards, 74 of them as nonsense to drop — chunks that are not governed prepositions (`werken volgens`, bare `sinds`), invented idioms (`de moer onder de kinderen geven`) or scenes that cannot be read. Nothing has been deleted; the verdicts sit on the cards. B1+ and B2 hold 58 of the 74, so their scope is the first question. Report: `~/claude-scratch/voorzetselpaden-content-md-review-2026-11-12.md` |
+| 12 | Two shipped errors the review found in `prepositions.json`, both unfixed: the `praten-tegen` control question is keyed `true` but its picture and sentence say the listener is not listening, and the separable-verb hints in `texts.prepositions.json` tell the learner the prefix goes last ("staat achteraan") when every accepted answer puts it straight after the verb |
+| 13 | `assets/verb-propositions/incoming/` holds 50 redraws nothing references, including fresh copies of the two scenes dropped as nonsense. `assets/claude/incoming/` is 13 MB of the same kind. Neither is committed; decide whether raster source art belongs in git at all |
 
 ## Working style the owner expects
 

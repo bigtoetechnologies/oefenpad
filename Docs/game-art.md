@@ -13,7 +13,7 @@ drawn.
 
 | Brief | What it supplies |
 |---|---|
-| `prepositions-art.md` | The thirty preposition scenes, their contrasts and what each must not suggest |
+| `voorzetselpaden/a0-a2.html` | The thirty pilot preposition scenes, one card per frame, with their contrasts and what each must not suggest |
 | `story-machine-art.md` | The 72 reel tiles, by reel and word |
 | This file | Stroke, colour, composition, prompt and checklist |
 
@@ -353,8 +353,8 @@ Ontdek card, where the image is the content, uses the scene's `alt`.
 One block per fresh context: attach the three style anchors, paste this header,
 then that batch's subject list. The header is byte-identical every time and the
 anchors are re-attached every time — that is what holds the style still when
-Grok's context is reset. The batch order is in `prepositions-art-a0-a2.md` under
-*Redraw pass*; the paste-ready header and all ten batch blocks are in
+Grok's context is reset. The batch order is in `Docs/voorzetselpaden/a0-a2.html`, in the
+collapsible *Plan en kaders* section under *Redraw pass*; the paste-ready header and all ten batch blocks are in
 `prepositions-art-redraw-prompts.md`.
 
 Do not attach the old drawings being replaced. In a fresh context they read as

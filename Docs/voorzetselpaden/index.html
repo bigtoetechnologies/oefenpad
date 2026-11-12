@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Voorzetselpaden — beeldplannen</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.batch{margin:26px 0 0;padding-top:12px;border-top:2px solid var(--kobalt)}
+.batch h2{margin:0;font-size:19px;letter-spacing:-.01em}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.kaart.sev-nonsense{border-color:var(--rood);border-width:2px}
+.kaart.sev-wrong-dutch{border-color:var(--oranje)}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.oordeel{margin-top:11px;padding:9px 11px;border-radius:8px;background:#f6f7fb;font-size:13px}
+.oordeel.nonsense{background:#fdeceb}
+.oordeel.wrong-dutch{background:#fdf4e6}
+.oordeel .kop{font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.05em}
+.oordeel.nonsense .kop{color:var(--rood)}
+.oordeel.wrong-dutch .kop{color:var(--oranje)}
+.oordeel p{margin:4px 0 0}
+.oordeel .fix{color:var(--kobalt)}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+details.prompt{margin-top:10px;font-size:13px}
+details.prompt summary{cursor:pointer;color:var(--kobalt)}
+details.prompt pre{white-space:pre-wrap;background:#f6f7fb;border:1px solid var(--lijn);
+  border-radius:8px;padding:12px;font-size:12px;overflow-x:auto}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.rood{color:var(--rood);font-weight:700}
+td.blurb{color:var(--grijs);max-width:46ch}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+</style>
+</head>
+<body>
+<header>
+<h1>Voorzetselpaden — beeldplannen</h1>
+<p class="lead">Elk werkwoord met zijn vaste voorzetsel, één kaart per frame: het beeld,
+de scene, wat het beeld moet laten zien, wat het moet vermijden, en — waar het in het spel
+zit — de voorbeeldzin, de bouwzin en de controlevraag. Deze zes bestanden zijn de bron.</p>
+<div class="sum"><span>876 kaarten</span><span>64 getekend</span>
+<span class="waarschuwing">510 gemarkeerd</span>
+<span class="waarschuwing">74 onzin</span></div>
+</header>
+<main>
+<table>
+<thead><tr><th>Band</th><th class="n">Kaarten</th><th class="n">Getekend</th>
+<th class="n">Gemarkeerd</th><th class="n">Onzin</th><th class="n">Fout&nbsp;NL</th>
+<th class="n">Zwak beeld</th><th class="n">Klein</th><th>Wat het is</th></tr></thead>
+<tbody>
+<tr><td><a href="a0-a2.html">A0–A2</a></td><td class="n">200</td><td class="n">50</td><td class="n">52</td><td class="n">—</td><td class="n">13</td><td class="n">29</td><td class="n">10</td><td class="blurb">The fifty delivered frames: the thirty pilot scenes and the twenty of batch 4. All are drawn and in the game. The appendix holds 150 proposed variant scenes.</td></tr>
+<tr><td><a href="a2-pairs.html">A2 pairs (4b)</a></td><td class="n">16</td><td class="n">14</td><td class="n">7</td><td class="n">—</td><td class="n">2</td><td class="n">4</td><td class="n">1</td><td class="blurb">Sixteen frames that give existing singles a contrast partner. Fourteen are drawn but not in the game; they need a redraw before integration.</td></tr>
+<tr><td><a href="a2-plus.html">A2+</a></td><td class="n">80</td><td class="n">0</td><td class="n">51</td><td class="n rood">7</td><td class="n">4</td><td class="n">31</td><td class="n">9</td><td class="blurb">Eighty frames: the spatial set, the adjective and noun chunks, and the pronominal adverbs. Roadmap batches 5–8.</td></tr>
+<tr><td><a href="b1.html">B1</a></td><td class="n">120</td><td class="n">0</td><td class="n">70</td><td class="n rood">9</td><td class="n">5</td><td class="n">36</td><td class="n">20</td><td class="blurb">One hundred and twenty high-frequency verb + preposition frames. Roadmap batches 9–13.</td></tr>
+<tr><td><a href="b1-plus.html">B1+</a></td><td class="n">250</td><td class="n">0</td><td class="n">163</td><td class="n rood">23</td><td class="n">11</td><td class="n">64</td><td class="n">65</td><td class="blurb">Two hundred and fifty frames, formal and figurative register. Roadmap batches 14–23.</td></tr>
+<tr><td><a href="b2.html">B2</a></td><td class="n">210</td><td class="n">0</td><td class="n">167</td><td class="n rood">35</td><td class="n">24</td><td class="n">64</td><td class="n">44</td><td class="blurb">Two hundred and ten frames: business, academic, medical, technical and legal register. Roadmap batches 24–32.</td></tr>
+<tr class="totaal"><td>Totaal</td><td class="n">876</td><td class="n">64</td>
+<td class="n">510</td><td class="n rood">74</td>
+<td class="n">59</td><td class="n">228</td><td class="n">149</td>
+<td></td></tr>
+</tbody>
+</table>
+
+<div class="uitleg">
+<h2>Waarom deze bestanden de bron zijn</h2>
+<p>De plannen stonden eerst in zeven Markdown-bestanden. Dezelfde frames kwamen in twee
+bestanden voor, de onderwijsinhoud stond alleen in <code>prepositions.json</code>, en de
+kwaliteitsoordelen stonden in een los rapport. Eén kaart per frame zet alles bij elkaar.</p>
+<p>De twintig frames van batch 4 stonden zowel in <code>prepositions-art.md</code> als in
+<code>prepositions-art-a0-a2.md</code>. Ze zijn samengevoegd: 896 rijen werden 876 kaarten.</p>
+
+<h2>Wat op een kaart staat</h2>
+<p>Scene, Must read en Avoid komen letterlijk uit de Grok-prompt van het frame. De volledige
+prompt per batch staat uitklapbaar boven elke batch, woord voor woord, zodat een batch
+onveranderd te kopiëren blijft. De prozatekst van het oude Markdown-bestand — de kaders,
+de uitsluitingen, de frame-regel — staat uitklapbaar bovenaan elke pagina.</p>
+<p>Voorbeeldzin, bouwzin, controlevraag, contrast en voornaamwoordelijk bijwoord bestaan
+alleen voor de vijftig frames die in het spel zitten. Bij de overige 826 zijn die velden
+leeg; ze zijn nooit geschreven.</p>
+
+<h2>Het oordeel op de kaart</h2>
+<p>De gekleurde strook onderaan een kaart is de bevinding uit de inhoudelijke review van
+12&nbsp;november 2026: wat er mis is en wat ervoor in de plaats moet. Rood is
+<em>onzin — schrappen</em>: geen Nederlands, of geen beheerst voorzetsel. Oranje is fout
+Nederlands dat met een andere formulering wel te onderwijzen is. Grijs is een zwak beeld of
+een kleinigheid.</p>
+<p>Van de 876 kaarten zijn er 510 gemarkeerd en 74 als te
+schrappen voorgesteld. Niets is verwijderd: dat is een beslissing van de eigenaar.</p>
+</div>
+</main>
+</body>
+</html>

@@ -43,7 +43,7 @@ Optional extension: **Krimp** — rewrite a sentence with `er` + preposition
 | Done when | Eighteen levels — ten contrast sets (nine pairs and one set of three) and eight single frames — work through the stops without English |
 
 The full spec, including the data shape, feedback rules and the pilot image
-list, is in `prepositions.md` and `prepositions-art.md`.
+list, is in `prepositions.md` and `voorzetselpaden/a0-a2.html`.
 
 ### Zinsbouwer (🔵 Pillar 7)
 

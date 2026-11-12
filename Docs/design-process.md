@@ -164,7 +164,7 @@ all four were corrected on 6 November 2026:
 
 | File | What it was | Fix |
 |---|---|---|
-| `Docs/prepositions-art.md` | Art-generation prompts, including the master prompt | Repointed at the live palette. Anything generated before this arrived in the wrong blue on the wrong white |
+| `Docs/prepositions-art.md` (now `Docs/voorzetselpaden/a0-a2.html`) | Art-generation prompts, including the master prompt | Repointed at the live palette. Anything generated before this arrived in the wrong blue on the wrong white |
 | `src/shared/common.js:165` (now `client/src/shared/confetti.ts`) | Default confetti colours — the only live code affected | Now cobalt, deep cobalt, light cobalt and the two oranges. The old warm white is dropped: white confetti on a white page is invisible |
 | `Docs/reuse-bigtoegames.md:141` | Told a future session to use the old palette | Hexes updated |
 | `Docs/identity/` | The 31 October identity sheet and three SVG marks, all in the old palette and referenced by nothing | Moved to `archive/identity-2026-10-31/` rather than recoloured — it is a record of a superseded identity, not a live asset |

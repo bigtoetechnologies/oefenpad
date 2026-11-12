@@ -189,7 +189,7 @@ Designed and not built:
 ## Scope and non-goals
 
 - The A0–A2 band is fifty frames, which completes the 30–50 chunk target of the
-  survival-kit pillar. See `prepositions-art.md`.
+  survival-kit pillar. See `voorzetselpaden/a0-a2.html`.
 - No audio in v1. Listening is blocked by `decisions.md` open question 6.
 - Not a full preposition table, and not a translation drill. The gloss is a
   fallback, never the main task.
@@ -215,5 +215,5 @@ Designed and not built:
 
 ## Pilot images
 
-The fifty scene briefs are in `prepositions-art.md`. The images are delivered
+The scene briefs are in `voorzetselpaden/a0-a2.html`, one card per frame. The images are delivered
 and in place; two batch-1 images are flagged there for a redraw.

@@ -370,8 +370,8 @@ Teaching the 101 sound-alikes (not just listing them)
 
    Settled 10 November 2026. A separable verb governs no preposition, so it was never a
    legal frame in Voorzetselpaden. The 29 that had been drafted into
-   `prepositions-art-b1.md` (now split into `prepositions-art-a2-plus.md` and
-   `prepositions-art-b1.md`) were cut and their chunks belong to this game. They are 23
+   the B1 plan (now split into `Docs/voorzetselpaden/a2-plus.html` and
+   `Docs/voorzetselpaden/b1.html`) were cut and their chunks belong to this game. They are 23
    distinct verbs across 29 frames. No art was ever drawn for them, so what moves is the
    word list, not a cost.
 

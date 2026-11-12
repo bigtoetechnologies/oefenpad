@@ -275,5 +275,5 @@ the page.
   frame. With few items a learner could pass on the imbalance rather than the
   meaning. Whether that happens is unchecked.
 - `denken-aan-persoon` and `eraan-denken-afspraak` are flagged for redraw in
-  `prepositions-art.md`; the game works with them, so the redraw is an art
+  `Docs/voorzetselpaden/a0-a2.html` (the card for each frame); the game works with them, so the redraw is an art
   decision, not a blocker.

@@ -62,7 +62,7 @@ The reconciliation with the batch plan below:
 | Scenes | 50 raster masks |
 | CEFR band | A0–A2 |
 
-Batch 4b (`prepositions-art-a2-pairs.md`) is drawn but not yet integrated. When
+Batch 4b (`Docs/voorzetselpaden/a2-pairs.html`) is drawn but not yet integrated. When
 it ships it takes the set to **66 frames, 36 levels, 23 pairs, three sets of
 three, ten singles and 13 prepositions**, as recorded in that file.
 
@@ -143,7 +143,7 @@ moved to the **Uit Elkaar** game idea in `suggestions.md`. Batch 8 keeps the
 pronominal adverbs; the freed slots went to high-frequency everyday chunks the
 set was missing (`hopen op`, `uitgeven aan`, `bellen met`, …). Three of the
 originally drafted chunks — `gaan naar`, `kiezen voor` and `betalen voor` — are
-also drawn in batch 4b. `prepositions-art-a2-plus.md` records that overlap and
+also drawn in batch 4b. `Docs/voorzetselpaden/a2-plus.html` records that overlap, in its collapsible *Plan en kaders* section, and
 the three ways to resolve it before A2+-08 is drawn. `tussen` was going to move
 from batch 5 to 4b; it stays in batch 5 now that `kiezen tussen` has been
 dropped from 4b.
@@ -157,12 +157,12 @@ batch 19 is 416, batch 25 is 566 and the close-out is **726**, not 710. `Δ`
 values are unchanged. The extra 16 come out of the same A2 budget, so the 710
 in this file's title is now a floor rather than a ceiling.
 
-The image plans were split into six files on 10 November 2026 so that each
-step is smaller: `prepositions-art-a0-a2.md` (batch 4), `prepositions-art-a2-pairs.md`
-(4b), `prepositions-art-a2-plus.md` (5–8, 80 frames), `prepositions-art-b1.md`
-(9–13, 120 frames), `prepositions-art-b1-plus.md` (14–23, 250 frames) and
-`prepositions-art-b2.md` (24–32, 210 frames). The batch numbers in this roadmap
-are unchanged; only the `Band` column and the file names follow the split. The
+The image plans were split into six pages on 10 November 2026 so that each
+step is smaller, and are now HTML pages in `Docs/voorzetselpaden/`: `a0-a2.html` (batch 4, with the 30 pilot frames), `a2-pairs.html`
+(4b), `a2-plus.html` (5–8, 80 frames), `b1.html`
+(9–13, 120 frames), `b1-plus.html` (14–23, 250 frames) and
+`b2.html` (24–32, 210 frames). `index.html` there is the overview. The batch numbers in this roadmap
+are unchanged; only the `Band` column and the page names follow the split. The
 `Band` values map to the files one-to-one: A2 → a0-a2 and a2-pairs, A2+ →
 a2-plus, B1 → b1, B1+ → b1-plus, B2 → b2.
 
@@ -238,11 +238,11 @@ nothing, per `prepositions.md`.
 710 scenes is not a plan; it is a decade. The pilot already uses raster, which
 `game-art.md` calls a placeholder. For this volume:
 
-All six slices are planned: `prepositions-art-a0-a2.md` holds the twenty
-batch-4 briefs and two copy-paste Grok prompts, `prepositions-art-a2-pairs.md`
-the sixteen batch-4b frames, `prepositions-art-a2-plus.md` the 80 A2+ frames,
-`prepositions-art-b1.md` the 120 B1 frames, `prepositions-art-b1-plus.md` the
-250 B1+ frames and `prepositions-art-b2.md` the 210 B2 frames.
+All six slices are planned, as pages in `Docs/voorzetselpaden/`: `a0-a2.html` has one card for each of the twenty
+batch-4 frames and two copy-paste Grok prompts, `a2-pairs.html`
+one card for each of the sixteen batch-4b frames, `a2-plus.html` the 80 A2+ frames,
+`b1.html` the 120 B1 frames, `b1-plus.html` the
+250 B1+ frames and `b2.html` the 210 B2 frames.
 
 | Phase | Frames | New scenes (est.) | Strategy |
 |---|---|---|---|
@@ -323,7 +323,7 @@ Three consequences:
 |---|---|
 | `prepositions.md` | The activity spec and the design reasoning. Canonical for intent |
 | `prepositions-implementation.md` | The shipped code and where the data model diverged from the spec. Canonical for behaviour |
-| `prepositions-art.md` | The scene briefs and art rules |
+| `voorzetselpaden/index.html` | The scene briefs and art rules, one page per CEFR band |
 | `game-catalogue.md` | Learning goals, modes, and the stated A1 → B1 target |
 | `Concept.md` | The 30–50 chunk survival-kit commitment and the pillar list |
 | `decisions.md` | Non-negotiables: Dutch UI, meaning in pictures, glosses as fallback |

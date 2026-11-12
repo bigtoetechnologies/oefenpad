@@ -2,7 +2,7 @@
 
 Grok online has no access to this repository or the file system, so every
 prompt here is self-contained. Paste the prompt as-is; do not rely on it
-reading `game-art.md`, `prepositions-art.md` or `prepositions.json`.
+reading `game-art.md`, `voorzetselpaden/a0-a2.html` or `prepositions.json`.
 
 > **Historical.** The style blocks below are the prompts that produced batches
 > 1–3 and are kept as a record. They are not the current style. The anchors are
@@ -32,7 +32,7 @@ Task: create the first ten SVG illustrations for the Voorzetselpaden
 
 Read first, if the files are present:
 Docs/game-art.md — the canonical image style
-Docs/prepositions-art.md — the scene briefs
+Docs/voorzetselpaden/a0-a2.html — the scene briefs
 Docs/prepositions.md — how the scenes are used
 
 Only create this folder and its files:
@@ -196,7 +196,7 @@ Status: delivered 2026-11-08. The ten files are in `assets/verbs/`, processed
 into the 512 × 763 alpha masks in `assets/voorzetselpaden/`, and wired into
 `server/Oefenpad.Resources/Games/Data/prepositions.json`. This is the ten new scenes. The two redraws
 (`denken-aan-persoon`, `eraan-denken-afspraak`) are a separate job, per
-`prepositions-art.md`.
+`Docs/voorzetselpaden/a0-a2.html`.
 
 Changes from batch 1: PNG instead of SVG; 2:3 portrait instead of square; pure
 white paper instead of transparent, because the mask pipeline expects dark ink
@@ -549,16 +549,16 @@ silhouette is still ambiguous. Do not add any image that is not on this list.
 
 ## Notes for batch 4
 
-Batch 4 is planned in `prepositions-art-a0-a2.md`: twenty A0–A2 frames around
+Batch 4 is planned in `Docs/voorzetselpaden/a0-a2.html`: twenty A0–A2 frames around
 `tegen`, `door`, `uit` and `tot`, with supporting `aan`, `met`, `op` and `in`
 frames, in two copy-paste Grok prompts. `zonder` is left out because
 `zonder + noun` is free prepositional use, not a chunk. The later bands follow
-in `prepositions-art-a2-plus.md`, `prepositions-art-b1.md`,
-`prepositions-art-b1-plus.md` and `prepositions-art-b2.md`. The items below
+in `Docs/voorzetselpaden/a2-plus.html`, `b1.html`,
+`b1-plus.html` and `b2.html`. The items below
 still apply.
 
 - `denken-aan-persoon` and `eraan-denken-afspraak` still need redraws; see
-  `prepositions-art.md`. Batch 3 did not touch them.
+  `Docs/voorzetselpaden/a0-a2.html`. Batch 3 did not touch them.
 - Deferred candidates: `afhangen van` (hard to draw unambiguously at 64 px),
   `werken voor` (too close to `werken bij`), `zoeken op` (separable
   `opzoeken`, a word-order item, not a frame).

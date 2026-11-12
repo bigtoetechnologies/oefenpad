@@ -3,7 +3,8 @@
 Paste-ready blocks for bringing the older scene art into the `wachten-op-*`
 style. The style itself is specified in `game-art.md` under *Style anchors* and
 *Generation prompt*; the order and the reasoning are in
-`prepositions-art-a0-a2.md` under *Redraw pass*.
+`Docs/voorzetselpaden/a0-a2.html`, in the collapsible *Plan en kaders*
+section under *Redraw pass*.
 
 ## How to use this file
 

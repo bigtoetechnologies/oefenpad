@@ -28,7 +28,7 @@ DATA = ROOT / "server/Oefenpad.Resources/Games/Data/prepositions.json"
 PENDING_PLANS = [
     # (plan file, full-size art folder, section title, note)
     (
-        ROOT / "Docs/prepositions-art-a2-pairs.md",
+        ROOT / "Docs/voorzetselpaden/a2-pairs.html",
         ROOT / "assets/verb-propositions/archived/04b-a2-pairs",
         "Batch 4b — A2 pair enhancement",
         "Getekend op 10 november 2026; twee scènes zijn op 12 november 2026 "
@@ -38,10 +38,7 @@ PENDING_PLANS = [
     ),
 ]
 
-ROW = re.compile(
-    r"^\| (\d+) \| `([^`]+)` \| ([^|]+?) \| ([^|]+?) \| ([^|]+?) \| ([^|]+?) \| (\w+) \|$"
-)
-SET = re.compile(r"^## Set ([AB])")
+SET = re.compile(r"\bSet ([AB])\b")
 SMALL = (64, 96)
 
 EXTRA_CSS = """
@@ -112,29 +109,73 @@ def mono(text: str) -> str:
 
 
 def read_plan(path: Path) -> list[dict]:
-    """Parse the batch tracker tables, keeping the Set A / Set B grouping."""
-    rows = []
-    current = None
-    for line in path.read_text(encoding="utf-8").splitlines():
-        heading = SET.match(line)
-        if heading:
-            current = heading.group(1)
-            continue
-        match = ROW.match(line)
-        if not match or current is None:
-            continue
-        number, file, frame, en, scene, pair, status = match.groups()
-        rows.append({
-            "set": current,
-            "number": int(number),
-            "file": file,
-            "frame": frame.strip(),
-            "en": en.strip(),
-            "scene": scene.strip(),
-            "pair": pair.strip(),
-            "status": status,
-        })
-    return rows
+    """Parse the band page, keeping the Set A / Set B grouping.
+
+    The plans moved from Markdown trackers to one card per frame in
+    Docs/voorzetselpaden/ on 12 November 2026. A card carries its fields as
+    data-* attributes and class names, so this reads those rather than a table.
+    """
+    from html.parser import HTMLParser
+
+    class Cards(HTMLParser):
+        def __init__(self):
+            super().__init__(convert_charrefs=True)
+            self.rows = []
+            self.cur = None
+            self.set = None
+            self.field = None
+            self.buf = []
+
+        def _flush(self):
+            if self.cur is not None and self.field:
+                self.cur[self.field] = " ".join("".join(self.buf).split())
+            self.field, self.buf = None, []
+
+        def handle_starttag(self, tag, attrs):
+            a = dict(attrs)
+            cls = a.get("class", "")
+            if tag == "section" and "batch" in cls.split():
+                m = SET.search(a.get("data-batch", ""))
+                self.set = m.group(1) if m else None
+            elif tag == "article" and "kaart" in cls.split():
+                self._flush()
+                self.cur = {
+                    "set": self.set,
+                    "number": int(a.get("data-row") or 0),
+                    "file": f'{a.get("data-id", "")}.png',
+                    "status": (a.get("data-status") or "").strip(),
+                    "frame": "", "en": "", "scene": "", "pair": "",
+                }
+            elif tag == "code" and self.field:
+                self.buf.append("`")
+            elif self.cur is not None:
+                for name, key in (("chunk", "frame"), ("gloss", "en"),
+                                  ("scene", "scene"), ("note", "pair")):
+                    if name in cls.split():
+                        self._flush()
+                        self.field, self.buf = key, []
+                        break
+
+        def handle_endtag(self, tag):
+            if tag == "code" and self.field:
+                self.buf.append("`")
+            elif tag in ("h3", "p", "dd"):
+                self._flush()
+            elif tag == "article" and self.cur is not None:
+                self._flush()
+                if self.cur["set"] and self.cur["file"] != ".png":
+                    self.rows.append(self.cur)
+                self.cur = None
+
+        def handle_data(self, data):
+            if self.field:
+                self.buf.append(data)
+
+    parser = Cards()
+    parser.feed(path.read_text(encoding="utf-8"))
+    parser.close()
+    parser.rows.sort(key=lambda r: (r["set"], r["number"]))
+    return parser.rows
 
 
 def pending_card(row: dict, art: Path, cache: dict, shipped: dict, by_scene: dict,
@@ -239,7 +280,7 @@ def main() -> None:
     for plan, art, title, note in PENDING_PLANS:
         rows = read_plan(plan)
         if not rows:
-            raise SystemExit(f"no tracker rows parsed from {plan}")
+            raise SystemExit(f"no frame cards parsed from {plan}")
         drawn = [row for row in rows if row["status"] == "drawn"]
         needed = [row for row in rows if row["status"] != "drawn"]
         pending_by_file = {row["file"]: row for row in rows}
