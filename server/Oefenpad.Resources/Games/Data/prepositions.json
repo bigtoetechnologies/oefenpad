@@ -295,7 +295,7 @@
     },
     {
       "id": "denken-over",
-      "frame": "denken over",
+      "frame": "nadenken over",
       "en": "to think about, to consider",
       "scene": "denken-over-keuze",
       "contrast": "denken-aan",
@@ -303,13 +303,14 @@
         "over"
       ],
       "example": {
-        "nl": "Ik denk over de keuze.",
+        "nl": "Ik denk na over de keuze.",
         "en": "I am thinking about the choice."
       },
       "build": [
         [
           "Ik",
           "denk",
+          "na",
           "over",
           "de",
           "keuze"
@@ -326,9 +327,11 @@
         }
       ],
       "pronominal": {
-        "nl": "Ik denk erover.",
+        "nl": "Ik denk erover na.",
         "en": "I am thinking about it."
-      }
+      },
+      "separable": true,
+      "prefix": "na"
     },
     {
       "id": "praten-met",
@@ -1274,7 +1277,7 @@
       "concept": [
         {
           "question": "Luistert de andere persoon?",
-          "answer": true
+          "answer": false
         }
       ]
     },
@@ -1773,7 +1776,7 @@
       ],
       "concept": [
         {
-          "question": "Is de persoon blij met het resultaat?",
+          "question": "Is de persoon tevreden met het resultaat?",
           "answer": true
         }
       ]
