@@ -1,0 +1,111 @@
+@{
+    var titelNl = ViewData["TitelNl"] as string ?? "Oefenpad";
+    var titelEn = ViewData["TitelEn"] as string ?? titelNl;
+    var ingelogd = User.Identity?.IsAuthenticated == true;
+}
+<!DOCTYPE html>
+<html lang="nl" data-taal="nl"
+      data-titel-nl="@titelNl"
+      data-titel-en="@titelEn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#2B50C8">
+<title>@titelNl</title>
+<script>
+/* Kies de taal voordat er iets getekend wordt: geen flits.
+   Een eerdere keuze van de bezoeker wint van de browsertaal. */
+(function () {
+  try {
+    var el = document.documentElement, t = null;
+    try { t = localStorage.getItem('oefenpad-taal'); } catch (e) {}
+    if (t !== 'nl' && t !== 'en') {
+      var l = navigator.languages || [navigator.language || 'nl'];
+      t = 'nl';
+      for (var i = 0; i < l.length; i++) {
+        if (/^nl\b/i.test(l[i])) { t = 'nl'; break; }
+        if (/^en\b/i.test(l[i])) { t = 'en'; break; }
+      }
+    }
+    el.setAttribute('data-taal', t);
+    el.setAttribute('lang', t);
+    var titel = el.getAttribute('data-titel-' + t);
+    if (titel) document.title = titel;
+  } catch (e) { /* dan blijft het Nederlands */ }
+})();
+</script>
+<script>
+/* Donkere modus — zet de klasse voordat er iets getekend wordt, en onthoudt
+   de keuze. Gelijk aan het blok in de oefeningen; sleutel oefenpad-theme. */
+(function () {
+  var KEY = 'oefenpad-theme';
+  function apply(saved) {
+    document.documentElement.classList.toggle('dark', saved === 'dark');
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { /* privemodus */ }
+  apply(saved);
+  window.toggleSiteTheme = function () {
+    var dark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+    if (btn) toggleSiteTheme();
+  });
+  window.addEventListener('storage', function (e) {
+    if (e.key === KEY && e.newValue) {
+      apply(e.newValue);
+      document.dispatchEvent(new CustomEvent('themechange',
+        { detail: { dark: document.documentElement.classList.contains('dark') } }));
+    }
+  });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/site/oefenpad.css">
+</head>
+<body>
+<div class="vel">
+
+  <nav class="balk">
+    <a class="merk" href="/"><img src="/assets/logo/logo_128px.png" alt=""><span>Oefenpad</span></a>
+    <a class="link" href="/"><span lang="nl">Oefeningen</span><span lang="en">Exercises</span></a>
+    @if (ingelogd)
+    {
+      <a class="link" href="/Account/Account"><span lang="nl">Mijn account</span><span lang="en">My account</span></a>
+    }
+    else
+    {
+      <a class="link" href="/Account/Inloggen"><span lang="nl">Inloggen</span><span lang="en">Sign in</span></a>
+      <a class="link" href="/Account/Registreren"><span lang="nl">Registreren</span><span lang="en">Sign up</span></a>
+    }
+    <div class="rechts">
+      <div class="taal" role="group" aria-label="Taal / Language">
+        <button type="button" data-taal-knop="nl" aria-pressed="true">NL</button>
+        <button type="button" data-taal-knop="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  @RenderBody()
+
+  <footer class="voet">
+    <div class="links">
+      <span lang="nl">Woorden uit <em>Quick Wins in Dutch</em></span>
+      <span lang="en">Words from <em>Quick Wins in Dutch</em></span>
+    </div>
+    <div class="rechts">
+      <a href="/voorwaarden.html"><span lang="nl">Voorwaarden</span><span lang="en">Terms</span></a>
+      <a href="/privacy.html">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script defer src="/assets/site/oefenpad.js"></script>
+</body>
+</html>

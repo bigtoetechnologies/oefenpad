@@ -1,15 +1,18 @@
 # Story Machine — design and art spec
 
 A slot machine that deals a sentence. The player picks 2 to 6 reels,
-pulls the handle, and reads the result aloud. Built at
-`src/storymachine/`, standalone: four files, no framework, no build step.
+pulls the handle, and reads the result aloud. The React page is
+`client/src/games/storymachine/`; the reels and their words are in
+`server/Oefenpad.Resources/Games/Data/reels.json`, and the drawing and
+holding rules are in
+`server/Oefenpad.Services/Games/StoryMachineService.cs`.
 
 ## Why a machine and not dice
 
 Reels are positional and dice are not. Reel 1 is always WHO, reel 2 is
 always DOES WHAT, so every pull lands as a sentence skeleton instead of
 a handful of loose nouns. That single property is what turns a toy into
-a language exercise, and it is why the reel order in `reels.js` is part
+a language exercise, and it is why the reel order in `reels.json` is part
 of the design rather than a list.
 
 | Reel | Slot | Added at |
@@ -51,19 +54,22 @@ a read-aloud or print view later. Nothing renders it today.
 ## The art
 
 72 tiles, 12 per reel. The full list, with ids and both languages, is
-`src/storymachine/reels.js`; that file is the spec a generator should
+`server/Oefenpad.Resources/Games/Data/reels.json`; that file is the spec a generator should
 read. Today each tile's `art` is an emoji placeholder. Replacing it
 with a path is the only change the game needs.
+
+The drawing style, prompt and checklist are in `game-art.md`. This list says
+what each tile must show; that file says how it is drawn.
 
 | Rule | Why |
 |------|-----|
 | No text baked into the image, ever | One art set serves every language. Words are drawn in HTML, per locale |
 | One idea per tile, readable as a silhouette at 64px | A phone reel tile is about that size |
 | Vague beats specific — "a door", not "a red door with a letterbox" | The player supplies the story. Detail does it for them |
-| Flat and bold, not photographic | Reels are read while moving |
+| Brush-drawn in cobalt, bold and sparse | `game-art.md`; reels are read while moving |
 | No culture-specific symbols | The audience is not Dutch |
 
-Proposed layout: `src/storymachine/art/<reel-id>/<tile-id>.svg`, so
+Proposed layout: `assets/storymachine/art/<reel-id>/<tile-id>.svg`, so
 `art/who/fox.svg`. Tile ids are stable; treat them as filenames.
 
 ## The words

@@ -1,0 +1,185 @@
+/* =================================================================
+   base.css — the shell the React game routes share.
+
+   The old pages each shipped their own page reset. One bundle now
+   loads every game's scoped sheet, so the reset and the page body
+   live here once. Nothing in this file is specific to one game.
+   ================================================================= */
+
+:root {
+  --duur: .18s;
+  --ruimte: clamp(10px, 2vw, 18px);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0;
+}
+
+body {
+  font-family: 'Archivo', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--papier);
+  color: var(--inkt);
+  min-height: 100dvh;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
+  /* A learner copies a Dutch word or sentence into their own dictionary
+     instead of translating the whole page. Every game string stays
+     selectable, button labels included. */
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+body * {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* A saved round was picked up. Quiet status, never a warning: the player is
+   simply put back where they left off. */
+.hervat {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--grijs);
+  margin-bottom: var(--ruimte);
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--kobalt);
+  outline-offset: 2px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ---------- the route that lists the games ---------- */
+
+.spellen-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-left: var(--rand);
+  border-top: var(--rand);
+  margin-bottom: var(--ruimte);
+}
+
+.spellen-list a {
+  border-right: var(--rand);
+  border-bottom: var(--rand);
+  padding: clamp(14px, 2vw, 24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 128px;
+  color: var(--inkt);
+  text-decoration: none;
+  transition: background var(--duur);
+}
+
+.spellen-list a:hover,
+.spellen-list a:focus-visible {
+  background: var(--raster-zacht);
+}
+
+.spellen-list .spellen-naam {
+  font-size: clamp(18px, 2.2vw, 26px);
+  font-weight: 900;
+  letter-spacing: -.035em;
+}
+
+.spellen-list .spellen-om {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--grijs);
+  line-height: 1.45;
+}
+
+.spellen-list .spellen-et {
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--kobalt);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+@media (max-width: 600px) {
+  .spellen-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- shell chrome shared by every route ----------
+   GameShell draws these on every page it renders, the games list at /spelen/
+   included. The per-game sheets scope their own copies to .game--<game>, so
+   without an unscoped definition here the list route renders at full sheet
+   width with a bare glyph for its back link. The scoped copies still win for
+   the six games; this is the floor under all of them. */
+
+.app-container {
+  width: 100%;
+  max-width: 720px;
+  flex: 1;
+  margin: 0 auto;
+  padding: 0 0 var(--ruimte);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  position: relative;
+}
+
+.btn-icon {
+  background: var(--papier);
+  color: var(--inkt);
+  border: 0;
+  box-shadow: inset 0 0 0 2px var(--inkt);
+  width: 40px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--duur);
+}
+
+.btn-icon:hover { background: var(--raster-zacht); }
+
+.spel-kop { margin-bottom: 0; padding-top: clamp(14px, 1.8vw, 26px); }
+.spel-kop .stand { gap: 8px; }
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--papier);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  transition: opacity .5s, visibility .5s;
+}
+
+.splash-screen.fade-out { opacity: 0; visibility: hidden; }
+.splash-logo { width: 160px; height: auto; margin-bottom: 16px; animation: splashPulse 2s ease-in-out infinite; }
+.splash-emoji { font-size: 96px; margin-bottom: 12px; }
+.splash-title { font-size: clamp(34px, 9vw, 64px); font-weight: 900; letter-spacing: -.05em; line-height: .9; margin-bottom: 4px; }
+.splash-publisher { font-size: 13px; color: var(--kobalt); font-weight: 700; }
+.splash-copyright { font-size: 11px; color: var(--grijs); margin-top: 8px; }
+
+@keyframes splashPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+@media (max-width: 600px) {
+  .app-container { border-left: 0; border-right: 0; }
+  .splash-logo { width: 130px; }
+}

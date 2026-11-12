@@ -1,15 +1,18 @@
 # Story Machine — art to create
 
 72 tile images are needed; none are drawn yet. Every tile in
-`src/storymachine/reels.js` still carries an emoji placeholder in its `art` field.
+`server/Oefenpad.Resources/Games/Data/reels.json` still carries an emoji placeholder in its `art` field.
 Replacing that string with a path is the only code change the game needs.
 
-Generated 2026-11-04 from `reels.js`. Regenerate rather than hand-edit: `reels.js` is the spec.
+Generated 2026-11-04 from `reels.json`. Regenerate rather than hand-edit: `reels.json` is the spec.
 The words are settled — see `story-machine-words.md`. Every tile below is safe to draw.
+
+The shared drawing rules, generation prompt and checklist are in `game-art.md`.
+This file lists the tiles; that file says how they are drawn.
 
 ## Where the files go
 
-`src/storymachine/art/<reel-id>/<tile-id>.svg`, so `art/who/fox.svg`. Tile ids are
+`assets/storymachine/art/<reel-id>/<tile-id>.svg`, so `art/who/fox.svg`. Tile ids are
 stable and are the filenames, per `story-machine.md`.
 
 Already drawn: `art/cardback_light.jpg` and `art/cardback_dark.jpg` — the BigToe
@@ -22,7 +25,7 @@ mascot card back, a placeholder until Quick Wins has its own.
 | No text baked into the image, ever | One art set serves every language; words are drawn in HTML per locale |
 | One idea per tile, readable as a silhouette at 64px | A phone reel tile is about that size |
 | Vague beats specific — "a door", not "a red door with a letterbox" | The player supplies the story |
-| Flat and bold, not photographic | Reels are read while moving |
+| Brush-drawn in cobalt, bold and sparse | `game-art.md`; reels are read while moving |
 | No culture-specific symbols | The audience is not Dutch |
 
 ## who — Who / Wie

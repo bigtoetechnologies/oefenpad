@@ -189,4 +189,7 @@
   window.Oefenpad.verf = verf;
   window.Oefenpad.verfAlles = alles;
   window.Oefenpad.zetTaal = zetTaal;
+  /* The game app draws its own bar after this script has run, so it asks for
+     the button here instead of writing the button itself. */
+  window.Oefenpad.ensureThemeToggle = themaKnop;
 })();

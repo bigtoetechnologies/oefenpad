@@ -266,3 +266,81 @@ html.dark .geverfd.kobalt .zacht,html.dark .geverfd.diep .zacht,
 html.dark .geverfd.oranje .zacht{color:rgba(14,17,23,.78)}
 html.dark .geverfd.licht .zacht{color:rgba(236,239,245,.9)}
 html.dark .vakje{background:var(--raster-zacht)}
+
+/* ---------- account: formulieren ----------
+   De accountpagina's gebruiken hetzelfde vel, dezelfde harde randen en
+   dezelfde zware letters. Een veld is een .vakje met een label erboven:
+   inset 2px inkt, geen radius, geen schaduw. */
+.account{
+  display:grid;grid-template-columns:repeat(12,1fr);
+  border-bottom:var(--rand-hard);flex:1;
+}
+.formulier{
+  grid-column:span 6;
+  padding:clamp(20px,2.4vw,40px) clamp(14px,1.6vw,26px) clamp(30px,3vw,56px) 0;
+  max-width:56ch;
+}
+.zij{
+  grid-column:span 5;border-left:var(--rand);
+  padding:clamp(20px,2.4vw,40px) 0 clamp(30px,3vw,56px) clamp(14px,1.4vw,20px);
+}
+.zij h2{font-size:clamp(16px,1.4vw,19px);font-weight:900;letter-spacing:-.03em;margin-bottom:7px}
+.zij h2 + p{margin-bottom:12px}
+.zij p{font-size:14px;line-height:1.5;font-weight:500;color:var(--grijs);margin-bottom:12px;max-width:38ch}
+.zij .knop{margin-bottom:22px}
+
+.veld{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.veld label,.veld-label{font-size:13px;font-weight:700;letter-spacing:.01em}
+.veld input,.veld select{
+  font:inherit;font-size:16px;font-weight:500;min-height:46px;width:100%;
+  padding:10px 12px;border:0;border-radius:0;
+  background:var(--papier);color:var(--inkt);
+  box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.veld input:focus-visible,.veld select:focus-visible{
+  outline:3px solid var(--oranje);outline-offset:2px;
+}
+.veld .hulp{font-size:13px;font-weight:500;line-height:1.4;color:var(--grijs)}
+.veld.heeft-fout input,.veld.heeft-fout select{box-shadow:inset 0 0 0 2px var(--fout)}
+
+.vinkje{
+  display:flex;gap:10px;align-items:flex-start;
+  font-size:14px;font-weight:500;line-height:1.45;margin:4px 0 20px;cursor:pointer;
+}
+.vinkje input{width:20px;height:20px;min-height:0;margin-top:2px;flex:none;accent-color:var(--kobalt)}
+.vinkje a{color:var(--kobalt);font-weight:700}
+
+.acties{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:6px}
+.acties a{font-weight:700;font-size:14px}
+
+.melding{
+  margin:0 0 22px;padding:12px 14px;border-left:4px solid var(--grijs);
+  background:var(--raster-zacht);font-size:14px;font-weight:600;line-height:1.45;
+}
+.melding p + p{margin-top:6px}
+.melding a{font-weight:700;color:var(--kobalt)}
+.melding.fout{border-left-color:var(--fout)}
+.melding.goed{border-left-color:var(--goed)}
+.melding.let-op{border-left-color:var(--oranje)}
+
+.gegevens{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;font-size:14px;margin-bottom:24px}
+.gegevens dt{color:var(--grijs);font-weight:600}
+.gegevens dd{font-weight:600}
+
+.lijst{list-style:none;border-top:var(--rand);margin-bottom:24px}
+.lijst li{border-bottom:var(--rand)}
+.lijst a{
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding:14px 0;text-decoration:none;color:var(--inkt);
+  font-weight:700;font-size:15px;
+}
+.lijst a:hover{color:var(--kobalt)}
+.lijst a span{color:var(--grijs);font-weight:500;font-size:15px}
+
+.scheiding{border-top:var(--rand-hard);margin:26px 0 18px}
+
+@media(max-width:900px){
+  .formulier,.zij{grid-column:span 12;padding-right:0}
+  .zij{border-left:0;border-top:var(--rand);padding-left:0;margin-top:12px}
+  .formulier{max-width:none}
+}

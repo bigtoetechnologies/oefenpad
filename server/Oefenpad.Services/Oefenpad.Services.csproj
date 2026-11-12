@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Oefenpad.Contracts\Oefenpad.Contracts.csproj" />
+    <ProjectReference Include="..\Oefenpad.DB\Oefenpad.DB.csproj" />
+    <ProjectReference Include="..\Oefenpad.DTOs\Oefenpad.DTOs.csproj" />
+    <ProjectReference Include="..\Oefenpad.Enums\Oefenpad.Enums.csproj" />
+    <ProjectReference Include="..\Oefenpad.Resources\Oefenpad.Resources.csproj" />
+    <ProjectReference Include="..\Oefenpad.Validation\Oefenpad.Validation.csproj" />
+  </ItemGroup>
+
+</Project>

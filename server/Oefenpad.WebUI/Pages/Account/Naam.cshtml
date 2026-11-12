@@ -1,0 +1,47 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.NaamModel
+@{
+    ViewData["TitelNl"] = "Naam wijzigen — Oefenpad";
+    ViewData["TitelEn"] = "Change name — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Naam wijzigen", "Change name")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Deze naam gebruiken we in je e-mails en op je account.",
+            "We use this name in your emails and on your account.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Fouten)
+        @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+        <form method="post">
+            <div class="@Model.VeldClass("FirstName")">
+                <label asp-for="Invoer.FirstName">@Html.Beide("Voornaam", "First name")</label>
+                <input asp-for="Invoer.FirstName" autocomplete="given-name" />
+            </div>
+
+            <div class="@Model.VeldClass("LastName")">
+                <label asp-for="Invoer.LastName">@Html.Beide("Achternaam", "Last name")</label>
+                <input asp-for="Invoer.LastName" autocomplete="family-name" />
+            </div>
+
+            <div class="acties">
+                <button class="knop oranje" type="submit">@Html.Beide("Opslaan", "Save")</button>
+                <a href="/Account/Account">@Html.Beide("Annuleren", "Cancel")</a>
+            </div>
+        </form>
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Terug", "Back")</h2>
+        <p>@Html.Beide(
+            "Je kunt je naam later altijd weer wijzigen.",
+            "You can always change your name again later.")</p>
+        <a class="knop leeg klein" href="/Account/Account">@Html.Beide("Mijn account", "My account")</a>
+    </aside>
+</main>

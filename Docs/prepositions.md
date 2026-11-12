@@ -1,8 +1,19 @@
 # Voorzetselpaden — activity spec
 
-Status: pilot, agreed 2026-11-06. Supersedes the "Preposition Playground" sketch
-in `games.md`. Canonical name: **Voorzetselpaden** / **Preposition Paths**, per
-`designguide.md` and `game-catalogue.md`.
+Status: pilot, agreed 2026-11-06, built 2026-11-08, now a React game at
+`client/src/games/prepositions/` with its content in
+`server/Oefenpad.Resources/Games/Data/prepositions.json`.
+Supersedes the "Preposition Playground" sketch in `games.md`. Canonical name:
+**Voorzetselpaden** / **Preposition Paths**, per `designguide.md` and
+`game-catalogue.md`.
+
+This file is the spec and the reasoning. `prepositions-implementation.md`
+describes the code as it shipped, including the fields that changed. Where the
+two differ, the implementation doc is right.
+
+The fifty-frame A0–A2 set is the first slice of a larger curriculum.
+`prepositions-roadmap.md` plans the path to 700 frames and B2, and states which
+of those numbers are productive and which are receptive.
 
 ## The problem
 
@@ -43,12 +54,13 @@ games.
 
 Optional warm-up: **Hetzelfde of anders?** — two sentences, same verb,
 different preposition; same meaning or different? This is the cheapest way to
-show that the preposition carries meaning.
+show that the preposition carries meaning. Not built.
 
 Optional fifth stop: **Krimp** — transform a full sentence into its pronominal
 form: *Ik denk aan jou* → *Ik denk eraan*; *Ik kijk uit naar de vakantie* → *Ik
 kijk ernaar uit*. It uses the same scene and the `pronominal` field. This is
-where the `er` + preposition chunk is learned.
+where the `er` + preposition chunk is learned. Not built; the shipped game
+prints the pronominal form as a `Korter:` line on the Ontdek card instead.
 
 ### Example: `uitkijken naar` / `uitkijken voor`
 
@@ -75,18 +87,23 @@ If `uit` lands next to `kijk`, the feedback is *"uit hoort achteraan"*.
 
 ## Session flow
 
-A pilot session should take about six minutes.
+A pilot session was scoped at about six minutes, across a contrast pair. As
+shipped, a two-frame level is 8 scored answers (Ontdek is input and unscored),
+`vragen` with three frames is 12, and a single-frame level — `ophouden`,
+`zorgen`, `meedoen`, `zoeken`, `last hebben`, `houden van`, `zin in`,
+`bang voor` — is 3; the table is the design intent, not a measurement.
 
 | Step | Time | Items |
 |---|---|---|
-| Ontdek | 30 sec | 2 contrast scenes |
-| Kies het beeld | 1 min | 4 sentences |
-| Klopt de zin? | 2 min | 6 true/false items, all minimal pairs |
-| Bouw de zin | 2 min | 3 sentences, at least one separable |
-| Flitskaarten | 1 min | The misses from this session |
+| Ontdek | 30 sec | 2 contrast scenes (3 in `denken`, which adds `eraan denken`) |
+| Kies het beeld | 1 min | 2 sentences, 3 scene options each |
+| Klopt de zin? | 2 min | 4 true/false items, all minimal pairs (6 in `vragen`); skipped when the level has no pair |
+| Bouw de zin | 2 min | 2 sentences, one per accepted `bouw` line |
+| Flitskaarten | 1 min | Not built; nothing is persisted |
 
 The session ends on retrieval of the items the learner got wrong, not on new
-material. That is the bridge to the mistakes queue in `game-catalogue.md`.
+material. That is the bridge to the mistakes queue in `game-catalogue.md`,
+and it is still only a design.
 
 ## Progression
 
@@ -99,85 +116,43 @@ Do not start with `uitkijken naar`. Layer the difficulty:
 4. **Separable, two frames** — `uitkijken naar` / `uitkijken voor`.
 5. **Pronominal** — `eraan denken`, `ernaar uitkijken`, `Waar denk je aan?`
 
+Batch 2 adds three more pairs — `werken bij` / `werken aan`, `klaar met` /
+`klaar voor`, `vragen aan` / `vragen om` — and four singles: `zorgen voor`,
+`meedoen met`, `zoeken naar`, `last hebben van`. They use the same four stops;
+the singles skip Klopt, so they have no concept question.
+
+Batch 3 adds three more pairs — `blij met` / `blij voor`, `boos op` /
+`boos over`, `klagen over` / `klagen bij` — and three singles: `houden van`,
+`zin in`, `bang voor`. It also adds `vragen naar` to the existing `vragen`
+level, making it the pilot's only three-frame set: three Kies items, six Klopt
+items, three Bouw items. `vragen naar` names `vragen aan` as its one contrast
+partner, because `vragen aan` and `vragen om` are already a pair.
+
 `wachten op` / `wachten voor` is a useful side contrast: the first is the
 idiomatic "wait for", the second is the spatial "wait in front of". It shows
 that not every `voor` is a fixed chunk.
 
 ## Data model
 
-The unit is a frame, not a verb. Add a `frames` section to the shared
-`grammar.js`:
+The unit is a frame, not a verb: `wachten op`, not `wachten`. A scene is a
+separate record so the alt text has a home and one image can serve more than one
+frame. `scenes[].file` names a picture under `assets/voorzetselpaden/`.
 
-```js
-frames: [
-  {
-    id: 'uitkijken-naar',
-    frame: 'uitkijken naar',
-    verb: 'uitkijken',
-    separable: true,
-    prefix: 'uit',
-    prep: 'naar',
-    en: 'to look forward to',
-    scene: 'uitkijken-naar-vakantie',
-    example: {
-      nl: 'Ik kijk uit naar de vakantie.',
-      en: 'I am looking forward to the holiday.'
-    },
-    pronominal: {
-      nl: 'Ik kijk ernaar uit.',
-      en: 'I am looking forward to it.'
-    },
-    pronominalScene: null,
-    contrast: 'uitkijken-voor',
-    conceptQuestions: [
-      { q: 'Gaat het over later?', a: true },
-      { q: 'Is het positief?', a: true }
-    ]
-  },
-  {
-    id: 'denken-aan',
-    frame: 'denken aan',
-    verb: 'denken',
-    separable: false,
-    prefix: null,
-    prep: 'aan',
-    en: 'to think of',
-    scene: 'denken-aan-persoon',
-    example: {
-      nl: 'Ik denk aan jou.',
-      en: 'I am thinking of you.'
-    },
-    pronominal: {
-      nl: 'Ik denk eraan.',
-      en: 'I am thinking of it.'
-    },
-    pronominalScene: 'eraan-denken-afspraak',
-    contrast: 'denken-over',
-    conceptQuestions: [
-      { q: 'Gaat het over een persoon?', a: true }
-    ]
-  }
-]
-```
+The shipped shape — every field, and each place it differs from what this spec
+proposed — is in `prepositions-implementation.md`. Read it there rather than
+here; a second copy of the schema is how the two got out of step once already.
 
-Scenes are separate records so the alt text has a home and the same image can
-be reused:
+The decisions that still govern the data:
 
-```js
-scenes: [
-  { id: 'uitkijken-naar-vakantie',
-    file: 'art/uitkijken-naar-vakantie.svg',
-    alt: 'Iemand met een koffer kijkt blij naar een kalender.' }
-]
-```
-
-`scenes[].file` is relative to the activity folder, `src/voorzetselpaden/`.
-
-`frames` repeats `separable` and `prefix` from the matching `verbs` entry so the
-game does not have to join at render time; `frame.verb` matches
-`verbs[].infinitive`. The checker must keep the two consistent. `contrast` points
-at another frame; that field is what lets the game generate a minimal-pair false
-item without a hand-written distractor list.
+- **The frame carries its own `separable` and `prefix`.** There is no verb table
+  in the pilot and no join at render time. If a shared verb table appears later,
+  a checker has to keep the two consistent.
+- **`contrast` points at another frame.** That single field is what lets the game
+  generate a minimal-pair false item without a hand-written distractor list, and
+  a `null` contrast is what removes the Klopt stop from a level.
+- **A frame carries its accepted sentences as tokens.** One array per accepted
+  sentence, so a separable frame can be practised on two persons without the
+  engine knowing any grammar.
 
 ## Feedback rules
 
@@ -195,9 +170,16 @@ item without a hand-written distractor list.
 
 ## What the game checks
 
+Shipped:
+
 - **Kies het beeld** and **Klopt de zin?** are table lookups; no parsing.
-- **Bouw de zin** checks token order and the exact position of the prefix. Use
-  the same tile-and-table approach as Zinsbouwer; do not parse free text in v1.
+- **Bouw de zin** compares token order and checks the position of the prefix
+  separately. It does not share code with Zinsbouwer — that game does not exist
+  yet, so only the tile-and-table approach carried over.
+- A wrong answer names the frame it belongs to, never just "wrong".
+
+Designed and not built:
+
 - **Krimp** compares the learner's sentence with `pronominal.nl`; it is a
   fixed-answer transformation in v1.
 - **Hetzelfde of anders?** compares two frame ids and their glosses.
@@ -206,7 +188,8 @@ item without a hand-written distractor list.
 
 ## Scope and non-goals
 
-- The pilot is ten frames, not the full 30–50. See `prepositions-art.md`.
+- The A0–A2 band is fifty frames, which completes the 30–50 chunk target of the
+  survival-kit pillar. See `prepositions-art.md`.
 - No audio in v1. Listening is blocked by `decisions.md` open question 6.
 - Not a full preposition table, and not a translation drill. The gloss is a
   fallback, never the main task.
@@ -218,15 +201,19 @@ item without a hand-written distractor list.
 
 ## Open questions
 
-- Does **Bouw de zin** live inside Voorzetselpaden or call Zinsbouwer? The tile
-  renderer should be shared; the activity and the data can stay separate.
+- The stop bar hides the `Klopt de zin?` entry on a single-frame level rather
+  than dimming it. Three entries in a four-column habit is honest, but a learner
+  who did another level first may read the gap as a bug.
 - How many contrast sets should one session hold before it becomes a wall of
-  scenes?
-- Should the concept question come before or after the true/false answer? The
-  current recommendation is after, so the learner judges the scene first.
+  scenes? The pilot has ten contrast sets and does not answer this.
+- The concept question was placed after the true/false answer. The shipped game
+  asks it there, and only at the Klopt stop: a single-frame level has no Klopt
+  stop, so its concept question never appears. Worth revisiting when Krimp is
+  built.
 - Does the review queue need to keep contrast partners together, or is it enough
   to store the frame id and let the scheduler decide?
 
 ## Pilot images
 
-The first ten scene briefs are in `prepositions-art.md`.
+The fifty scene briefs are in `prepositions-art.md`. The images are delivered
+and in place; two batch-1 images are flagged there for a redraw.

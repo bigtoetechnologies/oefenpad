@@ -115,13 +115,15 @@ and N taking H's frames into the exercise itself.
 | 9 | Bilingual home page, NL default | 18:40 | English browser gets English, everything else gets Dutch. Verified against `en-GB`, `nl-NL`, and with JS off |
 | 10 | ~~The Geheugen tile becomes light cobalt~~ — tried and reverted | 6 Nov | Done to remove a second orange, on a too-literal reading of the orange rule. Three blues killed the page's only accent. The meter bar and the tile it points at are the *same* signal, so both may be orange; the guide now says so |
 | 11 | Restore the brushstroke fills | 6 Nov | The shipped page had been painting flat rectangles since the rollout. Two causes, both now fixed and documented in `designguide.md`: the SVG used the tile's pixel size as its viewBox, putting the bristle texture below one pixel, and the opaque CSS fallback background filled in the gaps of a deliberately semi-transparent paint layer. The week meter bars are painted too, as in the prototype |
+| 12 | **Option A for the game chrome** | 7 Nov | Six prototypes were rendered in `design-options/game-chrome/`: A (home nav verbatim), B (compact nav), C (one bar), D (return strip only), E (home hero at full scale), F (game in the page grid with a facts rail). A won: the home `.balk` verbatim, the game title in a full-width `.spel-kop` outside the 720 px column, the unchanged game, and the footer |
+| 13 | No `.taal` switch on the game nav | with 12 | The five games that existed then were Dutch-only (the old `src/shared/i18n.js` pinned the language to Dutch; that file is gone and the API now returns Dutch-only strings), so an NL/EN button would visibly do nothing. The game `.balk` differs from the home one in that single control, which is also what `storymachine` already did. Making the games bilingual is a separate job, not part of adding the chrome |
 
 ### Why G and not F
 
 Both were painted versions of surviving round-1 options, so the choice was
 between a picture-led page and a grid-led page.
 
-The grid shows all five games above the fold and ranks them by tile size,
+The grid shows all the games above the fold and ranks them by tile size,
 which is how a returning learner finds where they stopped. A scene teaches
 five words well but pushes navigation down the page, and every new scene is
 new artwork. The grid needs no artwork at all.
@@ -144,7 +146,12 @@ layouts that carried them, and none of them is recorded elsewhere.
 
 Option G, applied to the whole site rather than the home page alone. All eight
 pages load `assets/site/oefenpad.css` and `assets/site/oefenpad.js`: the home
-page, the two legal pages, and all five games.
+page, the two legal pages, and all five games that existed at the time.
+
+> Later state (2026-11-09): there are now six games, and they are React pages
+> served from `/spelen/<game>` by the .NET host rather than static pages. The
+> five old game scripts described below no longer exist. `Docs/games-backend.md`
+> describes the current arrangement.
 
 The legal pages themselves were adapted from bigtoegames with the names
 changed, which is why `privacy.html` and `voorwaarden.html` predate the
@@ -158,7 +165,7 @@ all four were corrected on 6 November 2026:
 | File | What it was | Fix |
 |---|---|---|
 | `Docs/prepositions-art.md` | Art-generation prompts, including the master prompt | Repointed at the live palette. Anything generated before this arrived in the wrong blue on the wrong white |
-| `src/shared/common.js:165` | Default confetti colours — the only live code affected | Now cobalt, deep cobalt, light cobalt and the two oranges. The old warm white is dropped: white confetti on a white page is invisible |
+| `src/shared/common.js:165` (now `client/src/shared/confetti.ts`) | Default confetti colours — the only live code affected | Now cobalt, deep cobalt, light cobalt and the two oranges. The old warm white is dropped: white confetti on a white page is invisible |
 | `Docs/reuse-bigtoegames.md:141` | Told a future session to use the old palette | Hexes updated |
 | `Docs/identity/` | The 31 October identity sheet and three SVG marks, all in the old palette and referenced by nothing | Moved to `archive/identity-2026-10-31/` rather than recoloured — it is a record of a superseded identity, not a live asset |
 
@@ -167,7 +174,7 @@ all four were corrected on 6 November 2026:
 | # | Question |
 |---|---|
 | 1 | The week meter is twelve bars with no label. Does anyone know what it means? |
-| 2 | Dark mode works on four games but not on the Story Machine, the home page or the legal pages. Finish it or drop it |
+| 2 | Dark mode works on all the games but not on the home page or the legal pages. Finish it or drop it |
 | 3 | `--grijs` on `--papier` in dark mode is unverified for contrast |
 | 4 | The mascot, the tegeltje unit, and the free/premium line are all still open from `decisions.md` |
 | 5 | Whether any parked idea above becomes real work |

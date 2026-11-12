@@ -1,0 +1,10299 @@
+{
+  "animals": {
+    "label": {
+      "en": "Animals",
+      "nl": "Dieren"
+    },
+    "icon": "🐾",
+    "words": [
+      {
+        "en": "BEAR",
+        "nl": "BEER"
+      },
+      {
+        "en": "WOLF",
+        "nl": "WOLF"
+      },
+      {
+        "en": "DEER",
+        "nl": "HERT"
+      },
+      {
+        "en": "FOX",
+        "nl": "VOS"
+      },
+      {
+        "en": "HARE",
+        "nl": "HAAS"
+      },
+      {
+        "en": "LYNX",
+        "nl": "LYNX"
+      },
+      {
+        "en": "MOLE",
+        "nl": "MOL"
+      },
+      {
+        "en": "VOLE",
+        "nl": "WOELMUIS"
+      },
+      {
+        "en": "OTTER",
+        "nl": "OTTER"
+      },
+      {
+        "en": "STOAT",
+        "nl": "HERMELIJN"
+      },
+      {
+        "en": "BADGER",
+        "nl": "DAS"
+      },
+      {
+        "en": "WEASEL",
+        "nl": "WEZEL"
+      },
+      {
+        "en": "MARTEN",
+        "nl": "MARTER"
+      },
+      {
+        "en": "MINK",
+        "nl": "NERTS"
+      },
+      {
+        "en": "ADDER",
+        "nl": "ADDER"
+      },
+      {
+        "en": "SALMON",
+        "nl": "ZALM"
+      },
+      {
+        "en": "TROUT",
+        "nl": "FOREL"
+      },
+      {
+        "en": "PIKE",
+        "nl": "SNOEK"
+      },
+      {
+        "en": "PERCH",
+        "nl": "BAARS"
+      },
+      {
+        "en": "ROBIN",
+        "nl": "ROODBORST"
+      },
+      {
+        "en": "EAGLE",
+        "nl": "AREND"
+      },
+      {
+        "en": "HERON",
+        "nl": "REIGER"
+      },
+      {
+        "en": "STORK",
+        "nl": "OOIEVAAR"
+      },
+      {
+        "en": "CRANE",
+        "nl": "KRAANVOGEL"
+      },
+      {
+        "en": "RAVEN",
+        "nl": "RAAF"
+      },
+      {
+        "en": "MAGPIE",
+        "nl": "EKSTER"
+      },
+      {
+        "en": "JACKAL",
+        "nl": "JAKHALS"
+      },
+      {
+        "en": "WALRUS",
+        "nl": "WALRUS"
+      },
+      {
+        "en": "SEAL",
+        "nl": "ZEEHOND"
+      },
+      {
+        "en": "WHALE",
+        "nl": "WALVIS"
+      },
+      {
+        "en": "SQUIRREL",
+        "nl": "EEKHOORN"
+      },
+      {
+        "en": "HEDGEHOG",
+        "nl": "EGEL"
+      },
+      {
+        "en": "WILD BOAR",
+        "nl": "WILDZWIJN"
+      },
+      {
+        "en": "RED DEER",
+        "nl": "EDELHERT"
+      },
+      {
+        "en": "ROE DEER",
+        "nl": "REE"
+      },
+      {
+        "en": "DOLPHIN",
+        "nl": "DOLFIJN"
+      },
+      {
+        "en": "PUFFIN",
+        "nl": "PAPEGAAIDUIKER"
+      },
+      {
+        "en": "OYSTER",
+        "nl": "OESTER"
+      },
+      {
+        "en": "MUSSEL",
+        "nl": "MOSSEL"
+      },
+      {
+        "en": "RACCOON",
+        "nl": "WASBEER"
+      },
+      {
+        "en": "HAMSTER",
+        "nl": "HAMSTER"
+      },
+      {
+        "en": "GERBIL",
+        "nl": "GERBIL"
+      },
+      {
+        "en": "FERRET",
+        "nl": "FRET"
+      },
+      {
+        "en": "RABBIT",
+        "nl": "KONIJN"
+      },
+      {
+        "en": "PIGEON",
+        "nl": "DUIF"
+      },
+      {
+        "en": "CUCKOO",
+        "nl": "KOEKOEK"
+      },
+      {
+        "en": "BUNTING",
+        "nl": "GORS"
+      },
+      {
+        "en": "PLOVER",
+        "nl": "PLEVIER"
+      },
+      {
+        "en": "CURLEW",
+        "nl": "WULP"
+      },
+      {
+        "en": "LIZARD",
+        "nl": "HAGEDIS"
+      },
+      {
+        "en": "CHAMOIS",
+        "nl": "GEMS"
+      },
+      {
+        "en": "IBEX",
+        "nl": "STEENBOK"
+      },
+      {
+        "en": "MARMOT",
+        "nl": "MARMOT"
+      },
+      {
+        "en": "BEAVER",
+        "nl": "BEVER"
+      },
+      {
+        "en": "POLECAT",
+        "nl": "BUNZING"
+      },
+      {
+        "en": "PANTHER",
+        "nl": "PANTER"
+      },
+      {
+        "en": "LEOPARD",
+        "nl": "LUIPAARD"
+      },
+      {
+        "en": "CHEETAH",
+        "nl": "CHEETA"
+      },
+      {
+        "en": "JAGUAR",
+        "nl": "JAGUAR"
+      },
+      {
+        "en": "COUGAR",
+        "nl": "POEMA"
+      },
+      {
+        "en": "BUFFALO",
+        "nl": "BUFFEL"
+      },
+      {
+        "en": "GAZELLE",
+        "nl": "GAZELLE"
+      },
+      {
+        "en": "ANTELOPE",
+        "nl": "ANTILOPE"
+      },
+      {
+        "en": "CARIBOU",
+        "nl": "KARIBOE"
+      },
+      {
+        "en": "MUSK OX",
+        "nl": "MUSKUSOS"
+      },
+      {
+        "en": "BABOON",
+        "nl": "BAVIAAN"
+      },
+      {
+        "en": "GORILLA",
+        "nl": "GORILLA"
+      },
+      {
+        "en": "CHIMP",
+        "nl": "CHIMPANSEE"
+      },
+      {
+        "en": "ORANG",
+        "nl": "ORANGOETAN"
+      },
+      {
+        "en": "GIBBON",
+        "nl": "GIBBON"
+      },
+      {
+        "en": "KOALA",
+        "nl": "KOALA"
+      },
+      {
+        "en": "WOMBAT",
+        "nl": "WOMBAT"
+      },
+      {
+        "en": "PLATYPUS",
+        "nl": "VOGELBEKDIER"
+      },
+      {
+        "en": "ECHIDNA",
+        "nl": "MIERENEGEL"
+      },
+      {
+        "en": "WALLABY",
+        "nl": "WALLABY"
+      },
+      {
+        "en": "KANGAROO",
+        "nl": "KANGOEROE"
+      },
+      {
+        "en": "DINGO",
+        "nl": "DINGO"
+      },
+      {
+        "en": "EMU",
+        "nl": "EMOE"
+      },
+      {
+        "en": "KIWI",
+        "nl": "KIWI"
+      },
+      {
+        "en": "CONDOR",
+        "nl": "CONDOR"
+      },
+      {
+        "en": "FALCON",
+        "nl": "VALK"
+      },
+      {
+        "en": "PEACOCK",
+        "nl": "PAUW"
+      },
+      {
+        "en": "OSTRICH",
+        "nl": "STRUISVOGEL"
+      },
+      {
+        "en": "PELICAN",
+        "nl": "PELIKAAN"
+      },
+      {
+        "en": "FLAMINGO",
+        "nl": "FLAMINGO"
+      },
+      {
+        "en": "TOUCAN",
+        "nl": "TOEKAN"
+      },
+      {
+        "en": "MACAW",
+        "nl": "ARA"
+      },
+      {
+        "en": "COBRA",
+        "nl": "COBRA"
+      },
+      {
+        "en": "VIPER",
+        "nl": "POFADDER"
+      },
+      {
+        "en": "PYTHON",
+        "nl": "PYTHON"
+      },
+      {
+        "en": "ANACONDA",
+        "nl": "ANACONDA"
+      },
+      {
+        "en": "IGUANA",
+        "nl": "LEGUAAN"
+      },
+      {
+        "en": "GECKO",
+        "nl": "GEKKO"
+      },
+      {
+        "en": "CHAMELEON",
+        "nl": "KAMELEON"
+      },
+      {
+        "en": "MONITOR",
+        "nl": "VARAAN"
+      },
+      {
+        "en": "TEGU",
+        "nl": "TEGU"
+      },
+      {
+        "en": "SKINK",
+        "nl": "SKINK"
+      },
+      {
+        "en": "SALAMANDER",
+        "nl": "SALAMANDER"
+      },
+      {
+        "en": "NEWT",
+        "nl": "KAMSALAMANDER"
+      },
+      {
+        "en": "TOAD",
+        "nl": "PAD"
+      },
+      {
+        "en": "BULLFROG",
+        "nl": "BRULKIKKER"
+      }
+    ]
+  },
+  "nature": {
+    "label": {
+      "en": "Nature",
+      "nl": "Natuur"
+    },
+    "icon": "🌿",
+    "words": [
+      {
+        "en": "FOREST",
+        "nl": "BOS"
+      },
+      {
+        "en": "RIVER",
+        "nl": "RIVIER"
+      },
+      {
+        "en": "MEADOW",
+        "nl": "WEIDE"
+      },
+      {
+        "en": "STREAM",
+        "nl": "BEEK"
+      },
+      {
+        "en": "VALLEY",
+        "nl": "DAL"
+      },
+      {
+        "en": "CANYON",
+        "nl": "KLOOF"
+      },
+      {
+        "en": "CLIFF",
+        "nl": "KLIF"
+      },
+      {
+        "en": "GROVE",
+        "nl": "BOSJE"
+      },
+      {
+        "en": "MARSH",
+        "nl": "MOERAS"
+      },
+      {
+        "en": "HEATH",
+        "nl": "HEIDE"
+      },
+      {
+        "en": "OAK",
+        "nl": "EIK"
+      },
+      {
+        "en": "ELM",
+        "nl": "IEP"
+      },
+      {
+        "en": "ASH",
+        "nl": "LIND"
+      },
+      {
+        "en": "YEW",
+        "nl": "TAXUS"
+      },
+      {
+        "en": "PINE",
+        "nl": "DEN"
+      },
+      {
+        "en": "BIRCH",
+        "nl": "BERK"
+      },
+      {
+        "en": "ALDER",
+        "nl": "ELS"
+      },
+      {
+        "en": "WILLOW",
+        "nl": "WILG"
+      },
+      {
+        "en": "BEECH",
+        "nl": "BEUK"
+      },
+      {
+        "en": "MAPLE",
+        "nl": "ESDOORN"
+      },
+      {
+        "en": "MOSS",
+        "nl": "MOS"
+      },
+      {
+        "en": "FERN",
+        "nl": "VAREN"
+      },
+      {
+        "en": "REED",
+        "nl": "RIET"
+      },
+      {
+        "en": "RUSH",
+        "nl": "BIES"
+      },
+      {
+        "en": "HEATHER",
+        "nl": "STRUIKHEIDE"
+      },
+      {
+        "en": "THISTLE",
+        "nl": "DISTEL"
+      },
+      {
+        "en": "NETTLE",
+        "nl": "BRANDNETEL"
+      },
+      {
+        "en": "CLOVER",
+        "nl": "KLAVER"
+      },
+      {
+        "en": "IVY",
+        "nl": "KLIMOP"
+      },
+      {
+        "en": "BRAMBLE",
+        "nl": "BRAAMSTRUIK"
+      },
+      {
+        "en": "GLACIER",
+        "nl": "GLETSJER"
+      },
+      {
+        "en": "VOLCANO",
+        "nl": "VULKAAN"
+      },
+      {
+        "en": "GEYSER",
+        "nl": "GEISER"
+      },
+      {
+        "en": "LAGOON",
+        "nl": "LAGUNE"
+      },
+      {
+        "en": "ESTUARY",
+        "nl": "ESTUARIUM"
+      },
+      {
+        "en": "DELTA",
+        "nl": "DELTA"
+      },
+      {
+        "en": "TUNDRA",
+        "nl": "TOENDRA"
+      },
+      {
+        "en": "SAVANNA",
+        "nl": "SAVANNE"
+      },
+      {
+        "en": "PRAIRIE",
+        "nl": "PRAIRIE"
+      },
+      {
+        "en": "STEPPE",
+        "nl": "STEPPE"
+      },
+      {
+        "en": "WETLAND",
+        "nl": "DRASLAND"
+      },
+      {
+        "en": "THICKET",
+        "nl": "STRUIKGEWAS"
+      },
+      {
+        "en": "ORCHARD",
+        "nl": "BOOMGAARD"
+      },
+      {
+        "en": "PASTURE",
+        "nl": "WEILAND"
+      },
+      {
+        "en": "COPPICE",
+        "nl": "HAKHOUT"
+      },
+      {
+        "en": "GLADE",
+        "nl": "OPENPLEK"
+      },
+      {
+        "en": "RAPIDS",
+        "nl": "BRON"
+      },
+      {
+        "en": "WATERFALL",
+        "nl": "WATERVAL"
+      },
+      {
+        "en": "RAVINE",
+        "nl": "RAVIJN"
+      },
+      {
+        "en": "GORGE",
+        "nl": "CANYON"
+      },
+      {
+        "en": "POPLAR",
+        "nl": "POPULIER"
+      },
+      {
+        "en": "CYPRESS",
+        "nl": "CYPRES"
+      },
+      {
+        "en": "CEDAR",
+        "nl": "CEDER"
+      },
+      {
+        "en": "SPRUCE",
+        "nl": "SPAR"
+      },
+      {
+        "en": "LARCH",
+        "nl": "LARIX"
+      },
+      {
+        "en": "JUNIPER",
+        "nl": "JENEVERBES"
+      },
+      {
+        "en": "HOLLY",
+        "nl": "HULST"
+      },
+      {
+        "en": "HAWTHORN",
+        "nl": "MEIDOORN"
+      },
+      {
+        "en": "ROWAN",
+        "nl": "LIJSTERBES"
+      },
+      {
+        "en": "SYCAMORE",
+        "nl": "PLATAAN"
+      },
+      {
+        "en": "BAMBOO",
+        "nl": "BAMBOE"
+      },
+      {
+        "en": "MANGROVE",
+        "nl": "MANGROVE"
+      },
+      {
+        "en": "SEQUOIA",
+        "nl": "SEQUOIA"
+      },
+      {
+        "en": "BAOBAB",
+        "nl": "BAOBAB"
+      },
+      {
+        "en": "ACACIA",
+        "nl": "ACACIA"
+      },
+      {
+        "en": "EUCALYPTUS",
+        "nl": "EUCALYPTUS"
+      },
+      {
+        "en": "MAHOGANY",
+        "nl": "MAHONIE"
+      },
+      {
+        "en": "TEAK",
+        "nl": "TEAK"
+      },
+      {
+        "en": "EBONY",
+        "nl": "EBBEN"
+      },
+      {
+        "en": "ROSEWOOD",
+        "nl": "PALISSANDER"
+      },
+      {
+        "en": "MONSOON",
+        "nl": "MOESSON"
+      },
+      {
+        "en": "TYPHOON",
+        "nl": "TYFOON"
+      },
+      {
+        "en": "CYCLONE",
+        "nl": "CYCLOON"
+      },
+      {
+        "en": "DROUGHT",
+        "nl": "DROOGTE"
+      },
+      {
+        "en": "FLOOD",
+        "nl": "OVERSTROMING"
+      },
+      {
+        "en": "BLIZZARD",
+        "nl": "SNEEUWSTORM"
+      },
+      {
+        "en": "TORNADO",
+        "nl": "TORNADO"
+      },
+      {
+        "en": "HURRICANE",
+        "nl": "ORKAAN"
+      },
+      {
+        "en": "SANDSTORM",
+        "nl": "ZANDSTORM"
+      },
+      {
+        "en": "DUST DEVIL",
+        "nl": "STOFHOOS"
+      },
+      {
+        "en": "PEBBLE",
+        "nl": "KIEZEL"
+      },
+      {
+        "en": "BOULDER",
+        "nl": "ROTSBLOK"
+      },
+      {
+        "en": "BEDROCK",
+        "nl": "GRIND"
+      },
+      {
+        "en": "EROSION",
+        "nl": "EROSIE"
+      },
+      {
+        "en": "SEDIMENT",
+        "nl": "SEDIMENT"
+      },
+      {
+        "en": "MAGMA",
+        "nl": "MAGMA"
+      },
+      {
+        "en": "LAVA",
+        "nl": "LAVA"
+      },
+      {
+        "en": "PUMICE",
+        "nl": "PUIMSTEEN"
+      },
+      {
+        "en": "OBSIDIAN",
+        "nl": "OBSIDIAAN"
+      },
+      {
+        "en": "FLINT",
+        "nl": "VUURSTEEN"
+      },
+      {
+        "en": "HORIZON",
+        "nl": "HORIZON"
+      },
+      {
+        "en": "TWILIGHT",
+        "nl": "SCHEMERING"
+      },
+      {
+        "en": "SUNRISE",
+        "nl": "ZONSOPGANG"
+      },
+      {
+        "en": "SUNSET",
+        "nl": "ZONSONDERGANG"
+      },
+      {
+        "en": "RAINBOW",
+        "nl": "REGENBOOG"
+      },
+      {
+        "en": "MIST",
+        "nl": "MIST"
+      },
+      {
+        "en": "FROST",
+        "nl": "VORST"
+      },
+      {
+        "en": "DEW",
+        "nl": "DAUW"
+      },
+      {
+        "en": "SLEET",
+        "nl": "SNEEUWREGEN"
+      },
+      {
+        "en": "HAIL",
+        "nl": "HAGEL"
+      }
+    ]
+  },
+  "science": {
+    "label": {
+      "en": "Science",
+      "nl": "Wetenschap"
+    },
+    "icon": "🔬",
+    "words": [
+      {
+        "en": "ATOM",
+        "nl": "ATOOM"
+      },
+      {
+        "en": "CELL",
+        "nl": "CEL"
+      },
+      {
+        "en": "GENE",
+        "nl": "GEN"
+      },
+      {
+        "en": "WAVE",
+        "nl": "GOLF"
+      },
+      {
+        "en": "LENS",
+        "nl": "LENS"
+      },
+      {
+        "en": "MASS",
+        "nl": "MASSA"
+      },
+      {
+        "en": "FORCE",
+        "nl": "KRACHT"
+      },
+      {
+        "en": "LASER",
+        "nl": "LASER"
+      },
+      {
+        "en": "QUARK",
+        "nl": "QUARK"
+      },
+      {
+        "en": "PHOTON",
+        "nl": "FOTON"
+      },
+      {
+        "en": "OXYGEN",
+        "nl": "ZUURSTOF"
+      },
+      {
+        "en": "CARBON",
+        "nl": "KOOLSTOF"
+      },
+      {
+        "en": "HELIUM",
+        "nl": "HELIUM"
+      },
+      {
+        "en": "SODIUM",
+        "nl": "NATRIUM"
+      },
+      {
+        "en": "COBALT",
+        "nl": "KOBALT"
+      },
+      {
+        "en": "NICKEL",
+        "nl": "NIKKEL"
+      },
+      {
+        "en": "COPPER",
+        "nl": "KOPER"
+      },
+      {
+        "en": "ZINC",
+        "nl": "ZINK"
+      },
+      {
+        "en": "IRON",
+        "nl": "IJZER"
+      },
+      {
+        "en": "LEAD",
+        "nl": "LOOD"
+      },
+      {
+        "en": "GRAVITY",
+        "nl": "ZWAARTEKRACHT"
+      },
+      {
+        "en": "FUSION",
+        "nl": "FUSIE"
+      },
+      {
+        "en": "PLASMA",
+        "nl": "PLASMA"
+      },
+      {
+        "en": "ORBIT",
+        "nl": "OMLOOP"
+      },
+      {
+        "en": "COMET",
+        "nl": "KOMEET"
+      },
+      {
+        "en": "PULSAR",
+        "nl": "PULSAR"
+      },
+      {
+        "en": "QUASAR",
+        "nl": "QUASAR"
+      },
+      {
+        "en": "NEBULA",
+        "nl": "NEVEL"
+      },
+      {
+        "en": "MAGNET",
+        "nl": "MAGNEET"
+      },
+      {
+        "en": "CIRCUIT",
+        "nl": "STROOMKRING"
+      },
+      {
+        "en": "PROTEIN",
+        "nl": "EIWIT"
+      },
+      {
+        "en": "ENZYME",
+        "nl": "ENZYM"
+      },
+      {
+        "en": "MITOSIS",
+        "nl": "MITOSE"
+      },
+      {
+        "en": "NEURON",
+        "nl": "NEURON"
+      },
+      {
+        "en": "SYNAPSE",
+        "nl": "SYNAPS"
+      },
+      {
+        "en": "GENOME",
+        "nl": "GENOOM"
+      },
+      {
+        "en": "MUTATION",
+        "nl": "MUTATIE"
+      },
+      {
+        "en": "BACTERIA",
+        "nl": "BACTERIE"
+      },
+      {
+        "en": "FUNGUS",
+        "nl": "SCHIMMEL"
+      },
+      {
+        "en": "ALGAE",
+        "nl": "ALGEN"
+      },
+      {
+        "en": "CRYSTAL",
+        "nl": "KRISTAL"
+      },
+      {
+        "en": "MINERAL",
+        "nl": "MINERAAL"
+      },
+      {
+        "en": "FOSSIL",
+        "nl": "FOSSIEL"
+      },
+      {
+        "en": "MAMMAL",
+        "nl": "ZOOGDIER"
+      },
+      {
+        "en": "REPTILE",
+        "nl": "REPTIEL"
+      },
+      {
+        "en": "INSECT",
+        "nl": "INSECT"
+      },
+      {
+        "en": "MOLECULE",
+        "nl": "MOLECUUL"
+      },
+      {
+        "en": "ISOTOPE",
+        "nl": "ISOTOOP"
+      },
+      {
+        "en": "VOLT",
+        "nl": "VOLT"
+      },
+      {
+        "en": "WATT",
+        "nl": "WATT"
+      },
+      {
+        "en": "SILVER",
+        "nl": "ZILVER"
+      },
+      {
+        "en": "GOLD",
+        "nl": "GOUD"
+      },
+      {
+        "en": "TIN",
+        "nl": "TIN"
+      },
+      {
+        "en": "NEON",
+        "nl": "NEON"
+      },
+      {
+        "en": "ARGON",
+        "nl": "ARGON"
+      },
+      {
+        "en": "RADON",
+        "nl": "RADON"
+      },
+      {
+        "en": "RADIUM",
+        "nl": "RADIUM"
+      },
+      {
+        "en": "URANIUM",
+        "nl": "URANIUM"
+      },
+      {
+        "en": "PLUTONIUM",
+        "nl": "PLUTONIUM"
+      },
+      {
+        "en": "TITANIUM",
+        "nl": "TITANIUM"
+      },
+      {
+        "en": "VELOCITY",
+        "nl": "SNELHEID"
+      },
+      {
+        "en": "MOMENTUM",
+        "nl": "IMPULS"
+      },
+      {
+        "en": "FRICTION",
+        "nl": "WRIJVING"
+      },
+      {
+        "en": "TENSION",
+        "nl": "SPANNING"
+      },
+      {
+        "en": "PRESSURE",
+        "nl": "DRUK"
+      },
+      {
+        "en": "DENSITY",
+        "nl": "DICHTHEID"
+      },
+      {
+        "en": "VOLUME",
+        "nl": "VOLUME"
+      },
+      {
+        "en": "ENERGY",
+        "nl": "ENERGIE"
+      },
+      {
+        "en": "CHARGE",
+        "nl": "LADING"
+      },
+      {
+        "en": "FIELD",
+        "nl": "VELD"
+      },
+      {
+        "en": "TELESCOPE",
+        "nl": "TELESCOOP"
+      },
+      {
+        "en": "MICROSCOPE",
+        "nl": "MICROSCOOP"
+      },
+      {
+        "en": "PRISM",
+        "nl": "PRISMA"
+      },
+      {
+        "en": "SPECTRUM",
+        "nl": "SPECTRUM"
+      },
+      {
+        "en": "REFRACTION",
+        "nl": "BREKING"
+      },
+      {
+        "en": "DIFFRACTION",
+        "nl": "BUIGING"
+      },
+      {
+        "en": "CATALYST",
+        "nl": "KATALYSATOR"
+      },
+      {
+        "en": "REAGENT",
+        "nl": "REAGENS"
+      },
+      {
+        "en": "SOLVENT",
+        "nl": "OPLOSMIDDEL"
+      },
+      {
+        "en": "SOLUTE",
+        "nl": "NEERSLAG"
+      },
+      {
+        "en": "CHROMOSOME",
+        "nl": "CHROMOSOOM"
+      },
+      {
+        "en": "RIBOSOME",
+        "nl": "RIBOSOOM"
+      },
+      {
+        "en": "MEMBRANE",
+        "nl": "MEMBRAAN"
+      },
+      {
+        "en": "NUCLEUS",
+        "nl": "CELKERN"
+      },
+      {
+        "en": "CYTOPLASM",
+        "nl": "CYTOPLASMA"
+      },
+      {
+        "en": "VACUOLE",
+        "nl": "VACUOLE"
+      },
+      {
+        "en": "CHLOROPHYLL",
+        "nl": "BLADGROEN"
+      },
+      {
+        "en": "PHOTOSYNTHESIS",
+        "nl": "FOTOSYNTHESE"
+      },
+      {
+        "en": "RESPIRATION",
+        "nl": "ADEMHALING"
+      },
+      {
+        "en": "METABOLISM",
+        "nl": "STOFWISSELING"
+      },
+      {
+        "en": "HYPOTHESIS",
+        "nl": "HYPOTHESE"
+      },
+      {
+        "en": "THEORY",
+        "nl": "THEORIE"
+      },
+      {
+        "en": "EXPERIMENT",
+        "nl": "EXPERIMENT"
+      },
+      {
+        "en": "VARIABLE",
+        "nl": "VARIABELE"
+      },
+      {
+        "en": "CONTROL",
+        "nl": "CONTROLE"
+      },
+      {
+        "en": "DATA",
+        "nl": "DATA"
+      },
+      {
+        "en": "GRAPH",
+        "nl": "GRAFIEK"
+      },
+      {
+        "en": "TABLE",
+        "nl": "TABEL"
+      },
+      {
+        "en": "DIAGRAM",
+        "nl": "DIAGRAM"
+      },
+      {
+        "en": "FORMULA",
+        "nl": "FORMULE"
+      }
+    ]
+  },
+  "travel": {
+    "label": {
+      "en": "Travel",
+      "nl": "Reizen"
+    },
+    "icon": "✈️",
+    "words": [
+      {
+        "en": "HOTEL",
+        "nl": "HOTEL"
+      },
+      {
+        "en": "BEACH",
+        "nl": "STRAND"
+      },
+      {
+        "en": "CRUISE",
+        "nl": "CRUISE"
+      },
+      {
+        "en": "SAFARI",
+        "nl": "SAFARI"
+      },
+      {
+        "en": "TREK",
+        "nl": "TOCHT"
+      },
+      {
+        "en": "VOYAGE",
+        "nl": "REIS"
+      },
+      {
+        "en": "RESORT",
+        "nl": "RESORT"
+      },
+      {
+        "en": "HARBOR",
+        "nl": "HAVEN"
+      },
+      {
+        "en": "CABIN",
+        "nl": "HUT"
+      },
+      {
+        "en": "LODGE",
+        "nl": "LODGE"
+      },
+      {
+        "en": "PASSPORT",
+        "nl": "PASPOORT"
+      },
+      {
+        "en": "LUGGAGE",
+        "nl": "BAGAGE"
+      },
+      {
+        "en": "TERMINAL",
+        "nl": "TERMINAL"
+      },
+      {
+        "en": "RUNWAY",
+        "nl": "LANDINGSBAAN"
+      },
+      {
+        "en": "CUSTOMS",
+        "nl": "DOUANE"
+      },
+      {
+        "en": "DEPART",
+        "nl": "VERTREKKEN"
+      },
+      {
+        "en": "ARRIVE",
+        "nl": "AANKOMEN"
+      },
+      {
+        "en": "JETLAG",
+        "nl": "JETLAG"
+      },
+      {
+        "en": "SUITCASE",
+        "nl": "KOFFER"
+      },
+      {
+        "en": "BACKPACK",
+        "nl": "RUGZAK"
+      },
+      {
+        "en": "COMPASS",
+        "nl": "KOMPAS"
+      },
+      {
+        "en": "ATLAS",
+        "nl": "ATLAS"
+      },
+      {
+        "en": "GLOBE",
+        "nl": "GLOBE"
+      },
+      {
+        "en": "MAP",
+        "nl": "KAART"
+      },
+      {
+        "en": "TICKET",
+        "nl": "TICKET"
+      },
+      {
+        "en": "GUIDE",
+        "nl": "GIDS"
+      },
+      {
+        "en": "JOURNAL",
+        "nl": "DAGBOEK"
+      },
+      {
+        "en": "CAMERA",
+        "nl": "CAMERA"
+      },
+      {
+        "en": "BINOCULAR",
+        "nl": "VERREKIJKER"
+      },
+      {
+        "en": "TENT",
+        "nl": "TENT"
+      },
+      {
+        "en": "ISLAND",
+        "nl": "EILAND"
+      },
+      {
+        "en": "PENINSULA",
+        "nl": "SCHIEREILAND"
+      },
+      {
+        "en": "ARCHIPELAGO",
+        "nl": "ARCHIPEL"
+      },
+      {
+        "en": "OASIS",
+        "nl": "OASE"
+      },
+      {
+        "en": "JUNGLE",
+        "nl": "JUNGLE"
+      },
+      {
+        "en": "DESERT",
+        "nl": "WOESTIJN"
+      },
+      {
+        "en": "PLATEAU",
+        "nl": "PLATEAU"
+      },
+      {
+        "en": "FJORD",
+        "nl": "FJORD"
+      },
+      {
+        "en": "CANAL",
+        "nl": "KANAAL"
+      },
+      {
+        "en": "BRIDGE",
+        "nl": "BRUG"
+      },
+      {
+        "en": "SOUVENIR",
+        "nl": "SOUVENIR"
+      },
+      {
+        "en": "ITINERARY",
+        "nl": "REISROUTE"
+      },
+      {
+        "en": "EXPEDITION",
+        "nl": "EXPEDITIE"
+      },
+      {
+        "en": "EXCURSION",
+        "nl": "EXCURSIE"
+      },
+      {
+        "en": "PILGRIMAGE",
+        "nl": "BEDEVAART"
+      },
+      {
+        "en": "ADVENTURE",
+        "nl": "AVONTUUR"
+      },
+      {
+        "en": "HORIZON",
+        "nl": "HORIZON"
+      },
+      {
+        "en": "LANDFALL",
+        "nl": "KOERS"
+      },
+      {
+        "en": "WAYPOINT",
+        "nl": "WAYPOINT"
+      },
+      {
+        "en": "DESTINATION",
+        "nl": "BESTEMMING"
+      },
+      {
+        "en": "AIRPORT",
+        "nl": "LUCHTHAVEN"
+      },
+      {
+        "en": "STATION",
+        "nl": "STATION"
+      },
+      {
+        "en": "DEPOT",
+        "nl": "DEPOT"
+      },
+      {
+        "en": "DOCK",
+        "nl": "DOK"
+      },
+      {
+        "en": "PIER",
+        "nl": "PIER"
+      },
+      {
+        "en": "WHARF",
+        "nl": "KADE"
+      },
+      {
+        "en": "MARINA",
+        "nl": "JACHTHAVEN"
+      },
+      {
+        "en": "LIGHTHOUSE",
+        "nl": "VUURTOREN"
+      },
+      {
+        "en": "OUTPOST",
+        "nl": "BUITENPOST"
+      },
+      {
+        "en": "FRONTIER",
+        "nl": "GRENSGEBIED"
+      },
+      {
+        "en": "MOTEL",
+        "nl": "MOTEL"
+      },
+      {
+        "en": "HOSTEL",
+        "nl": "HOSTEL"
+      },
+      {
+        "en": "TAVERN",
+        "nl": "HERBERG"
+      },
+      {
+        "en": "CANTINA",
+        "nl": "KANTINE"
+      },
+      {
+        "en": "BAZAAR",
+        "nl": "BAZAAR"
+      },
+      {
+        "en": "MARKET",
+        "nl": "MARKT"
+      },
+      {
+        "en": "PLAZA",
+        "nl": "PLAZA"
+      },
+      {
+        "en": "SQUARE",
+        "nl": "PLEIN"
+      },
+      {
+        "en": "BOULEVARD",
+        "nl": "BOULEVARD"
+      },
+      {
+        "en": "AVENUE",
+        "nl": "LAAN"
+      },
+      {
+        "en": "CARAVAN",
+        "nl": "KARAVAAN"
+      },
+      {
+        "en": "CONVOY",
+        "nl": "KONVOOI"
+      },
+      {
+        "en": "FERRY",
+        "nl": "VEERBOOT"
+      },
+      {
+        "en": "GONDOLA",
+        "nl": "GONDEL"
+      },
+      {
+        "en": "CATAMARAN",
+        "nl": "CATAMARAN"
+      },
+      {
+        "en": "KAYAK",
+        "nl": "KAJAK"
+      },
+      {
+        "en": "CANOE",
+        "nl": "KANO"
+      },
+      {
+        "en": "RAFT",
+        "nl": "VLOT"
+      },
+      {
+        "en": "SCHOONER",
+        "nl": "SCHOENER"
+      },
+      {
+        "en": "CLIPPER",
+        "nl": "KLIPPER"
+      },
+      {
+        "en": "TRAIL",
+        "nl": "PAD"
+      },
+      {
+        "en": "PATH",
+        "nl": "WEG"
+      },
+      {
+        "en": "ROUTE",
+        "nl": "ROUTE"
+      },
+      {
+        "en": "HIGHWAY",
+        "nl": "SNELWEG"
+      },
+      {
+        "en": "FREEWAY",
+        "nl": "AUTOWEG"
+      },
+      {
+        "en": "TURNPIKE",
+        "nl": "TOLWEG"
+      },
+      {
+        "en": "CROSSING",
+        "nl": "OVERSTEEK"
+      },
+      {
+        "en": "JUNCTION",
+        "nl": "KRUISING"
+      },
+      {
+        "en": "ROUNDABOUT",
+        "nl": "ROTONDE"
+      },
+      {
+        "en": "UNDERPASS",
+        "nl": "ONDERDOORGANG"
+      },
+      {
+        "en": "VISA",
+        "nl": "VISUM"
+      },
+      {
+        "en": "EMBASSY",
+        "nl": "AMBASSADE"
+      },
+      {
+        "en": "CONSULATE",
+        "nl": "CONSULAAT"
+      },
+      {
+        "en": "BORDER",
+        "nl": "GRENS"
+      },
+      {
+        "en": "CHECKPOINT",
+        "nl": "CONTROLEPOST"
+      },
+      {
+        "en": "GATEWAY",
+        "nl": "TOEGANGSPOORT"
+      },
+      {
+        "en": "PORTAL",
+        "nl": "PORTAAL"
+      },
+      {
+        "en": "ENTRY",
+        "nl": "INGANG"
+      },
+      {
+        "en": "EXIT",
+        "nl": "UITGANG"
+      },
+      {
+        "en": "LOUNGE",
+        "nl": "LOUNGE"
+      }
+    ]
+  },
+  "countries": {
+    "label": {
+      "en": "Countries",
+      "nl": "Landen"
+    },
+    "icon": "🌍",
+    "words": [
+      {
+        "en": "FRANCE",
+        "nl": "FRANKRIJK"
+      },
+      {
+        "en": "SPAIN",
+        "nl": "SPANJE"
+      },
+      {
+        "en": "ITALY",
+        "nl": "ITALIE"
+      },
+      {
+        "en": "GREECE",
+        "nl": "GRIEKENLAND"
+      },
+      {
+        "en": "NORWAY",
+        "nl": "NOORWEGEN"
+      },
+      {
+        "en": "SWEDEN",
+        "nl": "ZWEDEN"
+      },
+      {
+        "en": "POLAND",
+        "nl": "POLEN"
+      },
+      {
+        "en": "AUSTRIA",
+        "nl": "OOSTENRIJK"
+      },
+      {
+        "en": "HUNGARY",
+        "nl": "HONGARIJE"
+      },
+      {
+        "en": "SERBIA",
+        "nl": "SERVIE"
+      },
+      {
+        "en": "BRAZIL",
+        "nl": "BRAZILIE"
+      },
+      {
+        "en": "CANADA",
+        "nl": "CANADA"
+      },
+      {
+        "en": "MEXICO",
+        "nl": "MEXICO"
+      },
+      {
+        "en": "CHILE",
+        "nl": "CHILI"
+      },
+      {
+        "en": "JAPAN",
+        "nl": "JAPAN"
+      },
+      {
+        "en": "INDIA",
+        "nl": "INDIA"
+      },
+      {
+        "en": "KENYA",
+        "nl": "KENIA"
+      },
+      {
+        "en": "EGYPT",
+        "nl": "EGYPTE"
+      },
+      {
+        "en": "GHANA",
+        "nl": "GHANA"
+      },
+      {
+        "en": "MALTA",
+        "nl": "MALTA"
+      },
+      {
+        "en": "PORTUGAL",
+        "nl": "PORTUGAL"
+      },
+      {
+        "en": "BELGIUM",
+        "nl": "BELGIE"
+      },
+      {
+        "en": "DENMARK",
+        "nl": "DENEMARKEN"
+      },
+      {
+        "en": "FINLAND",
+        "nl": "FINLAND"
+      },
+      {
+        "en": "ICELAND",
+        "nl": "IJSLAND"
+      },
+      {
+        "en": "IRELAND",
+        "nl": "IERLAND"
+      },
+      {
+        "en": "CROATIA",
+        "nl": "KROATIE"
+      },
+      {
+        "en": "ROMANIA",
+        "nl": "ROEMENIE"
+      },
+      {
+        "en": "BULGARIA",
+        "nl": "BULGARIJE"
+      },
+      {
+        "en": "ESTONIA",
+        "nl": "ESTLAND"
+      },
+      {
+        "en": "ARGENTINA",
+        "nl": "ARGENTINIE"
+      },
+      {
+        "en": "COLOMBIA",
+        "nl": "COLOMBIA"
+      },
+      {
+        "en": "PERU",
+        "nl": "PERU"
+      },
+      {
+        "en": "BOLIVIA",
+        "nl": "BOLIVIA"
+      },
+      {
+        "en": "URUGUAY",
+        "nl": "URUGUAY"
+      },
+      {
+        "en": "MOROCCO",
+        "nl": "MAROKKO"
+      },
+      {
+        "en": "TUNISIA",
+        "nl": "TUNESIE"
+      },
+      {
+        "en": "ALGERIA",
+        "nl": "ALGERIJE"
+      },
+      {
+        "en": "NIGERIA",
+        "nl": "NIGERIA"
+      },
+      {
+        "en": "ANGOLA",
+        "nl": "ANGOLA"
+      },
+      {
+        "en": "VIETNAM",
+        "nl": "VIETNAM"
+      },
+      {
+        "en": "THAILAND",
+        "nl": "THAILAND"
+      },
+      {
+        "en": "MYANMAR",
+        "nl": "MYANMAR"
+      },
+      {
+        "en": "MALAYSIA",
+        "nl": "MALEISIE"
+      },
+      {
+        "en": "INDONESIA",
+        "nl": "INDONESIE"
+      },
+      {
+        "en": "PHILIPPINES",
+        "nl": "FILIPPIJNEN"
+      },
+      {
+        "en": "PAKISTAN",
+        "nl": "PAKISTAN"
+      },
+      {
+        "en": "TURKEY",
+        "nl": "TURKIJE"
+      },
+      {
+        "en": "UKRAINE",
+        "nl": "OEKRAINE"
+      },
+      {
+        "en": "GEORGIA",
+        "nl": "GEORGIE"
+      },
+      {
+        "en": "LATVIA",
+        "nl": "LETLAND"
+      },
+      {
+        "en": "SLOVAKIA",
+        "nl": "SLOWAKIJE"
+      },
+      {
+        "en": "SLOVENIA",
+        "nl": "SLOVENIE"
+      },
+      {
+        "en": "ALBANIA",
+        "nl": "ALBANIE"
+      },
+      {
+        "en": "ARMENIA",
+        "nl": "ARMENIE"
+      },
+      {
+        "en": "MOLDOVA",
+        "nl": "MOLDAVIE"
+      },
+      {
+        "en": "LITHUANIA",
+        "nl": "LITOUWEN"
+      },
+      {
+        "en": "MONTENEGRO",
+        "nl": "MONTENEGRO"
+      },
+      {
+        "en": "LUXEMBOURG",
+        "nl": "LUXEMBURG"
+      },
+      {
+        "en": "NETHERLANDS",
+        "nl": "NEDERLAND"
+      },
+      {
+        "en": "ECUADOR",
+        "nl": "ECUADOR"
+      },
+      {
+        "en": "PARAGUAY",
+        "nl": "PARAGUAY"
+      },
+      {
+        "en": "HONDURAS",
+        "nl": "HONDURAS"
+      },
+      {
+        "en": "GUATEMALA",
+        "nl": "GUATEMALA"
+      },
+      {
+        "en": "NICARAGUA",
+        "nl": "NICARAGUA"
+      },
+      {
+        "en": "PANAMA",
+        "nl": "PANAMA"
+      },
+      {
+        "en": "JAMAICA",
+        "nl": "JAMAICA"
+      },
+      {
+        "en": "BAHAMAS",
+        "nl": "BAHAMAS"
+      },
+      {
+        "en": "BARBADOS",
+        "nl": "BARBADOS"
+      },
+      {
+        "en": "GRENADA",
+        "nl": "GRENADA"
+      },
+      {
+        "en": "SENEGAL",
+        "nl": "SENEGAL"
+      },
+      {
+        "en": "UGANDA",
+        "nl": "OEGANDA"
+      },
+      {
+        "en": "RWANDA",
+        "nl": "RWANDA"
+      },
+      {
+        "en": "MALAWI",
+        "nl": "MALAWI"
+      },
+      {
+        "en": "ZAMBIA",
+        "nl": "ZAMBIA"
+      },
+      {
+        "en": "NAMIBIA",
+        "nl": "NAMIBIE"
+      },
+      {
+        "en": "BOTSWANA",
+        "nl": "BOTSWANA"
+      },
+      {
+        "en": "LESOTHO",
+        "nl": "LESOTHO"
+      },
+      {
+        "en": "SWAZILAND",
+        "nl": "SWAZILAND"
+      },
+      {
+        "en": "ZIMBABWE",
+        "nl": "ZIMBABWE"
+      },
+      {
+        "en": "TAIWAN",
+        "nl": "TAIWAN"
+      },
+      {
+        "en": "NEPAL",
+        "nl": "NEPAL"
+      },
+      {
+        "en": "BHUTAN",
+        "nl": "BHUTAN"
+      },
+      {
+        "en": "LAOS",
+        "nl": "LAOS"
+      },
+      {
+        "en": "CAMBODIA",
+        "nl": "CAMBODJA"
+      },
+      {
+        "en": "MONGOLIA",
+        "nl": "MONGOLIE"
+      },
+      {
+        "en": "AZERBAIJAN",
+        "nl": "AZERBEIDZJAN"
+      },
+      {
+        "en": "KAZAKHSTAN",
+        "nl": "KAZACHSTAN"
+      },
+      {
+        "en": "KYRGYZSTAN",
+        "nl": "KIRGIZIE"
+      },
+      {
+        "en": "KUWAIT",
+        "nl": "KOEWEIT"
+      },
+      {
+        "en": "QATAR",
+        "nl": "QATAR"
+      },
+      {
+        "en": "OMAN",
+        "nl": "OMAN"
+      },
+      {
+        "en": "YEMEN",
+        "nl": "JEMEN"
+      },
+      {
+        "en": "SYRIA",
+        "nl": "SYRIE"
+      },
+      {
+        "en": "JORDAN",
+        "nl": "JORDANIE"
+      },
+      {
+        "en": "LEBANON",
+        "nl": "LIBANON"
+      },
+      {
+        "en": "CYPRUS",
+        "nl": "CYPRUS"
+      },
+      {
+        "en": "BAHRAIN",
+        "nl": "BAHREIN"
+      },
+      {
+        "en": "EMIRATES",
+        "nl": "EMIRATEN"
+      },
+      {
+        "en": "MALDIVES",
+        "nl": "MALEDIVEN"
+      }
+    ]
+  },
+  "cities": {
+    "label": {
+      "en": "Cities",
+      "nl": "Steden"
+    },
+    "icon": "🏙️",
+    "words": [
+      {
+        "en": "LONDON",
+        "nl": "LONDEN"
+      },
+      {
+        "en": "PARIS",
+        "nl": "PARIJS"
+      },
+      {
+        "en": "BERLIN",
+        "nl": "BERLIJN"
+      },
+      {
+        "en": "MADRID",
+        "nl": "MADRID"
+      },
+      {
+        "en": "ROME",
+        "nl": "ROME"
+      },
+      {
+        "en": "VIENNA",
+        "nl": "WENEN"
+      },
+      {
+        "en": "PRAGUE",
+        "nl": "PRAAG"
+      },
+      {
+        "en": "DUBLIN",
+        "nl": "DUBLIN"
+      },
+      {
+        "en": "OSLO",
+        "nl": "OSLO"
+      },
+      {
+        "en": "MINSK",
+        "nl": "MINSK"
+      },
+      {
+        "en": "TOKYO",
+        "nl": "TOKIO"
+      },
+      {
+        "en": "SEOUL",
+        "nl": "SEOUL"
+      },
+      {
+        "en": "BEIJING",
+        "nl": "PEKING"
+      },
+      {
+        "en": "DELHI",
+        "nl": "DELHI"
+      },
+      {
+        "en": "CAIRO",
+        "nl": "CAIRO"
+      },
+      {
+        "en": "LAGOS",
+        "nl": "LAGOS"
+      },
+      {
+        "en": "MIAMI",
+        "nl": "MIAMI"
+      },
+      {
+        "en": "DALLAS",
+        "nl": "DALLAS"
+      },
+      {
+        "en": "BOSTON",
+        "nl": "BOSTON"
+      },
+      {
+        "en": "DENVER",
+        "nl": "DENVER"
+      },
+      {
+        "en": "LISBON",
+        "nl": "LISSABON"
+      },
+      {
+        "en": "ZURICH",
+        "nl": "ZURICH"
+      },
+      {
+        "en": "GENEVA",
+        "nl": "GENEVE"
+      },
+      {
+        "en": "VENICE",
+        "nl": "VENETIE"
+      },
+      {
+        "en": "MILAN",
+        "nl": "MILAAN"
+      },
+      {
+        "en": "NAPLES",
+        "nl": "NAPELS"
+      },
+      {
+        "en": "BARCELONA",
+        "nl": "BARCELONA"
+      },
+      {
+        "en": "SEVILLE",
+        "nl": "SEVILLA"
+      },
+      {
+        "en": "MUNICH",
+        "nl": "MUNCHEN"
+      },
+      {
+        "en": "HAMBURG",
+        "nl": "HAMBURG"
+      },
+      {
+        "en": "BANGKOK",
+        "nl": "BANGKOK"
+      },
+      {
+        "en": "HANOI",
+        "nl": "HANOI"
+      },
+      {
+        "en": "MANILA",
+        "nl": "MANILA"
+      },
+      {
+        "en": "JAKARTA",
+        "nl": "JAKARTA"
+      },
+      {
+        "en": "NAIROBI",
+        "nl": "NAIROBI"
+      },
+      {
+        "en": "ACCRA",
+        "nl": "ACCRA"
+      },
+      {
+        "en": "DAKAR",
+        "nl": "DAKAR"
+      },
+      {
+        "en": "RABAT",
+        "nl": "RABAT"
+      },
+      {
+        "en": "AMMAN",
+        "nl": "AMMAN"
+      },
+      {
+        "en": "BEIRUT",
+        "nl": "BEIROET"
+      },
+      {
+        "en": "TORONTO",
+        "nl": "TORONTO"
+      },
+      {
+        "en": "OTTAWA",
+        "nl": "OTTAWA"
+      },
+      {
+        "en": "SYDNEY",
+        "nl": "SYDNEY"
+      },
+      {
+        "en": "PERTH",
+        "nl": "PERTH"
+      },
+      {
+        "en": "AUCKLAND",
+        "nl": "AUCKLAND"
+      },
+      {
+        "en": "MUMBAI",
+        "nl": "MUMBAI"
+      },
+      {
+        "en": "CHENNAI",
+        "nl": "CHENNAI"
+      },
+      {
+        "en": "KOLKATA",
+        "nl": "KOLKATA"
+      },
+      {
+        "en": "TEHRAN",
+        "nl": "TEHERAN"
+      },
+      {
+        "en": "BAGHDAD",
+        "nl": "BAGDAD"
+      },
+      {
+        "en": "WARSAW",
+        "nl": "WARSCHAU"
+      },
+      {
+        "en": "KIEV",
+        "nl": "KIEV"
+      },
+      {
+        "en": "RIGA",
+        "nl": "RIGA"
+      },
+      {
+        "en": "TALLINN",
+        "nl": "TALLINN"
+      },
+      {
+        "en": "VILNIUS",
+        "nl": "VILNIUS"
+      },
+      {
+        "en": "ZAGREB",
+        "nl": "ZAGREB"
+      },
+      {
+        "en": "BELGRADE",
+        "nl": "BELGRADO"
+      },
+      {
+        "en": "SOFIA",
+        "nl": "SOFIA"
+      },
+      {
+        "en": "BUCHAREST",
+        "nl": "BOEKAREST"
+      },
+      {
+        "en": "CHICAGO",
+        "nl": "CHICAGO"
+      },
+      {
+        "en": "SEATTLE",
+        "nl": "SEATTLE"
+      },
+      {
+        "en": "AUSTIN",
+        "nl": "AUSTIN"
+      },
+      {
+        "en": "PHOENIX",
+        "nl": "PHOENIX"
+      },
+      {
+        "en": "ATLANTA",
+        "nl": "ATLANTA"
+      },
+      {
+        "en": "DETROIT",
+        "nl": "DETROIT"
+      },
+      {
+        "en": "MEMPHIS",
+        "nl": "MEMPHIS"
+      },
+      {
+        "en": "HOUSTON",
+        "nl": "HOUSTON"
+      },
+      {
+        "en": "PORTLAND",
+        "nl": "PORTLAND"
+      },
+      {
+        "en": "ORLANDO",
+        "nl": "ORLANDO"
+      },
+      {
+        "en": "MELBOURNE",
+        "nl": "MELBOURNE"
+      },
+      {
+        "en": "BRISBANE",
+        "nl": "BRISBANE"
+      },
+      {
+        "en": "ADELAIDE",
+        "nl": "ADELAIDE"
+      },
+      {
+        "en": "HOBART",
+        "nl": "HOBART"
+      },
+      {
+        "en": "DUNEDIN",
+        "nl": "DUNEDIN"
+      },
+      {
+        "en": "WELLINGTON",
+        "nl": "WELLINGTON"
+      },
+      {
+        "en": "SUVA",
+        "nl": "SUVA"
+      },
+      {
+        "en": "APIA",
+        "nl": "APIA"
+      },
+      {
+        "en": "NUKUALOFA",
+        "nl": "NUKUALOFA"
+      },
+      {
+        "en": "PAPEETE",
+        "nl": "PAPEETE"
+      },
+      {
+        "en": "CASABLANCA",
+        "nl": "CASABLANCA"
+      },
+      {
+        "en": "ALGIERS",
+        "nl": "ALGIERS"
+      },
+      {
+        "en": "TRIPOLI",
+        "nl": "TRIPOLI"
+      },
+      {
+        "en": "KHARTOUM",
+        "nl": "KHARTOEM"
+      },
+      {
+        "en": "ADDIS ABABA",
+        "nl": "ADDIS ABEBA"
+      },
+      {
+        "en": "MOGADISHU",
+        "nl": "MOGADISHU"
+      },
+      {
+        "en": "DAR ES SALAAM",
+        "nl": "DAR ES SALAAM"
+      },
+      {
+        "en": "LUSAKA",
+        "nl": "LUSAKA"
+      },
+      {
+        "en": "HARARE",
+        "nl": "HARARE"
+      },
+      {
+        "en": "ANTANANARIVO",
+        "nl": "ANTANANARIVO"
+      },
+      {
+        "en": "ISTANBUL",
+        "nl": "ISTANBOEL"
+      },
+      {
+        "en": "ANKARA",
+        "nl": "ANKARA"
+      },
+      {
+        "en": "DAMASCUS",
+        "nl": "DAMASCUS"
+      },
+      {
+        "en": "RIYADH",
+        "nl": "RIAD"
+      },
+      {
+        "en": "DUBAI",
+        "nl": "DOEBAI"
+      },
+      {
+        "en": "MUSCAT",
+        "nl": "MUSCAT"
+      },
+      {
+        "en": "KUWAIT CITY",
+        "nl": "KOEWEITSTAD"
+      },
+      {
+        "en": "DOHA",
+        "nl": "DOHA"
+      },
+      {
+        "en": "KABUL",
+        "nl": "KABOEL"
+      },
+      {
+        "en": "ISLAMABAD",
+        "nl": "ISLAMABAD"
+      },
+      {
+        "en": "AMSTERDAM",
+        "nl": "AMSTERDAM"
+      }
+    ]
+  },
+  "food": {
+    "label": {
+      "en": "Food & Drink",
+      "nl": "Eten & Drinken"
+    },
+    "icon": "🍎",
+    "words": [
+      {
+        "en": "BREAD",
+        "nl": "BROOD"
+      },
+      {
+        "en": "CHEESE",
+        "nl": "KAAS"
+      },
+      {
+        "en": "APPLE",
+        "nl": "APPEL"
+      },
+      {
+        "en": "GRAPE",
+        "nl": "DRUIF"
+      },
+      {
+        "en": "LEMON",
+        "nl": "CITROEN"
+      },
+      {
+        "en": "PEACH",
+        "nl": "PERZIK"
+      },
+      {
+        "en": "MANGO",
+        "nl": "MANGO"
+      },
+      {
+        "en": "OLIVE",
+        "nl": "OLIJF"
+      },
+      {
+        "en": "ONION",
+        "nl": "PREI"
+      },
+      {
+        "en": "GARLIC",
+        "nl": "KNOFLOOK"
+      },
+      {
+        "en": "PASTA",
+        "nl": "PASTA"
+      },
+      {
+        "en": "PIZZA",
+        "nl": "PIZZA"
+      },
+      {
+        "en": "SUSHI",
+        "nl": "SUSHI"
+      },
+      {
+        "en": "CURRY",
+        "nl": "KERRIE"
+      },
+      {
+        "en": "STEAK",
+        "nl": "BIEFSTUK"
+      },
+      {
+        "en": "BACON",
+        "nl": "SPEK"
+      },
+      {
+        "en": "HONEY",
+        "nl": "HONING"
+      },
+      {
+        "en": "SUGAR",
+        "nl": "SUIKER"
+      },
+      {
+        "en": "SPICE",
+        "nl": "SPECERIJ"
+      },
+      {
+        "en": "HERB",
+        "nl": "KRUID"
+      },
+      {
+        "en": "BUTTER",
+        "nl": "BOTER"
+      },
+      {
+        "en": "CREAM",
+        "nl": "ROOM"
+      },
+      {
+        "en": "YOGURT",
+        "nl": "YOGHURT"
+      },
+      {
+        "en": "COFFEE",
+        "nl": "KOFFIE"
+      },
+      {
+        "en": "COCOA",
+        "nl": "CACAO"
+      },
+      {
+        "en": "CIDER",
+        "nl": "CIDER"
+      },
+      {
+        "en": "JUICE",
+        "nl": "SAP"
+      },
+      {
+        "en": "WATER",
+        "nl": "WATER"
+      },
+      {
+        "en": "SODA",
+        "nl": "FRISDRANK"
+      },
+      {
+        "en": "MILK",
+        "nl": "MELK"
+      },
+      {
+        "en": "ALMOND",
+        "nl": "AMANDEL"
+      },
+      {
+        "en": "WALNUT",
+        "nl": "WALNOOT"
+      },
+      {
+        "en": "PEANUT",
+        "nl": "PINDA"
+      },
+      {
+        "en": "RAISIN",
+        "nl": "ROZIJN"
+      },
+      {
+        "en": "PRUNE",
+        "nl": "GEDROOGDE PRUIM"
+      },
+      {
+        "en": "FIG",
+        "nl": "VIJG"
+      },
+      {
+        "en": "DATE",
+        "nl": "DADEL"
+      },
+      {
+        "en": "BERRY",
+        "nl": "BES"
+      },
+      {
+        "en": "CHERRY",
+        "nl": "KERS"
+      },
+      {
+        "en": "PLUM",
+        "nl": "PRUIM"
+      },
+      {
+        "en": "NOODLE",
+        "nl": "NOEDEL"
+      },
+      {
+        "en": "RISOTTO",
+        "nl": "RISOTTO"
+      },
+      {
+        "en": "TACO",
+        "nl": "TACO"
+      },
+      {
+        "en": "BAGEL",
+        "nl": "BAGEL"
+      },
+      {
+        "en": "TOAST",
+        "nl": "TOAST"
+      },
+      {
+        "en": "WAFFLE",
+        "nl": "WAFEL"
+      },
+      {
+        "en": "MUFFIN",
+        "nl": "MUFFIN"
+      },
+      {
+        "en": "BISCUIT",
+        "nl": "KAAKJE"
+      },
+      {
+        "en": "CARAMEL",
+        "nl": "KARAMEL"
+      },
+      {
+        "en": "VANILLA",
+        "nl": "VANILLE"
+      },
+      {
+        "en": "SALAD",
+        "nl": "SALADE"
+      },
+      {
+        "en": "SOUP",
+        "nl": "SOEP"
+      },
+      {
+        "en": "STEW",
+        "nl": "STOOFPOT"
+      },
+      {
+        "en": "ROAST",
+        "nl": "BRADEN"
+      },
+      {
+        "en": "GRILL",
+        "nl": "GRILLEN"
+      },
+      {
+        "en": "FRY",
+        "nl": "FRITUREN"
+      },
+      {
+        "en": "BAKE",
+        "nl": "BAKKEN"
+      },
+      {
+        "en": "BOIL",
+        "nl": "KOKEN"
+      },
+      {
+        "en": "STEAM",
+        "nl": "STOMEN"
+      },
+      {
+        "en": "POACH",
+        "nl": "POCHEREN"
+      },
+      {
+        "en": "CELERY",
+        "nl": "SELDERIJ"
+      },
+      {
+        "en": "CARROT",
+        "nl": "WORTEL"
+      },
+      {
+        "en": "POTATO",
+        "nl": "AARDAPPEL"
+      },
+      {
+        "en": "TOMATO",
+        "nl": "TOMAAT"
+      },
+      {
+        "en": "PEPPER",
+        "nl": "PAPRIKA"
+      },
+      {
+        "en": "RADISH",
+        "nl": "RADIJS"
+      },
+      {
+        "en": "BEET",
+        "nl": "BIET"
+      },
+      {
+        "en": "PEA",
+        "nl": "ERWT"
+      },
+      {
+        "en": "BEAN",
+        "nl": "BOON"
+      },
+      {
+        "en": "LENTIL",
+        "nl": "LINZE"
+      },
+      {
+        "en": "PINEAPPLE",
+        "nl": "ANANAS"
+      },
+      {
+        "en": "COCONUT",
+        "nl": "KOKOSNOOT"
+      },
+      {
+        "en": "BANANA",
+        "nl": "BANAAN"
+      },
+      {
+        "en": "ORANGE",
+        "nl": "SINAASAPPEL"
+      },
+      {
+        "en": "LIME",
+        "nl": "LIMOEN"
+      },
+      {
+        "en": "MELON",
+        "nl": "MELOEN"
+      },
+      {
+        "en": "KIWI",
+        "nl": "KIWI"
+      },
+      {
+        "en": "GUAVA",
+        "nl": "GUAVE"
+      },
+      {
+        "en": "PAPAYA",
+        "nl": "PAPAJA"
+      },
+      {
+        "en": "LYCHEE",
+        "nl": "LYCHEE"
+      },
+      {
+        "en": "CINNAMON",
+        "nl": "KANEEL"
+      },
+      {
+        "en": "GINGER",
+        "nl": "GEMBER"
+      },
+      {
+        "en": "NUTMEG",
+        "nl": "NOOTMUSKAAT"
+      },
+      {
+        "en": "CLOVE",
+        "nl": "KRUIDNAGEL"
+      },
+      {
+        "en": "PEPPERMINT",
+        "nl": "PEPERMUNT"
+      },
+      {
+        "en": "ROSEMARY",
+        "nl": "ROZEMARIJN"
+      },
+      {
+        "en": "THYME",
+        "nl": "TIJM"
+      },
+      {
+        "en": "BASIL",
+        "nl": "BASILICUM"
+      },
+      {
+        "en": "OREGANO",
+        "nl": "OREGANO"
+      },
+      {
+        "en": "PARSLEY",
+        "nl": "PETERSEELIE"
+      },
+      {
+        "en": "BURGER",
+        "nl": "BURGER"
+      },
+      {
+        "en": "SANDWICH",
+        "nl": "BOTERHAM"
+      },
+      {
+        "en": "OMELET",
+        "nl": "OMELET"
+      },
+      {
+        "en": "PANCAKE",
+        "nl": "PANNENKOEK"
+      },
+      {
+        "en": "DOUGHNUT",
+        "nl": "DONUT"
+      },
+      {
+        "en": "BROWNIE",
+        "nl": "BROWNIE"
+      },
+      {
+        "en": "COOKIE",
+        "nl": "KOEKJE"
+      },
+      {
+        "en": "PUDDING",
+        "nl": "PUDDING"
+      },
+      {
+        "en": "CUSTARD",
+        "nl": "VLA"
+      },
+      {
+        "en": "TART",
+        "nl": "TAART"
+      },
+      {
+        "en": "FISH",
+        "nl": "VIS"
+      },
+      {
+        "en": "CHICKEN",
+        "nl": "KIP"
+      },
+      {
+        "en": "PEAR",
+        "nl": "PEER"
+      },
+      {
+        "en": "BLUEBERRY",
+        "nl": "BOSBES"
+      },
+      {
+        "en": "RASPBERRY",
+        "nl": "FRAMBOOS"
+      },
+      {
+        "en": "STRAWBERRY",
+        "nl": "AARDBEI"
+      },
+      {
+        "en": "CABBAGE",
+        "nl": "KOOL"
+      },
+      {
+        "en": "CUCUMBER",
+        "nl": "KOMKOMMER"
+      },
+      {
+        "en": "LETTUCE",
+        "nl": "SLA"
+      },
+      {
+        "en": "MARROW",
+        "nl": "COURGETTE"
+      },
+      {
+        "en": "PARSNIP",
+        "nl": "PASTINAAK"
+      },
+      {
+        "en": "PUMPKIN",
+        "nl": "POMPOEN"
+      },
+      {
+        "en": "TURNIP",
+        "nl": "RAAP"
+      },
+      {
+        "en": "BRUSSELS SPROUT",
+        "nl": "SPROUTJES"
+      },
+      {
+        "en": "CHILLI",
+        "nl": "CHILIPEPER"
+      },
+      {
+        "en": "CAKE",
+        "nl": "CAKE"
+      },
+      {
+        "en": "ICE CREAM",
+        "nl": "IJSJE"
+      }
+    ]
+  },
+  "sports": {
+    "label": {
+      "en": "Sports",
+      "nl": "Sport"
+    },
+    "icon": "⚽",
+    "words": [
+      {
+        "en": "SOCCER",
+        "nl": "VOETBAL"
+      },
+      {
+        "en": "TENNIS",
+        "nl": "TENNIS"
+      },
+      {
+        "en": "RUGBY",
+        "nl": "RUGBY"
+      },
+      {
+        "en": "CRICKET",
+        "nl": "CRICKET"
+      },
+      {
+        "en": "HOCKEY",
+        "nl": "HOCKEY"
+      },
+      {
+        "en": "BOXING",
+        "nl": "BOKSEN"
+      },
+      {
+        "en": "GOLF",
+        "nl": "GOLF"
+      },
+      {
+        "en": "POLO",
+        "nl": "POLO"
+      },
+      {
+        "en": "JUDO",
+        "nl": "JUDO"
+      },
+      {
+        "en": "KARATE",
+        "nl": "KARATE"
+      },
+      {
+        "en": "RACING",
+        "nl": "RACEN"
+      },
+      {
+        "en": "SKIING",
+        "nl": "SKIEN"
+      },
+      {
+        "en": "ROWING",
+        "nl": "ROEIEN"
+      },
+      {
+        "en": "DIVING",
+        "nl": "DUIKEN"
+      },
+      {
+        "en": "FENCING",
+        "nl": "SCHERMEN"
+      },
+      {
+        "en": "ARCHERY",
+        "nl": "BOOGSCHIETEN"
+      },
+      {
+        "en": "CYCLING",
+        "nl": "WIELRENNEN"
+      },
+      {
+        "en": "SAILING",
+        "nl": "ZEILEN"
+      },
+      {
+        "en": "SURFING",
+        "nl": "SURFEN"
+      },
+      {
+        "en": "CLIMBING",
+        "nl": "KLIMMEN"
+      },
+      {
+        "en": "PITCHER",
+        "nl": "WERPER"
+      },
+      {
+        "en": "BATTER",
+        "nl": "SLAGMAN"
+      },
+      {
+        "en": "STRIKE",
+        "nl": "SLAG"
+      },
+      {
+        "en": "WICKET",
+        "nl": "WICKET"
+      },
+      {
+        "en": "SCORE",
+        "nl": "SCORE"
+      },
+      {
+        "en": "MATCH",
+        "nl": "WEDSTRIJD"
+      },
+      {
+        "en": "MEDAL",
+        "nl": "MEDAILLE"
+      },
+      {
+        "en": "TROPHY",
+        "nl": "TROFEE"
+      },
+      {
+        "en": "LEAGUE",
+        "nl": "COMPETITIE"
+      },
+      {
+        "en": "FINAL",
+        "nl": "FINALE"
+      },
+      {
+        "en": "STADIUM",
+        "nl": "STADION"
+      },
+      {
+        "en": "ARENA",
+        "nl": "ARENA"
+      },
+      {
+        "en": "COURT",
+        "nl": "BAAN"
+      },
+      {
+        "en": "FIELD",
+        "nl": "VELD"
+      },
+      {
+        "en": "TRACK",
+        "nl": "ATLETIEKBAAN"
+      },
+      {
+        "en": "POOL",
+        "nl": "ZWEMBAD"
+      },
+      {
+        "en": "RINK",
+        "nl": "IJSBAAN"
+      },
+      {
+        "en": "SLOPE",
+        "nl": "PISTE"
+      },
+      {
+        "en": "TRAIL",
+        "nl": "PARCOURS"
+      },
+      {
+        "en": "GOAL",
+        "nl": "DOEL"
+      },
+      {
+        "en": "PLAYER",
+        "nl": "SPELER"
+      },
+      {
+        "en": "COACH",
+        "nl": "COACH"
+      },
+      {
+        "en": "REFEREE",
+        "nl": "ARBITER"
+      },
+      {
+        "en": "UMPIRE",
+        "nl": "UMPIRE"
+      },
+      {
+        "en": "CAPTAIN",
+        "nl": "AANVOERDER"
+      },
+      {
+        "en": "TEAM",
+        "nl": "TEAM"
+      },
+      {
+        "en": "SQUAD",
+        "nl": "SELECTIE"
+      },
+      {
+        "en": "RACER",
+        "nl": "COUREUR"
+      },
+      {
+        "en": "JOCKEY",
+        "nl": "JOCKEY"
+      },
+      {
+        "en": "DIVER",
+        "nl": "DUIKER"
+      },
+      {
+        "en": "WRESTLING",
+        "nl": "WORSTELEN"
+      },
+      {
+        "en": "WEIGHTLIFTING",
+        "nl": "GEWICHTHEFFEN"
+      },
+      {
+        "en": "GYMNASTICS",
+        "nl": "TURNEN"
+      },
+      {
+        "en": "ATHLETICS",
+        "nl": "ATLETIEK"
+      },
+      {
+        "en": "MARATHON",
+        "nl": "MARATHON"
+      },
+      {
+        "en": "SPRINT",
+        "nl": "SPRINT"
+      },
+      {
+        "en": "RELAY",
+        "nl": "ESTAFETTE"
+      },
+      {
+        "en": "HURDLE",
+        "nl": "HORDELOOP"
+      },
+      {
+        "en": "JAVELIN",
+        "nl": "SPEERWERPEN"
+      },
+      {
+        "en": "DISCUS",
+        "nl": "DISCUSWERPEN"
+      },
+      {
+        "en": "BASKETBALL",
+        "nl": "BASKETBAL"
+      },
+      {
+        "en": "BASEBALL",
+        "nl": "HONKBAL"
+      },
+      {
+        "en": "SOFTBALL",
+        "nl": "SOFTBAL"
+      },
+      {
+        "en": "VOLLEYBALL",
+        "nl": "VOLLEYBAL"
+      },
+      {
+        "en": "HANDBALL",
+        "nl": "HANDBAL"
+      },
+      {
+        "en": "NETBALL",
+        "nl": "NETBAL"
+      },
+      {
+        "en": "LACROSSE",
+        "nl": "LACROSSE"
+      },
+      {
+        "en": "BADMINTON",
+        "nl": "BADMINTON"
+      },
+      {
+        "en": "SQUASH",
+        "nl": "SQUASH"
+      },
+      {
+        "en": "BOWLING",
+        "nl": "BOWLEN"
+      },
+      {
+        "en": "PADDLE",
+        "nl": "PEDDEL"
+      },
+      {
+        "en": "RACKET",
+        "nl": "RACKET"
+      },
+      {
+        "en": "HELMET",
+        "nl": "HELM"
+      },
+      {
+        "en": "GOGGLES",
+        "nl": "ZWEMBRIL"
+      },
+      {
+        "en": "WETSUIT",
+        "nl": "WETSUIT"
+      },
+      {
+        "en": "HARNESS",
+        "nl": "KLIMGORDEL"
+      },
+      {
+        "en": "PARACHUTE",
+        "nl": "PARACHUTE"
+      },
+      {
+        "en": "SNORKEL",
+        "nl": "SNORKEL"
+      },
+      {
+        "en": "FLIPPER",
+        "nl": "FLIPPER"
+      },
+      {
+        "en": "SKATE",
+        "nl": "SCHAATS"
+      },
+      {
+        "en": "REFLEX",
+        "nl": "REFLEX"
+      },
+      {
+        "en": "AGILITY",
+        "nl": "LENIGHEID"
+      },
+      {
+        "en": "BALANCE",
+        "nl": "EVENWICHT"
+      },
+      {
+        "en": "ENDURANCE",
+        "nl": "CONDITIE"
+      },
+      {
+        "en": "STRENGTH",
+        "nl": "KRACHT"
+      },
+      {
+        "en": "SPEED",
+        "nl": "SNELHEID"
+      },
+      {
+        "en": "POWER",
+        "nl": "VERMOGEN"
+      },
+      {
+        "en": "STAMINA",
+        "nl": "UITHOUDING"
+      },
+      {
+        "en": "TIMING",
+        "nl": "TIMING"
+      },
+      {
+        "en": "TACTIC",
+        "nl": "TACTIEK"
+      },
+      {
+        "en": "KNOCKOUT",
+        "nl": "KNOCKOUT"
+      },
+      {
+        "en": "TIMEOUT",
+        "nl": "TIMEOUT"
+      },
+      {
+        "en": "OVERTIME",
+        "nl": "VERLENGING"
+      },
+      {
+        "en": "PENALTY",
+        "nl": "STRAFSCHOP"
+      },
+      {
+        "en": "FREE THROW",
+        "nl": "VRIJE WORP"
+      },
+      {
+        "en": "SERVE",
+        "nl": "SERVEREN"
+      },
+      {
+        "en": "VOLLEY",
+        "nl": "VOLLEYEN"
+      },
+      {
+        "en": "TACKLE",
+        "nl": "TACKELEN"
+      },
+      {
+        "en": "DRIBBLE",
+        "nl": "DRIBBELEN"
+      },
+      {
+        "en": "TRAINING",
+        "nl": "TRAINING"
+      }
+    ]
+  },
+  "music": {
+    "label": {
+      "en": "Music",
+      "nl": "Muziek"
+    },
+    "icon": "🎵",
+    "words": [
+      {
+        "en": "PIANO",
+        "nl": "PIANO"
+      },
+      {
+        "en": "VIOLIN",
+        "nl": "VIOOL"
+      },
+      {
+        "en": "GUITAR",
+        "nl": "GITAAR"
+      },
+      {
+        "en": "FLUTE",
+        "nl": "FLUIT"
+      },
+      {
+        "en": "DRUM",
+        "nl": "TROMMEL"
+      },
+      {
+        "en": "HARP",
+        "nl": "HARP"
+      },
+      {
+        "en": "ORGAN",
+        "nl": "ORGEL"
+      },
+      {
+        "en": "CELLO",
+        "nl": "CELLO"
+      },
+      {
+        "en": "BASS",
+        "nl": "BAS"
+      },
+      {
+        "en": "HORN",
+        "nl": "HOORN"
+      },
+      {
+        "en": "MELODY",
+        "nl": "MELODIE"
+      },
+      {
+        "en": "RHYTHM",
+        "nl": "RITME"
+      },
+      {
+        "en": "CHORUS",
+        "nl": "REFREIN"
+      },
+      {
+        "en": "SONATA",
+        "nl": "SONATE"
+      },
+      {
+        "en": "OPERA",
+        "nl": "OPERA"
+      },
+      {
+        "en": "BALLET",
+        "nl": "BALLET"
+      },
+      {
+        "en": "JAZZ",
+        "nl": "JAZZ"
+      },
+      {
+        "en": "ROCK",
+        "nl": "ROCK"
+      },
+      {
+        "en": "FOLK",
+        "nl": "FOLK"
+      },
+      {
+        "en": "SOUL",
+        "nl": "SOUL"
+      },
+      {
+        "en": "SINGER",
+        "nl": "ZANGER"
+      },
+      {
+        "en": "TENOR",
+        "nl": "TENOR"
+      },
+      {
+        "en": "SOPRANO",
+        "nl": "SOPRAAN"
+      },
+      {
+        "en": "BARITONE",
+        "nl": "BARITON"
+      },
+      {
+        "en": "CONDUCTOR",
+        "nl": "DIRIGENT"
+      },
+      {
+        "en": "COMPOSER",
+        "nl": "COMPONIST"
+      },
+      {
+        "en": "MAESTRO",
+        "nl": "MAESTRO"
+      },
+      {
+        "en": "VIRTUOSO",
+        "nl": "VIRTUOOS"
+      },
+      {
+        "en": "MUSICIAN",
+        "nl": "MUZIKANT"
+      },
+      {
+        "en": "BAND",
+        "nl": "BAND"
+      },
+      {
+        "en": "TRUMPET",
+        "nl": "TROMPET"
+      },
+      {
+        "en": "TROMBONE",
+        "nl": "TROMBONE"
+      },
+      {
+        "en": "CLARINET",
+        "nl": "KLARINET"
+      },
+      {
+        "en": "BASSOON",
+        "nl": "FAGOT"
+      },
+      {
+        "en": "OBOE",
+        "nl": "HOBO"
+      },
+      {
+        "en": "PICCOLO",
+        "nl": "PICCOLO"
+      },
+      {
+        "en": "VIOLA",
+        "nl": "ALTVIOOL"
+      },
+      {
+        "en": "ZITHER",
+        "nl": "CITER"
+      },
+      {
+        "en": "SITAR",
+        "nl": "SITAR"
+      },
+      {
+        "en": "BANJO",
+        "nl": "BANJO"
+      },
+      {
+        "en": "CONCERT",
+        "nl": "CONCERT"
+      },
+      {
+        "en": "RECITAL",
+        "nl": "RECITAL"
+      },
+      {
+        "en": "FESTIVAL",
+        "nl": "FESTIVAL"
+      },
+      {
+        "en": "SYMPHONY",
+        "nl": "SYMFONIE"
+      },
+      {
+        "en": "ORCHESTRA",
+        "nl": "ORKEST"
+      },
+      {
+        "en": "CHOIR",
+        "nl": "KOOR"
+      },
+      {
+        "en": "QUARTET",
+        "nl": "KWARTET"
+      },
+      {
+        "en": "OCTET",
+        "nl": "OCTET"
+      },
+      {
+        "en": "ENSEMBLE",
+        "nl": "ENSEMBLE"
+      },
+      {
+        "en": "DUET",
+        "nl": "DUET"
+      },
+      {
+        "en": "ACCORDION",
+        "nl": "ACCORDEON"
+      },
+      {
+        "en": "HARMONICA",
+        "nl": "MONDHARMONICA"
+      },
+      {
+        "en": "BAGPIPE",
+        "nl": "DOEDELZAK"
+      },
+      {
+        "en": "MANDOLIN",
+        "nl": "MANDOLINE"
+      },
+      {
+        "en": "UKULELE",
+        "nl": "UKELELE"
+      },
+      {
+        "en": "XYLOPHONE",
+        "nl": "XYLOFOON"
+      },
+      {
+        "en": "MARIMBA",
+        "nl": "MARIMBA"
+      },
+      {
+        "en": "TIMPANI",
+        "nl": "PAUKEN"
+      },
+      {
+        "en": "CYMBAL",
+        "nl": "BEKKEN"
+      },
+      {
+        "en": "TAMBOURINE",
+        "nl": "TAMBOERIJN"
+      },
+      {
+        "en": "REGGAE",
+        "nl": "REGGAE"
+      },
+      {
+        "en": "BLUES",
+        "nl": "BLUES"
+      },
+      {
+        "en": "DISCO",
+        "nl": "DISCO"
+      },
+      {
+        "en": "PUNK",
+        "nl": "PUNK"
+      },
+      {
+        "en": "METAL",
+        "nl": "METAL"
+      },
+      {
+        "en": "LATIN",
+        "nl": "LATIN"
+      },
+      {
+        "en": "SALSA",
+        "nl": "SALSA"
+      },
+      {
+        "en": "TANGO",
+        "nl": "TANGO"
+      },
+      {
+        "en": "WALTZ",
+        "nl": "WALS"
+      },
+      {
+        "en": "POLKA",
+        "nl": "POLKA"
+      },
+      {
+        "en": "TEMPO",
+        "nl": "TEMPO"
+      },
+      {
+        "en": "BEAT",
+        "nl": "BEAT"
+      },
+      {
+        "en": "NOTE",
+        "nl": "NOOT"
+      },
+      {
+        "en": "CHORD",
+        "nl": "AKKOORD"
+      },
+      {
+        "en": "SCALE",
+        "nl": "TOONLADDER"
+      },
+      {
+        "en": "ARPEGGIO",
+        "nl": "ARPEGGIO"
+      },
+      {
+        "en": "CADENCE",
+        "nl": "CADENS"
+      },
+      {
+        "en": "CRESCENDO",
+        "nl": "CRESCENDO"
+      },
+      {
+        "en": "DIMINUENDO",
+        "nl": "DECRESCENDO"
+      },
+      {
+        "en": "VIBRATO",
+        "nl": "VIBRATO"
+      },
+      {
+        "en": "MICROPHONE",
+        "nl": "MICROFOON"
+      },
+      {
+        "en": "AMPLIFIER",
+        "nl": "VERSTERKER"
+      },
+      {
+        "en": "SPEAKER",
+        "nl": "LUIDSPREKER"
+      },
+      {
+        "en": "HEADPHONE",
+        "nl": "KOPTELEFOON"
+      },
+      {
+        "en": "TUNER",
+        "nl": "TUNER"
+      },
+      {
+        "en": "METRONOME",
+        "nl": "METRONOOM"
+      },
+      {
+        "en": "TUNING FORK",
+        "nl": "STEMVORK"
+      },
+      {
+        "en": "CAPO",
+        "nl": "CAPO"
+      },
+      {
+        "en": "PICK",
+        "nl": "PECTRUM"
+      },
+      {
+        "en": "BOW",
+        "nl": "STRIJKSTOK"
+      },
+      {
+        "en": "RECORD",
+        "nl": "PLAAT"
+      },
+      {
+        "en": "ALBUM",
+        "nl": "ALBUM"
+      },
+      {
+        "en": "TRACK",
+        "nl": "NUMMER"
+      },
+      {
+        "en": "SINGLE",
+        "nl": "SINGLE"
+      },
+      {
+        "en": "MIXTAPE",
+        "nl": "MIXTAPE"
+      },
+      {
+        "en": "PLAYLIST",
+        "nl": "AFSPEELLIJST"
+      },
+      {
+        "en": "STUDIO",
+        "nl": "STUDIO"
+      },
+      {
+        "en": "BOOTH",
+        "nl": "CABINE"
+      },
+      {
+        "en": "ACOUSTIC",
+        "nl": "AKOESTISCH"
+      },
+      {
+        "en": "DIGITAL",
+        "nl": "DIGITAAL"
+      }
+    ]
+  },
+  "movies": {
+    "label": {
+      "en": "Movies & Film",
+      "nl": "Films & Bioscoop"
+    },
+    "icon": "🎬",
+    "words": [
+      {
+        "en": "ACTOR",
+        "nl": "ACTEUR"
+      },
+      {
+        "en": "SCENE",
+        "nl": "SCENE"
+      },
+      {
+        "en": "SCRIPT",
+        "nl": "SCRIPT"
+      },
+      {
+        "en": "CAMERA",
+        "nl": "CAMERA"
+      },
+      {
+        "en": "STUDIO",
+        "nl": "STUDIO"
+      },
+      {
+        "en": "CINEMA",
+        "nl": "BIOSCOOP"
+      },
+      {
+        "en": "SCREEN",
+        "nl": "SCHERM"
+      },
+      {
+        "en": "DRAMA",
+        "nl": "DRAMA"
+      },
+      {
+        "en": "COMEDY",
+        "nl": "KOMEDIE"
+      },
+      {
+        "en": "THRILLER",
+        "nl": "THRILLER"
+      },
+      {
+        "en": "DIRECTOR",
+        "nl": "REGISSEUR"
+      },
+      {
+        "en": "PRODUCER",
+        "nl": "PRODUCENT"
+      },
+      {
+        "en": "PREMIERE",
+        "nl": "PREMIERE"
+      },
+      {
+        "en": "TRAILER",
+        "nl": "TRAILER"
+      },
+      {
+        "en": "SEQUEL",
+        "nl": "VERVOLG"
+      },
+      {
+        "en": "REMAKE",
+        "nl": "REMAKE"
+      },
+      {
+        "en": "COSTUME",
+        "nl": "KOSTUUM"
+      },
+      {
+        "en": "PROP",
+        "nl": "REKWISIET"
+      },
+      {
+        "en": "LIGHTING",
+        "nl": "VERLICHTING"
+      },
+      {
+        "en": "EDITING",
+        "nl": "FILMMONTAGE"
+      },
+      {
+        "en": "WESTERN",
+        "nl": "WESTERN"
+      },
+      {
+        "en": "FANTASY",
+        "nl": "FANTASY"
+      },
+      {
+        "en": "HORROR",
+        "nl": "HORROR"
+      },
+      {
+        "en": "ACTION",
+        "nl": "ACTIE"
+      },
+      {
+        "en": "ROMANCE",
+        "nl": "ROMANTIEK"
+      },
+      {
+        "en": "MUSICAL",
+        "nl": "MUSICAL"
+      },
+      {
+        "en": "DOCUMENTARY",
+        "nl": "DOCUMENTAIRE"
+      },
+      {
+        "en": "ANIMATION",
+        "nl": "ANIMATIE"
+      },
+      {
+        "en": "MYSTERY",
+        "nl": "MYSTERIE"
+      },
+      {
+        "en": "ADVENTURE",
+        "nl": "AVONTURENFILM"
+      },
+      {
+        "en": "CASTING",
+        "nl": "CASTING"
+      },
+      {
+        "en": "AUDITION",
+        "nl": "AUDITIE"
+      },
+      {
+        "en": "REHEARSE",
+        "nl": "REPETEREN"
+      },
+      {
+        "en": "PERFORM",
+        "nl": "ACTEREN"
+      },
+      {
+        "en": "NARRATOR",
+        "nl": "VERTELLER"
+      },
+      {
+        "en": "VILLAIN",
+        "nl": "SCHURK"
+      },
+      {
+        "en": "HERO",
+        "nl": "HELD"
+      },
+      {
+        "en": "STUNT",
+        "nl": "STUNT"
+      },
+      {
+        "en": "EFFECT",
+        "nl": "EFFECT"
+      },
+      {
+        "en": "SOUNDTRACK",
+        "nl": "SOUNDTRACK"
+      },
+      {
+        "en": "BLOCKBUSTER",
+        "nl": "KASKRAKER"
+      },
+      {
+        "en": "TRILOGY",
+        "nl": "TRILOGIE"
+      },
+      {
+        "en": "FRANCHISE",
+        "nl": "FRANCHISE"
+      },
+      {
+        "en": "FEATURE",
+        "nl": "SPEELFILM"
+      },
+      {
+        "en": "SHORT",
+        "nl": "KORTEFILM"
+      },
+      {
+        "en": "SILENT",
+        "nl": "STOMMEFILM"
+      },
+      {
+        "en": "CLASSIC",
+        "nl": "KLASSIEKER"
+      },
+      {
+        "en": "INDIE",
+        "nl": "INDIE"
+      },
+      {
+        "en": "AWARD",
+        "nl": "PRIJS"
+      },
+      {
+        "en": "FESTIVAL",
+        "nl": "FESTIVAL"
+      },
+      {
+        "en": "POPCORN",
+        "nl": "POPCORN"
+      },
+      {
+        "en": "TICKET",
+        "nl": "KAARTJE"
+      },
+      {
+        "en": "POSTER",
+        "nl": "POSTER"
+      },
+      {
+        "en": "MARQUEE",
+        "nl": "LUIFEL"
+      },
+      {
+        "en": "PROJECTOR",
+        "nl": "PROJECTOR"
+      },
+      {
+        "en": "REEL",
+        "nl": "FILMROL"
+      },
+      {
+        "en": "FRAME",
+        "nl": "FRAME"
+      },
+      {
+        "en": "CLIP",
+        "nl": "CLIP"
+      },
+      {
+        "en": "MONTAGE",
+        "nl": "MONTAGE"
+      },
+      {
+        "en": "CUT",
+        "nl": "KNIP"
+      },
+      {
+        "en": "SCREENPLAY",
+        "nl": "SCENARIO"
+      },
+      {
+        "en": "DIALOGUE",
+        "nl": "DIALOOG"
+      },
+      {
+        "en": "MONOLOGUE",
+        "nl": "MONOLOOG"
+      },
+      {
+        "en": "VOICEOVER",
+        "nl": "VOICEOVER"
+      },
+      {
+        "en": "SUBTITLE",
+        "nl": "ONDERTITEL"
+      },
+      {
+        "en": "CREDITS",
+        "nl": "AFTITELING"
+      },
+      {
+        "en": "OUTTAKE",
+        "nl": "OUTTAKE"
+      },
+      {
+        "en": "BLOOPER",
+        "nl": "BLOOPER"
+      },
+      {
+        "en": "DELETED",
+        "nl": "VERWIJDERD"
+      },
+      {
+        "en": "EXTENDED",
+        "nl": "UITGEBREID"
+      },
+      {
+        "en": "SCIENCE FICTION",
+        "nl": "SCIFI"
+      },
+      {
+        "en": "NOIR",
+        "nl": "NOIR"
+      },
+      {
+        "en": "EPIC",
+        "nl": "EPOS"
+      },
+      {
+        "en": "BIOGRAPHICAL",
+        "nl": "BIOGRAFISCH"
+      },
+      {
+        "en": "HISTORICAL",
+        "nl": "HISTORISCH"
+      },
+      {
+        "en": "CRIME",
+        "nl": "MISDAAD"
+      },
+      {
+        "en": "SUSPENSE",
+        "nl": "SPANNING"
+      },
+      {
+        "en": "COMEDY DRAMA",
+        "nl": "KOMEDIEDRAMA"
+      },
+      {
+        "en": "TRAGICOMEDY",
+        "nl": "TRAGIKOMEDIE"
+      },
+      {
+        "en": "CINEMATOGRAPHY",
+        "nl": "CAMERAVOERING"
+      },
+      {
+        "en": "CHOREOGRAPHY",
+        "nl": "CHOREOGRAFIE"
+      },
+      {
+        "en": "SET DESIGN",
+        "nl": "DECORONTWERP"
+      },
+      {
+        "en": "MAKEUP",
+        "nl": "GRIME"
+      },
+      {
+        "en": "WARDROBE",
+        "nl": "GARDEROBE"
+      },
+      {
+        "en": "PYROTECHNICS",
+        "nl": "PYROTECHNIEK"
+      },
+      {
+        "en": "CGI",
+        "nl": "CGI"
+      },
+      {
+        "en": "ANIMATRONIC",
+        "nl": "ANIMATRONICA"
+      },
+      {
+        "en": "MINIATURE",
+        "nl": "MINIATUUR"
+      },
+      {
+        "en": "BLUESCREEN",
+        "nl": "BLUESCREEN"
+      },
+      {
+        "en": "OSCAR",
+        "nl": "OSCAR"
+      },
+      {
+        "en": "EMMY",
+        "nl": "EMMY"
+      },
+      {
+        "en": "GOLDEN GLOBE",
+        "nl": "GOLDENGLOBE"
+      },
+      {
+        "en": "BAFTA",
+        "nl": "BAFTA"
+      },
+      {
+        "en": "PALME D'OR",
+        "nl": "GOUDENPALM"
+      },
+      {
+        "en": "NOMINATION",
+        "nl": "NOMINATIE"
+      },
+      {
+        "en": "ACCEPTANCE",
+        "nl": "DANKWOORD"
+      },
+      {
+        "en": "SPEECH",
+        "nl": "TOESPRAAK"
+      },
+      {
+        "en": "RED CARPET",
+        "nl": "RODELOPER"
+      },
+      {
+        "en": "GALA",
+        "nl": "GALA"
+      },
+      {
+        "en": "DETECTIVE",
+        "nl": "DETECTIVE"
+      }
+    ]
+  },
+  "literature": {
+    "label": {
+      "en": "Literature",
+      "nl": "Literatuur"
+    },
+    "icon": "📚",
+    "words": [
+      {
+        "en": "AUTHOR",
+        "nl": "AUTEUR"
+      },
+      {
+        "en": "NOVEL",
+        "nl": "ROMAN"
+      },
+      {
+        "en": "POEM",
+        "nl": "GEDICHT"
+      },
+      {
+        "en": "VERSE",
+        "nl": "VERS"
+      },
+      {
+        "en": "PROSE",
+        "nl": "PROZA"
+      },
+      {
+        "en": "FABLE",
+        "nl": "FABEL"
+      },
+      {
+        "en": "MYTH",
+        "nl": "MYTHE"
+      },
+      {
+        "en": "SAGA",
+        "nl": "SAGA"
+      },
+      {
+        "en": "EPIC",
+        "nl": "EPOS"
+      },
+      {
+        "en": "TALE",
+        "nl": "VERHAAL"
+      },
+      {
+        "en": "CHAPTER",
+        "nl": "HOOFDSTUK"
+      },
+      {
+        "en": "PREFACE",
+        "nl": "VOORWOORD"
+      },
+      {
+        "en": "INDEX",
+        "nl": "REGISTER"
+      },
+      {
+        "en": "GLOSSARY",
+        "nl": "WOORDENLIJST"
+      },
+      {
+        "en": "PRINT",
+        "nl": "DRUK"
+      },
+      {
+        "en": "BINDING",
+        "nl": "BOEKBAND"
+      },
+      {
+        "en": "LIBRARY",
+        "nl": "BIBLIOTHEEK"
+      },
+      {
+        "en": "BOOKSHOP",
+        "nl": "BOEKHANDEL"
+      },
+      {
+        "en": "READER",
+        "nl": "LEZER"
+      },
+      {
+        "en": "WRITER",
+        "nl": "SCHRIJVER"
+      },
+      {
+        "en": "POET",
+        "nl": "DICHTER"
+      },
+      {
+        "en": "BARD",
+        "nl": "BARD"
+      },
+      {
+        "en": "SCRIBE",
+        "nl": "KOPIIST"
+      },
+      {
+        "en": "PUBLISHER",
+        "nl": "UITGEVER"
+      },
+      {
+        "en": "EDITOR",
+        "nl": "REDACTEUR"
+      },
+      {
+        "en": "AGENT",
+        "nl": "AGENT"
+      },
+      {
+        "en": "PEN",
+        "nl": "PEN"
+      },
+      {
+        "en": "INK",
+        "nl": "INKT"
+      },
+      {
+        "en": "PAGE",
+        "nl": "BLADZIJDE"
+      },
+      {
+        "en": "QUILL",
+        "nl": "GANZENVEER"
+      },
+      {
+        "en": "SONNET",
+        "nl": "SONNET"
+      },
+      {
+        "en": "HAIKU",
+        "nl": "HAIKU"
+      },
+      {
+        "en": "LIMERICK",
+        "nl": "LIMERICK"
+      },
+      {
+        "en": "BALLAD",
+        "nl": "BALLADE"
+      },
+      {
+        "en": "STANZA",
+        "nl": "STROFE"
+      },
+      {
+        "en": "COUPLET",
+        "nl": "COUPLET"
+      },
+      {
+        "en": "RHYME",
+        "nl": "RIJM"
+      },
+      {
+        "en": "METER",
+        "nl": "METRUM"
+      },
+      {
+        "en": "METAPHOR",
+        "nl": "METAFOOR"
+      },
+      {
+        "en": "SIMILE",
+        "nl": "VERGELIJKING"
+      },
+      {
+        "en": "TRAGEDY",
+        "nl": "TRAGEDIE"
+      },
+      {
+        "en": "COMEDY",
+        "nl": "KOMEDIE"
+      },
+      {
+        "en": "SATIRE",
+        "nl": "SATIRE"
+      },
+      {
+        "en": "PARODY",
+        "nl": "PARODIE"
+      },
+      {
+        "en": "MEMOIR",
+        "nl": "MEMOIRES"
+      },
+      {
+        "en": "BIOGRAPHY",
+        "nl": "BIOGRAFIE"
+      },
+      {
+        "en": "FICTION",
+        "nl": "FICTIE"
+      },
+      {
+        "en": "FANTASY",
+        "nl": "FANTASY"
+      },
+      {
+        "en": "ALLEGORY",
+        "nl": "ALLEGORIE"
+      },
+      {
+        "en": "ANTHOLOGY",
+        "nl": "BLOEMLEZING"
+      },
+      {
+        "en": "DICTIONARY",
+        "nl": "WOORDENBOEK"
+      },
+      {
+        "en": "THESAURUS",
+        "nl": "THESAURUS"
+      },
+      {
+        "en": "ENCYCLOPEDIA",
+        "nl": "ENCYCLOPEDIE"
+      },
+      {
+        "en": "ALMANAC",
+        "nl": "ALMANAK"
+      },
+      {
+        "en": "ATLAS",
+        "nl": "ATLAS"
+      },
+      {
+        "en": "GAZETTEER",
+        "nl": "NASLAGWERK"
+      },
+      {
+        "en": "JOURNAL",
+        "nl": "VAKBLAD"
+      },
+      {
+        "en": "MAGAZINE",
+        "nl": "TIJDSCHRIFT"
+      },
+      {
+        "en": "PAMPHLET",
+        "nl": "PAMFLET"
+      },
+      {
+        "en": "BROCHURE",
+        "nl": "BROCHURE"
+      },
+      {
+        "en": "PROTAGONIST",
+        "nl": "HOOFDPERSOON"
+      },
+      {
+        "en": "ANTAGONIST",
+        "nl": "TEGENSPELER"
+      },
+      {
+        "en": "NARRATOR",
+        "nl": "VERTELLER"
+      },
+      {
+        "en": "CHARACTER",
+        "nl": "PERSONAGE"
+      },
+      {
+        "en": "SETTING",
+        "nl": "DECOR"
+      },
+      {
+        "en": "PLOT",
+        "nl": "PLOT"
+      },
+      {
+        "en": "THEME",
+        "nl": "THEMA"
+      },
+      {
+        "en": "MOTIF",
+        "nl": "MOTIEF"
+      },
+      {
+        "en": "SYMBOL",
+        "nl": "SYMBOOL"
+      },
+      {
+        "en": "IRONY",
+        "nl": "IRONIE"
+      },
+      {
+        "en": "MANUSCRIPT",
+        "nl": "MANUSCRIPT"
+      },
+      {
+        "en": "DRAFT",
+        "nl": "KLAD"
+      },
+      {
+        "en": "REVISION",
+        "nl": "HERZIENING"
+      },
+      {
+        "en": "PROOFREAD",
+        "nl": "PROEFLEZEN"
+      },
+      {
+        "en": "TYPESET",
+        "nl": "ZETWERK"
+      },
+      {
+        "en": "FONT",
+        "nl": "LETTERYPE"
+      },
+      {
+        "en": "MARGIN",
+        "nl": "MARGE"
+      },
+      {
+        "en": "JACKET",
+        "nl": "STOFOMSLAG"
+      },
+      {
+        "en": "SPINE",
+        "nl": "RUG"
+      },
+      {
+        "en": "SHAKESPEARE",
+        "nl": "SHAKESPEARE"
+      },
+      {
+        "en": "DICKENS",
+        "nl": "DICKENS"
+      },
+      {
+        "en": "AUSTEN",
+        "nl": "AUSTEN"
+      },
+      {
+        "en": "TOLKIEN",
+        "nl": "TOLKIEN"
+      },
+      {
+        "en": "ORWELL",
+        "nl": "ORWELL"
+      },
+      {
+        "en": "HEMINGWAY",
+        "nl": "HEMINGWAY"
+      },
+      {
+        "en": "TWAIN",
+        "nl": "TWAIN"
+      },
+      {
+        "en": "POE",
+        "nl": "POE"
+      },
+      {
+        "en": "VERNE",
+        "nl": "VERNE"
+      },
+      {
+        "en": "HUGO",
+        "nl": "HUGO"
+      },
+      {
+        "en": "LETTER",
+        "nl": "BRIEF"
+      },
+      {
+        "en": "DIARY",
+        "nl": "DAGBOEK"
+      },
+      {
+        "en": "NOTEBOOK",
+        "nl": "SCHRIFT"
+      },
+      {
+        "en": "PAPERBACK",
+        "nl": "PAPERBACK"
+      },
+      {
+        "en": "HARDCOVER",
+        "nl": "HARDCOVER"
+      },
+      {
+        "en": "EDITION",
+        "nl": "UITGAVE"
+      },
+      {
+        "en": "VOLUME",
+        "nl": "DEEL"
+      },
+      {
+        "en": "SERIES",
+        "nl": "REEKS"
+      },
+      {
+        "en": "TRILOGY",
+        "nl": "TRILOGIE"
+      },
+      {
+        "en": "OMNIBUS",
+        "nl": "OMNIBUS"
+      },
+      {
+        "en": "COVER",
+        "nl": "KAFT"
+      }
+    ]
+  },
+  "history": {
+    "label": {
+      "en": "History",
+      "nl": "Geschiedenis"
+    },
+    "icon": "🏛️",
+    "words": [
+      {
+        "en": "EMPIRE",
+        "nl": "KEIZERRIJK"
+      },
+      {
+        "en": "CASTLE",
+        "nl": "KASTEEL"
+      },
+      {
+        "en": "TEMPLE",
+        "nl": "TEMPEL"
+      },
+      {
+        "en": "TOMB",
+        "nl": "GRAF"
+      },
+      {
+        "en": "RUIN",
+        "nl": "RUINE"
+      },
+      {
+        "en": "CROWN",
+        "nl": "KROON"
+      },
+      {
+        "en": "THRONE",
+        "nl": "TROON"
+      },
+      {
+        "en": "SWORD",
+        "nl": "ZWAARD"
+      },
+      {
+        "en": "SHIELD",
+        "nl": "SCHILD"
+      },
+      {
+        "en": "ARMOR",
+        "nl": "HARNAS"
+      },
+      {
+        "en": "PHARAOH",
+        "nl": "FARAO"
+      },
+      {
+        "en": "CAESAR",
+        "nl": "CAESAR"
+      },
+      {
+        "en": "VIKING",
+        "nl": "VIKING"
+      },
+      {
+        "en": "KNIGHT",
+        "nl": "RIDDER"
+      },
+      {
+        "en": "SAMURAI",
+        "nl": "SAMOERAI"
+      },
+      {
+        "en": "MONARCH",
+        "nl": "MONARCH"
+      },
+      {
+        "en": "EMPEROR",
+        "nl": "KEIZER"
+      },
+      {
+        "en": "SULTAN",
+        "nl": "SULTAN"
+      },
+      {
+        "en": "TSAR",
+        "nl": "TSAAR"
+      },
+      {
+        "en": "REGENT",
+        "nl": "REGENT"
+      },
+      {
+        "en": "DYNASTY",
+        "nl": "DYNASTIE"
+      },
+      {
+        "en": "REVOLT",
+        "nl": "OPSTAND"
+      },
+      {
+        "en": "TREATY",
+        "nl": "VERDRAG"
+      },
+      {
+        "en": "SIEGE",
+        "nl": "BELEG"
+      },
+      {
+        "en": "BATTLE",
+        "nl": "VELDSLAG"
+      },
+      {
+        "en": "CONQUEST",
+        "nl": "VEROVERING"
+      },
+      {
+        "en": "COLONY",
+        "nl": "KOLONIE"
+      },
+      {
+        "en": "FRONTIER",
+        "nl": "GRENSGEBIED"
+      },
+      {
+        "en": "PIONEER",
+        "nl": "PIONIER"
+      },
+      {
+        "en": "SETTLER",
+        "nl": "KOLONIST"
+      },
+      {
+        "en": "PYRAMID",
+        "nl": "PIRAMIDE"
+      },
+      {
+        "en": "SPHINX",
+        "nl": "SFINX"
+      },
+      {
+        "en": "OBELISK",
+        "nl": "OBELISK"
+      },
+      {
+        "en": "FORUM",
+        "nl": "FORUM"
+      },
+      {
+        "en": "CITADEL",
+        "nl": "CITADEL"
+      },
+      {
+        "en": "MOSAIC",
+        "nl": "MOZAIEK"
+      },
+      {
+        "en": "FRESCO",
+        "nl": "FRESCO"
+      },
+      {
+        "en": "SCROLL",
+        "nl": "BOEKROL"
+      },
+      {
+        "en": "RELIC",
+        "nl": "RELIKWIE"
+      },
+      {
+        "en": "ARTIFACT",
+        "nl": "ARTEFACT"
+      },
+      {
+        "en": "BRONZE",
+        "nl": "BRONS"
+      },
+      {
+        "en": "IRON",
+        "nl": "IJZER"
+      },
+      {
+        "en": "STONE",
+        "nl": "STEEN"
+      },
+      {
+        "en": "MARBLE",
+        "nl": "MARMER"
+      },
+      {
+        "en": "GRANITE",
+        "nl": "GRANIET"
+      },
+      {
+        "en": "PARCHMENT",
+        "nl": "PERKAMENT"
+      },
+      {
+        "en": "MANUSCRIPT",
+        "nl": "MANUSCRIPT"
+      },
+      {
+        "en": "CODEX",
+        "nl": "CODEX"
+      },
+      {
+        "en": "CHRONICLE",
+        "nl": "KRONIEK"
+      },
+      {
+        "en": "ARCHIVE",
+        "nl": "ARCHIEF"
+      },
+      {
+        "en": "REPUBLIC",
+        "nl": "REPUBLIEK"
+      },
+      {
+        "en": "DEMOCRACY",
+        "nl": "DEMOCRATIE"
+      },
+      {
+        "en": "MONARCHY",
+        "nl": "MONARCHIE"
+      },
+      {
+        "en": "OLIGARCHY",
+        "nl": "OLIGARCHIE"
+      },
+      {
+        "en": "TYRANNY",
+        "nl": "TIRANNIE"
+      },
+      {
+        "en": "FEUDAL",
+        "nl": "FEODAAL"
+      },
+      {
+        "en": "TRIBAL",
+        "nl": "TRIBAAL"
+      },
+      {
+        "en": "NOMADIC",
+        "nl": "NOMADISCH"
+      },
+      {
+        "en": "PASTORAL",
+        "nl": "PASTORAAL"
+      },
+      {
+        "en": "AGRARIAN",
+        "nl": "AGRARISCH"
+      },
+      {
+        "en": "RENAISSANCE",
+        "nl": "RENAISSANCE"
+      },
+      {
+        "en": "ENLIGHTENMENT",
+        "nl": "VERLICHTING"
+      },
+      {
+        "en": "REFORMATION",
+        "nl": "REFORMATIE"
+      },
+      {
+        "en": "REVOLUTION",
+        "nl": "REVOLUTIE"
+      },
+      {
+        "en": "INDUSTRIAL",
+        "nl": "INDUSTRIEEL"
+      },
+      {
+        "en": "VICTORIAN",
+        "nl": "VICTORIAANS"
+      },
+      {
+        "en": "EDWARDIAN",
+        "nl": "EDWARDIAANS"
+      },
+      {
+        "en": "GEORGIAN",
+        "nl": "GEORGIANS"
+      },
+      {
+        "en": "REGENCY",
+        "nl": "REGENTSCHAP"
+      },
+      {
+        "en": "MODERN",
+        "nl": "MODERN"
+      },
+      {
+        "en": "GLADIATOR",
+        "nl": "GLADIATOR"
+      },
+      {
+        "en": "LEGION",
+        "nl": "LEGIOEN"
+      },
+      {
+        "en": "CENTURION",
+        "nl": "CENTURIO"
+      },
+      {
+        "en": "PRAETORIAN",
+        "nl": "PRETORIAAN"
+      },
+      {
+        "en": "IMMORTAL",
+        "nl": "ONSTERFELIJK"
+      },
+      {
+        "en": "JANISSARY",
+        "nl": "JANITSAREN"
+      },
+      {
+        "en": "MUSKETEER",
+        "nl": "MUSKETIER"
+      },
+      {
+        "en": "CAVALRY",
+        "nl": "CAVALERIE"
+      },
+      {
+        "en": "INFANTRY",
+        "nl": "INFANTERIE"
+      },
+      {
+        "en": "ARTILLERY",
+        "nl": "ARTILLERIE"
+      },
+      {
+        "en": "CUNEIFORM",
+        "nl": "KLEITABLET"
+      },
+      {
+        "en": "HIEROGLYPH",
+        "nl": "HIEROGLIEF"
+      },
+      {
+        "en": "PAPYRUS",
+        "nl": "PAPYRUS"
+      },
+      {
+        "en": "TABLET",
+        "nl": "TABLET"
+      },
+      {
+        "en": "STELE",
+        "nl": "STELE"
+      },
+      {
+        "en": "MONOLITH",
+        "nl": "MONOLIET"
+      },
+      {
+        "en": "MEGALITH",
+        "nl": "MEGALIET"
+      },
+      {
+        "en": "DOLMEN",
+        "nl": "HUNEBED"
+      },
+      {
+        "en": "CAIRN",
+        "nl": "STEENMAN"
+      },
+      {
+        "en": "TUMULUS",
+        "nl": "GRAFHEUVEL"
+      },
+      {
+        "en": "CARTOGRAPHER",
+        "nl": "CARTOGRAAF"
+      },
+      {
+        "en": "EXPLORER",
+        "nl": "ZEEVAARDER"
+      },
+      {
+        "en": "NAVIGATOR",
+        "nl": "NAVIGATOR"
+      },
+      {
+        "en": "TRADER",
+        "nl": "HANDELAAR"
+      },
+      {
+        "en": "MERCHANT",
+        "nl": "KOOPMAN"
+      },
+      {
+        "en": "GUILD",
+        "nl": "GILDE"
+      },
+      {
+        "en": "ARTISAN",
+        "nl": "AMBACHTSMAN"
+      },
+      {
+        "en": "APPRENTICE",
+        "nl": "LEERLING"
+      },
+      {
+        "en": "JOURNEYMAN",
+        "nl": "GEZEL"
+      },
+      {
+        "en": "MASTER",
+        "nl": "MEESTER"
+      }
+    ]
+  },
+  "space": {
+    "label": {
+      "en": "Space & Astronomy",
+      "nl": "Ruimte & Sterrenkunde"
+    },
+    "icon": "🚀",
+    "words": [
+      {
+        "en": "STAR",
+        "nl": "STER"
+      },
+      {
+        "en": "MOON",
+        "nl": "MAAN"
+      },
+      {
+        "en": "MARS",
+        "nl": "MARS"
+      },
+      {
+        "en": "VENUS",
+        "nl": "VENUS"
+      },
+      {
+        "en": "EARTH",
+        "nl": "AARDE"
+      },
+      {
+        "en": "SATURN",
+        "nl": "SATURNUS"
+      },
+      {
+        "en": "JUPITER",
+        "nl": "JUPITER"
+      },
+      {
+        "en": "MERCURY",
+        "nl": "MERCURIUS"
+      },
+      {
+        "en": "URANUS",
+        "nl": "URANUS"
+      },
+      {
+        "en": "NEPTUNE",
+        "nl": "NEPTUNUS"
+      },
+      {
+        "en": "COMET",
+        "nl": "KOMEET"
+      },
+      {
+        "en": "ASTEROID",
+        "nl": "ASTEROIDE"
+      },
+      {
+        "en": "METEOR",
+        "nl": "METEOOR"
+      },
+      {
+        "en": "GALAXY",
+        "nl": "MELKWEG"
+      },
+      {
+        "en": "NEBULA",
+        "nl": "NEVEL"
+      },
+      {
+        "en": "COSMOS",
+        "nl": "KOSMOS"
+      },
+      {
+        "en": "PLANET",
+        "nl": "PLANEET"
+      },
+      {
+        "en": "ORBIT",
+        "nl": "OMLOOP"
+      },
+      {
+        "en": "LUNAR",
+        "nl": "LUNAIR"
+      },
+      {
+        "en": "SOLAR",
+        "nl": "SOLAIR"
+      },
+      {
+        "en": "ROCKET",
+        "nl": "RAKET"
+      },
+      {
+        "en": "SHUTTLE",
+        "nl": "RUIMTEVEER"
+      },
+      {
+        "en": "MODULE",
+        "nl": "MODULE"
+      },
+      {
+        "en": "CAPSULE",
+        "nl": "CAPSULE"
+      },
+      {
+        "en": "PROBE",
+        "nl": "SONDE"
+      },
+      {
+        "en": "SATELLITE",
+        "nl": "SATELLIET"
+      },
+      {
+        "en": "TELESCOPE",
+        "nl": "TELESCOOP"
+      },
+      {
+        "en": "STATION",
+        "nl": "RUIMTESTATION"
+      },
+      {
+        "en": "LAUNCH",
+        "nl": "LANCERING"
+      },
+      {
+        "en": "MISSION",
+        "nl": "MISSIE"
+      },
+      {
+        "en": "ASTRONAUT",
+        "nl": "ASTRONAUT"
+      },
+      {
+        "en": "COSMONAUT",
+        "nl": "KOSMONAUT"
+      },
+      {
+        "en": "PILOT",
+        "nl": "PILOOT"
+      },
+      {
+        "en": "COMMANDER",
+        "nl": "COMMANDANT"
+      },
+      {
+        "en": "ENGINEER",
+        "nl": "INGENIEUR"
+      },
+      {
+        "en": "GRAVITY",
+        "nl": "ZWAARTEKRACHT"
+      },
+      {
+        "en": "THRUST",
+        "nl": "STUWKACHT"
+      },
+      {
+        "en": "BOOSTER",
+        "nl": "STUWRAKET"
+      },
+      {
+        "en": "PAYLOAD",
+        "nl": "LADING"
+      },
+      {
+        "en": "ORBITER",
+        "nl": "ORBITER"
+      },
+      {
+        "en": "ECLIPSE",
+        "nl": "ECLIPS"
+      },
+      {
+        "en": "ZENITH",
+        "nl": "ZENIT"
+      },
+      {
+        "en": "NADIR",
+        "nl": "NADIR"
+      },
+      {
+        "en": "AZIMUTH",
+        "nl": "AZIMUT"
+      },
+      {
+        "en": "APOGEE",
+        "nl": "APOGEUM"
+      },
+      {
+        "en": "PERIGEE",
+        "nl": "PERIGEUM"
+      },
+      {
+        "en": "CRATER",
+        "nl": "KRATER"
+      },
+      {
+        "en": "CORONA",
+        "nl": "CORONA"
+      },
+      {
+        "en": "FLARE",
+        "nl": "ZONNEVLAM"
+      },
+      {
+        "en": "QUASAR",
+        "nl": "QUASAR"
+      },
+      {
+        "en": "BLACK HOLE",
+        "nl": "ZWARTGAT"
+      },
+      {
+        "en": "SUPERNOVA",
+        "nl": "SUPERNOVA"
+      },
+      {
+        "en": "PULSAR",
+        "nl": "PULSAR"
+      },
+      {
+        "en": "MAGNETAR",
+        "nl": "MAGNETAR"
+      },
+      {
+        "en": "RED GIANT",
+        "nl": "RODEREUS"
+      },
+      {
+        "en": "WHITE DWARF",
+        "nl": "WITTEDWERG"
+      },
+      {
+        "en": "BROWN DWARF",
+        "nl": "BRUINEDWERG"
+      },
+      {
+        "en": "NEUTRON",
+        "nl": "NEUTRON"
+      },
+      {
+        "en": "PROTOSTAR",
+        "nl": "PROTOSTER"
+      },
+      {
+        "en": "BINARY",
+        "nl": "DUBBELSTER"
+      },
+      {
+        "en": "CONSTELLATION",
+        "nl": "STERRENBEELD"
+      },
+      {
+        "en": "ASTERISM",
+        "nl": "ASTERISME"
+      },
+      {
+        "en": "ZODIAC",
+        "nl": "DIERENRIEM"
+      },
+      {
+        "en": "ARIES",
+        "nl": "RAM"
+      },
+      {
+        "en": "TAURUS",
+        "nl": "STIER"
+      },
+      {
+        "en": "GEMINI",
+        "nl": "TWEELINGEN"
+      },
+      {
+        "en": "CANCER",
+        "nl": "KREEFT"
+      },
+      {
+        "en": "LEO",
+        "nl": "LEEUW"
+      },
+      {
+        "en": "VIRGO",
+        "nl": "MAAGD"
+      },
+      {
+        "en": "LIBRA",
+        "nl": "WEEGSCHAAL"
+      },
+      {
+        "en": "SCORPIO",
+        "nl": "SCHORPIOEN"
+      },
+      {
+        "en": "SAGITTARIUS",
+        "nl": "BOOGSCHUTTER"
+      },
+      {
+        "en": "CAPRICORN",
+        "nl": "STEENBOK"
+      },
+      {
+        "en": "AQUARIUS",
+        "nl": "WATERMAN"
+      },
+      {
+        "en": "PISCES",
+        "nl": "VISSEN"
+      },
+      {
+        "en": "ORION",
+        "nl": "ORION"
+      },
+      {
+        "en": "CASSIOPEIA",
+        "nl": "CASSIOPEIA"
+      },
+      {
+        "en": "ANDROMEDA",
+        "nl": "ANDROMEDA"
+      },
+      {
+        "en": "PLEIADES",
+        "nl": "PLEIADEN"
+      },
+      {
+        "en": "HYADES",
+        "nl": "HYADEN"
+      },
+      {
+        "en": "LIGHT YEAR",
+        "nl": "LICHTJAAR"
+      },
+      {
+        "en": "PARSEC",
+        "nl": "PARSEC"
+      },
+      {
+        "en": "MAGNITUDE",
+        "nl": "MAGNITUDE"
+      },
+      {
+        "en": "PARALLAX",
+        "nl": "PARALLAX"
+      },
+      {
+        "en": "REDSHIFT",
+        "nl": "LICHTSPECTRUM"
+      },
+      {
+        "en": "BLUESHIFT",
+        "nl": "HEELAL"
+      },
+      {
+        "en": "DOPPLER",
+        "nl": "DOPPLER"
+      },
+      {
+        "en": "HUBBLE",
+        "nl": "HUBBLE"
+      },
+      {
+        "en": "KEPLER",
+        "nl": "KEPLER"
+      },
+      {
+        "en": "COPERNICAN",
+        "nl": "COPERNICUS"
+      },
+      {
+        "en": "COSMIC",
+        "nl": "KOSMISCH"
+      },
+      {
+        "en": "STELLAR",
+        "nl": "STELLAIR"
+      },
+      {
+        "en": "INTERSTELLAR",
+        "nl": "INTERSTELLAIR"
+      },
+      {
+        "en": "GALACTIC",
+        "nl": "GALACTISCH"
+      },
+      {
+        "en": "UNIVERSAL",
+        "nl": "UNIVERSEEL"
+      },
+      {
+        "en": "CELESTIAL",
+        "nl": "HEMELS"
+      },
+      {
+        "en": "ASTRAL",
+        "nl": "ASTRAAL"
+      },
+      {
+        "en": "SIDEREAL",
+        "nl": "SIDERISCH"
+      },
+      {
+        "en": "EQUINOX",
+        "nl": "NACHTEVENING"
+      },
+      {
+        "en": "SOLSTICE",
+        "nl": "ZONNEWENDE"
+      }
+    ]
+  },
+  "oceans": {
+    "label": {
+      "en": "Oceans & Seas",
+      "nl": "Oceanen & Zeeën"
+    },
+    "icon": "🌊",
+    "words": [
+      {
+        "en": "CORAL",
+        "nl": "KORAAL"
+      },
+      {
+        "en": "REEF",
+        "nl": "RIF"
+      },
+      {
+        "en": "TIDE",
+        "nl": "GETIJ"
+      },
+      {
+        "en": "WAVE",
+        "nl": "GOLF"
+      },
+      {
+        "en": "SHORE",
+        "nl": "OEVER"
+      },
+      {
+        "en": "COAST",
+        "nl": "KUST"
+      },
+      {
+        "en": "BEACH",
+        "nl": "STRAND"
+      },
+      {
+        "en": "CLIFF",
+        "nl": "KLIF"
+      },
+      {
+        "en": "CAVE",
+        "nl": "GROT"
+      },
+      {
+        "en": "COVE",
+        "nl": "INHAM"
+      },
+      {
+        "en": "ANCHOR",
+        "nl": "ANKER"
+      },
+      {
+        "en": "SAILOR",
+        "nl": "ZEEMAN"
+      },
+      {
+        "en": "PIRATE",
+        "nl": "PIRAAT"
+      },
+      {
+        "en": "CAPTAIN",
+        "nl": "KAPITEIN"
+      },
+      {
+        "en": "VOYAGE",
+        "nl": "ZEEREIS"
+      },
+      {
+        "en": "FLEET",
+        "nl": "VLOOT"
+      },
+      {
+        "en": "VESSEL",
+        "nl": "SCHIP"
+      },
+      {
+        "en": "BARGE",
+        "nl": "AAKSCHUIT"
+      },
+      {
+        "en": "FERRY",
+        "nl": "VEERBOOT"
+      },
+      {
+        "en": "TRAWLER",
+        "nl": "TREILER"
+      },
+      {
+        "en": "DOLPHIN",
+        "nl": "DOLFIJN"
+      },
+      {
+        "en": "WHALE",
+        "nl": "WALVIS"
+      },
+      {
+        "en": "SHARK",
+        "nl": "HAAI"
+      },
+      {
+        "en": "OCTOPUS",
+        "nl": "OCTOPUS"
+      },
+      {
+        "en": "JELLYFISH",
+        "nl": "KWAL"
+      },
+      {
+        "en": "LOBSTER",
+        "nl": "KREEFT"
+      },
+      {
+        "en": "CRAB",
+        "nl": "KRAB"
+      },
+      {
+        "en": "SHRIMP",
+        "nl": "GARNAAL"
+      },
+      {
+        "en": "PRAWN",
+        "nl": "SCAMPI"
+      },
+      {
+        "en": "SQUID",
+        "nl": "INKTVIS"
+      },
+      {
+        "en": "ATLANTIC",
+        "nl": "ATLANTISCHE OCEAAN"
+      },
+      {
+        "en": "PACIFIC",
+        "nl": "PACIFISCHE OCEAAN"
+      },
+      {
+        "en": "BALTIC",
+        "nl": "OOSTZEE"
+      },
+      {
+        "en": "MEDITERRANEAN",
+        "nl": "MIDDELLANDSE ZEE"
+      },
+      {
+        "en": "CARIBBEAN",
+        "nl": "CARAIBISCHE ZEE"
+      },
+      {
+        "en": "ADRIATIC",
+        "nl": "ADRIATISCHE ZEE"
+      },
+      {
+        "en": "AEGEAN",
+        "nl": "EGEISCHE ZEE"
+      },
+      {
+        "en": "CASPIAN",
+        "nl": "KASPISCHE ZEE"
+      },
+      {
+        "en": "ARAL",
+        "nl": "ARALMEER"
+      },
+      {
+        "en": "BERING",
+        "nl": "BERINGZEE"
+      },
+      {
+        "en": "KELP",
+        "nl": "KELP"
+      },
+      {
+        "en": "ALGAE",
+        "nl": "ALGEN"
+      },
+      {
+        "en": "PLANKTON",
+        "nl": "PLANKTON"
+      },
+      {
+        "en": "SEABED",
+        "nl": "ZEEBODEM"
+      },
+      {
+        "en": "TRENCH",
+        "nl": "DIEPZEETROG"
+      },
+      {
+        "en": "RIDGE",
+        "nl": "ZEERUG"
+      },
+      {
+        "en": "BASIN",
+        "nl": "BEKKEN"
+      },
+      {
+        "en": "CURRENT",
+        "nl": "STROMING"
+      },
+      {
+        "en": "TYPHOON",
+        "nl": "TYFOON"
+      },
+      {
+        "en": "TSUNAMI",
+        "nl": "TSUNAMI"
+      },
+      {
+        "en": "SUBMARINE",
+        "nl": "DUIKBOOT"
+      },
+      {
+        "en": "BATHYSPHERE",
+        "nl": "BATHYSFEER"
+      },
+      {
+        "en": "SONAR",
+        "nl": "SONAR"
+      },
+      {
+        "en": "PERISCOPE",
+        "nl": "PERISCOOP"
+      },
+      {
+        "en": "PROPELLER",
+        "nl": "SCHROEF"
+      },
+      {
+        "en": "RUDDER",
+        "nl": "ROER"
+      },
+      {
+        "en": "HULL",
+        "nl": "ROMP"
+      },
+      {
+        "en": "DECK",
+        "nl": "DEK"
+      },
+      {
+        "en": "MAST",
+        "nl": "MAST"
+      },
+      {
+        "en": "KEEL",
+        "nl": "KIEL"
+      },
+      {
+        "en": "LIGHTHOUSE",
+        "nl": "VUURTOREN"
+      },
+      {
+        "en": "BUOY",
+        "nl": "BOEI"
+      },
+      {
+        "en": "CHANNEL",
+        "nl": "VAARGEUL"
+      },
+      {
+        "en": "STRAIT",
+        "nl": "ZEESTRAAT"
+      },
+      {
+        "en": "INLET",
+        "nl": "ZEEARM"
+      },
+      {
+        "en": "SOUND",
+        "nl": "SOND"
+      },
+      {
+        "en": "BAY",
+        "nl": "BAAI"
+      },
+      {
+        "en": "GULF",
+        "nl": "ZEEBOEZEM"
+      },
+      {
+        "en": "LAGOON",
+        "nl": "LAGUNE"
+      },
+      {
+        "en": "ATOLL",
+        "nl": "ATOL"
+      },
+      {
+        "en": "MANGROVE",
+        "nl": "MANGROVE"
+      },
+      {
+        "en": "SALT MARSH",
+        "nl": "KWELDER"
+      },
+      {
+        "en": "DUNE",
+        "nl": "DUIN"
+      },
+      {
+        "en": "SPIT",
+        "nl": "SCHORWAL"
+      },
+      {
+        "en": "BAR",
+        "nl": "ZANDBANK"
+      },
+      {
+        "en": "TOMBOLO",
+        "nl": "TOMBOLE"
+      },
+      {
+        "en": "SEA STACK",
+        "nl": "KLIPKUST"
+      },
+      {
+        "en": "ARCH",
+        "nl": "ROTSBOOG"
+      },
+      {
+        "en": "BLOWHOLE",
+        "nl": "BLAASGAT"
+      },
+      {
+        "en": "GEODE",
+        "nl": "GEODE"
+      },
+      {
+        "en": "ABYSS",
+        "nl": "AFGROND"
+      },
+      {
+        "en": "HADAL",
+        "nl": "HADAAL"
+      },
+      {
+        "en": "PELAGIC",
+        "nl": "PELAGISCH"
+      },
+      {
+        "en": "BENTHIC",
+        "nl": "BENTHISCH"
+      },
+      {
+        "en": "NERITIC",
+        "nl": "NERITISCH"
+      },
+      {
+        "en": "LITTORAL",
+        "nl": "LITORAAL"
+      },
+      {
+        "en": "ESTUARINE",
+        "nl": "ESTUARIUM"
+      },
+      {
+        "en": "BRACKISH",
+        "nl": "BRAK"
+      },
+      {
+        "en": "SALINE",
+        "nl": "ZOUT"
+      },
+      {
+        "en": "FRESHWATER",
+        "nl": "ZOETWATER"
+      },
+      {
+        "en": "MARINER",
+        "nl": "MATROOS"
+      },
+      {
+        "en": "DIVER",
+        "nl": "DUIKER"
+      },
+      {
+        "en": "LIFEGUARD",
+        "nl": "STRANDWACHT"
+      },
+      {
+        "en": "COASTGUARD",
+        "nl": "KUSTWACHT"
+      },
+      {
+        "en": "FISHERMAN",
+        "nl": "VISSER"
+      },
+      {
+        "en": "WHALER",
+        "nl": "WALVISVAARDER"
+      },
+      {
+        "en": "EXPLORER",
+        "nl": "ONTDEKKER"
+      },
+      {
+        "en": "CARTOGRAPHER",
+        "nl": "CARTOGRAAF"
+      },
+      {
+        "en": "OCEANOGRAPHER",
+        "nl": "OCEANOGRAAF"
+      },
+      {
+        "en": "HYDROGRAPHER",
+        "nl": "HYDROGRAAF"
+      }
+    ]
+  },
+  "mountains": {
+    "label": {
+      "en": "Mountains",
+      "nl": "Bergen"
+    },
+    "icon": "⛰️",
+    "words": [
+      {
+        "en": "ALPS",
+        "nl": "ALPEN"
+      },
+      {
+        "en": "ANDES",
+        "nl": "ANDES"
+      },
+      {
+        "en": "HIMALAYA",
+        "nl": "HIMALAYA"
+      },
+      {
+        "en": "ROCKIES",
+        "nl": "ROTSGEBERGTE"
+      },
+      {
+        "en": "PYRENEES",
+        "nl": "PYRENEEEN"
+      },
+      {
+        "en": "APENNINES",
+        "nl": "APENNINEN"
+      },
+      {
+        "en": "CARPATHIANS",
+        "nl": "KARPATEN"
+      },
+      {
+        "en": "CAUCASUS",
+        "nl": "KAUKASUS"
+      },
+      {
+        "en": "URALS",
+        "nl": "OERAAL"
+      },
+      {
+        "en": "ATLAS",
+        "nl": "ATLASGEBERGTE"
+      },
+      {
+        "en": "SUMMIT",
+        "nl": "TOP"
+      },
+      {
+        "en": "RIDGE",
+        "nl": "BERGKAM"
+      },
+      {
+        "en": "PEAK",
+        "nl": "PIEK"
+      },
+      {
+        "en": "SLOPE",
+        "nl": "HELLING"
+      },
+      {
+        "en": "VALLEY",
+        "nl": "DAL"
+      },
+      {
+        "en": "PASS",
+        "nl": "BERGPAS"
+      },
+      {
+        "en": "GLACIER",
+        "nl": "GLETSJER"
+      },
+      {
+        "en": "AVALANCHE",
+        "nl": "LAWINE"
+      },
+      {
+        "en": "CREVASSE",
+        "nl": "SPLEET"
+      },
+      {
+        "en": "PLATEAU",
+        "nl": "PLATEAU"
+      },
+      {
+        "en": "EVEREST",
+        "nl": "EVEREST"
+      },
+      {
+        "en": "FUJI",
+        "nl": "FUJI"
+      },
+      {
+        "en": "KILIMANJARO",
+        "nl": "KILIMANJARO"
+      },
+      {
+        "en": "DENALI",
+        "nl": "DENALI"
+      },
+      {
+        "en": "ACONCAGUA",
+        "nl": "ACONCAGUA"
+      },
+      {
+        "en": "MATTERHORN",
+        "nl": "MATTERHORN"
+      },
+      {
+        "en": "MONTBLANC",
+        "nl": "MONTBLANC"
+      },
+      {
+        "en": "CITLALTEPETL",
+        "nl": "CITLALTEPETL"
+      },
+      {
+        "en": "VINSON",
+        "nl": "VINSON"
+      },
+      {
+        "en": "ELBRUS",
+        "nl": "ELBROES"
+      },
+      {
+        "en": "GRANITE",
+        "nl": "GRANIET"
+      },
+      {
+        "en": "BASALT",
+        "nl": "BASALT"
+      },
+      {
+        "en": "SLATE",
+        "nl": "LEISTEEN"
+      },
+      {
+        "en": "MARBLE",
+        "nl": "MARMER"
+      },
+      {
+        "en": "LIMESTONE",
+        "nl": "KALKSTEEN"
+      },
+      {
+        "en": "SANDSTONE",
+        "nl": "ZANDSTEEN"
+      },
+      {
+        "en": "QUARTZ",
+        "nl": "KWARTS"
+      },
+      {
+        "en": "SCHIST",
+        "nl": "SCHIST"
+      },
+      {
+        "en": "GNEISS",
+        "nl": "GNEIS"
+      },
+      {
+        "en": "DOLOMITE",
+        "nl": "DOLOMIET"
+      },
+      {
+        "en": "HIKING",
+        "nl": "WANDELEN"
+      },
+      {
+        "en": "CLIMBING",
+        "nl": "KLIMMEN"
+      },
+      {
+        "en": "TREKKING",
+        "nl": "TREKKEN"
+      },
+      {
+        "en": "CAMPING",
+        "nl": "KAMPEREN"
+      },
+      {
+        "en": "RUCKSACK",
+        "nl": "RUGZAK"
+      },
+      {
+        "en": "SHERPA",
+        "nl": "SHERPA"
+      },
+      {
+        "en": "YAK",
+        "nl": "JAK"
+      },
+      {
+        "en": "EAGLE",
+        "nl": "AREND"
+      },
+      {
+        "en": "IBEX",
+        "nl": "STEENBOK"
+      },
+      {
+        "en": "MARMOT",
+        "nl": "MARMOT"
+      },
+      {
+        "en": "CIRQUE",
+        "nl": "KETELDAL"
+      },
+      {
+        "en": "ARETE",
+        "nl": "GRAAT"
+      },
+      {
+        "en": "COL",
+        "nl": "COL"
+      },
+      {
+        "en": "SADDLE",
+        "nl": "ZADEL"
+      },
+      {
+        "en": "COULOIR",
+        "nl": "COULOIR"
+      },
+      {
+        "en": "CHIMNEY",
+        "nl": "KAMIN"
+      },
+      {
+        "en": "FACE",
+        "nl": "WAND"
+      },
+      {
+        "en": "LEDGE",
+        "nl": "RICHEL"
+      },
+      {
+        "en": "OVERHANG",
+        "nl": "OVERHANG"
+      },
+      {
+        "en": "CORNICE",
+        "nl": "SNEEUWRAND"
+      },
+      {
+        "en": "PITON",
+        "nl": "PITON"
+      },
+      {
+        "en": "CARABINER",
+        "nl": "KARABIJNHAAK"
+      },
+      {
+        "en": "HARNESS",
+        "nl": "KLIMGORDEL"
+      },
+      {
+        "en": "CRAMPON",
+        "nl": "STIJGIJZER"
+      },
+      {
+        "en": "ICE AXE",
+        "nl": "PICKEL"
+      },
+      {
+        "en": "ROPE",
+        "nl": "TOUW"
+      },
+      {
+        "en": "PULLEY",
+        "nl": "KATROL"
+      },
+      {
+        "en": "ANCHOR",
+        "nl": "ANKER"
+      },
+      {
+        "en": "BELAY",
+        "nl": "ZEKEREN"
+      },
+      {
+        "en": "RAPPEL",
+        "nl": "ABSEILEN"
+      },
+      {
+        "en": "TECTONIC",
+        "nl": "TEKTONISCH"
+      },
+      {
+        "en": "FOLD",
+        "nl": "PLOOI"
+      },
+      {
+        "en": "FAULT",
+        "nl": "BREUK"
+      },
+      {
+        "en": "UPLIFT",
+        "nl": "OPHEFFING"
+      },
+      {
+        "en": "SUBSIDENCE",
+        "nl": "VERZAKKING"
+      },
+      {
+        "en": "WEATHERING",
+        "nl": "VERWERING"
+      },
+      {
+        "en": "MASS WASTING",
+        "nl": "MASSABEWEGING"
+      },
+      {
+        "en": "SCREE",
+        "nl": "PUINHELLING"
+      },
+      {
+        "en": "TALUS",
+        "nl": "PUINWAALER"
+      },
+      {
+        "en": "MORAINE",
+        "nl": "MORENE"
+      },
+      {
+        "en": "ALPINE",
+        "nl": "ALPIEN"
+      },
+      {
+        "en": "SUBALPINE",
+        "nl": "SUBALPIEN"
+      },
+      {
+        "en": "MONTANE",
+        "nl": "MONTAAN"
+      },
+      {
+        "en": "FOOTHILL",
+        "nl": "HEUVELLAND"
+      },
+      {
+        "en": "HIGHLAND",
+        "nl": "HOOGLAND"
+      },
+      {
+        "en": "LOWLAND",
+        "nl": "LAAGLAND"
+      },
+      {
+        "en": "PENEPLAIN",
+        "nl": "SCHIERVLAKTE"
+      },
+      {
+        "en": "ESCARPMENT",
+        "nl": "STEILRAND"
+      },
+      {
+        "en": "BUTTE",
+        "nl": "KEGELBERG"
+      },
+      {
+        "en": "MESA",
+        "nl": "TAFELBERG"
+      },
+      {
+        "en": "SNOWLINE",
+        "nl": "SNEEUWGRENS"
+      },
+      {
+        "en": "TREELINE",
+        "nl": "BOOMGRENS"
+      },
+      {
+        "en": "TIMBERLINE",
+        "nl": "ALPENWEIDE"
+      },
+      {
+        "en": "TUNDRA",
+        "nl": "TOENDRA"
+      },
+      {
+        "en": "TAIGA",
+        "nl": "TAIGA"
+      },
+      {
+        "en": "BOREAL",
+        "nl": "BOREAAL"
+      },
+      {
+        "en": "CONIFER",
+        "nl": "NAALDBOOM"
+      },
+      {
+        "en": "DECIDUOUS",
+        "nl": "LOOFBOOM"
+      },
+      {
+        "en": "EVERGREEN",
+        "nl": "GROENBLIJVEND"
+      },
+      {
+        "en": "LICHEN",
+        "nl": "KORSTMOS"
+      }
+    ]
+  },
+  "technology": {
+    "label": {
+      "en": "Technology",
+      "nl": "Technologie"
+    },
+    "icon": "💻",
+    "words": [
+      {
+        "en": "COMPUTER",
+        "nl": "COMPUTER"
+      },
+      {
+        "en": "SERVER",
+        "nl": "SERVER"
+      },
+      {
+        "en": "ROUTER",
+        "nl": "ROUTER"
+      },
+      {
+        "en": "MODEM",
+        "nl": "MODEM"
+      },
+      {
+        "en": "SCANNER",
+        "nl": "SCANNER"
+      },
+      {
+        "en": "PRINTER",
+        "nl": "PRINTER"
+      },
+      {
+        "en": "MONITOR",
+        "nl": "MONITOR"
+      },
+      {
+        "en": "KEYBOARD",
+        "nl": "TOETSENBORD"
+      },
+      {
+        "en": "MOUSE",
+        "nl": "MUIS"
+      },
+      {
+        "en": "TABLET",
+        "nl": "TABLET"
+      },
+      {
+        "en": "SOFTWARE",
+        "nl": "SOFTWARE"
+      },
+      {
+        "en": "HARDWARE",
+        "nl": "HARDWARE"
+      },
+      {
+        "en": "FIRMWARE",
+        "nl": "FIRMWARE"
+      },
+      {
+        "en": "DATABASE",
+        "nl": "DATABASE"
+      },
+      {
+        "en": "NETWORK",
+        "nl": "NETWERK"
+      },
+      {
+        "en": "CLOUD",
+        "nl": "CLOUD"
+      },
+      {
+        "en": "CYBER",
+        "nl": "CYBER"
+      },
+      {
+        "en": "DIGITAL",
+        "nl": "DIGITAAL"
+      },
+      {
+        "en": "VIRTUAL",
+        "nl": "VIRTUEEL"
+      },
+      {
+        "en": "MOBILE",
+        "nl": "MOBIEL"
+      },
+      {
+        "en": "CODING",
+        "nl": "PROGRAMMEREN"
+      },
+      {
+        "en": "PROGRAM",
+        "nl": "PROGRAMMA"
+      },
+      {
+        "en": "SCRIPT",
+        "nl": "SCRIPT"
+      },
+      {
+        "en": "COMPILER",
+        "nl": "COMPILER"
+      },
+      {
+        "en": "DEBUGGER",
+        "nl": "DEBUGGER"
+      },
+      {
+        "en": "KERNEL",
+        "nl": "KERNEL"
+      },
+      {
+        "en": "DRIVER",
+        "nl": "DRIVER"
+      },
+      {
+        "en": "SOCKET",
+        "nl": "SOCKET"
+      },
+      {
+        "en": "BUFFER",
+        "nl": "BUFFER"
+      },
+      {
+        "en": "CACHE",
+        "nl": "CACHE"
+      },
+      {
+        "en": "INTERNET",
+        "nl": "INTERNET"
+      },
+      {
+        "en": "BROWSER",
+        "nl": "BROWSER"
+      },
+      {
+        "en": "DOMAIN",
+        "nl": "DOMEIN"
+      },
+      {
+        "en": "PORTAL",
+        "nl": "PORTAAL"
+      },
+      {
+        "en": "WIDGET",
+        "nl": "WIDGET"
+      },
+      {
+        "en": "PLUGIN",
+        "nl": "PLUGIN"
+      },
+      {
+        "en": "UPLOAD",
+        "nl": "UPLOADEN"
+      },
+      {
+        "en": "DOWNLOAD",
+        "nl": "DOWNLOADEN"
+      },
+      {
+        "en": "STREAM",
+        "nl": "STREAMEN"
+      },
+      {
+        "en": "ENCRYPT",
+        "nl": "VERSLEUTELEN"
+      },
+      {
+        "en": "ROBOT",
+        "nl": "ROBOT"
+      },
+      {
+        "en": "DRONE",
+        "nl": "DRONE"
+      },
+      {
+        "en": "SENSOR",
+        "nl": "SENSOR"
+      },
+      {
+        "en": "CHIP",
+        "nl": "CHIP"
+      },
+      {
+        "en": "CIRCUIT",
+        "nl": "CIRCUIT"
+      },
+      {
+        "en": "BATTERY",
+        "nl": "BATTERIJ"
+      },
+      {
+        "en": "SCREEN",
+        "nl": "SCHERM"
+      },
+      {
+        "en": "CABLE",
+        "nl": "KABEL"
+      },
+      {
+        "en": "ANTENNA",
+        "nl": "ANTENNE"
+      },
+      {
+        "en": "SATELLITE",
+        "nl": "SATELLIET"
+      },
+      {
+        "en": "PROCESSOR",
+        "nl": "PROCESSOR"
+      },
+      {
+        "en": "MEMORY",
+        "nl": "GEHEUGEN"
+      },
+      {
+        "en": "STORAGE",
+        "nl": "OPSLAG"
+      },
+      {
+        "en": "DISPLAY",
+        "nl": "DISPLAY"
+      },
+      {
+        "en": "GRAPHICS",
+        "nl": "GRAFISCH"
+      },
+      {
+        "en": "AUDIO",
+        "nl": "AUDIO"
+      },
+      {
+        "en": "BLUETOOTH",
+        "nl": "BLUETOOTH"
+      },
+      {
+        "en": "WIRELESS",
+        "nl": "DRAADLOOS"
+      },
+      {
+        "en": "BROADBAND",
+        "nl": "BREEDBAND"
+      },
+      {
+        "en": "FIBER OPTIC",
+        "nl": "GLASVEZEL"
+      },
+      {
+        "en": "PIXEL",
+        "nl": "PIXEL"
+      },
+      {
+        "en": "RESOLUTION",
+        "nl": "RESOLUTIE"
+      },
+      {
+        "en": "MEGABYTE",
+        "nl": "MEGABYTE"
+      },
+      {
+        "en": "GIGABYTE",
+        "nl": "GIGABYTE"
+      },
+      {
+        "en": "TERABYTE",
+        "nl": "TERABYTE"
+      },
+      {
+        "en": "BANDWIDTH",
+        "nl": "BANDBREEDTE"
+      },
+      {
+        "en": "LATENCY",
+        "nl": "LATENTIE"
+      },
+      {
+        "en": "THROUGHPUT",
+        "nl": "DOORVOER"
+      },
+      {
+        "en": "PROTOCOL",
+        "nl": "PROTOCOL"
+      },
+      {
+        "en": "PACKET",
+        "nl": "PAKKET"
+      },
+      {
+        "en": "FIREWALL",
+        "nl": "FIREWALL"
+      },
+      {
+        "en": "PASSWORD",
+        "nl": "WACHTWOORD"
+      },
+      {
+        "en": "BIOMETRIC",
+        "nl": "BIOMETRIE"
+      },
+      {
+        "en": "TOKEN",
+        "nl": "TOKEN"
+      },
+      {
+        "en": "CERTIFICATE",
+        "nl": "CERTIFICAAT"
+      },
+      {
+        "en": "HASH",
+        "nl": "HASH"
+      },
+      {
+        "en": "CIPHER",
+        "nl": "GEHEIMSCHRIFT"
+      },
+      {
+        "en": "DECRYPT",
+        "nl": "ONTSLEUTELEN"
+      },
+      {
+        "en": "AUTHENTICATE",
+        "nl": "VERIFIEREN"
+      },
+      {
+        "en": "VALIDATE",
+        "nl": "VALIDEREN"
+      },
+      {
+        "en": "WEARABLE",
+        "nl": "WEARABLE"
+      },
+      {
+        "en": "IMPLANT",
+        "nl": "IMPLANTAAT"
+      },
+      {
+        "en": "HAPTIC",
+        "nl": "HAPTISCH"
+      },
+      {
+        "en": "GESTURE",
+        "nl": "GEBAAR"
+      },
+      {
+        "en": "VOICE",
+        "nl": "STEM"
+      },
+      {
+        "en": "FACIAL",
+        "nl": "GEZICHT"
+      },
+      {
+        "en": "RETINA",
+        "nl": "NETVLIES"
+      },
+      {
+        "en": "THERMAL",
+        "nl": "THERMISCH"
+      },
+      {
+        "en": "PROXIMITY",
+        "nl": "NABIJHEID"
+      },
+      {
+        "en": "MOTION",
+        "nl": "BEWEGING"
+      },
+      {
+        "en": "ASSEMBLY",
+        "nl": "ASSEMBLAGE"
+      },
+      {
+        "en": "COMPILE",
+        "nl": "COMPILEREN"
+      },
+      {
+        "en": "DEPLOY",
+        "nl": "IMPLEMENTEREN"
+      },
+      {
+        "en": "EXECUTE",
+        "nl": "UITVOEREN"
+      },
+      {
+        "en": "OPTIMIZE",
+        "nl": "OPTIMALISEREN"
+      },
+      {
+        "en": "MIGRATE",
+        "nl": "MIGREREN"
+      },
+      {
+        "en": "RESTORE",
+        "nl": "TERUGZETTEN"
+      },
+      {
+        "en": "BACKUP",
+        "nl": "BACKUP"
+      },
+      {
+        "en": "RECOVER",
+        "nl": "HERSTELLEN"
+      },
+      {
+        "en": "MONITORING",
+        "nl": "BEWAKEN"
+      }
+    ]
+  },
+  "art": {
+    "label": {
+      "en": "Art & Colors",
+      "nl": "Kunst & Kleuren"
+    },
+    "icon": "🎨",
+    "words": [
+      {
+        "en": "CANVAS",
+        "nl": "DOEK"
+      },
+      {
+        "en": "BRUSH",
+        "nl": "PENSEEL"
+      },
+      {
+        "en": "PALETTE",
+        "nl": "PALET"
+      },
+      {
+        "en": "PIGMENT",
+        "nl": "PIGMENT"
+      },
+      {
+        "en": "GALLERY",
+        "nl": "GALERIE"
+      },
+      {
+        "en": "MUSEUM",
+        "nl": "MUSEUM"
+      },
+      {
+        "en": "STUDIO",
+        "nl": "ATELIER"
+      },
+      {
+        "en": "EASEL",
+        "nl": "SCHILDERSEZEL"
+      },
+      {
+        "en": "FRESCO",
+        "nl": "FRESCO"
+      },
+      {
+        "en": "MURAL",
+        "nl": "GRAFFITI"
+      },
+      {
+        "en": "SKETCH",
+        "nl": "SCHETS"
+      },
+      {
+        "en": "PORTRAIT",
+        "nl": "PORTRET"
+      },
+      {
+        "en": "LANDSCAPE",
+        "nl": "LANDSCHAP"
+      },
+      {
+        "en": "COLLAGE",
+        "nl": "COLLAGE"
+      },
+      {
+        "en": "MOSAIC",
+        "nl": "MOZAIEK"
+      },
+      {
+        "en": "CERAMIC",
+        "nl": "KERAMIEK"
+      },
+      {
+        "en": "POTTERY",
+        "nl": "AARDEWERK"
+      },
+      {
+        "en": "TEXTILE",
+        "nl": "TEXTIEL"
+      },
+      {
+        "en": "BRONZE",
+        "nl": "BRONS"
+      },
+      {
+        "en": "MARBLE",
+        "nl": "MARMER"
+      },
+      {
+        "en": "PAINTER",
+        "nl": "SCHILDER"
+      },
+      {
+        "en": "SCULPTOR",
+        "nl": "BEELDHOUWER"
+      },
+      {
+        "en": "ARTIST",
+        "nl": "KUNSTENAAR"
+      },
+      {
+        "en": "CURATOR",
+        "nl": "CONSERVATOR"
+      },
+      {
+        "en": "CRITIC",
+        "nl": "CRITICUS"
+      },
+      {
+        "en": "MODEL",
+        "nl": "MODEL"
+      },
+      {
+        "en": "MUSE",
+        "nl": "MUZE"
+      },
+      {
+        "en": "MASTER",
+        "nl": "MEESTER"
+      },
+      {
+        "en": "GENIUS",
+        "nl": "GENIE"
+      },
+      {
+        "en": "CRAFTSMAN",
+        "nl": "VAKMAN"
+      },
+      {
+        "en": "YELLOW",
+        "nl": "GEEL"
+      },
+      {
+        "en": "ORANGE",
+        "nl": "ORANJE"
+      },
+      {
+        "en": "PURPLE",
+        "nl": "PAARS"
+      },
+      {
+        "en": "VIOLET",
+        "nl": "VIOLET"
+      },
+      {
+        "en": "INDIGO",
+        "nl": "INDIGO"
+      },
+      {
+        "en": "SILVER",
+        "nl": "ZILVER"
+      },
+      {
+        "en": "GOLDEN",
+        "nl": "GOUDEN"
+      },
+      {
+        "en": "COPPER",
+        "nl": "KOPER"
+      },
+      {
+        "en": "RUBY",
+        "nl": "ROBIJN"
+      },
+      {
+        "en": "IMPRESSION",
+        "nl": "IMPRESSIE"
+      },
+      {
+        "en": "ABSTRACT",
+        "nl": "ABSTRACT"
+      },
+      {
+        "en": "CUBISM",
+        "nl": "KUBISME"
+      },
+      {
+        "en": "BAROQUE",
+        "nl": "BAROK"
+      },
+      {
+        "en": "GOTHIC",
+        "nl": "GOTIEK"
+      },
+      {
+        "en": "ROCOCO",
+        "nl": "ROCOCO"
+      },
+      {
+        "en": "MODERN",
+        "nl": "MODERN"
+      },
+      {
+        "en": "RENAISSANCE",
+        "nl": "RENAISSANCE"
+      },
+      {
+        "en": "SURREAL",
+        "nl": "SURREALISME"
+      },
+      {
+        "en": "POP",
+        "nl": "POPART"
+      },
+      {
+        "en": "CHARCOAL",
+        "nl": "HOUTSKOOL"
+      },
+      {
+        "en": "PASTEL",
+        "nl": "PASTEL"
+      },
+      {
+        "en": "INK WASH",
+        "nl": "INKTWASSING"
+      },
+      {
+        "en": "WATERCOLOR",
+        "nl": "AQUAREL"
+      },
+      {
+        "en": "ACRYLIC",
+        "nl": "ACRYL"
+      },
+      {
+        "en": "GOUACHE",
+        "nl": "GOUACHE"
+      },
+      {
+        "en": "TEMPERA",
+        "nl": "TEMPERA"
+      },
+      {
+        "en": "ENCAUSTIC",
+        "nl": "ENCAUSTIEK"
+      },
+      {
+        "en": "LITHOGRAPH",
+        "nl": "LITHOGRAFIE"
+      },
+      {
+        "en": "ETCHING",
+        "nl": "ETS"
+      },
+      {
+        "en": "PERSPECTIVE",
+        "nl": "PERSPECTIEF"
+      },
+      {
+        "en": "VANISHING",
+        "nl": "VERDWIJNPUNT"
+      },
+      {
+        "en": "HORIZON",
+        "nl": "HORIZON"
+      },
+      {
+        "en": "FORESHORTEN",
+        "nl": "VERKORTING"
+      },
+      {
+        "en": "CHIAROSCURO",
+        "nl": "CLAIROBSCUR"
+      },
+      {
+        "en": "SFUMATO",
+        "nl": "SFUMATO"
+      },
+      {
+        "en": "IMPASTO",
+        "nl": "IMPASTO"
+      },
+      {
+        "en": "GLAZE",
+        "nl": "GLAZUUR"
+      },
+      {
+        "en": "SCUMBLE",
+        "nl": "LASEREN"
+      },
+      {
+        "en": "ALLA PRIMA",
+        "nl": "ALLAPRIMA"
+      },
+      {
+        "en": "EMERALD",
+        "nl": "SMARAGD"
+      },
+      {
+        "en": "SAPPHIRE",
+        "nl": "SAFFIER"
+      },
+      {
+        "en": "AMBER",
+        "nl": "BARNSTEEN"
+      },
+      {
+        "en": "JADE",
+        "nl": "JADE"
+      },
+      {
+        "en": "CORAL",
+        "nl": "KORAAL"
+      },
+      {
+        "en": "IVORY",
+        "nl": "IVOOR"
+      },
+      {
+        "en": "EBONY",
+        "nl": "EBBEN"
+      },
+      {
+        "en": "PEARL",
+        "nl": "PAREL"
+      },
+      {
+        "en": "OPAL",
+        "nl": "OPAAL"
+      },
+      {
+        "en": "TOPAZ",
+        "nl": "TOPAAS"
+      },
+      {
+        "en": "MINIMALISM",
+        "nl": "MINIMALISME"
+      },
+      {
+        "en": "EXPRESSIONISM",
+        "nl": "EXPRESSIE"
+      },
+      {
+        "en": "FAUVISM",
+        "nl": "FAUVISME"
+      },
+      {
+        "en": "DADA",
+        "nl": "DADA"
+      },
+      {
+        "en": "BAUHAUS",
+        "nl": "BAUHAUS"
+      },
+      {
+        "en": "ART DECO",
+        "nl": "ARTDECO"
+      },
+      {
+        "en": "ART NOUVEAU",
+        "nl": "JUGENDSTIL"
+      },
+      {
+        "en": "NEOCLASSICAL",
+        "nl": "CLASSICISME"
+      },
+      {
+        "en": "ROMANTICISM",
+        "nl": "ROMANTIEK"
+      },
+      {
+        "en": "REALISM",
+        "nl": "REALISME"
+      },
+      {
+        "en": "FRAME",
+        "nl": "LIJST"
+      },
+      {
+        "en": "MOUNT",
+        "nl": "PASSEPARTOUT"
+      },
+      {
+        "en": "PEDESTAL",
+        "nl": "SOKKEL"
+      },
+      {
+        "en": "PLINTH",
+        "nl": "VOETSTUK"
+      },
+      {
+        "en": "INSTALLATION",
+        "nl": "INSTALLATIE"
+      },
+      {
+        "en": "EXHIBIT",
+        "nl": "EXPO"
+      },
+      {
+        "en": "RETROSPECTIVE",
+        "nl": "RETROSPECTIEF"
+      },
+      {
+        "en": "BIENNIAL",
+        "nl": "BIENNALE"
+      },
+      {
+        "en": "TRIENNIAL",
+        "nl": "TRIENNALE"
+      },
+      {
+        "en": "COMMISSION",
+        "nl": "OPDRACHT"
+      },
+      {
+        "en": "TURQUOISE",
+        "nl": "TURKOOIS"
+      }
+    ]
+  },
+  "fashion": {
+    "label": {
+      "en": "Fashion",
+      "nl": "Mode"
+    },
+    "icon": "👗",
+    "words": [
+      {
+        "en": "DRESS",
+        "nl": "JURK"
+      },
+      {
+        "en": "SKIRT",
+        "nl": "ROK"
+      },
+      {
+        "en": "BLOUSE",
+        "nl": "BLOES"
+      },
+      {
+        "en": "JACKET",
+        "nl": "JASJE"
+      },
+      {
+        "en": "COAT",
+        "nl": "JAS"
+      },
+      {
+        "en": "SCARF",
+        "nl": "SJAAL"
+      },
+      {
+        "en": "GLOVE",
+        "nl": "HANDSCHOEN"
+      },
+      {
+        "en": "BOOT",
+        "nl": "LAARS"
+      },
+      {
+        "en": "SHOE",
+        "nl": "SCHOEN"
+      },
+      {
+        "en": "BELT",
+        "nl": "RIEM"
+      },
+      {
+        "en": "COTTON",
+        "nl": "KATOEN"
+      },
+      {
+        "en": "SILK",
+        "nl": "ZIJDE"
+      },
+      {
+        "en": "WOOL",
+        "nl": "WOL"
+      },
+      {
+        "en": "LINEN",
+        "nl": "LINNEN"
+      },
+      {
+        "en": "DENIM",
+        "nl": "DENIM"
+      },
+      {
+        "en": "VELVET",
+        "nl": "FLUWEEL"
+      },
+      {
+        "en": "LACE",
+        "nl": "KANT"
+      },
+      {
+        "en": "SATIN",
+        "nl": "SATIJN"
+      },
+      {
+        "en": "LEATHER",
+        "nl": "LEER"
+      },
+      {
+        "en": "SUEDE",
+        "nl": "SUEDE"
+      },
+      {
+        "en": "BUTTON",
+        "nl": "KNOOP"
+      },
+      {
+        "en": "ZIPPER",
+        "nl": "RITS"
+      },
+      {
+        "en": "POCKET",
+        "nl": "ZAK"
+      },
+      {
+        "en": "COLLAR",
+        "nl": "KRAAG"
+      },
+      {
+        "en": "SLEEVE",
+        "nl": "MOUW"
+      },
+      {
+        "en": "HEM",
+        "nl": "ZOOM"
+      },
+      {
+        "en": "SEAM",
+        "nl": "NAAD"
+      },
+      {
+        "en": "STITCH",
+        "nl": "STEEK"
+      },
+      {
+        "en": "NEEDLE",
+        "nl": "NAALD"
+      },
+      {
+        "en": "THREAD",
+        "nl": "GAREN"
+      },
+      {
+        "en": "DESIGNER",
+        "nl": "ONTWERPER"
+      },
+      {
+        "en": "TAILOR",
+        "nl": "KLEERMAKER"
+      },
+      {
+        "en": "MODEL",
+        "nl": "MODEL"
+      },
+      {
+        "en": "RUNWAY",
+        "nl": "CATWALK"
+      },
+      {
+        "en": "BOUTIQUE",
+        "nl": "BOETIEK"
+      },
+      {
+        "en": "ATELIER",
+        "nl": "ATELIER"
+      },
+      {
+        "en": "COLLECTION",
+        "nl": "COLLECTIE"
+      },
+      {
+        "en": "GARMENT",
+        "nl": "KLEDINGSTUK"
+      },
+      {
+        "en": "OUTFIT",
+        "nl": "OUTFIT"
+      },
+      {
+        "en": "WARDROBE",
+        "nl": "GARDEROBE"
+      },
+      {
+        "en": "JEWELRY",
+        "nl": "SIERADEN"
+      },
+      {
+        "en": "NECKLACE",
+        "nl": "KETTING"
+      },
+      {
+        "en": "BRACELET",
+        "nl": "ARMBAND"
+      },
+      {
+        "en": "EARRING",
+        "nl": "OORBEL"
+      },
+      {
+        "en": "PENDANT",
+        "nl": "HANGER"
+      },
+      {
+        "en": "BROOCH",
+        "nl": "BROCHE"
+      },
+      {
+        "en": "TIARA",
+        "nl": "TIARA"
+      },
+      {
+        "en": "TRINKET",
+        "nl": "SNUISTERIJ"
+      },
+      {
+        "en": "AMULET",
+        "nl": "AMULET"
+      },
+      {
+        "en": "CHARM",
+        "nl": "BEDEL"
+      },
+      {
+        "en": "HOODIE",
+        "nl": "HOODIE"
+      },
+      {
+        "en": "SWEATER",
+        "nl": "TRUI"
+      },
+      {
+        "en": "CARDIGAN",
+        "nl": "CARDIGAN"
+      },
+      {
+        "en": "VEST",
+        "nl": "GILET"
+      },
+      {
+        "en": "BLAZER",
+        "nl": "BLAZER"
+      },
+      {
+        "en": "TRENCH",
+        "nl": "TRENCHCOAT"
+      },
+      {
+        "en": "PARKA",
+        "nl": "PARKA"
+      },
+      {
+        "en": "PONCHO",
+        "nl": "PONCHO"
+      },
+      {
+        "en": "CAPE",
+        "nl": "CAPE"
+      },
+      {
+        "en": "KIMONO",
+        "nl": "KIMONO"
+      },
+      {
+        "en": "SNEAKER",
+        "nl": "SNEAKER"
+      },
+      {
+        "en": "SANDAL",
+        "nl": "SANDAAL"
+      },
+      {
+        "en": "LOAFER",
+        "nl": "LOAFER"
+      },
+      {
+        "en": "HEEL",
+        "nl": "HAK"
+      },
+      {
+        "en": "WEDGE",
+        "nl": "WEDGE"
+      },
+      {
+        "en": "PLATFORM",
+        "nl": "PLATEAUZOOL"
+      },
+      {
+        "en": "SLIPPER",
+        "nl": "SLIPPER"
+      },
+      {
+        "en": "MULE",
+        "nl": "MULE"
+      },
+      {
+        "en": "CLOG",
+        "nl": "KLOMP"
+      },
+      {
+        "en": "ESPADRILLE",
+        "nl": "ESPADRILLE"
+      },
+      {
+        "en": "TARTAN",
+        "nl": "TARTAN"
+      },
+      {
+        "en": "PLAID",
+        "nl": "PLAID"
+      },
+      {
+        "en": "STRIPE",
+        "nl": "STREEP"
+      },
+      {
+        "en": "POLKA DOT",
+        "nl": "STIPPEN"
+      },
+      {
+        "en": "PAISLEY",
+        "nl": "PAISLEY"
+      },
+      {
+        "en": "FLORAL",
+        "nl": "BLOEMEN"
+      },
+      {
+        "en": "CAMOUFLAGE",
+        "nl": "CAMOUFLAGE"
+      },
+      {
+        "en": "HOUNDSTOOTH",
+        "nl": "PIEDDEPOULE"
+      },
+      {
+        "en": "HERRINGBONE",
+        "nl": "VISGRAAT"
+      },
+      {
+        "en": "GINGHAM",
+        "nl": "GINGHAM"
+      },
+      {
+        "en": "CASHMERE",
+        "nl": "KASJMIER"
+      },
+      {
+        "en": "MOHAIR",
+        "nl": "MOHAIR"
+      },
+      {
+        "en": "ANGORA",
+        "nl": "ANGORA"
+      },
+      {
+        "en": "ALPACA",
+        "nl": "ALPACA"
+      },
+      {
+        "en": "VICUNA",
+        "nl": "VICUGNA"
+      },
+      {
+        "en": "CHIFFON",
+        "nl": "CHIFFON"
+      },
+      {
+        "en": "TAFFETA",
+        "nl": "TAF"
+      },
+      {
+        "en": "ORGANZA",
+        "nl": "ORGANZA"
+      },
+      {
+        "en": "BROCADE",
+        "nl": "BROKAAT"
+      },
+      {
+        "en": "DAMASK",
+        "nl": "DAMAST"
+      },
+      {
+        "en": "ACCESSORY",
+        "nl": "ACCESSOIRE"
+      },
+      {
+        "en": "HANDBAG",
+        "nl": "HANDTAS"
+      },
+      {
+        "en": "CLUTCH",
+        "nl": "CLUTCH"
+      },
+      {
+        "en": "WALLET",
+        "nl": "PORTEMONNEE"
+      },
+      {
+        "en": "UMBRELLA",
+        "nl": "PARAPLU"
+      },
+      {
+        "en": "SUNGLASSES",
+        "nl": "ZONNEBRIL"
+      },
+      {
+        "en": "WATCH",
+        "nl": "HORLOGE"
+      },
+      {
+        "en": "RING",
+        "nl": "RING"
+      },
+      {
+        "en": "ANKLET",
+        "nl": "ENKELBAND"
+      },
+      {
+        "en": "CUFFLINK",
+        "nl": "MANCHETKNOOP"
+      }
+    ]
+  },
+  "mythology": {
+    "label": {
+      "en": "Mythology",
+      "nl": "Mythologie"
+    },
+    "icon": "🏰",
+    "words": [
+      {
+        "en": "ZEUS",
+        "nl": "ZEUS"
+      },
+      {
+        "en": "HERA",
+        "nl": "HERA"
+      },
+      {
+        "en": "ARES",
+        "nl": "ARES"
+      },
+      {
+        "en": "THOR",
+        "nl": "THOR"
+      },
+      {
+        "en": "ODIN",
+        "nl": "ODIN"
+      },
+      {
+        "en": "LOKI",
+        "nl": "LOKI"
+      },
+      {
+        "en": "APOLLO",
+        "nl": "APOLLO"
+      },
+      {
+        "en": "ARTEMIS",
+        "nl": "ARTEMIS"
+      },
+      {
+        "en": "ATHENA",
+        "nl": "ATHENA"
+      },
+      {
+        "en": "HERMES",
+        "nl": "HERMES"
+      },
+      {
+        "en": "DRAGON",
+        "nl": "DRAAK"
+      },
+      {
+        "en": "PHOENIX",
+        "nl": "FENIKS"
+      },
+      {
+        "en": "GRIFFIN",
+        "nl": "GRIFFIOEN"
+      },
+      {
+        "en": "SPHINX",
+        "nl": "SFINX"
+      },
+      {
+        "en": "CYCLOPS",
+        "nl": "CYCLOOP"
+      },
+      {
+        "en": "MEDUSA",
+        "nl": "MEDUSA"
+      },
+      {
+        "en": "CENTAUR",
+        "nl": "CENTAUR"
+      },
+      {
+        "en": "MINOTAUR",
+        "nl": "MINOTAURUS"
+      },
+      {
+        "en": "PEGASUS",
+        "nl": "PEGASUS"
+      },
+      {
+        "en": "CHIMERA",
+        "nl": "CHIMERA"
+      },
+      {
+        "en": "VALHALLA",
+        "nl": "WALHALLA"
+      },
+      {
+        "en": "ASGARD",
+        "nl": "ASGARD"
+      },
+      {
+        "en": "OLYMPUS",
+        "nl": "OLYMPUS"
+      },
+      {
+        "en": "TARTARUS",
+        "nl": "TARTARUS"
+      },
+      {
+        "en": "ELYSIUM",
+        "nl": "ELYSIUM"
+      },
+      {
+        "en": "ATLANTIS",
+        "nl": "ATLANTIS"
+      },
+      {
+        "en": "AVALON",
+        "nl": "AVALON"
+      },
+      {
+        "en": "CAMELOT",
+        "nl": "CAMELOT"
+      },
+      {
+        "en": "SHANGRI",
+        "nl": "SHANGRILA"
+      },
+      {
+        "en": "EDEN",
+        "nl": "EDEN"
+      },
+      {
+        "en": "ORACLE",
+        "nl": "ORAKEL"
+      },
+      {
+        "en": "PROPHECY",
+        "nl": "VOORSPELLING"
+      },
+      {
+        "en": "CURSE",
+        "nl": "VLOEK"
+      },
+      {
+        "en": "BLESSING",
+        "nl": "ZEGEN"
+      },
+      {
+        "en": "RUNE",
+        "nl": "RUNE"
+      },
+      {
+        "en": "TOTEM",
+        "nl": "TOTEM"
+      },
+      {
+        "en": "TALISMAN",
+        "nl": "TALISMAN"
+      },
+      {
+        "en": "SCROLL",
+        "nl": "BOEKROL"
+      },
+      {
+        "en": "RELIC",
+        "nl": "RELIKWIE"
+      },
+      {
+        "en": "BLADE",
+        "nl": "KLING"
+      },
+      {
+        "en": "HERO",
+        "nl": "HELD"
+      },
+      {
+        "en": "DEMIGOD",
+        "nl": "HALFGOD"
+      },
+      {
+        "en": "TITAN",
+        "nl": "TITAAN"
+      },
+      {
+        "en": "GIANT",
+        "nl": "REUS"
+      },
+      {
+        "en": "DWARF",
+        "nl": "DWERG"
+      },
+      {
+        "en": "ELF",
+        "nl": "ELF"
+      },
+      {
+        "en": "FAIRY",
+        "nl": "FEE"
+      },
+      {
+        "en": "NYMPH",
+        "nl": "NIMF"
+      },
+      {
+        "en": "SATYR",
+        "nl": "SATER"
+      },
+      {
+        "en": "SIREN",
+        "nl": "SIRENE"
+      },
+      {
+        "en": "HADES",
+        "nl": "HADES"
+      },
+      {
+        "en": "POSEIDON",
+        "nl": "POSEIDON"
+      },
+      {
+        "en": "HESTIA",
+        "nl": "HESTIA"
+      },
+      {
+        "en": "DEMETER",
+        "nl": "DEMETER"
+      },
+      {
+        "en": "DIONYSUS",
+        "nl": "DIONYSUS"
+      },
+      {
+        "en": "HEPHAESTUS",
+        "nl": "HEPHAESTUS"
+      },
+      {
+        "en": "APHRODITE",
+        "nl": "APHRODITE"
+      },
+      {
+        "en": "PERSEPHONE",
+        "nl": "PERSEPHONE"
+      },
+      {
+        "en": "PROMETHEUS",
+        "nl": "PROMETHEUS"
+      },
+      {
+        "en": "ATLAS",
+        "nl": "ATLAS"
+      },
+      {
+        "en": "FREYA",
+        "nl": "FREYA"
+      },
+      {
+        "en": "BALDER",
+        "nl": "BALDER"
+      },
+      {
+        "en": "TYR",
+        "nl": "TYR"
+      },
+      {
+        "en": "HEIMDALL",
+        "nl": "HEIMDALL"
+      },
+      {
+        "en": "FRIGG",
+        "nl": "FRIGG"
+      },
+      {
+        "en": "NJORD",
+        "nl": "NJORD"
+      },
+      {
+        "en": "SKADI",
+        "nl": "SKADI"
+      },
+      {
+        "en": "FENRIR",
+        "nl": "FENRIR"
+      },
+      {
+        "en": "JORMUNGANDR",
+        "nl": "JORMUNGANDER"
+      },
+      {
+        "en": "SLEIPNIR",
+        "nl": "SLEIPNIR"
+      },
+      {
+        "en": "ANUBIS",
+        "nl": "ANUBIS"
+      },
+      {
+        "en": "OSIRIS",
+        "nl": "OSIRIS"
+      },
+      {
+        "en": "HORUS",
+        "nl": "HORUS"
+      },
+      {
+        "en": "THOTH",
+        "nl": "THOTH"
+      },
+      {
+        "en": "BASTET",
+        "nl": "BASTET"
+      },
+      {
+        "en": "SEKHMET",
+        "nl": "SEKHMET"
+      },
+      {
+        "en": "HATHOR",
+        "nl": "HATHOR"
+      },
+      {
+        "en": "SOBEK",
+        "nl": "SOBEK"
+      },
+      {
+        "en": "AMUN",
+        "nl": "AMON"
+      },
+      {
+        "en": "KHONSU",
+        "nl": "KHONSU"
+      },
+      {
+        "en": "MERLIN",
+        "nl": "MERLIJN"
+      },
+      {
+        "en": "MORGAN",
+        "nl": "MORGANA"
+      },
+      {
+        "en": "GUINEVERE",
+        "nl": "GUINEVERE"
+      },
+      {
+        "en": "LANCELOT",
+        "nl": "LANCELOT"
+      },
+      {
+        "en": "PERCIVAL",
+        "nl": "PERCIVAL"
+      },
+      {
+        "en": "GAWAIN",
+        "nl": "WALEWEIN"
+      },
+      {
+        "en": "GALAHAD",
+        "nl": "GALAHAD"
+      },
+      {
+        "en": "BORS",
+        "nl": "BORS"
+      },
+      {
+        "en": "BEDIVERE",
+        "nl": "BEDIVERE"
+      },
+      {
+        "en": "KAY",
+        "nl": "KAY"
+      },
+      {
+        "en": "WIZARD",
+        "nl": "TOVENAAR"
+      },
+      {
+        "en": "SORCERER",
+        "nl": "MAGIER"
+      },
+      {
+        "en": "ENCHANTER",
+        "nl": "BETOVERAAR"
+      },
+      {
+        "en": "WARLOCK",
+        "nl": "HEKSENMEESTER"
+      },
+      {
+        "en": "SHAMAN",
+        "nl": "SJAMAAN"
+      },
+      {
+        "en": "DRUID",
+        "nl": "DRUIDE"
+      },
+      {
+        "en": "SEER",
+        "nl": "ZIENER"
+      },
+      {
+        "en": "MYSTIC",
+        "nl": "MYSTICUS"
+      },
+      {
+        "en": "PROPHET",
+        "nl": "PROFEET"
+      },
+      {
+        "en": "SOOTHSAYER",
+        "nl": "VOORSPELLER"
+      }
+    ]
+  },
+  "professions": {
+    "label": {
+      "en": "Professions",
+      "nl": "Beroepen"
+    },
+    "icon": "💼",
+    "words": [
+      {
+        "en": "DOCTOR",
+        "nl": "ARTS"
+      },
+      {
+        "en": "NURSE",
+        "nl": "VERPLEEGSTER"
+      },
+      {
+        "en": "TEACHER",
+        "nl": "LERAAR"
+      },
+      {
+        "en": "LAWYER",
+        "nl": "ADVOCAAT"
+      },
+      {
+        "en": "JUDGE",
+        "nl": "RECHTER"
+      },
+      {
+        "en": "PILOT",
+        "nl": "PILOOT"
+      },
+      {
+        "en": "CHEF",
+        "nl": "KOK"
+      },
+      {
+        "en": "CLERK",
+        "nl": "KANTOORKLERK"
+      },
+      {
+        "en": "GUARD",
+        "nl": "BEWAKER"
+      },
+      {
+        "en": "SCOUT",
+        "nl": "GIDS"
+      },
+      {
+        "en": "FARMER",
+        "nl": "BOER"
+      },
+      {
+        "en": "MINER",
+        "nl": "MIJNWERKER"
+      },
+      {
+        "en": "SAILOR",
+        "nl": "MATROOS"
+      },
+      {
+        "en": "POTTER",
+        "nl": "POTTENBAKKER"
+      },
+      {
+        "en": "WEAVER",
+        "nl": "WEVER"
+      },
+      {
+        "en": "TAILOR",
+        "nl": "KLEERMAKER"
+      },
+      {
+        "en": "MASON",
+        "nl": "METSELAAR"
+      },
+      {
+        "en": "CARPENTER",
+        "nl": "TIMMERMAN"
+      },
+      {
+        "en": "PLUMBER",
+        "nl": "LOODGIETER"
+      },
+      {
+        "en": "WELDER",
+        "nl": "LASSER"
+      },
+      {
+        "en": "ARTIST",
+        "nl": "KUNSTENAAR"
+      },
+      {
+        "en": "ACTOR",
+        "nl": "ACTEUR"
+      },
+      {
+        "en": "WRITER",
+        "nl": "SCHRIJVER"
+      },
+      {
+        "en": "POET",
+        "nl": "DICHTER"
+      },
+      {
+        "en": "MUSICIAN",
+        "nl": "MUZIKANT"
+      },
+      {
+        "en": "DANCER",
+        "nl": "DANSER"
+      },
+      {
+        "en": "SINGER",
+        "nl": "ZANGER"
+      },
+      {
+        "en": "CLOWN",
+        "nl": "CLOWN"
+      },
+      {
+        "en": "JUGGLER",
+        "nl": "JONGLEUR"
+      },
+      {
+        "en": "MAGICIAN",
+        "nl": "GOOCHELAAR"
+      },
+      {
+        "en": "SOLDIER",
+        "nl": "SOLDAT"
+      },
+      {
+        "en": "RANGER",
+        "nl": "BOSWACHTER"
+      },
+      {
+        "en": "MARINE",
+        "nl": "MARINIER"
+      },
+      {
+        "en": "AVIATOR",
+        "nl": "VLIEGER"
+      },
+      {
+        "en": "CAPTAIN",
+        "nl": "KAPITEIN"
+      },
+      {
+        "en": "COLONEL",
+        "nl": "KOLONEL"
+      },
+      {
+        "en": "GENERAL",
+        "nl": "GENERAAL"
+      },
+      {
+        "en": "ADMIRAL",
+        "nl": "ADMIRAAL"
+      },
+      {
+        "en": "MARSHAL",
+        "nl": "MAARSCHALK"
+      },
+      {
+        "en": "SERGEANT",
+        "nl": "SERGEANT"
+      },
+      {
+        "en": "SCIENTIST",
+        "nl": "WETENSCHAPPER"
+      },
+      {
+        "en": "ENGINEER",
+        "nl": "INGENIEUR"
+      },
+      {
+        "en": "CHEMIST",
+        "nl": "SCHEIKUNDIGE"
+      },
+      {
+        "en": "BIOLOGIST",
+        "nl": "BIOLOOG"
+      },
+      {
+        "en": "GEOLOGIST",
+        "nl": "GEOLOOG"
+      },
+      {
+        "en": "PHYSICIST",
+        "nl": "NATUURKUNDIGE"
+      },
+      {
+        "en": "BOTANIST",
+        "nl": "BOTANICUS"
+      },
+      {
+        "en": "ZOOLOGIST",
+        "nl": "ZOOLOOG"
+      },
+      {
+        "en": "ASTRONOMER",
+        "nl": "ASTRONOOM"
+      },
+      {
+        "en": "INVENTOR",
+        "nl": "UITVINDER"
+      },
+      {
+        "en": "DENTIST",
+        "nl": "TANDARTS"
+      },
+      {
+        "en": "SURGEON",
+        "nl": "CHIRURG"
+      },
+      {
+        "en": "VETERINARIAN",
+        "nl": "DIERENARTS"
+      },
+      {
+        "en": "PHARMACIST",
+        "nl": "APOTHEKER"
+      },
+      {
+        "en": "PARAMEDIC",
+        "nl": "AMBULANCIER"
+      },
+      {
+        "en": "MIDWIFE",
+        "nl": "VROEDVROUW"
+      },
+      {
+        "en": "THERAPIST",
+        "nl": "THERAPEUT"
+      },
+      {
+        "en": "COUNSELOR",
+        "nl": "ADVISEUR"
+      },
+      {
+        "en": "PSYCHOLOGIST",
+        "nl": "PSYCHOLOOG"
+      },
+      {
+        "en": "SOCIAL WORKER",
+        "nl": "SOCIAALWERKER"
+      },
+      {
+        "en": "PROFESSOR",
+        "nl": "HOOGLERAAR"
+      },
+      {
+        "en": "LECTURER",
+        "nl": "DOCENT"
+      },
+      {
+        "en": "TUTOR",
+        "nl": "MENTOR"
+      },
+      {
+        "en": "PRINCIPAL",
+        "nl": "SCHOOLHOOFD"
+      },
+      {
+        "en": "DEAN",
+        "nl": "DECAAN"
+      },
+      {
+        "en": "CHANCELLOR",
+        "nl": "RECTOR"
+      },
+      {
+        "en": "LIBRARIAN",
+        "nl": "RECHERCHEUR"
+      },
+      {
+        "en": "ARCHIVIST",
+        "nl": "ARCHIVARIS"
+      },
+      {
+        "en": "CURATOR",
+        "nl": "CONSERVATOR"
+      },
+      {
+        "en": "HISTORIAN",
+        "nl": "HISTORICUS"
+      },
+      {
+        "en": "ARCHITECT",
+        "nl": "ARCHITECT"
+      },
+      {
+        "en": "SURVEYOR",
+        "nl": "LANDMETER"
+      },
+      {
+        "en": "DRAFTER",
+        "nl": "TEKENAAR"
+      },
+      {
+        "en": "ELECTRICIAN",
+        "nl": "ELEKTRICIEN"
+      },
+      {
+        "en": "MECHANIC",
+        "nl": "MONTEUR"
+      },
+      {
+        "en": "TECHNICIAN",
+        "nl": "TECHNICUS"
+      },
+      {
+        "en": "OPERATOR",
+        "nl": "MACHINIST"
+      },
+      {
+        "en": "INSPECTOR",
+        "nl": "INSPECTEUR"
+      },
+      {
+        "en": "ANALYST",
+        "nl": "ANALIST"
+      },
+      {
+        "en": "AUDITOR",
+        "nl": "CONTROLEUR"
+      },
+      {
+        "en": "BANKER",
+        "nl": "BANKIER"
+      },
+      {
+        "en": "BROKER",
+        "nl": "MAKELAAR"
+      },
+      {
+        "en": "TRADER",
+        "nl": "HANDELAAR"
+      },
+      {
+        "en": "ACTUARY",
+        "nl": "ACTUARIS"
+      },
+      {
+        "en": "ACCOUNTANT",
+        "nl": "ACCOUNTANT"
+      },
+      {
+        "en": "BOOKKEEPER",
+        "nl": "BOEKHOUDER"
+      },
+      {
+        "en": "CASHIER",
+        "nl": "KASSIERE"
+      },
+      {
+        "en": "TELLER",
+        "nl": "LOKETTIST"
+      },
+      {
+        "en": "RECEPTIONIST",
+        "nl": "RECEPTIONISTE"
+      },
+      {
+        "en": "DIPLOMAT",
+        "nl": "DIPLOMAAT"
+      },
+      {
+        "en": "AMBASSADOR",
+        "nl": "AMBASSADEUR"
+      },
+      {
+        "en": "CONSUL",
+        "nl": "CONSUL"
+      },
+      {
+        "en": "MINISTER",
+        "nl": "MINISTER"
+      },
+      {
+        "en": "GOVERNOR",
+        "nl": "GOUVERNEUR"
+      },
+      {
+        "en": "MAYOR",
+        "nl": "BURGEMEESTER"
+      },
+      {
+        "en": "SHERIFF",
+        "nl": "SHERIFF"
+      },
+      {
+        "en": "WARDEN",
+        "nl": "CIPIER"
+      },
+      {
+        "en": "SECRETARY",
+        "nl": "SECRETARESSE"
+      },
+      {
+        "en": "COMMISSIONER",
+        "nl": "COMMISSARIS"
+      },
+      {
+        "en": "SUPERVISOR",
+        "nl": "OPZICHTER"
+      }
+    ]
+  },
+  "dinosaurs": {
+    "label": {
+      "en": "Dinosaurs",
+      "nl": "Dinosauriërs"
+    },
+    "icon": "🦖",
+    "words": [
+      {
+        "en": "TREX",
+        "nl": "TREX"
+      },
+      {
+        "en": "RAPTOR",
+        "nl": "RAPTOR"
+      },
+      {
+        "en": "TRICERATOPS",
+        "nl": "TRICERATOPS"
+      },
+      {
+        "en": "STEGOSAURUS",
+        "nl": "STEGOSAURUS"
+      },
+      {
+        "en": "BRACHIOSAURUS",
+        "nl": "BRACHIOSAURUS"
+      },
+      {
+        "en": "PTERODACTYL",
+        "nl": "PTERODACTYLUS"
+      },
+      {
+        "en": "DIPLODOCUS",
+        "nl": "DIPLODOCUS"
+      },
+      {
+        "en": "ALLOSAURUS",
+        "nl": "ALLOSAURUS"
+      },
+      {
+        "en": "ANKYLOSAURUS",
+        "nl": "ANKYLOSAURUS"
+      },
+      {
+        "en": "SPINOSAURUS",
+        "nl": "SPINOSAURUS"
+      },
+      {
+        "en": "FOSSIL",
+        "nl": "FOSSIEL"
+      },
+      {
+        "en": "BONE",
+        "nl": "BOT"
+      },
+      {
+        "en": "CLAW",
+        "nl": "KLAUW"
+      },
+      {
+        "en": "TOOTH",
+        "nl": "TAND"
+      },
+      {
+        "en": "SKULL",
+        "nl": "SCHEDEL"
+      },
+      {
+        "en": "SPIKE",
+        "nl": "STEKEL"
+      },
+      {
+        "en": "HORN",
+        "nl": "HOORN"
+      },
+      {
+        "en": "CREST",
+        "nl": "KAM"
+      },
+      {
+        "en": "TAIL",
+        "nl": "STAART"
+      },
+      {
+        "en": "JAW",
+        "nl": "KAAK"
+      },
+      {
+        "en": "JURASSIC",
+        "nl": "JURA"
+      },
+      {
+        "en": "TRIASSIC",
+        "nl": "TRIAS"
+      },
+      {
+        "en": "CRETACEOUS",
+        "nl": "KRIJT"
+      },
+      {
+        "en": "EXTINCT",
+        "nl": "UITGESTORVEN"
+      },
+      {
+        "en": "PREDATOR",
+        "nl": "ROOFDIER"
+      },
+      {
+        "en": "HERBIVORE",
+        "nl": "PLANTENETER"
+      },
+      {
+        "en": "CARNIVORE",
+        "nl": "VLEESETER"
+      },
+      {
+        "en": "OMNIVORE",
+        "nl": "ALLESETER"
+      },
+      {
+        "en": "PACK",
+        "nl": "ROEDEL"
+      },
+      {
+        "en": "HERD",
+        "nl": "KUDDE"
+      },
+      {
+        "en": "VELOCIRAPTOR",
+        "nl": "VELOCIRAPTOR"
+      },
+      {
+        "en": "IGUANODON",
+        "nl": "IGUANODON"
+      },
+      {
+        "en": "HADROSAUR",
+        "nl": "HADROSAURUS"
+      },
+      {
+        "en": "PTERANODON",
+        "nl": "PTERANODON"
+      },
+      {
+        "en": "MOSASAUR",
+        "nl": "MOSASAURUS"
+      },
+      {
+        "en": "PLESIOSAUR",
+        "nl": "PLESIOSAURUS"
+      },
+      {
+        "en": "TYRANNOSAUR",
+        "nl": "TYRANNOSAURUS"
+      },
+      {
+        "en": "GIGANTOSAURUS",
+        "nl": "GIGANTOSAURUS"
+      },
+      {
+        "en": "CARNOTAURUS",
+        "nl": "CARNOTAURUS"
+      },
+      {
+        "en": "DEINONYCHUS",
+        "nl": "DEINONYCHUS"
+      },
+      {
+        "en": "NEST",
+        "nl": "NEST"
+      },
+      {
+        "en": "EGG",
+        "nl": "EISCHAAL"
+      },
+      {
+        "en": "HATCHLING",
+        "nl": "JONG"
+      },
+      {
+        "en": "SCALE",
+        "nl": "SCHUB"
+      },
+      {
+        "en": "PLATE",
+        "nl": "PLAAT"
+      },
+      {
+        "en": "ARMOR",
+        "nl": "PANTSER"
+      },
+      {
+        "en": "ROAR",
+        "nl": "GEBRUL"
+      },
+      {
+        "en": "STOMP",
+        "nl": "STAMPEN"
+      },
+      {
+        "en": "CHASE",
+        "nl": "JACHT"
+      },
+      {
+        "en": "HUNT",
+        "nl": "JAGEN"
+      },
+      {
+        "en": "MEGALODON",
+        "nl": "MEGALODON"
+      },
+      {
+        "en": "SABRE TOOTH",
+        "nl": "SABELTANDKAT"
+      },
+      {
+        "en": "MAMMOTH",
+        "nl": "MAMMOET"
+      },
+      {
+        "en": "MASTODON",
+        "nl": "MASTODONT"
+      },
+      {
+        "en": "SMILODON",
+        "nl": "SMILODON"
+      },
+      {
+        "en": "MEGATHERIUM",
+        "nl": "MEGATHERIUM"
+      },
+      {
+        "en": "GLYPTODON",
+        "nl": "GLYPTODON"
+      },
+      {
+        "en": "MEGALOCEROS",
+        "nl": "REUZENHERT"
+      },
+      {
+        "en": "DIPROTODON",
+        "nl": "DIPROTODON"
+      },
+      {
+        "en": "THYLACINE",
+        "nl": "BUIDELWOLF"
+      },
+      {
+        "en": "ARCHAEOPTERYX",
+        "nl": "ARCHEOPTERYX"
+      },
+      {
+        "en": "MICRORAPTOR",
+        "nl": "MICRORAPTOR"
+      },
+      {
+        "en": "OVIRAPTOR",
+        "nl": "OVIRAPTOR"
+      },
+      {
+        "en": "PROTOCERATOPS",
+        "nl": "PROTOCERATOPS"
+      },
+      {
+        "en": "PARASAUROLOPHUS",
+        "nl": "COMPSOGNATHUS"
+      },
+      {
+        "en": "CORYTHOSAURUS",
+        "nl": "CORYTHOSAURUS"
+      },
+      {
+        "en": "LAMBEOSAURUS",
+        "nl": "LAMBEOSAURUS"
+      },
+      {
+        "en": "EDMONTOSAURUS",
+        "nl": "EDMONTOSAURUS"
+      },
+      {
+        "en": "MAIASAURA",
+        "nl": "MAIASAURA"
+      },
+      {
+        "en": "HYPSILOPHODON",
+        "nl": "HYPSILOPHODON"
+      },
+      {
+        "en": "PALEONTOLOGIST",
+        "nl": "PALEONTOLOOG"
+      },
+      {
+        "en": "DIG",
+        "nl": "GRAVEN"
+      },
+      {
+        "en": "EXCAVATE",
+        "nl": "OPGRAVEN"
+      },
+      {
+        "en": "STRATA",
+        "nl": "LAGEN"
+      },
+      {
+        "en": "SEDIMENT",
+        "nl": "SEDIMENT"
+      },
+      {
+        "en": "AMBER",
+        "nl": "BARNSTEEN"
+      },
+      {
+        "en": "PETRIFIED",
+        "nl": "VERSTEEND"
+      },
+      {
+        "en": "CARBON",
+        "nl": "KOOLSTOF"
+      },
+      {
+        "en": "IMPRINT",
+        "nl": "AFDRUK"
+      },
+      {
+        "en": "CAST",
+        "nl": "AFGIETSEL"
+      },
+      {
+        "en": "SAUROPOD",
+        "nl": "SAUROPODE"
+      },
+      {
+        "en": "THEROPOD",
+        "nl": "THEROPODE"
+      },
+      {
+        "en": "ORNITHOPOD",
+        "nl": "ORNITHOPODE"
+      },
+      {
+        "en": "CERATOPSIAN",
+        "nl": "CERATOPSIDE"
+      },
+      {
+        "en": "PACHYCEPHALOSAUR",
+        "nl": "STEGOCERAS"
+      },
+      {
+        "en": "STEGOSAUR",
+        "nl": "STEGOSAURIDE"
+      },
+      {
+        "en": "ANKYLOSAUR",
+        "nl": "ANKYLOSAURIDE"
+      },
+      {
+        "en": "HADROSAURID",
+        "nl": "HADROSAURIDE"
+      },
+      {
+        "en": "DROMAEOSAUR",
+        "nl": "DROMAEOSAURUS"
+      },
+      {
+        "en": "TROODONTID",
+        "nl": "TROODONTIDE"
+      },
+      {
+        "en": "MESOZOIC",
+        "nl": "MESOZOICUM"
+      },
+      {
+        "en": "PERMIAN",
+        "nl": "PERM"
+      },
+      {
+        "en": "DEVONIAN",
+        "nl": "DEVON"
+      },
+      {
+        "en": "CAMBRIAN",
+        "nl": "CAMBRIUM"
+      },
+      {
+        "en": "PRECAMBRIAN",
+        "nl": "PRECAMBRIUM"
+      },
+      {
+        "en": "CARBONIFEROUS",
+        "nl": "CARBOON"
+      },
+      {
+        "en": "SILURIAN",
+        "nl": "SILUUR"
+      },
+      {
+        "en": "ORDOVICIAN",
+        "nl": "ORDOVICIUM"
+      },
+      {
+        "en": "PALEOCENE",
+        "nl": "PALEOCEEN"
+      },
+      {
+        "en": "PLEISTOCENE",
+        "nl": "PLEISTOCEEN"
+      }
+    ]
+  },
+  "flowers": {
+    "label": {
+      "en": "Flowers & Plants",
+      "nl": "Bloemen & Planten"
+    },
+    "icon": "🌸",
+    "words": [
+      {
+        "en": "ROSE",
+        "nl": "ROOS"
+      },
+      {
+        "en": "LILY",
+        "nl": "LELIE"
+      },
+      {
+        "en": "IRIS",
+        "nl": "IRIS"
+      },
+      {
+        "en": "DAISY",
+        "nl": "MADELIEF"
+      },
+      {
+        "en": "POPPY",
+        "nl": "KLAPROOS"
+      },
+      {
+        "en": "TULIP",
+        "nl": "TULP"
+      },
+      {
+        "en": "LOTUS",
+        "nl": "LOTUS"
+      },
+      {
+        "en": "ASTER",
+        "nl": "ASTER"
+      },
+      {
+        "en": "PEONY",
+        "nl": "PIOEN"
+      },
+      {
+        "en": "LILAC",
+        "nl": "SERING"
+      },
+      {
+        "en": "ORCHID",
+        "nl": "ORCHIDEE"
+      },
+      {
+        "en": "VIOLET",
+        "nl": "VIOOLTJE"
+      },
+      {
+        "en": "LAVENDER",
+        "nl": "LAVENDEL"
+      },
+      {
+        "en": "JASMINE",
+        "nl": "JASMIJN"
+      },
+      {
+        "en": "MAGNOLIA",
+        "nl": "MAGNOLIA"
+      },
+      {
+        "en": "AZALEA",
+        "nl": "AZALEA"
+      },
+      {
+        "en": "GARDENIA",
+        "nl": "GARDENIA"
+      },
+      {
+        "en": "HYACINTH",
+        "nl": "HYACINT"
+      },
+      {
+        "en": "PRIMROSE",
+        "nl": "SLEUTELBLOEM"
+      },
+      {
+        "en": "BLUEBELL",
+        "nl": "BOSHYACINT"
+      },
+      {
+        "en": "PETAL",
+        "nl": "BLOEMBLAADJE"
+      },
+      {
+        "en": "STEM",
+        "nl": "STENGEL"
+      },
+      {
+        "en": "LEAF",
+        "nl": "BLAD"
+      },
+      {
+        "en": "BUD",
+        "nl": "KNOP"
+      },
+      {
+        "en": "BLOOM",
+        "nl": "BLOEI"
+      },
+      {
+        "en": "BLOSSOM",
+        "nl": "BLOESEM"
+      },
+      {
+        "en": "POLLEN",
+        "nl": "STUIFMEEL"
+      },
+      {
+        "en": "NECTAR",
+        "nl": "NECTAR"
+      },
+      {
+        "en": "THORN",
+        "nl": "DOORN"
+      },
+      {
+        "en": "VINE",
+        "nl": "RANK"
+      },
+      {
+        "en": "CROCUS",
+        "nl": "KROKUS"
+      },
+      {
+        "en": "DAFFODIL",
+        "nl": "NARCIS"
+      },
+      {
+        "en": "SUNFLOWER",
+        "nl": "ZONNEBLOEM"
+      },
+      {
+        "en": "MARIGOLD",
+        "nl": "GOUDSBLOEM"
+      },
+      {
+        "en": "CARNATION",
+        "nl": "ANJER"
+      },
+      {
+        "en": "GERANIUM",
+        "nl": "GERANIUM"
+      },
+      {
+        "en": "BEGONIA",
+        "nl": "BEGONIA"
+      },
+      {
+        "en": "PETUNIA",
+        "nl": "PETUNIA"
+      },
+      {
+        "en": "ZINNIA",
+        "nl": "ZINNIA"
+      },
+      {
+        "en": "DAHLIA",
+        "nl": "DAHLIA"
+      },
+      {
+        "en": "BOTANY",
+        "nl": "PLANTKUNDE"
+      },
+      {
+        "en": "GARDEN",
+        "nl": "TUIN"
+      },
+      {
+        "en": "MEADOW",
+        "nl": "WEIDE"
+      },
+      {
+        "en": "BOUQUET",
+        "nl": "BOEKET"
+      },
+      {
+        "en": "WREATH",
+        "nl": "KRANS"
+      },
+      {
+        "en": "GARLAND",
+        "nl": "SLINGER"
+      },
+      {
+        "en": "HERBAL",
+        "nl": "KRUIDEN"
+      },
+      {
+        "en": "SHRUB",
+        "nl": "HEESTER"
+      },
+      {
+        "en": "FERN",
+        "nl": "VAREN"
+      },
+      {
+        "en": "MOSS",
+        "nl": "MOS"
+      },
+      {
+        "en": "HIBISCUS",
+        "nl": "HIBISCUS"
+      },
+      {
+        "en": "CAMELLIA",
+        "nl": "CAMELLIA"
+      },
+      {
+        "en": "CHRYSANTHEMUM",
+        "nl": "CHRYSANT"
+      },
+      {
+        "en": "WISTERIA",
+        "nl": "BLAUWEREGEN"
+      },
+      {
+        "en": "CLEMATIS",
+        "nl": "CLEMATIS"
+      },
+      {
+        "en": "HYDRANGEA",
+        "nl": "HORTENSIA"
+      },
+      {
+        "en": "RHODODENDRON",
+        "nl": "RODODENDRON"
+      },
+      {
+        "en": "BOUGAINVILLEA",
+        "nl": "BOUGAINVILLEA"
+      },
+      {
+        "en": "FOXGLOVE",
+        "nl": "DIGITALIS"
+      },
+      {
+        "en": "LARKSPUR",
+        "nl": "RIDDERSPOOR"
+      },
+      {
+        "en": "SNAPDRAGON",
+        "nl": "LEEUWENBEK"
+      },
+      {
+        "en": "SWEET PEA",
+        "nl": "SIERERWT"
+      },
+      {
+        "en": "COSMOS",
+        "nl": "COSMOS"
+      },
+      {
+        "en": "PHLOX",
+        "nl": "FLOKS"
+      },
+      {
+        "en": "LUPIN",
+        "nl": "LUPINE"
+      },
+      {
+        "en": "HOLLYHOCK",
+        "nl": "STOKROOS"
+      },
+      {
+        "en": "DELPHINIUM",
+        "nl": "MONNIKSKAP"
+      },
+      {
+        "en": "COLUMBINE",
+        "nl": "AKELEI"
+      },
+      {
+        "en": "ANEMONE",
+        "nl": "ANEMOON"
+      },
+      {
+        "en": "BUTTERCUP",
+        "nl": "BOTERBLOEM"
+      },
+      {
+        "en": "SEED",
+        "nl": "ZAAD"
+      },
+      {
+        "en": "ROOT",
+        "nl": "WORTEL"
+      },
+      {
+        "en": "BULB",
+        "nl": "BOL"
+      },
+      {
+        "en": "TUBER",
+        "nl": "KNOL"
+      },
+      {
+        "en": "RHIZOME",
+        "nl": "WORTELSTOK"
+      },
+      {
+        "en": "STOLON",
+        "nl": "UITLOPER"
+      },
+      {
+        "en": "CUTTING",
+        "nl": "STEK"
+      },
+      {
+        "en": "GRAFT",
+        "nl": "ENT"
+      },
+      {
+        "en": "POLLINATE",
+        "nl": "BESTUIVEN"
+      },
+      {
+        "en": "GERMINATE",
+        "nl": "ONTKIEMEN"
+      },
+      {
+        "en": "SUCCULENT",
+        "nl": "VETPLANT"
+      },
+      {
+        "en": "CACTUS",
+        "nl": "CACTUS"
+      },
+      {
+        "en": "BONSAI",
+        "nl": "BONSAI"
+      },
+      {
+        "en": "TOPIARY",
+        "nl": "VORMSNOEI"
+      },
+      {
+        "en": "HEDGE",
+        "nl": "HAAG"
+      },
+      {
+        "en": "TRELLIS",
+        "nl": "LATWERK"
+      },
+      {
+        "en": "PERGOLA",
+        "nl": "PERGOLA"
+      },
+      {
+        "en": "ARBOR",
+        "nl": "PRIEEL"
+      },
+      {
+        "en": "GREENHOUSE",
+        "nl": "BROEIKAS"
+      },
+      {
+        "en": "TERRARIUM",
+        "nl": "TERRARIUM"
+      },
+      {
+        "en": "PHOTOSYNTHESIS",
+        "nl": "FOTOSYNTHESE"
+      },
+      {
+        "en": "CHLOROPHYLL",
+        "nl": "BLADGROEN"
+      },
+      {
+        "en": "XYLEM",
+        "nl": "XYLEEM"
+      },
+      {
+        "en": "PHLOEM",
+        "nl": "FLOEEM"
+      },
+      {
+        "en": "STOMATA",
+        "nl": "HUIDMONDJES"
+      },
+      {
+        "en": "TRANSPIRATION",
+        "nl": "VERDAMPING"
+      },
+      {
+        "en": "DORMANT",
+        "nl": "RUSTEND"
+      },
+      {
+        "en": "DECIDUOUS",
+        "nl": "LOOFBOOM"
+      },
+      {
+        "en": "EVERGREEN",
+        "nl": "GROENBLIJVEND"
+      },
+      {
+        "en": "PERENNIAL",
+        "nl": "MEERJARIG"
+      }
+    ]
+  },
+  "marine": {
+    "label": {
+      "en": "Marine Life",
+      "nl": "Zeeleven"
+    },
+    "icon": "🐟",
+    "words": [
+      {
+        "en": "SHARK",
+        "nl": "HAAI"
+      },
+      {
+        "en": "WHALE",
+        "nl": "WALVIS"
+      },
+      {
+        "en": "DOLPHIN",
+        "nl": "DOLFIJN"
+      },
+      {
+        "en": "SEAL",
+        "nl": "ZEEHOND"
+      },
+      {
+        "en": "OTTER",
+        "nl": "OTTER"
+      },
+      {
+        "en": "TURTLE",
+        "nl": "ZEESCHILDPAD"
+      },
+      {
+        "en": "RAY",
+        "nl": "ROG"
+      },
+      {
+        "en": "EEL",
+        "nl": "PALING"
+      },
+      {
+        "en": "TUNA",
+        "nl": "TONIJN"
+      },
+      {
+        "en": "COD",
+        "nl": "KABELJAUW"
+      },
+      {
+        "en": "OCTOPUS",
+        "nl": "OCTOPUS"
+      },
+      {
+        "en": "SQUID",
+        "nl": "INKTVIS"
+      },
+      {
+        "en": "JELLYFISH",
+        "nl": "KWAL"
+      },
+      {
+        "en": "STARFISH",
+        "nl": "ZEESTER"
+      },
+      {
+        "en": "SEAHORSE",
+        "nl": "ZEEPAARD"
+      },
+      {
+        "en": "LOBSTER",
+        "nl": "KREEFT"
+      },
+      {
+        "en": "CRAB",
+        "nl": "KRAB"
+      },
+      {
+        "en": "OYSTER",
+        "nl": "OESTER"
+      },
+      {
+        "en": "CLAM",
+        "nl": "VENUSSCHELP"
+      },
+      {
+        "en": "MUSSEL",
+        "nl": "MOSSEL"
+      },
+      {
+        "en": "ANEMONE",
+        "nl": "ZEEANEMOON"
+      },
+      {
+        "en": "CORAL",
+        "nl": "KORAAL"
+      },
+      {
+        "en": "SPONGE",
+        "nl": "SPONS"
+      },
+      {
+        "en": "URCHIN",
+        "nl": "ZEEEGEL"
+      },
+      {
+        "en": "BARNACLE",
+        "nl": "ZEEPOK"
+      },
+      {
+        "en": "PLANKTON",
+        "nl": "PLANKTON"
+      },
+      {
+        "en": "KRILL",
+        "nl": "KRILL"
+      },
+      {
+        "en": "ALGAE",
+        "nl": "ALGEN"
+      },
+      {
+        "en": "KELP",
+        "nl": "KELP"
+      },
+      {
+        "en": "SEAGRASS",
+        "nl": "ZEEGRAS"
+      },
+      {
+        "en": "SALMON",
+        "nl": "ZALM"
+      },
+      {
+        "en": "TROUT",
+        "nl": "FOREL"
+      },
+      {
+        "en": "BASS",
+        "nl": "ZEBAARS"
+      },
+      {
+        "en": "PERCH",
+        "nl": "BAARS"
+      },
+      {
+        "en": "MACKEREL",
+        "nl": "MAKREEL"
+      },
+      {
+        "en": "SARDINE",
+        "nl": "SARDIEN"
+      },
+      {
+        "en": "ANCHOVY",
+        "nl": "ANSJOVIS"
+      },
+      {
+        "en": "HERRING",
+        "nl": "HARING"
+      },
+      {
+        "en": "HADDOCK",
+        "nl": "SCHELVIS"
+      },
+      {
+        "en": "FLOUNDER",
+        "nl": "BOT"
+      },
+      {
+        "en": "PENGUIN",
+        "nl": "PINGUIN"
+      },
+      {
+        "en": "PELICAN",
+        "nl": "PELIKAAN"
+      },
+      {
+        "en": "ALBATROSS",
+        "nl": "ALBATROS"
+      },
+      {
+        "en": "CORMORANT",
+        "nl": "AALSCHOLVER"
+      },
+      {
+        "en": "PUFFIN",
+        "nl": "PAPEGAAIDUIKER"
+      },
+      {
+        "en": "TERN",
+        "nl": "STERN"
+      },
+      {
+        "en": "GANNET",
+        "nl": "JANVANGENT"
+      },
+      {
+        "en": "SKUA",
+        "nl": "JAGER"
+      },
+      {
+        "en": "AUK",
+        "nl": "ALK"
+      },
+      {
+        "en": "GUILLEMOT",
+        "nl": "ZEKOET"
+      },
+      {
+        "en": "BARRACUDA",
+        "nl": "BARRACUDA"
+      },
+      {
+        "en": "MARLIN",
+        "nl": "MARLIJN"
+      },
+      {
+        "en": "SWORDFISH",
+        "nl": "ZWAARDVIS"
+      },
+      {
+        "en": "MAHI MAHI",
+        "nl": "MAHIMAHI"
+      },
+      {
+        "en": "GROUPER",
+        "nl": "TANDBAARS"
+      },
+      {
+        "en": "SNAPPER",
+        "nl": "SNAPPER"
+      },
+      {
+        "en": "HALIBUT",
+        "nl": "HEILBOT"
+      },
+      {
+        "en": "TILAPIA",
+        "nl": "TILAPIA"
+      },
+      {
+        "en": "CATFISH",
+        "nl": "MEERVAL"
+      },
+      {
+        "en": "STURGEON",
+        "nl": "STEUUR"
+      },
+      {
+        "en": "NAUTILUS",
+        "nl": "NAUTILUS"
+      },
+      {
+        "en": "CUTTLEFISH",
+        "nl": "ZEEKAT"
+      },
+      {
+        "en": "MANTIS SHRIMP",
+        "nl": "BIDSGARNAAL"
+      },
+      {
+        "en": "ISOPOD",
+        "nl": "PISSEBED"
+      },
+      {
+        "en": "AMPHIPOD",
+        "nl": "VLOKREEFT"
+      },
+      {
+        "en": "COPEPOD",
+        "nl": "WATERVLO"
+      },
+      {
+        "en": "ROTIFER",
+        "nl": "RADERDIERTJE"
+      },
+      {
+        "en": "BRYOZOAN",
+        "nl": "MOSDIERTJE"
+      },
+      {
+        "en": "TUNICATE",
+        "nl": "MANTELDIERTJE"
+      },
+      {
+        "en": "SALP",
+        "nl": "SALP"
+      },
+      {
+        "en": "MANATEE",
+        "nl": "LAMANTIJN"
+      },
+      {
+        "en": "DUGONG",
+        "nl": "DOEJONG"
+      },
+      {
+        "en": "NARWHAL",
+        "nl": "NARWAL"
+      },
+      {
+        "en": "BELUGA",
+        "nl": "BELOEGA"
+      },
+      {
+        "en": "ORCA",
+        "nl": "ORKA"
+      },
+      {
+        "en": "SPERM WHALE",
+        "nl": "POTVIS"
+      },
+      {
+        "en": "BLUE WHALE",
+        "nl": "BLAUWEVINVIS"
+      },
+      {
+        "en": "MINKE",
+        "nl": "DWEGVINVIS"
+      },
+      {
+        "en": "SEI",
+        "nl": "SEIWALVIS"
+      },
+      {
+        "en": "FIN WHALE",
+        "nl": "VINVIS"
+      },
+      {
+        "en": "GILL",
+        "nl": "KIEUW"
+      },
+      {
+        "en": "SCALE",
+        "nl": "SCHUB"
+      },
+      {
+        "en": "BARBEL",
+        "nl": "BAARDDRAAD"
+      },
+      {
+        "en": "WHISKER",
+        "nl": "TASTHAAR"
+      },
+      {
+        "en": "TENTACLE",
+        "nl": "TENTAKEL"
+      },
+      {
+        "en": "SUCKER",
+        "nl": "ZUIGNAP"
+      },
+      {
+        "en": "BEAK",
+        "nl": "SNAVEL"
+      },
+      {
+        "en": "MANTLE",
+        "nl": "MANTEL"
+      },
+      {
+        "en": "SIPHON",
+        "nl": "SIFON"
+      },
+      {
+        "en": "MIGRATION",
+        "nl": "TREK"
+      },
+      {
+        "en": "SPAWNING",
+        "nl": "PAAITIJD"
+      },
+      {
+        "en": "HATCHERY",
+        "nl": "BROEDERIJ"
+      },
+      {
+        "en": "AQUACULTURE",
+        "nl": "AQUACULTUUR"
+      },
+      {
+        "en": "MARICULTURE",
+        "nl": "MARICULTUUR"
+      },
+      {
+        "en": "ESTUARY",
+        "nl": "ESTUARIUM"
+      },
+      {
+        "en": "MANGROVE",
+        "nl": "MANGROVE"
+      },
+      {
+        "en": "SALTWATER",
+        "nl": "ZOUTWATER"
+      },
+      {
+        "en": "BRACKISH",
+        "nl": "BRAK"
+      },
+      {
+        "en": "PELAGIC",
+        "nl": "PELAGISCH"
+      },
+      {
+        "en": "FIN",
+        "nl": "VIN"
+      }
+    ]
+  },
+  "insects": {
+    "label": {
+      "en": "Insects & Bugs",
+      "nl": "Insecten & Kriebelbeestjes"
+    },
+    "icon": "🦋",
+    "words": [
+      {
+        "en": "ANT",
+        "nl": "MIER"
+      },
+      {
+        "en": "BEE",
+        "nl": "BIJ"
+      },
+      {
+        "en": "WASP",
+        "nl": "WESP"
+      },
+      {
+        "en": "FLY",
+        "nl": "VLIEG"
+      },
+      {
+        "en": "MOTH",
+        "nl": "MOT"
+      },
+      {
+        "en": "BEETLE",
+        "nl": "KEVER"
+      },
+      {
+        "en": "LADYBUG",
+        "nl": "WANTS"
+      },
+      {
+        "en": "CRICKET",
+        "nl": "KREKEL"
+      },
+      {
+        "en": "LOCUST",
+        "nl": "KAKKERLAK"
+      },
+      {
+        "en": "CICADA",
+        "nl": "CICADE"
+      },
+      {
+        "en": "BUTTERFLY",
+        "nl": "VLINDER"
+      },
+      {
+        "en": "DRAGONFLY",
+        "nl": "LIBEL"
+      },
+      {
+        "en": "GRASSHOPPER",
+        "nl": "SPRINKHAAN"
+      },
+      {
+        "en": "CATERPILLAR",
+        "nl": "RUPS"
+      },
+      {
+        "en": "BUMBLEBEE",
+        "nl": "HOMEL"
+      },
+      {
+        "en": "HORNET",
+        "nl": "HOORNAAR"
+      },
+      {
+        "en": "FIREFLY",
+        "nl": "VUURVLIEG"
+      },
+      {
+        "en": "MANTIS",
+        "nl": "BIDSPRINKHAAN"
+      },
+      {
+        "en": "WEEVIL",
+        "nl": "SNUITKEVER"
+      },
+      {
+        "en": "APHID",
+        "nl": "BLADLUIS"
+      },
+      {
+        "en": "SPIDER",
+        "nl": "SPIN"
+      },
+      {
+        "en": "TICK",
+        "nl": "TEEK"
+      },
+      {
+        "en": "MITE",
+        "nl": "MIJT"
+      },
+      {
+        "en": "SCORPION",
+        "nl": "SCHORPIOEN"
+      },
+      {
+        "en": "CENTIPEDE",
+        "nl": "DUIZENDPOOT"
+      },
+      {
+        "en": "MILLIPEDE",
+        "nl": "MILJOENPOOT"
+      },
+      {
+        "en": "EARWIG",
+        "nl": "OORWORM"
+      },
+      {
+        "en": "TERMITE",
+        "nl": "TERMIET"
+      },
+      {
+        "en": "FLEA",
+        "nl": "VLO"
+      },
+      {
+        "en": "LOUSE",
+        "nl": "LUIS"
+      },
+      {
+        "en": "COCOON",
+        "nl": "COCON"
+      },
+      {
+        "en": "CHRYSALIS",
+        "nl": "VERPOPPING"
+      },
+      {
+        "en": "LARVA",
+        "nl": "LARVE"
+      },
+      {
+        "en": "PUPA",
+        "nl": "IMAGO"
+      },
+      {
+        "en": "NYMPH",
+        "nl": "NIMF"
+      },
+      {
+        "en": "HIVE",
+        "nl": "BIJENKORF"
+      },
+      {
+        "en": "COLONY",
+        "nl": "KOLONIE"
+      },
+      {
+        "en": "SWARM",
+        "nl": "ZWERM"
+      },
+      {
+        "en": "BURROW",
+        "nl": "GANG"
+      },
+      {
+        "en": "WEB",
+        "nl": "SPINNENWEB"
+      },
+      {
+        "en": "POLLINATE",
+        "nl": "BESTUIVEN"
+      },
+      {
+        "en": "NECTAR",
+        "nl": "NECTAR"
+      },
+      {
+        "en": "HONEY",
+        "nl": "HONING"
+      },
+      {
+        "en": "WAX",
+        "nl": "WAS"
+      },
+      {
+        "en": "STING",
+        "nl": "STEEK"
+      },
+      {
+        "en": "VENOM",
+        "nl": "GIF"
+      },
+      {
+        "en": "ANTENNA",
+        "nl": "VOELSPRIET"
+      },
+      {
+        "en": "WING",
+        "nl": "VLEUGEL"
+      },
+      {
+        "en": "THORAX",
+        "nl": "BORSTSTUK"
+      },
+      {
+        "en": "MANDIBLE",
+        "nl": "KAAK"
+      },
+      {
+        "en": "MOSQUITO",
+        "nl": "STEKMUG"
+      },
+      {
+        "en": "GNAT",
+        "nl": "KNUT"
+      },
+      {
+        "en": "MIDGE",
+        "nl": "STEEKVLIEG"
+      },
+      {
+        "en": "HORSEFLY",
+        "nl": "DAAS"
+      },
+      {
+        "en": "BLOWFLY",
+        "nl": "BROMVLIEG"
+      },
+      {
+        "en": "HOUSEFLY",
+        "nl": "HUISVLIEG"
+      },
+      {
+        "en": "FRUITFLY",
+        "nl": "FRUITVLIEG"
+      },
+      {
+        "en": "TSETSE",
+        "nl": "TSETSEE"
+      },
+      {
+        "en": "BOTFLY",
+        "nl": "HORZEL"
+      },
+      {
+        "en": "GADFLY",
+        "nl": "HOUTWESP"
+      },
+      {
+        "en": "DAMSELFLY",
+        "nl": "WATERJUFFER"
+      },
+      {
+        "en": "STONEFLY",
+        "nl": "STEENVLIEG"
+      },
+      {
+        "en": "CADDISFLY",
+        "nl": "SCHIETMOT"
+      },
+      {
+        "en": "MAYFLY",
+        "nl": "EENDAGSVLIEG"
+      },
+      {
+        "en": "DOBSONFLY",
+        "nl": "ELZENVLIEG"
+      },
+      {
+        "en": "LACEWING",
+        "nl": "GAASVLIEG"
+      },
+      {
+        "en": "ANTLION",
+        "nl": "MIERENLEEUW"
+      },
+      {
+        "en": "SCARAB",
+        "nl": "SCARABEE"
+      },
+      {
+        "en": "STAG BEETLE",
+        "nl": "VLIEGENDHERT"
+      },
+      {
+        "en": "DUNG BEETLE",
+        "nl": "MESTKEVER"
+      },
+      {
+        "en": "TARANTULA",
+        "nl": "TARANTULA"
+      },
+      {
+        "en": "BLACK WIDOW",
+        "nl": "ZWARTEWEDUWE"
+      },
+      {
+        "en": "BROWN SPIDER",
+        "nl": "VIOOLSPIN"
+      },
+      {
+        "en": "WOLF SPIDER",
+        "nl": "WOLFSPIN"
+      },
+      {
+        "en": "JUMPING SPIDER",
+        "nl": "SPRINGSPIN"
+      },
+      {
+        "en": "CRAB SPIDER",
+        "nl": "KRABSPIN"
+      },
+      {
+        "en": "ORB WEAVER",
+        "nl": "WIELWEBSPIN"
+      },
+      {
+        "en": "FUNNEL WEB",
+        "nl": "TRECHTERWEB"
+      },
+      {
+        "en": "TRAPDOOR",
+        "nl": "VALDEURSPIN"
+      },
+      {
+        "en": "TARANTULA HAWK",
+        "nl": "WEGWESP"
+      },
+      {
+        "en": "METAMORPHOSIS",
+        "nl": "METAMORFOSE"
+      },
+      {
+        "en": "MOLT",
+        "nl": "VERVELLEN"
+      },
+      {
+        "en": "SHED",
+        "nl": "AFWERPEN"
+      },
+      {
+        "en": "EXOSKELETON",
+        "nl": "EXOSKELET"
+      },
+      {
+        "en": "CARAPACE",
+        "nl": "PANTSER"
+      },
+      {
+        "en": "PROBOSCIS",
+        "nl": "ZUIGSNAVEL"
+      },
+      {
+        "en": "OVIPOSITOR",
+        "nl": "LEGBOOR"
+      },
+      {
+        "en": "SPIRACLE",
+        "nl": "STIGMA"
+      },
+      {
+        "en": "COMPOUNDEYE",
+        "nl": "FACETOOG"
+      },
+      {
+        "en": "OCELLI",
+        "nl": "PUNTOGEN"
+      },
+      {
+        "en": "APHID LION",
+        "nl": "BOKTOR"
+      },
+      {
+        "en": "MEALYBUG",
+        "nl": "WOLLUIS"
+      },
+      {
+        "en": "SCALE INSECT",
+        "nl": "SCHILDLUIS"
+      },
+      {
+        "en": "WHITEFLY",
+        "nl": "WITTEVLIEG"
+      },
+      {
+        "en": "THRIP",
+        "nl": "TRIPS"
+      },
+      {
+        "en": "LEAFHOPPER",
+        "nl": "DWERGCICADE"
+      },
+      {
+        "en": "PLANTHOPPER",
+        "nl": "SCHUIMCICADE"
+      },
+      {
+        "en": "STINKBUG",
+        "nl": "STINKWANTS"
+      },
+      {
+        "en": "ASSASSIN BUG",
+        "nl": "ROOFWANTS"
+      },
+      {
+        "en": "WATERSTRIDER",
+        "nl": "DUIKERWANTS"
+      }
+    ]
+  },
+  "household": {
+    "label": {
+      "en": "Around the House",
+      "nl": "In en om het huis"
+    },
+    "icon": "🏠",
+    "words": [
+      {
+        "en": "TABLE",
+        "nl": "TAFEL"
+      },
+      {
+        "en": "CHAIR",
+        "nl": "STOEL"
+      },
+      {
+        "en": "SOFA",
+        "nl": "BANK"
+      },
+      {
+        "en": "BED",
+        "nl": "BED"
+      },
+      {
+        "en": "DESK",
+        "nl": "BUREAU"
+      },
+      {
+        "en": "SHELF",
+        "nl": "PLANK"
+      },
+      {
+        "en": "CABINET",
+        "nl": "KAST"
+      },
+      {
+        "en": "DRAWER",
+        "nl": "LADE"
+      },
+      {
+        "en": "MIRROR",
+        "nl": "SPIEGEL"
+      },
+      {
+        "en": "CLOCK",
+        "nl": "KLOK"
+      },
+      {
+        "en": "WINDOW",
+        "nl": "RAAM"
+      },
+      {
+        "en": "CURTAIN",
+        "nl": "GORDIJN"
+      },
+      {
+        "en": "CARPET",
+        "nl": "TAPIJT"
+      },
+      {
+        "en": "PILLOW",
+        "nl": "KUSSEN"
+      },
+      {
+        "en": "BLANKET",
+        "nl": "DEKEN"
+      },
+      {
+        "en": "TOWEL",
+        "nl": "HANDDOEK"
+      },
+      {
+        "en": "BASKET",
+        "nl": "MAND"
+      },
+      {
+        "en": "LANTERN",
+        "nl": "LANTAARN"
+      },
+      {
+        "en": "CANDLE",
+        "nl": "KAARS"
+      },
+      {
+        "en": "VASE",
+        "nl": "VAAS"
+      },
+      {
+        "en": "KITCHEN",
+        "nl": "KEUKEN"
+      },
+      {
+        "en": "GARDEN",
+        "nl": "TUIN"
+      },
+      {
+        "en": "GARAGE",
+        "nl": "GARAGE"
+      },
+      {
+        "en": "ATTIC",
+        "nl": "ZOLDER"
+      },
+      {
+        "en": "BASEMENT",
+        "nl": "KELDER"
+      },
+      {
+        "en": "STAIRS",
+        "nl": "TRAP"
+      },
+      {
+        "en": "CLOSET",
+        "nl": "INBOUWKAST"
+      },
+      {
+        "en": "PANTRY",
+        "nl": "VOORRAADKAST"
+      },
+      {
+        "en": "STUDY",
+        "nl": "STUDEERKAMER"
+      },
+      {
+        "en": "PATIO",
+        "nl": "TERRAS"
+      },
+      {
+        "en": "KETTLE",
+        "nl": "WATERKOKER"
+      },
+      {
+        "en": "TOASTER",
+        "nl": "BROODROOSTER"
+      },
+      {
+        "en": "BLENDER",
+        "nl": "BLENDER"
+      },
+      {
+        "en": "FRIDGE",
+        "nl": "KOELKAST"
+      },
+      {
+        "en": "FREEZER",
+        "nl": "DIEPVRIES"
+      },
+      {
+        "en": "OVEN",
+        "nl": "OVEN"
+      },
+      {
+        "en": "STOVE",
+        "nl": "FORNUIS"
+      },
+      {
+        "en": "PLATE",
+        "nl": "BORD"
+      },
+      {
+        "en": "BOWL",
+        "nl": "KOM"
+      },
+      {
+        "en": "MUG",
+        "nl": "MOK"
+      },
+      {
+        "en": "HAMMER",
+        "nl": "HAMER"
+      },
+      {
+        "en": "LADDER",
+        "nl": "LADDER"
+      },
+      {
+        "en": "BUCKET",
+        "nl": "EMMER"
+      },
+      {
+        "en": "BROOM",
+        "nl": "BEZEM"
+      },
+      {
+        "en": "RAKE",
+        "nl": "HARK"
+      },
+      {
+        "en": "SHOVEL",
+        "nl": "SCHEP"
+      },
+      {
+        "en": "PLIERS",
+        "nl": "TANG"
+      },
+      {
+        "en": "WRENCH",
+        "nl": "MOERSLEUTEL"
+      },
+      {
+        "en": "SCREW",
+        "nl": "SCHROEF"
+      },
+      {
+        "en": "NAIL",
+        "nl": "SPIJKER"
+      },
+      {
+        "en": "DOORKNOB",
+        "nl": "DEURKNOP"
+      },
+      {
+        "en": "HINGE",
+        "nl": "SCHARNIER"
+      },
+      {
+        "en": "LATCH",
+        "nl": "GRENDEL"
+      },
+      {
+        "en": "LOCK",
+        "nl": "SLOT"
+      },
+      {
+        "en": "KEY",
+        "nl": "SLEUTEL"
+      },
+      {
+        "en": "SWITCH",
+        "nl": "SCHAKELAAR"
+      },
+      {
+        "en": "OUTLET",
+        "nl": "STOPCONTACT"
+      },
+      {
+        "en": "PLUG",
+        "nl": "STEKKER"
+      },
+      {
+        "en": "CORD",
+        "nl": "SNOER"
+      },
+      {
+        "en": "EXTENSION",
+        "nl": "VERLENGSNOER"
+      },
+      {
+        "en": "THERMOSTAT",
+        "nl": "THERMOSTAAT"
+      },
+      {
+        "en": "RADIATOR",
+        "nl": "RADIATOR"
+      },
+      {
+        "en": "FIREPLACE",
+        "nl": "OPENHAARD"
+      },
+      {
+        "en": "CHIMNEY",
+        "nl": "SCHOORSTEEN"
+      },
+      {
+        "en": "FURNACE",
+        "nl": "GEISER"
+      },
+      {
+        "en": "BOILER",
+        "nl": "BOILER"
+      },
+      {
+        "en": "DUCT",
+        "nl": "LUCHTKANAAL"
+      },
+      {
+        "en": "VENT",
+        "nl": "ROOSTER"
+      },
+      {
+        "en": "FILTER",
+        "nl": "FILTER"
+      },
+      {
+        "en": "FAN",
+        "nl": "VENTILATOR"
+      },
+      {
+        "en": "FAUCET",
+        "nl": "KRAAN"
+      },
+      {
+        "en": "SINK",
+        "nl": "GOOTSTEEN"
+      },
+      {
+        "en": "DRAIN",
+        "nl": "AFVOER"
+      },
+      {
+        "en": "SHOWER",
+        "nl": "DOUCHE"
+      },
+      {
+        "en": "BATHTUB",
+        "nl": "BADKUIP"
+      },
+      {
+        "en": "TOILET",
+        "nl": "TOILET"
+      },
+      {
+        "en": "CUPBOARD",
+        "nl": "KEUKENKAST"
+      },
+      {
+        "en": "TILE",
+        "nl": "TEGEL"
+      },
+      {
+        "en": "GROUT",
+        "nl": "VOEGSEL"
+      },
+      {
+        "en": "ARMCHAIR",
+        "nl": "FAUTEUIL"
+      },
+      {
+        "en": "OTTOMAN",
+        "nl": "POEF"
+      },
+      {
+        "en": "STOOL",
+        "nl": "KRUK"
+      },
+      {
+        "en": "BENCH",
+        "nl": "BANKJE"
+      },
+      {
+        "en": "CRADLE",
+        "nl": "WIEG"
+      },
+      {
+        "en": "CRIB",
+        "nl": "LEDIKANT"
+      },
+      {
+        "en": "BUNK BED",
+        "nl": "STAPELBED"
+      },
+      {
+        "en": "LOFT",
+        "nl": "HOOGSLAPER"
+      },
+      {
+        "en": "FUTON",
+        "nl": "FUTON"
+      },
+      {
+        "en": "CUTLERY",
+        "nl": "BESTEK"
+      },
+      {
+        "en": "UTENSIL",
+        "nl": "KEUKENGEREI"
+      },
+      {
+        "en": "SAUCEPAN",
+        "nl": "STEELPAN"
+      },
+      {
+        "en": "SKILLET",
+        "nl": "KOEKENPAN"
+      },
+      {
+        "en": "COLANDER",
+        "nl": "VERGIET"
+      },
+      {
+        "en": "GRATER",
+        "nl": "RASP"
+      },
+      {
+        "en": "WHISK",
+        "nl": "GARDE"
+      },
+      {
+        "en": "SPATULA",
+        "nl": "SPATEL"
+      },
+      {
+        "en": "LADLE",
+        "nl": "SOEPLEPEL"
+      },
+      {
+        "en": "STRAINER",
+        "nl": "ZEEF"
+      },
+      {
+        "en": "DIVAN",
+        "nl": "DIVAN"
+      },
+      {
+        "en": "DISPLAY CABINET",
+        "nl": "VITRINE"
+      }
+    ]
+  }
+}

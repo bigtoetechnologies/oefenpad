@@ -1,6 +1,6 @@
 # Story Machine — the tile words
 
-**Status: applied.** `src/storymachine/reels.js` holds these words as of 2026-11-04.
+**Status: applied.** `server/Oefenpad.Resources/Games/Data/reels.json` holds these words as of 2026-11-04.
 The "Was" column is the wording they replaced, kept so the change is readable.
 
 Two tiles were dropped rather than reworded: `lost` (verdwaald) and `empty` (met lege

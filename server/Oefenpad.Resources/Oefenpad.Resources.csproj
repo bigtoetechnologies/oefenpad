@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Oefenpad.DTOs\Oefenpad.DTOs.csproj" />
+  </ItemGroup>
+
+  <!-- Game content banks. Embedded so they are never reachable over HTTP: the
+       browser can only ask the API for the slice of a round it is playing. -->
+  <ItemGroup>
+    <EmbeddedResource Include="Games/Data/*.json"
+                      LogicalName="Oefenpad.Resources.Games.Data.%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

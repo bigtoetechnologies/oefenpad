@@ -149,12 +149,32 @@ Constraints:
 
 </details>
 
+## Illustration and game art
+
+A game image is not a painted block. In the interface the brush is a fill and
+never a border; in an illustration the brush is the line. Same hand, different
+job: the logo's tapered strokes, cobalt on bare paper.
+
+| Rule | Detail |
+|---|---|
+| One idea per image | Readable as a silhouette at 64 px |
+| One ink | Cobalt only; depth comes from stroke weight, not a second blue |
+| No orange | Orange still means "do this now"; the logo's orange dab stays in the logo |
+| No text or numbers | `decisions.md`; one art set serves every learner |
+| No frame | The logo's border is the mark, not an image convention |
+| 512 × 512 SVG | Transparent background; no white plate |
+
+The full guide — stroke weights, taper, composition, the generation prompt and
+the checklist — is `game-art.md`. The closest existing visual reference for the
+brush as a line is `design-options/i-penseellijn.html`; the loose-corner frame
+is option H.
+
 ## Components
 
 | Class | What it is | Notes |
 |---|---|---|
 | `.vel` | Page sheet | The outer frame; everything sits inside it |
-| `.balk` | Nav bar | Hard `--inkt` rule beneath, logo + wordmark at 900 |
+| `.balk` | Nav bar | Hard `--inkt` rule beneath, logo + wordmark at 900. Every page has one, the games included |
 | `.kop` | Hero | Headline 8 cols, side panel 4 with a hairline left border |
 | `.meter` | Week strip | 12 bars: `.gedaan` cobalt, `.nu` orange, rest grey |
 | `.raster` / `.mod` | Tile grid | `.geverfd` painted or `.kaal` plain; `.kaal:hover` washes |
@@ -162,7 +182,7 @@ Constraints:
 | `.vakje` | Cell | Letters and cards; `2px` inset shadow, states `vol/goed/fout/nu` |
 | `.taal` | NL/EN toggle | Inset `2px` ink box, pressed state filled ink |
 | `.lees` | Text column | Legal and prose pages; links are orange here |
-| `.spel` / `.spel-kop` / `.werkvlak` | Exercise page frame | Title left, score right, hard rule under |
+| `.spel` / `.spel-kop` / `.werkvlak` | Exercise page frame | Title left, score right, hard rule under. On the games `.spel-kop` sits outside `.app-container`, so its rule spans the sheet rather than the 720 px game column |
 | `.voet` | Footer | Hard top rule, 6+6, pushed down by `margin-top:auto` |
 
 The home page adds its own span classes (`.groot`, `.b2`–`.b5`) inline, because
@@ -171,9 +191,16 @@ them; set spans for the layout you actually have.
 
 ## Bilingual pages
 
-Every page ships both languages in the markup. An inline script in `<head>`
-sets `data-taal` on `<html>` before first paint, so nothing flashes in the
-wrong language.
+The home page and the two legal pages ship both languages in the markup. An
+inline script in `<head>` sets `data-taal` on `<html>` before first paint, so
+nothing flashes in the wrong language.
+
+The six games are Dutch-only. Their interface strings come from the game API
+(`GET /api/games/<game>/texts`), which is deliberately fixed to Dutch, so their
+`.balk` carries no `.taal` switch: a button that switched nothing would be
+worse than no button. The game nav therefore differs from the home nav in that
+one control. The React shell renders `.balk` with no `.taal`; the footer has no
+English gloss at all.
 
 Order of precedence: a stored choice in `localStorage['oefenpad-taal']`, then
 the first entry in `navigator.languages` matching `nl` or `en`, then Dutch.
@@ -206,10 +233,9 @@ The switch is an inline script at the top of each page's `<head>`, before
 | Canvas and JS drawing | Listen for the `themechange` event; `galgje/script.js` reads the class to colour its drawing |
 
 All eight pages carry it. The button is injected rather than written into
-each page's markup, because the four BigToe-derived games still use a
-`.header-right` nav rather than `.balk .rechts`; the injection targets both.
-Without JS there is no dark mode at all, so a JS-injected control loses
-nothing.
+each page's markup; `oefenpad.js` targets `.balk .rechts`, which every page
+now has. Without JS there is no dark mode at all, so a JS-injected control
+loses nothing.
 
 The site always opens light, whatever the visitor's system is set to. Dark is
 a choice the visitor makes with the button, and it is then remembered. The
@@ -248,5 +274,7 @@ week meter is understandable without a label.
 - No second typeface, and no script or display face.
 - No souvenir Dutch imagery — windmills, clogs, tulips, canals, cheese.
 - No text inside artwork, ever. One art set serves every learner.
+- No new photographic clue images. New game art is brush-drawn; see
+  `game-art.md`.
 - No colour-coded meaning that a reader must have been taught. Motif
   distinguishes, colour does not.

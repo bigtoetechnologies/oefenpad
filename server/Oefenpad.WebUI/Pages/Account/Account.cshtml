@@ -1,0 +1,70 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.AccountModel
+@{
+    ViewData["TitelNl"] = "Mijn account — Oefenpad";
+    ViewData["TitelEn"] = "My account — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Mijn account", "My account")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Je gegevens, je wachtwoord en de taal van je e-mails.",
+            "Your details, your password and the language of your emails.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Gelukt, "goed")
+        @Html.Meldingen(Model.Fouten)
+        @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+        @if (Model.Profiel is not null)
+        {
+            <dl class="gegevens">
+                <dt>@Html.Beide("Naam", "Name")</dt>
+                <dd>@Model.Profiel.FirstName @Model.Profiel.LastName</dd>
+                <dt>@Html.Beide("E-mail", "Email")</dt>
+                <dd>@Model.Profiel.Email</dd>
+                <dt>@Html.Beide("Taal van e-mails", "Email language")</dt>
+                <dd>@(Model.Profiel.PreferredLanguageCode == "en" ? "English" : "Nederlands")</dd>
+            </dl>
+
+            <ul class="lijst">
+                <li><a href="/Account/Naam">@Html.Beide("Naam wijzigen", "Change name")<span>→</span></a></li>
+                <li><a href="/Account/E-mail">@Html.Beide("E-mailadres wijzigen", "Change email address")<span>→</span></a></li>
+                <li><a href="/Account/Wachtwoord">@Html.Beide("Wachtwoord wijzigen", "Change password")<span>→</span></a></li>
+            </ul>
+
+            <form method="post">
+                <div class="veld">
+                    <span class="veld-label">@Html.Beide("Taal van e-mails", "Email language")</span>
+                    <div class="acties">
+                        <button class="knop leeg klein" type="submit" name="taal" value="nl">Nederlands</button>
+                        <button class="knop leeg klein" type="submit" name="taal" value="en">English</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="scheiding"></div>
+
+            <form method="post" asp-page="/Account/Uitloggen">
+                <button class="knop leeg klein" type="submit">@Html.Beide("Uitloggen", "Sign out")</button>
+            </form>
+        }
+        else
+        {
+            <p>@Html.Beide("Je profiel is niet beschikbaar.", "Your profile is not available.")</p>
+            <a class="knop" href="/Account/Inloggen">@Html.Beide("Inloggen", "Sign in")</a>
+        }
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Je account verwijderen", "Delete your account")</h2>
+        <p>@Html.Beide(
+            "Je kunt je account en je gegevens verwijderen. Dat kan niet ongedaan worden gemaakt.",
+            "You can delete your account and your data. This cannot be undone.")</p>
+        <a class="knop leeg klein" href="/Account/Verwijderen">@Html.Beide("Naar verwijderen", "Go to delete")</a>
+    </aside>
+</main>

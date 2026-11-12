@@ -1,0 +1,73 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.InloggenModel
+@{
+    ViewData["TitelNl"] = "Inloggen — Oefenpad";
+    ViewData["TitelEn"] = "Sign in — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Inloggen", "Sign in")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Met een account blijft je voortgang bewaard.",
+            "With an account your progress is kept.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @if (Model.Hersteld)
+        {
+            @Html.Meldingen(new[] { AccountMessages.Beheer.Hersteld }, "goed")
+        }
+        @if (Model.EmailBevestig)
+        {
+            @Html.Meldingen(new[] { AccountMessages.Beheer.EmailGewijzigd }, "goed")
+        }
+        @if (Model.Uitgelogd)
+        {
+            @Html.Meldingen(new[] { AccountMessages.Inloggen.Uitgelogd }, "goed")
+        }
+
+        @Html.Meldingen(Model.Fouten)
+        @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+        <form method="post">
+            <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
+
+            <div class="@Model.VeldClass("Email")">
+                <label asp-for="Invoer.Email">@Html.Beide("E-mailadres", "Email address")</label>
+                <input asp-for="Invoer.Email" type="email" autocomplete="email" inputmode="email" />
+            </div>
+
+            <div class="@Model.VeldClass("Password")">
+                <label asp-for="Invoer.Password">@Html.Beide("Wachtwoord", "Password")</label>
+                <input asp-for="Invoer.Password" type="password" autocomplete="current-password" />
+            </div>
+
+            <label class="vinkje">
+                <input asp-for="Invoer.RememberMe" />
+                <span>@Html.Beide("Onthoud mij op dit apparaat.", "Remember me on this device.")</span>
+            </label>
+
+            <div class="acties">
+                <button class="knop oranje" type="submit">@Html.Beide("Inloggen", "Sign in")</button>
+                <a href="/Account/WachtwoordVergeten">@Html.Beide("Wachtwoord vergeten?", "Forgot your password?")</a>
+            </div>
+        </form>
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Nog geen account?", "No account yet?")</h2>
+        <p>@Html.Beide(
+            "Maak er een aan; het kost een minuut.",
+            "Create one; it takes a minute.")</p>
+        <a class="knop leeg klein" href="/Account/Registreren">@Html.Beide("Registreren", "Sign up")</a>
+
+        <h2>@Html.Beide("Geen bevestigingsmail?", "No confirmation email?")</h2>
+        <p>@Html.Beide(
+            "Vraag een nieuwe link aan.",
+            "Request a new link.")</p>
+        <a class="knop leeg klein" href="/Account/BevestigOpnieuw">@Html.Beide("Link opnieuw sturen", "Send a new link")</a>
+    </aside>
+</main>

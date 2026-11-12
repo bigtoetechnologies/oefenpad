@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="nl" data-taal="nl"
+      data-titel-nl="Galgje — Oefenpad"
+      data-titel-en="Hangman — Oefenpad">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="theme-color" content="#2B50C8">
+<title>Galgje — Oefenpad</title>
+<meta name="description" content="Raad het Nederlandse woord letter voor letter, met een plaatje als hint.">
+<link rel="icon" type="image/png" href="../../../assets/logo/logo_32px.png">
+<script>
+/* Taal vóór de eerste paint, net</title> als op de home page. */
+(function () {
+  try {
+    var el = document.documentElement, t = null;
+    try { t = localStorage.getItem('oefenpad-taal'); } catch (e) {}
+    if (t !== 'nl' && t !== 'en') {
+      var l = navigator.languages || [navigator.language || 'nl'];
+      t = 'nl';
+      for (var i = 0; i < l.length; i++) {
+        if (/^nl\b/i.test(l[i])) { t = 'nl'; break; }
+        if (/^en\b/i.test(l[i])) { t = 'en'; break; }
+      }
+    }
+    el.setAttribute('data-taal', t);
+    el.setAttribute('lang', t);
+    var titel = el.getAttribute('data-titel-' + t);
+    if (titel) document.title = titel;
+  } catch (e) {}
+})();
+</script>
+<script>
+/* Donkere modus — gelijk aan de rest van de site. */
+(function () {
+  var KEY = 'oefenpad-theme';
+  function apply(saved) {
+    document.documentElement.classList.toggle('dark', saved === 'dark');
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) {}
+  apply(saved);
+  window.toggleSiteTheme = function () {
+    var dark = !document.documentElement.classList.contains('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+    document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+  };
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+    if (btn) toggleSiteTheme();
+  });
+  window.addEventListener('storage', function (e) {
+    if (e.key === KEY && e.newValue) {
+      apply(e.newValue);
+      document.dispatchEvent(new CustomEvent('themechange',
+        { detail: { dark: document.documentElement.classList.contains('dark') } }));
+    }
+  });
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../assets/site/oefenpad.css">
+<link rel="stylesheet" href="../../../src/galgje/style.css">
+<link rel="stylesheet" href="chrome.css">
+<script defer src="../../../assets/site/oefenpad.js"></script>
+<script src="../../../src/shared/i18n.js"></script>
+<script src="../../../src/shared/common.js"></script>
+<script src="../../../src/shared/words.js"></script>
+<script src="../../../src/shared/wordimages.js"></script>
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div class="splash-screen" id="splashScreen">
+  <img class="splash-logo" src="../../../assets/logo/logo_128px.png" alt="Oefenpad">
+  <div class="splash-title" data-i18n="splash-title">Hangman</div>
+</div>
+
+<div class="vel">
+
+  <!-- OPTION A: the home page nav, unchanged. -->
+  <nav class="balk">
+    <a class="merk" href="../../../index.html"><img src="../../../assets/logo/logo_128px.png" alt=""><span>Oefenpad</span></a>
+    <a class="link" href="../../../index.html"><span lang="nl">Oefeningen</span><span lang="en">Exercises</span></a>
+    <a class="link" href="#"><span lang="nl">Over</span><span lang="en">About</span></a>
+    <a class="link" href="#">Contact</a>
+    <div class="rechts">
+      <div class="taal" role="group" aria-label="Taal / Language">
+        <button type="button" data-taal-knop="nl" aria-pressed="true">NL</button>
+        <button type="button" data-taal-knop="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="spel-kop">
+    <h1>Galgje</h1>
+    <div class="stand">
+      <a class="btn-icon" href="../../../index.html" aria-label="Terug naar Oefenpad">←</a>
+      <button class="btn-icon" onclick="openSettings()" title="Settings" data-i18n-title="settings-title" aria-label="Settings" data-i18n-aria-label="settings-title">⚙️</button>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <div class="difficulty-bar" id="difficultyBar" role="group" aria-label="Difficulty" data-i18n-aria-label="a11y-difficulty">
+      <button class="diff-btn" data-diff="easy" data-i18n="diff-easy" aria-pressed="false">Easy</button>
+      <button class="diff-btn active" data-diff="medium" data-i18n="diff-medium" aria-pressed="true">Medium</button>
+      <button class="diff-btn" data-diff="hard" data-i18n="diff-hard" aria-pressed="false">Hard</button>
+    </div>
+
+    <div class="status-row" aria-live="polite" aria-atomic="false">
+      <button class="status-chip" id="categoryChip" onclick="openCategoryPicker()" title="Choose category">
+        <span id="categoryEmoji"></span><span id="categoryName"></span> ▾
+      </button>
+      <span id="wrongCount" class="status-item">❌ 0/10</span>
+      <span id="timerDisplay" class="status-item">⏱ 0:00</span>
+    </div>
+
+    <div class="game-area">
+      <canvas id="hangmanCanvas" width="280" height="260"></canvas>
+      <div class="word-clue hidden" id="wordClue" aria-hidden="true"></div>
+      <div class="word-tiles" id="wordTiles"></div>
+      <div class="word-translation" id="wordTranslation" aria-live="polite"></div>
+    </div>
+
+    <div class="keyboard" id="keyboard"></div>
+
+    <div class="controls-bar">
+      <button class="ctrl-btn" id="btnHint" onclick="useHint()"><span data-i18n="btn-hint">💡 Hint</span> (<span id="hintCount">2</span>)</button>
+      <button class="ctrl-btn primary" onclick="newGame()" data-i18n="btn-new">🎲 New Game</button>
+    </div>
+  </div>
+
+  <footer class="voet">
+    <div class="links">
+      <span lang="nl">Woorden uit <em>Quick Wins in Dutch</em></span>
+      <span lang="en">Words from <em>Quick Wins in Dutch</em></span>
+    </div>
+    <div class="rechts">
+      <a href="../../../voorwaarden.html"><span lang="nl">Voorwaarden</span><span lang="en">Terms</span></a>
+      <a href="../../../privacy.html">Privacy</a>
+    </div>
+  </footer>
+</div>
+
+<!-- Celebration Overlay -->
+<div class="celebration-overlay hidden" id="celebrationOverlay" role="dialog" aria-modal="true" aria-labelledby="celebrationOverlayTitle">
+  <div class="confetti-container" id="confettiContainer"></div>
+  <div class="celebration-card">
+    <div class="trophy"><img src="../../../assets/logo/logo_128px.png" alt="Oefenpad" class="trophy-logo"></div>
+    <h2 id="celebrationOverlayTitle" data-i18n="cele-title">You Saved Him!</h2>
+    <p style="color: var(--grijs); font-size: 14px;" data-i18n="cele-msg">Great job! You guessed the word.</p>
+    <p style="color: var(--grijs); font-size: 14px;" data-i18n="lose-msg">The word was:</p>
+    <img id="celeImage" class="cele-image hidden" alt="">
+    <p id="celeWord" style="font-size:26px;font-weight:800;letter-spacing:3px;color:var(--kobalt);margin:8px 0 0;"></p>
+    <p id="celeTranslation" class="popup-translation"></p>
+    <p style="color: var(--grijs); font-size: 14px;"><span data-i18n="time-label">Time:</span> <span id="celeTime">0:00</span></p>
+    <p style="color: var(--grijs); font-size: 14px;"><span data-i18n="streak-label">🔥 Streak:</span> <span id="celeStreak">0</span></p>
+    <button onclick="closeCelebration()" style="margin-right:8px;background:var(--papier);color:var(--inkt);box-shadow:inset 0 0 0 2px var(--inkt);" data-i18n="btn-close">✕ Close</button>
+    <button onclick="closeCelebration();newGame();" data-i18n="btn-new">🎲 New Game</button>
+  </div>
+</div>
+
+<!-- Game Over Overlay -->
+<div class="celebration-overlay hidden" id="loseOverlay" role="dialog" aria-modal="true" aria-labelledby="loseOverlayTitle">
+  <div class="celebration-card">
+    <div class="trophy" style="font-size:48px;">💀</div>
+    <h2 id="loseOverlayTitle" data-i18n="lose-title">Game Over</h2>
+    <p style="color: var(--grijs); font-size: 14px;" data-i18n="lose-msg">The word was:</p>
+    <img id="loseImage" class="cele-image hidden" alt="">
+    <p id="loseWord" style="font-size:26px;font-weight:800;letter-spacing:3px;color:var(--kobalt);margin:8px 0 0;"></p>
+    <p id="loseTranslation" class="popup-translation"></p>
+    <button onclick="closeLose()" style="margin-right:8px;background:var(--papier);color:var(--inkt);box-shadow:inset 0 0 0 2px var(--inkt);" data-i18n="btn-close">✕ Close</button>
+    <button onclick="closeLose();newGame();" data-i18n="btn-new">🎲 New Game</button>
+  </div>
+</div>
+
+<!-- Settings Overlay -->
+<div class="settings-overlay hidden" id="settingsOverlay" role="dialog" aria-modal="true" aria-labelledby="settingsOverlayTitle">
+  <div class="settings-modal">
+    <h2 id="settingsOverlayTitle" data-i18n="settings-title">⚙️ Settings</h2>
+    <div class="settings-row">
+      <span class="settings-label" data-i18n="sound-effects">🔊 Sound Effects</span>
+      <label class="toggle-switch">
+        <input type="checkbox" id="settingSoundEffects" onchange="updateSetting('soundEffects', this.checked)">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+    <div class="settings-row">
+      <span class="settings-label" data-i18n="translate-label">🌍 Translate words</span>
+      <select id="settingTranslateTo" class="settings-select" onchange="setTranslateTo(this.value)"></select>
+    </div>
+    <p class="settings-note" data-i18n="translate-hint">Tap the word to show its translation. Only words that have a translation are used.</p>
+    <button class="settings-close-btn" onclick="closeSettings()" data-i18n="close">Close</button>
+  </div>
+</div>
+
+<!-- Category Selection Overlay -->
+<div class="settings-overlay hidden" id="categoryOverlay" role="dialog" aria-modal="true" aria-labelledby="categoryOverlayTitle">
+  <div class="settings-modal" style="max-width:520px;">
+    <h2 id="categoryOverlayTitle" data-i18n="cat-title">Choose a Category</h2>
+    <p style="font-size:13px;color:var(--grijs);margin-bottom:8px;" data-i18n="cat-subtitle">Select a theme for your word:</p>
+    <div class="category-grid" id="categoryGrid"></div>
+    <button class="settings-close-btn" onclick="closeCategoryPicker()" style="margin-top:10px;" data-i18n="close">Close</button>
+  </div>
+</div>
+
+<!-- New Game Confirmation Overlay -->
+<div class="settings-overlay hidden" id="confirmOverlay" role="dialog" aria-modal="true" aria-labelledby="confirmOverlayTitle">
+  <div class="settings-modal" style="max-width:340px;text-align:center;">
+    <h2 id="confirmOverlayTitle" data-i18n="confirm-new-title">Start a New Game?</h2>
+    <p style="color:var(--grijs);font-size:14px;" data-i18n="confirm-new-msg">This will start a new game. Your current progress will be lost.</p>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:14px;">
+      <button onclick="cancelNewGame()" style="background:var(--papier);color:var(--inkt);box-shadow:inset 0 0 0 2px var(--inkt);border:none;border-radius:0;padding:10px 18px;cursor:pointer;font-weight:600;" data-i18n="cancel">Cancel</button>
+      <button onclick="confirmNewGame()" style="background:var(--oranje);color:var(--papier);border:none;border-radius:0;padding:10px 18px;cursor:pointer;font-weight:600;" data-i18n="confirm-ok">Start New Game</button>
+    </div>
+  </div>
+</div>
+
+<script src="../../../src/galgje/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.WachtwoordHerstellenModel
+@{
+    ViewData["TitelNl"] = "Nieuw wachtwoord — Oefenpad";
+    ViewData["TitelEn"] = "New password — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Kies een nieuw wachtwoord", "Choose a new password")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Minstens 10 tekens en één cijfer.",
+            "At least 10 characters and one digit.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Fouten)
+        @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+        <form method="post">
+            <input type="hidden" asp-for="Invoer.Email" />
+            <input type="hidden" asp-for="Invoer.Code" />
+
+            <div class="@Model.VeldClass("Password")">
+                <label asp-for="Invoer.Password">@Html.Beide("Nieuw wachtwoord", "New password")</label>
+                <input asp-for="Invoer.Password" type="password" autocomplete="new-password" />
+            </div>
+
+            <div class="@Model.VeldClass("ConfirmPassword")">
+                <label asp-for="Invoer.ConfirmPassword">@Html.Beide("Wachtwoord nogmaals", "Password again")</label>
+                <input asp-for="Invoer.ConfirmPassword" type="password" autocomplete="new-password" />
+            </div>
+
+            <div class="acties">
+                <button class="knop oranje" type="submit">@Html.Beide("Wachtwoord opslaan", "Save password")</button>
+            </div>
+        </form>
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Link verlopen?", "Link expired?")</h2>
+        <p>@Html.Beide(
+            "Een herstellink werkt 24 uur. Vraag daarna een nieuwe aan.",
+            "A reset link works for 24 hours. Request a new one after that.")</p>
+        <a class="knop leeg klein" href="/Account/WachtwoordVergeten">@Html.Beide("Nieuwe link", "New link")</a>
+    </aside>
+</main>

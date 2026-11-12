@@ -1,0 +1,52 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.EmailModel
+@{
+    ViewData["TitelNl"] = "E-mailadres wijzigen — Oefenpad";
+    ViewData["TitelEn"] = "Change email address — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("E-mailadres wijzigen", "Change email address")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Je huidige adres: ",
+            "Your current address: ")<strong>@Model.HuidigEmail</strong></p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Fouten)
+        @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+        <div class="melding let-op">
+            <p>@Html.Beide(
+                "Na het wijzigen moet je het nieuwe adres bevestigen via de link die we sturen.",
+                "After the change you must confirm the new address using the link we send.")</p>
+        </div>
+
+        <form method="post">
+            <div class="@Model.VeldClass("NewEmail")">
+                <label asp-for="Invoer.NewEmail">@Html.Beide("Nieuw e-mailadres", "New email address")</label>
+                <input asp-for="Invoer.NewEmail" type="email" autocomplete="email" inputmode="email" />
+            </div>
+
+            <div class="@Model.VeldClass("CurrentPassword")">
+                <label asp-for="Invoer.CurrentPassword">@Html.Beide("Je huidige wachtwoord", "Your current password")</label>
+                <input asp-for="Invoer.CurrentPassword" type="password" autocomplete="current-password" />
+            </div>
+
+            <div class="acties">
+                <button class="knop oranje" type="submit">@Html.Beide("Adres wijzigen", "Change address")</button>
+                <a href="/Account/Account">@Html.Beide("Annuleren", "Cancel")</a>
+            </div>
+        </form>
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Waarom je wachtwoord?", "Why your password?")</h2>
+        <p>@Html.Beide(
+            "Zo weet niemand anders met toegang tot je apparaat het adres te veranderen.",
+            "That way nobody else with access to your device can change the address.")</p>
+    </aside>
+</main>

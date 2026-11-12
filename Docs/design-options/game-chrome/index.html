@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — sitekop en voet op de spellen</title>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Public Sans',system-ui,sans-serif;background:#101418;color:#F2F4F6;padding:40px 28px}
+h1{font-weight:900;font-size:34px;letter-spacing:-.035em;margin-bottom:6px}
+.lede{opacity:.6;font-size:15px;margin-bottom:14px;max-width:74ch;line-height:1.5}
+.let{opacity:.6;font-size:14px;margin-bottom:32px;max-width:74ch;line-height:1.5}
+.let b{opacity:1;font-weight:700;color:#F2F4F6}
+.let code{font-family:ui-monospace,monospace;font-size:12.5px;color:#7FB2FF}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(420px,1fr));gap:26px}
+.card{background:#171C22;border:1px solid #262E37;text-decoration:none;color:inherit;display:block}
+.card:hover{border-color:#4B5A6B}
+.shot-wrap{height:397px;overflow:hidden;position:relative;background:#fff}
+.shot-wrap iframe{width:1440px;height:1100px;border:0;transform:scale(.3611);transform-origin:0 0;position:absolute;top:0;left:0;pointer-events:none}
+.meta{padding:16px 18px}
+.meta > b{display:block;font-weight:900;font-size:19px;letter-spacing:-.02em;margin-bottom:4px}
+.meta span b{font-weight:700;opacity:1}
+.meta span{font-size:14px;opacity:.62;line-height:1.45;display:block}
+.meta span + span{margin-top:8px}
+.open{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#7FB2FF}
+</style>
+</head>
+<body>
+<h1>Kop en voet op de spellen</h1>
+<p class="lede">Zes manieren om de sitekop en de sitevoet van de home page op een spel te zetten. Alle zes zijn echte Galgje-pagina's: het spel werkt, dezelfde <code>script.js</code> draait. Een kaart openen toont de pagina op ware grootte; de schermen hieronder zijn verkleind.</p>
+<p class="let"><b>Wat vaststaat:</b> in A tot en met E blijft de spelkolom 720 px breed en gecentreerd — dat is waar de toetsenborden en het canvas op zijn ontworpen. F zet het spel in het paginaraster zelf. De voet is in alle zes gelijk: <b>Woorden uit <i>Quick Wins in Dutch</i></b> links, <b>Voorwaarden</b> en <b>Privacy</b> rechts.</p>
+<div class="grid">
+  <a class="card" href="a-vol.html"><div class="shot-wrap"><iframe src="a-vol.html" title="A" scrolling="no" tabindex="-1"></iframe></div>
+    <div class="meta"><b>A · De home-navigatie, letterlijk</b><span>De balk van de home page, ongewijzigd: logo, Oefeningen, Over, Contact, NL/EN, thema. Daaronder een eigen titelrij met Galgje en de knoppen terug en instellingen.</span><span>Meest consistent met de home page, maar de navigatie bevat dezelfde dode links, en de enige weg terug is het kleine pijltje in de titelrij.</span><span class="open">Open A</span></div></a>
+  <a class="card" href="b-compact.html"><div class="shot-wrap"><iframe src="b-compact.html" title="B" scrolling="no" tabindex="-1"></iframe></div>
+    <div class="meta"><b>B · Compacte kop <i style="color:#7FB2FF;font-style:normal">aanbevolen</i></b><span>Logo links, één eerlijke weg terug (<b>← Alle oefeningen</b>) op de plek waar de home page zijn eerste link heeft, thema rechts. Geen dode links. Titelrij met Galgje en instellingen.</span><span>Leest als dezelfde site, zonder de leerling iets voor te liegen. Eén klik terug is altijd zichtbaar, ook op de telefoon.</span><span class="open">Open B</span></div></a>
+  <a class="card" href="c-eenbalk.html"><div class="shot-wrap"><iframe src="c-eenbalk.html" title="C" scrolling="no" tabindex="-1"></iframe></div>
+    <div class="meta"><b>C · Alles in één balk</b><span>Logo, spelnaam en de drie knoppen (terug, instellingen, thema) in dezelfde balk. Geen tweede titelrij: het spel begint direct onder de navigatie.</span><span>Het diepst en het rustigst, maar de spelnaam staat in de navigatie, dus elke pagina moet zijn eigen titeltekst krijgen. Op de telefoon wordt de balk twee rijen.</span><span class="open">Open C</span></div></a>
+  <a class="card" href="d-kaal.html"><div class="shot-wrap"><iframe src="d-kaal.html" title="D" scrolling="no" tabindex="-1"></iframe></div>
+    <div class="meta"><b>D · Geen sitekop</b><span>Alleen een terugstrip: <b>← Alle oefeningen</b> links, thema rechts. Geen logo, geen navigatie, geen taalknop. Daaronder de titelrij met Galgje.</span><span>Het rustigst van alle zes en het snelst te bouwen. Maar de site verdwijnt uit beeld: je ziet nergens meer dat je op Oefenpad bent, en de taalkeuze is alleen nog op de home page te veranderen.</span><span class="open">Open D</span></div></a>
+  <a class="card" href="e-hero.html"><div class="shot-wrap"><iframe src="e-hero.html" title="E" scrolling="no" tabindex="-1"></iframe></div>
+    <div class="meta"><b>E · Grote kop</b><span>De navigatie van de home page en daaronder <b>dezelfde heldekop als de home page</b>: de spelnaam op 90 px, met een zijkolom met één zin uitleg en één feit.</span><span>Het meest als de home page. Maar de kop eist bijna een kwart van het scherm: op een laptop van 1000 px hoog moet je scrollen voor de voet.</span><span class="open">Open E</span></div></a>
+  <a class="card" href="f-tweekoloms.html"><div class="shot-wrap"><iframe src="f-tweekoloms.html" title="F" scrolling="no" tabindex="-1"></iframe></div>
+    <div class="meta"><b>F · Tweekoloms</b><span>Spel links (8 kolommen), smalle zijkolom rechts (4) met de weg terug en de stand. De pagina gebruikt hetzelfde raster als de home page in plaats van een gecentreerde kolom.</span><span>Het minst een los spel, maar de zijkolom is leeg onder de stand, en op een tablet wordt het spel smaller zonder dat de zijkolom veel toevoegt.</span><span class="open">Open F</span></div></a>
+</div>
+</body>
+</html>

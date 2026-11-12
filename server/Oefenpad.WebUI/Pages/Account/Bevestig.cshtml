@@ -1,0 +1,42 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.BevestigModel
+@{
+    ViewData["TitelNl"] = "E-mail bevestigen — Oefenpad";
+    ViewData["TitelEn"] = "Confirm email — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("E-mail bevestigen", "Confirm email")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Eén klik en je account is klaar voor gebruik.",
+            "One click and your account is ready.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Gelukt, "goed")
+        @Html.Meldingen(Model.Fouten)
+
+        @if (Model.Bevestigd)
+        {
+            <p>
+                <a class="knop oranje" href="/Account/Inloggen">@Html.Beide("Naar inloggen", "Go to sign in")</a>
+            </p>
+        }
+        else
+        {
+            <p>
+                <a class="knop leeg" href="/Account/BevestigOpnieuw">@Html.Beide("Nieuwe link aanvragen", "Request a new link")</a>
+            </p>
+        }
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Waarom bevestigen?", "Why confirm?")</h2>
+        <p>@Html.Beide(
+            "Het bewijst dat het adres van jou is, zodat niemand anders je account kan overnemen.",
+            "It proves the address is yours, so nobody else can take over your account.")</p>
+    </aside>
+</main>

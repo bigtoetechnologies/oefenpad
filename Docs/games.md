@@ -40,7 +40,7 @@ Optional extension: **Krimp** — rewrite a sentence with `er` + preposition
 |---|---|
 | Effort | Medium. The tile tray is shared with Zinsbouwer; the new work is scenes, contrast pairs and the split-sentence check |
 | Data | `frames`: frame, verb, separable, prefix, prep, English gloss, scene, sentence, pronominal form, contrast partner, concept questions |
-| Done when | Four contrast pairs, one separable single and one pronominal scene work through all four stops without English |
+| Done when | Eighteen levels — ten contrast sets (nine pairs and one set of three) and eight single frames — work through the stops without English |
 
 The full spec, including the data shape, feedback rules and the pilot image
 list, is in `prepositions.md` and `prepositions-art.md`.
@@ -75,9 +75,15 @@ rule are the levels, not a lesson.
 | 3 | Everything else in `Concept.md` | Only after one game has been in front of a stranger |
 
 `mvp.md` says one page, no backend, no accounts, deployed free, and shared into
-an expat group to see whether strangers finish it. That still holds. Build the
-first game that way and resist the shared layer — bigtoe.games and muziktools
-already keep two copies of `i18n.js` and `common.js`, and they have drifted.
+an expat group to see whether strangers finish it. That still holds for the MVP
+as written. Build the first game that way and resist the shared layer —
+bigtoe.games and muziktools already keep two copies of `i18n.js` and `common.js`,
+and they have drifted.
+
+> Later state (2026-11-09): the site outgrew this. There are now six games, a
+> .NET host serves them from `/spelen/`, and their content and puzzle generation
+> live server-side so the JS cannot be copied into a clone. `Docs/games-backend.md`
+> is the current architecture. The advice below is the MVP-history, not the plan.
 
 ## The data file
 

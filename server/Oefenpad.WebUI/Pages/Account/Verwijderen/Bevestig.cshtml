@@ -1,0 +1,52 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.Verwijderen.BevestigModel
+@{
+    ViewData["TitelNl"] = "Verwijderen bevestigen — Oefenpad";
+    ViewData["TitelEn"] = "Confirm deletion — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Verwijderen bevestigen", "Confirm deletion")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Eén klik en je account en gegevens zijn weg.",
+            "One click and your account and data are gone.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Gelukt, "goed")
+        @Html.Meldingen(Model.Fouten)
+
+        @if (Model.Verwijderd)
+        {
+            <p>
+                <a class="knop" href="/">@Html.Beide("Naar de oefeningen", "Go to the exercises")</a>
+            </p>
+        }
+        else
+        {
+            <div class="melding let-op">
+                <p>@Html.Beide(
+                    "Dit kan niet ongedaan worden gemaakt. je account en je profiel worden verwijderd.",
+                    "This cannot be undone. Your account and your profile will be deleted.")</p>
+            </div>
+
+            <form method="post">
+                <input type="hidden" asp-for="Token" />
+                <div class="acties">
+                    <button class="knop oranje" type="submit">@Html.Beide("Ja, verwijder mijn account", "Yes, delete my account")</button>
+                    <a href="/Account/Account">@Html.Beide("Nee, laat mijn account staan", "No, keep my account")</a>
+                </div>
+            </form>
+        }
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Toch niet zeker?", "Not sure?")</h2>
+        <p>@Html.Beide(
+            "Laat je account dan staan. Je kunt later alsnog verwijderen.",
+            "Leave your account as it is. You can always delete it later.")</p>
+    </aside>
+</main>

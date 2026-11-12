@@ -1,0 +1,52 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.WachtwoordModel
+@{
+    ViewData["TitelNl"] = "Wachtwoord wijzigen — Oefenpad";
+    ViewData["TitelEn"] = "Change password — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Wachtwoord wijzigen", "Change password")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Minstens 10 tekens en één cijfer.",
+            "At least 10 characters and one digit.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Fouten)
+        @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+        <form method="post">
+            <div class="@Model.VeldClass("CurrentPassword")">
+                <label asp-for="Invoer.CurrentPassword">@Html.Beide("Huidig wachtwoord", "Current password")</label>
+                <input asp-for="Invoer.CurrentPassword" type="password" autocomplete="current-password" />
+            </div>
+
+            <div class="@Model.VeldClass("NewPassword")">
+                <label asp-for="Invoer.NewPassword">@Html.Beide("Nieuw wachtwoord", "New password")</label>
+                <input asp-for="Invoer.NewPassword" type="password" autocomplete="new-password" />
+            </div>
+
+            <div class="@Model.VeldClass("ConfirmPassword")">
+                <label asp-for="Invoer.ConfirmPassword">@Html.Beide("Nieuw wachtwoord nogmaals", "New password again")</label>
+                <input asp-for="Invoer.ConfirmPassword" type="password" autocomplete="new-password" />
+            </div>
+
+            <div class="acties">
+                <button class="knop oranje" type="submit">@Html.Beide("Wachtwoord opslaan", "Save password")</button>
+                <a href="/Account/Account">@Html.Beide("Annuleren", "Cancel")</a>
+            </div>
+        </form>
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Andere apparaten", "Other devices")</h2>
+        <p>@Html.Beide(
+            "Na het wijzigen word je op andere apparaten binnen een minuut uitgelogd.",
+            "After the change, other devices are signed out within a minute.")</p>
+        <a class="knop leeg klein" href="/Account/WachtwoordVergeten">@Html.Beide("Wachtwoord vergeten?", "Forgot your password?")</a>
+    </aside>
+</main>

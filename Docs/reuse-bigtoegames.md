@@ -9,6 +9,13 @@ BigToe is vanilla HTML/CSS/JS with no framework and no bundler. The only build
 step is `sh deploy.sh`. That matches `mvp.md`'s "one page, no backend" shape, so
 the code is unusually easy to move.
 
+> **Later state (2026-11-09).** This document records the original copy. Those
+> `src/` files no longer exist: the word bank and image manifest are now
+> server-side (`server/Oefenpad.Resources/Games/Data/`), the games are React
+> pages under `client/src/games/`, and the six page stylesheets are vendored in
+> `client/src/styles/source/`. See `games-backend.md`. The renames and storage
+> keys below still hold.
+
 ## The short version
 
 BigToe already has **four of the thirteen planned games**, complete with Dutch UI
@@ -103,15 +110,13 @@ priorities. Use it as raw material for vocabulary games, then curate:
 
 There are only **157** images: 48 animals, 94 food, 15 household. Nothing for
 body, family, nature (as a category), verbs or most other categories. They are
-photorealistic white-background product shots, while `designguide.md` and
-`story-machine.md` call for flat, bold, sparse brush art in cobalt. Two options:
+photorealistic white-background product shots, while `game-art.md` calls for
+brush-drawn cobalt art with a transparent background. Treat the 157 as
+placeholders; new and replacement images follow the shared art guide. A mixed
+set is a known limitation until the replacement job is done.
 
-- use the 157 as placeholders and regenerate everything in the Oefenpad style,
-- or accept a separate photographic vocabulary-icon style and document it.
-
-The pipeline (`tools/gen_wordimages.py`) and the prompt in `docs/imgageprompt.md`
-are reusable, but that prompt explicitly asks for photorealistic icons, so it
-needs rewriting for the brand look.
+The pipeline (`tools/gen_wordimages.py`) is reusable, but the old photorealistic
+prompt must be rewritten to the style in `game-art.md`.
 
 Also note the per-category cap: Memory's 8×8 and 10×10 levels need 32 and 50
 unique images. Household has 15, so those levels disappear in that category.
@@ -154,7 +159,9 @@ Copy the **ideas**:
   `python3 -m http.server` hides stale HTML.
 
 Do not copy the FTP upload, ads or the BigToe header/footer. `mvp.md` says
-Netlify/Vercel, no backend.
+Netlify/Vercel, no backend. That was the MVP framing; the current site has a
+.NET host and server-side game content (see `Docs/games-backend.md`), so the
+static-deploy parts of this note are history, not the plan.
 
 ## What this does not give you
 

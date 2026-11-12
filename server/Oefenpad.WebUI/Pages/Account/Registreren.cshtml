@@ -1,0 +1,109 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.RegistrerenModel
+@{
+    ViewData["TitelNl"] = "Registreren — Oefenpad";
+    ViewData["TitelEn"] = "Sign up — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Maak een account", "Create an account")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Bewaar je voortgang en ga verder waar je was gebleven.",
+            "Keep your progress and pick up where you left off.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @if (Model.Verzonden)
+        {
+            @Html.Meldingen(Model.Gelukt, "goed")
+            @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+            @if (Model.Bevestigingslink is not null)
+            {
+                <div class="melding let-op">
+                    <p>
+                        <span lang="nl">Alleen in ontwikkeling: </span>
+                        <span lang="en">Development only: </span>
+                        <a href="@Model.Bevestigingslink"><span lang="nl">bevestig je e-mailadres</span><span lang="en">confirm your email address</span></a>
+                    </p>
+                </div>
+            }
+
+            <p class="hulp">@Html.Beide(
+                "Je kunt dit venster sluiten.",
+                "You can close this window.")</p>
+            <p>
+                <a class="knop leeg" href="/Account/Inloggen">@Html.Beide("Naar inloggen", "Go to sign in")</a>
+            </p>
+        }
+        else
+        {
+            @Html.Meldingen(Model.Fouten)
+            @Html.Meldingen(Model.Waarschuwingen, "let-op")
+
+            <form method="post">
+                <div class="@Model.VeldClass("FirstName")">
+                    <label asp-for="Invoer.FirstName">@Html.Beide("Voornaam", "First name")</label>
+                    <input asp-for="Invoer.FirstName" autocomplete="given-name" />
+                </div>
+
+                <div class="@Model.VeldClass("LastName")">
+                    <label asp-for="Invoer.LastName">@Html.Beide("Achternaam", "Last name")</label>
+                    <input asp-for="Invoer.LastName" autocomplete="family-name" />
+                </div>
+
+                <div class="@Model.VeldClass("Email")">
+                    <label asp-for="Invoer.Email">@Html.Beide("E-mailadres", "Email address")</label>
+                    <input asp-for="Invoer.Email" type="email" autocomplete="email" inputmode="email" />
+                    <span class="hulp">@Html.Beide(
+                        "We sturen één link om je adres te bevestigen.",
+                        "We send one link to confirm your address.")</span>
+                </div>
+
+                <div class="@Model.VeldClass("Password")">
+                    <label asp-for="Invoer.Password">@Html.Beide("Wachtwoord", "Password")</label>
+                    <input asp-for="Invoer.Password" type="password" autocomplete="new-password" />
+                    <span class="hulp">@Html.Beide(
+                        "Minstens 10 tekens en één cijfer.",
+                        "At least 10 characters and one digit.")</span>
+                </div>
+
+                <div class="@Model.VeldClass("ConfirmPassword")">
+                    <label asp-for="Invoer.ConfirmPassword">@Html.Beide("Wachtwoord nogmaals", "Password again")</label>
+                    <input asp-for="Invoer.ConfirmPassword" type="password" autocomplete="new-password" />
+                </div>
+
+                <div class="veld">
+                    <label asp-for="Invoer.PreferredLanguageCode">@Html.Beide("Taal van e-mails", "Email language")</label>
+                    <select asp-for="Invoer.PreferredLanguageCode">
+                        <option value="nl">Nederlands</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+
+                <label class="vinkje">
+                    <input asp-for="Invoer.TermsAccepted" />
+                    <span>
+                        <span lang="nl">Ik ga akkoord met de <a href="/voorwaarden.html">voorwaarden</a> en het <a href="/privacy.html">privacybeleid</a>.</span>
+                        <span lang="en">I agree to the <a href="/voorwaarden.html">terms</a> and the <a href="/privacy.html">privacy policy</a>.</span>
+                    </span>
+                </label>
+
+                <div class="acties">
+                    <button class="knop oranje" type="submit">@Html.Beide("Account aanmaken", "Create account")</button>
+                </div>
+            </form>
+        }
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Al een account?", "Already have an account?")</h2>
+        <p>@Html.Beide(
+            "Log in om verder te gaan waar je was gebleven.",
+            "Sign in to pick up where you left off.")</p>
+        <a class="knop leeg klein" href="/Account/Inloggen">@Html.Beide("Inloggen", "Sign in")</a>
+    </aside>
+</main>

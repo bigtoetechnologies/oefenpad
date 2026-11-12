@@ -1,0 +1,57 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.VerwijderenModel
+@{
+    ViewData["TitelNl"] = "Account verwijderen — Oefenpad";
+    ViewData["TitelEn"] = "Delete account — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Account verwijderen", "Delete account")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Dit verwijdert je account en je gegevens. Het kan niet ongedaan worden gemaakt.",
+            "This deletes your account and your data. It cannot be undone.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Gelukt, "goed")
+        @Html.Meldingen(Model.Fouten)
+
+        @if (!Model.Verzonden)
+        {
+            <div class="melding let-op">
+                <p>@Html.Beide(
+                    "Je voortgang en je profiel worden verwijderd. We sturen je eerst een link per e-mail om dit te bevestigen.",
+                    "Your progress and profile will be deleted. We first send you a link by email to confirm.")</p>
+            </div>
+
+            <form method="post">
+                <div class="@Model.VeldClass("Password")">
+                    <label asp-for="Invoer.Password">@Html.Beide("Je wachtwoord", "Your password")</label>
+                    <input asp-for="Invoer.Password" type="password" autocomplete="current-password" />
+                </div>
+
+                <div class="acties">
+                    <button class="knop oranje" type="submit">@Html.Beide("Verwijderen aanvragen", "Request deletion")</button>
+                    <a href="/Account/Account">@Html.Beide("Annuleren", "Cancel")</a>
+                </div>
+            </form>
+        }
+        else
+        {
+            <p>
+                <a class="knop leeg" href="/Account/Account">@Html.Beide("Terug naar mijn account", "Back to my account")</a>
+            </p>
+        }
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Liever niet?", "Rather not?")</h2>
+        <p>@Html.Beide(
+            "Je kunt je account ook laten staan en gewoon niet meer inloggen.",
+            "You can also leave your account as it is and simply stop signing in.")</p>
+        <a class="knop leeg klein" href="/Account/Account">@Html.Beide("Mijn account", "My account")</a>
+    </aside>
+</main>

@@ -1,0 +1,211 @@
+/* Generated from src/styles/source/prepositions.css by scripts/scope-css.mjs.
+   Scoped to .game--prepositions; edit the source and rerun the script. */
+
+.game--prepositions { --ruimte:clamp(12px,1.8vw,20px); }
+@media(min-height:520px){
+.game--prepositions .vel {height:100dvh;min-height:0}
+.game--prepositions .app-container {min-height:0;overflow-y:auto}
+}
+.game--prepositions .app-container {
+  width:100%;max-width:720px;flex:1;display:flex;flex-direction:column;align-items:stretch;
+  margin:0 auto;padding:0 0 24px;position:relative;
+}
+.game--prepositions .spel-kop {margin-bottom:0;padding-top:clamp(14px,1.8vw,26px)}
+.game--prepositions .spel-kop .stand {gap:8px}
+.game--prepositions .btn-icon {
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:var(--papier);color:var(--inkt);border:0;border-radius:0;font-size:18px;font-weight:900;
+  text-decoration:none;cursor:pointer;box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.game--prepositions .btn-icon:hover {background:var(--raster-zacht)}
+.game--prepositions .tagline {margin:0;max-width:46ch;text-align:right}
+.game--prepositions .spel-kop + .app-container {margin-top:clamp(14px,1.8vw,26px)}
+.game--prepositions .stoppen {
+  display:grid;grid-auto-flow:column;grid-auto-columns:1fr;list-style:none;margin:0 0 var(--ruimte);
+  padding:0;border:var(--rand-hard);
+}
+.game--prepositions .stoppen li {
+  padding:9px 6px;font-size:12px;font-weight:800;letter-spacing:-.01em;text-align:center;
+  border-right:var(--rand);color:var(--grijs);
+}
+.game--prepositions .stoppen li:last-child {border-right:0}
+.game--prepositions .stoppen li[data-staat="geweest"] {color:var(--inkt)}
+.game--prepositions .stoppen li[data-staat="nu"] {background:var(--oranje);color:#fff;border-color:var(--oranje)}
+.game--prepositions .scherm {flex:1;min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:center;justify-content:safe center}
+.game--prepositions .vraag {
+  font-size:clamp(20px,2.6vw,30px);font-weight:900;letter-spacing:-.035em;line-height:1.12;
+  margin:0;
+}
+.game--prepositions .app-container > .vraag {margin-bottom:8px}
+.game--prepositions .chunk {border-bottom:3px solid var(--kobalt)}
+.game--prepositions .uitleg {font-size:14px;font-weight:500;color:var(--grijs);margin:0}
+.game--prepositions .uitleg em {font-style:normal;font-weight:700;color:var(--inkt)}
+.game--prepositions .vlak {display:flex;flex-direction:column;gap:var(--ruimte);flex:1;min-height:0}
+.game--prepositions .beeldvak {height:min(38vh,300px);display:flex;align-items:center;justify-content:center}
+.game--prepositions .beeldvak .beeld {height:100%;width:100%}
+.game--prepositions .tekst {display:flex;flex-direction:column;gap:var(--ruimte);min-height:0}
+.game--prepositions .tekst > * {margin:0}
+.game--prepositions .beeld {
+  width:100%;aspect-ratio:512/763;
+  background:var(--kobalt);
+  -webkit-mask-image:var(--beeld);mask-image:var(--beeld);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:contain;mask-size:contain;
+}
+.game--prepositions .zin {font-size:clamp(19px,2.4vw,27px);font-weight:800;letter-spacing:-.03em;text-align:center}
+.game--prepositions .betekenis {font-size:14px;color:var(--grijs);text-align:center}
+.game--prepositions .vorm {
+  font-size:13px;color:var(--grijs);text-align:center;
+  border-top:var(--rand);padding-top:8px;
+}
+.game--prepositions .keuzes {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+}
+.game--prepositions .keuze {
+  position:relative;display:block;padding:6px;border:0;background:var(--papier);cursor:pointer;
+  box-shadow:inset 0 0 0 2px var(--raster);transition:box-shadow .15s,background .15s;
+}
+.game--prepositions .keuze:hover:not(:disabled) {box-shadow:inset 0 0 0 2px var(--inkt);background:var(--raster-zacht)}
+.game--prepositions .keuze:disabled {cursor:default}
+.game--prepositions .keuze:focus-visible {outline:3px solid var(--oranje);outline-offset:2px}
+.game--prepositions .keuze.goed {box-shadow:inset 0 0 0 4px var(--goed)}
+.game--prepositions .keuze.fout {box-shadow:inset 0 0 0 4px var(--fout)}
+.game--prepositions .keuze.fout .beeld {opacity:.35}
+.game--prepositions .kloptzin {
+  font-size:clamp(21px,2.8vw,32px);font-weight:900;letter-spacing:-.035em;line-height:1.2;
+  text-align:center;border-top:var(--rand);border-bottom:var(--rand);padding:var(--ruimte) 0;
+}
+.game--prepositions .tweeknoppen {display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.game--prepositions .keuze-knop {
+  padding:16px 10px;border:0;font:inherit;font-weight:900;font-size:clamp(15px,1.6vw,18px);
+  letter-spacing:-.02em;cursor:pointer;background:var(--papier);color:var(--inkt);
+  box-shadow:inset 0 0 0 2px var(--inkt);transition:background .15s;
+}
+.game--prepositions .keuze-knop:hover:not(:disabled) {background:var(--raster-zacht)}
+.game--prepositions .keuze-knop:focus-visible {outline:3px solid var(--oranje);outline-offset:2px}
+.game--prepositions .keuze-knop:disabled {cursor:default}
+.game--prepositions .keuze-knop.goed {background:var(--goed);color:#fff;box-shadow:none}
+.game--prepositions .keuze-knop.fout {background:var(--fout);color:#fff;box-shadow:none}
+.game--prepositions .terug {
+  margin:var(--ruimte) 0 0;padding:12px 14px;border-left:6px solid var(--kobalt);
+  background:var(--raster-zacht);font-size:15px;font-weight:600;line-height:1.4;
+}
+.game--prepositions .terug.goed {border-left-color:var(--goed)}
+.game--prepositions .terug.fout {border-left-color:var(--fout)}
+.game--prepositions .terug b {font-weight:800}
+.game--prepositions .terug .concept {
+  display:block;margin-top:10px;border-top:var(--rand);padding-top:10px;
+  font-size:14px;font-weight:500;color:var(--grijs);
+}
+.game--prepositions .terug .concept-rij {display:flex;gap:8px;margin-top:8px}
+.game--prepositions .terug .concept-rij button {
+  font:inherit;font-size:13px;font-weight:800;padding:7px 16px;cursor:pointer;
+  background:var(--papier);color:var(--inkt);border:0;box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.game--prepositions .terug .concept-rij button:hover {background:var(--raster)}
+.game--prepositions .terug .concept-rij button.goed {background:var(--goed);color:#fff;box-shadow:none}
+.game--prepositions .terug .concept-rij button.fout {background:var(--fout);color:#fff;box-shadow:none}
+.game--prepositions .rij {
+  display:flex;flex-wrap:wrap;gap:6px;min-height:56px;align-items:center;
+  border:var(--rand-hard);padding:8px;
+}
+.game--prepositions .rij.leeg {color:var(--grijs);font-size:13px;font-weight:600;border-style:dashed;border-color:var(--raster)}
+.game--prepositions .rij.goed {border-color:var(--goed);box-shadow:inset 0 0 0 2px var(--goed)}
+.game--prepositions .rij.fout {border-color:var(--fout);box-shadow:inset 0 0 0 2px var(--fout)}
+.game--prepositions .rij .punt {font-weight:900;font-size:20px;margin-left:-2px}
+.game--prepositions .pool {display:flex;flex-wrap:wrap;gap:6px}
+.game--prepositions .tegel {
+  font:inherit;font-size:clamp(15px,1.7vw,18px);font-weight:800;letter-spacing:-.02em;
+  padding:10px 14px;cursor:pointer;background:var(--papier);color:var(--inkt);border:0;
+  box-shadow:inset 0 0 0 2px var(--inkt);transition:background .15s,opacity .15s;
+}
+.game--prepositions .tegel:hover {background:var(--raster-zacht)}
+.game--prepositions .tegel:focus-visible {outline:3px solid var(--oranje);outline-offset:2px}
+.game--prepositions .tegel.geplaatst {background:var(--kobalt);color:var(--papier);box-shadow:none}
+.game--prepositions .tegel.vast {opacity:.25;pointer-events:none}
+.game--prepositions .verder {display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.game--prepositions .terug .verder {margin-top:12px}
+.game--prepositions .verder .knop {background:var(--kobalt);color:var(--papier);box-shadow:none}
+.game--prepositions .verder .knop:hover {background:var(--kobalt-diep)}
+.game--prepositions .verder .teller {font-size:13px;font-weight:700;color:var(--grijs);font-variant-numeric:tabular-nums}
+@keyframes terug-op{from{transform:translateY(14px);opacity:.65}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+.game--prepositions .terug {animation:terug-op .18s ease-out}
+}
+.game--prepositions .niveaus {display:grid;gap:0;border-top:var(--rand-hard);border-left:var(--rand-hard);margin-bottom:var(--ruimte)}
+.game--prepositions .niveau {
+  display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer;
+  background:var(--papier);color:var(--inkt);border:0;border-right:var(--rand-hard);
+  border-bottom:var(--rand-hard);font:inherit;text-align:left;transition:background .15s;
+}
+.game--prepositions .niveau:hover {background:var(--raster-zacht)}
+.game--prepositions .niveau:focus-visible {outline:3px solid var(--oranje);outline-offset:-3px}
+.game--prepositions .niveau .nr {font-size:22px;font-weight:900;color:var(--kobalt);letter-spacing:-.04em;min-width:1.4em}
+.game--prepositions .niveau .wat {font-size:clamp(17px,1.9vw,21px);font-weight:800;letter-spacing:-.03em;flex:1}
+.game--prepositions .niveau .onder {display:block;font-size:13px;font-weight:500;color:var(--grijs);margin-top:2px}
+.game--prepositions .niveau .gehaald {font-size:13px;font-weight:800;color:var(--kobalt);font-variant-numeric:tabular-nums;white-space:nowrap}
+.game--prepositions .niveau.is-dicht {cursor:default;background:var(--papier);color:var(--zacht)}
+.game--prepositions .niveau.is-dicht:hover {background:var(--papier)}
+.game--prepositions .niveau.is-dicht .nr {color:var(--zacht)}
+.game--prepositions .niveau.is-dicht .wat {font-weight:700}
+.game--prepositions .niveau .slot {font-size:18px;filter:grayscale(1);opacity:.7}
+.game--prepositions .niveau .dicht-link {font-size:13px;font-weight:800;color:var(--kobalt);white-space:nowrap}
+.game--prepositions .klaar {text-align:center;padding-top:var(--ruimte)}
+.game--prepositions .klaar .score {font-size:clamp(52px,9vw,92px);font-weight:900;letter-spacing:-.055em;line-height:.9;color:var(--kobalt)}
+.game--prepositions .klaar .van {font-size:14px;font-weight:700;color:var(--grijs);margin:6px 0 var(--ruimte)}
+.game--prepositions .klaar .knop {margin:0 auto}
+@media(min-width:800px) and (min-height:520px){
+.game--prepositions .app-container {max-width:min(1040px,100%)}
+.game--prepositions .vlak {
+    display:grid;
+    grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+    grid-template-areas:"beeld tekst" "beeld verder";
+    column-gap:clamp(22px,2.6vw,40px);row-gap:var(--ruimte);
+    height:auto;flex:none;
+  }
+.game--prepositions .beeldvak, .game--prepositions .keuzes {grid-area:beeld;grid-row:1 / span 2;align-self:center;min-height:0;width:100%}
+.game--prepositions .beeldvak {height:min(52vh,430px)}
+.game--prepositions .vlak--na .beeldvak {height:min(32vh,300px)}
+.game--prepositions .tekst {grid-area:tekst;align-self:center}
+.game--prepositions .verder {grid-area:verder;align-self:start}
+.game--prepositions .kloptzin {font-size:clamp(22px,2.2vw,30px)}
+.game--prepositions .niveaus {grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:799px), (max-height:519px){
+.game--prepositions .vlak {justify-content:center;justify-content:safe center}
+.game--prepositions .vlak--na {padding-bottom:calc(var(--terug-hoogte,0px) + 4px)}
+.game--prepositions .vlak--na > .verder {display:none}
+.game--prepositions .vlak--na .tekst {flex-shrink:0}
+.game--prepositions .beeldvak {height:auto;flex:1 1 180px;min-height:0;max-height:min(52vh,430px)}
+.game--prepositions .keuzes {align-content:center}
+.game--prepositions .vlak--na .beeldvak {height:min(24vh,200px);flex:0 1 auto}
+.game--prepositions .beeldvak {transition:height .18s ease}
+.game--prepositions .vlak .terug {
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    max-height:min(68dvh,520px);overflow-y:auto;
+    margin:0;padding:14px clamp(14px,4vw,22px) calc(14px + env(safe-area-inset-bottom));
+    border-left:0;border-top:6px solid var(--kobalt);
+    background:var(--papier);box-shadow:0 -1px 0 var(--rand);
+  }
+.game--prepositions .vlak .terug.goed {border-top-color:var(--goed);border-left-color:var(--goed)}
+.game--prepositions .vlak .terug.fout {border-top-color:var(--fout);border-left-color:var(--fout)}
+}
+@media(min-width:800px) and (max-height:820px){
+.game--prepositions .spel-kop {padding-top:10px}
+.game--prepositions .kloptzin {padding:10px 0}
+.game--prepositions .vlak .terug {padding:10px 12px}
+.game--prepositions .terug .concept {margin-top:8px;padding-top:8px}
+}
+@media(max-width:799px) and (max-height:760px){
+.game--prepositions .vlak--na:has(.concept-rij) .beeldvak, .game--prepositions .vlak--na:has(.concept-rij) .keuzes {display:none}
+}
+@media(max-width:560px){
+.game--prepositions .stoppen li {font-size:10.5px;padding:8px 3px}
+.game--prepositions .keuzes {gap:6px}
+.game--prepositions .keuze {padding:4px}
+.game--prepositions .tagline {display:none}
+.game--prepositions .zin {font-size:clamp(18px,5vw,22px)}
+.game--prepositions .kloptzin {font-size:clamp(19px,5.4vw,24px)}
+.game--prepositions .vraag {font-size:clamp(18px,5vw,22px)}
+}

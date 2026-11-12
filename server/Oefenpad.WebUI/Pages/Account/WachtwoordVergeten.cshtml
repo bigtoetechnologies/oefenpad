@@ -1,0 +1,50 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.WachtwoordVergetenModel
+@{
+    ViewData["TitelNl"] = "Wachtwoord vergeten — Oefenpad";
+    ViewData["TitelEn"] = "Forgot password — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Wachtwoord vergeten", "Forgot your password")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "We sturen een link naar je e-mailadres.",
+            "We send a link to your email address.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        @Html.Meldingen(Model.Gelukt, "goed")
+        @Html.Meldingen(Model.Fouten)
+
+        @if (!Model.Verzonden)
+        {
+            <form method="post">
+                <div class="@Model.VeldClass("Email")">
+                    <label asp-for="Email">@Html.Beide("E-mailadres", "Email address")</label>
+                    <input asp-for="Email" type="email" autocomplete="email" inputmode="email" />
+                </div>
+
+                <div class="acties">
+                    <button class="knop oranje" type="submit">@Html.Beide("Stuur de link", "Send the link")</button>
+                </div>
+            </form>
+        }
+        else
+        {
+            <p>
+                <a class="knop leeg" href="/Account/Inloggen">@Html.Beide("Terug naar inloggen", "Back to sign in")</a>
+            </p>
+        }
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Weet je het nog?", "Remembered it?")</h2>
+        <p>@Html.Beide(
+            "Dan kun je gewoon inloggen.",
+            "Then you can simply sign in.")</p>
+        <a class="knop leeg klein" href="/Account/Inloggen">@Html.Beide("Inloggen", "Sign in")</a>
+    </aside>
+</main>

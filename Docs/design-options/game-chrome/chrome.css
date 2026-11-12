@@ -1,0 +1,119 @@
+/* Prototype only: site chrome on a game page.
+   Loaded AFTER ../../../assets/site/oefenpad.css and the game's own style.css.
+   Nothing in the live site links this file. */
+
+/* The games centre a 720/900px .app-container on a flex body. On the sheet
+   the body must stop centring and .vel must take the full width, exactly as
+   the home page does. */
+body{display:block;align-items:stretch}
+.vel{width:100%}
+
+/* The game column keeps its own width. It loses the second frame: .vel
+   already draws the sheet's side rules. */
+.app-container{
+  margin:0 auto;
+  padding-left:0;
+  padding-right:0;
+  border-left:0;
+  border-right:0;
+}
+
+/* Game title bar used by options A and B. It sits outside .app-container so
+   its heading and rule line up with the sheet's edges, like .kop on the home
+   page; the game itself stays in its 720px column below. */
+.spel-kop{
+  margin-bottom:0;
+  padding:clamp(14px,1.8vw,26px) 0 clamp(12px,1.4vw,18px);
+}
+.spel-kop .stand{gap:8px}
+.spel-kop + .app-container .difficulty-bar{margin-top:clamp(14px,1.8vw,22px)}
+
+/* Option B — compact nav: brand, one way back, theme. */
+.balk-compact .merk{grid-column:span 4}
+.balk-compact a.terug{
+  grid-column:5/8;display:flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;color:var(--inkt);text-decoration:none;
+}
+.balk-compact .terug:hover{color:var(--kobalt)}
+.balk-compact .rechts{grid-column:11/-1}
+
+/* Option C — one bar: brand, game title, actions. */
+.balk-spel .merk{grid-column:span 4}
+.balk-spel .speltitel{
+  grid-column:5/10;
+  font-size:clamp(18px,2vw,26px);font-weight:900;letter-spacing:-.04em;
+  line-height:1;padding:10px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.balk-spel .rechts{grid-column:10/-1;gap:8px}
+
+/* Keep the footer at the bottom of the sheet on short games. */
+.voet{margin-top:auto}
+
+/* ---------- Option D — no site nav ---------- */
+/* Only a return strip. .balk stays so oefenpad.js still injects the theme
+   button into .rechts; the brand and the links are gone. */
+.balk-kaal a.terug{
+  grid-column:1/6;display:flex;align-items:center;gap:8px;padding:15px 0;
+  font-size:13px;font-weight:600;color:var(--inkt);text-decoration:none;
+}
+.balk-kaal a.terug:hover{color:var(--kobalt)}
+.balk-kaal .rechts{grid-column:11/-1}
+
+/* ---------- Option E — the home page hero at full scale ---------- */
+.kop-spel .stand{
+  display:flex;justify-content:flex-end;gap:8px;
+  margin-bottom:clamp(12px,1.6vw,20px);
+}
+.kop-spel .kant p{margin:0}
+.kop-spel + .app-container .difficulty-bar{margin-top:clamp(14px,1.8vw,22px)}
+
+/* ---------- Option F — game in the page grid, facts in a rail ---------- */
+.spelraster{display:grid;grid-template-columns:repeat(12,1fr);flex:1}
+.spelkolom{grid-column:span 8;min-width:0;padding-right:clamp(14px,1.6vw,24px)}
+.spelzijkant{
+  grid-column:span 4;border-left:var(--rand);
+  padding-left:clamp(14px,1.6vw,24px);
+  display:flex;flex-direction:column;gap:14px;
+}
+.spelzijkant .zijkant-terug{
+  justify-content:flex-start;width:100%;
+  background:none;box-shadow:none;padding:8px 0;min-height:0;
+  border-bottom:var(--rand-hard);font-size:14px;font-weight:700;
+}
+.spelzijkant .zijkant-terug:hover{background:var(--raster-zacht)}
+.spelzijkant .status-row{
+  flex-direction:column;align-items:flex-start;gap:10px;
+  padding:14px 0 0;border-top:var(--rand-hard);border-bottom:0;
+}
+.spelzijkant .status-chip{width:100%;justify-content:space-between}
+
+@media(max-width:900px){
+  .balk-kaal a.terug{grid-column:1/4;padding:12px 0;white-space:nowrap}
+
+  .spelraster{display:flex;flex-direction:column;flex:1}
+  .spelkolom{padding-right:0;width:100%}
+  .spelzijkant{
+    order:-1;border-left:0;border-bottom:var(--rand);
+    padding:0 0 10px;display:block;
+  }
+  .spelzijkant .zijkant-terug{display:inline-flex;width:auto;margin-bottom:6px}
+  .spelzijkant .status-row{
+    flex-direction:row;flex-wrap:wrap;align-items:center;
+    padding:0;border-top:0;
+  }
+  .spelzijkant .status-chip{width:auto}
+}
+
+@media(max-width:900px){
+  .balk-compact{grid-template-columns:repeat(4,1fr)}
+  .balk-compact .merk{grid-column:span 4}
+  .balk-compact a.terug{grid-column:span 3;white-space:nowrap}
+  .balk-compact .rechts{grid-column:span 1;justify-content:flex-end}
+
+  .balk-spel{grid-template-columns:repeat(4,1fr)}
+  .balk-spel .merk{grid-column:span 2}
+  .balk-spel .speltitel{grid-column:span 2;font-size:18px;padding:8px 0}
+  .balk-spel .rechts{grid-column:span 4;justify-content:flex-start;padding-bottom:8px}
+
+  .spel-kop + .difficulty-bar{margin-top:12px}
+}

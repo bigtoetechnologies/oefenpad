@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- The games are Dutch-only; data-taal is what oefenpad.css switches the
+     bilingual spans on, so without it both halves of every pair render. -->
+<html lang="nl" data-taal="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#2B50C8">
+  <title>Oefenpad</title>
+  <link rel="icon" type="image/png" href="/assets/logo/logo_32px.png">
+
+  <!-- Site-wide theme: always light unless the visitor chose dark. This runs
+       before first paint so a dark viewer never sees a white flash. -->
+  <script>
+    (function () {
+      var KEY = 'oefenpad-theme';
+      function apply(saved) {
+        document.documentElement.classList.toggle('dark', saved === 'dark');
+      }
+      var saved = null;
+      try { saved = localStorage.getItem(KEY); } catch (e) { /* private mode */ }
+      apply(saved);
+      window.toggleSiteTheme = function () {
+        var dark = !document.documentElement.classList.contains('dark');
+        document.documentElement.classList.toggle('dark', dark);
+        try { localStorage.setItem(KEY, dark ? 'dark' : 'light'); } catch (e) {}
+        document.dispatchEvent(new CustomEvent('themechange', { detail: { dark: dark } }));
+      };
+      document.addEventListener('click', function (e) {
+        var t = e.target;
+        var btn = t && t.closest ? t.closest('#theme-toggle') : null;
+        if (btn) toggleSiteTheme();
+      });
+      window.addEventListener('storage', function (e) {
+        if (e.key === KEY && e.newValue) {
+          apply(e.newValue);
+          document.dispatchEvent(new CustomEvent('themechange',
+            { detail: { dark: document.documentElement.classList.contains('dark') } }));
+        }
+      });
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/site/oefenpad.css">
+  <script defer src="/assets/site/oefenpad.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+</html>

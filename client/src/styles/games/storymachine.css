@@ -1,0 +1,128 @@
+/* Generated from src/styles/source/storymachine.css by scripts/scope-css.mjs.
+   Scoped to .game--storymachine; edit the source and rerun the script. */
+
+.game--storymachine .app-container {
+  width:100%;max-width:720px;flex:1;display:flex;flex-direction:column;align-items:stretch;
+  margin:0 auto;padding:0 0 20px;position:relative;
+}
+.game--storymachine .spel-kop {margin-bottom:0;padding-top:clamp(14px,1.8vw,26px)}
+.game--storymachine .spel-kop .stand {gap:8px}
+.game--storymachine .btn-icon {
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:var(--papier);color:var(--inkt);border:0;border-radius:0;font-size:18px;font-weight:900;
+  text-decoration:none;cursor:pointer;box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.game--storymachine .btn-icon:hover {background:var(--raster-zacht)}
+.game--storymachine .tagline {margin:0;max-width:44ch;text-align:right}
+.game--storymachine .spel-kop + .app-container .controls {margin-top:clamp(14px,1.8vw,22px)}
+.game--storymachine .controls {
+  display:flex;gap:clamp(18px,2.6vw,46px);align-items:center;flex-wrap:wrap;
+  padding:clamp(12px,1.4vw,20px) 0;border-bottom:var(--rand);
+}
+.game--storymachine .control {display:flex;align-items:center;gap:12px;font-size:13.5px;font-weight:700;color:var(--inkt)}
+.game--storymachine .control > span {white-space:nowrap}
+.game--storymachine #reel-count-out {
+  font-weight:900;font-size:17px;min-width:1.6em;text-align:center;
+  padding:3px 8px;box-shadow:inset 0 0 0 2px var(--inkt);font-variant-numeric:tabular-nums;
+}
+.game--storymachine input[type=range] {
+  -webkit-appearance:none;appearance:none;width:clamp(120px,16vw,210px);height:6px;
+  background:var(--raster);outline:none;cursor:pointer;
+}
+.game--storymachine input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance:none;appearance:none;width:20px;height:28px;background:var(--kobalt);cursor:pointer;border:0;
+}
+.game--storymachine input[type=range]::-moz-range-thumb {width:20px;height:28px;background:var(--kobalt);cursor:pointer;border:0;border-radius:0}
+.game--storymachine input[type=range]:focus-visible {outline:3px solid var(--oranje);outline-offset:4px}
+.game--storymachine .control-check {cursor:pointer;gap:9px}
+.game--storymachine .control-check input[type=checkbox] {
+  appearance:none;-webkit-appearance:none;width:22px;height:22px;margin:0;cursor:pointer;
+  box-shadow:inset 0 0 0 2px var(--inkt);background:var(--papier);display:grid;place-items:center;
+}
+.game--storymachine .control-check input[type=checkbox]:checked {background:var(--kobalt);box-shadow:inset 0 0 0 2px var(--kobalt)}
+.game--storymachine .control-check input[type=checkbox]:checked::after {content:"";width:10px;height:6px;border:2.5px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-2px)}
+.game--storymachine .control-check input[type=checkbox]:focus-visible {outline:3px solid var(--oranje);outline-offset:3px}
+.game--storymachine .cabinet {
+  display:flex;align-items:stretch;gap:clamp(14px,2vw,30px);
+  padding:clamp(18px,2.4vw,38px) 0;
+}
+.game--storymachine .window {
+  flex:1;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;
+  background:var(--inkt);padding:2px;min-height:clamp(150px,21vw,250px);overflow:hidden;
+}
+.game--storymachine .reel {
+  position:relative;overflow:hidden;background:var(--papier);
+  display:grid;place-items:center;cursor:pointer;
+}
+.game--storymachine .reel:focus-visible {outline:3px solid var(--oranje);outline-offset:-3px}
+.game--storymachine .reel.held {box-shadow:inset 0 0 0 4px var(--oranje)}
+.game--storymachine .reel.held::after {
+  content:"vast";position:absolute;top:0;left:0;
+  background:var(--oranje);color:#fff;font-size:10.5px;font-weight:800;
+  letter-spacing:.02em;padding:3px 7px;
+}
+.game--storymachine .strip {display:flex;flex-direction:column;width:100%}
+.game--storymachine .tile {
+  display:grid;place-items:center;aspect-ratio:1/1;width:100%;
+  font-size:clamp(44px,7.5vw,104px);font-weight:900;color:var(--kobalt);line-height:1;
+}
+.game--storymachine .tile-art {display:grid;place-items:center;width:100%;height:100%;line-height:1}
+.game--storymachine .reel.spinning .strip {animation:op-rol .5s linear infinite}
+@keyframes op-rol{from{transform:translateY(0)}to{transform:translateY(-33.333%)}}
+.game--storymachine .lever {
+  flex:none;width:clamp(56px,6vw,84px);background:none;border:0;cursor:pointer;padding:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.game--storymachine .lever:focus-visible {outline:3px solid var(--oranje);outline-offset:3px}
+.game--storymachine .lever:disabled {opacity:.45;cursor:not-allowed}
+.game--storymachine .lever-knob {display:block;width:100%;height:clamp(46px,5vw,66px);background:var(--oranje)}
+.game--storymachine .lever-stick {order:2;display:block;width:12px;flex:1;background:var(--inkt)}
+.game--storymachine .lever.pulled .lever-knob {background:var(--kobalt)}
+.game--storymachine .lever:hover:not(:disabled) .lever-knob {background:var(--oranje-diep)}
+.game--storymachine .cards {
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(120px,14vw,190px),1fr));
+  gap:clamp(10px,1.2vw,18px);padding-top:clamp(6px,1vw,14px);
+}
+.game--storymachine .card {
+  perspective:900px;background:none;border:0;padding:0;cursor:pointer;
+  aspect-ratio:3/4;
+}
+.game--storymachine .card:focus-visible {outline:3px solid var(--oranje);outline-offset:3px}
+.game--storymachine .card-inner {
+  display:block;position:relative;width:100%;height:100%;
+  transform-style:preserve-3d;transition:transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.game--storymachine .card.turned .card-inner {transform:rotateY(180deg)}
+.game--storymachine .card-face {
+  position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+  display:grid;place-items:center;padding:10px;
+}
+.game--storymachine .card-back {background:var(--kobalt)}
+.game--storymachine .card-back::after {
+  content:"";width:38%;height:38%;
+  box-shadow:inset 0 0 0 3px rgba(255,255,255,.55);
+}
+.game--storymachine .card-front {
+  transform:rotateY(180deg);background:var(--papier);
+  box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.game--storymachine .card-word {
+  font-size:clamp(15px,1.6vw,22px);font-weight:900;letter-spacing:-.03em;
+  text-align:center;color:var(--inkt);line-height:1.1;
+}
+.game--storymachine .held-hint {font-size:13px;font-weight:600;color:var(--grijs);padding-top:clamp(10px,1.2vw,16px)}
+.game--storymachine .sr-only {position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:560px){
+.game--storymachine .cabinet {gap:10px}
+.game--storymachine .window {min-height:150px}
+.game--storymachine .lever {width:48px}
+.game--storymachine .lever-knob {height:40px}
+.game--storymachine .cards {grid-template-columns:repeat(auto-fit,minmax(104px,1fr))}
+.game--storymachine .spel-kop .stand {width:100%;justify-content:space-between}
+.game--storymachine .tagline {text-align:left;max-width:none}
+}
+@media (prefers-reduced-motion:reduce){
+.game--storymachine .card-inner {transition:none}
+.game--storymachine .reel.spinning .strip {animation:none}
+}

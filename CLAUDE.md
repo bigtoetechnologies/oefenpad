@@ -1,12 +1,13 @@
 # Oefenpad
 
 A free Dutch practice site for adult newcomers to the Netherlands, most of
-them studying for inburgering. Static HTML, no build step, no framework, no
-backend. A companion paperback, *Quick Wins in Dutch*, is the acquisition
-channel and lives in `book.md`.
+them studying for inburgering. The practice pages are static HTML with no build
+step and no framework. Sign-up and account management are a small .NET 10
+service in `server/`. A companion paperback, *Quick Wins in Dutch*, is the
+acquisition channel and lives in `book.md`.
 
-The site is deliberately plain to deploy: open `index.html` over any static
-server and it runs.
+The practice site is deliberately plain to deploy: open `index.html` over any
+static server and it runs. The account pages need the server in `server/`.
 
 ## Start here
 
@@ -14,8 +15,16 @@ server and it runs.
 |---|---|
 | `Docs/decisions.md` | Why the product is shaped this way. Read before proposing anything |
 | `Docs/designguide.md` | Every visual rule. Canonical |
+| `Docs/accounts.md` | How sign-up and account management are built, run and tested |
+| `Docs/accounts-handover.md` | Why the account solution is shaped this way, plus the architecture and file-by-file code map |
+| `Docs/game-art.md` | How game images are drawn: brush line, cobalt only, 512 px |
+| `Docs/prepositions-roadmap.md` | The Voorzetselpaden plan to 710 frames, and what "B2" means |
+| `Docs/prepositions-art-a0-a2.md`, `Docs/prepositions-art-a2-pairs.md`, `Docs/prepositions-art-a2-plus.md`, `Docs/prepositions-art-b1.md`, `Docs/prepositions-art-b1-plus.md`, `Docs/prepositions-art-b2.md` | The scene images still to be drawn, in copy-paste Grok batches by CEFR band (A0–A2, A2 pairs, A2+, B1, B1+, B2) |
+| `Docs/prepositions-art.md` | The thirty pilot scene briefs, the shared frame rule and the checks for editing a plan |
 | `Docs/design-process.md` | Which designs were rejected and why, so you don't re-propose them |
 | `Docs/game-catalogue.md` | What each game is and what exists |
+| `Docs/games-backend.md` | How the games get their data from the API, and how the React app is built and run |
+| `Docs/review-handover.md` | What the 10 Nov 2026 review fixed, what it left, the content-exposure threat model, and the TotumTeams fidelity gaps |
 | `Docs/Concept.md`, `Docs/games.md` | The eight pillars and the game specs |
 | `Docs/design-options/index.html` | The fifteen home-page prototypes, side by side |
 
@@ -71,9 +80,13 @@ look like.
 - **Theme.** Opens light always. The system `prefers-color-scheme` is
   deliberately ignored. `oefenpad.js` injects the `#theme-toggle` button;
   do not hand-write it into pages.
-- **Four games still use the old BigToe header** (`.header-right`, not
-  `.balk .rechts`): galgje, geheugen, koppelen, woordzoeker. Code that
-  touches the nav must handle both.
+- **The games are React now.** The six games live in `client/` and are served
+  from `/spelen/<game>` by the .NET host. `GameShell` renders the chrome: `.vel`,
+  `.balk`, `.spel-kop` and `.voet`, with the title outside `.app-container` so
+  its rule spans the sheet rather than the 720 px game column. The games are
+  Dutch-only, so their `.balk` has no `.taal` switch; `.rechts` holds only the
+  injected `#theme-toggle`. The browser gets one round at a time from the game
+  API; the word bank and the puzzle generators are server-side.
 
 ## Running and checking it
 
@@ -102,15 +115,70 @@ Measuring beats eyeballing: sample pixels with PIL rather than judging a
 downscaled screenshot. Brush texture shows up as a spread of roughly 17–20 in
 the blue channel down a tile; a flat fill measures 0.
 
+The account system is a separate .NET 10 solution under `server/`. Port 8098 is
+for it; leave 8080 alone.
+
+```sh
+ASPNETCORE_ENVIRONMENT=Development dotnet run \
+  --project server/Oefenpad.WebUI --urls http://127.0.0.1:8098
+
+dotnet test server/Oefenpad.Tests
+```
+
+It applies migrations on start. The SQLite database is
+`server/Oefenpad.WebUI/oefenpad.db`; account email is written to
+`server/Oefenpad.WebUI/email-sink/` when no SMTP host is configured. Do not
+serve the repo root to the web app: only `assets/` and the WebUI `wwwroot` are
+exposed, and that is deliberate — the old `src/` scripts and word banks are
+gone.
+
+The React games build into the host. `dotnet build` and `dotnet publish` run
+`npm ci` (when `node_modules` is missing) and `npm run build`, so a normal
+build ships the games; `-p:SkipClientBuild=true` builds the server alone. The
+npm step is skipped when the client sources are unchanged.
+
+```sh
+cd client && npm run build                    # writes wwwroot/spelen by hand
+cd client && npm run scope-css                # after a change in styles/source
+```
+
+`Docs/games-backend.md` has the API, the round model, the verification record
+and what stays in the browser.
+
 ## Where things stand
 
-All eight pages — home, the two legal pages, five games — are committed and
-working, on one design system, bilingual, with a working theme switch.
+All nine pages — home, the two legal pages, six games — are on one design
+system, the six games under the same `.balk` and `.voet` chrome. The home and
+legal pages are bilingual and still static; the games are Dutch-only, React,
+and served by the .NET host from `/spelen/`, with their content behind
+`/api/games`.
 
-Nothing is uncommitted. The remote is
-`git@github.com:bigtoetechnologies/oefenpad.git`; `main` is **8 commits
-ahead and unpushed**, so the whole redesign exists only on this disk. Push
-only when the owner asks.
+Voorzetselpaden (now `client/src/games/prepositions/`, scenes in
+`assets/voorzetselpaden/`) is the newest: a pilot with eighteen
+levels — ten contrast sets (nine pairs and one set of three) and eight single
+frames — and the only game whose art is raster. Its thirty scene images are
+alpha masks drawn on a cobalt block, so they need no second file for dark mode. `Docs/game-art.md` has the art
+technique; `Docs/prepositions-implementation.md` describes how the game is
+built, and `Docs/prepositions.md` is the spec behind it. It is also the only
+game with a gate: the first three levels are free, the next six need an
+account, and the remaining nine need a paid plan, which is not built yet (so
+that slice is shut). Within a tier a level opens only when the learner has
+finished the one before it (`server/Oefenpad.Services/Games/GameAccessService.cs`).
+
+Sign-up and account management live in the .NET 10 solution under `server/`.
+It is Razor Pages, not Blazor, with ASP.NET Core Identity and SQLite, and it
+serves the static site alongside the account pages from the same host. The
+pages are bilingual and use the same `oefenpad.css`. `Docs/accounts.md` has
+the architecture, the flows, the rate limits and what must change before
+accounts go live. `Docs/accounts-handover.md` is the session record: the
+decisions behind the build, the verified build/test evidence, and a
+file-by-file map so the next agent does not have to load the solution.
+
+The remote is `git@github.com:bigtoetechnologies/oefenpad.git`; `main` is **8
+commits ahead and unpushed**, so the whole redesign exists only on this disk.
+Uncommitted on top of that: the game chrome, the whole React client, the
+server-side game content and API, the removal of the old `src/` game pages,
+and the docs that describe it. Push only when the owner asks.
 
 ## Open and unverified
 
@@ -120,7 +188,12 @@ only when the owner asks.
 | 2 | `--grijs` on `--papier` in dark mode is unchecked for contrast |
 | 3 | The twelve-bar week meter has no label. Nobody knows whether it reads as anything |
 | 4 | Six content ideas from the rejected prototypes, listed at the end of `Docs/design-process.md` |
-| 5 | The open questions in `Docs/decisions.md`: domain registration, a mascot, the free/premium line, audio for pillar 8 |
+| 5 | The open questions in `Docs/decisions.md`: domain registration, a mascot, whether a paid tier exists above free, audio for pillar 8. The games' free slice is decided there |
+| 6 | `privacy.html` and `voorwaarden.html` still say there is no account and no personal data. They must be rewritten before accounts go live; the mail provider is a new processor |
+| 7 | The home hero says "no account". Accounts save progress, and Voorzetselpaden locks its last nine levels behind a paid plan that does not exist yet; the six between need an account. Word search is still open to guests, so its free slice is decided in `Docs/decisions.md` but not enforced. Decide whether it gets the same gate and whether sign-up ever becomes required to play at all |
+| 8 | Production config: `Email:SmtpHost` is unset, so mail goes to `server/Oefenpad.WebUI/email-sink/`. Choose a provider. Set `App:BaseUrl` (mandatory outside Development — the app refuses to start without it) and `App:KnownProxies` when behind a TLS-terminating proxy, and persist the Data Protection keys. `Docs/accounts.md` lists the required values |
+| 9 | The games now need the server. No offline play was accepted by the owner on 2026-11-09. The client build is wired into `dotnet build`/`publish` (`-p:SkipClientBuild=true` to skip it), so that half is closed |
+| 10 | The game rounds are in memory, so a restart ends them and a second instance cannot share them. Fine for one host; a shared store is needed before scaling out |
 
 ## Working style the owner expects
 

@@ -1,0 +1,32 @@
+@page
+@model Oefenpad.WebUI.Pages.Account.ToegangGeweigerdModel
+@{
+    ViewData["TitelNl"] = "Geen toegang — Oefenpad";
+    ViewData["TitelEn"] = "No access — Oefenpad";
+}
+
+<header class="kop">
+    <h1>@Html.Beide("Geen toegang", "No access")</h1>
+    <div class="kant">
+        <p>@Html.Beide(
+            "Deze pagina is alleen voor ingelogde bezoekers.",
+            "This page is for signed-in visitors only.")</p>
+    </div>
+</header>
+
+<main class="account">
+    <section class="formulier">
+        <p>
+            <a class="knop oranje" href="/Account/Inloggen">@Html.Beide("Inloggen", "Sign in")</a>
+            <a href="/">@Html.Beide("Terug naar de oefeningen", "Back to the exercises")</a>
+        </p>
+    </section>
+
+    <aside class="zij">
+        <h2>@Html.Beide("Nog geen account?", "No account yet?")</h2>
+        <p>@Html.Beide(
+            "Maak er een aan; het kost een minuut.",
+            "Create one; it takes a minute.")</p>
+        <a class="knop leeg klein" href="/Account/Registreren">@Html.Beide("Registreren", "Sign up")</a>
+    </aside>
+</main>

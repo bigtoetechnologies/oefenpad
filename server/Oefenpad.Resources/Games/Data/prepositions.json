@@ -1,0 +1,2137 @@
+{
+  "scenes": {
+    "wachten-op-bus": {
+      "file": "art/wachten-op-bus.png",
+      "alt": "Iemand wacht bij een bushokje en kijkt op een horloge."
+    },
+    "wachten-voor-deur": {
+      "file": "art/wachten-voor-deur.png",
+      "alt": "Iemand staat met de armen over elkaar buiten een dichte deur."
+    },
+    "denken-aan-persoon": {
+      "file": "art/denken-aan-persoon.png",
+      "alt": "Iemand kijkt voor zich uit; in een gedachteballon staat een gezicht."
+    },
+    "denken-over-keuze": {
+      "file": "art/denken-over-keuze.png",
+      "alt": "Iemand zit aan tafel en vergelijkt twee dingen naast elkaar."
+    },
+    "uitkijken-naar-vakantie": {
+      "file": "art/uitkijken-naar-vakantie.png",
+      "alt": "Iemand met een koffer kijkt glimlachend naar een kalender met één gemarkeerde dag."
+    },
+    "uitkijken-voor-auto": {
+      "file": "art/uitkijken-voor-auto.png",
+      "alt": "Een kind staat aan de rand van de weg; een auto komt aanrijden."
+    },
+    "praten-met-vriend": {
+      "file": "art/praten-met-vriend.png",
+      "alt": "Twee mensen zitten tegenover elkaar en praten; hun tekstballonnen raken elkaar."
+    },
+    "praten-over-huis": {
+      "file": "art/praten-over-huis.png",
+      "alt": "Twee mensen aan tafel met een huis tussen hen in; de tekstballonnen wijzen naar het huis."
+    },
+    "ophouden-met-roken": {
+      "file": "art/ophouden-met-roken.png",
+      "alt": "Iemand drukt een sigaret uit in een asbak."
+    },
+    "eraan-denken-afspraak": {
+      "file": "art/eraan-denken-afspraak.png",
+      "alt": "Iemand slaat een hand tegen het voorhoofd: net iets belangrijks bedacht."
+    },
+    "werken-bij-bedrijf": {
+      "file": "art/werken-bij-bedrijf.png",
+      "alt": "Iemand staat bij een balie voor een bedrijfsgebouw met een badge om de nek."
+    },
+    "werken-aan-project": {
+      "file": "art/werken-aan-project.png",
+      "alt": "Iemand buigt over een tafel met een grote tekening of bouwplan."
+    },
+    "klaar-met-werk": {
+      "file": "art/klaar-met-werk.png",
+      "alt": "Iemand leunt achterover met de handen in de nek; de laptop is dicht en het bureau is opgeruimd."
+    },
+    "klaar-voor-feest": {
+      "file": "art/klaar-voor-feest.png",
+      "alt": "Iemand staat met een jas en een cadeau bij de voordeur, klaar om te gaan."
+    },
+    "vragen-aan-persoon": {
+      "file": "art/vragen-aan-persoon.png",
+      "alt": "Iemand leunt naar een ander toe met een opgestoken hand en een tekstballon."
+    },
+    "vragen-om-hulp": {
+      "file": "art/vragen-om-hulp.png",
+      "alt": "Iemand houdt een hand op en krijgt een tas of doos van een ander."
+    },
+    "zorgen-voor-kind": {
+      "file": "art/zorgen-voor-kind.png",
+      "alt": "Een volwassene helpt een kind in een jas; er staat een schooltas bij."
+    },
+    "meedoen-met-team": {
+      "file": "art/meedoen-met-team.png",
+      "alt": "Iemand schuift een stoel aan bij een groep die aan tafel een spel doet."
+    },
+    "zoeken-naar-sleutels": {
+      "file": "art/zoeken-naar-sleutels.png",
+      "alt": "Iemand knielt bij een bank en zoekt naar sleutels die op de grond liggen."
+    },
+    "last-hebben-van-lawaai": {
+      "file": "art/last-hebben-van-lawaai.png",
+      "alt": "Iemand houdt de handen voor de oren bij een muur; aan de andere kant klinkt een boormachine."
+    },
+    "blij-met-cadeau": {
+      "file": "art/blij-met-cadeau.png",
+      "alt": "Iemand houdt een cadeau met een strik vast en kijkt blij."
+    },
+    "blij-voor-vriend": {
+      "file": "art/blij-voor-vriend.png",
+      "alt": "Iemand kijkt blij naar een vriend die een kleine beker omhoog houdt."
+    },
+    "boos-op-collega": {
+      "file": "art/boos-op-collega.png",
+      "alt": "Iemand wijst boos naar een ander, die achteroverleunt."
+    },
+    "boos-over-rommel": {
+      "file": "art/boos-over-rommel.png",
+      "alt": "Iemand kijkt boos naar een rommel met papieren en een gebroken beker."
+    },
+    "klagen-over-apparaat": {
+      "file": "art/klagen-over-apparaat.png",
+      "alt": "Iemand staat met een opgestoken vinger bij een kapotte wasmachine."
+    },
+    "klagen-bij-balie": {
+      "file": "art/klagen-bij-balie.png",
+      "alt": "Iemand leunt over een balie en klaagt bij een medewerker."
+    },
+    "houden-van-hond": {
+      "file": "art/houden-van-hond.png",
+      "alt": "Iemand knuffelt een rustige hond."
+    },
+    "zin-in-koffie": {
+      "file": "art/zin-in-koffie.png",
+      "alt": "Iemand kijkt blij naar een kop koffie en een stuk taart."
+    },
+    "bang-voor-hond": {
+      "file": "art/bang-voor-hond.png",
+      "alt": "Iemand deinst achteruit voor een blaffende hond."
+    },
+    "vragen-naar-informatie": {
+      "file": "art/vragen-naar-informatie.png",
+      "alt": "Iemand wijst op een kaart aan de balie; de medewerker luistert."
+    },
+    "zeggen-tegen-persoon": {
+      "file": "art/zeggen-tegen-persoon.png",
+      "alt": "Iemand leunt naar een ander toe en zegt iets korts."
+    },
+    "vertellen-aan-kind": {
+      "file": "art/vertellen-aan-kind.png",
+      "alt": "Een volwassene vertelt met bewegende handen een verhaal aan een kind."
+    },
+    "praten-tegen-muur": {
+      "file": "art/praten-tegen-muur.png",
+      "alt": "Iemand praat tegen een ander die met de rug naar hem toe staat."
+    },
+    "beschermen-tegen-regen": {
+      "file": "art/beschermen-tegen-regen.png",
+      "alt": "Iemand blijft droog onder een paraplu in de schuine regen."
+    },
+    "komen-door-regen": {
+      "file": "art/komen-door-regen.png",
+      "alt": "Een doorweekte persoon wijst naar de regen, zonder paraplu."
+    },
+    "komen-uit-huis": {
+      "file": "art/komen-uit-huis.png",
+      "alt": "Iemand met een koffer stapt uit een huisdeur."
+    },
+    "kijken-door-sleutelgat": {
+      "file": "art/kijken-door-sleutelgat.png",
+      "alt": "Iemand buigt zich naar een deur en tuurt door een klein gat."
+    },
+    "kijken-uit-raam": {
+      "file": "art/kijken-uit-raam.png",
+      "alt": "Iemand kijkt uit een open raam naar buiten."
+    },
+    "doorgeven-aan-buur": {
+      "file": "art/doorgeven-aan-buur.png",
+      "alt": "Iemand geeft een doos over een hek aan een ander."
+    },
+    "doorbrengen-met-vriend": {
+      "file": "art/doorbrengen-met-vriend.png",
+      "alt": "Twee mensen zitten ontspannen op een bank; een leest, een houdt een kop vast."
+    },
+    "stappen-uit-bus": {
+      "file": "art/stappen-uit-bus.png",
+      "alt": "Iemand stapt uit de open deur van een bus op de stoep."
+    },
+    "drinken-uit-glas": {
+      "file": "art/drinken-uit-glas.png",
+      "alt": "Iemand kantelt een glas naar de mond om te drinken."
+    },
+    "vallen-uit-tas": {
+      "file": "art/vallen-uit-tas.png",
+      "alt": "Een open tas ligt op zijn kant; een boek en een appel vallen eruit."
+    },
+    "letten-op-verkeer": {
+      "file": "art/letten-op-verkeer.png",
+      "alt": "Iemand staat naast een weg en tuurt met een hand boven de ogen in de verte."
+    },
+    "bezig-zijn-met-klus": {
+      "file": "art/bezig-zijn-met-klus.png",
+      "alt": "Iemand buigt over een werkbank en zet een wiel op een as."
+    },
+    "geinteresseerd-in-onderwerp": {
+      "file": "art/geinteresseerd-in-onderwerp.png",
+      "alt": "Iemand zit gebogen over een boek aan tafel."
+    },
+    "tevreden-zijn-met-resultaat": {
+      "file": "art/tevreden-zijn-met-resultaat.png",
+      "alt": "Iemand staat rustig terug van een afgewerkt paneel op een lage standaard."
+    },
+    "bedanken-voor-de-uitnodiging": {
+      "file": "art/bedanken-voor-de-uitnodiging.png",
+      "alt": "Twee mensen bij een open deur; een houdt een open hand op als dank."
+    },
+    "feliciteren-met-de-verjaardag": {
+      "file": "art/feliciteren-met-de-verjaardag.png",
+      "alt": "Dezelfde twee mensen bij de deur; een houdt een klein ingepakt doosje omhoog."
+    },
+    "uitnodigen-voor-het-feest": {
+      "file": "art/uitnodigen-voor-het-feest.png",
+      "alt": "Iemand houdt een blanco kaartje naar een ander, die er al naar reikt."
+    }
+  },
+  "frames": [
+    {
+      "id": "wachten-op",
+      "frame": "wachten op",
+      "en": "to wait for",
+      "scene": "wachten-op-bus",
+      "contrast": "wachten-voor",
+      "focus": [
+        "op"
+      ],
+      "example": {
+        "nl": "Ik wacht op de bus.",
+        "en": "I am waiting for the bus."
+      },
+      "build": [
+        [
+          "Ik",
+          "wacht",
+          "op",
+          "de",
+          "bus"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Wacht de persoon tot de bus komt?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "wachten-voor",
+      "frame": "wachten voor",
+      "en": "to wait in front of",
+      "scene": "wachten-voor-deur",
+      "contrast": "wachten-op",
+      "focus": [
+        "voor"
+      ],
+      "example": {
+        "nl": "Ik wacht voor de deur.",
+        "en": "I am waiting in front of the door."
+      },
+      "build": [
+        [
+          "Ik",
+          "wacht",
+          "voor",
+          "de",
+          "deur"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Staat de persoon buiten?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "denken-aan",
+      "frame": "denken aan",
+      "en": "to think of",
+      "scene": "denken-aan-persoon",
+      "contrast": "denken-over",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik denk aan jou.",
+        "en": "I am thinking of you."
+      },
+      "build": [
+        [
+          "Ik",
+          "denk",
+          "aan",
+          "jou"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over een persoon?",
+          "answer": true
+        }
+      ],
+      "pronominal": {
+        "nl": "Ik denk eraan.",
+        "en": "I am thinking of it."
+      },
+      "pronominalScene": "eraan-denken-afspraak"
+    },
+    {
+      "id": "denken-over",
+      "frame": "denken over",
+      "en": "to think about, to consider",
+      "scene": "denken-over-keuze",
+      "contrast": "denken-aan",
+      "focus": [
+        "over"
+      ],
+      "example": {
+        "nl": "Ik denk over de keuze.",
+        "en": "I am thinking about the choice."
+      },
+      "build": [
+        [
+          "Ik",
+          "denk",
+          "over",
+          "de",
+          "keuze"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over twee mogelijkheden?",
+          "answer": true
+        },
+        {
+          "question": "Gaat het over één persoon?",
+          "answer": false
+        }
+      ],
+      "pronominal": {
+        "nl": "Ik denk erover.",
+        "en": "I am thinking about it."
+      }
+    },
+    {
+      "id": "praten-met",
+      "frame": "praten met",
+      "en": "to talk with",
+      "scene": "praten-met-vriend",
+      "contrast": "praten-over",
+      "focus": [
+        "met"
+      ],
+      "example": {
+        "nl": "Ik praat met mijn vriend.",
+        "en": "I am talking with my friend."
+      },
+      "build": [
+        [
+          "Ik",
+          "praat",
+          "met",
+          "mijn",
+          "vriend"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Praten de twee mensen met elkaar?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "praten-over",
+      "frame": "praten over",
+      "en": "to talk about",
+      "scene": "praten-over-huis",
+      "contrast": "praten-met",
+      "focus": [
+        "over"
+      ],
+      "example": {
+        "nl": "We praten over het huis.",
+        "en": "We are talking about the house."
+      },
+      "build": [
+        [
+          "We",
+          "praten",
+          "over",
+          "het",
+          "huis"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het gesprek over een huis?",
+          "answer": true
+        }
+      ],
+      "pronominal": {
+        "nl": "We praten erover.",
+        "en": "We are talking about it."
+      }
+    },
+    {
+      "id": "ophouden-met",
+      "frame": "ophouden met",
+      "en": "to stop doing something",
+      "scene": "ophouden-met-roken",
+      "contrast": null,
+      "focus": [
+        "op",
+        "met"
+      ],
+      "example": {
+        "nl": "Ik hou op met roken.",
+        "en": "I am stopping smoking."
+      },
+      "build": [
+        [
+          "Ik",
+          "hou",
+          "op",
+          "met",
+          "roken"
+        ],
+        [
+          "Zij",
+          "houdt",
+          "op",
+          "met",
+          "roken"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Stopt de persoon met roken?",
+          "answer": true
+        }
+      ],
+      "separable": true,
+      "prefix": "op",
+      "pronominal": {
+        "nl": "Ik hou ermee op.",
+        "en": "I am stopping it."
+      }
+    },
+    {
+      "id": "uitkijken-naar",
+      "frame": "uitkijken naar",
+      "en": "to look forward to",
+      "scene": "uitkijken-naar-vakantie",
+      "contrast": "uitkijken-voor",
+      "focus": [
+        "uit",
+        "naar"
+      ],
+      "example": {
+        "nl": "Ik kijk uit naar de vakantie.",
+        "en": "I am looking forward to the holiday."
+      },
+      "build": [
+        [
+          "Ik",
+          "kijk",
+          "uit",
+          "naar",
+          "de",
+          "vakantie"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over later?",
+          "answer": true
+        },
+        {
+          "question": "Is het positief?",
+          "answer": true
+        }
+      ],
+      "separable": true,
+      "prefix": "uit",
+      "pronominal": {
+        "nl": "Ik kijk ernaar uit.",
+        "en": "I am looking forward to it."
+      }
+    },
+    {
+      "id": "uitkijken-voor",
+      "frame": "uitkijken voor",
+      "en": "to watch out for",
+      "scene": "uitkijken-voor-auto",
+      "contrast": "uitkijken-naar",
+      "focus": [
+        "uit",
+        "voor"
+      ],
+      "example": {
+        "nl": "Kijk uit voor de auto!",
+        "en": "Watch out for the car!"
+      },
+      "build": [
+        [
+          "Kijk",
+          "uit",
+          "voor",
+          "de",
+          "auto"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over gevaar?",
+          "answer": true
+        },
+        {
+          "question": "Is het positief?",
+          "answer": false
+        }
+      ],
+      "separable": true,
+      "prefix": "uit",
+      "pronominal": {
+        "nl": "Kijk ervoor uit!",
+        "en": "Watch out for it!"
+      }
+    },
+    {
+      "id": "eraan-denken",
+      "frame": "eraan denken",
+      "en": "to think of it, to remember it",
+      "scene": "eraan-denken-afspraak",
+      "contrast": "denken-aan",
+      "focus": [
+        "eraan"
+      ],
+      "example": {
+        "nl": "Ik denk eraan.",
+        "en": "I am thinking of it."
+      },
+      "build": [
+        [
+          "Ik",
+          "denk",
+          "eraan"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Moet de persoon iets niet vergeten?",
+          "answer": true
+        }
+      ],
+      "discoverOnly": true
+    },
+    {
+      "id": "werken-bij",
+      "frame": "werken bij",
+      "en": "to work at",
+      "scene": "werken-bij-bedrijf",
+      "contrast": "werken-aan",
+      "focus": [
+        "bij"
+      ],
+      "example": {
+        "nl": "Ik werk bij een bedrijf.",
+        "en": "I work at a company."
+      },
+      "build": [
+        [
+          "Ik",
+          "werk",
+          "bij",
+          "een",
+          "bedrijf"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Werkt de persoon bij een bedrijf?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "werken-aan",
+      "frame": "werken aan",
+      "en": "to work on",
+      "scene": "werken-aan-project",
+      "contrast": "werken-bij",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik werk aan een project.",
+        "en": "I am working on a project."
+      },
+      "build": [
+        [
+          "Ik",
+          "werk",
+          "aan",
+          "een",
+          "project"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Werkt de persoon aan een project?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "klaar-met",
+      "frame": "klaar met",
+      "en": "done with",
+      "scene": "klaar-met-werk",
+      "contrast": "klaar-voor",
+      "focus": [
+        "met"
+      ],
+      "example": {
+        "nl": "Ik ben klaar met het werk.",
+        "en": "I am done with work."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "klaar",
+          "met",
+          "het",
+          "werk"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Is het werk af?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "klaar-voor",
+      "frame": "klaar voor",
+      "en": "ready for",
+      "scene": "klaar-voor-feest",
+      "contrast": "klaar-met",
+      "focus": [
+        "voor"
+      ],
+      "example": {
+        "nl": "Ik ben klaar voor het feest.",
+        "en": "I am ready for the party."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "klaar",
+          "voor",
+          "het",
+          "feest"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat de persoon naar een feest?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "vragen-aan",
+      "frame": "vragen aan",
+      "en": "to ask a person",
+      "scene": "vragen-aan-persoon",
+      "contrast": "vragen-om",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik vraag het aan mijn vriend.",
+        "en": "I ask my friend."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "het",
+          "aan",
+          "mijn",
+          "vriend"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Stelt de persoon een vraag aan iemand?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "vragen-om",
+      "frame": "vragen om",
+      "en": "to ask for",
+      "scene": "vragen-om-hulp",
+      "contrast": "vragen-aan",
+      "focus": [
+        "om"
+      ],
+      "example": {
+        "nl": "Ik vraag om hulp.",
+        "en": "I am asking for help."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "om",
+          "hulp"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Vraagt de persoon om iets?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "vragen-naar",
+      "frame": "vragen naar",
+      "en": "to ask about",
+      "scene": "vragen-naar-informatie",
+      "contrast": "vragen-aan",
+      "focus": [
+        "naar"
+      ],
+      "example": {
+        "nl": "Ik vraag naar de weg.",
+        "en": "I am asking for directions."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "naar",
+          "de",
+          "weg"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Vraagt de persoon naar informatie?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "zorgen-voor",
+      "frame": "zorgen voor",
+      "en": "to care for",
+      "scene": "zorgen-voor-kind",
+      "contrast": null,
+      "focus": [
+        "voor"
+      ],
+      "example": {
+        "nl": "Zij zorgt voor het kind.",
+        "en": "She is caring for the child."
+      },
+      "build": [
+        [
+          "Zij",
+          "zorgt",
+          "voor",
+          "het",
+          "kind"
+        ],
+        [
+          "Wij",
+          "zorgen",
+          "voor",
+          "het",
+          "kind"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zorgt de volwassene voor het kind?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "meedoen-met",
+      "frame": "meedoen met",
+      "en": "to join in",
+      "scene": "meedoen-met-team",
+      "contrast": null,
+      "focus": [
+        "mee",
+        "met"
+      ],
+      "example": {
+        "nl": "Ik doe mee met het spel.",
+        "en": "I am joining in the game."
+      },
+      "build": [
+        [
+          "Ik",
+          "doe",
+          "mee",
+          "met",
+          "het",
+          "spel"
+        ],
+        [
+          "Wij",
+          "doen",
+          "mee",
+          "met",
+          "het",
+          "spel"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Doet de persoon mee met de groep?",
+          "answer": true
+        }
+      ],
+      "separable": true,
+      "prefix": "mee"
+    },
+    {
+      "id": "zoeken-naar",
+      "frame": "zoeken naar",
+      "en": "to search for",
+      "scene": "zoeken-naar-sleutels",
+      "contrast": null,
+      "focus": [
+        "naar"
+      ],
+      "example": {
+        "nl": "Ik zoek naar mijn sleutels.",
+        "en": "I am searching for my keys."
+      },
+      "build": [
+        [
+          "Ik",
+          "zoek",
+          "naar",
+          "mijn",
+          "sleutels"
+        ],
+        [
+          "Zij",
+          "zoekt",
+          "naar",
+          "haar",
+          "sleutels"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zoekt de persoon naar de sleutels?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "last-hebben-van",
+      "frame": "last hebben van",
+      "en": "to be bothered by",
+      "scene": "last-hebben-van-lawaai",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Ik heb last van lawaai.",
+        "en": "I am bothered by noise."
+      },
+      "build": [
+        [
+          "Ik",
+          "heb",
+          "last",
+          "van",
+          "lawaai"
+        ],
+        [
+          "Wij",
+          "hebben",
+          "last",
+          "van",
+          "lawaai"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Hebben de mensen last van het lawaai?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "blij-met",
+      "frame": "blij met",
+      "en": "happy with",
+      "scene": "blij-met-cadeau",
+      "contrast": "blij-voor",
+      "focus": [
+        "met"
+      ],
+      "example": {
+        "nl": "Ik ben blij met het cadeau.",
+        "en": "I am happy with the gift."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "blij",
+          "met",
+          "het",
+          "cadeau"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over een ding?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "blij-voor",
+      "frame": "blij voor",
+      "en": "happy for",
+      "scene": "blij-voor-vriend",
+      "contrast": "blij-met",
+      "focus": [
+        "voor"
+      ],
+      "example": {
+        "nl": "Ik ben blij voor mijn vriend.",
+        "en": "I am happy for my friend."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "blij",
+          "voor",
+          "mijn",
+          "vriend"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over een persoon?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "boos-op",
+      "frame": "boos op",
+      "en": "angry at",
+      "scene": "boos-op-collega",
+      "contrast": "boos-over",
+      "focus": [
+        "op"
+      ],
+      "example": {
+        "nl": "Ik ben boos op mijn collega.",
+        "en": "I am angry at my colleague."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "boos",
+          "op",
+          "mijn",
+          "collega"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Is de persoon boos op iemand?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "boos-over",
+      "frame": "boos over",
+      "en": "angry about",
+      "scene": "boos-over-rommel",
+      "contrast": "boos-op",
+      "focus": [
+        "over"
+      ],
+      "example": {
+        "nl": "Ik ben boos over de rommel.",
+        "en": "I am angry about the mess."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "boos",
+          "over",
+          "de",
+          "rommel"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat het over een ding of een situatie?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "klagen-over",
+      "frame": "klagen over",
+      "en": "to complain about",
+      "scene": "klagen-over-apparaat",
+      "contrast": "klagen-bij",
+      "focus": [
+        "over"
+      ],
+      "example": {
+        "nl": "Ik klaag over de wasmachine.",
+        "en": "I am complaining about the washing machine."
+      },
+      "build": [
+        [
+          "Ik",
+          "klaag",
+          "over",
+          "de",
+          "wasmachine"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Klaagt de persoon over een ding?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "klagen-bij",
+      "frame": "klagen bij",
+      "en": "to complain to",
+      "scene": "klagen-bij-balie",
+      "contrast": "klagen-over",
+      "focus": [
+        "bij"
+      ],
+      "example": {
+        "nl": "Ik klaag bij de balie.",
+        "en": "I am complaining at the desk."
+      },
+      "build": [
+        [
+          "Ik",
+          "klaag",
+          "bij",
+          "de",
+          "balie"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Klaagt de persoon bij een persoon of bedrijf?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "houden-van",
+      "frame": "houden van",
+      "en": "to love",
+      "scene": "houden-van-hond",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Ik houd van mijn hond.",
+        "en": "I love my dog."
+      },
+      "build": [
+        [
+          "Ik",
+          "houd",
+          "van",
+          "mijn",
+          "hond"
+        ],
+        [
+          "Zij",
+          "houdt",
+          "van",
+          "haar",
+          "hond"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Houdt de persoon van de hond?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "zin-in",
+      "frame": "zin in",
+      "en": "to feel like",
+      "scene": "zin-in-koffie",
+      "contrast": null,
+      "focus": [
+        "in"
+      ],
+      "example": {
+        "nl": "Ik heb zin in koffie.",
+        "en": "I feel like coffee."
+      },
+      "build": [
+        [
+          "Ik",
+          "heb",
+          "zin",
+          "in",
+          "koffie"
+        ],
+        [
+          "Wij",
+          "hebben",
+          "zin",
+          "in",
+          "koffie"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Heeft de persoon zin in koffie?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "bang-voor",
+      "frame": "bang voor",
+      "en": "afraid of",
+      "scene": "bang-voor-hond",
+      "contrast": null,
+      "focus": [
+        "voor"
+      ],
+      "example": {
+        "nl": "Ik ben bang voor de hond.",
+        "en": "I am afraid of the dog."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "bang",
+          "voor",
+          "de",
+          "hond"
+        ],
+        [
+          "Zij",
+          "is",
+          "bang",
+          "voor",
+          "de",
+          "hond"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Is de persoon bang voor de hond?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "zeggen-tegen",
+      "frame": "zeggen tegen",
+      "en": "to say to",
+      "scene": "zeggen-tegen-persoon",
+      "contrast": "vertellen-aan",
+      "focus": [
+        "tegen"
+      ],
+      "example": {
+        "nl": "Ik zeg iets tegen mijn buur.",
+        "en": "I say something to my neighbour."
+      },
+      "build": [
+        [
+          "Ik",
+          "zeg",
+          "iets",
+          "tegen",
+          "mijn",
+          "buur"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zegt de persoon iets tegen iemand?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "vertellen-aan",
+      "frame": "vertellen aan",
+      "en": "to tell to",
+      "scene": "vertellen-aan-kind",
+      "contrast": "zeggen-tegen",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Zij vertelt een verhaal aan het kind.",
+        "en": "She tells a story to the child."
+      },
+      "build": [
+        [
+          "Zij",
+          "vertelt",
+          "een",
+          "verhaal",
+          "aan",
+          "het",
+          "kind"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Vertelt de persoon een verhaal aan het kind?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "praten-tegen",
+      "frame": "praten tegen",
+      "en": "to talk at",
+      "scene": "praten-tegen-muur",
+      "contrast": "praten-met",
+      "focus": [
+        "tegen"
+      ],
+      "example": {
+        "nl": "Hij praat tegen iemand die niet luistert.",
+        "en": "He talks at someone who is not listening."
+      },
+      "build": [
+        [
+          "Hij",
+          "praat",
+          "tegen",
+          "iemand",
+          "die",
+          "niet",
+          "luistert"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Luistert de andere persoon?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "beschermen-tegen",
+      "frame": "beschermen tegen",
+      "en": "to protect against",
+      "scene": "beschermen-tegen-regen",
+      "contrast": "komen-door",
+      "focus": [
+        "tegen"
+      ],
+      "example": {
+        "nl": "De paraplu beschermt mij tegen de regen.",
+        "en": "The umbrella protects me against the rain."
+      },
+      "build": [
+        [
+          "De",
+          "paraplu",
+          "beschermt",
+          "mij",
+          "tegen",
+          "de",
+          "regen"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Blijft de persoon droog?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "komen-door",
+      "frame": "komen door",
+      "en": "to be caused by",
+      "scene": "komen-door-regen",
+      "contrast": "beschermen-tegen",
+      "focus": [
+        "door"
+      ],
+      "example": {
+        "nl": "Dat komt door de regen.",
+        "en": "That is because of the rain."
+      },
+      "build": [
+        [
+          "Dat",
+          "komt",
+          "door",
+          "de",
+          "regen"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Is de regen de oorzaak?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "komen-uit",
+      "frame": "komen uit",
+      "en": "to come from",
+      "scene": "komen-uit-huis",
+      "contrast": null,
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "Hij komt uit het huis.",
+        "en": "He comes out of the house."
+      },
+      "build": [
+        [
+          "Hij",
+          "komt",
+          "uit",
+          "het",
+          "huis"
+        ],
+        [
+          "Zij",
+          "komt",
+          "uit",
+          "het",
+          "huis"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Komt de persoon naar buiten?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "kijken-door",
+      "frame": "kijken door",
+      "en": "to look through",
+      "scene": "kijken-door-sleutelgat",
+      "contrast": "kijken-uit",
+      "focus": [
+        "door"
+      ],
+      "example": {
+        "nl": "Hij kijkt door het sleutelgat.",
+        "en": "He looks through the keyhole."
+      },
+      "build": [
+        [
+          "Hij",
+          "kijkt",
+          "door",
+          "het",
+          "sleutelgat"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon door een klein gat?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "kijken-uit",
+      "frame": "kijken uit",
+      "en": "to look out of",
+      "scene": "kijken-uit-raam",
+      "contrast": "kijken-door",
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "Zij kijkt uit het raam.",
+        "en": "She looks out of the window."
+      },
+      "build": [
+        [
+          "Zij",
+          "kijkt",
+          "uit",
+          "het",
+          "raam"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon naar buiten?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "doorgeven-aan",
+      "frame": "doorgeven aan",
+      "en": "to pass on to",
+      "scene": "doorgeven-aan-buur",
+      "contrast": null,
+      "focus": [
+        "door",
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik geef het boek door aan mijn buur.",
+        "en": "I pass the book on to my neighbour."
+      },
+      "build": [
+        [
+          "Ik",
+          "geef",
+          "het",
+          "boek",
+          "door",
+          "aan",
+          "mijn",
+          "buur"
+        ],
+        [
+          "Zij",
+          "geeft",
+          "het",
+          "boek",
+          "door",
+          "aan",
+          "haar",
+          "buur"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Geeft de persoon het boek aan iemand anders?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "doorbrengen-met",
+      "frame": "doorbrengen met",
+      "en": "to spend time with",
+      "scene": "doorbrengen-met-vriend",
+      "contrast": null,
+      "focus": [
+        "door",
+        "met"
+      ],
+      "example": {
+        "nl": "Ik breng de middag door met mijn vriend.",
+        "en": "I spend the afternoon with my friend."
+      },
+      "build": [
+        [
+          "Ik",
+          "breng",
+          "de",
+          "middag",
+          "door",
+          "met",
+          "mijn",
+          "vriend"
+        ],
+        [
+          "Zij",
+          "brengt",
+          "de",
+          "middag",
+          "door",
+          "met",
+          "haar",
+          "vriend"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Brengt de persoon tijd met iemand door?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "stappen-uit",
+      "frame": "stappen uit",
+      "en": "to get out of",
+      "scene": "stappen-uit-bus",
+      "contrast": null,
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "Hij stapt uit de bus.",
+        "en": "He gets out of the bus."
+      },
+      "build": [
+        [
+          "Hij",
+          "stapt",
+          "uit",
+          "de",
+          "bus"
+        ],
+        [
+          "Zij",
+          "stapt",
+          "uit",
+          "de",
+          "bus"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Stapt de persoon uit het voertuig?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "drinken-uit",
+      "frame": "drinken uit",
+      "en": "to drink from",
+      "scene": "drinken-uit-glas",
+      "contrast": null,
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "Zij drinkt uit het glas.",
+        "en": "She drinks from the glass."
+      },
+      "build": [
+        [
+          "Zij",
+          "drinkt",
+          "uit",
+          "het",
+          "glas"
+        ],
+        [
+          "Hij",
+          "drinkt",
+          "uit",
+          "het",
+          "glas"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Drinkt de persoon uit een glas?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "vallen-uit",
+      "frame": "vallen uit",
+      "en": "to fall out of",
+      "scene": "vallen-uit-tas",
+      "contrast": null,
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "De boeken vallen uit de tas.",
+        "en": "The books fall out of the bag."
+      },
+      "build": [
+        [
+          "De",
+          "boeken",
+          "vallen",
+          "uit",
+          "de",
+          "tas"
+        ],
+        [
+          "Het",
+          "boek",
+          "valt",
+          "uit",
+          "de",
+          "tas"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Vallen de dingen uit de tas?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "letten-op",
+      "frame": "letten op",
+      "en": "to pay attention to, to watch out for",
+      "scene": "letten-op-verkeer",
+      "contrast": null,
+      "focus": [
+        "op"
+      ],
+      "example": {
+        "nl": "Ik let op het verkeer.",
+        "en": "I pay attention to the traffic."
+      },
+      "build": [
+        [
+          "Ik",
+          "let",
+          "op",
+          "het",
+          "verkeer"
+        ],
+        [
+          "Zij",
+          "let",
+          "op",
+          "het",
+          "verkeer"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon goed naar het verkeer?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "bezig-zijn-met",
+      "frame": "bezig zijn met",
+      "en": "to be busy with, to be working on",
+      "scene": "bezig-zijn-met-klus",
+      "contrast": null,
+      "focus": [
+        "met"
+      ],
+      "example": {
+        "nl": "Ik ben bezig met een klus.",
+        "en": "I am busy with a job."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "bezig",
+          "met",
+          "een",
+          "klus"
+        ],
+        [
+          "Zij",
+          "is",
+          "bezig",
+          "met",
+          "een",
+          "klus"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Werkt de persoon aan een taak?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "geinteresseerd-in",
+      "frame": "geïnteresseerd zijn in",
+      "en": "to be interested in",
+      "scene": "geinteresseerd-in-onderwerp",
+      "contrast": null,
+      "focus": [
+        "in"
+      ],
+      "example": {
+        "nl": "Zij is geïnteresseerd in het onderwerp.",
+        "en": "She is interested in the subject."
+      },
+      "build": [
+        [
+          "Zij",
+          "is",
+          "geïnteresseerd",
+          "in",
+          "het",
+          "onderwerp"
+        ],
+        [
+          "Hij",
+          "is",
+          "geïnteresseerd",
+          "in",
+          "het",
+          "onderwerp"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Wil de persoon meer weten over het onderwerp?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "tevreden-zijn-met",
+      "frame": "tevreden zijn met",
+      "en": "to be satisfied with",
+      "scene": "tevreden-zijn-met-resultaat",
+      "contrast": null,
+      "focus": [
+        "met"
+      ],
+      "example": {
+        "nl": "Ik ben tevreden met het resultaat.",
+        "en": "I am satisfied with the result."
+      },
+      "build": [
+        [
+          "Ik",
+          "ben",
+          "tevreden",
+          "met",
+          "het",
+          "resultaat"
+        ],
+        [
+          "Zij",
+          "is",
+          "tevreden",
+          "met",
+          "het",
+          "resultaat"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Is de persoon blij met het resultaat?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "bedanken-voor",
+      "frame": "bedanken voor",
+      "en": "to thank for",
+      "scene": "bedanken-voor-de-uitnodiging",
+      "contrast": "feliciteren-met",
+      "focus": [
+        "voor"
+      ],
+      "example": {
+        "nl": "Ik bedank haar voor de uitnodiging.",
+        "en": "I thank her for the invitation."
+      },
+      "build": [
+        [
+          "Ik",
+          "bedank",
+          "haar",
+          "voor",
+          "de",
+          "uitnodiging"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Bedankt de persoon de ander?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "feliciteren-met",
+      "frame": "feliciteren met",
+      "en": "to congratulate on",
+      "scene": "feliciteren-met-de-verjaardag",
+      "contrast": "bedanken-voor",
+      "focus": [
+        "met"
+      ],
+      "example": {
+        "nl": "Ik feliciteer haar met haar verjaardag.",
+        "en": "I congratulate her on her birthday."
+      },
+      "build": [
+        [
+          "Ik",
+          "feliciteer",
+          "haar",
+          "met",
+          "haar",
+          "verjaardag"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Geeft de persoon haar een felicitatie?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "uitnodigen-voor",
+      "frame": "uitnodigen voor",
+      "en": "to invite to",
+      "scene": "uitnodigen-voor-het-feest",
+      "contrast": null,
+      "focus": [
+        "uit",
+        "voor"
+      ],
+      "example": {
+        "nl": "Ik nodig mijn vriend uit voor het feest.",
+        "en": "I invite my friend to the party."
+      },
+      "build": [
+        [
+          "Ik",
+          "nodig",
+          "mijn",
+          "vriend",
+          "uit",
+          "voor",
+          "het",
+          "feest"
+        ],
+        [
+          "Zij",
+          "nodigt",
+          "haar",
+          "vriend",
+          "uit",
+          "voor",
+          "het",
+          "feest"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Vraagt de persoon of de ander komt?",
+          "answer": true
+        }
+      ]
+    }
+  ],
+  "levels": [
+    {
+      "id": "wachten",
+      "name": "wachten",
+      "frames": [
+        "wachten-op",
+        "wachten-voor"
+      ]
+    },
+    {
+      "id": "denken",
+      "name": "denken",
+      "frames": [
+        "denken-aan",
+        "denken-over"
+      ],
+      "extra": [
+        "eraan-denken"
+      ]
+    },
+    {
+      "id": "praten",
+      "name": "praten",
+      "frames": [
+        "praten-met",
+        "praten-over",
+        "praten-tegen"
+      ]
+    },
+    {
+      "id": "ophouden",
+      "name": "ophouden",
+      "frames": [
+        "ophouden-met"
+      ]
+    },
+    {
+      "id": "uitkijken",
+      "name": "uitkijken",
+      "frames": [
+        "uitkijken-naar",
+        "uitkijken-voor"
+      ]
+    },
+    {
+      "id": "werken",
+      "name": "werken",
+      "frames": [
+        "werken-bij",
+        "werken-aan"
+      ]
+    },
+    {
+      "id": "klaar",
+      "name": "klaar",
+      "frames": [
+        "klaar-met",
+        "klaar-voor"
+      ]
+    },
+    {
+      "id": "vragen",
+      "name": "vragen",
+      "frames": [
+        "vragen-aan",
+        "vragen-om",
+        "vragen-naar"
+      ]
+    },
+    {
+      "id": "zorgen",
+      "name": "zorgen",
+      "frames": [
+        "zorgen-voor"
+      ]
+    },
+    {
+      "id": "meedoen",
+      "name": "meedoen",
+      "frames": [
+        "meedoen-met"
+      ]
+    },
+    {
+      "id": "zoeken",
+      "name": "zoeken",
+      "frames": [
+        "zoeken-naar"
+      ]
+    },
+    {
+      "id": "last-hebben",
+      "name": "last hebben",
+      "frames": [
+        "last-hebben-van"
+      ]
+    },
+    {
+      "id": "blij",
+      "name": "blij",
+      "frames": [
+        "blij-met",
+        "blij-voor"
+      ]
+    },
+    {
+      "id": "boos",
+      "name": "boos",
+      "frames": [
+        "boos-op",
+        "boos-over"
+      ]
+    },
+    {
+      "id": "klagen",
+      "name": "klagen",
+      "frames": [
+        "klagen-over",
+        "klagen-bij"
+      ]
+    },
+    {
+      "id": "houden",
+      "name": "houden van",
+      "frames": [
+        "houden-van"
+      ]
+    },
+    {
+      "id": "zin",
+      "name": "zin in",
+      "frames": [
+        "zin-in"
+      ]
+    },
+    {
+      "id": "bang",
+      "name": "bang",
+      "frames": [
+        "bang-voor"
+      ]
+    },
+    {
+      "id": "zeggen",
+      "name": "zeggen",
+      "frames": [
+        "zeggen-tegen",
+        "vertellen-aan"
+      ]
+    },
+    {
+      "id": "beschermen",
+      "name": "beschermen",
+      "frames": [
+        "beschermen-tegen",
+        "komen-door"
+      ]
+    },
+    {
+      "id": "kijken",
+      "name": "kijken",
+      "frames": [
+        "kijken-door",
+        "kijken-uit"
+      ]
+    },
+    {
+      "id": "bedanken",
+      "name": "bedanken",
+      "frames": [
+        "bedanken-voor",
+        "feliciteren-met"
+      ]
+    },
+    {
+      "id": "komen-uit",
+      "name": "komen uit",
+      "frames": [
+        "komen-uit"
+      ]
+    },
+    {
+      "id": "doorgeven",
+      "name": "doorgeven",
+      "frames": [
+        "doorgeven-aan"
+      ]
+    },
+    {
+      "id": "doorbrengen",
+      "name": "doorbrengen",
+      "frames": [
+        "doorbrengen-met"
+      ]
+    },
+    {
+      "id": "stappen-uit",
+      "name": "stappen uit",
+      "frames": [
+        "stappen-uit"
+      ]
+    },
+    {
+      "id": "drinken-uit",
+      "name": "drinken uit",
+      "frames": [
+        "drinken-uit"
+      ]
+    },
+    {
+      "id": "vallen-uit",
+      "name": "vallen uit",
+      "frames": [
+        "vallen-uit"
+      ]
+    },
+    {
+      "id": "letten-op",
+      "name": "letten op",
+      "frames": [
+        "letten-op"
+      ]
+    },
+    {
+      "id": "bezig-zijn",
+      "name": "bezig zijn",
+      "frames": [
+        "bezig-zijn-met"
+      ]
+    },
+    {
+      "id": "geinteresseerd",
+      "name": "geïnteresseerd",
+      "frames": [
+        "geinteresseerd-in"
+      ]
+    },
+    {
+      "id": "tevreden",
+      "name": "tevreden",
+      "frames": [
+        "tevreden-zijn-met"
+      ]
+    },
+    {
+      "id": "uitnodigen",
+      "name": "uitnodigen",
+      "frames": [
+        "uitnodigen-voor"
+      ]
+    }
+  ]
+}

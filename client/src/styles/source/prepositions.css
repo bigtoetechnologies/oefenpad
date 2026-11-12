@@ -1,0 +1,296 @@
+/* Voorzetselpaden — eigen laag boven assets/site/oefenpad.css.
+   Alleen tokens: --kobalt, --oranje, --inkt, --papier, --raster,
+   --raster-zacht, --grijs, --goed, --fout, --rand, --rand-hard.
+
+   De tekeningen zijn transparante maskers (zie game-art.md): het beeld
+   is geen <img> maar een kobalt vlak met het penseel als masker. Zo
+   wisselt de kleur mee met het thema zonder tweede bestand. */
+
+:root{ --ruimte:clamp(12px,1.8vw,20px); }
+
+*,*::before,*::after{box-sizing:border-box}
+body{background:var(--papier);color:var(--inkt)}
+
+/* Op een scherm dat hoog genoeg is vult het spel het scherm: kop, spel
+   en voet blijven staan en alleen wat niet past scrolt binnen het
+   spelvlak. Zo duwt een lange stap de voet niet onder de vouw. Een
+   scherm lager dan 520 px (telefoon op zijn kant) valt terug op gewoon
+   pagina-scrollen; daar is simpelweg geen ruimte voor een stap. */
+@media(min-height:520px){
+  .vel{height:100dvh;min-height:0}
+  .app-container{min-height:0;overflow-y:auto}
+}
+
+.app-container{
+  width:100%;max-width:720px;flex:1;display:flex;flex-direction:column;align-items:stretch;
+  margin:0 auto;padding:0 0 24px;position:relative;
+}
+
+/* ---------- kop ---------- */
+.spel-kop{margin-bottom:0;padding-top:clamp(14px,1.8vw,26px)}
+.spel-kop .stand{gap:8px}
+.btn-icon{
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:var(--papier);color:var(--inkt);border:0;border-radius:0;font-size:18px;font-weight:900;
+  text-decoration:none;cursor:pointer;box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.btn-icon:hover{background:var(--raster-zacht)}
+.tagline{margin:0;max-width:46ch;text-align:right}
+.spel-kop + .app-container{margin-top:clamp(14px,1.8vw,26px)}
+
+/* ---------- de vier stappen ----------
+   Oranje is de stap die je nu doet. Verder geen oranje op dit scherm. */
+.stoppen{
+  display:grid;grid-auto-flow:column;grid-auto-columns:1fr;list-style:none;margin:0 0 var(--ruimte);
+  padding:0;border:var(--rand-hard);
+}
+.stoppen li{
+  padding:9px 6px;font-size:12px;font-weight:800;letter-spacing:-.01em;text-align:center;
+  border-right:var(--rand);color:var(--grijs);
+}
+.stoppen li:last-child{border-right:0}
+.stoppen li[data-staat="geweest"]{color:var(--inkt)}
+.stoppen li[data-staat="nu"]{background:var(--oranje);color:#fff;border-color:var(--oranje)}
+
+/* ---------- het vlak ----------
+   Beeld links, antwoord rechts op een breed scherm; gestapeld op een
+   telefoon. Zo past één stap in één scherm zonder scrollen. */
+.scherm{flex:1;min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:center;justify-content:safe center}
+.vraag{
+  font-size:clamp(20px,2.6vw,30px);font-weight:900;letter-spacing:-.035em;line-height:1.12;
+  margin:0;
+}
+.app-container > .vraag{margin-bottom:8px}
+.chunk{border-bottom:3px solid var(--kobalt)}
+.uitleg{font-size:14px;font-weight:500;color:var(--grijs);margin:0}
+.uitleg em{font-style:normal;font-weight:700;color:var(--inkt)}
+
+.vlak{display:flex;flex-direction:column;gap:var(--ruimte);flex:1;min-height:0}
+.beeldvak{height:min(38vh,300px);display:flex;align-items:center;justify-content:center}
+.beeldvak .beeld{height:100%;width:100%}
+.tekst{display:flex;flex-direction:column;gap:var(--ruimte);min-height:0}
+.tekst > *{margin:0}
+
+/* ---------- het beeld ----------
+   Een kobalt vlak met de tekening als masker. Het masker heeft de
+   verhouding van de tekening (512 x 763). */
+.beeld{
+  width:100%;aspect-ratio:512/763;
+  background:var(--kobalt);
+  -webkit-mask-image:var(--beeld);mask-image:var(--beeld);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:contain;mask-size:contain;
+}
+
+/* ---------- ontdek ---------- */
+.zin{font-size:clamp(19px,2.4vw,27px);font-weight:800;letter-spacing:-.03em;text-align:center}
+.betekenis{font-size:14px;color:var(--grijs);text-align:center}
+.vorm{
+  font-size:13px;color:var(--grijs);text-align:center;
+  border-top:var(--rand);padding-top:8px;
+}
+
+/* ---------- kies het beeld ---------- */
+.keuzes{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
+}
+.keuze{
+  position:relative;display:block;padding:6px;border:0;background:var(--papier);cursor:pointer;
+  box-shadow:inset 0 0 0 2px var(--raster);transition:box-shadow .15s,background .15s;
+}
+.keuze:hover:not(:disabled){box-shadow:inset 0 0 0 2px var(--inkt);background:var(--raster-zacht)}
+.keuze:disabled{cursor:default}
+.keuze:focus-visible{outline:3px solid var(--oranje);outline-offset:2px}
+.keuze.goed{box-shadow:inset 0 0 0 4px var(--goed)}
+.keuze.fout{box-shadow:inset 0 0 0 4px var(--fout)}
+.keuze.fout .beeld{opacity:.35}
+
+/* ---------- klopt de zin? ---------- */
+.kloptzin{
+  font-size:clamp(21px,2.8vw,32px);font-weight:900;letter-spacing:-.035em;line-height:1.2;
+  text-align:center;border-top:var(--rand);border-bottom:var(--rand);padding:var(--ruimte) 0;
+}
+.tweeknoppen{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.keuze-knop{
+  padding:16px 10px;border:0;font:inherit;font-weight:900;font-size:clamp(15px,1.6vw,18px);
+  letter-spacing:-.02em;cursor:pointer;background:var(--papier);color:var(--inkt);
+  box-shadow:inset 0 0 0 2px var(--inkt);transition:background .15s;
+}
+.keuze-knop:hover:not(:disabled){background:var(--raster-zacht)}
+.keuze-knop:focus-visible{outline:3px solid var(--oranje);outline-offset:2px}
+.keuze-knop:disabled{cursor:default}
+.keuze-knop.goed{background:var(--goed);color:#fff;box-shadow:none}
+.keuze-knop.fout{background:var(--fout);color:#fff;box-shadow:none}
+
+/* ---------- terugkoppeling ---------- */
+.terug{
+  margin:var(--ruimte) 0 0;padding:12px 14px;border-left:6px solid var(--kobalt);
+  background:var(--raster-zacht);font-size:15px;font-weight:600;line-height:1.4;
+}
+.terug.goed{border-left-color:var(--goed)}
+.terug.fout{border-left-color:var(--fout)}
+.terug b{font-weight:800}
+.terug .concept{
+  display:block;margin-top:10px;border-top:var(--rand);padding-top:10px;
+  font-size:14px;font-weight:500;color:var(--grijs);
+}
+.terug .concept-rij{display:flex;gap:8px;margin-top:8px}
+.terug .concept-rij button{
+  font:inherit;font-size:13px;font-weight:800;padding:7px 16px;cursor:pointer;
+  background:var(--papier);color:var(--inkt);border:0;box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.terug .concept-rij button:hover{background:var(--raster)}
+.terug .concept-rij button.goed{background:var(--goed);color:#fff;box-shadow:none}
+.terug .concept-rij button.fout{background:var(--fout);color:#fff;box-shadow:none}
+
+/* ---------- bouw de zin ---------- */
+.rij{
+  display:flex;flex-wrap:wrap;gap:6px;min-height:56px;align-items:center;
+  border:var(--rand-hard);padding:8px;
+}
+.rij.leeg{color:var(--grijs);font-size:13px;font-weight:600;border-style:dashed;border-color:var(--raster)}
+.rij.goed{border-color:var(--goed);box-shadow:inset 0 0 0 2px var(--goed)}
+.rij.fout{border-color:var(--fout);box-shadow:inset 0 0 0 2px var(--fout)}
+.rij .punt{font-weight:900;font-size:20px;margin-left:-2px}
+.pool{display:flex;flex-wrap:wrap;gap:6px}
+.tegel{
+  font:inherit;font-size:clamp(15px,1.7vw,18px);font-weight:800;letter-spacing:-.02em;
+  padding:10px 14px;cursor:pointer;background:var(--papier);color:var(--inkt);border:0;
+  box-shadow:inset 0 0 0 2px var(--inkt);transition:background .15s,opacity .15s;
+}
+.tegel:hover{background:var(--raster-zacht)}
+.tegel:focus-visible{outline:3px solid var(--oranje);outline-offset:2px}
+.tegel.geplaatst{background:var(--kobalt);color:var(--papier);box-shadow:none}
+.tegel.vast{opacity:.25;pointer-events:none}
+
+/* ---------- knoppen onderaan ---------- */
+.verder{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.terug .verder{margin-top:12px}
+.verder .knop{background:var(--kobalt);color:var(--papier);box-shadow:none}
+.verder .knop:hover{background:var(--kobalt-diep)}
+.verder .teller{font-size:13px;font-weight:700;color:var(--grijs);font-variant-numeric:tabular-nums}
+
+@keyframes terug-op{from{transform:translateY(14px);opacity:.65}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+  .terug{animation:terug-op .18s ease-out}
+}
+
+/* ---------- niveaukeuze ---------- */
+.niveaus{display:grid;gap:0;border-top:var(--rand-hard);border-left:var(--rand-hard);margin-bottom:var(--ruimte)}
+.niveau{
+  display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer;
+  background:var(--papier);color:var(--inkt);border:0;border-right:var(--rand-hard);
+  border-bottom:var(--rand-hard);font:inherit;text-align:left;transition:background .15s;
+}
+.niveau:hover{background:var(--raster-zacht)}
+.niveau:focus-visible{outline:3px solid var(--oranje);outline-offset:-3px}
+.niveau .nr{font-size:22px;font-weight:900;color:var(--kobalt);letter-spacing:-.04em;min-width:1.4em}
+.niveau .wat{font-size:clamp(17px,1.9vw,21px);font-weight:800;letter-spacing:-.03em;flex:1}
+.niveau .onder{display:block;font-size:13px;font-weight:500;color:var(--grijs);margin-top:2px}
+.niveau .gehaald{font-size:13px;font-weight:800;color:var(--kobalt);font-variant-numeric:tabular-nums;white-space:nowrap}
+
+/* Een dicht niveau is geen knop: het houdt zijn plek in de rij, maar zegt wat
+   er moet gebeuren voordat het opengaat. Het slot is een beeld, geen woord. */
+.niveau.is-dicht{cursor:default;background:var(--papier);color:var(--zacht)}
+.niveau.is-dicht:hover{background:var(--papier)}
+.niveau.is-dicht .nr{color:var(--zacht)}
+.niveau.is-dicht .wat{font-weight:700}
+.niveau .slot{font-size:18px;filter:grayscale(1);opacity:.7}
+.niveau .dicht-link{font-size:13px;font-weight:800;color:var(--kobalt);white-space:nowrap}
+
+/* ---------- klaar ---------- */
+.klaar{text-align:center;padding-top:var(--ruimte)}
+.klaar .score{font-size:clamp(52px,9vw,92px);font-weight:900;letter-spacing:-.055em;line-height:.9;color:var(--kobalt)}
+.klaar .van{font-size:14px;font-weight:700;color:var(--grijs);margin:6px 0 var(--ruimte)}
+.klaar .knop{margin:0 auto}
+
+/* ---------- breed scherm: beeld en antwoord naast elkaar ----------
+   Het beeld bepaalt de hoogte en de tekst staat ernaast, zodat een
+   stap in één scherm past in plaats van onder elkaar te scrollen. */
+@media(min-width:800px) and (min-height:520px){
+  .app-container{max-width:min(1040px,100%)}
+  .vlak{
+    display:grid;
+    grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+    grid-template-areas:"beeld tekst" "beeld verder";
+    column-gap:clamp(22px,2.6vw,40px);row-gap:var(--ruimte);
+    height:auto;flex:none;
+  }
+  .beeldvak,.keuzes{grid-area:beeld;grid-row:1 / span 2;align-self:center;min-height:0;width:100%}
+  .beeldvak{height:min(52vh,430px)}
+  /* Met het antwoord erbij wordt de rechterkolom hoog; het beeld geeft
+     dan ruimte zodat de stap als geheel blijft passen. */
+  .vlak--na .beeldvak{height:min(32vh,300px)}
+  .tekst{grid-area:tekst;align-self:center}
+  .verder{grid-area:verder;align-self:start}
+  .kloptzin{font-size:clamp(22px,2.2vw,30px)}
+  .niveaus{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ---------- smal scherm: het antwoord komt van onderen op ----------
+   Als een blad over het spel heen, zodat het beeld en de zin blijven
+   staan en er niets wegscrollt achter de onderrand. */
+@media(max-width:799px), (max-height:519px){
+  /* Het beeld neemt de ruimte die de tekst overlaat, zodat een stap het
+     scherm vult in plaats van er een gat onder te laten. Het krimpt
+     wanneer de tekst groeit (een gebouwde zin, een antwoordstrook);
+     daardoor hoeft er niets te scrollen. */
+  .vlak{justify-content:center;justify-content:safe center}
+  /* De antwoordstrook staat vast onderaan; de stap houdt die hoogte vrij
+     zodat de zin en het beeld erboven blijven staan in plaats van er
+     achter te verdwijnen. De hoogte komt uit de strook zelf. */
+  .vlak--na{padding-bottom:calc(var(--terug-hoogte,0px) + 4px)}
+  /* Tijdens het lezen van het antwoord is de teller overbodig; de
+     stappenbalk bovenaan zegt al waar je bent. Alleen de teller van de
+     stap zelf, niet de Volgende-knop in de antwoordstrook. */
+  .vlak--na > .verder{display:none}
+  /* De tekst krimpt nooit: wat je leest blijft staan, het beeld geeft
+     ruimte. */
+  .vlak--na .tekst{flex-shrink:0}
+  .beeldvak{height:auto;flex:1 1 180px;min-height:0;max-height:min(52vh,430px)}
+  .keuzes{align-content:center}
+  /* Zodra het antwoord er is, dekt de strook de onderkant af. Het beeld
+     levert die ruimte in, zodat de zin erboven leesbaar blijft. */
+  .vlak--na .beeldvak{height:min(24vh,200px);flex:0 1 auto}
+  .beeldvak{transition:height .18s ease}
+  .vlak .terug{
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    max-height:min(68dvh,520px);overflow-y:auto;
+    margin:0;padding:14px clamp(14px,4vw,22px) calc(14px + env(safe-area-inset-bottom));
+    border-left:0;border-top:6px solid var(--kobalt);
+    background:var(--papier);box-shadow:0 -1px 0 var(--rand);
+  }
+  .vlak .terug.goed{border-top-color:var(--goed);border-left-color:var(--goed)}
+  .vlak .terug.fout{border-top-color:var(--fout);border-left-color:var(--fout)}
+}
+
+/* ---------- korte laptop: iets compacter ----------
+   Onder de 820 px hoogte is de marge weg. De kop, de zin en de
+   antwoordstrook leveren elk een paar pixels in, zodat ook het antwoord
+   met de controlevraag op één scherm past. */
+@media(min-width:800px) and (max-height:820px){
+  .spel-kop{padding-top:10px}
+  .kloptzin{padding:10px 0}
+  .vlak .terug{padding:10px 12px}
+  .terug .concept{margin-top:8px;padding-top:8px}
+}
+
+/* ---------- korte telefoon: de strook met de controlevraag ----------
+   Antwoorden én een controlevraag kosten zoveel hoogte dat er boven de
+   strook geen beeld meer past. De zin is dan het belangrijkste; het
+   beeld is al gezien. */
+@media(max-width:799px) and (max-height:760px){
+  .vlak--na:has(.concept-rij) .beeldvak,
+  .vlak--na:has(.concept-rij) .keuzes{display:none}
+}
+
+@media(max-width:560px){
+  .stoppen li{font-size:10.5px;padding:8px 3px}
+  .keuzes{gap:6px}
+  .keuze{padding:4px}
+  .tagline{display:none}
+  .zin{font-size:clamp(18px,5vw,22px)}
+  .kloptzin{font-size:clamp(19px,5.4vw,24px)}
+  .vraag{font-size:clamp(18px,5vw,22px)}
+}
