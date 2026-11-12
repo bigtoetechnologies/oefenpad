@@ -134,11 +134,10 @@ def read_plan(path: Path) -> list[dict]:
         def handle_starttag(self, tag, attrs):
             a = dict(attrs)
             cls = a.get("class", "")
-            if tag == "section" and "batch" in cls.split():
+            if tag == "article" and "kaart" in cls.split():
+                self._flush()
                 m = SET.search(a.get("data-batch", ""))
                 self.set = m.group(1) if m else None
-            elif tag == "article" and "kaart" in cls.split():
-                self._flush()
                 self.cur = {
                     "set": self.set,
                     "number": int(a.get("data-row") or 0),
@@ -163,7 +162,7 @@ def read_plan(path: Path) -> list[dict]:
                 self._flush()
             elif tag == "article" and self.cur is not None:
                 self._flush()
-                if self.cur["set"] and self.cur["file"] != ".png":
+                if self.cur["file"] != ".png":
                     self.rows.append(self.cur)
                 self.cur = None
 
@@ -171,11 +170,30 @@ def read_plan(path: Path) -> list[dict]:
             if self.field:
                 self.buf.append(data)
 
+    text = path.read_text(encoding="utf-8")
     parser = Cards()
-    parser.feed(path.read_text(encoding="utf-8"))
+    parser.feed(text)
     parser.close()
-    parser.rows.sort(key=lambda r: (r["set"], r["number"]))
-    return parser.rows
+
+    # Set membership comes from the page's batch index, which lists each
+    # batch and its files in order. The cards themselves sit in contrast
+    # clusters, not batch order.
+    sets = {}
+    for blk in re.finditer(r'<div class="batchrij" data-batch="(?P<b>[^"]*)">'
+                           r'(?P<body>.*?)</div>', text, re.S):
+        m = SET.search(blk.group("b"))
+        if not m:
+            continue
+        for f in re.findall(r"<code>([^<]+\.png)</code>", blk.group("body")):
+            sets[f] = m.group(1)
+
+    rows = []
+    for r in parser.rows:
+        r["set"] = sets.get(r["file"]) or r.get("set")
+        if r["set"]:
+            rows.append(r)
+    rows.sort(key=lambda r: (r["set"], r["number"]))
+    return rows
 
 
 def pending_card(row: dict, art: Path, cache: dict, shipped: dict, by_scene: dict,

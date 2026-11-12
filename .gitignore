@@ -12,3 +12,7 @@ server/**/dataprotection-keys/
 
 # React game app
 client/node_modules/
+
+# Python bytecode
+__pycache__/
+*.pyc
