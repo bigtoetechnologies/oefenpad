@@ -30,8 +30,14 @@ FIELDS = [
     ("Avoid", "avoid"),
     ("Pair / note", "note"),
     ("Tests", "tests"),
+    ("Example", "voorbeeld-nl"),
+    ("Build", "bouw"),
+    ("Check question", "controlevraag"),
+    ("Alt text", "alt"),
     ("Verdict", "verdict_why"),
 ]
+# fields whose markup is more than escaped text
+RICH = {"voorbeeld-nl", "bouw", "controlevraag"}
 LABEL = {cls: lab for lab, cls in FIELDS}
 ORDER = [cls for _, cls in FIELDS]
 
@@ -86,17 +92,47 @@ def esc(v):
     return H.escape(str(v), quote=True)
 
 
+def render(cls, value):
+    """The inner HTML for one field."""
+    if cls == "voorbeeld-nl":
+        nl = esc(value.get("nl", "")) if isinstance(value, dict) else esc(value)
+        en = esc(value.get("en", "")) if isinstance(value, dict) else ""
+        return nl + (f'<br><span class="voorbeeld-en">{en}</span>' if en else "")
+    if cls == "controlevraag":
+        if isinstance(value, dict):
+            q = esc(value.get("question", ""))
+            a = "Ja" if value.get("answer") else "Nee"
+            return f'{q} <strong class="antwoord">{a}</strong>'
+        return esc(value)
+    return esc(value)
+
+
 def set_field(body, cls, value):
-    """Replace a dd, or insert the dt/dd pair in canonical order."""
+    """Replace a dd, or insert the dt/dd pair in canonical order.
+
+    `bouw` may be a list: the learner gets one sentence per variant, so each
+    becomes its own dt/dd pair, as the shipped cards have.
+    """
+    if cls == "bouw" and isinstance(value, (list, tuple)):
+        body = re.sub(r'<dt>Build</dt><dd class="bouw">.*?</dd>', "", body, flags=re.S)
+        block = "".join(f'<dt>Build</dt><dd class="bouw">{esc(v)}</dd>' for v in value)
+        return insert_block(body, "bouw", block)
+
     pat = re.compile(r'(<dd class="%s">).*?(</dd>)' % cls, re.S)
     if pat.search(body):
-        return pat.sub(lambda m: m.group(1) + esc(value) + m.group(2), body, count=1)
-    block = f'<dt>{LABEL[cls]}</dt><dd class="{cls}">{esc(value)}</dd>'
+        return pat.sub(lambda m: m.group(1) + render(cls, value) + m.group(2),
+                       body, count=1)
+    block = f'<dt>{LABEL[cls]}</dt><dd class="{cls}">{render(cls, value)}</dd>'
+    return insert_block(body, cls, block)
+
+
+def insert_block(body, cls, block):
     after = ORDER[:ORDER.index(cls)]
     for prev in reversed(after):
-        m = re.search(r'<dd class="%s">.*?</dd>' % prev, body, re.S)
-        if m:
-            return body[:m.end()] + block + body[m.end():]
+        ms = list(re.finditer(r'<dd class="%s">.*?</dd>' % prev, body, re.S))
+        if ms:
+            end = ms[-1].end()          # after the LAST one: Build repeats
+            return body[:end] + block + body[end:]
     m = re.search(r"<dl>", body)
     if m:
         return body[:m.end()] + block + body[m.end():]
@@ -134,8 +170,17 @@ def patch(fixes, dry=False):
             whole, body = m.group(0), m.group("body")
             new = body
             for cls in ORDER:
-                if cls in fix and str(fix[cls]).strip():
-                    new = set_field(new, cls, str(fix[cls]).strip())
+                if cls not in fix:
+                    continue
+                val = fix[cls]
+                if isinstance(val, (dict, list, tuple)):
+                    if not val:
+                        continue
+                else:
+                    val = str(val).strip()
+                    if not val:
+                        continue
+                new = set_field(new, cls, val)
             if "chunk" in fix and str(fix["chunk"]).strip():
                 new = re.sub(r'(<h3 class="chunk">).*?(</h3>)',
                              lambda x: x.group(1) + esc(fix["chunk"].strip()) + x.group(2),
