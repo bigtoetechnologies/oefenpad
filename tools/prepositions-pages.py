@@ -28,8 +28,9 @@ FIELDS = [
     ("Scene", "scene"),
     ("Must read", "must"),
     ("Avoid", "avoid"),
-    ("Paar / notitie", "note"),
-    ("Toetst", "tests"),
+    ("Pair / note", "note"),
+    ("Tests", "tests"),
+    ("Verdict", "verdict_why"),
 ]
 LABEL = {cls: lab for lab, cls in FIELDS}
 ORDER = [cls for _, cls in FIELDS]
@@ -37,6 +38,13 @@ ORDER = [cls for _, cls in FIELDS]
 CARD = re.compile(r'<article class="kaart[^"]*"[^>]*data-id="(?P<id>[^"]+)"[^>]*>'
                   r'(?P<body>.*?)</article>', re.S)
 BADGES = {"needs_redraw": ('<span class="redraw">redraw</span>', "redraw")}
+
+# the commissioning verdict: is this card worth paying an artist for
+VERDICTS = {
+    "keep": ('<span class="v-keep">keep</span>', "v-keep"),
+    "weak": ('<span class="v-weak">weak</span>', "v-weak"),
+    "drop": ('<span class="v-drop">drop</span>', "v-drop"),
+}
 
 
 def pages():
@@ -67,6 +75,9 @@ def read_cards(path):
             if d:
                 rec[cls] = text_of(d.group(1))
         rec["needs_redraw"] = 'class="redraw"' in body
+        vm = re.search(r'data-verdict="([a-z]+)"', src[m.start():m.start() + 400])
+        if vm:
+            rec["verdict"] = vm.group(1)
         out[rec["id"]] = rec
     return out
 
@@ -135,6 +146,22 @@ def patch(fixes, dry=False):
                              new, count=1, flags=re.S)
             if fix.get("needs_redraw"):
                 new = set_badge(new, "needs_redraw")
+            v = str(fix.get("verdict", "")).lower()
+            if v in VERDICTS:
+                markup, cls = VERDICTS[v]
+                for _, oc in VERDICTS.values():
+                    new = re.sub(r'<span class="%s">[^<]*</span>' % oc, "", new)
+                fm = re.search(r'<p class="vlaggen">(.*?)</p>', new, re.S)
+                if fm:
+                    new = new[:fm.end() - 4] + markup + new[fm.end() - 4:]
+                why = str(fix.get("verdict_why", "")).strip()
+                if why:
+                    new = set_field(new, "verdict_why", why)
+            if v in VERDICTS:
+                head = whole[:whole.index(">") + 1]
+                nh = re.sub(r'\s*data-verdict="[a-z]*"', "", head)
+                nh = nh[:-1] + f' data-verdict="{v}">'
+                whole = nh + whole[len(head):]
             if new == body:
                 return whole
             changed += 1
