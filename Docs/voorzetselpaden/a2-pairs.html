@@ -80,6 +80,14 @@ details.geschrapt summary{cursor:pointer;color:var(--rood);font-weight:700}
 details.bijlage{margin-top:16px}
 details.bijlage summary{cursor:pointer;color:var(--kobalt);font-weight:700}
 details.bijlage details{margin:10px 0 0 14px}
+.batchrij{margin:12px 0 0}
+.batchrij h3{margin:0;font-size:15px}
+.batchrij h3 span{color:var(--grijs);font-weight:400}
+.batchrij ol{margin:4px 0 0;padding-left:26px;font-size:13px;columns:2;column-gap:28px}
+.batchrij li{margin:1px 0;break-inside:avoid}
+.batchrij code{font-size:12px}
+.verouderd{margin:10px 0 0;padding:9px 11px;border-radius:8px;background:#fdf4e6;
+  font-size:13px;max-width:85ch}
 </style>
 </head>
 <body>
@@ -96,6 +104,10 @@ voorzetsel met zijn eigen voorbeelden.</p>
 <span>0 geschrapt</span></div>
 <nav class="banden"><a href="index.html">overzicht</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="a2-pairs.html" class="hier">A2 pairs (4b)</a><a href="a2-plus.html">A2+</a><a href="b1.html">B1</a><a href="b1-plus.html">B1+</a><a href="b2.html">B2</a></nav>
 <details class="prompt plan"><summary>Plan en kaders (uit het oude Markdown-bestand)</summary>
+<p class="verouderd">Let op: de stijlregels hieronder zijn verouderd. Ze beschrijven de
+oude brush-pen schets. De geldende stijl staat in <code>base-prompt.txt</code> naast dit
+bestand. Wat hieronder wel geldt is de opzet: de kaders, de uitsluitingen en de
+frame-regel.</p>
 <pre class="planprose"># Voorzetselpaden — image plan, A2 pair enhancement (batch 4b)
 
 Status: 14 of 16 drawn, not yet in the game, 10 November 2026; two scenes were
@@ -370,317 +382,28 @@ yet. Remaining work, in order:
 <p class="contrastnoot">ook elders: <a href="b1-plus.html">zorgen over</a> <span>(B1+)</span>, <a href="a0.html">zorgen voor</a> <span>(A0)</span></p>
 <div class="chunkgroep" data-chunk="zorgen om" data-examples="1"><h3>zorgen om</h3><p class="telling"><span class="tekort">1 voorbeeld — minstens 3 nodig</span></p><div class="kaarten"><article class="kaart sev-wrong-dutch" data-id="zorgen-om-persoon" data-band="a2-pairs" data-kind="frame" data-row="3" data-status="needed" data-severity="wrong-dutch"><p class="geenbeeld">nog niet getekend</p><h3 class="chunk">zorgen om</h3><p class="gloss">to worry about</p><p class="vlaggen"><span>needed</span></p><dl><dt>Scene</dt><dd class="scene">one person sitting alone at a table, one hand holding a small framed photo of another person up in front of them, the other hand pressed to the forehead; brow drawn down, shoulders hunched. The photo and the worried face are the clearest marks.</dd><dt>Must read</dt><dd class="must">worrying about someone.</dd><dt>Avoid</dt><dd class="avoid">an adult helping a child into a coat (that is the shipped zorgen voor scene); a second person in the room; a phone; a readable photo.</dd><dt>Paar / notitie</dt><dd class="note">Pairs shipped <code>zorgen-voor-kind</code>; same verb, two prepositions</dd></dl><div class="oordeel wrong-dutch" data-severity="wrong-dutch"><span class="kop">fout Nederlands</span><p class="wat">The bare verb is not how Dutch says it. The file admits this and keeps it. A2+ #76 uses the correct <code>zich zorgen maken over</code>.</p><p class="fix"><code>zich zorgen maken om</code>. Scene: parent in the foreground, hand at the mouth, looking at a child in bed with a cloth on the forehead. A photo plus a hand on the forehead reads as <code>missen</code> or grief.</p></div><p class="id">zorgen-om-persoon.png · rij 3 · herkomst Docs/prepositions-art-a2-pairs.md:116 (git)</p></article></div></div>
 </section>
-<section class="sectiekop"><h2>Grok-prompts</h2><p>Elke batch zoals hij aan de generator gegeven wordt, woord voor woord. De kaarten hierboven staan per contrastset, dus niet in batchvolgorde; deze blokken houden de batch heel.</p></section>
-<details class="bijlage"><summary>2 promptblokken</summary>
-<details class="prompt"><summary>Set A — images 1–11</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or
-attachment. Everything you need is in this message.
-
-TASK
-Generate eleven separate images for a Dutch practice game called
-Voorzetselpaden, and nothing else. Each image is a wordless clue for one Dutch
-verb or adjective plus a fixed preposition. The learner sees the image,
-recognises the everyday situation, and connects it to the chunk. A Dutch speaker
-must be able to name the situation from the drawing alone, without a caption.
-The Dutch and English below are context for you only. None of those words may
-appear in the image.
-
-STYLE — FOLLOW EXACTLY
-- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
-  chisel marker, thick pressure-varying strokes with dry-brush streaks and
-  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
-  photorealistic, 3D or soft-shaded.
-- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
-  colour or full colour.
-- Plain pure white background (#FFFFFF). No off-white, cream, beige or grey
-  background. The white paper is intentional; it becomes transparency later.
-  No gradients, soft shading, stippling, drop shadows, glow, blur, grain or
-  paper texture. No border, frame, card, rounded rectangle or white plate.
-- Contour plus hatching. Important edges are drawn twice, a few pixels off,
-  and corners may stay open. Strokes taper: thinner at the ends, wider at the
-  point of pressure. At 784 px wide: most lines 4–8 px, boldest contours
-  9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5). Ink covers
-  14–22% of the canvas, up to 27% for a scene with two figures and furniture.
-- Hatching is wanted: quick, dense, directional strokes on the shadow side of
-  folds and under objects, with white paper still visible between them. Never
-  cross-hatch.
-- Fill hair only, plus one or two small accents. Clothing, furniture and
-  background stay white inside the contour. Never build the scene from filled
-  silhouettes.
-- One idea per image. The scene spans 90–100% of the width and the person
-  35–55%; it may touch the left or right edge, with paper kept at top and
-  bottom. Must still be nameable at 64 × 64 px.
-- People have adult proportions, profile or three-quarter view, facing right:
-  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
-  finger lines. No cartoon faces, open mouths or motion lines.
-- Posture carries the meaning. The drawing is a clue for an adult learner,
-  not a cartoon for children.
-- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
-  readable signs anywhere. A sign in a scene must be blank. Blank speech
-  bubbles are allowed as shapes, but they contain no letters, words or
-  punctuation. Do not use a question mark.
-- No decorative background: no plants, posters, wallpaper, shelves,
-  landscapes or scenery that is not the idea.
-- No culture-specific or Dutch souvenir imagery: no windmills, clogs, tulips,
-  canals, cheese or similar. Everyday objects are fine.
-- If the scene needs a caption to be understood, simplify or redraw it.
-
-FORMAT
-- Eleven separate images, one per subject.
-- 2:3 portrait, for example 1024 × 1536 px. All eleven use the same camera,
-  the same scale and the same line weight, because they sit side by side in one
-  game.
-- Raster PNG. Do not produce SVG code.
-- No contact sheet, grid, collage or extra images. If you must return them one
-  at a time, return them in the numbered order.
-- Do not put the filename, a number or any label inside the image. Put the
-  exact filename in the chat text above or below each image.
-
-THE ELEVEN SUBJECTS, IN ORDER
-
-1. betalen-voor-kassa.png — Dutch chunk: betalen voor (to pay for).
-   Scene: one person at a plain shop counter, one hand pushing a few coins
-   across the counter toward a single plain object standing on it, eyes on the
-   object. The counter edge is a strong horizontal line.
-   Must read: paying for the thing on the counter.
-   Avoid: a bank card or terminal (that is #2); a queue of people; price tags
-   or readable figures.
-
-2. betalen-met-kaart.png — Dutch chunk: betalen met (to pay with).
-   Scene: the same counter, the same person and the same object as #1; one
-   hand holds a plain bank card up to a small terminal at the counter, the
-   other hand rests on the object.
-   Must read: paying by a means, a card.
-   Avoid: coins lying on the counter (that is #1); a phone; readable card
-   details or a signature.
-
-3. kiezen-voor-taart.png — Dutch chunk: kiezen voor (to choose).
-   Scene: one person stands square-on at a plain table with an apple on the
-   left and a small plain cake on the right, the two side by side at the same
-   distance from the person; one hand is closed on the cake and the apple
-   stays untouched. Head and shoulders are turned to the cake. The two objects
-   and the one gripped hand are the clearest marks.
-   Must read: choosing the cake over the apple.
-   Avoid: a bite taken out of the cake, a cut slice or a plate (those read as
-   eating); coins, a card or price tags (that is betalen voor, #1 in this set);
-   a shop counter or till; candles; two objects of the same kind; a second
-   person. A single cake with the hands only reaching for it is zin in (A0–A2
-   #85), not this frame.
-
-4. stappen-in-bus.png — Dutch chunk: stappen in (to get into).
-   Scene: one person with one foot on the step of a bus and one hand on the
-   open door, body turned inward toward the dark interior, caught mid-movement.
-   Must read: getting onto a bus.
-   Avoid: stepping down out of the bus (that is the shipped stappen uit scene);
-   a bus shelter; a ticket or a driver.
-
-5. beginnen-met-hardlopen.png — Dutch chunk: beginnen met (to start with).
-   Scene: one person crouched at a front door, tying a running shoe; a plain
-   water bottle stands beside them on the ground.
-   Must read: starting an activity.
-   Avoid: a cigarette or ashtray (that is the shipped ophouden met scene); a
-   finish line, a stopwatch or a race number.
-
-6. meespelen-met-band.png — Dutch chunk: meespelen met (to play along with).
-   Scene: three people standing in a loose half-circle, each holding a simple
-   instrument — one guitar shape, one small hand drum; the third person leans in
-   to join the group. One shared blank shape floats between them, like a chord.
-   Must read: playing along with other people.
-   Avoid: a board game or a table (that is the shipped meedoen scene); a stage
-   with curtains; readable notes or a music stand with text.
-
-7. kijken-naar-schilderij.png — Dutch chunk: kijken naar (to look at).
-   Scene: one person standing still with both hands behind the back, facing a
-   framed blank picture hanging on a plain wall. The frame is the second mass.
-   Must read: looking at something on a wall.
-   Avoid: a window, a keyhole or a mirror; a museum crowd; anything readable in
-   the frame.
-
-8. trots-op-kind.png — Dutch chunk: trots op (proud of).
-   Scene: one adult standing tall with one hand flat on the chest, looking down
-   at a child who holds up a blank sheet of paper with both hands. The adult&#x27;s
-   upright posture carries the meaning.
-   Must read: pride in another person.
-   Avoid: a trophy or cup (that is the shipped blij voor scene); a wrapped gift
-   (that is the shipped feliciteren scene); a medal or a rosette.
-
-9. geloven-in-spiegel.png — Dutch chunk: geloven in (to believe in).
-   Scene: one person standing straight in front of a tall plain mirror, one
-   hand on the chest, chin up, meeting their own reflection. The mirror frame
-   is the second mass.
-   Must read: believing in yourself.
-   Avoid: praying hands or a church; a book on a table (that is the shipped
-   geïnteresseerd scene); a second person.
-
-10. genieten-van-zon.png — Dutch chunk: genieten van (to enjoy).
-    Scene: one person sitting on a simple bench, leaning back with the face
-    tilted up and eyes closed, a small plain sun in the upper corner; hands
-    resting open on the knees.
-    Must read: savouring something pleasant.
-    Avoid: a cup of coffee and a slice of cake (that is the shipped zin in
-    scene); two people (that is the shipped doorbrengen scene); a beach or a
-    landscape.
-
-11. gaan-naar-gebouw.png — Dutch chunk: gaan naar (to go to).
-    Scene: one person seen from behind, bag in hand, walking up a short path
-    toward the open door of a plain building. The doorway is ahead of them and
-    the back view is essential.
-    Must read: heading towards a place.
-    Avoid: stepping out of a door towards the viewer (that is the shipped komen
-    uit scene); a bus or a car (that is #4); readable signs.
-
-CONTRAST PAIRS — DESIGN THESE TOGETHER
-1 and 2 are a pair: same counter, same person, same object. Change only the
-payment — coins pushed across the counter versus a card held to a terminal.
-3 is a single: it has no partner in this set.
-4 pairs with the shipped stappen uit scene: same bus, same camera, opposite
-direction. Do not redraw the shipped scene.
-7 joins the shipped kijken door and kijken uit scenes as a set of three. It
-must not reuse their openings — no keyhole, no window.
-5 pairs with the shipped ophouden met scene as an opposite. 6 pairs with the
-shipped meedoen scene and must not reuse its table-game composition.
-8, 9, 10 and 11 each pair with a shipped frame (bang voor, geïnteresseerd in,
-last hebben van, komen uit). They do not share a camera, so the pair is
-conceptual: keep scale and line weight identical so the cards still sit
-together.
-Draw each pair in the same sitting. At 64 × 64 px the two images must be
-clearly different, and neither may suggest the other&#x27;s chunk.
-
-VALIDATION BEFORE YOU FINISH
-For every image:
-- Downscale mentally or actually to 64 × 64: is the idea still nameable?
-- Is it cobalt only, with no orange, no grey and no second blue?
-- Is there any text, letter, number, logo, emoji, punctuation, arrow or
-  readable sign? Remove it.
-- Are the strokes tapered filled shapes, not uniform outlines?
-- Is the background plain white, with no border, card, shadow or scenery?
-- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
-Then check the pairs side by side. If either image in a pair suggests the
-other&#x27;s chunk, redraw it before delivering.
-
-When finished, list the eleven filenames and name any image whose 64 px
-silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
-<details class="prompt"><summary>Set B — images 1–5</summary><pre class="promptblok">You have no file access. Do not ask to read any repository, document, image or
-attachment. Everything you need is in this message.
-
-TASK
-Generate five separate images for a Dutch practice game called Voorzetselpaden,
-and nothing else. Each image is a wordless clue for one Dutch verb plus a fixed
-preposition. The learner sees the image, recognises the everyday situation, and
-connects it to the chunk. A Dutch speaker must be able to name the situation
-from the drawing alone, without a caption. The Dutch and English below are
-context for you only. None of those words may appear in the image.
-
-STYLE — FOLLOW EXACTLY
-- Bold brush-pen sketch in the hand of the Oefenpad logo: a wide-nib brush or
-  chisel marker, thick pressure-varying strokes with dry-brush streaks and
-  split bristles. Not pencil, fine-liner, flat vector, cartoon, stock,
-  photorealistic, 3D or soft-shaded.
-- Cobalt blue #2B50C8 only. No orange, red, green, second blue, grey, skin
-  colour or full colour.
-- Plain pure white background (#FFFFFF). No off-white, cream, beige or grey
-  background. The white paper is intentional; it becomes transparency later.
-  No gradients, soft shading, stippling, drop shadows, glow, blur, grain or
-  paper texture. No border, frame, card, rounded rectangle or white plate.
-- Contour plus hatching. Important edges are drawn twice, a few pixels off,
-  and corners may stay open. Strokes taper: thinner at the ends, wider at the
-  point of pressure. At 784 px wide: most lines 4–8 px, boldest contours
-  9–14 px, hatching 2–4 px (at 1024 px wide: 5–10, 12–18, 3–5). Ink covers
-  14–22% of the canvas, up to 27% for a scene with two figures and furniture.
-- Hatching is wanted: quick, dense, directional strokes on the shadow side of
-  folds and under objects, with white paper still visible between them. Never
-  cross-hatch.
-- Fill hair only, plus one or two small accents. Clothing, furniture and
-  background stay white inside the contour. Never build the scene from filled
-  silhouettes.
-- One idea per image. The scene spans 90–100% of the width and the person
-  35–55%; it may touch the left or right edge, with paper kept at top and
-  bottom. Must still be nameable at 64 × 64 px.
-- People have adult proportions, profile or three-quarter view, facing right:
-  brow, one eye, nose line, mouth, ear, filled hair. Hands have a thumb and
-  finger lines. No cartoon faces, open mouths or motion lines.
-- Posture carries the meaning. The drawing is a clue for an adult learner,
-  not a cartoon for children.
-- No text, letters, numbers, words, logos, emoji, punctuation, arrows or
-  readable signs anywhere. A sign in a scene must be blank. Blank speech
-  bubbles are allowed as shapes, but they contain no letters, words or
-  punctuation. Do not use a question mark.
-- No decorative background: no plants, posters, wallpaper, shelves,
-  landscapes or scenery that is not the idea.
-- No culture-specific or Dutch souvenir imagery: no windmills, clogs, tulips,
-  canals, cheese or similar. Everyday objects are fine.
-- If the scene needs a caption to be understood, simplify or redraw it.
-
-FORMAT
-- Five separate images, one per subject.
-- 2:3 portrait, for example 1024 × 1536 px. All five use the same camera, the
-  same scale and the same line weight, because they sit side by side in one
-  game.
-- Raster PNG. Do not produce SVG code.
-- No contact sheet, grid, collage or extra images. If you must return them one
-  at a time, return them in the numbered order.
-- Do not put the filename, a number or any label inside the image. Put the
-  exact filename in the chat text above or below each image.
-
-THE FIVE SUBJECTS, IN ORDER
-
-1. rekenen-op-vriend.png — Dutch chunk: rekenen op (to rely on).
-   Scene: two people; one steps onto a low flat plank laid over a puddle and
-   holds the other&#x27;s outstretched hand. The helper stands firm with both feet
-   planted and takes the weight.
-   Must read: depending on someone&#x27;s support.
-   Avoid: a calculator, coins or numbers; an umbrella; a crowd.
-
-2. rekenen-met-regen.png — Dutch chunk: rekenen met (to reckon with).
-   Scene: one person beside a bicycle, looking up at a single grey cloud, one
-   hand folding a raincoat into a bag hanging on the handlebars.
-   Must read: allowing for something in advance.
-   Avoid: rain actually falling on the person (that is the shipped komen door
-   scene); an open umbrella (that is the shipped beschermen scene); a calendar.
-
-3. zorgen-om-persoon.png — Dutch chunk: zorgen om (to worry about).
-   Scene: one person sitting alone at a table, one hand holding a small framed
-   photo of another person up in front of them, the other hand pressed to the
-   forehead; brow drawn down, shoulders hunched. The photo and the worried face
-   are the clearest marks.
-   Must read: worrying about someone.
-   Avoid: an adult helping a child into a coat (that is the shipped zorgen voor
-   scene); a second person in the room; a phone; a readable photo.
-
-4. passen-op-kind.png — Dutch chunk: passen op (to look after).
-   Scene: one person sitting on a low stool beside a small child who plays on
-   the floor with a plain block. The adult watches the child, not the room.
-   Must read: minding a child.
-   Avoid: watching a road or a car (that is the shipped letten op scene); a pram
-   with nobody attending it; a dog.
-
-5. krijgen-van-vriend.png — Dutch chunk: krijgen van (to get from).
-   Scene: two people facing each other; one places a plain small object into
-   the other&#x27;s two cupped hands. The receiver&#x27;s cupped hands are the main mass.
-   Must read: receiving something from someone.
-   Avoid: a box passed over a fence (that is the shipped doorgeven scene); a
-   wrapped gift with a ribbon; money or a wallet.
-
-CONTRAST PAIRS — DESIGN THESE TOGETHER
-1 and 2 are a same-verb pair. They do not share a scene, so keep scale and line
-weight identical; the shared verb is the lesson.
-3, 4 and 5 each pair with a shipped frame — zorgen voor, letten op and
-doorgeven aan — and must not reuse those compositions or cameras.
-Draw 1 and 2 in the same sitting so the two rekenen cards sit together.
-
-VALIDATION BEFORE YOU FINISH
-For every image:
-- Downscale mentally or actually to 64 × 64: is the idea still nameable?
-- Is it cobalt only, with no orange, no grey and no second blue?
-- Is there any text, letter, number, logo, emoji, punctuation, arrow or
-  readable sign? Remove it.
-- Are the strokes tapered filled shapes, not uniform outlines?
-- Is the background plain white, with no border, card, shadow or scenery?
-- Does the scene span the frame without shrinking into a card, with the person 35–55% of the width?
-Then check 1 and 2 side by side. If either suggests the other&#x27;s chunk, redraw
-it before delivering.
-
-When finished, list the five filenames and name any image whose 64 px
-silhouette is still ambiguous. Do not add any image that is not on this list.</pre></details>
+<section class="sectiekop"><h2>Batches</h2><p>Welke scenes in welke batch zitten, en in welke volgorde. De vaste prompt staat in <code>base-prompt.txt</code> naast dit bestand; plak die, vul <em>THE SCENES</em> met de Scene-, Must read- en Avoid-regels van de kaarten hieronder, en noem de zip naar de batch.</p></section>
+<details class="bijlage"><summary>2 batches</summary>
+<div class="batchrij" data-batch="Set A — images 1–11"><h3>Set A — images 1–11 <span>(11)</span></h3><ol>
+<li><code>betalen-voor-kassa.png</code> — betalen voor</li>
+<li><code>betalen-met-kaart.png</code> — betalen met</li>
+<li><code>kiezen-voor-taart.png</code> — kiezen voor</li>
+<li><code>stappen-in-bus.png</code> — stappen in</li>
+<li><code>beginnen-met-hardlopen.png</code> — beginnen met</li>
+<li><code>meespelen-met-band.png</code> — meespelen met</li>
+<li><code>kijken-naar-schilderij.png</code> — kijken naar</li>
+<li><code>trots-op-kind.png</code> — trots op</li>
+<li><code>geloven-in-spiegel.png</code> — geloven in</li>
+<li><code>genieten-van-zon.png</code> — genieten van</li>
+<li><code>gaan-naar-gebouw.png</code> — gaan naar</li>
+</ol></div>
+<div class="batchrij" data-batch="Set B — images 1–5"><h3>Set B — images 1–5 <span>(5)</span></h3><ol>
+<li><code>rekenen-op-vriend.png</code> — rekenen op</li>
+<li><code>rekenen-met-regen.png</code> — rekenen met</li>
+<li><code>zorgen-om-persoon.png</code> — zorgen om</li>
+<li><code>passen-op-kind.png</code> — passen op</li>
+<li><code>krijgen-van-vriend.png</code> — krijgen van</li>
+</ol></div>
 </details>
 </main>
 <script>
