@@ -12,9 +12,7 @@ writes changes back into the same HTML, leaving every other byte alone.
 `patch` takes {"fixes": [{"id": ..., "scene": ..., ...}]} and edits the card
 with that data-id, in place, on whichever page holds it. Fields it does not
 mention are untouched. A field the card does not yet have is inserted in the
-canonical order below. A card marked owner_edit is refused unless the fix
-says "force": true, so a hand-written scene is never silently replaced.
-"""
+canonical order below. """
 import argparse
 import html as H
 import json
@@ -38,8 +36,7 @@ ORDER = [cls for _, cls in FIELDS]
 
 CARD = re.compile(r'<article class="kaart[^"]*"[^>]*data-id="(?P<id>[^"]+)"[^>]*>'
                   r'(?P<body>.*?)</article>', re.S)
-BADGES = {"needs_redraw": ('<span class="redraw">opnieuw tekenen</span>', "redraw"),
-          "owner_edit": ('<span class="eigenaar">door de eigenaar</span>', "eigenaar")}
+BADGES = {"needs_redraw": ('<span class="redraw">redraw</span>', "redraw")}
 
 
 def pages():
@@ -69,7 +66,6 @@ def read_cards(path):
             d = re.search(r'<dd class="%s">(.*?)</dd>' % cls, body, re.S)
             if d:
                 rec[cls] = text_of(d.group(1))
-        rec["owner_edit"] = 'class="eigenaar"' in body
         rec["needs_redraw"] = 'class="redraw"' in body
         out[rec["id"]] = rec
     return out
@@ -110,7 +106,7 @@ def patch(fixes, dry=False):
     want = {}
     for f in fixes:
         want.setdefault(f["id"], {}).update(f)
-    touched, changed, refused, notfound = {}, 0, [], list(want)
+    touched, changed, notfound = {}, 0, list(want)
 
     for path in pages():
         src = path.read_text(encoding="utf-8")
@@ -125,9 +121,6 @@ def patch(fixes, dry=False):
             if cid in notfound:
                 notfound.remove(cid)
             whole, body = m.group(0), m.group("body")
-            if 'class="eigenaar"' in body and not fix.get("force"):
-                refused.append(cid)
-                return whole
             new = body
             for cls in ORDER:
                 if cls in fix and str(fix[cls]).strip():
@@ -140,9 +133,8 @@ def patch(fixes, dry=False):
                 new = re.sub(r'(<p class="gloss">).*?(</p>)',
                              lambda x: x.group(1) + esc(fix["gloss"].strip()) + x.group(2),
                              new, count=1, flags=re.S)
-            for key in ("needs_redraw", "owner_edit"):
-                if fix.get(key):
-                    new = set_badge(new, key)
+            if fix.get("needs_redraw"):
+                new = set_badge(new, "needs_redraw")
             if new == body:
                 return whole
             changed += 1
@@ -154,7 +146,7 @@ def patch(fixes, dry=False):
             path.write_text(out, encoding="utf-8")
         if hits:
             touched[path.name] = hits
-    return touched, changed, refused, notfound
+    return touched, changed, notfound
 
 
 def main():
@@ -189,12 +181,10 @@ def main():
         sys.exit("patch needs a fixes file")
     data = json.loads(Path(a.file).read_text(encoding="utf-8"))
     fixes = data.get("fixes") or data.get("briefs") or data
-    touched, changed, refused, notfound = patch(fixes, a.dry_run)
+    touched, changed, notfound = patch(fixes, a.dry_run)
     print(f"{'would change' if a.dry_run else 'changed'}: {changed} cards")
     for name, ids in touched.items():
         print(f"  {name:16s} {len(ids)}")
-    if refused:
-        print(f"REFUSED, owner_edit (pass force:true to override): {refused}")
     if notfound:
         print(f"id not found on any page: {notfound}")
 
