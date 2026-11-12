@@ -33,11 +33,13 @@ FIELDS = [
     ("Example", "voorbeeld-nl"),
     ("Build", "bouw"),
     ("Check question", "controlevraag"),
+    ("Contrast", "contrast"),
+    ("Pronominal adverb", "pronominaal"),
     ("Alt text", "alt"),
     ("Verdict", "verdict_why"),
 ]
 # fields whose markup is more than escaped text
-RICH = {"voorbeeld-nl", "bouw", "controlevraag"}
+RICH = {"voorbeeld-nl", "bouw", "controlevraag", "pronominaal"}
 LABEL = {cls: lab for lab, cls in FIELDS}
 ORDER = [cls for _, cls in FIELDS]
 
@@ -98,6 +100,10 @@ def render(cls, value):
         nl = esc(value.get("nl", "")) if isinstance(value, dict) else esc(value)
         en = esc(value.get("en", "")) if isinstance(value, dict) else ""
         return nl + (f'<br><span class="voorbeeld-en">{en}</span>' if en else "")
+    if cls == "pronominaal":
+        nl = esc(value.get("nl", "")) if isinstance(value, dict) else esc(value)
+        en = esc(value.get("en", "")) if isinstance(value, dict) else ""
+        return nl + (f'<br><span class="pronominaal-en">{en}</span>' if en else "")
     if cls == "controlevraag":
         if isinstance(value, dict):
             q = esc(value.get("question", ""))
