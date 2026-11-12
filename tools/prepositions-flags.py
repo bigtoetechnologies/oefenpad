@@ -53,8 +53,23 @@ def main():
     tally = Counter(d["action"] for d in decisions)
 
     # Dutch corrections first, through the page tool, so one writer owns the markup
-    fixes = [{k: v for k, v in d.items() if k in FIELDS or k == "id"}
-             for d in decisions if d.get("action") == "fix"]
+    def as_fix(d):
+        """Accept the fields at the top level or nested under `fields`."""
+        src = dict(d.get("fields") or {})
+        src.update({k: v for k, v in d.items() if k in FIELDS})
+        out = {"id": d["id"]}
+        for k, v in src.items():
+            if k in FIELDS:
+                out[k] = v
+        # a separate English line belongs with its Dutch one
+        nl, en = src.get("voorbeeld-nl"), src.get("voorbeeld-en")
+        if nl is not None and not isinstance(nl, dict):
+            out["voorbeeld-nl"] = {"nl": nl, "en": en or ""}
+        elif en and isinstance(out.get("voorbeeld-nl"), dict):
+            out["voorbeeld-nl"]["en"] = en
+        return out
+
+    fixes = [as_fix(d) for d in decisions if d.get("action") == "fix"]
     if fixes and not a.dry_run:
         tmp = Path(a.file).with_suffix(".fixes.json")
         tmp.write_text(json.dumps({"fixes": fixes}, ensure_ascii=False), encoding="utf-8")
