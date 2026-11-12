@@ -38,7 +38,6 @@ PENDING_PLANS = [
     ),
 ]
 
-SET = re.compile(r"\bSet ([AB])\b")
 SMALL = (64, 96)
 
 EXTRA_CSS = """
@@ -136,10 +135,7 @@ def read_plan(path: Path) -> list[dict]:
             cls = a.get("class", "")
             if tag == "article" and "kaart" in cls.split():
                 self._flush()
-                m = SET.search(a.get("data-batch", ""))
-                self.set = m.group(1) if m else None
                 self.cur = {
-                    "set": self.set,
                     "number": int(a.get("data-row") or 0),
                     "file": f'{a.get("data-id", "")}.png',
                     "status": (a.get("data-status") or "").strip(),
@@ -170,29 +166,11 @@ def read_plan(path: Path) -> list[dict]:
             if self.field:
                 self.buf.append(data)
 
-    text = path.read_text(encoding="utf-8")
     parser = Cards()
-    parser.feed(text)
+    parser.feed(path.read_text(encoding="utf-8"))
     parser.close()
-
-    # Set membership comes from the page's batch index, which lists each
-    # batch and its files in order. The cards themselves sit in contrast
-    # clusters, not batch order.
-    sets = {}
-    for blk in re.finditer(r'<div class="batchrij" data-batch="(?P<b>[^"]*)">'
-                           r'(?P<body>.*?)</div>', text, re.S):
-        m = SET.search(blk.group("b"))
-        if not m:
-            continue
-        for f in re.findall(r"<code>([^<]+\.png)</code>", blk.group("body")):
-            sets[f] = m.group(1)
-
-    rows = []
-    for r in parser.rows:
-        r["set"] = sets.get(r["file"]) or r.get("set")
-        if r["set"]:
-            rows.append(r)
-    rows.sort(key=lambda r: (r["set"], r["number"]))
+    rows = [r for r in parser.rows if r["file"].endswith(".png")]
+    rows.sort(key=lambda r: (r["frame"], r["number"]))
     return rows
 
 
@@ -255,7 +233,7 @@ def pending_card(row: dict, art: Path, cache: dict, shipped: dict, by_scene: dic
         <h3>{esc(row['frame'])}</h3>
         <p class="betekenis">{esc(row['en'])}</p>
         <p class="vlaggen"><span class="nieuw">getekend, niet in het spel</span>
-          <span class="neutraal">set {esc(row['set'])} #{row['number']}</span></p>
+          <span class="neutraal">#{row['number']}</span></p>
         <dl>
           <dt>Scenario</dt>
           <dd>{esc(row['scene'])}</dd>
@@ -313,15 +291,19 @@ def main() -> None:
             f'<p>{len(rows)} frames: {len(drawn)} drawn, {len(needed)} still to '
             f'draw. {esc(note)}{needed_note}</p></section>'
         )
-        for group in ("A", "B"):
-            table = [row for row in rows if row["set"] == group]
-            if not table:
-                continue
+        groups = []
+        for row in rows:
+            if row["frame"] not in groups:
+                groups.append(row["frame"])
+        for group in groups:
+            table = [row for row in rows if row["frame"] == group]
             drawn_table = [row for row in table if row["status"] == "drawn"]
+            if not drawn_table:
+                continue
             blocks.append(
-                f'<section class="fase"><h2>Set {group}</h2>'
-                f'<p>{len(table)} frames, {len(drawn_table)} drawn, in the '
-                f'numbering of {esc(Path(plan).name)}.</p></section>'
+                f'<section class="fase"><h2>{esc(group)}</h2>'
+                f'<p>{len(table)} frames, {len(drawn_table)} drawn, from '
+                f'{esc(Path(plan).name)}.</p></section>'
             )
             cards = "".join(
                 pending_card(row, art, cache, scenes, by_scene, by_id,
