@@ -64,12 +64,29 @@ details.prompt pre{white-space:pre-wrap;background:#f6f7fb;border:1px solid var(
   .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
 }
 
+.cluster{margin:26px 0 0;padding-top:12px;border-top:2px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:20px;letter-spacing:-.01em}
+.cluster h2 .preps{color:var(--grijs);font-weight:400;font-size:15px;margin-left:8px}
+.cluster .contrastnoot{margin:3px 0 0;color:var(--grijs);font-size:13px}
+.chunkgroep{margin-top:16px}
+.chunkgroep h3{margin:0 0 2px;font-size:16px;color:var(--kobalt)}
+.telling{font-size:12px;color:var(--grijs);margin:0 0 8px}
+.telling .tekort{color:var(--rood);font-weight:700}
+.sectiekop{grid-column:1/-1;margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+details.geschrapt{margin-top:16px}
+details.geschrapt summary{cursor:pointer;color:var(--rood);font-weight:700}
+details.bijlage{margin-top:16px}
+details.bijlage summary{cursor:pointer;color:var(--kobalt);font-weight:700}
+details.bijlage details{margin:10px 0 0 14px}
+
 table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
 th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
 td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 td.rood{color:var(--rood);font-weight:700}
-td.blurb{color:var(--grijs);max-width:46ch}
+td.blurb{color:var(--grijs);max-width:44ch}
 tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
 .uitleg{max-width:80ch;margin-top:22px}
 .uitleg h2{font-size:17px;margin:20px 0 6px}
@@ -80,57 +97,60 @@ tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:no
 <body>
 <header>
 <h1>Voorzetselpaden — beeldplannen</h1>
-<p class="lead">Elk werkwoord met zijn vaste voorzetsel, één kaart per frame: het beeld,
-de scene, wat het beeld moet laten zien, wat het moet vermijden, en — waar het in het spel
-zit — de voorbeeldzin, de bouwzin en de controlevraag. Deze zes bestanden zijn de bron.</p>
-<div class="sum"><span>876 kaarten</span><span>64 getekend</span>
-<span class="waarschuwing">510 gemarkeerd</span>
-<span class="waarschuwing">74 onzin</span></div>
+<p class="lead">Elk werkwoord met zijn vaste voorzetsel, één kaart per frame. De kaarten
+staan per contrastset: hetzelfde werkwoord met zijn verschillende voorzetsels naast
+elkaar, en onder elk voorzetsel zijn eigen voorbeelden. Deze acht bestanden zijn de bron.</p>
+<div class="sum"><span>802 kaarten</span><span>64 getekend</span>
+<span>38 contrastsets</span>
+<span class="waarschuwing">533 chunks onder 3 voorbeelden</span>
+<span class="waarschuwing">74 geschrapt</span></div>
 </header>
 <main>
 <table>
 <thead><tr><th>Band</th><th class="n">Kaarten</th><th class="n">Getekend</th>
-<th class="n">Gemarkeerd</th><th class="n">Onzin</th><th class="n">Fout&nbsp;NL</th>
-<th class="n">Zwak beeld</th><th class="n">Klein</th><th>Wat het is</th></tr></thead>
+<th class="n">Contrastsets</th><th class="n">Onder&nbsp;3</th>
+<th class="n">Geschrapt</th><th class="n">Gemarkeerd</th><th>Wat het is</th></tr></thead>
 <tbody>
-<tr><td><a href="a0-a2.html">A0–A2</a></td><td class="n">200</td><td class="n">50</td><td class="n">52</td><td class="n">—</td><td class="n">13</td><td class="n">29</td><td class="n">10</td><td class="blurb">The fifty delivered frames: the thirty pilot scenes and the twenty of batch 4. All are drawn and in the game. The appendix holds 150 proposed variant scenes.</td></tr>
-<tr><td><a href="a2-pairs.html">A2 pairs (4b)</a></td><td class="n">16</td><td class="n">14</td><td class="n">7</td><td class="n">—</td><td class="n">2</td><td class="n">4</td><td class="n">1</td><td class="blurb">Sixteen frames that give existing singles a contrast partner. Fourteen are drawn but not in the game; they need a redraw before integration.</td></tr>
-<tr><td><a href="a2-plus.html">A2+</a></td><td class="n">80</td><td class="n">0</td><td class="n">51</td><td class="n rood">7</td><td class="n">4</td><td class="n">31</td><td class="n">9</td><td class="blurb">Eighty frames: the spatial set, the adjective and noun chunks, and the pronominal adverbs. Roadmap batches 5–8.</td></tr>
-<tr><td><a href="b1.html">B1</a></td><td class="n">120</td><td class="n">0</td><td class="n">70</td><td class="n rood">9</td><td class="n">5</td><td class="n">36</td><td class="n">20</td><td class="blurb">One hundred and twenty high-frequency verb + preposition frames. Roadmap batches 9–13.</td></tr>
-<tr><td><a href="b1-plus.html">B1+</a></td><td class="n">250</td><td class="n">0</td><td class="n">163</td><td class="n rood">23</td><td class="n">11</td><td class="n">64</td><td class="n">65</td><td class="blurb">Two hundred and fifty frames, formal and figurative register. Roadmap batches 14–23.</td></tr>
-<tr><td><a href="b2.html">B2</a></td><td class="n">210</td><td class="n">0</td><td class="n">167</td><td class="n rood">35</td><td class="n">24</td><td class="n">64</td><td class="n">44</td><td class="blurb">Two hundred and ten frames: business, academic, medical, technical and legal register. Roadmap batches 24–32.</td></tr>
-<tr class="totaal"><td>Totaal</td><td class="n">876</td><td class="n">64</td>
-<td class="n">510</td><td class="n rood">74</td>
-<td class="n">59</td><td class="n">228</td><td class="n">149</td>
-<td></td></tr>
+<tr><td><a href="a0.html">A0</a></td><td class="n">40</td><td class="n">10</td><td class="n">—</td><td class="n">—</td><td class="n">—</td><td class="n">11</td><td class="blurb">Survival: what a newcomer meets in the first weeks. Physical acts and basic needs, no separable verbs, no same-verb contrast.</td></tr>
+<tr><td><a href="a1.html">A1</a></td><td class="n">80</td><td class="n">20</td><td class="n">6</td><td class="n">—</td><td class="n">—</td><td class="n">18</td><td class="blurb">The concrete, high-frequency sets and the first contrast pairs: wachten, werken, vragen, praten, klaar, kijken.</td></tr>
+<tr><td><a href="a2.html">A2</a></td><td class="n">80</td><td class="n">20</td><td class="n">5</td><td class="n rood">1</td><td class="n">—</td><td class="n">23</td><td class="blurb">The abstract and emotional sets: denken, uitkijken, boos, klagen, blij, and the separable and pronominal chunks.</td></tr>
+<tr><td><a href="a2-pairs.html">A2 pairs (4b)</a></td><td class="n">16</td><td class="n">14</td><td class="n">2</td><td class="n rood">16</td><td class="n">—</td><td class="n">7</td><td class="blurb">Sixteen frames that give existing singles a contrast partner. Fourteen are drawn but not in the game; they need a redraw before integration.</td></tr>
+<tr><td><a href="a2-plus.html">A2+</a></td><td class="n">73</td><td class="n">—</td><td class="n">1</td><td class="n rood">58</td><td class="n rood">7</td><td class="n">44</td><td class="blurb">Eighty frames: the spatial set, the adjective and noun chunks, and the pronominal adverbs. Roadmap batches 5–8.</td></tr>
+<tr><td><a href="b1.html">B1</a></td><td class="n">111</td><td class="n">—</td><td class="n">7</td><td class="n rood">82</td><td class="n rood">9</td><td class="n">61</td><td class="blurb">One hundred and twenty high-frequency verb + preposition frames. Roadmap batches 9–13.</td></tr>
+<tr><td><a href="b1-plus.html">B1+</a></td><td class="n">227</td><td class="n">—</td><td class="n">14</td><td class="n rood">209</td><td class="n rood">23</td><td class="n">140</td><td class="blurb">Two hundred and fifty frames, formal and figurative register. Roadmap batches 14–23.</td></tr>
+<tr><td><a href="b2.html">B2</a></td><td class="n">175</td><td class="n">—</td><td class="n">3</td><td class="n rood">167</td><td class="n rood">35</td><td class="n">132</td><td class="blurb">Two hundred and ten frames: business, academic, medical, technical and legal register. Roadmap batches 24–32.</td></tr>
+<tr class="totaal"><td>Totaal</td><td class="n">802</td><td class="n">64</td>
+<td class="n">38</td><td class="n rood">533</td>
+<td class="n rood">74</td><td class="n">436</td><td></td></tr>
 </tbody>
 </table>
 
 <div class="uitleg">
-<h2>Waarom deze bestanden de bron zijn</h2>
-<p>De plannen stonden eerst in zeven Markdown-bestanden. Dezelfde frames kwamen in twee
-bestanden voor, de onderwijsinhoud stond alleen in <code>prepositions.json</code>, en de
-kwaliteitsoordelen stonden in een los rapport. Eén kaart per frame zet alles bij elkaar.</p>
-<p>De twintig frames van batch 4 stonden zowel in <code>prepositions-art.md</code> als in
-<code>prepositions-art-a0-a2.md</code>. Ze zijn samengevoegd: 896 rijen werden 876 kaarten.</p>
+<h2>Hoe de kaarten geordend staan</h2>
+<p>Per contrastset. <code>wachten op</code> staat naast <code>wachten voor</code>, want het
+paar is wat onderwijst: twee tekeningen die op één zichtbaar punt verschillen. Onder elk
+voorzetsel staan zijn eigen voorbeelden bij elkaar.</p>
+<p>Staat de partner in een andere band, dan noemt de kop hem met een link. Chunks zonder
+partner staan onder <em>Losse frames</em>.</p>
 
-<h2>Wat op een kaart staat</h2>
-<p>Scene, Must read en Avoid komen letterlijk uit de Grok-prompt van het frame. De volledige
-prompt per batch staat uitklapbaar boven elke batch, woord voor woord, zodat een batch
-onveranderd te kopiëren blijft. De prozatekst van het oude Markdown-bestand — de kaders,
-de uitsluitingen, de frame-regel — staat uitklapbaar bovenaan elke pagina.</p>
-<p>Voorbeeldzin, bouwzin, controlevraag, contrast en voornaamwoordelijk bijwoord bestaan
-alleen voor de vijftig frames die in het spel zitten. Bij de overige 826 zijn die velden
-leeg; ze zijn nooit geschreven.</p>
+<h2>Drie voorbeelden per chunk</h2>
+<p>Een voorzetsel is pas geleerd als de leerder het in meer dan één situatie herkent, dus
+elke chunk hoort minstens 3 voorbeelden te hebben. 533 chunks halen
+dat niet; de kop van de groep zegt het in rood.</p>
+<p>A0, A1 en A2 halen het wel, omdat de appendix van het oude A0–A2-plan drie varianten per
+frame voorstelt. Vanaf A2+ heeft bijna elke chunk er één.</p>
 
-<h2>Het oordeel op de kaart</h2>
-<p>De gekleurde strook onderaan een kaart is de bevinding uit de inhoudelijke review van
-12&nbsp;november 2026: wat er mis is en wat ervoor in de plaats moet. Rood is
-<em>onzin — schrappen</em>: geen Nederlands, of geen beheerst voorzetsel. Oranje is fout
-Nederlands dat met een andere formulering wel te onderwijzen is. Grijs is een zwak beeld of
-een kleinigheid.</p>
-<p>Van de 876 kaarten zijn er 510 gemarkeerd en 74 als te
-schrappen voorgesteld. Niets is verwijderd: dat is een beslissing van de eigenaar.</p>
+<h2>A0, A1 en A2</h2>
+<p>De vijftig A0–A2-frames stonden in één band. Ze zijn gesplitst: A0 is overleving in de
+eerste weken, A1 de concrete sets met hun eerste contrastparen, A2 het abstracte en
+emotionele werk plus de scheidbare en voornaamwoordelijke chunks.</p>
+<p>A0 heeft met opzet geen contrastset: twee voorzetsels bij één werkwoord vragen dat de
+leerder beide al vasthoudt.</p>
+
+<h2>Geschrapt</h2>
+<p>74 frames zijn uit de telling gehaald na de inhoudelijke review van
+12&nbsp;november 2026: geen beheerst voorzetsel, geen Nederlands, of geen leesbaar beeld.
+Ze staan onderaan hun eigen pagina, ingeklapt, met de reden erbij. Verwijderd is niets.</p>
 </div>
 </main>
 </body>
