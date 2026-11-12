@@ -20,7 +20,7 @@ static server and it runs. The account pages need the server in `server/`.
 | `Docs/game-art.md` | How game images are drawn: brush line, cobalt only, 512 px |
 | `Docs/prepositions-roadmap.md` | The Voorzetselpaden plan to 710 frames, and what "B2" means |
 | `Docs/voorzetselpaden/index.html` | Every Voorzetselpaden frame, one card each, by CEFR band. **The master.** Open it in a browser |
-| `Docs/voorzetselpaden/a0-a2.html` … `b2.html` | The six band pages: the chunk, the gloss, the scene brief, Must read, Avoid, the review verdict, and the verbatim Grok prompt per batch |
+| `Docs/voorzetselpaden/a0.html` … `b2.html` | The eight band pages, grouped by contrast set: the chunk, the gloss, the scene brief, Must read, Avoid, the review verdict, and the Grok prompts in an appendix |
 | `Docs/design-process.md` | Which designs were rejected and why, so you don't re-propose them |
 | `Docs/game-catalogue.md` | What each game is and what exists |
 | `Docs/games-backend.md` | How the games get their data from the API, and how the React app is built and run |
@@ -162,8 +162,11 @@ technique; `Docs/prepositions-implementation.md` describes how the game is
 built, and `Docs/prepositions.md` is the spec behind it.
 
 **The scene plans are HTML now, and they are the master.** The seven Markdown
-plans were replaced on 12 November 2026 by six pages under
-`Docs/voorzetselpaden/`, one per CEFR band, 876 cards in all. A card holds the
+plans were replaced on 12 November 2026 by eight pages under
+`Docs/voorzetselpaden/` — A0, A1, A2, A2 pairs, A2+, B1, B1+, B2 — holding 802
+active cards. Cards group by contrast set, so `wachten op` sits beside
+`wachten voor`, and each chunk's own examples sit together with a count that
+turns red below three. A card holds the
 chunk, the gloss, the scene brief, Must read, Avoid, the review verdict and —
 for the fifty frames that are in the game — the example sentence, the build
 sentence and the control question. Each batch keeps its Grok prompt verbatim in
@@ -207,7 +210,10 @@ and the docs that describe it. Push only when the owner asks.
 | 8 | Production config: `Email:SmtpHost` is unset, so mail goes to `server/Oefenpad.WebUI/email-sink/`. Choose a provider. Set `App:BaseUrl` (mandatory outside Development — the app refuses to start without it) and `App:KnownProxies` when behind a TLS-terminating proxy, and persist the Data Protection keys. `Docs/accounts.md` lists the required values |
 | 9 | The games now need the server. No offline play was accepted by the owner on 2026-11-09. The client build is wired into `dotnet build`/`publish` (`-p:SkipClientBuild=true` to skip it), so that half is closed |
 | 10 | The game rounds are in memory, so a restart ends them and a second instance cannot share them. Fine for one host; a shared store is needed before scaling out |
-| 11 | The content review of 12 Nov 2026 flagged 510 of the 876 Voorzetselpaden cards, 74 of them as nonsense to drop — chunks that are not governed prepositions (`werken volgens`, bare `sinds`), invented idioms (`de moer onder de kinderen geven`) or scenes that cannot be read. Nothing has been deleted; the verdicts sit on the cards. B1+ and B2 hold 58 of the 74, so their scope is the first question. Report: `~/claude-scratch/voorzetselpaden-content-md-review-2026-11-12.md` |
+| 11 | The 74 frames the 12 Nov 2026 review called nonsense are out of the counts and collapsed at the foot of their page; 436 cards are still flagged for weaker faults. B1+ and B2 hold 58 of the 74, so their scope is the open question. Report: `~/claude-scratch/voorzetselpaden-content-md-review-2026-11-12.md` |
+| 14 | 533 chunks have fewer than three example scenes, almost all from A2+ upward. Bringing every chunk to three is roughly 1,000 new scene briefs — more than the current plan. Decide which bands that target applies to |
+| 15 | The A0/A1/A2 levelling is judgement, not roadmap: `~/claude-scratch/voorzetselpaden-a0-a1-a2.json` records the reason per frame. A0 came out at 10 frames against a 15–20 target because contrast sets are held out of A0 |
+| 16 | `Docs/voorzetselpaden/base-prompt.txt` appeared during the 12 Nov session and is untracked. Nobody has claimed it; check it before keeping or deleting |
 | 12 | Two shipped errors the review found in `prepositions.json`, both unfixed: the `praten-tegen` control question is keyed `true` but its picture and sentence say the listener is not listening, and the separable-verb hints in `texts.prepositions.json` tell the learner the prefix goes last ("staat achteraan") when every accepted answer puts it straight after the verb |
 | 13 | `assets/verb-propositions/incoming/` holds 50 redraws nothing references, including fresh copies of the two scenes dropped as nonsense. `assets/claude/incoming/` is 13 MB of the same kind. Neither is committed; decide whether raster source art belongs in git at all |
 
