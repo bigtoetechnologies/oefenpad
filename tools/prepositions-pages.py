@@ -56,7 +56,8 @@ VERDICTS = {
 
 
 def pages():
-    return sorted(p for p in PAGES.glob("*.html") if p.name != "index.html")
+    return sorted(p for p in PAGES.glob("*.html")
+                  if p.name != "index.html" and not p.name.startswith("matrix-"))
 
 
 def text_of(fragment):
