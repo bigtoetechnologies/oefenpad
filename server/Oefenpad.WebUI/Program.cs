@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.RateLimiting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.FileProviders;
 using Oefenpad.Contracts.Interfaces.Services;
 using Oefenpad.Contracts.Options;
@@ -232,19 +233,44 @@ if (httpsPort is not null || configuredUrls.Contains("https://", StringCompariso
 // The static site is served from the repo root, but only the assets folder.
 // Serving the root itself would expose .git and server/, and serving src/ would
 // hand out the old game scripts and word banks.
+// ── Cache directives ────────────────────────────────────────────────────────
+// Nothing under /assets carries a content hash: the stylesheet, the script and
+// every scene image keep their name when their bytes change, and a redrawn
+// scene lands on the URL the old one used. A response with no Cache-Control is
+// cached heuristically (roughly ten percent of its age), so a browser that saw
+// the previous art keeps painting it until the URL changes. Revalidation costs
+// one conditional request and answers 304, which is what these files want.
+static void NoCache(StaticFileResponseContext context) =>
+    context.Context.Response.Headers.CacheControl = "no-cache";
+
 var assetsPath = Path.Combine(siteRoot, "assets");
 if (Directory.Exists(assetsPath))
 {
     app.UseStaticFiles(new StaticFileOptions
     {
         FileProvider = new PhysicalFileProvider(assetsPath),
-        RequestPath = "/assets"
+        RequestPath = "/assets",
+        OnPrepareResponse = NoCache
     });
 }
 
 // The React game app. Its build output lives in this project's wwwroot, so the
 // browser never gets a route to the old src/ scripts or the content banks.
-app.UseStaticFiles();
+//
+// Vite names the bundle after a hash of its contents, so a given bundle URL can
+// be cached forever. The shell cannot: it is one unhashed document that names
+// the bundle, and a cached copy keeps pointing at the bundle of the build it
+// came from. That looks exactly like a server that never got the update.
+app.UseStaticFiles(new StaticFileOptions
+{
+    OnPrepareResponse = context =>
+    {
+        context.Context.Response.Headers.CacheControl =
+            context.Context.Request.Path.StartsWithSegments("/spelen/assets")
+                ? "public, max-age=31536000, immutable"
+                : "no-cache";
+    }
+});
 
 app.UseRouting();
 app.UseRateLimiter();
@@ -273,16 +299,26 @@ app.MapRazorPages();
 // so only application routes reach the fallback. Routing ignores a trailing
 // slash, so the one endpoint answers both /spelen and /spelen/; redirecting
 // between them would loop. Any deeper route gets the same SPA document.
-app.MapGet("/spelen", (IWebHostEnvironment env) =>
+app.MapGet("/spelen", (IWebHostEnvironment env, HttpContext context) =>
+    SpaShell(env, context));
+
+// The fallback serves the same document for any deeper route, so it must carry
+// the same "revalidate me" directive.
+app.MapFallbackToFile("/spelen/{*path:nonfile}", "spelen/index.html", new StaticFileOptions
 {
-    var spaIndex = Path.Combine(env.ContentRootPath, "wwwroot", "spelen", "index.html");
-    return File.Exists(spaIndex)
-        ? Results.File(spaIndex, "text/html; charset=utf-8")
-        : Results.NotFound();
+    OnPrepareResponse = NoCache
 });
-app.MapFallbackToFile("/spelen/{*path:nonfile}", "spelen/index.html");
 
 app.Run();
+
+static IResult SpaShell(IWebHostEnvironment env, HttpContext context)
+{
+    var spaIndex = Path.Combine(env.ContentRootPath, "wwwroot", "spelen", "index.html");
+    if (!File.Exists(spaIndex)) return Results.NotFound();
+
+    context.Response.Headers.CacheControl = "no-cache";
+    return Results.File(spaIndex, "text/html; charset=utf-8");
+}
 
 static async Task ApplyMigrationsAsync(WebApplication app)
 {

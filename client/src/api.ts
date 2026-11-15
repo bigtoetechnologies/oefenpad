@@ -18,6 +18,8 @@ export interface GameLevel {
   name: string;
   size: number | null;
   subtitle: string | null;
+  /** The CEFR band the level was written for (`a0`, `a1`, …); absent on other games. */
+  band?: string | null;
   /** The visitor may not start this level yet. */
   locked: boolean;
   /** Why, when it is locked: an account, the previous level, or a paid plan. */

@@ -5,62 +5,72 @@ using Xunit;
 namespace Oefenpad.Tests.Games;
 
 /// <summary>
-/// The three tiers of Voorzetselpaden and the level chain behind them: three
-/// levels for everyone, six more for an account, the rest for a paid plan. The
-/// rule is deliberately simple — finishing a level opens the next — so these
-/// tests pin exactly where each gate falls.
+/// The three tiers of Voorzetselpaden and the level chain behind them: A0 for
+/// everyone, A1 for an account, A2 and up for a paid plan. The tier is read off
+/// the band, so adding a band cannot silently move the cut. The rule inside a
+/// tier is deliberately simple — a band starts at its first level and finishing
+/// a level opens the next — so these tests pin exactly where each gate falls.
 /// </summary>
 public sealed class GameAccessTests
 {
     private static readonly List<Level> Levels =
     [
-        new() { Id = "een" },
-        new() { Id = "twee" },
-        new() { Id = "drie" },
-        new() { Id = "vier" },
-        new() { Id = "vijf" },
-        new() { Id = "zes" },
-        new() { Id = "zeven" },
-        new() { Id = "acht" },
-        new() { Id = "negen" },
-        new() { Id = "tien" },
-        new() { Id = "elf" },
-        new() { Id = "twaalf" }
+        new() { Id = "een", Band = "a0" },
+        new() { Id = "twee", Band = "a0" },
+        new() { Id = "drie", Band = "a0" },
+        new() { Id = "vier", Band = "a1" },
+        new() { Id = "vijf", Band = "a1" },
+        new() { Id = "zes", Band = "a1" },
+        new() { Id = "zeven", Band = "a1" },
+        new() { Id = "acht", Band = "a2" },
+        new() { Id = "negen", Band = "a2" }
     ];
 
     private static HashSet<string> Passed(params string[] ids) => [.. ids];
 
     [Fact]
-    public void A_guest_reaches_the_three_free_levels_and_no_more()
+    public void The_band_decides_the_tier()
+    {
+        PrepositionAccess.TierOf(new Level { Band = "a0" }).Should().Be(PrepositionAccess.Tier.Free);
+        PrepositionAccess.TierOf(new Level { Band = "A1" }).Should().Be(PrepositionAccess.Tier.Account);
+        PrepositionAccess.TierOf(new Level { Band = "a2" }).Should().Be(PrepositionAccess.Tier.Premium);
+        PrepositionAccess.TierOf(new Level { Band = "b2" }).Should().Be(PrepositionAccess.Tier.Premium);
+
+        // An unlabelled level stays free: a new band must not arrive shut.
+        PrepositionAccess.TierOf(new Level()).Should().Be(PrepositionAccess.Tier.Free);
+        PrepositionAccess.TierOf(new Level { Band = "" }).Should().Be(PrepositionAccess.Tier.Free);
+    }
+
+    [Fact]
+    public void A_guest_reaches_the_whole_a0_band_and_no_more()
     {
         var locks = PrepositionAccess.Evaluate(Levels, null, isSignedIn: false);
 
         locks.Should().NotContainKeys("een", "twee", "drie");
-        locks.Should().HaveCount(Levels.Count - PrepositionAccess.FreeLevels);
         locks["vier"].Should().Be(GameLock.Account);
-        locks["negen"].Should().Be(GameLock.Account);
-        locks["tien"].Should().Be(GameLock.Premium);
-        locks["twaalf"].Should().Be(GameLock.Premium);
+        locks["zeven"].Should().Be(GameLock.Account);
+        locks["acht"].Should().Be(GameLock.Premium);
+        locks["negen"].Should().Be(GameLock.Premium);
     }
 
     [Fact]
-    public void A_signed_in_learner_with_nothing_finished_is_gated_on_progress()
+    public void An_account_opens_each_band_at_its_first_level()
     {
         var locks = PrepositionAccess.Evaluate(Levels, Passed(), isSignedIn: true);
 
-        locks["vier"].Should().Be(GameLock.Progress);
-        locks["negen"].Should().Be(GameLock.Progress);
-        locks["tien"].Should().Be(GameLock.Premium);
+        // Nothing finished, so A1 opens where it starts and stops there.
+        locks.Should().NotContainKey("vier");
+        locks["vijf"].Should().Be(GameLock.Progress);
+        locks["zeven"].Should().Be(GameLock.Progress);
     }
 
     [Fact]
     public void Finishing_a_level_opens_exactly_the_next_one()
     {
-        var locks = PrepositionAccess.Evaluate(Levels, Passed("drie"), isSignedIn: true);
+        var locks = PrepositionAccess.Evaluate(Levels, Passed("vier"), isSignedIn: true);
 
-        locks.Should().NotContainKey("vier");
-        locks["vijf"].Should().Be(GameLock.Progress);
-        locks["tien"].Should().Be(GameLock.Premium);
+        locks.Should().NotContainKey("vijf");
+        locks["zes"].Should().Be(GameLock.Progress);
     }
 
     [Fact]
@@ -69,34 +79,31 @@ public sealed class GameAccessTests
         // Progress rows are per level, so a level can only be reached through
         // the chain. If a row exists out of order, it still opens itself; the
         // gap before it stays closed.
-        var locks = PrepositionAccess.Evaluate(Levels, Passed("vijf"), isSignedIn: true);
+        var locks = PrepositionAccess.Evaluate(Levels, Passed("zes"), isSignedIn: true);
 
-        locks["vier"].Should().Be(GameLock.Progress);
-        locks.Should().NotContainKey("zes");
-        locks["zeven"].Should().Be(GameLock.Progress);
+        locks["vijf"].Should().Be(GameLock.Progress);
+        locks.Should().NotContainKeys("zes", "zeven");
     }
 
     [Fact]
-    public void A_paid_plan_opens_the_premium_slice_and_keeps_the_chain()
+    public void A_paid_plan_opens_the_premium_band_and_keeps_the_chain()
     {
-        // The first nine levels finished, so the tenth opens. A plan does not
-        // skip the chain: the eleventh still waits for the tenth.
-        var passed = Passed("een", "twee", "drie", "vier", "vijf",
-            "zes", "zeven", "acht", "negen");
+        // A0 and A1 finished, so A2 opens at the plan boundary. A plan does not
+        // skip the chain: the second A2 level still waits for the first.
+        var passed = Passed("een", "twee", "drie", "vier", "vijf", "zes", "zeven");
 
         var locks = PrepositionAccess.Evaluate(Levels, passed, isSignedIn: true, isPremium: true);
 
-        locks.Should().NotContainKey("tien");
-        locks["elf"].Should().Be(GameLock.Progress);
-        locks["twaalf"].Should().Be(GameLock.Progress);
+        locks.Should().NotContainKey("acht");
+        locks["negen"].Should().Be(GameLock.Progress);
     }
 
     [Fact]
     public void A_finished_premium_level_locks_again_without_a_plan()
     {
-        var locks = PrepositionAccess.Evaluate(Levels, Passed("tien"), isSignedIn: true);
+        var locks = PrepositionAccess.Evaluate(Levels, Passed("acht"), isSignedIn: true);
 
-        locks["tien"].Should().Be(GameLock.Premium);
+        locks["acht"].Should().Be(GameLock.Premium);
     }
 
     [Fact]

@@ -18,6 +18,13 @@ interface GameShellProps {
   tagline?: string;
   /** Splash title. Omit for games that open straight onto the board. */
   splash?: string;
+  /**
+   * Back to the game's own first screen — the level or category list. Given
+   * only while a round is open, so the button never appears when there is
+   * nothing to go back to. The arrow beside it leaves the game for the site.
+   */
+  onBegin?: () => void;
+  beginLabel?: string;
   onSettings?: () => void;
   children: ReactNode;
   overlays?: ReactNode;
@@ -34,6 +41,8 @@ export function GameShell({
   title,
   tagline,
   splash,
+  onBegin,
+  beginLabel = 'Terug naar begin',
   onSettings,
   children,
   overlays,
@@ -79,6 +88,16 @@ export function GameShell({
           <h1>{title}</h1>
           <div className="stand">
             {tagline === undefined ? null : <p className="tagline">{tagline}</p>}
+            {onBegin === undefined ? null : (
+              <button
+                type="button"
+                className="btn-icon btn-icon--tekst"
+                onClick={onBegin}
+                title={beginLabel}
+              >
+                {beginLabel}
+              </button>
+            )}
             <a className="btn-icon" href="/index.html" aria-label="Terug naar Oefenpad">←</a>
             {onSettings === undefined ? null : (
               <button

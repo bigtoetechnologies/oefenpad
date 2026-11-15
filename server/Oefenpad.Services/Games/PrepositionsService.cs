@@ -36,7 +36,8 @@ public sealed class PrepositionsService : GameService
             return new GameLevel(
                 level.Id,
                 level.Name,
-                Subtitle: count == 1 ? "1 beeld" : $"{count} beelden");
+                Subtitle: count == 1 ? "1 beeld" : $"{count} beelden",
+                Band: level.Band);
         }).ToList();
 
         return new GameOptions(System.Array.Empty<GameCategory>(), levels);
@@ -112,9 +113,10 @@ public sealed class PrepositionsService : GameService
             }).ToList()
         });
 
-        /* 3. Does the sentence fit? Only when the pair is in this level. */
+        /* 3. Does the sentence fit? A level is one chunk, so the partner sits
+           in another level; any frame whose partner resolves can ask. */
         var hasContrast = frames.Any(f =>
-            f.Contrast is not null && level.Frames.Contains(f.Contrast));
+            f.Contrast is not null && _byId.ContainsKey(f.Contrast));
 
         if (hasContrast)
         {
@@ -156,20 +158,30 @@ public sealed class PrepositionsService : GameService
 
     private List<string> OptionsFor(PrepositionFrame frame, Level level)
     {
+        // A level is one chunk with several example scenes, so the other
+        // examples of the same chunk make the best distractors: the question
+        // becomes which situation this sentence describes. Only a level with
+        // fewer than three examples borrows scenes from elsewhere.
         var inside = level.Frames
             .Where(_byId.ContainsKey)
             .Select(id => _byId[id].Scene)
+            .Distinct()
             .ToList();
+
+        var options = new List<string> { frame.Scene };
+        foreach (var scene in Shuffle(inside.Where(scene => scene != frame.Scene)))
+        {
+            if (options.Count >= 3) break;
+            options.Add(scene);
+        }
 
         var outside = Shuffle(_practiceable
             .Where(f => !level.Frames.Contains(f.Id))
             .Select(f => f.Scene));
 
-        var options = inside.ToList();
-        var index = 0;
-        while (options.Count < 3 && index < outside.Count)
+        foreach (var scene in outside)
         {
-            var scene = outside[index++];
+            if (options.Count >= 3) break;
             if (!options.Contains(scene)) options.Add(scene);
         }
 
@@ -258,10 +270,14 @@ public sealed class PrepositionsService : GameService
         }
         else
         {
+            // Every scene has its own sentence, and the distractors here are
+            // mostly other examples of the same chunk. Naming the chunk of the
+            // picture the learner picked would say "bang voor, niet bang voor",
+            // so the correction points at the sentence the picked picture fits.
             var wrong = Content.Prepositions.Frames.FirstOrDefault(f => f.Scene == chosen);
-            state.LastExplanation = Text("image-wrong",
-                ("other", wrong is null ? Text("image-other") : wrong.Frame),
-                ("frame", item.Frame.Frame));
+            state.LastExplanation = wrong is null
+                ? Text("image-wrong-unknown", ("frame", item.Frame.Frame))
+                : Text("image-wrong", ("other", wrong.Example.Nl), ("frame", item.Frame.Frame));
         }
 
         return Result(state);

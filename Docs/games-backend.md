@@ -64,16 +64,18 @@ readable, by design: it is only the parts that make the product.
 | `account` | the visitor is past the free slice and not signed in | a lock, "Maak een account om verder te gaan." and a Registreren link |
 | `premium` | the level belongs to the paid slice | a lock and "Hiervoor komt een abonnement." (no link: there is no payment system yet) |
 
-Voorzetselpaden is the only game with a policy today. It has three tiers
-(`PrepositionAccess` in `GameAccessService.cs`):
+Voorzetselpaden is the only game with a policy today. Its tiers follow the
+CEFR bands the content comes in (`PrepositionAccess` in
+`GameAccessService.cs`):
 
 | Levels | Who can play |
 |---|---|
-| 1–3 | everyone |
-| 4–9 | a signed-in learner |
-| 10–18 | a paid plan — not built, so shut |
+| the A0 band | everyone |
+| the A1 band | a signed-in learner |
+| A2 and up | a paid plan — not built, so shut (and not imported yet) |
 
-Within a tier a level opens only when the one before it is finished, and
+A band starts at its first level; within it a level opens only when the one
+before it is finished, and
 finishing counts as passing — the gate exists to make a crawler play, not to
 grade the player. A finished level stays playable if an earlier row is missing,
 but a finished premium level locks again without a plan: progress survives,
@@ -156,7 +158,7 @@ by `GameContent`:
 |---|---|
 | `words.json` | 25 categories, 2,518 entries (Dutch, English, optional image key) |
 | `wordimages.json` | English word → image file |
-| `prepositions.json` | 33 levels, 50 scenes, frames, examples, build tiles |
+| `prepositions.json` | 28 levels (A0, A1), 91 example scenes, frames, examples, build tiles |
 | `reels.json` | the six story reels and their tiles |
 | `meta.json` | counts for tests and documentation |
 | `texts.<game>.json` | the Dutch interface strings, one file per game |
@@ -197,8 +199,9 @@ Routes: `/spelen/`, `/spelen/hangman`, `/spelen/memory`,
 
 `GameShell` renders the same chrome the old pages had: the `.vel`
 column, the site bar with the injected `#theme-toggle`, the `.spel-kop`
-with the back and settings buttons, the splash where a game has one,
-and the `.voet` footer. The wrapper carries `.game--<game>`, which is
+with the back and settings buttons — plus a start button where a game hands
+the shell an `onBegin`, as Voorzetselpaden does mid-level — the splash where
+a game has one, and the `.voet` footer. The wrapper carries `.game--<game>`, which is
 the scope of that game's stylesheet.
 
 ### Code in English, content in Dutch

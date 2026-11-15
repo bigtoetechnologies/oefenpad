@@ -88,6 +88,16 @@ check("guest has no saved round",
 check("guest progress is empty",
       guest.get_json("/api/games/prepositions/progress") == {"levels": {}})
 
+# The tiers follow the bands: A0 is the free slice, A1 needs an account.
+guest_levels = guest.get_json("/api/games/prepositions/options")["levels"]
+guest_a0 = [level for level in guest_levels if level["band"] == "a0"]
+guest_a1 = [level for level in guest_levels if level["band"] == "a1"]
+check("the level list is grouped by band", bool(guest_a0) and bool(guest_a1))
+check("a guest reaches the whole a0 band",
+      all(not level["locked"] for level in guest_a0))
+check("a1 asks a guest for an account",
+      guest_a1[0]["locked"] and guest_a1[0]["lockReason"] == "account")
+
 # ------------------------------------------------------ register and confirm
 player = Session()
 page = player.get("/Account/Registreren")
@@ -147,9 +157,13 @@ check("resumed round is playable",
 
 # ------------------------------------ prepositions: finish levels, gate the rest
 levels = player.get_json("/api/games/prepositions/options")["levels"]
+a0 = [level for level in levels if level["band"] == "a0"]
+a1 = [level for level in levels if level["band"] == "a1"]
 
-check("a signed-in learner with nothing finished is gated on progress",
-      levels[3]["locked"] and levels[3]["lockReason"] == "progress")
+check("a signed-in learner starts each band at its first level",
+      not a1[0]["locked"])
+check("the second a1 level waits for the first",
+      a1[1]["locked"] and a1[1]["lockReason"] == "progress")
 
 
 def play(level_id):
@@ -177,10 +191,10 @@ def play(level_id):
 
 
 finished = {}
-for level in levels[:3]:
+for level in (a0[0], a1[0]):
     finished[level["id"]] = play(level["id"])
 
-level_id = levels[0]["id"]
+level_id = a0[0]["id"]
 view = finished[level_id]
 check("level finishes", view.get("done") is True)
 check("finished level has a score", view.get("total", 0) > 0)
@@ -193,11 +207,12 @@ check("finishing clears the saved round",
       player.get_json("/api/games/prepositions/saved") == {"saved": False})
 
 levels = player.get_json("/api/games/prepositions/options")["levels"]
-check("finishing the third free level opens the fourth", not levels[3]["locked"])
-check("the fifth still waits for the fourth",
-      levels[4]["locked"] and levels[4]["lockReason"] == "progress")
-check("the fourth level now starts",
-      "roundId" in player.post_json("/api/games/prepositions/rounds", {"level": levels[3]["id"]}))
+a1 = [level for level in levels if level["band"] == "a1"]
+check("finishing the first a1 level opens the second", not a1[1]["locked"])
+check("the third still waits for the second",
+      a1[2]["locked"] and a1[2]["lockReason"] == "progress")
+check("the second level now starts",
+      "roundId" in player.post_json("/api/games/prepositions/rounds", {"level": a1[1]["id"]}))
 
 # ----------------------------------------- the database holds what the API said
 db = sqlite3.connect(DB)
@@ -208,7 +223,7 @@ level_rows = db.execute(
     "select count(*) from GameLevelProgress p join AspNetUsers u on u.Id = p.ApplicationUserId "
     "where u.Email = ?", (EMAIL,)).fetchone()[0]
 check("a saved round row per started game", saves == 2, f"{saves} rows")
-check("three level progress rows for the player", level_rows == 3, f"{level_rows} rows")
+check("two level progress rows for the player", level_rows == 2, f"{level_rows} rows")
 
 print(f"\naccount: {EMAIL}")
 print(f"level {level_id}: {view.get('correct')} / {view.get('total')}")

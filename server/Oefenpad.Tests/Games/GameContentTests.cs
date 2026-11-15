@@ -101,7 +101,7 @@ public sealed class GameRoundTests
     private static JsonElement Json(object value) => JsonSerializer.SerializeToElement(value);
 
     [Fact]
-    public void Every_level_with_a_contrast_pair_builds_four_steps_and_the_rest_three()
+    public void Every_level_whose_frames_have_a_contrast_partner_builds_four_steps()
     {
         var service = new PrepositionsService(Content, new RoundStore());
         var frames = Content.Prepositions.Frames.ToDictionary(f => f.Id);
@@ -111,14 +111,72 @@ public sealed class GameRoundTests
             var round = service.Start(Body(new { level = level.Id }));
             var view = Json(round.View);
 
+            // The partner now lives in another level: a level is one chunk, so
+            // its contrast is the chunk it is contrasted with, not a sibling.
             var hasContrast = level.Frames
                 .Where(frames.ContainsKey)
-                .Any(id => frames[id].Contrast is { } other && level.Frames.Contains(other));
+                .Any(id => frames[id].Contrast is { } other && frames.ContainsKey(other));
 
             var steps = view.GetProperty("steps");
             steps.GetArrayLength().Should().Be(
                 hasContrast ? 4 : 3,
-                $"{level.Id} has {(hasContrast ? "" : "no ")}contrast partner in the level");
+                $"{level.Id} has {(hasContrast ? "" : "no ")}resolvable contrast partner");
+        }
+    }
+
+    [Fact]
+    public void Every_level_is_one_chunk_with_several_example_scenes()
+    {
+        foreach (var level in Content.Prepositions.Levels)
+        {
+            level.Frames.Should().HaveCountGreaterThanOrEqualTo(1);
+
+            var frames = level.Frames.Select(id => Content.Prepositions.Frames
+                .Single(frame => frame.Id == id)).ToList();
+
+            frames.Select(frame => frame.Frame).Distinct().Should().HaveCount(1,
+                $"{level.Id} holds one verb-preposition combination");
+            frames.Select(frame => frame.Example.Nl).Distinct().Should().HaveCount(
+                frames.Count, $"{level.Id} practises each example once");
+        }
+    }
+
+    [Fact]
+    public void A_contrast_partner_is_another_chunk_and_another_sentence()
+    {
+        var frames = Content.Prepositions.Frames.ToDictionary(f => f.Id);
+
+        foreach (var frame in Content.Prepositions.Frames.Where(f => f.Contrast is not null))
+        {
+            frames.Should().ContainKey(frame.Contrast!);
+            var partner = frames[frame.Contrast!];
+            partner.Frame.Should().NotBe(frame.Frame, $"{frame.Id} contrasts two chunks");
+            partner.Example.Nl.Should().NotBe(frame.Example.Nl);
+        }
+    }
+
+    [Fact]
+    public void The_choose_step_offers_three_pictures_from_the_level()
+    {
+        var service = new PrepositionsService(Content, new RoundStore());
+        var round = service.Start(Body(new { level = "bang-voor" }));
+        var view = Json(round.View);
+
+        while (view.GetProperty("kind").GetString() != "choose")
+            view = Json(service.Move(round.RoundId, Body(new { action = "next" })).View);
+
+        var count = view.GetProperty("count").GetInt32();
+        for (var item = 0; item < count; item++)
+        {
+            var options = view.GetProperty("content").GetProperty("options")
+                .EnumerateArray().Select(option => option.GetProperty("id").GetString()).ToList();
+
+            options.Should().HaveCount(3, "the picture grid is three columns wide");
+            options.Should().OnlyHaveUniqueItems();
+
+            view = Json(service.Move(round.RoundId,
+                Body(new { action = "choose", scene = options[0] })).View);
+            view = Json(service.Move(round.RoundId, Body(new { action = "next" })).View);
         }
     }
 
@@ -126,7 +184,7 @@ public sealed class GameRoundTests
     public void A_round_opens_on_the_discover_step()
     {
         var service = new PrepositionsService(Content, new RoundStore());
-        var level = Content.Prepositions.Levels.First(l => l.Id == "wachten");
+        var level = Content.Prepositions.Levels.First(l => l.Id == "wachten-op");
 
         var view = Json(service.Start(Body(new { level = level.Id })).View);
         var kinds = view.GetProperty("steps").EnumerateArray()
@@ -140,7 +198,7 @@ public sealed class GameRoundTests
     public void Concept_feedback_repeats_the_scene_sentence_instead_of_the_gloss()
     {
         var service = new PrepositionsService(Content, new RoundStore());
-        var round = service.Start(Body(new { level = "wachten" }));
+        var round = service.Start(Body(new { level = "wachten-op" }));
 
         // Walk the discover cards and every picture to choose; the number of
         // frames per level varies. The sentence step is the one to answer.
@@ -174,12 +232,13 @@ public sealed class GameRoundTests
 
         // The concept answer repeats the card's Dutch sentence. The English
         // gloss used to follow "Ja.", which read as "Ja. to wait in front of."
+        // Which word opens it depends on the card's control question.
         view = Json(service.Move(
             round.RoundId, Body(new { action = "concept", answer = true })).View);
         var explanation = view.GetProperty("feedback").GetProperty("concept")
             .GetProperty("explanation").GetString();
 
-        explanation.Should().StartWith("Ja. ");
+        explanation.Should().MatchRegex("^(Ja|Nee)\\. ");
 
         var sentences = Content.Prepositions.Frames.Select(frame => frame.Example.Nl).ToList();
         sentences.Should().Contain(sentence =>

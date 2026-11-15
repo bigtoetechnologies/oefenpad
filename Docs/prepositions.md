@@ -11,7 +11,8 @@ This file is the spec and the reasoning. `prepositions-implementation.md`
 describes the code as it shipped, including the fields that changed. Where the
 two differ, the implementation doc is right.
 
-The fifty-frame A0–A2 set is the first slice of a larger curriculum.
+The A0–A1 slice — twenty-eight chunks over ninety-one example scenes — is the
+first slice of a larger curriculum.
 `prepositions-roadmap.md` plans the path to 700 frames and B2, and states which
 of those numbers are productive and which are receptive.
 
@@ -188,8 +189,9 @@ Designed and not built:
 
 ## Scope and non-goals
 
-- The A0–A2 band is fifty frames, which completes the 30–50 chunk target of the
-  survival-kit pillar. See `voorzetselpaden/a0-a2.html`.
+- A0 and A1 ship twenty-eight chunks, each with two to four example scenes.
+  That is the 30–50 chunk target of the survival-kit pillar as far as the first
+  two bands reach; A2 (`Voorzetselpaden/a2.html`) is written but not yet drawn.
 - No audio in v1. Listening is blocked by `decisions.md` open question 6.
 - Not a full preposition table, and not a translation drill. The gloss is a
   fallback, never the main task.
@@ -201,15 +203,15 @@ Designed and not built:
 
 ## Open questions
 
-- The stop bar hides the `Klopt de zin?` entry on a single-frame level rather
-  than dimming it. Three entries in a four-column habit is honest, but a learner
-  who did another level first may read the gap as a bug.
-- How many contrast sets should one session hold before it becomes a wall of
-  scenes? The pilot has ten contrast sets and does not answer this.
+- The stop bar hides the `Klopt de zin?` entry on a chunk without a contrast
+  partner rather than dimming it. Three entries in a four-column habit is
+  honest, but a learner who did another level first may read the gap as a bug.
+- How many example scenes of one chunk should a session hold before it becomes
+  repetition? The pilot ships two to four and does not answer this.
 - The concept question was placed after the true/false answer. The shipped game
-  asks it there, and only at the Klopt stop: a single-frame level has no Klopt
-  stop, so its concept question never appears. Worth revisiting when Krimp is
-  built.
+  asks it there, and only at the Klopt stop: a chunk with no contrast partner
+  has no Klopt stop, so its concept question never appears. Worth revisiting
+  when Krimp is built.
 - Does the review queue need to keep contrast partners together, or is it enough
   to store the frame id and let the scheduler decide?
 

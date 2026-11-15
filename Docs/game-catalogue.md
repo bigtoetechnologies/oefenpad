@@ -76,10 +76,11 @@ production second; B1 adds idioms, longer texts and free output.
   partner (`uitkijken naar` vs `uitkijken voor`), not a verb + preposition pair.
   Matching alone tests recall of the pairing, not meaning; see `prepositions.md`.
 - **Preposition Paths shipped as a pilot** in `client/src/games/prepositions/`:
-  thirty-three levels — twelve contrast pairs, two sets of three and nineteen
-  single frames — each running Ontdek → Kies het beeld → Klopt de zin? → Bouw de
-  zin on its frames. A single frame has no contrast partner, so its level skips
-  `Klopt de zin?`. The fifty scene images are delivered raster, not SVG; see
+  twenty-eight levels, one per chunk — ten A0 chunks and eighteen A1 chunks —
+  each taught across two to four example scenes, ninety-one in all. Every level
+  runs Ontdek → Kies het beeld → Bouw de zin, and adds Klopt de zin? when the
+  chunk has a contrast partner in the data. A chunk with no partner skips it.
+  The ninety-one scene images are delivered raster, not SVG; see
   `game-art.md`. How it is built is `prepositions-implementation.md`. `Krimp` and
   `Hetzelfde of anders?` are still unbuilt, and the pronominal form is shown as a
   line on the Ontdek card rather than as a step.

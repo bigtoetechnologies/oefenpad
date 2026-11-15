@@ -13,9 +13,37 @@ drawn.
 
 | Brief | What it supplies |
 |---|---|
-| `voorzetselpaden/a0-a2.html` | The thirty pilot preposition scenes, one card per frame, with their contrasts and what each must not suggest |
+| `voorzetselpaden/*.html` | Every Voorzetselpaden scene, one card per frame, by CEFR band, with its contrasts and what it must not suggest |
 | `story-machine-art.md` | The 72 reel tiles, by reel and word |
 | This file | Stroke, colour, composition, prompt and checklist |
+
+## Voorzetselpaden uses style A
+
+Since 12 November 2026 every Voorzetselpaden scene is drawn in style A: a flat
+picture-book pictogram, solid cobalt clothing, simple faces, no shading. The
+owner chose it over the brush style below because it stays consistent across a
+batch and reads at the phone choice tile, about 93 CSS px wide.
+
+The brush rules in the rest of this file still describe the other games' art.
+For Voorzetselpaden they are replaced by the four things in this table.
+
+| What | Where |
+|---|---|
+| The fixed prompt | `Docs/voorzetselpaden/base-prompt.txt`, pasted unchanged |
+| The three references | `assets/verb-propositions/referenceimages/style-a/`; not the files in its `origin/` folder |
+| The scenes | The cards on each band page, read when the prompt is built: `tools/grok/grok.py prompt <band> "<chunk>"` |
+| The pipeline | Unchanged: *Delivered raster art* below |
+
+One batch is one chunk, in one fresh Grok chat. Attach the three references and
+paste the prompt that `grok.py prompt` prints: the base prompt, then the chunk's
+cards as they are on the page now, then a delivery line naming the zip and every
+file. Without that line, Grok returns the images inline and they cannot be
+fetched in bulk. `tools/grok/README.md` has the whole run.
+
+Review each image against the three references, at full size and at phone tile size, and check the framing: the whole figure,
+head to feet, at the same scale as the rest of the set. A scene fix goes on its
+card, not into the base prompt; mark a hand-written scene with the *door de
+eigenaar* badge so batch edits leave it alone.
 
 ## The idea in one line
 
@@ -52,6 +80,9 @@ The logo's orange accent is brand identity, not an art convention. Do not copy
 it into a scene. If an image needs an accent, use a heavier cobalt stroke.
 
 ## Style anchors
+
+Retired for Voorzetselpaden, which uses the style A references above. These
+three remain the reference for brush-style art in the other games.
 
 Three delivered scenes define the target. Measure a new image against them; if
 it would not pass unnoticed beside these three, it is not finished.
@@ -309,8 +340,8 @@ The fifty Voorzetselpaden scenes are the one shipped exception to "SVG, 512 ×
 files; batch 4 mostly at 784 × 1168 with one at 1152 × 1712. All arrived with
 the white paper baked in and drawn at 2:3 portrait. The originals stay untouched
 in `assets/verb-propositions/archived/`, one folder per batch. They are kept for
-provenance only; the three images in `referenceimages/` are the only source art
-the redraw uses.
+provenance only; the style A references in `referenceimages/style-a/` are the
+only images attached to a Voorzetselpaden generation.
 
 They are not used as they arrived. A baked white background becomes a bright
 card on dark paper and the brush disappears, so each file is processed into an
@@ -350,79 +381,18 @@ Ontdek card, where the image is the content, uses the scene's `alt`.
 
 ## Generation prompt
 
-One block per fresh context: attach the three style anchors, paste this header,
-then that batch's subject list. The header is byte-identical every time and the
-anchors are re-attached every time — that is what holds the style still when
-Grok's context is reset. The batch order is in `Docs/voorzetselpaden/a0-a2.html`, in the
-collapsible *Plan en kaders* section under *Redraw pass*; the paste-ready header and all ten batch blocks are in
-`prepositions-art-redraw-prompts.md`.
-
-Do not attach the old drawings being replaced. In a fresh context they read as
-the target, and the result is a traced copy of the cartoon.
-
-### Locked header
-
-> You are drawing a set of Dutch verb + preposition scene illustrations for
-> Oefenpad. Three finished images are attached: `wachten-op-vriend.png`,
-> `wachten-op-trein.png` and `wachten-op-eten.png`.
->
-> They are the line reference. Match their drawing exactly: the same bold
-> brush-pen line, the same rough ink texture and hatching, the same amount of
-> detail, the same composition and camera. Do not copy their subjects,
-> furniture or poses, and do not introduce a fourth style.
->
-> **Style.** Bold brush-pen sketch, cobalt blue only (#2B50C8; the references
-> measure about #0A41A6–#1657C9), on plain white. This is a wide-nib brush or
-> chisel marker drawing, not a pencil, fine-liner or engraving. Every contour
-> is a broad, pressure-varying band with visible dry-brush streaks and split
-> bristles; important edges are gone over a second time, a few pixels off, and
-> corners are left open. The ink is dark and solid at the core of each stroke,
-> and the line stays loose and energetic — not neat, polished or vector-smooth.
-> Interiors stay white — this is not a silhouette or an icon.
->
-> **Line weight** at 784 px wide: most lines 4–8 px, the boldest contours 9–14
-> px, detail and hatching 2–4 px. Total ink 14–22% of the canvas for a
-plain scene and up to 27% where it holds two figures and furniture; below 13%
-the drawing is too thin. The figure scales with how much is in the scene —
-never thin a busy scene to reach a number. No hairline
-> contours. Fill hair only, plus one or two small accents; do not fill
-> clothing, furniture or background.
->
-> **Shading.** Quick, dense directional hatching on the shadow side of a fold
-> or under an object: clusters of 2–4 px strokes that follow the form, with
-> white paper still visible inside the cluster. Hatching must read as a tone
-> at arm's length, not as a few decorative lines. No cross-hatch, no
-> gradients, no drop or inner shadows, no grain or texture overlay.
->
-> **People:** adult proportions, profile or three-quarter view, facing right,
-> placed in the left half of the frame. The face is a brow, one eye, a nose
-> line, a mouth and an ear, with a focused, neutral expression. Hair is a
-> filled mass with strokes through it. Hands have a thumb and finger lines. No
-> cartoon faces, no open mouths, no motion lines, no stick figures.
->
-> **Composition:** 2:3 portrait, 784 × 1168. The scene spans 90–100% of the
-> width and the person 35–55%. One place cue in the other third — a door, a
-> platform, a window, a table edge. Eye level or slightly above; tabletops and
-> rails in simple perspective. The drawing may touch or bleed off the left or
-> right edge; keep a margin of paper at top and bottom. No wallpaper, no full
-> room.
->
-> **Never:** text, letters, numbers, signs, arrows, logos, borders or frames;
-> orange, a second blue or grey; Dutch souvenir imagery (windmills, clogs,
-> tulips, canals, cheese); a thin, even, pencil-like line.
->
-> Flat white background, no border, no shadow around the image.
-
-### Batch protocol
+The Voorzetselpaden prompt is `Docs/voorzetselpaden/base-prompt.txt`; how to
+use it is under *Voorzetselpaden uses style A* above. The old brush-pen locked
+header and its batch protocol are retired. They are in git history (before
+12 November 2026) for provenance, and must not be pasted: they ask for
+hatching the references never had, which is where the drift came from.
 
 | Rule | Why |
 |---|---|
-| **5 images per batch, maximum 6** | Style drifts with batch size; the 114-image batch proved it |
-| Keep a contrast family in one batch | `boos op` and `boos over` drawn apart get different line weights and stop pairing |
-| Never split one frame's variants across batches | The three `wachten op` images are the anchors *because* they were drawn together |
-| Same anchor files attached every time | Attaching them only at the start lets the style decay by batch three |
-| Reject and redo, do not patch | Restyling a cartoon by thinning its outline leaves a thin cartoon |
-| Batch 1 is a test | Draw only the first batch, compare against the anchors at full size and at 64 px, then continue |
+| One batch per chunk, one fresh chat per batch | A chunk's variants are drawn together, so they match |
+| The same three references attached every time | The style holds only while the target is in the context |
+| The base prompt unchanged | Every change to it needs a fresh test batch before it is trusted |
+| Reject and redo, do not patch | A patched image never sits right beside the others |
 
 The output is a sketch, not a deliverable. Pipeline it as described in
 *Delivered raster art*: alpha mask, 512 × 763, tinted by CSS. Do not ship the

@@ -193,6 +193,10 @@ public sealed class Level
 {
     public string Id { get; set; } = "";
     public string Name { get; set; } = "";
+
+    /// <summary>The CEFR band the level comes from, e.g. <c>a0</c>.</summary>
+    public string? Band { get; set; }
+
     public List<string> Frames { get; set; } = new();
     public List<string>? Extra { get; set; }
 }

@@ -69,13 +69,18 @@ public sealed record GameCategory(string Id, string Name, string Icon, int Count
 /// <param name="Size">Grid size or pair count, where the level has one.</param>
 /// <param name="Locked">The current visitor may not start this level yet.</param>
 /// <param name="LockReason">Why it is locked, when it is; see <see cref="GameLock"/>.</param>
+/// <summary>
+/// A level as the client sees it. <see cref="Band"/> is the CEFR band the
+/// level was written for, so a long list can group and label its rows.
+/// </summary>
 public sealed record GameLevel(
     string Id,
     string Name,
     int? Size = null,
     string? Subtitle = null,
     bool Locked = false,
-    string? LockReason = null);
+    string? LockReason = null,
+    string? Band = null);
 
 public sealed class RoundExpiredException : Exception
 {

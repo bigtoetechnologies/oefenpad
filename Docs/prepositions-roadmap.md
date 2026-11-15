@@ -143,8 +143,15 @@ moved to the **Uit Elkaar** game idea in `suggestions.md`. Batch 8 keeps the
 pronominal adverbs; the freed slots went to high-frequency everyday chunks the
 set was missing (`hopen op`, `uitgeven aan`, `bellen met`, …). Three of the
 originally drafted chunks — `gaan naar`, `kiezen voor` and `betalen voor` — are
-also drawn in batch 4b. `Docs/voorzetselpaden/a2-plus.html` records that overlap, in its collapsible *Plan en kaders* section, and
-the three ways to resolve it before A2+-08 is drawn. `tussen` was going to move
+also drawn in batch 4b. Each of the three is drawn in a different scene in each band, so only the chunk
+repeats; `kiezen voor` (cake over an apple in 4b) cannot be mistaken for its A2+
+partner, while the other two differ only in place or object. One of three
+resolutions must be chosen before A2+-08 is drawn: keep both scenes and put each
+chunk in a level apart from its 4b partner (no new art); drop the three A2+ rows
+and plan three replacements from the B1 and B1+ chunks (band stays at 80); or
+point the three rows at the 4b art (they become documentation, not frames).
+Until then the three rows stay planned. This text moved here from the A2+ page
+on 12 Nov 2026, when the old Markdown prose was taken off the band pages. `tussen` was going to move
 from batch 5 to 4b; it stays in batch 5 now that `kiezen tussen` has been
 dropped from 4b.
 
@@ -214,8 +221,8 @@ art plans, `zonder` included, and that `via` appears only inside
 
 ## 8. What changes in the engine
 
-The engine is tuned for 50 frames and 33 levels (66 and 36 once batch 4b ships).
-700 needs these changes.
+The game now ships 91 example scenes across 28 levels (A0 and A1). 700 needs
+these changes.
 None of them are in `prepositions-implementation.md` yet.
 
 | Change | Why |

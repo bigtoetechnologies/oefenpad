@@ -1,10 +1,10 @@
 {
-  "generatedFrom": "canonical JSON banks (extracted once from the old src/ game pages, which no longer exist)",
+  "generatedFrom": "Docs/voorzetselpaden/a0.html and a1.html (cards with an image), via tools/import-prepositions-band.py",
   "categories": 25,
   "words": 2518,
   "wordImages": 148,
-  "scenes": 50,
-  "frames": 50,
-  "levels": 33,
+  "scenes": 91,
+  "frames": 91,
+  "levels": 28,
   "reels": 6
 }

@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
+import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
 import { api, ApiError, fill, type GameLevel, type LevelResults, type Texts } from '../../api';
 import { GameShell } from '../../site/GameShell';
 import { ResumeNote } from '../../shared/ResumeNote';
@@ -423,15 +423,22 @@ export function PrepositionsGame() {
         <div className="niveaus">
           {levels.map((level, index) => {
             const done = progress[level.id];
+            /* The list follows the band pages, so it starts a new group where
+               the band changes. The number keeps counting across bands; the
+               heading is what tells a learner which shelf they are on. */
+            const band = level.band;
+            const startsBand = Boolean(band)
+              && (index === 0 || levels[index - 1].band !== band);
+
+            let row;
             if (level.locked) {
               const reason = level.lockReason === 'premium'
                 ? t('locked-premium')
                 : level.lockReason === 'progress'
                   ? t('locked-progress')
                   : t('locked-account');
-              return (
+              row = (
                 <div
-                  key={level.id}
                   className="niveau is-dicht"
                   aria-disabled="true"
                 >
@@ -448,24 +455,31 @@ export function PrepositionsGame() {
                   ) : null}
                 </div>
               );
+            } else {
+              row = (
+                <button
+                  type="button"
+                  className="niveau"
+                  disabled={starting}
+                  onClick={() => void start(level.id)}
+                >
+                  <span className="nr">{index + 1}</span>
+                  <span className="wat">
+                    {level.name}
+                    <span className="onder">{level.subtitle ?? ''}</span>
+                  </span>
+                  {done === undefined ? null : (
+                    <span className="gehaald">{`✓ ${done.correct}/${done.total}`}</span>
+                  )}
+                </button>
+              );
             }
+
             return (
-              <button
-                key={level.id}
-                type="button"
-                className="niveau"
-                disabled={starting}
-                onClick={() => void start(level.id)}
-              >
-                <span className="nr">{index + 1}</span>
-                <span className="wat">
-                  {level.name}
-                  <span className="onder">{level.subtitle ?? ''}</span>
-                </span>
-                {done === undefined ? null : (
-                  <span className="gehaald">{`✓ ${done.correct}/${done.total}`}</span>
-                )}
-              </button>
+              <Fragment key={level.id}>
+                {startsBand ? <p className="band-kop">{band!.toUpperCase()}</p> : null}
+                {row}
+              </Fragment>
             );
           })}
         </div>
@@ -494,6 +508,10 @@ export function PrepositionsGame() {
       game="prepositions"
       title={texts?.['title'] ?? ''}
       tagline={texts?.['tagline']}
+      // Mid-level there is no other way out of the round, so the chrome
+      // carries one. The end screen has its own `Ander niveau`.
+      onBegin={view === null ? undefined : toLevels}
+      beginLabel={texts?.['to-levels']}
     >
       {body}
     </GameShell>

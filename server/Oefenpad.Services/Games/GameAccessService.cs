@@ -61,22 +61,34 @@ public sealed class GameAccess
 }
 
 /// <summary>
-/// The visitor tiers for Voorzetselpaden. The first levels are open to
-/// everyone, the next six need an account, and everything after that needs a
-/// paid plan. Within a tier a level also waits for the one before it. Finishing
-/// counts as passing: the point of the gate is to make a crawler play, not to
-/// grade the player.
+/// The visitor tiers for Voorzetselpaden. The tiers follow the CEFR bands the
+/// content is written in: A0 is open to everyone, A1 needs an account, and A2
+/// and up will need a paid plan. A band is the unit because the game grows a
+/// band at a time — an index-based cut would move every time a band lands.
+/// Within a tier a level also waits for the one before it, and the first level
+/// of a band opens the band. Finishing counts as passing: the point of the gate
+/// is to make a crawler play, not to grade the player.
 /// </summary>
 public static class PrepositionAccess
 {
-    public const int FreeLevels = 3;
+    /// <summary>The band every visitor may practise.</summary>
+    public const string FreeBand = "a0";
+
+    /// <summary>The band that needs an account. Anything above it needs a plan.</summary>
+    public const string AccountBand = "a1";
+
+    public enum Tier { Free, Account, Premium }
 
     /// <summary>
-    /// The index of the first level that needs a paid plan. Levels 0–2 are free,
-    /// 3–8 need an account (six levels), 9 and up need a subscription. There is
-    /// no payment system yet, so no visitor is premium and that slice stays shut.
+    /// Which tier a level belongs to. A level without a band is left free, so a
+    /// new or unlabelled band never arrives locked by accident.
     /// </summary>
-    public const int PremiumFrom = 9;
+    public static Tier TierOf(Level level) => level.Band?.Trim().ToLowerInvariant() switch
+    {
+        AccountBand => Tier.Account,
+        null or "" or FreeBand => Tier.Free,
+        _ => Tier.Premium
+    };
 
     /// <summary>
     /// Per-level lock reason, keyed by level id. A null <paramref name="passed"/>
@@ -92,31 +104,36 @@ public static class PrepositionAccess
 
         for (var i = 0; i < levels.Count; i++)
         {
-            if (i < FreeLevels) continue;
+            var level = levels[i];
+            var tier = TierOf(level);
 
-            var id = levels[i].Id;
+            if (tier == Tier.Free) continue;
 
             // A paid level is closed without a plan even when it was finished
             // before: progress survives, access does not.
-            if (i >= PremiumFrom && !isPremium)
+            if (tier == Tier.Premium && !isPremium)
             {
-                locks[id] = GameLock.Premium;
+                locks[level.Id] = GameLock.Premium;
                 continue;
             }
 
             if (!isSignedIn)
             {
-                locks[id] = GameLock.Account;
+                locks[level.Id] = GameLock.Account;
                 continue;
             }
 
-            if (passed is null) { locks[id] = GameLock.Progress; continue; }
+            if (passed is null) { locks[level.Id] = GameLock.Progress; continue; }
 
-            // A level that was finished stays playable, and finishing the one
-            // before opens this one. Anything else waits.
-            if (passed.Contains(id) || passed.Contains(levels[i - 1].Id)) continue;
+            // A level that was finished stays playable, finishing the one
+            // before opens this one, and the first level of a band is where
+            // that band starts. Anything else waits.
+            var opensBand = i == 0
+                || !string.Equals(levels[i - 1].Band, level.Band, StringComparison.OrdinalIgnoreCase);
 
-            locks[id] = GameLock.Progress;
+            if (opensBand || passed.Contains(level.Id) || passed.Contains(levels[i - 1].Id)) continue;
+
+            locks[level.Id] = GameLock.Progress;
         }
 
         return locks;

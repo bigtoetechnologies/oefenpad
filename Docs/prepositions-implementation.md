@@ -1,202 +1,192 @@
 # Voorzetselpaden — how it is built
 
-The game as shipped: thirty-three levels, four stops (three in a single-frame
-level). The React page is `client/src/games/prepositions/`; the levels, frames,
-scenes and sentences are in
+The game as shipped: **twenty-eight levels** — ten in A0, eighteen in A1 —
+holding **ninety-one example scenes**. A level is one verb or expression plus
+its preposition (`wachten op`), taught across two to four photographs. The
+React page is `client/src/games/prepositions/`; the levels, frames, scenes and
+sentences are in
 `server/Oefenpad.Resources/Games/Data/prepositions.json`, and the rules that
-build the four steps and judge every answer are in
+build the steps and judge every answer are in
 `server/Oefenpad.Services/Games/PrepositionsService.cs`. `prepositions.md` is
 the activity spec and the reasoning; `game-art.md` is how the images are drawn;
 this file is the code.
 
-Read this before changing the JSON or adding a level. Several fields the
-spec proposed did not survive contact with the engine, and the differences are
-listed below rather than left to be rediscovered.
+**The band pages are the source.** `Docs/voorzetselpaden/a0.html` and
+`a1.html` hold the cards — chunk, gloss, scene brief, the example sentence,
+the build sentence and the control question. `prepositions.json` and
+`meta.json` are generated from them by
+`tools/import-prepositions-band.py` (read-only over the pages, promoting each
+card's image into `assets/voorzetselpaden/`). Do not hand-edit the JSON: edit
+the page and re-run the importer, or the next run will overwrite you. Only
+cards that carry a `class="beeld"` image are imported; `vragen om` and
+`doorgeven aan` have none in A0/A1 and are therefore absent.
 
 ## Files
 
 | File | What it holds |
 |---|---|
-| `client/src/games/prepositions/PrepositionsGame.tsx` | The React page: the stop bar, the four renderers, the level list |
+| `client/src/games/prepositions/PrepositionsGame.tsx` | The React page: the stop bar, the four renderers, the level list, the feedback panel |
+| `client/src/styles/source/prepositions.css` | A thin layer over `assets/site/oefenpad.css`; tokens only, no new colours. Regenerate `client/src/styles/games/prepositions.css` with `npm run scope-css` |
 | `server/Oefenpad.Resources/Games/Data/prepositions.json` | `scenes`, `frames`, `levels`. Content only, no logic |
 | `server/Oefenpad.Services/Games/PrepositionsService.cs` | The step engine, the options, the judging, the view |
-| `client/src/styles/source/prepositions.css` | A thin layer over `assets/site/oefenpad.css`; tokens only, no new colours |
-| `assets/voorzetselpaden/*.png` | Fifty alpha masks, 512 × 763, one per scene |
+| `server/Oefenpad.Services/Games/GameAccessService.cs` | The tier and level-chain rule (`PrepositionAccess`) |
+| `assets/voorzetselpaden/*.png` | The alpha masks, 512 × 763, one per example scene |
+| `tools/import-prepositions-band.py` | Page → JSON importer and art promoter |
 
 `GameShell` supplies the `.balk` / `.spel-kop` / `.voet` chrome and the theme
 toggle. The browser never sees the frames, the contrast partner or the tile
 order; the service sends one card at a time and judges every answer.
 
-There is no `grammar.js` and no `verbs` table. The spec assumed both; the pilot
-does not need them.
+The `.spel-kop` carries one button the other games do not need: `Niveaus`,
+the way back to the level list from anywhere inside a level. It is a labelled
+`.btn-icon--tekst` rather than a glyph because the arrow beside it already
+leaves the game for the site, and two arrows would say the same thing twice.
+`GameShell` renders it only while a round is open, so the level list and the
+end screen (which has `Ander niveau`) show no button that would go nowhere.
+Below about 370 px of width the whole `.stand` wraps under the title; the step
+was re-checked at 360 × 740 and still fits on one screen.
+
+There is no `grammar.js` and no `verbs` table. The spec assumed both; the
+pilot does not need them.
 
 ## The data, as shipped
 
 ```js
 {
   scenes: { '<scene-id>': { file, alt } },
-  frames: [ { id, frame, en, scene, contrast, focus, example: { nl, en },
-              build: [[token, …], …], concept: [{ question, answer }],
-              separable, prefix, pronominal, pronominalScene, discoverOnly } ],
-  levels: [ { id, name, frames: [frameId, …], extra: [frameId] } ]
+  frames: [ { id, frame, en, scene, contrast, focus,
+              example: { nl, en }, build: [[token, …], …],
+              concept: [{ question, answer }],
+              separable, prefix } ],
+  levels: [ { id, name, band, frames: [frameId, …] } ]
 }
 ```
 
-A **frame** is one verb, adjective or fixed expression plus its preposition —
-`wachten op`, `klaar met`, `last hebben van` — not a bare word. A **level** is
-one such word's contrast set, usually a pair; `vragen` and `praten` are sets of
-three, and the other nineteen levels are sets of one. The level is what the
-learner picks.
+A **frame** is one example scene of a chunk: `bang-voor-spin` carries
+`frame: "bang voor"`, `en: "afraid of"` and its own sentence. The chunk is
+repeated on every one of its examples — that repetition is what lets the
+client show the same combination four times without a lookup table. A
+**level** is one chunk, `band` is the CEFR band it was written for (`a0`,
+`a1`), and `frames` lists its examples in page order.
 
 ### Where it diverged from the spec
 
 | Spec (`prepositions.md`) | Shipped | Why |
 |---|---|---|
 | `verb`, `prep` separate fields | One `frame` string, plus `focus[]` | Nothing joins on the verb. `focus` is the list of words the UI underlines — the preposition and, for a separable verb, the prefix |
-| `conceptQuestions` | `concept` | Renamed for brevity; same shape |
-| `pronominalScene` on every frame | Kept on `denken-aan` only | The engine never reads it. `eraan-denken` is its own frame with its own scene |
-| — | `bouw: [[token, …], …]` | One array per accepted sentence, see below |
-| — | `discoverOnly` | Marks `eraan-denken` as input-only |
-| — | `levels[]` | The session order, which the spec described in prose |
-| `contrast` always set | `null` on the single-frame levels | A single frame has no contrast partner, and that null is what removes the third stop |
-| `separable` on every frame | `true` + `prefix` on separable frames only | Absence means not separable; `false` and `null` are not used |
+| `conceptQuestions` | `concept` | Renamed for brevity; same shape. Only `concept[0]` is read |
+| `pronominalScene` on every frame | Dropped | The engine never read it, and the band pages do not carry it |
+| — | `levels[].band` | The tier rule and the level list both group by band |
+| — | `build: [[token, …], …]` | One array per accepted sentence; the importer keeps the card's first build line, the only one that varies |
+| — | `contrast` may name a frame in another level | A level is one chunk now, so the partner is always elsewhere — see below |
+| `separable` on every frame | `true` + `prefix` on separable frames only | Absence means not separable. The field is documentation; the engine keys off `prefix` |
 
-`separable` is read by nothing. It records the fact for a human; the engine
-keys off `prefix`.
-
-### Why `bouw` is a list of sentences
-
-`ophouden met` was the first frame with two entries; the four singles added with
-batch 2 (`zorgen voor`, `meedoen met`, `zoeken naar`, `last hebben van`) follow
-the same pattern. `ophouden met` looks like this:
-
-```js
-bouw: [['Ik', 'hou', 'op', 'met', 'roken'], ['Zij', 'houdt', 'op', 'met', 'roken']]
-```
-
-A separable prefix is a word-order rule, and one person is one data point. Two
-persons give the learner the same *op … met*-frame twice with a different verb
-form, so the position is what is being learned rather than a memorised string.
-Each entry becomes its own Bouw item; the two are never shown side by side.
-
-For a single-frame level this is not optional polish: it is what gives the level
-three scored answers (1 Kies + 2 Bouw) instead of two. Adding a second sentence
-to any other frame is a one-line change with no engine work.
-
-### The fields that do the work
-
-| Field | Used by | Effect |
-|---|---|---|
-| `contrast` | `bouwStappen`, Klopt | Names the only wrong sentence allowed in Klopt. `null` removes the stop |
-
-In a two-frame level the two frames point at each other. `vragen` has three
-frames, so its pointers form a chain instead: `vragen-aan` ↔ `vragen-om`, and
-`vragen-naar` → `vragen-aan` one way. The engine only reads each frame's own
-`contrast`, so a non-reciprocal entry is valid; do not "fix" it into a cycle.
-| `focus` | `zin()` | Underlines the chunk in cobalt; the rest of the sentence stays black |
-| `pronominal` | Ontdek | Printed as a `Korter:` line, not a stop |
-| `discoverOnly` | `oefenbaar` | The frame can appear on an Ontdek card but never as a Kies option or a distractor |
-| `levels[].extra` | Ontdek | Extra input cards, e.g. `eraan-denken` inside the `denken` level |
-| `en` | Ontdek, Kies, Klopt | The English gloss. The game is Dutch-only, but the gloss is the fallback meaning, per `decisions.md` |
-
-`scenes[].file` is **relative to the game folder**, not the repo root:
-`art/wachten-op-bus.png`.
+`scenes[].file` is **relative to the game folder**: `art/bang-voor-hond.png`.
 
 ## The step engine
 
-`start(level)` builds `sessie = { level, stappen, stap, item, goed, totaal }`.
-`bouwStappen(level)` turns a level into an array of steps; each step is
-`{ soort, kaarten }` or `{ soort, items }`.
+`Start(level)` builds a `RoundState` — level id, steps, step index, item,
+score. `BuildSteps(level)` turns the level into its steps; each step is a
+`DiscoverStep`, `ChooseStep`, `TrueFalseStep` or `BuildStep`. Empty steps are
+dropped before the round starts, because a view indexes item 0 of an empty
+list.
 
-| Step | Built from | Items in a two-frame level |
+| Step | Built from | Items for a level with 4 examples |
 |---|---|---|
-| `ontdek` | `frames` plus `level.extra` | 2 cards (3 in `denken`) |
-| `kies` | One item per frame, each with 3 scene options | 2 |
-| `klopt` | Per frame: its own sentence (true) and the partner's (false) | 4 |
-| `bouw` | Every token array of every frame | 2 |
+| `discover` | every example | 4 cards (unscored) |
+| `choose` | One item per example, each with 3 scene options | 4 |
+| `klopt` | Per example: its own sentence (true) and the contrast partner's (false) | 8 |
+| `build` | Every token array of every frame | 4 |
 
-`vragen` and `praten` have three frames, so they get 3 Kies items, 6 Klopt
-items and 3 Bouw items. `ophouden` and the eighteen other single-frame levels
-have one frame, so they get 1 Kies item and 2 Bouw items — three scored
-answers, three stops, not four. That is the level, not a data fault.
+A level with one or two examples gets one or two Kies items, and a level
+without a contrast partner has no Klopt step: three stops instead of four.
+That is the level, not a data fault.
 
 ### Why Klopt is conditional
 
-```js
-var heeftContrast = frames.some(function (f) {
-    return f.contrast && level.frames.indexOf(f.contrast) !== -1;
-});
+```csharp
+var hasContrast = frames.Any(f =>
+    f.Contrast is not null && _byId.ContainsKey(f.Contrast));
 ```
 
-Klopt only exists if the level contains a real pair. A level whose frames do not
-point at each other would have to invent a distractor, and a wrong preposition
-that is not the partner teaches nothing about this chunk. If a future level
-breaks the pairing, the stop silently disappears — that is the intended
-failure mode, but check the stop bar after adding data.
+Klopt only exists when the chunk has a contrast partner that resolves to a
+frame **anywhere in the data** — not necessarily in this level. Since a level
+is now one chunk, the partner is always in another level: `wachten op` points
+at `wachten voor`, and its Klopt questions borrow the partner's sentence. A
+wrong preposition that is not the partner teaches nothing about this chunk, so
+a chunk with no partner (A0's ten, and `bezig zijn met`, `meedoen met`,
+`uitnodigen voor`, `vallen uit`) simply has no Klopt stop. If an entry stops
+resolving, the stop silently disappears — check the stop bar after adding
+data.
+
+### Choosing the three pictures
+
+`OptionsFor` always shows the right scene plus two distractors. The other
+examples of the same level come first, because the question is *which
+situation does this sentence describe*; a level with fewer than three examples
+borrows scenes from elsewhere in the data. The option list is shuffled before
+it is sent.
 
 ### The loop
 
-| Function | Does |
+| Member | Does |
 |---|---|
-| `naarStap(i)` | Sets `stap`, resets `item` to 0, shows `toonKlaar()` past the end |
-| `volgendeItem()` | Increments `item`; at the end of a step, advances the step |
-| `teken()` | Clears `#scherm` once and dispatches on `stap.soort` |
-| `toonStap(soort)` | Hides stop-bar entries this level has no step for, marks the current one orange, earlier ones `geweest` |
+| `Next` | Advances the item; at the end of a step, advances the step and skips anything empty. Discovery advances without an answer |
+| `Choose` / `TrueFalse` / `Build` | Score the item, set the feedback fields, return the same view with `phase: "feedback"` |
+| `Concept` | Records the answer to the post-answer meaning question. Not scored |
+| `View` | Projects the current step and item into the one object the client renders |
+| `CurrentStep`, `ItemCount` | Guard every action against an index the client should not have |
 
-Every stop advances through the same `volgendeItem`, including Ontdek, which is
-unscored. Only `teken()` writes to `#scherm`, so a renderer may assume an empty
-container.
+The client renders from `view` alone. `stepIndex` and `item` drive the stop
+bar and the counter, and `steps` lists the kinds this level has, so an absent
+Klopt needs no client knowledge.
 
 ### Renderers
 
-Each renderer appends to `#scherm` and, where there is a right answer, calls
-`toonTerug(blok, 'goed'|'fout', frame)` instead of writing feedback itself.
-`toonTerug` is the only place a `.terug` panel is created, which is why the
-concept question lives there and cannot appear before the answer.
-
-`tekenBouw` is the exception: it owns local state (`gekozen`, `pool`, `klaar`)
-and its own `Controleer` button, then hands off to `toonTerug` for the verdict.
-
-### Layout: one step, one screen
-
-Every renderer returns the same skeleton so a step never scrolls:
+`renderStep` dispatches on `view.kind` to one of four renderers, all of which
+return the same skeleton so a step never scrolls:
 
 ```
 .vlak
   .beeldvak (the drawing) or .keuzes (the three images)
-  .tekst    (.vraag / .uitleg / .zin / .kloptzin / .rij / .pool / .terug)
+  .tekst    (.vraag / .uitleg / .zin / .rij / .pool / .terug)
   .verder   (the counter and the primary button)
 ```
 
+`BuildView` is the exception on the client: it owns local state (the chosen
+tiles, the pool) and its own `Controleer` button, then hands off to
+`FeedbackBlock`.
+
+### Layout: one step, one screen
+
 - **Wide screen** (`min-width:800px and min-height:520px`): `.vlak` is a
-grid, drawing left spanning both rows, text and buttons right. The drawing
-is capped at `min(52vh,430px)`, and at `min(32vh,300px)` once feedback is
-showing, because the answer panel makes the text column the tall one. Below
-820 px of height the step bar, the sentence and the panel each give up a few
-pixels (`@media(min-width:800px) and (max-height:820px)`).
+  grid, drawing left spanning both rows, text and buttons right. The drawing
+  is capped at `min(52vh,430px)`, and at `min(32vh,300px)` once feedback is
+  showing, because the answer panel makes the text column the tall one. Below
+  820 px of height the step bar, the sentence and the panel each give up a few
+  pixels (`@media(min-width:800px) and (max-height:820px)`).
 - **Narrow screen**: stacked, `.vlak` centres its content and the drawing
-absorbs the slack (`flex:1 1 180px`) so a tall phone does not leave a hole
-under the sentence. The answer panel is `position:fixed` at the bottom and
-slides in; the step reserves exactly the part it covers. `FeedbackBlock`
-measures that (`--terug-hoogte`, a `ResizeObserver` on the panel, using
-`offsetHeight` because the entrance animation is a transform) and
-`.vlak--na` pads by it, so the sentence is never hidden behind the panel.
-The panel grows when its concept question is answered, which is why this is
-an observer and not one measurement. `justify-content: safe center` keeps a
-too-tall step from spilling up over the step bar.
+  absorbs the slack (`flex:1 1 180px`) so a tall phone does not leave a hole
+  under the sentence. The answer panel is `position:fixed` at the bottom and
+  slides in; the step reserves exactly the part it covers. `FeedbackBlock`
+  measures that (`--terug-hoogte`, a `ResizeObserver` on the panel, using
+  `offsetHeight` because the entrance animation is a transform) and
+  `.vlak--na` pads by it, so the sentence is never hidden behind the panel.
+  The panel grows when its concept question is answered, which is why this is
+  an observer and not one measurement. `justify-content: safe center` keeps a
+  too-tall step from spilling up over the step bar.
 - **Short phone** (`max-height:760px`) with a concept question: the panel and
-the sentence are all that fits, so the drawing is hidden. The sentence is
-what is being read; the drawing has already been seen.
+  the sentence are all that fits, so the drawing is hidden. The sentence is
+  what is being read; the drawing has already been seen.
 - `.vel` is `height:100dvh` at 520 px and above, so the footer stays on
-screen and anything that still cannot fit scrolls inside `.app-container`.
-Below 520 px (a phone on its side) the page falls back to normal scrolling,
-because a step plus the site header does not fit there at all.
+  screen and anything that still cannot fit scrolls inside `.app-container`.
+  Below 520 px (a phone on its side) the page falls back to normal scrolling,
+  because a step plus the site header does not fit there at all.
 
 Verified in headless Chrome at 360×740, 390×844, 844×390, 1280×600,
-1366×768 and 1400×900: every state of a level reports
-`scrollHeight === innerHeight`, and a DOM check found no step content behind
-the answer panel. The two exceptions are 844×390 (page scroll, by design)
-and 1280×600, where the concept-question panel scrolls inside the game area.
+1366×768 and 1400×900 before the A0/A1 import; the import changed the number
+of items per step, not the skeleton, and the A0/A1 screens were re-checked at
+1400×1000 on 13 Nov 2026.
 
 ## There is no parser
 
@@ -204,76 +194,100 @@ Every check is a lookup or a string compare.
 
 | Stop | Check |
 |---|---|
-| Kies | `gekozen === item.frame.scene` |
-| Klopt | `gekozen === item.waar` — the answer is stored, not derived |
-| Bouw | `gekozen.join(' ') === doel.join(' ')`, then `lastIndexOf(prefix) === doel.length - 1` for the position message |
+| Kies | `chosen === item.Frame.Scene` |
+| Klopt | `answer === item.Truth` — the answer is stored, not derived |
+| Bouw | `answer.SequenceEqual(item.Target)`, then `LastIndexOf(prefix) === Target.Count - 1` for the position message |
 
-Bouw's exact-string compare means the only accepted sentence is one written in
-`prepositions.json`. That is deliberate: a pilot does not need to accept paraphrases, and
-a parser would be the largest piece of code in the game. The cost is that the
-tile order is the only order: a learner who builds a different but grammatical
-sentence is marked wrong.
+Bouw's exact-sequence compare means the only accepted sentence is the one in
+`prepositions.json`. That is deliberate: a pilot does not need to accept
+paraphrases, and a parser would be the largest piece of code in the game. The
+cost is that the tile order is the only order: a learner who builds a
+different but grammatical sentence is marked wrong.
 
 A misplaced prefix is reported as a position error before any other failure:
 
-```js
-} else if (f.prefix && antwoord.indexOf(f.prefix) !== -1 && !prefixLaatst) {
-    blok = tekst(['Bijna. ', vet(f.prefix), ' hoort achteraan.']);
+```csharp
+} else if (item.Frame.Prefix is not null &&
+           answer.Contains(item.Frame.Prefix) && !prefixLast) {
+    state.LastExplanation = Text("build-almost", ("prefix", item.Frame.Prefix));
 }
 ```
 
+Only `meedoen met` carries `prefix` in A0/A1, because it is the only card the
+band pages mark `scheidbaar`. `uitnodigen voor` is separable in its own
+sentences too, but the page does not say so, so `build-almost` never fires for
+it. That is a content gap, not an engine one.
+
 ## Scoring and feedback
 
-- Ontdek is not counted. Kies, Klopt and Bouw each add one to `totaal`.
-- The end screen is `goed / totaal` with `Nog een keer` (same level) and `Ander
-  niveau`. Nothing is stored, so a session leaves no trace — there is no review
-  queue yet.
-- Feedback names the chunk, never just "wrong": a wrong Kies says which frame
-  the chosen image belongs to, a wrong Klopt names the preposition that would
-  fit, and Bouw prints the target sentence.
-- The concept question is rendered by `toonTerug`, and only Klopt passes it a
-  frame. So it appears at Klopt alone, after the answer, and only `concept[0]`
-  is ever read. The single-frame levels have no Klopt stop, so their concept
-  questions never appear at all.
-- `#melding` is `aria-live="polite"` and repeats the question or the verdict.
-  Scene images are `aria-hidden` in choice buttons (`aria-label="Beeld 1"`), and
-  carry the scene `alt` only where the image is the content: Ontdek, Klopt and
-  Bouw.
+- Ontdek is not counted. Kies, Klopt and Bouw each add one to `total`.
+- The end screen is `correct / total` with `Nog een keer` (same level) and
+  `Ander niveau`. Progress is saved per level for a signed-in account; a guest
+  leaves no trace.
+- Feedback names the chunk, never just "wrong":
+  - a wrong Kies says which **sentence** the picked picture belongs to,
+    because the distractors are usually other examples of the same chunk and
+    naming the chunk would read "bang voor, niet bang voor";
+  - a wrong Klopt names the chunk and the sentence the picture fits;
+  - Bouw prints the target sentence, and the prefix message when the prefix is
+    in the wrong place.
+- The concept question is rendered by `FeedbackBlock`, and only Klopt passes it
+  a frame. So it appears at Klopt alone, after the answer, and only
+  `concept[0]` is ever read. Chunks without a Klopt stop never show theirs.
+- The live region repeats the question or the verdict. Scene images are
+  `aria-hidden` in choice buttons (`aria-label="Beeld 1"`), and carry the scene
+  `alt` only where the image is the content: Ontdek, Klopt and Bouw.
+
+## Access
+
+`PrepositionAccess.Evaluate` decides per level. The tier comes from the band,
+not from an index, because the game grows a band at a time:
+
+| Band | Tier |
+|---|---|
+| `a0` (and anything unlabelled) | free — no account, no chain |
+| `a1` | account. The first level of the band opens the band; each next one waits for the one before it |
+| `a2` and up | paid plan. No payment system exists yet, so that slice is shut |
+
+`/options` marks a closed level; `POST /rounds` answers 403 for it. The round
+endpoint is the check that matters, because a caller can skip `/options`
+entirely. The level list groups rows under an `A0` / `A1` heading
+(`.band-kop`); the row number keeps counting across bands.
 
 ## The art
 
-The thirty files are alpha masks, not pictures. `beeld(sceneId)` sets `--beeld` to
+The ninety-one files are alpha masks, not pictures. `Scene` sets `--beeld` to
 the file URL and `.beeld` paints `var(--kobalt)` through it, so the ink follows
-the theme with one file. The formula, the portrait exception and the reason for
-it are in `game-art.md` under *Delivered raster art*; do not recolour the PNGs.
+the theme with one file. The formula, the portrait exception and the reason
+for it are in `game-art.md` under *Delivered raster art*; do not recolour the
+PNGs.
 
-`aspect-ratio: 512 / 763` in `style.css` must match the shipped files. A new
-image at another ratio needs that rule changed, which changes every scene on
-the page.
+`aspect-ratio: 512 / 763` in `prepositions.css` must match the shipped files.
+A new image at another ratio needs that rule changed, which changes every
+scene on the page.
 
 ## Not built
 
 | Item | State |
 |---|---|
-| `Krimp` (pronominal transformation) | Not built; the form is a `Korter:` line on Ontdek |
+| `Krimp` (pronominal transformation) | Not built, and not in the A0/A1 data |
 | `Hetzelfde of anders?` | Not built |
-| Flitskaarten / review queue | Not built; nothing is persisted |
+| Flitskaarten / review queue | Not built; progress is a best score per level |
 | Audio | Not built, blocked by the open question in `decisions.md` |
-| Second concept question | In the data for three frames, never rendered |
-| `pronominalScene` | In the data, never read |
-| Shared Zinsbouwer tile renderer | There is no Zinsbouwer module to share with; `tekenBouw` is local |
-| Free-text entry | Not built; all four stops are taps |
+| Second concept question | In the data for some frames, never rendered |
+| Free-text entry | Not built; every stop is taps |
+| A2 and up | Not imported; the band pages exist, the images do not yet |
 
 ## Open questions
 
-- The stop bar hides the Klopt entry on every single-frame level rather than
-  dimming it. Three entries in a four-column habit is honest, but a learner who
-  did another level first may read the gap as a bug. Unmeasured.
-- Ten contrast sets exist. Whether a session of scenes reads as a path or a
-  wall is still unmeasured.
+- The stop bar hides the Klopt entry on a chunk without a contrast partner
+  rather than dimming it. Three entries in a four-column habit is honest, but a
+  learner who did another level first may read the gap as a bug. Unmeasured.
 - Klopt is exactly half true, every time: one true and one false item per
-  frame. With few items a learner could pass on the imbalance rather than the
+  example. With few items a learner could pass on the imbalance rather than the
   meaning. Whether that happens is unchecked.
-- `denken-aan-persoon` and `eraan-denken-afspraak` are flagged for redraw in
-  `Docs/voorzetselpaden/a0-a2.html` (the card for each frame); the game works with them, so the redraw is an art
-  decision, not a blocker.
+- Whether four photographs of one chunk read as practice or as repetition is
+  unmeasured. It is also the point of the remake: one picture per chunk taught
+  the chunk, four teach the situation.
+- The A0/A1 split is judgement, not roadmap. `Docs/prepositions-roadmap.md` has
+  the plan and the reason per frame.

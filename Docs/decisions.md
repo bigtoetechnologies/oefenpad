@@ -68,14 +68,16 @@ and they are not negotiable:
   and conventions, but uses Razor Pages and bilingual records rather than Blazor
   and `.resx`. See `accounts.md` for how it works and `accounts-handover.md` for
   the map and the decisions.
-- The games' content slice is **three tiers**. The first three Voorzetselpaden
-  levels are free to everyone; the next six need an account; the remaining nine
-  need a paid plan. Word search keeps roughly three A0 categories free. Within
-  a tier a preposition level still waits for the one before it, and finishing
-  counts as passing. This is a brake on bulk scraping, not the payment logic:
-  the client may hold a round's answer, and bulk download is the threat. **No
-  payment system exists yet**, so the paid slice is closed to everyone. See
-  `review-handover.md` for the reasoning and the threat model.
+- The games' content slice is **three tiers, cut by CEFR band**. Voorzetselpaden
+  gives A0 to everyone, needs an account from A1, and will charge for A2 and up.
+  Word search keeps roughly three A0 categories free. A band starts at its first
+  level, each next level in it waits for the one before, and finishing counts as
+  passing. The cut follows the band because the game grows a band at a time: an
+  index-based cut would move with every import. This is a brake on bulk
+  scraping, not the payment logic: the client may hold a round's answer, and
+  bulk download is the threat. **No payment system exists yet**, so the paid
+  slice is closed to everyone. See `review-handover.md` for the reasoning and
+  the threat model.
 
 ## Open
 
@@ -84,7 +86,7 @@ and they are not negotiable:
 | 1 | Register `oefenpad.nl` and `.com` | Both showed NXDOMAIN on 31 Oct 2026. Not proof — confirm at a registrar. Nothing registered yet |
 | 2 | A mascot, and whether to have one | A heron was proposed: patient, in every Dutch canal, steps deliberately, survives 16px, draws in flat cobalt. It would never speak and never nag. Undecided |
 | 3 | The tegeltje as the unit of content | One phrase learned is one tile; a finished pillar is a panel the learner built. Proposed, undecided |
-| 4 | Where the free/premium line falls | Decided for Voorzetselpaden: three levels free, six more with an account, the last nine paid. Word search keeps about three A0 categories free and does not enforce even that yet. The payment system, the price and what else a paid plan holds are still open |
+| 4 | Where the free/premium line falls | Decided for Voorzetselpaden: A0 is free, the whole A1 band needs an account, and A2 and up need a paid plan. The tier follows the CEFR band, not a level index, because the game grows a band at a time (`PrepositionAccess` in `GameAccessService.cs`). Word search keeps about three A0 categories free and does not enforce even that yet. The payment system, the price and what else a paid plan holds are still open |
 | 5 | A git remote | Exists: `git@github.com:bigtoetechnologies/oefenpad.git`. As of 6 Nov 2026 `main` is 8 commits ahead and unpushed, so the redesign has no backup off this disk |
 | 6 | Pillar 8 (pronunciation) needs audio | Nothing exists. Blocks the Listening Drill |
 | 7 | Grammar data | `grammar.js` does not exist yet. Both specced games need it — see `games.md` |

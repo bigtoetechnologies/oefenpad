@@ -154,21 +154,23 @@ and served by the .NET host from `/spelen/`, with their content behind
 `/api/games`.
 
 Voorzetselpaden (now `client/src/games/prepositions/`, scenes in
-`assets/voorzetselpaden/`) is the newest: a pilot with eighteen
-levels — ten contrast sets (nine pairs and one set of three) and eight single
-frames — and the only game whose art is raster. Its thirty scene images are
+`assets/voorzetselpaden/`) is the newest: a pilot with twenty-eight
+levels — ten A0 chunks and eighteen A1 chunks, each taught across two to
+four example scenes, ninety-one in all — and the only game whose art is
+raster. Its ninety-one scene images are
 alpha masks drawn on a cobalt block, so they need no second file for dark mode. `Docs/game-art.md` has the art
 technique; `Docs/prepositions-implementation.md` describes how the game is
 built, and `Docs/prepositions.md` is the spec behind it.
 
 **The scene plans are HTML now, and they are the master.** The seven Markdown
 plans were replaced on 12 November 2026 by eight pages under
-`Docs/voorzetselpaden/` — A0, A1, A2, A2 pairs, A2+, B1, B1+, B2 — holding 802
-active cards. Cards group by contrast set, so `wachten op` sits beside
+`Docs/voorzetselpaden/` — A0, A1, A2, A2 pairs, A2+, B1, B1+, B2 — holding 713
+chunks and 1015 cards, 271 of them proposals with no art yet. Cards group by
+contrast set, so `wachten op` sits beside
 `wachten voor`, and each chunk's own examples sit together with a count that
 turns red below three. A card holds the
 chunk, the gloss, the scene brief, Must read, Avoid, the review verdict and —
-for the fifty frames that are in the game — the example sentence, the build
+for the ninety-one examples that are in the game — the example sentence, the build
 sentence and the control question. A batch is one chunk; its Grok prompt is
 built from the cards when it is needed (`tools/grok/grok.py prompt`), so it
 never goes stale. The old
@@ -177,9 +179,10 @@ Markdown prose is in git history, no longer on the pages. Edit the HTML, not
 are in git at `80e688c`.
 
 It is also the only
-game with a gate: the first three levels are free, the next six need an
-account, and the remaining nine need a paid plan, which is not built yet (so
-that slice is shut). Within a tier a level opens only when the learner has
+game with a gate: the A0 band is free, the whole A1 band needs an account, and
+A2 and up will need a paid plan, which is not built yet (so that slice is
+empty). The first level of a band opens the band; within it a level opens only
+when the learner has
 finished the one before it (`server/Oefenpad.Services/Games/GameAccessService.cs`).
 
 Sign-up and account management live in the .NET 10 solution under `server/`.
@@ -207,16 +210,17 @@ and the docs that describe it. Push only when the owner asks.
 | 4 | Six content ideas from the rejected prototypes, listed at the end of `Docs/design-process.md` |
 | 5 | The open questions in `Docs/decisions.md`: domain registration, a mascot, whether a paid tier exists above free, audio for pillar 8. The games' free slice is decided there |
 | 6 | `privacy.html` and `voorwaarden.html` still say there is no account and no personal data. They must be rewritten before accounts go live; the mail provider is a new processor |
-| 7 | The home hero says "no account". Accounts save progress, and Voorzetselpaden locks its last nine levels behind a paid plan that does not exist yet; the six between need an account. Word search is still open to guests, so its free slice is decided in `Docs/decisions.md` but not enforced. Decide whether it gets the same gate and whether sign-up ever becomes required to play at all |
+| 7 | The home hero says "no account". Accounts save progress, and Voorzetselpaden gives A0 away and asks for an account from A1 onward; the paid slice above it is empty until A2 ships. Word search is still open to guests, so its free slice is decided in `Docs/decisions.md` but not enforced. Decide whether it gets the same gate and whether sign-up ever becomes required to play at all |
 | 8 | Production config: `Email:SmtpHost` is unset, so mail goes to `server/Oefenpad.WebUI/email-sink/`. Choose a provider. Set `App:BaseUrl` (mandatory outside Development — the app refuses to start without it) and `App:KnownProxies` when behind a TLS-terminating proxy, and persist the Data Protection keys. `Docs/accounts.md` lists the required values |
 | 9 | The games now need the server. No offline play was accepted by the owner on 2026-11-09. The client build is wired into `dotnet build`/`publish` (`-p:SkipClientBuild=true` to skip it), so that half is closed |
 | 10 | The game rounds are in memory, so a restart ends them and a second instance cannot share them. Fine for one host; a shared store is needed before scaling out |
 | 11 | The 74 frames the 12 Nov 2026 review called nonsense were settled in `317f9db`: 67 dropped, 7 overturned. 76 cards still carry a severity mark. On 13 Nov a read of all 76 found 27 stale, 27 with a real text fault (now patched), 18 that need a redraw or a not-for-teaching mark, and 4 unsure. The marks themselves are not yet cleared. Report: `~/claude-scratch/voorzetselpaden-content-md-review-2026-11-12.md`. What it covered is in `Docs/voorzetselpaden-content-checks.md` |
-| 14 | 533 chunks have fewer than three example scenes, almost all from A2+ upward. Bringing every chunk to three is roughly 1,000 new scene briefs — more than the current plan. Decide which bands that target applies to |
+| 14 | 636 chunks have fewer than three example scenes (651 if counted by the best group per chunk), almost all from A2+ upward. Bringing every chunk to three means 1,222 new scene briefs — more than the current plan. Decide which bands that target applies to |
 | 15 | The A0/A1/A2 levelling is judgement, not roadmap: `~/claude-scratch/voorzetselpaden-a0-a1-a2.json` records the reason per frame. A0 came out at 10 frames against a 15–20 target because contrast sets are held out of A0 |
 | 16 | `Docs/voorzetselpaden/base-prompt.txt` appeared during the 12 Nov session and is untracked. Nobody has claimed it; check it before keeping or deleting |
-| 12 | The two errors the review found are fixed in the game data (`91b24dc`, `a99cc86`): the `praten-tegen` key and the "staat achteraan" hints. The `praten-tegen` card on `a2.html` still says "Ja", so regenerating game data from the page would bring it back. A 13 Nov audit of the 50 shipped frames found 41 further faults, mostly build sentences that accept only one word order. They are listed, not yet fixed |
+| 12 | The two errors the review found are fixed in the game data (`91b24dc`, `a99cc86`): the `praten-tegen` key and the "staat achteraan" hints. The `praten-tegen` card on `a2.html` was re-checked on 15 Nov 2026 and answers `Nee`; the only rebuild hazard left is that regenerating game data from the pages would ship the 121 unarted proposals. A 13 Nov audit of the fifty frames that were shipped then found 41 further faults, mostly build sentences that accept only one word order. They are listed, not yet fixed |
 | 13 | `assets/verb-propositions/incoming/` holds 50 redraws nothing references, including fresh copies of the two scenes dropped as nonsense. `assets/claude/incoming/` is 13 MB of the same kind. Neither is committed; decide whether raster source art belongs in git at all |
+| 17 | The 15 Nov 2026 verb–preposition audit added 121 chunks against the ZiN (90) and Heard Dutch Here (187) lists: three on A1, twenty-seven on A2, six on A2+, forty-eight on B1, twenty-seven on B1+, ten on B2. All are proposal cards with no art, so `import-prepositions-band.py` cannot see them and the game does not ship them. Two of the two lists' entries remain untaught deliberately (`bang zijn van`, `gebruikmaken van`) and twelve Heard Dutch Here entries are free prepositions or duplicates; the reasons are in `Docs/voorzetselpaden/verb-prep-check-2026-11-15.md`. Decide whether the free-spatial chunks (`wachten voor`, `kijken door`, `kijken uit`, `kijken op`) belong in a verb + fixed-preposition plan at all: all four are in, `kijken op` as a single whose reason is written into its card |
 
 ## Working style the owner expects
 

@@ -175,10 +175,10 @@ The old `src/` game folders are gone.
    progress), retention, deletion, and the mail provider as a processor. This
    is a legal-text change, not a code cleanup.
 2. **The home page says "no account".** Accounts save progress, and
-   Voorzetselpaden works in tiers: three levels free, six with an account, the
-   last nine behind a paid plan that is not built yet. Word search is still
-   open to guests. Decide whether it gets the same free slice and adjust the
-   hero and meta description if sign-up becomes required.
+   Voorzetselpaden works in tiers: A0 is free, the whole A1 band needs an
+   account, and A2 and up need a paid plan that is not built yet. Word search is
+   still open to guests. Decide whether it gets the same free slice and adjust
+   the hero and meta description if sign-up becomes required.
 3. **Production email and URLs.** `appsettings.json` ships empty placeholder
    keys; fill them through environment variables or a production settings file,
    never by editing the shared file with a live value.

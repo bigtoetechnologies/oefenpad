@@ -40,7 +40,7 @@ Optional extension: **Krimp** — rewrite a sentence with `er` + preposition
 |---|---|
 | Effort | Medium. The tile tray is shared with Zinsbouwer; the new work is scenes, contrast pairs and the split-sentence check |
 | Data | `frames`: frame, verb, separable, prefix, prep, English gloss, scene, sentence, pronominal form, contrast partner, concept questions |
-| Done when | Eighteen levels — ten contrast sets (nine pairs and one set of three) and eight single frames — work through the stops without English |
+| Done when | Twenty-eight levels — ten A0 chunks and eighteen A1 chunks, each with two to four example scenes — work through the stops without needing the English gloss |
 
 The full spec, including the data shape, feedback rules and the pilot image
 list, is in `prepositions.md` and `voorzetselpaden/a0-a2.html`.
