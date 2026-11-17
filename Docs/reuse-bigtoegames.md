@@ -6,8 +6,7 @@ art or word images came from a third-party generator, check that tool's terms
 before shipping.
 
 BigToe is vanilla HTML/CSS/JS with no framework and no bundler. The only build
-step is `sh deploy.sh`. That matches `mvp.md`'s "one page, no backend" shape, so
-the code is unusually easy to move.
+step is `sh deploy.sh`, so the code is unusually easy to move.
 
 > **Later state (2026-11-09).** This document records the original copy. Those
 > `src/` files no longer exist: the word bank and image manifest are now
@@ -75,9 +74,9 @@ nicer single-grid flip experience. Reuse one, not both.
 `src/matchup/` is two panels of face-down cards: flip a word, flip a picture,
 match them. The planned Koppelen is "drag words onto the right pictures". The
 data, image mapping, level sizes and celebration are reusable; the drag layer is
-new. The `suggestions.md` "Room Raid" idea is the closer mechanic for drag-onto-a-
-scene, so this may be a deliberate split: Koppelen = flip-match, Room Raid =
-drag-to-scene.
+new. The "Room Raid" idea in `archive/suggestions.md` is the closer mechanic for
+drag-onto-a-scene, so this may be a deliberate split: Koppelen = flip-match,
+Room Raid = drag-to-scene.
 
 ### Word Search and Hangman have no picture clues yet
 
@@ -158,10 +157,10 @@ Copy the **ideas**:
 - keep `serve.py`-style no-cache local serving, because plain
   `python3 -m http.server` hides stale HTML.
 
-Do not copy the FTP upload, ads or the BigToe header/footer. `mvp.md` says
-Netlify/Vercel, no backend. That was the MVP framing; the current site has a
-.NET host and server-side game content (see `Docs/games-backend.md`), so the
-static-deploy parts of this note are history, not the plan.
+Do not copy the FTP upload, ads or the BigToe header/footer. The original plan
+was Netlify/Vercel with no backend. That was the MVP framing; the current site
+has a .NET host and server-side game content (see `Docs/games-backend.md`), so
+the static-deploy parts of this note are history, not the plan.
 
 ## What this does not give you
 

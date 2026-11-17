@@ -1,8 +1,9 @@
 # Games for the Companion Website
 
-The website's games are drills with a score, one per content pillar, and they
-all read from one shared data file. This is the detail behind `todo.md` item 2
-and the module list in `Concept.md`.
+The website's games are drills with a score, and they all read from content the
+server owns. `game-catalogue.md` is the goal-first catalogue; this file is the
+build spec for the first two games. Its `grammar.js` data file and static-deploy
+details are MVP history — see the later-state note below and `games-backend.md`.
 
 They live here, and not on bigtoe.games, for one reason: bigtoe.games treats
 language as *presentation* — the same game in four locales, with the UI
@@ -70,15 +71,14 @@ rule are the levels, not a lesson.
 
 | # | What | Why |
 |---|---|---|
-| 1 | Voorzetselpaden | Smallest dataset, and Pillar 5 is already written up; the pilot is ten frames |
+| 1 | Voorzetselpaden | Smallest dataset, and Pillar 5 is already written up; the pilot is twenty-eight levels |
 | 2 | Zinsbouwer | Reuses the tile tray; needs the verb table |
-| 3 | Everything else in `Concept.md` | Only after one game has been in front of a stranger |
+| 3 | The rest of `game-catalogue.md` | Only after one game has been in front of a stranger |
 
-`mvp.md` says one page, no backend, no accounts, deployed free, and shared into
-an expat group to see whether strangers finish it. That still holds for the MVP
-as written. Build the first game that way and resist the shared layer —
-bigtoe.games and muziktools already keep two copies of `i18n.js` and `common.js`,
-and they have drifted.
+The original MVP rule was one page, no backend, no accounts, deployed free, and
+shared into an expat group to see whether strangers finish it. Build the first
+game that way and resist a shared layer — bigtoe.games and muziktools already
+keep two copies of `i18n.js` and `common.js`, and they have drifted.
 
 > Later state (2026-11-09): the site outgrew this. There are now six games, a
 > .NET host serves them from `/spelen/`, and their content and puzzle generation

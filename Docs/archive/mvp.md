@@ -1,3 +1,7 @@
+> **Historical — dead as guidance.** These validation experiments predate the
+site. Their scope deliberately excludes accounts, a backend and more than one
+content type; all three now exist and ship. Product truth is `Docs/product.md`.
+
 MVP: Minimal Effort to Test the Idea
 
   The goal isn't to build the ecosystem — it's to find out whether English speakers actually feel the "quick win" payoff the concept promises. Cheapest way to learn that:

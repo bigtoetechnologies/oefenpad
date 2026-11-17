@@ -1,6 +1,11 @@
 
 
 
+> **Archived 16 November 2026.** A pre-pivot scratch list: book exercises, a
+> website content sketch, and a sales funnel. All three are superseded by
+> `Docs/product.md`. The game list in item 2 lives properly in
+> `Docs/game-catalogue.md`.
+
 1. Book
 
 a) Add exercies at the end of each sub section, such as soundalikes. For example show a dutch menu, or a letter from a child to parents. Ask the reader how much they understand. It could be useful to include false friends in this exercise that the reader then encounters in the next section, then in the exercise, show that same content and ask them what they understand now.

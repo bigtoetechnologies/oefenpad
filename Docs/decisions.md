@@ -1,10 +1,18 @@
 # Decisions and open questions
 
+> **Superseded on the product, 16 November 2026.** `Docs/product.md` is now the
+> single source for what the product is, who it is for, the promise and the gate.
+> This file remains the record of the 30–31 October design decisions — the name,
+> the language constraint, colour and chrome — and of what is still open.
+
 What was settled on 30–31 October 2026, and what was not. Visual rules live in
 `designguide.md`; this is everything else, so a later session does not have to
 re-argue it.
 
 ## The two products
+
+> **Read with `product.md` §7:** the book is on hold and is not part of the offer.
+> The table below records the original split, not the current plan.
 
 | | Book | Site |
 |---|---|---|
@@ -58,8 +66,8 @@ and they are not negotiable:
   `archive/designguide-delft-2026-10-31.md`.
 - Blue says what a thing is. Orange says act on it now, and nothing else.
 - The eight pillars are distinguished by **motif**, not colour, so they work
-  for someone who cannot read the label. Pillar colours in `Concept.md` belong
-  to the book.
+  for someone who cannot read the label. Pillar colours in `archive/Concept.md`
+  belong to the book; the pillar list now lives in `game-catalogue.md`.
 - Tagline **"Stap voor stap"**, with no English version. If it needs
   translating it is the wrong tagline.
 - The activity list and its Dutch names: `designguide.md`.
@@ -86,7 +94,7 @@ and they are not negotiable:
 | 1 | Register `oefenpad.nl` and `.com` | Both showed NXDOMAIN on 31 Oct 2026. Not proof — confirm at a registrar. Nothing registered yet |
 | 2 | A mascot, and whether to have one | A heron was proposed: patient, in every Dutch canal, steps deliberately, survives 16px, draws in flat cobalt. It would never speak and never nag. Undecided |
 | 3 | The tegeltje as the unit of content | One phrase learned is one tile; a finished pillar is a panel the learner built. Proposed, undecided |
-| 4 | Where the free/premium line falls | Decided for Voorzetselpaden: A0 is free, the whole A1 band needs an account, and A2 and up need a paid plan. The tier follows the CEFR band, not a level index, because the game grows a band at a time (`PrepositionAccess` in `GameAccessService.cs`). Word search keeps about three A0 categories free and does not enforce even that yet. The payment system, the price and what else a paid plan holds are still open |
+| 4 | Where the free/premium line falls | **Settled on product in `product.md` §7: two free themes at A1 and below, six weeks of full access on sign-up, then €10/month or €100/year. Not built.** The shipped code still enforces the older slice below. The tier follows the CEFR band, not a level index, because the game grows a band at a time (`PrepositionAccess` in `GameAccessService.cs`). Word search keeps about three A0 categories free and does not enforce even that yet |
 | 5 | A git remote | Exists: `git@github.com:bigtoetechnologies/oefenpad.git`. As of 6 Nov 2026 `main` is 8 commits ahead and unpushed, so the redesign has no backup off this disk |
 | 6 | Pillar 8 (pronunciation) needs audio | Nothing exists. Blocks the Listening Drill |
 | 7 | Grammar data | `grammar.js` does not exist yet. Both specced games need it — see `games.md` |

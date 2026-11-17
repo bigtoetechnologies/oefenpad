@@ -1,10 +1,11 @@
 # Oefenpad
 
-A free Dutch practice site for adult newcomers to the Netherlands, most of
+A Dutch practice site for adult newcomers to the Netherlands, most of
 them studying for inburgering. The practice pages are static HTML with no build
 step and no framework. Sign-up and account management are a small .NET 10
-service in `server/`. A companion paperback, *Quick Wins in Dutch*, is the
-acquisition channel and lives in `book.md`.
+service in `server/`. A companion paperback, *Quick Wins in Dutch*, lives in
+`book.md`; it was put on hold on 16 November 2026 and is not part of the offer
+(`Docs/product.md` §7).
 
 The practice site is deliberately plain to deploy: open `index.html` over any
 static server and it runs. The account pages need the server in `server/`.
@@ -13,7 +14,8 @@ static server and it runs. The account pages need the server in `server/`.
 
 | Read | To answer |
 |---|---|
-| `Docs/decisions.md` | Why the product is shaped this way. Read before proposing anything |
+| `Docs/product.md` | What the product is, who it is for, the promise, and the gate. **Read before proposing anything** |
+| `Docs/decisions.md` | Why the design and interface are shaped this way (the product decisions are in `product.md`) |
 | `Docs/designguide.md` | Every visual rule. Canonical |
 | `Docs/accounts.md` | How sign-up and account management are built, run and tested |
 | `Docs/accounts-handover.md` | Why the account solution is shaped this way, plus the architecture and file-by-file code map |
@@ -25,7 +27,7 @@ static server and it runs. The account pages need the server in `server/`.
 | `Docs/game-catalogue.md` | What each game is and what exists |
 | `Docs/games-backend.md` | How the games get their data from the API, and how the React app is built and run |
 | `Docs/review-handover.md` | What the 10 Nov 2026 review fixed, what it left, the content-exposure threat model, and the TotumTeams fidelity gaps |
-| `Docs/Concept.md`, `Docs/games.md` | The eight pillars and the game specs |
+| `Docs/games.md` | The build spec for the first two games |
 | `Docs/design-options/index.html` | The fifteen home-page prototypes, side by side |
 
 Superseded material lives in `Docs/archive/`. It is history, not guidance.
@@ -87,6 +89,13 @@ look like.
   Dutch-only, so their `.balk` has no `.taal` switch; `.rechts` holds only the
   injected `#theme-toggle`. The browser gets one round at a time from the game
   API; the word bank and the puzzle generators are server-side.
+- **The lexicon is internal data.** `tools/lexicon/` holds a 10,000-lemma Dutch
+  list through B2, classified by part of speech, theme and semantic domain, with
+  our own five-band frequency scale (`Start`, `Basis`, `Midden`, `Gevorderd`,
+  `Verdieping`) because no public B2 list exists and the coursebook's A1/B1/open
+  tier is not a level. Nothing on the site reads these files. `README.md` there
+  has the pipeline and the scale; `bronnen.md` has every source and the exact
+  selection rule. It is untracked in git.
 
 ## Running and checking it
 
@@ -185,6 +194,13 @@ empty). The first level of a band opens the band; within it a level opens only
 when the learner has
 finished the one before it (`server/Oefenpad.Services/Games/GameAccessService.cs`).
 
+> The product decision changed on 16 November 2026: `Docs/product.md` §7 sets
+> two free themes (Boodschappen, Mensen) at A1 and below, six weeks of full
+> access on sign-up, then €10/month or €100/year, with a frozen read-only log
+> after cancelling. **That gate is not built**, and cannot be until themes exist
+> — Voorzetselpaden's 713 chunks carry no theme tag (`product.md` §12). The code
+> still enforces the band slice above.
+
 Sign-up and account management live in the .NET 10 solution under `server/`.
 It is Razor Pages, not Blazor, with ASP.NET Core Identity and SQLite, and it
 serves the static site alongside the account pages from the same host. The
@@ -208,9 +224,9 @@ and the docs that describe it. Push only when the owner asks.
 | 2 | `--grijs` on `--papier` in dark mode is unchecked for contrast |
 | 3 | The twelve-bar week meter has no label. Nobody knows whether it reads as anything |
 | 4 | Six content ideas from the rejected prototypes, listed at the end of `Docs/design-process.md` |
-| 5 | The open questions in `Docs/decisions.md`: domain registration, a mascot, whether a paid tier exists above free, audio for pillar 8. The games' free slice is decided there |
+| 5 | The open questions in `Docs/decisions.md`: domain registration, a mascot, whether a paid tier exists above free, audio for pillar 8. The games' free slice is decided in `Docs/product.md` §7 now, not there |
 | 6 | `privacy.html` and `voorwaarden.html` still say there is no account and no personal data. They must be rewritten before accounts go live; the mail provider is a new processor |
-| 7 | The home hero says "no account". Accounts save progress, and Voorzetselpaden gives A0 away and asks for an account from A1 onward; the paid slice above it is empty until A2 ships. Word search is still open to guests, so its free slice is decided in `Docs/decisions.md` but not enforced. Decide whether it gets the same gate and whether sign-up ever becomes required to play at all |
+| 7 | The home hero says "no account" and the site sells itself as free. `Docs/product.md` §7 replaces that: two free themes at A1 and below, six weeks of full access, then €10/month — none of it built, and it needs theme tags on content before it can be. Until then the code enforces the old slice (A0 free, A1 account, A2 empty). Word search is still open to guests and has no gate at all. Decide whether it gets the same gate and whether sign-up ever becomes required to play at all |
 | 8 | Production config: `Email:SmtpHost` is unset, so mail goes to `server/Oefenpad.WebUI/email-sink/`. Choose a provider. Set `App:BaseUrl` (mandatory outside Development — the app refuses to start without it) and `App:KnownProxies` when behind a TLS-terminating proxy, and persist the Data Protection keys. `Docs/accounts.md` lists the required values |
 | 9 | The games now need the server. No offline play was accepted by the owner on 2026-11-09. The client build is wired into `dotnet build`/`publish` (`-p:SkipClientBuild=true` to skip it), so that half is closed |
 | 10 | The game rounds are in memory, so a restart ends them and a second instance cannot share them. Fine for one host; a shared store is needed before scaling out |
@@ -226,6 +242,14 @@ and the docs that describe it. Push only when the owner asks.
 
 - Lead with the answer. Keep it short; expand only when asked.
 - Disagree when you think he is wrong, in the first line, with the reason.
+- **Delegate to sub-agents wherever the task allows it.** This repo's reading is
+  heavy and the main context fills up fast, so use `spawn_agent` for work that is
+  self-contained: reading a set of docs to answer one question, drafting a
+  document, running a build or test suite and reporting only the failures,
+  auditing a batch of cards. Each agent starts blank — give it every path, rule
+  and constraint it needs, keep write scopes disjoint when several run in
+  parallel, and ask for a short report rather than a transcript. Do the small
+  surgical edit yourself; coordination costs more than it saves.
 - Never report something as working without having run it.
 - Show visual changes before committing to them. A one-line description of a
   colour change is not enough for him to judge it, and a change he approved

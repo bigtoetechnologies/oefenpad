@@ -1,3 +1,10 @@
+> **Archived 16 November 2026.** A pre-pivot brainstorm aimed at English
+> speakers and at writing the book. The product is now `Docs/product.md`: the
+> audience is post-A2 learners, the book is on hold, and themes replace the
+> pillar/game taxonomy discussed here. The one live piece — the **Uit Elkaar**
+> separable-verbs game and its word list — was lifted to `Docs/uit-elkaar.md`
+> before archiving. Everything else is history, not guidance.
+
 Brainstorm: Teaching Dutch quick wins, not listing them
 
   Core shift: tables = reference. Teaching = sequence + repetition + "aha" moments. Here are angles worth stealing from:

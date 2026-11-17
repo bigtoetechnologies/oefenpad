@@ -21,6 +21,26 @@ Two conventions used throughout:
 Target level is A1 → B1, so most games should sit at recognition first and
 production second; B1 adds idioms, longer texts and free output.
 
+## The eight content pillars
+
+The Pillar column below uses the pre-pivot *content* taxonomy, lifted here from
+`archive/Concept.md` when that file was archived on 16 November 2026. It survives
+as a content map only: the learner-facing navigation is **themes**, not pillars
+(`product.md` §12). The pillar colours belong to the book.
+
+| # | Pillar | Example |
+|---|---|---|
+| 1 | Words You Already Know (cognates & near-identicals) | hotel, taxi, menu, problem |
+| 2 | High-Value Word Endings | `-tion → -tie`, `-ity → -iteit`, `-al → -aal`, `-y → -ig`, `-ness → -heid` |
+| 3 | Word Families & Lego Words (prefixes, diminutives) | `werken → werker → werkzaam`, `huis → huisje` |
+| 4 | False Friends | `winkel ≠ winkle` (shop), `bellen ≠ bell` (to call) |
+| 5 | Fixed Prepositions | `wachten op`, `denken aan`, `zorgen voor` |
+| 6 | Irregular / Strong Verbs | `lopen → liep → gelopen` |
+| 7 | Word Order | V2 rule, "because → verb to the end" |
+| 8 | Survival Patterns & Pronunciation | greetings, ordering, vowel shifts |
+
+Pillars 2 and 4 are English-dependent; see the notes below.
+
 ---
 
 ## The 13 planned games
@@ -155,7 +175,8 @@ appropriate reply, or the *je/u* register.
 
 - **Reageer** — a short dialogue; pick the natural reply, then type it. This is
   the text-only version of conversation practice and the cheapest to build.
-  Feedback can be rule-based at first, AI-scored later (see `suggestions.md`).
+  Feedback can be rule-based at first, AI-scored later (see
+  `archive/suggestions.md`).
 - **Rollenspel** — branching dialogue (café, GP, gemeente, landlord), or an AI
   role-play once there is sign-in. Higher effort; the authentic version needs AI
   or a person.
@@ -261,10 +282,10 @@ are the practice engine, not the whole course.
 
 ---
 
-## Already in `suggestions.md` — where each fits
+## Ideas not in the 13
 
-These ideas exist but are not in the 13. They should not be lost, and several
-fill the gaps above.
+These came from a pre-pivot brainstorm, now at `archive/suggestions.md`. They are
+not in the 13. They should not be lost, and several fill the gaps above.
 
 | Idea | Goal it serves | Verdict |
 |---|---|---|
@@ -283,8 +304,8 @@ fill the gaps above.
 
 ## Recommended order
 
-The constraint from `mvp.md` still applies: one thing in front of a stranger
-before the ecosystem. The order below is by *gap filled per unit of work*, not by
+The constraint that one thing goes in front of a stranger before the ecosystem
+still applies. The order below is by *gap filled per unit of work*, not by
 how fun the game sounds.
 
 1. **Shared data + mistakes queue.** Extend the one `grammar.js` with verbs,

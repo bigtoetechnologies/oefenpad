@@ -1,5 +1,11 @@
 # Quick Wins in Dutch — Concept
 
+> **Historical — superseded on product.** This is the pre-pivot concept. Its
+> audience (English speakers), its promise ("Understand 60–70% of Dutch in days")
+> and its four formats are replaced by `Docs/product.md`. The eight content
+> pillars below were lifted to `Docs/game-catalogue.md`; nothing else here is
+> current.
+
 A pattern-based learning ecosystem helping English speakers fast-track Dutch (A1 → B1) through high-ROI shortcuts, not grammar theory. Delivered across four reinforcing formats sharing one brand, color system, and content spine.
 
 ## Shared Foundation

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oefenpad — prototype A: sporen</title>
+<script>
+/* Zelfde themaregel als de site: licht tenzij de bezoeker donker koos. */
+(function () {
+  var saved = null;
+  try { saved = localStorage.getItem('oefenpad-theme'); } catch (e) {}
+  document.documentElement.classList.toggle('dark', saved === 'dark');
+})();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/site/oefenpad.css">
+<link rel="stylesheet" href="rethink.css">
+</head>
+<body>
+<div class="vel">
+
+  <nav class="balk">
+    <a class="merk" href="../../index.html"><img src="../../assets/logo/logo_128px.png" alt=""><span>Oefenpad</span></a>
+    <a class="link" href="../../index.html">Oefeningen</a>
+    <a class="link" href="/Account/Inloggen">Inloggen</a>
+    <a class="link" href="/Account/Registreren">Registreren</a>
+    <div class="rechts"></div>
+  </nav>
+
+  <header class="kop">
+    <h1>Kies een<br>spoor.</h1>
+    <div class="kant">
+      <p>Vier soorten oefeningen. Elk spoor traint iets anders: woorden, spelling, betekenis of spreken. Je hoeft niet te kiezen — begin waar je bent.</p>
+      <div class="telling">
+        <b class="cijfer">4</b>
+        <span>sporen<br>om te kiezen</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="verder" aria-label="Verder waar je stopte">
+    <div class="verder-beeld">
+      <div class="plaat" style="--beeld:url('../../assets/voorzetselpaden/bang-voor-hond.png')" role="img" aria-label="Iemand doet een stap achteruit voor een blaffende hond."></div>
+    </div>
+    <div class="verder-tekst">
+      <div class="et">Verder waar je stopte · Betekenis</div>
+      <h2>bang voor</h2>
+      <p class="zin">Ik ben bang voor de hond.</p>
+      <p class="waar">Voorzetselpaden · A0 · beeld 2 van 4</p>
+    </div>
+    <div class="verder-actie">
+      <a class="knop oranje" href="/spelen/prepositions">Ga verder</a>
+    </div>
+  </section>
+
+  <main class="sporen">
+
+    <section class="spoor">
+      <div class="spoor-kop">
+        <span class="nr">01</span>
+        <h2>Woorden</h2>
+        <p>Wat een woord betekent. Je ziet het beeld en het woord bij elkaar, tot het blijft hangen.</p>
+        <span class="aantal">2 oefeningen</span>
+      </div>
+      <a class="oefening" href="/spelen/memory">
+        <span class="naam">Geheugen</span>
+        <span class="om">Eén woord, één plaatje. Zoek de paren.</span>
+        <span class="stand"><span class="klein zacht">Kies een categorie</span></span>
+        <span class="pijl" aria-hidden="true">→</span>
+      </a>
+      <a class="oefening" href="/spelen/matching">
+        <span class="naam">Koppelen</span>
+        <span class="om">Koppel elk woord aan het juiste plaatje.</span>
+        <span class="stand"><span class="klein zacht">Kies een categorie</span></span>
+        <span class="pijl" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <section class="spoor">
+      <div class="spoor-kop">
+        <span class="nr">02</span>
+        <h2>Spelling</h2>
+        <p>Hoe je een woord schrijft. Je ziet het woord steeds vaker, dus je gaat het herkennen.</p>
+        <span class="aantal">2 oefeningen</span>
+      </div>
+      <a class="oefening" href="/spelen/wordsearch">
+        <span class="naam">Woordzoeker</span>
+        <span class="om">Zoek de woorden in het raster.</span>
+        <span class="stand"><span class="klein zacht">Kies een categorie</span></span>
+        <span class="pijl" aria-hidden="true">→</span>
+      </a>
+      <a class="oefening" href="/spelen/hangman">
+        <span class="naam">Galgje</span>
+        <span class="om">Raad het woord, letter voor letter.</span>
+        <span class="stand"><span class="klein zacht">Kies een categorie</span></span>
+        <span class="pijl" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <section class="spoor">
+      <div class="spoor-kop">
+        <span class="nr">03</span>
+        <h2>Betekenis</h2>
+        <p>Hetzelfde werkwoord, een ander voorzetsel. Je kijkt naar de situatie, niet naar een rijtje.</p>
+        <span class="aantal">1 oefening</span>
+      </div>
+      <a class="oefening" href="/spelen/prepositions">
+        <span class="naam">Voorzetselpaden</span>
+        <span class="om">Zelfde werkwoord, ander voorzetsel: kijk naar de situatie.</span>
+        <span class="stand">
+          <span class="niveau nu"><b>A0</b> 4/10</span>
+          <span class="niveau dicht"><b>A1</b> account</span>
+        </span>
+        <span class="pijl" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+    <section class="spoor">
+      <div class="spoor-kop">
+        <span class="nr">04</span>
+        <h2>Spreken</h2>
+        <p>Zeg het hardop. Geen score, geen goed of fout — alleen een verhaal dat je zelf vertelt.</p>
+        <span class="aantal">1 oefening</span>
+      </div>
+      <a class="oefening" href="/spelen/storymachine">
+        <span class="naam">Verhaalmachine</span>
+        <span class="om">Draai de rollen, vertel het verhaal hardop.</span>
+        <span class="stand"><span class="klein zacht">Geen niveaus</span></span>
+        <span class="pijl" aria-hidden="true">→</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="voet">
+    <div class="links">Woorden uit <em>Quick Wins in Dutch</em></div>
+    <div class="rechts">
+      <a href="../../voorwaarden.html">Voorwaarden</a>
+      <a href="../../privacy.html">Privacy</a>
+    </div>
+  </footer>
+</div>
+<script defer src="../../assets/site/oefenpad.js"></script>
+</body>
+</html>

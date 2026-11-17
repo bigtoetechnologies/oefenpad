@@ -41,9 +41,9 @@ voor`. So the word inventory is not the work. The chunk inventory is.
 | B1 | ~100–150 | ~250 |
 | **B2** | **~250–400** | **~500–700** |
 
-`Docs/Concept.md` commits only to **30–50 chunks** for the survival-kit pillar.
-That is an A2 target, not a B2 one. The 700 in this file is the top of the B2
-receptive band; 500 is the floor.
+The original concept (`archive/Concept.md`) committed only to **30–50 chunks**
+for the survival-kit pillar. That is an A2 target, not a B2 one. The 700 in this
+file is the top of the B2 receptive band; 500 is the floor.
 
 The reconciliation with the batch plan below:
 
@@ -139,7 +139,7 @@ frames per level that is roughly **250–300 levels**.
 Batch 8 was planned as pronominal adverbs plus separable-prefix frames. A
 separable verb governs no preposition, so the 29 separable frames drafted for
 it and for batches 9–13 were cut on 10 November 2026 and the prefix material
-moved to the **Uit Elkaar** game idea in `suggestions.md`. Batch 8 keeps the
+moved to the **Uit Elkaar** game idea in `uit-elkaar.md`. Batch 8 keeps the
 pronominal adverbs; the freed slots went to high-frequency everyday chunks the
 set was missing (`hopen op`, `uitgeven aan`, `bellen met`, …). Three of the
 originally drafted chunks — `gaan naar`, `kiezen voor` and `betalen voor` — are
@@ -332,5 +332,6 @@ Three consequences:
 | `prepositions-implementation.md` | The shipped code and where the data model diverged from the spec. Canonical for behaviour |
 | `voorzetselpaden/index.html` | The scene briefs and art rules, one page per CEFR band |
 | `game-catalogue.md` | Learning goals, modes, and the stated A1 → B1 target |
-| `Concept.md` | The 30–50 chunk survival-kit commitment and the pillar list |
+| `archive/Concept.md` | The 30–50 chunk survival-kit commitment (history) |
+| `uit-elkaar.md` | The separable-verbs game that took the 29 prefix frames |
 | `decisions.md` | Non-negotiables: Dutch UI, meaning in pictures, glosses as fallback |

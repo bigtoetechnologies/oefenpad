@@ -1,0 +1,179 @@
+/* ==========================================================================
+   Rethink-prototypes (Docs/rethink)
+   Drie homepages op het bestaande systeem: dezelfde tokens, rasters en
+   zware Archivo. Alleen de structuur verschilt. Niets hiervan zit in
+   assets/site/oefenpad.css; het is een voorstel, geen productie.
+   ========================================================================== */
+
+/* ---------- het beeld: een kobalt tekening als masker op papier ----------
+   Zelfde techniek als het spel (client/src/styles/source/prepositions.css):
+   de png is het masker, het kobalt komt uit de token, dus dark mode werkt. */
+.plaat{
+  width:100%;aspect-ratio:512/763;background:var(--kobalt);
+  -webkit-mask-image:var(--beeld);mask-image:var(--beeld);
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-size:contain;mask-size:contain;
+}
+
+/* ---------- gedeelde kopjes ---------- */
+.et{font-size:12px;font-weight:700;letter-spacing:.01em}
+.cijfer{font-variant-numeric:tabular-nums}
+
+/* ==========================================================================
+   A — Sporen
+   ========================================================================== */
+
+.verder{
+  display:grid;grid-template-columns:repeat(12,1fr);align-items:center;
+  border-bottom:var(--rand-hard);background:var(--raster-zacht);
+}
+.verder-beeld{grid-column:span 3;display:flex;padding:16px 0 16px clamp(16px,1.7vw,24px)}
+.verder-beeld .plaat{width:min(132px,100%)}
+.verder-tekst{grid-column:span 6;padding:18px 22px 18px 22px}
+.verder-tekst h2{font-size:clamp(24px,2.6vw,38px);font-weight:900;letter-spacing:-.042em;line-height:1;margin:5px 0 3px}
+.verder-tekst .zin{font-size:clamp(16px,1.4vw,19px);font-weight:600}
+.verder-tekst .waar{font-size:13px;font-weight:600;color:var(--grijs);margin-top:7px}
+.verder-actie{grid-column:span 3;display:flex;justify-content:flex-end;padding-right:clamp(16px,1.7vw,24px)}
+
+.sporen{flex:1}
+.spoor{border-bottom:var(--rand-hard)}
+.spoor-kop{display:grid;grid-template-columns:repeat(12,1fr);align-items:baseline;padding:clamp(16px,1.7vw,24px) 0 8px}
+.spoor-kop .nr{grid-column:span 1;font-size:12px;font-weight:800;color:var(--kobalt);letter-spacing:.04em}
+.spoor-kop h2{grid-column:span 4;font-size:clamp(22px,2.4vw,34px);font-weight:900;letter-spacing:-.04em;line-height:1}
+.spoor-kop p{grid-column:span 5;font-size:14px;font-weight:500;color:var(--grijs);line-height:1.4;max-width:44ch;padding-right:16px}
+.spoor-kop .aantal{grid-column:span 2;text-align:right;font-size:12px;font-weight:700;color:var(--zacht)}
+
+.oefening{
+  display:grid;grid-template-columns:repeat(12,1fr);align-items:center;gap:0;
+  text-decoration:none;color:var(--inkt);
+  border-top:var(--rand);padding:14px 0;
+}
+.oefening:hover{background:var(--raster-zacht)}
+.oefening:focus-visible{outline:3px solid var(--kobalt);outline-offset:-3px}
+.oefening .naam{grid-column:span 4;font-weight:800;font-size:clamp(18px,1.9vw,24px);letter-spacing:-.032em;line-height:1.05}
+.oefening .om{grid-column:span 4;font-size:14px;font-weight:500;line-height:1.35;color:var(--grijs);max-width:34ch;padding-right:14px}
+.oefening .stand{grid-column:span 3;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.oefening .pijl{grid-column:span 1;text-align:right;font-size:19px;font-weight:800;color:var(--kobalt)}
+
+.niveau{
+  display:inline-flex;align-items:center;gap:6px;padding:3px 8px;
+  box-shadow:inset 0 0 0 1px var(--raster);font-size:12px;font-weight:700;
+  font-variant-numeric:tabular-nums;white-space:nowrap;
+}
+.niveau b{font-size:11px;letter-spacing:.03em;color:var(--kobalt)}
+.niveau.nu{box-shadow:inset 0 0 0 2px var(--kobalt)}
+.niveau.dicht{color:var(--zacht)}
+.niveau.dicht b{color:var(--zacht)}
+
+/* ==========================================================================
+   B — Les
+   ========================================================================== */
+
+.les{flex:1;padding-top:clamp(10px,1.2vw,16px)}
+.les-kop{
+  display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding-bottom:10px;font-size:12px;font-weight:700;color:var(--grijs);
+}
+.stap{
+  display:grid;grid-template-columns:repeat(12,1fr);align-items:center;gap:14px;
+  border-top:var(--rand);padding:clamp(14px,1.6vw,22px) 0;
+  text-decoration:none;color:var(--inkt);
+}
+.stap:last-child{border-bottom:var(--rand)}
+.stap:hover{background:var(--raster-zacht)}
+.stap:focus-visible{outline:3px solid var(--kobalt);outline-offset:-3px}
+.stap.nu{background:var(--raster-zacht)}
+.stap-nr{grid-column:span 1;font-size:clamp(24px,2.8vw,42px);font-weight:900;letter-spacing:-.05em;line-height:1;color:var(--zacht)}
+.stap.nu .stap-nr{color:var(--kobalt)}
+.stap-tekst{grid-column:span 7}
+.stap-tekst .et{color:var(--kobalt)}
+.stap-naam{font-size:clamp(18px,1.9vw,26px);font-weight:800;letter-spacing:-.032em;line-height:1.1;margin-top:3px}
+.stap-om{font-size:13.5px;font-weight:500;color:var(--grijs);line-height:1.4;margin-top:3px;max-width:52ch}
+.stap-beeld{grid-column:span 2;display:flex;justify-content:center}
+.stap-beeld .plaat{width:min(112px,100%)}
+.stap-actie{grid-column:span 2;display:flex;justify-content:flex-end}
+
+.los{padding:clamp(20px,2.4vw,32px) 0 clamp(24px,2.6vw,38px)}
+.los-kop{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.los-kop h2{font-size:clamp(19px,1.9vw,26px);font-weight:900;letter-spacing:-.04em}
+.los-kop a{font-size:13px;font-weight:700;text-decoration:none}
+.sporen-kies{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--rand-hard);border-left:var(--rand)}
+.spoor-link{
+  display:flex;flex-direction:column;gap:4px;min-height:104px;
+  padding:12px 14px 14px;text-decoration:none;color:var(--inkt);
+  border-right:var(--rand);border-bottom:var(--rand);
+}
+.spoor-link:hover{background:var(--raster-zacht)}
+.spoor-link:focus-visible{outline:3px solid var(--kobalt);outline-offset:-3px}
+.spoor-link .et{color:var(--kobalt)}
+.spoor-link .naam{font-size:clamp(16px,1.6vw,20px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:auto}
+.spoor-link .om{font-size:12.5px;font-weight:500;line-height:1.35;color:var(--grijs)}
+
+/* ==========================================================================
+   C — Vandaag
+   ========================================================================== */
+
+.dag{
+  display:grid;grid-template-columns:repeat(12,1fr);align-items:center;
+  border-bottom:var(--rand-hard);flex:1;min-height:min(58vh,540px);
+}
+.dag-tekst{grid-column:span 6;padding:clamp(20px,2.6vw,44px) 26px clamp(20px,2.6vw,44px) 0}
+.dag-tekst .et{color:var(--kobalt)}
+.dag h1{
+  font-size:clamp(40px,6.6vw,92px);font-weight:900;line-height:.92;
+  letter-spacing:-.05em;margin:8px 0 12px;
+}
+.dag-zin{font-size:clamp(18px,1.8vw,25px);font-weight:700;letter-spacing:-.025em;line-height:1.25;max-width:26ch}
+.dag-gloss{font-size:14px;font-weight:500;color:var(--grijs);margin-top:3px}
+.dag .knop{margin-top:clamp(18px,2vw,28px)}
+.dag-onder{font-size:13px;font-weight:600;color:var(--grijs);margin-top:9px}
+.dag-beeld{grid-column:span 6;display:flex;justify-content:center;align-items:center;padding:clamp(16px,2vw,32px) 0}
+.dag-beeld .plaat{width:min(100%,320px)}
+
+.verderop{padding:clamp(18px,2vw,28px) 0 clamp(22px,2.4vw,34px)}
+.verderop-kop{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.verderop-kop h2{font-size:clamp(20px,2vw,28px);font-weight:900;letter-spacing:-.04em}
+.verderop-kop a{font-size:13px;font-weight:700;text-decoration:none}
+.doelen{display:grid;grid-template-columns:repeat(4,1fr);border-top:var(--rand-hard);border-left:var(--rand)}
+.doel{
+  display:flex;flex-direction:column;gap:5px;text-decoration:none;color:var(--inkt);
+  border-right:var(--rand);border-bottom:var(--rand);
+  padding:14px 15px 16px;min-height:118px;
+}
+.doel:hover{background:var(--raster-zacht)}
+.doel:focus-visible{outline:3px solid var(--kobalt);outline-offset:-3px}
+.doel .et{color:var(--kobalt)}
+.doel .doel-naam{font-size:clamp(17px,1.7vw,22px);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-top:auto}
+.doel .doel-om{font-size:13px;font-weight:500;color:var(--grijs);line-height:1.35}
+
+/* ==========================================================================
+   mobiel
+   ========================================================================== */
+@media(max-width:900px){
+  .verder{grid-template-columns:1fr}
+  .verder-beeld{grid-column:span 12;padding:16px 16px 0}
+  .verder-beeld .plaat{width:min(96px,30%)}
+  .verder-tekst{grid-column:span 12;padding:10px 0 0}
+  .verder-actie{grid-column:span 12;padding:14px 0 18px}
+  .spoor-kop{grid-template-columns:repeat(4,1fr);row-gap:5px}
+  .spoor-kop .nr{grid-column:span 1}
+  .spoor-kop h2{grid-column:span 3}
+  .spoor-kop p{grid-column:span 4;padding-right:0}
+  .spoor-kop .aantal{grid-column:span 4;text-align:left}
+  .oefening{display:flex;flex-direction:column;align-items:flex-start;gap:4px;padding:13px 0}
+  .oefening .pijl{display:none}
+  .oefening .om{max-width:none}
+  .dag{grid-template-columns:1fr;min-height:0}
+  .dag-tekst,.dag-beeld{grid-column:span 12}
+  .dag-tekst{padding:18px 0 6px;order:2}
+  .dag-beeld{padding:14px 0 0;order:1;justify-content:flex-start}
+  .dag-beeld .plaat{width:min(58vw,220px)}
+  .doelen{grid-template-columns:repeat(2,1fr)}
+  .stap{grid-template-columns:repeat(4,1fr);gap:10px;align-items:start}
+  .stap-nr{grid-column:span 1}
+  .stap-tekst{grid-column:span 3}
+  .stap-beeld{display:none}
+  .stap-actie{grid-column:2 / span 3;justify-content:flex-start;margin-top:4px}
+  .sporen-kies{grid-template-columns:repeat(2,1fr)}
+}
