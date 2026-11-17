@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oefenpad design guide — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html" aria-current="page">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Start here</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Oefenpad design guide</h1>
+      <p class="lede">Canonical visual rules: grid, type, colour, painted fills and chrome.</p>
+      <p class="doc-meta">Docs/designguide.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-idea-in-one-line">The idea in one line</a></li><li class="toc-h2"><a href="#colour">Colour</a></li><li class="toc-h2"><a href="#typography">Typography</a></li><li class="toc-h2"><a href="#grid">Grid</a></li><li class="toc-h2"><a href="#the-painted-fill">The painted fill</a></li><li class="toc-h2"><a href="#illustration-and-game-art">Illustration and game art</a></li><li class="toc-h2"><a href="#components">Components</a></li><li class="toc-h2"><a href="#bilingual-pages">Bilingual pages</a></li><li class="toc-h2"><a href="#dark-mode">Dark mode</a></li><li class="toc-h2"><a href="#accessibility">Accessibility</a></li><li class="toc-h2"><a href="#what-this-design-does-not-do">What this design does not do</a></li></ul></details>
+    <article class="prose">
+<p>The rules for every Oefenpad page. This describes option <strong>G, penseelraster</strong> —
+the direction chosen on 4 November 2026 and implemented in
+<code>assets/site/oefenpad.css</code> and <code>assets/site/oefenpad.js</code>.</p>
+<p>For how we got here and what was rejected, see <a href="design-process.html"><code>design-process.html</code></a>. The earlier
+Delftware guide is kept at <a href="archive/designguide-delft-2026-10-31.html"><code>archive/designguide-delft-2026-10-31.html</code></a> and no
+longer applies.</p>
+<h2 id="the-idea-in-one-line">The idea in one line</h2>
+<p>A hard editorial grid, heavy grotesk type, and colour applied as if painted —
+brush texture carried only in the fill of a block, never in its border.</p>
+<p>Three claims follow from that, and the rest of this guide is their detail:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The grid is the structure</td>
+<td>Hairline rules, no cards, no shadows, no rounded corners</td>
+</tr>
+<tr>
+<td>The type is the decoration</td>
+<td>Weight 900, tight tracking, large sizes; no ornament</td>
+</tr>
+<tr>
+<td>The paint is the warmth</td>
+<td>Texture lives in the SVG fill, applied to a minority of blocks</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="colour">Colour</h2>
+<p>Four colours carry meaning; the greys are structure. Cobalt names a thing,
+orange acts on it. Nothing else is allowed to signal.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Token</th>
+<th>Light</th>
+<th>Dark</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--kobalt</code></td>
+<td><code>#2B50C8</code></td>
+<td><code>#5C7DEB</code></td>
+<td>Brand, links, painted blocks, done days</td>
+</tr>
+<tr>
+<td><code>--kobalt-diep</code></td>
+<td><code>#15307F</code></td>
+<td><code>#8FA8F2</code></td>
+<td>Second painted block, button hover</td>
+</tr>
+<tr>
+<td><code>--kobalt-licht</code></td>
+<td><code>#7E9BE0</code></td>
+<td><code>#3A57A8</code></td>
+<td>Tints only, never text</td>
+</tr>
+<tr>
+<td><code>--oranje</code></td>
+<td><code>#E8601F</code></td>
+<td><code>#FF7A3D</code></td>
+<td>The current step, the primary action, focus rings</td>
+</tr>
+<tr>
+<td><code>--oranje-diep</code></td>
+<td><code>#C44A12</code></td>
+<td><code>#FF9666</code></td>
+<td>Orange hover</td>
+</tr>
+<tr>
+<td><code>--inkt</code></td>
+<td><code>#101522</code></td>
+<td><code>#ECEFF5</code></td>
+<td>Body text, hard rules, the language toggle</td>
+</tr>
+<tr>
+<td><code>--papier</code></td>
+<td><code>#FFFFFF</code></td>
+<td><code>#0E1117</code></td>
+<td>Page</td>
+</tr>
+<tr>
+<td><code>--raster</code></td>
+<td><code>#DFE2E8</code></td>
+<td><code>#262C38</code></td>
+<td>Hairline rules</td>
+</tr>
+<tr>
+<td><code>--raster-zacht</code></td>
+<td><code>#F2F4F7</code></td>
+<td><code>#171C25</code></td>
+<td>Hover wash on plain tiles</td>
+</tr>
+<tr>
+<td><code>--grijs</code></td>
+<td><code>#5C6578</code></td>
+<td><code>#A3ACBD</code></td>
+<td>Secondary text</td>
+</tr>
+<tr>
+<td><code>--zacht</code></td>
+<td><code>#8A91A1</code></td>
+<td><code>#788295</code></td>
+<td>Tertiary text, timestamps</td>
+</tr>
+<tr>
+<td><code>--goed</code></td>
+<td><code>#1F7A4D</code></td>
+<td><code>#3FA873</code></td>
+<td>Correct answer</td>
+</tr>
+<tr>
+<td><code>--fout</code></td>
+<td><code>#C4342A</code></td>
+<td><code>#E8625A</code></td>
+<td>Wrong answer</td>
+</tr>
+</tbody>
+</table></div>
+<p>Rules:</p>
+<ol>
+<li>Orange marks one <em>idea</em> per screen: what to do now. It may land on more
+   than one element when those elements say the same thing — on the home page
+   the live bar in the week meter and the tile it points at are both the
+   current step. A second, unrelated orange is what makes orange meaningless.</li>
+<li>Pure white is the page, not a surface. There is no second elevation.</li>
+<li>Dark mode is a token swap on <code>html.dark</code>, nothing more. Never write a
+   second rule set.</li>
+</ol>
+<p>The old Delft cobalt <code>#1B3A6B</code> and warm white <code>#FBF8F2</code> are retired.
+<a href="design-process.html"><code>design-process.html</code></a> lists the four files still carrying them.</p>
+<h2 id="typography">Typography</h2>
+<p>One family, <strong>Archivo</strong>, loaded from Google Fonts at weights 400–900. The
+system stack <code>system-ui, -apple-system, 'Segoe UI', sans-serif</code> is the
+fallback and is close enough that a failed font load is not a broken page.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Size</th>
+<th>Weight</th>
+<th>Tracking</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hero <code>h1</code></td>
+<td><code>clamp(34px, 6.4vw, 96px)</code></td>
+<td>900</td>
+<td><code>-.048em</code>, line-height <code>.88</code></td>
+</tr>
+<tr>
+<td>Game page <code>h1</code></td>
+<td><code>clamp(24px, 2.8vw, 40px)</code></td>
+<td>900</td>
+<td><code>-.04em</code></td>
+</tr>
+<tr>
+<td><code>h2</code></td>
+<td><code>clamp(21px, 2.1vw, 30px)</code></td>
+<td>900</td>
+<td><code>-.035em</code></td>
+</tr>
+<tr>
+<td><code>h3</code></td>
+<td><code>clamp(17px, 1.6vw, 22px)</code></td>
+<td>800</td>
+<td><code>-.035em</code></td>
+</tr>
+<tr>
+<td>Tile name <code>.naam</code></td>
+<td><code>clamp(18px, 1.9vw, 28px)</code></td>
+<td>800</td>
+<td><code>-.032em</code></td>
+</tr>
+<tr>
+<td>Body / reading <code>.lees p</code></td>
+<td><code>15.5px</code></td>
+<td>450</td>
+<td>line-height <code>1.65</code></td>
+</tr>
+<tr>
+<td>Tile blurb <code>.om</code></td>
+<td><code>14px</code></td>
+<td>500</td>
+<td>max <code>32ch</code></td>
+</tr>
+<tr>
+<td>Label <code>.et</code></td>
+<td><code>12px</code></td>
+<td>700</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Headlines break by hand with <code>&lt;br&gt;</code>, because the line break is a composition
+decision. Negative tracking is what makes the heavy weights read as designed
+rather than as shouting; do not drop it when adding a new heading.</p>
+<h2 id="grid">Grid</h2>
+<p>Twelve columns, everywhere, with no gutters. The column count is the only
+layout vocabulary the site has.</p>
+<p><code>.vel</code> is the sheet: <code>max-width: 1420px</code>, centred, with <code>--kolom</code> of
+<code>clamp(16px, 2vw, 30px)</code> side padding and a hairline border left and right.
+Those side borders disappear below 900px.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Region</th>
+<th>Class</th>
+<th>Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nav bar</td>
+<td><code>.balk</code></td>
+<td>brand 4, each link 2, right group <code>11/-1</code></td>
+</tr>
+<tr>
+<td>Hero</td>
+<td><code>.kop</code></td>
+<td>headline 8, side panel 4</td>
+</tr>
+<tr>
+<td>Week meter</td>
+<td><code>.meter</code></td>
+<td>12 bars of 1</td>
+</tr>
+<tr>
+<td>Tile grid</td>
+<td><code>.raster</code></td>
+<td>spans set per tile</td>
+</tr>
+<tr>
+<td>Reading column</td>
+<td><code>.lees</code></td>
+<td>8, max <code>72ch</code></td>
+</tr>
+<tr>
+<td>Footer</td>
+<td><code>.voet</code></td>
+<td>6 + 6</td>
+</tr>
+</tbody>
+</table></div>
+<p>Below 900px the nav collapses to a 4-column grid, the hero stacks to full
+width with the side panel moving under a top rule, and tiles drop their right
+border. Nothing is hidden at small sizes.</p>
+<h2 id="the-painted-fill">The painted fill</h2>
+<p>Colour arrives as paint, not as a flat swatch. <code>assets/site/oefenpad.js</code>
+inserts an SVG behind any element carrying <code>data-verf</code>, filling it with a
+four-point path whose corners are jittered, run through two <code>feTurbulence</code>
+filters for bristle grain and edge displacement.</p>
+<details>
+<summary>How to use it, and the constraints</summary>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data-verf="kobalt \| diep \| oranje \| licht"</code></td>
+<td>Which paint, matching the JS <code>KLEUR</code> map</td>
+</tr>
+<tr>
+<td><code>data-zaad="&lt;n&gt;"</code></td>
+<td>Seed for the corner jitter; fixes the shape across reloads</td>
+</tr>
+<tr>
+<td><code>data-verf-klein</code></td>
+<td>Uses the tighter <code>#op-verf-klein</code> filter, for small elements</td>
+</tr>
+</tbody>
+</table></div>
+<p>The element also needs class <code>geverfd</code> plus the matching colour class
+(<code>kobalt</code>, <code>diep</code>, <code>oranje</code>, <code>licht</code>). That class sets a flat CSS background in the same
+colour, so a page with JS disabled or still loading shows a solid block rather
+than nothing. The painted SVG then lands on top. This fallback is the reason
+the colour is specified twice; keep both in sync.</p>
+<p>Two rules keep the brush visible. Both were broken in the first
+implementation and the result was flat rectangles, indistinguishable from
+plain CSS backgrounds:</p>
+<ol>
+<li><strong>The SVG draws into a fixed, small user space</strong> — 300 × 150, or 100 × 30
+   with <code>data-verf-klein</code> — and is stretched by <code>preserveAspectRatio="none"</code>.
+   The filter's <code>baseFrequency</code> is tuned to those units. Setting the viewBox
+   to the element's real pixel size puts the bristles below one pixel and the
+   fill averages out to a solid colour.</li>
+<li><strong>The flat CSS background is cleared once the paint lands.</strong> <code>verf()</code> sets
+   <code>backgroundColor: transparent</code> on the element after inserting the SVG. The
+   painted layer is deliberately semi-transparent, between about 0.3 and 1
+   alpha, so an opaque background behind it fills in every bristle gap and
+   the texture disappears.</li>
+</ol>
+<p>Constraints:</p>
+<ul>
+<li>Give every painted element a distinct <code>data-zaad</code>. Two blocks with the same
+  seed get the same silhouette and the eye catches it.</li>
+<li>Paint a minority of blocks. On the home page, three of five tiles are
+  painted and two are plain. All five painted reads as a toy.</li>
+<li>The paint is repainted only on <code>themechange</code>, because the theme swaps the
+  colour tokens. Resizing needs nothing: the viewBox is fixed, so the fill
+  stretches with the element. Do not call <code>Oefenpad.verfAlles()</code> in a loop.</li>
+<li>Painted text is <code>--papier</code> at full strength; secondary text inside a painted
+  block uses <code>.zacht</code>, which becomes <code>rgba(255,255,255,.82)</code>.</li>
+</ul>
+</details>
+<h2 id="illustration-and-game-art">Illustration and game art</h2>
+<p>A game image is not a painted block. In the interface the brush is a fill and
+never a border; in an illustration the brush is the line. Same hand, different
+job: the logo's tapered strokes, cobalt on bare paper.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One idea per image</td>
+<td>Readable as a silhouette at 64 px</td>
+</tr>
+<tr>
+<td>One ink</td>
+<td>Cobalt only; depth comes from stroke weight, not a second blue</td>
+</tr>
+<tr>
+<td>No orange</td>
+<td>Orange still means "do this now"; the logo's orange dab stays in the logo</td>
+</tr>
+<tr>
+<td>No text or numbers</td>
+<td><a href="decisions.html"><code>decisions.html</code></a>; one art set serves every learner</td>
+</tr>
+<tr>
+<td>No frame</td>
+<td>The logo's border is the mark, not an image convention</td>
+</tr>
+<tr>
+<td>512 × 512 SVG</td>
+<td>Transparent background; no white plate</td>
+</tr>
+</tbody>
+</table></div>
+<p>The full guide — stroke weights, taper, composition, the generation prompt and
+the checklist — is <a href="game-art.html"><code>game-art.html</code></a>. The closest existing visual reference for the
+brush as a line is <a href="design-options/i-penseellijn.html"><code>design-options/i-penseellijn.html</code></a>; the loose-corner frame
+is option H.</p>
+<h2 id="components">Components</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Class</th>
+<th>What it is</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.vel</code></td>
+<td>Page sheet</td>
+<td>The outer frame; everything sits inside it</td>
+</tr>
+<tr>
+<td><code>.balk</code></td>
+<td>Nav bar</td>
+<td>Hard <code>--inkt</code> rule beneath, logo + wordmark at 900. Every page has one, the games included</td>
+</tr>
+<tr>
+<td><code>.kop</code></td>
+<td>Hero</td>
+<td>Headline 8 cols, side panel 4 with a hairline left border</td>
+</tr>
+<tr>
+<td><code>.meter</code></td>
+<td>Week strip</td>
+<td>12 bars: <code>.gedaan</code> cobalt, <code>.nu</code> orange, rest grey</td>
+</tr>
+<tr>
+<td><code>.raster</code> / <code>.mod</code></td>
+<td>Tile grid</td>
+<td><code>.geverfd</code> painted or <code>.kaal</code> plain; <code>.kaal:hover</code> washes</td>
+</tr>
+<tr>
+<td><code>.knop</code></td>
+<td>Button</td>
+<td>Square, weight 800, min-height 46px; <code>.oranje</code>, <code>.leeg</code>, <code>.klein</code></td>
+</tr>
+<tr>
+<td><code>.vakje</code></td>
+<td>Cell</td>
+<td>Letters and cards; <code>2px</code> inset shadow, states <code>vol/goed/fout/nu</code></td>
+</tr>
+<tr>
+<td><code>.taal</code></td>
+<td>NL/EN toggle</td>
+<td>Inset <code>2px</code> ink box, pressed state filled ink</td>
+</tr>
+<tr>
+<td><code>.lees</code></td>
+<td>Text column</td>
+<td>Legal and prose pages; links are orange here</td>
+</tr>
+<tr>
+<td><code>.spel</code> / <code>.spel-kop</code> / <code>.werkvlak</code></td>
+<td>Exercise page frame</td>
+<td>Title left, score right, hard rule under. On the games <code>.spel-kop</code> sits outside <code>.app-container</code>, so its rule spans the sheet rather than the 720 px game column</td>
+</tr>
+<tr>
+<td><code>.voet</code></td>
+<td>Footer</td>
+<td>Hard top rule, 6+6, pushed down by <code>margin-top:auto</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The home page adds its own span classes (<code>.groot</code>, <code>.b2</code>–<code>.b5</code>) inline, because
+the tile arrangement is specific to that page. Other pages should not copy
+them; set spans for the layout you actually have.</p>
+<h2 id="bilingual-pages">Bilingual pages</h2>
+<p>The home page and the two legal pages ship both languages in the markup. An
+inline script in <code>&lt;head&gt;</code> sets <code>data-taal</code> on <code>&lt;html&gt;</code> before first paint, so
+nothing flashes in the wrong language.</p>
+<p>The six games are Dutch-only. Their interface strings come from the game API
+(<code>GET /api/games/&lt;game&gt;/texts</code>), which is deliberately fixed to Dutch, so their
+<code>.balk</code> carries no <code>.taal</code> switch: a button that switched nothing would be
+worse than no button. The game nav therefore differs from the home nav in that
+one control. The React shell renders <code>.balk</code> with no <code>.taal</code>; the footer has no
+English gloss at all.</p>
+<p>Order of precedence: a stored choice in <code>localStorage['oefenpad-taal']</code>, then
+the first entry in <code>navigator.languages</code> matching <code>nl</code> or <code>en</code>, then Dutch.
+Dutch is also what a no-JS visitor gets, because <code>data-taal="nl"</code> is in the
+static attribute.</p>
+<p>CSS does the switching: <code>html[data-taal="nl"] [lang="en"]{display:none}</code> and
+its mirror. To add translated text, wrap each version in a <code>&lt;span lang="nl"&gt;</code>
+and <code>&lt;span lang="en"&gt;</code>. Page titles use <code>data-titel-nl</code> and <code>data-titel-en</code>
+on <code>&lt;html&gt;</code>.</p>
+<p>This covers Dutch and English only. Per <a href="decisions.html"><code>decisions.html</code></a> the product does not
+translate into learners' own languages; meaning travels in pictures.</p>
+<h2 id="dark-mode">Dark mode</h2>
+<p>A <code>dark</code> class on <code>&lt;html&gt;</code> swaps the tokens listed above. No component has a
+second rule set, and nothing outside <code>:root</code> and <code>html.dark</code> should name a
+colour literally.</p>
+<p>The switch is an inline script at the top of each page's <code>&lt;head&gt;</code>, before
+<code>oefenpad.css</code> loads, so the page never paints light and then flips:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stored choice</td>
+<td><code>localStorage['oefenpad-theme']</code>, values <code>dark</code> or <code>light</code></td>
+</tr>
+<tr>
+<td>No stored choice</td>
+<td>Opens light. The system <code>prefers-color-scheme</code> is deliberately ignored</td>
+</tr>
+<tr>
+<td>Toggle</td>
+<td><code>oefenpad.js</code> injects a <code>#theme-toggle</code> button into the nav on every page; a delegated click handler in the head script does the switching</td>
+</tr>
+<tr>
+<td>Across tabs</td>
+<td>A <code>storage</code> listener re-applies the new value</td>
+</tr>
+<tr>
+<td>Canvas and JS drawing</td>
+<td>Listen for the <code>themechange</code> event; <code>galgje/script.js</code> reads the class to colour its drawing</td>
+</tr>
+</tbody>
+</table></div>
+<p>All eight pages carry it. The button is injected rather than written into
+each page's markup; <code>oefenpad.js</code> targets <code>.balk .rechts</code>, which every page
+now has. Without JS there is no dark mode at all, so a JS-injected control
+loses nothing.</p>
+<p>The site always opens light, whatever the visitor's system is set to. Dark is
+a choice the visitor makes with the button, and it is then remembered. The
+reason is that brush on white paper is the design; following the system would
+mean most visitors never saw it.</p>
+<h2 id="accessibility">Accessibility</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>How it is met</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Focus visible</td>
+<td><code>.knop</code> and <code>.taal</code> take a 3px orange outline; <code>.mod</code> a 4px inset cobalt</td>
+</tr>
+<tr>
+<td>Hit size</td>
+<td>Buttons <code>min-height: 46px</code>, small variant 38px, toggle 32px</td>
+</tr>
+<tr>
+<td>Reduced motion</td>
+<td><code>prefers-reduced-motion</code> kills animation and transition durations</td>
+</tr>
+<tr>
+<td>Decorative SVG</td>
+<td>Every painted layer is <code>aria-hidden</code> and <code>focusable="false"</code></td>
+</tr>
+<tr>
+<td>Language</td>
+<td><code>lang</code> is updated on <code>&lt;html&gt;</code> with every toggle, not only <code>data-taal</code></td>
+</tr>
+<tr>
+<td>Screen-reader text</td>
+<td><code>.alleen-lezer</code> clips without hiding</td>
+</tr>
+</tbody>
+</table></div>
+<p>Measured 6 November 2026 by sampling rendered pixels. The <code>licht</code> fill is the
+awkward one, because it is mid-tone rather than clearly dark or light:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Pair</th>
+<th>Light</th>
+<th>Dark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.zacht</code> on a <code>licht</code> painted tile</td>
+<td>5.56:1</td>
+<td>4.92:1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both clear AA. <code>kobalt</code>, <code>diep</code> and <code>oranje</code> carry white or near-black text
+and are nowhere near the line. The <code>licht</code> class is defined and safe to use;
+nothing on the home page uses it today.</p>
+<p>Still unverified: <code>--grijs</code> on <code>--papier</code> in dark mode, and whether a 12-bar
+week meter is understandable without a label.</p>
+<h2 id="what-this-design-does-not-do">What this design does not do</h2>
+<ul>
+<li>No cards, shadows, gradients, or rounded corners. <code>--radius</code> is <code>0</code> and is
+  not a knob to turn.</li>
+<li>No second typeface, and no script or display face.</li>
+<li>No souvenir Dutch imagery — windmills, clogs, tulips, canals, cheese.</li>
+<li>No text inside artwork, ever. One art set serves every learner.</li>
+<li>No new photographic clue images. New game art is brush-drawn; see
+  <a href="game-art.html"><code>game-art.html</code></a>.</li>
+<li>No colour-coded meaning that a reader must have been taught. Motif
+  distinguishes, colour does not.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="game-catalogue.html"><span>Previous</span>Game catalogue — learning goals, coverage and gaps</a><a class="next" href="decisions.html"><span>Next</span>Decisions and open questions</a></nav>
+    <footer class="footer">
+      <code>Docs/designguide.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

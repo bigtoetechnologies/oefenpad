@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html" aria-current="page">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <header class="index-head">
+      <p class="eyebrow">Oefenpad</p>
+      <h1>Documentation</h1>
+      <p class="lede">Every working document in <code>Docs/</code>, plus the project
+      rules, in one browsable set. These pages are the documents themselves: edit
+      them here. The menu is the index of the whole set.</p>
+      <p class="index-stats">40 documents · 20 plans and prototypes already in HTML</p>
+    </header>
+    <section class="index-group"><h2>Start here</h2><div class="index-grid"><a class="index-card" href="project-rules.html"><b>Project rules</b><span>What the site is, the non-negotiables, where things stand, and what is open.</span><code>Docs/project-rules.html</code></a><a class="index-card" href="product.html"><b>Product brief</b><span>What the product is, who it is for, the promise, and the gate.</span><code>Docs/product.html</code></a><a class="index-card" href="game-catalogue.html"><b>Game catalogue</b><span>Every game, what it trains, what the set covers and what is missing.</span><code>Docs/game-catalogue.html</code></a><a class="index-card" href="designguide.html"><b>Design guide</b><span>Canonical visual rules: grid, type, colour, painted fills and chrome.</span><code>Docs/designguide.html</code></a><a class="index-card" href="decisions.html"><b>Decisions and open questions</b><span>The October design decisions still in force, and what remains open.</span><code>Docs/decisions.html</code></a></div></section><section class="index-group"><h2>Accounts</h2><div class="index-grid"><a class="index-card" href="accounts.html"><b>Accounts and sign-up</b><span>How the account system is built, run and tested.</span><code>Docs/accounts.html</code></a><a class="index-card" href="accounts-handover.html"><b>Accounts handover</b><span>The session record: decisions, verified evidence and a file-by-file map.</span><code>Docs/accounts-handover.html</code></a></div></section><section class="index-group"><h2>Games</h2><div class="index-grid"><a class="index-card" href="games.html"><b>Games build spec</b><span>The build spec for the first two games, and what changed since.</span><code>Docs/games.html</code></a><a class="index-card" href="games-backend.html"><b>Games backend</b><span>How the games get their data from the API, and how the React app is built.</span><code>Docs/games-backend.html</code></a><a class="index-card" href="prepositions.html"><b>Voorzetselpaden spec</b><span>The activity spec: the four stops, the data shape and the feedback rules.</span><code>Docs/prepositions.html</code></a><a class="index-card" href="prepositions-implementation.html"><b>Voorzetselpaden implementation</b><span>How the shipped game is built, file by file.</span><code>Docs/prepositions-implementation.html</code></a><a class="index-card" href="prepositions-roadmap.html"><b>Voorzetselpaden roadmap</b><span>The plan to 710 frames, and what B2 means.</span><code>Docs/prepositions-roadmap.html</code></a><a class="index-card" href="game-art.html"><b>Game art</b><span>How the images are drawn: style A and brush line, cobalt only, 512 px.</span><code>Docs/game-art.html</code></a><a class="index-card" href="voorzetselpaden-art-redo.html"><b>Voorzetselpaden art to redo</b><span>Which scenes need redrawing, in what order, and why.</span><code>Docs/voorzetselpaden-art-redo.html</code></a><a class="index-card" href="voorzetselpaden-content-checks.html"><b>Voorzetselpaden content checks</b><span>What the 12 November content review covered.</span><code>Docs/voorzetselpaden-content-checks.html</code></a><a class="index-card" href="story-machine.html"><b>Story Machine spec</b><span>Design and art spec for the slot-machine speaking prompt.</span><code>Docs/story-machine.html</code></a><a class="index-card" href="story-machine-art.html"><b>Story Machine art</b><span>The art still to create for the reels.</span><code>Docs/story-machine-art.html</code></a><a class="index-card" href="story-machine-words.html"><b>Story Machine words</b><span>The reels and the 61 nouns, with verified articles.</span><code>Docs/story-machine-words.html</code></a><a class="index-card" href="uit-elkaar.html"><b>Uit Elkaar</b><span>The separable-verbs game: idea, level ladder and word list.</span><code>Docs/uit-elkaar.html</code></a><a class="index-card" href="reuse-bigtoegames.html"><b>Reuse from BigToe Games</b><span>What can be lifted from the BigToe Games repository.</span><code>Docs/reuse-bigtoegames.html</code></a><a class="index-card" href="review-handover.html"><b>Review and hardening handover</b><span>What the 10 November review fixed, what it left, and the threat model.</span><code>Docs/review-handover.html</code></a></div></section><section class="index-group"><h2>Lexicon</h2><div class="index-grid"><a class="index-card" href="lexicon/index.html"><b>Lexicon overview</b><span>The 10,000-lemma list, its files, the pipeline that builds them, and what the level bands mean.</span><code>Docs/lexicon/index.html</code></a><a class="index-card" href="lexicon/bronnen.html"><b>Where the 10,000 words come from</b><span>The selection rule, the arithmetic and the provenance counts.</span><code>Docs/lexicon/bronnen.html</code></a><a class="index-card" href="lexicon/aanvulling.html"><b>The next ~3,000 words</b><span>Every open source inspected, and why the themed gap cannot be closed from open data.</span><code>Docs/lexicon/aanvulling.html</code></a><a class="index-card" href="lexicon/gloss-audit.html"><b>English gloss audit</b><span>The 41 wrong glosses in the appendix rows, with page, row and the fix.</span><code>Docs/lexicon/gloss-audit.html</code></a></div></section><section class="index-group"><h2>Design history</h2><div class="index-grid"><a class="index-card" href="design-process.html"><b>How the home page was designed</b><span>Which designs were rejected and why, so they are not re-proposed.</span><code>Docs/design-process.html</code></a></div></section><section class="index-group"><h2>Content checks</h2><div class="index-grid"><a class="index-card" href="voorzetselpaden/AGENTS.html"><b>Working notes for agents</b><span>The band pages are the master; conventions for editing them.</span><code>Docs/voorzetselpaden/AGENTS.html</code></a><a class="index-card" href="voorzetselpaden/dutchgrammar-check.html"><b>dutchgrammar.com list checked</b><span>Their verb–preposition list, checked against ours.</span><code>Docs/voorzetselpaden/dutchgrammar-check.html</code></a><a class="index-card" href="voorzetselpaden/verb-prep-check-2026-11-15.html"><b>ZiN and Heard Dutch Here checked</b><span>The 15 November comparison of both lists against ours.</span><code>Docs/voorzetselpaden/verb-prep-check-2026-11-15.html</code></a><a class="index-card" href="voorzetselpaden/verb-prep-verification-2026-11-15.html"><b>Verifying the additions</b><span>How the 121 new chunks were verified.</span><code>Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html</code></a></div></section><section class="index-group"><h2>Content plans</h2><div class="index-grid"><a class="index-card" href="voorzetselpaden/index.html"><b>Master index — every frame</b><span>All frames, one card each, by CEFR band.</span><code>Docs/voorzetselpaden/index.html</code></a><a class="index-card" href="voorzetselpaden/a0.html"><b>A0 band</b><span>The A0 cards and their scenes.</span><code>Docs/voorzetselpaden/a0.html</code></a><a class="index-card" href="voorzetselpaden/a1.html"><b>A1 band</b><span>The A1 cards and their scenes.</span><code>Docs/voorzetselpaden/a1.html</code></a><a class="index-card" href="voorzetselpaden/a2.html"><b>A2 band</b><span>The A2 cards and their scenes.</span><code>Docs/voorzetselpaden/a2.html</code></a><a class="index-card" href="voorzetselpaden/a2-pairs.html"><b>A2 pairs</b><span>Contrast pairs at A2.</span><code>Docs/voorzetselpaden/a2-pairs.html</code></a><a class="index-card" href="voorzetselpaden/a2-plus.html"><b>A2+ band</b><span>The A2+ cards and their scenes.</span><code>Docs/voorzetselpaden/a2-plus.html</code></a><a class="index-card" href="voorzetselpaden/b1.html"><b>B1 band</b><span>The B1 cards and their scenes.</span><code>Docs/voorzetselpaden/b1.html</code></a><a class="index-card" href="voorzetselpaden/b1-plus.html"><b>B1+ band</b><span>The B1+ cards and their scenes.</span><code>Docs/voorzetselpaden/b1-plus.html</code></a><a class="index-card" href="voorzetselpaden/b2.html"><b>B2 band</b><span>The B2 cards and their scenes.</span><code>Docs/voorzetselpaden/b2.html</code></a></div></section><section class="index-group"><h2>Band matrices</h2><div class="index-grid"><a class="index-card" href="voorzetselpaden/matrix-a0.html"><b>A0 matrix</b><span>Generated scoring matrix for A0.</span><code>Docs/voorzetselpaden/matrix-a0.html</code></a><a class="index-card" href="voorzetselpaden/matrix-a1.html"><b>A1 matrix</b><span>Generated scoring matrix for A1.</span><code>Docs/voorzetselpaden/matrix-a1.html</code></a><a class="index-card" href="voorzetselpaden/matrix-a2.html"><b>A2 matrix</b><span>Generated scoring matrix for A2.</span><code>Docs/voorzetselpaden/matrix-a2.html</code></a><a class="index-card" href="voorzetselpaden/matrix-a2-pairs.html"><b>A2 pairs matrix</b><span>Generated scoring matrix for the A2 pairs.</span><code>Docs/voorzetselpaden/matrix-a2-pairs.html</code></a><a class="index-card" href="voorzetselpaden/matrix-a2-plus.html"><b>A2+ matrix</b><span>Generated scoring matrix for A2+.</span><code>Docs/voorzetselpaden/matrix-a2-plus.html</code></a><a class="index-card" href="voorzetselpaden/matrix-b1.html"><b>B1 matrix</b><span>Generated scoring matrix for B1.</span><code>Docs/voorzetselpaden/matrix-b1.html</code></a><a class="index-card" href="voorzetselpaden/matrix-b1-plus.html"><b>B1+ matrix</b><span>Generated scoring matrix for B1+.</span><code>Docs/voorzetselpaden/matrix-b1-plus.html</code></a><a class="index-card" href="voorzetselpaden/matrix-b2.html"><b>B2 matrix</b><span>Generated scoring matrix for B2.</span><code>Docs/voorzetselpaden/matrix-b2.html</code></a></div></section><section class="index-group"><h2>Design prototypes</h2><div class="index-grid"><a class="index-card" href="design-options/index.html"><b>Home-page prototypes</b><span>The fifteen home-page options, side by side.</span><code>Docs/design-options/index.html</code></a><a class="index-card" href="design-options/game-chrome/index.html"><b>Game chrome prototypes</b><span>The six game-chrome options.</span><code>Docs/design-options/game-chrome/index.html</code></a><a class="index-card" href="archive/identity-2026-10-31/sheet.html"><b>Identity sheet</b><span>The first logo and mark exploration.</span><code>Docs/archive/identity-2026-10-31/sheet.html</code></a></div></section><section class="index-group"><h2>Archive</h2><div class="index-grid"><a class="index-card" href="archive/Concept.html"><b>Quick Wins in Dutch — concept</b><span>The pre-pivot concept. Superseded on product.</span><code>Docs/archive/Concept.html</code></a><a class="index-card" href="archive/rethink-2026-11-16/README.html"><b>Rethink: structure and art</b><span>The 16 November structure proposal, superseded on structure.</span><code>Docs/archive/rethink-2026-11-16/README.html</code></a><a class="index-card" href="archive/suggestions.html"><b>Brainstorm</b><span>A pre-pivot brainstorm; Uit Elkaar was lifted out first.</span><code>Docs/archive/suggestions.html</code></a><a class="index-card" href="archive/todo.html"><b>Scratch list</b><span>Pre-pivot book exercises and website notes.</span><code>Docs/archive/todo.html</code></a><a class="index-card" href="archive/mvp.html"><b>MVP experiments</b><span>Two validation experiments, dead as guidance.</span><code>Docs/archive/mvp.html</code></a><a class="index-card" href="archive/designguide-delft-2026-10-31.html"><b>Design guide, Delft</b><span>The first design guide. Superseded.</span><code>Docs/archive/designguide-delft-2026-10-31.html</code></a><a class="index-card" href="archive/preposition-review-findings-2026-11-10.html"><b>Prepositions art review</b><span>Findings from the 10 November art-plan review.</span><code>Docs/archive/preposition-review-findings-2026-11-10.html</code></a><a class="index-card" href="archive/prepositions-art-handover-2026-11-10.html"><b>Prepositions art handover</b><span>The art-plan session record.</span><code>Docs/archive/prepositions-art-handover-2026-11-10.html</code></a><a class="index-card" href="archive/prepositions-art-prompts-2026-11-12.html"><b>Art prompt history</b><span>Every Grok prompt used for the scene art.</span><code>Docs/archive/prepositions-art-prompts-2026-11-12.html</code></a><a class="index-card" href="archive/prepositions-art-redraw-prompts.html"><b>Redraw prompts</b><span>Paste-ready blocks for the anchor style.</span><code>Docs/archive/prepositions-art-redraw-prompts.html</code></a></div></section>
+    <div class="index-note">
+      <strong>Adding a document.</strong> The menu is written into every page, so a
+      new document means a new card here and a new sidebar entry on every page, in
+      the group it belongs to. There is no build step and no Markdown source: the
+      pages are the documents, edited directly.
+    </div>
+    <footer class="footer">
+      <code>Docs/index.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

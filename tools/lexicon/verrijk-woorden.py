@@ -4,7 +4,7 @@
 `extraheer-woorden.py` writes the two sources the owner already owned: the
 coursebook appendix and the games' word bank, 7,107 words. `kandidaten.tsv`
 holds words extracted from English Wiktionary via kaikki.org (see
-`aanvulling.md` for the licence reasoning), already filtered to Dutch lemmas
+`Docs/lexicon/aanvulling.html` for the licence reasoning), already filtered to Dutch lemmas
 with an English gloss that are absent from woorden.tsv.
 
 This script chooses which of them to keep. The appendix is the 5,000 most
@@ -16,7 +16,7 @@ The rule is: sort the candidates by (-zipf, nl) and take as many as the target
 needs. `--report` prints that arithmetic without writing anything: the pool
 size, how many are already present, the zipf cut-off, how many candidates sit
 exactly on it, and what taking more would cost. The measured figures are in
-`bronnen.md`; this docstring is the rule, that file is the evidence.
+`Docs/lexicon/bronnen.html`; this docstring is the rule, that file is the evidence.
 
 Order of the pipeline:
 

@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voorzetselpaden — curriculum roadmap — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html" aria-current="page">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Games</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Voorzetselpaden — curriculum roadmap</h1>
+      <p class="lede">The plan to 710 frames, and what B2 means.</p>
+      <p class="doc-meta">Docs/prepositions-roadmap.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#1-two-different-counts">1. Two different counts</a></li><li class="toc-h2"><a href="#2-what-the-numbers-mean">2. What the numbers mean</a></li><li class="toc-h2"><a href="#3-where-the-pilot-sits">3. Where the pilot sits</a></li><li class="toc-h2"><a href="#4-the-cumulative-ladder">4. The cumulative ladder</a></li><li class="toc-h2"><a href="#5-batch-plan-to-710">5. Batch plan to 710</a></li><li class="toc-h2"><a href="#6-composition-of-the-710">6. Composition of the 710</a></li><li class="toc-h2"><a href="#7-preposition-coverage">7. Preposition coverage</a></li><li class="toc-h2"><a href="#8-what-changes-in-the-engine">8. What changes in the engine</a></li><li class="toc-h2"><a href="#9-what-happens-to-the-art">9. What happens to the art</a></li><li class="toc-h2"><a href="#10-session-study-time-and-assessment">10. Session, study time and assessment</a></li><li class="toc-h2"><a href="#11-what-the-700-does-not-include">11. What the 700 does not include</a></li><li class="toc-h2"><a href="#12-sequencing-rules">12. Sequencing rules</a></li><li class="toc-h2"><a href="#13-open-questions">13. Open questions</a></li><li class="toc-h2"><a href="#14-references">14. References</a></li></ul></details>
+    <article class="prose">
+<p>Status: planning document, 9 November 2026. This extends the pilot spec in
+<a href="prepositions.html"><code>prepositions.html</code></a> from the thirty-frame pilot to a <strong>700-frame</strong> curriculum. It
+changes no shipped code and settles no product decision on its own. Where this
+file and <a href="prepositions.html"><code>prepositions.html</code></a> disagree about the game as built, <a href="prepositions.html"><code>prepositions.html</code></a>
+and <a href="prepositions-implementation.html"><code>prepositions-implementation.html</code></a> win.</p>
+<p>Two things it does decide:</p>
+<ol>
+<li><strong>The count.</strong> 700 is the <strong>receptive</strong> ceiling — the number of chunks a
+   learner should recognise and understand at B2. The <strong>productive</strong> target is
+   smaller: roughly 250–400 chunks actually produced in speech.</li>
+<li><strong>The shape.</strong> The first ~400 frames get the full four-stop loop. The last
+   ~300 are receptive-first and may ship without <code>Bouw de zin</code>.</li>
+</ol>
+<p>The numbers are estimates. The repo contains no frequency list and no CEFR
+chunk count; CEFR does not define one either. Order them by frequency before
+trusting the batch boundaries.</p>
+<hr>
+<h2 id="1-two-different-counts">1. Two different counts</h2>
+<p>Do not conflate the closed class with the chunks built on it.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What is counted</th>
+<th>Dutch total</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Preposition <strong>words</strong></td>
+<td>~25 core, ~40–45 including formal</td>
+<td><code>aan, achter, bij, binnen, boven, buiten, door, in, langs, met, na, naar, naast, om, onder, op, over, rond, sinds, tegen, tussen, uit, van, vanaf, voor, zonder</code> plus <code>tijdens, volgens, wegens, ondanks, behalve, vanwege, via, richting, per, gezien, aangaande, betreffende, jegens, overeenkomstig</code></td>
+</tr>
+<tr>
+<td>Verb / adjective / noun + preposition <strong>frames</strong></td>
+<td>1,000+ fixed combinations</td>
+<td><code>beschikken over</code>, <code>trots op</code>, <code>behoefte aan</code>. The game's unit</td>
+</tr>
+</tbody>
+</table></div>
+<p>The shipped A0–A2 set already uses <strong>13</strong> of the core prepositions across its
+<strong>50 frames</strong>: <code>aan, bij, door, in, met, naar, om, op, over, tegen, uit, van,
+voor</code>. So the word inventory is not the work. The chunk inventory is.</p>
+<h2 id="2-what-the-numbers-mean">2. What the numbers mean</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Productive (speaking)</th>
+<th>Receptive (reading, listening)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A2 survival kit</td>
+<td>~40–50</td>
+<td>~80</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>~100–150</td>
+<td>~250</td>
+</tr>
+<tr>
+<td><strong>B2</strong></td>
+<td><strong>~250–400</strong></td>
+<td><strong>~500–700</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>The original concept (<a href="archive/Concept.html"><code>archive/Concept.html</code></a>) committed only to <strong>30–50 chunks</strong>
+for the survival-kit pillar. That is an A2 target, not a B2 one. The 700 in this
+file is the top of the B2 receptive band; 500 is the floor.</p>
+<p>The reconciliation with the batch plan below:</p>
+<ul>
+<li><strong>Phases A–C</strong> build about <strong>400</strong> frames with the full loop, meaning and form
+  both scored. That covers the productive B2 band (250–400).</li>
+<li><strong>Phases D–E</strong> add about <strong>300</strong> more, receptive-first. They extend what the
+  learner understands, not what they must produce.</li>
+</ul>
+<h2 id="3-where-the-pilot-sits">3. Where the pilot sits</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Shipped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frames</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Levels</td>
+<td>33 (twelve pairs, two sets of three, nineteen singles)</td>
+</tr>
+<tr>
+<td>Prepositions governed as frames</td>
+<td>13</td>
+</tr>
+<tr>
+<td>Scenes</td>
+<td>50 raster masks</td>
+</tr>
+<tr>
+<td>CEFR band</td>
+<td>A0–A2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Batch 4b (<a href="voorzetselpaden/a2-pairs.html"><code>Docs/voorzetselpaden/a2-pairs.html</code></a>) is drawn but not yet integrated. When
+it ships it takes the set to <strong>66 frames, 36 levels, 23 pairs, three sets of
+three, ten singles and 13 prepositions</strong>, as recorded in that file.</p>
+<p>The shipped 50 are concentrated at the bottom of the ladder. They are roughly
+<strong>7%</strong> of the 710 target and about <strong>12%</strong> of the productive B2 band. The
+remaining build is <strong>660 frames</strong>, not ~120.</p>
+<h2 id="4-the-cumulative-ladder">4. The cumulative ladder</h2>
+<p>Read as “by the end of this band the learner controls this many distinct
+chunks”, counted from zero.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Band</th>
+<th>Cumulative chunks</th>
+<th>What is added</th>
+<th>Roadmap batches</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A0 → A1</td>
+<td>15–25</td>
+<td>Survival: <code>wonen in</code>, <code>gaan naar</code>, <code>komen uit</code>, <code>kijken naar</code>, <code>praten met</code>, <code>houden van</code>, <code>zin in</code></td>
+<td>1–3, 4b (planned)</td>
+</tr>
+<tr>
+<td>A1 → A2</td>
+<td>40–50</td>
+<td>Everyday <code>op/aan/voor/van</code>, first contrast pairs, separable basics</td>
+<td>1–4b</td>
+</tr>
+<tr>
+<td>A2 → A2+</td>
+<td>~147</td>
+<td><code>tegen, door, uit, zonder, tot</code>; the spatial set; adjective and noun chunks; pronominal adverbs</td>
+<td>4b–8</td>
+</tr>
+<tr>
+<td>A2+ → B1</td>
+<td>~267</td>
+<td>High-frequency verb + preposition</td>
+<td>9–13</td>
+</tr>
+<tr>
+<td>B1 → B1+</td>
+<td>~417</td>
+<td>Reflexive chunks, multi-word prepositions, formal verb chunks, contrast at scale, work register</td>
+<td>14–23</td>
+</tr>
+<tr>
+<td>B1+ → B2</td>
+<td>~567</td>
+<td>Low-frequency vocabulary, idioms, business and academic register</td>
+<td>24–27</td>
+</tr>
+<tr>
+<td>B2 → B2+</td>
+<td>~667</td>
+<td>Medical, legal, journalistic and opinion</td>
+<td>28–30</td>
+</tr>
+<tr>
+<td>B2+ / C1 doorway</td>
+<td><strong>726</strong></td>
+<td>Colloquial, literary and consolidating frames, exceptions, coverage close-out</td>
+<td>31–32</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="5-batch-plan-to-710">5. Batch plan to 710</h2>
+<p>Batches 1–4 are shipped and 4b is planned. Each later batch is one content
+production unit, sized to what one reviewer can vet in a session. <code>Δ</code> is frames
+added; <code>Σ</code> is the cumulative total.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Batch</th>
+<th>Theme</th>
+<th>Δ</th>
+<th>Σ</th>
+<th>Band</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–3</td>
+<td>Pilot: ten contrast sets, eight singles</td>
+<td>30</td>
+<td>30</td>
+<td>A0–A2</td>
+</tr>
+<tr>
+<td><strong>Phase A — everyday expansion</strong></td>
+<td></td>
+<td><strong>100</strong></td>
+<td><strong>130</strong></td>
+<td>A2 → A2+</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>tegen</code>, <code>door</code>, <code>uit</code>, <code>zonder</code>, <code>tot</code> — shipped</td>
+<td>20</td>
+<td>50</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>4b</td>
+<td>A2 pair enhancement: same-verb and same-preposition contrasts — drawn</td>
+<td>16</td>
+<td>66</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Spatial: <code>tussen</code>, <code>onder</code>, <code>boven</code>, <code>naast</code>, <code>achter</code>, <code>langs</code></td>
+<td>20</td>
+<td>70</td>
+<td>A2+</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Adjective + preposition, core</td>
+<td>20</td>
+<td>90</td>
+<td>A2+</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Noun + preposition, core</td>
+<td>20</td>
+<td>110</td>
+<td>A2+</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Pronominal adverbs and high-frequency everyday chunks</td>
+<td>20</td>
+<td>130</td>
+<td>A2+</td>
+</tr>
+<tr>
+<td><strong>Phase B — B1 floor</strong></td>
+<td></td>
+<td><strong>120</strong></td>
+<td><strong>250</strong></td>
+<td>A2+ → B1</td>
+</tr>
+<tr>
+<td>9</td>
+<td>High-frequency verb + preposition I</td>
+<td>25</td>
+<td>155</td>
+<td>B1</td>
+</tr>
+<tr>
+<td>10</td>
+<td>High-frequency verb + preposition II</td>
+<td>25</td>
+<td>180</td>
+<td>B1</td>
+</tr>
+<tr>
+<td>11</td>
+<td>High-frequency verb + preposition III</td>
+<td>25</td>
+<td>205</td>
+<td>B1</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Adjective + preposition II</td>
+<td>25</td>
+<td>230</td>
+<td>B1</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Noun + preposition II</td>
+<td>20</td>
+<td>250</td>
+<td>B1</td>
+</tr>
+<tr>
+<td><strong>Phase C — B1+ breadth</strong></td>
+<td></td>
+<td><strong>150</strong></td>
+<td><strong>400</strong></td>
+<td>B1 → B1+</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Reflexive and idiomatic chunks</td>
+<td>25</td>
+<td>275</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Multi-word prepositions</td>
+<td>25</td>
+<td>300</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Formal verb + preposition</td>
+<td>25</td>
+<td>325</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Contrast pairs at scale</td>
+<td>25</td>
+<td>350</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Double prepositions and choice</td>
+<td>25</td>
+<td>375</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Work register</td>
+<td>25</td>
+<td>400</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td><strong>Phase D — B2 receptive breadth</strong></td>
+<td></td>
+<td><strong>150</strong></td>
+<td><strong>550</strong></td>
+<td>B1+ → B2</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Low-frequency verb + preposition</td>
+<td>25</td>
+<td>425</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Low-frequency adjective + preposition</td>
+<td>25</td>
+<td>450</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Low-frequency noun + preposition</td>
+<td>25</td>
+<td>475</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>23</td>
+<td>Idioms with fixed prepositions</td>
+<td>25</td>
+<td>500</td>
+<td>B1+</td>
+</tr>
+<tr>
+<td>24</td>
+<td>Business and administration</td>
+<td>25</td>
+<td>525</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>25</td>
+<td>Academic and formal</td>
+<td>25</td>
+<td>550</td>
+<td>B2</td>
+</tr>
+<tr>
+<td><strong>Phase E — B2+ receptive</strong></td>
+<td></td>
+<td><strong>150</strong></td>
+<td><strong>700</strong></td>
+<td>B2 → B2+</td>
+</tr>
+<tr>
+<td>26</td>
+<td>Medical and technical</td>
+<td>25</td>
+<td>575</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>27</td>
+<td>Legal and official</td>
+<td>25</td>
+<td>600</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Journalistic and opinion</td>
+<td>25</td>
+<td>625</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>29</td>
+<td>Colloquial and regional</td>
+<td>25</td>
+<td>650</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>30</td>
+<td>Literary and idiomatic</td>
+<td>25</td>
+<td>675</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>31</td>
+<td>Consolidation and exceptions</td>
+<td>25</td>
+<td>700</td>
+<td>B2+</td>
+</tr>
+<tr>
+<td><strong>Close-out</strong></td>
+<td></td>
+<td><strong>10</strong></td>
+<td><strong>710</strong></td>
+<td>B2+</td>
+</tr>
+<tr>
+<td>32</td>
+<td>Unframed prepositions: <code>zonder</code>, <code>vanwege</code>, <code>gezien</code>, <code>richting</code>, <code>per</code>, <code>aangaande</code>, <code>betreffende</code>, <code>jegens</code>, <code>overeenkomstig</code></td>
+<td>10</td>
+<td>710</td>
+<td>B2+</td>
+</tr>
+</tbody>
+</table></div>
+<p>29 new batches, 680 new frames, 710 in total. With batch 4b that becomes <strong>30
+new batches, 696 new frames and 726 in total</strong>. At the current maximum of three
+frames per level that is roughly <strong>250–300 levels</strong>.</p>
+<p>Batch 8 was planned as pronominal adverbs plus separable-prefix frames. A
+separable verb governs no preposition, so the 29 separable frames drafted for
+it and for batches 9–13 were cut on 10 November 2026 and the prefix material
+moved to the <strong>Uit Elkaar</strong> game idea in <a href="uit-elkaar.html"><code>uit-elkaar.html</code></a>. Batch 8 keeps the
+pronominal adverbs; the freed slots went to high-frequency everyday chunks the
+set was missing (<code>hopen op</code>, <code>uitgeven aan</code>, <code>bellen met</code>, …). Three of the
+originally drafted chunks — <code>gaan naar</code>, <code>kiezen voor</code> and <code>betalen voor</code> — are
+also drawn in batch 4b. Each of the three is drawn in a different scene in each band, so only the chunk
+repeats; <code>kiezen voor</code> (cake over an apple in 4b) cannot be mistaken for its A2+
+partner, while the other two differ only in place or object. One of three
+resolutions must be chosen before A2+-08 is drawn: keep both scenes and put each
+chunk in a level apart from its 4b partner (no new art); drop the three A2+ rows
+and plan three replacements from the B1 and B1+ chunks (band stays at 80); or
+point the three rows at the 4b art (they become documentation, not frames).
+Until then the three rows stay planned. This text moved here from the A2+ page
+on 12 Nov 2026, when the old Markdown prose was taken off the band pages. <code>tussen</code> was going to move
+from batch 5 to 4b; it stays in batch 5 now that <code>kiezen tussen</code> has been
+dropped from 4b.</p>
+<p>Batch 32 exists because phases D and E named nine prepositions that no frame
+ever used. It is a coverage close-out, not new curriculum.</p>
+<p>Batch 4b adds 16 frames at A2. The <code>Σ</code> column below batch 4 is therefore <strong>16
+higher</strong> than the table shows: batch 5 is 86, batch 8 is 146, batch 13 is 266,
+batch 19 is 416, batch 25 is 566 and the close-out is <strong>726</strong>, not 710. <code>Δ</code>
+values are unchanged. The extra 16 come out of the same A2 budget, so the 710
+in this file's title is now a floor rather than a ceiling.</p>
+<p>The image plans were split into six pages on 10 November 2026 so that each
+step is smaller, and are now HTML pages in <code>Docs/voorzetselpaden/</code>: <code>a0-a2.html</code> (batch 4, with the 30 pilot frames), <a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a>
+(4b), <a href="voorzetselpaden/a2-plus.html"><code>a2-plus.html</code></a> (5–8, 80 frames), <a href="voorzetselpaden/b1.html"><code>b1.html</code></a>
+(9–13, 120 frames), <a href="voorzetselpaden/b1-plus.html"><code>b1-plus.html</code></a> (14–23, 250 frames) and
+<a href="voorzetselpaden/b2.html"><code>b2.html</code></a> (24–32, 210 frames). <code>index.html</code> there is the overview. The batch numbers in this roadmap
+are unchanged; only the <code>Band</code> column and the page names follow the split. The
+<code>Band</code> values map to the files one-to-one: A2 → a0-a2 and a2-pairs, A2+ →
+a2-plus, B1 → b1, B1+ → b1-plus, B2 → b2.</p>
+<h2 id="6-composition-of-the-710">6. Composition of the 710</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Frames</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Verb + preposition</td>
+<td>350</td>
+<td><code>beschikken over</code>, <code>afhangen van</code>, <code>bijdragen aan</code></td>
+</tr>
+<tr>
+<td>Adjective + preposition</td>
+<td>110</td>
+<td><code>trots op</code>, <code>afhankelijk van</code>, <code>gewend aan</code></td>
+</tr>
+<tr>
+<td>Noun + preposition</td>
+<td>100</td>
+<td><code>behoefte aan</code>, <code>kans op</code>, <code>moeite met</code></td>
+</tr>
+<tr>
+<td>Pronominal adverbs</td>
+<td>40</td>
+<td><code>eraan</code>, <code>ernaar</code>, <code>waar…aan</code>, <code>daar…over</code></td>
+</tr>
+<tr>
+<td>Multi-word / prepositional expressions</td>
+<td>50</td>
+<td><code>met betrekking tot</code>, <code>in verband met</code>, <code>op basis van</code></td>
+</tr>
+<tr>
+<td>Idioms and fixed expressions</td>
+<td>50</td>
+<td><code>op de hoogte zijn van</code>, <code>rekening houden met</code></td>
+</tr>
+<tr>
+<td>Bare prepositions taught as free use</td>
+<td>10</td>
+<td><code>zonder</code>, <code>vanwege</code>, <code>richting</code>, <code>jegens</code></td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>710</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>The last row is batch 32 and is the one category that is not a chunk. These
+words govern nothing, so the only way to teach them is the situation they turn
+up in; §11 excludes free use everywhere else.</p>
+<p>The register batches (19, 24–31) are a cross-cut: they draw from the categories
+above rather than adding a seventh category. Do not count them twice.</p>
+<h2 id="7-preposition-coverage">7. Preposition coverage</h2>
+<p>A sanity check on breadth. “Introduced” means the preposition first appears as a
+governed frame, not merely as a prefix or inside a fixed expression.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Prepositions introduced</th>
+<th>Running total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pilot (1–3)</td>
+<td><code>aan, bij, in, met, naar, om, op, over, van, voor</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td>4 (shipped)</td>
+<td><code>tegen, door, uit</code></td>
+<td>13</td>
+</tr>
+<tr>
+<td>4b (drawn)</td>
+<td>none — <code>kiezen tussen</code> was cut</td>
+<td>13</td>
+</tr>
+<tr>
+<td>A (4b–8)</td>
+<td><code>tussen, zonder, tot, onder, boven, naast, achter, langs, binnen, buiten, na, rond, vanaf</code></td>
+<td>26</td>
+</tr>
+<tr>
+<td>B (9–13)</td>
+<td>none — the verb chunks reuse the prepositions above</td>
+<td>26</td>
+</tr>
+<tr>
+<td>C (14–19)</td>
+<td><code>sinds, tijdens, volgens, wegens, ondanks, behalve</code></td>
+<td>32</td>
+</tr>
+<tr>
+<td>D (20–25)</td>
+<td><code>vanwege, via, richting, per, gezien</code></td>
+<td>37</td>
+</tr>
+<tr>
+<td>E (26–31)</td>
+<td><code>aangaande, betreffende, jegens, overeenkomstig, met inbegrip van, ten opzichte van</code></td>
+<td>43</td>
+</tr>
+<tr>
+<td>Close-out (32)</td>
+<td>the nine of D–E that no frame used: <code>zonder</code>, <code>vanwege</code>, <code>gezien</code>, <code>richting</code>, <code>per</code>, <code>aangaande</code>, <code>betreffende</code>, <code>jegens</code>, <code>overeenkomstig</code></td>
+<td>43</td>
+</tr>
+</tbody>
+</table></div>
+<p>By the end of phase C the learner has productive frames for every core
+preposition. Phases D–E are about register and rarity, not new grammar.</p>
+<p>The phase rows above say where a preposition is <em>introduced in the plan</em>. An
+audit on 10 November 2026 found that nine of them had no frame anywhere in the
+art plans, <code>zonder</code> included, and that <code>via</code> appears only inside
+<code>verspreiden via</code>. Batch 32 frames the nine. <code>via</code> is still single-sourced.</p>
+<h2 id="8-what-changes-in-the-engine">8. What changes in the engine</h2>
+<p>The game now ships 91 example scenes across 28 levels (A0 and A1). 700 needs
+these changes.
+None of them are in <a href="prepositions-implementation.html"><code>prepositions-implementation.html</code></a> yet.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Split <code>prepositions.json</code> by phase or batch</td>
+<td>A 700-frame single file is unreviewable and slow to load. One file per phase, merged into the server-side <code>GameContent</code> catalog at load</td>
+</tr>
+<tr>
+<td>Add <code>band</code> (<code>A2</code>/<code>A2+</code>/<code>B1</code>/<code>B1+</code>/<code>B2</code>/<code>B2+</code>) to levels</td>
+<td>Lets the UI order and gate content without hard-coded level arrays</td>
+</tr>
+<tr>
+<td>Add <code>register</code> (<code>everyday</code>/<code>work</code>/<code>academic</code>/<code>legal</code>/<code>medical</code>/<code>colloquial</code>/<code>literary</code>) to frames</td>
+<td>A chunk can be correct and still wrong for the situation; the feedback should say so</td>
+</tr>
+<tr>
+<td>Make <code>Bouw</code> conditional, like <code>Klopt</code></td>
+<td>Receptive-only frames have no accepted-sentence list. Skip Bouw when <code>bouw</code> is absent instead of rendering an empty step</td>
+</tr>
+<tr>
+<td>Add a <code>sense</code> key where a frame string repeats</td>
+<td><code>werken aan</code> (a project) and <code>werken bij</code> (an employer) should not collide; two frames may share a label but not an id</td>
+</tr>
+<tr>
+<td>Give receptive-only frames a second exercise type</td>
+<td><code>Kies</code> is one item per frame. A 25-frame batch with no contrast and no Bouw is 25 taps and no feedback loop. Either pair them or add a meaning-matching mode</td>
+</tr>
+<tr>
+<td>Build <code>Krimp</code> as a stop</td>
+<td>Pronominal adverbs are 40 frames and a core B2 skill. Today the form is a <code>Korter:</code> line on Ontdek</td>
+</tr>
+<tr>
+<td>Persist misses by frame id</td>
+<td>700 frames without a review queue is a dictionary. The mistakes queue in <a href="game-catalogue.html"><code>game-catalogue.html</code></a> is the feature</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>contrast</code> stays the only source of a false item. Do not add random
+distractors to make the later batches work; a random wrong preposition teaches
+nothing, per <a href="prepositions.html"><code>prepositions.html</code></a>.</p>
+<h2 id="9-what-happens-to-the-art">9. What happens to the art</h2>
+<p>710 scenes is not a plan; it is a decade. The pilot already uses raster, which
+<a href="game-art.html"><code>game-art.html</code></a> calls a placeholder. For this volume:</p>
+<p>All six slices are planned, as pages in <code>Docs/voorzetselpaden/</code>: <code>a0-a2.html</code> has one card for each of the twenty
+batch-4 frames and two copy-paste Grok prompts, <a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a>
+one card for each of the sixteen batch-4b frames, <a href="voorzetselpaden/a2-plus.html"><code>a2-plus.html</code></a> the 80 A2+ frames,
+<a href="voorzetselpaden/b1.html"><code>b1.html</code></a> the 120 B1 frames, <a href="voorzetselpaden/b1-plus.html"><code>b1-plus.html</code></a> the
+250 B1+ frames and <a href="voorzetselpaden/b2.html"><code>b2.html</code></a> the 210 B2 frames.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Frames</th>
+<th>New scenes (est.)</th>
+<th>Strategy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>100</td>
+<td>50</td>
+<td>One scene per contrast pair, plus one per distinct situation</td>
+</tr>
+<tr>
+<td>B</td>
+<td>120</td>
+<td>50</td>
+<td>Reuse everyday scenes; add only where the situation is new</td>
+</tr>
+<tr>
+<td>C</td>
+<td>150</td>
+<td>50</td>
+<td>Register scenes reused across chunks (an office, a counter, a clinic)</td>
+</tr>
+<tr>
+<td>D</td>
+<td>150</td>
+<td>35</td>
+<td>Register-generic scenes; abstract or symbolic for formal chunks</td>
+</tr>
+<tr>
+<td>E</td>
+<td>150</td>
+<td>30</td>
+<td>Reuse the register set; only exceptions get new art</td>
+</tr>
+<tr>
+<td>Close-out</td>
+<td>10</td>
+<td>0</td>
+<td>Reuse the register set; bare prepositions need no new scene</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>680 new</strong></td>
+<td><strong>~215 new (≈245 with pilot)</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<p>Three consequences:</p>
+<ul>
+<li><strong>Return to SVG</strong> for all new art. Raster was a pilot decision; <a href="game-art.html"><code>game-art.html</code></a>
+  already says new art starts as SVG. Hundreds of redraws in raster is not
+  maintainable.</li>
+<li><strong>Scene reuse becomes a data rule, not an accident.</strong> A scene may serve
+  several frames; the data model already allows it (<code>scenes</code> is separate from
+  <code>frames</code>).</li>
+<li><strong>The meaning-first promise weakens in phases D–E.</strong> A formal chunk like
+  <code>aangaande</code> has no honest silhouette. Flag those as gloss-and-context frames
+  rather than pretending a picture carries the meaning.</li>
+</ul>
+<h2 id="10-session-study-time-and-assessment">10. Session, study time and assessment</h2>
+<ul>
+<li>A two-frame level is 8 scored answers, roughly six minutes. 250–300 levels is
+  about <strong>25–30 hours</strong> of first-pass play, before review.</li>
+<li>At 5–10 new chunks a day, 700 chunks is <strong>70–140 days</strong> of study. That is a
+  realistic B2 timeline for an adult learner, not a content defect.</li>
+<li><strong>This game does not assess speaking.</strong> It trains recognition and written
+  production. B2 <em>speaking</em> also needs audio, pronunciation and free output,
+  which <a href="game-catalogue.html"><code>game-catalogue.html</code></a> lists as gaps. Do not claim the 700 closes them.</li>
+</ul>
+<h2 id="11-what-the-700-does-not-include">11. What the 700 does not include</h2>
+<ul>
+<li>Free spatial and temporal use (<code>op tafel</code>, <code>in de kast</code>, <code>na de les</code>). That is
+  grammar and vocabulary, not chunk learning.</li>
+<li>Preposition stranding and word order beyond the frame.</li>
+<li>Audio, pronunciation or listening.</li>
+<li>Free speaking or interaction.</li>
+<li>Every fixed combination in Dutch. The universe is 1,000+; 700 is a B2 slice.</li>
+</ul>
+<h2 id="12-sequencing-rules">12. Sequencing rules</h2>
+<ol>
+<li><strong>Frequency before completeness.</strong> Order every batch by corpus frequency,
+   not by alphabetical neatness. If a frequency list arrives, re-cut the
+   batches around it.</li>
+<li><strong>Contrast before single.</strong> A pair teaches meaning; a single teaches form.
+   Spend the extra art and data on pairs.</li>
+<li><strong>One new preposition per level.</strong> Do not introduce two new prepositions and
+   a new verb in the same level.</li>
+<li><strong>Recycle older frames as options.</strong> Later batches should draw distractors
+   from earlier prepositions, not only from the immediate contrast partner, or
+   the learner learns the pair and nothing else.</li>
+<li><strong>Register last.</strong> A learner who cannot produce <code>wachten op</code> does not need
+   <code>aangaande</code>.</li>
+</ol>
+<h2 id="13-open-questions">13. Open questions</h2>
+<ul>
+<li><strong>Product scope.</strong> <a href="game-catalogue.html"><code>game-catalogue.html</code></a> states the target level as A1 → B1.
+  This roadmap runs to B2. That is a product decision for the owner, not a doc
+  edit: does Voorzetselpaden own B2, or does it stop at B1 and leave B2 to
+  reading and speaking work?</li>
+<li><strong>Ship all 700, or build to 400 and stop?</strong> Phases D–E are receptive and
+  expensive to vet. The productive B2 band is complete at the end of phase C.</li>
+<li><strong>Where does the frequency order come from?</strong> No list exists in the repo.
+  SUBTLEX-NL or an NT2 lemma list would settle the batch boundaries.</li>
+<li><strong>Do receptive-only levels need a new exercise type?</strong> <code>Kies</code> alone is too
+  thin, and a single frame has no <code>Klopt</code>.</li>
+<li><strong>Does the mistakes queue gate release?</strong> Without it, 700 frames is browsing,
+  not learning.</li>
+<li><strong>Art budget.</strong> ~215 new scenes is still large. Which phases may use one
+  scene across several chunks, and who signs that off?</li>
+</ul>
+<h2 id="14-references">14. References</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Relationship</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="prepositions.html"><code>prepositions.html</code></a></td>
+<td>The activity spec and the design reasoning. Canonical for intent</td>
+</tr>
+<tr>
+<td><a href="prepositions-implementation.html"><code>prepositions-implementation.html</code></a></td>
+<td>The shipped code and where the data model diverged from the spec. Canonical for behaviour</td>
+</tr>
+<tr>
+<td><a href="voorzetselpaden/index.html"><code>voorzetselpaden/index.html</code></a></td>
+<td>The scene briefs and art rules, one page per CEFR band</td>
+</tr>
+<tr>
+<td><a href="game-catalogue.html"><code>game-catalogue.html</code></a></td>
+<td>Learning goals, modes, and the stated A1 → B1 target</td>
+</tr>
+<tr>
+<td><a href="archive/Concept.html"><code>archive/Concept.html</code></a></td>
+<td>The 30–50 chunk survival-kit commitment (history)</td>
+</tr>
+<tr>
+<td><a href="uit-elkaar.html"><code>uit-elkaar.html</code></a></td>
+<td>The separable-verbs game that took the 29 prefix frames</td>
+</tr>
+<tr>
+<td><a href="decisions.html"><code>decisions.html</code></a></td>
+<td>Non-negotiables: Dutch UI, meaning in pictures, glosses as fallback</td>
+</tr>
+</tbody>
+</table></div>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="prepositions-implementation.html"><span>Previous</span>Voorzetselpaden — how it is built</a><a class="next" href="game-art.html"><span>Next</span>Game art</a></nav>
+    <footer class="footer">
+      <code>Docs/prepositions-roadmap.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

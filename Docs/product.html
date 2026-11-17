@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oefenpad — product brief — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html" aria-current="page">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Start here</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Oefenpad — product brief</h1>
+      <p class="lede">What the product is, who it is for, the promise, and the gate.</p>
+      <p class="doc-meta">Docs/product.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#1-what-this-is-in-one-sentence">1. What this is, in one sentence</a></li><li class="toc-h2"><a href="#2-the-gap-we-fill">2. The gap we fill</a></li><li class="toc-h2"><a href="#3-the-promise-and-what-we-may-claim">3. The promise, and what we may claim</a></li><li class="toc-h3"><a href="#what-we-may-claim-and-why">What we may claim, and why</a></li><li class="toc-h3"><a href="#the-promise-that-sells-and-can-be-checked">The promise that sells and can be checked</a></li><li class="toc-h3"><a href="#destination-and-promise-are-not-the-same-sentence">Destination and promise are not the same sentence</a></li><li class="toc-h2"><a href="#4-who-it-is-for">4. Who it is for</a></li><li class="toc-h2"><a href="#5-the-ladder-passive-active-real-world">5. The ladder: passive → active → real world</a></li><li class="toc-h2"><a href="#6-language-policy-a-product-rule-not-a-style-choice">6. Language policy — a product rule, not a style choice</a></li><li class="toc-h2"><a href="#7-money-and-the-gate">7. Money and the gate</a></li><li class="toc-h3"><a href="#the-gate-settled-16-november">The gate — settled 16 November</a></li><li class="toc-h3"><a href="#the-book-is-on-hold">The book is on hold</a></li><li class="toc-h3"><a href="#after-a-cancellation">After a cancellation</a></li><li class="toc-h3"><a href="#what-the-gate-costs-to-build">What the gate costs to build</a></li><li class="toc-h3"><a href="#what-the-price-forces">What the price forces</a></li><li class="toc-h2"><a href="#8-the-memory-model-spaced-repetition">8. The memory model: spaced repetition</a></li><li class="toc-h3"><a href="#what-the-backend-must-hold">What the backend must hold</a></li><li class="toc-h2"><a href="#9-how-we-know-it-works">9. How we know it works</a></li><li class="toc-h2"><a href="#10-non-goals">10. Non-goals</a></li><li class="toc-h2"><a href="#11-engagement-is-a-constraint-not-a-flavour">11. Engagement is a constraint, not a flavour</a></li><li class="toc-h2"><a href="#12-content-words-by-theme">12. Content: words by theme</a></li><li class="toc-h3"><a href="#themes-are-the-navigation-not-just-the-content">Themes are the navigation, not just the content</a></li><li class="toc-h3"><a href="#the-theme-set">The theme set</a></li><li class="toc-h3"><a href="#more-themes-the-owner-wants-them">More themes — the owner wants them</a></li><li class="toc-h3"><a href="#the-count">The count</a></li><li class="toc-h3"><a href="#every-theme-hosts-every-activity-that-fits-it">Every theme hosts every activity that fits it</a></li><li class="toc-h2"><a href="#13-open-decisions-collected">13. Open decisions, collected</a></li><li class="toc-h2"><a href="#14-what-this-document-supersedes">14. What this document supersedes</a></li></ul></details>
+    <article class="prose">
+<p><strong>Status:</strong> first draft, 16 November 2026. Built by interview with the owner;
+sections marked <code>OPEN</code> are unanswered questions, not blanks to guess at.
+This document is the single source for <em>what the product is and who it is for</em>.
+Everything else in <code>Docs/</code> is implementation detail or history.</p>
+<hr>
+<h2 id="1-what-this-is-in-one-sentence">1. What this is, in one sentence</h2>
+<blockquote>
+<p>Oefenpad turns the Dutch you have already met into words you can reach for
+mid-sentence — through a repetitive process that pushes them into memory.</p>
+</blockquote>
+<h2 id="2-the-gap-we-fill">2. The gap we fill</h2>
+<p>Courses teach. They do not get people to <em>fluent</em>.</p>
+<p>The learner who arrives here has usually done some Dutch already — a course, an
+inburgering intake, a year of Duolingo, a job where people speak English at
+them. They can follow the class and then run out of words halfway through a
+sentence.</p>
+<p>Owner's framing, 16 November 2026:</p>
+<blockquote>
+<p>Most courses teach just enough vocabulary to use the grammar they are
+teaching. Courses are roughly 90% grammar, but grammar is about 20% of the
+problem. The other 80% is the actual words people need.</p>
+</blockquote>
+<p>So the gap is <strong>volume of the right words, and reps on them</strong>. The learner does
+not need a seventh explanation of <code>om te</code> + infinitive. They need two thousand
+more words they can produce without stopping, met often enough to stay.</p>
+<p>Three consequences, and they bind the whole product:</p>
+<ol>
+<li><strong>Vocabulary is the product; grammar is the minority.</strong> Grammar drilling
+   stays, but it is the smaller slice, and it exists to serve the words rather
+   than the words existing to demonstrate the rule.</li>
+<li><strong>The unit of progress is "a word I can now use", not "a rule I now
+   understand".</strong> That is what has to be visible on the screen.</li>
+<li><strong>Repetition is the feature, not the padding.</strong> Meeting the same words again
+   is the mechanism. It is not evidence that we ran out of content.</li>
+</ol>
+<p><strong>The owner's own evidence, 16 November — the sharpest statement of the gap in
+this document:</strong></p>
+<blockquote>
+<p>I passed inburgering and scored straight 10s in the A2 language tests, so I
+can get citizenship — and I still can't hold a conversation. That is the gap
+we're filling.</p>
+</blockquote>
+<p>No market claim beats that. The exam can be passed perfectly and the
+conversation still fails, because the exam measured what the exam measures. It
+is also the reason §4's decision is not a retreat: we are not refusing to do
+exam prep, we are pointing at what exam prep leaves behind.</p>
+<p><strong>The destination is better fluency.</strong> Holding a conversation without drying up
+is what the learner wants and what the product aims at. See §3 for why that is
+the aim and not the promise.</p>
+<p><strong>Where the evidence comes from, honestly.</strong> Owner, 16 November: mostly the word
+is missing, sometimes it arrives too late, and rarely is it fear of the grammar
+— <em>"but that's me, not others; I suspect from others that it's similar."</em></p>
+<p>So the founding evidence is <strong>a sample of one plus anecdote</strong>, and §2 should be
+read that way. That is not a weakness to hide: the owner is also the first test
+subject (§11), and a hypothesis with a named test beats a survey nobody ran. But
+no content decision may be justified by "the owner finds it so" on its own.</p>
+<p>Two things he reported that generalise well:</p>
+<ul>
+<li><strong>Prepositions are the worst case.</strong> They carry the most meaning per syllable
+  and the least picture, which is why they are the flagship game.</li>
+<li><strong>Looking things up destroys the exercise.</strong> Television with a dictionary ends
+  in zoning out. So an unknown word may never send the learner out of the task —
+  see §6, rule 5.</li>
+</ul>
+<p><strong>A2 is a low ceiling, and that is the market.</strong> The owner's straight 10s came
+after a year of courses reaching almost B1, so the score measures a modest
+level. In his words, 16 November: <em>"A2 is very low. The biggest gap after A2 is
+mostly an enormous amount of vocabulary that needs to be learned, and that's
+where we come in."</em></p>
+<p>That defines the audience more sharply than §4 does: <strong>people who finished the
+course.</strong> Indicative sizes, approximate and not load-bearing: A2 ≈ 2,000 words,
+comfortable B1 ≈ 3,500–4,000. The gap is a few thousand words, and no course
+timetable has room for them.</p>
+<p>It also validates the content target: 24 themes at ~200 words is ~4,800 words —
+the right size for exactly that gap, and the reason "2,000" was never the number.</p>
+<p><strong>Caveat, to be honest with ourselves:</strong> the 80/20 split is a <strong>product thesis,
+not a measured finding</strong>. It should be falsifiable by our own numbers — which is
+why vocabulary growth is the natural thing to report in §9.</p>
+<h2 id="3-the-promise-and-what-we-may-claim">3. The promise, and what we may claim</h2>
+<blockquote>
+<p>We do not teach you Dutch. We give you the words — and the reps that keep
+them.</p>
+</blockquote>
+<p>Explicitly <strong>not</strong> the promise:</p>
+<ul>
+<li>Not "learn Dutch in 24 hours" / "fluent in a month" — no speed claims.</li>
+<li>Not "we'll teach you Dutch" — we are not a course, not a curriculum, not a
+  teacher. No lessons, no units, no enrolment.</li>
+</ul>
+<h3 id="what-we-may-claim-and-why">What we may claim, and why</h3>
+<p>The owner raised the temptation directly on 16 November: <em>"we can't be 100%
+honest about what we offer or no one will buy it."</em> <strong>I think that is the one
+place he is wrong</strong>, and the doc records the disagreement rather than settling
+it: overclaiming is what the competitors do, and it is the thing his own
+opening line rejected. Keeping the promise checkable is also the cheapest
+differentiator available — the learner has been sold "fluent in three months"
+already and it did not work.</p>
+<p>Proposed rule, so honesty does not mean timid:</p>
+<ul>
+<li><strong>Claim outcomes, never mechanisms.</strong> "You will run out of words less often."
+  "You will stop freezing at the counter." Not "we make you fluent", not "in
+  eight weeks".</li>
+<li><strong>A claim we can half-prove with our own numbers beats a claim we cannot.</strong>
+  "Members learn 400 new words in their first month" is a sales line <em>and</em> a
+  measurement in §9.</li>
+<li><strong>Say what we are not.</strong> "No lessons. No certificate. No teacher." This is a
+  selling position, not a disclaimer — it is the reason someone chooses us over
+  a course for the fourth time.</li>
+<li><strong>Why we may not hint at the exam.</strong> §4 puts inburgering out of scope, so no
+  copy, image or page may imply a pass, a level, or exam preparation. A
+  suggested line that keeps the audience and refuses the claim: <strong>"Geen
+  examencursus. Wel de woorden die je toch nodig hebt."</strong></li>
+</ul>
+<p><code>OPEN</code> — owner to accept, adjust or overrule.</p>
+<h3 id="the-promise-that-sells-and-can-be-checked">The promise that sells and can be checked</h3>
+<p>Proposed 16 November, in answer to "what do we promise that's sellable and
+measurable":</p>
+<blockquote>
+<p><strong>You will know more words every week than you did the week before — and you
+will be able to see it.</strong></p>
+</blockquote>
+<p>Two halves, both required:</p>
+<ul>
+<li><strong>Growth</strong> is the sellable half, and it must be a <em>rate</em>, not a total — see the
+  trap below.</li>
+<li><strong>Proof</strong> is the measurable half. It is what lets us avoid a speed claim
+  entirely and still say something strong.</li>
+</ul>
+<p><strong>The definition, to be wired into the product.</strong> A word <em>counts</em> when the
+learner answers it correctly in a review that comes <strong>at least three weeks
+after they last met it</strong>, having not seen it in between. That word is <strong>held</strong>.
+Everything the learner sees derives from that one rule:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Shown to the learner</th>
+<th>What it means</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Words met</strong></td>
+<td>seen at least once, in this theme or overall</td>
+</tr>
+<tr>
+<td><strong>Words held</strong></td>
+<td>passed a review at a three-week gap</td>
+</tr>
+<tr>
+<td><strong>Words due</strong></td>
+<td>held once, and the next review is now</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Three rules that keep the number honest</strong>, because we are counting our own
+exercises:</p>
+<ol>
+<li><strong>Never show the same sentence twice.</strong> Otherwise we measure memory for <em>that
+   sentence</em>, not for the word.</li>
+<li><strong>Randomise the distractors.</strong> A word is not held if it was the only
+   plausible option.</li>
+<li><strong>Count only at a real gap.</strong> Recognition in the same session is not memory.</li>
+</ol>
+<p><strong>The trap: a finite promise kills a subscription.</strong> "2,000 words and you're
+done" is a countdown to cancelling, and at €10/month the learner who cancels on
+completion is the worst case. So the promise has to be a <strong>rate, not a total</strong> —
+more words next week — which means the theme set stays effectively open-ended
+and later bands keep arriving. That is a standing commitment, not a slogan.</p>
+<p><strong>What we still may not promise:</strong> fluency, a CEFR level, an exam result, or a
+date.</p>
+<h3 id="destination-and-promise-are-not-the-same-sentence">Destination and promise are not the same sentence</h3>
+<ul>
+<li>The learner's <strong>destination</strong> is better fluency — holding a conversation
+  without running out of words (§2). That is what we aim at, and it is honest to
+  say we are working on the thing that stops them talking.</li>
+<li>Our <strong>promise</strong> is the part a website can actually deliver: <strong>more words,
+  held, every week.</strong></li>
+<li><strong>Talking needs a person.</strong> The site does not supply one, which is why rung 3
+  exists (§5). So we may not say we will make someone fluent — only that we are
+  fixing the words that fail them when they try.</li>
+<li><strong>The dashboard proves words, not conversation.</strong> Conversation comes from using
+  the words on a human. Confusing the two is how competitors end up selling a
+  guarantee they cannot keep.</li>
+</ul>
+<h2 id="4-who-it-is-for">4. Who it is for</h2>
+<blockquote>
+<p>An adult who has lived in the Netherlands a year or more, has done some Dutch
+already (a course, an intake, or Duolingo), and runs out of words in ordinary
+conversation. Practices on a phone, ten minutes at a time.</p>
+</blockquote>
+<p>Confirmed by the owner, 16 November 2026.</p>
+<p>What follows from it:</p>
+<ul>
+<li><strong>Adults</strong> who already live in the Netherlands, or are about to.</li>
+<li><strong>Already learning</strong>, not starting from zero. This is a supplement. Typically
+  <strong>at or just past A2</strong> — they finished a course and stopped there, which is
+  the market in §2.</li>
+<li><strong>Most read English</strong> — but this must not be load-bearing (see §6).</li>
+<li><strong>Phone-first</strong> experience matters; assume small screen and short sessions.</li>
+</ul>
+<p><strong>The inburgering exam is out of scope</strong> — settled 16 November, reason given:
+it needs specialist knowledge (the exam's own formats, and what the municipality
+tests) that this product does not have and should not pretend to have.</p>
+<p>The learners are still the audience; it is the <em>exam</em> that is out. So the site
+is what you use <strong>alongside</strong> an exam course, and the words are the words they
+need anyway. It is also a clean position to take in public, and one no exam
+course can copy: we are not competing with their results.</p>
+<h2 id="5-the-ladder-passive-active-real-world">5. The ladder: passive → active → real world</h2>
+<p>This is the answer to "how does a word get from known to used", and it defines
+what the site does and where it stops.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rung</th>
+<th>What happens</th>
+<th>What carries it</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1. Recognise</strong></td>
+<td>The word is met in its theme, often enough to be known on sight and hearing. This is the <strong>target at launch</strong>.</td>
+<td>The games</td>
+<td>Built</td>
+</tr>
+<tr>
+<td><strong>2. Produce</strong></td>
+<td>The learner has to use it — build a sentence, tell a story</td>
+<td>The Story Machine (<a href="story-machine.html"><code>Docs/story-machine.html</code></a>)</td>
+<td>Exists; more producer games planned</td>
+</tr>
+<tr>
+<td><strong>3. Use it on a person</strong></td>
+<td>We point them at real places to practise — a <em>taalcafé</em> in the library, a conversation group, a volunteer scheme</td>
+<td>A directory page</td>
+<td><strong>Dropped 16 Nov — deferred, out of the current product</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Notes:</p>
+<ul>
+<li><strong>The site's job ends at rung 2.</strong> Rung 3 is signposting, not teaching. We are
+  not running a class and we are not stitching together strangers.</li>
+<li><strong>Rung 3 is dropped for now</strong> (owner, 16 November: out of scope). The
+  consequence has to be said plainly: with no directory the product stops at rung
+  2, so <strong>copy may not promise conversation</strong> — only words. §3 already draws that
+  line; this makes it mandatory rather than careful.</li>
+<li><strong>The directory is a product decision, not an appendix.</strong> It commits us to
+  content that goes stale — places close, times change. <code>OPEN</code>: who owns it, how
+  often it is checked, and whether it is one national page or per-city.</li>
+<li><strong>Passive first is deliberate.</strong> Active production needs a partner, a class or
+  a teacher; the site can only simulate it. Rung 2 is the honest ceiling of what
+  software alone can do, which is why rung 3 exists at all.</li>
+</ul>
+<h2 id="6-language-policy-a-product-rule-not-a-style-choice">6. Language policy — a product rule, not a style choice</h2>
+<p>The site must work for someone who does <strong>not</strong> read English well.</p>
+<ol>
+<li><strong>Dutch first, always.</strong> Every control, heading, instruction and error
+   message is in Dutch, written in simple Dutch — short sentences, one idea
+   each.</li>
+<li><strong>English is a convenience, never a dependency.</strong> An English gloss sits
+   beside the Dutch where it helps. If removing it breaks the task, the design
+   is wrong.</li>
+<li><strong>Meaning travels in picture, colour and shape.</strong> A learner should be able to
+   do the exercise without parsing any sentence in any language.</li>
+<li><strong>Exception:</strong> legal and account pages (<code>privacy</code>, <code>voorwaarden</code>, account
+   mail) are in normal Dutch and normal English. They are contracts, not
+   practice.</li>
+<li><strong>No lookup detours.</strong> An unknown word is resolved <em>in place</em> — a tap, a
+   picture, a gloss — and the exercise continues. Anything that sends the learner
+   to a dictionary or a second tab has already lost them. This comes straight
+   from the owner's own account: television plus a dictionary ends in zoning out.</li>
+</ol>
+<p>Consequence to accept: "simple Dutch" is a second writing job on every string,
+not a translation of the English one.</p>
+<p><code>OPEN</code> — is there a floor below which we do not go, e.g. no Dutch word a
+complete beginner could not decode? Or do we accept A2 Dutch chrome?</p>
+<h2 id="7-money-and-the-gate">7. Money and the gate</h2>
+<p>Settled:</p>
+<ul>
+<li><strong>Volume, not margin.</strong> 1,000 people at €10/month beats 10 at €50.</li>
+<li><strong>Cheap enough that price is not the reason someone says no.</strong> The learner
+  who needs this most often has least.</li>
+</ul>
+<h3 id="the-gate-settled-16-november">The gate — settled 16 November</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Who</th>
+<th>Gets</th>
+<th>Pays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Guest, no account</strong></td>
+<td>Two themes (<strong>Boodschappen</strong>, <strong>Mensen</strong>), <strong>A1 and below</strong>, with every activity inside them. Nothing is remembered.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Signed in, first 6 weeks</strong></td>
+<td>Every theme, every band, the word log</td>
+<td>Free</td>
+</tr>
+<tr>
+<td><strong>After 6 weeks, and after any cancellation</strong></td>
+<td>Back to the two free themes, <em>with</em> a log — frozen and read-only</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Paid</strong></td>
+<td>Every theme, every band, the log at full scope, reviews everywhere</td>
+<td><strong>€10/month or €100/year</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>One tier.</strong> No per-band pricing, no second subscription level, no add-ons.
+  €100 for a year is the only discount — €8.33 a month against €10.</li>
+<li><strong>Six weeks, not four.</strong> §3 defines a word as <em>held</em> only when it comes back
+  correctly after a three-week gap. A four-week trial expires at almost the first
+  moment that evidence could exist, and only for someone who started on day one
+  and never missed. Six weeks is the first length at which an ordinary starter can
+  watch the product prove the one thing it promises.</li>
+<li><strong>The free tier keeps a log.</strong> After the trial a learner falls back to two themes
+  <em>with</em> memory, not to a dead end. That is what makes €10 an upgrade — "more
+  themes, more words" — rather than a wall. Nobody is asked to pay before they
+  have watched the counter move.</li>
+<li><strong>The free slice is capped twice: two themes, and A1 and below</strong> (owner, 16
+  November). Both limits apply, so the taster is the first band of two themes.</li>
+</ul>
+<h3 id="the-book-is-on-hold">The book is on hold</h3>
+<p>Owner, 16 November: the book is <strong>not</strong> part of the offer. It is sold separately,
+through Amazon.</p>
+<ul>
+<li>€10/month and €100/year do not include it, and buying it grants nothing.</li>
+<li><strong>It was one acquisition channel, not the only one, and it is now unavailable.</strong>
+  So it cannot be counted on: the site has to convert a cold visitor on its own.
+  Working out where those visitors come from is an open question, not an
+  emergency, and it is not part of this document yet.</li>
+<li>Nothing in the product may depend on a book code or a purchase path that does
+  not exist.</li>
+</ul>
+<h3 id="after-a-cancellation">After a cancellation</h3>
+<p>Owner: the log stays, but <em>"being careful not to make it easy for them to
+download them and use them for another purpose — we need them to come to the site
+if they want to learn them."</em></p>
+<p>So: <strong>frozen, read-only and counted</strong> — words met, held and due, by theme. Not a
+word list with glosses, and no export. Honest caveat: anything on a screen can be
+copied by hand, so the goal is not to fight copying; it is to not hand over a
+tidy export that could stand in for the product.</p>
+<h3 id="what-the-gate-costs-to-build">What the gate costs to build</h3>
+<p>Access is one service today (<code>GameAccessService</code>), keyed by band and by position
+within a band. The gate above adds <strong>three</strong> dimensions: <strong>theme</strong>, <strong>account
+state</strong> (guest / trial / free / paid) and <strong>the log's scope</strong>. That is a change to
+the access rule itself, not a setting — and §12's theme navigation needs the theme
+axis anyway.</p>
+<p>Also note §8: a guest has no log, so ten minutes of guest play accumulates
+nothing. That is a deliberate trade — it makes an account worth having on day
+one — but it means <strong>the taster has to stand up on its own</strong>, with no memory
+behind it.</p>
+<h3 id="what-the-price-forces">What the price forces</h3>
+<p>Self-serve signup and cancellation with no human in the loop; no per-user support
+beyond a FAQ; no sales team; no per-learner content authoring. Anything added
+per learner has to cost near zero at 1,000 users and still cost near zero at
+10,000.</p>
+<h2 id="8-the-memory-model-spaced-repetition">8. The memory model: spaced repetition</h2>
+<p>Owner's answer, 16 November:</p>
+<blockquote>
+<p>Review sessions at key points, and reviews at random times.</p>
+</blockquote>
+<p>What that means concretely:</p>
+<ul>
+<li><strong>Sessions, not just streaks.</strong> A review session appears after a set amount of
+  new material, and old words are interleaved into new sessions at intervals.</li>
+<li><strong>It needs per-learner state on the server.</strong> <code>GET /api/games/{game}/progress</code>
+  exists; there is no scheduling behind it yet. This is the largest piece of
+  work the product decision creates.</li>
+<li><strong>Session-level scheduling is enough to start.</strong> Per-word scheduling (each
+  word with its own next-due date) is better and is what "spaced repetition"
+  usually means, but a fixed interleave is a legitimate first version and can be
+  replaced without changing the learner's experience.</li>
+</ul>
+<p><strong>The state is per word.</strong> Owner, 16 November. Not per chunk, not per theme —
+that is what the §3 definition of <em>held</em> requires, and it is the most work.</p>
+<h3 id="what-the-backend-must-hold">What the backend must hold</h3>
+<p>Owner, 16 November:</p>
+<blockquote>
+<p>Keep a log of the words met, held, due, etc, and a log of what needs to be
+reviewed. We need that as a feature somewhere in the back end for those
+signed in.</p>
+</blockquote>
+<p>Per signed-in learner, the server owns:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>The log</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Word log</strong></td>
+<td>one row per word: first met, times met, last met, whether held, when next due</td>
+</tr>
+<tr>
+<td><strong>Review queue</strong></td>
+<td>derived from the word log — what is due now, oldest first</td>
+</tr>
+<tr>
+<td><strong>Session history</strong></td>
+<td>enough to recompute the above, and to answer §9's questions</td>
+</tr>
+</tbody>
+</table></div>
+<p>This is <strong>additive to the existing account system</strong>, not a new one: Identity,
+SQLite and sign-in already exist under <code>server/</code>, so this is new tables plus an
+endpoint. The harder part is not storage but the review scheduling rule.</p>
+<p><strong>The log keeps the picture.</strong> Owner, 16 November: <em>"pictures are important to
+aid memory — our brains remember images better than words."</em> So a review shows
+the <strong>image</strong>, not the English gloss. If the review shows the gloss, the gloss
+is what was learned and the picture was decoration. This also means the word row
+must carry a reference to its art, not only its text.</p>
+<p>Two consequences:</p>
+<ol>
+<li><strong>The log only exists for signed-in learners.</strong> A guest plays and learns
+   nothing persists. That makes the account genuinely useful rather than a
+   gate, and it is the honest basis for the free/paid line in §7.</li>
+<li><strong>The log is also the proof in §3.</strong> Words met, held and due are not a
+   marketing statistic kept internally — they are the learner's own screen.</li>
+</ol>
+<h2 id="9-how-we-know-it-works">9. How we know it works</h2>
+<p><code>OPEN</code> — one or two numbers, checked at a fixed date. The candidates now follow
+from the §3 definition of <em>held</em>, and there should be one of each kind:</p>
+<p><strong>The product's own number</strong> — does the mechanism work:</p>
+<ul>
+<li><strong>Share of words met that are later held</strong> (passed at a three-week gap). If
+  this is low, the review model in §8 is wrong.</li>
+<li><strong>Words held per active learner per month.</strong> The headline.</li>
+</ul>
+<p><strong>The business's number</strong> — do people stay and pay:</p>
+<ul>
+<li>Retained learners at 30 days.</li>
+<li>Paying learners who renew at month 2.</li>
+</ul>
+<h2 id="10-non-goals">10. Non-goals</h2>
+<p>Draft, to confirm:</p>
+<ul>
+<li><strong>Not a course.</strong> No lessons, no curriculum, no certificate, no teacher.</li>
+<li><strong>Not a speed promise.</strong> No "fluent by Christmas" (§3).</li>
+<li><strong>Not exam prep.</strong> No exam formats, no practice tests, no KNM. Settled 16
+  November (§4): it needs specialist knowledge.</li>
+<li><strong>Not a dictionary or translator.</strong></li>
+<li><strong>Not a booking service.</strong> The rung-3 directory lists places; it does not
+  take bookings or run the group (§5).</li>
+<li><strong>Not a social network.</strong> <code>OPEN</code> — no profiles, comments or leaderboards?</li>
+</ul>
+<h2 id="11-engagement-is-a-constraint-not-a-flavour">11. Engagement is a constraint, not a flavour</h2>
+<p>Owner, 16 November:</p>
+<blockquote>
+<p>People advise me to watch TV but I get too frustrated opening the dictionary
+for words I don't know and I zone out, so I want something more engaging. I'm
+actually the very first test subject to see if the system works, because I also
+have ADHD — so if this system can teach me and keep me engaged, that's the test.</p>
+</blockquote>
+<p>What follows:</p>
+<ul>
+<li><strong>The named user has ADHD.</strong> Short sessions, an obvious next action, immediate
+  feedback, and never leaving the exercise (§6, rule 5). These are
+  ADHD-friendly and they are also simply good design — they do not turn the
+  product into a niche product.</li>
+<li><strong>The acceptance test is the owner using it for weeks without stopping.</strong> Not
+  a survey, not a mockup review. If he stops, that is the finding.</li>
+<li><strong>He is a fair test, not a flattering one.</strong> His A2 came after a year of courses
+  to near B1 — that is precisely the learner in §4, not an expert early-adopter.</li>
+<li><strong>Engagement is not learning.</strong> Keeping him playing is this section; whether
+  the words are held is §9. Both must be true and neither implies the other. A
+  product that is fun and teaches nothing fails the same test as a boring one
+  that works.</li>
+<li><strong>Streaks and reminders are not automatically dark patterns here.</strong> The usual
+  objection to gamification is that it manufactures a need. When the user's real
+  problem is <em>starting</em>, external structure helps. The line: structure that
+  helps you begin is fine; guilt, loss-framing and nagging are not.</li>
+<li><strong>The tension with §2 stands.</strong> The mechanism is repetition, so the pleasure has
+  to come from pace, feel and getting faster — not from novelty. A game that is
+  different every time is a game the learner is not drilling.</li>
+</ul>
+<p><strong>What the mechanism is</strong> — owner, 16 November:</p>
+<blockquote>
+<p>A reminder will be needed, and a sense of excitement, a visible and obvious
+progress — maybe a tally of how many words I've been exposed to and how many
+are learned.</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Piece</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A tally: words met vs words held</strong></td>
+<td>Decided. It is the same counter as §3, so the promise and the progress display are one thing, not two.</td>
+</tr>
+<tr>
+<td><strong>A reminder</strong></td>
+<td>Decided in principle; the channel is open.</td>
+</tr>
+<tr>
+<td><strong>"Excitement"</strong></td>
+<td>A design goal, not a mechanism. It comes from pace, from the tally moving and from getting faster — not from confetti, and not from novelty (§2).</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>The reminder's honest costs:</strong></p>
+<ul>
+<li><strong>Email is the only channel with infrastructure today.</strong> <code>server/</code> already sends
+  mail, and without an SMTP host it writes to <code>email-sink/</code>. Web push is
+  unreliable on iOS, which is most of the audience.</li>
+<li><strong>A reminder is personal data processing.</strong> It needs explicit consent, and
+  <a href="../privacy.html"><code>privacy.html</code></a> currently states there are no accounts and no personal data. That
+  page has to change before this ships.</li>
+</ul>
+<p><strong>The home page follows from this.</strong> If the first screen is a tally of words met
+and held, then the home is a counter plus an obvious next action — not six equal
+painted tiles. This is the structural answer to "the site doesn't match the
+product"; it is derived from the product, not from taste.</p>
+<p><code>OPEN</code> — which visible mechanism: a streak, a daily target, a visible next step,
+several of them, or none.</p>
+<h2 id="12-content-words-by-theme">12. Content: words by theme</h2>
+<p>Owner's answer, 16 November:</p>
+<blockquote>
+<p>We're building words in themes and I'm sure we can come up with the 2000 most
+commonly needed words, and more. There are no official word lists but we will
+build upon themes.</p>
+</blockquote>
+<p>Consequences:</p>
+<ul>
+<li><strong>Themes are the navigation unit.</strong> Not a frequency list, not CEFR bands as the
+  primary axis. A learner chooses a theme; the words come with it.</li>
+<li><strong>Completeness is measurable per theme</strong>, which is the answer to "are we done":
+  a theme is done when its words are covered and have enough example contexts.</li>
+<li><strong>We choose themes; no authority chooses them for us.</strong> So the theme set is an
+  editorial product decision and needs to be written down and defended once, not
+  invented per batch.</li>
+<li><strong>Frequency lists will disagree with us.</strong> Where they do, we follow themes and
+  say why — a word that is frequent but never needed in the learner's life is
+  not our word.</li>
+</ul>
+<h3 id="themes-are-the-navigation-not-just-the-content">Themes are the navigation, not just the content</h3>
+<p>Owner, 16 November:</p>
+<blockquote>
+<p>We can organise the games also by theme. It will be a bit more complex but we
+can offer themes rather than just straight into games, and then guide them
+through a path of different games to practice that theme, so a theme will have
+to crosscut into different games.</p>
+</blockquote>
+<p>So the learner chooses <strong>a theme</strong>, and the site walks them through a sequence of
+<em>different games</em> that all practise it. The games become tools inside a theme,
+not six doors on the home page.</p>
+<p>Consequences:</p>
+<ol>
+<li><strong>Two axes must be tagged independently.</strong> Every word has a theme; every
+   exercise belongs to a game. A theme path is a sequence of (theme, game)
+   combinations, and content has to carry both tags.</li>
+<li><strong>The game's own internal progression becomes secondary.</strong> Entering by theme
+   makes the band ladder inside a game a side door for people who want "more
+   prepositions", not the main road.</li>
+<li><strong>This answers "several games, different learning goals".</strong> The goals are the
+   themes; the games are the tools. A separate skill taxonomy
+   (Woorden/Spelling/Betekenis/Zinnen/Spreken) is no longer needed as the top
+   axis.</li>
+</ol>
+<p><strong>Blocker to resolve:</strong> Voorzetselpaden is organised by chunk and CEFR band and
+its 713 chunks carry no theme tag. Either it gains theme tags — real content
+work — or it stays the one game reachable only by its own path. <code>OPEN</code>.</p>
+<h3 id="the-theme-set">The theme set</h3>
+<p>Proposed 16 November; the owner called it "a good start" and added three needs.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Covers</th>
+<th>Picture</th>
+<th>Free?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Boodschappen</strong></td>
+<td>supermarket, prices, quantities, paying, <em>waar staat de …?</em></td>
+<td>basket</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><strong>Mensen</strong></td>
+<td>small talk, invitations, feelings, birthdays</td>
+<td>two speech bubbles</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><strong>Wonen</strong></td>
+<td>house, neighbours, rent, repairs</td>
+<td>key</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Werk</strong></td>
+<td>shift, tools, colleagues, safety</td>
+<td>toolbox</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Gezondheid</strong></td>
+<td>doctor, pharmacy, body, appointment</td>
+<td>plaster</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Het lichaam</strong></td>
+<td>body parts: head, arm, leg, back, knee, stomach, tooth</td>
+<td>a body outline</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Kinderen en school</strong></td>
+<td>crèche, teacher, playground, notes</td>
+<td>school bag</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Gemeente en post</strong></td>
+<td>letters, forms, DigiD, the system</td>
+<td>envelope</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Reizen</strong></td>
+<td>bus, train, tickets, the city</td>
+<td>bus stop</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>De weg</strong></td>
+<td>asking, giving and following directions</td>
+<td>turning arrow</td>
+<td>no</td>
+</tr>
+<tr>
+<td><strong>Afspraken</strong></td>
+<td>booking, moving, cancelling, arriving late</td>
+<td>calendar</td>
+<td>no</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Two different kinds of unit were hiding in the answer.</strong> Themes are <em>worlds</em> —
+where the learner is. Directions, booking an appointment and asking where a
+product is are <em>actions</em> — what the learner does, and they crosscut worlds: an
+appointment happens at the doctor, at the gemeente and at the garage alike.</p>
+<p>Resolution taken here, to be confirmed:</p>
+<ul>
+<li><strong>Asking where a product is</strong> lives <strong>inside Boodschappen</strong> — it is one chunk
+  set, not a theme.</li>
+<li><strong>De weg</strong> and <strong>Afspraken</strong> are promoted to themes, because both are drawable,
+  both are exactly the felt need, and both have enough vocabulary to carry a
+  theme.</li>
+<li>If more actions accumulate, a second axis gets made explicitly — later, and
+  only when the list demands it.</li>
+</ul>
+<p>Two themes are still the weakest as pictures even with their word beside them:
+<strong>Gemeente en post</strong> (an envelope says "post", not "the system") and <strong>Mensen</strong>
+(two speech bubbles say "talking", not "chatting with the neighbour"). Weak is
+not the same as unusable — the word carries the rest.</p>
+<p>Size check: 2,000 words over 10 themes is ~200 each, still a month of practice
+per theme and a finishable unit.</p>
+<p><strong>Body parts are their own theme</strong> (owner, 16 November) rather than only a corner
+of Gezondheid: the vocabulary is large, it is in daily use well beyond the
+doctor, and it is the easiest theme in the set to draw — a body outline carries
+most of it. Worth keeping in mind if the free pair is ever revisited.</p>
+<h3 id="more-themes-the-owner-wants-them">More themes — the owner wants them</h3>
+<p>Owner, 16 November: <em>"We need more themes."</em> Agreed, and it solves a problem:
+ten themes makes the free slice 20% of the product and "2,000 words" a total
+someone can finish — which fights the rate promise in §3.</p>
+<p><strong>Worlds — where the learner is</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Covers</th>
+<th>Picture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Eten en drinken</strong></td>
+<td>restaurant, café, ordering, allergies</td>
+<td>plate and cup</td>
+</tr>
+<tr>
+<td><strong>Kleding</strong></td>
+<td>shop, sizes, fitting, returns</td>
+<td>hanger</td>
+</tr>
+<tr>
+<td><strong>Bank en geld</strong></td>
+<td>account, bills, insurance, borrowing</td>
+<td>card</td>
+</tr>
+<tr>
+<td><strong>Telefoon en internet</strong></td>
+<td>provider, contract, helpdesk, no signal</td>
+<td>phone</td>
+</tr>
+<tr>
+<td><strong>Buurt</strong></td>
+<td>neighbours, noise, shared hallway, the street</td>
+<td>doorbell</td>
+</tr>
+<tr>
+<td><strong>Sport en vrije tijd</strong></td>
+<td>club, gym, hobby, team</td>
+<td>whistle</td>
+</tr>
+<tr>
+<td><strong>Solliciteren</strong></td>
+<td>finding work, CV, the interview</td>
+<td>briefcase</td>
+</tr>
+<tr>
+<td><strong>Nood en politie</strong></td>
+<td>emergency, theft, reporting, accident</td>
+<td>emergency vehicle, lights on</td>
+</tr>
+<tr>
+<td><strong>Zorg voor iemand anders</strong></td>
+<td>calling on someone's behalf, an elderly parent</td>
+<td>a hand on a shoulder</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Actions — what the learner does</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Covers</th>
+<th>Picture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bellen</strong></td>
+<td>phone calls as a skill: opening, spelling your name, being transferred</td>
+<td>traditional handset</td>
+</tr>
+<tr>
+<td><strong>Klachten</strong></td>
+<td>broken, refund, complaint, escalating politely</td>
+<td>item with a return arrow</td>
+</tr>
+<tr>
+<td><strong>Mening geven</strong></td>
+<td>agreeing, disagreeing, saying no, an opinion</td>
+<td>head with a speech bubble</td>
+</tr>
+<tr>
+<td><strong>Formulieren</strong></td>
+<td>filling in a form, with help, signing</td>
+<td>form and pen</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Cost, so the number is chosen rather than wished.</strong> A theme is roughly 200
+words, one 512px pictogram, and a path through the games. 10 themes ≈ 2,000
+words, 20 ≈ 4,000, 25 ≈ 5,000. Each theme added also shrinks the two free
+themes' share of the product — a gate decision, not only a content one.</p>
+<p><strong>Pictures all round — the owner is right.</strong> Every theme can be drawn. The
+picture does not have to carry the meaning alone: <strong>the Dutch word sits with
+it</strong>, so the drawing only has to get the learner close. Emergency vehicles for
+Nood en politie; a traditional handset for Bellen against a smartphone for
+Telefoon en internet; a form and a pen for Formulieren against an envelope for
+Gemeente en post.</p>
+<p>The one thing no picture plus word can carry is <strong>grammar</strong> — <code>ik werk</code> versus
+<code>ik heb gewerkt</code>, word order, <code>op</code> versus <code>aan</code>. Those are relations, not things,
+which is why grammar lives inside exercises (and why Voorzetselpaden needed
+scenes rather than icons).</p>
+<p><code>OPEN</code> — how many themes, and which of the above.</p>
+<h3 id="the-count">The count</h3>
+<p>10 base + 13 candidates + <strong>Het lichaam</strong> = <strong>24 themes</strong>. That is:</p>
+<ul>
+<li><strong>24 drawable themes</strong> — the picture plus the Dutch word together identify each
+  one; no theme is left without a picture.</li>
+<li>roughly <strong>4,800 words</strong> at ~200 per theme — past A2 and into B1 territory,
+  which is consistent with §2's "2,000 and more" but is a large authoring job.</li>
+<li>a free slice of <strong>2 of 24, about 8%</strong> of the product.</li>
+</ul>
+<p>The set can be defined now and shipped over time — but a theme shown as a door
+must have content behind it, so the visible set at launch is the content budget,
+not the target.</p>
+<p><strong>Words are global; paths are local.</strong> With 24 overlapping themes the same word
+arrives in several places — <code>de rekening</code> in Boodschappen and Eten en drinken,
+<code>de knie</code> in Het lichaam and Gezondheid. That is good for practice and a trap
+for counting: the word log in §8 must be keyed by <strong>word</strong>, not by
+(theme, word), or a word met in two themes is counted twice and the counter in
+§3 lies.</p>
+<h3 id="every-theme-hosts-every-activity-that-fits-it">Every theme hosts every activity that fits it</h3>
+<p>Goal set 16 November: a theme is not a word list, it is a path of different games.
+So each theme should carry every activity that makes sense for its words.</p>
+<p>Where a game genuinely does not fit a theme — a preposition game may have nothing
+to say about <code>Klachten</code> — that is acceptable, but it must be a <strong>recorded
+decision, not an accident</strong>, and the theme's path still needs enough variety to
+feel like a path rather than the same drill relabelled.</p>
+<h2 id="13-open-decisions-collected">13. Open decisions, collected</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Blocks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>~~1~~</td>
+<td>~~Which gap is primary (§2)~~ — <strong>answered: vocabulary volume, pushed into memory by repetition</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~2a~~</td>
+<td>~~Recognition or production?~~ — <strong>answered: passive first, production via the Story Machine. The directory (rung 3) was dropped on 16 Nov (§5)</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~2b~~</td>
+<td>~~What "in memory" means?~~ — <strong>answered: spaced review sessions (§8)</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~2c~~</td>
+<td>~~Where do the words come from?~~ — <strong>answered: themes, ~2000+, our own list (§12)</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~3~~</td>
+<td>~~Audience in one sentence (§4)~~ — <strong>answered 16 Nov</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~4~~</td>
+<td>~~May we claim outcomes only, never mechanisms (§3)~~ — <strong>accepted 16 Nov</strong></td>
+<td>All copy and the home page</td>
+</tr>
+<tr>
+<td>~~4b~~</td>
+<td>~~Accept the definition of <em>held</em>~~ — <strong>accepted 16 Nov in his own words: a tally of "how many words I've been exposed to and how many are learned"</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~5~~</td>
+<td>~~Is inburgering exam prep in or out (§4, §10)~~ — <strong>answered 16 Nov: out, it needs specialist knowledge</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~6~~</td>
+<td>~~What stays free~~ — <strong>answered 16 Nov: two themes (Boodschappen, Mensen) with every activity inside, nothing remembered for a guest</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~6b~~</td>
+<td>~~Trial at all~~ — <strong>answered 16 Nov: 6 weeks of full access, then paid</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~6c~~</td>
+<td>~~Free account with a limited log~~ — <strong>answered 16 Nov: the post-trial tier keeps a log on the two free themes</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~6d~~</td>
+<td>~~The book~~ — <strong>answered 16 Nov: on hold, sold separately via Amazon, grants nothing</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~6e~~</td>
+<td>~~What a cancelled account keeps~~ — <strong>answered 16 Nov: a frozen, read-only, counts-only log, no export</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>~~6f~~</td>
+<td>~~Are the two free themes also capped at A1~~ — <strong>answered 16 Nov: yes, both limits apply</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>6g</td>
+<td>Which games fit which themes (§12) — every theme hosts every activity that makes sense, and exceptions get recorded</td>
+<td>The theme paths, and §12's "every activity" in the gate</td>
+</tr>
+<tr>
+<td>~~7~~</td>
+<td>~~Playful design or gamification (§11)~~ — <strong>answered 16 Nov: a reminder, a visible tally (words met vs held), and a sense of excitement</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>7b</td>
+<td>The reminder's channel and its consent (§11)</td>
+<td>Email design, and the privacy page, which still says no accounts and no data</td>
+</tr>
+<tr>
+<td>~~8~~</td>
+<td>~~Review state per word, chunk or theme (§8)~~ — <strong>answered 16 Nov: per word, kept in the learner's account</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>8b</td>
+<td>Does Voorzetselpaden gain theme tags, or stay reachable only by its own path (§12)</td>
+<td>Whether a theme path can include it</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Confirm the 24 themes and the free pair (§12) — <strong>list as of 16 Nov: 24 themes, all drawable; Boodschappen + Mensen free</strong></td>
+<td>All content work</td>
+</tr>
+<tr>
+<td>~~10~~</td>
+<td>~~The rung-3 directory~~ — <strong>dropped 16 Nov, out of scope</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>11</td>
+<td>~~How the games group by learning goal~~ — <strong>answered 16 Nov: themes are the axis; games crosscut them (§12)</strong></td>
+<td>—</td>
+</tr>
+<tr>
+<td>12</td>
+<td>A second test subject (§11) — so the design is not validated on the founder alone. Not because he is unusually good: §2 says he is the typical post-A2 learner, but one person is still one person</td>
+<td>Whether the product ships before a second person has used it for a month</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Where visitors come from, now that the book is not carrying them (§7)</td>
+<td>Acquisition, and whether the site sells itself cold</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="14-what-this-document-supersedes">14. What this document supersedes</h2>
+<p>Written 16 November 2026. Where any of these disagree with this file, this file wins.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Doc</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="archive/Concept.html"><code>Docs/Concept.html</code></a> (now <a href="archive/Concept.html"><code>archive/Concept.html</code></a>)</td>
+<td><strong>Superseded on product.</strong> Its audience (English speakers), its promise ("60–70% in days") and its four formats are replaced by §4, §3 and §5. The eight content pillars survive as a <em>content</em> taxonomy and are now listed in <a href="game-catalogue.html"><code>game-catalogue.html</code></a>.</td>
+</tr>
+<tr>
+<td><a href="archive/mvp.html"><code>Docs/mvp.html</code></a> (now <a href="archive/mvp.html"><code>archive/mvp.html</code></a>)</td>
+<td><strong>Dead.</strong> Two validation experiments whose scope excludes accounts, the backend and more than one content type — all three now exist and ship.</td>
+</tr>
+<tr>
+<td><a href="archive/todo.html"><code>Docs/todo.html</code></a> (now <a href="archive/todo.html"><code>archive/todo.html</code></a>)</td>
+<td><strong>Dead.</strong> A pre-pivot book/website sketch; the game list it gestures at is <a href="game-catalogue.html"><code>game-catalogue.html</code></a>.</td>
+</tr>
+<tr>
+<td><a href="archive/suggestions.html"><code>Docs/suggestions.html</code></a> (now <a href="archive/suggestions.html"><code>archive/suggestions.html</code></a>)</td>
+<td><strong>Superseded</strong>, being a pre-pivot brainstorm for English speakers and the book. The one live piece, the Uit Elkaar separable-verbs game and its word list, is now <a href="uit-elkaar.html"><code>uit-elkaar.html</code></a>.</td>
+</tr>
+<tr>
+<td><code>Docs/rethink/</code> (now <code>archive/rethink-2026-11-16/</code>)</td>
+<td><strong>Superseded on structure</strong> by §11 (home = the tally plus one action) and §12 (themes, not goals). Keep it for the art treatment in C, not for the five goal names.</td>
+</tr>
+<tr>
+<td><a href="decisions.html"><code>Docs/decisions.html</code></a></td>
+<td>Superseded on <strong>the products and the gate</strong> (§5, §7). Still the record of design decisions: colour, chrome, interface language.</td>
+</tr>
+<tr>
+<td><a href="game-catalogue.html"><code>Docs/game-catalogue.html</code></a></td>
+<td>The games are still the catalogue. Its <strong>learning-goal taxonomy</strong> is replaced by themes (§12).</td>
+</tr>
+<tr>
+<td><a href="games.html"><code>Docs/games.html</code></a></td>
+<td>Still the game specs.</td>
+</tr>
+<tr>
+<td><a href="project-rules.html"><code>CLAUDE.html</code></a></td>
+<td>Its "Where things stand" now records that §7 replaces the old band gate and that the new one is not built; the open-items table says the same. The old text is not to be restored.</td>
+</tr>
+</tbody>
+</table></div>
+<p>History is not deleted: the five files above are in <code>Docs/archive/</code> with a banner
+at the top. By this repo's own convention, anything fully superseded belongs
+there once its replacement is in place.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="project-rules.html"><span>Previous</span>Project rules</a><a class="next" href="game-catalogue.html"><span>Next</span>Game catalogue</a></nav>
+    <footer class="footer">
+      <code>Docs/product.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

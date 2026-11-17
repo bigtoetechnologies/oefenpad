@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accounts and sign-up — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html" aria-current="page">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Accounts</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Accounts and sign-up</h1>
+      <p class="lede">How the account system is built, run and tested.</p>
+      <p class="doc-meta">Docs/accounts.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-shape-and-what-was-copied-from-totumteams">The shape, and what was copied from TotumTeams</a></li><li class="toc-h2"><a href="#where-the-code-lives">Where the code lives</a></li><li class="toc-h2"><a href="#the-data-model">The data model</a></li><li class="toc-h2"><a href="#the-flows">The flows</a></li><li class="toc-h2"><a href="#email">Email</a></li><li class="toc-h2"><a href="#rate-limiting">Rate limiting</a></li><li class="toc-h2"><a href="#running-it">Running it</a></li><li class="toc-h2"><a href="#conventions-worth-keeping">Conventions worth keeping</a></li><li class="toc-h2"><a href="#what-must-change-before-accounts-go-live">What must change before accounts go live</a></li></ul></details>
+    <article class="prose">
+<p>The static site stays static. Sign-up and account management are a separate
+.NET 10 solution in <code>server/</code>, served from the same host, using the same
+<code>assets/site/oefenpad.css</code>, so the account pages are visual siblings of the
+home page rather than a second design.</p>
+<p>The scope is deliberately one person per account. There are no organisations,
+groups, invitations or roles beyond Identity's default role table.</p>
+<p>This file is the living how-it-works reference. The session record — decisions,
+rejected alternatives, evidence and the full file-by-file map — is in
+<a href="accounts-handover.html"><code>accounts-handover.html</code></a>.</p>
+<h2 id="the-shape-and-what-was-copied-from-totumteams">The shape, and what was copied from TotumTeams</h2>
+<p>TotumTeams is the architectural sample: the project layering, the <code>Result</code>
+convention, the context factory, the UTC convention, the Identity settings and
+the email adapter all follow it. Three things are deliberately different:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>TotumTeams</th>
+<th>Here</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Blazor + MudBlazor</td>
+<td>Razor Pages, server-rendered</td>
+<td>The site's design system is hand-written CSS. A UI framework would fight it, and the pages need no interactive circuit.</td>
+</tr>
+<tr>
+<td><code>.resx</code> + <code>IStringLocalizer</code></td>
+<td><code>Bilingual</code> records</td>
+<td>Every page ships Dutch and English in the same markup; a message should carry both, not ask for a culture.</td>
+</tr>
+<tr>
+<td>Organisations, members, roles</td>
+<td><code>ApplicationUser</code> + <code>Person</code> only</td>
+<td>The agreed scope is a single person.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Layering, each project referencing only what it needs:</p>
+<pre><code>Oefenpad.Enums
+Oefenpad.DTOs           → Enums
+Oefenpad.Contracts      → DTOs                 (interfaces, options)
+Oefenpad.Resources      → DTOs                 (bilingual messages, email bodies)
+Oefenpad.Validation     → DTOs, Resources      (FluentValidation)
+Oefenpad.DB             → DTOs, Contracts      (EF Core, models, builders)
+Oefenpad.Services       → Contracts, DB, DTOs, Enums, Resources, Validation
+Oefenpad.WebUI          → all of the above     (Razor Pages, Program.cs)
+Oefenpad.Tests          → Services, Validation, DB, WebUI
+</code></pre>
+<h2 id="where-the-code-lives">Where the code lives</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Project</th>
+<th>What it owns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Oefenpad.Enums</code></td>
+<td><code>MessageSeverity</code> only.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.DTOs</code></td>
+<td><code>Bilingual</code>, <code>Result</code>, <code>ResultMessage</code>, <code>ApplicationUser</code>, <code>EmailMessage</code>, and the request/profile records under <code>Account/</code>. No behaviour.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.Contracts</code></td>
+<td>Service interfaces, <code>ICurrentUserService</code>, <code>IEmailDispatcher</code>, <code>IAppUrlProvider</code>, and the <code>App</code> / <code>Email</code> options.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.Resources</code></td>
+<td>Every user-facing sentence (<code>AccountMessages</code>) and every email body (<code>AccountEmails</code>).</td>
+</tr>
+<tr>
+<td><code>Oefenpad.Validation</code></td>
+<td>FluentValidation rules and the <code>CustomState</code> bridge.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.DB</code></td>
+<td><code>OefenpadDbContext</code>, <code>Person</code>, <code>AccountDeletionToken</code>, model builders, UTC converter, context factory, migrations.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.Services</code></td>
+<td>Registration, account, deletion, current user, URL provider, claims factory, email dispatchers.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.WebUI</code></td>
+<td><code>Program.cs</code> (DI, Identity, cookie, rate limits, static files, routes) and the Razor Pages under <code>Pages/Account/</code>.</td>
+</tr>
+<tr>
+<td><code>Oefenpad.Tests</code></td>
+<td>In-memory SQLite harness plus registration and validator tests.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>Program.cs</code> is the entry point for anything cross-cutting. <code>AccountPageModel</code>
+is the shared base for the account pages. <code>AccountMessages</code> and <code>AccountEmails</code>
+are the only places a user-facing string should be written. The handover has the
+file-by-file list and a table of where to change what.</p>
+<h2 id="the-data-model">The data model</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AspNetUsers</code></td>
+<td>Identity account. <code>PreferredLanguageCode</code> is <code>nl</code> or <code>en</code> and chooses the language of account email.</td>
+</tr>
+<tr>
+<td><code>Persons</code></td>
+<td><code>FirstName</code>, <code>LastName</code>, optional <code>ApplicationUserId</code>. Audit columns. Unique index on <code>ApplicationUserId</code>.</td>
+</tr>
+<tr>
+<td><code>AccountDeletionTokens</code></td>
+<td><code>TokenHash</code> (SHA-256 hex), expiry, user. The raw token exists only in the email.</td>
+</tr>
+<tr>
+<td><code>GameSaves</code></td>
+<td>One live round per <code>(user, game)</code>: the game's private state JSON and the round id. Unique on <code>(ApplicationUserId, Game)</code>.</td>
+</tr>
+<tr>
+<td><code>GameLevelProgress</code></td>
+<td>Best score per <code>(user, game, level)</code>: <code>Correct</code>, <code>Total</code>, <code>CompletedAt</code>. Unique on the three ids.</td>
+</tr>
+<tr>
+<td>Identity's own tables</td>
+<td>Roles, claims, logins, tokens.</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>OefenpadDbContext</code> is an <code>IdentityDbContext&lt;ApplicationUser&gt;</code>. Every
+<code>DateTime</code> is converted to UTC both ways, as in TotumTeams. Audit fields are
+set in <code>SaveChangesAsync</code>; the author is the Person id from the cookie.</p>
+<p>All database reads in services are projections (<code>Select(...)</code>). There is no
+<code>Include</code>.</p>
+<h2 id="the-flows">The flows</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Route</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/Account/Registreren</code></td>
+<td>Validates with FluentValidation, creates the Identity user, creates the <code>Person</code>, emails a confirmation link. A duplicate address is returned as a message, never thrown. If the <code>Person</code> save fails the user is deleted again.</td>
+</tr>
+<tr>
+<td><code>/Account/Bevestig</code></td>
+<td>Decodes the base64url token, calls <code>ConfirmEmailAsync</code>. Until this succeeds, <code>RequireConfirmedEmail</code> blocks sign-in.</td>
+</tr>
+<tr>
+<td><code>/Account/BevestigOpnieuw</code></td>
+<td>Sends a fresh link. The answer is identical whether or not the address exists.</td>
+</tr>
+<tr>
+<td><code>/Account/Inloggen</code></td>
+<td><code>PasswordSignInAsync</code> with lockout on failure. Unconfirmed, locked out and wrong credentials are three distinct bilingual messages.</td>
+</tr>
+<tr>
+<td><code>/Account/Account</code></td>
+<td>Profile summary, links to name, email and password, email-language buttons, sign-out.</td>
+</tr>
+<tr>
+<td><code>/Account/Naam</code></td>
+<td>Updates <code>Person</code>; the audit stamp records the change.</td>
+</tr>
+<tr>
+<td><code>/Account/Wachtwoord</code></td>
+<td><code>ChangePasswordAsync</code>, then refreshes the sign-in so the current session survives the security-stamp rotation.</td>
+</tr>
+<tr>
+<td><code>/Account/E-mail</code></td>
+<td>Verifies the current password, moves email and username, marks the address unconfirmed, emails the new address and a notice to the old one, signs out.</td>
+</tr>
+<tr>
+<td><code>/Account/WachtwoordVergeten</code></td>
+<td>Emails a reset link; the answer does not reveal whether the address exists.</td>
+</tr>
+<tr>
+<td><code>/Account/WachtwoordHerstellen</code></td>
+<td>Resets the password and emails a confirmation.</td>
+</tr>
+<tr>
+<td><code>/Account/Verwijderen</code></td>
+<td>Password, then a one-hour emailed link. Only the token hash is stored.</td>
+</tr>
+<tr>
+<td><code>/Account/Verwijderen/Bevestig</code></td>
+<td>Removes the <code>Person</code>, then deletes the Identity user. The token page is anonymous: the link is the credential.</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cookie settings: <code>oefenpad.auth</code>, <code>HttpOnly</code>, <code>SameSite=Lax</code>, 14 days with
+sliding expiration, security stamp checked every minute. Password reset and
+confirmation tokens last 24 hours.</p>
+<h2 id="email">Email</h2>
+<p><code>IEmailDispatcher</code> is the only way out. <code>Email:SmtpHost</code> empty selects
+<code>FileEmailDispatcher</code>, which writes each message as an <code>.html</code> file under
+<code>server/Oefenpad.WebUI/email-sink/</code>. Set <code>Email:SmtpHost</code> (and the user,
+password and sender) to select <code>SmtpEmailDispatcher</code> instead.</p>
+<p><code>IdentityEmailSender</code> adapts Identity's <code>IEmailSender&lt;TUser&gt;</code> to the same
+dispatcher, so a resend triggered by Identity is branded and translated too.</p>
+<p>In Development the registration page also shows the confirmation link on the
+page, clearly marked, because there is no real mailbox. It is never rendered
+outside Development.</p>
+<h2 id="rate-limiting">Rate limiting</h2>
+<p>Policies are named in <code>WebUI/Services/RateLimitPolicies.cs</code> and applied to the
+page model. <strong>Only POST counts.</strong> A Razor Page attribute covers every handler,
+including the GET that renders the form; without the method check a person
+correcting the form a few times would be turned away. The partition is the
+client IP.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>POSTs allowed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Login</td>
+<td>10 per 5 minutes</td>
+</tr>
+<tr>
+<td>Register</td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td>Resend confirmation</td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td>Password reset</td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td>Change email</td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td>Delete account</td>
+<td>3 per 10 minutes</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="running-it">Running it</h2>
+<pre><code class="language-sh"># apply migrations and create an empty database
+ASPNETCORE_ENVIRONMENT=Development dotnet run --project server/Oefenpad.WebUI -- migrate
+
+# run on 8098 (8080 belongs to the owner)
+ASPNETCORE_ENVIRONMENT=Development dotnet run --project server/Oefenpad.WebUI --urls http://127.0.0.1:8098
+</code></pre>
+<p>The app applies pending migrations on every normal start too. The database is
+<code>server/Oefenpad.WebUI/oefenpad.db</code> (SQLite, gitignored). Data Protection keys
+are written to <code>server/Oefenpad.WebUI/dataprotection-keys/</code>.</p>
+<p>Tests:</p>
+<pre><code class="language-sh">dotnet test server/Oefenpad.Tests
+</code></pre>
+<p>The host serves only <code>assets/</code> and the WebUI <code>wwwroot/</code> (which holds the built
+React games under <code>spelen/</code>), plus the three static HTML pages by explicit
+route. Do not serve the repo root itself: it would expose <code>.git</code> and <code>server/</code>.
+The old <code>src/</code> game folders are gone.</p>
+<h2 id="conventions-worth-keeping">Conventions worth keeping</h2>
+<ul>
+<li>Business-rule failures are <code>Result</code> messages, not exceptions. Unexpected
+  failures throw. Sign-in state is checked through <code>ICurrentUserService</code>.</li>
+<li>Validation messages are <code>Bilingual</code> and travel in FluentValidation's
+  <code>CustomState</code>; <code>AccountPageModel.ValideerAsync</code> reads them and marks the
+  field. <code>.WithMessage</code> gets the Dutch text so anything else reading
+  <code>ErrorMessage</code> still shows something sensible.</li>
+<li>Every user-facing sentence is Dutch and English in the markup; the CSS
+  switch does the rest. Do not render only one language because the server
+  happens to know a culture.</li>
+<li><a href="designguide.html"><code>Docs/designguide.html</code></a> still governs the form styling: hard 2 px inset
+  borders, no radius, no shadow, orange for the primary action only.</li>
+<li>Do not add account text to the games. The games remain Dutch-only.</li>
+</ul>
+<h2 id="what-must-change-before-accounts-go-live">What must change before accounts go live</h2>
+<ol>
+<li><strong>The legal pages are now wrong.</strong> <a href="../privacy.html"><code>privacy.html</code></a> says no account is needed
+   and no personal data is collected; <a href="../voorwaarden.html"><code>voorwaarden.html</code></a> says there is no
+   registration. Both need rewriting: which data (name, email, password hash,
+   progress), retention, deletion, and the mail provider as a processor. This
+   is a legal-text change, not a code cleanup.</li>
+<li><strong>The home page says "no account".</strong> Accounts save progress, and
+   Voorzetselpaden works in tiers: A0 is free, the whole A1 band needs an
+   account, and A2 and up need a paid plan that is not built yet. Word search is
+   still open to guests. Decide whether it gets the same free slice and adjust
+   the hero and meta description if sign-up becomes required.</li>
+<li><strong>Production email and URLs.</strong> <code>appsettings.json</code> ships empty placeholder
+   keys; fill them through environment variables or a production settings file,
+   never by editing the shared file with a live value.
+
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Required value</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Email:SmtpHost</code></td>
+<td>the provider's SMTP host</td>
+<td>otherwise mail goes to <code>email-sink/</code></td>
+</tr>
+<tr>
+<td><code>Email:SmtpPort</code>, <code>Email:SmtpUseSsl</code>, <code>Email:FromAddress</code></td>
+<td>match the provider</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>App:BaseUrl</code></td>
+<td><code>https://oefenpad.nl</code> (the public origin, no trailing slash)</td>
+<td><strong>mandatory outside Development</strong>: the app throws on start without it, because links would otherwise be built from the caller-controlled <code>Host</code> header</td>
+</tr>
+<tr>
+<td><code>App:KnownProxies</code></td>
+<td>comma-separated proxy IPs, e.g. <code>10.0.0.5</code></td>
+<td>restores <code>X-Forwarded-Proto</code> (Secure cookie) and per-client rate-limit partitions behind a TLS-terminating proxy</td>
+</tr>
+</tbody>
+</table></div>
+<p>A production start therefore looks like:</p>
+<pre><code>ASPNETCORE_ENVIRONMENT=Production \
+App__BaseUrl=https://oefenpad.nl \
+App__KnownProxies=10.0.0.5 \
+Email__SmtpHost=smtp.example.nl \
+dotnet Oefenpad.WebUI.dll</code></pre>
+<p>Move the Data Protection keys (<code>dataprotection-keys/</code>) somewhere that
+   survives a redeploy; the path is currently hard-coded under the content root.</p></li>
+<li><strong>PostgreSQL</strong> when the SQLite file stops being enough. The context is
+   already provider-agnostic and <code>ExecuteWithRetryAsync</code> is in place for a
+   retrying strategy.</li>
+</ol>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="decisions.html"><span>Previous</span>Decisions and open questions</a><a class="next" href="accounts-handover.html"><span>Next</span>Accounts handover</a></nav>
+    <footer class="footer">
+      <code>Docs/accounts.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

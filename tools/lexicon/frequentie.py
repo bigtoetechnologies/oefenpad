@@ -20,7 +20,7 @@ them a band from their source instead of their rank. The `zipf` column is printe
 to two decimals; the rank is computed on the full-precision score.
 
 Attribution: wordfreq is Robyn Speer's; its data is CC BY-SA 4.0 and needs the
-SUBTLEX and OpenSubtitles notices if shipped. See `bronnen.md` §Attribution.
+SUBTLEX and OpenSubtitles notices if shipped. See `Docs/lexicon/bronnen.html` §Attribution.
 """
 
 import argparse

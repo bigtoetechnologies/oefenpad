@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reuse from BigToe Games — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html" aria-current="page">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Games</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Reuse from BigToe Games</h1>
+      <p class="lede">What can be lifted from the BigToe Games repository.</p>
+      <p class="doc-meta">Docs/reuse-bigtoegames.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-short-version">The short version</a></li><li class="toc-h2"><a href="#copy-almost-as-is">Copy almost as-is</a></li><li class="toc-h2"><a href="#copy-and-adapt">Copy and adapt</a></li><li class="toc-h3"><a href="#geheugen-is-the-wrong-game-for-word-picture">Geheugen is the wrong game for &quot;word ↔ picture&quot;</a></li><li class="toc-h3"><a href="#koppelen-is-flip-and-match-not-drag">Koppelen is flip-and-match, not drag</a></li><li class="toc-h3"><a href="#word-search-and-hangman-have-no-picture-clues-yet">Word Search and Hangman have no picture clues yet</a></li><li class="toc-h3"><a href="#the-word-bank-is-not-the-oefenpad-curriculum">The word bank is not the Oefenpad curriculum</a></li><li class="toc-h3"><a href="#images-are-thin-and-off-style">Images are thin and off-style</a></li><li class="toc-h3"><a href="#i18n-is-bigger-than-oefenpad-wants">i18n is bigger than Oefenpad wants</a></li><li class="toc-h3"><a href="#branding-and-tracking">Branding and tracking</a></li><li class="toc-h3"><a href="#build-and-deploy-are-bigtoe-specific">Build and deploy are BigToe-specific</a></li><li class="toc-h2"><a href="#what-this-does-not-give-you">What this does not give you</a></li><li class="toc-h2"><a href="#first-cut">First cut</a></li><li class="toc-h2"><a href="#mapping-to-the-thirteen">Mapping to the thirteen</a></li><li class="toc-h2"><a href="#port-log-first-cut-done">Port log (first cut, done)</a></li><li class="toc-h3"><a href="#layout">Layout</a></li><li class="toc-h3"><a href="#renames">Renames</a></li><li class="toc-h3"><a href="#stripped">Stripped</a></li><li class="toc-h3"><a href="#behaviour-changes">Behaviour changes</a></li><li class="toc-h3"><a href="#validation">Validation</a></li><li class="toc-h3"><a href="#still-open">Still open</a></li></ul></details>
+    <article class="prose">
+<p>What in <code>/media/tony/Data/repos/bigtoegames</code> is worth copying into Oefenpad, what
+needs adapting, and what it does not solve. Assumes both repos are yours; if any
+art or word images came from a third-party generator, check that tool's terms
+before shipping.</p>
+<p>BigToe is vanilla HTML/CSS/JS with no framework and no bundler. The only build
+step is <code>sh deploy.sh</code>, so the code is unusually easy to move.</p>
+<blockquote>
+<p><strong>Later state (2026-11-09).</strong> This document records the original copy. Those
+<code>src/</code> files no longer exist: the word bank and image manifest are now
+server-side (<code>server/Oefenpad.Resources/Games/Data/</code>), the games are React
+pages under <code>client/src/games/</code>, and the six page stylesheets are vendored in
+<code>client/src/styles/source/</code>. See <a href="games-backend.html"><code>games-backend.html</code></a>. The renames and storage
+keys below still hold.</p>
+</blockquote>
+<h2 id="the-short-version">The short version</h2>
+<p>BigToe already has <strong>four of the thirteen planned games</strong>, complete with Dutch UI
+strings, category pickers, difficulty levels, timers, saved state, stats, sound
+effects and PWA support:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Planned game</th>
+<th>BigToe equivalent</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Galgje</td>
+<td><code>src/hangman/</code></td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Woordzoeker</td>
+<td><code>src/wordsearch/</code></td>
+<td>Working</td>
+</tr>
+<tr>
+<td>Koppelen</td>
+<td><code>src/matchup/</code></td>
+<td>Working word ↔ picture</td>
+</tr>
+<tr>
+<td>Geheugen</td>
+<td><code>src/memory/</code></td>
+<td>Ported and adapted: word ↔ picture</td>
+</tr>
+</tbody>
+</table></div>
+<p>Roughly 3,800 lines of game JavaScript and 2,500 lines of CSS, plus a shared
+word bank, image manifest, helpers, service worker and test harness. That is the
+head start. The other nine games — prepositions, word order, endings, Lego words,
+false friends, flashcards, gap fill, listening, story machine — are either not
+there or exist only as separate unrelated pages.</p>
+<h2 id="copy-almost-as-is">Copy almost as-is</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Source</th>
+<th>What you get</th>
+<th>Changes needed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hangman</td>
+<td><code>src/hangman/</code> (<code>index.html</code>, <code>style.css</code>, <code>script.js</code>)</td>
+<td>Category picker, three difficulties, on-screen keyboard, hints, win/lose overlays, timer, saved game, stats, translation hint</td>
+<td>Rebrand, pin language to Dutch, add picture clue</td>
+</tr>
+<tr>
+<td>Word Search</td>
+<td><code>src/wordsearch/</code></td>
+<td>Grid generator, six difficulties, all directions, hints, category picker, translation hint, saved game</td>
+<td>Rebrand, pin language, add picture/gloss clue</td>
+</tr>
+<tr>
+<td>Match Up</td>
+<td><code>src/matchup/</code></td>
+<td>Word ↔ picture flip pairing, two panels, 4–12 pairs, categories, celebration</td>
+<td>Rebrand; decide whether "Koppelen" stays flip-match or becomes drag</td>
+</tr>
+<tr>
+<td>Word bank</td>
+<td><code>src/website/words.js</code></td>
+<td>25 categories, ~2,500 entries, <code>{ en, nl, uk }</code>, optional fields, <code>BIGTOE.entries</code> / <code>BIGTOE.words</code> helpers</td>
+<td>Curate hard; add missing categories; drop irrelevant ones</td>
+</tr>
+<tr>
+<td>Image manifest</td>
+<td><code>build/website/wordimages.js</code></td>
+<td><code>word → category/file.jpg</code> map, keyed by uppercase English word</td>
+<td>Regenerate from the curated set</td>
+</tr>
+<tr>
+<td>Image pipeline</td>
+<td><code>tools/gen_wordimages.py</code>, <code>assets/wordimages/</code></td>
+<td>Crops to 256×256 JPEG, fixes typos, aliases multiple words to one image, emits the manifest</td>
+<td>Point at Oefenpad assets; rerun</td>
+</tr>
+<tr>
+<td>i18n layer</td>
+<td><code>src/website/i18n.js</code></td>
+<td><code>register</code> / <code>t</code> / <code>data-i18n</code>, Dutch strings already present in every game</td>
+<td>Pin to <code>nl</code>, remove switcher</td>
+</tr>
+<tr>
+<td>Shared helpers</td>
+<td><code>src/website/common.js</code></td>
+<td><code>shuffle</code>, <code>fmtTime</code>, confetti, Web Audio sound effects, splash, dark mode, PWA install, pressed-state sync</td>
+<td>Remove analytics/consent, rebrand keys</td>
+</tr>
+<tr>
+<td>PWA shell</td>
+<td><code>src/website/manifest.json</code>, <code>sw.js</code>, <code>offline.html</code>, <code>tools/gen_pwa_icons.py</code></td>
+<td>Installable app, offline fallback, network-first HTML, cache-first art</td>
+<td>Rebrand icons/colours/name/cache prefixes</td>
+</tr>
+<tr>
+<td>Game specs</td>
+<td><code>docs/hangman.md</code>, <code>docs/memory.md</code>, <code>docs/matchup.md</code></td>
+<td>Ready-made spec format for Galgje, Geheugen, Koppelen</td>
+<td>Rename and align with Oefenpad</td>
+</tr>
+<tr>
+<td>Test harness</td>
+<td><code>tools/dom_stub.js</code>, <code>smoke_common.js</code>, <code>smoke_games_boot.js</code>, <code>test_word_format.js</code>, <code>check_matchup_dict.js</code></td>
+<td>Fake DOM/audio, boot checks, word-format checks, dictionary completeness</td>
+<td>Repoint paths; add Oefenpad assertions</td>
+</tr>
+</tbody>
+</table></div>
+<p>The games already ship Dutch UI text. For example, Hangman has <code>Galgje</code>,
+<code>Nieuw spel</code>, <code>Instellingen</code>, <code>Geluideffecten</code>, <code>Kies een categorie</code>, and the
+Word Search has <code>Woordzoeker</code>, <code>Te vinden woorden</code>, <code>Gevonden</code>. That is a real
+translation saving, even though it needs a tone pass.</p>
+<h2 id="copy-and-adapt">Copy and adapt</h2>
+<h3 id="geheugen-is-the-wrong-game-for-word-picture">Geheugen is the wrong game for "word ↔ picture"</h3>
+<p><code>src/memory/</code> matches <strong>identical pictures</strong> (image pairs), not a Dutch word to a
+picture. The planned Geheugen needs one of:</p>
+<ul>
+<li>port Match Up's word-card/image-card pairing into a single grid, or</li>
+<li>add a <code>word</code> face to Memory's card renderer and deal one word card + one image
+  card per pair.</li>
+</ul>
+<p>Match Up already has the pairing logic and the image manifest. Memory has the
+nicer single-grid flip experience. Reuse one, not both.</p>
+<h3 id="koppelen-is-flip-and-match-not-drag">Koppelen is flip-and-match, not drag</h3>
+<p><code>src/matchup/</code> is two panels of face-down cards: flip a word, flip a picture,
+match them. The planned Koppelen is "drag words onto the right pictures". The
+data, image mapping, level sizes and celebration are reusable; the drag layer is
+new. The "Room Raid" idea in <a href="archive/suggestions.html"><code>archive/suggestions.html</code></a> is the closer mechanic for
+drag-onto-a-scene, so this may be a deliberate split: Koppelen = flip-match,
+Room Raid = drag-to-scene.</p>
+<h3 id="word-search-and-hangman-have-no-picture-clues-yet">Word Search and Hangman have no picture clues yet</h3>
+<p>Both have a <strong>translation hint</strong> (English or Ukrainian) rather than a picture
+clue. The user-facing idea — hold the word in mind while searching, with a
+picture and a dictionary fallback — needs one addition:</p>
+<ul>
+<li>render the clue from <code>BIGTOE_WORD_IMAGES[entry.en]</code> beside the word, and</li>
+<li>on completion, show picture + Dutch word + audio together.</li>
+</ul>
+<p>Word Search's existing translation hint is a good "look it up" affordance for
+learners whose first language is not English, so keep it as an option rather
+than deleting it. Hangman's translation hint works the same way.</p>
+<h3 id="the-word-bank-is-not-the-oefenpad-curriculum">The word bank is not the Oefenpad curriculum</h3>
+<p><code>words.js</code> is a general thematic noun bank, not the Quick Wins pattern set. It
+has no <strong>verbs</strong>, no <strong>body</strong>, no <strong>family</strong> category, and no prepositions,
+endings, word families, false friends or sentence data. Its 25 categories
+include <code>mythology</code>, <code>dinosaurs</code>, <code>marine</code> and <code>countries</code>, which are not A1/B1
+priorities. Use it as raw material for vocabulary games, then curate:</p>
+<ul>
+<li>keep animals, food, household, travel, professions, nature, sports, music,
+  technology, flowers/insects if useful;</li>
+<li>add body, family, verbs, adjectives, function words;</li>
+<li>align the survivors with the book's chapters and the eight pillars;</li>
+<li>add a checker that every playable word has an image or a gloss.</li>
+</ul>
+<h3 id="images-are-thin-and-off-style">Images are thin and off-style</h3>
+<p>There are only <strong>157</strong> images: 48 animals, 94 food, 15 household. Nothing for
+body, family, nature (as a category), verbs or most other categories. They are
+photorealistic white-background product shots, while <a href="game-art.html"><code>game-art.html</code></a> calls for
+brush-drawn cobalt art with a transparent background. Treat the 157 as
+placeholders; new and replacement images follow the shared art guide. A mixed
+set is a known limitation until the replacement job is done.</p>
+<p>The pipeline (<code>tools/gen_wordimages.py</code>) is reusable, but the old photorealistic
+prompt must be rewritten to the style in <a href="game-art.html"><code>game-art.html</code></a>.</p>
+<p>Also note the per-category cap: Memory's 8×8 and 10×10 levels need 32 and 50
+unique images. Household has 15, so those levels disappear in that category.
+Match Up caps pairs at the available mapped words.</p>
+<h3 id="i18n-is-bigger-than-oefenpad-wants">i18n is bigger than Oefenpad wants</h3>
+<p><code>i18n.js</code> supports <code>en</code>, <code>en-us</code>, <code>nl</code>, <code>uk</code>, detects the browser language and
+persists a switcher choice. <a href="decisions.html"><code>decisions.html</code></a> says the interface is Dutch, full
+stop. Pin <code>lang = 'nl'</code>, remove the switcher and the "change language restarts
+the game" dialogs. Keep the per-game Dutch dictionaries.</p>
+<p>If you later want the "show English gloss" hint, use the word-level <code>translateTo</code>
+setting the games already implement — do not reintroduce a UI language switcher.</p>
+<h3 id="branding-and-tracking">Branding and tracking</h3>
+<p>Replace, do not ship:</p>
+<ul>
+<li><code>bigtoe_holdingtrophy.jpg</code>, <code>bigtoe.png</code>, <code>playingcard_light.jpg</code> /
+  <code>playingcard_dark.jpg</code>, the teal theme and all BigToe copy;</li>
+<li><code>© 2026 BigToe Games</code>, <code>bigtoe.games</code> canonical/OG URLs, AdSense/analytics
+  snippets and the consent gate (unless you decide to add analytics);</li>
+<li>localStorage keys (<code>bigtoe-theme</code>, <code>hangman-settings</code>, <code>memory-best</code>, …) so
+  they cannot collide and so Oefenpad progress is clearly its own.</li>
+</ul>
+<p>Use the Oefenpad palette (<code>#2B50C8</code>, <code>#FFFFFF</code>, <code>#E8601F</code>) and <code>assets/logo/</code>.
+The <code>16px</code>/<code>32px</code> favicon cut already exists.</p>
+<h3 id="build-and-deploy-are-bigtoe-specific">Build and deploy are BigToe-specific</h3>
+<p><code>deploy.sh</code> does <code>src/</code> → <code>build/website/</code>, patches site chrome into every page,
+fills the precache list, cache-busts JS/CSS by content hash, and checks anchors.
+Copy the <strong>ideas</strong>:</p>
+<ul>
+<li>fail the build if a required string/asset is missing;</li>
+<li>hash JS/CSS URLs, leave images alone;</li>
+<li>generate the service-worker precache list rather than hand-maintaining it;</li>
+<li>keep <code>serve.py</code>-style no-cache local serving, because plain
+  <code>python3 -m http.server</code> hides stale HTML.</li>
+</ul>
+<p>Do not copy the FTP upload, ads or the BigToe header/footer. The original plan
+was Netlify/Vercel with no backend. That was the MVP framing; the current site
+has a .NET host and server-side game content (see <a href="games-backend.html"><code>Docs/games-backend.html</code></a>), so
+the static-deploy parts of this note are history, not the plan.</p>
+<h2 id="what-this-does-not-give-you">What this does not give you</h2>
+<ul>
+<li><strong>Verb tables, prepositions, sentence tiles, endings, word families, false
+  friends.</strong> None of that data exists. <code>grammar.js</code> is still the job.</li>
+<li><strong>SRS scheduling and the mistakes queue.</strong> No spaced-repetition engine, no
+  shared progress model beyond per-game localStorage.</li>
+<li><strong>Reading, writing, conversation, listening comprehension, minimal pairs,
+  pronunciation.</strong> No audio assets and no dialogue/text data.</li>
+<li><strong>Curriculum mapping.</strong> The word bank is thematic, not pillar-based.</li>
+<li><strong>Dutch audio.</strong> The sound effects are synthesized Web Audio beeps, not speech.
+  Do not mistake them for pronunciation or listening material.</li>
+</ul>
+<h2 id="first-cut">First cut</h2>
+<ol>
+<li>Create a <code>src/</code> page set and a small <code>shared/</code> folder: <code>words.js</code> (curated),
+   <code>wordimages.js</code>, <code>i18n.js</code> (pinned to Dutch), <code>common.js</code> (trimmed).</li>
+<li>Copy Galgje and Woordzoeker first — they are the most complete and the
+   closest to the planned games.</li>
+<li>Copy Koppelen for word ↔ picture; decide whether Geheugen becomes a single-
+   grid word ↔ picture game or stays picture-only.</li>
+<li>Rebrand CSS, card backs, trophy art, metadata, localStorage keys; strip ads
+   and analytics.</li>
+<li>Curate 300–500 core words with images/glosses, and add the build checker.</li>
+<li>Add picture clues to Galgje/Woordzoeker and the picture + word + audio payoff.</li>
+<li>Add the PWA shell and offline fallback so daily practice works on a phone.</li>
+<li>Only then invest in the grammar games and the data they need.</li>
+</ol>
+<h2 id="mapping-to-the-thirteen">Mapping to the thirteen</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Planned</th>
+<th>Reuse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Galgje</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>Woordzoeker</td>
+<td>Direct</td>
+</tr>
+<tr>
+<td>Koppelen</td>
+<td>Direct for flip-match; new drag layer for drag-to-picture</td>
+</tr>
+<tr>
+<td>Geheugen</td>
+<td>Adapt Match Up pairing or add word faces to Memory</td>
+</tr>
+<tr>
+<td>Others</td>
+<td>No equivalent</td>
+</tr>
+</tbody>
+</table></div>
+<p>The real head start is the vocabulary-game engine, not the language curriculum.
+Copying the four pages saves the UI, state, persistence, category, difficulty and
+PWA work — the part that is tedious and easy to get wrong — while leaving the
+Quick Wins content, the grammar games and the audio as the actual product.</p>
+<h2 id="port-log-first-cut-done">Port log (first cut, done)</h2>
+<p>What was actually copied into Oefenpad and how it was changed. BigToe itself was
+read only.</p>
+<h3 id="layout">Layout</h3>
+<pre><code>src/shared/i18n.js          Dutch-pinned i18n (no detection, no switcher)
+src/shared/common.js        shuffle, fmtTime, confetti, splash, audio, sfx, aria sync
+src/shared/words.js         word bank, helpers on window.OEFENPAD
+src/shared/wordimages.js    image manifest (OEFENPAD_WORD_IMAGES)
+src/galgje/                 from bigtoegames/src/hangman/
+src/woordzoeker/            from bigtoegames/src/wordsearch/
+src/koppelen/               from bigtoegames/src/matchup/
+src/geheugen/               from bigtoegames/src/memory/
+assets/wordimages/          all 157 images (animals 48, food 94, household 15)
+</code></pre>
+<p>Directory names are Dutch to match the interface; the games map 1:1 to the
+canonical names in <a href="games.html"><code>games.html</code></a>.</p>
+<h3 id="renames">Renames</h3>
+<ul>
+<li>Namespace <code>BIGTOE</code> → <code>OEFENPAD</code>; <code>BIGTOE_WORDS</code> → <code>OEFENPAD_WORDS</code>;
+  <code>BIGTOE_WORD_IMAGES</code> → <code>OEFENPAD_WORD_IMAGES</code>.</li>
+<li>Theme key <code>bigtoe-theme</code> → <code>oefenpad-theme</code>.</li>
+<li>Per-game storage: <code>hangman-*</code> → <code>oefenpad-galgje-*</code>, <code>wordsearch-*</code> →
+  <code>oefenpad-woordzoeker-*</code>, <code>matchup-*</code> → <code>oefenpad-koppelen-*</code>, <code>memory-*</code> →
+  <code>oefenpad-geheugen-*</code>.</li>
+<li>Image paths <code>../wordimages/</code> → <code>../../assets/wordimages/</code>.</li>
+</ul>
+<h3 id="stripped">Stripped</h3>
+<p>AdSense meta, canonical/OG/Twitter tags, PWA manifest/icons (until the shell is
+added), the language switcher and its confirmation dialog, the consent banner
+and analytics, BigToe splash/header/About branding, the trophy photo and the
+playing-card back JPGs. Card backs are now a cobalt CSS gradient, and the
+trophy slot uses <code>assets/logo/logo_128px.png</code>.</p>
+<h3 id="behaviour-changes">Behaviour changes</h3>
+<ul>
+<li><strong>Geheugen is now word ↔ picture</strong>, not picture ↔ picture. <code>deal()</code> creates one
+  picture card and one Dutch-word card per item; a match requires the same item
+  with different faces. Emoji fallback still exists for categories with no
+  images.</li>
+<li><strong>Galgje shows a picture clue</strong> above the word tiles when the selected word has
+  an image, and shows the picture again on the win/lose overlays.</li>
+<li><strong>Woordzoeker shows a thumbnail</strong> beside each word in the list when one exists.
+  Word objects carry <code>img</code> through puzzle regeneration and saved games. Default
+  difficulty is now <code>beginner</code>.</li>
+<li><strong>Koppelen stays flip-and-match.</strong> It is already word ↔ picture; the drag
+  mechanic described in <a href="game-catalogue.html"><code>game-catalogue.html</code></a> is still future work.</li>
+<li>Translation hints (<code>translateTo</code>) remain as an optional English gloss, default
+  off. The Translate dropdown no longer offers a UI language; it only selects
+  the gloss language.</li>
+</ul>
+<h3 id="validation">Validation</h3>
+<p>All eight JS files pass <code>node --check</code>. Each page was loaded in headless Chrome
+with a fresh profile; no console errors, and the expected dynamic content was
+present (Galgje tiles/keyboard/clue, Woordzoeker 10×10 grid with thumbnails,
+Koppelen 6 word ↔ picture pairs, Geheugen 18 pairs = 18 words + 18 pictures).</p>
+<h3 id="still-open">Still open</h3>
+<ul>
+<li>Curate the word bank: it still has no verbs, body, family or adjectives, and
+  the 157 images cover only animals, food and household. Cards for words without
+  images fall back to text or are filtered out.</li>
+<li>Add a <code>src/index.html</code> hub linking the four games (and Verhaalmachine).</li>
+<li>Add the PWA shell and audio (pronunciation), then the grammar-game data.</li>
+<li>Port the BigToe test harness if the games keep growing.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="uit-elkaar.html"><span>Previous</span>Uit Elkaar — separable verbs</a><a class="next" href="review-handover.html"><span>Next</span>Review and hardening handover</a></nav>
+    <footer class="footer">
+      <code>Docs/reuse-bigtoegames.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

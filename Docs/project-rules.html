@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project rules — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html" aria-current="page">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Start here</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Project rules</h1>
+      <p class="lede">What the site is, the non-negotiables, where things stand, and what is open.</p>
+      <p class="doc-meta">Docs/project-rules.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#start-here">Start here</a></li><li class="toc-h2"><a href="#non-negotiables">Non-negotiables</a></li><li class="toc-h2"><a href="#the-design-system">The design system</a></li><li class="toc-h3"><a href="#two-traps-that-have-already-cost-a-day">Two traps that have already cost a day</a></li><li class="toc-h3"><a href="#other-things-worth-knowing">Other things worth knowing</a></li><li class="toc-h2"><a href="#running-and-checking-it">Running and checking it</a></li><li class="toc-h2"><a href="#where-things-stand">Where things stand</a></li><li class="toc-h2"><a href="#open-and-unverified">Open and unverified</a></li><li class="toc-h2"><a href="#working-style-the-owner-expects">Working style the owner expects</a></li></ul></details>
+    <article class="prose">
+<p>A Dutch practice site for adult newcomers to the Netherlands, most of
+them studying for inburgering. The practice pages are static HTML with no build
+step and no framework. Sign-up and account management are a small .NET 10
+service in <code>server/</code>. A companion paperback, <em>Quick Wins in Dutch</em>, lives in
+<code>book.md</code>; it was put on hold on 16 November 2026 and is not part of the offer
+(<a href="product.html"><code>Docs/product.html</code></a> §7).</p>
+<p>The practice site is deliberately plain to deploy: open <a href="../index.html"><code>index.html</code></a> over any
+static server and it runs. The account pages need the server in <code>server/</code>.</p>
+<p><strong>The documentation is HTML, and the HTML is the document.</strong> Every page under
+<code>Docs/</code> is a <code>.html</code> file reached from
+<a href="index.html"><code>Docs/index.html</code></a>. The Markdown originals were converted in November 2026
+and deleted, so there is no separate source to keep in sync and no doc build step: edit
+the page itself. Adding a document means writing a page in the same shell — sidebar,
+header, "On this page", previous/next — and putting it in the menu on every page and on
+the index. Never add a <code>.md</code> file under <code>Docs/</code>.</p>
+<h2 id="start-here">Start here</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Read</th>
+<th>To answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="product.html"><code>Docs/product.html</code></a></td>
+<td>What the product is, who it is for, the promise, and the gate. <strong>Read before proposing anything</strong></td>
+</tr>
+<tr>
+<td><a href="decisions.html"><code>Docs/decisions.html</code></a></td>
+<td>Why the design and interface are shaped this way (the product decisions are in <a href="product.html"><code>product.html</code></a>)</td>
+</tr>
+<tr>
+<td><a href="designguide.html"><code>Docs/designguide.html</code></a></td>
+<td>Every visual rule. Canonical</td>
+</tr>
+<tr>
+<td><a href="accounts.html"><code>Docs/accounts.html</code></a></td>
+<td>How sign-up and account management are built, run and tested</td>
+</tr>
+<tr>
+<td><a href="accounts-handover.html"><code>Docs/accounts-handover.html</code></a></td>
+<td>Why the account solution is shaped this way, plus the architecture and file-by-file code map</td>
+</tr>
+<tr>
+<td><a href="game-art.html"><code>Docs/game-art.html</code></a></td>
+<td>How game images are drawn: Voorzetselpaden in style A, the other games in brush line; cobalt only, 512 px</td>
+</tr>
+<tr>
+<td><a href="prepositions-roadmap.html"><code>Docs/prepositions-roadmap.html</code></a></td>
+<td>The Voorzetselpaden plan to 710 frames, and what "B2" means</td>
+</tr>
+<tr>
+<td><a href="voorzetselpaden/index.html"><code>Docs/voorzetselpaden/index.html</code></a></td>
+<td>Every Voorzetselpaden frame, one card each, by CEFR band. <strong>The master.</strong> Open it in a browser</td>
+</tr>
+<tr>
+<td><a href="voorzetselpaden/a0.html"><code>Docs/voorzetselpaden/a0.html</code></a> … <a href="voorzetselpaden/b2.html"><code>b2.html</code></a></td>
+<td>The eight band pages, grouped by contrast set: the chunk, the gloss, the scene brief, Must read, Avoid, the review verdict, and the Grok prompts in an appendix</td>
+</tr>
+<tr>
+<td><a href="design-process.html"><code>Docs/design-process.html</code></a></td>
+<td>Which designs were rejected and why, so you don't re-propose them</td>
+</tr>
+<tr>
+<td><a href="game-catalogue.html"><code>Docs/game-catalogue.html</code></a></td>
+<td>What each game is and what exists</td>
+</tr>
+<tr>
+<td><a href="games-backend.html"><code>Docs/games-backend.html</code></a></td>
+<td>How the games get their data from the API, and how the React app is built and run</td>
+</tr>
+<tr>
+<td><a href="review-handover.html"><code>Docs/review-handover.html</code></a></td>
+<td>What the 10 Nov 2026 review fixed, what it left, the content-exposure threat model, and the TotumTeams fidelity gaps</td>
+</tr>
+<tr>
+<td><a href="games.html"><code>Docs/games.html</code></a></td>
+<td>The build spec for the first two games</td>
+</tr>
+<tr>
+<td><a href="design-options/index.html"><code>Docs/design-options/index.html</code></a></td>
+<td>The fifteen home-page prototypes, side by side</td>
+</tr>
+</tbody>
+</table></div>
+<p>Superseded material lives in <code>Docs/archive/</code>. It is history, not guidance.</p>
+<h2 id="non-negotiables">Non-negotiables</h2>
+<p>These come from <a href="decisions.html"><code>Docs/decisions.html</code></a> and are not yours to relax.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The interface is Dutch</td>
+<td>Most users have no English. Dutch chrome is itself practice</td>
+</tr>
+<tr>
+<td>Meaning travels in pictures and colour</td>
+<td>Never in a sentence a learner must parse</td>
+</tr>
+<tr>
+<td>No text inside artwork, ever</td>
+<td>One art set has to serve every first language</td>
+</tr>
+<tr>
+<td>English glosses only, no other languages</td>
+<td>Learners use their own dictionary</td>
+</tr>
+<tr>
+<td>Orange means "do this now", nothing else</td>
+<td>It may mark several elements if they are the same idea</td>
+</tr>
+<tr>
+<td>Blue says what a thing is</td>
+<td>Cobalt <code>#2B50C8</code>, never the retired <code>#1B3A6B</code></td>
+</tr>
+<tr>
+<td>No souvenir Dutch imagery</td>
+<td>No windmills, clogs, tulips, canals, cheese</td>
+</tr>
+</tbody>
+</table></div>
+<p>A feature that only works if the learner reads English is suspect. Say so
+rather than building it.</p>
+<h2 id="the-design-system">The design system</h2>
+<p>One stylesheet and one script for the whole site: <code>assets/site/oefenpad.css</code>
+and <code>assets/site/oefenpad.js</code>. Class names are Dutch. A twelve-column grid,
+hairline rules, heavy Archivo type, and colour applied as brush-painted
+fills. Full rules in <a href="designguide.html"><code>Docs/designguide.html</code></a>.</p>
+<h3 id="two-traps-that-have-already-cost-a-day">Two traps that have already cost a day</h3>
+<p>The painted fills look like plain rectangles if either of these is broken,
+and breaking one of them produces no visible change on its own, so you will
+think your fix did nothing.</p>
+<ol>
+<li><strong>The painted SVG must use a fixed small viewBox</strong> — 300 × 150, or 100 × 30
+   with <code>data-verf-klein</code> — stretched by <code>preserveAspectRatio="none"</code>. The
+   filter's <code>baseFrequency</code> is tuned to those units. Use the element's real
+   pixel size and the bristle texture falls below one pixel.</li>
+<li><strong><code>verf()</code> clears <code>background-color</code> after inserting the SVG.</strong> The paint
+   layer is semi-transparent by design; the flat CSS background is only the
+   no-JS fallback. Leave it opaque and it fills in every bristle gap.</li>
+</ol>
+<p>Compare any change against <a href="design-options/g-penseelraster.html"><code>Docs/design-options/g-penseelraster.html</code></a>. That
+prototype is the agreed design and the reference for what the paint should
+look like.</p>
+<h3 id="other-things-worth-knowing">Other things worth knowing</h3>
+<ul>
+<li><strong>Bilingual markup.</strong> Every page ships both languages; <code>&lt;span lang="nl"&gt;</code>
+  and <code>&lt;span lang="en"&gt;</code>, switched by CSS on <code>html[data-taal]</code>. An inline
+  script in <code>&lt;head&gt;</code> sets it before first paint.</li>
+<li><strong>Theme.</strong> Opens light always. The system <code>prefers-color-scheme</code> is
+  deliberately ignored. <code>oefenpad.js</code> injects the <code>#theme-toggle</code> button;
+  do not hand-write it into pages.</li>
+<li><strong>The games are React now.</strong> The six games live in <code>client/</code> and are served
+  from <code>/spelen/&lt;game&gt;</code> by the .NET host. <code>GameShell</code> renders the chrome: <code>.vel</code>,
+  <code>.balk</code>, <code>.spel-kop</code> and <code>.voet</code>, with the title outside <code>.app-container</code> so
+  its rule spans the sheet rather than the 720 px game column. The games are
+  Dutch-only, so their <code>.balk</code> has no <code>.taal</code> switch; <code>.rechts</code> holds only the
+  injected <code>#theme-toggle</code>. The browser gets one round at a time from the game
+  API; the word bank and the puzzle generators are server-side.</li>
+<li><strong>The lexicon is internal data.</strong> <code>tools/lexicon/</code> holds a 10,000-lemma Dutch
+  list through B2, classified by part of speech, theme and semantic domain, with
+  our own five-band frequency scale (<code>Start</code>, <code>Basis</code>, <code>Midden</code>, <code>Gevorderd</code>,
+  <code>Verdieping</code>) because no public B2 list exists and the coursebook's A1/B1/open
+  tier is not a level. Nothing on the site reads these files.
+  <a href="lexicon/index.html"><code>Docs/lexicon/index.html</code></a> has the pipeline and the scale;
+  <a href="lexicon/bronnen.html"><code>Docs/lexicon/bronnen.html</code></a> has every source and the exact
+  selection rule. The data is untracked in git.</li>
+</ul>
+<h2 id="running-and-checking-it">Running and checking it</h2>
+<p>Port 8080 is often in use by something of the owner's. Leave it alone.</p>
+<pre><code class="language-sh">python3 -m http.server 8099 --bind 127.0.0.1
+</code></pre>
+<p>To check a visual change, screenshot it headless and compare against the
+prototype:</p>
+<pre><code class="language-sh">google-chrome --headless=new --disable-gpu --no-sandbox --hide-scrollbars \
+  --window-size=1400,1000 --virtual-time-budget=7000 \
+  --user-data-dir=/tmp/fresh-profile \
+  --screenshot=out.png &quot;http://127.0.0.1:8099/index.html?v=1&quot;
+</code></pre>
+<p><strong>Chrome caches aggressively here and will hand you a stale render.</strong> A
+screenshot that contradicts the DOM is the symptom. Use a fresh
+<code>--user-data-dir</code> and a changing query string for every shot that matters.
+Two separate wrong conclusions in this repo came from skipping that.</p>
+<p>Measuring beats eyeballing: sample pixels with PIL rather than judging a
+downscaled screenshot. Brush texture shows up as a spread of roughly 17–20 in
+the blue channel down a tile; a flat fill measures 0.</p>
+<p>The account system is a separate .NET 10 solution under <code>server/</code>. Port 8098 is
+for it; leave 8080 alone.</p>
+<pre><code class="language-sh">ASPNETCORE_ENVIRONMENT=Development dotnet run \
+  --project server/Oefenpad.WebUI --urls http://127.0.0.1:8098
+
+dotnet test server/Oefenpad.Tests
+</code></pre>
+<p>It applies migrations on start. The SQLite database is
+<code>server/Oefenpad.WebUI/oefenpad.db</code>; account email is written to
+<code>server/Oefenpad.WebUI/email-sink/</code> when no SMTP host is configured. Do not
+serve the repo root to the web app: only <code>assets/</code> and the WebUI <code>wwwroot</code> are
+exposed, and that is deliberate — the old <code>src/</code> scripts and word banks are
+gone.</p>
+<p>The React games build into the host. <code>dotnet build</code> and <code>dotnet publish</code> run
+<code>npm ci</code> (when <code>node_modules</code> is missing) and <code>npm run build</code>, so a normal
+build ships the games; <code>-p:SkipClientBuild=true</code> builds the server alone. The
+npm step is skipped when the client sources are unchanged.</p>
+<pre><code class="language-sh">cd client &amp;&amp; npm run build                    # writes wwwroot/spelen by hand
+cd client &amp;&amp; npm run scope-css                # after a change in styles/source
+</code></pre>
+<p><a href="games-backend.html"><code>Docs/games-backend.html</code></a> has the API, the round model, the verification record
+and what stays in the browser.</p>
+<h2 id="where-things-stand">Where things stand</h2>
+<p>All nine pages — home, the two legal pages, six games — are on one design
+system, the six games under the same <code>.balk</code> and <code>.voet</code> chrome. The home and
+legal pages are bilingual and still static; the games are Dutch-only, React,
+and served by the .NET host from <code>/spelen/</code>, with their content behind
+<code>/api/games</code>.</p>
+<p>Voorzetselpaden (now <code>client/src/games/prepositions/</code>, scenes in
+<code>assets/voorzetselpaden/</code>) is the newest: a pilot with twenty-eight
+levels — ten A0 chunks and eighteen A1 chunks, each taught across two to
+four example scenes, ninety-one in all — and the only game whose art is
+raster. Its ninety-one scene images are
+alpha masks drawn on a cobalt block, so they need no second file for dark mode. <a href="game-art.html"><code>Docs/game-art.html</code></a> has the art
+technique; <a href="prepositions-implementation.html"><code>Docs/prepositions-implementation.html</code></a> describes how the game is
+built, and <a href="prepositions.html"><code>Docs/prepositions.html</code></a> is the spec behind it.</p>
+<p><strong>The scene plans are HTML now, and they are the master.</strong> The seven Markdown
+plans were replaced on 12 November 2026 by eight pages under
+<code>Docs/voorzetselpaden/</code> — A0, A1, A2, A2 pairs, A2+, B1, B1+, B2 — holding 713
+chunks and 1015 cards, 271 of them proposals with no art yet. Cards group by
+contrast set, so <code>wachten op</code> sits beside
+<code>wachten voor</code>, and each chunk's own examples sit together with a count that
+turns red below three. A card holds the
+chunk, the gloss, the scene brief, Must read, Avoid, the review verdict and —
+for the ninety-one examples that are in the game — the example sentence, the build
+sentence and the control question. A batch is one chunk; its Grok prompt is
+built from the cards when it is needed (<code>tools/grok/grok.py prompt</code>), so it
+never goes stale. The old
+Markdown prose is in git history, no longer on the pages. Edit the HTML, not
+<code>prepositions.json</code>: the game data is generated from these pages. The originals
+are in git at <code>80e688c</code>.</p>
+<p>It is also the only
+game with a gate: the A0 band is free, the whole A1 band needs an account, and
+A2 and up will need a paid plan, which is not built yet (so that slice is
+empty). The first level of a band opens the band; within it a level opens only
+when the learner has
+finished the one before it (<code>server/Oefenpad.Services/Games/GameAccessService.cs</code>).</p>
+<blockquote>
+<p>The product decision changed on 16 November 2026: <a href="product.html"><code>Docs/product.html</code></a> §7 sets
+two free themes (Boodschappen, Mensen) at A1 and below, six weeks of full
+access on sign-up, then €10/month or €100/year, with a frozen read-only log
+after cancelling. <strong>That gate is not built</strong>, and cannot be until themes exist
+— Voorzetselpaden's 713 chunks carry no theme tag (<a href="product.html"><code>product.html</code></a> §12). The code
+still enforces the band slice above.</p>
+</blockquote>
+<p>Sign-up and account management live in the .NET 10 solution under <code>server/</code>.
+It is Razor Pages, not Blazor, with ASP.NET Core Identity and SQLite, and it
+serves the static site alongside the account pages from the same host. The
+pages are bilingual and use the same <code>oefenpad.css</code>. <a href="accounts.html"><code>Docs/accounts.html</code></a> has
+the architecture, the flows, the rate limits and what must change before
+accounts go live. <a href="accounts-handover.html"><code>Docs/accounts-handover.html</code></a> is the session record: the
+decisions behind the build, the verified build/test evidence, and a
+file-by-file map so the next agent does not have to load the solution.</p>
+<p>The remote is <code>git@github.com:bigtoetechnologies/oefenpad.git</code>; <code>main</code> is <strong>8
+commits ahead and unpushed</strong>, so the whole redesign exists only on this disk.
+Uncommitted on top of that: the game chrome, the whole React client, the
+server-side game content and API, the removal of the old <code>src/</code> game pages,
+and the docs that describe it. Push only when the owner asks.</p>
+<h2 id="open-and-unverified">Open and unverified</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>The no-JS fallback is reasoned correct but untested; headless <code>--disable-javascript</code> had no effect</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>--grijs</code> on <code>--papier</code> in dark mode is unchecked for contrast</td>
+</tr>
+<tr>
+<td>3</td>
+<td>The twelve-bar week meter has no label. Nobody knows whether it reads as anything</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Six content ideas from the rejected prototypes, listed at the end of <a href="design-process.html"><code>Docs/design-process.html</code></a></td>
+</tr>
+<tr>
+<td>5</td>
+<td>The open questions in <a href="decisions.html"><code>Docs/decisions.html</code></a>: domain registration, a mascot, whether a paid tier exists above free, audio for pillar 8. The games' free slice is decided in <a href="product.html"><code>Docs/product.html</code></a> §7 now, not there</td>
+</tr>
+<tr>
+<td>6</td>
+<td><a href="../privacy.html"><code>privacy.html</code></a> and <a href="../voorwaarden.html"><code>voorwaarden.html</code></a> still say there is no account and no personal data. They must be rewritten before accounts go live; the mail provider is a new processor</td>
+</tr>
+<tr>
+<td>7</td>
+<td>The home hero says "no account" and the site sells itself as free. <a href="product.html"><code>Docs/product.html</code></a> §7 replaces that: two free themes at A1 and below, six weeks of full access, then €10/month — none of it built, and it needs theme tags on content before it can be. Until then the code enforces the old slice (A0 free, A1 account, A2 empty). Word search is still open to guests and has no gate at all. Decide whether it gets the same gate and whether sign-up ever becomes required to play at all</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Production config: <code>Email:SmtpHost</code> is unset, so mail goes to <code>server/Oefenpad.WebUI/email-sink/</code>. Choose a provider. Set <code>App:BaseUrl</code> (mandatory outside Development — the app refuses to start without it) and <code>App:KnownProxies</code> when behind a TLS-terminating proxy, and persist the Data Protection keys. <a href="accounts.html"><code>Docs/accounts.html</code></a> lists the required values</td>
+</tr>
+<tr>
+<td>9</td>
+<td>The games now need the server. No offline play was accepted by the owner on 2026-11-09. The client build is wired into <code>dotnet build</code>/<code>publish</code> (<code>-p:SkipClientBuild=true</code> to skip it), so that half is closed</td>
+</tr>
+<tr>
+<td>10</td>
+<td>The game rounds are in memory, so a restart ends them and a second instance cannot share them. Fine for one host; a shared store is needed before scaling out</td>
+</tr>
+<tr>
+<td>11</td>
+<td>The 74 frames the 12 Nov 2026 review called nonsense were settled in <code>317f9db</code>: 67 dropped, 7 overturned. 76 cards still carry a severity mark. On 13 Nov a read of all 76 found 27 stale, 27 with a real text fault (now patched), 18 that need a redraw or a not-for-teaching mark, and 4 unsure. The marks themselves are not yet cleared. Report: <code>~/claude-scratch/voorzetselpaden-content-md-review-2026-11-12.md</code>. What it covered is in <a href="voorzetselpaden-content-checks.html"><code>Docs/voorzetselpaden-content-checks.html</code></a></td>
+</tr>
+<tr>
+<td>14</td>
+<td>636 chunks have fewer than three example scenes (651 if counted by the best group per chunk), almost all from A2+ upward. Bringing every chunk to three means 1,222 new scene briefs — more than the current plan. Decide which bands that target applies to</td>
+</tr>
+<tr>
+<td>15</td>
+<td>The A0/A1/A2 levelling is judgement, not roadmap: <code>~/claude-scratch/voorzetselpaden-a0-a1-a2.json</code> records the reason per frame. A0 came out at 10 frames against a 15–20 target because contrast sets are held out of A0</td>
+</tr>
+<tr>
+<td>16</td>
+<td><code>Docs/voorzetselpaden/base-prompt.txt</code> appeared during the 12 Nov session and is untracked. Nobody has claimed it; check it before keeping or deleting</td>
+</tr>
+<tr>
+<td>12</td>
+<td>The two errors the review found are fixed in the game data (<code>91b24dc</code>, <code>a99cc86</code>): the <code>praten-tegen</code> key and the "staat achteraan" hints. The <code>praten-tegen</code> card on <a href="voorzetselpaden/a2.html"><code>a2.html</code></a> was re-checked on 15 Nov 2026 and answers <code>Nee</code>; the only rebuild hazard left is that regenerating game data from the pages would ship the 121 unarted proposals. A 13 Nov audit of the fifty frames that were shipped then found 41 further faults, mostly build sentences that accept only one word order. They are listed, not yet fixed</td>
+</tr>
+<tr>
+<td>13</td>
+<td><code>assets/verb-propositions/incoming/</code> holds 50 redraws nothing references, including fresh copies of the two scenes dropped as nonsense. <code>assets/claude/incoming/</code> is 13 MB of the same kind. Neither is committed; decide whether raster source art belongs in git at all</td>
+</tr>
+<tr>
+<td>17</td>
+<td>The 15 Nov 2026 verb–preposition audit added 121 chunks against the ZiN (90) and Heard Dutch Here (187) lists: three on A1, twenty-seven on A2, six on A2+, forty-eight on B1, twenty-seven on B1+, ten on B2. All are proposal cards with no art, so <code>import-prepositions-band.py</code> cannot see them and the game does not ship them. Two of the two lists' entries remain untaught deliberately (<code>bang zijn van</code>, <code>gebruikmaken van</code>) and twelve Heard Dutch Here entries are free prepositions or duplicates; the reasons are in <a href="voorzetselpaden/verb-prep-check-2026-11-15.html"><code>Docs/voorzetselpaden/verb-prep-check-2026-11-15.html</code></a>. Decide whether the free-spatial chunks (<code>wachten voor</code>, <code>kijken door</code>, <code>kijken uit</code>, <code>kijken op</code>) belong in a verb + fixed-preposition plan at all: all four are in, <code>kijken op</code> as a single whose reason is written into its card</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="working-style-the-owner-expects">Working style the owner expects</h2>
+<ul>
+<li>Lead with the answer. Keep it short; expand only when asked.</li>
+<li>Disagree when you think he is wrong, in the first line, with the reason.</li>
+<li><strong>Delegate to sub-agents wherever the task allows it.</strong> This repo's reading is
+  heavy and the main context fills up fast, so use <code>spawn_agent</code> for work that is
+  self-contained: reading a set of docs to answer one question, drafting a
+  document, running a build or test suite and reporting only the failures,
+  auditing a batch of cards. Each agent starts blank — give it every path, rule
+  and constraint it needs, keep write scopes disjoint when several run in
+  parallel, and ask for a short report rather than a transcript. Do the small
+  surgical edit yourself; coordination costs more than it saves.</li>
+<li>Never report something as working without having run it.</li>
+<li>Show visual changes before committing to them. A one-line description of a
+  colour change is not enough for him to judge it, and a change he approved
+  from a description has already had to be reverted once.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="next" href="product.html"><span>Next</span>Product brief</a></nav>
+    <footer class="footer">
+      <code>Docs/project-rules.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

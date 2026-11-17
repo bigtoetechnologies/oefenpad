@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accounts handover — 2026-11-09 — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html" aria-current="page">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Accounts</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Accounts handover — 2026-11-09</h1>
+      <p class="lede">The session record: decisions, verified evidence and a file-by-file map.</p>
+      <p class="doc-meta">Docs/accounts-handover.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#in-one-paragraph">In one paragraph</a></li><li class="toc-h2"><a href="#status">Status</a></li><li class="toc-h2"><a href="#documentation-changed-this-session">Documentation changed this session</a></li><li class="toc-h2"><a href="#decisions-made-this-session">Decisions made this session</a></li><li class="toc-h2"><a href="#architecture-map">Architecture map</a></li><li class="toc-h3"><a href="#project-graph">Project graph</a></li><li class="toc-h3"><a href="#runtime-shape">Runtime shape</a></li><li class="toc-h3"><a href="#request-routing">Request routing</a></li><li class="toc-h3"><a href="#sign-up-flow">Sign-up flow</a></li><li class="toc-h3"><a href="#data-model">Data model</a></li><li class="toc-h3"><a href="#authentication-and-tokens">Authentication and tokens</a></li><li class="toc-h3"><a href="#email-path">Email path</a></li><li class="toc-h3"><a href="#rate-limiting">Rate limiting</a></li><li class="toc-h2"><a href="#code-map">Code map</a></li><li class="toc-h3"><a href="#server-root">server/ root</a></li><li class="toc-h3"><a href="#oefenpadenums">Oefenpad.Enums</a></li><li class="toc-h3"><a href="#oefenpaddtos">Oefenpad.DTOs</a></li><li class="toc-h3"><a href="#oefenpadcontracts">Oefenpad.Contracts</a></li><li class="toc-h3"><a href="#oefenpadresources">Oefenpad.Resources</a></li><li class="toc-h3"><a href="#oefenpadvalidation">Oefenpad.Validation</a></li><li class="toc-h3"><a href="#oefenpaddb">Oefenpad.DB</a></li><li class="toc-h3"><a href="#oefenpadservices">Oefenpad.Services</a></li><li class="toc-h3"><a href="#oefenpadwebui">Oefenpad.WebUI</a></li><li class="toc-h3"><a href="#oefenpadtests">Oefenpad.Tests</a></li><li class="toc-h3"><a href="#outside-server">Outside server/</a></li><li class="toc-h2"><a href="#where-to-make-a-change">Where to make a change</a></li><li class="toc-h3"><a href="#add-an-account-page">Add an account page</a></li><li class="toc-h3"><a href="#add-a-user-facing-sentence">Add a user-facing sentence</a></li><li class="toc-h3"><a href="#add-an-email">Add an email</a></li><li class="toc-h3"><a href="#add-a-field-to-the-profile">Add a field to the profile</a></li><li class="toc-h3"><a href="#change-a-rate-limit">Change a rate limit</a></li><li class="toc-h3"><a href="#change-the-password-policy">Change the password policy</a></li><li class="toc-h3"><a href="#switch-to-smtp">Switch to SMTP</a></li><li class="toc-h3"><a href="#switch-to-postgresql">Switch to PostgreSQL</a></li><li class="toc-h2"><a href="#verification-evidence">Verification evidence</a></li><li class="toc-h2"><a href="#open-items-and-risks">Open items and risks</a></li><li class="toc-h2"><a href="#traps-that-have-already-cost-time">Traps that have already cost time</a></li></ul></details>
+    <article class="prose">
+<p>This is the session record for the work that added sign-up and account management
+to Oefenpad. It explains what was built, why each choice was made, where every
+file lives, and what a future agent should check before changing it.</p>
+<p>The living how-it-works reference is <a href="accounts.html"><code>accounts.html</code></a>. Read that for
+the flows and conventions; read this for the map, the rejected alternatives and
+the evidence that the thing actually ran.</p>
+<h2 id="in-one-paragraph">In one paragraph</h2>
+<p><code>server/</code> is now a nine-project .NET 10 solution. It adds one-person sign-up and
+account management to the existing static site: register, confirm the email,
+sign in, change name, change email, change password, choose the email language,
+reset a forgotten password, and delete the account through a two-step emailed
+link. The account pages are Razor Pages, use ASP.NET Core Identity with SQLite,
+validate with FluentValidation, and carry Dutch and English in the same markup.
+The same host also serves the static site from the repository root, but only
+<code>/assets</code> and <code>/src</code> are exposed.</p>
+<p>Scope was deliberately single-person. There are no organisations, groups,
+invitations, tenants or roles beyond Identity's default role table.</p>
+<h2 id="status">Status</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Build (<code>dotnet build server/Oefenpad.sln</code>)</td>
+<td>0 warnings, 0 errors</td>
+</tr>
+<tr>
+<td>Tests (<code>dotnet test server/Oefenpad.Tests</code>)</td>
+<td>8 passed, 0 failed</td>
+</tr>
+<tr>
+<td>Live HTTP smoke test on 8098</td>
+<td>Run earlier this session; every account flow passed</td>
+</tr>
+<tr>
+<td>Screenshots (light, dark, NL, EN, signed-in, 420 px)</td>
+<td>Reviewed earlier this session</td>
+</tr>
+<tr>
+<td>Committed / pushed</td>
+<td><strong>No.</strong> The working tree is dirty and <code>main</code> is 8 commits unpushed</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Reset to schema-only after the smoke test; server stopped</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="documentation-changed-this-session">Documentation changed this session</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="accounts.html"><code>Docs/accounts.html</code></a></td>
+<td>Added a project-level "Where the code lives" map and a cross-link to this handover. It remains the living how-it-works reference.</td>
+</tr>
+<tr>
+<td><a href="accounts-handover.html"><code>Docs/accounts-handover.html</code></a></td>
+<td>This session record: decisions, architecture diagrams, file-by-file map, recipes, evidence and risks.</td>
+</tr>
+<tr>
+<td><a href="project-rules.html"><code>CLAUDE.html</code></a></td>
+<td>Added this handover to "Start here" and pointed the accounts paragraph at it.</td>
+</tr>
+<tr>
+<td><a href="decisions.html"><code>Docs/decisions.html</code></a></td>
+<td>Added the single-person account scope to "Settled", with pointers to <a href="accounts.html"><code>accounts.html</code></a> and this handover.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="decisions-made-this-session">Decisions made this session</h2>
+<p>These are the choices a future agent is likely to question. Each one was made
+against the TotumTeams sample, the design system, or the agreed single-person
+scope.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Razor Pages, not Blazor or MudBlazor</strong></td>
+<td>The site's design system is hand-written CSS in <code>assets/site/oefenpad.css</code>. A component framework would fight <a href="designguide.html"><code>Docs/designguide.html</code></a>, and the pages need no interactive circuit. Razor Pages keeps the server-rendered shape and the bilingual CSS switch trivial.</td>
+</tr>
+<tr>
+<td><strong><code>Bilingual</code> records instead of <code>.resx</code> / <code>IStringLocalizer</code></strong></td>
+<td>Every page ships both languages. A message should carry both texts to the page, not depend on a request culture. <code>Bilingual</code> also survives being returned from a service.</td>
+</tr>
+<tr>
+<td><strong>No organisations, groups, members or roles</strong></td>
+<td>Agreed scope: one person, one account. Adding tenancy tables now would be unused structure.</td>
+</tr>
+<tr>
+<td><strong>Validation messages live in FluentValidation <code>CustomState</code></strong></td>
+<td><code>AccountPageModel.ValideerAsync</code> reads the <code>Bilingual</code> from <code>CustomState</code>, adds it to <code>Fouten</code>, and marks the field. <code>.WithMessage</code> still carries the Dutch text so any other consumer of <code>ErrorMessage</code> sees something sensible.</td>
+</tr>
+<tr>
+<td><strong>Business failures return <code>Result&lt;T&gt;</code>; unexpected failures throw</strong></td>
+<td>TotumTeams convention. A duplicate email, a wrong password or an expired token is an expected answer, not an exception. Infrastructure failures are logged and turned into a generic <code>Result</code> only where the user needs an answer.</td>
+</tr>
+<tr>
+<td><strong>Bilingual emails are rendered in code (<code>AccountEmails</code>)</strong></td>
+<td>Five messages plus a password-changed notice. Embedded HTML templates would add a loader and a file dependency for no gain at this size.</td>
+</tr>
+<tr>
+<td><strong>Account deletion is two-step: password, then a one-hour emailed link; only a SHA-256 hash is stored</strong></td>
+<td>GDPR Article 17 needs a real deletion path. The password proves the request is the holder's; the emailed link proves the mailbox is still theirs. The raw token exists only in the email. The confirmation page is anonymous because the link is the credential.</td>
+</tr>
+<tr>
+<td><strong>Changing the email signs the user out and marks the address unconfirmed</strong></td>
+<td>The existing cookie names the old address and the new address has not been proved. Signing out avoids a session that claims an address it no longer owns.</td>
+</tr>
+<tr>
+<td><strong>SQLite + <code>IDbContextFactory</code> + <code>ExecuteWithRetryAsync</code></strong></td>
+<td>Matches TotumTeams. SQLite is enough now; the factory and retry wrapper keep a PostgreSQL move from changing service code.</td>
+</tr>
+<tr>
+<td><strong>Rate limits apply to POST only</strong></td>
+<td>A Razor Page <code>[EnableRateLimiting]</code> attribute covers the GET that renders the form too. Without the method check, a person correcting a form a few times exhausts the budget and sees a false 429. This happened twice during testing.</td>
+</tr>
+<tr>
+<td><strong>In Development the registration page shows the confirmation link</strong></td>
+<td>There is no real mailbox in development. The link is rendered only under <code>environment.IsDevelopment()</code>; it is never shown outside Development.</td>
+</tr>
+<tr>
+<td><strong>The server serves only <code>/assets</code> and the WebUI <code>wwwroot/</code> from the site root</strong></td>
+<td>Serving the repository root would expose <code>.git</code> and <code>server/</code>. The home and legal pages are mapped as explicit routes; the React games are served from <code>wwwroot/spelen/</code>. (This originally read <code>/assets</code> and <code>/src</code>; the old <code>src/</code> game folders were removed when the games moved to React.)</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="architecture-map">Architecture map</h2>
+<h3 id="project-graph">Project graph</h3>
+<p>Arrows point at the project being referenced (A → B means A references B).</p>
+<pre><code class="language-mermaid">flowchart TD
+    Enums[Oefenpad.Enums]
+    DTOs[Oefenpad.DTOs] --&gt; Enums
+    Contracts[Oefenpad.Contracts] --&gt; DTOs
+    Resources[Oefenpad.Resources] --&gt; DTOs
+    Validation[Oefenpad.Validation] --&gt; DTOs
+    Validation --&gt; Resources
+    DB[Oefenpad.DB] --&gt; DTOs
+    DB --&gt; Contracts
+    Services[Oefenpad.Services] --&gt; Contracts
+    Services --&gt; DB
+    Services --&gt; DTOs
+    Services --&gt; Enums
+    Services --&gt; Resources
+    Services --&gt; Validation
+    WebUI[Oefenpad.WebUI] --&gt; Contracts
+    WebUI --&gt; DB
+    WebUI --&gt; DTOs
+    WebUI --&gt; Enums
+    WebUI --&gt; Resources
+    WebUI --&gt; Services
+    WebUI --&gt; Validation
+    Tests[Oefenpad.Tests] --&gt; Services
+    Tests --&gt; Validation
+    Tests --&gt; DB
+    Tests --&gt; WebUI
+</code></pre>
+<p>The rule behind the layering: dependencies only point inward. <code>Contracts</code> knows
+interfaces but no implementation. <code>DB</code> knows persistence. <code>Services</code> knows
+business rules. <code>WebUI</code> knows HTTP and HTML. <code>Tests</code> is the only project allowed
+to reference everything.</p>
+<h3 id="runtime-shape">Runtime shape</h3>
+<pre><code class="language-mermaid">flowchart LR
+    Browser[Browser] --&gt; WebUI[Razor Pages in WebUI]
+    WebUI --&gt; Validators[FluentValidation validators]
+    WebUI --&gt; Services[Domain services]
+    Services --&gt; Context[IOefenpadContextFactory]
+    Context --&gt; SQLite[(SQLite via EF Core)]
+    Services --&gt; Dispatcher[IEmailDispatcher]
+    Dispatcher --&gt; Sink[email-sink in development]
+    Dispatcher --&gt; SMTP[SMTP in production]
+    WebUI --&gt; Static[Static site assets and game files]
+</code></pre>
+<p>One process, one SQLite file, one email adapter selected at start-up by
+<code>Email:SmtpHost</code>. There is no queue, no background worker and no second service.</p>
+<h3 id="request-routing">Request routing</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Page / mapping</th>
+<th>Page model</th>
+<th>Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/</code>, <code>/index.html</code></td>
+<td><code>StaticPage("index.html")</code></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><a href="../privacy.html"><code>/privacy.html</code></a>, <a href="../voorwaarden.html"><code>/voorwaarden.html</code></a></td>
+<td><code>StaticPage(...)</code></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>/Account/Registreren</code></td>
+<td><code>Pages/Account/Registreren.cshtml</code></td>
+<td><code>RegistrerenModel</code></td>
+<td><code>IRegistrationService.RegisterAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Bevestig</code></td>
+<td><code>Pages/Account/Bevestig.cshtml</code></td>
+<td><code>BevestigModel</code></td>
+<td><code>IRegistrationService.ConfirmEmailAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/BevestigOpnieuw</code></td>
+<td><code>Pages/Account/BevestigOpnieuw.cshtml</code></td>
+<td><code>BevestigOpnieuwModel</code></td>
+<td><code>IRegistrationService.ResendConfirmationAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Inloggen</code></td>
+<td><code>Pages/Account/Inloggen.cshtml</code></td>
+<td><code>InloggenModel</code></td>
+<td><code>SignInManager.PasswordSignInAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Uitloggen</code></td>
+<td><code>Pages/Account/Uitloggen.cshtml</code></td>
+<td><code>UitloggenModel</code></td>
+<td><code>SignInManager.SignOutAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Account</code></td>
+<td><code>Pages/Account/Account.cshtml</code></td>
+<td><code>AccountModel</code></td>
+<td><code>IAccountService.GetProfileAsync</code> / <code>ChangeLanguageAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Naam</code></td>
+<td><code>Pages/Account/Naam.cshtml</code></td>
+<td><code>NaamModel</code></td>
+<td><code>IAccountService.ChangeNameAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/E-mail</code></td>
+<td><code>Pages/Account/E-mail.cshtml</code></td>
+<td><code>EmailModel</code></td>
+<td><code>IAccountService.ChangeEmailAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Wachtwoord</code></td>
+<td><code>Pages/Account/Wachtwoord.cshtml</code></td>
+<td><code>WachtwoordModel</code></td>
+<td><code>IAccountService.ChangePasswordAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/WachtwoordVergeten</code></td>
+<td><code>Pages/Account/WachtwoordVergeten.cshtml</code></td>
+<td><code>WachtwoordVergetenModel</code></td>
+<td><code>IAccountService.SendPasswordResetAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/WachtwoordHerstellen</code></td>
+<td><code>Pages/Account/WachtwoordHerstellen.cshtml</code></td>
+<td><code>WachtwoordHerstellenModel</code></td>
+<td><code>IAccountService.ResetPasswordAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Verwijderen</code></td>
+<td><code>Pages/Account/Verwijderen.cshtml</code></td>
+<td><code>VerwijderenModel</code></td>
+<td><code>IAccountDeletionService.RequestDeletionAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Verwijderen/Bevestig</code></td>
+<td><code>Pages/Account/Verwijderen/Bevestig.cshtml</code></td>
+<td><code>BevestigModel</code></td>
+<td><code>IAccountDeletionService.ConfirmDeletionAsync</code></td>
+</tr>
+<tr>
+<td><code>/Account/Verwijderd</code></td>
+<td><code>Pages/Account/Verwijderd.cshtml</code></td>
+<td><code>VerwijderdModel</code></td>
+<td>— (success page)</td>
+</tr>
+<tr>
+<td><code>/Account/ToegangGeweigerd</code></td>
+<td><code>Pages/Account/ToegangGeweigerd.cshtml</code></td>
+<td><code>ToegangGeweigerdModel</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p><code>Pages/Account/AccountPageModel.cs</code> is the shared base for almost every page. It
+holds <code>Fouten</code>, <code>Waarschuwingen</code>, <code>Gelukt</code> and <code>FouteVelden</code>, plus
+<code>NeemResultaatOver</code>, <code>ValideerAsync</code> and <code>VeldClass</code>.</p>
+<h3 id="sign-up-flow">Sign-up flow</h3>
+<ol>
+<li><code>POST /Account/Registreren</code> binds <code>RegisterRequest</code> and runs
+   <code>RegisterRequestValidator</code>.</li>
+<li><code>RegistrationService.RegisterAsync</code> creates the <code>ApplicationUser</code>, then the
+   <code>Person</code>. If the <code>Person</code> save fails, the user is deleted again so a retry
+   does not collide with a half-created account.</li>
+<li>Identity generates an email-confirmation token. <code>AccountEmails.Bevestig</code>
+   renders the bilingual message and <code>IEmailDispatcher</code> writes or sends it.</li>
+<li><code>RequireConfirmedEmail = true</code> blocks sign-in until
+   <code>/Account/Bevestig</code> calls <code>ConfirmEmailAsync</code>.</li>
+<li>In Development the page also exposes <code>ConfirmationUrl</code> from
+   <code>RegistrationResult</code> so the flow can be finished without a mailbox.</li>
+</ol>
+<h3 id="data-model">Data model</h3>
+<pre><code class="language-mermaid">erDiagram
+    AspNetUsers {
+        string Id PK
+        string Email
+        string PreferredLanguageCode
+    }
+    Persons {
+        int Id PK
+        string FirstName
+        string LastName
+        string ApplicationUserId FK
+        int CreatedBy
+        datetime CreatedAt
+        int UpdatedBy
+        datetime UpdatedAt
+    }
+    AccountDeletionTokens {
+        int Id PK
+        string TokenHash
+        string ApplicationUserId FK
+        datetime CreatedAt
+        datetime ExpiresAt
+    }
+    AspNetUsers ||--o| Persons : has
+    AspNetUsers ||--o{ AccountDeletionTokens : issues
+</code></pre>
+<p>Identity's own role, claim, login and token tables are present but unused beyond
+Identity's defaults.</p>
+<p>Important persistence details:</p>
+<ul>
+<li><code>Persons.ApplicationUserId</code> is <strong>nullable and uniquely indexed</strong>. A profile can
+  exist briefly without a login, and one login cannot own two profiles.</li>
+<li>The <code>Person → ApplicationUser</code> foreign key is <code>SetNull</code>. That is why account
+  deletion removes the <code>Person</code> <strong>before</strong> deleting the user; the other order
+  leaves an orphan holding the name.</li>
+<li>Every <code>DateTime</code> passes through <code>UtcDateTimeConverter</code> on the way in and out.
+  SQLite returns <code>Unspecified</code>, so the converter stamps <code>Utc</code> both ways.</li>
+<li>Audit fields (<code>CreatedBy</code>, <code>CreatedAt</code>, <code>UpdatedBy</code>, <code>UpdatedAt</code>) are applied
+  in <code>OefenpadDbContext.SaveChangesAsync</code> to anything deriving from
+  <code>AuditableEntry</code>. The author is the <code>PersonId</code> claim, which can be null during
+  registration.</li>
+<li>Reads in services are projections (<code>Select(...)</code>); there is no <code>Include</code>.</li>
+</ul>
+<h3 id="authentication-and-tokens">Authentication and tokens</h3>
+<ul>
+<li>Cookie name <code>oefenpad.auth</code>, <code>HttpOnly</code>, <code>SameSite=Lax</code>,
+  <code>SecurePolicy = SameAsRequest</code> (production must be HTTPS), 14 days with sliding
+  expiration.</li>
+<li>Security stamp checked every minute, so a password change ends other sessions
+  quickly.</li>
+<li>Identity's password reset and email-confirmation tokens last 24 hours
+  (<code>DataProtectionTokenProviderOptions</code>).</li>
+<li>Account-deletion tokens last <strong>one hour</strong> and are stored only as a SHA-256 hex
+  hash. A new request deletes the previous rows, so only the latest email works.</li>
+<li><code>OefenpadUserClaimsPrincipalFactory</code> adds <code>oefenpad:person_id</code> and
+  <code>oefenpad:taal</code> to the cookie. <code>CurrentUserService</code> reads them; no database
+  lookup is needed for the audit stamp or the email language.</li>
+</ul>
+<h3 id="email-path">Email path</h3>
+<pre><code>page / service
+    → AccountEmails.&lt;message&gt;(name, link, language)   // EmailContent
+    → EmailMessage(to, Bilingual subject, HTML body)
+    → IEmailDispatcher
+        → FileEmailDispatcher   when Email:SmtpHost is empty
+        → SmtpEmailDispatcher   when Email:SmtpHost is set
+</code></pre>
+<p><code>IdentityEmailSender</code> adapts Identity's <code>IEmailSender&lt;ApplicationUser&gt;</code> to the
+same dispatcher, so a resend triggered by Identity is branded and translated in
+the same way.</p>
+<p><code>FileEmailDispatcher</code> writes
+<code>server/Oefenpad.WebUI/email-sink/{timestamp}-{recipient}-{guid}.html</code>.
+<code>Email:SinkPath</code> overrides the folder. Nothing leaves the machine.</p>
+<h3 id="rate-limiting">Rate limiting</h3>
+<p>Policies are named in <code>server/Oefenpad.WebUI/Services/RateLimitPolicies.cs</code> and
+applied to the page model. <code>Program.cs</code> builds them and returns a no-op limiter
+for anything that is not a POST. The partition key is the client IP.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Policy</th>
+<th>Applied to</th>
+<th>POSTs allowed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Login</code></td>
+<td><code>Inloggen</code></td>
+<td>10 per 5 minutes</td>
+</tr>
+<tr>
+<td><code>Register</code></td>
+<td><code>Registreren</code></td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td><code>ResendConfirmation</code></td>
+<td><code>BevestigOpnieuw</code></td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td><code>PasswordReset</code></td>
+<td><code>WachtwoordVergeten</code></td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td><code>ChangeEmail</code></td>
+<td><code>E-mail</code></td>
+<td>5 per 10 minutes</td>
+</tr>
+<tr>
+<td><code>DeleteAccount</code></td>
+<td><code>Verwijderen</code>, <code>Verwijderen/Bevestig</code></td>
+<td>3 per 10 minutes</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="code-map">Code map</h2>
+<p>Paths are relative to the repository root. This is the file-by-file map; start
+here instead of loading the solution.</p>
+<h3 id="server-root"><code>server/</code> root</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Oefenpad.sln</code></td>
+<td>Classic <code>.sln</code>, nine projects. Not <code>.slnx</code>.</td>
+</tr>
+<tr>
+<td><code>Directory.Build.props</code></td>
+<td>Forces project-local <code>bin/</code> and <code>obj/</code> paths so EF Core tools do not emit Windows-style paths on Linux.</td>
+</tr>
+<tr>
+<td><code>../.gitignore</code></td>
+<td>Ignores <code>server/**/bin/</code>, <code>server/**/obj/</code>, <code>*.db</code>, <code>server/**/email-sink/</code>, <code>server/**/dataprotection-keys/</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadenums"><code>Oefenpad.Enums</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MessageSeverity.cs</code></td>
+<td><code>Info</code>, <code>Success</code>, <code>Warning</code>, <code>Error</code>. Used by <code>ResultMessage</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpaddtos"><code>Oefenpad.DTOs</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Bilingual.cs</code></td>
+<td><code>sealed record Bilingual(string Nl, string En)</code>; <code>Same(text)</code> and <code>For(languageCode)</code>.</td>
+</tr>
+<tr>
+<td><code>Result.cs</code></td>
+<td><code>Result&lt;T&gt;</code> with <code>IsSuccess</code>, <code>ResultContent</code>, <code>Messages</code>; <code>Success</code> / <code>Failure</code> helpers.</td>
+</tr>
+<tr>
+<td><code>ResultMessage.cs</code></td>
+<td>Severity plus a <code>Bilingual</code> text.</td>
+</tr>
+<tr>
+<td><code>ApplicationUser.cs</code></td>
+<td><code>IdentityUser</code> subclass; adds <code>PreferredLanguageCode</code> (<code>nl</code> / <code>en</code>).</td>
+</tr>
+<tr>
+<td><code>EmailMessage.cs</code></td>
+<td><code>To</code>, bilingual <code>Subject</code>, HTML <code>Body</code>.</td>
+</tr>
+<tr>
+<td><code>Account/RegisterRequest.cs</code></td>
+<td>First name, last name, email, password, confirmation, terms flag, preferred language.</td>
+</tr>
+<tr>
+<td><code>Account/LoginRequest.cs</code></td>
+<td>Email, password, remember-me.</td>
+</tr>
+<tr>
+<td><code>Account/RegistrationResult.cs</code></td>
+<td>New user id, email, optional <code>ConfirmationUrl</code> for Development.</td>
+</tr>
+<tr>
+<td><code>Account/AccountProfileDto.cs</code></td>
+<td>Profile projection: person id, names, email, language.</td>
+</tr>
+<tr>
+<td><code>Account/PersonDto.cs</code></td>
+<td>Person id and names.</td>
+</tr>
+<tr>
+<td><code>Account/ChangeNameRequest.cs</code></td>
+<td>First and last name.</td>
+</tr>
+<tr>
+<td><code>Account/ChangePasswordRequest.cs</code></td>
+<td>Current, new, confirm.</td>
+</tr>
+<tr>
+<td><code>Account/ChangeEmailRequest.cs</code></td>
+<td>Current password, new email.</td>
+</tr>
+<tr>
+<td><code>Account/ResetPasswordRequest.cs</code></td>
+<td>Email, code, new password, confirm.</td>
+</tr>
+<tr>
+<td><code>Account/DeleteAccountRequest.cs</code></td>
+<td>Password.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadcontracts"><code>Oefenpad.Contracts</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Interfaces/Services/IRegistrationService.cs</code></td>
+<td><code>RegisterAsync</code>, <code>ConfirmEmailAsync</code>, <code>ResendConfirmationAsync</code>.</td>
+</tr>
+<tr>
+<td><code>Interfaces/Services/IAccountService.cs</code></td>
+<td>Profile, name, password, email, language, password reset.</td>
+</tr>
+<tr>
+<td><code>Interfaces/Services/IAccountDeletionService.cs</code></td>
+<td><code>RequestDeletionAsync</code>, <code>ConfirmDeletionAsync</code>.</td>
+</tr>
+<tr>
+<td><code>Interfaces/Services/ICurrentUserService.cs</code></td>
+<td><code>IsAuthenticated</code>, <code>UserId</code>, <code>PersonId</code>, <code>Email</code>, <code>PreferredLanguageCode</code>.</td>
+</tr>
+<tr>
+<td><code>Interfaces/Services/IEmailDispatcher.cs</code></td>
+<td><code>SendAsync(EmailMessage, CancellationToken)</code>.</td>
+</tr>
+<tr>
+<td><code>Interfaces/Services/IAppUrlProvider.cs</code></td>
+<td><code>ToAbsoluteUrl(relativePath)</code> for links in email.</td>
+</tr>
+<tr>
+<td><code>Options/AppOptions.cs</code></td>
+<td><code>App:BaseUrl</code>.</td>
+</tr>
+<tr>
+<td><code>Options/EmailOptions.cs</code></td>
+<td><code>Email:FromAddress</code>, <code>FromName</code>, <code>SinkPath</code>, <code>SmtpHost</code>, <code>SmtpPort</code>, <code>SmtpUseSsl</code>, <code>SmtpUser</code>, <code>SmtpPassword</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadresources"><code>Oefenpad.Resources</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Account/AccountMessages.cs</code></td>
+<td>Every user-facing sentence, grouped by page: <code>Validatie</code>, <code>Registratie</code>, <code>Inloggen</code>, <code>Beheer</code>, <code>Verwijderen</code>. Bilingual.</td>
+</tr>
+<tr>
+<td><code>Account/AccountEmails.cs</code></td>
+<td>Six rendered emails: confirmation, new-email confirmation, password reset, password changed, email changed notice, account deletion. Returns <code>EmailContent</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadvalidation"><code>Oefenpad.Validation</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BilingualRuleExtensions.cs</code></td>
+<td>Puts a <code>Bilingual</code> into <code>CustomState</code> and <code>.WithMessage</code> in one call.</td>
+</tr>
+<tr>
+<td><code>Account/RegisterRequestValidator.cs</code></td>
+<td>Names, email, 10-character password with a digit, confirmation, terms, language.</td>
+</tr>
+<tr>
+<td><code>Account/LoginRequestValidator.cs</code></td>
+<td>Email present and valid; password present.</td>
+</tr>
+<tr>
+<td><code>Account/ChangeNameRequestValidator.cs</code></td>
+<td>Names required and within 50 characters.</td>
+</tr>
+<tr>
+<td><code>Account/ChangePasswordRequestValidator.cs</code></td>
+<td>Current password present; new password rules; confirmation matches; new differs from current.</td>
+</tr>
+<tr>
+<td><code>Account/ChangeEmailRequestValidator.cs</code></td>
+<td>Current password present; new email valid.</td>
+</tr>
+<tr>
+<td><code>Account/ResetPasswordRequestValidator.cs</code></td>
+<td>Email, code, password rules, confirmation.</td>
+</tr>
+<tr>
+<td><code>Account/DeleteAccountRequestValidator.cs</code></td>
+<td>Password present.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpaddb"><code>Oefenpad.DB</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>OefenpadDbContext.cs</code></td>
+<td><code>IdentityDbContext&lt;ApplicationUser&gt;</code>, <code>Persons</code>, <code>AccountDeletionTokens</code>, UTC convention, audit stamping.</td>
+</tr>
+<tr>
+<td><code>OefenpadDbContextFactory.cs</code></td>
+<td>Design-time factory for <code>dotnet ef</code>.</td>
+</tr>
+<tr>
+<td><code>IOefenpadContextFactory.cs</code></td>
+<td>Abstraction over <code>IDbContextFactory</code> for services.</td>
+</tr>
+<tr>
+<td><code>OefenpadContextFactory.cs</code></td>
+<td>Creates a context and attaches <code>ICurrentUserService</code> for audit fields.</td>
+</tr>
+<tr>
+<td><code>OefenpadContextFactoryExtensions.cs</code></td>
+<td><code>ExecuteWithRetryAsync</code> for caller-owned transactions under a retry strategy.</td>
+</tr>
+<tr>
+<td><code>UtcDateTimeConverter.cs</code></td>
+<td><code>DateTime</code> ↔ UTC on read and write.</td>
+</tr>
+<tr>
+<td><code>Models/AuditableEntry.cs</code></td>
+<td><code>CreatedBy</code>, <code>CreatedAt</code>, <code>UpdatedBy</code>, <code>UpdatedAt</code>.</td>
+</tr>
+<tr>
+<td><code>Models/Person.cs</code></td>
+<td>Learner profile: id, names, optional user id.</td>
+</tr>
+<tr>
+<td><code>Models/AccountDeletionToken.cs</code></td>
+<td>SHA-256 hash, user id, <code>CreatedAt</code>, <code>ExpiresAt</code>.</td>
+</tr>
+<tr>
+<td><code>ModelBuilders/PersonBuilder.cs</code></td>
+<td>Table, lengths 50, unique nullable FK, <code>SetNull</code> on delete.</td>
+</tr>
+<tr>
+<td><code>ModelBuilders/ApplicationUserBuilder.cs</code></td>
+<td><code>PreferredLanguageCode</code> max length 5, nullable.</td>
+</tr>
+<tr>
+<td><code>ModelBuilders/AccountDeletionTokenBuilder.cs</code></td>
+<td>Unique <code>TokenHash</code>, 64 chars, cascade on user delete.</td>
+</tr>
+<tr>
+<td><code>Migrations/20261108204924_InitialCreate*.cs</code></td>
+<td>Initial schema.</td>
+</tr>
+<tr>
+<td><code>Migrations/OefenpadDbContextModelSnapshot.cs</code></td>
+<td>EF snapshot; keep in sync when models change.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadservices"><code>Oefenpad.Services</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RegistrationService.cs</code></td>
+<td>Create user + Person with rollback; confirmation send returns <code>(sent, url)</code>; resend.</td>
+</tr>
+<tr>
+<td><code>AccountService.cs</code></td>
+<td>Profile projection; name; password and sign-in refresh; email change (sign out, confirm new, notify old); language; reset request and reset.</td>
+</tr>
+<tr>
+<td><code>AccountDeletionService.cs</code></td>
+<td>Password check, raw token + hash, one-hour expiry, confirmation deletes Person before user.</td>
+</tr>
+<tr>
+<td><code>CurrentUserService.cs</code></td>
+<td>Reads the cookie claims; anonymous reads are false/null.</td>
+</tr>
+<tr>
+<td><code>AppUrlProvider.cs</code></td>
+<td><code>App:BaseUrl</code> wins; otherwise build from the current request.</td>
+</tr>
+<tr>
+<td><code>OefenpadUserClaimsPrincipalFactory.cs</code></td>
+<td>Adds <code>oefenpad:person_id</code> and <code>oefenpad:taal</code> to the cookie.</td>
+</tr>
+<tr>
+<td><code>ClaimsKeys.cs</code></td>
+<td>Claim-type constants.</td>
+</tr>
+<tr>
+<td><code>ResultHelpers.cs</code></td>
+<td>Shorthand for failure results, plus <code>IdentityErrorTranslator</code>, which turns Identity error codes into bilingual sentences.</td>
+</tr>
+<tr>
+<td><code>Mappings/PersonMappings.cs</code></td>
+<td><code>Expression&lt;Func&lt;Person, PersonDto&gt;&gt;</code> projection.</td>
+</tr>
+<tr>
+<td><code>Email/EmailDispatchers.cs</code></td>
+<td><code>FileEmailDispatcher</code> and <code>SmtpEmailDispatcher</code>.</td>
+</tr>
+<tr>
+<td><code>Email/IdentityEmailSender.cs</code></td>
+<td>Adapts Identity's <code>IEmailSender&lt;ApplicationUser&gt;</code>.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadwebui"><code>Oefenpad.WebUI</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Program.cs</code></td>
+<td>Configuration, DI, Identity, cookie, token lifetimes, rate limiter, static files, explicit routes, <code>migrate</code> argument, <code>ApplyMigrationsAsync</code>.</td>
+</tr>
+<tr>
+<td><code>appsettings.json</code></td>
+<td><code>App:BaseUrl</code>, <code>Database:Path</code>, <code>Email:*</code>, logging.</td>
+</tr>
+<tr>
+<td><code>appsettings.Development.json</code></td>
+<td>Detailed errors and debug logging.</td>
+</tr>
+<tr>
+<td><code>Properties/launchSettings.json</code></td>
+<td>Local profile, port 8098.</td>
+</tr>
+<tr>
+<td><code>Services/RateLimitPolicies.cs</code></td>
+<td>Policy name constants.</td>
+</tr>
+<tr>
+<td><code>Helpers/BilingualHtml.cs</code></td>
+<td><code>Beide()</code> and <code>Meldingen()</code> helpers; renders both languages.</td>
+</tr>
+<tr>
+<td><code>Pages/_ViewImports.cshtml</code></td>
+<td>Namespaces and tag helpers.</td>
+</tr>
+<tr>
+<td><code>Pages/_ViewStart.cshtml</code></td>
+<td>Sets <code>_Layout</code>.</td>
+</tr>
+<tr>
+<td><code>Pages/Shared/_Layout.cshtml</code></td>
+<td>Both inline head scripts (language and theme), <code>.vel</code>, <code>.balk</code>, <code>.voet</code>, nav switches on <code>User.Identity.IsAuthenticated</code>.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/AccountPageModel.cs</code></td>
+<td>Shared message lists and validation bridge.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Registreren.cshtml(.cs)</code></td>
+<td>Sign-up form; Development-only confirmation link.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Bevestig.cshtml(.cs)</code></td>
+<td>Email confirmation.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/BevestigOpnieuw.cshtml(.cs)</code></td>
+<td>Resend confirmation; same answer whether the address exists.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Inloggen.cshtml(.cs)</code></td>
+<td>Sign-in with distinct unconfirmed / locked / wrong-credential messages.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Uitloggen.cshtml(.cs)</code></td>
+<td>GET redirects home; POST signs out.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Account.cshtml(.cs)</code></td>
+<td>Profile summary, language buttons, links to the other pages.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Naam.cshtml(.cs)</code></td>
+<td>Change name.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/E-mail.cshtml(.cs)</code></td>
+<td>Change email; service signs out.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Wachtwoord.cshtml(.cs)</code></td>
+<td>Change password.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/WachtwoordVergeten.cshtml(.cs)</code></td>
+<td>Request reset link.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/WachtwoordHerstellen.cshtml(.cs)</code></td>
+<td>Consume reset link.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Verwijderen.cshtml(.cs)</code></td>
+<td>Request deletion link.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Verwijderen/Bevestig.cshtml(.cs)</code></td>
+<td>Anonymous confirmation page.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/Verwijderd.cshtml(.cs)</code></td>
+<td>Deletion success.</td>
+</tr>
+<tr>
+<td><code>Pages/Account/ToegangGeweigerd.cshtml(.cs)</code></td>
+<td>Access denied.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="oefenpadtests"><code>Oefenpad.Tests</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Account/SqliteTestBase.cs</code></td>
+<td>One in-memory SQLite database per test, kept open; <code>FakeCurrentUser</code>, <code>FakeEmailDispatcher</code>, <code>TestContextFactory</code>. Wires Identity with the same password and confirmation settings as the host.</td>
+</tr>
+<tr>
+<td><code>Account/RegistrationServiceTests.cs</code></td>
+<td>Creates user + Person + email; refuses duplicate address; unconfirmed sign-in blocked then unlocked; tampered code rejected.</td>
+</tr>
+<tr>
+<td><code>Account/RegisterRequestValidatorTests.cs</code></td>
+<td>Password mismatch in both languages; terms required; length plus digit; complete request valid.</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="outside-server">Outside <code>server/</code></h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>index.html</code></td>
+<td>Top nav's <code>Over</code> / <code>Contact</code> links replaced with <code>Inloggen</code> / <code>Registreren</code>.</td>
+</tr>
+<tr>
+<td><code>assets/site/oefenpad.css</code></td>
+<td>Added the account form block: <code>.account</code>, <code>.formulier</code>, <code>.zij</code>, <code>.veld</code>, <code>.veld-label</code>, <code>.vinkje</code>, <code>.acties</code>, <code>.melding</code>, <code>.gegevens</code>, <code>.lijst</code>, <code>.scheiding</code>. Also restored <code>.thema</code>, <code>.geverfd.licht</code> and the dark-mode <code>.zacht</code> rules that the working tree had lost. The diff is additions only.</td>
+</tr>
+<tr>
+<td><code>.gitignore</code></td>
+<td>Added the server build output, database, email sink and Data Protection keys.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="where-to-make-a-change">Where to make a change</h2>
+<h3 id="add-an-account-page">Add an account page</h3>
+<ol>
+<li>Add <code>Pages/Account/NaamVanPagina.cshtml</code> and <code>.cshtml.cs</code>.</li>
+<li>Derive from <code>AccountPageModel</code> so messages and field errors work.</li>
+<li>Add <code>[Authorize]</code> if it needs a signed-in person, and
+   <code>[EnableRateLimiting(...)]</code> if it accepts a sensitive POST.</li>
+<li>Call a service through its interface from <code>Oefenpad.Contracts</code> rather than
+   touching <code>DbContext</code> in the page.</li>
+<li>Add bilingual markup with <code>&lt;span lang="nl"&gt;</code> / <code>&lt;span lang="en"&gt;</code>. Use
+   <code>@Html.Beide(...)</code> and <code>@Html.Meldingen(...)</code>.</li>
+<li>Add a link from <code>Account.cshtml</code> if it belongs in the account hub.</li>
+<li>Add the route to the table in <a href="accounts.html"><code>accounts.html</code></a> and this file if it is a new flow.</li>
+</ol>
+<h3 id="add-a-user-facing-sentence">Add a user-facing sentence</h3>
+<p>Put it in <code>Resources/Account/AccountMessages.cs</code> under the page's nested class as
+a <code>Bilingual</code>. Reuse an existing one if it is the same idea. Never add a
+single-language string to a page.</p>
+<h3 id="add-an-email">Add an email</h3>
+<ol>
+<li>Add a method to <code>Resources/Account/AccountEmails.cs</code> returning <code>EmailContent</code>.</li>
+<li>Send it from the service with an <code>EmailMessage</code> and <code>IEmailDispatcher</code>.</li>
+<li>Choose the language from <code>user.PreferredLanguageCode</code>.</li>
+<li>If Identity triggers it, route it through <code>IdentityEmailSender</code>.</li>
+</ol>
+<h3 id="add-a-field-to-the-profile">Add a field to the profile</h3>
+<ol>
+<li>Add the property to <code>Person</code> and, if it is user-facing, to <code>PersonDto</code> /
+   <code>AccountProfileDto</code>.</li>
+<li>Add it to <code>PersonBuilder</code> (length, required).</li>
+<li>Add a migration:
+   <code>dotnet ef migrations add &lt;Name&gt; --project server/Oefenpad.DB --startup-project server/Oefenpad.WebUI</code>.</li>
+<li>Update <code>PersonMappings.ToDto</code> and the profile projection.</li>
+<li>Add the input to the relevant page and a validator rule.</li>
+<li>Update both languages and the docs.</li>
+</ol>
+<h3 id="change-a-rate-limit">Change a rate limit</h3>
+<p>Edit the <code>AddPolicy(...)</code> call in <code>Program.cs</code>. The policy names are constants in
+<code>RateLimitPolicies.cs</code>; do not duplicate the string literal in a page. Keep the
+POST-only behaviour in <code>AddPolicy</code>.</p>
+<h3 id="change-the-password-policy">Change the password policy</h3>
+<p>Edit the <code>AddIdentity(...)</code> block in <code>Program.cs</code> <strong>and</strong> the matching block in
+<code>Tests/Account/SqliteTestBase.cs</code>. A test that uses different password rules
+than the host is testing a different application.</p>
+<h3 id="switch-to-smtp">Switch to SMTP</h3>
+<p>Set <code>Email:SmtpHost</code> (plus <code>SmtpPort</code>, <code>SmtpUseSsl</code>, <code>SmtpUser</code>,
+<code>SmtpPassword</code>, <code>FromAddress</code>, <code>FromName</code>). <code>Program.cs</code> selects
+<code>SmtpEmailDispatcher</code> automatically. Also set <code>App:BaseUrl</code> so links in email do
+not depend on the request host.</p>
+<h3 id="switch-to-postgresql">Switch to PostgreSQL</h3>
+<p>Replace <code>UseSqlite</code> in <code>Program.cs</code> and <code>OefenpadDbContextFactory.cs</code>, add the
+provider package to <code>Oefenpad.DB</code>, and add a migration. <code>ExecuteWithRetryAsync</code>
+and the UTC converter are already in place.</p>
+<h2 id="verification-evidence">Verification evidence</h2>
+<p>Re-run on 2026-11-09 while writing this handover:</p>
+<pre><code class="language-sh">dotnet build server/Oefenpad.sln --no-restore --nologo -v minimal
+# Build succeeded. 0 Warning(s), 0 Error(s)
+
+dotnet test server/Oefenpad.Tests --no-build --nologo -v minimal
+# Passed! - Failed: 0, Passed: 8, Skipped: 0, Total: 8
+</code></pre>
+<p>The eight tests are:</p>
+<ol>
+<li><code>Password_mismatch_is_reported_in_both_languages</code></li>
+<li><code>Terms_must_be_accepted</code></li>
+<li><code>Password_needs_ten_characters_and_a_digit</code></li>
+<li><code>A_complete_request_is_valid</code></li>
+<li><code>Register_creates_user_person_and_sends_confirmation</code></li>
+<li><code>Register_refuses_a_second_account_for_the_same_address</code></li>
+<li><code>Unconfirmed_address_cannot_sign_in_and_confirmation_unlocks_it</code></li>
+<li><code>Confirmation_rejects_a_tampered_code</code></li>
+</ol>
+<p>Earlier in the session the live host on <code>http://127.0.0.1:8098</code> was exercised
+through every flow with curl: register, confirmation, sign-in, profile, name
+change, password change, email change, language change, forgot password, reset
+password, deletion request and deletion confirmation. Screenshots were reviewed
+in light and dark, Dutch and English, signed-in and anonymous, and at 420 px.
+Those runs were not repeated while writing this document; the database was reset
+to schema-only afterwards.</p>
+<h2 id="open-items-and-risks">Open items and risks</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Item</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>The games are not gated.</strong> The brief said "sign up to play", but the games still open anonymously and the home hero still says "no account". Accounts currently save a profile and nothing else. Decide whether sign-up becomes required, then change the hero, the nav and the game entry points together.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>The legal pages are now wrong.</strong> <a href="../privacy.html"><code>privacy.html</code></a> says no account is needed and no personal data is collected; <a href="../voorwaarden.html"><code>voorwaarden.html</code></a> says there is no registration. Both must be rewritten before launch. The mail provider is a new processor. This is a legal-text change, not a code cleanup; do not silently patch it.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Production email is unset.</strong> <code>Email:SmtpHost</code> is empty, so mail goes to <code>server/Oefenpad.WebUI/email-sink/</code>. Choose a provider, set the SMTP settings and <code>App:BaseUrl</code>, and persist the Data Protection keys outside the checkout.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Rate limiting behind a proxy.</strong> The partition key is <code>Connection.RemoteIpAddress</code>. Behind a reverse proxy every request shares the proxy's address unless <code>ForwardedHeaders</code> is configured. That would make the limits global rather than per person. Add and trust the proxy headers before deployment.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Test coverage is narrow.</strong> Only registration and the registration validator have unit tests. Name, email, password, language, reset and deletion are covered by the manual smoke test only. Add service tests using <code>SqliteTestBase</code> before making further changes to those flows.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Expired deletion tokens are not swept.</strong> A row is deleted when its user is deleted, and a new request replaces earlier rows, but an expired row for a live user stays until the next request. Harmless at this size; add a cleanup if the table grows.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong><code>CookieSecurePolicy.SameAsRequest</code></strong> is convenient for local HTTP but means the deployment must terminate HTTPS. Do not relax it; make sure the production URL is HTTPS.</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>No organisations, groups or roles.</strong> This is scope, not a missing feature. If a future request needs them, treat it as a new design, not a small extension.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="traps-that-have-already-cost-time">Traps that have already cost time</h2>
+<ul>
+<li><strong>Do not use port 8080.</strong> It belongs to the owner. Use 8098 for the server and
+  8099 for the static site.</li>
+<li><strong><code>dotnet new sln</code> creates <code>.slnx</code>.</strong> The classic <code>.sln</code> in this repo was made
+  with <code>--format sln</code>.</li>
+<li><strong>The server lives in <code>server/</code>.</strong> The old <code>src/</code> game folders are gone; game
+  art is now under <code>assets/&lt;game&gt;/</code>, and the React games under <code>client/</code> build
+  into <code>server/Oefenpad.WebUI/wwwroot/spelen/</code>. Do not serve the repo root.</li>
+<li><strong>A Razor Page rate-limit attribute covers GET too.</strong> Keep the
+  <code>HttpMethods.IsPost</code> check in <code>Program.cs</code>. Without it, normal corrections
+  produce false 429s.</li>
+<li><strong>A checkbox posts <code>value="true"</code></strong>, not <code>"on"</code>. A script that sends <code>"on"</code>
+  gets a 500 from model binding (<code>FormatException</code>).</li>
+<li><strong>Page members called from a view must be <code>public</code>.</strong> <code>VeldClass</code> was
+  <code>protected</code> and failed to compile.</li>
+<li><strong>Test DI needs <code>AddDefaultTokenProviders()</code></strong>, or token generation throws, and
+  <strong><code>AddAuthentication()</code></strong>, or <code>SignInManager</code> construction fails.</li>
+<li><strong>Keep the in-memory SQLite connection open</strong> for the test's lifetime. A
+  singleton context against a closed connection loses the schema.</li>
+<li><strong>Delete the <code>Person</code> before the <code>ApplicationUser</code>.</strong> The FK is <code>SetNull</code>;
+  the other order leaves an orphan with the name.</li>
+<li><strong>Chrome caches aggressively.</strong> Use a fresh <code>--user-data-dir</code> and a changing
+  <code>?v=</code> on every screenshot. A screenshot that contradicts the DOM is the
+  symptom.</li>
+<li><strong>Do not commit or push.</strong> <code>main</code> is 8 commits ahead and unpushed, and the
+  working tree contains the whole redesign plus this server. Push only when the
+  owner asks.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="accounts.html"><span>Previous</span>Accounts and sign-up</a><a class="next" href="games.html"><span>Next</span>Games build spec</a></nav>
+    <footer class="footer">
+      <code>Docs/accounts-handover.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

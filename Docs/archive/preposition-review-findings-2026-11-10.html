@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prepositions art plan — review findings — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="../index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="../project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="../product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="../game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="../designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="../decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="../accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="../accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="../games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="../games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="../prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="../prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="../prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="../game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="../voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="../voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="../story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="../story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="../story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="../uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="../reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="../review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="../lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="../lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="../lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="../lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="../design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="../voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="../voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="../voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="../voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="../voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="../voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="../voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="../voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="../voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="../voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="../voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="../voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="../voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="../voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="../voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="../voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="../design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="../design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="../archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="../archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="../archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="../archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="../archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="../archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="../archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="../archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html" aria-current="page">Prepositions art review</a></li><li><a href="../archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="../archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="../archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Docs</a><span>/</span><span>Archive</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Prepositions art plan — review findings</h1>
+      <p class="lede">Findings from the 10 November art-plan review.</p>
+      <p class="doc-meta">Docs/archive/preposition-review-findings-2026-11-10.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#what-was-applied">What was applied</a></li><li class="toc-h2"><a href="#bottom-line">Bottom line</a></li><li class="toc-h2"><a href="#1-does-every-frame-have-a-preposition-an-explanation-and-an-art-design">1. Does every frame have a preposition, an explanation, and an art design?</a></li><li class="toc-h3"><a href="#explanation-and-art-design-complete">Explanation and art design — complete</a></li><li class="toc-h3"><a href="#a-governing-preposition-complete">A governing preposition — complete</a></li><li class="toc-h3"><a href="#the-36-b1-frames-that-had-no-preposition-fixed">The 36 B1 frames that had no preposition (fixed)</a></li><li class="toc-h2"><a href="#2-are-the-frames-correct-tracker-batch-block">2. Are the frames correct? (tracker ↔ batch block)</a></li><li class="toc-h2"><a href="#3-are-any-frames-not-really-prepositions-the-tot-ziens-question">3. Are any frames not really prepositions? (the tot ziens question)</a></li><li class="toc-h3"><a href="#a-29-bare-separable-verbs-in-b1-replaced">(a) 29 bare separable verbs in B1 (replaced)</a></li><li class="toc-h3"><a href="#b-16-bareother-verbs-in-b2-batch-blocks-fixed">(b) 16 bare/other verbs in B2 batch blocks (fixed)</a></li><li class="toc-h3"><a href="#c-8-pronominal-adverb-frames-keep-these">(c) 8 pronominal-adverb frames — keep these</a></li><li class="toc-h2"><a href="#4-are-any-verbpreposition-chunks-missing">4. Are any verb+preposition chunks missing?</a></li><li class="toc-h3"><a href="#preposition-coverage-gaps-roadmap-7">Preposition coverage gaps (roadmap §7)</a></li><li class="toc-h2"><a href="#5-other-defects-worth-fixing-in-the-same-pass">5. Other defects worth fixing in the same pass</a></li><li class="toc-h3"><a href="#12-duplicate-b1-tracker-scene-cells-off-by-one-copy-paste-fixed">12 duplicate B1 tracker Scene cells (off-by-one copy-paste) — fixed</a></li><li class="toc-h3"><a href="#new-10-b2-tracker-scene-cells-described-a-different-scene-fixed">New: 10 B2 tracker Scene cells described a different scene — fixed</a></li><li class="toc-h3"><a href="#duplicates-that-are-likely-by-design">Duplicates that are likely by design</a></li><li class="toc-h3"><a href="#filenames">Filenames</a></li><li class="toc-h2"><a href="#recommendation-safe-order">Recommendation (safe order)</a></li><li class="toc-h2"><a href="#reproducing-the-checks">Reproducing the checks</a></li></ul></details>
+    <article class="prose">
+<p>10 November 2026, audit; same day, <strong>every step of the recommendation applied</strong>.
+The audit ran against the rule in <a href="prepositions-art-handover-2026-11-10.html"><code>prepositions-art-handover-2026-11-10.html</code></a> and the
+curriculum in <a href="../prepositions-roadmap.html"><code>prepositions-roadmap.html</code></a>. Three further defects the first pass
+missed are marked <strong>New</strong> below and were fixed in the same sweep.</p>
+<p>Scope: every tracked frame in the three art plans plus the 30 shipped pilot
+frames.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Docs/prepositions-art-a0-a2.md</code></td>
+<td>20</td>
+</tr>
+<tr>
+<td><code>Docs/prepositions-art-b1.md</code></td>
+<td>200</td>
+</tr>
+<tr>
+<td><code>Docs/prepositions-art-b2.md</code></td>
+<td>460</td>
+</tr>
+<tr>
+<td><code>server/Oefenpad.Resources/Games/Data/prepositions.json</code> (pilot)</td>
+<td>30</td>
+</tr>
+</tbody>
+</table></div>
+<p>Total <strong>710</strong> tracked frames, <strong>585</strong> distinct chunk strings. <code>prepositions.json</code>
+is untouched: still 30 scenes and 18 levels, and no artwork has been drawn.</p>
+<h2 id="what-was-applied">What was applied</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Fix</th>
+<th>Where</th>
+<th>State</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>12 duplicated tracker Scene cells copied back from the blocks</td>
+<td><code>prepositions-art-b1.md</code></td>
+<td>done</td>
+</tr>
+<tr>
+<td>2</td>
+<td>17 batch blocks synced to their tracker frame and filename</td>
+<td><code>prepositions-art-b2.md</code></td>
+<td>done</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Two batch summaries that counted an eleventh subject</td>
+<td><code>prepositions-art-b2.md</code> B2-13, B2-26 (<strong>New</strong>)</td>
+<td>done</td>
+</tr>
+<tr>
+<td>4</td>
+<td>10 tracker Scene cells describing a different scene than the block, and 4 notes with them</td>
+<td><code>prepositions-art-b2.md</code> (<strong>New</strong>)</td>
+<td>done</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Pronominal adverbs written into the frame rule; 32 corrected to 29</td>
+<td><a href="prepositions-art-handover-2026-11-10.html"><code>prepositions-art-handover-2026-11-10.html</code></a></td>
+<td>done</td>
+</tr>
+<tr>
+<td>6</td>
+<td>29 B1 bare separable verbs replaced by real preposition chunks</td>
+<td><code>prepositions-art-b1.md</code></td>
+<td>done</td>
+</tr>
+<tr>
+<td>7</td>
+<td>New batch B2-46 for the 9 unframed prepositions</td>
+<td><code>prepositions-art-b2.md</code></td>
+<td>done</td>
+</tr>
+<tr>
+<td>8</td>
+<td><code>ten slotte</code> ×2 replaced (<code>ten laste van</code>, <code>gebaseerd zijn op</code>)</td>
+<td><code>prepositions-art-b2.md</code></td>
+<td>done</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Batch 8 retheme, batch 32, totals</td>
+<td><a href="../prepositions-roadmap.html"><code>prepositions-roadmap.html</code></a></td>
+<td>done</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Separable word list handed to <strong>Uit Elkaar</strong></td>
+<td><a href="suggestions.html"><code>suggestions.html</code></a></td>
+<td>done</td>
+</tr>
+<tr>
+<td>11</td>
+<td><code>ten einde te</code> replaced by <code>ten dienste staan van</code></td>
+<td><code>prepositions-art-b2.md</code></td>
+<td>done</td>
+</tr>
+</tbody>
+</table></div>
+<p>After the sweep and that final replacement: <strong>0</strong> tracker↔block mismatches, <strong>0</strong>
+duplicate Scene cells and <strong>0</strong> duplicate filenames across all three files; B1 is
+200 rows / 20 batches / 40 fences and B2 is 460 rows / 46 batches / 92 fences.
+The whole set is 710 frames including the 30 pilots. A whitelisted
+no-preposition scan is clean for A0–A2, B1 and the B2 blocks; before the final
+replacement its only remaining hit was <code>ten einde te</code> (#43), a fused-<code>ten</code>
+conjunction.</p>
+<h2 id="bottom-line">Bottom line</h2>
+<p>Every frame has an English explanation and a Scene/art note, and there are
+<strong>zero greeting/formula fakes</strong> — <code>tot ziens</code> was correctly removed. Every
+blocking fault found in the audit has been fixed:</p>
+<ul>
+<li>The <strong>36 B1 frames with no bare preposition</strong> were resolved: 29 bare
+  separable verbs were replaced and the 7 pronominal-adverb frames stay.</li>
+<li>The <strong>17 B2 batch blocks that had drifted</strong> from their tracker rows were
+  re-synced to the tracker.</li>
+<li>The <strong>9 prepositions in roadmap §7</strong> that no frame used are now framed in
+  B2-46.</li>
+</ul>
+<p><code>ten einde te</code> (#43) was the last off-rule frame and has since been replaced by
+<code>ten dienste staan van</code>. The plans are ready to send to Grok.</p>
+<hr>
+<h2 id="1-does-every-frame-have-a-preposition-an-explanation-and-an-art-design">1. Does every frame have a preposition, an explanation, and an art design?</h2>
+<h3 id="explanation-and-art-design-complete">Explanation and art design — complete</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>Rows</th>
+<th>Empty cells (frame / English / Scene / note / file)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>prepositions-art-a0-a2.md</code></td>
+<td>20</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>prepositions-art-b1.md</code></td>
+<td>200</td>
+<td>0</td>
+</tr>
+<tr>
+<td><code>prepositions-art-b2.md</code></td>
+<td>460</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>Every row has a Dutch frame, an English gloss, a Scene and a pair/note.
+<code>Status</code> is <code>needed</code> on all rows, which is expected before delivery.</p>
+<h3 id="a-governing-preposition-complete">A governing preposition — complete</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Frames with a real preposition</th>
+<th>Frames without</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A0–A2</td>
+<td>20 / 20</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B1</td>
+<td>200 / 200</td>
+<td>0 (29 replaced; 7 pronominal adverbs whitelisted)</td>
+</tr>
+<tr>
+<td>B2 tracker</td>
+<td>460 / 460</td>
+<td>0</td>
+</tr>
+<tr>
+<td>B2 batch blocks</td>
+<td>460 / 460</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></div>
+<p>A scripted "has a preposition?" pass is clean for A0–A2, B1 and the B2 blocks
+once the pronominal forms are whitelisted.</p>
+<p><strong>Correction to the first pass:</strong> <code>ergens klaar mee zijn</code> (#403) does carry a
+preposition, inside <code>mee</code>; the two rows a whitelisted scan flagged were
+<code>ten slotte</code> #46 and #450. <code>ten slotte</code> is a fixed adverbial with a fused
+preposition (<code>te</code> + <code>den</code>), not a chunk that governs one; both were replaced.
+The same test then left <code>ten einde te</code> (#43), which has now been replaced by
+<code>ten dienste staan van</code>.</p>
+<h3 id="the-36-b1-frames-that-had-no-preposition-fixed">The 36 B1 frames that had no preposition (fixed)</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Batch</th>
+<th>#</th>
+<th>Frames</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B1-07</td>
+<td>7</td>
+<td>#61 <code>ergens naartoe</code>, #62 <code>ergens vandaan</code>, #63 <code>ergens mee bezig</code>, #66 <code>waar … naartoe</code>, #67 <code>waar … vandaan</code>, #69 <code>erover nadenken</code>, #70 <code>eraan toe zijn</code></td>
+</tr>
+<tr>
+<td>B1-08</td>
+<td>10</td>
+<td>#71 <code>opbellen</code>, #72 <code>aankomen</code>, #73 <code>weggaan</code>, #74 <code>terugkomen</code>, #75 <code>opruimen</code>, #76 <code>thuiskomen</code>, #77 <code>opschrijven</code>, #78 <code>uitdoen</code>, #79 <code>meenemen</code>, #80 <code>uitleggen</code></td>
+</tr>
+<tr>
+<td>B1-11</td>
+<td>4</td>
+<td>#106 <code>ophangen</code>, #107 <code>afwassen</code>, #108 <code>invullen</code>, #110 <code>afslaan</code></td>
+</tr>
+<tr>
+<td>B1-12</td>
+<td>3</td>
+<td>#113 <code>afslaan</code>, #114 <code>invullen</code>, #118 <code>ophangen</code></td>
+</tr>
+<tr>
+<td>B1-14</td>
+<td>2</td>
+<td>#131 <code>dwarszitten</code>, #138 <code>zich vervelen</code></td>
+</tr>
+<tr>
+<td>B1-15</td>
+<td>1</td>
+<td>#149 <code>zich afvragen</code></td>
+</tr>
+<tr>
+<td>B1-16</td>
+<td>1</td>
+<td>#157 <code>afwassen</code></td>
+</tr>
+<tr>
+<td>B1-17</td>
+<td>5</td>
+<td>#162 <code>oprotten</code>, #163 <code>afronden</code>, #164 <code>uitpakken</code>, #165 <code>inpakken</code>, #166 <code>zich aankleden</code></td>
+</tr>
+<tr>
+<td>B1-18</td>
+<td>1</td>
+<td>#180 <code>zich vervelen</code></td>
+</tr>
+<tr>
+<td>B1-19</td>
+<td>1</td>
+<td>#184 <code>vergeten</code></td>
+</tr>
+<tr>
+<td>B1-20</td>
+<td>1</td>
+<td>#197 <code>ophangen</code></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Correction to the handover:</strong> it says "B1 has 32 frames with no preposition —
+13 in B1-07/08". The real number is <strong>36</strong>, and <strong>17</strong> of them are in B1-07/08.
+The handover misses the pronominal-adverb group in B1-07. Of the 36, <strong>29 are
+bare separable verbs</strong> and <strong>7 are pronominal-adverb frames</strong> (see §3).</p>
+<p>All 29 bare separable frames in the table were replaced on 10 November. The
+seven B1-07 pronominals remain, because a pronominal adverb carries its
+preposition inside <code>er…</code>, <code>daar…</code> or <code>waar…</code>.</p>
+<p>B1-08's own VALIDATION line — "Does the direction of action in the drawing match
+the <strong>prefix</strong>, not just the verb stem?" — confirms these were written as
+separable-prefix frames, not preposition frames.</p>
+<hr>
+<h2 id="2-are-the-frames-correct-tracker-batch-block">2. Are the frames correct? (tracker ↔ batch block)</h2>
+<p>B1 block↔tracker: <strong>0 mismatches across all 200.</strong> Clean.</p>
+<p>B2: <strong>17 mismatches, all now fixed</strong> by rewriting the block's filename and
+chunk to the tracker's. 16 had a different file <em>and</em> a different chunk; #227
+differed only in chunk wording. The Scene, Must-read and Avoid lines already
+matched the tracker's scene, so only two Must-read lines needed rewording with
+the restored chunk (#121 "acting in a role" → "being in charge of a group",</p>
+<h1 id="146-completing-a-form-signing-yourself-in-at-a-counter-plus-four">146 "completing a form" → "signing yourself in at a counter"), plus four</h1>
+<p>CONTRAST PAIRS lines that named a drifted chunk.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Tracker frame (correct side)</th>
+<th>Batch-block chunk</th>
+<th>File mismatch?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>115</td>
+<td><code>afwegen tegen</code></td>
+<td><code>afwegen</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>116</td>
+<td><code>besluiten tot</code></td>
+<td><code>besluiten</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td>121</td>
+<td><code>leidinggeven aan</code></td>
+<td><code>functioneren als</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>124</td>
+<td><code>een punt zetten achter</code></td>
+<td><code>afronden</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>125</td>
+<td><code>inplannen in</code></td>
+<td><code>inplannen</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>126</td>
+<td><code>inwerken in</code></td>
+<td><code>inwerken</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td>130</td>
+<td><code>een vergoeding krijgen voor</code></td>
+<td><code>vergoeden</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>136</td>
+<td><code>ingrijpen bij</code></td>
+<td><code>ingrijpen</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td>142</td>
+<td><code>een einde maken aan</code></td>
+<td><code>een contract beëindigen</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>143</td>
+<td><code>verlengen met</code></td>
+<td><code>verlengen</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>146</td>
+<td><code>zich aanmelden bij</code></td>
+<td><code>invullen</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>147</td>
+<td><code>in ontvangst nemen</code></td>
+<td><code>opvangen</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>148</td>
+<td><code>overdragen aan</code></td>
+<td><code>doorgeven</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>176</td>
+<td><code>zich neerleggen bij</code></td>
+<td><code>loslaten</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>227</td>
+<td><code>ter beschikking stellen van</code></td>
+<td><code>ter beschikking stellen</code></td>
+<td>no</td>
+</tr>
+<tr>
+<td>239</td>
+<td><code>de waarde bepalen van</code></td>
+<td><code>een taxatie laten uitvoeren</code></td>
+<td>yes</td>
+</tr>
+<tr>
+<td>260</td>
+<td><code>aandragen voor</code></td>
+<td><code>aandragen</code></td>
+<td>yes</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two consequences:</p>
+<ul>
+<li><strong>The file mismatches</strong> (#115, 121, 124, 125, 130, 142, 143, 146, 147, 148,
+  176, 239) fork the asset name from the tracker, so the shipped scene id would
+  not resolve.</li>
+<li><strong><code>functioneren als</code> (#121) is not a preposition frame at all.</strong> <code>als</code> is not
+  in this curriculum's preposition set, and it contradicts the tracker's
+  <code>leidinggeven aan</code>.</li>
+</ul>
+<p><strong>Also wrong, both fixed:</strong> B2-13's CONTRAST PAIRS said "One, four, five,
+eight, nine, ten and <strong>11</strong> are singles"; the batch has ten subjects. <strong>New:</strong>
+B2-26 has the same fault and the first pass missed it — "Nine, ten and <strong>11</strong>
+are handing-over singles" went on to describe a third image, "a folder pushed
+across a desk", that no subject in the batch asks for. An artist working from
+that block would have drawn an eleventh picture.</p>
+<p>Aside from the drift, the frames use standard Dutch collocations. The unusual
+ones were spot-checked and are valid: <code>beschikken tot</code> (#53), <code>noodzaken tot</code>,
+<code>bewogen worden tot</code>, <code>benodigd zijn tot</code>, <code>zich verlagen tot</code>. A full native
+collocation pass is beyond what a script can prove.</p>
+<hr>
+<h2 id="3-are-any-frames-not-really-prepositions-the-tot-ziens-question">3. Are any frames not really prepositions? (the <code>tot ziens</code> question)</h2>
+<p><strong>No greetings or formulae anywhere.</strong> A search of all 710 frames (including the
+pilot) for <code>tot ziens</code>, <code>tot morgen</code>, <code>tot straks</code>, <code>tot later</code>, <code>tot nu toe</code>,
+<code>tot volgende week</code> and <code>hoe gaat het</code> returned <strong>zero hits</strong>. <code>prepositions-art-a0-a2.md</code>
+L58–68 documents the removal and what replaced it. This part is already correct.</p>
+<p>What was off-rule fell into three buckets. The first two have been fixed; the
+third stays.</p>
+<h3 id="a-29-bare-separable-verbs-in-b1-replaced">(a) 29 bare separable verbs in B1 (replaced)</h3>
+<p>The list in §1 minus the 7 B1-07 pronominals: <code>opbellen</code>, <code>afwassen</code>,
+<code>invullen</code>, <code>ophangen</code>, <code>zich vervelen</code>, <code>oprotten</code>, <code>afronden</code>, <code>inpakken</code>,
+<code>uitpakken</code>, <code>zich aankleden</code>, <code>vergeten</code>, … None governs a preposition. All 29
+were replaced on 10 November.</p>
+<h3 id="b-16-bareother-verbs-in-b2-batch-blocks-fixed">(b) 16 bare/other verbs in B2 batch blocks (fixed)</h3>
+<p>The §2 mismatches, minus #227 (which is a wording loss, not a bare verb).
+Notably <code>functioneren als</code>, <code>een contract beëindigen</code>, <code>opvangen</code>,
+<code>een taxatie laten uitvoeren</code>, <code>loslaten</code>, <code>aandragen</code>, <code>afronden</code>, <code>inplannen</code>,
+<code>inwerken</code>, <code>vergoeden</code>, <code>ingrijpen</code>. All 16 blocks were re-synced to their
+tracker chunk.</p>
+<h3 id="c-8-pronominal-adverb-frames-keep-these">(c) 8 pronominal-adverb frames — keep these</h3>
+<p><code>ergens naartoe</code>, <code>waar … vandaan</code>, <code>erover nadenken</code>, <code>eraan toe zijn</code>
+(B1-07) and <code>ergens klaar mee zijn</code> (#403). These have no <em>bare</em> preposition but
+carry one inside a pronominal adverb. Roadmap §6 budgets 40 frames for
+"Pronominal adverbs"; they are in scope. The fix is to add pronominal adverbs to
+the handover's frame rule (L23–28), not to replace the frames.</p>
+<p><strong>Conclusion:</strong> the <code>tot ziens</code> class is gone, and the 29 B1 separables, 16 B2
+block-side bare verbs and <code>als</code> in #121 have all been fixed. The last
+non-preposition frame, <code>ten einde te</code> (#43), was replaced by <code>ten dienste staan
+van</code>.</p>
+<hr>
+<h2 id="4-are-any-verbpreposition-chunks-missing">4. Are any verb+preposition chunks missing?</h2>
+<p>This is judgement-based: the repo has <strong>no frequency list</strong> (roadmap §12.1 says
+re-cut everything when one arrives). Cross-checked against all 568 chunks and
+the 30 pilots at audit time, <strong>23 common chunks appeared nowhere</strong>:</p>
+<p><code>wonen in</code>, <code>gaan naar</code>, <code>kiezen voor</code>, <code>hopen op</code>, <code>wijzen op</code>,
+<code>vertrouwen op</code>, <code>bestaan uit</code>, <code>leiden tot</code>, <code>akkoord gaan met</code>,
+<code>het eens zijn met</code>, <code>gebaseerd zijn op</code>, <code>afkomstig zijn uit</code>,
+<code>vergelijken met</code>, <code>het verschil tussen</code>, <code>passen op</code>, <code>afgaan op</code>,
+<code>zich verlaten op</code>, <code>ontstaan uit</code>, <code>ruimte voor</code>, <code>tellen als</code>,
+<code>werken voor</code>, <code>twijfelen tussen</code>, <code>zich zorgen maken over</code>.</p>
+<ul>
+<li><strong><code>kiezen voor</code></strong> was the standout: the corpus framed <code>kiezen tussen</code> /
+  <code>kiezen uit</code>, <code>opteren voor</code> and <code>beslissen tot</code>, but never the most common
+  form. It is now B1 #73.</li>
+<li><code>werken voor</code> is deliberately excluded (too close to <code>werken bij</code>). The
+  positive <code>zich zorgen maken over</code> was absent while <code>zich geen zorgen maken over</code>
+  (#401) was present; it is now B1 #76.</li>
+<li>Beware substring false positives: <code>gaan naar</code> is <em>not</em> covered by
+  <code>uitgaan naar</code> (#82), nor <code>wijzen op</code> by <code>afwijzen op grond van</code> (#354), nor
+  <code>leiden tot</code> by <code>opleiden tot</code> (#149), nor <code>passen op</code> by <code>toepassen op</code>
+  (#336).</li>
+</ul>
+<p>Fifteen of the 23 are now framed, mostly by the B1 replacement: <code>wonen in</code>,
+<code>gaan naar</code>, <code>kiezen voor</code>, <code>hopen op</code>, <code>wijzen op</code>, <code>vertrouwen op</code>,
+<code>bestaan uit</code>, <code>akkoord gaan met</code>, <code>het eens zijn met</code>, <code>gebaseerd zijn op</code>,
+<code>vergelijken met</code>, <code>passen op</code>, <code>ruimte voor</code>, <code>twijfelen tussen</code> and
+<code>zich zorgen maken over</code>.
+Eight remain absent: <code>leiden tot</code>, <code>afkomstig zijn uit</code>, <code>ontstaan uit</code>, <code>het
+verschil tussen</code>, <code>afgaan op</code>, <code>zich verlaten op</code>, <code>tellen als</code> and <code>werken voor</code>.
+The last two are deliberate exclusions; the other six are the frequency-list
+backlog. Three further common chunks are also absent — <code>antwoorden op</code>, <code>wijzen
+naar</code> and <code>gewend zijn aan</code> — though <code>gewend aan</code> is already framed (#25, #26,</p>
+<h1 id="39">39).</h1>
+<h3 id="preposition-coverage-gaps-roadmap-7">Preposition coverage gaps (roadmap §7)</h3>
+<p><strong>9 prepositions were never framed anywhere at audit time:</strong> <code>zonder</code>, <code>vanwege</code>,
+<code>gezien</code>, <code>richting</code>, <code>per</code>, <code>aangaande</code>, <code>betreffende</code>, <code>jegens</code>,
+<code>overeenkomstig</code>.</p>
+<ul>
+<li><code>zonder</code> was absent entirely (handover L49 and roadmap §7 both flag it).</li>
+<li><code>vanwege</code>, <code>gezien</code>, <code>richting</code>, <code>per</code> are roadmap §7 <strong>phase D</strong>
+  (batches 20–25); <code>aangaande</code>, <code>betreffende</code>, <code>jegens</code>, <code>overeenkomstig</code> are
+  <strong>phase E</strong> (26–31). Both phases are B2, and no B2 frame used any of them.
+  That was a roadmap gap, not just an art-plan gap.</li>
+<li><code>met inbegrip van</code> and <code>ten opzichte van</code> <em>are</em> present, so §7's E-row was
+  only partly unmet.</li>
+</ul>
+<p>All nine are now framed in B2-46 (#451–#460), and the roadmap's batch 32
+records the close-out.</p>
+<p><code>tot</code> appears 18 times, but <strong>all in B2</strong> — first at B2 <strong>#13 <code>zich richten tot</code></strong>.
+The handover's claim that <code>tot</code> has no frame below B2 is correct; the summary's
+"first at #23" is off by ten rows.</p>
+<p>B1 first-introduces many prepositions roadmap §7 assigns to A2 batch 5
+(<code>achter, bij, binnen, boven, buiten, langs, na, naar, naast, om, onder, over,
+rond, tussen, van, vanaf</code>). That is consistent with handover decision 2 ("keep
+the B1-01/02 spatial frames — they're the only frames teaching those words"),
+but it means A0–A2 covers only <code>aan, door, in, met, op, tegen, uit, voor</code>.</p>
+<hr>
+<h2 id="5-other-defects-worth-fixing-in-the-same-pass">5. Other defects worth fixing in the same pass</h2>
+<h3 id="12-duplicate-b1-tracker-scene-cells-off-by-one-copy-paste-fixed">12 duplicate B1 tracker Scene cells (off-by-one copy-paste) — fixed</h3>
+<p>The last subject of a batch took the first subject of the next batch's scene.
+The batch blocks are correct and unique, so only the tracker Scene column was
+wrong, and each cell was copied back from its block:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Wrongly shared</th>
+<th>Rows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vanaf</code> ↔ <code>binnen</code></td>
+<td>#10 / #11</td>
+</tr>
+<tr>
+<td><code>de hele dag door</code> ↔ <code>trots op</code></td>
+<td>#20 / #21</td>
+</tr>
+<tr>
+<td><code>boos over</code> ↔ <code>verliefd op</code></td>
+<td>#30 / #31</td>
+</tr>
+<tr>
+<td><code>kwaad op</code> ↔ <code>behoefte aan</code></td>
+<td>#40 / #41</td>
+</tr>
+<tr>
+<td><code>gebrek aan</code> ↔ <code>kritiek op</code></td>
+<td>#50 / #51</td>
+</tr>
+<tr>
+<td><code>schrik van</code> ↔ <code>ergens naartoe</code></td>
+<td>#60 / #61</td>
+</tr>
+<tr>
+<td><code>eraan toe zijn</code> ↔ <code>opbellen</code></td>
+<td>#70 / #71</td>
+</tr>
+<tr>
+<td><code>uitleggen</code> ↔ <code>beginnen met</code></td>
+<td>#80 / #81</td>
+</tr>
+<tr>
+<td><code>praten tegen jezelf</code> ↔ <code>wachten op</code></td>
+<td>#90 / #91</td>
+</tr>
+<tr>
+<td><code>praten met</code> ↔ <code>zich verheugen op</code></td>
+<td>#100 / #101</td>
+</tr>
+<tr>
+<td><code>afslaan</code> ↔ <code>afspreken met</code></td>
+<td>#110 / #111</td>
+</tr>
+<tr>
+<td><code>denken aan</code> ↔ <code>raken aan</code></td>
+<td>#120 / #121</td>
+</tr>
+</tbody>
+</table></div>
+<p>B2 has <strong>0</strong> duplicated Scene cells.</p>
+<h3 id="new-10-b2-tracker-scene-cells-described-a-different-scene-fixed">New: 10 B2 tracker Scene cells described a different scene — fixed</h3>
+<p>A duplicate-cell scan does not catch a cell that is merely stale, so the first
+pass missed these. The B2 tracker Scene column is a condensed version of the
+block's Scene; in ten rows it described something the block does not show. The
+block is the considered side in every case — it is the one that matches the
+chunk — so the tracker cell was rewritten from it, together with four Pair/note
+cells that repeated the stale idea.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Chunk</th>
+<th>Tracker said</th>
+<th>Block says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>62</td>
+<td><code>afstand nemen van</code></td>
+<td>palm down, speaking precisely</td>
+<td>palm turned outward, pushing the idea away</td>
+</tr>
+<tr>
+<td>259</td>
+<td><code>benoemen tot</code></td>
+<td>a plain object into the hands</td>
+<td>an armband slid up the upper arm</td>
+</tr>
+<tr>
+<td>301</td>
+<td><code>stelling nemen tegen</code></td>
+<td>at a lectern, hand resting on a board</td>
+<td>foot forward, both palms flat against the board</td>
+</tr>
+<tr>
+<td>305</td>
+<td><code>weerleggen met</code></td>
+<td>lifts a block out of a sagging stack</td>
+<td>lays a ruled sheet beside the stack and pushes it forward</td>
+</tr>
+<tr>
+<td>385</td>
+<td><code>ruimte geven aan</code></td>
+<td>arms flung wide, speaking to a circle</td>
+<td>steps back and makes room on the bench for another speaker</td>
+</tr>
+<tr>
+<td>407</td>
+<td><code>niet voldoen aan</code></td>
+<td>the holder shrugs</td>
+<td>the second figure's shoulders drop</td>
+</tr>
+<tr>
+<td>416</td>
+<td><code>stilstaan bij</code></td>
+<td>a bench and a handless wall clock</td>
+<td>standing before an old photograph on a panel</td>
+</tr>
+<tr>
+<td>424</td>
+<td><code>uiting geven aan</code></td>
+<td>repeats a gesture in front of five seated figures</td>
+<td>hands on the chest, one sustained sound, two listeners</td>
+</tr>
+<tr>
+<td>427</td>
+<td><code>afgeven op</code></td>
+<td>a stone held ready to throw</td>
+<td>speaking hard about a third figure who turns away</td>
+</tr>
+<tr>
+<td>430</td>
+<td><code>afstappen van</code></td>
+<td>feet planted on the far side of the wheel</td>
+<td>turns the wheel, then walks away towards a doorway</td>
+</tr>
+</tbody>
+</table></div>
+<p>Five tracker English glosses also read differently from their block
+(<code>een definitie geven van</code>, <code>niet voldoen aan</code>, <code>stilstaan bij</code>,
+<code>over de schreef gaan</code>, <code>afgeven op</code>); all five are synonyms and were left
+alone. A sixth, #385 <code>ruimte geven aan</code>, said "to give voice to" against the
+block's "to give space to" — two different chunks — and was set to the block's.</p>
+<p>The remaining differences between the two columns are condensations, not
+contradictions. Three of them drop the detail that carries the chunk — #269
+<code>afscheid nemen van</code> loses the raised hand, #365 <code>afzien van</code> loses the push to
+the desk edge, #402 <code>voet bij stuk houden</code> loses the planted foot. The blocks
+are right; the tracker is only a summary, so these were left alone.</p>
+<h3 id="duplicates-that-are-likely-by-design">Duplicates that are likely by design</h3>
+<p>Duplicate chunk strings are mostly intentional contrast variants. Notable
+repeats: B1 <code>denken aan</code> ×11, <code>zorgen voor</code> ×4; B2 <code>zich beroepen op</code> ×4,
+<code>zich richten tot</code> ×3. A few look like pure duplicates rather than contrast
+pairs (<code>bereid tot</code> #183/#184, <code>geschikt voor</code> #185/#186, <code>rekening houden met</code></p>
+<h1 id="224225-that-is-a-curation-call-not-an-error">224/#225). That is a curation call, not an error.</h1>
+<h3 id="filenames">Filenames</h3>
+<p>No duplicate filenames in any file; all ASCII. Pilot filename references resolve
+against <code>assets/voorzetselpaden/</code> and <code>prepositions.json</code>.</p>
+<hr>
+<h2 id="recommendation-safe-order">Recommendation (safe order)</h2>
+<ol>
+<li>~~Fix the 12 duplicate B1 tracker Scene cells.~~ <strong>Done.</strong></li>
+<li>~~Fix the 17 B2 tracker↔block mismatches, and the "11" in B2-13.~~ <strong>Done</strong>,
+   plus the same fault in B2-26 and the 10 stale B2 Scene cells.</li>
+<li>~~Document pronominal adverbs in the handover rule; correct "32".~~ <strong>Done.</strong></li>
+<li>~~Decide the 29 B1 bare separable verbs.~~ <strong>Done:</strong> replaced, and the
+   prefix material moved to <strong>Uit Elkaar</strong>. B1-08 was rebuilt whole; nineteen
+   more frames were replaced across B1-11…B1-20. Twenty-two of the 29 came from
+   the missing-chunk list in §4; the other seven are <code>kloppen op</code>,
+   <code>hulp vragen aan</code>, <code>passen bij</code>, <code>drukken op</code>, <code>spelen met</code>, <code>kijken op</code> and
+   <code>zich vergissen in</code>. <code>kijken op</code> is deliberately placed beside
+   <code>kijken naar</code> in B1-18 so one verb carries two prepositions.</li>
+<li>~~Close the roadmap §7 D/E coverage gap.~~ <strong>Done:</strong> batch B2-46, ten frames,
+   in the style of B2-44.</li>
+<li>~~Decide <code>ten slotte</code>.~~ <strong>Done:</strong> replaced by <code>ten laste van</code> (#46, which
+   keeps B2-05's <code>ten … van</code> theme) and <code>gebaseerd zijn op</code> (#450).</li>
+<li>~~Decide <code>ten einde te</code>.~~ <strong>Done:</strong> replaced by <code>ten dienste staan van</code>
+   (#43), which keeps B2-05's <code>ten … van</code> theme and governs its <code>van</code>.</li>
+</ol>
+<p>The frequency-list backlog is <code>leiden tot</code>, <code>afkomstig zijn uit</code>, <code>ontstaan uit</code>,
+<code>het verschil tussen</code>, <code>afgaan op</code> and <code>zich verlaten op</code>, plus three common
+chunks the original list did not name: <code>antwoorden op</code>, <code>wijzen naar</code> and
+<code>gewend zijn aan</code> (though <code>gewend aan</code> is already framed). <code>tellen als</code> and
+<code>werken voor</code> stay out — <code>als</code> is not in the preposition set, and <code>werken voor</code>
+sits too close to <code>werken bij</code>.</p>
+<p>All three art plans are now ready to send to Grok. The next step is external:
+draw the images and load the delivered frames into <code>prepositions.json</code>.</p>
+<hr>
+<h2 id="reproducing-the-checks">Reproducing the checks</h2>
+<pre><code class="language-sh">cd repos/oefenpad
+
+# Row and fence counts (a0-a2 20/4, b1 200/40, b2 460/92)
+for f in Docs/prepositions-art-a0-a2.md Docs/prepositions-art-b1.md Docs/prepositions-art-b2.md; do
+  echo &quot;$f $(grep -c '^````' &quot;$f&quot;) $(awk -F'|' '/^\| [0-9]+ \|/ &amp;&amp; $2 ~ /^ *[0-9]+ *$/ {c++} END{print c+0}' &quot;$f&quot;)&quot;
+done
+
+# Duplicate filenames (expect empty)
+awk -F'|' '/^\| [0-9]+ \|/ &amp;&amp; $2 ~ /^ *[0-9]+ *$/ {f=$3; gsub(/^ +| +$/,&quot;&quot;,f); print f}' \
+  Docs/prepositions-art-b2.md | sort | uniq -d
+</code></pre>
+<p>The no-preposition, tracker↔block, duplicate-Scene and coverage checks were run
+with a small Python parser over the tracker tables and the <code>## Batch</code> subject
+blocks. Key points for re-running:</p>
+<ul>
+<li>Whitelist <strong><code>tegenover</code></strong> — it is a real preposition, so a naive scan falsely
+  flags #358. Whitelist the pronominal forms too (<code>naartoe</code>, <code>vandaan</code>, <code>mee</code>,
+  <code>toe</code>, and any <code>er…</code>/<code>daar…</code>/<code>waar…</code> chunk), or the scan reports the eight
+  pronominal frames as failures. Before the 10 November replacements it also
+  reported 36 B1 failures; after them it is clean.</li>
+<li>Compare the tracker Scene cell against the block Scene as well as the
+  filename and chunk. It is a condensed copy, so match it as a prefix and read
+  the misses by hand: most are legitimate condensations and ten were stale.</li>
+<li>Block subjects renumber from 1, so compare block subject <code>N</code> to tracker row
+  <code>batch_start + N − 1</code>.</li>
+<li>Only treat a backticked token as a filename if it is ASCII-hyphenated or ends
+  in <code>.png</code>; backticks in the Pair/note column are usually prepositions.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="designguide-delft-2026-10-31.html"><span>Previous</span>Design guide, Delft</a><a class="next" href="prepositions-art-handover-2026-11-10.html"><span>Next</span>Prepositions art handover</a></nav>
+    <footer class="footer">
+      <code>Docs/archive/preposition-review-findings-2026-11-10.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

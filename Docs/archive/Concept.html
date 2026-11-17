@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick Wins in Dutch — Concept — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="../index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="../project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="../product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="../game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="../designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="../decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="../accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="../accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="../games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="../games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="../prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="../prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="../prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="../game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="../voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="../voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="../story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="../story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="../story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="../uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="../reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="../review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="../lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="../lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="../lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="../lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="../design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="../voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="../voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="../voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="../voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="../voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="../voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="../voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="../voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="../voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="../voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="../voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="../voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="../voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="../voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="../voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="../voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="../design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="../design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="../archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="../archive/Concept.html" data-path="Docs/archive/Concept.html" aria-current="page">Quick Wins in Dutch — concept</a></li><li><a href="../archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="../archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="../archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="../archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="../archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="../archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="../archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="../archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="../archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Docs</a><span>/</span><span>Archive</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Quick Wins in Dutch — Concept</h1>
+      <p class="lede">The pre-pivot concept. Superseded on product.</p>
+      <p class="doc-meta">Docs/archive/Concept.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#shared-foundation">Shared Foundation</a></li><li class="toc-h2"><a href="#1-the-book">1. The Book</a></li><li class="toc-h2"><a href="#2-the-website">2. The Website</a></li><li class="toc-h2"><a href="#3-the-mobile-app">3. The Mobile App</a></li><li class="toc-h2"><a href="#4-physical-memory-card-games">4. Physical Memory Card Games</a></li><li class="toc-h2"><a href="#reinforcement-loop">Reinforcement Loop</a></li><li class="toc-h2"><a href="#unfair-advantage">Unfair Advantage</a></li><li class="toc-h2"><a href="#concrete-examples-by-pattern">Concrete Examples by Pattern</a></li><li class="toc-h2"><a href="#word-order-cheat-codes">Word Order Cheat Codes</a></li><li class="toc-h2"><a href="#diminutives-je">Diminutives (-je)</a></li><li class="toc-h2"><a href="#preposition-learning-techniques">Preposition Learning Techniques</a></li><li class="toc-h2"><a href="#guiding-principles">Guiding Principles</a></li><li class="toc-h2"><a href="#roadmap">Roadmap</a></li><li class="toc-h2"><a href="#expansion-possibilities">Expansion Possibilities</a></li><li class="toc-h2"><a href="#funding-angle">Funding Angle</a></li><li class="toc-h2"><a href="#tech-direction-working-assumption">Tech Direction (working assumption)</a></li></ul></details>
+    <article class="prose">
+<blockquote>
+<p><strong>Historical — superseded on product.</strong> This is the pre-pivot concept. Its
+audience (English speakers), its promise ("Understand 60–70% of Dutch in days")
+and its four formats are replaced by <a href="../product.html"><code>Docs/product.html</code></a>. The eight content
+pillars below were lifted to <a href="../game-catalogue.html"><code>Docs/game-catalogue.html</code></a>; nothing else here is
+current.</p>
+</blockquote>
+<p>A pattern-based learning ecosystem helping English speakers fast-track Dutch (A1 → B1) through high-ROI shortcuts, not grammar theory. Delivered across four reinforcing formats sharing one brand, color system, and content spine.</p>
+<h2 id="shared-foundation">Shared Foundation</h2>
+<p><strong>Positioning:</strong> "Understand 60–70% of Dutch in days, not months."</p>
+<p><strong>Content pillars</strong> (canonical list — every chapter, module, and deck maps to one of these; color-coded across all formats):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Pillar</th>
+<th>Color</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Words You Already Know</strong> (cognates &amp; near-identicals)</td>
+<td>⚪</td>
+<td>hotel, taxi, menu, problem</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>High-Value Word Endings</strong></td>
+<td>🟡</td>
+<td><code>-tion → -tie</code>, <code>-ity → -iteit</code>, <code>-al → -aal</code>, <code>-y → -ig</code>, <code>-ness → -heid</code></td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>Word Families &amp; Lego Words</strong> (verb/noun/adjective, prefixes, diminutives)</td>
+<td>🟢</td>
+<td><code>werken → werker → werkzaam</code>, <code>huis → huisje</code>, <code>kopen → verkopen</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>False Friends</strong></td>
+<td>🔴</td>
+<td><code>winkel ≠ winkle</code> (shop), <code>bellen ≠ bell</code> (to call)</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>Fixed Prepositions</strong></td>
+<td>🟠</td>
+<td><code>wachten op</code>, <code>denken aan</code>, <code>zorgen voor</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Irregular / Strong Verbs</strong></td>
+<td>🟣</td>
+<td><code>lopen → liep → gelopen</code></td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Word Order Cheat Codes</strong></td>
+<td>🔵</td>
+<td>V2 rule, "because → verb to the end"</td>
+</tr>
+<tr>
+<td>8</td>
+<td><strong>Survival Patterns &amp; Pronunciation</strong></td>
+<td>🟤</td>
+<td>greetings, ordering, vowel shifts</td>
+</tr>
+</tbody>
+</table></div>
+<p>Open to extension as new high-ROI patterns surface.</p>
+<hr>
+<h2 id="1-the-book">1. The Book</h2>
+<p>Static, hook-first introduction to the system. Short, punchy chapters; recognition vs. production split.</p>
+<p><strong>Chapter outline</strong> (each chapter maps to a content pillar):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Chapter</th>
+<th>Pillar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Words You Already Know</td>
+<td>⚪ Pillar 1</td>
+</tr>
+<tr>
+<td>2. High-Value Word Endings</td>
+<td>🟡 Pillar 2</td>
+</tr>
+<tr>
+<td>3. Build Words Like Lego (Sometimes) — families, prefixes, diminutives</td>
+<td>🟢 Pillar 3</td>
+</tr>
+<tr>
+<td>4. 101 False Friends</td>
+<td>🔴 Pillar 4</td>
+</tr>
+<tr>
+<td>5. Preposition Survival Kit</td>
+<td>🟠 Pillar 5</td>
+</tr>
+<tr>
+<td>6. Spot the Verb &amp; Tame Irregulars</td>
+<td>🟣 Pillar 6</td>
+</tr>
+<tr>
+<td>7. Word Order Without Tears</td>
+<td>🔵 Pillar 7</td>
+</tr>
+<tr>
+<td>8. Pronunciation Hacks &amp; Survival Patterns</td>
+<td>🟤 Pillar 8</td>
+</tr>
+<tr>
+<td>9. Next-Level Quick Wins (compounds, numbers, dates)</td>
+<td>extension</td>
+</tr>
+</tbody>
+</table></div>
+<p>Avoids: long grammar, exception lists, linguistic jargon.</p>
+<hr>
+<h2 id="2-the-website">2. The Website</h2>
+<p>Central interactive hub. Pattern recognition via active exercises with instant feedback and spaced repetition.</p>
+<p><strong>Modules</strong> (one per pillar):
+- ⚪ <strong>Quick Cognates</strong> — flip cards, instant recognition (Pillar 1)
+- 🟡 <strong>Ending Matcher</strong> — drag-and-drop <code>-tion/-tie</code> style endings (Pillar 2)
+- 🟢 <strong>Pattern Builder</strong> — assemble verb/noun/adjective families, prefixes, diminutives (Pillar 3)
+- 🔴 <strong>False Friend Lab</strong> — multiple choice + "trap" mode (Pillar 4)
+- 🟠 <strong>Voorzetselpaden</strong> — meaning-first scenes, minimal pairs and sentence building (Pillar 5)
+- 🟣 <strong>Irregular Verb Trainer</strong> — conjugation puzzles, pattern prediction (Pillar 6)
+- 🔵 <strong>Zinsbouwer</strong> — re-order sentence fragments (Pillar 7)
+- 🟤 <strong>Survival Phrasebook</strong> — pronunciation + everyday phrase drills (Pillar 8)
+- <strong>Progress Dashboard</strong> — mastery, streaks, weakest areas</p>
+<p><strong>Gamification:</strong> points, badges, level unlocks, weekly pattern-challenge leaderboard.</p>
+<hr>
+<h2 id="3-the-mobile-app">3. The Mobile App</h2>
+<p>Micro-learning companion for 5–10 minute daily sessions. Shares content + progress with the website.</p>
+<ul>
+<li>Swipe-to-match verb ↔ noun</li>
+<li>Choose the scene that matches a sentence, then build the sentence</li>
+<li>Digital memory-match (mirrors physical decks)</li>
+<li>Streak reminders &amp; push notifications</li>
+<li>Offline mode for travel</li>
+<li>Cross-device progress sync</li>
+</ul>
+<hr>
+<h2 id="4-physical-memory-card-games">4. Physical Memory Card Games</h2>
+<p>Tactile reinforcement — a series of color-coded decks playable solo, in pairs, or in classrooms.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Deck</th>
+<th>Pillar</th>
+<th>Pair Example</th>
+<th>Game Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Words You Already Know</td>
+<td>⚪ 1</td>
+<td><code>information ↔ informatie</code></td>
+<td>Memory match</td>
+</tr>
+<tr>
+<td>Ending Patterns</td>
+<td>🟡 2</td>
+<td><code>-tion ↔ -tie</code> family</td>
+<td>Sort by ending</td>
+</tr>
+<tr>
+<td>Word Families (Lego)</td>
+<td>🟢 3</td>
+<td><code>werken ↔ werker ↔ werkzaam</code></td>
+<td>Build-the-family</td>
+</tr>
+<tr>
+<td>False Friends</td>
+<td>🔴 4</td>
+<td><code>winkel ↔ shop</code></td>
+<td>Match + "trap the false friend"</td>
+</tr>
+<tr>
+<td>Fixed Prepositions</td>
+<td>🟠 5</td>
+<td><code>uitkijken naar</code> ↔ holiday scene</td>
+<td>Match scene to chunk</td>
+</tr>
+<tr>
+<td>Irregular Verbs</td>
+<td>🟣 6</td>
+<td><code>lopen ↔ liep ↔ gelopen</code></td>
+<td>3-card sequence match</td>
+</tr>
+<tr>
+<td>Word Order</td>
+<td>🔵 7</td>
+<td>sentence fragments</td>
+<td>Re-order race</td>
+</tr>
+<tr>
+<td>Survival Phrases</td>
+<td>🟤 8</td>
+<td>greeting / ordering pairs</td>
+<td>Memory match</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Variations:</strong> speed rounds, team play, timed challenges, expansion packs by level/theme.</p>
+<p><strong>Prototype path:</strong> home-print on paper → glue to thick card → corner-round → playtest → iterate before any commercial print run.</p>
+<hr>
+<h2 id="reinforcement-loop">Reinforcement Loop</h2>
+<pre><code>Physical cards  →  Website practice  →  Daily app session  →  Back to cards
+   (tactile)        (deep practice)      (micro-habit)         (review)
+</code></pre>
+<p>Each format reinforces the others; progress tracked digitally across web + app; cards keep learning offline and social.</p>
+<h2 id="unfair-advantage">Unfair Advantage</h2>
+<p>Author is a native English speaker actively learning Dutch — uniquely placed to know where English speakers actually trip up. Often a stronger position than a native Dutch author, who may take cognates and false friends for granted.</p>
+<h2 id="concrete-examples-by-pattern">Concrete Examples by Pattern</h2>
+<p><strong>Cognate endings (free vocabulary):</strong>
+- <code>-tion → -tie</code>: information → informatie, situation → situatie
+- <code>-ity → -iteit</code>: possibility → mogelijkheid (also <code>-heid</code>)
+- <code>-al → -aal</code>: normal → normaal
+- <code>-y → -ig</code>: salty → zoutig, stony → stenig
+- Near-identical: hotel, taxi, menu, restaurant, film, computer, problem</p>
+<p><strong>False friends:</strong>
+- <code>winkel</code> ≠ winkle → shop
+- <code>bellen</code> ≠ bell → to call
+- <code>eventueel</code> ≠ eventually → possibly</p>
+<h2 id="word-order-cheat-codes">Word Order Cheat Codes</h2>
+<p>Operational rules, not grammar theory:
+- <strong>V2 rule</strong> — verb stays in second position in main clauses.
+- <strong>"Because → kick the verb to the end"</strong> — any subordinator (<code>omdat</code>, <code>dat</code>, <code>als</code>, <code>terwijl</code>) sends the verb to the clause's end.
+- Frame as recipes the reader can apply immediately, not as syntactic theory.</p>
+<h2 id="diminutives-je">Diminutives (<code>-je</code>)</h2>
+<p>Both a grammar feature and a vocab multiplier — learners get a second word almost free:
+- <code>huis → huisje</code> (small house)
+- <code>boek → boekje</code> (booklet)</p>
+<p>Ubiquitous in real-life Dutch; worth its own short module across book/app/cards.</p>
+<h2 id="preposition-learning-techniques">Preposition Learning Techniques</h2>
+<p>Because fixed prepositions are idiomatic, teach them as <strong>clusters and chunks</strong>, never as isolated words:</p>
+<ul>
+<li><strong>Meaning first</strong> — a chunk is learned from a situation, not a translation. Show the scene, ask what is happening, then give the gloss.</li>
+<li><strong>Minimal pairs</strong> — teach <code>uitkijken naar</code> next to <code>uitkijken voor</code>, <code>denken aan</code> next to <code>denken over</code>. The preposition carries meaning; one verb is not one chunk.</li>
+<li><strong>Verb + preposition chunks</strong> — memorise <code>wachten op</code>, <code>denken aan</code>, <code>zorgen voor</code>, <code>geloven in</code> as single units.</li>
+<li><strong>Mnemonic mini-sentences</strong> — "Ik wacht op de bus", "Ik denk aan jou". Brain remembers scenarios, not lists.</li>
+<li><strong>Concept questions</strong> — after the scene, ask <em>positief of negatief?</em>, <em>nu of later?</em>, <em>wie doet het?</em>; a correct preposition does not prove understanding.</li>
+<li><strong>Separable verbs</strong> — show the prefix moving to the end: <em>Ik kijk </em><em>uit</em><em> naar de vakantie.</em></li>
+<li><strong>Pronominal forms</strong> — <code>eraan denken</code>, <code>ernaar uitkijken</code>, <code>Waar denk je aan?</code></li>
+<li><strong>Group by theme</strong> — spatial (<code>in, op, onder, boven, naast</code>), temporal (<code>sinds, voor, na, tijdens</code>), cause/effect (<code>door, vanwege, dankzij</code>).</li>
+<li><strong>Preposition + article combos</strong> — learn <code>op de</code>, <code>in het</code>, <code>aan het</code> as fixed chunks.</li>
+<li><strong>Spaced repetition</strong> — 5–10 new combos/day via flashcards with context (<code>wachten ___ de bus</code> → <code>op</code>).</li>
+<li><strong>Mini-dialogues</strong> — reinforce in short conversational scenes rather than abstract drills.</li>
+</ul>
+<h2 id="guiding-principles">Guiding Principles</h2>
+<ul>
+<li><strong>Recognition vs Production</strong> — every tip is tagged as either "recognise when reading/listening" or "use when speaking", to prevent overwhelm.</li>
+<li><strong>Patterns, not rules</strong> — shortcuts that work <em>most</em> of the time; explicit warnings where they break (e.g. <code>bouwen → gebouw</code>, not <code>bouwing</code>).</li>
+<li><strong>Prepositions as a survival kit</strong> — teach the top 30–50 verb+preposition clusters (<code>wachten op</code>, <code>denken aan</code>, <code>zorgen voor</code>) via scenes, mini-sentences and contrast pairs, not exhaustive tables. Flag the rest as unpredictable.</li>
+<li><strong>Biggest risk to avoid:</strong> becoming a messy collection of tips instead of a coherent system.</li>
+</ul>
+<h2 id="roadmap">Roadmap</h2>
+<ul>
+<li><strong>MVP</strong> — core quick-win patterns: cognates, top word endings, top 50 false friends.</li>
+<li><strong>Level 2</strong> — word families, verb → person, adjective → abstract noun.</li>
+<li><strong>Level 3</strong> — preposition clusters, irregular verb patterns, mini-dialogues, survival phrases.</li>
+<li><strong>Optional</strong> — leaderboards, daily streaks, spaced repetition engine.</li>
+</ul>
+<h2 id="expansion-possibilities">Expansion Possibilities</h2>
+<ul>
+<li>New decks: rare verbs, advanced prepositions, idioms</li>
+<li>Seasonal / themed packs (holidays, travel, Dutch culture)</li>
+<li>Teacher edition: printable classroom decks + worksheets</li>
+<li>Community: shared scores, custom user-built decks</li>
+</ul>
+<h2 id="funding-angle">Funding Angle</h2>
+<p>Explore UWV support (start-up / self-employment trajectory or training exemption) to dedicate ~6 months to building the MVP. Requires a formal plan: milestones, prototype evidence, employability/income path, regular progress reports.</p>
+<h2 id="tech-direction-working-assumption">Tech Direction (working assumption)</h2>
+<ul>
+<li><strong>Web + mini-games:</strong> React (large ecosystem for drag-drop, animation)</li>
+<li><strong>Mobile:</strong> React Native (shared code with web)</li>
+<li><strong>Backend / APIs / content / progress:</strong> .NET (leverages existing expertise)</li>
+<li>Blazor considered but de-prioritised for interactive game UX.</li>
+</ul>
+<p>onest estimate, broken down by pillar. "Teach" here means passive recognition — the learner sees/hears the word and decodes it. Active production is a fraction of this.</p>
+<p>Per-pillar yield</p>
+<p>┌────────────────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┬────────────────────────┐
+  │             Pillar             │                                                        Mechanism                                                         │    Realistic words     │
+  │                                │                                                                                                                          │        unlocked        │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 1. Cognates &amp; sound-alikes     │ ~200 near-identicals + ~800 Germanic sound-alikes (via 3 sound lenses in Appendix B)                                     │ ~1,000                 │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 2. Word endings                │ -tie, -iteit, -aal, -isch, -isme, -eus, -ief, -uur, -antie, -entie, -or/-eur, -ig, -heid — each productive across        │ ~5,000–8,000           │
+  │                                │ hundreds of Latinate words                                                                                               │                        │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 3. Families, prefixes,         │ ver-/be-/ont-/her-/ge- + -je + verb↔noun↔adj on ~500 stems. Multiplier, not additive.                                    │ ~2,000–3,000           │
+  │ diminutives                    │                                                                                                                          │                        │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 4. False friends               │ Subtractive — protects ~150 existing hits, doesn't add vocab                                                             │ 0 (but saves errors)   │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 5. Prepositions                │ 30–50 chunks. High utility, low word count                                                                               │ ~50                    │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 6. Irregular verbs             │ ~200 strong verbs × pattern recognition                                                                                  │ ~200 lemmas            │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 7. Word order                  │ Grammar, not vocab                                                                                                       │ 0                      │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 8. Survival phrases            │ ~100 chunks                                                                                                              │ ~100                   │
+  ├────────────────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┼────────────────────────┤
+  │ 9. Compounds                   │ Transparent once parts are known. Book already shows 101 for free. Dutch has tens of thousands.                          │ ~2,000–5,000           │
+  └────────────────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┴────────────────────────┘</p>
+<p>The honest caveats</p>
+<ol>
+<li>Pillar 2 is where the real leverage is. The endings chapter is currently empty and is arguably worth more vocabulary than Pillars 1, 4, 5, 6, 8 combined. If you only finished one
+  more chapter, finish this one.</li>
+<li>Pillar 3's multiplier only fires if the learner already knows the stems — so Ch3 depends on Ch1 and Ch2 doing their jobs first.</li>
+<li>Frequency matters more than raw count. Unlocking 8,000 Latinate -tie words is impressive but many are low-frequency. Unlocking 500 high-frequency Germanic sound-alikes probably does
+  more for day-one comprehension.</li>
+<li>Compounds are double-counted risk. Ch3 (Lego) and Ch9 (Next-level compounds) both claim them — decide which chapter owns the concept or the reader will feel the overlap.</li>
+</ol>
+<p>TL;DR: Realistic ceiling is roughly 10k passive / 1–2k active, and Pillar 2 is carrying most of that weight on paper you haven't written yet.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="../voorzetselpaden/verb-prep-verification-2026-11-15.html"><span>Previous</span>Verifying the ZiN / Heard Dutch Here additions</a><a class="next" href="rethink-2026-11-16/README.html"><span>Next</span>Rethink: structure and art</a></nav>
+    <footer class="footer">
+      <code>Docs/archive/Concept.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voorzetselpaden art to redo — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html" aria-current="page">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Games</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Voorzetselpaden art to redo</h1>
+      <p class="lede">Which scenes need redrawing, in what order, and why.</p>
+      <p class="doc-meta">Docs/voorzetselpaden-art-redo.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#rejected-on-13-nov-first-round-5-cards">Rejected on 13 Nov, first round (5 cards)</a></li><li class="toc-h2"><a href="#rejected-on-13-nov-second-round-49-cards">Rejected on 13 Nov, second round (49 cards)</a></li><li class="toc-h2"><a href="#base-prompt-changes-after-the-13-nov-feedback">Base prompt changes after the 13 Nov feedback</a></li><li class="toc-h2"><a href="#a2-a2-plushtml-not-yet-usable">A2+ (a2-plus.html), not yet usable</a></li><li class="toc-h2"><a href="#before-the-next-run">Before the next run</a></li></ul></details>
+    <article class="prose">
+<p>Fifty-four images were rejected on 13 Nov 2026 (five, then 49) and A2+ is mostly ungenerated. Both are queued for the next Grok session, planned for Wednesday 18 Nov 2026 evening.</p>
+<h2 id="rejected-on-13-nov-first-round-5-cards">Rejected on 13 Nov, first round (5 cards)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Card id</th>
+<th>Page</th>
+<th>Chunk</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>komen-door-hond</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>dat komt door</td>
+<td>Rejected by the owner</td>
+</tr>
+<tr>
+<td><code>komen-door-regen</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>dat komt door</td>
+<td>Rejected by the owner</td>
+</tr>
+<tr>
+<td><code>komen-door-storm</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>dat komt door</td>
+<td>Rejected by the owner</td>
+</tr>
+<tr>
+<td><code>komen-door-zon</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>dat komt door</td>
+<td>Rejected by the owner</td>
+</tr>
+<tr>
+<td><code>vragen-om-geld</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>vragen om</td>
+<td>Characters completely shaded in</td>
+</tr>
+</tbody>
+</table></div>
+<p>The five PNGs are moved out of <code>assets/verb-propositions/incoming/</code> to <code>~/claude-scratch/rejected-images/2026-11-13/</code>. Observation, not the owner's reason: the four <code>komen-door</code> images draw the figures white on a cobalt ground, the reverse of the other sets.</p>
+<p>All five cards are back to the "not drawn yet" placeholder on their pages.</p>
+<p>To redo <code>dat komt door</code>: <code>tools/grok/grok.py prompt a2 "dat komt door"</code>, then <code>tools/grok/grok.py</code> <code>new</code>, <code>compose</code>, <code>send</code>, <code>wait</code>, <code>download</code>, as in <code>tools/grok/README.md</code>. The earlier prompt is <code>~/claude-scratch/oefenpad-a2-run/a2-dat-komt-door.txt</code>.</p>
+<h2 id="rejected-on-13-nov-second-round-49-cards">Rejected on 13 Nov, second round (49 cards)</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Card id</th>
+<th>Page</th>
+<th>Owner's reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>vragen-om-hulp</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Rejected by the owner</td>
+</tr>
+<tr>
+<td><code>vragen-om-pen</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Rejected by the owner</td>
+</tr>
+<tr>
+<td><code>werken-aan-fiets</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Looks nothing like a bike</td>
+</tr>
+<tr>
+<td><code>werken-bij-kantoor</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>werken-bij-winkel</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>zeggen-tegen-collega</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Wrong colour</td>
+</tr>
+<tr>
+<td><code>zoeken-naar-sleutels</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Character has no face</td>
+</tr>
+<tr>
+<td><code>beginnen-met-hardlopen</code></td>
+<td><a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a></td>
+<td>A man panting, not running</td>
+</tr>
+<tr>
+<td><code>beschermen-tegen-regen</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Face is solid block colour, not cobalt outline on white</td>
+</tr>
+<tr>
+<td><code>beschermen-tegen-zon</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Faces filled in</td>
+</tr>
+<tr>
+<td><code>betalen-voor-kassa</code></td>
+<td><a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a></td>
+<td>Jagged, pixelated or fuzzy edges; the character pours tea instead of paying</td>
+</tr>
+<tr>
+<td><code>denken-aan-eten</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>denken-aan-huis</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>denken-aan-persoon</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>denken-aan-vakantie</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>denken-over-keuze</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Jagged, pixelated or fuzzy edges; face shaded in</td>
+</tr>
+<tr>
+<td><code>denken-over-twee-autos</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Jagged, pixelated or fuzzy edges; faces shaded</td>
+</tr>
+<tr>
+<td><code>denken-over-twee-huizen</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Jagged, pixelated or fuzzy edges; faces shaded</td>
+</tr>
+<tr>
+<td><code>denken-over-twee-reizen</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>doorgeven-aan-buur</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Jagged, pixelated or fuzzy edges (the owner wrote <code>doorbrengen-aan-buur</code>; read as this card)</td>
+</tr>
+<tr>
+<td><code>doorgeven-aan-collega</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>doorgeven-aan-kind</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>doorgeven-aan-medespeler</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>houden-van-kat</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>houden-van-muziek</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>kiezen-voor-taart</code></td>
+<td><a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>kijken-door-kier</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Strange head shape</td>
+</tr>
+<tr>
+<td><code>kijken-door-microscoop</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Strange head shape</td>
+</tr>
+<tr>
+<td><code>kijken-door-sleutelgat</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Strange head shape</td>
+</tr>
+<tr>
+<td><code>kijken-naar-schilderij</code></td>
+<td><a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a></td>
+<td>Face shaded</td>
+</tr>
+<tr>
+<td><code>kijken-uit-balkon</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Face shaded; jagged, pixelated or fuzzy edges</td>
+</tr>
+<tr>
+<td><code>kijken-uit-treinraam</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Very strange head shape</td>
+</tr>
+<tr>
+<td><code>klagen-bij-leidinggevende</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Faces shaded, strange shapes</td>
+</tr>
+<tr>
+<td><code>klagen-bij-receptie</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Faces shaded, strange shapes</td>
+</tr>
+<tr>
+<td><code>krijgen-van-vriend</code></td>
+<td><a href="voorzetselpaden/a2-pairs.html"><code>a2-pairs.html</code></a></td>
+<td>Faces shaded</td>
+</tr>
+<tr>
+<td><code>last-hebben-van-hoofdpijn</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Face shaded</td>
+</tr>
+<tr>
+<td><code>last-hebben-van-lawaai</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Faces shaded</td>
+</tr>
+<tr>
+<td><code>last-hebben-van-muggen</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Face shaded</td>
+</tr>
+<tr>
+<td><code>letten-op-verkeer</code></td>
+<td><a href="voorzetselpaden/a0.html"><code>a0.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>praten-met-collega</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>praten-tegen-muur</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>praten-tegen-scherm</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+<tr>
+<td><code>tevreden-zijn-met-resultaat</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>Strange head shape</td>
+</tr>
+<tr>
+<td><code>uitkijken-voor-hond</code></td>
+<td><a href="voorzetselpaden/a2.html"><code>a2.html</code></a></td>
+<td>No dog: there is a tram; one man has his arm through another</td>
+</tr>
+<tr>
+<td><code>uitnodigen-voor-het-feest</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Strange character and head shapes</td>
+</tr>
+<tr>
+<td><code>uitnodigen-voor-wandeling</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Strange heads</td>
+</tr>
+<tr>
+<td><code>vallen-uit-bed</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Face shaded</td>
+</tr>
+<tr>
+<td><code>vragen-aan-buur</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>The man asking faces away from the other person instead of facing him</td>
+</tr>
+<tr>
+<td><code>vragen-om-advies</code></td>
+<td><a href="voorzetselpaden/a1.html"><code>a1.html</code></a></td>
+<td>Poor quality (jagged, pixelated or fuzzy edges)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The PNGs are backed up in <code>~/claude-scratch/rejected-images/2026-11-13/</code>, along with the four band pages and the old <code>base-prompt.txt</code> as they were before this round (<code>html-before/</code>). All 49 cards are back to "not drawn yet". Together with the first five, 54 cards need art again.</p>
+<p>The recurring faults, and how the base prompt was changed for them, are in the section below.</p>
+<h2 id="base-prompt-changes-after-the-13-nov-feedback">Base prompt changes after the 13 Nov feedback</h2>
+<p><code>Docs/voorzetselpaden/base-prompt.txt</code> was changed to answer the recurring faults. The old version is in <code>~/claude-scratch/rejected-images/2026-11-13/html-before/base-prompt.txt</code>.</p>
+<p>"Poor quality" means jagged, pixelated or fuzzy edges. Zoomed against good images, the bad ones show stair-stepped edges, speckle and thin lines that break up, mostly where the drawing has hairline strokes or fine detail (spokes, stitching, small windows). This is read from four images, not tested.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Owner's feedback</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faces shaded or filled in; face in block colour</td>
+<td>The face stays white inside a cobalt outline and is never filled or shaded. Only hair is solid</td>
+</tr>
+<tr>
+<td>Strange head shapes</td>
+<td>Natural, proportionate human heads: slightly oval, chin, ears, neck. Not a perfect circle</td>
+</tr>
+<tr>
+<td>Wrong colour</td>
+<td>One cobalt only, no lighter or darker blue; never a cobalt background or a white drawing on blue</td>
+</tr>
+<tr>
+<td>Poor quality: jagged, pixelated, fuzzy</td>
+<td>New line-quality rule: thick bold lines only, no hairlines or fine detail, smooth crisp edges, no broken lines</td>
+</tr>
+<tr>
+<td>Not a bike, a tram instead of a dog, panting instead of running, pouring instead of paying</td>
+<td>New section: draw every named object recognisably and the action asked for, not a nearby one</td>
+</tr>
+<tr>
+<td>The man asking faces away</td>
+<td>When people speak to, ask or give to each other, they face each other</td>
+</tr>
+<tr>
+<td>(all)</td>
+<td>A check before returning: natural faces, smooth bold lines, cobalt on white, action matches; redraw any that fail</td>
+</tr>
+</tbody>
+</table></div>
+<p>A first draft limited drawings to three objects besides the figures. It was softened to "few large elements" because several briefs name more than three.</p>
+<h2 id="a2-a2-plushtml-not-yet-usable">A2+ (<a href="voorzetselpaden/a2-plus.html"><code>a2-plus.html</code></a>), not yet usable</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>State</th>
+<th>Chunks</th>
+<th>Images</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generated and downloaded, owner has not accepted them</td>
+<td>31</td>
+<td>55</td>
+<td><code>~/claude-scratch/oefenpad-a2plus-run/out/</code></td>
+</tr>
+<tr>
+<td>Started, no zip (stopped mid-generation)</td>
+<td>1 (<code>langs</code>)</td>
+<td>2</td>
+<td>Chat link in <code>run.log</code> of that folder</td>
+</tr>
+<tr>
+<td>Never started</td>
+<td>31</td>
+<td>about 41</td>
+<td>Prompts in the same folder; <code>plan.txt</code> lists them in order</td>
+</tr>
+</tbody>
+</table></div>
+<p>The owner is checking the 31 downloaded chunks one by one on 13 Nov. Nothing is rejected or accepted yet.</p>
+<h2 id="before-the-next-run">Before the next run</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Make <code>run.sh</code> stop at the first failed download</td>
+<td>On 13 Nov it carried on after 31 failed downloads and spent the Grok quota</td>
+</tr>
+<tr>
+<td>Start Chrome on the Grok profile with <code>--remote-debugging-port=9333</code> and sign in</td>
+<td>The old session had timed out</td>
+</tr>
+</tbody>
+</table></div>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="game-art.html"><span>Previous</span>Game art</a><a class="next" href="voorzetselpaden-content-checks.html"><span>Next</span>Voorzetselpaden content checks</a></nav>
+    <footer class="footer">
+      <code>Docs/voorzetselpaden-art-redo.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

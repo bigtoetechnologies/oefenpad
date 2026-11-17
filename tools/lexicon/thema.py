@@ -5,7 +5,7 @@ Writes tools/lexicon/woorden-thema.tsv:
     nl<TAB>thema<TAB>thema_ook<TAB>prioriteit<TAB>en
 one row per input row, same order, `nl` byte-identical.
 
-Themes are the 24 in Docs/product.md §12 (11 base + 13 candidates, with
+Themes are the 24 in Docs/product.html §12 (11 base + 13 candidates, with
 Het lichaam), plus three buckets the product's worlds do not hold:
 `algemeen`, `naam`, `plaats`.
 
@@ -42,7 +42,7 @@ OUT = os.path.join(HERE, "woorden-thema.tsv")
 SAMPLE_SEED = 20261116
 
 # ---------------------------------------------------------------------------
-# The taxonomy: Docs/product.md §12, plus the three non-product buckets.
+# The taxonomy: Docs/product.html §12, plus the three non-product buckets.
 # ---------------------------------------------------------------------------
 
 WORLD_THEMES = [

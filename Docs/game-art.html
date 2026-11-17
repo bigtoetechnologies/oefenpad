@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game art — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html" aria-current="page">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Games</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Game art</h1>
+      <p class="lede">How the images are drawn: style A and brush line, cobalt only, 512 px.</p>
+      <p class="doc-meta">Docs/game-art.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#voorzetselpaden-uses-style-a">Voorzetselpaden uses style A</a></li><li class="toc-h2"><a href="#the-idea-in-one-line">The idea in one line</a></li><li class="toc-h2"><a href="#non-negotiables">Non-negotiables</a></li><li class="toc-h2"><a href="#style-anchors">Style anchors</a></li><li class="toc-h2"><a href="#the-brush">The brush</a></li><li class="toc-h3"><a href="#one-edge-drawn-twice">One edge, drawn twice</a></li><li class="toc-h3"><a href="#taper">Taper</a></li><li class="toc-h3"><a href="#roughness">Roughness</a></li><li class="toc-h3"><a href="#what-not-to-draw">What not to draw</a></li><li class="toc-h3"><a href="#people-and-animals">People and animals</a></li><li class="toc-h2"><a href="#composition">Composition</a></li><li class="toc-h2"><a href="#colour-and-background">Colour and background</a></li><li class="toc-h3"><a href="#do-not-use-the-interface-paint-filter">Do not use the interface paint filter</a></li><li class="toc-h2"><a href="#files-and-naming">Files and naming</a></li><li class="toc-h2"><a href="#delivered-raster-art">Delivered raster art</a></li><li class="toc-h2"><a href="#generation-prompt">Generation prompt</a></li><li class="toc-h2"><a href="#do-dont">Do / Don&#x27;t</a></li><li class="toc-h2"><a href="#checklist">Checklist</a></li><li class="toc-h2"><a href="#why-the-old-word-images-do-not-set-the-style">Why the old word images do not set the style</a></li></ul></details>
+    <article class="prose">
+<p>Every image inside a game is a brush drawing in the logo's hand: cobalt ink on
+bare paper, one idea, no words.</p>
+<p>This is the shared style guide for clue images, card faces, scene art, reels,
+trophies and card backs. It does not cover the painted blocks in the interface
+(<a href="designguide.html"><code>designguide.html</code></a>), the logo itself, or the 157 photographic word images in
+<code>assets/wordimages/</code> — those are placeholders, not the target style.</p>
+<p>The per-game briefs say <em>what</em> each image must show. This says <em>how</em> it must be
+drawn.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Brief</th>
+<th>What it supplies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>voorzetselpaden/*.html</code></td>
+<td>Every Voorzetselpaden scene, one card per frame, by CEFR band, with its contrasts and what it must not suggest</td>
+</tr>
+<tr>
+<td><a href="story-machine-art.html"><code>story-machine-art.html</code></a></td>
+<td>The 72 reel tiles, by reel and word</td>
+</tr>
+<tr>
+<td>This file</td>
+<td>Stroke, colour, composition, prompt and checklist</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="voorzetselpaden-uses-style-a">Voorzetselpaden uses style A</h2>
+<p>Since 12 November 2026 every Voorzetselpaden scene is drawn in style A: a flat
+picture-book pictogram, solid cobalt clothing, simple faces, no shading. The
+owner chose it over the brush style below because it stays consistent across a
+batch and reads at the phone choice tile, about 93 CSS px wide.</p>
+<p>The brush rules in the rest of this file still describe the other games' art.
+For Voorzetselpaden they are replaced by the four things in this table.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The fixed prompt</td>
+<td><code>Docs/voorzetselpaden/base-prompt.txt</code>, pasted unchanged</td>
+</tr>
+<tr>
+<td>The three references</td>
+<td><code>assets/verb-propositions/referenceimages/style-a/</code>; not the files in its <code>origin/</code> folder</td>
+</tr>
+<tr>
+<td>The scenes</td>
+<td>The cards on each band page, read when the prompt is built: <code>tools/grok/grok.py prompt &lt;band&gt; "&lt;chunk&gt;"</code></td>
+</tr>
+<tr>
+<td>The pipeline</td>
+<td>Unchanged: <em>Delivered raster art</em> below</td>
+</tr>
+</tbody>
+</table></div>
+<p>One batch is one chunk, in one fresh Grok chat. Attach the three references and
+paste the prompt that <code>grok.py prompt</code> prints: the base prompt, then the chunk's
+cards as they are on the page now, then a delivery line naming the zip and every
+file. Without that line, Grok returns the images inline and they cannot be
+fetched in bulk. <a href="archive/rethink-2026-11-16/README.html"><code>tools/grok/README.html</code></a> has the whole run.</p>
+<p>Review each image against the three references, at full size and at phone tile size, and check the framing: the whole figure,
+head to feet, at the same scale as the rest of the set. A scene fix goes on its
+card, not into the base prompt; mark a hand-written scene with the <em>door de
+eigenaar</em> badge so batch edits leave it alone.</p>
+<h2 id="the-idea-in-one-line">The idea in one line</h2>
+<p>The logo is the reference. A game image should look like it was drawn by the
+same hand that painted the O and the P: a few confident, tapered cobalt strokes,
+visible bristle splits, loose ends, and a lot of paper.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Claim</th>
+<th>Consequence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The stroke is the line</td>
+<td>Not a flat vector silhouette, not an icon with a uniform outline</td>
+</tr>
+<tr>
+<td>Paper is part of the drawing</td>
+<td>Transparent background; empty space is composition, not a gap to fill</td>
+</tr>
+<tr>
+<td>One idea per image</td>
+<td>If the silhouette needs a caption, redraw it</td>
+</tr>
+</tbody>
+</table></div>
+<p>Scene art is drawn in the same hand at sketch weight: a bold brush-pen
+drawing with a wide nib, visible dry-brush streaks and directional hatching —
+not a thin pen-and-ink illustration and not a pictogram. See <em>Style anchors</em>.</p>
+<h2 id="non-negotiables">Non-negotiables</h2>
+<p>These are inherited from <a href="decisions.html"><code>decisions.html</code></a> and <a href="designguide.html"><code>designguide.html</code></a>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No text, letters or numbers in the image, ever</td>
+<td>One art set serves every first language; the words are drawn in HTML</td>
+</tr>
+<tr>
+<td>Cobalt only, no orange</td>
+<td>Orange still means "do this now"; the logo's orange dab stays in the logo</td>
+</tr>
+<tr>
+<td>No culture-specific or Dutch souvenir imagery</td>
+<td>The audience is international</td>
+</tr>
+<tr>
+<td>No meaning carried by colour alone</td>
+<td>The drawing must carry the meaning</td>
+</tr>
+<tr>
+<td>Readable at 64 px</td>
+<td>That is a phone-sized clue or reel tile; line weight has to carry it</td>
+</tr>
+<tr>
+<td>One idea per image</td>
+<td>A learner has one glance to connect the picture to the chunk</td>
+</tr>
+<tr>
+<td>Transparent, vector where possible</td>
+<td>It has to sit on paper in both themes</td>
+</tr>
+<tr>
+<td>Scene art is 2:3 portrait</td>
+<td>512 × 763 shipped; one ratio and one camera keep contrast pairs comparable</td>
+</tr>
+</tbody>
+</table></div>
+<p>The logo's orange accent is brand identity, not an art convention. Do not copy
+it into a scene. If an image needs an accent, use a heavier cobalt stroke.</p>
+<h2 id="style-anchors">Style anchors</h2>
+<p>Retired for Voorzetselpaden, which uses the style A references above. These
+three remain the reference for brush-style art in the other games.</p>
+<p>Three delivered scenes define the target. Measure a new image against them; if
+it would not pass unnoticed beside these three, it is not finished.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Anchor</th>
+<th>What it anchors</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>wachten-op-vriend.png</code></td>
+<td>People: seated, in profile, the fold of a coat and a chair</td>
+</tr>
+<tr>
+<td><code>wachten-op-trein.png</code></td>
+<td>Place: rails in perspective, a figure seen from behind</td>
+</tr>
+<tr>
+<td><code>wachten-op-eten.png</code></td>
+<td>Hands and objects on a tabletop, in perspective</td>
+</tr>
+</tbody>
+</table></div>
+<p>All three live in <code>assets/verb-propositions/referenceimages/</code>, are 784 × 1168
+RGB PNGs with the white paper baked in, and use an ink core of about
+<code>#0A41A6</code>–<code>#1657C9</code>, hue 218–220°. Measured at 784 px wide:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Measure</th>
+<th>Target</th>
+<th>How it was measured</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ink coverage</td>
+<td>14–22% plain, to 27% busy</td>
+<td>share of pixels with <code>min(r,g,b) &lt; 200</code></td>
+</tr>
+<tr>
+<td>Typical stroke</td>
+<td>4–8 px</td>
+<td>60–65% of the ink survives a 3 px erosion, 30–40% a 5 px erosion</td>
+</tr>
+<tr>
+<td>Boldest contour</td>
+<td>9–14 px</td>
+<td>the chair frame, a rail, the edge of a table</td>
+</tr>
+<tr>
+<td>Hatching</td>
+<td>2–4 px</td>
+<td>dense directional strokes on folds and under objects</td>
+</tr>
+<tr>
+<td>Subject extent</td>
+<td>scene 90–100% of the width; person 35–55%</td>
+<td>the person is half the scene, not the whole frame</td>
+</tr>
+<tr>
+<td>Filled mass</td>
+<td>hair, plus one or two small accents</td>
+<td>clothing, furniture and background stay white inside the contour</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Where the coverage figure comes from.</strong> The fifty drawn scenes in
+<code>assets/verb-propositions/incoming/</code> measure 13–27% by the definition above,
+median 18. The three anchors measure 14.0, 15.4 and 18.5. An earlier version of
+this table said 13–17% with a 20% failure threshold; seventeen of the fifty
+broke it, and so did one anchor, so the threshold was describing nothing.
+Coverage scales with how much is in the scene: one person on a bench sits near
+the bottom of the range, two people with furniture near the top. Judge the
+drawing against the anchors, not the number — a generator given a ceiling
+will draw thin to stay under it.</p>
+<p>The stroke is a <strong>wide-nib brush or chisel marker</strong>, not a pen. Each line is a
+broad band with pressure variation, dry-brush streaks and split bristles; the
+ink is dark and solid at the core, not pale or washed out. The contour is gone
+over a second time on one or two edges. Hatching is drawn in quick, dense
+clusters that read as tone at arm's length, with paper still visible between
+the strokes.</p>
+<p>The fifty shipped scenes went the other way: solid black clothing, big eyes and
+motion lines. They are too heavy. But a drawing that comes back as a thin,
+even pencil line has also missed the anchors — the reference line is bold,
+rough and inky. That is why this is a redraw rather than a tweak.</p>
+<h2 id="the-brush">The brush</h2>
+<p>At 784 px wide — the delivered source size — these weights hold:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>At 784</th>
+<th>At 512 shipped</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary contour</td>
+<td>9–14</td>
+<td>6–9</td>
+<td>The shape that must survive at 64 px</td>
+</tr>
+<tr>
+<td>Secondary</td>
+<td>4–8</td>
+<td>3–5</td>
+<td>Internal structure, limbs, object parts</td>
+</tr>
+<tr>
+<td>Detail and hatching</td>
+<td>2–4</td>
+<td>1.5–3</td>
+<td>Folds, hair, shadow, tabletop lines</td>
+</tr>
+</tbody>
+</table></div>
+<p>The primary contour becomes roughly 1 px at 64 px. Anything thinner than
+2 px at 784 is not load-bearing; if the meaning depends on it, draw it at
+primary weight instead. A contour drawn at 1 px at 784 reads as pencil, not
+brush.</p>
+<h3 id="one-edge-drawn-twice">One edge, drawn twice</h3>
+<p>The old rule was one stroke per edge. The anchors do not obey it: they go over
+an important edge a second time, a few pixels off, or leave a pale guide line
+running beside the final one. That second pass is what makes the result read as
+a drawing rather than a traced icon.</p>
+<ul>
+<li>The second pass goes on <strong>one</strong> or <strong>two</strong> edges of a shape, never as a
+  symmetrical outline around both sides.</li>
+<li>It may stop short or overshoot by 3–6 px at 784.</li>
+<li>It is thinner than the edge it doubles, usually secondary weight.</li>
+</ul>
+<h3 id="taper">Taper</h3>
+<p>Every stroke starts thin, widens around the middle or the point of pressure,
+and ends thin. The logo's O is a single looping stroke that overshoots its own
+start; the P has a long descending stem that narrows as it falls.</p>
+<p>A uniform <code>&lt;line&gt;</code> or a <code>stroke-width</code> that never changes is a pen line, not a
+brush. Draw the stroke as a closed, filled shape:</p>
+<pre><code class="language-svg">&lt;!-- a tapered stroke, not a line --&gt;
+&lt;path d=&quot;M40 80 C90 70 140 74 180 64 C140 88 90 92 40 80 Z&quot;/&gt;
+</code></pre>
+<p>Draw with a pressure-sensitive brush in a vector editor and expand the stroke
+to an outline if that is easier. The delivered SVG must contain the shape, not
+a dependency on the tool.</p>
+<h3 id="roughness">Roughness</h3>
+<p>Roughness is selective. The stroke has a hand, not a noise texture laid over
+the whole image.</p>
+<ul>
+<li>Cut two or three narrow bristle splits into one edge of the widest strokes.
+  Run them with the stroke; do not scatter dots.</li>
+<li>Let the edge wobble by 1–3 units. Do not make every edge equally ragged.</li>
+<li>Let joins be loose: one stroke can overshoot another by 2–4 units, or stop
+  1–3 units short at a corner. Closed, mechanical corners read as vector art.</li>
+<li>Do not close every shape. The logo's frame leaves the corners imperfect.</li>
+</ul>
+<h3 id="what-not-to-draw">What not to draw</h3>
+<p>Form is line, then hatching, then mass — in that order of preference. The
+anchors are contour drawings: interiors stay white and shadow is built with
+hatching, not filled in.</p>
+<ul>
+<li>No solid masses beyond hair and one or two small accents. A figure whose whole
+  coat is painted black belongs to the old fifty, not to this set.</li>
+<li>No flat vector silhouettes with a uniform outline around them.</li>
+<li>No thin, even pencil line. The contour is a broad, rough brush stroke with
+  pressure variation, doubled on one or two important edges. If the drawing
+  looks delicate, it is wrong.</li>
+<li>No symmetrical outline tracing both sides of every shape. A second pass on one
+  edge is a sketch; a second line all the way round is an icon.</li>
+<li><strong>Hatching is allowed and wanted</strong>, in one form only: quick, directional
+  strokes clustered on the shadow side of a fold or under an object. The strokes
+  follow the form, vary in length, and may touch or run together, but the paper
+  must still show inside the cluster and they must not become a solid fill or a
+  cross-hatch. They must read as a tone at arm's length, not as decoration.</li>
+<li>No gradients, drop shadows, inner shadows, blur, grain or paper-texture
+  overlay. The hatching is drawn, not filtered.</li>
+<li>No photographic detail. A face is not the subject, but it is not a smiley
+  either; see <em>People and animals</em>.</li>
+<li>No decoration. Background is allowed only as <strong>one place cue</strong> — the door, the
+  platform, the window that tells the learner where they are. Never wallpaper,
+  scenery or a full room.</li>
+</ul>
+<h3 id="people-and-animals">People and animals</h3>
+<p>The audience is adult, and the drawing is a clue, not a cartoon.</p>
+<ul>
+<li>Adult proportions. A standing figure is about seven heads tall, a seated one
+  about four. The anchors are drawn from life, not from an icon set.</li>
+<li>Face in profile or three-quarter: a brow, one eye under it, a nose line, a
+  mouth, an ear. That is the whole face. No second eye bulging at the viewer, no
+  open mouth, no sweat drops, no motion lines around the head.</li>
+<li>Hair is the one place that carries mass: a filled, brushy shape with a few
+  strokes through it, as in all three anchors.</li>
+<li>Hands are drawn, not mittened. A thumb and the line of the fingers is enough,
+  as on the table in <code>wachten-op-eten.png</code>.</li>
+<li>Clothing is contour plus hatching folds, never a black fill. Where the old
+  fifty painted a coat solid, draw the outline, hatch the shadow side and let
+  the paper show.</li>
+<li>No skin colour. There is one ink.</li>
+<li>Do not caricature. The person is a learner in an everyday situation, not a
+  type.</li>
+</ul>
+<h2 id="composition">Composition</h2>
+<p>Scene art is 512 × 763, 2:3 portrait. Everything else starts at 512 × 512,
+<code>viewBox="0 0 512 512"</code>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Canvas</td>
+<td>2:3 portrait for scene art; square for tiles, reels and card faces</td>
+</tr>
+<tr>
+<td>Safe area</td>
+<td>32 units at 784, 20 at 512; the drawing may cross it, nothing required may fall outside it</td>
+</tr>
+<tr>
+<td>Subject extent</td>
+<td>The scene spans 90–100% of the width; the person is 35–55%; it may touch the left or right edge, with paper kept at top and bottom</td>
+</tr>
+<tr>
+<td>Camera</td>
+<td>One camera for the set: eye level or slightly above. The anchors put the subject in the left half, facing right; reverse it only when the chunk reverses the direction</td>
+</tr>
+<tr>
+<td>Place cue</td>
+<td>One object in the other third completes the sentence — a door, a platform, a window, a table edge</td>
+</tr>
+<tr>
+<td>Element count</td>
+<td>One subject and one place cue. A third object only when the chunk needs it</td>
+</tr>
+<tr>
+<td>Focus</td>
+<td>The thing the sentence is about is the clearest mark, not necessarily the largest</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>Paper, both in light and dark mode</td>
+</tr>
+<tr>
+<td>Frame</td>
+<td>None. The logo's border is the mark, not an image convention</td>
+</tr>
+<tr>
+<td>Contrast pairs</td>
+<td>Design the pair together: same camera, same scale, same composition; change only the meaningful element</td>
+</tr>
+</tbody>
+</table></div>
+<p>At 64 px the lines no longer resolve into a silhouette, so judge the reduced
+image by whether the idea is still nameable — who is doing what, where. If it is
+not, the composition is wrong, not the detail. A uniform heavy outline added to
+save the small size puts the image back in the old style; the answer is a
+clearer silhouette, not a thicker border.</p>
+<p>For a contrast pair, look at the two images side by side at 64 px. Neither may
+suggest the other's sentence. Designing one and then deriving the other
+produces near-duplicates with the wrong emphasis.</p>
+<h2 id="colour-and-background">Colour and background</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Light</td>
+<td>Cobalt <code>#2B50C8</code></td>
+</tr>
+<tr>
+<td>Dark</td>
+<td>Cobalt <code>#5C7DEB</code></td>
+</tr>
+<tr>
+<td>Measured ink core in the anchors</td>
+<td><code>#1657C9</code>, hue 218–219°</td>
+</tr>
+<tr>
+<td>Background</td>
+<td>Transparent. No white plate, no paper-coloured rectangle</td>
+</tr>
+<tr>
+<td>Depth</td>
+<td>Stroke weight, overlap and hatching, not a second blue or a grey</td>
+</tr>
+</tbody>
+</table></div>
+<p>The logo uses one cobalt. Do not add <code>--kobalt-diep</code> or <code>--kobalt-licht</code> to an
+illustration to create depth; that is a page-fill behaviour, not an art one.</p>
+<p>A generated PNG will not land on the token exactly — the anchors sit at a
+slightly deeper <code>#1657C9</code>. That is fine, because the shipped file is a mask on a
+cobalt block and never carries its own colour; do not correct the hex in the
+raster.</p>
+<p>Game art has to survive the theme swap without a second file:</p>
+<ul>
+<li>Preferred: inline SVG with <code>fill="currentColor"</code>, and CSS sets
+  <code>color: var(--kobalt)</code>. The token swaps with the theme.</li>
+<li>If the image must be an <code>&lt;img&gt;</code>, use a CSS mask on a cobalt block rather than
+  baking <code>#2B50C8</code> onto a white background.</li>
+<li>Never ship a white rectangle behind the drawing. On dark paper it becomes a
+  bright card, and the brush disappears.</li>
+</ul>
+<h3 id="do-not-use-the-interface-paint-filter">Do not use the interface paint filter</h3>
+<p><code>data-verf</code> and the <code>#op-verf</code> / <code>#op-verf-klein</code> filters belong to rectangular
+UI fills. Their <code>baseFrequency</code> is tuned to the 300 × 150 and 100 × 30 viewBoxes,
+and <code>verf()</code> is applied by JavaScript. Art must render with JS off and at any
+size.</p>
+<p>A static brush filter is allowed if it is tuned to the 512 viewBox and checked
+at both 512 px and 64 px. The <code>#lijn</code> filter in
+<a href="design-options/i-penseellijn.html"><code>design-options/i-penseellijn.html</code></a> is the starting point; retune
+<code>baseFrequency</code> for 512 rather than copying the 1440-wide values. Geometry with
+real bristle gaps is more reliable than a filter and is preferred.</p>
+<p>Option I was rejected as a <em>home-page composition</em>, not as an illustration
+style. It is the closest existing visual reference for the brush as a line, and
+the frame in option H shows the same loose-corner behaviour. Do not re-propose
+either as a page layout; use them to judge a drawing.</p>
+<h2 id="files-and-naming">Files and naming</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>What</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A game's own art</td>
+<td><code>assets/&lt;game&gt;/art/&lt;id&gt;.svg</code></td>
+</tr>
+<tr>
+<td>Story Machine card backs</td>
+<td><code>assets/storymachine/art/&lt;id&gt;.jpg</code> (existing)</td>
+</tr>
+<tr>
+<td>Story Machine tiles</td>
+<td>emoji placeholders in <code>server/Oefenpad.Resources/Games/Data/reels.json</code> until drawn</td>
+</tr>
+<tr>
+<td>Preposition scenes</td>
+<td><code>assets/voorzetselpaden/&lt;scene-id&gt;.png</code> (shipped raster; see <em>Delivered raster art</em>)</td>
+</tr>
+<tr>
+<td>Shared art</td>
+<td><code>assets/shared/art/&lt;id&gt;.svg</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The games themselves live in <code>client/src/games/</code>; art never sits beside the
+code any more, because only <code>assets/</code> is served. A picture's id is what the
+server sends in a round view (for example <code>/assets/wordimages/animals/dog.jpg</code>).</p>
+<ul>
+<li>One file per idea. Ids are stable, lowercase and hyphenated; they match the
+  data key or scene id.</li>
+<li>Do not duplicate a shared image into each game. Put it in <code>assets/shared/art/</code>.</li>
+<li>Raster is a placeholder, not a deliverable. The shipped exceptions are the
+  BigToe mascot card back in <code>assets/storymachine/art/</code>, which is waiting to be
+  replaced, and the thirty preposition scenes described below. New art still
+  starts as an SVG.</li>
+</ul>
+<p>The filename is not the alt text. For a picture-clue exercise the image is the
+question, so do not put the answer in <code>alt</code>; the exercise's prompt carries the
+accessible name. Whether picture-clue games can be made fully screen-reader
+playable is a separate accessibility question, not something the artwork can
+solve.</p>
+<h2 id="delivered-raster-art">Delivered raster art</h2>
+<p>The fifty Voorzetselpaden scenes are the one shipped exception to "SVG, 512 ×
+512". Batch 1 arrived as 784 × 1168 PNGs; batches 2 and 3 as 1152 × 1712
+files; batch 4 mostly at 784 × 1168 with one at 1152 × 1712. All arrived with
+the white paper baked in and drawn at 2:3 portrait. The originals stay untouched
+in <code>assets/verb-propositions/archived/</code>, one folder per batch. They are kept for
+provenance only; the style A references in <code>referenceimages/style-a/</code> are the
+only images attached to a Voorzetselpaden generation.</p>
+<p>They are not used as they arrived. A baked white background becomes a bright
+card on dark paper and the brush disappears, so each file is processed into an
+alpha mask and shipped at <code>assets/voorzetselpaden/*.png</code>, 512 × 763:</p>
+<pre><code class="language-python"># paper -&gt; 0, ink -&gt; 255; the floor keeps near-white noise out of the mask
+d = 255 - min(r, g, b)
+a = 0 if d &lt;= 10 else round((d - 10) * 255 / 245)
+</code></pre>
+<p>The ink is not recoloured. The mask is drawn on a cobalt block in CSS, so the
+theme swap happens without a second file and <code>--kobalt</code> stays the only ink:</p>
+<pre><code class="language-css">.beeld{
+  background:var(--kobalt);
+  -webkit-mask-image:var(--beeld); mask-image:var(--beeld);
+  -webkit-mask-size:contain; mask-size:contain;
+  -webkit-mask-position:center; mask-position:center;
+  aspect-ratio:512/763;
+}
+</code></pre>
+<p>Set <code>--beeld</code> inline per element with <code>url("art/&lt;scene-id&gt;.png")</code>. No JavaScript,
+no filter, and it renders on paper in both themes.</p>
+<p>The portrait ratio is no longer an exception: 2:3 is the default for scene art,
+because all the images have one camera and one scale, which is what makes the
+contrast pairs comparable. Cropping to squares would cut each scene differently.
+Scene art starts at 784 × 1168 and ships at 512 × 763. Square 512 × 512 remains
+the default for tiles, reels, trophies and card faces.</p>
+<p>A picture-clue tile must not carry the answer in its accessible name. The choice
+buttons get <code>aria-label="Beeld 1"</code> and the drawing is <code>aria-hidden</code>; only the
+Ontdek card, where the image is the content, uses the scene's <code>alt</code>.</p>
+<h2 id="generation-prompt">Generation prompt</h2>
+<p>The Voorzetselpaden prompt is <code>Docs/voorzetselpaden/base-prompt.txt</code>; how to
+use it is under <em>Voorzetselpaden uses style A</em> above. The old brush-pen locked
+header and its batch protocol are retired. They are in git history (before
+12 November 2026) for provenance, and must not be pasted: they ask for
+hatching the references never had, which is where the drift came from.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Rule</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One batch per chunk, one fresh chat per batch</td>
+<td>A chunk's variants are drawn together, so they match</td>
+</tr>
+<tr>
+<td>The same three references attached every time</td>
+<td>The style holds only while the target is in the context</td>
+</tr>
+<tr>
+<td>The base prompt unchanged</td>
+<td>Every change to it needs a fresh test batch before it is trusted</td>
+</tr>
+<tr>
+<td>Reject and redo, do not patch</td>
+<td>A patched image never sits right beside the others</td>
+</tr>
+</tbody>
+</table></div>
+<p>The output is a sketch, not a deliverable. Pipeline it as described in
+<em>Delivered raster art</em>: alpha mask, 512 × 763, tinted by CSS. Do not ship the
+raster and do not correct its blue.</p>
+<h2 id="do-dont">Do / Don't</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Do</th>
+<th>Don't</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Draw the contour, then hatch the shadow</td>
+<td>Fill a coat, a chair or a wall black</td>
+</tr>
+<tr>
+<td>Draw bold, rough, pressure-varying strokes</td>
+<td>Draw a thin, even pencil line</td>
+</tr>
+<tr>
+<td>Use one weight for the edge and a lighter one for detail</td>
+<td>Give every line the same thickness</td>
+</tr>
+<tr>
+<td>Re-draw one or two edges a few pixels off</td>
+<td>Outline both sides of every shape</td>
+</tr>
+<tr>
+<td>Keep interiors white</td>
+<td>Shade with a gradient or a filter</td>
+</tr>
+<tr>
+<td>Let hatching build a tone</td>
+<td>Cross-hatch or fill the shadow solid</td>
+</tr>
+<tr>
+<td>Let the scene fill the frame and touch an edge</td>
+<td>Shrink the subject into a card-sized pictogram</td>
+</tr>
+<tr>
+<td>Give the frame one place cue</td>
+<td>Fill the background with scenery</td>
+</tr>
+<tr>
+<td>Draw the contrast family in one batch</td>
+<td>Design one, then tweak a copy</td>
+</tr>
+<tr>
+<td>Draw the face in profile, neutral</td>
+<td>Draw a cartoon face with an open mouth</td>
+</tr>
+<tr>
+<td>Use one cobalt</td>
+<td>Add a second blue, grey or orange for depth</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="checklist">Checklist</h2>
+<ul>
+<li>[ ] A Dutch speaker can name the target sentence from the image alone,
+      without the English gloss.</li>
+<li>[ ] The idea is still nameable at 64 px.</li>
+<li>[ ] It passes unnoticed beside the three anchors at full size.</li>
+<li>[ ] Ink covers 14–22% for a plain scene, up to 27% for a busy one; most
+      lines are 4–8 px at 784, bold contours 9–14 px.</li>
+<li>[ ] The line is a bold brush band with dry-brush streaks, not a thin even
+      pencil line.</li>
+<li>[ ] Interiors are white; only hair and one or two small accents are filled.</li>
+<li>[ ] Shading is directional hatch clusters that read as tone, with paper
+      visible inside them.</li>
+<li>[ ] Faces are in profile with a brow, one eye, nose, mouth and ear, and a
+      neutral expression.</li>
+<li>[ ] The scene spans 90–100% of the width; the person is 35–55%; paper is kept
+      at top and bottom.</li>
+<li>[ ] There is exactly one place cue, and it carries the chunk's location.</li>
+<li>[ ] The contrast pair is clearly different side by side, and neither image
+      suggests the partner.</li>
+<li>[ ] No text, letters, numbers, logos or signage with readable marks.</li>
+<li>[ ] Cobalt only; no orange.</li>
+<li>[ ] 2:3 portrait, 784 × 1168 delivered, 512 × 763 shipped as an alpha mask.</li>
+<li>[ ] Flat white background, no frame and no shadow around the image.</li>
+<li>[ ] Renders in light mode, dark mode and with JavaScript off.</li>
+</ul>
+<h2 id="why-the-old-word-images-do-not-set-the-style">Why the old word images do not set the style</h2>
+<p>The 157 images in <code>assets/wordimages/</code> are photorealistic white-background
+product shots. They were inherited with the vocabulary games and are useful as
+placeholders, but they are the opposite of the logo's hand: full colour, full
+frame, no line, no paper. Do not add more in that style.</p>
+<p>Replacing them is a separate, larger job. Until then, new art follows this
+guide, and a mixed set is a known limitation rather than a reason to dilute the
+style.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="prepositions-roadmap.html"><span>Previous</span>Voorzetselpaden — curriculum roadmap</a><a class="next" href="voorzetselpaden-art-redo.html"><span>Next</span>Voorzetselpaden art to redo</a></nav>
+    <footer class="footer">
+      <code>Docs/game-art.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

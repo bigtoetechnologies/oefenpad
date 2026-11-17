@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Where the next ~3,000 words can come from — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="../index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="../project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="../product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="../game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="../designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="../decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="../accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="../accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="../games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="../games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="../prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="../prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="../prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="../game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="../voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="../voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="../story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="../story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="../story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="../uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="../reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="../review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="../lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="../lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="../lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html" aria-current="page">The next ~3,000 words</a></li><li><a href="../lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="../design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="../voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="../voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="../voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="../voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="../voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="../voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="../voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="../voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="../voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="../voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="../voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="../voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="../voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="../voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="../voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="../voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="../design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="../design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="../archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="../archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="../archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="../archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="../archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="../archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="../archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="../archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="../archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="../archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="../archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Docs</a><span>/</span><span>Lexicon</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Where the next ~3,000 words can come from</h1>
+      <p class="lede">Every open source inspected, what it actually contains, what it is licensed under, and the themed gap none of them can close.</p>
+      <p class="doc-meta">Docs/lexicon/aanvulling.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-answer-in-one-paragraph">The answer in one paragraph</a></li><li class="toc-h2"><a href="#what-was-inspected-and-how">What was inspected, and how</a></li><li class="toc-h2"><a href="#how-10442-was-produced-and-why-it-is-not-padded">How 10,442 was produced, and why it is not padded</a></li><li class="toc-h2"><a href="#what-the-24-themes-still-need">What the 24 themes still need</a></li><li class="toc-h2"><a href="#attribution-obligations-before-this-ships">Attribution obligations before this ships</a></li><li class="toc-h2"><a href="#files">Files</a></li><li class="toc-h2"><a href="#reproducing">Reproducing</a></li></ul></details>
+    <article class="prose">
+<p>Written 16 November 2026. Research only: nothing here changes <code>woorden.tsv</code>,
+<code>woorden-woordsoort.tsv</code>, <code>woorden-thema.tsv</code>, <code>extraheer-woorden.py</code> or
+<code>thema.py</code>. The extracted words are in <code>tools/lexicon/kandidaten.tsv</code>.</p>
+<h2 id="the-answer-in-one-paragraph">The answer in one paragraph</h2>
+<p><strong>10,000 ordinary lemmas is reachable; 10,000 <em>themed</em> lemmas is not, from open
+sources.</strong> kaikki.org's English-Wiktionary extraction for Dutch gives English
+glosses, part of speech and lemmas under a licence that permits commercial use,
+and after removing names, inflected forms, obsolete registers and words already
+on the list it still yields <strong>10,442</strong> new lemmas with clean English glosses.
+That number is larger than the 2,893 the project needs, so the lemma count is
+no longer the constraint. The constraint is that only about <strong>2,500</strong> of those
+new lemmas land in one of the 24 product themes, and about a quarter of those
+landings are wrong when you read them. The themed gap (roughly 4,800 themed
+everyday words, of which about 1,400 exist) cannot be closed by any open source
+found here. It needs a hand-built list, or a theme tag written by a human
+against a topic list that open data does not carry.</p>
+<h2 id="what-was-inspected-and-how">What was inspected, and how</h2>
+<p>Every count below was produced by downloading the source and parsing it on this
+machine in <code>/tmp/lex/</code>, not recalled. Where a licence statement was checked, the
+URL that states it is given. Two sources could not be verified and are marked so.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>URL</th>
+<th>What it actually contains</th>
+<th>Entries (verified)</th>
+<th>English glosses</th>
+<th>Lemma or form</th>
+<th>POS / level</th>
+<th>Licence (and where stated)</th>
+<th>Commercially usable</th>
+<th>Could add</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>kaikki.org Dutch</strong> (English Wiktionary via wiktextract)</td>
+<td><code>https://kaikki.org/dictionary/Dutch/kaikki.org-dictionary-Dutch.jsonl</code> (257,235,436 bytes, 146,790 lines)</td>
+<td>One JSON object per POS entry: <code>word</code>, <code>pos</code>, <code>senses[].glosses</code> (English), <code>forms</code>, etymology, <code>topics</code> on 5,360 senses</td>
+<td><strong>146,790 entries, 138,944 distinct words</strong>; 54,377 lowercase lemma words after dropping form-of/alt-of; 146,779 entries carry a gloss</td>
+<td><strong>Yes</strong> — English glosses, the source's whole point</td>
+<td><strong>Lemmas</strong>, with inflected forms separate and tagged <code>form_of</code>/<code>alt_of</code> (99,214 senses)</td>
+<td>POS on every entry (noun 75,799; verb 40,519; adj 13,445; name 12,452; …). <strong>No CEFR level, no frequency, no rank</strong></td>
+<td><strong>CC BY-SA 4.0 and GFDL</strong>, stated at <code>https://en.wiktionary.org/wiki/Wiktionary:Copyrights</code> and inherited by kaikki from the extraction date shown on <code>https://kaikki.org/dictionary/Dutch/index.html</code> (extracted 2026-10-30 from the 2026-10-01 enwiktionary dump)</td>
+<td><strong>Yes</strong></td>
+<td><strong>10,442</strong> (see below)</td>
+</tr>
+<tr>
+<td><strong>Open Dutch WordNet 1.4</strong></td>
+<td><code>https://raw.githubusercontent.com/cltl/OpenDutchWordnet/master/resources/odwn/odwn_orbn_gwg-LMF_1.4.xml.gz</code> (15,425,745 bytes)</td>
+<td>WordNet-LMF XML: <code>LexicalEntry</code> → <code>Lemma writtenForm</code>, <code>partOfSpeech</code>, <code>Sense</code> → English WordNet 3.0 synset id (<code>synset="eng-30-…"</code>)</td>
+<td><strong>90,923 lexical entries, 59,578 distinct lemmas</strong> (noun 73,956; verb 15,824; adj 1,143)</td>
+<td><strong>Indirectly</strong> — no gloss text; the English synset id would have to be joined to an English WordNet release to get a gloss</td>
+<td>Lemmas</td>
+<td>POS yes; <strong>no CEFR level</strong></td>
+<td><strong>CC BY-SA 4.0</strong>, <code>https://github.com/cltl/OpenDutchWordnet/blob/master/LICENSE.md</code></td>
+<td><strong>Yes</strong></td>
+<td>Small net addition: 42,000+ of its lemmas are already reachable from kaikki, and it has no adjectives worth the name (1,143). Useful as a <strong>second opinion on lemma/POS</strong>, not as a gloss source</td>
+</tr>
+<tr>
+<td><strong>OpenTaal word list</strong></td>
+<td><code>https://github.com/OpenTaal/opentaal-wordlist</code> — checked <code>elements/basiswoorden-gekeurd.txt</code> (2,532,852 bytes, <strong>199,403 lines</strong>) and <code>wordlist.txt</code> (5,104,598 bytes)</td>
+<td>Spelling list: base words approved by the Taalunie spelling mark, plus unapproved base words, flexions and word parts</td>
+<td><strong>199,403 approved base words</strong>; &gt;400,000 in the full <code>wordlist.txt</code> per the README</td>
+<td><strong>No</strong> — spelling only</td>
+<td><code>basiswoorden-gekeurd.txt</code> is <strong>base words (lemmas/compounds)</strong>; <code>flexies-ongekeurd.txt</code> and much of <code>wordlist.txt</code> are <strong>inflected forms</strong></td>
+<td><strong>No POS, no level</strong></td>
+<td><strong>BSD-3-Clause <em>or</em> CC BY 3.0, at your discretion</strong>, stated in <code>https://github.com/OpenTaal/opentaal-wordlist/blob/master/LICENSE.txt</code> (§3 and §6 of the English text)</td>
+<td><strong>Yes</strong></td>
+<td><strong>0 on its own</strong> — it has no glosses. Its value is as a <strong>spelling/coverage oracle</strong>: it would confirm which kaikki lemmas are real modern spellings, and catch kaikki omissions</td>
+</tr>
+<tr>
+<td><strong>hermitdave/FrequencyWords <code>nl_50k</code></strong></td>
+<td><code>https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/content/2018/nl/nl_50k.txt</code> (650,762 bytes)</td>
+<td><code>token count</code> per line, from OpenSubtitles 2018</td>
+<td><strong>50,000 lines</strong></td>
+<td><strong>No</strong></td>
+<td><strong>Forms</strong>, not lemmas (<code>is</code>, <code>waren</code>, <code>gemaakt</code> all appear)</td>
+<td>No</td>
+<td><strong>MIT</strong>, <code>https://raw.githubusercontent.com/hermitdave/FrequencyWords/master/LICENSE</code></td>
+<td><strong>Yes</strong></td>
+<td><strong>0 on its own</strong> — frequency only, and of forms. Redundant with <code>wordfreq</code> below</td>
+</tr>
+<tr>
+<td><strong><code>wordfreq</code> 3.1.1</strong> (Robyn Speer)</td>
+<td>PyPI wheel <code>wordfreq-3.1.1-py3-none-any.whl</code> (56.8 MB), installed to a throwaway target dir</td>
+<td>Per-language token frequency, blended from Wikipedia, ParaCrawl, OpenSubtitles, SUBTLEX-NL, Google Books Ngrams</td>
+<td>Dutch list queried live (<code>top_n_list('nl', 50000)</code>, <code>zipf_frequency(w,'nl')</code>)</td>
+<td><strong>No</strong></td>
+<td><strong>Forms</strong></td>
+<td>No</td>
+<td><strong>Code Apache-2.0; data redistributable under CC BY-SA 4.0</strong>, with SUBTLEX and OpenSubtitles attribution required — <code>https://github.com/rspeer/wordfreq/blob/master/NOTICE.md</code>. The <code>LICENSE.txt</code> explicitly says "This license applies to the code only. See NOTICE.md"</td>
+<td><strong>Yes</strong>, as data under CC BY-SA 4.0 with attribution</td>
+<td><strong>0 words</strong> — used here only to <strong>rank and gate</strong> kaikki candidates. Any product build that reuses its rankings must carry the attribution</td>
+</tr>
+<tr>
+<td><strong>Tatoeba</strong></td>
+<td><code>https://tatoeba.org/en/downloads</code></td>
+<td>Sentence pairs, many Dutch↔English</td>
+<td>Sentence counts per export, not a word list</td>
+<td>Sentence-level translation, not glosses</td>
+<td>Neither</td>
+<td>No</td>
+<td><strong>CC BY 2.0 FR</strong>, some sentences <strong>CC0 1.0</strong>, stated on <code>https://tatoeba.org/en/downloads</code></td>
+<td><strong>Yes</strong> (CC BY 2.0 FR permits commercial use with attribution)</td>
+<td><strong>0 lemmas</strong>. Would need lemmatising and sense disambiguation; a gloss-provenance aid at best</td>
+</tr>
+<tr>
+<td><strong>NT2Lex</strong></td>
+<td><code>https://github.com/anaistack/NT2Lex</code></td>
+<td>CEFR-graded lexical resource linked to ODWN</td>
+<td>Not inspected for content</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td><strong>CC BY-NC-SA 4.0</strong> per the owner's brief; GitHub reports licence <code>NOASSERTION</code>, and the repo was not downloaded</td>
+<td><strong>No</strong> — NC. <strong>Internal levelling reference only</strong></td>
+<td>0 shippable</td>
+</tr>
+<tr>
+<td><strong>SUBTLEX-NL</strong></td>
+<td><code>http://crr.ugent.be/programs-data/subtitle-frequencies</code></td>
+<td>Subtitle frequencies</td>
+<td>—</td>
+<td>No</td>
+<td>Forms</td>
+<td>No</td>
+<td>Research-licensed (owner's brief); not re-verified here</td>
+<td><strong>No</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Routledge, <em>A Frequency Dictionary of Dutch</em> (2014)</strong></td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>—</td>
+<td>Copyrighted; already consumed as <code>bijlage8</code> under fair-use-style extraction into <code>woorden.tsv</code></td>
+<td><strong>No</strong> as a source</td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>Numo "Woordenlijst NT2-modules A0-A1"</strong></td>
+<td><code>https://assets.numo.nl/wp/Woordenlijst-nt2.pdf</code> (1,685,302 bytes, fetched)</td>
+<td>Word, skill, exercise, POS — a publisher's course word list</td>
+<td>Not counted; <strong>no licence statement found in the document</strong></td>
+<td>Only Dutch</td>
+<td>Mixed</td>
+<td>POS yes; A0–A1 by construction</td>
+<td><strong>No licence stated anywhere in the PDF</strong> — treated as all rights reserved</td>
+<td><strong>No</strong></td>
+<td>0</td>
+</tr>
+<tr>
+<td><strong>ISK/LOWAN "Basiswoordenschat alfabetisering NT2 — 600 woorden"</strong></td>
+<td><code>https://www.wikiwijs.nl/app/uploads/ISK_startwoordenschat-600-woorden.pdf</code> (96,729 bytes, fetched)</td>
+<td>~600 alphabetisation words grouped by lesson theme</td>
+<td><strong>600 by its own title</strong>; theme grouping is exactly the product's missing dimension</td>
+<td><strong>No</strong></td>
+<td>Mixed, with parenthetical hints</td>
+<td>A1-and-below by construction</td>
+<td><strong>No licence statement found in the PDF or in its metadata</strong></td>
+<td><strong>No</strong></td>
+<td>0 — but this is the <em>shape</em> the product needs</td>
+</tr>
+</tbody>
+</table></div>
+<p>Not inspected: the CLARIN-NL/INT portal pages (no direct download found to
+verify), and <code>eupassway.com</code>'s "woordenlijst inburgering (A1–B2)", which is a
+commercial site with no licence grant. Neither is counted anywhere below.</p>
+<h2 id="how-10442-was-produced-and-why-it-is-not-padded">How 10,442 was produced, and why it is not padded</h2>
+<p>Starting from all 146,790 kaikki entries:</p>
+<ol>
+<li>Keep <code>noun</code>, <code>verb</code>, <code>adj</code>, <code>adv</code> only.</li>
+<li>Drop every entry whose senses are <code>form_of</code> or <code>alt_of</code> — that is what makes
+   the result a <strong>lemma</strong> list rather than a form list.</li>
+<li>Drop a word if every sense is tagged <code>rare</code>, <code>archaic</code>, <code>obsolete</code>, <code>dated</code>,
+   <code>historical</code>, <code>slang</code>, <code>neologism</code>, <code>nonstandard</code>, <code>misspelling</code>,
+   <code>humorous</code>, <code>vulgar</code>, <code>derogatory</code>, <code>offensive</code>, <code>childish</code> or
+   <code>bureaucratese</code>.</li>
+<li>Drop any gloss that is itself a form description ("…indicative of X"), a
+   spelling note ("Synonym of", "Official spelling of"), or a cross-reference.</li>
+<li>Drop anything already in <code>woorden.tsv</code>, matching on the lemma with the
+   <code>(verb)</code>/<code>(noun)</code> disambiguator stripped.</li>
+<li>Apply <code>wordfreq</code>'s Dutch zipf score as an everyday-ness gate at <strong>≥ 2.5</strong>
+   (roughly "occurs at least occasionally in edited text"). This alone removed
+   11,270 unattested and 10,600 near-silent dictionary entries.</li>
+<li>Drop English loanwords that the corpus frequencies over-supply (<code>house</code>,
+   <code>girl</code>, <code>big</code>, <code>star</code>, <code>party</code>) unless their Dutch frequency is very high.</li>
+<li>Drop words that kaikki also documents as an inflected form, at moderate
+   frequency, to avoid <code>waren</code>, <code>gemaakt</code>, <code>wilde</code>-type homographs.</li>
+</ol>
+<p>That leaves <strong>10,442</strong> rows, every one with a non-empty English gloss, no
+duplicates, and zero overlap with <code>woorden.tsv</code> (checked). Of those, <strong>4,949</strong>
+have a zipf ≥ 3.0 — that is, comfortably common words, the kind the product
+wants for A2–B1. A sampling of the ≥ 3.0 band: <code>informatie</code>, <code>postkantoor</code>,
+<code>verblijfsvergunning</code>, <code>id-kaart</code>, <code>ov-chipkaart</code>, <code>registratie</code>, <code>annuleren</code>,
+<code>afzeggen</code>, <code>zorgzaam</code>, <code>kraamzorg</code>, <code>makkelijk</code>, <code>vergeet-mij-niet</code>,
+<code>auto-ongeluk</code>, <code>zwart-wit</code>, <code>mee-eten</code>, <code>kant-en-klaar</code>, <code>sleutelwoord</code>,
+<code>huurwoning</code>, <code>buurthuis</code>, <code>boodschappenlijst</code>, <code>gesprek</code>, <code>opleiding</code>.</p>
+<p><strong>The list is not padded, but it is not clean either.</strong> The tail between zipf
+2.5 and 3.0 contains encyclopaedic and specialist words (<code>zeeniveau</code>,
+<code>belastingdruk</code>, <code>conservatorium</code>) that are legitimate lemmas but not
+A1–B1 teaching material. Anyone merging this must apply a further judgement
+step, by cut-off on rank or by hand. I have deliberately not trimmed the file
+to disguise that; the report states the numbers at each cut-off so the decision
+is made on evidence:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Gate</th>
+<th>New lemmas</th>
+<th>Running total with the existing 7,107</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>zipf ≥ 2.5 (the file as shipped)</td>
+<td>10,442</td>
+<td>17,549</td>
+</tr>
+<tr>
+<td>zipf ≥ 3.0 (comfortably common only)</td>
+<td>4,949</td>
+<td>12,056</td>
+</tr>
+<tr>
+<td>zipf ≥ 3.5</td>
+<td>1,624</td>
+<td>8,731</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>So 10,000 is reachable, and reachable from words a learner would actually
+meet</strong> — the zipf ≥ 3.0 band alone gives 12,056, needing only ~2,000 more on top
+of 7,107 against 4,949 available. There is roughly a 2.7× margin at that gate.
+Even the strictest reasonable cut (zipf ≥ 3.5) plus the existing list reaches
+8,731, and closing the last 1,300 from the 2.5–3.5 band is easy.</p>
+<h2 id="what-the-24-themes-still-need">What the 24 themes still need</h2>
+<p>The lemma target is met. The <strong>themed</strong> target in <a href="../product.html"><code>Docs/product.html</code></a> §12 is not,
+and this is the honest bad news.</p>
+<p>Running the project's own classifier (<code>thema.py</code>, called directly, unmodified)
+over the 10,442 rows:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Now</th>
+<th>+ candidates</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mensen</td>
+<td>162</td>
+<td>398</td>
+<td>560</td>
+</tr>
+<tr>
+<td>Wonen</td>
+<td>191</td>
+<td>307</td>
+<td>498</td>
+</tr>
+<tr>
+<td>Eten en drinken</td>
+<td>179</td>
+<td>256</td>
+<td>435</td>
+</tr>
+<tr>
+<td>Reizen</td>
+<td>137</td>
+<td>229</td>
+<td>366</td>
+</tr>
+<tr>
+<td>Werk</td>
+<td>127</td>
+<td>142</td>
+<td>269</td>
+</tr>
+<tr>
+<td>Sport en vrije tijd</td>
+<td>131</td>
+<td>131</td>
+<td>262</td>
+</tr>
+<tr>
+<td>Het lichaam</td>
+<td>76</td>
+<td>165</td>
+<td>241</td>
+</tr>
+<tr>
+<td>Kinderen en school</td>
+<td>65</td>
+<td>145</td>
+<td>210</td>
+</tr>
+<tr>
+<td>Nood en politie</td>
+<td>66</td>
+<td>121</td>
+<td>187</td>
+</tr>
+<tr>
+<td>Kleding</td>
+<td>110</td>
+<td>61</td>
+<td>171</td>
+</tr>
+<tr>
+<td>Bank en geld</td>
+<td>42</td>
+<td>114</td>
+<td>156</td>
+</tr>
+<tr>
+<td>Gezondheid</td>
+<td>37</td>
+<td>118</td>
+<td>155</td>
+</tr>
+<tr>
+<td><strong>Boodschappen</strong></td>
+<td>30</td>
+<td>95</td>
+<td><strong>125</strong></td>
+</tr>
+<tr>
+<td>Gemeente en post</td>
+<td>39</td>
+<td>56</td>
+<td>95</td>
+</tr>
+<tr>
+<td>Telefoon en internet</td>
+<td>29</td>
+<td>55</td>
+<td>84</td>
+</tr>
+<tr>
+<td>Mening geven</td>
+<td>21</td>
+<td>40</td>
+<td>61</td>
+</tr>
+<tr>
+<td>De weg</td>
+<td>17</td>
+<td>23</td>
+<td>40</td>
+</tr>
+<tr>
+<td>Klachten</td>
+<td>9</td>
+<td>29</td>
+<td>38</td>
+</tr>
+<tr>
+<td>Solliciteren</td>
+<td>6</td>
+<td>23</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Afspraken</td>
+<td>5</td>
+<td>15</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Formulieren</td>
+<td>9</td>
+<td>9</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Buurt</td>
+<td>6</td>
+<td>10</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Zorg voor iemand anders</td>
+<td>10</td>
+<td>6</td>
+<td>16</td>
+</tr>
+<tr>
+<td>Bellen</td>
+<td>5</td>
+<td>7</td>
+<td>12</td>
+</tr>
+<tr>
+<td><em>(algemeen)</em></td>
+<td>5,252</td>
+<td>7,760</td>
+<td>13,012</td>
+</tr>
+</tbody>
+</table></div>
+<p>Total in a world theme: <strong>1,411 now → 3,956 after</strong>, against a §12 target of
+~4,800 across 24 themes at ~200 each.</p>
+<p>Three qualifications, none of them in the candidates' favour:</p>
+<ol>
+<li><strong>The classifier is a keyword matcher, and dictionary glosses trip it.</strong> In
+   <code>Boodschappen</code> it files <code>klimaatverandering</code> (on "change"), <code>amendement</code> (on
+   "change"), <code>omkleden</code> (on "change"), <code>magazijn</code> (on "store") and <code>slager</code>,
+   only one of which belongs. In <code>Formulieren</code> it files <code>tankstation</code>,
+   <code>pompstation</code> and <code>vulling</code> because their glosses contain "fill". In
+   <code>Buurt</code> it files <code>beitel</code> (a chisel, on "block") and <code>galerij</code> (an art
+   gallery). <strong>I estimate precision as roughly 70–80% in the mid-size themes and
+   below 50% in <code>Formulieren</code>, <code>Buurt</code> and <code>De weg</code>.</strong> The "after" column above
+   is therefore an overcount of usable themed words, probably by 500–700.</li>
+<li><strong>The thin themes are thin for a reason that no open word list fixes.</strong>
+   <code>Buurt</code>, <code>Afspraken</code>, <code>Bellen</code>, <code>Zorg voor iemand anders</code>, <code>Solliciteren</code> and
+   <code>Formulieren</code> are <em>situations</em>, not semantic domains. Their vocabulary is
+   mostly the same high-frequency general words (<code>deur</code>, <code>brief</code>, <code>afspreken</code>,
+   <code>belasting</code>) already counted under <code>algemeen</code>, and adding 10,000 lemmas does
+   not change that. Getting <code>Buurt</code> to 200 means deciding <em>which</em> words belong
+   to the neighbourhood and listing them — that is editorial work, not data
+   sourcing.</li>
+<li><strong>kaikki's <code>topics</code> field does not rescue this.</strong> Only 5,360 of 146,790
+   entries carry topics at all, and the everyday words that matter do not:
+   <code>supermarkt</code>, <code>dokter</code>, <code>buurman</code>, <code>apotheek</code>, <code>postkantoor</code>, <code>huurwoning</code>
+   have none. A topic-driven themer cannot be built from this.</li>
+</ol>
+<p>What would actually close the themed gap, in order of cost:</p>
+<ul>
+<li><strong>The <code>kandidaten.tsv</code> rows that the classifier places in a theme</strong>, sorted by
+  frequency, hand-checked theme by theme. That is ~3,900 rows to review, a
+  realistic two or three days, and yields maybe 2,700 usable ones. It gets most
+  themes past 150 and a handful past 200.</li>
+<li><strong>The ISK 600-word alphabetisation list</strong> (<code>https://www.wikiwijs.nl/app/uploads/ISK_startwoordenschat-600-woorden.pdf</code>)
+  is grouped by exactly the right situations (<code>Ik ga naar school</code>, <code>Ik heb
+  vrije tijd</code>, …). Its licence is unstated, so it can be used as a <strong>checklist
+  to write against</strong>, not copied. This is the single most useful artefact found
+  for the themed problem and it cannot be shipped.</li>
+<li><strong>Dutch municipal and government "klare taal" corpora</strong> (gemeente, DUO, DigiD
+  explainers) are the right register for <code>Gemeente en post</code>, <code>Formulieren</code>,
+  <code>Afspraken</code> — but the ones checked are government copyright, not CC.</li>
+<li>Otherwise: write the themed lists. At ~200 words × 6 thin themes, that is
+  ~1,200 rows of hand work with English glosses — less than one day for a
+  competent editor, and the only route that produces a list matching the
+  product's own themes.</li>
+</ul>
+<h2 id="attribution-obligations-before-this-ships">Attribution obligations before this ships</h2>
+<p>The CC BY-SA 4.0 obligation is real and applies to whatever is built from
+kaikki:</p>
+<ul>
+<li>Credit "English Wiktionary, CC BY-SA 4.0, via kaikki.org/wiktextract" in the
+  site's credits or colophon, with a link to the licence.</li>
+<li>The derived gloss list becomes <strong>Adapted Material</strong> and must itself be
+  shared under CC BY-SA 4.0. If <code>kandidaten.tsv</code> is merged into <code>woorden.tsv</code>
+  and that file is published, it must carry the BY-SA notice. Keeping
+  <code>woorden.tsv</code> internal and shipping only the game rounds does not escape this,
+  because the glosses reach the learner.</li>
+<li>If <code>wordfreq</code> rankings are baked into a shipped ranking, add Robyn Speer,
+  SUBTLEX (Brysbaert et al.) and OpenSubtitles attribution per <code>NOTICE.md</code>.</li>
+<li>OpenTaal, if used as a spelling oracle, needs its BSD-3 or CC BY 3.0 notice.</li>
+</ul>
+<p>This is a licensing decision for the owner, not a technical one: merging kaikki
+into <code>woorden.tsv</code> makes the vocabulary list itself copyleft.</p>
+<h2 id="files">Files</h2>
+<ul>
+<li><code>tools/lexicon/kandidaten.tsv</code> — 10,442 rows, columns <code>nl  en  bron  licentie</code>,
+  same shape as <code>woorden.tsv</code> minus the three columns this source cannot
+  supply (<code>niveau</code>, <code>top2000</code>, <code>herkomst</code> are blank-by-absence). Sorted by
+  descending frequency. <code>bron</code> is <code>kaikki:enwiktionary-nl</code>; <code>licentie</code> is
+  <code>CC BY-SA 4.0 + GFDL</code>.</li>
+<li>The two scripts and the three TSVs were not modified.</li>
+</ul>
+<h2 id="reproducing">Reproducing</h2>
+<pre><code class="language-sh">curl -o nl.jsonl https://kaikki.org/dictionary/Dutch/kaikki.org-dictionary-Dutch.jsonl
+pip install --target ./wfenv wordfreq
+# then: filter form_of/alt_of, register tags, form-description glosses,
+# de-disambiguate woorden.tsv, gate on zipf_frequency(w,'nl') &gt;= 2.5
+</code></pre>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="bronnen.html"><span>Prev</span>Where the 10,000 words come from</a><a class="next" href="gloss-audit.html"><span>Next</span>English gloss audit</a></nav>
+    <footer class="footer">
+      <code>Docs/lexicon/aanvulling.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Games: server-side data and the React app — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html" aria-current="page">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Games</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Games: server-side data and the React app</h1>
+      <p class="lede">How the games get their data from the API, and how the React app is built.</p>
+      <p class="doc-meta">Docs/games-backend.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#why-this-exists">Why this exists</a></li><li class="toc-h2"><a href="#what-the-browser-can-get">What the browser can get</a></li><li class="toc-h2"><a href="#level-gating">Level gating</a></li><li class="toc-h2"><a href="#the-round-model">The round model</a></li><li class="toc-h2"><a href="#progress-on-an-account">Progress on an account</a></li><li class="toc-h3"><a href="#actions-per-game">Actions per game</a></li><li class="toc-h2"><a href="#where-the-content-lives">Where the content lives</a></li><li class="toc-h2"><a href="#the-react-app">The React app</a></li><li class="toc-h3"><a href="#code-in-english-content-in-dutch">Code in English, content in Dutch</a></li><li class="toc-h3"><a href="#why-the-game-styles-are-scoped">Why the game styles are scoped</a></li><li class="toc-h3"><a href="#what-deliberately-stays-in-the-browser">What deliberately stays in the browser</a></li><li class="toc-h2"><a href="#running-it">Running it</a></li><li class="toc-h2"><a href="#what-changed-on-disk">What changed on disk</a></li><li class="toc-h2"><a href="#port-notes-and-verification">Port notes and verification</a></li><li class="toc-h3"><a href="#bugs-found-and-fixed-during-the-port">Bugs found and fixed during the port</a></li><li class="toc-h2"><a href="#known-limits">Known limits</a></li></ul></details>
+    <article class="prose">
+<p>The six practice games no longer ship their content or their puzzle
+generators to the browser. The .NET service owns the word banks, the
+pictures, the prepositions, the story reels and the Dutch interface
+strings; it also builds the Word Search grid, the Memory deck and the
+Matching board. The browser asks for one round and posts the player's
+actions back.</p>
+<p>This document is the map: what lives where, why, and how to run it.</p>
+<h2 id="why-this-exists">Why this exists</h2>
+<p>Until this change every game was a static page:</p>
+<pre><code>src/galgje/script.js          src/shared/words.js      (2,699 lines)
+src/geheugen/script.js        src/shared/wordimages.js
+src/koppelen/script.js        src/shared/i18n.js
+src/woordzoeker/script.js     src/shared/common.js
+src/storymachine/script.js
+src/voorzetselpaden/script.js
+</code></pre>
+<p>A visitor could save the HTML, the scripts and the 25-category word bank
+and rehost the whole thing. The Word Search generator was in the script
+as well, so the bank and the puzzle engine both left with the page.</p>
+<p>Now the only game data that crosses the wire is the view of the round
+the player is in.</p>
+<h2 id="what-the-browser-can-get">What the browser can get</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET /api/games</code></td>
+<td>the game ids</td>
+</tr>
+<tr>
+<td><code>GET /api/games/{game}/options</code></td>
+<td>category names, icons and counts; level ids and names, plus <code>locked</code> / <code>lockReason</code> for a level the visitor may not start. No words</td>
+</tr>
+<tr>
+<td><code>GET /api/games/{game}/texts</code></td>
+<td>the Dutch interface strings for that game</td>
+</tr>
+<tr>
+<td><code>GET /api/games/{game}/saved</code></td>
+<td>the signed-in player's saved round, or <code>{ "saved": false }</code></td>
+</tr>
+<tr>
+<td><code>GET /api/games/{game}/progress</code></td>
+<td>finished levels and their best scores, or <code>{}</code> for a guest</td>
+</tr>
+<tr>
+<td><code>POST /api/games/{game}/rounds</code></td>
+<td><code>{ roundId, view }</code> for one round, or <strong>403</strong> when the level is locked</td>
+</tr>
+<tr>
+<td><code>POST /api/games/{game}/rounds/{id}/moves</code></td>
+<td>the new view, plus whether the move was correct and any feedback</td>
+</tr>
+</tbody>
+</table></div>
+<p>The browser never receives the word bank, the image manifest, the
+translation column for unplayed words, or the placement list of a Word
+Search puzzle. A <code>wordsearch</code> round for a 10×10 beginner puzzle is about
+1.3 KB; the embedded bank it was drawn from is about 169 KB.</p>
+<p>A player can still read the ten words on their own board — that is the
+game. They cannot enumerate the bank without playing rounds, and the
+game API is rate limited (600 requests per five minutes per address).</p>
+<p>This is not encryption. It moves the asset that was worth copying — the
+content and the generator — behind the API. The renderer is still
+readable, by design: it is only the parts that make the product.</p>
+<h2 id="level-gating">Level gating</h2>
+<p><code>/options</code> marks each level with <code>locked</code> and a <code>lockReason</code>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th><code>lockReason</code></th>
+<th>Meaning</th>
+<th>The client shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>progress</code></td>
+<td>the previous level has not been finished</td>
+<td>a lock and "Haal eerst het vorige niveau."</td>
+</tr>
+<tr>
+<td><code>account</code></td>
+<td>the visitor is past the free slice and not signed in</td>
+<td>a lock, "Maak een account om verder te gaan." and a Registreren link</td>
+</tr>
+<tr>
+<td><code>premium</code></td>
+<td>the level belongs to the paid slice</td>
+<td>a lock and "Hiervoor komt een abonnement." (no link: there is no payment system yet)</td>
+</tr>
+</tbody>
+</table></div>
+<p>Voorzetselpaden is the only game with a policy today. Its tiers follow the
+CEFR bands the content comes in (<code>PrepositionAccess</code> in
+<code>GameAccessService.cs</code>):</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Levels</th>
+<th>Who can play</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>the A0 band</td>
+<td>everyone</td>
+</tr>
+<tr>
+<td>the A1 band</td>
+<td>a signed-in learner</td>
+</tr>
+<tr>
+<td>A2 and up</td>
+<td>a paid plan — not built, so shut (and not imported yet)</td>
+</tr>
+</tbody>
+</table></div>
+<p>A band starts at its first level; within it a level opens only when the one
+before it is finished, and
+finishing counts as passing — the gate exists to make a crawler play, not to
+grade the player. A finished level stays playable if an earlier row is missing,
+but a finished premium level locks again without a plan: progress survives,
+access does not. <code>POST .../rounds</code> re-checks the rule and answers 403, so hiding
+a level in <code>/options</code> is not the only defence. The decision and threat model are
+in <a href="review-handover.html"><code>review-handover.html</code></a>.</p>
+<h2 id="the-round-model">The round model</h2>
+<p>A round is created with <code>POST .../rounds</code> and lives in memory:</p>
+<ul>
+<li><code>RoundStore</code> holds the private state (grid, solution, deck, order);</li>
+<li>a round lasts <strong>3 hours</strong>, and at most <strong>4,000</strong> are held; when the
+  store is full the oldest half is dropped;</li>
+<li>an unknown or expired round answers <strong>410 Gone</strong> with
+  <code>{ "error": "Deze ronde bestaat niet meer." }</code>; the client shows the
+  message and offers a new game;</li>
+<li>an invalid action answers <strong>400</strong> with the server's Dutch reason.</li>
+</ul>
+<p>Because state is in memory, restarting the service ends open rounds for a
+guest. A signed-in player's round is copied to the account after every
+answer, so it survives a restart and can be rebuilt (see below).</p>
+<h2 id="progress-on-an-account">Progress on an account</h2>
+<p>Progress is optional and never gates a game. A guest plays exactly as before:
+the progress service answers nothing and writes nothing.</p>
+<p>For a signed-in player the API does three things on the normal paths:</p>
+<ul>
+<li>after <code>POST .../rounds</code> and after every accepted move, it serializes the
+game's private state with <code>IGameService.Export</code> and upserts one
+<code>GameSaves</code> row per <code>(user, game)</code>;</li>
+<li><code>GET .../saved</code> loads that row, rebuilds a fresh in-memory round with
+<code>IGameService.Resume</code>, and returns <code>{ saved: true, roundId, view, resume }</code>.
+The game then reuses the new round id for its moves. A blob the game can no
+longer rebuild is deleted and answered as <code>{ saved: false }</code>;</li>
+<li>when a move finishes a round, the save is cleared. If <code>IGameService.LevelOf</code>
+names a level (prepositions today), the result is written to
+<code>GameLevelProgress</code>, keeping the best score. Nothing else invents levels:
+Hangman, Memory, Matching, Story Machine and Word Search have settings, not
+levels.</li>
+</ul>
+<p>The stored JSON is the same private state <code>RoundStore</code> would hold: the hidden
+word, the deck, the placement table. It never leaves the server. The two
+exceptions are deliberate and narrow:</p>
+<ul>
+<li>Word Search's resume payload carries <code>placements</code>, and only for words the
+player has already found, so the canvas can redraw their outlines;</li>
+<li>Prepositions serializes its whole step tree. Rebuilding it from the level id
+would reshuffle the questions and hand out points twice.</li>
+</ul>
+<p>The client asks for <code>/saved</code> once when a game mounts, before its own first
+round. A resumed round shows one quiet Dutch line, "We gaan verder waar je
+gebleven was.", and disappears after a few seconds. <code>GameSaves</code> and
+<code>GameLevelProgress</code> cascade-delete with the user.</p>
+<h3 id="actions-per-game">Actions per game</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Game</th>
+<th>Start body</th>
+<th>Move bodies</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hangman</code></td>
+<td><code>{ category, difficulty, translateTo? }</code></td>
+<td><code>{ action: "guess", letter }</code>, <code>{ action: "hint" }</code></td>
+</tr>
+<tr>
+<td><code>memory</code></td>
+<td><code>{ category, level }</code></td>
+<td><code>{ action: "flip", index }</code></td>
+</tr>
+<tr>
+<td><code>matching</code></td>
+<td><code>{ category, pairs }</code></td>
+<td><code>{ action: "flip", index }</code></td>
+</tr>
+<tr>
+<td><code>wordsearch</code></td>
+<td><code>{ category, difficulty, translateTo? }</code></td>
+<td><code>{ action: "select", r1, c1, r2, c2 }</code>, <code>{ action: "hint" }</code></td>
+</tr>
+<tr>
+<td><code>storymachine</code></td>
+<td><code>{ count, language }</code></td>
+<td><code>{ action: "hold", index, held }</code>, <code>{ action: "language", language }</code>, <code>{ action: "spin" }</code></td>
+</tr>
+<tr>
+<td><code>prepositions</code></td>
+<td><code>{ level }</code></td>
+<td><code>{ action: "next" }</code>, <code>{ action: "concept", answer }</code>, <code>{ action: "choose", scene }</code>, <code>{ action: "trueFalse", answer }</code>, <code>{ action: "build", tiles: [] }</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>The server judges every answer. The Word Search checks the line the
+player selected against the hidden solution; the Memory and Matching
+services decide whether two cards form a pair; Hangman owns the pattern
+and the wrong-letter count.</p>
+<h2 id="where-the-content-lives">Where the content lives</h2>
+<p><code>server/Oefenpad.Resources/Games/Data/</code> — embedded resources, read once
+by <code>GameContent</code>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>File</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>words.json</code></td>
+<td>25 categories, 2,518 entries (Dutch, English, optional image key)</td>
+</tr>
+<tr>
+<td><code>wordimages.json</code></td>
+<td>English word → image file</td>
+</tr>
+<tr>
+<td><code>prepositions.json</code></td>
+<td>28 levels (A0, A1), 91 example scenes, frames, examples, build tiles</td>
+</tr>
+<tr>
+<td><code>reels.json</code></td>
+<td>the six story reels and their tiles</td>
+</tr>
+<tr>
+<td><code>meta.json</code></td>
+<td>counts for tests and documentation</td>
+</tr>
+<tr>
+<td><code>texts.&lt;game&gt;.json</code></td>
+<td>the Dutch interface strings, one file per game</td>
+</tr>
+</tbody>
+</table></div>
+<p>Editing content means editing these JSON files and rebuilding the
+resource project. The generated pictures stay under
+<code>assets/wordimages/</code> and <code>assets/voorzetselpaden/</code>; the API sends a path
+such as <code>/assets/wordimages/animals/dog.jpg</code>.</p>
+<p><code>meta.json</code> is the canonical count table; the tests read it.</p>
+<h2 id="the-react-app">The React app</h2>
+<p><code>client/</code> is a Vite 5 + React 18 single-page app. It is served from
+<code>/spelen/</code> by the .NET host, not from the repo root.</p>
+<pre><code>client/
+  index.html                    shell, theme pre-paint, site CSS + JS
+  vite.config.ts                base /spelen/, outDir the host's wwwroot
+  scripts/scope-css.mjs         page sheets -&gt; route-scoped sheets
+  src/
+    api.ts                      the only network layer
+    App.tsx, main.tsx           routes and stylesheet imports
+    site/GameShell.tsx          .vel, .balk, .spel-kop, .voet, splash
+    site/GameList.tsx           the /spelen/ index
+    shared/                     timer, splash, sound, confetti, storage,
+                                overlay, zoom pop, word image, game data
+    games/&lt;game&gt;/               one folder per game
+    styles/base.css             page shell and reset
+    styles/source/*.css         the unmodified per-page sheets
+    styles/games/*.css          generated, scoped to .game--&lt;game&gt;
+</code></pre>
+<p>Routes: <code>/spelen/</code>, <code>/spelen/hangman</code>, <code>/spelen/memory</code>,
+<code>/spelen/matching</code>, <code>/spelen/wordsearch</code>, <code>/spelen/storymachine</code>,
+<code>/spelen/prepositions</code>.</p>
+<p><code>GameShell</code> renders the same chrome the old pages had: the <code>.vel</code>
+column, the site bar with the injected <code>#theme-toggle</code>, the <code>.spel-kop</code>
+with the back and settings buttons — plus a start button where a game hands
+the shell an <code>onBegin</code>, as Voorzetselpaden does mid-level — the splash where
+a game has one, and the <code>.voet</code> footer. The wrapper carries <code>.game--&lt;game&gt;</code>, which is
+the scope of that game's stylesheet.</p>
+<h3 id="code-in-english-content-in-dutch">Code in English, content in Dutch</h3>
+<p>Identifiers, comments, file names, routes and JSON field names are
+English. Dutch survives as content: the strings in
+<code>texts.&lt;game&gt;.json</code>, category and level names, the words on the cards,
+and the feedback sentences. The markup class names stay Dutch
+(<code>.vel</code>, <code>.balk</code>, <code>.spel-kop</code>, <code>.knop</code>) because they are the contract
+with <code>assets/site/oefenpad.css</code>.</p>
+<h3 id="why-the-game-styles-are-scoped">Why the game styles are scoped</h3>
+<p>One bundle loads all six sheets, and the old pages reused the same class
+names for different things (<code>.card</code> is a memory card on one page and a
+story card on another). <code>scripts/scope-css.mjs</code> prefixes every selector
+with <code>.game--&lt;game&gt;</code>, passes <code>@keyframes</code> through untouched, and recurses
+into <code>@media</code>. Page resets (<code>:root</code>, <code>body</code>, the universal reset,
+<code>button</code>, <code>:focus-visible</code>) are dropped: <code>base.css</code> owns them once, and
+a scoped <code>*</code> reset would otherwise override the padding of <code>.vel</code>
+because it comes later in the cascade at equal specificity.</p>
+<p>After editing a sheet in <code>client/src/styles/source/</code>, run:</p>
+<pre><code class="language-sh">cd client &amp;&amp; npm run scope-css
+</code></pre>
+<h3 id="what-deliberately-stays-in-the-browser">What deliberately stays in the browser</h3>
+<p>Timers, the WebAudio sound set, confetti, the hangman canvas, the Word
+Search selection line, pointer and tap handling, the card zoom, and
+<code>localStorage</code> for settings and best scores. These are presentation and
+input; moving them would add latency and buy nothing.</p>
+<p>The old storage keys are kept unchanged, so settings and records survive
+the move: <code>oefenpad-theme</code>, <code>oefenpad-taal</code>, <code>oefenpad-geheugen-settings</code>,
+<code>oefenpad-geheugen-best</code>, <code>oefenpad-koppelen-settings</code>,
+<code>oefenpad-koppelen-stats</code>, <code>oefenpad-galgje-settings</code>,
+<code>oefenpad-galgje-stats</code>, <code>oefenpad-woordzoeker-settings</code>,
+<code>oefenpad-woordzoeker-stats</code>.</p>
+<h2 id="running-it">Running it</h2>
+<p>The host builds the app. <code>dotnet build</code> and <code>dotnet publish</code> run <code>npm ci</code>
+(only when <code>node_modules</code> is missing) and <code>npm run build</code>, then ship
+<code>wwwroot/spelen/</code>. The build is incremental: the npm step is skipped unless
+something under <code>client/src</code>, <code>client/scripts</code>, <code>index.html</code>, <code>package.json</code>,
+<code>package-lock.json</code>, <code>tsconfig.json</code> or <code>vite.config.ts</code> changed. Pass
+<code>-p:SkipClientBuild=true</code> to build the server alone.</p>
+<pre><code class="language-sh">cd client
+npm install          # once, if you want to run vite directly
+npm run build        # tsc --noEmit &amp;&amp; vite build, into wwwroot/spelen
+</code></pre>
+<p>Run the service (port 8098; 8080 belongs to the owner):</p>
+<pre><code class="language-sh">ASPNETCORE_ENVIRONMENT=Development dotnet run \
+  --project server/Oefenpad.WebUI --urls http://127.0.0.1:8098
+</code></pre>
+<p>Then open <code>http://127.0.0.1:8098/spelen/</code>. The home page links straight
+to the React routes.</p>
+<p>During front-end work, <code>npm run dev</code> serves the app with a proxy to
+<code>8098</code> for <code>/api</code> and <code>/assets</code>; the built app is what the host serves.</p>
+<p>Check the API without a browser:</p>
+<pre><code class="language-sh">python3 tools/smoke-games-api.py
+python3 tools/smoke-game-progress.py   # server in Development
+ASPNETCORE_ENVIRONMENT=Development dotnet test server/Oefenpad.Tests
+</code></pre>
+<h2 id="what-changed-on-disk">What changed on disk</h2>
+<ul>
+<li>All six <code>src/&lt;game&gt;/</code> folders and <code>src/shared/</code> are gone. The old
+  scripts, the word bank and the client-side generators are no longer in
+  the repo.</li>
+<li><code>client/src/styles/source/*.css</code> keeps the six page stylesheets, vendored
+  so <code>scope-css</code> still works. Nothing under the old <code>src/</code> remains.</li>
+<li><code>assets/voorzetselpaden/</code> now holds the 30 scene images (moved from the
+  old <code>src/voorzetselpaden/art/</code>). <code>assets/storymachine/art/</code> holds the two
+  card backs (moved from <code>src/storymachine/art/</code>).</li>
+<li>The home page links to <code>/spelen/&lt;game&gt;</code>.</li>
+<li><code>assets/site/oefenpad.js</code> exports <code>window.Oefenpad.ensureThemeToggle</code>,
+  because the React bar is drawn after that script runs.</li>
+</ul>
+<h2 id="port-notes-and-verification">Port notes and verification</h2>
+<p>This port was checked end to end on 2026-11-09, not just built.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What was run or seen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Server build</td>
+<td><code>cd server &amp;&amp; dotnet build Oefenpad.sln</code> — 0 warnings, 0 errors</td>
+</tr>
+<tr>
+<td>Tests</td>
+<td><code>dotnet test server/Oefenpad.Tests</code> — 29 passed: the game-content and round tests in <code>GameContentTests.cs</code>, plus the save/resume and progress tests in <code>GameProgressTests.cs</code></td>
+</tr>
+<tr>
+<td>API smoke</td>
+<td><code>python3 tools/smoke-games-api.py</code> — all six games start a round and accept moves; the Word Search view is checked for leaked placements, Hangman for a leaked answer, and prepositions for a full level walk</td>
+</tr>
+<tr>
+<td>Client build</td>
+<td><code>cd client &amp;&amp; npm run build</code> — <code>tsc --noEmit</code> clean, Vite writes into <code>server/Oefenpad.WebUI/wwwroot/spelen/</code></td>
+</tr>
+<tr>
+<td>Visual equivalence</td>
+<td>Headless Chrome screenshots of each game against the old pages served from git HEAD, on port 8099. Memory, Hangman, Matching, Story Machine and Prepositions match. Word Search matches except for the intentionally restored first-visit category picker</td>
+</tr>
+<tr>
+<td>Interaction</td>
+<td>Chrome DevTools drove every game through a round: no console errors</td>
+</tr>
+<tr>
+<td>Account progress</td>
+<td><code>python3 tools/smoke-game-progress.py</code> — registers and signs in, then checks <code>/saved</code>, the Word Search placements, a finished level in <code>/progress</code>, and both database rows. Headless Chrome showed the resumed board with its Dutch notice and <code>✓ 3/8</code> on the finished level</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="bugs-found-and-fixed-during-the-port">Bugs found and fixed during the port</h3>
+<p>These cost time; do not reintroduce them.</p>
+<ol>
+<li><strong>A scoped universal reset overrode <code>.vel</code> padding.</strong>
+   <code>scope-css.mjs</code> must skip <code>*</code>, <code>*::before</code> and <code>*::after</code>. They arrive
+   split by commas, so a naive prefix pass scoped the reset and it won the
+   cascade at equal specificity, silently flattening the page padding.</li>
+<li><strong>Memory stopped re-rendering after the zoom pop.</strong> <code>pendingFirst</code> was a
+   ref, so the second card turning over did not trigger a render. It now
+   drives a <code>bump()</code> from <code>useReducer</code>. A missed pair also stayed face up;
+   the hidden mask uses <code>hidden</code> / <code>hiddenRef</code> and <code>turnFirst</code> is kept as a
+   ref until the pair is judged.</li>
+<li><strong>Word Search carried a stray <code>.status-chip</code></strong> from the old page and lost
+   the first-visit category picker. The chip is gone; the picker is back,
+   gated on <code>oefenpad-woordzoeker-visited</code>.</li>
+</ol>
+<h2 id="known-limits">Known limits</h2>
+<ol>
+<li><strong>The games need the server.</strong> The old static pages worked offline;
+   the API-gated ones do not. The owner accepted this on 2026-11-09 as the
+   price of keeping the bank private. Offline play can be revisited later,
+   but it is not missing by accident.</li>
+<li><strong>The build output is no longer missing from <code>dotnet publish</code>.</strong>
+   <code>Oefenpad.WebUI.csproj</code> runs the npm build in a <code>ClientBuild</code> target and
+   adds <code>wwwroot/spelen/**</code> as publish files, so a publish ships the games.
+   The npm step is skipped when the client sources are unchanged, and
+   <code>-p:SkipClientBuild=true</code> turns it off for a server-only build.</li>
+<li><strong>Live rounds are in memory.</strong> A guest's round ends with a restart; a
+   signed-in round is saved to the account and rebuilt. A second instance
+   still cannot share a round that has not been saved yet, so a shared
+   <code>RoundStore</code> is needed before scaling out.</li>
+<li><strong>The rate limit is per remote address.</strong> Behind a proxy that
+   rewrites the address, every player shares one budget.</li>
+</ol>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="games.html"><span>Previous</span>Games for the Companion Website</a><a class="next" href="prepositions.html"><span>Next</span>Voorzetselpaden spec</a></nav>
+    <footer class="footer">
+      <code>Docs/games-backend.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

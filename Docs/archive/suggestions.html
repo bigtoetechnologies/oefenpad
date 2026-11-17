@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brainstorm — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="../index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="../project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="../product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="../game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="../designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="../decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="../accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="../accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="../games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="../games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="../prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="../prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="../prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="../game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="../voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="../voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="../story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="../story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="../story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="../uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="../reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="../review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="../lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="../lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="../lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="../lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="../design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="../voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="../voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="../voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="../voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="../voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="../voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="../voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="../voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="../voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="../voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="../voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="../voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="../voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="../voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="../voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="../voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="../design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="../design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="../archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="../archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="../archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="../archive/suggestions.html" data-path="Docs/archive/suggestions.html" aria-current="page">Brainstorm</a></li><li><a href="../archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="../archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="../archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="../archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="../archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="../archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="../archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Docs</a><span>/</span><span>Archive</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Brainstorm</h1>
+      <p class="lede">A pre-pivot brainstorm; Uit Elkaar was lifted out first.</p>
+      <p class="doc-meta">Docs/archive/suggestions.html</p>
+    </header>
+    
+    <article class="prose">
+<blockquote>
+<p><strong>Archived 16 November 2026.</strong> A pre-pivot brainstorm aimed at English<br>
+speakers and at writing the book. The product is now <a href="../product.html"><code>Docs/product.html</code></a>: the<br>
+audience is post-A2 learners, the book is on hold, and themes replace the<br>
+pillar/game taxonomy discussed here. The one live piece — the <strong>Uit Elkaar</strong><br>
+separable-verbs game and its word list — was lifted to <a href="../uit-elkaar.html"><code>Docs/uit-elkaar.html</code></a><br>
+before archiving. Everything else is history, not guidance.</p>
+</blockquote>
+<p>Brainstorm: Teaching Dutch quick wins, not listing them</p>
+<p>Core shift: tables = reference. Teaching = sequence + repetition + "aha" moments. Here are angles worth stealing from:</p>
+<ol>
+<li>Pattern-first, not word-first</li>
+</ol>
+<p>Don't teach 50 words — teach 5 transformations that unlock hundreds.<br>
+  - "English -tion → Dutch -tie" (information → informatie). One rule, ~1000 words free.<br>
+  - "English c → Dutch k" (camera → kamera-ish, contact → kontakt).<br>
+  - "English -ity → Dutch -iteit" (university → universiteit).<br>
+  Each rule = a mini-lesson with 3 examples, 1 exception, 1 "try it yourself."</p>
+<ol start="2">
+<li>The "you already speak Dutch" cold open</li>
+</ol>
+<p>Start with a paragraph of Dutch the reader can read with zero instruction:<br>
+  ▎ "De bank is open. Mijn appel is rood. Water is koud."<br>
+  ▎ Then reveal: you just read Dutch. Hook before rules.</p>
+<ol start="3">
+<li>Cognate ladders</li>
+</ol>
+<p>Group by distance from English, not by topic:<br>
+  - Tier 0 — Identical: water, hand, film, hotel<br>
+  - Tier 1 — One letter off: boek, melk, vis<br>
+  - Tier 2 — Predictable shift: nacht/night, dochter/daughter (ch↔gh)<br>
+  - Tier 3 — Need a hint: ziekenhuis = sick-house = hospital</p>
+<p>Climbing the ladder feels like progress in a way a flat table doesn't.</p>
+<ol start="4">
+<li>Decoder lens, not vocab list</li>
+</ol>
+<p>Frame the whole thing as "glasses you put on to read Dutch" rather than words to memorize. Each rule is a lens. Stack 5 lenses → suddenly a menu/sign/headline is legible.</p>
+<ol start="5">
+<li>Sound-shift storytelling</li>
+</ol>
+<p>The English↔Dutch sound correspondences (th→d, gh→ch, k→ch) come from real linguistic history. A 2-sentence "why" makes them stick: "Dutch and English split ~1500 years ago. Dutch kept<br>
+  the harder consonants English softened." Now nacht/night isn't trivia, it's a fossil.</p>
+<ol start="6">
+<li>Spot-the-Dutch challenges</li>
+</ol>
+<p>Show a real photo: a supermarket sign, a train ticket, a menu. Ask: how much can you read right now? Then teach 3 rules. Show same photo. Reader sees the jump themselves. This is the<br>
+  single highest-impact format for "quick wins."</p>
+<ol start="7">
+<li>False-friend warnings as punchlines</li>
+</ol>
+<p>slim = clever. eventueel = possibly, not eventually. Frame these as landmines, not footnotes — one per lesson, memorable because it's funny/dangerous.</p>
+<ol start="8">
+<li>Minimum viable sentence</li>
+</ol>
+<p>Instead of word lists, give one skeleton sentence and swap parts:<br>
+  ▎ Ik wil een [koffie / biertje / broodje].<br>
+  ▎ Reader leaves with a usable line, not 20 isolated nouns.</p>
+<ol start="9">
+<li>Progressive disclosure / "unlock" framing</li>
+</ol>
+<p>Gamify: "Lesson 1 unlocks ~200 words. Lesson 2 unlocks ~500." Give the reader a running counter. Tables hide this; a teaching arc makes it visible.</p>
+<ol start="10">
+<li>The 80/20 sign-reader</li>
+</ol>
+<p>A single page: "If you learn only these 15 words, you can navigate any Dutch train station / supermarket / street." Ruthless pruning beats completeness for a quick-win doc.</p>
+<hr>
+<p>My pick of the most powerful two to combine: #4 (decoder lenses) as the spine + #6 (spot-the-Dutch photo challenges) as the proof points between lessons. That turns the doc from a<br>
+  reference into an experience where the reader watches their own comprehension grow.</p>
+<p>Teaching the 101 sound-alikes (not just listing them)</p>
+<p>The current table is a flat data dump of 101 rows. The reader's eye glazes by row 20. Here's how to turn it into a lesson that earns the same coverage:</p>
+<ol>
+<li>Start with a mini-shock, not a table</li>
+</ol>
+<p>Open with a 4-line Dutch paragraph using only sound-alikes:<br>
+  ▎ Mijn moeder en vader drinken water. De kat slaapt op het bed. De zon is warm.<br>
+  ▎ Ask the reader: how much did you just understand? They'll get ~90%. Now they're motivated. The table becomes evidence for a claim they already believe.</p>
+<ol start="2">
+<li>Don't show 101 rows. Show 6 rows, six times.</li>
+</ol>
+<p>Chunk the list into ~6 themed micro-tables of ~15 words each, and put a task between each:<br>
+  - Family (moeder, vader, broer, zuster, dochter, zoon, kind…)<br>
+  - Body (hand, arm, hart, voet, knie, oor, lip, vinger, tand…)<br>
+  - House &amp; things (huis, bed, lamp, boek, school…)<br>
+  - Food &amp; kitchen (water, melk, brood, appel, peer, zout, honing…)<br>
+  - Nature &amp; weather (zon, maan, ster, wind, storm, sneeuw, ijs, vuur…)<br>
+  - Verbs you already know (komen, geven, maken, helpen, drinken, slapen, zwemmen…)</p>
+<p>Six small wins beats one giant wall. Each chunk is a "level."</p>
+<ol start="3">
+<li>Sort by effort, not frequency</li>
+</ol>
+<p>Inside each chunk, put identical words first (hand, arm, lamp, bed), then one-letter-off (boek, melk, vis), then needs-a-shift (nacht, dochter, zuster). The reader feels the difficulty<br>
+  climb gently instead of being thrown a random pile. Frequency-ordering is for reference docs; effort-ordering is for teaching.</p>
+<ol start="4">
+<li>Make the reader do something every chunk</li>
+</ol>
+<p>After "Body," show a stick figure with Dutch labels and no English. After "Food," show a Dutch breakfast menu. After "Nature," a weather forecast screenshot. Recognition under mild<br>
+  pressure is what cements it — passive reading doesn't.</p>
+<ol start="5">
+<li>Teach the shifts before the words, not after</li>
+</ol>
+<p>Right now the patterns (ou↔ui, th↔d, gh↔ch) are listed after the table, as a postscript. Flip it. Teach one shift, then show the 8 words it unlocks, then the next shift. The reader<br>
+  stops memorising 101 facts and starts internalising 4 rules that generate the 101.</p>
+<p>Concretely:<br>
+  ▎ Lens 1: th becomes d or t.<br>
+  ▎ that → dat. think → denken. brother → broer. mother → moeder. father → vader.<br>
+  ▎ Try it: what's English "thank"? (→ dank.)</p>
+<p>▎ Lens 2: gh/ght becomes ch.<br>
+  ▎ night → nacht. daughter → dochter. light → licht.</p>
+<p>▎ Lens 3: long ou becomes ui.<br>
+  ▎ out → uit. house → huis. mouse → muis.</p>
+<p>Now the reader has tools, not trivia.</p>
+<ol start="6">
+<li>The "read this sign" payoff</li>
+</ol>
+<p>End the chapter with a real photo — a Dutch shop window, train board, café menu — and let the reader translate it themselves using only what's in the chapter. This is the moment where<br>
+  teaching beats listing: the table can't do this, the lesson can.</p>
+<ol start="7">
+<li>Keep the 101 — but as an appendix, not the spine</li>
+</ol>
+<p>The full list still has value as a reference the reader can scan later. Move it to the back of the chapter (or an appendix), and let the body of the chapter be ~30 carefully chosen<br>
+  words taught through the 4 lenses + 6 themed chunks + 3 recognition exercises. Coverage moves to the appendix; comprehension moves to the chapter.</p>
+<hr>
+<p>The single biggest change: stop treating the 101 as the lesson. The 101 is the proof. The lesson is "here are 4 sound-shifts and 6 themes that let you decode hundreds of Dutch words on<br>
+  sight" — and the table is what you point at to show it's true.</p>
+<p># Website content </p>
+<ul>
+<li>Recording of each of the dutch words for pronunications</li>
+<li>Minimal pair training</li>
+</ul>
+<hr>
+<hr>
+<p>Games that suit the material</p>
+<ol>
+<li>"Spot the Imposter" (sound-shift pattern)</li>
+</ol>
+<p>Show 4 Dutch words. Three follow the same sound-shift rule (th→d: moeder, vader, broer). One is from a different rule or is a false friend. Tap the odd one out. Fast, competitive, works<br>
+    in rounds. Add a leaderboard. The point is pattern recognition, not word memorisation.</p>
+<ol start="2">
+<li>"Translate the Telegram" (context decoding)</li>
+</ol>
+<p>Short Dutch sentence appears word by word, like an old telegram arriving. User taps each word as it lands to "decode" it — click dochter to reveal daughter. No typing, no choices — just<br>
+    the satisfying act of revealing. Completing a sentence scores points. Sentences get longer and use more sound-shift words as levels progress. This digitalises the book's own opening<br>
+   trick and scales naturally.</p>
+<ol start="3">
+<li>"Which Room?" (categorisation speed game)</li>
+</ol>
+<p>Dutch words fall from the top of the screen (or appear in a queue). User sorts them into rooms — Family, Body, House, Food, Nature, Verbs — by swiping or tapping. No translation needed,<br>
+    just recognition of what category it belongs to. Faster = more points. Works because the rooms are already the chapter's structure.</p>
+<ol start="4">
+<li>"False Friend or Real Friend?" (binary judgment)</li>
+</ol>
+<p>Dutch word appears. Two buttons: FRIEND (means what it looks like) or TRAP (false friend). Simple, fast, anxiety-inducing in the right way. Score goes up for speed + accuracy, drops<br>
+   hard on a wrong Trap call. The emotional sting of being tricked once makes the lesson stick. After each round, show what the trap actually means.</p>
+<ol start="5">
+<li>"Build the Ladder" (ordering by difficulty)</li>
+</ol>
+<p>Give the user 5 words from a single room, scrambled. Task: drag them into order from easiest to decode (identical) to hardest (needs a sound-shift). No right/wrong on the words<br>
+   themselves — the game is about understanding why one is harder than another. Low pressure, high insight. Fits the book's own ladder structure exactly.</p>
+<ol start="6">
+<li>"Verb Factory" (strip-the-ending mechanic)</li>
+</ol>
+<p>Dutch verb arrives on a conveyor belt. User clicks a big "strip -en" button, which animates the ending being chopped off, then types or selects the English verb. Points for speed.<br>
+   Satisfying mechanically — the visual of removing the suffix reinforces the actual rule. Can escalate: verbs where s→z also applies (zingen → sing) need two operations.</p>
+<ol start="7">
+<li>"Double Agent" (polysemy / one-word-several-jobs)</li>
+</ol>
+<p>A Dutch word is placed in two sentences side by side. One sentence makes the obvious English meaning work; the other doesn't. User assigns the correct English meaning to each sentence.<br>
+   The challenge is that both options look plausible. Warm = warm in one sentence, hot in the other. Teaches context-dependence without any grammar explanation.</p>
+<ol start="8">
+<li>"Sound-shift Repair Shop" (active reconstruction)</li>
+</ol>
+<p>Show a Dutch word with one letter highlighted in red (the shifted letter). Show its English cognate with a blank where the equivalent letter should be. User types the missing letter.<br>
+   vader → fa_her → types t. Turns the passive pattern into an active one. Works best as a short chain: do 5 words all sharing the same shift, then a mixed round.</p>
+<ol start="9">
+<li>"Sentence Rescue" (whole-sentence decoding with a timer)</li>
+</ol>
+<p>A Dutch sentence appears. The user has 20 seconds to tap every word they recognise before the timer runs out. Words they tap correctly light up. Words they miss go grey. Score is % of<br>
+   the sentence decoded. Same sentence can be replayed — watching your score go from 60% to 95% on the same sentence over a few sessions is a very concrete progress signal. No translation<br>
+   required from memory, just recognition under pressure.</p>
+<ol start="10">
+<li>"Room Raid" (memory match variant, but with purpose)</li>
+</ol>
+<p>Not traditional memory-match. Instead: a room illustration (e.g. a kitchen) with 8 objects unlabelled. Dutch labels appear in a list on the side. User drags the label to the object.<br>
+   First time is exploratory. Replay is recall. The visual scene provides context that pure word pairs don't — brood on a kitchen table is more memorable than brood ↔ bread on a card.</p>
+<hr>
+<p>Which ones to build first</p>
+<p>For MVP Chapter 1, the highest-value three are:</p>
+<p>┌─────────────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐<br>
+   │            Game             │                                                       Why                                                       │<br>
+   ├─────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤<br>
+   │ Translate the Telegram      │ Replicates the book's hook exactly; no build complexity; immediate "I can read Dutch" payoff                    │<br>
+   ├─────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤<br>
+   │ False Friend or Real Friend │ High emotional engagement; directly teaches the chapter's warning section; shareable ("I got trapped by kind!") │<br>
+   ├─────────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤<br>
+   │ Sound-shift Repair Shop     │ Turns passive pattern knowledge into active; measurable skill gain within a session; natural difficulty curve   │<br>
+   └─────────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘</p>
+<p>The others can unlock as the user completes rooms — gives you a natural progression system without needing a paid gate.</p>
+<hr>
+<p>AI driven exercises?</p>
+<p>Yes, and it's actually a great fit for this content. Here's how to think through it:</p>
+<pre><code> ---
+ Why AI scoring works well here
+
+ Chapter 1 is specifically about recognition, not grammar. So the rubric is simple: did the user understand the meaning? "Mijn broer is in het huis" → "My brother is in the house" and
+ "My bro is in the home" are both correct. A rule-based exact-match would fail both. An LLM won't.
+
+ You also get natural language feedback: "You wrote 'kind' as 'kind' (nice) — in Dutch it means 'child'. Classic false friend from the chapter!" That's impossible to do well without AI.
+
+ ---
+ How to implement it
+
+ The prompt to Claude is simple:
+
+ The user is an English speaker learning Dutch.
+ They were shown this Dutch sentence: "{dutch_sentence}"
+ They translated it as: "{user_translation}"
+ The correct English translation is: "{reference_translation}"
+
+ Score their attempt out of 10 for meaning accuracy (not grammar).
+ List each Dutch word and whether they got it right, wrong, or close.
+ For any wrong words, explain briefly why — especially if it's a false friend
+ or a sound-shift pattern from the lesson.
+ Keep feedback encouraging and under 80 words.
+
+ You already have the word lists, the sound-shift rules, and the false friends — inject those as context and the feedback becomes lesson-aware, not generic.
+
+ Response structure back to the user:
+
+ - Overall score (meaning-only, not spelling/grammar)
+ - Word-by-word breakdown — green/amber/red
+ - One specific "here's what tripped you" note
+ - One encouragement line tied to what they did get right
+
+ ---
+ The word-level breakdown is the key feature
+
+ This is what makes it better than a mark scheme. If the user writes "My mother and father drink water" but translates vader as "father" correctly — they get credit for that word even if
+  something else was wrong. Progress is visible at word level, not just sentence level.
+
+ You can accumulate this: after 5 sentences, show the user a personal weak-word list. "You've missed 'dochter' three times — remember: ght→cht."
+
+ ---
+ Practical concerns
+
+ Cost: Each AI call is cheap (a short prompt + short response). But at scale, cache common sentences — there'll be a fixed set of exercise sentences, so you can pre-generate or cache the
+  reference feedback and only call the API live for the diff between expected and actual.
+
+ Latency: 1-2 second wait for feedback is fine in this context — it feels like the system is "thinking", which is appropriate. Don't fake instant feedback with a spinner.
+
+ Consistency: You want the scoring rubric to be stable. Put the scoring instructions in a system prompt, not the user prompt, and keep a version number on it. When you change the rubric,
+  you'll want to know which sessions used which version.
+
+ Guardrails: Users will type nonsense or off-topic text. The prompt should instruct the model to return a low score and a neutral "try again with a real translation" message rather than
+ engaging with anything off-task.
+
+ ---
+ One upgrade worth planning for later
+
+ Once you have sign-in, you can feed the user's history of wrong words into the prompt:
+
+ This user has previously struggled with: dochter, zomer, vuur.
+ Watch for those specifically.
+
+ Now the feedback is personalised to that learner's actual weak spots. That's the feature that justifies sign-in — not just saving progress, but making the AI tutor smarter about you.
+
+ ---
+ What this enables for marketing
+
+ "AI-powered feedback that tells you exactly which words you missed and why" is a clean differentiator from Duolingo-style multiple choice. It also generates real data: aggregate
+ wrong-word rates across all users tells you which Dutch words are genuinely hard for English speakers — which is itself publishable content and validates the book's false-friend
+ warnings with real evidence.
+</code></pre>
+<hr>
+<hr>
+<p># Game idea: separable verbs (scheidbare werkwoorden)</p>
+<p>Working title: <strong>Uit Elkaar</strong>. Status: idea only — not built, not scheduled, no art yet.</p>
+<p>Separable verbs deserve a separate game (the pun is the point). Right now prefix<br>
+   movement is only a side-level of other games: <a href="../game-catalogue.html"><code>game-catalogue.html</code></a> lists "separable<br>
+   prefixes" as something Preposition Paths also trains, and the Werkwoordtrainer<br>
+   candidate mentions it as one level. It is bigger than that. The prefix moves through<br>
+   five positions, the perfect tense puts <code>ge-</code> inside it, and B2 has pairs where the<br>
+   spelling is identical and only stress and meaning differ. That is a whole game.</p>
+<p>## Learning goal</p>
+<p>Produce and recognise a Dutch separable verb in every position it can take:</p>
+<ul>
+<li>main clause, finite verb at position 2, prefix at the end: <em>Ik bel mijn moeder </em><em>op</em><em>.</em></li>
+<li>inversion: <em>Om zeven uur </em><em>bel</em><em> ik mijn moeder </em><em>op</em><em>.</em></li>
+<li>subclause, joined: <em>...omdat ik mijn moeder </em><em>opbel</em><em>.</em></li>
+<li>modal / infinitive, joined: <em>Ik moet mijn moeder </em><em>opbellen</em><em>.</em></li>
+<li>perfect tense, <code>ge-</code> inside: <em>Ik heb mijn moeder </em><em>opgebeld</em><em>.</em> (never <em>geopbeld</em>)</li>
+<li><code>te</code>-infinitive: <em>Ik probeer mijn moeder </em><em>op te bellen</em><em>.</em></li>
+</ul>
+<p>And separate them from inseparable prefixes (<code>be-</code>, <code>ver-</code>, <code>ont-</code>, <code>her-</code>, <code>er-</code>,<br>
+<code>ge-</code>), which never split: <em>begrijpen</em>, <em>vertellen</em>, <em>ontdekken</em>, <em>herinneren</em>.</p>
+<p>## Level ladder</p>
+<p><strong>A1–A2 — motion prefixes with a clear scene:</strong> opstaan, opbellen, aankomen, aandoen,<br>
+   aanzetten, uitzetten, uitgaan, uitnodigen, meenemen, meekomen, terugkomen, teruggeven,<br>
+   binnenkomen, weggaan, thuiskomen, klaarmaken, schoonmaken, openmaken, afspreken,<br>
+   afmaken, afwassen, opruimen, opeten, neerzetten, omdraaien, doorgaan.</p>
+<p><strong>B1 — the perfect tense as its own round:</strong> opgestaan, opgebeld, aangekomen,<br>
+   meegenomen, teruggekomen. Also subclauses and inversion, where the split and the join<br>
+   are deliberately paired.</p>
+<p><strong>B2 — same letters, different stress:</strong> inseparable vs separable pairs.<br>
+<em>voorkomen</em> (prevent) vs <em>vóórkomen</em> (occur), <em>ondergaan</em> (undergo) vs <em>óndergaan</em><br>
+   (go down), <em>doorlopen</em> (run through a course) vs <em>dóórlopen</em> (walk on). The spelling is<br>
+   identical, so only audio or a definition clue can decide which one is meant.</p>
+<p>## Modes (same spine as Voorzetselpaden: Ontdek → oefen → bouw)</p>
+<ol>
+<li><strong>Zet het achteraan</strong> — main-clause skeleton; drag the prefix from the verb to the<br>
+      end. The core mechanic.</li>
+<li><strong>Aan elkaar of uit elkaar?</strong> — two versions of one sentence (main vs subclause);<br>
+      pick the correct one, and the wrong one shows the prefix stranded in the wrong place.</li>
+<li><strong>Waar gaat ge-?</strong> — perfect-tense round: choose <em>opgebeld</em> / <em>geopbeld</em> /<br>
+<em>gebeld op</em>. Teaches the infix in one screen.</li>
+<li><strong>Los of vast?</strong> — is this prefix separable (<code>op-</code>, <code>aan-</code>, <code>uit-</code>) or inseparable<br>
+      (<code>be-</code>, <code>ver-</code>, <code>ont-</code>) in this verb? Fast binary, like False Friend Trap.</li>
+<li><strong>Betekenis</strong> — picture or Dutch definition → the chunk, so the game is not only<br>
+      word order.</li>
+<li><strong>Hoor je het verschil?</strong> <em>(B2)</em> — audio-only stress pair, blocked until audio<br>
+      exists, the same blocker as Luisteroefening (<a href="../decisions.html"><code>decisions.html</code></a> open question 6).</li>
+</ol>
+<p>## What it reuses, and what it does not</p>
+<ul>
+<li>Reuses the Zinsbouwer tile engine and its verb table, and the Voorzetselpaden level<br>
+     spine and progress shape.</li>
+<li>Reuses the prefix inventory that already runs through the preposition art plans<br>
+     (op, aan, uit, in, door, af, bij, toe, mee, na, terug, weg, over, onder, voor).</li>
+<li>Does <strong>not</strong> reuse the Voorzetselpaden art approach. That game's scene <em>is</em> the clue;<br>
+     here the unit is a sentence with a moving part, so the game is text tiles and reading,<br>
+     not pictures. A small recurring mascot could "throw" the prefix to the end of the<br>
+     sentence (cobalt brush line, no text inside the drawing), but the game works with no<br>
+     art at all, so art is polish rather than a dependency.</li>
+</ul>
+<p>## Word list handed over from Voorzetselpaden</p>
+<p>Settled 10 November 2026. A separable verb governs no preposition, so it was never a<br>
+   legal frame in Voorzetselpaden. The 29 that had been drafted into<br>
+   the B1 plan (now split into <a href="../voorzetselpaden/a2-plus.html"><code>Docs/voorzetselpaden/a2-plus.html</code></a> and<br>
+<a href="../voorzetselpaden/b1.html"><code>Docs/voorzetselpaden/b1.html</code></a>) were cut and their chunks belong to this game. They are 23<br>
+   distinct verbs across 29 frames. No art was ever drawn for them, so what moves is the<br>
+   word list, not a cost.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Prefix</th>
+<th>Verbs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>op-</td>
+<td>opbellen, opruimen, opschrijven, ophangen, oprotten</td>
+</tr>
+<tr>
+<td>aan-</td>
+<td>aankomen, zich aankleden</td>
+</tr>
+<tr>
+<td>af-</td>
+<td>afwassen, afslaan, afronden, zich afvragen</td>
+</tr>
+<tr>
+<td>in-</td>
+<td>invullen, inpakken</td>
+</tr>
+<tr>
+<td>uit-</td>
+<td>uitdoen, uitleggen, uitpakken</td>
+</tr>
+<tr>
+<td>mee-, terug-, thuis-, weg-</td>
+<td>meenemen, terugkomen, thuiskomen, weggaan</td>
+</tr>
+<tr>
+<td>dwars-</td>
+<td>dwarszitten</td>
+</tr>
+</tbody>
+</table></div>
+<p>Two of the 29 were not separable at all and are listed here only so they are not<br>
+   lost: <code>zich vervelen</code> and <code>vergeten</code>. Neither belongs in this game either; they are<br>
+   ordinary verbs that were mis-filed as frames.</p>
+<p>Two more were raised during the A0–A2 pair review and belong here for the same<br>
+   reason: <code>oversteken</code> (<code>over-</code>, A1–A2) and <code>afsnijden</code> (<code>af-</code>, A2–B1). Neither<br>
+   governs a preposition — they split, <em>ik steek de straat over</em> and <em>ik snijd een<br>
+   stuk af</em> — so neither could ever be a Voorzetselpaden frame. They are not a<br>
+   higher CEFR band; they are the wrong category.</p>
+<p>Those are A2–B1 verbs and make a usable first level set on their own. B2's<br>
+   separable-prefix chunks (<code>aandacht vragen voor</code>, <code>opvangen</code>, <code>inwerken in</code> …) stay in<br>
+   Voorzetselpaden: they govern a real preposition, so they are legal frames there and<br>
+   would only duplicate here.</p>
+<p>## Open questions</p>
+<ul>
+<li>Does this replace the "separable prefixes" line in the Preposition Paths catalogue<br>
+     entry, or sit beside it?</li>
+<li>Is it really distinct from Sentence Builder, or should the two share one engine and<br>
+     differ only in content and scoring?</li>
+<li>B2 stress pairs need audio. Until audio exists they can only be taught by definition,<br>
+     not by ear.</li>
+<li>Name: <em>Uit Elkaar</em> is a working title and may read as "out of each other".<br>
+     Alternatives: <em>Werkwoordsplitter</em>, <em>Los!</em>.</li>
+</ul>
+<p>## Success test</p>
+<p>A learner can take any A2 separable verb and place the prefix correctly in (a) a main<br>
+   clause, (b) an inversion, (c) a subclause, (d) a modal sentence and (e) the perfect<br>
+   tense — and never writes <em>geopbeld</em>.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="rethink-2026-11-16/README.html"><span>Previous</span>Rethink: structure and art</a><a class="next" href="todo.html"><span>Next</span>Scratch list</a></nav>
+    <footer class="footer">
+      <code>Docs/archive/suggestions.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>
