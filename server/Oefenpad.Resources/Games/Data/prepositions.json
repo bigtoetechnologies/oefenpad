@@ -1104,7 +1104,7 @@
     {
       "id": "zoeken-naar-bril",
       "frame": "zoeken naar",
-      "en": "to search for",
+      "en": "to look for",
       "scene": "zoeken-naar-bril",
       "contrast": null,
       "focus": [
@@ -1133,7 +1133,7 @@
     {
       "id": "zoeken-naar-hond",
       "frame": "zoeken naar",
-      "en": "to search for",
+      "en": "to look for",
       "scene": "zoeken-naar-hond",
       "contrast": null,
       "focus": [
@@ -1162,7 +1162,7 @@
     {
       "id": "zoeken-naar-telefoon",
       "frame": "zoeken naar",
-      "en": "to search for",
+      "en": "to look for",
       "scene": "zoeken-naar-telefoon",
       "contrast": null,
       "focus": [
@@ -1397,7 +1397,7 @@
     {
       "id": "vragen-naar-informatie",
       "frame": "vragen naar",
-      "en": "to ask about",
+      "en": "to ask about, to ask for a person",
       "scene": "vragen-naar-informatie",
       "contrast": "vragen-aan-persoon",
       "focus": [
@@ -1426,7 +1426,7 @@
     {
       "id": "vragen-naar-weg",
       "frame": "vragen naar",
-      "en": "to ask about",
+      "en": "to ask about, to ask for a person",
       "scene": "vragen-naar-weg",
       "contrast": "vragen-aan-leraar",
       "focus": [
@@ -1456,7 +1456,7 @@
     {
       "id": "vragen-naar-tijd",
       "frame": "vragen naar",
-      "en": "to ask about",
+      "en": "to ask about, to ask for a person",
       "scene": "vragen-naar-tijd",
       "contrast": "vragen-aan-arts",
       "focus": [
@@ -1485,7 +1485,7 @@
     {
       "id": "vragen-naar-adres",
       "frame": "vragen naar",
-      "en": "to ask about",
+      "en": "to ask about, to ask for a person",
       "scene": "vragen-naar-adres",
       "contrast": "vragen-aan-persoon",
       "focus": [
