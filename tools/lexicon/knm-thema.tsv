@@ -1,0 +1,280 @@
+nl	thema	prioriteit	waarom
+dichtbevolkt	algemeen	nuttig	describes the Randstad
+handel	algemeen	nuttig	narrow noun trade
+landbouw	algemeen	nuttig	encyclopaedic sector noun
+politiek	algemeen	nuttig	common abstract noun
+Randstad	naam	nuttig	place name
+veeteelt	algemeen	laag	encyclopaedic farming term
+Afsluitdijk	naam	laag	encyclopaedic place name
+Deltawerken	naam	laag	encyclopaedic place name
+dijk	plaats	nuttig	landscape thing
+duin	plaats	nuttig	landscape thing
+overstroming	algemeen	nuttig	narrow disaster noun
+polder	plaats	nuttig	landscape thing
+watersnoodramp	algemeen	nuttig	narrow encyclopaedic event
+christelijk	algemeen	nuttig	adjective christian
+godsdienst	algemeen	nuttig	only somewhat: not reading of faith
+katholiek	algemeen	nuttig	adjective catholic
+macht	algemeen	nuttig	abstract noun power
+onafhankelijk	algemeen	nuttig	abstract adjective
+opstand	algemeen	nuttig	historical noun
+protestant	algemeen	nuttig	adjective protestant
+republiek	algemeen	nuttig	encyclopaedic noun
+Gouden Eeuw	naam	nuttig	historical period name
+gracht	plaats	nuttig	city landscape feature
+schip	Reizen	nuttig	common vehicle noun
+slaaf	algemeen	nuttig	historical noun
+V.O.C.	naam	laag	encyclopaedic company name
+vervoeren	algemeen	nuttig	common verb transport
+kolonie	algemeen	nuttig	historical noun
+democratie	algemeen	nuttig	politics noun
+grondwet	algemeen	nuttig	law noun
+minister	algemeen	nuttig	politics person
+parlement	algemeen	nuttig	politics body
+volk	Mensen	nuttig	people of a country
+bevrijden	algemeen	nuttig	verb liberate
+bezetten	algemeen	nuttig	verb occupy
+concentratiekamp	algemeen	nuttig	historical noun
+dagboek	algemeen	nuttig	common noun
+geallieerden	algemeen	nuttig	historical noun
+hongerwinter	algemeen	nuttig	historical one-off
+Jood	Mensen	nuttig	group of people
+onderduiken	algemeen	nuttig	historical verb
+slachtoffer	algemeen	kern	common noun victim
+emancipatie	algemeen	nuttig	abstract noun
+Europese Unie	naam	nuttig	institution name
+gastarbeider	algemeen	nuttig	historical noun
+gelijkheid	algemeen	nuttig	abstract noun
+organisatie	algemeen	kern	common noun organisation
+recht	algemeen	nuttig	common law noun
+stemmen (op)	algemeen	nuttig	narrow voting sense
+Verenigde Naties	naam	nuttig	institution name
+vluchteling	Mensen	kern	common person noun
+beleefd	algemeen	nuttig	abstract adjective
+gewoonte	algemeen	kern	common noun habit
+overlast	Buurt	kern	neighbour nuisance
+gedicht	algemeen	nuttig	common noun
+oliebol	algemeen	nuttig	one Dutch custom word
+pretpark	algemeen	nuttig	common leisure noun
+vrijheid	algemeen	kern	central abstract noun
+couplet	algemeen	laag	narrow song term
+volkslied	algemeen	nuttig	national anthem
+bekende	Mensen	kern	common person noun
+crematie	algemeen	nuttig	narrow funeral noun
+kraambezoek	algemeen	nuttig	narrow custom word
+receptie	algemeen	nuttig	common event noun
+rouwkaart	algemeen	nuttig	narrow custom word
+bestuur	algemeen	nuttig	abstract governing noun
+buurthuis	Buurt	nuttig	neighbourhood place
+contributie	algemeen	nuttig	club fees noun
+vereniging	algemeen	nuttig	association noun
+vrijwilligerswerk	Werk	nuttig	volunteer work
+homo	Mensen	kern	common person noun
+lastigvallen	algemeen	nuttig	verb harass
+bod doen	Wonen	nuttig	offer on a house
+toeslag	Bank en geld	kern	benefit payment noun
+hypotheek	Bank en geld	kern	mortgage noun
+inkomen	Bank en geld	kern	common money noun
+makelaar	Werk	nuttig	agent job noun
+notaris	algemeen	nuttig	narrow profession
+rente	Bank en geld	kern	interest noun
+sociale huurwoning	Wonen	kern	social housing noun
+woningbouwvereniging	Wonen	nuttig	housing corporation
+aanvragen	Formulieren	kern	very common verb apply
+abonnement	Telefoon en internet	kern	common subscription noun
+elektriciteit	Wonen	kern	common utility noun
+energie	Wonen	kern	common utility noun
+jaarrekening	algemeen	laag	narrow financial term
+meter	algemeen	nuttig	measuring device noun
+meterstand	Wonen	nuttig	narrow utility term
+milieu	algemeen	nuttig	abstract noun
+provider	Telefoon en internet	nuttig	internet provider
+regio	plaats	nuttig	area noun
+vast bedrag	Bank en geld	nuttig	fixed price
+zuinig	algemeen	nuttig	common adjective
+hoofdkraan	Wonen	nuttig	narrow household term
+loodgieter	Werk	nuttig	plumber
+melder	Wonen	nuttig	smoke detector
+stopcontact	Wonen	kern	common household noun
+storing	Telefoon en internet	nuttig	common malfunction noun
+aansprakelijkheidsverzekering	algemeen	nuttig	narrow insurance term
+afsluiten	algemeen	kern	common verb conclude
+inboedel	Wonen	nuttig	household contents
+opstalverzekering	algemeen	nuttig	narrow insurance term
+polis	algemeen	nuttig	insurance document
+premie	algemeen	nuttig	insurance payment noun
+schade	algemeen	kern	common damage noun
+vergoeding	Bank en geld	nuttig	compensation noun
+verzekering	algemeen	kern	insurance noun
+verzekeringsmaatschappij	algemeen	nuttig	insurance company
+woonhuisverzekering	algemeen	nuttig	narrow insurance term
+afval scheiden	Wonen	kern	daily household task
+afvalkalender	Wonen	nuttig	narrow municipal term
+chemisch afval	Wonen	nuttig	household waste term
+container	Wonen	kern	very common container noun
+gft-bak	Wonen	nuttig	organic waste bin
+grofvuil	Wonen	nuttig	bulky waste noun
+recyclen (gerecycled)	Wonen	nuttig	common verb recycle
+textiel	algemeen	nuttig	material noun
+vuilnis	Wonen	kern	common rubbish noun
+herhaalrecept	Gezondheid	nuttig	narrow pharmacy term
+huisartsenpost	Gezondheid	nuttig	out-of-hours surgery
+huisartsenpraktijk	Gezondheid	nuttig	doctor practice
+pijnstiller	Gezondheid	kern	common medicine noun
+spreekuur	Gezondheid	nuttig	consulting hour
+voorschrijven	Gezondheid	nuttig	verb prescribe
+ambulance	Nood en politie	kern	emergency vehicle
+doorverwijzen	Gezondheid	nuttig	verb refer
+noodgeval	Nood en politie	kern	common noun emergency
+opname	Gezondheid	nuttig	hospital admission
+patiënt	Gezondheid	kern	very common patient noun
+polikliniek	Gezondheid	nuttig	narrow hospital term
+specialist	Gezondheid	kern	medical specialist
+Spoedeisende Hulp	Nood en politie	kern	emergency department
+verwijsbrief	Gezondheid	nuttig	narrow referral term
+depressief	Gezondheid	kern	common adjective
+fysiotherapeut	Gezondheid	nuttig	physiotherapist
+psycholoog	Gezondheid	nuttig	psychologist
+stijf	Gezondheid	nuttig	common symptom adjective
+bevalling	Gezondheid	nuttig	childbirth noun
+consultatiebureau	Gezondheid	nuttig	child health clinic
+gynaecoloog	Gezondheid	nuttig	narrow specialist
+kraamverzorgster	Zorg voor iemand anders	nuttig	postnatal care person
+kraamzorg	Zorg voor iemand anders	nuttig	postnatal care at home
+vaccinatie	Gezondheid	kern	common vaccination noun
+verloskundige	Zorg voor iemand anders	nuttig	midwife
+mantelzorg	Zorg voor iemand anders	nuttig	informal care noun
+recht hebben op	algemeen	kern	common right expression
+thuiszorg	Zorg voor iemand anders	nuttig	home care at home
+verpleeghuis	Zorg voor iemand anders	nuttig	nursing home
+verzorgingshuis	Zorg voor iemand anders	nuttig	nursing home
+wijkverpleegkundige	Zorg voor iemand anders	nuttig	district nurse
+zorgplan	Zorg voor iemand anders	nuttig	care plan
+aanvullende verzekering	algemeen	nuttig	narrow insurance term
+basisverzekering	algemeen	nuttig	narrow insurance term
+declareren	algemeen	nuttig	verb claim costs
+eigen risico	Gezondheid	nuttig	health deductible
+vergoeden	algemeen	nuttig	verb reimburse
+gedrag	algemeen	kern	common noun behaviour
+kinderbijslag	Kinderen en school	nuttig	child benefit
+kindgebonden budget	Kinderen en school	nuttig	child budget
+ontwikkelen	algemeen	kern	common verb develop
+opvoeding	Kinderen en school	kern	central upbringing noun
+per ongeluk	algemeen	kern	very common adverb phrase
+pesten	Kinderen en school	kern	common verb bullying
+verantwoordelijk	algemeen	kern	common adjective
+buitenschoolse opvang	Kinderen en school	nuttig	after school care
+crèche	Kinderen en school	kern	baby daycare
+gastouder	Kinderen en school	nuttig	host parent carer
+kinderdagverblijf	Kinderen en school	kern	daycare centre
+kinderopvang	Kinderen en school	kern	childcare
+wachtlijst	algemeen	kern	common waiting list noun
+blind	algemeen	nuttig	common adjective
+islamitisch	algemeen	nuttig	adjective islamic
+leerplicht	Kinderen en school	kern	compulsory schooling
+openbaar	algemeen	nuttig	adjective public
+ouderbetrokkenheid	Kinderen en school	nuttig	narrow school term
+peuterspeelzaal	Kinderen en school	nuttig	preschool
+vervolgopleiding	Kinderen en school	nuttig	narrow education term
+voorschool	Kinderen en school	nuttig	preschool
+aardrijkskunde	Kinderen en school	kern	school subject
+bijdrage	algemeen	kern	common contribution noun
+biologie	Kinderen en school	kern	school subject
+seksuele voorlichting	Kinderen en school	nuttig	sex education
+voortgezet onderwijs	Kinderen en school	kern	secondary school
+studiefinanciering	Kinderen en school	kern	student grant
+actief	algemeen	kern	common adjective
+netwerk	algemeen	nuttig	common abstract noun
+uitzendbureau	Werk	nuttig	temp agency
+aannemen	Solliciteren	nuttig	verb hire
+diplomawaardering	Solliciteren	nuttig	credential evaluation
+ervaringscertificaat	Solliciteren	nuttig	narrow certificate term
+motivatie	Solliciteren	kern	motivation letter
+werkervaringsplaats	Solliciteren	nuttig	experience placement
+brutoloon	Werk	nuttig	narrow pay term
+cao	Solliciteren	nuttig	collective agreement
+loonstrook	Solliciteren	kern	payslip contract word
+nettoloon	Werk	nuttig	narrow pay term
+opzegtermijn	Solliciteren	kern	notice period contract word
+uitkering	Bank en geld	kern	common benefit noun
+discriminatie	algemeen	kern	common noun
+initiatief nemen	Werk	nuttig	workplace expression
+leidinggevende	Werk	kern	common supervisor noun
+vertrouwenspersoon	Werk	nuttig	confidential adviser
+ondernemingsraad	Werk	nuttig	works council
+ontslaan	Solliciteren	kern	verb fire contract sense
+vakbond	Werk	nuttig	trade union
+btw-nummer	Formulieren	nuttig	official number
+financiering	algemeen	nuttig	abstract finance noun
+investeren (in)	algemeen	nuttig	common verb invest
+Kamer van Koophandel	naam	nuttig	official body name
+ondernemingsplan	Werk	nuttig	business plan
+vergunning	Gemeente en post	kern	licence from municipality
+alleenstaande ouder	Mensen	nuttig	single parent
+plicht	algemeen	kern	common duty noun
+psychisch	algemeen	nuttig	abstract adjective
+aangifte doen	Formulieren	kern	do tax declaration
+administratie	algemeen	nuttig	bookkeeping noun
+burgemeester	Gemeente en post	kern	mayor
+document	Formulieren	kern	common document noun
+ID-kaart	Formulieren	kern	identity card
+nationaliteit	Formulieren	nuttig	nationality on forms
+naturaliseren	Gemeente en post	nuttig	verb naturalise
+uittreksel	Formulieren	nuttig	official extract
+verlengen	Gemeente en post	kern	common verb renew
+voorwaarde	Gemeente en post	nuttig	condition requirement
+dader	Nood en politie	kern	perpetrator
+gevecht	Nood en politie	nuttig	common fight noun
+geweld	Nood en politie	kern	common violence noun
+identiteitsbewijs	Formulieren	kern	identity document
+instantie	Gemeente en post	kern	official organisation
+legitimeren	Nood en politie	nuttig	show ID to police
+misdrijf	Nood en politie	kern	common crime noun
+voorkomen	Nood en politie	nuttig	verb prevent
+belastingaangifte	Formulieren	kern	tax return form
+burgerservicenummer	Formulieren	kern	BSN official number
+gift	algemeen	nuttig	common noun gift
+inkomsten	Bank en geld	kern	common income noun
+in termijnen	Bank en geld	nuttig	paying in instalments
+jaaropgaaf	Formulieren	nuttig	annual tax statement
+kwijtschelding	Formulieren	nuttig	tax waiver
+riool	Wonen	nuttig	sewer municipal noun
+uitgave	Bank en geld	nuttig	expense noun
+antidiscriminatiebureau	Gemeente en post	nuttig	report discrimination office
+College voor de Rechten van de Mens	naam	nuttig	institution name
+indienen	Gemeente en post	kern	verb submit application
+jeugdzorg	Gemeente en post	nuttig	youth care services
+juridisch	algemeen	nuttig	adjective legal
+Juridisch Loket	naam	nuttig	helpdesk name
+maatschappelijk werker	Gemeente en post	nuttig	social worker
+Nationale ombudsman	naam	nuttig	institution name
+kiesrecht	algemeen	nuttig	narrow voting term
+leider	algemeen	kern	common leader noun
+politieke partij	algemeen	nuttig	political party
+regeren	algemeen	nuttig	verb govern
+verkiezing	algemeen	nuttig	election noun
+Commissaris van de Koning	naam	nuttig	official title name
+Eerste Kamer	naam	nuttig	institution name
+gemeenteraad	Gemeente en post	kern	city council
+kabinet	algemeen	nuttig	cabinet noun
+minister-president	algemeen	nuttig	prime minister
+Provinciale Staten	naam	nuttig	institution name
+staatssecretaris	algemeen	nuttig	junior minister
+Tweede Kamer	naam	nuttig	institution name
+troonrede	algemeen	nuttig	annual royal speech
+voorzitter	algemeen	kern	common chairman noun
+wethouder	Gemeente en post	nuttig	alderman
+rechter	algemeen	nuttig	judge noun
+rechterlijke macht	algemeen	nuttig	narrow legal term
+scheiding van de machten	algemeen	nuttig	narrow civics phrase
+uitvoeren	algemeen	kern	common verb carry out
+uitvoerende macht	algemeen	nuttig	narrow legal term
+wetgevende macht	algemeen	nuttig	narrow legal term
+abortus	algemeen	nuttig	sensitive topic noun
+besnijdenis	algemeen	nuttig	sensitive topic noun
+eerwraak	algemeen	laag	narrow encyclopaedic term
+euthanasie	algemeen	nuttig	sensitive topic noun
+kindermishandeling	algemeen	nuttig	sensitive topic noun
+meningsuiting	algemeen	nuttig	freedom of expression
+respect (hebben voor)	Mensen	kern	common respect verb
+scheiding van kerk en staat	algemeen	nuttig	narrow civics phrase
