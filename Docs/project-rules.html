@@ -375,7 +375,8 @@ look like.</p>
   licence obligation is the CC BY-SA copyleft from the <code>kaikki</code> rows.
   <a href="lexicon/index.html"><code>Docs/lexicon/index.html</code></a> has the pipeline and the scale;
   <a href="lexicon/bronnen.html"><code>Docs/lexicon/bronnen.html</code></a> has every source and the exact
-  selection rule. The generated TSVs are untracked in git.</li>
+  selection rule. The generated TSVs are tracked in git; commit them with the scripts
+  that produced them.</li>
 </ul>
 <h2 id="running-and-checking-it">Running and checking it</h2>
 <p>Port 8080 is often in use by something of the owner's. Leave it alone.</p>
@@ -544,7 +545,7 @@ and the docs that describe it. Push only when the owner asks.</p>
 </tr>
 <tr>
 <td>13</td>
-<td><code>assets/verb-propositions/incoming/</code> holds 50 redraws nothing references, including fresh copies of the two scenes dropped as nonsense. <code>assets/claude/incoming/</code> is 13 MB of the same kind. Neither is committed; decide whether raster source art belongs in git at all</td>
+<td><code>assets/verb-propositions/incoming/</code> holds the redraws nothing references, sorted by band (<code>A0/</code> 40, <code>A1/</code> 78, <code>A2/</code> 58, <code>A2-PAIRS/</code> 11), including fresh copies of the two scenes dropped as nonsense. <code>assets/claude/incoming/</code> is 13 MB of the same kind. Both are now committed; decide whether raster source art belongs in git at all</td>
 </tr>
 <tr>
 <td>17</td>
