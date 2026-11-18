@@ -199,7 +199,7 @@ main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
       <p class="lede">The 41 wrong English glosses in the appendix rows, with PDF page, row number, what it says and what it should say.</p>
       <p class="doc-meta">Docs/lexicon/gloss-audit.html</p>
     </header>
-    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#1-method">1. Method</a></li><li class="toc-h2"><a href="#2-the-number">2. The number</a></li><li class="toc-h2"><a href="#3-tableau">3. Tableau</a></li><li class="toc-h3"><a href="#the-shift-stretches-in-full">The shift stretches, in full</a></li><li class="toc-h2"><a href="#4-repair-proposal-not-applied">4. Repair proposal (not applied)</a></li><li class="toc-h2"><a href="#5-what-i-could-not-check">5. What I could not check</a></li></ul></details>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#1-method">1. Method</a></li><li class="toc-h2"><a href="#2-the-number">2. The number</a></li><li class="toc-h2"><a href="#3-tableau">3. Tableau</a></li><li class="toc-h3"><a href="#the-shift-stretches-in-full">The shift stretches, in full</a></li><li class="toc-h2"><a href="#4-repair-proposal-not-applied">4. Repair proposal (not applied at the time)</a></li><li class="toc-h2"><a href="#5-what-i-could-not-check">5. What I could not check</a></li><li class="toc-h2"><a href="#6-fixed-on-18-november-2026">6. Fixed on 18 November 2026</a></li></ul></details>
     <article class="prose">
 <p>Audit only. No data file, script or PDF was modified. Every claim below is
 tied to a row number in <code>tools/lexicon/woorden.tsv</code> (1-based, header = row 1).</p>
@@ -229,7 +229,7 @@ stretch could still be one word early or late.</p>
 <tbody>
 <tr>
 <td><code>bijlage8</code> rows in <code>woorden.tsv</code></td>
-<td>5,161 (4,709 with <code>bijlage8</code> as sole origin; 452 also in a game)</td>
+<td>5,162 (4,709 with <code>bijlage8</code> as sole origin; 453 also in a game)</td>
 </tr>
 <tr>
 <td>certainly wrong — correct gloss can be named</td>
@@ -634,12 +634,16 @@ fix nothing.</p>
 </tr>
 </tbody>
 </table></div>
-<p><strong>Footers: 2</strong> (2258, 3630). The PDF carries a footer on <strong>all 148 pages</strong>
-(<code>N van 148</code>); the extraction caught 146 of them and two leaked into glosses.</p>
+<p><strong>Footers: all 148 pages.</strong> The PDF carries a footer on <strong>every page</strong>
+(<code>N van 148</code>), and the extraction leaked each one into the gloss of the last
+entry on that page — not the two rows shown above, which were simply the two
+that happened to fall inside this audit's sample. The footer is split into two
+XML cells (<code>5</code> + <code> van 148</code>), so a per-cell test never matched; only the
+joined gloss does. Fixed at the source, see §6.</p>
 <p><strong>Sense markers: 2</strong> (30, 574; 46, 202 — four rows, two distinct strings). The
 glosses <code>to an(noun)ce</code> and <code>to (adj)ust</code> contain a stylistic tag that the
 source set in the same size as the word, so it was read as gloss text. 4744's
-<code>(adv)</code> is the same class.</p>
+<code>(adv)</code> is the same class. Also fixed at the source, see §6.</p>
 <h3 id="the-shift-stretches-in-full">The shift stretches, in full</h3>
 <p>Every neighbour swap is <strong>exactly ±1</strong>. Five are self-contained two-row
 transpositions; three are chains of three or more that need a cyclic rotation.
@@ -723,7 +727,10 @@ therefore means shifting glosses <strong>up</strong>, not down.</p>
 partner inside it; it is listed as <code>probable</code> only because its gloss is almost
 certainly <code>bewegen</code>'s — the source has it at <code>bewegen</code> too, where it is
 harmless. Do not move it without checking the PDF page by eye.</p>
-<h2 id="4-repair-proposal-not-applied">4. Repair proposal (not applied)</h2>
+<h2 id="4-repair-proposal-not-applied">4. Repair proposal (not applied at the time)</h2>
+<p class="note"><strong>Superseded.</strong> The mechanical defects in this section — footers and
+sense markers — were fixed at the source on 18 November 2026; see §6. The
+row-by-row gloss corrections below are still outstanding.</p>
 <p>Recommended, in this order.</p>
 <ol>
 <li><strong>Patch the data, not the script.</strong> A parser change cannot help: there is
@@ -764,12 +771,33 @@ the same commit or the alignment assertion in <code>bouw-viewer.py</code> will f
 <li><strong>Hiatuses &gt; 1 row.</strong> I verified every shift is ±1 by checking that each
   gloss belongs to an immediate neighbour. I did not establish whether any
   stretch has a two-row gap, so a gloss two rows away would have looked clean.</li>
-<li><strong>The 452 rows with a game origin as well as <code>bijlage8</code></strong> were checked for
+<li><strong>The 453 rows with a game origin as well as <code>bijlage8</code></strong> were checked for
   gloss text but their <code>en</code> is normally overwritten by the game bank; those
   glosses are not appendix-sourced and were not audited as such.</li>
 <li><strong><code>Docs/</code> and the games</strong> were not touched: this file reports on the lexicon
   only, and nothing here changes what the site ships.</li>
 </ul>
+<h2 id="6-fixed-on-18-november-2026">6. Fixed on 18 November 2026</h2>
+<p>The extraction was repaired rather than the data, because these three defects
+were reproducible in the parser:</p>
+<ul>
+<li><strong>148 footer bleeds.</strong> The footer is two cells (<code>5</code> + <code> van 148</code>), so the
+  per-cell <code>FOOTER</code> test never matched. <code>extraheer-woorden.py</code> now joins the
+  cells, normalises whitespace and refuses to append a row whose gloss is a
+  footer. A rebuild emits zero <code>N van 148</code> glosses.</li>
+<li><strong>Five sense-marker glosses.</strong> <code>POS_MARK</code> now strips the parenthetical tag,
+  and <code>GLOSS_REPAIR</code> writes out the four glosses the tag had eaten letters from
+  (<code>aankondigen</code>, <code>aanpassen</code>, <code>afstemmen</code>, <code>bekendmaken</code>). <code>razend</code> keeps its
+  genuine two-sense gloss <code>a) furious b) very</code> with the marker removed.</li>
+<li><strong><code>zo’n</code> was missing.</strong> It is set in a different font on page 147 and had
+  been lost silently. The extraction now finds it, and <code>VERWACHT</code> asserts that
+  <code>zo’n</code>, <code>ons</code>, <code>zijn</code>, <code>een</code> and <code>niet</code> survive a rebuild (comma variants
+  such as <code>zijn, z’n</code> are split before the check). <code>aanvul-woorden.py</code> also
+  restores it if a future rebuild ever loses it again.</li>
+</ul>
+<p>What remains in §3 is the semantic damage a rebuild cannot fix: the neighbour
+swaps, the misspelled lemmas and the wrong-but-plausible glosses. Those still
+need the hand edits proposed in §4.</p>
     </article>
     <nav class="pager" aria-label="Previous and next document"><a class="prev" href="aanvulling.html"><span>Prev</span>The next ~3,000 words</a><a class="next" href="../design-process.html"><span>Next</span>How the home page was designed</a></nav>
     <footer class="footer">

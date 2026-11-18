@@ -199,23 +199,25 @@ main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
       <p class="lede">The selection rule and the provenance counts: what was taken, what was left, and the arithmetic that decided it.</p>
       <p class="doc-meta">Docs/lexicon/bronnen.html</p>
     </header>
-    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-answer-in-one-paragraph">The answer in one paragraph</a></li><li class="toc-h2"><a href="#the-three-steps">The three steps</a></li><li class="toc-h2"><a href="#the-selection-rule-as-arithmetic">The selection rule, as arithmetic</a></li><li class="toc-h2"><a href="#what-was-left-on-the-table">What was left on the table</a></li><li class="toc-h2"><a href="#the-2768-are-mostly-nouns-and-that-matters">The 2,768 are mostly nouns, and that matters</a></li><li class="toc-h2"><a href="#provenance-of-the-10000">Provenance of the 10,000</a></li><li class="toc-h2"><a href="#what-counts-as-a-word-here">What counts as a "word" here</a></li><li class="toc-h2"><a href="#sources">Sources</a></li><li class="toc-h2"><a href="#attribution">Attribution</a></li><li class="toc-h2"><a href="#what-we-did-not-use-and-why">What we did not use, and why</a></li><li class="toc-h2"><a href="#reproducing-the-selection-without-changing-anything">Reproducing the selection without changing anything</a></li><li class="toc-h2"><a href="#known-defects-in-the-result">Known defects in the result</a></li></ul></details>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-answer-in-one-paragraph">The answer in one paragraph</a></li><li class="toc-h2"><a href="#the-three-steps">The three steps</a></li><li class="toc-h2"><a href="#the-selection-rule-as-arithmetic">The selection rule, as arithmetic</a></li><li class="toc-h2"><a href="#what-was-left-on-the-table">What was left on the table</a></li><li class="toc-h2"><a href="#the-2444-are-mostly-nouns-and-that-matters">The 2,444 are mostly nouns, and that matters</a></li><li class="toc-h2"><a href="#provenance-of-the-10000">Provenance of the 10,000</a></li><li class="toc-h2"><a href="#what-counts-as-a-word-here">What counts as a "word" here</a></li><li class="toc-h2"><a href="#sources">Sources</a></li><li class="toc-h2"><a href="#attribution">Attribution</a></li><li class="toc-h2"><a href="#coursebook-comparison">What the coursebooks added, and what they did not</a></li><li class="toc-h2"><a href="#what-we-did-not-use-and-why">What we did not use, and why</a></li><li class="toc-h2"><a href="#reproducing-the-selection-without-changing-anything">Reproducing the selection without changing anything</a></li><li class="toc-h2"><a href="#known-defects-in-the-result">Known defects in the result</a></li></ul></details>
     <article class="prose">
-<p>Written 17 November 2026. Every number below was measured by re-running the
+<p>Written 17 November 2026; every figure re-measured on 18 November 2026 after the
+coursebook additions. Every number below was produced by re-running the
 selection against the files in this directory, not copied from an earlier
 report. All source research — what was downloaded, what it contained, what it
 was licensed under — is in <a href="aanvulling.html"><code>Docs/lexicon/aanvulling.html</code></a>; this file states the <em>selection
 rule</em> and the <em>provenance counts</em>, and points there for the rest.</p>
 <h2 id="the-answer-in-one-paragraph">The answer in one paragraph</h2>
-<p>Nobody chose the online words by hand. The 10,000 is <strong>7,232 words the owner
-already owned</strong> (the coursebook appendix, the games' picture vocabulary, the
-TaalCompleet KNM list) plus <strong>2,768 words taken from English Wiktionary by
-frequency rank</strong>: the 10,442 kaikki candidates were scored with <code>wordfreq</code>, sorted
-by descending zipf frequency (alphabetical on ties), and cut at <strong>zipf 3.29</strong>. The
-alphabetical tie-break at that cut-off decided 42 of the 61 words sitting exactly
-on the boundary, so the last few words in the file are arbitrary. <strong>7,607 usable
-candidates were left unused</strong> — that is the headroom if the target ever rises.</p>
-<h2 id="the-three-steps">The three steps</h2>
+<p>Nobody chose the online words by hand. The 10,000 is <strong>7,556 words the owner
+already owned or curated</strong> (the coursebook appendix, the games' picture
+vocabulary, the TaalCompleet KNM list and the coursebook additions) plus <strong>2,444
+words taken from English Wiktionary by frequency rank</strong>: the 10,442 kaikki
+candidates were scored with <code>wordfreq</code>, sorted by descending zipf frequency
+(alphabetical on ties), and cut at <strong>zipf 3.35</strong>. The alphabetical tie-break at
+that cut-off decided 54 of the 58 words sitting exactly on the boundary, so the
+last few words in the file are arbitrary. <strong>7,805 usable candidates were left
+unused</strong> — that is the headroom if the target ever rises.</p>
+<h2 id="the-three-steps">The four steps</h2>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -240,17 +242,24 @@ candidates were left unused</strong> — that is the headroom if the target ever
 </tr>
 <tr>
 <td>3</td>
+<td><code>aanvul-woorden.py</code></td>
+<td>curated coursebook vocabulary the frequency cut misses</td>
+<td><strong>7,556</strong></td>
+</tr>
+<tr>
+<td>4</td>
 <td><code>verrijk-woorden.py</code></td>
 <td>kaikki candidates, ranked by <code>wordfreq</code></td>
 <td><strong>10,000</strong></td>
 </tr>
 </tbody>
 </table></div>
-<p>Only step 3 involves a choice. Steps 1 and 2 are exhaustive: every lemma those
-sources supply that is not already present is taken.</p>
+<p>Only step 4 involves a choice. Steps 1–3 are exhaustive: every lemma those
+sources supply that is not already present is taken. Step 3 is curated by hand
+from <code>aanvul-woorden.tsv</code>, but it too adds every row it is given.</p>
 <h2 id="the-selection-rule-as-arithmetic">The selection rule, as arithmetic</h2>
-<p>Inputs: <code>kandidaten.tsv</code> (10,442 rows) and <code>woorden.tsv</code> as step 2 left it
-(7,232 rows).</p>
+<p>Inputs: <code>kandidaten.tsv</code> (10,442 rows) and <code>woorden.tsv</code> as step 3 left it
+(7,556 rows).</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -264,24 +273,16 @@ sources supply that is not already present is taken.</p>
 <td>10,442</td>
 </tr>
 <tr>
-<td>already present after step 2 (the 67 KNM lemmas that also sit in the pool)</td>
-<td>−67</td>
-</tr>
-<tr>
-<td>rows with an empty gloss</td>
-<td>−0</td>
-</tr>
-<tr>
-<td>duplicate lemmas among the survivors</td>
-<td>−0</td>
+<td>skipped because already present, blank or repeated</td>
+<td>−193</td>
 </tr>
 <tr>
 <td><strong>actually scored with <code>zipf_frequency(nl, "nl")</code></strong></td>
-<td><strong>10,375</strong></td>
+<td><strong>10,249</strong></td>
 </tr>
 <tr>
 <td>needed to reach 10,000</td>
-<td>2,768</td>
+<td>2,444</td>
 </tr>
 <tr>
 <td>sorted by</td>
@@ -289,27 +290,29 @@ sources supply that is not already present is taken.</p>
 </tr>
 <tr>
 <td><strong>cut-off</strong></td>
-<td><strong>zipf 3.2900</strong></td>
+<td><strong>zipf 3.3500</strong></td>
 </tr>
 <tr>
-<td>candidates sitting exactly at 3.29</td>
-<td>61</td>
+<td>candidates sitting exactly at 3.35</td>
+<td>58</td>
 </tr>
 <tr>
 <td>of those, taken</td>
-<td>42</td>
+<td>54</td>
 </tr>
 <tr>
 <td><strong>unused survivors</strong></td>
-<td><strong>7,607</strong></td>
+<td><strong>7,805</strong></td>
 </tr>
 </tbody>
 </table></div>
-<p>The 67 is not a coincidence: <code>knm-woorden.py</code> runs <em>before</em> the top-up, so the
-KNM words the pool also contains are already in <code>woorden.tsv</code> and are skipped
-rather than double-counted. The KNM step itself: 321 rows / 279 distinct
+<p>The 193 is smaller than the 7,556 words already on the list because the
+candidate pool was built against an earlier state of <code>woorden.tsv</code>: most
+coursebook words are not in <code>kandidaten.tsv</code> at all. Whatever did overlap is
+skipped, not double-counted. The KNM step itself: 321 rows / 279 distinct
 headwords → <strong>125 added</strong>, 152 already present or repeated, <strong>44 phrases skipped</strong>
-(multi-word or containing digits), 0 empty glosses.</p>
+(multi-word or containing digits), 0 empty glosses. The coursebook step added
+<strong>324</strong> of its 325 curated rows (<code>zo’n</code> was already recovered from the appendix).</p>
 <h2 id="what-was-left-on-the-table">What was left on the table</h2>
 <p>All 10,442 candidates already passed the <code>zipf &gt;= 2.5</code> gate when
 <code>kandidaten.tsv</code> was built (step 6 of the recipe in <a href="aanvulling.html"><code>Docs/lexicon/aanvulling.html</code></a>). The
@@ -324,27 +327,31 @@ selection therefore threw away real, usable, glossed lemmas:</p>
 <tbody>
 <tr>
 <td>2.50</td>
-<td>7,607</td>
+<td>7,805</td>
 </tr>
 <tr>
 <td>3.00</td>
-<td>2,128</td>
+<td>2,395</td>
 </tr>
 <tr>
 <td>3.10</td>
-<td>1,320</td>
+<td>1,602</td>
 </tr>
 <tr>
 <td>3.20</td>
-<td>620</td>
+<td>916</td>
 </tr>
 <tr>
 <td>3.25</td>
-<td>288</td>
+<td>600</td>
 </tr>
 <tr>
-<td>3.28</td>
-<td>75</td>
+<td>3.30</td>
+<td>282</td>
+</tr>
+<tr>
+<td>3.35</td>
+<td>4</td>
 </tr>
 </tbody>
 </table></div>
@@ -357,10 +364,10 @@ band holds encyclopaedic and specialist vocabulary (<code>zeeniveau</code>, <cod
 5,360 senses.</p>
 <p>If the target moved to 12,000, the next 2,000 words are already on disk and need
 no new source — <code>verrijk-woorden.py --target 12000</code> is the whole change; at that
-point the cut-off is around zipf 2.9. The pool runs out at <strong>17,607</strong> in total
-(7,232 + 10,375), beyond which a new extraction from a lower gate would be
+point the cut-off is around zipf 3.0. The pool runs out at <strong>17,805</strong> in total
+(7,556 + 10,249), beyond which a new extraction from a lower gate would be
 needed.</p>
-<h2 id="the-2768-are-mostly-nouns-and-that-matters">The 2,768 are mostly nouns, and that matters</h2>
+<h2 id="the-2444-are-mostly-nouns-and-that-matters">The 2,444 are mostly nouns, and that matters</h2>
 <p>Part of speech of the <code>kaikki</code> rows:</p>
 <div class="table-wrap"><table>
 <thead>
@@ -373,27 +380,27 @@ needed.</p>
 <tbody>
 <tr>
 <td>noun</td>
-<td>2,142</td>
-<td>77.4%</td>
+<td>1,900</td>
+<td>77.7%</td>
 </tr>
 <tr>
 <td>adj</td>
-<td>294</td>
-<td>10.6%</td>
+<td>256</td>
+<td>10.5%</td>
 </tr>
 <tr>
 <td>verb</td>
-<td>277</td>
-<td>10.0%</td>
+<td>240</td>
+<td>9.8%</td>
 </tr>
 <tr>
 <td>adv</td>
-<td>41</td>
-<td>1.5%</td>
+<td>35</td>
+<td>1.4%</td>
 </tr>
 <tr>
 <td>function</td>
-<td>9</td>
+<td>8</td>
 <td>0.3%</td>
 </tr>
 <tr>
@@ -409,7 +416,7 @@ needed.</p>
 </tbody>
 </table></div>
 <p>So "10,000 words to B2" is a <em>noun</em> claim more than anything. The appendix
-already carries the verb and adjective spine (1,330 verbs, 844 adjectives); the
+already carries the verb and adjective spine (1,297 verbs, 800 adjectives); the
 extension adds nouns. If the goal is B2 reading, that is defensible — most of
 what a B2 text adds beyond B1 is nominal — but it is not a balanced list, and no
 source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p>
@@ -430,12 +437,12 @@ source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p
 </tr>
 <tr>
 <td><code>bijlage8;spel:…</code></td>
-<td>452</td>
+<td>453</td>
 <td>appendix words that are also in a game's picture bank</td>
 </tr>
 <tr>
 <td><code>spel:…</code> (games only)</td>
-<td>1,946</td>
+<td>1,945</td>
 <td>picture vocabulary from the six games</td>
 </tr>
 <tr>
@@ -445,8 +452,18 @@ source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p
 </tr>
 <tr>
 <td><code>kaikki</code></td>
-<td>2,768</td>
+<td>2,444</td>
 <td>frequency-ranked Wiktionary extension</td>
+</tr>
+<tr>
+<td><code>les:*</code></td>
+<td>321</td>
+<td>curated coursebook vocabulary (NIG, NIA register, TaalCompleet B1 themes 1–5)</td>
+</tr>
+<tr>
+<td><code>handmatig</code></td>
+<td>3</td>
+<td>confirmed high-frequency gaps</td>
 </tr>
 <tr>
 <td><strong>total</strong></td>
@@ -462,11 +479,12 @@ source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p
 <code>technology</code>, <code>travel</code>. Many rows carry two or three tags.</p>
 <p>Read another way:</p>
 <ul>
-<li><strong>5,161</strong> rows come from the frequency appendix (4,709 + 452).</li>
-<li><strong>2,398</strong> rows are in at least one game bank; 452 of those are also appendix
-  words, so <strong>1,946</strong> are game-only.</li>
-<li>The "general Dutch spine" — appendix, KNM and Wiktionary, no picture game —
-  is <strong>8,054</strong> words. The remaining 1,946 are concrete, pictureable vocabulary.</li>
+<li><strong>5,162</strong> rows come from the frequency appendix (4,709 + 453).</li>
+<li><strong>2,398</strong> rows are in at least one game bank; 453 of those are also appendix
+  words, so <strong>1,945</strong> are game-only.</li>
+<li>The "general Dutch spine" — appendix, KNM, coursebook additions and
+  Wiktionary, no picture game — is <strong>8,055</strong> words. The remaining 1,945 are
+  concrete, pictureable vocabulary.</li>
 </ul>
 <h2 id="what-counts-as-a-word-here">What counts as a "word" here</h2>
 <p><code>woorden-woordsoort.tsv</code> gives the shape of the 10,000:</p>
@@ -481,22 +499,22 @@ source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p
 <tbody>
 <tr>
 <td>noun</td>
-<td>6,335</td>
+<td>6,318</td>
 <td></td>
 </tr>
 <tr>
 <td>verb</td>
-<td>1,607</td>
+<td>1,638</td>
 <td></td>
 </tr>
 <tr>
 <td>adj</td>
-<td>1,138</td>
+<td>1,127</td>
 <td></td>
 </tr>
 <tr>
 <td>adv</td>
-<td>364</td>
+<td>359</td>
 <td></td>
 </tr>
 <tr>
@@ -506,12 +524,12 @@ source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p
 </tr>
 <tr>
 <td>function</td>
-<td>205</td>
+<td>206</td>
 <td>prepositions, pronouns, conjunctions, numerals</td>
 </tr>
 <tr>
 <td>interjection</td>
-<td>35</td>
+<td>36</td>
 <td></td>
 </tr>
 <tr>
@@ -522,15 +540,15 @@ source found supplies a frequency-ranked B2 verb or adjective list to fix it.</p
 </tbody>
 </table></div>
 <p>If "word a learner wants to learn" means a content word, the usable figure is
-<strong>9,480</strong> after removing the 205 function words and 315 proper names — and 1,946
-of those are picture vocabulary the games already teach. The 205 function words
+<strong>9,479</strong> after removing the 206 function words and 315 proper names — and 1,945
+of those are picture vocabulary the games already teach. The 206 function words
 are deliberately kept: a learner needs them, but they are taught as grammar, not
 as vocabulary, which is why <code>thema</code> files them all as <code>algemeen</code>/<code>laag</code> and the
 domain axis puts them in <code>Function words</code>.</p>
 <h2 id="sources">Sources</h2>
 <p>Every source with a URL, a verified byte/row count, a licence and where that
 licence is stated is tabulated in <a href="aanvulling.html"><code>Docs/lexicon/aanvulling.html</code></a> §"What was inspected, and how".
-Summary of the three that contributed rows:</p>
+Summary of the sources that contributed rows:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -545,19 +563,37 @@ Summary of the three that contributed rows:</p>
 <td><strong>English Wiktionary via kaikki.org</strong></td>
 <td><code>https://kaikki.org/dictionary/Dutch/kaikki.org-dictionary-Dutch.jsonl</code> — 257,235,436 B, 146,790 entries, extracted 2026-10-30 from the 2026-10-01 dump</td>
 <td><strong>CC BY-SA 4.0 + GFDL</strong> — <code>https://en.wiktionary.org/wiki/Wiktionary:Copyrights</code></td>
-<td>2,768</td>
+<td>2,444</td>
 </tr>
 <tr>
 <td><strong>Bijlage 8</strong>, <em>Nederlands in actie</em></td>
-<td><code>/home/tony/Downloads/filen/DutchCourses/NederlandsInActie/Bijlage-8-Frequente woorden (1).pdf</code> — 148 pp, 1,938,987 B; credits C. Tiberius &amp; T. Schoonheim (2014), <em>A Frequency Dictionary of Dutch</em>, Routledge</td>
-<td>Copyrighted, no grant. Tier read from the page <em>fill colour</em>, not text</td>
-<td>5,161 (any)</td>
+<td><code>/media/tony/Data/Dutch/Bijlage-8-Frequente woorden.pdf</code> — 148 pp, 1,841,498 B; credits C. Tiberius &amp; T. Schoonheim (2014), <em>A Frequency Dictionary of Dutch</em>, Routledge</td>
+<td>No separate licence. Tier read from the page <em>fill colour</em>, not text (see §Attribution)</td>
+<td>5,162 (any)</td>
 </tr>
 <tr>
 <td><strong>TaalCompleet KNM</strong> word lists</td>
-<td><code>…/4 Woordenlijst KNM - Engels.pdf</code> (10 pp) and <code>…/6 Woordenlijst KNM - Nederlands.pdf</code> (26 pp)</td>
-<td>None stated anywhere — treat as internal</td>
+<td><code>/media/tony/Data/Dutch/4 Woordenlijst KNM - Engels.pdf</code> (10 pp) and the Dutch counterpart (26 pp)</td>
+<td>No separate licence (see §Attribution)</td>
 <td>125</td>
+</tr>
+<tr>
+<td><strong><em>Nederlands in gang</em></strong> word list</td>
+<td><code>/media/tony/Data/Dutch/nig-woordenlijst-nl-eng-totaal.pdf</code></td>
+<td>No separate licence (see §Attribution)</td>
+<td>93</td>
+</tr>
+<tr>
+<td><strong><em>Nederlands in actie</em></strong> register</td>
+<td><code>/media/tony/Data/Dutch/Bijlage-7-Register Nederlands-Engels.pdf</code></td>
+<td>No separate licence (see §Attribution)</td>
+<td>165</td>
+</tr>
+<tr>
+<td><strong>TaalCompleet B1</strong> vocabulary, themes 1–5</td>
+<td><code>/media/tony/Data/Dutch/Woordenlijst Thema 1-5 Totaal.pdf</code></td>
+<td>No separate licence (see §Attribution)</td>
+<td>68</td>
 </tr>
 <tr>
 <td><strong>The six games' word banks</strong></td>
@@ -576,7 +612,7 @@ Summary of the three that contributed rows:</p>
 <p>Note what the appendix is: it is a <em>tiered</em> list. Light blue page fill means the
 word is taught in <em>Nederlands in gang</em> (A1), orange means <em>Nederlands in actie</em>
 (B1), unmarked means it is in the 5,000 most frequent but in neither coursebook
-— which <code>woorden.tsv</code> records as <code>niveau = open</code> (3,469 rows). There is no B2
+— which <code>woorden.tsv</code> records as <code>niveau = open</code> (3,468 rows). There is no B2
 tier in that source and no B2 label anywhere in these files.</p>
 <p><strong>No public B2 word list exists.</strong> CEFR publishes none; the Groene Boekje is
 spelling only; SUBTLEX-NL and Routledge are restricted; NT2Lex is CC BY-NC-SA.
@@ -593,10 +629,13 @@ it binds whatever is built from these files:</p>
   makes <code>woorden.tsv</code> and the three files derived from it <strong>copyleft</strong>.</li>
 <li>If <code>wordfreq</code> rankings ship, add Robyn Speer, SUBTLEX (Brysbaert et al.) and
   OpenSubtitles attribution per <code>NOTICE.md</code>.</li>
-<li>The <code>bijlage8</code> and <code>knm</code> rows are copyrighted extractions. They cannot ship at
-  all as they stand, independently of the CC BY-SA question.</li>
+<li>The <code>bijlage8</code>, <code>knm</code> and <code>les:*</code> rows come from coursebooks. <strong>A list of
+  words in a language is not copyrightable</strong>, and we reproduce no selection or
+  arrangement of theirs: the lemmas are re-levelled, extended from other sources
+  and reordered. No attribution is owed for the words themselves.</li>
 </ul>
-<p>None of this is cleared. It is an owner licensing decision.</p>
+<p>That is the owner's ruling of 18 November 2026. The only live licence
+obligation is the CC BY-SA copyleft carried by the <code>kaikki</code> rows.</p>
 <h2 id="what-we-did-not-use-and-why">What we did not use, and why</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -646,6 +685,61 @@ it binds whatever is built from these files:</p>
 </table></div>
 <p>The full comparison, including what each source could have added, is
 <a href="aanvulling.html"><code>Docs/lexicon/aanvulling.html</code></a>.</p>
+<h2 id="coursebook-comparison">What the coursebooks added, and what they did not</h2>
+<p>Comparing our list against the three coursebook extracts was a coverage check,
+not a copy job. Every headword was normalised (lowercase, straight apostrophe,
+leading article and <code>zich</code> stripped), deduplicated, and tested against the
+10,000 before anything was added. The result:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Source</th>
+<th>Headwords</th>
+<th>Gaps in our list</th>
+<th>Added</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Nederlands in gang</em></td>
+<td>1,013</td>
+<td>117</td>
+<td>93</td>
+</tr>
+<tr>
+<td>TaalCompleet B1, themes 1–5</td>
+<td>618</td>
+<td>84</td>
+<td>68</td>
+</tr>
+<tr>
+<td><em>Nederlands in actie</em> register</td>
+<td>1,080</td>
+<td>215</td>
+<td>165</td>
+</tr>
+</tbody>
+</table></div>
+<p>The union of the three gap sets was 410 distinct lemmas. Of those, 266 were
+already curated, and 59 more cleared the selection rule (zipf, plural-lemma test,
+no transparent inflections or proper nouns), giving the 325 rows in
+<code>aanvul-woorden.tsv</code>. The rest were rejected on purpose: proper nouns,
+transparent inflections, diminutives, extraction artefacts and words below zipf
+2.0. Words already present were not touched — their existing gloss and level won.</p>
+<p>Read the other way round, the list already covered most of what the three courses
+teach: <strong>88%</strong> of <em>Nederlands in gang</em>'s 1,013 headwords, <strong>86%</strong> of the
+TaalCompleet B1 themes 1–5 list, and <strong>80%</strong> of the <em>Nederlands in actie</em>
+register.</p>
+<p><strong>Where the added coursebook words sit on the frequency axis is the
+telling part.</strong> Of the 321 <code>les:*</code> rows now in <code>woorden.tsv</code>, only 85 of the 316
+with a <code>wordfreq</code> score reach zipf 3.35 — the cut-off the frequency rule used —
+and 231 sit below it. Their median zipf is <strong>2.99</strong>, and <strong>210 of the 321</strong> land in
+<code>Verdieping</code>. By source the medians are close: 3.16 (<em>Nederlands in gang</em>),
+3.11 (TaalCompleet themes 1–5) and 2.77 (the <em>Nederlands in actie</em> register). In
+other words, the coursebooks pull in a low-frequency tail that a pure frequency
+rule discards: these are words a learner is <em>taught</em> at A1–B1 even though the
+corpus counts them as rare. This is the case for keeping a coursebook source
+beside the frequency source, and it is why 321 rows of 10,000 are there.</p>
 <h2 id="reproducing-the-selection-without-changing-anything">Reproducing the selection without changing anything</h2>
 <pre><code class="language-sh">python3 -m pip install --target /tmp/wf wordfreq
 python3 tools/lexicon/verrijk-woorden.py --wordfreq /tmp/wf --report
@@ -663,7 +757,7 @@ target is reached.</p>
   and survives.</li>
 <li><strong>Theme accuracy is weak on <code>kaikki</code> rows</strong>: 16 of 33 sampled named themes were
   wrong. <code>domein</code> is the axis to browse by; <code>thema</code> on those rows is a hint.</li>
-<li><strong>The boundary is arbitrary.</strong> 42 of 61 words at zipf 3.29 got in by
+<li><strong>The boundary is arbitrary.</strong> 54 of 58 words at zipf 3.35 got in by
   alphabetical order. Do not treat inclusion or exclusion at the tail as
   meaningful.</li>
 </ul>

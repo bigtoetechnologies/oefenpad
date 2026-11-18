@@ -56,6 +56,28 @@ OUT = os.path.join(ROOT, "tools/lexicon/woorden.tsv")
 DPI = 120
 HEADERS = ("Nederlands woord", "Bijlage 8", "|", "Woorden die", "Engelse vertaling")
 
+# The page footer (`37 van 148`) is set in the translation column, so a row with
+# no lemma appends it to the entry above. One gloss per page carried it.
+FOOTER = re.compile(r"^\s*\d+\s+van\s+\d+\s*$")
+
+# The text layer puts a part-of-speech tag in the middle of a glossed word:
+# `to an(noun)ce`, `to (adj)ust`, `a) furious b) (adv) very`.
+POS_MARK = re.compile(r"\s*\((?:noun|adj|adv|verb|prep|conj|pron|num|interj|art)\.?\)")
+
+# Where the marker swallowed letters the gloss cannot be rebuilt from the text,
+# so the four affected entries are written out.
+GLOSS_REPAIR = {
+    "aankondigen": "to announce",
+    "aanpassen": "to adjust",
+    "afstemmen": "to tune, to adjust",
+    "bekendmaken": "to announce",
+}
+
+# `zo’n` is set in a different font on page 147 and was once lost silently.
+# These are common lemmas the appendix must yield; a rebuild that drops one
+# fails here instead of shrinking the list without a word.
+VERWACHT = {"zo’n", "ons", "zijn", "een", "niet"}
+
 
 def kleur(px):
     """Classify one pixel of the highlight fill behind a word."""
@@ -109,14 +131,22 @@ def lees_bijlage(pdf):
             for top in sorted(rows):
                 cells = sorted(rows[top])
                 lemma = [c for c in cells if 100 <= c[0] < 250]
-                gloss = " ".join(c[3] for c in cells if c[0] >= 390)
+                gloss = " ".join(c[3] for c in cells
+                                 if c[0] >= 390 and not FOOTER.match(c[3]))
+                gloss = re.sub(r"\s+", " ", gloss).strip()
                 if not lemma:
-                    if out and gloss:  # wrapped gloss for the entry above
+                    # A wrapped gloss sits in a row of its own; a page footer does
+                    # too, but the footer is split into `5` + ` van 148` cells, so
+                    # only the joined text can be recognised.
+                    if out and gloss and not FOOTER.match(gloss):
                         out[-1] = (out[-1][0], (out[-1][1] + " " + gloss).strip(), out[-1][2])
                     continue
                 left, w, h, name = lemma[0]
                 if skip(name, nr, top):
                     continue
+                gloss = POS_MARK.sub("", gloss)
+                gloss = re.sub(r"\s+", " ", gloss).strip()
+                gloss = GLOSS_REPAIR.get(name.lower(), gloss)
                 box = (int(left * scale), int(top * scale),
                        int((left + w) * scale), int((top + h) * scale))
                 counts = collections.Counter(kleur(p) for p in img.crop(box).getdata())
@@ -146,6 +176,14 @@ def main():
             "top2000": "1" if tier == "gang-top2000" else "",
             "herkomst": ["bijlage8"],
         }
+
+    # Rows such as `zijn, z’n` and `een, één` are stored under the whole string,
+    # so split the variants before checking that nothing was lost.
+    gehad = set()
+    for naam in woorden:
+        gehad.update(deel.strip() for deel in naam.split(","))
+    ontbreekt = VERWACHT - gehad
+    assert not ontbreekt, "appendix extraction lost: %s" % sorted(ontbreekt)
 
     def kandidaten(w):
         """Plural game forms onto the singular lemma the appendix already has."""

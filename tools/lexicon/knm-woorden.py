@@ -19,6 +19,7 @@ Order of the pipeline:
 
     extraheer-woorden.py   appendix + games  -> woorden.tsv (7,107)
     knm-woorden.py         + KNM vocabulary  -> woorden.tsv (7,232)
+    aanvul-woorden.py      + coursebooks     -> woorden.tsv (~7,600)
     verrijk-woorden.py     + candidates      -> woorden.tsv (10,000)
     woordsoort.py                            -> woorden-woordsoort.tsv
     thema.py                                 -> woorden-thema.tsv
@@ -30,8 +31,10 @@ before `verrijk-woorden.py`.
 The KNM theme and priority for these rows are in `knm-thema.tsv`, which
 `thema.py` reads for rows whose `herkomst` is `knm`. That file is hand-checked:
 the KNM word list is authoritative about which words an inburgering learner
-needs, but it is TaalCompleet's, not open-licensed. Treat the rows here as an
-internal extraction, like the appendix. See README.md.
+needs. The rows are an extraction, not a copy: the glosses and themes are ours,
+the list is re-levelled and ordered differently, and a list of words in a
+language is not itself the kind of thing copyright protects. See
+`Docs/lexicon/bronnen.html` for the licence position.
 """
 
 import csv

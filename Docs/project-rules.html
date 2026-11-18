@@ -366,14 +366,16 @@ look like.</p>
   Dutch-only, so their <code>.balk</code> has no <code>.taal</code> switch; <code>.rechts</code> holds only the
   injected <code>#theme-toggle</code>. The browser gets one round at a time from the game
   API; the word bank and the puzzle generators are server-side.</li>
-<li><strong>The lexicon is internal data.</strong> <code>tools/lexicon/</code> holds a 10,000-lemma Dutch
-  list through B2, classified by part of speech, theme and semantic domain, with
-  our own five-band frequency scale (<code>Start</code>, <code>Basis</code>, <code>Midden</code>, <code>Gevorderd</code>,
-  <code>Verdieping</code>) because no public B2 list exists and the coursebook's A1/B1/open
-  tier is not a level. Nothing on the site reads these files.
+<li><strong>The lexicon is a 10,000-lemma Dutch word list.</strong> <code>tools/lexicon/</code> holds
+  the list through B2, classified by part of speech, theme and semantic domain,
+  with our own five-band frequency scale (<code>Start</code>, <code>Basis</code>, <code>Midden</code>,
+  <code>Gevorderd</code>, <code>Verdieping</code>) because no public B2 list exists and the
+  coursebook's A1/B1/open tier is not a level. Nothing on the site reads these
+  files yet. A list of words in a language is not copyrightable; the only
+  licence obligation is the CC BY-SA copyleft from the <code>kaikki</code> rows.
   <a href="lexicon/index.html"><code>Docs/lexicon/index.html</code></a> has the pipeline and the scale;
   <a href="lexicon/bronnen.html"><code>Docs/lexicon/bronnen.html</code></a> has every source and the exact
-  selection rule. The data is untracked in git.</li>
+  selection rule. The generated TSVs are untracked in git.</li>
 </ul>
 <h2 id="running-and-checking-it">Running and checking it</h2>
 <p>Port 8080 is often in use by something of the owner's. Leave it alone.</p>

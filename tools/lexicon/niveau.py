@@ -22,7 +22,7 @@ The band is set by frequency rank, taken from `woorden-frequentie.tsv` (run
 word", which is the question a study order needs. The coursebook tier answers a
 different question — "where does a coursebook teach it" — and stays in the data
 as `trede` so the two can be compared. They do not coincide: see the calibration
-table this script prints, and `README.md` §"Our level scale".
+table this script prints, and `Docs/lexicon/index.html` §"Our level scale".
 
 The CEFR ranges above are an alignment of convenience, not a measurement and not
 a claim about any individual word. Do not print a CEFR label next to a lemma on
@@ -31,12 +31,14 @@ the strength of its band.
 A lemma wordfreq has never seen is absent from the corpus, which makes it rarer
 than everything the corpus does contain, so it belongs in `Verdieping` — not in
 `Start` where a rank of 'not found' would otherwise read as 'very frequent'. The
-one exception is direct evidence about when a learner meets the word: the
-coursebook's own tier, and the KNM list, override the rank.
+The one exception is direct evidence about when a learner meets the word: the
+coursebook's own tier, the KNM list, and the coursebook vocabulary added by
+`aanvul-woorden.py` override the rank.
 
-    186 no-score rows:
+    no-score rows:
     appendix A1 -> Start        appendix B1 -> Midden
     appendix open -> Gevorderd  KNM -> Basis        game word -> Verdieping
+    les:nig -> Basis            les:taalcompleet / les:register -> Midden
 
 `grondslag` records which rule fired.
 
@@ -63,6 +65,17 @@ TAIL = "Verdieping"
 # The no-score fallback: the appendix's own tier, then the source.
 TREDE_BAND = {"A1": "Start", "B1": "Midden", "open": "Gevorderd"}
 
+# A coursebook word wordfreq has never seen still has direct evidence about
+# when a learner meets it: the book that teaches it. Without this branch such a
+# row falls through to the game fallback (`spel`) and lands in Verdieping, which
+# is exactly wrong for a word *Nederlands in gang* teaches in its first year.
+LES_BAND = {
+    "les:nig": "Basis",          # Nederlands in gang, A0-A2
+    "les:taalcompleet": "Midden",  # TaalCompleet B1, A2-B1
+    "les:register": "Midden",      # Nederlands in actie register, A2-B1
+    "handmatig": "Basis",         # a confirmed high-frequency gap
+}
+
 
 def read_tsv(path):
     with open(path, encoding="utf-8") as fh:
@@ -88,6 +101,10 @@ def assign(row, freq_row):
         return TREDE_BAND[trede], "trede"
     if "knm" in herkomst:
         return "Basis", "knm"
+    tags = herkomst.split(";")
+    for tag, band in LES_BAND.items():
+        if tag in tags:
+            return band, "les"
     return TAIL, "spel"
 
 

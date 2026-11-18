@@ -16,9 +16,10 @@ The game practices one chunk per level (`wachten op`, not `wachten`). A level
 therefore holds every ready example of that chunk, and the contrast partner is
 used for the Klopt stop.
 
-The source art is `assets/verb-propositions/incoming/`. The conversion is the
-one in `assets/verb-propositions/README.md`: white paper to alpha, 512 x 763,
-keeping only alpha so the CSS mask paints the cobalt.
+The source art lives in `assets/verb-propositions/incoming/`, one folder per
+band (`A0/`, `A1/`, ...). The conversion is the one in
+`assets/verb-propositions/README.md`: white paper to alpha, 512 x 763, keeping
+only alpha so the CSS mask paints the cobalt.
 
 Usage:
     python3 tools/import-prepositions-band.py            # write everything
@@ -43,6 +44,19 @@ META = ROOT / "server/Oefenpad.Resources/Games/Data/meta.json"
 
 BANDS = ("a0", "a1")
 MASK_SIZE = (512, 763)
+
+
+def incoming_art(band: str, scene_id: str) -> Path | None:
+    """The delivered drawing for a scene, filed under its band's folder.
+
+    A file left loose in the pool root is still accepted, so an un-filed
+    delivery keeps working while `incoming/` is being reorganised.
+    """
+    for path in (INCOMING / band.upper() / f"{scene_id}.png",
+                 INCOMING / f"{scene_id}.png"):
+        if path.exists():
+            return path
+    return None
 
 ARTICLE = re.compile(r'<article class="kaart"([^>]*)>(.*?)</article>', re.S)
 CHUNK_GROUP = re.compile(
@@ -169,6 +183,7 @@ def build_content() -> tuple[dict, list[str]]:
             partners[target] = slug(chunk)
 
     scenes: dict[str, dict] = {}
+    scene_bands: dict[str, str] = {}
     frames: list[dict] = []
     levels: list[dict] = []
     missing_art: list[str] = []
@@ -190,6 +205,7 @@ def build_content() -> tuple[dict, list[str]]:
                 "alt": card["alt"] or card["nl"],
             }
             level_frames.append(card["id"])
+            scene_bands[card["id"]] = chunk["band"]
             frames.append({
                 "id": card["id"],
                 "frame": name,
@@ -223,10 +239,11 @@ def build_content() -> tuple[dict, list[str]]:
 
     for scene_id in scenes:
         if not (ART / f"{scene_id}.png").exists():
-            if not (INCOMING / f"{scene_id}.png").exists():
+            if incoming_art(scene_bands[scene_id], scene_id) is None:
                 missing_art.append(scene_id)
 
-    return {"scenes": scenes, "frames": frames, "levels": levels}, missing_art
+    return ({"scenes": scenes, "frames": frames, "levels": levels}, missing_art,
+            scene_bands)
 
 
 def ink_alpha(path: Path) -> Image.Image:
@@ -254,11 +271,11 @@ def ink_alpha(path: Path) -> Image.Image:
     return grey.point(lut).resize(MASK_SIZE, Image.LANCZOS)
 
 
-def promote(scene_id: str, force: bool = False) -> bool:
+def promote(scene_id: str, band: str, force: bool = False) -> bool:
     out = ART / f"{scene_id}.png"
     if out.exists() and not force:
         return False
-    alpha = ink_alpha(INCOMING / f"{scene_id}.png")
+    alpha = ink_alpha(incoming_art(band, scene_id))
     flat = Image.new("RGB", MASK_SIZE, (255, 255, 255))
     flat.putalpha(alpha)
     flat.save(out, optimize=True)
@@ -273,7 +290,7 @@ def main() -> None:
                         help="re-convert masks that already exist")
     args = parser.parse_args()
 
-    content, missing = build_content()
+    content, missing, scene_bands = build_content()
     frames = len(content["frames"])
     levels = content["levels"]
     scenes = len(content["scenes"])
@@ -292,7 +309,8 @@ def main() -> None:
         return
 
     if not args.no_art:
-        written = sum(promote(scene, args.force_art) for scene in content["scenes"])
+        written = sum(promote(scene, scene_bands[scene], args.force_art)
+                      for scene in content["scenes"])
         print(f"promoted {written} masks into {ART.relative_to(ROOT)}")
 
     DATA.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n",

@@ -118,7 +118,7 @@ def verify(data: dict[str, list[list[str]]]) -> None:
     for i, row in enumerate(niveau, start=2):
         if row[1] not in bands:
             fail(f"woorden-niveau.tsv:{i} has unknown niveau {row[1]!r} (nl {row[0]!r})")
-        if row[3] not in ("rang", "trede", "knm", "spel"):
+        if row[3] not in ("rang", "trede", "knm", "spel", "les"):
             fail(f"woorden-niveau.tsv:{i} has unknown grondslag {row[3]!r} (nl {row[0]!r})")
     used = {row[1] for row in niveau}
     if used != set(bands):

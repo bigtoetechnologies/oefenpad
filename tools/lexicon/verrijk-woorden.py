@@ -2,8 +2,10 @@
 """Top up woorden.tsv to 10,000 words from the verified online candidates.
 
 `extraheer-woorden.py` writes the two sources the owner already owned: the
-coursebook appendix and the games' word bank, 7,107 words. `kandidaten.tsv`
-holds words extracted from English Wiktionary via kaikki.org (see
+coursebook appendix and the games' word bank, 7,107 words. `knm-woorden.py`
+and `aanvul-woorden.py` add the civic and coursebook vocabulary that a
+frequency cut cannot recover. `kandidaten.tsv` holds words extracted from
+English Wiktionary via kaikki.org (see
 `Docs/lexicon/aanvulling.html` for the licence reasoning), already filtered to Dutch lemmas
 with an English gloss that are absent from woorden.tsv.
 
@@ -22,13 +24,15 @@ Order of the pipeline:
 
     extraheer-woorden.py   appendix + games  -> woorden.tsv (7,107)
     knm-woorden.py         + KNM vocabulary  -> woorden.tsv (7,232)
+    aanvul-woorden.py      + coursebooks     -> woorden.tsv (~7,600)
     verrijk-woorden.py     + candidates      -> woorden.tsv (10,000)
     woordsoort.py                            -> woorden-woordsoort.tsv
     thema.py                                 -> woorden-thema.tsv
 
 `verrijk-woorden.py` is idempotent: words already present are never added
 again, so a second run adds nothing. Re-running `extraheer-woorden.py` rewrites
-woorden.tsv from scratch and will drop the additions; run this again after it.
+woorden.tsv from scratch and will drop the additions; run `knm-woorden.py`,
+`aanvul-woorden.py` and this script again after it.
 
 wordfreq is not a project dependency. Install it to a throwaway directory:
 
@@ -38,7 +42,8 @@ wordfreq is not a project dependency. Install it to a throwaway directory:
 Attribution: the ranking uses wordfreq, whose data derives from Wikipedia,
 ParaCrawl, OpenSubtitles, SUBTLEX-NL and Google Books Ngrams. The words added
 here come from English Wiktionary via kaikki.org, CC BY-SA 4.0 + GFDL, so this
-file and the two files derived from it carry that licence. See README.md.
+file and the two files derived from it carry that licence. See
+`Docs/lexicon/bronnen.html`.
 """
 
 import argparse
@@ -140,7 +145,7 @@ def report(krows, present, have_count, scored, target):
     print(f"usable candidates left unused:     {len(scored) - len(take)}")
     zips = [z for z, _, _ in scored]
     print(f"candidate zipf range:              {min(zips):.2f} .. {max(zips):.2f}")
-    for th in (3.00, 3.10, 3.20):
+    for th in (3.00, 3.10, 3.20, 3.25, 3.30, 3.35):
         left = sum(1 for z, _, _ in scored[len(take):] if z >= th)
         print(f"  unused with zipf >= {th:.2f}:          {left}")
     print("first taken: " + ", ".join(nl for _, nl, _ in take[:5]))

@@ -7,6 +7,7 @@ material, not shipped art; the game never reads this folder.
 
 | Folder | What | Use |
 |---|---|---|
+| `incoming/` | Delivered full-size RGB PNGs, one folder per band: `A0/`, `A1/`, `A2/`, `A2-PAIRS/` | Active source that `tools/import-prepositions-band.py` promotes from. File every delivery under its band's folder; a file left loose in the pool root is still accepted as a fallback. |
 | `referenceimages/style-a/` | The three style A references: `zorgen-om-persoon.png`, `krijgen-van-vriend.png`, `trots-op-kind.png` | Active. Attach these to every Voorzetselpaden generation, with `Docs/voorzetselpaden/base-prompt.txt`. Never ship them. |
 | `referenceimages/style-a/origin/` | The three early hand-drawn scenes style A grew from | Provenance only; do not attach |
 | `referenceimages/` (top level) | The three brush anchors `wachten-op-*.png` | Retired for Voorzetselpaden on 12 Nov 2026; still the brush reference for other games |

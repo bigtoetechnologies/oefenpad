@@ -58,6 +58,7 @@ OVERRIDES = {
     "zijn, z’n": "function",
     "gij, ge": "function",
     "ons": "function",            # a) us b) our
+    "zo\u2019n": "function",          # the appendix spells it with a curly apostrophe
     # ---- multiword ----
     "alstublieft alsjeblieft": "interjection",
     "enzovoort, enz": "adv",

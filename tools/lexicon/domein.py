@@ -188,6 +188,55 @@ OVERRIDES = {
     "luifel": "House & home",
 }
 
+# The coursebook additions of 2026-11: the keyword table read these literally
+# (`head of department` became Body & health, `main course` Education).
+OVERRIDES.update({
+    "afdelingshoofd": "Work & jobs",
+    "bijwerking": "Body & health",
+    "beterschap": "Body & health",
+    "goedkomen": "Abstract & general",
+    "klamboe": "House & home",
+    "loonschaal": "Work & jobs",
+    "medestander": "People & relations",
+    "moedertaalspreker": "Communication & language",
+    "olielamp": "House & home",
+    "onderuitgaan": "Movement & position",
+    "pieken": "Abstract & general",
+    "schuren": "House & home",
+    "spellen": "Sport & games",
+    "stratenmaker": "Work & jobs",
+    "uitwisselingsprogramma": "Education & learning",
+    "videogesprek": "Communication & language",
+    "gehaktbal": "Food & drink",
+    "hoofdgerecht": "Food & drink",
+    "kledingzaak": "Clothing & appearance",
+    "dagschotel": "Food & drink",
+    "mosselen": "Food & drink",
+    "paella": "Food & drink",
+    "peterselie": "Food & drink",
+    "rucola": "Food & drink",
+    "zalf": "Body & health",
+    "zandplaat": "Places & geography",
+    "rapper": "Arts & media",
+    "ranglijst": "Sport & games",
+    "relativering": "Abstract & general",
+    "notulen": "Work & jobs",
+    "tube": "Body & health",
+    "thermometer": "Body & health",
+    "zwoel": "Nature & weather",
+    "zoem": "Animals",
+    "zoemen": "Animals",
+    "snurken": "Body & health",
+    "uitputten": "Body & health",
+    "verdacht": "Law & conflict",
+    "zorgzaam": "Character & behaviour",
+    "yogadocent": "Work & jobs",
+    "volleybalteam": "Sport & games",
+    "glazenwasser": "Work & jobs",
+    "lantaarnpaal": "Places & geography",
+    "kruiwagen": "Plants & farming",
+})
+
 # ---------------------------------------------------------------------------
 # Keyword rules. (domain, allowed pos or None, regex over "nl en").
 # Order is significance: the first match wins, so narrow or unambiguous

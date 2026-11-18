@@ -40,6 +40,14 @@
       "file": "art/houden-van-partner.png",
       "alt": "Twee mensen omhelzen elkaar rustig."
     },
+    "houden-van-kat": {
+      "file": "art/houden-van-kat.png",
+      "alt": "Een vrouw houdt een ontspannen kat tegen haar borst, met haar wang op zijn kop en haar ogen dicht."
+    },
+    "houden-van-muziek": {
+      "file": "art/houden-van-muziek.png",
+      "alt": "Een man zit op de vloer tegen een bank, met een koptelefoon op en zijn ogen dicht, en drukt een platenhoes tegen zijn borst; naast hem staat een platenspeler."
+    },
     "komen-uit-huis": {
       "file": "art/komen-uit-huis.png",
       "alt": "Iemand met een koffer stapt uit een huisdeur."
@@ -56,9 +64,25 @@
       "file": "art/komen-uit-winkel.png",
       "alt": "Een vrouw stapt met lege handen uit de deur van een kleine winkel met een luifel en een etalage met paspoppen."
     },
+    "last-hebben-van-lawaai": {
+      "file": "art/last-hebben-van-lawaai.png",
+      "alt": "Iemand houdt de handen voor de oren bij een muur; aan de andere kant klinkt een boormachine."
+    },
     "last-hebben-van-kou": {
       "file": "art/last-hebben-van-kou.png",
       "alt": "Een man in een shirt met korte mouwen staat in de sneeuw bij een kale boom en klemt zijn armen om zich heen."
+    },
+    "last-hebben-van-hoofdpijn": {
+      "file": "art/last-hebben-van-hoofdpijn.png",
+      "alt": "Een vrouw zit voorovergebogen op de rand van een bed en drukt haar vingers tegen haar slapen; op het nachtkastje staan een glas water en een strip pillen."
+    },
+    "last-hebben-van-muggen": {
+      "file": "art/last-hebben-van-muggen.png",
+      "alt": "Een man zit op een klapstoel voor een tent en slaat naar een zwerm muggen rond zijn hoofd en benen."
+    },
+    "letten-op-verkeer": {
+      "file": "art/letten-op-verkeer.png",
+      "alt": "Iemand staat naast een weg en tuurt met een hand boven de ogen in de verte."
     },
     "letten-op-hond": {
       "file": "art/letten-op-hond.png",
@@ -100,6 +124,10 @@
       "file": "art/zin-in-zwemmen.png",
       "alt": "Een man in zwembroek loopt snel over een houten steiger naar het water, met een handdoek onder zijn arm; zijn kleren liggen op een bank achter hem."
     },
+    "zoeken-naar-sleutels": {
+      "file": "art/zoeken-naar-sleutels.png",
+      "alt": "Iemand knielt bij een bank en zoekt naar sleutels die op de grond liggen."
+    },
     "zoeken-naar-bril": {
       "file": "art/zoeken-naar-bril.png",
       "alt": "Een vrouw buigt over een bureau en tast over het blad en in een la, terwijl haar bril boven op haar hoofd zit."
@@ -136,6 +164,10 @@
       "file": "art/vragen-aan-leraar.png",
       "alt": "Een student aan een tafeltje steekt een vinger op; de leraar bij het lege bord kijkt naar de student."
     },
+    "vragen-aan-buur": {
+      "file": "art/vragen-aan-buur.png",
+      "alt": "Iemand staat op de mat voor de deur van de buur met een open hand en een lege tekstballon; de buur leunt uit de deuropening."
+    },
     "vragen-aan-arts": {
       "file": "art/vragen-aan-arts.png",
       "alt": "Een patiënt buigt met een opgestoken vinger en een lege tekstballon naar een dokter met een stethoscoop, die aan het bureau luistert."
@@ -156,17 +188,53 @@
       "file": "art/vragen-naar-adres.png",
       "alt": "Iemand op de stoep houdt een envelop omhoog; een voorbijganger wijst naar de derde van drie gelijke voordeuren."
     },
+    "vragen-om-hulp": {
+      "file": "art/vragen-om-hulp.png",
+      "alt": "Iemand buigt zich over een grote, zware doos met één hand erop en steekt de andere hand op naar een tweede persoon, die stilstaat met de armen langs het lichaam."
+    },
+    "vragen-om-geld": {
+      "file": "art/vragen-om-geld.png",
+      "alt": "Iemand bij een kaartjesautomaat toont een lege broekzak en houdt een hand op; de ander kijkt in een open portemonnee."
+    },
+    "vragen-om-advies": {
+      "file": "art/vragen-om-advies.png",
+      "alt": "Een gast aan de keukentafel houdt een leeg glas uit en wijst erin; de gastheer staat ernaast met een volle kan tegen de borst."
+    },
+    "vragen-om-pen": {
+      "file": "art/vragen-om-pen.png",
+      "alt": "Twee mensen zitten in een wachtkamer met een formulier op schoot; de een steekt een open hand uit naar de pen in de borstzak van de ander."
+    },
+    "kijken-door-sleutelgat": {
+      "file": "art/kijken-door-sleutelgat.png",
+      "alt": "Iemand buigt zich naar een deur en tuurt door een klein gat."
+    },
     "kijken-door-verrekijker": {
       "file": "art/kijken-door-verrekijker.png",
       "alt": "Iemand staat op een houten uitkijkpunt met een verrekijker voor de ogen; ver weg aan de horizon vaart een kleine zeilboot."
+    },
+    "kijken-door-microscoop": {
+      "file": "art/kijken-door-microscoop.png",
+      "alt": "Iemand buigt over een labtafel met één oog aan een microscoop en het andere oog dicht; ernaast staat een rek met vier reageerbuizen."
+    },
+    "kijken-door-kier": {
+      "file": "art/kijken-door-kier.png",
+      "alt": "Iemand staat gebogen tegen een hoge houten schutting, met beide handen op de planken en één oog bij een smalle kier."
     },
     "kijken-uit-raam": {
       "file": "art/kijken-uit-raam.png",
       "alt": "Iemand kijkt uit een open raam naar buiten."
     },
+    "kijken-uit-treinraam": {
+      "file": "art/kijken-uit-treinraam.png",
+      "alt": "Een reiziger zit in de trein met de kin in de hand en het hoofd dicht bij het raam; buiten schuiven palen en heuvels voorbij."
+    },
     "kijken-uit-tent": {
       "file": "art/kijken-uit-tent.png",
       "alt": "Iemand knielt in de open ingang van een kleine tent, houdt de flap opzij en steekt hoofd en schouders naar buiten."
+    },
+    "kijken-uit-balkon": {
+      "file": "art/kijken-uit-balkon.png",
+      "alt": "Hoofd en schouders van iemand steken door een open dakraam in een schuin pannendak; de persoon kijkt uit over andere daken en een schoorsteen."
     },
     "klaar-met-werk": {
       "file": "art/klaar-met-werk.png",
@@ -260,9 +328,17 @@
       "file": "art/wachten-voor-kantoor.png",
       "alt": "Iemand in een net jasje staat met een map onder de arm op de stoep onder aan de trap van een hoog kantoor met dichte deuren en gesloten jaloezieën."
     },
+    "wachten-tot-de-klok": {
+      "file": "art/wachten-tot-de-klok.png",
+      "alt": "Iemand zit rechtop op een bank naast een kale muur met een grote ronde klok, handen plat op de knieen en de blik op de klok; op straat is niemand anders."
+    },
     "werken-aan-project": {
       "file": "art/werken-aan-project.png",
       "alt": "Iemand buigt over een tafel met een grote tekening of bouwplan."
+    },
+    "werken-aan-fiets": {
+      "file": "art/werken-aan-fiets.png",
+      "alt": "Een fiets staat op zijn kop zonder voorwiel; iemand knielt bij de voorvork en draait met een sleutel aan een moer, naast een open gereedschapskist."
     },
     "werken-aan-verslag": {
       "file": "art/werken-aan-verslag.png",
@@ -279,6 +355,14 @@
     "werken-bij-bakker": {
       "file": "art/werken-bij-bakker.png",
       "alt": "Iemand met een schort en een bakkersmuts staat achter de toonbank van een bakkerij en legt een lang brood op een rek vol broden."
+    },
+    "werken-bij-kantoor": {
+      "file": "art/werken-bij-kantoor.png",
+      "alt": "Iemand in uniform met een pet en een grote posttas stapt uit een bestelbus met een stapel enveloppen in de hand, bij een rij voordeuren."
+    },
+    "werken-bij-winkel": {
+      "file": "art/werken-bij-winkel.png",
+      "alt": "Iemand met een schort en een naamkaartje duwt een lange rij lege winkelwagens naar de schuifdeuren van een supermarkt."
     },
     "bedanken-voor-de-uitnodiging": {
       "file": "art/bedanken-voor-de-uitnodiging.png",
@@ -311,6 +395,22 @@
     "bezig-zijn-met-opruimen": {
       "file": "art/bezig-zijn-met-opruimen.png",
       "alt": "Iemand loopt met een volle doos op de heup door een kamer en raapt een kussen op; links ligt de vloer vol spullen, rechts is hij leeg."
+    },
+    "doorgeven-aan-buur": {
+      "file": "art/doorgeven-aan-buur.png",
+      "alt": "Iemand geeft een doos over een hek aan een ander."
+    },
+    "doorgeven-aan-collega": {
+      "file": "art/doorgeven-aan-collega.png",
+      "alt": "Drie collega's zitten naast elkaar aan een lang bureau; de middelste houdt een map naar rechts en de rechter collega reikt ernaar met beide handen."
+    },
+    "doorgeven-aan-kind": {
+      "file": "art/doorgeven-aan-kind.png",
+      "alt": "Drie mensen zitten aan een eettafel; de middelste volwassene laat een schaal met broodjes zakken naar een kind, dat beide handen omhoog steekt."
+    },
+    "doorgeven-aan-medespeler": {
+      "file": "art/doorgeven-aan-medespeler.png",
+      "alt": "Op een atletiekbaan drukt een loper een stokje in de hand van de loper ervoor; verder naar achteren staat een derde loper voorovergebogen uit te rusten."
     },
     "feliciteren-met-de-verjaardag": {
       "file": "art/feliciteren-met-de-verjaardag.png",
@@ -363,6 +463,10 @@
     "vallen-uit-kast": {
       "file": "art/vallen-uit-kast.png",
       "alt": "Iemand trekt de deur van een overvolle kast open en houdt een arm voor het gezicht; handdoeken, een schoenendoos en een bal vallen eruit."
+    },
+    "geven-aan-boek": {
+      "file": "art/geven-aan-boek.png",
+      "alt": "Twee mensen staan tegenover elkaar; de een houdt een dicht boek met beide handen voor zich uit, de ander strekt beide open handen uit."
     }
   },
   "frames": [
@@ -662,6 +766,65 @@
       ]
     },
     {
+      "id": "houden-van-kat",
+      "frame": "houden van",
+      "en": "to love",
+      "scene": "houden-van-kat",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Zij houdt van haar kat.",
+        "en": "She loves her cat."
+      },
+      "build": [
+        [
+          "Zij",
+          "houdt",
+          "van",
+          "haar",
+          "kat"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Heeft de vrouw de kat in haar armen?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "houden-van-muziek",
+      "frame": "houden van",
+      "en": "to love",
+      "scene": "houden-van-muziek",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Hij houdt heel veel van muziek.",
+        "en": "He loves music very much."
+      },
+      "build": [
+        [
+          "Hij",
+          "houdt",
+          "heel",
+          "veel",
+          "van",
+          "muziek"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Speelt de man op een instrument?",
+          "answer": false
+        }
+      ]
+    },
+    {
       "id": "komen-uit-huis",
       "frame": "komen uit",
       "en": "to come out of",
@@ -779,6 +942,35 @@
       ]
     },
     {
+      "id": "last-hebben-van-lawaai",
+      "frame": "last hebben van",
+      "en": "to be bothered by",
+      "scene": "last-hebben-van-lawaai",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Ik heb last van lawaai.",
+        "en": "I am bothered by noise."
+      },
+      "build": [
+        [
+          "Ik",
+          "heb",
+          "last",
+          "van",
+          "lawaai"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Heeft de persoon last van het lawaai?",
+          "answer": true
+        }
+      ]
+    },
+    {
       "id": "last-hebben-van-kou",
       "frame": "last hebben van",
       "en": "to be bothered by",
@@ -805,6 +997,94 @@
         {
           "question": "Draagt de man een dikke jas?",
           "answer": false
+        }
+      ]
+    },
+    {
+      "id": "last-hebben-van-hoofdpijn",
+      "frame": "last hebben van",
+      "en": "to be bothered by",
+      "scene": "last-hebben-van-hoofdpijn",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Zij heeft last van hoofdpijn.",
+        "en": "She is suffering from a headache."
+      },
+      "build": [
+        [
+          "Zij",
+          "heeft",
+          "last",
+          "van",
+          "hoofdpijn"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Heeft de vrouw haar handen aan haar hoofd?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "last-hebben-van-muggen",
+      "frame": "last hebben van",
+      "en": "to be bothered by",
+      "scene": "last-hebben-van-muggen",
+      "contrast": null,
+      "focus": [
+        "van"
+      ],
+      "example": {
+        "nl": "Ik heb last van de muggen.",
+        "en": "The mosquitoes are bothering me."
+      },
+      "build": [
+        [
+          "Ik",
+          "heb",
+          "last",
+          "van",
+          "de",
+          "muggen"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zijn er veel muggen bij de man?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "letten-op-verkeer",
+      "frame": "letten op",
+      "en": "to pay attention to, to keep an eye on",
+      "scene": "letten-op-verkeer",
+      "contrast": null,
+      "focus": [
+        "op"
+      ],
+      "example": {
+        "nl": "Ik let op het verkeer.",
+        "en": "I pay attention to the traffic."
+      },
+      "build": [
+        [
+          "Ik",
+          "let",
+          "op",
+          "het",
+          "verkeer"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon goed naar het verkeer?",
+          "answer": true
         }
       ]
     },
@@ -1102,6 +1382,35 @@
       ]
     },
     {
+      "id": "zoeken-naar-sleutels",
+      "frame": "zoeken naar",
+      "en": "to look for",
+      "scene": "zoeken-naar-sleutels",
+      "contrast": null,
+      "focus": [
+        "naar"
+      ],
+      "example": {
+        "nl": "Ik zoek naar mijn sleutels.",
+        "en": "I am searching for my keys."
+      },
+      "build": [
+        [
+          "Ik",
+          "zoek",
+          "naar",
+          "mijn",
+          "sleutels"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zoekt de persoon naar de sleutels?",
+          "answer": true
+        }
+      ]
+    },
+    {
       "id": "zoeken-naar-bril",
       "frame": "zoeken naar",
       "en": "to look for",
@@ -1309,7 +1618,7 @@
       "frame": "vragen aan",
       "en": "to ask a person",
       "scene": "vragen-aan-persoon",
-      "contrast": "vragen-naar-informatie",
+      "contrast": "vragen-om-hulp",
       "focus": [
         "aan"
       ],
@@ -1339,7 +1648,7 @@
       "frame": "vragen aan",
       "en": "to ask a person",
       "scene": "vragen-aan-leraar",
-      "contrast": "vragen-naar-weg",
+      "contrast": "vragen-om-geld",
       "focus": [
         "aan"
       ],
@@ -1365,11 +1674,41 @@
       ]
     },
     {
+      "id": "vragen-aan-buur",
+      "frame": "vragen aan",
+      "en": "to ask a person",
+      "scene": "vragen-aan-buur",
+      "contrast": "vragen-om-advies",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik vraag iets aan mijn buur.",
+        "en": "I ask my neighbour something."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "iets",
+          "aan",
+          "mijn",
+          "buur"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Staat de persoon bij de eigen deur?",
+          "answer": false
+        }
+      ]
+    },
+    {
       "id": "vragen-aan-arts",
       "frame": "vragen aan",
       "en": "to ask a person",
       "scene": "vragen-aan-arts",
-      "contrast": "vragen-naar-tijd",
+      "contrast": "vragen-om-pen",
       "focus": [
         "aan"
       ],
@@ -1458,7 +1797,7 @@
       "frame": "vragen naar",
       "en": "to ask about, to ask for a person",
       "scene": "vragen-naar-tijd",
-      "contrast": "vragen-aan-arts",
+      "contrast": "vragen-aan-buur",
       "focus": [
         "naar"
       ],
@@ -1487,7 +1826,7 @@
       "frame": "vragen naar",
       "en": "to ask about, to ask for a person",
       "scene": "vragen-naar-adres",
-      "contrast": "vragen-aan-persoon",
+      "contrast": "vragen-aan-arts",
       "focus": [
         "naar"
       ],
@@ -1512,11 +1851,153 @@
       ]
     },
     {
+      "id": "vragen-om-hulp",
+      "frame": "vragen om",
+      "en": "to ask for (a thing)",
+      "scene": "vragen-om-hulp",
+      "contrast": "vragen-aan-persoon",
+      "focus": [
+        "om"
+      ],
+      "example": {
+        "nl": "Ik vraag om hulp.",
+        "en": "I am asking for help."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "om",
+          "hulp"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Vraagt de persoon om iets?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "vragen-om-geld",
+      "frame": "vragen om",
+      "en": "to ask for (a thing)",
+      "scene": "vragen-om-geld",
+      "contrast": "vragen-aan-leraar",
+      "focus": [
+        "om"
+      ],
+      "example": {
+        "nl": "Ik vraag om geld.",
+        "en": "I ask for money."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "om",
+          "geld"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Heeft de persoon met de open hand geld in de zak?",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "vragen-om-advies",
+      "frame": "vragen om",
+      "en": "to ask for (a thing)",
+      "scene": "vragen-om-advies",
+      "contrast": "vragen-aan-buur",
+      "focus": [
+        "om"
+      ],
+      "example": {
+        "nl": "Ik vraag om water.",
+        "en": "I ask for water."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "om",
+          "water"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Is het glas van de gast vol?",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "vragen-om-pen",
+      "frame": "vragen om",
+      "en": "to ask for (a thing)",
+      "scene": "vragen-om-pen",
+      "contrast": "vragen-aan-arts",
+      "focus": [
+        "om"
+      ],
+      "example": {
+        "nl": "Ik vraag om een pen.",
+        "en": "I ask for a pen."
+      },
+      "build": [
+        [
+          "Ik",
+          "vraag",
+          "om",
+          "een",
+          "pen"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Wil de persoon de pen van de ander?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "kijken-door-sleutelgat",
+      "frame": "kijken door",
+      "en": "to look through",
+      "scene": "kijken-door-sleutelgat",
+      "contrast": "kijken-uit-raam",
+      "focus": [
+        "door"
+      ],
+      "example": {
+        "nl": "Hij kijkt door het sleutelgat.",
+        "en": "He looks through the keyhole."
+      },
+      "build": [
+        [
+          "Hij",
+          "kijkt",
+          "door",
+          "het",
+          "sleutelgat"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon door een klein gat?",
+          "answer": true
+        }
+      ]
+    },
+    {
       "id": "kijken-door-verrekijker",
       "frame": "kijken door",
       "en": "to look through",
       "scene": "kijken-door-verrekijker",
-      "contrast": "kijken-uit-raam",
+      "contrast": "kijken-uit-treinraam",
       "focus": [
         "door"
       ],
@@ -1541,11 +2022,72 @@
       ]
     },
     {
+      "id": "kijken-door-microscoop",
+      "frame": "kijken door",
+      "en": "to look through",
+      "scene": "kijken-door-microscoop",
+      "contrast": "kijken-uit-tent",
+      "focus": [
+        "door"
+      ],
+      "example": {
+        "nl": "Zij kijkt door de microscoop.",
+        "en": "She looks through the microscope."
+      },
+      "build": [
+        [
+          "Zij",
+          "kijkt",
+          "door",
+          "de",
+          "microscoop"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon met één oog?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "kijken-door-kier",
+      "frame": "kijken door",
+      "en": "to look through",
+      "scene": "kijken-door-kier",
+      "contrast": "kijken-uit-balkon",
+      "focus": [
+        "door"
+      ],
+      "example": {
+        "nl": "Hij kijkt door een kier in de schutting.",
+        "en": "He looks through a gap in the fence."
+      },
+      "build": [
+        [
+          "Hij",
+          "kijkt",
+          "door",
+          "een",
+          "kier",
+          "in",
+          "de",
+          "schutting"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kan de persoon over de schutting kijken?",
+          "answer": false
+        }
+      ]
+    },
+    {
       "id": "kijken-uit-raam",
       "frame": "kijken uit",
       "en": "to look out of",
       "scene": "kijken-uit-raam",
-      "contrast": "kijken-door-verrekijker",
+      "contrast": "kijken-door-sleutelgat",
       "focus": [
         "uit"
       ],
@@ -1570,11 +2112,43 @@
       ]
     },
     {
+      "id": "kijken-uit-treinraam",
+      "frame": "kijken uit",
+      "en": "to look out of",
+      "scene": "kijken-uit-treinraam",
+      "contrast": "kijken-door-verrekijker",
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "Ik kijk uit het raam van de trein.",
+        "en": "I look out of the train window."
+      },
+      "build": [
+        [
+          "Ik",
+          "kijk",
+          "uit",
+          "het",
+          "raam",
+          "van",
+          "de",
+          "trein"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Rijdt de trein?",
+          "answer": true
+        }
+      ]
+    },
+    {
       "id": "kijken-uit-tent",
       "frame": "kijken uit",
       "en": "to look out of",
       "scene": "kijken-uit-tent",
-      "contrast": "kijken-door-verrekijker",
+      "contrast": "kijken-door-microscoop",
       "focus": [
         "uit"
       ],
@@ -1595,6 +2169,35 @@
         {
           "question": "Is de tent dicht?",
           "answer": false
+        }
+      ]
+    },
+    {
+      "id": "kijken-uit-balkon",
+      "frame": "kijken uit",
+      "en": "to look out of",
+      "scene": "kijken-uit-balkon",
+      "contrast": "kijken-door-kier",
+      "focus": [
+        "uit"
+      ],
+      "example": {
+        "nl": "Ik kijk uit het dakraam.",
+        "en": "I look out of the roof window."
+      },
+      "build": [
+        [
+          "Ik",
+          "kijk",
+          "uit",
+          "het",
+          "dakraam"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Staat het dakraam open?",
+          "answer": true
         }
       ]
     },
@@ -2273,6 +2876,37 @@
       ]
     },
     {
+      "id": "wachten-tot-de-klok",
+      "frame": "wachten tot",
+      "en": "to wait until",
+      "scene": "wachten-tot-de-klok",
+      "contrast": "wachten-op-bus",
+      "focus": [
+        "tot"
+      ],
+      "example": {
+        "nl": "Wij wachten tot het vijf uur is.",
+        "en": "We are waiting until five o'clock."
+      },
+      "build": [
+        [
+          "Wij",
+          "wachten",
+          "tot",
+          "het",
+          "vijf",
+          "uur",
+          "is"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kijkt de persoon naar een klok?",
+          "answer": true
+        }
+      ]
+    },
+    {
       "id": "werken-aan-project",
       "frame": "werken aan",
       "en": "to work on",
@@ -2302,11 +2936,40 @@
       ]
     },
     {
+      "id": "werken-aan-fiets",
+      "frame": "werken aan",
+      "en": "to work on",
+      "scene": "werken-aan-fiets",
+      "contrast": "werken-bij-bakker",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik werk aan mijn fiets.",
+        "en": "I am working on my bike."
+      },
+      "build": [
+        [
+          "Ik",
+          "werk",
+          "aan",
+          "mijn",
+          "fiets"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Kan de persoon nu op de fiets rijden?",
+          "answer": false
+        }
+      ]
+    },
+    {
       "id": "werken-aan-verslag",
       "frame": "werken aan",
       "en": "to work on",
       "scene": "werken-aan-verslag",
-      "contrast": "werken-bij-bakker",
+      "contrast": "werken-bij-kantoor",
       "focus": [
         "aan"
       ],
@@ -2335,7 +2998,7 @@
       "frame": "werken aan",
       "en": "to work on",
       "scene": "werken-aan-tuin",
-      "contrast": "werken-bij-bedrijf",
+      "contrast": "werken-bij-winkel",
       "focus": [
         "aan"
       ],
@@ -2393,7 +3056,7 @@
       "frame": "werken bij",
       "en": "to work at",
       "scene": "werken-bij-bakker",
-      "contrast": "werken-aan-verslag",
+      "contrast": "werken-aan-fiets",
       "focus": [
         "bij"
       ],
@@ -2413,6 +3076,64 @@
       "concept": [
         {
           "question": "Is de persoon een klant?",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "werken-bij-kantoor",
+      "frame": "werken bij",
+      "en": "to work at",
+      "scene": "werken-bij-kantoor",
+      "contrast": "werken-aan-verslag",
+      "focus": [
+        "bij"
+      ],
+      "example": {
+        "nl": "Ik werk bij de post.",
+        "en": "I work for the postal service."
+      },
+      "build": [
+        [
+          "Ik",
+          "werk",
+          "bij",
+          "de",
+          "post"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Draagt de persoon een tas met post?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "werken-bij-winkel",
+      "frame": "werken bij",
+      "en": "to work at",
+      "scene": "werken-bij-winkel",
+      "contrast": "werken-aan-tuin",
+      "focus": [
+        "bij"
+      ],
+      "example": {
+        "nl": "Ik werk bij de supermarkt.",
+        "en": "I work at the supermarket."
+      },
+      "build": [
+        [
+          "Ik",
+          "werk",
+          "bij",
+          "de",
+          "supermarkt"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Doet de persoon boodschappen?",
           "answer": false
         }
       ]
@@ -2650,6 +3371,134 @@
       "concept": [
         {
           "question": "Is de hele kamer al netjes?",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "doorgeven-aan-buur",
+      "frame": "doorgeven aan",
+      "en": "to pass on to",
+      "scene": "doorgeven-aan-buur",
+      "contrast": null,
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik geef het boek door aan mijn buur.",
+        "en": "I pass the book on to my neighbour."
+      },
+      "build": [
+        [
+          "Ik",
+          "geef",
+          "het",
+          "boek",
+          "door",
+          "aan",
+          "mijn",
+          "buur"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Geeft de persoon het boek aan iemand anders?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "doorgeven-aan-collega",
+      "frame": "doorgeven aan",
+      "en": "to pass on to",
+      "scene": "doorgeven-aan-collega",
+      "contrast": null,
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik geef de map door aan mijn collega.",
+        "en": "I pass the folder on to my colleague."
+      },
+      "build": [
+        [
+          "Ik",
+          "geef",
+          "de",
+          "map",
+          "door",
+          "aan",
+          "mijn",
+          "collega"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Gaat de map naar de collega rechts?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "doorgeven-aan-kind",
+      "frame": "doorgeven aan",
+      "en": "to pass on to",
+      "scene": "doorgeven-aan-kind",
+      "contrast": null,
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik geef het brood door aan het kind.",
+        "en": "I pass the bread on to the child."
+      },
+      "build": [
+        [
+          "Ik",
+          "geef",
+          "het",
+          "brood",
+          "door",
+          "aan",
+          "het",
+          "kind"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Blijft de schaal bij de volwassene in het midden?",
+          "answer": false
+        }
+      ]
+    },
+    {
+      "id": "doorgeven-aan-medespeler",
+      "frame": "doorgeven aan",
+      "en": "to pass on to",
+      "scene": "doorgeven-aan-medespeler",
+      "contrast": null,
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Ik geef het stokje door aan mijn teamgenoot.",
+        "en": "I pass the baton on to my teammate."
+      },
+      "build": [
+        [
+          "Ik",
+          "geef",
+          "het",
+          "stokje",
+          "door",
+          "aan",
+          "mijn",
+          "teamgenoot"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Rennen alle drie de lopers?",
           "answer": false
         }
       ]
@@ -3059,6 +3908,37 @@
           "answer": false
         }
       ]
+    },
+    {
+      "id": "geven-aan-boek",
+      "frame": "geven aan",
+      "en": "to give to",
+      "scene": "geven-aan-boek",
+      "contrast": null,
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Zij geeft het boek aan haar broer.",
+        "en": "She gives the book to her brother."
+      },
+      "build": [
+        [
+          "Zij",
+          "geeft",
+          "het",
+          "boek",
+          "aan",
+          "haar",
+          "broer"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Houdt de gever het boek nog vast?",
+          "answer": true
+        }
+      ]
     }
   ],
   "levels": [
@@ -3090,7 +3970,9 @@
       "band": "a0",
       "frames": [
         "houden-van-hond",
-        "houden-van-partner"
+        "houden-van-partner",
+        "houden-van-kat",
+        "houden-van-muziek"
       ]
     },
     {
@@ -3109,7 +3991,10 @@
       "name": "last hebben van",
       "band": "a0",
       "frames": [
-        "last-hebben-van-kou"
+        "last-hebben-van-lawaai",
+        "last-hebben-van-kou",
+        "last-hebben-van-hoofdpijn",
+        "last-hebben-van-muggen"
       ]
     },
     {
@@ -3117,6 +4002,7 @@
       "name": "letten op",
       "band": "a0",
       "frames": [
+        "letten-op-verkeer",
         "letten-op-hond",
         "letten-op-pannen"
       ]
@@ -3148,6 +4034,7 @@
       "name": "zoeken naar",
       "band": "a0",
       "frames": [
+        "zoeken-naar-sleutels",
         "zoeken-naar-bril",
         "zoeken-naar-hond",
         "zoeken-naar-telefoon"
@@ -3171,6 +4058,7 @@
       "frames": [
         "vragen-aan-persoon",
         "vragen-aan-leraar",
+        "vragen-aan-buur",
         "vragen-aan-arts"
       ]
     },
@@ -3186,11 +4074,25 @@
       ]
     },
     {
+      "id": "vragen-om",
+      "name": "vragen om",
+      "band": "a1",
+      "frames": [
+        "vragen-om-hulp",
+        "vragen-om-geld",
+        "vragen-om-advies",
+        "vragen-om-pen"
+      ]
+    },
+    {
       "id": "kijken-door",
       "name": "kijken door",
       "band": "a1",
       "frames": [
-        "kijken-door-verrekijker"
+        "kijken-door-sleutelgat",
+        "kijken-door-verrekijker",
+        "kijken-door-microscoop",
+        "kijken-door-kier"
       ]
     },
     {
@@ -3199,7 +4101,9 @@
       "band": "a1",
       "frames": [
         "kijken-uit-raam",
-        "kijken-uit-tent"
+        "kijken-uit-treinraam",
+        "kijken-uit-tent",
+        "kijken-uit-balkon"
       ]
     },
     {
@@ -3268,11 +4172,20 @@
       ]
     },
     {
+      "id": "wachten-tot",
+      "name": "wachten tot",
+      "band": "a1",
+      "frames": [
+        "wachten-tot-de-klok"
+      ]
+    },
+    {
       "id": "werken-aan",
       "name": "werken aan",
       "band": "a1",
       "frames": [
         "werken-aan-project",
+        "werken-aan-fiets",
         "werken-aan-verslag",
         "werken-aan-tuin"
       ]
@@ -3283,7 +4196,9 @@
       "band": "a1",
       "frames": [
         "werken-bij-bedrijf",
-        "werken-bij-bakker"
+        "werken-bij-bakker",
+        "werken-bij-kantoor",
+        "werken-bij-winkel"
       ]
     },
     {
@@ -3306,6 +4221,17 @@
         "bezig-zijn-met-koken",
         "bezig-zijn-met-knutselen",
         "bezig-zijn-met-opruimen"
+      ]
+    },
+    {
+      "id": "doorgeven-aan",
+      "name": "doorgeven aan",
+      "band": "a1",
+      "frames": [
+        "doorgeven-aan-buur",
+        "doorgeven-aan-collega",
+        "doorgeven-aan-kind",
+        "doorgeven-aan-medespeler"
       ]
     },
     {
@@ -3347,6 +4273,14 @@
         "vallen-uit-tas",
         "vallen-uit-doos",
         "vallen-uit-kast"
+      ]
+    },
+    {
+      "id": "geven-aan",
+      "name": "geven aan",
+      "band": "a1",
+      "frames": [
+        "geven-aan-boek"
       ]
     }
   ]

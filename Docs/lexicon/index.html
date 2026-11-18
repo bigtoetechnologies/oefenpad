@@ -199,7 +199,7 @@ main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
       <p class="lede">The 10,000-lemma Dutch list behind the themes: its files, the pipeline that builds them, and what each axis does and does not mean.</p>
       <p class="doc-meta">Docs/lexicon/index.html</p>
     </header>
-    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-files">The files</a></li><li class="toc-h2"><a href="#reading-them-without-a-terminal">Reading them without a terminal</a></li><li class="toc-h2"><a href="#the-pipeline">The pipeline</a></li><li class="toc-h2"><a href="#where-the-words-come-from">Where the words come from</a></li><li class="toc-h2"><a href="#our-level-scale">Our level scale</a></li><li class="toc-h2"><a href="#licence-unresolved-and-it-matters">Licence — unresolved, and it matters</a></li><li class="toc-h2"><a href="#how-good-the-classification-is">How good the classification is</a></li><li class="toc-h2"><a href="#the-domain-axis">The domain axis</a></li><li class="toc-h2"><a href="#the-theme-gap-stated-plainly">The theme gap, stated plainly</a></li><li class="toc-h2"><a href="#do-not">Do not</a></li></ul></details>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-files">The files</a></li><li class="toc-h2"><a href="#reading-them-without-a-terminal">Reading them without a terminal</a></li><li class="toc-h2"><a href="#the-pipeline">The pipeline</a></li><li class="toc-h2"><a href="#where-the-words-come-from">Where the words come from</a></li><li class="toc-h2"><a href="#our-level-scale">Our level scale</a></li><li class="toc-h2"><a href="#licence">Licence — settled</a></li><li class="toc-h2"><a href="#how-good-the-classification-is">How good the classification is</a></li><li class="toc-h2"><a href="#the-domain-axis">The domain axis</a></li><li class="toc-h2"><a href="#the-theme-gap-stated-plainly">The theme gap, stated plainly</a></li><li class="toc-h2"><a href="#do-not">Do not</a></li></ul></details>
     <article class="prose">
 <p>A 10,000-lemma Dutch vocabulary list, classified by part of speech and by the
 product's themes. It is <strong>evidence and data, not a learner surface</strong>: a page
@@ -281,7 +281,7 @@ which <a href="../project-rules.html">the project rules</a> call suspect. Nothin
 byte-identical and in the same order. Each script asserts this.</p>
 <h2 id="reading-them-without-a-terminal">Reading them without a terminal</h2>
 <p>Open <code>tools/lexicon/index.html</code> in a browser. It is one self-contained file —
-<strong>2.4 MB, no network, no server, works by double-click</strong> — with the whole
+<strong>2.5 MB, no network, no server, works by double-click</strong> — with the whole
 10,000-row list joined by position, plus tabs for the KNM list and the
 candidate pool. It offers search (case- and accent-insensitive), filters on
 <code>pos</code>, <code>thema</code>, <code>domein</code>, <code>prioriteit</code>, <code>niveau</code> and <code>herkomst</code>, sortable
@@ -293,7 +293,7 @@ columns, and a summary panel with the per-theme and per-domain counts.</p>
 counts and the row alignment, and fails if a hand-edit has broken the data.</p>
 <p><strong>Every facet must offer a <code>(geen)</code> option for a value that can be blank.</strong> The
 first version of the <code>niveau</code> filter did not, and because that column was the
-coursebook tier — blank for 4,839 rows — those rows were counted in <code>all (N)</code>
+coursebook tier — blank for 4,838 rows — those rows were counted in <code>all (N)</code>
 and appeared under no option. The counts looked wrong and were. <code>trede</code> now
 shows <code>(geen)</code>, every facet partitions exactly, and a throwaway headless
 harness confirmed it against the rendered page.</p>
@@ -314,29 +314,32 @@ python3 tools/lexicon/extraheer-woorden.py \
 # 2. + the KNM vocabulary -&gt; woorden.tsv (7,232)
 python3 tools/lexicon/knm-woorden.py
 
-# 3. + the frequency extension -&gt; woorden.tsv (10,000)
+# 3. + coursebook vocabulary the frequency cut misses -&gt; woorden.tsv (7,556)
+python3 tools/lexicon/aanvul-woorden.py
+
+# 4. + the frequency extension -&gt; woorden.tsv (10,000)
 python3 -m pip install --target /tmp/wf wordfreq
 python3 tools/lexicon/verrijk-woorden.py --wordfreq /tmp/wf --target 10000
 
-# 4. part of speech -&gt; woorden-woordsoort.tsv
+# 5. part of speech -&gt; woorden-woordsoort.tsv
 python3 tools/lexicon/woordsoort.py
 
-# 5. theme and priority -&gt; woorden-thema.tsv
+# 6. theme and priority -&gt; woorden-thema.tsv
 python3 tools/lexicon/thema.py
 
-# 6. semantic domain -&gt; woorden-domein.tsv (needs 1 and 5)
+# 7. semantic domain -&gt; woorden-domein.tsv (needs 1 and 6)
 python3 tools/lexicon/domein.py
 
-# 7. frequency score -&gt; woorden-frequentie.tsv (needs 1)
+# 8. frequency score -&gt; woorden-frequentie.tsv (needs 1)
 #    wordfreq is installed once, to a throwaway directory
 python3 -m pip install --target /tmp/wf wordfreq
 python3 tools/lexicon/frequentie.py --wordfreq /tmp/wf
 
-# 8. our five bands -&gt; woorden-niveau.tsv (needs 1 and 7)
+# 9. our five bands -&gt; woorden-niveau.tsv (needs 1 and 8)
 python3 tools/lexicon/niveau.py
 </code></pre>
 <p><strong>Re-running step 1 rewrites <code>woorden.tsv</code> from scratch and drops everything
-steps 2 and 3 added.</strong> Run 2 and 3 again afterwards. Steps 4, 5 and 6 must then
+steps 2, 3 and 4 added.</strong> Run 2, 3 and 4 again afterwards. Steps 5–9 must then
 be re-run because they are keyed on row order.</p>
 <p>Each step is deterministic. No network access after the <code>pip install</code>.</p>
 <h2 id="where-the-words-come-from">Where the words come from</h2>
@@ -361,16 +364,30 @@ be re-run because they are keyed on row order.</p>
 </tr>
 <tr>
 <td><code>kaikki</code></td>
-<td>2,768</td>
-<td>English Wiktionary via kaikki.org, chosen by <code>wordfreq</code> zipf rank, cut-off 3.29</td>
+<td>2,444</td>
+<td>English Wiktionary via kaikki.org, chosen by <code>wordfreq</code> zipf rank, cut-off 3.35</td>
 </tr>
 <tr>
 <td><code>knm</code></td>
 <td>125</td>
 <td>the TaalCompleet KNM word lists (Nederlands + Engels), extracted to <code>knm-kandidaten.tsv</code></td>
 </tr>
+<tr>
+<td><code>les:*</code></td>
+<td>321</td>
+<td>curated coursebook vocabulary in <code>aanvul-woorden.tsv</code>: <em>Nederlands in gang</em> (<code>les:nig</code>), the <em>Nederlands in actie</em> register (<code>les:register</code>) and TaalCompleet B1 themes 1–5 (<code>les:taalcompleet</code>)</td>
+</tr>
+<tr>
+<td><code>handmatig</code></td>
+<td>3</td>
+<td>confirmed high-frequency gaps added by hand</td>
+</tr>
 </tbody>
 </table></div>
+<p>These categories partition the 10,000 exactly. <code>bijlage8</code> counts rows whose
+<em>only</em> source is the appendix; the 453 appendix words that are also in a game
+bank are counted under <code>spel</code>, and <code>spel</code> itself is any row in at least one
+bank (2,398).</p>
 <p><code>niveau</code> = <code>open</code> in <code>woorden.tsv</code> means "in the 5,000 most frequent lemmas but
 taught in neither coursebook", a candidate pool for B1+. <strong>It is not a B2
 label</strong>, and the viewer calls that column <code>trede</code> for exactly that reason. No
@@ -379,16 +396,16 @@ only, and SUBTLEX-NL, Routledge and NT2Lex are all restricted (NT2Lex is
 CC BY-NC-SA, out on licence grounds). B2 receptive vocabulary is usually put at
 8,000–10,000 lemmas, which is where the 10,000 target comes from — it is a
 <em>target</em>, not a measurement.</p>
-<p><strong>The <code>kaikki</code> 2,768 were not chosen one by one.</strong> They are the most frequent
-2,768 of the 10,375 usable candidates, ranked with <code>wordfreq</code> and cut at zipf
-<strong>3.29</strong>; 7,607 candidates were left unused. <a href="bronnen.html"><code>Docs/lexicon/bronnen.html</code></a> has the arithmetic, the
+<p><strong>The <code>kaikki</code> 2,444 were not chosen one by one.</strong> They are the most frequent
+2,444 of the 10,249 usable candidates, ranked with <code>wordfreq</code> and cut at zipf
+<strong>3.35</strong>; 7,805 candidates were left unused. <a href="bronnen.html"><code>Docs/lexicon/bronnen.html</code></a> has the arithmetic, the
 source table and the provenance counts, and
 <code>python3 tools/lexicon/verrijk-woorden.py --wordfreq /tmp/wf311 --report</code>
 reproduces it without writing anything.</p>
 <h2 id="our-level-scale">Our level scale</h2>
 <p>The coursebook's tiering (<code>A1</code>, <code>B1</code>, <code>open</code>) is not a level. It says which of
 two books teaches a word, it borrows CEFR's names without CEFR's meaning, and it
-is blank for 4,839 of the 10,000 rows. <code>niveau.py</code> therefore writes a second,
+is blank for 4,838 of the 10,000 rows. <code>niveau.py</code> therefore writes a second,
 separate axis — <strong><code>niveau</code>, ours</strong>, cut by frequency rank from
 <code>woorden-frequentie.tsv</code>:</p>
 <div class="table-wrap"><table>
@@ -411,25 +428,25 @@ separate axis — <strong><code>niveau</code>, ours</strong>, cut by frequency r
 <td>Basis</td>
 <td>1,001–2,500</td>
 <td>A1–A2</td>
-<td>1,505</td>
+<td>1,506</td>
 </tr>
 <tr>
 <td>Midden</td>
 <td>2,501–5,000</td>
 <td>A2–B1</td>
-<td>2,501</td>
+<td>2,505</td>
 </tr>
 <tr>
 <td>Gevorderd</td>
 <td>5,001–8,000</td>
 <td>B1–B2</td>
-<td>3,016</td>
+<td>3,015</td>
 </tr>
 <tr>
 <td>Verdieping</td>
 <td>8,001–10,000</td>
 <td>B2 and past it</td>
-<td>1,972</td>
+<td>1,968</td>
 </tr>
 </tbody>
 </table></div>
@@ -448,37 +465,42 @@ below: the boundaries are ranks <em>in this list</em>, so growth to 12,000 moves
 <p><strong>The CEFR ranges are an approximation of convenience, not a measurement.</strong> They
 are checked against the appendix tiers, and the check is unflattering:</p>
 <ul>
-<li><strong>79%</strong> of the words the A1 coursebook teaches are in Start or Basis (729 of
-  927). The rest are frequent enough to be in Midden or beyond.</li>
-<li><strong>42%</strong> of the B1 coursebook's words are in Midden or beyond (323 of 765).
+<li><strong>78%</strong> of the words the A1 coursebook teaches are in Start or Basis (728 of
+  928). The rest are frequent enough to be in Midden or beyond.</li>
+<li><strong>43%</strong> of the B1 coursebook's words are in Midden or beyond (329 of 766).
   A B1 coursebook teaches a lot of very frequent words, because B1 is about
   using them, not only meeting them.</li>
 </ul>
 <p>So a band is a frequency statement. Never print a CEFR label next to a lemma on
 the strength of its band; the ranges above exist so the scale can be read at a
 glance, not so a word can be certified.</p>
-<p>186 lemmas have no wordfreq score at all — game compounds such as
+<p>190 lemmas have no wordfreq score at all — game compounds such as
 <code>ankylosauride</code>, and a few misspellings such as <code>belangstellilng</code>. They rank last
-and land in Verdieping, which is what "absent from the corpus" means. The 23 of
-them that are appendix words, and the 5 that are KNM words, take their band from
-that evidence instead; <code>grondslag</code> in <code>woorden-niveau.tsv</code> says which rule fired
-(<code>rang</code>, <code>trede</code>, <code>knm</code>, <code>spel</code>). <code>niveau.py --why &lt;word&gt;</code> prints it.</p>
+and land in Verdieping, which is what "absent from the corpus" means. The 22 of
+them that are appendix words, the 5 that are KNM words and the 5 that a
+coursebook teaches take their band from that evidence instead; <code>grondslag</code> in
+<code>woorden-niveau.tsv</code> says which rule fired
+(<code>rang</code>, <code>trede</code>, <code>knm</code>, <code>les</code>, <code>spel</code>). <code>niveau.py --why &lt;word&gt;</code> prints it.</p>
 <p>Two consequences worth knowing before this axis is used for planning:</p>
 <ul>
 <li><strong>The game banks are not a frequency ladder.</strong> With <code>domein = Animals</code> and
-  <code>thema = algemeen</code>, 300 of 435 words are Verdieping: the games deliberately
+  <code>thema = algemeen</code>, 294 of 439 words are Verdieping: the games deliberately
   carry exotic species (<code>ankylosaurus</code>, <code>zeekomkommer</code>). Pictures make a rare
   word learnable; frequency still calls it rare.</li>
 <li><strong>The cut points are ranks in this 10,000.</strong> Growing the list to 12,000 moves
 every boundary. Re-run <code>frequentie.py</code> and <code>niveau.py</code> and re-read the
   calibration table before trusting the bands after a rebuild.</li>
 </ul>
-<h2 id="licence-unresolved-and-it-matters">Licence — unresolved, and it matters</h2>
+<h2 id="licence">Licence — settled</h2>
+<p><strong>A list of words in a language is not copyrightable.</strong> Neither the choice of
+Dutch lemmas nor their order can be owned, and this is not any single source's
+list: it is rearranged, extended from Wiktionary and the games, and re-levelled
+on our own frequency scale. The coursebook extracts are used to cross-check our
+coverage and to supply candidate lemmas — not reproduced as their lists.</p>
 <ul>
-<li><strong><code>bijlage8</code> rows</strong> are a derived extraction from a copyrighted Routledge
-  dictionary. Internal use only.</li>
-<li><strong><code>knm</code> rows</strong> are a derived extraction from TaalCompleet's KNM word lists. No
-  licence is stated; treat them as internal, like the appendix.</li>
+<li><strong><code>bijlage8</code>, <code>knm</code> and <code>les:*</code> rows</strong> come from coursebooks. The individual
+  words are facts about Dutch, not protected expression; the books' prose,
+  illustrations and their selection <em>as a whole</em> are, and we copy neither.</li>
 <li><strong><code>kaikki</code> rows</strong> are CC BY-SA 4.0 + GFDL. Because they are merged into the
   same files, <strong>the three 10,000-row files are copyleft</strong>.</li>
 <li><strong><code>wordfreq</code></strong> supplies the ranking only. Its data derives from Wikipedia,
@@ -486,12 +508,16 @@ every boundary. Re-run <code>frequentie.py</code> and <code>niveau.py</code> and
 </ul>
 <p>The attribution wording, and what each obligation attaches to, is in
 <a href="bronnen.html"><code>Docs/lexicon/bronnen.html</code></a> §Attribution and <a href="aanvulling.html"><code>Docs/lexicon/aanvulling.html</code></a> §Attribution.</p>
-<p>Nothing here has been cleared for publication. This needs an owner decision
-before any of it ships, and the two extractions cannot ship at all as they
-stand.</p>
+<p>This is the owner's ruling of 18 November 2026, recorded so it is not
+relitigated. The lexical content is free to reuse; the only live obligation is
+the CC BY-SA copyleft that arrives with the <code>kaikki</code> rows.</p>
 <h2 id="how-good-the-classification-is">How good the classification is</h2>
 <p>Measured on 16 November 2026 by hand-scoring fixed-seed samples; re-run the
-sample print at the end of <code>thema.py</code> to check again.</p>
+sample print at the end of <code>thema.py</code> to check again. Re-checked on 18 November
+2026 against the rebuilt list: the same seed draws 77 appendix-backed rows and 23
+<code>kaikki</code> rows, and the scores below still hold — one adjective read as a noun in
+the first group (<code>kapot</code>), three errors in the second (<code>proces-verbaal</code>,
+<code>ondersteboven</code>, <code>rechtdoor</code>).</p>
 <ul>
 <li><strong>part of speech</strong>: 98% correct on appendix rows, 88% on <code>kaikki</code> rows. The
   errors are adjectives tagged <code>noun</code> (<code>flexibel</code>, <code>getalenteerd</code>,
@@ -510,7 +536,7 @@ sample print at the end of <code>thema.py</code> to check again.</p>
 </ul>
 <h2 id="the-domain-axis">The domain axis</h2>
 <p><code>thema</code> is a <em>situation</em>: a supermarket, a doctor's appointment, a form. It
-leaves 7,421 words in <code>algemeen</code>, which is a bucket, not a category — too large
+leaves 7,360 words in <code>algemeen</code>, which is a bucket, not a category — too large
 to browse or to build a theme around. <code>domein</code> is the <em>semantic field</em>: what
 kind of thing the word names, whatever the situation.</p>
 <p>It is a second axis, not a replacement. The product's theme list is fixed by
@@ -543,8 +569,8 @@ labels were close to random (<code>atoom</code> → Names, <code>zus</code> → 
 were deleted. Do not restore that method. <code>domein.py</code> is the only source of
 <code>woorden-domein.tsv</code>.</p>
 <h2 id="the-theme-gap-stated-plainly">The theme gap, stated plainly</h2>
-<p>Only <strong>2,192 of 10,000</strong> words sit in one of the 24 product themes. The other
-7,808 are <code>algemeen</code> (7,421), <code>naam</code> (313) or <code>plaats</code> (74). This is the gap the
+<p>Only <strong>2,258 of 10,000</strong> words sit in one of the 24 product themes. The other
+7,742 are <code>algemeen</code> (7,360), <code>naam</code> (313) or <code>plaats</code> (69). This is the gap the
 domain axis above addresses for browsing and for content planning; it does not
 change the theme labels themselves.</p>
 <p>This is not a classifier failure to be tuned away. The 24 themes are <em>situations
@@ -552,13 +578,13 @@ and concrete domains</em> — a supermarket, a doctor's appointment, a form — 
 lemmas that a 10,000-word B2 list adds beyond the coursebook are mostly
 <strong>abstract</strong> (<code>toepassing</code>, <code>polarisatie</code>, <code>voorwaarde</code>). They have no home in
 the 24, and <code>algemeen</code> is the honest label for them.</p>
-<p>Six themes remain thin and <strong>cannot be filled from open word lists</strong>: <code>Bellen</code>
-(7), <code>Afspraken</code> (7), <code>Buurt</code> (11), <code>Solliciteren</code> (15), <code>Klachten</code> (17),
-<code>Formulieren</code> (19), <code>Zorg voor iemand anders</code> (19). They name situations rather
+<p>Seven themes remain thin and <strong>cannot be filled from open word lists</strong>: <code>Bellen</code>
+(8), <code>Afspraken</code> (8), <code>Buurt</code> (11), <code>Klachten</code> (15), <code>Solliciteren</code> (16),
+<code>Formulieren</code> (19), <code>Zorg voor iemand anders</code> (20). They name situations rather
 than semantic domains, so they have to be drafted by hand from the material a
 learner actually meets. The KNM list was the one source that moved several of
-them (<code>Formulieren</code> 12 → 19, <code>Zorg voor iemand anders</code> 10 → 19, <code>Solliciteren</code>
-9 → 15) and it is now exhausted.</p>
+them (<code>Formulieren</code> 12 → 19, <code>Solliciteren</code> 9 → 16, <code>Zorg voor iemand anders</code>
+10 → 20) and it is now exhausted.</p>
 <h2 id="do-not">Do not</h2>
 <ul>
 <li>Do not edit <code>woorden.tsv</code> by hand to fix a theme or a part of speech. Fix the

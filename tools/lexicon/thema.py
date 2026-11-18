@@ -1001,6 +1001,48 @@ OVERRIDES.update({
     "@nl:pijn": ("Gezondheid", "kern"),
 })
 
+# The coursebook additions of 2026-11: gloss-keyword theming put these in the
+# wrong world (a `head of department` in Het lichaam, a `main course` in
+# Kinderen en school), so they are pinned here.
+OVERRIDES.update({
+    "@nl:afdelingshoofd": ("Werk", "kern"),
+    "@nl:dagschotel": ("Eten en drinken", "kern"),
+    "@nl:gehaktbal": ("Eten en drinken", "kern"),
+    "@nl:hoofdgerecht": ("Eten en drinken", "kern"),
+    "@nl:kledingzaak": ("Kleding", "kern"),
+    "@nl:loonschaal": ("Werk", "kern"),
+    "@nl:medestander": ("Mensen", "kern"),
+    "@nl:olielamp": ("Wonen", "kern"),
+    "@nl:paskamer": ("Kleding", "kern"),
+    "@nl:rij-instructeur": ("Werk", "kern"),
+    "@nl:spellen": ("Sport en vrije tijd", "kern"),
+    "@nl:toelichten": ("algemeen", "kern"),
+    "@nl:uitwisselingsprogramma": ("Kinderen en school", "nuttig"),
+    "@nl:volleybalteam": ("Sport en vrije tijd", "kern"),
+    "@nl:yogadocent": ("Sport en vrije tijd", "kern"),
+    "@nl:glazenwasser": ("Werk", "kern"),
+    "@nl:hovenier": ("Werk", "kern"),
+    "@nl:stratenmaker": ("Werk", "kern"),
+    "@nl:verkoopster": ("Werk", "kern"),
+    "@nl:schoonheidsspecialist": ("Werk", "kern"),
+    "@nl:voedingsdeskundige": ("Werk", "kern"),
+    "@nl:wereldreiziger": ("Reizen", "nuttig"),
+    "@nl:beterschap": ("Gezondheid", "kern"),
+    "@nl:verdacht": ("Nood en politie", "kern"),
+    "@nl:mosselen": ("Eten en drinken", "kern"),
+    "@nl:paella": ("Eten en drinken", "kern"),
+    "@nl:rucola": ("Eten en drinken", "kern"),
+    "@nl:peterselie": ("Eten en drinken", "kern"),
+    "@nl:zalf": ("Gezondheid", "kern"),
+    "@nl:bijsluiter": ("Gezondheid", "kern"),
+    "@nl:bijwerking": ("Gezondheid", "kern"),
+    "@nl:klamboe": ("Wonen", "kern"),
+    "@nl:rapper": ("Sport en vrije tijd", "nuttig"),
+    "@nl:podcast": ("Sport en vrije tijd", "nuttig"),
+    "@nl:ranglijst": ("Sport en vrije tijd", "nuttig"),
+    "@nl:notulen": ("Werk", "kern"),
+})
+
 EN_ONLY = {
     "post": ("Gemeente en post", "kern"),
     "bank": ("Bank en geld", "kern"),
