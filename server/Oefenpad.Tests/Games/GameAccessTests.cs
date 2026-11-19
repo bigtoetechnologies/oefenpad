@@ -6,7 +6,7 @@ namespace Oefenpad.Tests.Games;
 
 /// <summary>
 /// The three tiers of Voorzetselpaden and the level chain behind them: A0 for
-/// everyone, A1 for an account, A2 and up for a paid plan. The tier is read off
+/// everyone, A1, A2 and the A2 pairs for an account, B1 and up for a paid plan. The tier is read off
 /// the band, so adding a band cannot silently move the cut. The rule inside a
 /// tier is deliberately simple — a band starts at its first level and finishing
 /// a level opens the next — so these tests pin exactly where each gate falls.
@@ -22,8 +22,8 @@ public sealed class GameAccessTests
         new() { Id = "vijf", Band = "a1" },
         new() { Id = "zes", Band = "a1" },
         new() { Id = "zeven", Band = "a1" },
-        new() { Id = "acht", Band = "a2" },
-        new() { Id = "negen", Band = "a2" }
+        new() { Id = "acht", Band = "b1" },
+        new() { Id = "negen", Band = "b1" }
     ];
 
     private static HashSet<string> Passed(params string[] ids) => [.. ids];
@@ -33,7 +33,9 @@ public sealed class GameAccessTests
     {
         PrepositionAccess.TierOf(new Level { Band = "a0" }).Should().Be(PrepositionAccess.Tier.Free);
         PrepositionAccess.TierOf(new Level { Band = "A1" }).Should().Be(PrepositionAccess.Tier.Account);
-        PrepositionAccess.TierOf(new Level { Band = "a2" }).Should().Be(PrepositionAccess.Tier.Premium);
+        PrepositionAccess.TierOf(new Level { Band = "a2" }).Should().Be(PrepositionAccess.Tier.Account);
+        PrepositionAccess.TierOf(new Level { Band = "a2-pairs" }).Should().Be(PrepositionAccess.Tier.Account);
+        PrepositionAccess.TierOf(new Level { Band = "b1" }).Should().Be(PrepositionAccess.Tier.Premium);
         PrepositionAccess.TierOf(new Level { Band = "b2" }).Should().Be(PrepositionAccess.Tier.Premium);
 
         // An unlabelled level stays free: a new band must not arrive shut.
@@ -88,8 +90,8 @@ public sealed class GameAccessTests
     [Fact]
     public void A_paid_plan_opens_the_premium_band_and_keeps_the_chain()
     {
-        // A0 and A1 finished, so A2 opens at the plan boundary. A plan does not
-        // skip the chain: the second A2 level still waits for the first.
+        // A0 and A1 finished, so B1 opens at the plan boundary. A plan does not
+        // skip the chain: the second B1 level still waits for the first.
         var passed = Passed("een", "twee", "drie", "vier", "vijf", "zes", "zeven");
 
         var locks = PrepositionAccess.Evaluate(Levels, passed, isSignedIn: true, isPremium: true);

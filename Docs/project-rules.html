@@ -434,10 +434,10 @@ technique; <a href="prepositions-implementation.html"><code>Docs/prepositions-im
 built, and <a href="prepositions.html"><code>Docs/prepositions.html</code></a> is the spec behind it.</p>
 <p><strong>The scene plans are HTML now, and they are the master.</strong> The seven Markdown
 plans were replaced on 12 November 2026 by eight pages under
-<code>Docs/voorzetselpaden/</code> — A0, A1, A2, A2 pairs, A2+, B1, B1+, B2 — holding 713 chunks and 3,121 cards, 2,740 of them not drawn yet. Cards group by
+<code>Docs/voorzetselpaden/</code> — A0, A1, A2, A2 pairs, A2+, B1, B1+, B2 — holding 713 chunks and 3,124 cards, 2,743 of them not drawn yet. Cards group by
 contrast set, so <code>wachten op</code> sits beside
 <code>wachten voor</code>, and each chunk's own examples sit together with a count that
-turns red below three. A card holds the
+turns red below four. A card holds the
 chunk, the gloss, the scene brief, Must read, Avoid, the review verdict and —
 for the ninety-one examples that are in the game — the example sentence, the build
 sentence and the control question. A batch is one chunk; its Grok prompt is
@@ -447,9 +447,9 @@ Markdown prose is in git history, no longer on the pages. Edit the HTML, not
 <code>prepositions.json</code>: the game data is generated from these pages. The originals
 are in git at <code>80e688c</code>.</p>
 <p>It is also the only
-game with a gate: the A0 band is free, the whole A1 band needs an account, and
-A2 and up will need a paid plan, which is not built yet (so that slice is
-empty). The first level of a band opens the band; within it a level opens only
+game with a gate: the A0 band is free, the A1, A2 and A2-pairs bands need an
+account, and B1 and up will need a paid plan, which is not built yet (so that
+slice is empty). The first level of a band opens the band; within it a level opens only
 when the learner has
 finished the one before it (<code>server/Oefenpad.Services/Games/GameAccessService.cs</code>).</p>
 <blockquote>

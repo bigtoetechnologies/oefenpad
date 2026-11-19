@@ -62,8 +62,8 @@ public sealed class GameAccess
 
 /// <summary>
 /// The visitor tiers for Voorzetselpaden. The tiers follow the CEFR bands the
-/// content is written in: A0 is open to everyone, A1 needs an account, and A2
-/// and up will need a paid plan. A band is the unit because the game grows a
+/// content is written in: A0 is open to everyone, A1, A2 and the A2 pairs need
+/// an account, and B1 and up will need a paid plan. A band is the unit because the game grows a
 /// band at a time — an index-based cut would move every time a band lands.
 /// Within a tier a level also waits for the one before it, and the first level
 /// of a band opens the band. Finishing counts as passing: the point of the gate
@@ -74,8 +74,8 @@ public static class PrepositionAccess
     /// <summary>The band every visitor may practise.</summary>
     public const string FreeBand = "a0";
 
-    /// <summary>The band that needs an account. Anything above it needs a plan.</summary>
-    public const string AccountBand = "a1";
+    /// <summary>The bands that need an account. Anything above them needs a plan.</summary>
+    public static readonly string[] AccountBands = ["a1", "a2", "a2-pairs"];
 
     public enum Tier { Free, Account, Premium }
 
@@ -85,8 +85,8 @@ public static class PrepositionAccess
     /// </summary>
     public static Tier TierOf(Level level) => level.Band?.Trim().ToLowerInvariant() switch
     {
-        AccountBand => Tier.Account,
         null or "" or FreeBand => Tier.Free,
+        var band when AccountBands.Contains(band) => Tier.Account,
         _ => Tier.Premium
     };
 

@@ -113,7 +113,9 @@ def add(page, cardsfile, dry):
         n = int(m.group("n")) + len(new)
         i = body.rindex("</article>") + len("</article>")
         body = body[:i] + "".join(build(c, band) for c in new) + body[i:]
-        body = re.sub(r'<p class="telling">.*?</p>', f'<p class="telling">{n} examples</p>', body, 1, re.S)
+        say = (f'{n} examples' if n >= 4 else
+               f'<span class="tekort">{n} example{"s" if n != 1 else ""} — needs at least 4</span>')
+        body = re.sub(r'<p class="telling">.*?</p>', f'<p class="telling">{say}</p>', body, 1, re.S)
         added += len(new)
         return (f'<div class="chunkgroep" data-chunk="{m.group("chunk")}" data-examples="{n}">' + body)
 
