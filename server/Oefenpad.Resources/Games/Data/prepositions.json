@@ -344,6 +344,10 @@
       "file": "art/wachten-tot-de-soep.png",
       "alt": "Iemand staat met de armen over elkaar bij een fornuis en kijkt naar een pan met deksel waar stoom uit komt; een houten lepel ligt ernaast."
     },
+    "wachten-tot-de-bus": {
+      "file": "art/wachten-tot-de-bus.png",
+      "alt": "Een passagier zit in de bus bij het raam met een tas op schoot; buiten komt een bushalte in zicht."
+    },
     "werken-aan-project": {
       "file": "art/werken-aan-project.png",
       "alt": "Iemand buigt over een tafel met een grote tekening of bouwplan."
@@ -500,6 +504,10 @@
       "file": "art/geven-aan-geld.png",
       "alt": "Een klant houdt drie munten in een open hand over de toonbank uit; de kassière in een schort steekt een hand uit om ze aan te nemen."
     },
+    "geven-aan-bloemen": {
+      "file": "art/geven-aan-bloemen.png",
+      "alt": "Een jonge man buigt zich naar een oudere vrouw in een leunstoel en houdt een bos bloemen naar haar uit; zij steekt beide open handen uit."
+    },
     "zwaaien-naar-raam": {
       "file": "art/zwaaien-naar-raam.png",
       "alt": "Iemand staat op straat met een hoog opgeheven arm en open hand te zwaaien naar een figuur achter een verlicht raam aan de overkant."
@@ -511,6 +519,10 @@
     "zwaaien-naar-opa": {
       "file": "art/zwaaien-naar-opa.png",
       "alt": "Een vrouw en twee kinderen staan op een oprit en zwaaien met een opgestoken hand naar een oude man die achter het open raampje van een auto terugzwaait."
+    },
+    "zwaaien-naar-bus": {
+      "file": "art/zwaaien-naar-bus.png",
+      "alt": "Een vrouw op de stoep steekt haar hand op naar een bus die voorbijrijdt; de chauffeur zwaait terug achter de voorruit."
     },
     "blij-met-cadeau": {
       "file": "art/blij-met-cadeau.png",
@@ -4046,6 +4058,36 @@
       ]
     },
     {
+      "id": "wachten-tot-de-bus",
+      "frame": "wachten tot",
+      "en": "to wait until",
+      "scene": "wachten-tot-de-bus",
+      "contrast": "wachten-op-eten",
+      "focus": [
+        "tot"
+      ],
+      "example": {
+        "nl": "Ik wacht tot de bus stopt.",
+        "en": "I am waiting until the bus stops."
+      },
+      "build": [
+        [
+          "Ik",
+          "wacht",
+          "tot",
+          "de",
+          "bus",
+          "stopt"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zit de passagier nog op de stoel?",
+          "answer": true
+        }
+      ]
+    },
+    {
       "id": "werken-aan-project",
       "frame": "werken aan",
       "en": "to work on",
@@ -5234,6 +5276,37 @@
       ]
     },
     {
+      "id": "geven-aan-bloemen",
+      "frame": "geven aan",
+      "en": "to give to",
+      "scene": "geven-aan-bloemen",
+      "contrast": "geven-om-kleinzoon",
+      "focus": [
+        "aan"
+      ],
+      "example": {
+        "nl": "Hij geeft de bloemen aan zijn moeder.",
+        "en": "He gives the flowers to his mother."
+      },
+      "build": [
+        [
+          "Hij",
+          "geeft",
+          "de",
+          "bloemen",
+          "aan",
+          "zijn",
+          "moeder"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Heeft de moeder de bloemen al in haar handen?",
+          "answer": false
+        }
+      ]
+    },
+    {
       "id": "zwaaien-naar-raam",
       "frame": "zwaaien naar",
       "en": "to wave at",
@@ -5322,6 +5395,35 @@
       "concept": [
         {
           "question": "Zit opa in de auto?",
+          "answer": true
+        }
+      ]
+    },
+    {
+      "id": "zwaaien-naar-bus",
+      "frame": "zwaaien naar",
+      "en": "to wave at",
+      "scene": "zwaaien-naar-bus",
+      "contrast": null,
+      "focus": [
+        "naar"
+      ],
+      "example": {
+        "nl": "Zij zwaait naar de buschauffeur.",
+        "en": "She waves at the bus driver."
+      },
+      "build": [
+        [
+          "Zij",
+          "zwaait",
+          "naar",
+          "de",
+          "buschauffeur"
+        ]
+      ],
+      "concept": [
+        {
+          "question": "Zwaait de chauffeur terug?",
           "answer": true
         }
       ]
@@ -9184,7 +9286,7 @@
       "frame": "geven om",
       "en": "to care about",
       "scene": "geven-om-kleinzoon",
-      "contrast": "geven-aan-boek",
+      "contrast": "geven-aan-bloemen",
       "focus": [
         "om"
       ],
@@ -13125,7 +13227,8 @@
       "frames": [
         "wachten-tot-de-klok",
         "wachten-tot-het-licht",
-        "wachten-tot-de-soep"
+        "wachten-tot-de-soep",
+        "wachten-tot-de-bus"
       ]
     },
     {
@@ -13234,7 +13337,8 @@
       "frames": [
         "geven-aan-boek",
         "geven-aan-sleutel",
-        "geven-aan-geld"
+        "geven-aan-geld",
+        "geven-aan-bloemen"
       ]
     },
     {
@@ -13244,7 +13348,8 @@
       "frames": [
         "zwaaien-naar-raam",
         "zwaaien-naar-trein",
-        "zwaaien-naar-opa"
+        "zwaaien-naar-opa",
+        "zwaaien-naar-bus"
       ]
     },
     {
