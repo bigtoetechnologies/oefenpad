@@ -242,7 +242,11 @@ fixes into the game.</p>
 python3 tools/prepositions-pages.py read --out records.json
 python3 tools/prepositions-pages.py patch fixes.json [--dry-run]
 python3 tools/build-prepositions-matrix.py                # rebuild matrix-*.html
+python3 tools/number-prepositions-frames.py               # renumber the cards across all eight bands
 </code></pre>
+<p>Adding, removing or moving a card shifts the reference numbers, so rerun
+<code>tools/number-prepositions-frames.py</code> afterwards. The numbers run on across the
+band pages in order, A0 first and B2 last.</p>
 <p><code>patch</code> takes <code>{"fixes": [{"id": ..., "scene": ..., ...}]}</code> and edits fields in
 place: <code>scene</code>, <code>must</code>, <code>avoid</code>, <code>note</code>, <code>tests</code>, <code>voorbeeld-nl</code>, <code>bouw</code>,
 <code>controlevraag</code>, <code>contrast</code>, <code>pronominaal</code>, <code>alt</code>, <code>verdict_why</code>, plus <code>chunk</code>,
