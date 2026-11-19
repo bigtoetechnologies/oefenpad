@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Rebuild Voorzetselpaden from the A0 and A1 band pages.
+"""Rebuild Voorzetselpaden from the A0, A1, A2 and A2-pairs band pages.
 
-`Docs/voorzetselpaden/a0.html` and `a1.html` are the master for the content:
+`Docs/voorzetselpaden/a0.html`, `a1.html`, `a2.html` and `a2-pairs.html` are the master for the content:
 one card per example scene, with the sentence, the build lines, the control
 question and the alt text. This script reads them (read-only) and writes:
 
@@ -42,7 +42,7 @@ ART = ROOT / "assets/voorzetselpaden"
 DATA = ROOT / "server/Oefenpad.Resources/Games/Data/prepositions.json"
 META = ROOT / "server/Oefenpad.Resources/Games/Data/meta.json"
 
-BANDS = ("a0", "a1")
+BANDS = ("a0", "a1", "a2", "a2-pairs")
 MASK_SIZE = (512, 763)
 
 
@@ -318,7 +318,7 @@ def main() -> None:
 
     meta = json.loads(META.read_text(encoding="utf-8"))
     meta["generatedFrom"] = (
-        "Docs/voorzetselpaden/a0.html and a1.html (cards with an image), "
+        "Docs/voorzetselpaden/a0.html, a1.html, a2.html and a2-pairs.html (cards with an image), "
         "via tools/import-prepositions-band.py")
     meta["scenes"] = scenes
     meta["frames"] = frames
