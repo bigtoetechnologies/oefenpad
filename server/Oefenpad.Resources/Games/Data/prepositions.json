@@ -18,19 +18,19 @@
     },
     "drinken-uit-glas": {
       "file": "art/drinken-uit-glas.png",
-      "alt": "Iemand kantelt een glas naar de mond om te drinken."
+      "alt": "Iemand kantelt een glas naar de mond."
     },
     "drinken-uit-kopje": {
       "file": "art/drinken-uit-kopje.png",
-      "alt": "Iemand houdt een mok met twee handen vast en drinkt er rustig uit."
+      "alt": "Iemand houdt een mok met twee handen bij de mond en neemt rustig een slok."
     },
     "drinken-uit-fles": {
       "file": "art/drinken-uit-fles.png",
-      "alt": "Iemand houdt een fles aan de mond en drinkt met het hoofd iets achterover."
+      "alt": "Iemand houdt een fles aan de mond, met het hoofd iets achterover."
     },
     "drinken-uit-beker": {
       "file": "art/drinken-uit-beker.png",
-      "alt": "Iemand drinkt met één hand uit een eenvoudige papieren beker."
+      "alt": "Iemand houdt een eenvoudige papieren beker met één hand aan de mond."
     },
     "houden-van-hond": {
       "file": "art/houden-van-hond.png",
@@ -42,7 +42,7 @@
     },
     "houden-van-kat": {
       "file": "art/houden-van-kat.png",
-      "alt": "Een vrouw houdt een ontspannen kat tegen haar borst, met haar wang op zijn kop en haar ogen dicht."
+      "alt": "Een vrouw drukt een ontspannen kat tegen haar borst, met haar wang op zijn kop en haar ogen dicht."
     },
     "houden-van-muziek": {
       "file": "art/houden-van-muziek.png",
@@ -50,7 +50,7 @@
     },
     "komen-uit-huis": {
       "file": "art/komen-uit-huis.png",
-      "alt": "Iemand met een koffer stapt uit een huisdeur."
+      "alt": "Een man loopt met lege handen door de open voordeur van een klein huis naar buiten."
     },
     "komen-uit-kantoor": {
       "file": "art/komen-uit-kantoor.png",
@@ -62,7 +62,7 @@
     },
     "komen-uit-winkel": {
       "file": "art/komen-uit-winkel.png",
-      "alt": "Een vrouw stapt met lege handen uit de deur van een kleine winkel met een luifel en een etalage met paspoppen."
+      "alt": "Een vrouw loopt met lege handen naar buiten door de deur van een kleine winkel met een luifel en een etalage met paspoppen."
     },
     "last-hebben-van-lawaai": {
       "file": "art/last-hebben-van-lawaai.png",
@@ -82,7 +82,7 @@
     },
     "letten-op-verkeer": {
       "file": "art/letten-op-verkeer.png",
-      "alt": "Iemand staat naast een weg en tuurt met een hand boven de ogen in de verte."
+      "alt": "Een vrouw staat stil met haar fiets bij de stoeprand en kijkt opzij naar een auto die vlak langs haar rijdt."
     },
     "letten-op-hond": {
       "file": "art/letten-op-hond.png",
@@ -94,23 +94,23 @@
     },
     "stappen-uit-bus": {
       "file": "art/stappen-uit-bus.png",
-      "alt": "Iemand stapt uit de open deur van een bus op de stoep."
+      "alt": "Iemand zet een voet vanaf de onderste tree van een bus op de stoep; de deur staat open."
     },
     "stappen-uit-auto": {
       "file": "art/stappen-uit-auto.png",
-      "alt": "Een vrouw komt uit de bestuurdersstoel van een kleine auto met de deur wijd open; één voet staat al op de weg."
+      "alt": "Een vrouw zet vanaf de bestuurdersstoel van een kleine auto één voet op de weg; de deur staat wijd open."
     },
     "stappen-uit-trein": {
       "file": "art/stappen-uit-trein.png",
-      "alt": "Een man stapt uit de open deur van een trein; zijn voorste voet reikt naar het perron en hij houdt de stang vast."
+      "alt": "Een man zet zijn voorste voet vanaf de open deur van een trein naar het perron en houdt de stang vast."
     },
     "stappen-uit-boot": {
       "file": "art/stappen-uit-boot.png",
-      "alt": "Een vrouw stapt uit een kleine roeiboot op een houten steiger, met één voet nog in de boot en een hand aan een paal."
+      "alt": "Een vrouw zet één voet vanaf een kleine roeiboot op een houten steiger; de andere voet staat nog in de boot en een hand houdt een paal vast."
     },
     "zin-in-koffie": {
       "file": "art/zin-in-koffie.png",
-      "alt": "Iemand kijkt blij naar een kop koffie en een stuk taart."
+      "alt": "Een vrouw zit voorovergebogen aan een rond tafeltje en houdt haar gezicht glimlachend boven een dampende kop koffie."
     },
     "zin-in-taart": {
       "file": "art/zin-in-taart.png",
@@ -126,7 +126,7 @@
     },
     "zoeken-naar-sleutels": {
       "file": "art/zoeken-naar-sleutels.png",
-      "alt": "Iemand knielt bij een bank en zoekt naar sleutels die op de grond liggen."
+      "alt": "Iemand knielt bij een bank en tast met een hand over de grond, waar sleutels liggen."
     },
     "zoeken-naar-bril": {
       "file": "art/zoeken-naar-bril.png",
@@ -174,7 +174,7 @@
     },
     "vragen-naar-informatie": {
       "file": "art/vragen-naar-informatie.png",
-      "alt": "Iemand wijst op een kaart aan de balie; de medewerker luistert."
+      "alt": "Iemand houdt een opengevouwen kaart vast, zet een vinger op één plek en spreekt een tweede persoon toe, die zich over de kaart buigt."
     },
     "vragen-naar-weg": {
       "file": "art/vragen-naar-weg.png",
@@ -196,8 +196,8 @@
       "file": "art/vragen-om-geld.png",
       "alt": "Iemand bij een kaartjesautomaat toont een lege broekzak en houdt een hand op; de ander kijkt in een open portemonnee."
     },
-    "vragen-om-advies": {
-      "file": "art/vragen-om-advies.png",
+    "vragen-om-water": {
+      "file": "art/vragen-om-water.png",
       "alt": "Een gast aan de keukentafel houdt een leeg glas uit en wijst erin; de gastheer staat ernaast met een volle kan tegen de borst."
     },
     "vragen-om-pen": {
@@ -222,7 +222,7 @@
     },
     "kijken-uit-raam": {
       "file": "art/kijken-uit-raam.png",
-      "alt": "Iemand kijkt uit een open raam naar buiten."
+      "alt": "Iemand staat bij een open raam en steekt het hoofd naar buiten."
     },
     "kijken-uit-treinraam": {
       "file": "art/kijken-uit-treinraam.png",
@@ -232,9 +232,9 @@
       "file": "art/kijken-uit-tent.png",
       "alt": "Iemand knielt in de open ingang van een kleine tent, houdt de flap opzij en steekt hoofd en schouders naar buiten."
     },
-    "kijken-uit-balkon": {
-      "file": "art/kijken-uit-balkon.png",
-      "alt": "Hoofd en schouders van iemand steken door een open dakraam in een schuin pannendak; de persoon kijkt uit over andere daken en een schoorsteen."
+    "kijken-uit-dakraam": {
+      "file": "art/kijken-uit-dakraam.png",
+      "alt": "Iemand staat met hoofd en schouders boven een open dakraam in een schuin pannendak; de blik gaat over andere daken en een schoorsteen."
     },
     "klaar-met-werk": {
       "file": "art/klaar-met-werk.png",
@@ -254,7 +254,7 @@
     },
     "klaar-voor-feest": {
       "file": "art/klaar-voor-feest.png",
-      "alt": "Iemand staat met een jas en een cadeau bij de voordeur, klaar om te gaan."
+      "alt": "Iemand staat met een jas aan en een cadeau in de hand bij de voordeur, op het punt om te gaan."
     },
     "klaar-voor-vertrek": {
       "file": "art/klaar-voor-vertrek.png",
@@ -270,7 +270,7 @@
     },
     "praten-met-vriend": {
       "file": "art/praten-met-vriend.png",
-      "alt": "Twee mensen zitten tegenover elkaar en praten; hun tekstballonnen raken elkaar."
+      "alt": "Twee mensen zitten tegenover elkaar; hun tekstballonnen raken elkaar."
     },
     "praten-met-buur": {
       "file": "art/praten-met-buur.png",
@@ -302,7 +302,7 @@
     },
     "wachten-op-bus": {
       "file": "art/wachten-op-bus.png",
-      "alt": "Iemand wacht bij een bushokje en kijkt op een horloge."
+      "alt": "Iemand staat bij een bushokje en kijkt naar een horloge."
     },
     "wachten-op-trein": {
       "file": "art/wachten-op-trein.png",
@@ -334,7 +334,7 @@
     },
     "wachten-tot-de-klok": {
       "file": "art/wachten-tot-de-klok.png",
-      "alt": "Iemand zit rechtop op een bank naast een kale muur met een grote ronde klok, handen plat op de knieen en de blik op de klok; op straat is niemand anders."
+      "alt": "Iemand zit rechtop op een bank naast een kale muur met een grote ronde klok, handen plat op de knieën en de blik op de klok; op straat is niemand anders."
     },
     "wachten-tot-het-licht": {
       "file": "art/wachten-tot-het-licht.png",
@@ -360,8 +360,8 @@
       "file": "art/werken-aan-verslag.png",
       "alt": "Iemand zit aan een bureau, typt met één hand op een laptop met een grafiek en houdt met de andere een blad van een dikke stapel papier omhoog."
     },
-    "werken-aan-tuin": {
-      "file": "art/werken-aan-tuin.png",
+    "werken-aan-schilderij": {
+      "file": "art/werken-aan-schilderij.png",
       "alt": "Iemand staat met een palet en een penseel voor een ezel; de bovenste helft van het doek toont een heuvel en een zon, de onderste helft is nog leeg."
     },
     "werken-bij-bedrijf": {
@@ -372,12 +372,12 @@
       "file": "art/werken-bij-bakker.png",
       "alt": "Iemand met een schort en een bakkersmuts staat achter de toonbank van een bakkerij en legt een lang brood op een rek vol broden."
     },
-    "werken-bij-kantoor": {
-      "file": "art/werken-bij-kantoor.png",
+    "werken-bij-de-post": {
+      "file": "art/werken-bij-de-post.png",
       "alt": "Iemand in uniform met een pet en een grote posttas stapt uit een bestelbus met een stapel enveloppen in de hand, bij een rij voordeuren."
     },
-    "werken-bij-winkel": {
-      "file": "art/werken-bij-winkel.png",
+    "werken-bij-de-supermarkt": {
+      "file": "art/werken-bij-de-supermarkt.png",
       "alt": "Iemand met een schort en een naamkaartje duwt een lange rij lege winkelwagens naar de schuifdeuren van een supermarkt."
     },
     "bedanken-voor-de-uitnodiging": {
@@ -414,7 +414,7 @@
     },
     "doorgeven-aan-buur": {
       "file": "art/doorgeven-aan-buur.png",
-      "alt": "Iemand geeft een doos over een hek aan een ander."
+      "alt": "Iemand reikt een doos over een hek naar een ander."
     },
     "doorgeven-aan-collega": {
       "file": "art/doorgeven-aan-collega.png",
@@ -448,12 +448,12 @@
       "file": "art/meedoen-met-team.png",
       "alt": "Iemand schuift een stoel aan bij een groep die aan tafel een spel doet."
     },
-    "meedoen-met-gesprek": {
-      "file": "art/meedoen-met-gesprek.png",
+    "meedoen-met-de-buren": {
+      "file": "art/meedoen-met-de-buren.png",
       "alt": "Twee buren harken bladeren op de stoep voor twee voordeuren; een derde persoon komt erbij met een eigen hark en een van de buren wenkt."
     },
-    "meedoen-met-spel": {
-      "file": "art/meedoen-met-spel.png",
+    "meedoen-met-de-kinderen": {
+      "file": "art/meedoen-met-de-kinderen.png",
       "alt": "Op een grasveld staat een volwassene met open handen tussen twee kinderen; een bal vliegt van het ene kind naar de volwassene."
     },
     "meedoen-met-klas": {
@@ -478,15 +478,15 @@
     },
     "vallen-uit-tas": {
       "file": "art/vallen-uit-tas.png",
-      "alt": "Een open tas ligt op zijn kant; een boek en een appel vallen eruit."
+      "alt": "Een open tas ligt op zijn kant met een boek en een appel net buiten de opening."
     },
     "vallen-uit-doos": {
       "file": "art/vallen-uit-doos.png",
-      "alt": "Iemand houdt een grote kartonnen doos tegen de borst; de bodem is opengebarsten en een kopje, een schoen en een bal vallen naar beneden."
+      "alt": "Iemand houdt een grote kartonnen doos tegen de borst; de bodem is opengebarsten en een kopje, een schoen en een bal tuimelen naar beneden."
     },
     "vallen-uit-kast": {
       "file": "art/vallen-uit-kast.png",
-      "alt": "Iemand trekt de deur van een overvolle kast open en houdt een arm voor het gezicht; handdoeken, een schoenendoos en een bal vallen eruit."
+      "alt": "Iemand trekt de deur van een overvolle kast open en houdt een arm voor het gezicht; handdoeken, een schoenendoos en een bal tuimelen naar buiten."
     },
     "vallen-uit-bed": {
       "file": "art/vallen-uit-bed.png",
@@ -510,7 +510,7 @@
     },
     "zwaaien-naar-raam": {
       "file": "art/zwaaien-naar-raam.png",
-      "alt": "Iemand staat op straat met een hoog opgeheven arm en open hand te zwaaien naar een figuur achter een verlicht raam aan de overkant."
+      "alt": "Iemand staat op straat met een hoog opgeheven arm en open hand, gericht op een figuur achter een verlicht raam aan de overkant."
     },
     "zwaaien-naar-trein": {
       "file": "art/zwaaien-naar-trein.png",
@@ -518,15 +518,15 @@
     },
     "zwaaien-naar-opa": {
       "file": "art/zwaaien-naar-opa.png",
-      "alt": "Een vrouw en twee kinderen staan op een oprit en zwaaien met een opgestoken hand naar een oude man die achter het open raampje van een auto terugzwaait."
+      "alt": "Een vrouw en twee kinderen staan op een oprit met een opgestoken hand; achter het open raampje van een auto steekt een oude man ook een hand op."
     },
     "zwaaien-naar-bus": {
       "file": "art/zwaaien-naar-bus.png",
-      "alt": "Een vrouw op de stoep steekt haar hand op naar een bus die voorbijrijdt; de chauffeur zwaait terug achter de voorruit."
+      "alt": "Een vrouw op de stoep steekt haar hand op terwijl een bus voorbijrijdt; de chauffeur achter de voorruit steekt ook een hand op."
     },
     "blij-met-cadeau": {
       "file": "art/blij-met-cadeau.png",
-      "alt": "Iemand houdt een cadeau met een strik vast en kijkt blij."
+      "alt": "Iemand houdt lachend een ingepakt cadeau vast."
     },
     "blij-met-fiets": {
       "file": "art/blij-met-fiets.png",
@@ -542,7 +542,7 @@
     },
     "blij-voor-vriend": {
       "file": "art/blij-voor-vriend.png",
-      "alt": "Iemand kijkt blij naar een vriend die een kleine beker omhoog houdt."
+      "alt": "Iemand kijkt lachend naar een vriend die een kleine beker omhoog houdt."
     },
     "blij-voor-collega": {
       "file": "art/blij-voor-collega.png",
@@ -558,7 +558,7 @@
     },
     "boos-op-collega": {
       "file": "art/boos-op-collega.png",
-      "alt": "Iemand wijst boos naar een ander, die achteroverleunt."
+      "alt": "Iemand wijst met een frons naar een ander, die achteroverleunt."
     },
     "boos-op-kind": {
       "file": "art/boos-op-kind.png",
@@ -574,23 +574,23 @@
     },
     "boos-over-rommel": {
       "file": "art/boos-over-rommel.png",
-      "alt": "Iemand kijkt boos naar een rommel met papieren en een gebroken beker."
+      "alt": "Iemand kijkt met een frons naar een rommel met papieren en een gebroken beker."
     },
     "boos-over-rekening": {
       "file": "art/boos-over-rekening.png",
       "alt": "Iemand zit alleen aan de keukentafel en verfrommelt een blad met twee vuisten, naast een open envelop en een lege portemonnee."
     },
-    "boos-over-vertraging": {
-      "file": "art/boos-over-vertraging.png",
+    "boos-over-boete": {
+      "file": "art/boos-over-boete.png",
       "alt": "Iemand staat alleen bij een geparkeerde auto, tilt de ruitenwisser op en verfrommelt een papiertje in een opgeheven vuist."
     },
-    "boos-over-geluid": {
-      "file": "art/boos-over-geluid.png",
+    "boos-over-lekke-band": {
+      "file": "art/boos-over-lekke-band.png",
       "alt": "Iemand staat alleen met de vuisten in de zij bij een fiets met een platte achterband en een volle tas aan het stuur."
     },
     "klagen-bij-balie": {
       "file": "art/klagen-bij-balie.png",
-      "alt": "Iemand leunt over een balie en klaagt bij een medewerker."
+      "alt": "Iemand leunt over een balie en spreekt een medewerker verontwaardigd aan."
     },
     "klagen-bij-leidinggevende": {
       "file": "art/klagen-bij-leidinggevende.png",
@@ -622,11 +622,11 @@
     },
     "uitkijken-naar-vakantie": {
       "file": "art/uitkijken-naar-vakantie.png",
-      "alt": "Iemand met een koffer kijkt glimlachend naar een kalender met één gemarkeerde dag."
+      "alt": "Iemand met een koffer glimlacht bij een kalender met één gemarkeerde dag."
     },
     "uitkijken-naar-verjaardag": {
       "file": "art/uitkijken-naar-verjaardag.png",
-      "alt": "Iemand met een feesthoed hangt een slinger op en kijkt lachend naar een kalender met één omcirkelde dag."
+      "alt": "Iemand met een feesthoed hangt een slinger op en lacht bij een kalender met één omcirkelde dag."
     },
     "uitkijken-naar-bezoek": {
       "file": "art/uitkijken-naar-bezoek.png",
@@ -640,8 +640,8 @@
       "file": "art/uitkijken-voor-auto.png",
       "alt": "Een kind staat aan de rand van de weg; een auto komt aanrijden."
     },
-    "uitkijken-voor-hond": {
-      "file": "art/uitkijken-voor-hond.png",
+    "uitkijken-voor-tram": {
+      "file": "art/uitkijken-voor-tram.png",
       "alt": "Iemand bij een tramhalte houdt een arm als slagboom voor een ander; een tram rijdt vlak langs hen."
     },
     "uitkijken-voor-gladde-vloer": {
@@ -650,7 +650,7 @@
     },
     "uitkijken-voor-fiets": {
       "file": "art/uitkijken-voor-fiets.png",
-      "alt": "Iemand houdt een voet boven het fietspad stil en kijkt over de schouder naar een fietser die aan komt rijden."
+      "alt": "Iemand houdt een voet boven het fietspad stil en draait het hoofd over de schouder naar een fietser die aan komt rijden."
     },
     "denken-aan-persoon": {
       "file": "art/denken-aan-persoon.png",
@@ -682,11 +682,11 @@
     },
     "denken-om-je-rug": {
       "file": "art/denken-om-je-rug.png",
-      "alt": "Een jonge vrouw zit met een rechte rug op haar hurken naast een grote zak aarde; een grijze man naast haar houdt een hand op zijn eigen onderrug en wijst naar haar knieen."
+      "alt": "Een jonge vrouw zit met een rechte rug op haar hurken naast een grote zak aarde; een grijze man naast haar houdt een hand op zijn eigen onderrug en wijst naar haar knieën."
     },
     "denken-van-het-plan": {
       "file": "art/denken-van-het-plan.png",
-      "alt": "Twee mensen zitten tegenover elkaar aan tafel; de een houdt een open hand op met opgetrokken wenkbrauwen, de ander denkt met een vinger aan de kin na."
+      "alt": "Twee mensen zitten tegenover elkaar aan tafel; de een houdt een open hand op met opgetrokken wenkbrauwen, de ander houdt peinzend een vinger tegen de kin."
     },
     "denken-van-mijn-haar": {
       "file": "art/denken-van-mijn-haar.png",
@@ -782,7 +782,7 @@
     },
     "sterven-van-ouderdom": {
       "file": "art/sterven-van-ouderdom.png",
-      "alt": "Een oud iemand zit met gesloten ogen en een deken over de knieen in een stoel bij het raam, een wandelstok ernaast en een foto op het tafeltje."
+      "alt": "Een oud iemand zit met gesloten ogen en een deken over de knieën in een stoel bij het raam, een wandelstok ernaast en een foto op het tafeltje."
     },
     "sterven-van-de-honger": {
       "file": "art/sterven-van-de-honger.png",
@@ -810,7 +810,7 @@
     },
     "ruiken-naar-patat": {
       "file": "art/ruiken-naar-patat.png",
-      "alt": "Uit het luik van een patatkraam op straat kringelen lange geurlijnen; verderop staat een jonge vrouw stil en ruikt met gesloten ogen."
+      "alt": "Uit het luik van een patatkraam op straat kringelen lange geurlijnen; verderop staat een jonge vrouw stil met gesloten ogen en de neus omhoog."
     },
     "ruiken-aan-bloem": {
       "file": "art/ruiken-aan-bloem.png",
@@ -830,7 +830,7 @@
     },
     "zeggen-tegen-persoon": {
       "file": "art/zeggen-tegen-persoon.png",
-      "alt": "Iemand leunt naar een ander toe en zegt iets korts."
+      "alt": "Iemand leunt naar een ander toe en spreekt kort."
     },
     "zeggen-tegen-buur": {
       "file": "art/zeggen-tegen-buur.png",
@@ -858,7 +858,7 @@
     },
     "zeggen-van-de-gitaar": {
       "file": "art/zeggen-van-de-gitaar.png",
-      "alt": "Een jongen speelt gitaar op een kruk; zijn vader staat met de armen over elkaar in de deuropening en zegt iets met een lachend gezichtje in een wolkje."
+      "alt": "Een jongen speelt gitaar op een kruk; zijn vader staat met de armen over elkaar in de deuropening, met een lachend gezichtje in een wolkje boven zijn hoofd."
     },
     "beschermen-tegen-regen": {
       "file": "art/beschermen-tegen-regen.png",
@@ -916,8 +916,8 @@
       "file": "art/eraan-denken-boodschappen.png",
       "alt": "Iemand is net voorbij een groentewinkel gelopen en draait zich met opgestoken vinger om, een lege tas onder de arm."
     },
-    "eraan-denken-sleutels": {
-      "file": "art/eraan-denken-sleutels.png",
+    "eraan-denken-telefoon": {
+      "file": "art/eraan-denken-telefoon.png",
       "alt": "Iemand in een jas staat halverwege de stoep, een hand op een lege jaszak, en draait zich om naar een telefoon op een tafeltje in de gang."
     },
     "eraan-denken-medicijn": {
@@ -962,7 +962,7 @@
     },
     "ophouden-met-drinken": {
       "file": "art/ophouden-met-drinken.png",
-      "alt": "Iemand houdt bij het aanrecht een wijnfles ondersteboven boven de gootsteen; er staan nog twee lege flessen in en een omgekeerd glas ernaast."
+      "alt": "Iemand keert bij het aanrecht een wijnfles om boven de gootsteen; er staan nog twee lege flessen in en een omgekeerd glas ernaast."
     },
     "ophouden-met-snoepen": {
       "file": "art/ophouden-met-snoepen.png",
@@ -974,19 +974,19 @@
     },
     "praten-tegen-muur": {
       "file": "art/praten-tegen-muur.png",
-      "alt": "Iemand praat tegen een ander die met de rug naar hem toe staat."
+      "alt": "Iemand spreekt een ander toe die met de rug naar hem toe staat."
     },
     "praten-tegen-de-hond": {
       "file": "art/praten-tegen-de-hond.png",
-      "alt": "Iemand hurkt op het kleed met open handen en praat tegen een zittende hond, die zijn kop scheef houdt."
+      "alt": "Iemand hurkt op het kleed met open handen en spreekt een zittende hond toe, die zijn kop scheef houdt."
     },
-    "praten-tegen-gesloten-deur": {
-      "file": "art/praten-tegen-gesloten-deur.png",
-      "alt": "Een volwassene buigt zich lachend over een kinderwagen en praat tegen de baby, die met grote ogen omhoog kijkt."
+    "praten-tegen-de-baby": {
+      "file": "art/praten-tegen-de-baby.png",
+      "alt": "Een volwassene buigt zich lachend over een kinderwagen en spreekt de baby toe, die met grote ogen omhoog kijkt."
     },
     "praten-tegen-scherm": {
       "file": "art/praten-tegen-scherm.png",
-      "alt": "Iemand leunt over de rug van een leunstoel en praat met drukke gebaren tegen een ander, die met oortjes in over een laptop gebogen zit."
+      "alt": "Iemand leunt over de rug van een leunstoel en gebaart druk naar een ander, die met oortjes in over een laptop gebogen zit."
     },
     "tevreden-zijn-met-resultaat": {
       "file": "art/tevreden-zijn-met-resultaat.png",
@@ -1006,7 +1006,7 @@
     },
     "vertellen-aan-kind": {
       "file": "art/vertellen-aan-kind.png",
-      "alt": "Een volwassene vertelt met bewegende handen een verhaal aan een kind."
+      "alt": "Een volwassene spreekt met bewegende handen; een kind luistert."
     },
     "vertellen-aan-buur": {
       "file": "art/vertellen-aan-buur.png",
@@ -1018,7 +1018,7 @@
     },
     "vertellen-aan-kleinkind": {
       "file": "art/vertellen-aan-kleinkind.png",
-      "alt": "Een grootouder zit in een leunstoel en vertelt met grote gebaren; het kleinkind zit op de vloer en kijkt omhoog, onder een lang leeg lint."
+      "alt": "Een grootouder zit in een leunstoel en spreekt met grote gebaren; het kleinkind zit op de vloer en kijkt omhoog, onder een lang leeg lint."
     },
     "geven-om-familie": {
       "file": "art/geven-om-familie.png",
@@ -1182,7 +1182,7 @@
     },
     "aanbellen-bij-de-buren": {
       "file": "art/aanbellen-bij-de-buren.png",
-      "alt": "Iemand staat op een stoep met een vinger op een kleine ronde bel naast een dichte voordeur; achter hen leunt een fiets tegen een laag muurtje."
+      "alt": "Iemand staat op een stoep met een vinger op een kleine ronde knop naast een dichte voordeur; achter hen leunt een fiets tegen een laag muurtje."
     },
     "aanbellen-bij-ahmed": {
       "file": "art/aanbellen-bij-ahmed.png",
@@ -1190,15 +1190,15 @@
     },
     "aanbellen-bij-vrienden": {
       "file": "art/aanbellen-bij-vrienden.png",
-      "alt": "Een man en een vrouw staan bij een dicht tuinhek in een hoge heg; de vrouw drukt op een bel aan de paal en de man houdt een schaal vast."
+      "alt": "Een man en een vrouw staan bij een dicht tuinhek in een hoge heg; de vrouw drukt op een knop aan de paal en de man houdt een schaal vast."
     },
     "aanbellen-bij-oma": {
       "file": "art/aanbellen-bij-oma.png",
-      "alt": "Een jonge man met bloemen staat op een plank naar een woonboot en drukt op de bel naast de dichte deur."
+      "alt": "Een jonge man met bloemen staat op een plank naar een woonboot en drukt op de knop naast de dichte deur."
     },
     "doen-aan-tennis": {
       "file": "art/doen-aan-tennis.png",
-      "alt": "Iemand in korte broek staat op een tennisbaan met een racket in de ene hand en een bal in de andere, knieen licht gebogen en de blik op het net."
+      "alt": "Iemand in korte broek staat op een tennisbaan met een racket in de ene hand en een bal in de andere, knieën licht gebogen en de blik op het net."
     },
     "doen-aan-judo": {
       "file": "art/doen-aan-judo.png",
@@ -1222,27 +1222,27 @@
     },
     "halen-uit-de-tas": {
       "file": "art/halen-uit-de-tas.png",
-      "alt": "Een jonge vrouw staat op de stoep en haalt een portemonnee uit haar open schoudertas."
+      "alt": "Een jonge vrouw staat op de stoep met een portemonnee in de hand boven haar open schoudertas."
     },
     "halen-uit-het-water": {
       "file": "art/halen-uit-het-water.png",
-      "alt": "Een man knielt aan de rand van een vijver en haalt een bal uit het water; een kleine jongen staat achter hem met zijn handen uitgestoken."
+      "alt": "Een man knielt aan de rand van een vijver en tilt een natte bal boven het water; een kleine jongen staat achter hem met zijn handen uitgestoken."
     },
     "rennen-naar-de-bus": {
       "file": "art/rennen-naar-de-bus.png",
-      "alt": "Iemand rent met gebogen armen naar een bus met een open deur bij een halte, een voet van de grond en een tas die meeschommelt."
+      "alt": "Iemand sprint met gebogen armen richting een bus met een open deur bij een halte, een voet van de grond en een tas die meeschommelt."
     },
     "rennen-naar-mama": {
       "file": "art/rennen-naar-mama.png",
-      "alt": "Een klein kind rent met gestrekte armen over een parkpad naar zijn moeder, die op een knie zit met open armen."
+      "alt": "Een klein kind holt met gestrekte armen over een parkpad richting zijn moeder, die op een knie zit met open armen."
     },
     "rennen-naar-de-lift": {
       "file": "art/rennen-naar-de-lift.png",
-      "alt": "Een man in pak rent met een koffertje door een gang naar een lift waarvan de deuren bijna dicht zijn."
+      "alt": "Een man in pak holt met een koffertje door een gang richting een lift waarvan de deuren bijna dicht zijn."
     },
     "rennen-naar-huis": {
       "file": "art/rennen-naar-huis.png",
-      "alt": "Een vrouw rent in de regen over de stoep naar een klein huis en houdt haar jas boven haar hoofd."
+      "alt": "Een vrouw holt in de regen over de stoep richting een klein huis en houdt haar jas boven haar hoofd."
     },
     "rijden-naar-de-stad": {
       "file": "art/rijden-naar-de-stad.png",
@@ -1250,15 +1250,15 @@
     },
     "rijden-naar-de-camping": {
       "file": "art/rijden-naar-de-camping.png",
-      "alt": "Een vrouw rijdt met een auto en een caravan over een landweg naar twee tenten tussen hoge bomen."
+      "alt": "Een vrouw met een auto en een caravan is onderweg over een landweg, richting twee tenten tussen hoge bomen."
     },
     "rijden-naar-het-werk": {
       "file": "art/rijden-naar-het-werk.png",
-      "alt": "Een vrouw met een helm rijdt op een scooter door de stad naar een hoog kantoorgebouw."
+      "alt": "Een vrouw met een helm is op een scooter onderweg door de stad, richting een hoog kantoorgebouw."
     },
     "rijden-naar-de-haven": {
       "file": "art/rijden-naar-de-haven.png",
-      "alt": "Een vrachtwagen met een container rijdt over een kade naar twee hoge kranen en een groot schip."
+      "alt": "Een vrachtwagen met een container is onderweg over een kade, richting twee hoge kranen en een groot schip."
     },
     "smaken-naar-kaneel": {
       "file": "art/smaken-naar-kaneel.png",
@@ -1308,8 +1308,8 @@
       "file": "art/betalen-voor-haar-vriendin.png",
       "alt": "Twee vrouwen staan bij een friettent; de een geeft geld aan de verkoper en duwt de open portemonnee van haar vriendin zacht omlaag."
     },
-    "beginnen-met-hardlopen": {
-      "file": "art/beginnen-met-hardlopen.png",
+    "beginnen-met-verven": {
+      "file": "art/beginnen-met-verven.png",
       "alt": "Iemand in een overall houdt een verfroller hoog tegen een grote kale muur met één geverfde baan; op de vloer staat een volle verfpot."
     },
     "beginnen-met-eten": {
@@ -1330,7 +1330,7 @@
     },
     "gaan-naar-school": {
       "file": "art/gaan-naar-school.png",
-      "alt": "Een jongen met een schooltas op zijn rug loopt over de stoep naar een schoolgebouw met een open hek, waar twee andere kinderen naar binnen gaan."
+      "alt": "Een jongen met een schooltas op zijn rug loopt over de stoep richting een schoolgebouw met een open hek, waar twee andere kinderen binnenlopen."
     },
     "gaan-naar-de-speeltuin": {
       "file": "art/gaan-naar-de-speeltuin.png",
@@ -1378,15 +1378,15 @@
     },
     "kijken-naar-de-vissen": {
       "file": "art/kijken-naar-de-vissen.png",
-      "alt": "Een oudere man buigt voorover met zijn handen op zijn knieën en kijkt naar twee vissen in een groot aquarium."
+      "alt": "Een oudere man buigt voorover met zijn handen op zijn knieën, de neus bijna tegen een groot aquarium met twee vissen."
     },
     "kijken-naar-de-olifant": {
       "file": "art/kijken-naar-de-olifant.png",
-      "alt": "Een vrouw leunt met haar armen op een houten hek in de dierentuin en kijkt naar een olifant die zijn slurf omhoog steekt."
+      "alt": "Een vrouw leunt met haar armen op een houten hek in de dierentuin; daarachter steekt een olifant zijn slurf omhoog."
     },
     "kijken-naar-het-vuurwerk": {
       "file": "art/kijken-naar-het-vuurwerk.png",
-      "alt": "Een man en een vrouw staan naast elkaar bij een hek aan het water en kijken met hun hoofd achterover naar drie grote vuurwerkpijlen in de lucht."
+      "alt": "Een man en een vrouw staan naast elkaar bij een hek aan het water met hun hoofd achterover; in de lucht spatten drie grote vuurwerkpijlen uiteen."
     },
     "krijgen-van-vriend": {
       "file": "art/krijgen-van-vriend.png",
@@ -1402,11 +1402,11 @@
     },
     "krijgen-van-trainer-medaille": {
       "file": "art/krijgen-van-trainer-medaille.png",
-      "alt": "Een hardloper heeft net een medaille om zijn nek gekregen; de trainster met een fluitje staat voor hem met haar handen nog omhoog."
+      "alt": "Een hardloper draagt net een nieuwe medaille om zijn nek; de trainster met een fluitje staat voor hem met haar handen nog omhoog."
     },
     "meespelen-met-band": {
       "file": "art/meespelen-met-band.png",
-      "alt": "Een gitarist en een trommelaar spelen tegenover elkaar; een derde persoon stapt ertussen met een tamboerijn omhoog, en de gitarist knikt lachend."
+      "alt": "Een gitarist en een trommelaar musiceren tegenover elkaar; een derde persoon stapt ertussen, tamboerijn omhoog, en de gitarist knikt lachend."
     },
     "meespelen-met-springtouw": {
       "file": "art/meespelen-met-springtouw.png",
@@ -1414,11 +1414,11 @@
     },
     "meespelen-met-leerling-piano": {
       "file": "art/meespelen-met-leerling-piano.png",
-      "alt": "Een jonge man en een oudere lerares zitten naast elkaar aan één piano en spelen samen."
+      "alt": "Een jonge man en een oudere lerares zitten naast elkaar aan één piano, allebei de handen op de toetsen."
     },
     "meespelen-met-radio-trompet": {
       "file": "art/meespelen-met-radio-trompet.png",
-      "alt": "Een man staat naast een radio op een kastje en speelt met bolle wangen op een trompet mee."
+      "alt": "Een man staat naast een radio op een kastje en blaast op een trompet, de wangen bol."
     },
     "passen-op-kind": {
       "file": "art/passen-op-kind.png",
@@ -1474,7 +1474,7 @@
     },
     "stappen-in-het-vliegtuig": {
       "file": "art/stappen-in-het-vliegtuig.png",
-      "alt": "Een vrouw met een tas staat boven aan een trap tegen een vliegtuig en stapt door de open deur naar binnen."
+      "alt": "Een vrouw met een tas staat boven aan een trap tegen een vliegtuig en loopt door de open deur naar binnen."
     },
     "stappen-in-de-tractor": {
       "file": "art/stappen-in-de-tractor.png",
@@ -1482,7 +1482,7 @@
     },
     "stappen-in-het-reuzenrad": {
       "file": "art/stappen-in-het-reuzenrad.png",
-      "alt": "Een oudere vrouw stapt met een voet in het onderste bakje van een reuzenrad, waar een oudere man al zit en haar een hand toesteekt."
+      "alt": "Een oudere vrouw zet een voet over de rand van het onderste bakje van een reuzenrad, waar een oudere man al zit en haar een hand toesteekt."
     },
     "trots-op-kind": {
       "file": "art/trots-op-kind.png",
@@ -1494,7 +1494,7 @@
     },
     "trots-op-het-vogelhuisje": {
       "file": "art/trots-op-het-vogelhuisje.png",
-      "alt": "Een jonge man in een schort houdt trots een zelfgemaakt vogelhuisje op zijn vlakke handen omhoog; achter hem ligt gereedschap op een werkbank."
+      "alt": "Een jonge man in een schort houdt met opgeheven kin een zelfgemaakt vogelhuisje omhoog in zijn vlakke handen; achter hem staat een werkbank met gereedschap."
     },
     "trots-op-de-vis": {
       "file": "art/trots-op-de-vis.png",
@@ -2738,7 +2738,7 @@
       "frame": "vragen aan",
       "en": "to ask a person",
       "scene": "vragen-aan-buur",
-      "contrast": "vragen-om-advies",
+      "contrast": "vragen-om-water",
       "focus": [
         "aan"
       ],
@@ -2967,10 +2967,10 @@
       ]
     },
     {
-      "id": "vragen-om-advies",
+      "id": "vragen-om-water",
       "frame": "vragen om",
       "en": "to ask for (a thing)",
-      "scene": "vragen-om-advies",
+      "scene": "vragen-om-water",
       "contrast": "vragen-aan-buur",
       "focus": [
         "om"
@@ -3115,7 +3115,7 @@
       "frame": "kijken door",
       "en": "to look through",
       "scene": "kijken-door-kier",
-      "contrast": "kijken-uit-balkon",
+      "contrast": "kijken-uit-dakraam",
       "focus": [
         "door"
       ],
@@ -3233,10 +3233,10 @@
       ]
     },
     {
-      "id": "kijken-uit-balkon",
+      "id": "kijken-uit-dakraam",
       "frame": "kijken uit",
       "en": "to look out of",
-      "scene": "kijken-uit-balkon",
+      "scene": "kijken-uit-dakraam",
       "contrast": "kijken-door-kier",
       "focus": [
         "uit"
@@ -4150,7 +4150,7 @@
       "frame": "werken aan",
       "en": "to work on",
       "scene": "werken-aan-verslag",
-      "contrast": "werken-bij-kantoor",
+      "contrast": "werken-bij-de-post",
       "focus": [
         "aan"
       ],
@@ -4175,11 +4175,11 @@
       ]
     },
     {
-      "id": "werken-aan-tuin",
+      "id": "werken-aan-schilderij",
       "frame": "werken aan",
       "en": "to work on",
-      "scene": "werken-aan-tuin",
-      "contrast": "werken-bij-winkel",
+      "scene": "werken-aan-schilderij",
+      "contrast": "werken-bij-de-supermarkt",
       "focus": [
         "aan"
       ],
@@ -4262,10 +4262,10 @@
       ]
     },
     {
-      "id": "werken-bij-kantoor",
+      "id": "werken-bij-de-post",
       "frame": "werken bij",
       "en": "to work at",
-      "scene": "werken-bij-kantoor",
+      "scene": "werken-bij-de-post",
       "contrast": "werken-aan-verslag",
       "focus": [
         "bij"
@@ -4291,11 +4291,11 @@
       ]
     },
     {
-      "id": "werken-bij-winkel",
+      "id": "werken-bij-de-supermarkt",
       "frame": "werken bij",
       "en": "to work at",
-      "scene": "werken-bij-winkel",
-      "contrast": "werken-aan-tuin",
+      "scene": "werken-bij-de-supermarkt",
+      "contrast": "werken-aan-schilderij",
       "focus": [
         "bij"
       ],
@@ -4839,10 +4839,10 @@
       ]
     },
     {
-      "id": "meedoen-met-gesprek",
+      "id": "meedoen-met-de-buren",
       "frame": "meedoen met",
       "en": "to join in",
-      "scene": "meedoen-met-gesprek",
+      "scene": "meedoen-met-de-buren",
       "contrast": null,
       "focus": [
         "mee",
@@ -4872,10 +4872,10 @@
       ]
     },
     {
-      "id": "meedoen-met-spel",
+      "id": "meedoen-met-de-kinderen",
       "frame": "meedoen met",
       "en": "to join in",
-      "scene": "meedoen-met-spel",
+      "scene": "meedoen-met-de-kinderen",
       "contrast": null,
       "focus": [
         "mee",
@@ -5736,7 +5736,7 @@
       "frame": "boos op",
       "en": "angry at",
       "scene": "boos-op-hond",
-      "contrast": "boos-over-vertraging",
+      "contrast": "boos-over-boete",
       "focus": [
         "op"
       ],
@@ -5766,7 +5766,7 @@
       "frame": "boos op",
       "en": "angry at",
       "scene": "boos-op-buur",
-      "contrast": "boos-over-geluid",
+      "contrast": "boos-over-lekke-band",
       "focus": [
         "op"
       ],
@@ -5853,10 +5853,10 @@
       ]
     },
     {
-      "id": "boos-over-vertraging",
+      "id": "boos-over-boete",
       "frame": "boos over",
       "en": "angry about",
-      "scene": "boos-over-vertraging",
+      "scene": "boos-over-boete",
       "contrast": "boos-op-hond",
       "focus": [
         "over"
@@ -5883,10 +5883,10 @@
       ]
     },
     {
-      "id": "boos-over-geluid",
+      "id": "boos-over-lekke-band",
       "frame": "boos over",
       "en": "angry about",
-      "scene": "boos-over-geluid",
+      "scene": "boos-over-lekke-band",
       "contrast": "boos-op-buur",
       "focus": [
         "over"
@@ -6187,7 +6187,7 @@
       "frame": "uitkijken naar",
       "en": "to look forward to",
       "scene": "uitkijken-naar-verjaardag",
-      "contrast": "uitkijken-voor-hond",
+      "contrast": "uitkijken-voor-tram",
       "focus": [
         "uit",
         "naar"
@@ -6314,10 +6314,10 @@
       ]
     },
     {
-      "id": "uitkijken-voor-hond",
+      "id": "uitkijken-voor-tram",
       "frame": "uitkijken voor",
       "en": "to watch out for",
-      "scene": "uitkijken-voor-hond",
+      "scene": "uitkijken-voor-tram",
       "contrast": "uitkijken-naar-verjaardag",
       "focus": [
         "uit",
@@ -6689,8 +6689,8 @@
         "van"
       ],
       "example": {
-        "nl": "Wat denk jij van mijn nieuwe haar?",
-        "en": "What do you think of my new hair?"
+        "nl": "Wat denk jij van mijn haar?",
+        "en": "What do you think of my hair?"
       },
       "build": [
         [
@@ -6699,7 +6699,6 @@
           "jij",
           "van",
           "mijn",
-          "nieuwe",
           "haar"
         ]
       ],
@@ -7147,13 +7146,13 @@
         "over"
       ],
       "example": {
-        "nl": "Hij droomde over een grote hond.",
-        "en": "He dreamed about a big dog."
+        "nl": "Hij droomt over een grote hond.",
+        "en": "He is dreaming about a big dog."
       },
       "build": [
         [
           "Hij",
-          "droomde",
+          "droomt",
           "over",
           "een",
           "grote",
@@ -7177,13 +7176,13 @@
         "over"
       ],
       "example": {
-        "nl": "Hij droomde over het examen.",
-        "en": "He dreamed about the exam."
+        "nl": "Hij droomt over het examen.",
+        "en": "He is dreaming about the exam."
       },
       "build": [
         [
           "Hij",
-          "droomde",
+          "droomt",
           "over",
           "het",
           "examen"
@@ -7206,13 +7205,13 @@
         "over"
       ],
       "example": {
-        "nl": "Zij droomde over haar oma.",
-        "en": "She dreamed about her grandmother."
+        "nl": "Zij droomt over haar oma.",
+        "en": "She is dreaming about her grandmother."
       },
       "build": [
         [
           "Zij",
-          "droomde",
+          "droomt",
           "over",
           "haar",
           "oma"
@@ -7258,7 +7257,7 @@
     {
       "id": "sterven-aan-een-ziekte",
       "frame": "sterven aan",
-      "en": "to die of",
+      "en": "to die of (an illness)",
       "scene": "sterven-aan-een-ziekte",
       "contrast": "sterven-van-ouderdom",
       "focus": [
@@ -7287,7 +7286,7 @@
     {
       "id": "sterven-aan-een-hartaanval",
       "frame": "sterven aan",
-      "en": "to die of",
+      "en": "to die of (an illness)",
       "scene": "sterven-aan-een-hartaanval",
       "contrast": "sterven-van-de-honger",
       "focus": [
@@ -7318,7 +7317,7 @@
     {
       "id": "sterven-aan-malaria",
       "frame": "sterven aan",
-      "en": "to die of",
+      "en": "to die of (an illness)",
       "scene": "sterven-aan-malaria",
       "contrast": "sterven-van-de-dorst",
       "focus": [
@@ -7347,7 +7346,7 @@
     {
       "id": "sterven-aan-een-longziekte",
       "frame": "sterven aan",
-      "en": "to die of",
+      "en": "to die of (an illness)",
       "scene": "sterven-aan-een-longziekte",
       "contrast": "sterven-van-verveling",
       "focus": [
@@ -7378,7 +7377,7 @@
     {
       "id": "sterven-van-ouderdom",
       "frame": "sterven van",
-      "en": "to die of",
+      "en": "to die of (old age, hunger, thirst)",
       "scene": "sterven-van-ouderdom",
       "contrast": "sterven-aan-een-ziekte",
       "focus": [
@@ -7408,7 +7407,7 @@
     {
       "id": "sterven-van-de-honger",
       "frame": "sterven van",
-      "en": "to die of",
+      "en": "to die of (old age, hunger, thirst)",
       "scene": "sterven-van-de-honger",
       "contrast": "sterven-aan-een-hartaanval",
       "focus": [
@@ -7437,7 +7436,7 @@
     {
       "id": "sterven-van-de-dorst",
       "frame": "sterven van",
-      "en": "to die of",
+      "en": "to die of (old age, hunger, thirst)",
       "scene": "sterven-van-de-dorst",
       "contrast": "sterven-aan-malaria",
       "focus": [
@@ -7466,7 +7465,7 @@
     {
       "id": "sterven-van-verveling",
       "frame": "sterven van",
-      "en": "to die of",
+      "en": "to die of (old age, hunger, thirst)",
       "scene": "sterven-van-verveling",
       "contrast": "sterven-aan-een-longziekte",
       "focus": [
@@ -8396,10 +8395,10 @@
       ]
     },
     {
-      "id": "eraan-denken-sleutels",
+      "id": "eraan-denken-telefoon",
       "frame": "eraan denken",
       "en": "to remember it",
-      "scene": "eraan-denken-sleutels",
+      "scene": "eraan-denken-telefoon",
       "contrast": "denken-aan-eten",
       "focus": [
         "denken"
@@ -8886,10 +8885,10 @@
       ]
     },
     {
-      "id": "praten-tegen-gesloten-deur",
+      "id": "praten-tegen-de-baby",
       "frame": "praten tegen",
       "en": "to talk to",
-      "scene": "praten-tegen-gesloten-deur",
+      "scene": "praten-tegen-de-baby",
       "contrast": "praten-met-collega",
       "focus": [
         "tegen"
@@ -10332,15 +10331,15 @@
         "met"
       ],
       "example": {
-        "nl": "Hij past goed op met het mes.",
-        "en": "He is very careful with the knife."
+        "nl": "Hij moet goed oppassen met het mes.",
+        "en": "He has to be very careful with the knife."
       },
       "build": [
         [
           "Hij",
-          "past",
+          "moet",
           "goed",
-          "op",
+          "oppassen",
           "met",
           "het",
           "mes"
@@ -10363,15 +10362,15 @@
         "met"
       ],
       "example": {
-        "nl": "De ober past op met de glazen.",
-        "en": "The waiter is careful with the glasses."
+        "nl": "De ober moet oppassen met de glazen.",
+        "en": "The waiter has to be careful with the glasses."
       },
       "build": [
         [
           "De",
           "ober",
-          "past",
-          "op",
+          "moet",
+          "oppassen",
           "met",
           "de",
           "glazen"
@@ -10394,14 +10393,14 @@
         "met"
       ],
       "example": {
-        "nl": "Zij past op met de kaarsen.",
-        "en": "She is careful with the candles."
+        "nl": "Zij moet oppassen met de kaarsen.",
+        "en": "She has to be careful with the candles."
       },
       "build": [
         [
           "Zij",
-          "past",
-          "op",
+          "moet",
+          "oppassen",
           "met",
           "de",
           "kaarsen"
@@ -11357,10 +11356,10 @@
       ]
     },
     {
-      "id": "beginnen-met-hardlopen",
+      "id": "beginnen-met-verven",
       "frame": "beginnen met",
       "en": "to start with",
-      "scene": "beginnen-met-hardlopen",
+      "scene": "beginnen-met-verven",
       "contrast": null,
       "focus": [
         "met"
@@ -13128,7 +13127,7 @@
       "frames": [
         "vragen-om-hulp",
         "vragen-om-geld",
-        "vragen-om-advies",
+        "vragen-om-water",
         "vragen-om-pen"
       ]
     },
@@ -13151,7 +13150,7 @@
         "kijken-uit-raam",
         "kijken-uit-treinraam",
         "kijken-uit-tent",
-        "kijken-uit-balkon"
+        "kijken-uit-dakraam"
       ]
     },
     {
@@ -13239,7 +13238,7 @@
         "werken-aan-project",
         "werken-aan-fiets",
         "werken-aan-verslag",
-        "werken-aan-tuin"
+        "werken-aan-schilderij"
       ]
     },
     {
@@ -13249,8 +13248,8 @@
       "frames": [
         "werken-bij-bedrijf",
         "werken-bij-bakker",
-        "werken-bij-kantoor",
-        "werken-bij-winkel"
+        "werken-bij-de-post",
+        "werken-bij-de-supermarkt"
       ]
     },
     {
@@ -13303,8 +13302,8 @@
       "band": "a1",
       "frames": [
         "meedoen-met-team",
-        "meedoen-met-gesprek",
-        "meedoen-met-spel",
+        "meedoen-met-de-buren",
+        "meedoen-met-de-kinderen",
         "meedoen-met-klas"
       ]
     },
@@ -13392,8 +13391,8 @@
       "frames": [
         "boos-over-rommel",
         "boos-over-rekening",
-        "boos-over-vertraging",
-        "boos-over-geluid"
+        "boos-over-boete",
+        "boos-over-lekke-band"
       ]
     },
     {
@@ -13435,7 +13434,7 @@
       "band": "a2",
       "frames": [
         "uitkijken-voor-auto",
-        "uitkijken-voor-hond",
+        "uitkijken-voor-tram",
         "uitkijken-voor-gladde-vloer",
         "uitkijken-voor-fiets"
       ]
@@ -13623,7 +13622,7 @@
       "frames": [
         "eraan-denken-afspraak",
         "eraan-denken-boodschappen",
-        "eraan-denken-sleutels",
+        "eraan-denken-telefoon",
         "eraan-denken-medicijn"
       ]
     },
@@ -13667,7 +13666,7 @@
       "frames": [
         "praten-tegen-muur",
         "praten-tegen-de-hond",
-        "praten-tegen-gesloten-deur",
+        "praten-tegen-de-baby",
         "praten-tegen-scherm"
       ]
     },
@@ -13896,7 +13895,7 @@
       "name": "beginnen met",
       "band": "a2-pairs",
       "frames": [
-        "beginnen-met-hardlopen",
+        "beginnen-met-verven",
         "beginnen-met-eten",
         "beginnen-met-opruimen",
         "beginnen-met-de-was"
