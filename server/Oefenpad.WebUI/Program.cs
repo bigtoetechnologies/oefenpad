@@ -100,6 +100,7 @@ builder.Services.AddScoped<IAccountDeletionService, AccountDeletionService>();
 builder.Services.AddSingleton<GameContent>();
 builder.Services.AddSingleton<RoundStore>();
 builder.Services.AddSingleton<IGameService, PrepositionsService>();
+builder.Services.AddSingleton<IGameService, VerbService>();
 builder.Services.AddSingleton<IGameService, HangmanService>();
 builder.Services.AddSingleton<IGameService, MemoryService>();
 builder.Services.AddSingleton<IGameService, MatchingService>();

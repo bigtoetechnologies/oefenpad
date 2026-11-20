@@ -229,12 +229,20 @@ sources. Sources and pages agree as of that date. Before the next rebuild, run t
 with <code>--out</code> to a scratch folder and diff it against the pages; rebuild only if they match.</p>
 <p><code>index.html</code>, <code>matrix.html</code> and <code>backlog.html</code> are generated output. Do not hand-edit
 them; change the source and rebuild.</p>
-<p>No game data is generated from these pages yet. When a verb game ships, this is where
-<code>verbs.json</code> comes from, and the importer should behave like the preposition one: read only
-cards that carry <code>class="beeld"</code> plus text, and skip the rest.</p>
+<p>A verb game ships from these pages. <code>tools/import-verb-game.py</code> reads only cards that
+carry <code>class="beeld"</code>, groups the drawn verbs into levels of four or five, and writes
+<code>verbs.json</code>. The game shows one picture per verb, its infinitive and gloss, and the
+past/perfect for an irregular verb, then asks which picture belongs to the verb. There is no
+example sentence and no conjugation drill: the forms are vocabulary to recognise.</p>
 <h2 id="the-card">The card</h2>
 <p>One card per verb, in the base form. There is deliberately no example sentence, no
 <code>Build</code> and no <code>Check question</code>: the card teaches what the verb means.</p>
+<p><strong>Contrast is optional (decided 20 November 2026).</strong> A contrast note appears only where a
+second verb shares the drawing and differs in one visible point, and the pair is written both ways in
+<code>tools/_ww_tmp/contrasts.tsv</code>. A partner may sit in another band or on another page: a verb
+is banded by its own frequency, so walk and run can pair across A1 and A2, while crawl keeps no partner
+until one exists at its level. Most verbs have no partner, and an empty field is honest; the checker
+fails a one-way link and reports the covered pairs.</p>
 <p><strong>Forms follow predictability (decided 20 November 2026).</strong> A form a learner cannot predict is
 vocabulary, like <em>de</em> or <em>het</em> on a noun, so it goes on the card. A form that follows a rule is
 grammar, taught once elsewhere. Irregular cards therefore carry the past singular and the perfect
@@ -248,6 +256,7 @@ form only. Other persons, the plural and the other tenses stay out. Source: Bijl
 <tr><td><code>Scene</code></td><td>The action drawn, as a brief for the illustrator: who, doing what, with which objects.</td><td>English</td></tr>
 <tr><td><code>Must read</code></td><td>The one mark that has to be legible at thumbnail size. One clause.</td><td>English</td></tr>
 <tr><td><code>Avoid</code></td><td>Three to five near-miss actions, each with the competing verb in brackets.</td><td>English</td></tr>
+<tr><td><code>Contrast</code></td><td>Optional. <em>Pair with X. Same scene, the only difference is ... here / ... there.</em> Written both ways in <code>tools/_ww_tmp/contrasts.tsv</code>; the partner may sit in another band.</td><td>English</td></tr>
 <tr><td><code>Alt text</code></td><td>One sentence describing the picture for a screen reader.</td><td>Dutch</td></tr>
 <tr><td><code>Past</code> and <code>Perfect</code> (<code>p.vormen</code>)</td><td>Irregular cards only. Past singular, then auxiliary plus participle: <code>was</code>, <code>is geweest</code>. Two forms joined by a slash are both correct. <code>zullen</code> has no participle and says so.</td><td>Dutch</td></tr>
 </tbody>

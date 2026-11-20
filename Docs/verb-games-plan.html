@@ -208,7 +208,7 @@ main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
       small-step plan for building the verb games.</p>
       <p class="doc-meta">Docs/verb-games-plan.html</p>
     </header>
-    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#verdict">The verdict: it builds the wrong thing first</a></li><li class="toc-h2"><a href="#what-the-repo-settles">What the repo already settles</a></li><li class="toc-h2"><a href="#series-phase-by-phase">The series, phase by phase</a></li><li class="toc-h2"><a href="#questions">Questions to settle first</a></li><li class="toc-h2"><a href="#plan">Draft plan, in small steps</a></li><li class="toc-h2"><a href="#defaults">Defaults and housekeeping</a></li></ul></details>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#verdict">The verdict: it builds the wrong thing first</a></li><li class="toc-h2"><a href="#what-the-repo-settles">What the repo already settles</a></li><li class="toc-h2"><a href="#series-phase-by-phase">The series, phase by phase</a></li><li class="toc-h2"><a href="#questions">Questions to settle first</a></li><li class="toc-h2"><a href="#plan">Draft plan, in small steps</a></li><li class="toc-h2"><a href="#defaults">Defaults and housekeeping</a></li><li class="toc-h2"><a href="#level-plan">Level plan: A1 as the start (proposal)</a></li></ul></details>
     <article class="prose">
 <p><strong>Status:</strong> review and open questions, 19 November 2026. This page reviews the
 series of prompts in <code>Docs/plans/verb_generation_teaching_prompts.md</code> — the plan for
@@ -473,6 +473,68 @@ the HTML page is the master — the rule already used for prepositions
 <p>Housekeeping: <code>Docs/plans/verb_generation_teaching_prompts.md</code> should become this
 page, or be deleted. It is the only Markdown file under <code>Docs/</code>, and the rules say
 there should be none.</p>
+<h2 id="level-plan">Level plan: A1 as the start (proposal, 20 November 2026)</h2>
+<p><strong>Status: a proposal, being tried.</strong> The default Verb game started at A0·1 with
+<em>zijn</em>, <em>hebben</em>, <em>kunnen</em> and <em>gaan</em>. That is the frequency list,
+not the product audience (§4). The default path now starts at A1; the A0 levels stay behind a
+<strong>Basis</strong> shelf.</p>
+
+<h3 id="level-plan-principles">Principles</h3>
+<ol>
+<li><strong>A0 stays in the corpus.</strong> It is not deleted: gaps are real. It is a collapsed
+<strong>Basis</strong> shelf, not the default teaching path.</li>
+<li><strong>The default game starts at A1 and teaches the A1 verbs.</strong> Only a small set is
+assumed known: <em>zijn</em>, <em>hebben</em> and the eight everyday verbs listed below.
+Everything else is taught or verified.</li>
+<li><strong>Use known vocabulary to teach new words.</strong> Examples and Dutch explanations
+are written with words the learner already has, even when the card is A2.</li>
+<li><strong>A picture must carry the meaning.</strong> The A1 track uses only verbs whose
+drawing carries the meaning. The A0 shelf keeps the rest for a learner with a gap; an abstract
+verb there is an explanation-card candidate, not a forced picture.</li>
+<li><strong>English is confirmation, not the explanation.</strong> The gloss moves after the
+answer and becomes optional. The card must work without it.</li>
+<li><strong>Do not start at the beginning of a frequency list.</strong> A “ken ik” skip and,
+later, per-word state let an A1 learner pass the words they already know.</li>
+</ol>
+
+<h3 id="level-plan-assumed">Verbs we assume</h3>
+<p>The safe set is deliberately small: <em>zijn</em>, <em>hebben</em>, <em>eten</em>,
+<em>drinken</em>, <em>slapen</em>, <em>wonen</em>, <em>werken</em>, <em>rijden</em> and
+<em>kopen</em>. <em>Fietsen</em> is safe too, but it has no drawn card yet. Everything else is
+taught or verified. In particular <em>zullen</em> and <em>blijven</em> are <strong>not</strong>
+assumed: many learners at A2 do not know them, and both sit in the repo’s A0 band.</p>
+<p>The A1 track teaches every drawn A1 verb. The A0 verbs that are not assumed sit in the
+collapsed <strong>Basis</strong> shelf, so a learner with a gap can still reach them without
+making A0 the default path.</p>
+
+<h3 id="level-plan-game">What changes in the Verb game</h3>
+<ul>
+<li>The default level list starts at A1. A0 is a collapsed Basis shelf, not the first screen.</li>
+<li>The A1 drawn set (61 verbs) is the first real game; the A0 levels move to the shelf.</li>
+<li>Discover shows picture and verb; the gloss is revealed after the choice.</li>
+<li>A “ken ik” button on Discover marks the word seen and moves on.</li>
+<li>Levels and counts stay as they are for now; no content is deleted.</li>
+</ul>
+
+<h3 id="level-plan-content">What it means for the content</h3>
+<p>The target is A2, and the drawings stop at A1. The 90 existing drawings are A0/A1; A2 has
+none. The next art batch should serve A2, or the A2 gap should be served by text-based
+exercises (fill the gap, word families) until art exists. The A0/A1 cards stay for remediation
+and for use as context.</p>
+<p>Explanation cards already allow words at or below the card’s band. For an A1 learner on an
+A2 card, the useful target is A1 wording, not merely “A2 or below”. That is a guideline to
+write to, not a change to the checker.</p>
+
+<h3 id="level-plan-open">Open questions</h3>
+<ol>
+<li>A1 is the floor for the default path and A0 is the Basis shelf. Is that the final shape, or
+do some learners start at A2?</li>
+<li>Are the nine assumed words enough, or does the list grow as the content grows? The same
+question for a coursebook A1 list versus the lexicon bands.</li>
+<li>Do we teach the abstract A0 verbs at all, or only use them in examples?</li>
+<li>What is the placement mechanism: self-select, a “ken ik” skip, or a short placement test?</li>
+<li>Does the art budget move to A2 now, or do we ship A1 first?</li>
+</ol>
     </article>
     <nav class="pager" aria-label="Previous and next document"><a class="prev" href="uit-elkaar.html"><span>Previous</span>Uit Elkaar — separable verbs</a><a class="next" href="reuse-bigtoegames.html"><span>Next</span>Reuse from BigToe Games</a></nav>
     <footer class="footer">

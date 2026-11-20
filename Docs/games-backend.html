@@ -207,9 +207,9 @@ main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
       <p class="lede">How the games get their data from the API, and how the React app is built.</p>
       <p class="doc-meta">Docs/games-backend.html</p>
     </header>
-    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#why-this-exists">Why this exists</a></li><li class="toc-h2"><a href="#what-the-browser-can-get">What the browser can get</a></li><li class="toc-h2"><a href="#level-gating">Level gating</a></li><li class="toc-h2"><a href="#the-round-model">The round model</a></li><li class="toc-h2"><a href="#progress-on-an-account">Progress on an account</a></li><li class="toc-h3"><a href="#actions-per-game">Actions per game</a></li><li class="toc-h2"><a href="#where-the-content-lives">Where the content lives</a></li><li class="toc-h2"><a href="#the-react-app">The React app</a></li><li class="toc-h3"><a href="#code-in-english-content-in-dutch">Code in English, content in Dutch</a></li><li class="toc-h3"><a href="#why-the-game-styles-are-scoped">Why the game styles are scoped</a></li><li class="toc-h3"><a href="#what-deliberately-stays-in-the-browser">What deliberately stays in the browser</a></li><li class="toc-h2"><a href="#running-it">Running it</a></li><li class="toc-h2"><a href="#what-changed-on-disk">What changed on disk</a></li><li class="toc-h2"><a href="#port-notes-and-verification">Port notes and verification</a></li><li class="toc-h3"><a href="#bugs-found-and-fixed-during-the-port">Bugs found and fixed during the port</a></li><li class="toc-h2"><a href="#known-limits">Known limits</a></li></ul></details>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#why-this-exists">Why this exists</a></li><li class="toc-h2"><a href="#what-the-browser-can-get">What the browser can get</a></li><li class="toc-h2"><a href="#level-gating">Level gating</a></li><li class="toc-h2"><a href="#the-round-model">The round model</a></li><li class="toc-h2"><a href="#progress-on-an-account">Progress on an account</a></li><li class="toc-h3"><a href="#actions-per-game">Actions per game</a></li><li class="toc-h2"><a href="#where-the-content-lives">Where the content lives</a></li><li class="toc-h2"><a href="#the-react-app">The React app</a></li><li class="toc-h3"><a href="#code-in-english-content-in-dutch">Code in English, content in Dutch</a></li><li class="toc-h3"><a href="#why-the-game-styles-are-scoped">Why the game styles are scoped</a></li><li class="toc-h3"><a href="#what-deliberately-stays-in-the-browser">What deliberately stays in the browser</a></li><li class="toc-h2"><a href="#running-it">Running it</a></li><li class="toc-h2"><a href="#what-changed-on-disk">What changed on disk</a></li><li class="toc-h2"><a href="#port-notes-and-verification">Port notes and verification</a></li><li class="toc-h3"><a href="#bugs-found-and-fixed-during-the-port">Bugs found and fixed during the port</a></li><li class="toc-h2"><a href="#known-limits">Known limits</a></li><li class="toc-h2"><a href="#future-database">Open design: a content and learner database</a></li></ul></details>
     <article class="prose">
-<p>The six practice games no longer ship their content or their puzzle
+<p>The seven practice games no longer ship their content or their puzzle
 generators to the browser. The .NET service owns the word banks, the
 pictures, the prepositions, the story reels and the Dutch interface
 strings; it also builds the Word Search grid, the Memory deck and the
@@ -589,7 +589,7 @@ ASPNETCORE_ENVIRONMENT=Development dotnet test server/Oefenpad.Tests
 </tr>
 <tr>
 <td>API smoke</td>
-<td><code>python3 tools/smoke-games-api.py</code> — all six games start a round and accept moves; the Word Search view is checked for leaked placements, Hangman for a leaked answer, and prepositions for a full level walk</td>
+<td><code>python3 tools/smoke-games-api.py</code> — all seven games start a round and accept moves; the Word Search view is checked for leaked placements, Hangman for a leaked answer, and prepositions for a full level walk</td>
 </tr>
 <tr>
 <td>Client build</td>
@@ -643,6 +643,45 @@ ASPNETCORE_ENVIRONMENT=Development dotnet test server/Oefenpad.Tests
 <li><strong>The rate limit is per remote address.</strong> Behind a proxy that
    rewrites the address, every player shares one budget.</li>
 </ol>
+
+<h2 id="future-database">Open design: a content and learner database</h2>
+<p><strong>Status: a design note; nothing is built.</strong> Recorded on 20 November 2026 so the reasoning survives. It is not a plan of work.</p>
+<p>The question was whether the cards should move into a database so a game can recall them on demand, pair contrasts across levels, and remember what a learner has seen, learned and when they were last tested. The conclusion was to split the problem in three rather than put everything in one store.</p>
+<div class="table-wrap"><table><thead><tr><th>Job</th><th>What it needs</th><th>Where it belongs</th></tr></thead><tbody>
+<tr><td>Authoring the cards</td><td>Prose, art briefs, review, diffs</td><td>git files; the files stay the master</td></tr>
+<tr><td>Serving content to games</td><td>Ids, bands, forms, partners, examples</td><td>A compiled read-only index (SQLite or JSON) built from the files</td></tr>
+<tr><td>Remembering the learner</td><td>Attempts, mastery, due dates</td><td>The live database, one row per learner and word</td></tr>
+</tbody></table></div>
+<p>The card briefs are prose for an illustrator and a reviewer. As the only copy in a database they would lose <code>git diff</code>, the family checkers and the reviewed pages, and an admin screen would have to replace them. The compiled index is the part that helps: it gives the games one source, and it exposes the drift the handover already records between the reviewed Voorzetselpaden pages and <code>prepositions.json</code>.</p>
+
+<h3 id="contrasts-as-edges">Contrasts are edges, not a field</h3>
+<p>A card currently carries one contrast partner. A word can have several, at different bands: <em>lopen</em> can pair with <em>rennen</em> (A2), <em>wandelen</em> (A2) and <em>kruipen</em> (B1). Model pairs as their own rows:</p>
+<pre><code>contrast_pair(id, word_a, word_b, axis, note_a, note_b, reveal_policy)</code></pre>
+<p><code>reveal_policy</code> is what makes a later-band contrast usable: <code>same_round</code>, <code>after_first_known</code> (show the second word only once the first is learned), or <code>after_both_known</code> (review only). The pair's static band is the higher of the two, but eligibility is per learner. Cross-family pairs (the Vaste uitdrukkingen cards that point at Bijwoorden) are rows too; today they cannot even carry a <code>data-partner</code>.</p>
+
+<h3 id="per-word-progress">Progress is per word</h3>
+<p>Decided in the discussion: the learning unit is the <strong>word</strong>, not the card. A word may have more than one card, and the same word appears in several games. An attempt therefore records the word, the game and, for diagnosis, the card that presented it. Progress does not split because a noun and an adjective card share a spelling, and a word seen in Galgje counts as seen in the card family.</p>
+<p>Two things follow. First, a word needs a stable key. <code>tools/lexicon/woorden.tsv</code> is the natural hub for lemmas, but a Vaste uitdrukkingen chunk such as <em>op tijd</em> is not a lemma in that file, so chunks need their own key or a word type. Second, one lemma can teach two senses (<em>kennen</em> has two explanation cards; <em>arm</em> is a noun and an adjective). If progress is per lemma, senses merge; if that matters, the key becomes lemma plus sense. That is still open.</p>
+<p>Store attempts, derive state: <code>attempt(learner, word, at, game, card, correct, ms, prompt_kind)</code> and a derived <code>word_state(learner, word, first_seen, last_seen, last_tested, correct, wrong, streak, interval, due_at)</code>. <em>Learned</em> is then a rule (for example three correct answers on separate days, or an interval of three weeks), not a column nobody can audit.</p>
+
+<h3 id="database-decisions">Decisions recorded</h3>
+<ol>
+<li>The documentation stays static. Only the games use a database; opening the docs from any static server still works.</li>
+<li>A guest's progress lives in browser storage. localStorage is too small for thousands of attempts, so IndexedDB is the store; localStorage only marks that a guest has progress. Merging a guest's history into an account on sign-in is undecided.</li>
+<li>The learning unit is the word, with one or more cards per word and the word shared across games.</li>
+<li>Where a learner's level comes from is undecided. It blocks the "show this contrast later" rule, which needs to know what the learner already knows and what they are ready for.</li>
+</ol>
+
+<h3 id="database-wins">What it would unlock</h3>
+<ul>
+<li>One content index, so a card fix reaches every game and the docs agree with the game.</li>
+<li>Word games stop repeating what was seen yesterday, and can prefer words that are due.</li>
+<li>A contrast can be held back and served when the learner knows one member, instead of being taught at the first word's band.</li>
+<li>Progress survives a content edit if words and cards get immutable keys and are retired rather than renumbered.</li>
+</ul>
+
+<h3 id="database-scale">An honest note on scale</h3>
+<p>About 5,000 cards is nothing; content lookup does not need a database. The index is worth building for one source and referential integrity. The database earns its place through relationships and learner history. EF Core 10 and SQLite are already wired (<code>OefenpadDbContext</code>, <code>GameSave</code>, <code>GameLevelProgress</code>); this is additive. SQLite is fine at this size, and the context already notes the PostgreSQL path. The account-deletion flow must cascade into any new tables.</p>
     </article>
     <nav class="pager" aria-label="Previous and next document"><a class="prev" href="games.html"><span>Previous</span>Games for the Companion Website</a><a class="next" href="prepositions.html"><span>Next</span>Voorzetselpaden spec</a></nav>
     <footer class="footer">

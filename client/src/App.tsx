@@ -6,6 +6,7 @@ import { MatchingGame } from './games/matching/MatchingGame';
 import { WordSearchGame } from './games/wordsearch/WordSearchGame';
 import { StoryMachineGame } from './games/storymachine/StoryMachineGame';
 import { PrepositionsGame } from './games/prepositions/PrepositionsGame';
+import { VerbGame } from './games/verbs/VerbGame';
 
 export function App() {
   return (
@@ -18,6 +19,7 @@ export function App() {
         <Route path="/wordsearch" element={<WordSearchGame />} />
         <Route path="/storymachine" element={<StoryMachineGame />} />
         <Route path="/prepositions" element={<PrepositionsGame />} />
+        <Route path="/verbs" element={<VerbGame />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

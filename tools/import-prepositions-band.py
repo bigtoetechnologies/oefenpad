@@ -215,7 +215,7 @@ def build_content() -> tuple[dict, list[str]]:
                 "focus": focus,
                 **({"separable": True, "prefix": prefix} if prefix else {}),
                 "example": {"nl": card["nl"], "en": card["en"]},
-                "build": [card["build"][0].split()],
+                "build": [b.split() for b in card["build"]],
                 "concept": [{"question": card["question"], "answer": card["answer"]}],
             })
 
@@ -314,7 +314,7 @@ def main() -> None:
         print(f"promoted {written} masks into {ART.relative_to(ROOT)}")
 
     DATA.write_text(json.dumps(content, ensure_ascii=False, indent=2) + "\n",
-                    encoding="utf-8")
+                    encoding="utf-8", newline="\n")
 
     meta = json.loads(META.read_text(encoding="utf-8"))
     meta["generatedFrom"] = (
@@ -324,7 +324,7 @@ def main() -> None:
     meta["frames"] = frames
     meta["levels"] = len(levels)
     META.write_text(json.dumps(meta, ensure_ascii=False, indent=2) + "\n",
-                    encoding="utf-8")
+                    encoding="utf-8", newline="\n")
     print(f"wrote {DATA.relative_to(ROOT)} and {META.relative_to(ROOT)}")
 
 

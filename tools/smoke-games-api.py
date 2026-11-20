@@ -61,35 +61,34 @@ def assert_no_answers(view, forbidden):
 
 # ---------------------------------------------------------------- registry
 games = call("GET", GAMES)
-check("all six games are registered", set(games["games"]) == {
-    "hangman", "matching", "memory", "prepositions", "storymachine", "wordsearch"
+check("all seven games are registered", set(games["games"]) == {
+    "hangman", "matching", "memory", "prepositions", "verbs", "storymachine", "wordsearch"
 })
 
 # ------------------------------------------------------------ prepositions
 options = call("GET", f"{GAMES}/prepositions/options")
-check("prepositions offers thirty-three levels", len(options["levels"]) == 33)
+check("prepositions offers ninety-six levels", len(options["levels"]) == 96)
 check("prepositions options carry no frame phrases",
       all(" \u00b7 " not in (level.get("subtitle") or "") for level in options["levels"]))
-check("the first three levels are free for a guest",
-      all(not level["locked"] for level in options["levels"][:3]))
-check("the next six need an account",
+check("a0 levels are free for a guest",
+      all(not level["locked"] for level in options["levels"] if level.get("band") == "a0"))
+check("a1 and a2 levels need an account",
       all(level["locked"] and level["lockReason"] == "account"
-          for level in options["levels"][3:9]))
-check("levels past the account slice need a paid plan",
-      all(level["locked"] and level["lockReason"] == "premium"
-          for level in options["levels"][9:]))
+          for level in options["levels"]
+          if level.get("band") in ("a1", "a2", "a2-pairs")))
 
 # A start that did not come from the level list must still be refused.
-call("POST", f"{GAMES}/prepositions/rounds",
-     {"level": options["levels"][3]["id"]}, expect=403)
-call("POST", f"{GAMES}/prepositions/rounds",
-     {"level": options["levels"][9]["id"]}, expect=403)
+locked = next(level for level in options["levels"] if level["locked"])
+call("POST", f"{GAMES}/prepositions/rounds", {"level": locked["id"]}, expect=403)
 
-started = start("prepositions", {"level": "wachten"})
+# This free level is the one a0 chunk with a contrast partner, so the
+# true/false and concept steps are exercised too.
+started = start("prepositions", {"level": "stappen-uit"})
 round_id = started["roundId"]
 view = started["view"]
 check("prepositions opens on discover", view["kind"] == "discover")
-check("discover view carries no other frames", "wachten-voor" not in json.dumps(view))
+check("discover view carries only the current card",
+      json.dumps(view).count('"sentence"') == 1)
 
 steps = 0
 concept_answered = False
@@ -131,6 +130,32 @@ while steps < 80:
 check("prepositions reached the end", view.get("done") is True, )
 check("prepositions scored every step", view["total"] >= 4)
 check("a concept question was offered", concept_answered)
+
+# ------------------------------------------------------------------- verbs
+options = call("GET", f"{GAMES}/verbs/options")
+check("verbs offers twenty-two levels", len(options["levels"]) == 22)
+check("verbs options carry a band", all(level.get("band") for level in options["levels"]))
+
+started = start("verbs", {"level": "a0-1"})
+round_id = started["roundId"]
+view = started["view"]
+check("verbs opens on discover", view["kind"] == "discover")
+check("verbs discover card carries a verb and a picture",
+      bool(view["content"]["card"]["verb"]) and bool(view["content"]["card"]["image"]["url"]))
+
+done = False
+while not done:
+    if view["kind"] == "discover" or view.get("phase") == "feedback":
+        result = move("verbs", round_id, {"action": "next"})
+    else:
+        option = view["content"]["options"][0]["id"]
+        result = move("verbs", round_id, {"action": "choose", "scene": option})
+        check("verbs judges a choice", result["correct"] in (True, False))
+    view = result["view"]
+    done = result.get("done") is True
+
+check("verbs reaches the end", done)
+check("verbs scores every verb", view["total"] >= 4)
 
 # ------------------------------------------------------------------ memory
 options = call("GET", f"{GAMES}/memory/options")

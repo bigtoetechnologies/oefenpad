@@ -34,7 +34,7 @@ public sealed class GameContentTests
         foreach (var game in new[]
                  {
                      "hangman", "memory", "matching", "wordsearch",
-                     "prepositions", "storymachine"
+                     "prepositions", "verbs", "storymachine"
                  })
         {
             var texts = _content.Texts(game);
@@ -71,6 +71,39 @@ public sealed class GameContentTests
                 sentence.Should().NotBeEmpty();
                 sentence.Should().OnlyContain(token => !string.IsNullOrWhiteSpace(token));
             }
+        }
+    }
+
+    [Fact]
+    public void Every_verb_level_points_at_known_frames_and_scenes()
+    {
+        var frames = _content.Verbs.Frames.ToDictionary(f => f.Id);
+
+        foreach (var level in _content.Verbs.Levels)
+        {
+            level.Frames.Should().HaveCountGreaterThanOrEqualTo(2,
+                "the choose step needs at least one distractor");
+            foreach (var id in level.Frames)
+            {
+                frames.Should().ContainKey(id);
+                _content.Verbs.Scenes.Should().ContainKey(frames[id].Scene);
+            }
+        }
+    }
+
+    [Fact]
+    public void Every_verb_frame_has_an_image_and_predictable_forms()
+    {
+        foreach (var frame in _content.Verbs.Frames)
+        {
+            _content.Verbs.Scenes.Should().ContainKey(frame.Scene);
+            frame.Verb.Should().NotBeNullOrWhiteSpace();
+            frame.Gloss.Should().NotBeNullOrWhiteSpace();
+            frame.Band.Should().NotBeNullOrWhiteSpace();
+
+            // The generator writes both forms or neither: a regular verb has no
+            // past/perfect line, an irregular one has the pair.
+            (frame.Past is null).Should().Be(frame.Perfect is null, $"{frame.Id} has half a forms pair");
         }
     }
 

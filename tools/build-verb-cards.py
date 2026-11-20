@@ -56,6 +56,25 @@ def load_drawn():
 
 
 REDRAW = {}
+CONTRASTS = {}
+
+
+def load_contrasts():
+    """Verbs with a true one-drawing contrast partner: tools/_ww_tmp/contrasts.tsv.
+
+    A verb appears only when a partner exists whose drawing differs from it in
+    one visible point.  No row means no partner, which is the normal case; the
+    partner may sit in another band and on another page.
+    """
+    path = os.path.join(TMP, "contrasts.tsv")
+    if not os.path.exists(path):
+        return
+    for r in read_tsv(path):
+        verb = (r.get("verb") or "").strip()
+        partner = (r.get("partner") or "").strip()
+        note = (r.get("note") or "").strip()
+        if verb and partner and note:
+            CONTRASTS[verb] = {"partner": partner, "note": note}
 
 
 def load_redraw():
@@ -118,6 +137,7 @@ main{padding:18px 24px 56px}
 .vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
 .vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
 .vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+.contrast-note{border-left:3px solid var(--kobalt);padding-left:8px}
 dl{margin:0;font-size:14px}
 dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
 dd{margin:2px 0 0}
@@ -197,6 +217,7 @@ def build():
     FORMS.update(load_forms())
     load_drawn()
     load_redraw()
+    load_contrasts()
     with open(os.path.join(TMP, "selection.json"), encoding="utf-8") as fh:
         records = json.load(fh)
     backlog = read_tsv(os.path.join(TMP, "backlog_seed.tsv"))
@@ -297,7 +318,7 @@ def build():
             html_out.append("<header>")
             html_out.append(f"<h1>Werkwoorden — {band} · {LABEL[reg]}</h1>")
             html_out.append(f'<p class="lead">{esc(BAND_LEAD[band] + " " + PAGE_BLURB[reg])}</p>')
-            html_out.append('<p class="lead">One card per verb: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, and the Dutch alt text. Sorted by lexicon frequency rank.</p>')
+            html_out.append('<p class="lead">One card per verb: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, a contrast note where a true pair exists, and the Dutch alt text. Sorted by lexicon frequency rank.</p>')
             html_out.append(
                 '<div class="sum">'
                 f'<span>{len(cards)} werkwoorden</span>'
@@ -328,7 +349,7 @@ def build():
             html_out.append(FILTER_JS)
             html_out.append("</body>")
             html_out.append("</html>")
-            with open(os.path.join(OUT, key + ".html"), "w", encoding="utf-8") as fh:
+            with open(os.path.join(OUT, key + ".html"), "w", encoding="utf-8", newline="\n") as fh:
                 fh.write("\n".join(html_out) + "\n")
 
     order = [page_key(band, reg) for band in BANDS for reg in REGS]
@@ -359,10 +380,22 @@ def form_lines(r):
     ]
 
 
+def contrast_lines(verb):
+    """A contrast note only where a true one-drawing pair exists."""
+    c = CONTRASTS.get(verb)
+    if not c:
+        return []
+    return [f'<dt>Contrast</dt><dd class="contrast-note" data-partner="{attr(c["partner"])}">'
+            f'{esc(c["note"])}</dd>']
+
+
 def status_of(slug):
     if slug not in DRAWN:
         return "proposal"
     return "redraw" if slug in REDRAW else "drawn"
+
+
+STATUS_LABEL = {"proposal": "voorstel", "drawn": "getekend", "redraw": "opnieuw tekenen"}
 
 
 def render_card(r, s, number):
@@ -387,6 +420,7 @@ def render_card(r, s, number):
         f'<dt>Scene</dt><dd class="scene">{esc(s["scene"].strip())}</dd>',
         f'<dt>Must read</dt><dd class="must">{esc(s["must"].strip())}</dd>',
         f'<dt>Avoid</dt><dd class="avoid">{esc(s["avoid"].strip())}</dd>',
+        *contrast_lines(r["verb"]),
         f'<dt>Alt text</dt><dd class="alt">{esc(s["alt"].strip())}</dd>',
         "</dl>",
         f'<p class="id">{esc(r["slug"])}.png · rang {r["rank"]} · {r["band"]} {LABEL[r["regularity"]]} · lexicon woorden.tsv</p>',
@@ -441,7 +475,7 @@ def write_matrix(records, numbers):
             f'<td>{LABEL[r["regularity"]]}</td>'
             f'<td class="n">{r["rank"]}</td>'
             f'<td>{esc(r["domain"])}</td>'
-            '<td>voorstel</td>'
+            f'<td>{STATUS_LABEL[status_of(r["slug"])]}</td>'
             "</tr>"
         )
     body = "\n".join([
@@ -458,7 +492,7 @@ def write_matrix(records, numbers):
         "</tbody>",
         "</table>",
     ])
-    with open(os.path.join(OUT, "matrix.html"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(OUT, "matrix.html"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(shell("Werkwoorden — matrix", "Every verb, its band, regularity, frequency rank and lexicon domain, in frame order.", body, "matrix"))
 
 
@@ -575,8 +609,10 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
         "<p>Irregular cards also carry the forms a learner cannot predict: the past singular and the "
         "perfect (auxiliary plus participle), taken from Bijlage 3b into "
         "<code>tools/lexicon/werkwoorden-vormen.tsv</code>. Regular cards carry the base form only, because "
-        "<em>-te/-de</em> and <em>ge-</em> are one rule taught once. There are no example sentences and no "
-        "contrast pairs in this pass.</p>",
+        "<em>-te/-de</em> and <em>ge-</em> are one rule taught once. There are no example sentences on these cards.</p>",
+        "<p>A contrast note appears only where a second verb shares the drawing and differs in one visible "
+        "point. Where no such partner exists the card has no note; that is the normal case. A partner may sit "
+        "in another band, because a verb is banded on its own frequency, not on the company it keeps.</p>",
         "<h2>How the bands were cut</h2>",
         "<p>By lexicon frequency rank, from <code>tools/lexicon/woorden-frequentie.tsv</code>: "
         "A0 up to 250, A1 up to 1000, A2 up to 2500, B1 up to 5000, B2 up to 10,000. Irregular and regular "
@@ -630,7 +666,7 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
         "recipe are in <a href=\"AGENTS.html\">AGENTS.html</a>.</p>",
         "</div>",
     ])
-    with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(shell(
             "Werkwoorden — beeldplannen",
             "One card per Dutch verb for every band from A0 to B2: the base form (irregular verbs add the past and perfect), a picture brief, and the frequency rank that put it there.",
@@ -720,10 +756,13 @@ def write_backlog(backlog, skipped):
         parts.append("<table><thead><tr><th>Verb</th><th>Band</th><th class='n'>Rang</th><th>Why no single picture</th><th>Explanation card</th></tr></thead><tbody>")
         excards = explanation_cards()
         for r in skipped:
+            ex = excards.get(r["verb"])
+            link = (f'<a href="../explanation-cards/{ex[0]}.html#{ex[1]}">card</a>'
+                    if ex else "to be written")
             parts.append(
                 f'<tr><td>{esc(r["verb"])}</td><td>{r["band"]} {LABEL[r["regularity"]]}</td>'
                 f'<td class="n">{r["rank"]}</td><td>{esc(r["reason"])}</td>'
-                f'<td>{("<a href=\"../explanation-cards/" + excards[r["verb"]][0] + ".html#" + excards[r["verb"]][1] + "\">card</a>") if r["verb"] in excards else "to be written"}</td></tr>'
+                f'<td>{link}</td></tr>'
             )
         parts.append("</tbody></table>")
 
@@ -757,7 +796,7 @@ def write_backlog(backlog, skipped):
         "<code>tools/build-verb-cards.py</code>. The frame numbers renumber themselves.</p>"
         "</div>"
     )
-    with open(os.path.join(OUT, "backlog.html"), "w", encoding="utf-8") as fh:
+    with open(os.path.join(OUT, "backlog.html"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(shell(
             "Werkwoorden — backlog",
             "What still needs a card: the verbs held back before selection, the selected verbs skipped for want of a picture, and the other word classes.",

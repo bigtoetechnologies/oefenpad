@@ -15,11 +15,12 @@ public sealed class GameContent
         Categories = GameData.Load<Dictionary<string, WordCategory>>("words");
         WordImages = GameData.Load<Dictionary<string, string>>("wordimages");
         Prepositions = GameData.Load<PrepositionsData>("prepositions");
+        Verbs = GameData.Load<VerbsData>("verbs");
         Reels = GameData.Load<List<Reel>>("reels");
         Meta = GameData.Load<MetaData>("meta");
 
         _texts = new Dictionary<string, IReadOnlyDictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
-        foreach (var game in new[] { "hangman", "memory", "matching", "wordsearch", "prepositions", "storymachine" })
+        foreach (var game in new[] { "hangman", "memory", "matching", "wordsearch", "prepositions", "verbs", "storymachine" })
         {
             if (GameData.Exists($"texts.{game}"))
                 _texts[game] = GameData.Load<Dictionary<string, string>>($"texts.{game}");
@@ -34,6 +35,8 @@ public sealed class GameContent
     public IReadOnlyDictionary<string, string> WordImages { get; }
 
     public PrepositionsData Prepositions { get; }
+
+    public VerbsData Verbs { get; }
 
     public IReadOnlyList<Reel> Reels { get; }
 
@@ -199,6 +202,33 @@ public sealed class Level
 
     public List<string> Frames { get; set; } = new();
     public List<string>? Extra { get; set; }
+}
+
+/* ---------- verbs ---------- */
+
+public sealed class VerbsData
+{
+    public Dictionary<string, Scene> Scenes { get; set; } = new();
+    public List<VerbFrame> Frames { get; set; } = new();
+    public List<Level> Levels { get; set; } = new();
+}
+
+/// <summary>
+/// One drawn verb. The picture teaches the meaning; <see cref="Past"/> and
+/// <see cref="Perfect"/> are the forms a learner cannot predict, shown as
+/// vocabulary rather than drilled as grammar.
+/// </summary>
+public sealed class VerbFrame
+{
+    public string Id { get; set; } = "";
+    public string Verb { get; set; } = "";
+    public string Gloss { get; set; } = "";
+    public string Scene { get; set; } = "";
+    public string Band { get; set; } = "";
+    public string? Contrast { get; set; }
+    public string? Past { get; set; }
+    public string? Perfect { get; set; }
+    public bool Regular { get; set; }
 }
 
 /* ---------- story machine ---------- */

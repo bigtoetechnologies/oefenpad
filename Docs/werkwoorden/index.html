@@ -40,6 +40,7 @@ main{padding:18px 24px 56px}
 .vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
 .vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
 .vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+.contrast-note{border-left:3px solid var(--kobalt);padding-left:8px}
 dl{margin:0;font-size:14px}
 dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
 dd{margin:2px 0 0}
@@ -106,7 +107,8 @@ tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:no
 <h2>What these pages are</h2>
 <p>One card per Dutch verb, in its base form. Each card carries a picture brief: <em>Scene</em> (what is drawn), <em>Must read</em> (the one mark that has to be legible at thumbnail size), <em>Avoid</em> (the near-miss actions, each with the competing verb) and <em>Alt text</em> (Dutch, for a screen reader). The art is the Voorzetselpaden style: flat cobalt #2B50C8 on white, no text. The brief is in <a href="base-prompt.txt">base-prompt.txt</a>.</p>
 <p>90 of 327 cards are drawn so far: a card counts as drawn when <code>assets/verbs/&lt;slug&gt;.png</code> exists, and the rest are proposals.</p>
-<p>Irregular cards also carry the forms a learner cannot predict: the past singular and the perfect (auxiliary plus participle), taken from Bijlage 3b into <code>tools/lexicon/werkwoorden-vormen.tsv</code>. Regular cards carry the base form only, because <em>-te/-de</em> and <em>ge-</em> are one rule taught once. There are no example sentences and no contrast pairs in this pass.</p>
+<p>Irregular cards also carry the forms a learner cannot predict: the past singular and the perfect (auxiliary plus participle), taken from Bijlage 3b into <code>tools/lexicon/werkwoorden-vormen.tsv</code>. Regular cards carry the base form only, because <em>-te/-de</em> and <em>ge-</em> are one rule taught once. There are no example sentences on these cards.</p>
+<p>A contrast note appears only where a second verb shares the drawing and differs in one visible point. Where no such partner exists the card has no note; that is the normal case. A partner may sit in another band, because a verb is banded on its own frequency, not on the company it keeps.</p>
 <h2>How the bands were cut</h2>
 <p>By lexicon frequency rank, from <code>tools/lexicon/woorden-frequentie.tsv</code>: A0 up to 250, A1 up to 1000, A2 up to 2500, B1 up to 5000, B2 up to 10,000. Irregular and regular verbs are separate pages, because a learner meets them in a different order. The ranks were cross-checked against the coursebook appendices in <code>/media/tony/Data/Dutch</code> (Bijlage 3b for irregular verbs, Bijlage 4 for separable verbs), which is also what the cross-check in <code>Docs/voorzetselpaden/</code> used.</p>
 <h2 id="rang-handmatig">Ranks set by hand</h2>

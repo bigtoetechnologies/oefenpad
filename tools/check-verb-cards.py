@@ -37,6 +37,14 @@ Asserts
   - Avoid names no colour either, and alt names no Dutch colour other than wit
     or zwart
   - Scene and Must ask for no musical notes (a notation glyph is a readable mark)
+  Contrast notes (20 November 2026):
+  - a verb in contrasts.tsv must be a card, not a SKIP row
+  - its partner must be a card too, and the pair must be reciprocal
+  - the note must open "Pair with <partner>." and be rendered on the card with
+    that data-partner
+  - a card with no contrasts row must render no Contrast field
+  - partners may sit in another band: a verb is banded by its own frequency, so
+    a same-band rule would forbid the honest pairs
   - a SKIP row may not give "two senses" as its reason (the family picks one
     sense and cards it), and a "Duplicate of <family>:<id>" reason must name a
     card that exists in that family
@@ -112,6 +120,17 @@ def cards(path):
 
 
 VERBS = {r["verb"] for r in json.load(open(os.path.join(TMP, "selection.json"), encoding="utf-8"))}
+
+CONTRASTS = {}
+_contrast_path = os.path.join(TMP, "contrasts.tsv")
+if os.path.exists(_contrast_path):
+    for _r in read_tsv(_contrast_path):
+        _v = (_r.get("verb") or "").strip()
+        if _v:
+            CONTRASTS[_v] = {
+                "partner": (_r.get("partner") or "").strip(),
+                "note": (_r.get("note") or "").strip(),
+            }
 FORMS_TSV = os.path.join(ROOT, "tools", "lexicon", "werkwoorden-vormen.tsv")
 FORMS = {r["verb"]: r for r in read_tsv(FORMS_TSV)}
 
@@ -332,6 +351,37 @@ for band in BANDS:
             want = key.endswith("irregular")
             if has.get(c["id"]) != want:
                 err(f"{key}: {c['id']} {'lacks' if want else 'must not have'} the past/perfect line")
+
+# 7. Contrast notes: a true pair, reciprocal, rendered with its partner.
+for verb, c in CONTRASTS.items():
+    if verb not in seen:
+        err(f"contrasts.tsv: {verb} is not a card (skipped or unknown)")
+        continue
+    partner = c["partner"]
+    if partner not in seen:
+        err(f"contrasts.tsv: {verb} partner {partner!r} is not a card")
+    if not c["note"].startswith(f"Pair with {partner}."):
+        err(f"contrasts.tsv: {verb} note must open 'Pair with {partner}.'")
+    back = CONTRASTS.get(partner)
+    if not back:
+        err(f"contrasts.tsv: {partner} has no row back to {verb}")
+    elif back["partner"] != verb:
+        err(f"contrasts.tsv: {partner} pairs with {back['partner']}, not {verb}")
+
+for key, (found, _t) in by_page.items():
+    for c in found:
+        verb = html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1))
+        shown = re.search(r'<dd class="contrast-note" data-partner="([^"]*)">(.*?)</dd>', c["block"], re.S)
+        want = CONTRASTS.get(verb)
+        if want and not shown:
+            err(f"{key}: {verb} has a contrast row but no Contrast field")
+        elif want and shown:
+            if shown.group(1) != want["partner"]:
+                err(f"{key}: {verb} data-partner={shown.group(1)!r}, expected {want['partner']!r}")
+            if not html.unescape(shown.group(2)).strip():
+                err(f"{key}: {verb} Contrast field is empty")
+        elif not want and shown:
+            err(f"{key}: {verb} renders a Contrast field with no contrasts.tsv row")
 
 # A form of another B1/B2 card in an alt text (review L2: leunt on duwen, buigt
 # on ontwijken).  Warning only: the word may be the honest description.

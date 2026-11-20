@@ -1,0 +1,1602 @@
+{
+  "scenes": {
+    "zijn": {
+      "file": "verbs/zijn.png",
+      "alt": "Iemand staat recht voor de kijker met een open handpalm op de eigen borst."
+    },
+    "hebben": {
+      "file": "verbs/hebben.png",
+      "alt": "Iemand drukt een dichte doos met beide armen tegen de borst."
+    },
+    "kunnen": {
+      "file": "verbs/kunnen.png",
+      "alt": "Iemand staat rechtop met een opgeheven arm en een gebalde vuist, en kijkt de kijker zelfverzekerd aan."
+    },
+    "gaan": {
+      "file": "verbs/gaan.png",
+      "alt": "Iemand met de rug naar de kijker loopt met een opgeheven voet recht op een gesloten deur af."
+    },
+    "zien": {
+      "file": "verbs/zien.png",
+      "alt": "Iemand staat in een lege kamer en merkt met grote ogen een bal op de vloer op."
+    },
+    "moeten": {
+      "file": "verbs/moeten.png",
+      "alt": "Iemand staat voorovergebogen onder een zware zak op de schouders en houdt de randen met beide handen vast."
+    },
+    "komen": {
+      "file": "verbs/komen.png",
+      "alt": "Iemand stapt door een open deur naar de kijker toe; de achterste voet staat nog op de drempel."
+    },
+    "willen": {
+      "file": "verbs/willen.png",
+      "alt": "Iemand drukt beide handen plat tegen een glasplaat en kijkt met grote ogen naar een bal erachter."
+    },
+    "geven": {
+      "file": "verbs/geven.png",
+      "alt": "Twee mensen staan tegenover elkaar met een doos tussen hun handen."
+    },
+    "vinden": {
+      "file": "verbs/vinden.png",
+      "alt": "Iemand knielt bij een lage plank en tilt een sleutel aan een ring uit een potje."
+    },
+    "weten": {
+      "file": "verbs/weten.png",
+      "alt": "Iemand staat met een opgeheven vinger; boven het hoofd hangt een wolk met een brandende gloeilamp."
+    },
+    "krijgen": {
+      "file": "verbs/krijgen.png",
+      "alt": "De doos rust al in twee open handen; de ander houdt nog twee vingers aan de hoek."
+    },
+    "staan": {
+      "file": "verbs/staan.png",
+      "alt": "Iemand blijft rechtop overeind met beide voeten plat naast elkaar en de armen langs het lichaam."
+    },
+    "zeggen": {
+      "file": "verbs/zeggen.png",
+      "alt": "Iemand staat tegenover een ander en spreekt met een open mond en een opgeheven hand."
+    },
+    "houden": {
+      "file": "verbs/houden.png",
+      "alt": "Iemand heeft een dichte houten doos met beide handen vlak tegen de borst."
+    },
+    "blijven": {
+      "file": "verbs/blijven.png",
+      "alt": "Iemand staat stil met beide voeten op de grond en kijkt een ander na die wegloopt."
+    },
+    "vragen": {
+      "file": "verbs/vragen.png",
+      "alt": "Twee mensen staan tegenover elkaar; de één houdt een lege handpalm op en de ander haalt de schouders op."
+    },
+    "nemen": {
+      "file": "verbs/nemen.png",
+      "alt": "Iemand zit aan een tafel en tilt met duim en vingers een stuk fruit van het tafelblad."
+    },
+    "kijken": {
+      "file": "verbs/kijken.png",
+      "alt": "Iemand tuurt met een vlakke hand boven de ogen in de verte, met de kin omhoog."
+    },
+    "zitten": {
+      "file": "verbs/zitten.png",
+      "alt": "Iemand rust rechtop op de rand van een stoel met beide voeten plat op de vloer."
+    },
+    "denken": {
+      "file": "verbs/denken.png",
+      "alt": "Iemand zit met de kin op de vuist; boven het hoofd hangt een gedachtewolk met een vraagteken."
+    },
+    "helpen": {
+      "file": "verbs/helpen.png",
+      "alt": "Twee mensen tillen samen één doos op: vier handen aan dezelfde doos."
+    },
+    "eten": {
+      "file": "verbs/eten.png",
+      "alt": "Iemand zit aan tafel en bijt in een stuk brood, met een bord en een mes voor zich."
+    },
+    "maken": {
+      "file": "verbs/maken.png",
+      "alt": "Iemand zit aan een tafel en zet met een hamer een kistje in elkaar uit losse planken."
+    },
+    "werken": {
+      "file": "verbs/werken.png",
+      "alt": "Iemand zit achter een bureau met beide handen op het toetsenbord van een laptop."
+    },
+    "gebruiken": {
+      "file": "verbs/gebruiken.png",
+      "alt": "Een volwassene staat aan het aanrecht en draait met een schroevendraaier een schroef in een plank."
+    },
+    "spelen": {
+      "file": "verbs/spelen.png",
+      "alt": "Een kind hurkt op de grond en duwt met beide handen een kleine bal over de vloer."
+    },
+    "zorgen": {
+      "file": "verbs/zorgen.png",
+      "alt": "Een volwassene knielt bij een kind op een krukje en slaat met beide handen een deken om de schouders."
+    },
+    "leren": {
+      "file": "verbs/leren.png",
+      "alt": "Een kind zit aan een tafel voor een open boek; een volwassene staat erachter en wijst naar de bladzijde."
+    },
+    "brengen": {
+      "file": "verbs/brengen.png",
+      "alt": "Een volwassene draagt een dichte doos met twee handen naar een halfopen deur, waar al een hand naar de doos reikt."
+    },
+    "lopen": {
+      "file": "verbs/lopen.png",
+      "alt": "Een volwassene is midden in een stap: de voorste voet staat plat op de grond, de achterste voet is net van de vloer."
+    },
+    "mogen": {
+      "file": "verbs/mogen.png",
+      "alt": "Een poortwachter tilt een slagboom op en wuift een voorbijganger met een open hand door."
+    },
+    "beginnen": {
+      "file": "verbs/beginnen.png",
+      "alt": "Een volwassene zit aan een tafel en tilt net het voorplat van een gesloten schrift op, met een dichte pennenbak ernaast."
+    },
+    "zoeken": {
+      "file": "verbs/zoeken.png",
+      "alt": "Een volwassene knielt bij een lage bank, houdt een kussen opgetild en tast met de andere hand onder de zitting."
+    },
+    "lezen": {
+      "file": "verbs/lezen.png",
+      "alt": "Een volwassene zit aan een tafel met een open boek, beide handen aan de rand en de ogen op de bladzijden."
+    },
+    "liggen": {
+      "file": "verbs/liggen.png",
+      "alt": "Een volwassene rust met gestrekte benen op de rug op een opgemaakt bed, de ogen open en naar boven gericht."
+    },
+    "kopen": {
+      "file": "verbs/kopen.png",
+      "alt": "Een volwassene legt een briefje geld op de toonbank; de winkelier schuift er een papieren zak met appels naartoe."
+    },
+    "vergeten": {
+      "file": "verbs/vergeten.png",
+      "alt": "Iemand loopt bij een tafel vandaan en kijkt om; op de tafel blijft een bos sleutels liggen."
+    },
+    "vallen": {
+      "file": "verbs/vallen.png",
+      "alt": "Een volwassene raakt uit balans: het lichaam helt voorover, beide armen zwaaien en de achterste voet is los van de grond."
+    },
+    "rijden": {
+      "file": "verbs/rijden.png",
+      "alt": "Een volwassene zit achter het stuur van een auto op een weg met een witte streep, de handen aan het wiel."
+    },
+    "kiezen": {
+      "file": "verbs/kiezen.png",
+      "alt": "Een volwassene staat bij een tafel met twee potten en houdt de hand boven een van de twee, zonder die aan te raken."
+    },
+    "schrijven": {
+      "file": "verbs/schrijven.png",
+      "alt": "Een volwassene zit aan een tafel en duwt een pen op een vel papier waarop al een paar korte strepen staan."
+    },
+    "slapen": {
+      "file": "verbs/slapen.png",
+      "alt": "Een volwassene ligt onder een deken tot de schouders, de ogen dicht en het gezicht rustig; naast het bed staat een wekker."
+    },
+    "spreken": {
+      "file": "verbs/spreken.png",
+      "alt": "Een volwassene staat alleen voor de kijker met een open hand op borsthoogte en de mond open; naast het hoofd hangt een tekstballon."
+    },
+    "dragen": {
+      "file": "verbs/dragen.png",
+      "alt": "Een volwassene loopt met een hoge doos tegen de borst, de armen eromheen en de kin erachter verborgen."
+    },
+    "winnen": {
+      "file": "verbs/winnen.png",
+      "alt": "Een volwassene steekt beide armen omhoog met een beker in een hand, een rozet op de borst en papieren snippers in de lucht."
+    },
+    "genieten": {
+      "file": "verbs/genieten.png",
+      "alt": "Een volwassene zit met het hoofd achterover en de ogen dicht te glimlachen, een volle kop onder de neus."
+    },
+    "trekken": {
+      "file": "verbs/trekken.png",
+      "alt": "Een volwassene staat schrap met beide voeten uit elkaar en houdt een strak touw met twee handen vast, het lichaam achterover."
+    },
+    "bieden": {
+      "file": "verbs/bieden.png",
+      "alt": "Een volwassene houdt een opgevouwen briefje op een open handpalm naar de winkelier, die een lamp vasthoudt en de andere hand ophoudt."
+    },
+    "verlaten": {
+      "file": "verbs/verlaten.png",
+      "alt": "Een volwassene stapt met de rug naar ons door een deuropening naar buiten en trekt de deur achter zich dicht."
+    },
+    "drinken": {
+      "file": "verbs/drinken.png",
+      "alt": "Een volwassene staat met het hoofd achterover en een schuin gehouden halfleeg glas aan de lippen; naast hem staat een kan water."
+    },
+    "sluiten": {
+      "file": "verbs/sluiten.png",
+      "alt": "Een volwassene duwt van binnen met een vlakke hand een deur dicht, met nog een smalle kier en het oog op die kier."
+    },
+    "verkopen": {
+      "file": "verbs/verkopen.png",
+      "alt": "Een volwassene achter een marktkraam houdt een zak appels naar een klant, die een mandje vasthoudt en de handen nog niet uitsteekt."
+    },
+    "slaan": {
+      "file": "verbs/slaan.png",
+      "alt": "Een volwassene staat opzij en zwaait een houten slagplank met beide handen naar een balletje in de lucht."
+    },
+    "vervangen": {
+      "file": "verbs/vervangen.png",
+      "alt": "Iemand houdt op de hurken bij een fiets een lekke band omhoog, los van het wiel."
+    },
+    "bekijken": {
+      "file": "verbs/bekijken.png",
+      "alt": "Iemand staat voor een ingelijste tekening en kijkt er voorover naar."
+    },
+    "verliezen": {
+      "file": "verbs/verliezen.png",
+      "alt": "Een volwassene staat met hangende schouders bij een schaakbord met alleen zwarte stukken en een gescheurd rozet ernaast."
+    },
+    "onderzoeken": {
+      "file": "verbs/onderzoeken.png",
+      "alt": "Iemand bekijkt op de hurken bij een fiets het wiel met een vergrootglas, van dichtbij."
+    },
+    "bezoeken": {
+      "file": "verbs/bezoeken.png",
+      "alt": "Iemand stapt in de deuropening binnen met een bos bloemen voor een ander."
+    },
+    "lachen": {
+      "file": "verbs/lachen.png",
+      "alt": "Een volwassene gooit het hoofd achterover met een wijd open mond, de ogen tot streepjes dicht en een hand op de buik."
+    },
+    "zingen": {
+      "file": "verbs/zingen.png",
+      "alt": "Een volwassene staat alleen met het hoofd iets geheven en de mond open; uit de mond waaieren een paar gebogen lijnen."
+    },
+    "vliegen": {
+      "file": "verbs/vliegen.png",
+      "alt": "Een klein toestel met vleugels gaat horizontaal door de lucht, boven twee platte wolken."
+    },
+    "horen": {
+      "file": "verbs/horen.png",
+      "alt": "Iemand aan tafel met een open boek draait het hoofd snel naar een rinkelende bel bij de deur."
+    },
+    "zetten": {
+      "file": "verbs/zetten.png",
+      "alt": "Een volwassene brengt een glas omlaag naar de tafel; de bodem raakt de tafel en de vingers houden het glas nog vast."
+    },
+    "wachten": {
+      "file": "verbs/wachten.png",
+      "alt": "Iemand staat stil op een leeg perron met een tas, onder een grote ronde klok."
+    },
+    "halen": {
+      "file": "verbs/halen.png",
+      "alt": "Iemand komt door een deur binnen met een fles melk voor iemand die met een leeg glas aan tafel wacht."
+    },
+    "delen": {
+      "file": "verbs/delen.png",
+      "alt": "Twee volwassenen houden samen een brood vast en breken het midden door; kruimels vallen."
+    },
+    "praten": {
+      "file": "verbs/praten.png",
+      "alt": "Twee volwassenen staan tegenover elkaar, mond open, met boven elk hoofd een korte streep."
+    },
+    "volgen": {
+      "file": "verbs/volgen.png",
+      "alt": "Een volwassene loopt een paar stappen achter een ander in dezelfde richting."
+    },
+    "betalen": {
+      "file": "verbs/betalen.png",
+      "alt": "Iemand schuift een opgevouwen briefje over de toonbank naar de winkelier."
+    },
+    "vertellen": {
+      "file": "verbs/vertellen.png",
+      "alt": "Een volwassene gebaart met open mond naar iemand die stil op een stoel zit."
+    },
+    "leiden": {
+      "file": "verbs/leiden.png",
+      "alt": "Een volwassene loopt voorop met de arm vooruit; een tweede volgt aan een touw tussen hen."
+    },
+    "kosten": {
+      "file": "verbs/kosten.png",
+      "alt": "Een winkelier draait met twee handen een bordje met een munt erop naar de kijker."
+    },
+    "wonen": {
+      "file": "verbs/wonen.png",
+      "alt": "Iemand met een boodschappentas draait een sleutel om in de voordeur van een klein huis."
+    },
+    "stoppen": {
+      "file": "verbs/stoppen.png",
+      "alt": "Iemand houdt op de stoeprand een vlakke hand op naar een auto met brandende remlichten."
+    },
+    "sturen": {
+      "file": "verbs/sturen.png",
+      "alt": "Iemand houdt een envelop boven de gleuf van een brievenbus, nog niet losgelaten."
+    },
+    "voelen": {
+      "file": "verbs/voelen.png",
+      "alt": "Iemand zit op een bed en strijkt met een vlakke hand over een dikke sjaal."
+    },
+    "leggen": {
+      "file": "verbs/leggen.png",
+      "alt": "Iemand strijkt op een tafel een doek plat neer; ernaast ligt een tweede doek."
+    },
+    "pakken": {
+      "file": "verbs/pakken.png",
+      "alt": "Iemand sluit een hand om een mok op een schap en trekt die naar zich toe."
+    },
+    "bouwen": {
+      "file": "verbs/bouwen.png",
+      "alt": "Iemand zet met twee handen een nieuwe steen op een muur die half af is."
+    },
+    "beschermen": {
+      "file": "verbs/beschermen.png",
+      "alt": "Iemand houdt een open paraplu boven een kind, de arm om de schouders, in de regen."
+    },
+    "luisteren": {
+      "file": "verbs/luisteren.png",
+      "alt": "Iemand zit voorover naar een radio en houdt een hand achter het oor."
+    },
+    "bellen": {
+      "file": "verbs/bellen.png",
+      "alt": "Iemand houdt een telefoon tegen een oor, elleboog opzij, en praat met open mond."
+    },
+    "voeren": {
+      "file": "verbs/voeren.png",
+      "alt": "Iemand aan de rand van een vijver gooit stukjes brood naar drie eenden."
+    },
+    "stappen": {
+      "file": "verbs/stappen.png",
+      "alt": "Iemand zet een voet op de onderste tree van een trap, de andere komt van de stoep."
+    },
+    "verdienen": {
+      "file": "verbs/verdienen.png",
+      "alt": "Iemand achter de toonbank houdt met twee handen een stapel briefjes vast."
+    },
+    "reizen": {
+      "file": "verbs/reizen.png",
+      "alt": "Iemand loopt met een koffer en een kaartje langs een perron, naast het spoor."
+    },
+    "redden": {
+      "file": "verbs/redden.png",
+      "alt": "Iemand aan de rand van een zwembad houdt een kind in het water bij de pols vast."
+    },
+    "vieren": {
+      "file": "verbs/vieren.png",
+      "alt": "Iemand steekt de armen hoog met een slinger; ernaast heft iemand een glas bij een taart."
+    },
+    "dromen": {
+      "file": "verbs/dromen.png",
+      "alt": "Iemand slaapt onder een deken; boven het hoofd hangt een wolk met zon en paraplu."
+    }
+  },
+  "frames": [
+    {
+      "id": "zijn",
+      "verb": "zijn",
+      "gloss": "to be",
+      "scene": "zijn",
+      "band": "a0",
+      "contrast": null,
+      "past": "was",
+      "perfect": "is geweest",
+      "regular": false
+    },
+    {
+      "id": "hebben",
+      "verb": "hebben",
+      "gloss": "to have",
+      "scene": "hebben",
+      "band": "a0",
+      "contrast": null,
+      "past": "had",
+      "perfect": "heeft gehad",
+      "regular": false
+    },
+    {
+      "id": "kunnen",
+      "verb": "kunnen",
+      "gloss": "to be able to",
+      "scene": "kunnen",
+      "band": "a0",
+      "contrast": null,
+      "past": "kon",
+      "perfect": "heeft gekund",
+      "regular": false
+    },
+    {
+      "id": "gaan",
+      "verb": "gaan",
+      "gloss": "to go",
+      "scene": "gaan",
+      "band": "a0",
+      "contrast": null,
+      "past": "ging",
+      "perfect": "is gegaan",
+      "regular": false
+    },
+    {
+      "id": "zien",
+      "verb": "zien",
+      "gloss": "to see",
+      "scene": "zien",
+      "band": "a0",
+      "contrast": null,
+      "past": "zag",
+      "perfect": "heeft gezien",
+      "regular": false
+    },
+    {
+      "id": "moeten",
+      "verb": "moeten",
+      "gloss": "to have to",
+      "scene": "moeten",
+      "band": "a0",
+      "contrast": null,
+      "past": "moest",
+      "perfect": "heeft gemoeten",
+      "regular": false
+    },
+    {
+      "id": "komen",
+      "verb": "komen",
+      "gloss": "to come",
+      "scene": "komen",
+      "band": "a0",
+      "contrast": null,
+      "past": "kwam",
+      "perfect": "is gekomen",
+      "regular": false
+    },
+    {
+      "id": "willen",
+      "verb": "willen",
+      "gloss": "to want",
+      "scene": "willen",
+      "band": "a0",
+      "contrast": null,
+      "past": "wilde / wou",
+      "perfect": "heeft gewild",
+      "regular": false
+    },
+    {
+      "id": "geven",
+      "verb": "geven",
+      "gloss": "to give",
+      "scene": "geven",
+      "band": "a0",
+      "contrast": null,
+      "past": "gaf",
+      "perfect": "heeft gegeven",
+      "regular": false
+    },
+    {
+      "id": "vinden",
+      "verb": "vinden",
+      "gloss": "to find",
+      "scene": "vinden",
+      "band": "a0",
+      "contrast": null,
+      "past": "vond",
+      "perfect": "heeft gevonden",
+      "regular": false
+    },
+    {
+      "id": "weten",
+      "verb": "weten",
+      "gloss": "to know (a fact)",
+      "scene": "weten",
+      "band": "a0",
+      "contrast": null,
+      "past": "wist",
+      "perfect": "heeft geweten",
+      "regular": false
+    },
+    {
+      "id": "krijgen",
+      "verb": "krijgen",
+      "gloss": "to get",
+      "scene": "krijgen",
+      "band": "a0",
+      "contrast": null,
+      "past": "kreeg",
+      "perfect": "heeft gekregen",
+      "regular": false
+    },
+    {
+      "id": "staan",
+      "verb": "staan",
+      "gloss": "to stand",
+      "scene": "staan",
+      "band": "a0",
+      "contrast": null,
+      "past": "stond",
+      "perfect": "heeft gestaan",
+      "regular": false
+    },
+    {
+      "id": "zeggen",
+      "verb": "zeggen",
+      "gloss": "to say",
+      "scene": "zeggen",
+      "band": "a0",
+      "contrast": null,
+      "past": "zei",
+      "perfect": "heeft gezegd",
+      "regular": false
+    },
+    {
+      "id": "houden",
+      "verb": "houden",
+      "gloss": "to hold / to keep",
+      "scene": "houden",
+      "band": "a0",
+      "contrast": null,
+      "past": "hield",
+      "perfect": "heeft gehouden",
+      "regular": false
+    },
+    {
+      "id": "blijven",
+      "verb": "blijven",
+      "gloss": "to remain",
+      "scene": "blijven",
+      "band": "a0",
+      "contrast": null,
+      "past": "bleef",
+      "perfect": "is gebleven",
+      "regular": false
+    },
+    {
+      "id": "vragen",
+      "verb": "vragen",
+      "gloss": "to ask",
+      "scene": "vragen",
+      "band": "a0",
+      "contrast": null,
+      "past": "vroeg",
+      "perfect": "heeft gevraagd",
+      "regular": false
+    },
+    {
+      "id": "nemen",
+      "verb": "nemen",
+      "gloss": "to take",
+      "scene": "nemen",
+      "band": "a0",
+      "contrast": null,
+      "past": "nam",
+      "perfect": "heeft genomen",
+      "regular": false
+    },
+    {
+      "id": "kijken",
+      "verb": "kijken",
+      "gloss": "to look",
+      "scene": "kijken",
+      "band": "a0",
+      "contrast": null,
+      "past": "keek",
+      "perfect": "heeft gekeken",
+      "regular": false
+    },
+    {
+      "id": "zitten",
+      "verb": "zitten",
+      "gloss": "to sit",
+      "scene": "zitten",
+      "band": "a0",
+      "contrast": null,
+      "past": "zat",
+      "perfect": "heeft gezeten",
+      "regular": false
+    },
+    {
+      "id": "denken",
+      "verb": "denken",
+      "gloss": "to think",
+      "scene": "denken",
+      "band": "a0",
+      "contrast": null,
+      "past": "dacht",
+      "perfect": "heeft gedacht",
+      "regular": false
+    },
+    {
+      "id": "helpen",
+      "verb": "helpen",
+      "gloss": "to help",
+      "scene": "helpen",
+      "band": "a0",
+      "contrast": null,
+      "past": "hielp",
+      "perfect": "heeft geholpen",
+      "regular": false
+    },
+    {
+      "id": "eten",
+      "verb": "eten",
+      "gloss": "to eat",
+      "scene": "eten",
+      "band": "a0",
+      "contrast": null,
+      "past": "at",
+      "perfect": "heeft gegeten",
+      "regular": false
+    },
+    {
+      "id": "maken",
+      "verb": "maken",
+      "gloss": "to make",
+      "scene": "maken",
+      "band": "a0",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "werken",
+      "verb": "werken",
+      "gloss": "to work",
+      "scene": "werken",
+      "band": "a0",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "gebruiken",
+      "verb": "gebruiken",
+      "gloss": "to use",
+      "scene": "gebruiken",
+      "band": "a0",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "spelen",
+      "verb": "spelen",
+      "gloss": "to play",
+      "scene": "spelen",
+      "band": "a0",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "zorgen",
+      "verb": "zorgen",
+      "gloss": "to take care (of)",
+      "scene": "zorgen",
+      "band": "a0",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "leren",
+      "verb": "leren",
+      "gloss": "to learn",
+      "scene": "leren",
+      "band": "a0",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "brengen",
+      "verb": "brengen",
+      "gloss": "to bring",
+      "scene": "brengen",
+      "band": "a1",
+      "contrast": null,
+      "past": "bracht",
+      "perfect": "heeft gebracht",
+      "regular": false
+    },
+    {
+      "id": "lopen",
+      "verb": "lopen",
+      "gloss": "to walk",
+      "scene": "lopen",
+      "band": "a1",
+      "contrast": null,
+      "past": "liep",
+      "perfect": "heeft/is gelopen",
+      "regular": false
+    },
+    {
+      "id": "mogen",
+      "verb": "mogen",
+      "gloss": "to be allowed",
+      "scene": "mogen",
+      "band": "a1",
+      "contrast": null,
+      "past": "mocht",
+      "perfect": "heeft gemogen",
+      "regular": false
+    },
+    {
+      "id": "beginnen",
+      "verb": "beginnen",
+      "gloss": "to begin",
+      "scene": "beginnen",
+      "band": "a1",
+      "contrast": null,
+      "past": "begon",
+      "perfect": "is begonnen",
+      "regular": false
+    },
+    {
+      "id": "zoeken",
+      "verb": "zoeken",
+      "gloss": "to search",
+      "scene": "zoeken",
+      "band": "a1",
+      "contrast": null,
+      "past": "zocht",
+      "perfect": "heeft gezocht",
+      "regular": false
+    },
+    {
+      "id": "lezen",
+      "verb": "lezen",
+      "gloss": "to read",
+      "scene": "lezen",
+      "band": "a1",
+      "contrast": null,
+      "past": "las",
+      "perfect": "heeft gelezen",
+      "regular": false
+    },
+    {
+      "id": "liggen",
+      "verb": "liggen",
+      "gloss": "to lie",
+      "scene": "liggen",
+      "band": "a1",
+      "contrast": null,
+      "past": "lag",
+      "perfect": "heeft gelegen",
+      "regular": false
+    },
+    {
+      "id": "kopen",
+      "verb": "kopen",
+      "gloss": "to buy",
+      "scene": "kopen",
+      "band": "a1",
+      "contrast": null,
+      "past": "kocht",
+      "perfect": "heeft gekocht",
+      "regular": false
+    },
+    {
+      "id": "vergeten",
+      "verb": "vergeten",
+      "gloss": "to forget",
+      "scene": "vergeten",
+      "band": "a1",
+      "contrast": null,
+      "past": "vergat",
+      "perfect": "heeft/is vergeten",
+      "regular": false
+    },
+    {
+      "id": "vallen",
+      "verb": "vallen",
+      "gloss": "to fall",
+      "scene": "vallen",
+      "band": "a1",
+      "contrast": null,
+      "past": "viel",
+      "perfect": "is gevallen",
+      "regular": false
+    },
+    {
+      "id": "rijden",
+      "verb": "rijden",
+      "gloss": "to drive",
+      "scene": "rijden",
+      "band": "a1",
+      "contrast": null,
+      "past": "reed",
+      "perfect": "heeft/is gereden",
+      "regular": false
+    },
+    {
+      "id": "kiezen",
+      "verb": "kiezen",
+      "gloss": "to choose",
+      "scene": "kiezen",
+      "band": "a1",
+      "contrast": null,
+      "past": "koos",
+      "perfect": "heeft gekozen",
+      "regular": false
+    },
+    {
+      "id": "schrijven",
+      "verb": "schrijven",
+      "gloss": "to write",
+      "scene": "schrijven",
+      "band": "a1",
+      "contrast": null,
+      "past": "schreef",
+      "perfect": "heeft geschreven",
+      "regular": false
+    },
+    {
+      "id": "slapen",
+      "verb": "slapen",
+      "gloss": "to sleep",
+      "scene": "slapen",
+      "band": "a1",
+      "contrast": null,
+      "past": "sliep",
+      "perfect": "heeft geslapen",
+      "regular": false
+    },
+    {
+      "id": "spreken",
+      "verb": "spreken",
+      "gloss": "to speak",
+      "scene": "spreken",
+      "band": "a1",
+      "contrast": null,
+      "past": "sprak",
+      "perfect": "heeft gesproken",
+      "regular": false
+    },
+    {
+      "id": "dragen",
+      "verb": "dragen",
+      "gloss": "to carry",
+      "scene": "dragen",
+      "band": "a1",
+      "contrast": null,
+      "past": "droeg",
+      "perfect": "heeft gedragen",
+      "regular": false
+    },
+    {
+      "id": "winnen",
+      "verb": "winnen",
+      "gloss": "to win",
+      "scene": "winnen",
+      "band": "a1",
+      "contrast": null,
+      "past": "won",
+      "perfect": "heeft gewonnen",
+      "regular": false
+    },
+    {
+      "id": "genieten",
+      "verb": "genieten",
+      "gloss": "to enjoy",
+      "scene": "genieten",
+      "band": "a1",
+      "contrast": null,
+      "past": "genoot",
+      "perfect": "heeft genoten",
+      "regular": false
+    },
+    {
+      "id": "trekken",
+      "verb": "trekken",
+      "gloss": "to pull",
+      "scene": "trekken",
+      "band": "a1",
+      "contrast": null,
+      "past": "trok",
+      "perfect": "heeft/is getrokken",
+      "regular": false
+    },
+    {
+      "id": "bieden",
+      "verb": "bieden",
+      "gloss": "to offer",
+      "scene": "bieden",
+      "band": "a1",
+      "contrast": null,
+      "past": "bood",
+      "perfect": "heeft geboden",
+      "regular": false
+    },
+    {
+      "id": "verlaten",
+      "verb": "verlaten",
+      "gloss": "to leave (a place)",
+      "scene": "verlaten",
+      "band": "a1",
+      "contrast": null,
+      "past": "verliet",
+      "perfect": "heeft verlaten",
+      "regular": false
+    },
+    {
+      "id": "drinken",
+      "verb": "drinken",
+      "gloss": "to drink",
+      "scene": "drinken",
+      "band": "a1",
+      "contrast": null,
+      "past": "dronk",
+      "perfect": "heeft gedronken",
+      "regular": false
+    },
+    {
+      "id": "sluiten",
+      "verb": "sluiten",
+      "gloss": "to close",
+      "scene": "sluiten",
+      "band": "a1",
+      "contrast": null,
+      "past": "sloot",
+      "perfect": "heeft gesloten",
+      "regular": false
+    },
+    {
+      "id": "verkopen",
+      "verb": "verkopen",
+      "gloss": "to sell",
+      "scene": "verkopen",
+      "band": "a1",
+      "contrast": null,
+      "past": "verkocht",
+      "perfect": "heeft verkocht",
+      "regular": false
+    },
+    {
+      "id": "slaan",
+      "verb": "slaan",
+      "gloss": "to hit",
+      "scene": "slaan",
+      "band": "a1",
+      "contrast": null,
+      "past": "sloeg",
+      "perfect": "heeft geslagen",
+      "regular": false
+    },
+    {
+      "id": "vervangen",
+      "verb": "vervangen",
+      "gloss": "to replace",
+      "scene": "vervangen",
+      "band": "a1",
+      "contrast": null,
+      "past": "verving",
+      "perfect": "heeft vervangen",
+      "regular": false
+    },
+    {
+      "id": "bekijken",
+      "verb": "bekijken",
+      "gloss": "to look at",
+      "scene": "bekijken",
+      "band": "a1",
+      "contrast": null,
+      "past": "bekeek",
+      "perfect": "heeft bekeken",
+      "regular": false
+    },
+    {
+      "id": "verliezen",
+      "verb": "verliezen",
+      "gloss": "to lose",
+      "scene": "verliezen",
+      "band": "a1",
+      "contrast": null,
+      "past": "verloor",
+      "perfect": "heeft/is verloren",
+      "regular": false
+    },
+    {
+      "id": "onderzoeken",
+      "verb": "onderzoeken",
+      "gloss": "to investigate",
+      "scene": "onderzoeken",
+      "band": "a1",
+      "contrast": null,
+      "past": "onderzocht",
+      "perfect": "heeft onderzocht",
+      "regular": false
+    },
+    {
+      "id": "bezoeken",
+      "verb": "bezoeken",
+      "gloss": "to visit",
+      "scene": "bezoeken",
+      "band": "a1",
+      "contrast": null,
+      "past": "bezocht",
+      "perfect": "heeft bezocht",
+      "regular": false
+    },
+    {
+      "id": "lachen",
+      "verb": "lachen",
+      "gloss": "to laugh",
+      "scene": "lachen",
+      "band": "a1",
+      "contrast": null,
+      "past": "lachte",
+      "perfect": "heeft gelachen",
+      "regular": false
+    },
+    {
+      "id": "zingen",
+      "verb": "zingen",
+      "gloss": "to sing",
+      "scene": "zingen",
+      "band": "a1",
+      "contrast": null,
+      "past": "zong",
+      "perfect": "heeft gezongen",
+      "regular": false
+    },
+    {
+      "id": "vliegen",
+      "verb": "vliegen",
+      "gloss": "to fly",
+      "scene": "vliegen",
+      "band": "a1",
+      "contrast": null,
+      "past": "vloog",
+      "perfect": "heeft/is gevlogen",
+      "regular": false
+    },
+    {
+      "id": "horen",
+      "verb": "horen",
+      "gloss": "to hear",
+      "scene": "horen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "zetten",
+      "verb": "zetten",
+      "gloss": "to put (upright)",
+      "scene": "zetten",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "wachten",
+      "verb": "wachten",
+      "gloss": "to wait",
+      "scene": "wachten",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "halen",
+      "verb": "halen",
+      "gloss": "to fetch",
+      "scene": "halen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "delen",
+      "verb": "delen",
+      "gloss": "to share",
+      "scene": "delen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "praten",
+      "verb": "praten",
+      "gloss": "to talk",
+      "scene": "praten",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "volgen",
+      "verb": "volgen",
+      "gloss": "to follow",
+      "scene": "volgen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "betalen",
+      "verb": "betalen",
+      "gloss": "to pay",
+      "scene": "betalen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "vertellen",
+      "verb": "vertellen",
+      "gloss": "to tell",
+      "scene": "vertellen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "leiden",
+      "verb": "leiden",
+      "gloss": "to lead",
+      "scene": "leiden",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "kosten",
+      "verb": "kosten",
+      "gloss": "to cost",
+      "scene": "kosten",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "wonen",
+      "verb": "wonen",
+      "gloss": "to live (reside)",
+      "scene": "wonen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "stoppen",
+      "verb": "stoppen",
+      "gloss": "to stop",
+      "scene": "stoppen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "sturen",
+      "verb": "sturen",
+      "gloss": "to send",
+      "scene": "sturen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "voelen",
+      "verb": "voelen",
+      "gloss": "to feel",
+      "scene": "voelen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "leggen",
+      "verb": "leggen",
+      "gloss": "to lay (flat)",
+      "scene": "leggen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "pakken",
+      "verb": "pakken",
+      "gloss": "to grab",
+      "scene": "pakken",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "bouwen",
+      "verb": "bouwen",
+      "gloss": "to build",
+      "scene": "bouwen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "beschermen",
+      "verb": "beschermen",
+      "gloss": "to protect",
+      "scene": "beschermen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "luisteren",
+      "verb": "luisteren",
+      "gloss": "to listen",
+      "scene": "luisteren",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "bellen",
+      "verb": "bellen",
+      "gloss": "to call (by phone)",
+      "scene": "bellen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "voeren",
+      "verb": "voeren",
+      "gloss": "to feed (animals)",
+      "scene": "voeren",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "stappen",
+      "verb": "stappen",
+      "gloss": "to step",
+      "scene": "stappen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "verdienen",
+      "verb": "verdienen",
+      "gloss": "to earn",
+      "scene": "verdienen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "reizen",
+      "verb": "reizen",
+      "gloss": "to travel",
+      "scene": "reizen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "redden",
+      "verb": "redden",
+      "gloss": "to save (rescue)",
+      "scene": "redden",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "vieren",
+      "verb": "vieren",
+      "gloss": "to celebrate",
+      "scene": "vieren",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    },
+    {
+      "id": "dromen",
+      "verb": "dromen",
+      "gloss": "to dream",
+      "scene": "dromen",
+      "band": "a1",
+      "contrast": null,
+      "past": null,
+      "perfect": null,
+      "regular": true
+    }
+  ],
+  "levels": [
+    {
+      "id": "a0-1",
+      "name": "A0 · 1",
+      "band": "a0",
+      "frames": [
+        "zijn",
+        "hebben",
+        "kunnen",
+        "gaan"
+      ]
+    },
+    {
+      "id": "a0-2",
+      "name": "A0 · 2",
+      "band": "a0",
+      "frames": [
+        "zien",
+        "moeten",
+        "komen",
+        "willen"
+      ]
+    },
+    {
+      "id": "a0-3",
+      "name": "A0 · 3",
+      "band": "a0",
+      "frames": [
+        "geven",
+        "vinden",
+        "weten",
+        "krijgen"
+      ]
+    },
+    {
+      "id": "a0-4",
+      "name": "A0 · 4",
+      "band": "a0",
+      "frames": [
+        "staan",
+        "zeggen",
+        "houden",
+        "blijven"
+      ]
+    },
+    {
+      "id": "a0-5",
+      "name": "A0 · 5",
+      "band": "a0",
+      "frames": [
+        "vragen",
+        "nemen",
+        "kijken",
+        "zitten"
+      ]
+    },
+    {
+      "id": "a0-6",
+      "name": "A0 · 6",
+      "band": "a0",
+      "frames": [
+        "denken",
+        "helpen",
+        "eten",
+        "maken"
+      ]
+    },
+    {
+      "id": "a0-7",
+      "name": "A0 · 7",
+      "band": "a0",
+      "frames": [
+        "werken",
+        "gebruiken",
+        "spelen",
+        "zorgen",
+        "leren"
+      ]
+    },
+    {
+      "id": "a1-1",
+      "name": "A1 · 1",
+      "band": "a1",
+      "frames": [
+        "brengen",
+        "lopen",
+        "mogen",
+        "beginnen"
+      ]
+    },
+    {
+      "id": "a1-2",
+      "name": "A1 · 2",
+      "band": "a1",
+      "frames": [
+        "zoeken",
+        "lezen",
+        "liggen",
+        "kopen"
+      ]
+    },
+    {
+      "id": "a1-3",
+      "name": "A1 · 3",
+      "band": "a1",
+      "frames": [
+        "vergeten",
+        "vallen",
+        "rijden",
+        "kiezen"
+      ]
+    },
+    {
+      "id": "a1-4",
+      "name": "A1 · 4",
+      "band": "a1",
+      "frames": [
+        "schrijven",
+        "slapen",
+        "spreken",
+        "dragen"
+      ]
+    },
+    {
+      "id": "a1-5",
+      "name": "A1 · 5",
+      "band": "a1",
+      "frames": [
+        "winnen",
+        "genieten",
+        "trekken",
+        "bieden"
+      ]
+    },
+    {
+      "id": "a1-6",
+      "name": "A1 · 6",
+      "band": "a1",
+      "frames": [
+        "verlaten",
+        "drinken",
+        "sluiten",
+        "verkopen"
+      ]
+    },
+    {
+      "id": "a1-7",
+      "name": "A1 · 7",
+      "band": "a1",
+      "frames": [
+        "slaan",
+        "vervangen",
+        "bekijken",
+        "verliezen"
+      ]
+    },
+    {
+      "id": "a1-8",
+      "name": "A1 · 8",
+      "band": "a1",
+      "frames": [
+        "onderzoeken",
+        "bezoeken",
+        "lachen",
+        "zingen"
+      ]
+    },
+    {
+      "id": "a1-9",
+      "name": "A1 · 9",
+      "band": "a1",
+      "frames": [
+        "vliegen",
+        "horen",
+        "zetten",
+        "wachten"
+      ]
+    },
+    {
+      "id": "a1-10",
+      "name": "A1 · 10",
+      "band": "a1",
+      "frames": [
+        "halen",
+        "delen",
+        "praten",
+        "volgen"
+      ]
+    },
+    {
+      "id": "a1-11",
+      "name": "A1 · 11",
+      "band": "a1",
+      "frames": [
+        "betalen",
+        "vertellen",
+        "leiden",
+        "kosten"
+      ]
+    },
+    {
+      "id": "a1-12",
+      "name": "A1 · 12",
+      "band": "a1",
+      "frames": [
+        "wonen",
+        "stoppen",
+        "sturen",
+        "voelen"
+      ]
+    },
+    {
+      "id": "a1-13",
+      "name": "A1 · 13",
+      "band": "a1",
+      "frames": [
+        "leggen",
+        "pakken",
+        "bouwen",
+        "beschermen"
+      ]
+    },
+    {
+      "id": "a1-14",
+      "name": "A1 · 14",
+      "band": "a1",
+      "frames": [
+        "luisteren",
+        "bellen",
+        "voeren",
+        "stappen"
+      ]
+    },
+    {
+      "id": "a1-15",
+      "name": "A1 · 15",
+      "band": "a1",
+      "frames": [
+        "verdienen",
+        "reizen",
+        "redden",
+        "vieren",
+        "dromen"
+      ]
+    }
+  ]
+}

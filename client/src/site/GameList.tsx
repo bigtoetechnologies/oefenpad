@@ -45,6 +45,12 @@ const GAMES: GameEntry[] = [
     about: 'Draai de rollen, vertel het verhaal hardop.',
     kind: 'Spreken',
   },
+  {
+    route: '/verbs',
+    name: 'Werkwoorden',
+    about: 'Eén beeld per werkwoord. Kies het juiste beeld.',
+    kind: 'Betekenis',
+  },
 ];
 
 /** The SPA's own index, for anyone who lands on /spelen/ directly. */
