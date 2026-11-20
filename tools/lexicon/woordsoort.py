@@ -200,6 +200,42 @@ OVERRIDES = {
     "vorig": "adj",
     "binnenkort": "adv",
     "vandoor": "adv",               # `off, away`
+    # ---- card-family audit 2026-11-20: rows the rules tagged noun or adj that
+    # the word-type cards use in their main sense. Kept as tagged, on purpose:
+    # druk/bot/bol (bare rows gloss the noun), heel (`very` is the frequent
+    # sense), dichtbij, bezig, mis, apart, and the prepositions aan uit op over
+    # boven, which stay `function` even where a card uses them as adverbs ----
+    "kort": "adj",                   # `short`; no noun reading in the list
+    "kapot": "adj",                  # `broken`
+    "bang": "adj",                   # `afraid`
+    "krom": "adj",                   # `crooked, curved`
+    "kaal": "adj",                   # `bald`
+    "soepel": "adj",                 # `flexible, smooth`
+    "schuin": "adj",                 # `oblique`; attributive `een schuin dak`
+    "raak": "adj",                   # `on target`; an adjective, used adverbially
+    "flat": "noun",                  # the Dutch word is the block of flats
+    "veel": "adv",                   # `much`; same class as weinig, minder, genoeg
+    "evenveel": "adv",               # `as much`; same class as veel, zoveel
+    "overdag": "adv",                # `by day`
+    "rechtdoor": "adv",              # `straight ahead`
+    "linksaf": "adv",                # `to the left`
+    "bovenaan": "adv",               # `at the top`
+    "onderaan": "adv",               # `at the bottom`
+    "voorin": "adv",                 # `in the front`
+    "rechtop": "adv",                # `upright`
+    "ondersteboven": "adv",          # `upside down`
+    "dwars": "adv",                  # `across`; adverbial use (dwars door) dominates
+    "verderop": "adv",               # `further on`
+    "achterover": "adv",             # `backwards`
+    "voorover": "adv",               # `face forward`
+    "overboord": "adv",              # `overboard`
+    # ---- owner-approved retags 2026-11-20: plain nouns the rules tagged adj,
+    # and a quantity word the rules tagged noun ----
+    "gegeven": "noun",               # `fact, data`; het gegeven, not the participle
+    "toekomst": "noun",              # `future`; de toekomst
+    "mens": "noun",                  # `human`; de mens
+    "huwelijk": "noun",              # `marriage`; het huwelijk
+    "teveel": "adv",                 # `too much`; same class as veel, genoeg, zoveel
 }
 
 # --------------------------------------------------------------------------

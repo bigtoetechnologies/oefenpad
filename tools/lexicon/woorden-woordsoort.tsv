@@ -475,7 +475,7 @@ ban	noun	ban
 banaan	noun	banana
 band	noun	bond
 bandbreedte	noun	bandwidth
-bang	noun	afraid, frightened
+bang	adj	afraid, frightened
 bangkok	name	bangkok
 banjo	noun	banjo
 bank	noun	a) bank b) bench, sofa
@@ -932,7 +932,7 @@ boulevard	noun	boulevard
 bouw	noun	construction
 bouwen	verb	to build
 boven	function	above
-bovenaan	noun	at the top
+bovenaan	adv	at the top
 bovendien	adv	also
 bovenop	adv	on top
 bowlen	noun	bowling
@@ -1586,7 +1586,7 @@ duw	noun	push
 duwen	verb	to push
 dwaas	adj	foolish
 dwalen	verb	to wander
-dwars	noun	diagonal
+dwars	adv	diagonal
 dwegvinvis	noun	minke
 dwerg	noun	dwarf
 dwergcicade	noun	leafhopper
@@ -1776,7 +1776,7 @@ evengoed	noun	as well
 evenmin	adv	as little as, nor
 eventjes	adv	quickly
 eventueel	adj	potential
-evenveel	adj	same
+evenveel	adv	same
 evenwel	noun	nevertheless
 evenwicht	noun	balance
 everest	name	everest
@@ -1875,7 +1875,7 @@ fit	adj	fit
 fjord	noun	fjord
 flamingo	noun	flamingo
 flard	noun	fragment
-flat	adj	flat
+flat	noun	flat
 flauw	adj	weak
 fles	noun	bottle
 flink	adj	significant
@@ -2000,7 +2000,7 @@ geel	adj	yellow
 geen	function	no
 geest	noun	mind, spirit
 geestelijk	adj	mental
-gegeven	adj	fact, data
+gegeven	noun	fact, data
 gehandicapt	noun	handicapped
 geheel (adj)	adj	whole
 geheel (noun)	noun	whole
@@ -2551,7 +2551,7 @@ hunebed	noun	dolmen
 huren	verb	to rent
 hut	noun	hut
 huur	noun	rent
-huwelijk	adj	marriage
+huwelijk	noun	marriage
 huwen	verb	to marry
 hyacint	noun	hyacinth
 hyaden	noun	hyades
@@ -2801,7 +2801,7 @@ justitie	noun	justice
 juweel	noun	jewel
 kaak	noun	jaw
 kaakje	noun	biscuit
-kaal	noun	bald
+kaal	adj	bald
 kaars	noun	candle
 kaart	noun	map
 kaartje	noun	ticket
@@ -2846,7 +2846,7 @@ kap	noun	hood
 kapel	noun	chapel
 kapitaal	noun	capital
 kapitein	noun	captain
-kapot	noun	broken
+kapot	adj	broken
 kappen	verb	to cut (down)
 kapper	noun	hairdresser
 kar	noun	cart
@@ -3071,7 +3071,7 @@ koppig	adj	stubborn
 koptelefoon	noun	headphone
 koraal	noun	coral
 korstmos	noun	lichen
-kort	noun	short
+kort	adj	short
 kortefilm	noun	short
 korting	noun	discount
 kortom	adv	in short
@@ -3118,7 +3118,7 @@ kritisch	adj	critical
 kroatie	name	croatia
 kroeg	noun	pub
 krokus	noun	crocus
-krom	noun	crooked, curved
+krom	adj	crooked, curved
 kroniek	noun	chronicle
 kroon	noun	crown
 kruid	noun	herb
@@ -3540,7 +3540,7 @@ menen	verb	to believe, to think
 mengen	verb	to mix
 menigte	noun	crowd
 mening	noun	opinion
-mens	adj	human
+mens	noun	human
 menselijk	adj	human
 mensheid	noun	humankind
 mentaal	adj	mental
@@ -3971,7 +3971,7 @@ onbelangrijk	noun	unimportant
 onbewust	adj	unconscious
 ondanks	adv	in spite of
 onder	function	under
-onderaan	noun	at the bottom
+onderaan	adv	at the bottom
 onderbreken	verb	to interrupt
 onderbrengen	verb	to accommodate, to lodge
 onderbroek	noun	underpants
@@ -4272,7 +4272,7 @@ overal	adv	everywhere
 overblijven	verb	a) to remain b) to stay behind
 overbodig	adj	superfluous
 overbrengen	verb	to transfer
-overdag	noun	by day
+overdag	adv	by day
 overdragen	verb	to pass on, to transfer
 overdreven	adj	overdone
 overdrijven	verb	to exaggerate
@@ -4706,7 +4706,7 @@ raad	noun	advice
 raadplegen	verb	to consult
 raadsel	noun	mystery
 raaf	noun	raven
-raak	noun	~ home, telling
+raak	adj	~ home, telling
 raam	noun	window
 raap	noun	turnip
 raar	adj	strange
@@ -4759,7 +4759,7 @@ recht (noun)	noun	right
 rechtbank	noun	court
 rechter	noun	judge
 rechterhand	noun	right hand
-rechtop	noun	upright
+rechtop	adv	upright
 rechts	adv	a) right b) right-wing
 rechtstreeks	adj	direct
 rechtszaak	noun	trial
@@ -5110,7 +5110,7 @@ schudden	verb	to shake
 schuifelen	verb	to shuffle
 schuilen	verb	to shelter, to hide
 schuimcicade	noun	planthopper
-schuin	noun	oblique
+schuin	adj	oblique
 schuiven	verb	to push, to pull
 schuld	noun	a) debt b) blame
 schuldgevoel	noun	feeling of guilt
@@ -5266,7 +5266,7 @@ socialist	noun	socialist
 socialistisch	adj	socialist
 socket	noun	socket
 soep	noun	soup
-soepel	noun	flexible, smooth
+soepel	adj	flexible, smooth
 soeplepel	noun	ladle
 sofia	name	sofia
 softbal	noun	softball
@@ -5754,7 +5754,7 @@ toekan	noun	toucan
 toekennen	verb	to award
 toekijken	verb	to watch
 toekomen	verb	to get round to
-toekomst	adj	future
+toekomst	noun	future
 toekomstig	adj	future
 toelaten	verb	to allow
 toen (adv)	adv	then
@@ -6078,7 +6078,7 @@ vastzitten	verb	to get stuck
 vat	noun	a) barrel b) grip
 vatten	verb	to catch, to grasp
 vechten	verb	to fight
-veel	noun	much
+veel	adv	much
 veelal	adv	often
 veelvuldig	adj	frequent
 veer	noun	a) feather b) spring
@@ -6136,7 +6136,7 @@ verdenken	verb	to suspect
 verdenking	noun	suspicion
 verder (adj)	adj	further
 verder (adv)	adv	further
-verderop	noun	further down
+verderop	adv	further down
 verdienen	verb	to earn
 verdienste	noun	merit
 verdiepen (zich)	verb	to go into, to be caught up in
@@ -6540,7 +6540,7 @@ voorganger	noun	predecessor
 voorgoed	adv	permanently
 voorheen	adv	before
 voorhoofd	noun	forehead
-voorin	noun	in (the) front
+voorin	adv	in (the) front
 voorjaar	noun	spring
 voorkant	noun	front
 voorkeur	noun	preference
@@ -6556,7 +6556,7 @@ voornemen (noun)	noun	intention
 voornemen (verb)	verb	to plan
 vooroordeel	noun	prejudice
 voorop	adv	ahead
-voorover	noun	face forward
+voorover	adv	face forward
 voorraad	noun	stock
 voorraadkast	noun	pantry
 voorschrijven	verb	to prescribe
@@ -7596,7 +7596,7 @@ gemakkelijk	adj	easy
 tweet	noun	tweet
 ex-vriend	adj	ex-boyfriend
 gent	noun	bird of the Sulidae family
-teveel	noun	excess
+teveel	adv	excess
 deur-aan-deur	noun	door to door
 ex-vriendin	noun	ex-girlfriend
 voort	noun	forth, forwards
@@ -8411,7 +8411,7 @@ winnares	noun	winner
 zwaan	noun	a swan, a large waterbird of the genera Cygnus and Coscoroba
 zweeds	adj	Swedish
 academisch	adj	academic
-achterover	noun	backwards, on one's back
+achterover	adv	backwards, on one's back
 afstandsbediening	noun	remote control
 antiek	noun	antique
 beugel	noun	stay, brace, bracket, prop, support
@@ -8704,7 +8704,7 @@ massief	adj	solid, massive
 meditatie	noun	meditation
 mensenhandel	noun	human trafficking
 ongewijzigd	noun	unaltered
-overboord	noun	overboard
+overboord	adv	overboard
 retweeten	verb	to retweet
 sensatie	noun	sensation
 stiefvader	noun	stepfather, stepdad
@@ -9494,7 +9494,7 @@ molenaar	noun	miller
 noodsituatie	noun	emergency situation
 nucleair	noun	nuclear
 onaanvaardbaar	adj	unacceptable, unallowable, impermissible
-ondersteboven	noun	upside down
+ondersteboven	adv	upside down
 onderwijzen	verb	to teach, to educate
 ondiep	adj	shallow
 ongedierte	noun	vermin, pests, harmful or undesirable animals
@@ -9567,7 +9567,7 @@ overlopen	verb	to overflow
 partnerschap	noun	partnership
 profetie	noun	prophecy
 puberteit	noun	puberty
-rechtdoor	noun	straight, straight ahead
+rechtdoor	adv	straight, straight ahead
 schoolmeisje	noun	schoolgirl
 simulatie	noun	simulation
 solide	noun	solid, secure
@@ -9973,7 +9973,7 @@ ingewanden	adj	guts, entrails, innards
 kameel	noun	camel
 karakteristiek	noun	characteristic
 kudde-instinct	noun	herd instinct
-linksaf	noun	towards the left
+linksaf	adv	towards the left
 masseren	noun	to
 meel	noun	flour, meal, farina
 misleiding	noun	deception
