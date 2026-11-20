@@ -5,8 +5,8 @@ staan	zitten	Pair with zitten. Same adult and the same room: the body rests on b
 zitten	staan	Pair with staan. Same adult and the same room: a chair takes the seat's weight here, the body rests on both feet with no chair there.
 openen	sluiten	Pair with sluiten. Same door and the same flat palm: the gap widens to a band of light here, it narrows to a sliver there.
 sluiten	openen	Pair with openen. Same door and the same flat palm: the gap narrows to a sliver here, it widens to a band of light there.
-kopen	verkopen	Pair with verkopen. Same two people at the same stall: the bag and the note meet in the middle here, the bag is held out by the seller there.
-verkopen	kopen	Pair with kopen. Same two people at the same stall: the bag is held out by the seller here, the bag and the note meet in the middle there.
+kopen	verkopen	Pair with verkopen. Same two people at the same counter with the same cash register: the arrow marks the buyer here, who holds out the note; it marks the seller there, who holds out the bag.
+verkopen	kopen	Pair with kopen. Same two people at the same counter with the same cash register: the arrow marks the seller here, who holds out the bag; it marks the buyer there, who holds out the note.
 leggen	zetten	Pair with zetten. Same hand on the same table: the object lies flat under a smoothing palm here, it stands upright as its base lands there.
 zetten	leggen	Pair with leggen. Same hand on the same table: the object stands upright as its base lands here, it lies flat under a smoothing palm there.
 lopen	rennen	Pair with rennen. Same adult on the same path: one foot stays down here, both feet leave the ground with a forward lean there.
