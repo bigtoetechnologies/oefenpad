@@ -438,9 +438,12 @@ and served by the .NET host from <code>/spelen/</code>, with their content behin
 <code>/api/games</code>.</p>
 <p>Voorzetselpaden (now <code>client/src/games/prepositions/</code>, scenes in
 <code>assets/voorzetselpaden/</code>) is the newest: a pilot with ninety-six
-levels — ten A0, twenty-three A1, forty-seven A2 and sixteen A2-pairs chunks, each taught across several example scenes, 382 in all — and the only game whose art is
-raster. Its 382 scene images are
-alpha masks drawn on a cobalt block, so they need no second file for dark mode. <a href="game-art.html"><code>Docs/game-art.html</code></a> has the art
+levels — ten A0, twenty-three A1, forty-seven A2 and sixteen A2-pairs chunks, each taught across several example scenes, 382 in all — and the only game whose art is a plain PNG
+per scene rather than an SVG symbol. Its 382 drawings are the delivered
+drawings themselves in
+<code>assets/voorzetselpaden/</code>, shown as ordinary <code>&lt;img&gt;</code> paths by the band pages
+and the game alike. There is no dark mode, so there is one file per scene.
+<a href="game-art.html"><code>Docs/game-art.html</code></a> has the art
 technique; <a href="prepositions-implementation.html"><code>Docs/prepositions-implementation.html</code></a> describes how the game is
 built, and <a href="prepositions.html"><code>Docs/prepositions.html</code></a> is the spec behind it.</p>
 <p><strong>The scene plans are HTML now, and they are the master.</strong> The seven Markdown

@@ -259,7 +259,7 @@ cards that carry a <code>class="beeld"</code> image are imported; <code>vragen o
 </tr>
 <tr>
 <td><code>assets/voorzetselpaden/*.png</code></td>
-<td>The alpha masks, 512 × 763, one per example scene</td>
+<td>The shipped drawings, 512 × 763, one per example scene</td>
 </tr>
 <tr>
 <td><code>tools/import-prepositions-band.py</code></td>
@@ -567,11 +567,11 @@ endpoint is the check that matters, because a caller can skip <code>/options</co
 entirely. The level list groups rows under an <code>A0</code> / <code>A1</code> heading
 (<code>.band-kop</code>); the row number keeps counting across bands.</p>
 <h2 id="the-art">The art</h2>
-<p>The ninety-one files are alpha masks, not pictures. <code>Scene</code> sets <code>--beeld</code> to
-the file URL and <code>.beeld</code> paints <code>var(--kobalt)</code> through it, so the ink follows
-the theme with one file. The formula, the portrait exception and the reason
-for it are in <a href="game-art.html"><code>game-art.html</code></a> under <em>Delivered raster art</em>; do not recolour the
-PNGs.</p>
+<p>Each file is the drawing that was delivered, shrunk to 512 × 763: no mask, no
+recolour. The band pages and <code>Scene</code> both point at it as an ordinary
+<code>&lt;img src="assets/voorzetselpaden/&lt;id&gt;.png"&gt;</code>. The formula, the portrait
+exception and the reason for it are in
+<a href="game-art.html"><code>game-art.html</code></a> under <em>Delivered raster art</em>.</p>
 <p><code>aspect-ratio: 512 / 763</code> in <code>prepositions.css</code> must match the shipped files.
 A new image at another ratio needs that rule changed, which changes every
 scene on the page.</p>

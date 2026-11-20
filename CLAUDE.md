@@ -1,14 +1,11 @@
 # Oefenpad
 
-This repository's documentation is HTML. Start here:
+**Read `AGENTS.md` first.** It is the router: what to read, what never to read,
+where each card family's source of truth lives, the code map and the commands.
 
-- **Project rules** — what the site is, the non-negotiables, the commands, where
-  things stand, and what is open: `Docs/project-rules.html`
-- **Every document**, with a menu: `Docs/index.html`
-- **Word list and levels** — `tools/lexicon/woorden.tsv` is the master vocabulary;
-  `tools/lexicon/woorden-niveau.tsv` is the word-to-level mapping. Explainer and
-  pipeline: `Docs/lexicon/index.html`. Do not look for a master word list anywhere
-  else, in this repository or in the BigToe Games one.
+Then `Docs/project-rules.html` before proposing or building anything — it is the
+canonical state of the project. Every other document is listed in
+`Docs/index.html`. There is no Markdown copy: the HTML is the document.
 
-Read `Docs/project-rules.html` before proposing or building anything. There is no
-Markdown copy: that page is the document.
+`tools/lexicon/woorden.tsv` is the master vocabulary (10,000 lemmas);
+`tools/lexicon/woorden-niveau.tsv` is the word-to-level mapping.

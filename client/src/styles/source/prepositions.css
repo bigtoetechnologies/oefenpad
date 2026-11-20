@@ -2,9 +2,8 @@
    Alleen tokens: --kobalt, --oranje, --inkt, --papier, --raster,
    --raster-zacht, --grijs, --goed, --fout, --rand, --rand-hard.
 
-   De tekeningen zijn transparante maskers (zie game-art.md): het beeld
-   is geen <img> maar een kobalt vlak met het penseel als masker. Zo
-   wisselt de kleur mee met het thema zonder tweede bestand. */
+   De tekeningen zijn gewone <img>-bestanden van kobalt op papier in
+   assets/voorzetselpaden/ (zie Docs/game-art.html). */
 
 :root{ --ruimte:clamp(12px,1.8vw,20px); }
 
@@ -75,15 +74,10 @@ body{background:var(--papier);color:var(--inkt)}
 .tekst > *{margin:0}
 
 /* ---------- het beeld ----------
-   Een kobalt vlak met de tekening als masker. Het masker heeft de
-   verhouding van de tekening (512 x 763). */
+   Een tekening van kobalt op papier, als gewoon <img>. Het bestand is
+   512 x 763 en schaalt binnen het vak. */
 .beeld{
-  width:100%;aspect-ratio:512/763;
-  background:var(--kobalt);
-  -webkit-mask-image:var(--beeld);mask-image:var(--beeld);
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-  -webkit-mask-position:center;mask-position:center;
-  -webkit-mask-size:contain;mask-size:contain;
+  display:block;width:100%;height:100%;object-fit:contain;
 }
 
 /* ---------- ontdek ---------- */

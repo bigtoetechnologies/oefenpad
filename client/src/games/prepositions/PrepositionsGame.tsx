@@ -1,4 +1,4 @@
-import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState, type CSSProperties } from 'react';
+import { Fragment, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { api, ApiError, fill, type GameLevel, type LevelResults, type Texts } from '../../api';
 import { GameShell } from '../../site/GameShell';
 import { ResumeNote } from '../../shared/ResumeNote';
@@ -123,44 +123,26 @@ function Sentence({ nl, focus }: { nl: string; focus: string[] }) {
 }
 
 /**
- * The drawing: a cobalt block masked by the brush-painted scene. The
- * image itself shows through the --beeld variable, so a hidden picture
- * must also stop painting that variable.
+ * The drawing: cobalt on paper, a plain <img> of the shipped file under
+ * assets/voorzetselpaden/. A missing file is hidden rather than left as a
+ * broken-image placeholder.
  */
 function Scene({ image, label, className }: { image: SceneImage; label?: string; className?: string }) {
   const [missing, setMissing] = useState(false);
-  const probe = useRef<HTMLImageElement>(null);
 
-  // The probe has no layout, so it never shows up; it only reports whether
-  // the file is there. Cached loads fire before React's onLoad is attached.
-  // Re-runs on every new file: the step keeps one Scene instance across its
-  // items, so a single 404 would otherwise blank every later drawing too.
-  useEffect(() => {
-    setMissing(false);
-    const element = probe.current;
-    if (element && element.complete && element.naturalWidth === 0) setMissing(true);
-  }, [image.url]);
+  // The step keeps one Scene instance across its items, so a 404 from the
+  // previous file must be cleared when the next one arrives.
+  useEffect(() => setMissing(false), [image.url]);
 
   return (
-    <div
+    <img
       className={className === undefined ? 'beeld' : `beeld ${className}`}
-      style={
-        missing || image.url === ''
-          ? { '--beeld': 'none' } as CSSProperties
-          : { '--beeld': `url("${image.url}")` } as CSSProperties
-      }
-      role={label === undefined ? undefined : 'img'}
-      aria-label={label}
+      src={image.url || undefined}
+      alt={label ?? ''}
+      style={missing || image.url === '' ? { visibility: 'hidden' } : undefined}
+      onError={() => setMissing(true)}
       aria-hidden={label === undefined ? true : undefined}
-    >
-      <img
-        ref={probe}
-        src={image.url}
-        alt=""
-        style={{ display: 'none' }}
-        onError={() => setMissing(true)}
-      />
-    </div>
+    />
   );
 }
 

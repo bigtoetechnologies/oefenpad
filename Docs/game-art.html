@@ -346,7 +346,7 @@ not a thin pen-and-ink illustration and not a pictogram. See <em>Style anchors</
 </tr>
 <tr>
 <td>Transparent, vector where possible</td>
-<td>It has to sit on paper in both themes</td>
+<td>It has to sit on paper, so the sheet shows through</td>
 </tr>
 <tr>
 <td>Scene art is 2:3 portrait</td>
@@ -602,7 +602,7 @@ hatching, not filled in.</p>
 </tr>
 <tr>
 <td>Background</td>
-<td>Paper, both in light and dark mode</td>
+<td>Paper</td>
 </tr>
 <tr>
 <td>Frame</td>
@@ -645,7 +645,8 @@ produces near-duplicates with the wrong emphasis.</p>
 </tr>
 <tr>
 <td>Background</td>
-<td>Transparent. No white plate, no paper-coloured rectangle</td>
+<td>Paper or transparent. The copy the page shows is cobalt on paper: no plate,
+no frame, no second rectangle</td>
 </tr>
 <tr>
 <td>Depth</td>
@@ -655,18 +656,20 @@ produces near-duplicates with the wrong emphasis.</p>
 </table></div>
 <p>The logo uses one cobalt. Do not add <code>--kobalt-diep</code> or <code>--kobalt-licht</code> to an
 illustration to create depth; that is a page-fill behaviour, not an art one.</p>
-<p>A generated PNG will not land on the token exactly — the anchors sit at a
-slightly deeper <code>#1657C9</code>. That is fine, because the shipped file is a mask on a
-cobalt block and never carries its own colour; do not correct the hex in the
-raster.</p>
-<p>Game art has to survive the theme swap without a second file:</p>
+<p>There is no dark mode, so art does not have to survive a theme swap: one image
+per scene, with the cobalt baked in and referenced by path.</p>
 <ul>
-<li>Preferred: inline SVG with <code>fill="currentColor"</code>, and CSS sets
-  <code>color: var(--kobalt)</code>. The token swaps with the theme.</li>
-<li>If the image must be an <code>&lt;img&gt;</code>, use a CSS mask on a cobalt block rather than
-  baking <code>#2B50C8</code> onto a white background.</li>
-<li>Never ship a white rectangle behind the drawing. On dark paper it becomes a
-  bright card, and the brush disappears.</li>
+<li>Preferred: a flattened PNG of the drawing in cobalt on the paper colour,
+  shown with <code>&lt;img src="assets/voorzetselpaden/&lt;scene-id&gt;.png"&gt;</code>. No CSS colour,
+  no mask.</li>
+<li>Inline SVG with <code>fill="currentColor"</code> stays fine for icons and chrome. The
+  ban is on masks standing in for a picture.</li>
+<li>Never put the bytes in the page. A band page that carries its art as
+  <code>data:</code> URIs is 1.5–6.5 MB, has no reviewable diff, and shows a stale
+  snapshot of the drawing.</li>
+<li>A generated PNG will not land on the token exactly — the ink measures
+  <code>#1657C9</code> against <code>#2B50C8</code>. Correct it in the raster now that the file
+  carries the colour.</li>
 </ul>
 <h3 id="do-not-use-the-interface-paint-filter">Do not use the interface paint filter</h3>
 <p><code>data-verf</code> and the <code>#op-verf</code> / <code>#op-verf-klein</code> filters belong to rectangular
@@ -705,7 +708,8 @@ either as a page layout; use them to judge a drawing.</p>
 </tr>
 <tr>
 <td>Preposition scenes</td>
-<td><code>assets/voorzetselpaden/&lt;scene-id&gt;.png</code> (shipped raster; see <em>Delivered raster art</em>)</td>
+<td><code>assets/voorzetselpaden/&lt;scene-id&gt;.png</code> (one drawing; see
+<em>Delivered raster art</em>)</td>
 </tr>
 <tr>
 <td>Shared art</td>
@@ -738,25 +742,22 @@ the white paper baked in and drawn at 2:3 portrait. The originals stay untouched
 in <code>assets/verb-propositions/archived/</code>, one folder per batch. They are kept for
 provenance only; the style A references in <code>referenceimages/style-a/</code> are the
 only images attached to a Voorzetselpaden generation.</p>
-<p>They are not used as they arrived. A baked white background becomes a bright
-card on dark paper and the brush disappears, so each file is processed into an
-alpha mask and shipped at <code>assets/voorzetselpaden/*.png</code>, 512 × 763:</p>
-<pre><code class="language-python"># paper -&gt; 0, ink -&gt; 255; the floor keeps near-white noise out of the mask
-d = 255 - min(r, g, b)
-a = 0 if d &lt;= 10 else round((d - 10) * 255 / 245)
+<p>They are not used at their delivered size. The drawing keeps its own ink: it
+is shrunk to <code>assets/voorzetselpaden/*.png</code>, 512 × 763, and
+palette-compressed, which keeps 384 files near 35 MB. No mask is taken, nothing
+is recoloured, and the brush edge the delivery carries survives.</p>
+<pre><code class="language-python">flat = delivered.convert("RGB").resize((512, 763), Image.LANCZOS)
+flat = flat.quantize(colors=96, method=Image.MEDIANCUT)
 </code></pre>
-<p>The ink is not recoloured. The mask is drawn on a cobalt block in CSS, so the
-theme swap happens without a second file and <code>--kobalt</code> stays the only ink:</p>
-<pre><code class="language-css">.beeld{
-  background:var(--kobalt);
-  -webkit-mask-image:var(--beeld); mask-image:var(--beeld);
-  -webkit-mask-size:contain; mask-size:contain;
-  -webkit-mask-position:center; mask-position:center;
-  aspect-ratio:512/763;
-}
+<p>One file per scene, and it is both the master and what the site shows: the band
+pages and the game point at it as an ordinary <code>&lt;img&gt;</code>:</p>
+<pre><code class="language-sh">python3 tools/composite-prepositions-art.py &lt;delivered.png&gt; &lt;scene-id&gt;
 </code></pre>
-<p>Set <code>--beeld</code> inline per element with <code>url("art/&lt;scene-id&gt;.png")</code>. No JavaScript,
-no filter, and it renders on paper in both themes.</p>
+<p>There is no dark mode, so no mask is kept and no second file exists per scene.
+Rerun the command from the delivered drawing when the ink or the paper changes.
+Never put the bytes back into the page as base64: that made a band page 6.5 MB,
+gave every art fix a multi-megabyte diff, and left the page showing a stale
+snapshot.</p>
 <p>The portrait ratio is no longer an exception: 2:3 is the default for scene art,
 because all the images have one camera and one scale, which is what makes the
 contrast pairs comparable. Cropping to squares would cut each scene differently.
@@ -798,8 +799,8 @@ hatching the references never had, which is where the drift came from.</p>
 </tbody>
 </table></div>
 <p>The output is a sketch, not a deliverable. Pipeline it as described in
-<em>Delivered raster art</em>: alpha mask, 512 × 763, tinted by CSS. Do not ship the
-raster and do not correct its blue.</p>
+<em>Delivered raster art</em>: the drawing itself, shrunk to 512 × 763, which
+the pages reference by path.</p>
 <h2 id="do-dont">Do / Don't</h2>
 <div class="table-wrap"><table>
 <thead>
@@ -877,9 +878,11 @@ raster and do not correct its blue.</p>
       suggests the partner.</li>
 <li>[ ] No text, letters, numbers, logos or signage with readable marks.</li>
 <li>[ ] Cobalt only; no orange.</li>
-<li>[ ] 2:3 portrait, 784 × 1168 delivered, 512 × 763 shipped as an alpha mask.</li>
-<li>[ ] Flat white background, no frame and no shadow around the image.</li>
-<li>[ ] Renders in light mode, dark mode and with JavaScript off.</li>
+<li>[ ] 2:3 portrait, 784 × 1168 delivered; shipped as one 512 × 763 cobalt-on-paper
+      file at <code>assets/voorzetselpaden/</code>.</li>
+<li>[ ] Flat paper background, no frame and no shadow around the image.</li>
+<li>[ ] Renders with JavaScript off, from a file path, and loads nothing from a
+      <code>data:</code> URI.</li>
 </ul>
 <h2 id="why-the-old-word-images-do-not-set-the-style">Why the old word images do not set the style</h2>
 <p>The 157 images in <code>assets/wordimages/</code> are photorealistic white-background

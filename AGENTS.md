@@ -69,14 +69,14 @@ and ja/nee-question rule for Voorzetselpaden, and reciprocal contrast partners
 across every family. A contrast partner is optional and may cross bands.
 
 Art, per family: `assets/verbs/<slug>.png` (werkwoorden, plain `<img>`),
-`assets/voorzetselpaden/<id>.png` (one composited cobalt-on-paper file per
-scene, shown by both the docs and the game). Explanation cards have no game
+`assets/voorzetselpaden/<id>.png` (one file per scene: the delivered drawing,
+shown by both the docs and the game). Explanation cards have no game
 yet; Werkwoorden has a picture-choice game built from its 90 drawn A0/A1 cards
 (`tools/import-verb-game.py` → `server/.../verbs.json`).
 
 **Run `tools/check-prepositions-art.py` on the delivered drawings or
 `assets/verb-propositions/incoming`, never on the shipped files** — those are
-already composited, so a check on them audits the output, not the drawing.
+already shipped, so a check on them audits the output, not the drawing.
 
 **Never regenerate a family's data unless asked.** Voorzetselpaden's reviewed
 content and its shipped `prepositions.json` diverge on purpose.

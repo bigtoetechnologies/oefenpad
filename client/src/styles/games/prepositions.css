@@ -47,12 +47,7 @@
 .game--prepositions .tekst {display:flex;flex-direction:column;gap:var(--ruimte);min-height:0}
 .game--prepositions .tekst > * {margin:0}
 .game--prepositions .beeld {
-  width:100%;aspect-ratio:512/763;
-  background:var(--kobalt);
-  -webkit-mask-image:var(--beeld);mask-image:var(--beeld);
-  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
-  -webkit-mask-position:center;mask-position:center;
-  -webkit-mask-size:contain;mask-size:contain;
+  display:block;width:100%;height:100%;object-fit:contain;
 }
 .game--prepositions .zin {font-size:clamp(19px,2.4vw,27px);font-weight:800;letter-spacing:-.03em;text-align:center}
 .game--prepositions .betekenis {font-size:14px;color:var(--grijs);text-align:center}

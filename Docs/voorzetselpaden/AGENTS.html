@@ -252,6 +252,7 @@ python3 tools/prepositions-pages.py patch fixes.json [--dry-run]
 python3 tools/build-prepositions-matrix.py                # rebuild matrix-*.html
 python3 tools/number-prepositions-frames.py               # renumber the cards across all eight bands
 python3 tools/composite-prepositions-art.py IN.png ID    # delivered drawing -> the shipped file
+python3 tools/composite-prepositions-art.py --all        # every delivered drawing, re-shipped
 </code></pre>
 <p><code>check</code> fails on: duplicate ids, broken numbering, footer/id mismatch, wrong
 <code>data-examples</code>, dropped cards with art, Dutch the reviews found wrong
@@ -283,8 +284,9 @@ sections; do those by hand.</p>
 <li>Do not split band pages on <code>&lt;/section&gt;</code>; the counts differ. Split on
   <code>&lt;section class="cluster"&gt;</code> and <code>&lt;div class="chunkgroep"&gt;</code>.</li>
 <li><strong>Images are files, not data URIs.</strong> A drawn card points at
-  <code>../../assets/voorzetselpaden/&lt;id&gt;.png</code>: one composited cobalt-on-paper
-  file per scene, no mask, no second file. A new drawing goes through
+  <code>../../assets/voorzetselpaden/&lt;id&gt;.png</code>: the delivered drawing
+  itself, shrunk to 512 × 763, one file per scene, no mask, no second file. A
+  new drawing goes through
   <code>tools/composite-prepositions-art.py &lt;delivered.png&gt; &lt;id&gt;</code>. Never put the
   bytes into the page: a page with its art inlined is up to 6.5 MB and shows a
   stale snapshot.</li>
