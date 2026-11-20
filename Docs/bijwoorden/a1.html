@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijwoorden — A1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijwoorden — A1</h1>
+<p class="lead">Where things are and which way: used up and left over, upstairs and downstairs, left and right, everywhere and nowhere, in and out, more and fewer, day and night.</p>
+<div class="sum"><span>7 contrast sets</span><span>15 adverbs</span><span>frames #13–#27</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html" class="hier">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="op-over" data-band="a1"><h2><span class="woorden">op (leeg) · over (rest)</span></h2><p class="as">used up or left over · 2 cards</p><p class="zin">De koekjes zijn op, maar er is nog brood over.<span class="en">The cookies are finished, but there is still bread left.</span></p><p class="frame"><strong>Fixed frame.</strong> One plain glass jar with its lid off stands on a plain table beside one small plain plate, seen from the front, a plain wall behind, same sizes on the page. Only the cookies change: none left anywhere, or a few left.</p><div class="kaarten"><article id="op-leeg" class="kaart" data-id="op-leeg" data-band="a1" data-kind="adverb" data-cluster="op-over" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 13">#13</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">op</h3>
+<p class="gloss">used up</p>
+<p class="vlaggen"><span>used up or left over</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain glass jar with its lid off stands upright and empty on the plain table, nothing inside it but one crumb, and the small plain plate beside it has two crumbs and no cookies. The wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">an empty upright jar and a plate with only crumbs.</dd>
+<dt>Avoid</dt><dd class="avoid">a plate with three cookies (over-rest); a jar full of cookies (vol); a jar with its lid on (dicht); a hungry face (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="over-rest">Pair with over-rest. The only difference is the cookies: none, only crumbs, here; three still on the plate there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De melk is op, ik haal nieuwe.<br><span class="voorbeeld-en">The milk is finished, I will get new.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lege pot staat naast een bord met alleen kruimels.</dd>
+</dl>
+<p class="id">op-leeg.png · A1 · op-over</p>
+</article>
+<article id="over-rest" class="kaart" data-id="over-rest" data-band="a1" data-kind="adverb" data-cluster="op-over" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 14">#14</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">over</h3>
+<p class="gloss">left over</p>
+<p class="vlaggen"><span>used up or left over</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain glass jar with its lid off stands upright and empty on the plain table, and on the small plain plate beside it lie three whole round cookies, all the same size, in a loose row. The wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">three cookies on the plate next to an empty jar.</dd>
+<dt>Avoid</dt><dd class="avoid">a plate with only crumbs (op-leeg); a jar full of cookies (vol); a plate with one huge cookie (groot); cookies in a pile of many (veel).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-leeg">Pair with op-leeg. The only difference is the cookies: three still on the plate here, none but crumbs there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Er is nog soep over voor jou.<br><span class="voorbeeld-en">There is still soup left over for you.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lege pot staat naast een bord met drie koekjes.</dd>
+</dl>
+<p class="id">over-rest.png · A1 · op-over</p>
+</article></div></section>
+<section class="cluster" data-cluster="boven-beneden" data-band="a1"><h2><span class="woorden">boven · beneden</span></h2><p class="as">upstairs or downstairs · 2 cards</p><p class="zin">De slaapkamer is boven, maar de keuken is beneden.<span class="en">The bedroom is upstairs, but the kitchen is downstairs.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain two-storey house seen from the front with the front wall cut away so both floors show, a plain staircase joining them, a pitched roof above. One adult in plain clothes, same size in every drawing. Only the floor the adult stands on changes.</p><div class="kaarten"><article id="boven" class="kaart" data-id="boven" data-band="a1" data-kind="adverb" data-cluster="boven-beneden" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 15">#15</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">boven</h3>
+<p class="gloss">upstairs</p>
+<p class="vlaggen"><span>upstairs or downstairs</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain two-storey cutaway house shows one adult standing on the upper floor beside a plain bed, near the top of the staircase, with the lower floor empty except for a plain table. The pitched roof sits just above the adult's head.</dd>
+<dt>Must read</dt><dd class="must">the person on the upper floor beside a bed, the lower floor empty.</dd>
+<dt>Avoid</dt><dd class="avoid">a person on the lower floor (beneden); a person on the roof outside (buiten); a person at the top step of the stairs only (bovenaan); a person standing on a table (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="beneden">Pair with beneden. The only difference is the floor: the adult stands on the upper floor beside the bed here, on the lower floor beside the table there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen slapen boven.<br><span class="voorbeeld-en">The children are sleeping upstairs.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op de eerste verdieping van een huis, naast een bed.</dd>
+</dl>
+<p class="id">boven.png · A1 · boven-beneden</p>
+</article>
+<article id="beneden" class="kaart" data-id="beneden" data-band="a1" data-kind="adverb" data-cluster="boven-beneden" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 16">#16</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">beneden</h3>
+<p class="gloss">downstairs</p>
+<p class="vlaggen"><span>upstairs or downstairs</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain two-storey cutaway house shows one adult standing on the lower floor beside a plain table, near the foot of the staircase, with the upper floor empty except for a plain bed. The ground line runs just under the adult's shoes.</dd>
+<dt>Must read</dt><dd class="must">the person on the lower floor beside a table, the upper floor empty.</dd>
+<dt>Avoid</dt><dd class="avoid">a person on the upper floor (boven); a person in a cellar below the ground (not the card); a person at the bottom step only (onderaan); a person outside the house (buiten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="boven">Pair with boven. The only difference is the floor: the adult stands on the lower floor beside the table here, on the upper floor beside the bed there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij eten beneden in de keuken.<br><span class="voorbeeld-en">We eat downstairs in the kitchen.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op de begane grond van een huis, naast een tafel.</dd>
+</dl>
+<p class="id">beneden.png · A1 · boven-beneden</p>
+</article></div></section>
+<section class="cluster" data-cluster="links-rechts" data-band="a1"><h2><span class="woorden">links · rechts</span></h2><p class="as">left or right · 2 cards</p><p class="zin">Links is de bank, rechts is de bushalte.<span class="en">On the left is the bank, on the right is the bus stop.</span></p><p class="frame"><strong>Fixed frame.</strong> One adult in plain clothes stands whole-figure seen from behind on a flat ground line, feet together, a plain wall far ahead, with one plain tree on the left half of the picture and one identical tree on the right half; a small bird sits in the left tree. Only which arm points to which tree changes.</p><div class="kaarten"><article id="links" class="kaart" data-id="links" data-band="a1" data-kind="adverb" data-cluster="links-rechts" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 17">#17</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">links</h3>
+<p class="gloss">left</p>
+<p class="vlaggen"><span>left or right</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult, seen from behind, stretches the left arm straight out toward the plain tree with the small bird on the left half of the picture; the right arm hangs down. Both trees are the same size and the wall far ahead is plain.</dd>
+<dt>Must read</dt><dd class="must">the adult's left arm pointing at the tree on the left.</dd>
+<dt>Avoid</dt><dd class="avoid">the right arm pointing at the right tree (rechts); both arms raised (not the card); the adult facing the viewer so the sides swap (not the frame); an arrow shape (not the style).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rechts">Pair with rechts. The only difference is the raised arm: the left arm pointing at the left tree here, the right arm pointing at the right tree there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bank is links, naast de deur.<br><span class="voorbeeld-en">The bank is on the left, next to the door.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met zijn rug naar ons wijst met zijn arm naar de boom met de vogel; de andere boom is leeg.</dd>
+</dl>
+<p class="id">links.png · A1 · links-rechts</p>
+</article>
+<article id="rechts" class="kaart" data-id="rechts" data-band="a1" data-kind="adverb" data-cluster="links-rechts" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 18">#18</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">rechts</h3>
+<p class="gloss">right</p>
+<p class="vlaggen"><span>left or right</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult, seen from behind, stretches the right arm straight out toward the plain tree on the right half of the picture, away from the bird; the left arm hangs down. Both trees are the same size and the wall far ahead is plain.</dd>
+<dt>Must read</dt><dd class="must">the adult's right arm pointing at the tree on the right.</dd>
+<dt>Avoid</dt><dd class="avoid">the left arm pointing at the left tree (links); both arms raised (not the card); the adult facing the viewer so the sides swap (not the frame); an arrow shape (not the style).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="links">Pair with links. The only difference is the raised arm: the right arm pointing at the right tree here, the left arm pointing at the left tree there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bushalte is rechts.<br><span class="voorbeeld-en">The bus stop is on the right.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met zijn rug naar ons wijst met zijn arm naar de boom zonder vogel; in de andere boom zit een vogel.</dd>
+</dl>
+<p class="id">rechts.png · A1 · links-rechts</p>
+</article></div></section>
+<section class="cluster" data-cluster="overal-nergens" data-band="a1"><h2><span class="woorden">overal · nergens</span></h2><p class="as">flowers everywhere or none · 2 cards</p><p class="zin">Er zijn overal bloemen, maar nergens een bank.<span class="en">There are flowers everywhere, but nowhere a bench.</span></p><p class="frame"><strong>Fixed frame.</strong> A flat rectangular field seen from slightly above, bounded by a plain low fence line, with one adult in plain clothes standing at the bottom edge looking into it, arms hanging at the sides, same size in every drawing. Only the flowers change: small plain flowers in every part of the field, or none.</p><div class="kaarten"><article id="overal" class="kaart" data-id="overal" data-band="a1" data-kind="adverb" data-cluster="overal-nergens" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 19">#19</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">overal</h3>
+<p class="gloss">everywhere</p>
+<p class="vlaggen"><span>flowers everywhere or none</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The flat field seen from slightly above is dotted with small plain flowers in every part: foreground, middle and far corner, dozens in all, spaced evenly. The adult stands at the bottom edge with arms hanging at the sides, looking into the field.</dd>
+<dt>Must read</dt><dd class="must">flowers spread over every part of the field.</dd>
+<dt>Avoid</dt><dd class="avoid">a field with no flowers (nergens); flowers only in one corner (ergens); a dense solid mass of flowers (veel); a single big flower (groot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="nergens">Pair with nergens. The only difference is the flowers: spread over every part of the field here, absent from every part there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Overal in de stad staan fietsen.<br><span class="voorbeeld-en">There are bikes everywhere in the city.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat aan de rand van een veld met bloemen in elke hoek.</dd>
+</dl>
+<p class="id">overal.png · A1 · overal-nergens</p>
+</article>
+<article id="nergens" class="kaart" data-id="nergens" data-band="a1" data-kind="adverb" data-cluster="overal-nergens" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 20">#20</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">nergens</h3>
+<p class="gloss">nowhere</p>
+<p class="vlaggen"><span>flowers everywhere or none</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The flat field seen from slightly above is bare plain ground from the foreground to the far corner, with no flower or plant anywhere. The adult stands at the bottom edge with arms hanging at the sides, looking out over the empty field.</dd>
+<dt>Must read</dt><dd class="must">a completely bare field from edge to edge.</dd>
+<dt>Avoid</dt><dd class="avoid">a field full of flowers (overal); a field with one flower in a corner (ergens); a person sleeping on the field (not the card); a field of snow (not the frame).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="overal">Pair with overal. The only difference is the flowers: none anywhere here, spread over every part there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kan mijn sleutels nergens vinden.<br><span class="voorbeeld-en">I cannot find my keys anywhere.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat aan de rand van een kaal veld zonder een enkele bloem.</dd>
+</dl>
+<p class="id">nergens.png · A1 · overal-nergens</p>
+</article></div></section>
+<section class="cluster" data-cluster="ingang" data-band="a1"><h2><span class="woorden">naar binnen · naar buiten</span></h2><p class="as">direction through a door · 2 cards</p><p class="zin">Hij gaat naar binnen en zij gaat naar buiten.<span class="en">He is going in and she is going out.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain house seen from the front with one open door on a flat ground line, a short plain path in front of the door, one adult in plain clothes, same size in every drawing. Only the adult's direction through the doorway changes: stepping in, or stepping out.</p><div class="kaarten"><article id="naar-binnen" class="kaart" data-id="naar-binnen" data-band="a1" data-kind="adverb" data-cluster="ingang" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 21">#21</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">naar binnen</h3>
+<p class="gloss">inside (going in)</p>
+<p class="vlaggen"><span>direction through a door</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult is seen from behind, one foot already over the threshold of the open door, the other foot lifted, the body leaning forward into the open doorway. The short plain path behind the adult is empty and the door stands wide open.</dd>
+<dt>Must read</dt><dd class="must">a back-turned person stepping over the threshold into the doorway.</dd>
+<dt>Avoid</dt><dd class="avoid">a person walking out of the door toward the viewer (naar buiten); a person standing inside the room (binnen); a person knocking at a shut door (not the card); a person on the path far from the door (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="naar-buiten">Pair with naar-buiten. The only difference is the direction: a back-turned person stepping into the doorway here, a front-facing person stepping out of it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Kom maar naar binnen, het is koud.<br><span class="voorbeeld-en">Come inside, it is cold.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met zijn rug naar ons zet een voet over de drempel van een open deur.</dd>
+</dl>
+<p class="id">naar-binnen.png · A1 · ingang</p>
+</article>
+<article id="naar-buiten" class="kaart" data-id="naar-buiten" data-band="a1" data-kind="adverb" data-cluster="ingang" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 22">#22</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">naar buiten</h3>
+<p class="gloss">outside (going out)</p>
+<p class="vlaggen"><span>direction through a door</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult is seen from the front, one foot already over the threshold of the open door onto the path, the other foot still inside, the body leaning forward toward the viewer. The short plain path ahead of the adult is empty and the door stands wide open.</dd>
+<dt>Must read</dt><dd class="must">a front-facing person stepping over the threshold out of the doorway.</dd>
+<dt>Avoid</dt><dd class="avoid">a person walking into the door away from the viewer (naar binnen); a person standing in the garden (buiten); a person leaning out of a window (not the card); a person with a suitcase on a road (onderweg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="naar-binnen">Pair with naar-binnen. The only difference is the direction: a front-facing person stepping out of the doorway here, a back-turned person stepping into it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen gaan naar buiten om te spelen.<br><span class="voorbeeld-en">The children are going outside to play.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man kijkt ons aan en zet een voet over de drempel van een open deur op het pad.</dd>
+</dl>
+<p class="id">naar-buiten.png · A1 · ingang</p>
+</article></div></section>
+<section class="cluster" data-cluster="vergelijking" data-band="a1"><h2><span class="woorden">meer · minder · evenveel</span></h2><p class="as">more or fewer than a reference · 3 cards</p><p class="zin">Jan heeft meer appels dan Eva, Kees heeft minder en Lisa heeft evenveel.<span class="en">Jan has more apples than Eva, Kees has fewer and Lisa has the same number.</span></p><p class="frame"><strong>Fixed frame.</strong> Two plain round plates stand side by side on a plain table seen from the front, a plain wall behind, same plate size. The left plate always holds four whole round apples. Only the number of apples on the right plate changes against that reference.</p><div class="kaarten"><article id="meer" class="kaart" data-id="meer" data-band="a1" data-kind="adverb" data-cluster="vergelijking" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 23">#23</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">meer</h3>
+<p class="gloss">more</p>
+<p class="vlaggen"><span>more or fewer than a reference</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The left plate holds four whole round apples as always; the right plate holds eight apples in two tidy rows, clearly twice as many. Both plates are the same size, the table and the wall plain.</dd>
+<dt>Must read</dt><dd class="must">the right plate visibly fuller, with twice the apples of the left.</dd>
+<dt>Avoid</dt><dd class="avoid">a right plate with one apple (minder); a right plate with four apples (evenveel); a right plate with one huge apple (groot); a basket of dozens (veel).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="minder evenveel">Pair with minder and evenveel. The only difference is the right plate: eight apples here, one in minder, four in evenveel.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik wil meer koffie, alsjeblieft.<br><span class="voorbeeld-en">I would like more coffee, please.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee borden staan naast elkaar; het rechterbord heeft acht appels, het linkerbord vier.</dd>
+</dl>
+<p class="id">meer.png · A1 · vergelijking</p>
+</article>
+<article id="minder" class="kaart" data-id="minder" data-band="a1" data-kind="adverb" data-cluster="vergelijking" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 24">#24</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">minder</h3>
+<p class="gloss">fewer</p>
+<p class="vlaggen"><span>more or fewer than a reference</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The left plate holds four whole round apples as always; the right plate holds just one apple in the middle of a bare plate. Both plates are the same size, the table and the wall plain.</dd>
+<dt>Must read</dt><dd class="must">the right plate with one apple against four on the left.</dd>
+<dt>Avoid</dt><dd class="avoid">a right plate with eight apples (meer); a right plate with four apples (evenveel); an empty right plate (leeg); a tiny right plate (klein).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="meer evenveel">Pair with meer and evenveel. The only difference is the right plate: one apple here, eight in meer, four in evenveel.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik drink minder koffie dan vroeger.<br><span class="voorbeeld-en">I drink less coffee than before.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee borden staan naast elkaar; het rechterbord heeft één appel, het linkerbord vier.</dd>
+</dl>
+<p class="id">minder.png · A1 · vergelijking</p>
+</article>
+<article id="evenveel" class="kaart" data-id="evenveel" data-band="a1" data-kind="adverb" data-cluster="vergelijking" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 25">#25</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">evenveel</h3>
+<p class="gloss">as many</p>
+<p class="vlaggen"><span>more or fewer than a reference</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The left plate holds four whole round apples as always; the right plate also holds four apples in the same square arrangement, so the two plates look like mirror twins. Both plates are the same size, the table and the wall plain.</dd>
+<dt>Must read</dt><dd class="must">two plates with identical four-apple arrangements.</dd>
+<dt>Avoid</dt><dd class="avoid">a right plate with eight apples (meer); a right plate with one apple (minder); two different fruits on the plates (not the card); one plate with eight apples (veel).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="meer minder">Pair with meer and minder. The only difference is the right plate: four apples in the same arrangement here, eight in meer, one in minder.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij hebben evenveel geld.<br><span class="voorbeeld-en">We have the same amount of money.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee borden staan naast elkaar met precies dezelfde ronde vruchten in hetzelfde patroon.</dd>
+</dl>
+<p class="id">evenveel.png · A1 · vergelijking</p>
+</article></div></section>
+<section class="cluster" data-cluster="dagdeel" data-band="a1"><h2><span class="woorden">overdag · 's nachts</span></h2><p class="as">sun or moon · 2 cards</p><p class="zin">Overdag schijnt de zon, maar 's nachts schijnt de maan.<span class="en">By day the sun shines, but at night the moon shines.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain park bench and one plain tree stand on a flat ground line under an open plain sky, seen from the front, same size on the page, with no person and no house. Only the body in the sky above the tree changes: a round sun with short rays, or a crescent moon.</p><div class="kaarten"><article id="overdag" class="kaart" data-id="overdag" data-band="a1" data-kind="adverb" data-cluster="dagdeel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 26">#26</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">overdag</h3>
+<p class="gloss">by day</p>
+<p class="vlaggen"><span>sun or moon</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A plain park bench and one plain tree stand on the flat ground line under the open plain sky, seen from the front. High in the sky above the tree stands one round sun with short straight rays. Nothing else is in the sky, and the bench is empty.</dd>
+<dt>Must read</dt><dd class="must">a round sun with rays high in the sky.</dd>
+<dt>Avoid</dt><dd class="avoid">a crescent moon in the sky (nachts); a sun low on the horizon (vroeg); a lamp shining indoors (aan); a cloudy sky with no sun (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="nachts">Pair with nachts. The only difference is the body in the sky: a round sun with rays here, a crescent moon there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Overdag werk ik en 's avonds leer ik.<br><span class="voorbeeld-en">By day I work and in the evening I study.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lege bank en een boom; hoog in de lucht staat een zon met stralen.</dd>
+</dl>
+<p class="id">overdag.png · A1 · dagdeel</p>
+</article>
+<article id="nachts" class="kaart" data-id="nachts" data-band="a1" data-kind="adverb" data-cluster="dagdeel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 27">#27</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">'s nachts</h3>
+<p class="gloss">at night</p>
+<p class="vlaggen"><span>sun or moon</span><span>A1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A plain park bench and one plain tree stand on the flat ground line under the open plain sky, seen from the front. High in the sky above the tree hangs one crescent moon, drawn as a plain outline. Nothing else is in the sky, and the bench is empty.</dd>
+<dt>Must read</dt><dd class="must">a crescent moon high in the sky.</dd>
+<dt>Avoid</dt><dd class="avoid">a round sun with rays (overdag); a lit window under a moon (laat); a plain dark box (donker); a person asleep in bed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="overdag">Pair with overdag. The only difference is the body in the sky: a crescent moon here, a round sun with rays there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">'s Nachts is het stil in de straat.<br><span class="voorbeeld-en">At night it is quiet in the street.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lege bank en een boom; hoog in de lucht staat een maansikkel.</dd>
+</dl>
+<p class="id">nachts.png · A1 · dagdeel</p>
+</article></div></section>
+</main>
+</body>
+</html>

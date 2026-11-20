@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijwoorden — B1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijwoorden — B1</h1>
+<p class="lead">Finer places and postures: top, halfway and bottom of the stairs, front and back seat, middle and aside, upright and upside down, on the front and back of a bike, across and slantwise, underground and above ground, on one's feet and going flying, leaning back and bending forward, on board and overboard, at the top and at the bottom of a cupboard.</p>
+<div class="sum"><span>11 contrast sets</span><span>23 adverbs</span><span>frames #43–#65</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html" class="hier">B1</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="bovenaan-onderaan" data-band="b1"><h2><span class="woorden">bovenaan · halverwege · onderaan</span></h2><p class="as">place on a staircase · 3 cards</p><p class="zin">Mijn zoon staat bovenaan, mijn dochter onderaan en ik sta halverwege.<span class="en">My son is standing at the top, my daughter at the bottom and I am standing halfway.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain staircase of ten steps with a plain handrail, seen from the side and rising to the right, with a flat landing at the top and a flat floor at the bottom. One adult in plain clothes, same size in every drawing. Only the step the adult stands on changes.</p><div class="kaarten"><article id="bovenaan" class="kaart" data-id="bovenaan" data-band="b1" data-kind="adverb" data-cluster="bovenaan-onderaan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 43">#43</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">bovenaan</h3>
+<p class="gloss">at the top</p>
+<p class="vlaggen"><span>place on a staircase</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain ten-step staircase rises to the right and the adult stands on the top step at the edge of the flat landing, one hand on the handrail, looking down the steps. The bottom of the stairs and the floor are empty.</dd>
+<dt>Must read</dt><dd class="must">the person on the topmost step at the landing, looking down the stairs.</dd>
+<dt>Avoid</dt><dd class="avoid">the person on the bottom step (onderaan); the person on the fifth step, halfway up (halverwege); the person on an upper floor with no staircase shown (boven); the person on the roof (buiten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="halverwege onderaan">Pair with onderaan and halverwege. The only difference is the step: the topmost step at the landing here, the bottom step or the fifth step there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij wacht bovenaan.<br><span class="voorbeeld-en">He is waiting at the top.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op de hoogste trede met een hand op de leuning en kijkt de trap af.</dd>
+</dl>
+<p class="id">bovenaan.png · B1 · bovenaan-onderaan</p>
+</article>
+<article id="halverwege" class="kaart" data-id="halverwege" data-band="b1" data-kind="adverb" data-cluster="bovenaan-onderaan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 44">#44</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">halverwege</h3>
+<p class="gloss">halfway</p>
+<p class="vlaggen"><span>place on a staircase</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain ten-step staircase rises to the right and the adult stands on the fifth step, about halfway between the floor and the landing, one hand on the handrail, looking up the steps. The landing at the top and the floor at the bottom are both empty.</dd>
+<dt>Must read</dt><dd class="must">the person on the fifth step, about halfway between the floor and the landing.</dd>
+<dt>Avoid</dt><dd class="avoid">the person on the top step (bovenaan); the person on the bottom step (onderaan); the person on the second step, close to the floor (not the card); the person sitting on a step (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovenaan onderaan">Pair with bovenaan and onderaan. The only difference is the step: the fifth step here, the topmost step or the bottom step there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Halverwege stopt hij even.<br><span class="voorbeeld-en">Halfway he stops for a moment.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op de middelste trede van een trap met een hand op de leuning en kijkt naar de overloop.</dd>
+</dl>
+<p class="id">halverwege.png · B1 · bovenaan-onderaan</p>
+</article>
+<article id="onderaan" class="kaart" data-id="onderaan" data-band="b1" data-kind="adverb" data-cluster="bovenaan-onderaan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 45">#45</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">onderaan</h3>
+<p class="gloss">at the bottom</p>
+<p class="vlaggen"><span>place on a staircase</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain ten-step staircase rises to the right and the adult stands on the bottom step at the edge of the flat floor, one hand on the handrail, looking up the steps. The top landing is empty.</dd>
+<dt>Must read</dt><dd class="must">the person on the lowest step at the floor, looking up the stairs.</dd>
+<dt>Avoid</dt><dd class="avoid">the person on the top step (bovenaan); the person on the fifth step, halfway up (halverwege); the person on the lower floor with no staircase shown (beneden); the person crawling on the floor (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovenaan halverwege">Pair with bovenaan and halverwege. The only difference is the step: the bottom step on the floor here, the topmost step or the fifth step there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij wacht onderaan.<br><span class="voorbeeld-en">She is waiting at the bottom.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op de laagste trede met een hand op de leuning en kijkt de trap op.</dd>
+</dl>
+<p class="id">onderaan.png · B1 · bovenaan-onderaan</p>
+</article></div></section>
+<section class="cluster" data-cluster="voorin-achterin" data-band="b1"><h2><span class="woorden">voorin · achterin</span></h2><p class="as">seat in a car · 2 cards</p><p class="zin">Mijn zoon zit achterin, maar mijn vrouw zit voorin.<span class="en">My son is sitting in the back, but my wife is sitting in the front.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain car seen from straight above with its roof removed, so four seats show in two rows, on a plain road. A driver sits at the wheel in the front left seat. One child in plain clothes, same size in every drawing. Only the seat the child occupies changes.</p><div class="kaarten"><article id="voorin" class="kaart" data-id="voorin" data-band="b1" data-kind="adverb" data-cluster="voorin-achterin" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 46">#46</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">voorin</h3>
+<p class="gloss">in the front</p>
+<p class="vlaggen"><span>seat in a car</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain car seen from straight above with its roof removed shows the four seats in two rows. The driver sits at the wheel in the front left seat, and the child sits in the front right seat beside the driver, seat belt across the chest. Both back seats are empty.</dd>
+<dt>Must read</dt><dd class="must">the child in the front row beside the driver, both back seats empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the child in the back row (achterin); the child on the driver's lap (not the card); the child in the boot (not the card); the child outside the car (buiten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="achterin">Pair with achterin. The only difference is the seat: the child sits in the front row beside the driver here, in the back row there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Je moet voorin zitten, anders word je ziek.<br><span class="voorbeeld-en">You have to sit in the front, otherwise you will get sick.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een auto van bovenaf zonder dak; een kind zit met een riem om naast de bestuurder en de stoelen op de tweede rij zijn leeg.</dd>
+</dl>
+<p class="id">voorin.png · B1 · voorin-achterin</p>
+</article>
+<article id="achterin" class="kaart" data-id="achterin" data-band="b1" data-kind="adverb" data-cluster="voorin-achterin" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 47">#47</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">achterin</h3>
+<p class="gloss">in the back</p>
+<p class="vlaggen"><span>seat in a car</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain car seen from straight above with its roof removed shows the four seats in two rows. The driver sits at the wheel in the front left seat, and the child sits in the back right seat, seat belt across the chest. The front seat beside the driver is empty.</dd>
+<dt>Must read</dt><dd class="must">the child in the back row, the seat beside the driver empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the child in the front row beside the driver (voorin); the child lying across the seats (not the card); the child in the boot (not the card); the child outside the car (buiten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="voorin">Pair with voorin. The only difference is the seat: the child sits in the back row here, in the front row beside the driver there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen zitten achterin.<br><span class="voorbeeld-en">The children are sitting in the back.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een auto van bovenaf zonder dak; een kind zit met een riem om op de tweede rij en de stoel naast de bestuurder is leeg.</dd>
+</dl>
+<p class="id">achterin.png · B1 · voorin-achterin</p>
+</article></div></section>
+<section class="cluster" data-cluster="midden-opzij" data-band="b1"><h2><span class="woorden">midden · opzij</span></h2><p class="as">place in a street · 2 cards</p><p class="zin">Hij staat midden op straat, maar nu gaat hij opzij.<span class="en">He is standing in the middle of the street, but now he steps aside.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain wide street seen from the front as a flat strip with a plain kerb at each side and a plain wall far behind. One cyclist rides toward the viewer down the middle, still far off. One adult in plain clothes, whole-figure, same size in every drawing. Only the place of the adult changes: mid-street, or up on the kerb.</p><div class="kaarten"><article id="midden" class="kaart" data-id="midden" data-band="b1" data-kind="adverb" data-cluster="midden-opzij" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 48">#48</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">midden</h3>
+<p class="gloss">in the middle</p>
+<p class="vlaggen"><span>place in a street</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain wide street shows the adult standing exactly halfway between the two kerbs, arms hanging, facing the viewer, while the cyclist rides down the middle of the street toward the adult's back, still far off. Nothing else is on the street.</dd>
+<dt>Must read</dt><dd class="must">the person standing mid-street, in the cyclist's path.</dd>
+<dt>Avoid</dt><dd class="avoid">the person up on the kerb (opzij); the person lying on the road (not the card); the person at the far end of the street (ver); two people in the street (not the frame).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opzij">Pair with opzij. The only difference is the place: in the middle of the street here, up on the kerb there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het huis staat midden in het dorp.<br><span class="voorbeeld-en">The house stands in the middle of the village.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat precies tussen de twee stoepranden; achter hem komt een fietser aan.</dd>
+</dl>
+<p class="id">midden.png · B1 · midden-opzij</p>
+</article>
+<article id="opzij" class="kaart" data-id="opzij" data-band="b1" data-kind="adverb" data-cluster="midden-opzij" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 49">#49</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opzij</h3>
+<p class="gloss">aside</p>
+<p class="vlaggen"><span>place in a street</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain wide street shows the adult standing up on the left kerb, arms hanging, facing the viewer, while the cyclist rides down the middle of the street toward the viewer, still far off, the whole road clear. Nothing else is on the street.</dd>
+<dt>Must read</dt><dd class="must">the person up on the kerb, the road clear for the cyclist.</dd>
+<dt>Avoid</dt><dd class="avoid">the person standing in the middle of the street (midden); the person walking away along the street (not the card); the person hiding behind a wall (not the card); the person lying on the pavement (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="midden">Pair with midden. The only difference is the place: up on the kerb here, in the middle of the street there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ga even opzij, ik wil erdoor.<br><span class="voorbeeld-en">Step aside for a moment, I want to get through.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op de stoeprand; over de lege weg komt een fietser aan.</dd>
+</dl>
+<p class="id">opzij.png · B1 · midden-opzij</p>
+</article></div></section>
+<section class="cluster" data-cluster="stand" data-band="b1"><h2><span class="woorden">rechtop · ondersteboven</span></h2><p class="as">orientation of a mug · 2 cards</p><p class="zin">Deze beker staat rechtop, maar die beker staat ondersteboven.<span class="en">This mug is standing upright, but that mug is upside down.</span></p><p class="frame"><strong>Fixed frame.</strong> One plain mug with a handle, seen from the side, stands on a plain table with a plain wall behind, same size on the page. Only the way the mug stands changes: on its base, or on its rim.</p><div class="kaarten"><article id="rechtop" class="kaart" data-id="rechtop" data-band="b1" data-kind="adverb" data-cluster="stand" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 50">#50</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">rechtop</h3>
+<p class="gloss">upright</p>
+<p class="vlaggen"><span>orientation of a mug</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain mug with a handle stands on its flat base on the plain table, seen from the side, its open top facing the ceiling and the handle to the right. Nothing else is on the table, and the wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">a mug standing on its base with the open top up.</dd>
+<dt>Avoid</dt><dd class="avoid">a mug standing on its rim (ondersteboven); a mug lying on its side (plat); a very tall mug (hoog); a mug being filled from a jug (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ondersteboven">Pair with ondersteboven. The only difference is the mug: on its base with the open top up here, on its rim with the base up there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ga rechtop zitten, dan heb je geen pijn.<br><span class="voorbeeld-en">Sit up straight, then you will not have pain.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een beker staat met de bodem op de tafel; de open kant wijst naar het plafond.</dd>
+</dl>
+<p class="id">rechtop.png · B1 · stand</p>
+</article>
+<article id="ondersteboven" class="kaart" data-id="ondersteboven" data-band="b1" data-kind="adverb" data-cluster="stand" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 51">#51</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ondersteboven</h3>
+<p class="gloss">upside down</p>
+<p class="vlaggen"><span>orientation of a mug</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain mug with a handle stands on its rim on the plain table, seen from the side, its flat base facing the ceiling and the handle to the right. Nothing else is on the table, and the wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">a mug standing on its rim with the base up.</dd>
+<dt>Avoid</dt><dd class="avoid">a mug standing on its base (rechtop); a mug lying on its side (plat); a mug falling through the air (not the card); an empty mug with drops (leeg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rechtop">Pair with rechtop. The only difference is the mug: on its rim with the base up here, on its base with the open top up there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De fiets ligt ondersteboven in de sloot.<br><span class="voorbeeld-en">The bike is lying upside down in the ditch.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een beker staat met de rand op de tafel; de bodem wijst naar het plafond.</dd>
+</dl>
+<p class="id">ondersteboven.png · B1 · stand</p>
+</article></div></section>
+<section class="cluster" data-cluster="voorop-achterop" data-band="b1"><h2><span class="woorden">voorop · achterop</span></h2><p class="as">child seat on a bicycle · 2 cards</p><p class="zin">Mijn dochter zit niet meer voorop, maar achterop.<span class="en">My daughter no longer sits on the front, but on the back.</span></p><p class="frame"><strong>Fixed frame.</strong> One adult cycles on a plain upright bicycle seen from the side, riding right, on a flat road with a plain low wall behind. The bike carries two small child seats: one at the handlebar, one over the back wheel. Only the seat the child sits in changes.</p><div class="kaarten"><article id="voorop" class="kaart" data-id="voorop" data-band="b1" data-kind="adverb" data-cluster="voorop-achterop" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 52">#52</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">voorop</h3>
+<p class="gloss">on the front (of a bike)</p>
+<p class="vlaggen"><span>child seat on a bicycle</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult cycles to the right on the plain bicycle. The child sits in the small seat at the handlebar, between the adult's arms, both hands on the seat's front bar. The seat over the back wheel is empty. The road and the low wall behind are plain.</dd>
+<dt>Must read</dt><dd class="must">the child in the seat at the handlebar, the back seat empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the child in the seat over the back wheel (achterop); the child riding a bike of its own (not the card); the child walking beside the bike (not the card); the child in a trailer behind the bike (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="achterop">Pair with achterop. The only difference is the seat: the child sits at the handlebar here, over the back wheel there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn zoontje zit graag voorop.<br><span class="voorbeeld-en">My little son likes sitting on the front.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw fietst met een kind in het zitje bij het stuur, tussen haar armen; het zitje bij de bagagedrager is leeg.</dd>
+</dl>
+<p class="id">voorop.png · B1 · voorop-achterop</p>
+</article>
+<article id="achterop" class="kaart" data-id="achterop" data-band="b1" data-kind="adverb" data-cluster="voorop-achterop" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 53">#53</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">achterop</h3>
+<p class="gloss">on the back (of a bike)</p>
+<p class="vlaggen"><span>child seat on a bicycle</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult cycles to the right on the plain bicycle. The child sits in the small seat over the back wheel, behind the adult's back, hands holding the seat's sides. The seat at the handlebar is empty. The road and the low wall behind are plain.</dd>
+<dt>Must read</dt><dd class="must">the child in the seat over the back wheel, the front seat empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the child in the seat at the handlebar (voorop); the child pedalling a second bike behind (not the card); the child running behind the bike (not the card); the child standing next to a parked bike (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="voorop">Pair with voorop. The only difference is the seat: the child sits over the back wheel here, at the handlebar there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Spring maar achterop, ik breng je thuis.<br><span class="voorbeeld-en">Hop on the back, I will take you home.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw fietst met een kind in het zitje bij de bagagedrager, vlak bij haar rug; het zitje bij het stuur is leeg.</dd>
+</dl>
+<p class="id">achterop.png · B1 · voorop-achterop</p>
+</article></div></section>
+<section class="cluster" data-cluster="dwars-schuin" data-band="b1"><h2><span class="woorden">dwars · schuin</span></h2><p class="as">angle of a trunk over a path · 2 cards</p><p class="zin">De boom ligt niet schuin over het pad, maar dwars.<span class="en">The tree is not lying slantwise across the path, but straight across.</span></p><p class="frame"><strong>Fixed frame.</strong> A straight forest path runs up the page, seen from high above, with a row of tree trunks along each edge. One fallen trunk, longer than the path is wide, lies on the path with its ends between the verge trees. Only the angle of the fallen trunk changes.</p><div class="kaarten"><article id="dwars" class="kaart" data-id="dwars" data-band="b1" data-kind="adverb" data-cluster="dwars-schuin" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 54">#54</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">dwars</h3>
+<p class="gloss">across (at a right angle)</p>
+<p class="vlaggen"><span>angle of a trunk over a path</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The straight forest path is seen from a high viewpoint. The fallen tree trunk lies at a right angle to the path, from one edge straight to the other, closing the whole width like a gate. The rows of tree trunks along both edges are unchanged and nothing else is on the path.</dd>
+<dt>Must read</dt><dd class="must">a trunk lying at a right angle across the path.</dd>
+<dt>Avoid</dt><dd class="avoid">a trunk lying at a slant across the path (schuin); a trunk lying along the path (not the card); a tree still standing at the edge (rechtop); a pile of cut logs (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="schuin">Pair with schuin. The only difference is the angle: the trunk lies at a right angle to the path here, at a slant there. Cross-reference: Voorzetselpaden B1+ draws a tree dwars over de weg and one car dwars in a row of schuin parked cars; the taught items differ.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De auto staat dwars op de weg.<br><span class="voorbeeld-en">The car is standing across the road.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een boomstam ligt haaks op een recht bospad en sluit de hele breedte af.</dd>
+</dl>
+<p class="id">dwars.png · B1 · dwars-schuin</p>
+</article>
+<article id="schuin" class="kaart" data-id="schuin" data-band="b1" data-kind="adverb" data-cluster="dwars-schuin" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 55">#55</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">schuin</h3>
+<p class="gloss">slantwise, diagonally</p>
+<p class="vlaggen"><span>angle of a trunk over a path</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The straight forest path is seen from a high viewpoint. The fallen tree trunk lies at a slant over the path, one end at the left edge near the bottom, the other end at the right edge much higher up. The rows of tree trunks along both edges are unchanged and nothing else is on the path.</dd>
+<dt>Must read</dt><dd class="must">a trunk lying at a clear slant over the path.</dd>
+<dt>Avoid</dt><dd class="avoid">a trunk lying at a right angle across the path (dwars); a trunk lying along the path (not the card); a tree leaning against another tree (not the card); a trunk with a bend in it (krom).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="dwars">Pair with dwars. The only difference is the angle: the trunk lies at a slant over the path here, at a right angle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Steek de straat niet zomaar schuin over.<br><span class="voorbeeld-en">Do not just cross the street diagonally.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een boomstam ligt in een hoek over een recht bospad, van linksvoor naar rechtsachter.</dd>
+</dl>
+<p class="id">schuin.png · B1 · dwars-schuin</p>
+</article></div></section>
+<section class="cluster" data-cluster="ondergronds-bovengronds" data-band="b1"><h2><span class="woorden">ondergronds · bovengronds</span></h2><p class="as">level of a train · 2 cards</p><p class="zin">Hier rijdt de metro ondergronds, daar rijdt hij bovengronds.<span class="en">Here the metro runs underground, there it runs above ground.</span></p><p class="frame"><strong>Fixed frame.</strong> A cutaway landscape seen from the side: a flat ground surface with a row of plain houses and a railway track on it, and below it, deep in the earth, a round tunnel with a second track. One metro train, same size in every drawing. Only the place of the train changes.</p><div class="kaarten"><article id="ondergronds" class="kaart" data-id="ondergronds" data-band="b1" data-kind="adverb" data-cluster="ondergronds-bovengronds" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 56">#56</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ondergronds</h3>
+<p class="gloss">underground</p>
+<p class="vlaggen"><span>level of a train</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The cutaway landscape shows the plain metro train inside the round tunnel deep in the earth, wheels on the lower track, lit windows drawn as plain outlines. The railway track on the ground surface between the houses is empty. The houses and the earth layers are unchanged.</dd>
+<dt>Must read</dt><dd class="must">the train inside the tunnel deep in the earth, the surface track empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the train on the track between the houses (bovengronds); a train on a high bridge (not the card); a train going into a tunnel mouth (not the card); a cellar under a house (beneden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovengronds">Pair with bovengronds. The only difference is the place of the train: in the tunnel deep in the earth here, on the track between the houses there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de stad rijdt de metro ondergronds.<br><span class="voorbeeld-en">In the city the metro runs underground.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een trein rijdt door een tunnel diep in de aarde; de rails tussen de huizen zijn leeg.</dd>
+</dl>
+<p class="id">ondergronds.png · B1 · ondergronds-bovengronds</p>
+</article>
+<article id="bovengronds" class="kaart" data-id="bovengronds" data-band="b1" data-kind="adverb" data-cluster="ondergronds-bovengronds" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 57">#57</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">bovengronds</h3>
+<p class="gloss">above ground</p>
+<p class="vlaggen"><span>level of a train</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The cutaway landscape shows the plain metro train on the railway track on the ground surface, running between the plain houses. The round tunnel deep in the earth below is empty, its lower track bare. The houses and the earth layers are unchanged.</dd>
+<dt>Must read</dt><dd class="must">the train on the track between the houses, the tunnel below empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the train inside the tunnel deep in the earth (ondergronds); a train on a high bridge (not the card); a bus on the road (not the card); a train standing at a platform with people (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ondergronds">Pair with ondergronds. The only difference is the place of the train: on the track between the houses here, in the tunnel deep in the earth there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Buiten het centrum rijdt de metro bovengronds.<br><span class="voorbeeld-en">Outside the centre the metro runs above ground.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een trein rijdt over de rails tussen de huizen; de tunnel diep in de aarde is leeg.</dd>
+</dl>
+<p class="id">bovengronds.png · B1 · ondergronds-bovengronds</p>
+</article></div></section>
+<section class="cluster" data-cluster="overeind-onderuit" data-band="b1"><h2><span class="woorden">overeind · onderuit (gaan)</span></h2><p class="as">on the feet or fallen · 2 cards</p><p class="zin">Op het ijs blijft hij eerst overeind, maar dan gaat hij onderuit.<span class="en">On the ice he stays on his feet at first, but then he falls over.</span></p><p class="frame"><strong>Fixed frame.</strong> One adult in a winter coat on a frozen pavement, seen from the side, with a plain low wall and one bare tree behind and a few small ice patches on the ground, same size on the page. Only the adult's body changes: still on both feet, or feet flying off the ice.</p><div class="kaarten"><article id="overeind" class="kaart" data-id="overeind" data-band="b1" data-kind="adverb" data-cluster="overeind-onderuit" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 58">#58</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">overeind</h3>
+<p class="gloss">on one's feet (not fallen)</p>
+<p class="vlaggen"><span>on the feet or fallen</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult walks on the frozen pavement in small careful steps, both feet on the ice, knees slightly bent, arms held out wide for balance, body upright. The ice patches, the low wall and the bare tree behind are unchanged. Nothing lies on the ground.</dd>
+<dt>Must read</dt><dd class="must">a person upright on both feet on the ice, arms out for balance.</dd>
+<dt>Avoid</dt><dd class="avoid">a person slipping, feet flying forward (onderuit); a person sitting on a bench (zitten); a person skating fast with speed lines (snel); a person standing still on dry ground (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="onderuit">Pair with onderuit. The only difference is the body: upright on both feet here, feet flying forward and body tipping back there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij bleef met moeite overeind.<br><span class="voorbeeld-en">He only just managed to stay on his feet.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man loopt met kleine stapjes op een bevroren stoep, armen wijd, en staat nog op beide voeten.</dd>
+</dl>
+<p class="id">overeind.png · B1 · overeind-onderuit</p>
+</article>
+<article id="onderuit" class="kaart" data-id="onderuit" data-band="b1" data-kind="adverb" data-cluster="overeind-onderuit" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 59">#59</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">onderuit (gaan)</h3>
+<p class="gloss">(go) flying, slip and fall</p>
+<p class="vlaggen"><span>on the feet or fallen</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult is caught mid-slip on the frozen pavement: both feet shoot forward off the ice patch, the body tips back in the air above the ground, arms flung up, mouth open in surprise. The ice patches, the low wall and the bare tree behind are unchanged. Nothing lies on the ground.</dd>
+<dt>Must read</dt><dd class="must">a person in mid-slip, both feet shooting forward off the ice, body tipped back in the air.</dd>
+<dt>Avoid</dt><dd class="avoid">a person upright on both feet on the ice (overeind); a person already lying still on the ground (not the card); a person sprawled at ease in a chair (not the card); a person jumping on purpose (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="overeind">Pair with overeind. The only difference is the body: feet flying forward and body tipping back here, upright on both feet there. Taught as onderuit (gaan): the verb onderuitgaan (rank 9745) is taken by this card and is not carded elsewhere.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Op het gladde ijs ging zij onderuit.<br><span class="voorbeeld-en">On the slippery ice she fell over.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man glijdt weg op een bevroren stoep: zijn voeten schieten naar voren en hij valt naar achteren, met open mond.</dd>
+</dl>
+<p class="id">onderuit.png · B1 · overeind-onderuit</p>
+</article></div></section>
+<section class="cluster" data-cluster="achterover-voorover" data-band="b1"><h2><span class="woorden">achterover · voorover</span></h2><p class="as">lean of a seated person · 2 cards</p><p class="zin">Op de stoel leunt hij niet achterover, maar voorover.<span class="en">On the chair he does not lean back, but forward.</span></p><p class="frame"><strong>Fixed frame.</strong> One adult sits on a plain wooden chair with a backrest, seen from the side and facing right, both feet flat on the floor and both hands resting on the thighs, plain wall behind, same size on the page. Only the lean of the upper body changes.</p><div class="kaarten"><article id="achterover" class="kaart" data-id="achterover" data-band="b1" data-kind="adverb" data-cluster="achterover-voorover" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 60">#60</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">achterover</h3>
+<p class="gloss">backward (leaning back)</p>
+<p class="vlaggen"><span>lean of a seated person</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult sits on the plain wooden chair, feet flat and hands on the thighs, with the upper body tipped back against the backrest, shoulders well behind the hips and the face turned up toward the ceiling. The chair legs stay on the floor. The wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">a seated person with the upper body tipped back against the backrest.</dd>
+<dt>Avoid</dt><dd class="avoid">a seated person bent forward toward the knees (voorover); a person sitting straight (rechtop); a chair tipping over backward (not the card); a person lying on a sofa (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="voorover">Pair with voorover. The only difference is the lean: the upper body tips back against the backrest here, bends forward toward the knees there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij leunt lekker achterover in zijn stoel.<br><span class="voorbeeld-en">He leans back comfortably in his chair.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit op een stoel en leunt met zijn rug tegen de leuning, zijn gezicht naar het plafond.</dd>
+</dl>
+<p class="id">achterover.png · B1 · achterover-voorover</p>
+</article>
+<article id="voorover" class="kaart" data-id="voorover" data-band="b1" data-kind="adverb" data-cluster="achterover-voorover" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 61">#61</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">voorover</h3>
+<p class="gloss">forward (bending forward)</p>
+<p class="vlaggen"><span>lean of a seated person</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The adult sits on the plain wooden chair, feet flat and hands on the thighs, with the upper body bent forward far over the knees, the back clear of the backrest and the face turned down toward the floor. The chair is unchanged. The wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">a seated person bent forward over the knees, back clear of the backrest.</dd>
+<dt>Avoid</dt><dd class="avoid">a seated person tipped back against the backrest (achterover); a person sitting straight (rechtop); a person falling off the chair (onderuit); a person kneeling on the floor (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="achterover">Pair with achterover. The only difference is the lean: the upper body bends forward toward the knees here, tips back against the backrest there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij buigt voorover om haar veters te strikken.<br><span class="voorbeeld-en">She bends forward to tie her laces.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit op een stoel met zijn bovenlijf ver naar zijn knieën gebogen; zijn rug raakt de leuning niet.</dd>
+</dl>
+<p class="id">voorover.png · B1 · achterover-voorover</p>
+</article></div></section>
+<section class="cluster" data-cluster="boord" data-band="b1"><h2><span class="woorden">aan boord · overboord</span></h2><p class="as">on a boat or in the water · 2 cards</p><p class="zin">De man was eerst aan boord, nu is hij overboord gevallen.<span class="en">The man was on board at first, now he has fallen overboard.</span></p><p class="frame"><strong>Fixed frame.</strong> One small plain motor boat floats on a calm lake, side view, facing right, with a flat deck and a low rail, right beside a low bank of short grass at the left. One adult in a life jacket, same size in every drawing. Only the place of the adult changes: on the deck, or in the water beside the boat.</p><div class="kaarten"><article id="aan-boord" class="kaart" data-id="aan-boord" data-band="b1" data-kind="adverb" data-cluster="boord" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 62">#62</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">aan boord</h3>
+<p class="gloss">on board</p>
+<p class="vlaggen"><span>on a boat or in the water</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The small plain motor boat floats on the calm lake. The adult in the life jacket stands upright on the flat deck, one hand on the low rail, looking ahead. The water beside the boat is calm and empty, and the low grassy bank at the left is empty.</dd>
+<dt>Must read</dt><dd class="must">a person standing on the deck, one hand on the rail.</dd>
+<dt>Avoid</dt><dd class="avoid">a person in the water beside the boat (overboord); a person standing on the grassy bank beside the boat (aan wal); a person swimming far from any boat (not the card); a person climbing a ladder into the boat (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="overboord">Pair with overboord. The only difference is the adult's place: standing on the deck here, in the water beside the boat there. Vaste uitdrukkingen aan-wal borrows this frame and names both cards: change it with this set.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Alle passagiers zijn nu aan boord.<br><span class="voorbeeld-en">All passengers are on board now.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met een zwemvest staat op het dek van een kleine boot en houdt de reling vast.</dd>
+</dl>
+<p class="id">aan-boord.png · B1 · boord</p>
+</article>
+<article id="overboord" class="kaart" data-id="overboord" data-band="b1" data-kind="adverb" data-cluster="boord" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 63">#63</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">overboord</h3>
+<p class="gloss">overboard</p>
+<p class="vlaggen"><span>on a boat or in the water</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The small plain motor boat floats on the calm lake. The adult in the life jacket is in the water just beside the boat, head and one raised arm above the surface, small splash rings around him. The flat deck is empty, and the low grassy bank at the left is empty.</dd>
+<dt>Must read</dt><dd class="must">a person in the water beside the boat, the deck empty.</dd>
+<dt>Avoid</dt><dd class="avoid">a person standing on the deck (aan boord); a person diving neatly from the boat (not the card); a person swimming far from the boat (not the card); a person fishing from the deck (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-boord">Pair with aan-boord. The only difference is the adult's place: in the water beside the boat here, standing on the deck there. Vaste uitdrukkingen aan-wal borrows this frame and names both cards: change it with this set.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Tijdens de storm sloeg een man overboord.<br><span class="voorbeeld-en">During the storm a man went overboard.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met een zwemvest ligt naast een kleine boot in het water en steekt een arm omhoog; het dek is leeg.</dd>
+</dl>
+<p class="id">overboord.png · B1 · boord</p>
+</article></div></section>
+<section class="cluster" data-cluster="bovenin-onderin" data-band="b1"><h2><span class="woorden">bovenin · onderin</span></h2><p class="as">shelf in a cupboard · 2 cards</p><p class="zin">De beker staat niet meer bovenin, maar onderin.<span class="en">The mug is no longer at the top, but at the bottom.</span></p><p class="frame"><strong>Fixed frame.</strong> A tall plain cupboard seen from the front with both doors open, showing five plain empty shelves from floor to top. One plain mug with a handle, same size in every drawing, stands on one shelf. Only the shelf the mug stands on changes.</p><div class="kaarten"><article id="bovenin" class="kaart" data-id="bovenin" data-band="b1" data-kind="adverb" data-cluster="bovenin-onderin" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 64">#64</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">bovenin</h3>
+<p class="gloss">at the top (inside)</p>
+<p class="vlaggen"><span>shelf in a cupboard</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The tall plain cupboard stands with both doors open and its five shelves showing. The plain mug stands alone on the highest shelf, close to the top of the cupboard. The four shelves below are empty. The floor in front of the cupboard is bare.</dd>
+<dt>Must read</dt><dd class="must">a mug alone on the highest shelf of an open cupboard.</dd>
+<dt>Avoid</dt><dd class="avoid">a mug alone on the lowest shelf (onderin); a mug standing on top of the closed cupboard (bovenop); a mug on the middle shelf (midden); a full cupboard (vol).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="onderin">Pair with onderin. The only difference is the shelf: the highest shelf here, the lowest shelf there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zoek maar bovenin, daar ligt het.<br><span class="voorbeeld-en">Just look at the top, that is where it is.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een open kast met vijf planken; een beker staat op de hoogste plank en de andere planken zijn leeg.</dd>
+</dl>
+<p class="id">bovenin.png · B1 · bovenin-onderin</p>
+</article>
+<article id="onderin" class="kaart" data-id="onderin" data-band="b1" data-kind="adverb" data-cluster="bovenin-onderin" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 65">#65</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">onderin</h3>
+<p class="gloss">at the bottom (inside)</p>
+<p class="vlaggen"><span>shelf in a cupboard</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The tall plain cupboard stands with both doors open and its five shelves showing. The plain mug stands alone on the lowest shelf, just above the floor. The four shelves above are empty. The floor in front of the cupboard is bare.</dd>
+<dt>Must read</dt><dd class="must">a mug alone on the lowest shelf of an open cupboard.</dd>
+<dt>Avoid</dt><dd class="avoid">a mug alone on the highest shelf (bovenin); a mug on the floor in front of the cupboard (not the card); a mug on the middle shelf (midden); an empty cupboard (leeg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovenin">Pair with bovenin. The only difference is the shelf: the lowest shelf here, the highest shelf there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De zware dozen zet je onderin.<br><span class="voorbeeld-en">You put the heavy boxes at the bottom.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een open kast met vijf planken; een beker staat op de laagste plank, vlak bij de vloer, en de andere planken zijn leeg.</dd>
+</dl>
+<p class="id">onderin.png · B1 · bovenin-onderin</p>
+</article></div></section>
+</main>
+</body>
+</html>

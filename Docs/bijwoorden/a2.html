@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijwoorden — A2</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijwoorden — A2</h1>
+<p class="lead">Aim, movement and route: on target and off, up and down, forward and backward, straight on and turning, together and apart, front and back of a queue, next door and further on.</p>
+<div class="sum"><span>7 contrast sets</span><span>15 adverbs</span><span>frames #28–#42</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html" class="hier">A2</a><a href="b1.html">B1</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="doel" data-band="a2"><h2><span class="woorden">raak · mis</span></h2><p class="as">hit or miss · 2 cards</p><p class="zin">Zijn eerste worp is raak, maar de tweede is mis.<span class="en">His first throw is on target, but the second one is off target.</span></p><p class="frame"><strong>Fixed frame.</strong> One plain round target board of five rings, no numbers, hangs on a plain wall at head height, seen from the front, with one plain dart in flight or landed. Only where the dart ends changes: in the centre ring, or in the wall beside the board.</p><div class="kaarten"><article id="raak" class="kaart" data-id="raak" data-band="a2" data-kind="adverb" data-cluster="doel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 28">#28</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">raak</h3>
+<p class="gloss">on target</p>
+<p class="vlaggen"><span>hit or miss</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain round target board with five rings hangs on the plain wall, and one plain dart is stuck with its tip in the centre ring, the shaft sticking out straight toward the viewer. The rest of the board and the wall around it are bare.</dd>
+<dt>Must read</dt><dd class="must">the dart's tip in the centre of the rings.</dd>
+<dt>Avoid</dt><dd class="avoid">a dart in the wall beside the board (mis); a dart in the outer ring (bijna); a dart in the air with no target (not the card); a person throwing a dart (not the frame).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="mis">Pair with mis. The only difference is where the dart ends: in the centre ring here, in the bare wall beside the board there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het schot is raak!<br><span class="voorbeeld-en">The shot is on target!</span></dd>
+<dt>Alt text</dt><dd class="alt">Een pijl steekt in het midden van een ronde schijf met cirkels.</dd>
+</dl>
+<p class="id">raak.png · A2 · doel</p>
+</article>
+<article id="mis" class="kaart" data-id="mis" data-band="a2" data-kind="adverb" data-cluster="doel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 29">#29</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">mis</h3>
+<p class="gloss">off target</p>
+<p class="vlaggen"><span>hit or miss</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain round target board with five rings hangs on the plain wall, bare in every ring, and one plain dart is stuck in the wall a hand's width to the right of the board with its tip in the wall, the shaft pointing toward the viewer.</dd>
+<dt>Must read</dt><dd class="must">a dart in the bare wall beside the board.</dd>
+<dt>Avoid</dt><dd class="avoid">a dart in the centre ring (raak); a dart in the outer ring of the board (bijna); a dart falling on the floor (not the card); a board with no dart at all (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="raak">Pair with raak. The only difference is where the dart ends: in the bare wall beside the board here, in the centre ring there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Je schot is mis, probeer het nog eens.<br><span class="voorbeeld-en">Your shot is off target, try again.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een pijl steekt in de muur naast een ronde schijf met cirkels die leeg is.</dd>
+</dl>
+<p class="id">mis.png · A2 · doel</p>
+</article></div></section>
+<section class="cluster" data-cluster="omhoog-omlaag" data-band="a2"><h2><span class="woorden">omhoog · omlaag</span></h2><p class="as">direction of movement · 2 cards</p><p class="zin">De ballon gaat omhoog, maar de bal gaat omlaag.<span class="en">The balloon goes up, but the ball goes down.</span></p><p class="frame"><strong>Fixed frame.</strong> One child stands whole-figure in side view on a flat ground line, head tilted back, with one plain round ball and a plain wall behind, same figure size on the page. Only the ball changes: rising away from the child's hands, or dropping toward them.</p><div class="kaarten"><article id="omhoog" class="kaart" data-id="omhoog" data-band="a2" data-kind="adverb" data-cluster="omhoog-omlaag" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 30">#30</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">omhoog</h3>
+<p class="gloss">up</p>
+<p class="vlaggen"><span>direction of movement</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One child stands side-on on the ground line with arms stretched straight up and head tilted back, hands just opened after a throw. A plain round ball hangs high above the hands, three short strokes below it marking its upward path, and the plain wall behind is bare.</dd>
+<dt>Must read</dt><dd class="must">the ball high above the hands with strokes beneath it and the face tilted up.</dd>
+<dt>Avoid</dt><dd class="avoid">a ball dropping toward the hands with strokes above it (omlaag); a tall tower (hoog); a ball resting on a shelf (boven); a child jumping with the ball in hand (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="omlaag">Pair with omlaag. The only difference is the ball's path: strokes below it as it rises away from the hands here, strokes above it as it falls toward the hands there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Kijk omhoog, daar vliegt een vogel.<br><span class="voorbeeld-en">Look up, there is a bird flying.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kind met de armen gestrekt kijkt naar een bal ver boven zijn handen met drie streepjes eronder.</dd>
+</dl>
+<p class="id">omhoog.png · A2 · omhoog-omlaag</p>
+</article>
+<article id="omlaag" class="kaart" data-id="omlaag" data-band="a2" data-kind="adverb" data-cluster="omhoog-omlaag" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 31">#31</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">omlaag</h3>
+<p class="gloss">down</p>
+<p class="vlaggen"><span>direction of movement</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One child stands side-on on the ground line with arms held low and open and head still tilted back. A plain round ball hangs a little above the hands, three short strokes above it marking its downward path, and the plain wall behind is bare.</dd>
+<dt>Must read</dt><dd class="must">the ball just above the open hands with strokes above it.</dd>
+<dt>Avoid</dt><dd class="avoid">a ball rising away from the hands with strokes below (omhoog); a ball already on the ground (not the card); a low table (laag); a child bending to pick up a ball (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="omhoog">Pair with omhoog. The only difference is the ball's path: strokes above it as it falls toward the hands here, strokes below it as it rises away from the hands there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De lift gaat omlaag naar de kelder.<br><span class="voorbeeld-en">The lift is going down to the cellar.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kind houdt zijn open handen bij zijn knieën en kijkt naar een bal net boven zijn handen, met drie streepjes erboven.</dd>
+</dl>
+<p class="id">omlaag.png · A2 · omhoog-omlaag</p>
+</article></div></section>
+<section class="cluster" data-cluster="vooruit-achteruit" data-band="a2"><h2><span class="woorden">vooruit · achteruit</span></h2><p class="as">driving direction of a car · 2 cards</p><p class="zin">Mijn auto rijdt vooruit, maar jouw auto rijdt achteruit.<span class="en">My car is driving forward, but your car is reversing.</span></p><p class="frame"><strong>Fixed frame.</strong> One plain small car seen from the side, front facing right, stands on a flat ground line between two identical plain posts, one near each edge, a plain low wall behind, same size in every drawing. Only the tyre tracks change: a short trail behind the boot, or ahead of the bonnet.</p><div class="kaarten"><article id="vooruit" class="kaart" data-id="vooruit" data-band="a2" data-kind="adverb" data-cluster="vooruit-achteruit" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 32">#32</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vooruit</h3>
+<p class="gloss">forward</p>
+<p class="vlaggen"><span>driving direction of a car</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain small car, seen from the side with its front facing right, stands between the two plain posts on the ground line. A short trail of tyre tracks runs on the ground behind the car, from the boot back toward the left post, and the ground ahead of the bonnet is clean.</dd>
+<dt>Must read</dt><dd class="must">tyre tracks behind the boot and clean ground ahead of the bonnet.</dd>
+<dt>Avoid</dt><dd class="avoid">tracks ahead of the bonnet (achteruit); a car with speed lines (snel); a car turning into a side road (linksaf); a parked car with no tracks (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="achteruit">Pair with achteruit. The only difference is the tyre tracks: behind the boot here, ahead of the bonnet there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De auto rijdt langzaam vooruit.<br><span class="voorbeeld-en">The car slowly moves forward.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kleine auto staat tussen twee paaltjes; bij de kofferbak liggen bandensporen, bij de motorkap is de grond schoon.</dd>
+</dl>
+<p class="id">vooruit.png · A2 · vooruit-achteruit</p>
+</article>
+<article id="achteruit" class="kaart" data-id="achteruit" data-band="a2" data-kind="adverb" data-cluster="vooruit-achteruit" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 33">#33</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">achteruit</h3>
+<p class="gloss">backward</p>
+<p class="vlaggen"><span>driving direction of a car</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain small car, seen from the side with its front facing right, stands between the two plain posts on the ground line. A short trail of tyre tracks runs on the ground ahead of the car, from the bonnet on toward the right post, and the ground behind the boot is clean.</dd>
+<dt>Must read</dt><dd class="must">tyre tracks ahead of the bonnet and clean ground behind the boot.</dd>
+<dt>Avoid</dt><dd class="avoid">tracks behind the boot (vooruit); a car with speed lines (snel); a car parked against a wall (not the card); a car being towed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vooruit">Pair with vooruit. The only difference is the tyre tracks: ahead of the bonnet here, behind the boot there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij rijdt de auto achteruit de garage in.<br><span class="voorbeeld-en">He reverses the car into the garage.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kleine auto staat tussen twee paaltjes; bij de motorkap liggen bandensporen, bij de kofferbak is de grond schoon.</dd>
+</dl>
+<p class="id">achteruit.png · A2 · vooruit-achteruit</p>
+</article></div></section>
+<section class="cluster" data-cluster="richting" data-band="a2"><h2><span class="woorden">rechtdoor · linksaf · rechtsaf</span></h2><p class="as">which branch of a junction · 3 cards</p><p class="zin">Eerst gaat u rechtdoor, dan gaat u linksaf en daarna rechtsaf.<span class="en">First you go straight on, then you turn left and after that you turn right.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain junction in a high three-quarter view from behind one adult: one path comes from the bottom edge and divides into three plain paths, one going straight ahead and one each to the left and right, with one small plain house beside the left branch. The adult stands at the foot of the junction, same size in every drawing. Only which branch carries a dotted route line changes.</p><div class="kaarten"><article id="rechtdoor" class="kaart" data-id="rechtdoor" data-band="a2" data-kind="adverb" data-cluster="richting" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 34">#34</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">rechtdoor</h3>
+<p class="gloss">straight on</p>
+<p class="vlaggen"><span>which branch of a junction</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain three-way junction in a high three-quarter view from behind the adult, who stands at its foot; a small house stands beside the left branch. A dotted line runs from the adult's feet straight up the middle path to the top edge, while the left and right branches carry no line.</dd>
+<dt>Must read</dt><dd class="must">a dotted line running straight up the middle branch.</dd>
+<dt>Avoid</dt><dd class="avoid">a dotted line turning into the left branch (linksaf); a dotted line turning into the right branch (rechtsaf); a dotted line that loops back (not the card); a long straight road with no junction (lang).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="linksaf rechtsaf">Pair with linksaf and rechtsaf. The only difference is the branch with the dotted line: the middle one here, the left one in linksaf, the right one in rechtsaf.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Loop rechtdoor tot het einde van de straat.<br><span class="voorbeeld-en">Walk straight on to the end of the street.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met zijn rug naar ons staat bij een splitsing; een stippellijn loopt over het middelste pad naar de verte.</dd>
+</dl>
+<p class="id">rechtdoor.png · A2 · richting</p>
+</article>
+<article id="linksaf" class="kaart" data-id="linksaf" data-band="a2" data-kind="adverb" data-cluster="richting" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 35">#35</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">linksaf</h3>
+<p class="gloss">turn left</p>
+<p class="vlaggen"><span>which branch of a junction</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain three-way junction in a high three-quarter view from behind the adult, who stands at its foot; a small house stands beside the left branch. A dotted line runs from the adult's feet up and bends into the branch on the left side of the picture, ending near its end; the middle and right branches carry no line.</dd>
+<dt>Must read</dt><dd class="must">a dotted line bending into the left branch.</dd>
+<dt>Avoid</dt><dd class="avoid">a dotted line going straight up the middle (rechtdoor); a dotted line bending into the right branch (rechtsaf); a person turning around to go back (not the card); a U-turn loop (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rechtdoor rechtsaf">Pair with rechtdoor and rechtsaf. The only difference is the branch with the dotted line: the left one here, the middle one in rechtdoor, the right one in rechtsaf.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Bij het stoplicht gaat u linksaf.<br><span class="voorbeeld-en">At the traffic light you turn left.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met zijn rug naar ons staat bij een splitsing; een stippellijn buigt naar het pad met het huis.</dd>
+</dl>
+<p class="id">linksaf.png · A2 · richting</p>
+</article>
+<article id="rechtsaf" class="kaart" data-id="rechtsaf" data-band="a2" data-kind="adverb" data-cluster="richting" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 36">#36</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">rechtsaf</h3>
+<p class="gloss">turn right</p>
+<p class="vlaggen"><span>which branch of a junction</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain three-way junction in a high three-quarter view from behind the adult, who stands at its foot; a small house stands beside the left branch. A dotted line runs from the adult's feet up and bends into the branch on the right side of the picture, ending near its end; the middle and left branches carry no line.</dd>
+<dt>Must read</dt><dd class="must">a dotted line bending into the right branch.</dd>
+<dt>Avoid</dt><dd class="avoid">a dotted line going straight up the middle (rechtdoor); a dotted line bending into the left branch (linksaf); a person turning around to go back (not the card); a U-turn loop (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rechtdoor linksaf">Pair with rechtdoor and linksaf. The only difference is the branch with the dotted line: the right one here, the middle one in rechtdoor, the left one in linksaf.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Na de brug gaat u rechtsaf.<br><span class="voorbeeld-en">After the bridge you turn right.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met zijn rug naar ons staat bij een splitsing; een stippellijn buigt naar het pad tegenover het huis.</dd>
+</dl>
+<p class="id">rechtsaf.png · A2 · richting</p>
+</article></div></section>
+<section class="cluster" data-cluster="groepering" data-band="a2"><h2><span class="woorden">bij elkaar · apart</span></h2><p class="as">arrangement of blocks · 2 cards</p><p class="zin">De boeken liggen bij elkaar, maar het woordenboek ligt apart.<span class="en">The books are lying together, but the dictionary is lying apart.</span></p><p class="frame"><strong>Fixed frame.</strong> Six identical plain wooden blocks lie on a plain table seen from the front, a plain wall behind, same block size on the page. Only the arrangement of the blocks changes: all gathered into one spot, or spread out one by one.</p><div class="kaarten"><article id="bij-elkaar" class="kaart" data-id="bij-elkaar" data-band="a2" data-kind="adverb" data-cluster="groepering" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 37">#37</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">bij elkaar</h3>
+<p class="gloss">together (in one place)</p>
+<p class="vlaggen"><span>arrangement of blocks</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The six plain wooden blocks are stacked and pushed together into one tight cluster in the middle of the table, every block touching at least one other, the outline of the group compact. The rest of the table and the wall behind are bare.</dd>
+<dt>Must read</dt><dd class="must">all six blocks in one tight cluster.</dd>
+<dt>Avoid</dt><dd class="avoid">blocks spread out one by one (apart); blocks in a tall tower (hoog); blocks lined up in a row with gaps (not the card); a few blocks dropped on the floor (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="apart">Pair with apart. The only difference is the arrangement: all six blocks touching in one cluster here, six blocks each alone with wide gaps there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij wonen met de hele familie bij elkaar.<br><span class="voorbeeld-en">We live together as a whole family.</span></dd>
+<dt>Alt text</dt><dd class="alt">Zes houten blokken liggen als één groepje midden op een tafel, zonder ruimte ertussen.</dd>
+</dl>
+<p class="id">bij-elkaar.png · A2 · groepering</p>
+</article>
+<article id="apart" class="kaart" data-id="apart" data-band="a2" data-kind="adverb" data-cluster="groepering" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 38">#38</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">apart</h3>
+<p class="gloss">separately</p>
+<p class="vlaggen"><span>arrangement of blocks</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The six plain wooden blocks lie spread across the table, each one alone with a wide empty gap to the next, none touching another. The rest of the table and the wall behind are bare.</dd>
+<dt>Must read</dt><dd class="must">six blocks each alone with wide gaps between them.</dd>
+<dt>Avoid</dt><dd class="avoid">all six blocks in one cluster (bij elkaar); blocks piled in a stack (hoog); a few blocks missing from the table (weinig); blocks hidden in a drawer (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bij-elkaar">Pair with bij-elkaar. The only difference is the arrangement: six blocks each alone with wide gaps here, all six touching in one cluster there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Leg het vlees en de groente apart.<br><span class="voorbeeld-en">Put the meat and the vegetables apart.</span></dd>
+<dt>Alt text</dt><dd class="alt">Zes houten blokken liggen elk op een eigen plek met veel lege tafel ertussen.</dd>
+</dl>
+<p class="id">apart.png · A2 · groepering</p>
+</article></div></section>
+<section class="cluster" data-cluster="vooraan-achteraan" data-band="a2"><h2><span class="woorden">vooraan · achteraan</span></h2><p class="as">place in a queue · 2 cards</p><p class="zin">Vooraan staat een vrouw met een hoed, maar achteraan staat een man.<span class="en">At the front stands a woman with a hat, but at the back stands a man.</span></p><p class="frame"><strong>Fixed frame.</strong> Five adults in plain clothes stand in a straight queue in side view, all facing right toward a plain service counter at the right edge, evenly spaced on a flat ground line, a plain wall behind. Only which person wears a plain brimmed hat changes.</p><div class="kaarten"><article id="vooraan" class="kaart" data-id="vooraan" data-band="a2" data-kind="adverb" data-cluster="vooraan-achteraan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 39">#39</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vooraan</h3>
+<p class="gloss">at the front</p>
+<p class="vlaggen"><span>place in a queue</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Five adults queue in a straight line facing right toward the counter. The person standing first, right beside the counter, wears a plain brimmed hat; the other four, stretching back to the left edge, have bare heads. All are the same size and evenly spaced.</dd>
+<dt>Must read</dt><dd class="must">the hat-wearer standing first, next to the counter.</dd>
+<dt>Avoid</dt><dd class="avoid">the hat-wearer standing last (achteraan); the hat-wearer in the middle (midden); a person standing alone at the counter with no queue (not the card); a person cutting in from the side (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="achteraan">Pair with achteraan. The only difference is the hat: on the first person next to the counter here, on the last person far from it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Vooraan in de rij staat een oude man.<br><span class="voorbeeld-en">At the front of the queue stands an old man.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf mensen staan in een rij naar een loket; de eerste, naast het loket, draagt een hoed.</dd>
+</dl>
+<p class="id">vooraan.png · A2 · vooraan-achteraan</p>
+</article>
+<article id="achteraan" class="kaart" data-id="achteraan" data-band="a2" data-kind="adverb" data-cluster="vooraan-achteraan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 40">#40</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">achteraan</h3>
+<p class="gloss">at the back</p>
+<p class="vlaggen"><span>place in a queue</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Five adults queue in a straight line facing right toward the counter. The person standing last, farthest from the counter at the left edge, wears a plain brimmed hat; the other four, leading up to the counter, have bare heads. All are the same size and evenly spaced.</dd>
+<dt>Must read</dt><dd class="must">the hat-wearer standing last, far from the counter.</dd>
+<dt>Avoid</dt><dd class="avoid">the hat-wearer standing first (vooraan); the hat-wearer in the middle (midden); a person walking away from the queue (not the card); a person turned around facing the other way (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vooraan">Pair with vooraan. The only difference is the hat: on the last person far from the counter here, on the first person next to it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ga maar achteraan in de rij staan.<br><span class="voorbeeld-en">Go and stand at the back of the queue.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf mensen staan in een rij naar een loket; de laatste, het verst van het loket, draagt een hoed.</dd>
+</dl>
+<p class="id">achteraan.png · A2 · vooraan-achteraan</p>
+</article></div></section>
+<section class="cluster" data-cluster="verderop-hiernaast" data-band="a2"><h2><span class="woorden">hiernaast · verderop</span></h2><p class="as">place of a shop in a street · 2 cards</p><p class="zin">Vroeger zat de bakker hiernaast, nu zit hij verderop.<span class="en">The baker used to be next door, now he is further down the street.</span></p><p class="frame"><strong>Fixed frame.</strong> A plain street of five joined houses seen from the front, with one adult standing at the door of the first house on the left. One small shop with loaves of bread in its window, same size in every drawing. Only the place of the shop in the row changes.</p><div class="kaarten"><article id="hiernaast" class="kaart" data-id="hiernaast" data-band="a2" data-kind="adverb" data-cluster="verderop-hiernaast" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 41">#41</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">hiernaast</h3>
+<p class="gloss">next door</p>
+<p class="vlaggen"><span>place of a shop in a street</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain street of five joined houses is seen from the front. The adult stands at the door of the first house on the left, arms hanging, facing the viewer. The small shop with loaves in its window is the second house, directly to the right of the adult's house and touching its wall. The other houses are plain.</dd>
+<dt>Must read</dt><dd class="must">the bread shop joined to the adult's own house.</dd>
+<dt>Avoid</dt><dd class="avoid">the bread shop at the far end of the row (verderop); the bread shop across the street (not the card); the adult inside the shop (binnen); the adult walking down the street (onderweg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="verderop">Pair with verderop. The only difference is the shop's place: directly next to the adult's house here, at the far end of the row there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn beste vriendin woont hiernaast.<br><span class="voorbeeld-en">My best friend lives next door.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat bij zijn voordeur; de winkel met broden in de etalage zit direct tegen zijn huis.</dd>
+</dl>
+<p class="id">hiernaast.png · A2 · verderop-hiernaast</p>
+</article>
+<article id="verderop" class="kaart" data-id="verderop" data-band="a2" data-kind="adverb" data-cluster="verderop-hiernaast" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 42">#42</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">verderop</h3>
+<p class="gloss">further on</p>
+<p class="vlaggen"><span>place of a shop in a street</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The plain street of five joined houses is seen from the front. The adult stands at the door of the first house on the left, arms hanging, facing the viewer. The small shop with loaves in its window is the fifth house, at the far right end of the row, three plain houses between. The other houses are plain.</dd>
+<dt>Must read</dt><dd class="must">the bread shop at the far end of the row, three houses between.</dd>
+<dt>Avoid</dt><dd class="avoid">the bread shop joined to the adult's own house (hiernaast); the bread shop tiny on the horizon (ver); the bread shop across the street (not the card); the adult walking to the shop (onderweg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="hiernaast">Pair with hiernaast. The only difference is the shop's place: at the far end of the row here, directly next to the adult's house there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bushalte is een stukje verderop.<br><span class="voorbeeld-en">The bus stop is a little further on.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat bij zijn voordeur; de winkel met broden in de etalage is het laatste huis van de rij.</dd>
+</dl>
+<p class="id">verderop.png · A2 · verderop-hiernaast</p>
+</article></div></section>
+</main>
+</body>
+</html>

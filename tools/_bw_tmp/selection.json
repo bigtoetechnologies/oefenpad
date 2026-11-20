@@ -1,0 +1,901 @@
+{
+ "a0": [
+  {
+   "id": "hier-daar",
+   "axis": "place near or far from the speaker",
+   "band": "a0",
+   "members": [
+    {
+     "id": "hier",
+     "lemma": "hier",
+     "gloss": "here",
+     "rank": 49
+    },
+    {
+     "id": "daar",
+     "lemma": "daar",
+     "gloss": "there",
+     "rank": 63
+    }
+   ]
+  },
+  {
+   "id": "binnen-buiten",
+   "axis": "inside or outside a house",
+   "band": "a0",
+   "members": [
+    {
+     "id": "binnen",
+     "lemma": "binnen",
+     "gloss": "inside",
+     "rank": 104
+    },
+    {
+     "id": "buiten",
+     "lemma": "buiten",
+     "gloss": "outside",
+     "rank": 188
+    }
+   ]
+  },
+  {
+   "id": "samen-alleen",
+   "axis": "company at a table",
+   "band": "a0",
+   "members": [
+    {
+     "id": "samen",
+     "lemma": "samen",
+     "gloss": "together",
+     "rank": 113
+    },
+    {
+     "id": "alleen-solo",
+     "lemma": "alleen",
+     "gloss": "alone",
+     "rank": 53
+    }
+   ]
+  },
+  {
+   "id": "ook-alleen",
+   "axis": "who has the thing",
+   "band": "a0",
+   "members": [
+    {
+     "id": "ook",
+     "lemma": "ook",
+     "gloss": "also",
+     "rank": 18
+    },
+    {
+     "id": "alleen-enkel",
+     "lemma": "alleen",
+     "gloss": "only",
+     "rank": 53
+    }
+   ]
+  },
+  {
+   "id": "aan-uit",
+   "axis": "lamp on or off",
+   "band": "a0",
+   "members": [
+    {
+     "id": "aan",
+     "lemma": "aan",
+     "gloss": "on",
+     "rank": 16
+    },
+    {
+     "id": "uit",
+     "lemma": "uit",
+     "gloss": "off",
+     "rank": 20
+    }
+   ]
+  },
+  {
+   "id": "thuis-onderweg",
+   "axis": "at home or travelling",
+   "band": "a0",
+   "members": [
+    {
+     "id": "thuis",
+     "lemma": "thuis",
+     "gloss": "at home",
+     "rank": 213
+    },
+    {
+     "id": "onderweg",
+     "lemma": "onderweg",
+     "gloss": "on the way",
+     "rank": 817
+    }
+   ]
+  },
+  {
+   "id": "veel-weinig",
+   "axis": "number of apples",
+   "band": "a0",
+   "members": [
+    {
+     "id": "veel",
+     "lemma": "veel",
+     "gloss": "a lot",
+     "rank": 38
+    },
+    {
+     "id": "weinig",
+     "lemma": "weinig",
+     "gloss": "a little, few",
+     "rank": 288
+    }
+   ]
+  },
+  {
+   "id": "genoeg-teveel",
+   "axis": "number of cups for three people",
+   "band": "a0",
+   "members": [
+    {
+     "id": "genoeg",
+     "lemma": "genoeg",
+     "gloss": "enough",
+     "rank": 205
+    },
+    {
+     "id": "te-veel",
+     "lemma": "te veel",
+     "gloss": "too many",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "mate",
+   "axis": "how far the glass is filled",
+   "band": "a0",
+   "members": [
+    {
+     "id": "helemaal",
+     "lemma": "helemaal",
+     "gloss": "completely",
+     "rank": 159
+    },
+    {
+     "id": "bijna",
+     "lemma": "bijna",
+     "gloss": "almost",
+     "rank": 173
+    },
+    {
+     "id": "beetje",
+     "lemma": "een beetje",
+     "gloss": "a little",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "af-bezig",
+   "axis": "wall finished or in progress",
+   "band": "a0",
+   "members": [
+    {
+     "id": "af",
+     "lemma": "af",
+     "gloss": "finished",
+     "rank": 93
+    },
+    {
+     "id": "bezig",
+     "lemma": "bezig",
+     "gloss": "busy",
+     "rank": 315
+    }
+   ]
+  },
+  {
+   "id": "dag",
+   "axis": "yesterday, today, tomorrow",
+   "band": "a0",
+   "members": [
+    {
+     "id": "gisteren",
+     "lemma": "gisteren",
+     "gloss": "yesterday",
+     "rank": 516
+    },
+    {
+     "id": "vandaag",
+     "lemma": "vandaag",
+     "gloss": "today",
+     "rank": 150
+    },
+    {
+     "id": "morgen",
+     "lemma": "morgen",
+     "gloss": "tomorrow",
+     "rank": 8696
+    }
+   ]
+  },
+  {
+   "id": "moment",
+   "axis": "now or later",
+   "band": "a0",
+   "members": [
+    {
+     "id": "nu",
+     "lemma": "nu",
+     "gloss": "now",
+     "rank": 36
+    },
+    {
+     "id": "straks",
+     "lemma": "straks",
+     "gloss": "later",
+     "rank": 732
+    }
+   ]
+  },
+  {
+   "id": "altijd-nooit",
+   "axis": "always or never",
+   "band": "a0",
+   "members": [
+    {
+     "id": "altijd",
+     "lemma": "altijd",
+     "gloss": "always",
+     "rank": 79
+    },
+    {
+     "id": "nooit",
+     "lemma": "nooit",
+     "gloss": "never",
+     "rank": 107
+    }
+   ]
+  },
+  {
+   "id": "frequentie",
+   "axis": "how often",
+   "band": "a0",
+   "members": [
+    {
+     "id": "vaak",
+     "lemma": "vaak",
+     "gloss": "often",
+     "rank": 167
+    },
+    {
+     "id": "zelden",
+     "lemma": "zelden",
+     "gloss": "rarely",
+     "rank": 1840
+    },
+    {
+     "id": "soms",
+     "lemma": "soms",
+     "gloss": "sometimes",
+     "rank": 212
+    }
+   ]
+  },
+  {
+   "id": "al-nog",
+   "axis": "already or still",
+   "band": "a0",
+   "members": [
+    {
+     "id": "al",
+     "lemma": "al",
+     "gloss": "already",
+     "rank": 8684
+    },
+    {
+     "id": "nog",
+     "lemma": "nog",
+     "gloss": "still",
+     "rank": 27
+    }
+   ]
+  },
+  {
+   "id": "volgorde",
+   "axis": "order of two actions",
+   "band": "a0",
+   "members": [
+    {
+     "id": "eerst",
+     "lemma": "eerst",
+     "gloss": "first",
+     "rank": 154
+    },
+    {
+     "id": "daarna",
+     "lemma": "daarna",
+     "gloss": "afterwards",
+     "rank": 273
+    }
+   ]
+  },
+  {
+   "id": "zekerheid",
+   "axis": "certainty",
+   "band": "a0",
+   "members": [
+    {
+     "id": "misschien",
+     "lemma": "misschien",
+     "gloss": "maybe",
+     "rank": 138
+    },
+    {
+     "id": "zeker",
+     "lemma": "zeker",
+     "gloss": "certainly",
+     "rank": 136
+    }
+   ]
+  },
+  {
+   "id": "ontkenning",
+   "axis": "affirm or negate",
+   "band": "a0",
+   "members": [
+    {
+     "id": "wel",
+     "lemma": "wel",
+     "gloss": "so (affirming)",
+     "rank": 32
+    },
+    {
+     "id": "niet",
+     "lemma": "niet",
+     "gloss": "not",
+     "rank": 10
+    }
+   ]
+  }
+ ],
+ "a1": [
+  {
+   "id": "op-over",
+   "axis": "used up or left over",
+   "band": "a1",
+   "members": [
+    {
+     "id": "op-leeg",
+     "lemma": "op",
+     "gloss": "used up",
+     "rank": 6
+    },
+    {
+     "id": "over-rest",
+     "lemma": "over",
+     "gloss": "left over",
+     "rank": 26
+    }
+   ]
+  },
+  {
+   "id": "boven-beneden",
+   "axis": "upstairs or downstairs",
+   "band": "a1",
+   "members": [
+    {
+     "id": "boven",
+     "lemma": "boven",
+     "gloss": "upstairs",
+     "rank": 252
+    },
+    {
+     "id": "beneden",
+     "lemma": "beneden",
+     "gloss": "downstairs",
+     "rank": 958
+    }
+   ]
+  },
+  {
+   "id": "links-rechts",
+   "axis": "left or right",
+   "band": "a1",
+   "members": [
+    {
+     "id": "links",
+     "lemma": "links",
+     "gloss": "left",
+     "rank": 434
+    },
+    {
+     "id": "rechts",
+     "lemma": "rechts",
+     "gloss": "right",
+     "rank": 818
+    }
+   ]
+  },
+  {
+   "id": "overal-nergens",
+   "axis": "flowers everywhere or none",
+   "band": "a1",
+   "members": [
+    {
+     "id": "overal",
+     "lemma": "overal",
+     "gloss": "everywhere",
+     "rank": 413
+    },
+    {
+     "id": "nergens",
+     "lemma": "nergens",
+     "gloss": "nowhere",
+     "rank": 728
+    }
+   ]
+  },
+  {
+   "id": "ingang",
+   "axis": "direction through a door",
+   "band": "a1",
+   "members": [
+    {
+     "id": "naar-binnen",
+     "lemma": "naar binnen",
+     "gloss": "inside (going in)",
+     "rank": null
+    },
+    {
+     "id": "naar-buiten",
+     "lemma": "naar buiten",
+     "gloss": "outside (going out)",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "vergelijking",
+   "axis": "more or fewer than a reference",
+   "band": "a1",
+   "members": [
+    {
+     "id": "meer",
+     "lemma": "meer",
+     "gloss": "more",
+     "rank": 8506
+    },
+    {
+     "id": "minder",
+     "lemma": "minder",
+     "gloss": "fewer",
+     "rank": 201
+    },
+    {
+     "id": "evenveel",
+     "lemma": "evenveel",
+     "gloss": "as many",
+     "rank": 3411
+    }
+   ]
+  },
+  {
+   "id": "dagdeel",
+   "axis": "sun or moon",
+   "band": "a1",
+   "members": [
+    {
+     "id": "overdag",
+     "lemma": "overdag",
+     "gloss": "by day",
+     "rank": 2453
+    },
+    {
+     "id": "nachts",
+     "lemma": "'s nachts",
+     "gloss": "at night",
+     "rank": null
+    }
+   ]
+  }
+ ],
+ "a2": [
+  {
+   "id": "doel",
+   "axis": "hit or miss",
+   "band": "a2",
+   "members": [
+    {
+     "id": "raak",
+     "lemma": "raak",
+     "gloss": "on target",
+     "rank": 2130
+    },
+    {
+     "id": "mis",
+     "lemma": "mis",
+     "gloss": "off target",
+     "rank": 468
+    }
+   ]
+  },
+  {
+   "id": "omhoog-omlaag",
+   "axis": "direction of movement",
+   "band": "a2",
+   "members": [
+    {
+     "id": "omhoog",
+     "lemma": "omhoog",
+     "gloss": "up",
+     "rank": 1047
+    },
+    {
+     "id": "omlaag",
+     "lemma": "omlaag",
+     "gloss": "down",
+     "rank": 2834
+    }
+   ]
+  },
+  {
+   "id": "vooruit-achteruit",
+   "axis": "driving direction of a car",
+   "band": "a2",
+   "members": [
+    {
+     "id": "vooruit",
+     "lemma": "vooruit",
+     "gloss": "forward",
+     "rank": 1201
+    },
+    {
+     "id": "achteruit",
+     "lemma": "achteruit",
+     "gloss": "backward",
+     "rank": 2549
+    }
+   ]
+  },
+  {
+   "id": "richting",
+   "axis": "which branch of a junction",
+   "band": "a2",
+   "members": [
+    {
+     "id": "rechtdoor",
+     "lemma": "rechtdoor",
+     "gloss": "straight on",
+     "rank": 7170
+    },
+    {
+     "id": "linksaf",
+     "lemma": "linksaf",
+     "gloss": "turn left",
+     "rank": 7731
+    },
+    {
+     "id": "rechtsaf",
+     "lemma": "rechtsaf",
+     "gloss": "turn right",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "groepering",
+   "axis": "arrangement of blocks",
+   "band": "a2",
+   "members": [
+    {
+     "id": "bij-elkaar",
+     "lemma": "bij elkaar",
+     "gloss": "together (in one place)",
+     "rank": null
+    },
+    {
+     "id": "apart",
+     "lemma": "apart",
+     "gloss": "separately",
+     "rank": 1785
+    }
+   ]
+  },
+  {
+   "id": "vooraan-achteraan",
+   "axis": "place in a queue",
+   "band": "a2",
+   "members": [
+    {
+     "id": "vooraan",
+     "lemma": "vooraan",
+     "gloss": "at the front",
+     "rank": 3502
+    },
+    {
+     "id": "achteraan",
+     "lemma": "achteraan",
+     "gloss": "at the back",
+     "rank": 3513
+    }
+   ]
+  },
+  {
+   "id": "plots-geleidelijk",
+   "axis": "sudden or gradual",
+   "band": "a2",
+   "members": [
+    {
+     "id": "plotseling",
+     "lemma": "plotseling",
+     "gloss": "suddenly",
+     "rank": 2305
+    },
+    {
+     "id": "geleidelijk",
+     "lemma": "geleidelijk",
+     "gloss": "gradually",
+     "rank": 3412
+    }
+   ]
+  },
+  {
+   "id": "opzet",
+   "axis": "intention",
+   "band": "a2",
+   "members": [
+    {
+     "id": "expres",
+     "lemma": "expres",
+     "gloss": "on purpose",
+     "rank": null
+    },
+    {
+     "id": "per-ongeluk",
+     "lemma": "per ongeluk",
+     "gloss": "by accident",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "verderop-hiernaast",
+   "axis": "place of a shop in a street",
+   "band": "a2",
+   "members": [
+    {
+     "id": "hiernaast",
+     "lemma": "hiernaast",
+     "gloss": "next door",
+     "rank": null
+    },
+    {
+     "id": "verderop",
+     "lemma": "verderop",
+     "gloss": "further on",
+     "rank": 2507
+    }
+   ]
+  }
+ ],
+ "b1": [
+  {
+   "id": "bovenaan-onderaan",
+   "axis": "place on a staircase",
+   "band": "b1",
+   "members": [
+    {
+     "id": "bovenaan",
+     "lemma": "bovenaan",
+     "gloss": "at the top",
+     "rank": 2589
+    },
+    {
+     "id": "halverwege",
+     "lemma": "halverwege",
+     "gloss": "halfway",
+     "rank": 2598
+    },
+    {
+     "id": "onderaan",
+     "lemma": "onderaan",
+     "gloss": "at the bottom",
+     "rank": 3345
+    }
+   ]
+  },
+  {
+   "id": "voorin-achterin",
+   "axis": "seat in a car",
+   "band": "b1",
+   "members": [
+    {
+     "id": "voorin",
+     "lemma": "voorin",
+     "gloss": "in the front",
+     "rank": 6512
+    },
+    {
+     "id": "achterin",
+     "lemma": "achterin",
+     "gloss": "in the back",
+     "rank": 3276
+    }
+   ]
+  },
+  {
+   "id": "midden-opzij",
+   "axis": "place in a street",
+   "band": "b1",
+   "members": [
+    {
+     "id": "midden",
+     "lemma": "midden",
+     "gloss": "in the middle",
+     "rank": 8695
+    },
+    {
+     "id": "opzij",
+     "lemma": "opzij",
+     "gloss": "aside",
+     "rank": 3207
+    }
+   ]
+  },
+  {
+   "id": "stand",
+   "axis": "orientation of a mug",
+   "band": "b1",
+   "members": [
+    {
+     "id": "rechtop",
+     "lemma": "rechtop",
+     "gloss": "upright",
+     "rank": 5627
+    },
+    {
+     "id": "ondersteboven",
+     "lemma": "ondersteboven",
+     "gloss": "upside down",
+     "rank": 7082
+    }
+   ]
+  },
+  {
+   "id": "voorop-achterop",
+   "axis": "child seat on a bicycle",
+   "band": "b1",
+   "members": [
+    {
+     "id": "voorop",
+     "lemma": "voorop",
+     "gloss": "on the front (of a bike)",
+     "rank": 2773
+    },
+    {
+     "id": "achterop",
+     "lemma": "achterop",
+     "gloss": "on the back (of a bike)",
+     "rank": 4973
+    }
+   ]
+  },
+  {
+   "id": "dwars-schuin",
+   "axis": "angle of a trunk over a path",
+   "band": "b1",
+   "members": [
+    {
+     "id": "dwars",
+     "lemma": "dwars",
+     "gloss": "across (at a right angle)",
+     "rank": 2592
+    },
+    {
+     "id": "schuin",
+     "lemma": "schuin",
+     "gloss": "slantwise, diagonally",
+     "rank": 5086
+    }
+   ]
+  },
+  {
+   "id": "ondergronds-bovengronds",
+   "axis": "level of a train",
+   "band": "b1",
+   "members": [
+    {
+     "id": "ondergronds",
+     "lemma": "ondergronds",
+     "gloss": "underground",
+     "rank": 4939
+    },
+    {
+     "id": "bovengronds",
+     "lemma": "bovengronds",
+     "gloss": "above ground",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "overeind-onderuit",
+   "axis": "on the feet or fallen",
+   "band": "b1",
+   "members": [
+    {
+     "id": "overeind",
+     "lemma": "overeind",
+     "gloss": "on one's feet (not fallen)",
+     "rank": 3885
+    },
+    {
+     "id": "onderuit",
+     "lemma": "onderuit (gaan)",
+     "gloss": "(go) flying, slip and fall",
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "achterover-voorover",
+   "axis": "lean of a seated person",
+   "band": "b1",
+   "members": [
+    {
+     "id": "achterover",
+     "lemma": "achterover",
+     "gloss": "backward (leaning back)",
+     "rank": 5241
+    },
+    {
+     "id": "voorover",
+     "lemma": "voorover",
+     "gloss": "forward (bending forward)",
+     "rank": 6726
+    }
+   ]
+  },
+  {
+   "id": "boord",
+   "axis": "on a boat or in the water",
+   "band": "b1",
+   "members": [
+    {
+     "id": "aan-boord",
+     "lemma": "aan boord",
+     "gloss": "on board",
+     "rank": null
+    },
+    {
+     "id": "overboord",
+     "lemma": "overboord",
+     "gloss": "overboard",
+     "rank": 5819
+    }
+   ]
+  },
+  {
+   "id": "bovenin-onderin",
+   "axis": "shelf in a cupboard",
+   "band": "b1",
+   "members": [
+    {
+     "id": "bovenin",
+     "lemma": "bovenin",
+     "gloss": "at the top (inside)",
+     "rank": null
+    },
+    {
+     "id": "onderin",
+     "lemma": "onderin",
+     "gloss": "at the bottom (inside)",
+     "rank": null
+    }
+   ]
+  }
+ ]
+}

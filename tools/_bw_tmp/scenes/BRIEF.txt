@@ -1,0 +1,93 @@
+BIJWOORDEN — SCENE BRIEF FOR ONE BATCH
+====================================================
+
+Each card in Docs/bijwoorden/ stands for one Dutch adverb.
+The card is a picture brief: one drawing, in the same cobalt-on-white style as
+Docs/voorzetselpaden/ and Docs/werkwoorden/, that makes the adverb obvious.
+Adverbs are learned as CONTRAST SETS: two (sometimes three) adverbs that
+sit on one axis (groot/klein, heet/warm/koud). The pair is what teaches, so the
+drawings in a set must be the SAME picture with ONE visible thing changed.
+
+Read first (paths relative to the repo root, /media/tony/Data/repos/oefenpad):
+  tools/_bw_tmp/selection.json           the clusters; yours are named below
+  Docs/werkwoorden/AGENTS.html           card conventions (what Must read / Avoid mean)
+  tools/_ww_tmp/scenes/a1-regular.tsv    two example scene rows (verbs, not adverbs)
+  Docs/voorzetselpaden/a2-pairs.html     read the first cluster (betalen met / voor): how
+                                         paired frames share a fixed setting and differ on one mark
+Do NOT edit anything outside the two files you are asked to write.
+
+TWO FILES PER BATCH (raw TSV, tab-separated, header row first, UTF-8)
+---------------------------------------------------------------------
+1. scenes/<batch>.clusters.tsv, one row per cluster, in the order you were given:
+
+   cluster<TAB>frame<TAB>sentence_nl<TAB>sentence_en
+
+   cluster      the cluster id, exactly as in selection.json
+   frame        English. The FIXED part of every drawing in the set: the same figure(s)
+                or object, the same plain setting, the same viewpoint, the same size on
+                the page. 25-45 words. Then one final sentence starting "Only ..." that
+                names the single thing that changes between the drawings.
+   sentence_nl  Dutch. ONE contrast sentence that uses all adverbs of the set, e.g.
+                "De olifant is groot, maar de muis is klein." Plain, A2-level grammar for
+                A0-A2 sets. Correct Dutch: check adverb inflection (e.g. "een
+                kleine hond", "het kleine huis", but "de hond is klein").
+   sentence_en  English translation.
+
+2. scenes/<batch>.cards.tsv, one row per member, in selection.json order:
+
+   id<TAB>scene<TAB>must<TAB>avoid<TAB>contrast<TAB>example_nl<TAB>example_en<TAB>alt
+
+   id          the member id from selection.json (not necessarily the lemma)
+   scene       English. What is drawn, as a brief for the illustrator. 35-55 words.
+               It starts from the cluster frame and states the changed element
+               explicitly. Name every object that must be visible. Always a person or a
+               named object, never "someone" or "something". The adverb is shown by
+               a COMPARISON INSIDE THE PICTURE where a single object cannot show it
+               (big = the object next to a small reference object of known size), and
+               by an object where it can (a full glass, a closed door).
+   must        English. The one mark that must be readable at thumbnail size. One clause.
+   avoid       English. Three to five near misses, separated by semicolons, each with the
+               competing adverb in brackets, e.g. "a tall thin shape (hoog)". The
+               partner(s) of the set must appear here as the first item.
+   contrast    English. Starts "Pair with <partner id>." (name every partner). Then ONE
+               sentence naming the single point of difference between the two drawings.
+   example_nl  Dutch. One natural sentence with the adverb, 5-9 words, A0-A1 grammar
+               for the A0/A1 batches. Not the cluster sentence.
+   example_en  English translation.
+   alt         Dutch. One sentence for a screen reader. Describes the picture. It NEVER
+               contains the adverb or any form of it, nor its partner.
+
+HARD RULES
+----------
+- Style is fixed elsewhere (cobalt line drawing on white). Never mention colour as the
+  carrier of meaning: nothing is "red", "yellow" or "dark blue". Brightness can be
+  drawn as a lamp with rays vs a lamp without, not as a tint.
+- No text, numbers or writing inside the drawing, not even a price tag. Show price with a small coin pile vs a large coin pile beside the object.
+- Faces: emotions are shown with brows, eyes and mouth on a white outlined face.
+- Abstract senses get no card. If an adverb in your set cannot be honestly shown in
+  one picture, write the row anyway but start `scene` with "SKIP: " and give the
+  reason; the builder then moves it to the backlog.
+- One sense per card. oud-spullen = an old object, oud-mensen = an old person; the id says
+  which, and the scene must draw that sense only.
+- Do not use real brands, real people or religious symbols.
+- Dutch examples must be correct Dutch. If you are unsure of a form, choose a
+  sentence that avoids the problem.
+- No tab character inside any field; no line breaks inside a field.
+
+EXAMPLE (cluster "tempo", A0)
+clusters row:
+tempo	a single adult in a long plain street, side view, whole figure, same distance from the viewer, a plain low wall behind. Only the pace of the walker changes.	De fiets is snel, maar de schildpad is langzaam.	The bike is fast, but the tortoise is slow.
+cards row for snel:
+snel	one adult on a plain bicycle seen side-on, leaning forward, legs mid-turn, three bold speed lines trailing behind the bike and the wheels drawn slightly apart from the ground line. Beside the bike, in the same drawing, a small stone marker shows how far they have come from the start line.	a leaning cyclist with long speed lines behind the bike.	an adult walking with one foot on the ground (langzaam); a parked bike with a rider sitting still (langzaam); dust clouds or smoke (not the style); a car or train (not the card).	Pair with langzaam. The only difference is the pace: speed lines and a leaning rider here, a rider sitting upright with no lines there.	Mijn fiets is snel.	My bike is fast.	Een fietser leunt naar voren; achter de fiets lopen drie lange strepen.
+(Illustrative only; write your own, better.)
+
+BIJWOORDEN ADAPTATION
+---------------------
+- Items are adverbs and adverbial phrases of place, direction, amount and state. Time adverbs
+  (gisteren, nu, altijd, al/nog ...) have no honest single picture: write the whole set as SKIP.
+- Skip a set as a whole, never one half, so no drawn card loses its partner.
+- Where a word is also an adjective or preposition (alleen, af, op, over), the id names the sense
+  (alleen-solo, alleen-enkel, op-leeg, over-rest) and the scene draws that sense only.
+- Three-member sets (mate, richting, vergelijking) name all partners in "Pair with".
+- Scenes are 35-60 words; the checker enforces it. Alt text never contains the item or a partner.
+- Authoring data lives in tools/_bw_tmp/author_*.py; author.py writes the scene TSVs.
