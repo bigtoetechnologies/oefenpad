@@ -1,0 +1,126 @@
+# cluster-id ; axis ; members as id=lemma:gloss:article:plural:dim[:base] (dim=yes when the headword is a diminutive; base = the noun it is formed from, with article), separated by |
+# Bands come from select.py (frequency rank, or its OVERRIDE table with a reason). Glosses must not contain ';' or ':'.
+woning ; kind of home ; huis=huis:house:het:huizen:|flat=flat:flat, block of flats:de:flats:
+persoon ; adult man or woman ; man=man:man:de:mannen:|vrouw=vrouw:woman:de:vrouwen:
+voertuig ; kind of vehicle ; auto=auto:car:de:auto's:|bus=bus:bus:de:bussen:|fiets=fiets:bicycle:de:fietsen:
+plaats ; size of a settlement ; stad=stad:city:de:steden:|dorp=dorp:village:het:dorpen:
+zitplek ; kind of seat ; stoel=stoel:chair:de:stoelen:|bank=bank:sofa:de:banken:
+drinkgerei ; kind of drinking vessel ; kopje=kopje:cup:het:kopjes:yes:de kop|glas=glas:glass:het:glazen:|beker=beker:mug, beaker:de:bekers:
+bestek ; kind of cutlery ; mes=mes:knife:het:messen:|vork=vork:fork:de:vorken:|lepel=lepel:spoon:de:lepels:
+jas-trui ; outer coat or knitted top ; jas=jas:coat:de:jassen:|trui=trui:jumper:de:truien:
+schoeisel ; shoe or boot ; schoen=schoen:shoe:de:schoenen:|laars=laars:boot:de:laarzen:
+bagage ; bag or suitcase ; tas=tas:bag:de:tassen:|koffer=koffer:suitcase:de:koffers:
+huisdier ; cat or dog ; kat=kat:cat:de:katten:|hond=hond:dog:de:honden:
+boerderijdier ; farm animal ; koe=koe:cow:de:koeien:|schaap=schaap:sheep:het:schapen:|varken=varken:pig:het:varkens:
+vogel-vis ; air or water animal ; vogel=vogel:bird:de:vogels:|vis=vis:fish:de:vissen:
+fruit ; kind of fruit ; appel=appel:apple:de:appels:|peer=peer:pear:de:peren:
+servies ; plate or dish ; bord=bord:plate:het:borden:|schaal=schaal:dish, serving bowl:de:schalen:
+opening ; window or door ; raam=raam:window:het:ramen:|deur=deur:door:de:deuren:
+lichtbron ; lamp or candle ; lamp=lamp:lamp:de:lampen:|kaars=kaars:candle:de:kaarsen:
+schrijfgerei ; pen or pencil ; pen=pen:pen:de:pennen:|potlood=potlood:pencil:het:potloden:
+lezen ; book or newspaper ; boek=boek:book:het:boeken:|krant=krant:newspaper:de:kranten:
+hand-voet ; hand or foot ; hand=hand:hand:de:handen:|voet=voet:foot:de:voeten:
+gezicht ; part of the face ; oog=oog:eye:het:ogen:|oor=oor:ear:het:oren:|neus=neus:nose:de:neuzen:
+ledemaat ; arm or leg ; arm=arm:arm:de:armen:|been=been:leg:het:benen:
+plant ; tree, flower or leaf ; boom=boom:tree:de:bomen:|bloem=bloem:flower:de:bloemen:|blad=blad:leaf:het:bladeren:
+bos ; same word, het or de ; bos-woud=bos:forest:het:bossen:|bos-bos=bos:bunch (of flowers):de:bossen:
+pad ; same word, het or de ; pad-weg=pad:path:het:paden:|pad-dier=pad:toad:de:padden:
+hemel ; sun, moon or star ; zon=zon:sun:de:zonnen:|maan=maan:moon:de:manen:|ster=ster:star:de:sterren:
+kamers ; room in a house ; kamer=kamer:room, living room:de:kamers:|keuken=keuken:kitchen:de:keukens:
+sleutel-slot ; key or lock ; sleutel=sleutel:key:de:sleutels:|slot=slot:lock:het:sloten:
+tijdmeter ; wall clock or wristwatch ; klok=klok:clock:de:klokken:|horloge=horloge:watch:het:horloges:
+kleding-onder ; trousers, skirt or dress ; broek=broek:trousers:de:broeken:|rok=rok:skirt:de:rokken:|jurk=jurk:dress:de:jurken:
+schip ; boat or ship ; boot=boot:boat:de:boten:|schip=schip:ship:het:schepen:
+opberger ; box or chest ; doos=doos:box:de:dozen:|kist=kist:chest:de:kisten:
+kind-getal ; one or more (irregular plural) ; kind-een=kind:child:het:kinderen:|kind-meer=kinderen:children:de:kinderen:
+schip-getal ; one or more (irregular plural) ; schip-een=schip:ship:het:schepen:|schip-meer=schepen:ships:de:schepen:
+huis-getal ; one or more ; huis-een=huis:house:het:huizen:|huis-meer=huizen:houses:de:huizen:
+ei-getal ; one or more (irregular plural) ; ei-een=ei:egg:het:eieren:|ei-meer=eieren:eggs:de:eieren:
+been-getal ; one or more ; been-een=been:leg:het:benen:|been-meer=benen:legs:de:benen:
+muis-getal ; one or more ; muis-een=muis:mouse:de:muizen:|muis-meer=muizen:mice:de:muizen:
+glas-getal ; one or more (irregular plural) ; glas-een=glas:glass:het:glazen:|glas-meer=glazen:glasses:de:glazen:
+blad-getal ; one or more (irregular plural) ; blad-een=blad:leaf:het:bladeren:|blad-meer=bladeren:leaves:de:bladeren:
+boom-getal ; one or more ; boom-een=boom:tree:de:bomen:|boom-meer=bomen:trees:de:bomen:
+hoofddeksel ; hat or cap ; hoed=hoed:hat:de:hoeden:|pet=pet:cap:de:petten:
+konijn-haas ; rabbit or hare ; konijn=konijn:rabbit:het:konijnen:|haas=haas:hare:de:hazen:
+haai-dolfijn ; shark or dolphin ; haai=haai:shark:de:haaien:|dolfijn=dolfijn:dolphin:de:dolfijnen:
+vlinder-mot ; butterfly or moth ; vlinder=vlinder:butterfly:de:vlinders:|mot=mot:moth:de:motten:
+ezel-pony ; donkey or pony ; ezel=ezel:donkey:de:ezels:|pony=pony:pony:de:pony's:
+nest-kooi ; nest or cage ; nest=nest:nest:het:nesten:|kooi=kooi:cage:de:kooien:
+vogeldeel ; part of a bird ; staart=staart:tail:de:staarten:|poot=poot:leg, paw (of an animal):de:poten:|vleugel=vleugel:wing:de:vleugels:
+beek-vijver ; running or still water ; beek=beek:stream, brook:de:beken:|vijver=vijver:pond:de:vijvers:
+woestijn-moeras ; dry or wet land ; woestijn=woestijn:desert:de:woestijnen:|moeras=moeras:marsh, swamp:het:moerassen:
+bootdeel ; part of a sailing boat ; anker=anker:anchor:het:ankers:|zeil=zeil:sail:het:zeilen:|mast=mast:mast:de:masten:
+hek-schutting ; open or closed fence ; hek=hek:fence, railings, gate:het:hekken:|schutting=schutting:board fence:de:schuttingen:
+deken-dekbed ; blanket or duvet ; deken=deken:blanket:de:dekens:|dekbed=dekbed:duvet:het:dekbedden:
+kelder-zolder ; space under or at the top of a house ; kelder=kelder:cellar, basement:de:kelders:|zolder=zolder:attic, loft:de:zolders:
+terras-balkon ; outdoor space below or upstairs ; terras=terras:terrace, patio:het:terrassen:|balkon=balkon:balcony:het:balkons:
+mand-emmer ; basket or bucket ; mand=mand:basket:de:manden:|emmer=emmer:bucket:de:emmers:
+mond ; part of the mouth ; tong=tong:tongue:de:tongen:|tand=tand:tooth:de:tanden:|lip=lip:lip:de:lippen:
+gezichtsdeel ; area of the face ; wang=wang:cheek:de:wangen:|kin=kin:chin:de:kinnen:|voorhoofd=voorhoofd:forehead:het:voorhoofden:
+armgewricht ; joint of the arm ; schouder=schouder:shoulder:de:schouders:|elleboog=elleboog:elbow:de:ellebogen:|pols=pols:wrist:de:polsen:
+beengewricht ; joint of the leg ; heup=heup:hip:de:heupen:|knie=knie:knee:de:knieën:|enkel=enkel:ankle:de:enkels:
+vinger ; digit of the hand ; duim=duim:thumb:de:duimen:|pink=pink:little finger:de:pinken:|wijsvinger=wijsvinger:index finger:de:wijsvingers:
+rolstoel-kinderwagen ; seat on wheels ; rolstoel=rolstoel:wheelchair:de:rolstoelen:|kinderwagen=kinderwagen:pram, pushchair:de:kinderwagens:
+kam-tandenborstel ; comb or toothbrush ; kam=kam:comb:de:kammen:|tandenborstel=tandenborstel:toothbrush:de:tandenborstels:
+boomdeel ; part of a tree ; tak=tak:branch:de:takken:|stam=stam:trunk:de:stammen:|wortel=wortel:root:de:wortels:
+schuur-kas ; garden building ; schuur=schuur:shed, barn:de:schuren:|kas=kas:greenhouse:de:kassen:
+vrachtwagen-bestelwagen ; big or small goods vehicle ; vrachtwagen=vrachtwagen:lorry, truck:de:vrachtwagens:|bestelwagen=bestelwagen:van, delivery van:de:bestelwagens:
+helikopter-drone ; machine that hovers ; helikopter=helikopter:helicopter:de:helikopters:|drone=drone:drone:de:drones:
+kruispunt-rotonde ; where roads meet ; kruispunt=kruispunt:crossroads, junction:het:kruispunten:|rotonde=rotonde:roundabout:de:rotondes:
+lijn ; cable, rope or thread ; kabel=kabel:cable:de:kabels:|touw=touw:rope:het:touwen:|draad=draad:thread, wire:de:draden:
+gereedschap ; hand tool ; hamer=hamer:hammer:de:hamers:|zaag=zaag:saw:de:zagen:|tang=tang:pliers:de:tangen:
+sluiting ; button or zip ; knoop=knoop:button (on clothes):de:knopen:|rits=rits:zip:de:ritsen:
+sieraad ; necklace or bracelet ; ketting=ketting:necklace, chain:de:kettingen:|armband=armband:bracelet:de:armbanden:
+gezichtshaar ; beard or moustache ; baard=baard:beard:de:baarden:|snor=snor:moustache:de:snorren:
+naald-speld ; needle or pin ; naald=naald:needle:de:naalden:|speld=speld:pin:de:spelden:
+winterkleding ; winter accessory ; sjaal=sjaal:scarf:de:sjaals:|muts=muts:woolly hat, beanie:de:mutsen:|handschoen=handschoen:glove:de:handschoenen:
+piano-orgel ; keyboard instrument ; piano=piano:piano:de:piano's:|orgel=orgel:organ (instrument):het:orgels:
+eend-zwaan ; duck or swan ; eend=eend:duck:de:eenden:|zwaan=zwaan:swan:de:zwanen:
+olifant-neushoorn ; large thick-skinned animal ; olifant=olifant:elephant:de:olifanten:|neushoorn=neushoorn:rhinoceros:de:neushoorns:
+tijger-jaguar ; striped or spotted big cat ; tijger=tijger:tiger:de:tijgers:|jaguar=jaguar:jaguar:de:jaguars:
+kraan ; same word, two things ; kraan-water=kraan:tap:de:kranen:|kraan-bouw=kraan:crane (machine):de:kranen:
+slang ; same word, two things ; slang-dier=slang:snake:de:slangen:|slang-tuin=slang:hose:de:slangen:
+vlieg-mug ; small flying insect ; vlieg=vlieg:fly:de:vliegen:|mug=mug:mosquito:de:muggen:
+oven-magnetron ; oven or microwave ; oven=oven:oven:de:ovens:|magnetron=magnetron:microwave oven:de:magnetrons:
+kikker-schildpad ; frog or tortoise ; kikker=kikker:frog:de:kikkers:|schildpad=schildpad:tortoise, turtle:de:schildpadden:
+hert-geit ; antlers or horns ; hert=hert:deer:het:herten:|geit=geit:goat:de:geiten:
+ooievaar-reiger ; long-legged bird ; ooievaar=ooievaar:stork:de:ooievaars:|reiger=reiger:heron:de:reigers:
+uil-papegaai ; owl or parrot ; uil=uil:owl:de:uilen:|papegaai=papegaai:parrot:de:papegaaien:
+slak-rups ; slow crawling animal ; slak=slak:snail:de:slakken:|rups=rups:caterpillar:de:rupsen:
+krokodil-hagedis ; large or small reptile ; krokodil=krokodil:crocodile:de:krokodillen:|hagedis=hagedis:lizard:de:hagedissen:
+krab-kreeft ; crab or lobster ; krab=krab:crab:de:krabben:|kreeft=kreeft:lobster:de:kreeften:
+otter-bever ; otter or beaver ; otter=otter:otter:de:otters:|bever=bever:beaver:de:bevers:
+mossel-oester ; mussel or oyster ; mossel=mossel:mussel:de:mosselen:|oester=oester:oyster:de:oesters:
+kwal-inktvis ; soft sea animal ; kwal=kwal:jellyfish:de:kwallen:|inktvis=inktvis:squid:de:inktvissen:
+sprinkhaan-krekel ; grasshopper or cricket ; sprinkhaan=sprinkhaan:grasshopper:de:sprinkhanen:|krekel=krekel:cricket (insect):de:krekels:
+eekhoorn-egel ; small garden animal ; eekhoorn=eekhoorn:squirrel:de:eekhoorns:|egel=egel:hedgehog:de:egels:
+telescoop-verrekijker ; telescope or binoculars ; telescoop=telescoop:telescope:de:telescopen:|verrekijker=verrekijker:binoculars:de:verrekijkers:
+tomaat-paprika ; tomato or pepper ; tomaat=tomaat:tomato:de:tomaten:|paprika=paprika:bell pepper:de:paprika's:
+citroen-sinaasappel ; lemon or orange ; citroen=citroen:lemon:de:citroenen:|sinaasappel=sinaasappel:orange (fruit):de:sinaasappels:
+koekje-wafel ; biscuit or waffle ; koekje=koekje:biscuit, cookie:het:koekjes:yes:de koek|wafel=wafel:waffle:de:wafels:
+bes ; small soft fruit ; kers=kers:cherry:de:kersen:|aardbei=aardbei:strawberry:de:aardbeien:|framboos=framboos:raspberry:de:frambozen:
+pompoen-meloen ; pumpkin or melon ; pompoen=pompoen:pumpkin:de:pompoenen:|meloen=meloen:melon:de:meloenen:
+noot ; kind of nut ; pinda=pinda:peanut:de:pinda's:|walnoot=walnoot:walnut:de:walnoten:|amandel=amandel:almond:de:amandelen:
+pan ; deep or flat pan ; steelpan=steelpan:saucepan:de:steelpannen:|koekenpan=koekenpan:frying pan:de:koekenpannen:
+zeef-vergiet ; sieve or colander ; zeef=zeef:sieve:de:zeven:|vergiet=vergiet:colander:het:vergieten:
+haard-kachel ; fireplace or stove ; haard=haard:fireplace:de:haarden:|kachel=kachel:stove, heater:de:kachels:
+handdoek-laken ; towel or sheet ; handdoek=handdoek:towel:de:handdoeken:|laken=laken:sheet (bed):het:lakens:
+stofzuiger-bezem ; floor-cleaning tool ; stofzuiger=stofzuiger:vacuum cleaner:de:stofzuigers:|bezem=bezem:broom:de:bezems:
+schep-hark ; garden tool ; schep=schep:shovel, spade:de:scheppen:|hark=hark:rake:de:harken:
+kwast-penseel ; wide or fine brush ; kwast=kwast:paintbrush (wide):de:kwasten:|penseel=penseel:artist's brush:het:penselen:
+kruk-fauteuil ; simple or padded seat ; kruk=kruk:stool:de:krukken:|fauteuil=fauteuil:armchair:de:fauteuils:
+stopcontact-schakelaar ; socket or switch ; stopcontact=stopcontact:socket, power point:het:stopcontacten:|schakelaar=schakelaar:switch:de:schakelaars:
+spijker-schroef ; nail or screw ; spijker=spijker:nail:de:spijkers:|schroef=schroef:screw:de:schroeven:
+schroevendraaier-moersleutel ; screwdriver or spanner ; schroevendraaier=schroevendraaier:screwdriver:de:schroevendraaiers:|moersleutel=moersleutel:spanner, wrench:de:moersleutels:
+sok-kous ; sock or stocking ; sok=sok:sock:de:sokken:|kous=kous:stocking:de:kousen:
+mouw-kraag ; part of a shirt ; mouw=mouw:sleeve:de:mouwen:|kraag=kraag:collar:de:kragen:
+sandaal-slipper ; sandal or flip-flop ; sandaal=sandaal:sandal:de:sandalen:|slipper=slipper:flip-flop:de:slippers:
+oorbel-broche ; earring or brooch ; oorbel=oorbel:earring:de:oorbellen:|broche=broche:brooch:de:broches:
+racket-peddel ; strung racket or solid paddle ; racket=racket:racket:het:rackets:|peddel=peddel:paddle:de:peddels:
+snorkel-zwembril ; snorkel or goggles ; snorkel=snorkel:snorkel:de:snorkels:|zwembril=zwembril:swimming goggles:de:zwembrillen:
+kano-kajak ; open or closed small boat ; kano=kano:canoe:de:kano's:|kajak=kajak:kayak:de:kajaks:
+viool-cello ; small or large string instrument ; viool=viool:violin:de:violen:|cello=cello:cello:de:cello's:
+trompet-trombone ; trumpet or trombone ; trompet=trompet:trumpet:de:trompetten:|trombone=trombone:trombone:de:trombones:
+wond-pleister ; wound or plaster ; wond=wond:wound:de:wonden:|pleister=pleister:sticking plaster:de:pleisters:
+rund-getal ; one or more (irregular plural) ; rund-een=rund:cow, bull or ox (one animal):het:runderen:|rund-meer=runderen:cattle:de:runderen:

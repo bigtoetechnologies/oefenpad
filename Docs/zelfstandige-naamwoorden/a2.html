@@ -1,0 +1,1644 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zelfstandige naamwoorden — A2</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.vormen .art::before{content:"lidwoord"}
+.vormen .mv::before{content:"meervoud"}
+.vormen .dim{color:var(--grijs);font-weight:400}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Zelfstandige naamwoorden — A2</h1>
+<p class="lead">Cups, cutlery, clothes, bags, birds and fish, light and headwear, plus ei/eieren, muis/muizen, glas/glazen and blad/bladeren. Promoted on coursebook level: arm and leg joints, basket/bucket, terrace/balcony, shed/greenhouse and tomato/pepper; promoted by judgment as daily words: lemon/orange, biscuit/waffle, sock/stocking, towel/sheet, blanket/duvet, mouth, comb/toothbrush, crossroads/roundabout, winter wear, the tap and the crane, oven/microwave, berries, vacuum cleaner/broom, pumpkin/melon, nuts, pans, socket/switch and sandal/flip-flop.</p>
+<div class="sum"><span>41 contrast sets</span><span>91 nouns</span><span>frames #54–#144</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html" class="hier">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="drinkgerei" data-band="a2"><h2><span class="woorden">het kopje · het glas · de beker</span></h2><p class="as">kind of drinking vessel · 3 cards</p><p class="zin">Het kopje staat op een schoteltje, het glas is doorzichtig en de beker heeft een groot oor.<span class="en">The cup stands on a saucer, the glass is see-through and the mug has a big handle.</span></p><p class="frame"><strong>Fixed frame.</strong> one empty drinking vessel standing on a flat table line against a plain wall, seen side-on, whole object, same height on the page, no liquid, no straw. Only the kind of vessel changes: a small handled cup on a saucer, a plain straight see-through glass, or a thick mug with a large handle.</p><div class="kaarten"><article id="kopje" class="kaart" data-id="kopje" data-band="a2" data-kind="noun" data-article="het" data-plural="kopjes" data-dim="yes" data-cluster="drinkgerei" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 54">#54</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het kopje</h3>
+<p class="gloss">cup</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">kopjes</span><span class="dim" title="verkleinwoord">verkleinwoord van de kop</span></p>
+<p class="vlaggen"><span>kind of drinking vessel</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small porcelain cup with one curved handle on its right side, standing on a round saucer on the table line, seen side-on. The cup is wide at the rim and curves in toward a small foot; no stem, no lid, no liquid.</dd>
+<dt>Must read</dt><dd class="must">a small cup with a curved handle sitting on a saucer.</dd>
+<dt>Avoid</dt><dd class="avoid">a see-through glass with no handle (glas); a thick mug with a large handle and no saucer (beker); a bowl with no handle (not the card); a teapot with a spout (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="glas beker">Pair with glas and beker. The only difference is the vessel: a small cup on a saucer here, a see-through glass or a thick mug with no saucer there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wil je een kopje thee?<br><span class="voorbeeld-en">Would you like a cup of tea?</span></dd>
+<dt>Alt text</dt><dd class="alt">Een klein rond vat met een gebogen oor staat op een plat bordje.</dd>
+</dl>
+<p class="id">kopje.png · A2 · drinkgerei</p>
+</article>
+<article id="glas" class="kaart" data-id="glas" data-band="a2" data-kind="noun" data-article="het" data-plural="glazen" data-dim="no" data-cluster="drinkgerei" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 55">#55</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het glas</h3>
+<p class="gloss">glass</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">glazen</span></p>
+<p class="vlaggen"><span>kind of drinking vessel</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A plain straight drinking glass standing on the table line, seen side-on: straight walls that widen slightly to the rim, a thick flat base, no stem and no handle. Two short slanted strokes on the wall show it is transparent; no liquid. The glas-een and glas-meer cards reuse this drawing.</dd>
+<dt>Must read</dt><dd class="must">a plain straight see-through glass with two transparency strokes and no handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a small cup with a handle on a saucer (kopje); a thick mug with a large handle (beker); a stemmed wine glass (not the card); a bottle with a neck (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kopje beker">Pair with kopje and beker. The only difference is the vessel: a see-through straight wall with nothing attached here, a small cup on a saucer or a thick mug with a large handle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik drink een glas water.<br><span class="voorbeeld-en">I drink a glass of water.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een doorzichtig recht vat zonder oor en zonder steel staat op een tafel.</dd>
+</dl>
+<p class="id">glas.png · A2 · drinkgerei</p>
+</article>
+<article id="beker" class="kaart" data-id="beker" data-band="a2" data-kind="noun" data-article="de" data-plural="bekers" data-dim="no" data-cluster="drinkgerei" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 56">#56</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de beker</h3>
+<p class="gloss">mug, beaker</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">bekers</span></p>
+<p class="vlaggen"><span>kind of drinking vessel</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A thick mug standing on the table line, seen side-on: straight thick walls, a flat base, a plain round rim and one large handle on its right side. It is taller and heavier than the cup and has no saucer, no stem and no liquid.</dd>
+<dt>Must read</dt><dd class="must">a thick straight mug with one large handle and no saucer.</dd>
+<dt>Avoid</dt><dd class="avoid">a small cup with a handle on a saucer (kopje); a see-through glass with no handle (glas); a jug with a spout (not the card); a bucket with a handle (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kopje glas">Pair with kopje and glas. The only difference is the vessel: a thick mug with a large handle and no saucer here, a small cup on a saucer or a see-through glass with no handle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De beker staat op de tafel.<br><span class="voorbeeld-en">The mug is on the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dik recht vat met een groot oor en een platte bodem staat op een tafel.</dd>
+</dl>
+<p class="id">beker.png · A2 · drinkgerei</p>
+</article></div></section>
+<section class="cluster" data-cluster="bestek" data-band="a2"><h2><span class="woorden">het mes · de vork · de lepel</span></h2><p class="as">kind of cutlery · 3 cards</p><p class="zin">Ik snijd met het mes, ik prik met de vork en ik eet soep met de lepel.<span class="en">I cut with the knife, I spear food with the fork and I eat soup with the spoon.</span></p><p class="frame"><strong>Fixed frame.</strong> one piece of cutlery lying flat on a plain table line, seen from above, whole object, same length on the page, no plate, no food. Only the piece changes: a knife with a blade, a fork with tines, or a spoon with a round bowl.</p><div class="kaarten"><article id="mes" class="kaart" data-id="mes" data-band="a2" data-kind="noun" data-article="het" data-plural="messen" data-dim="no" data-cluster="bestek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 57">#57</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het mes</h3>
+<p class="gloss">knife</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">messen</span></p>
+<p class="vlaggen"><span>kind of cutlery</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A knife lying flat on the table line, seen from above, with a long straight blade with a sharp edge on one side and a pointed tip, joined to a short rounded handle with two small rivets. The whole object is about as long as a hand and a half.</dd>
+<dt>Must read</dt><dd class="must">a single long sharp blade with a plain handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a fork with several tines (vork); a spoon with a round bowl (lepel); a pair of scissors (not the card); a screwdriver (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vork lepel">Pair with vork and lepel. The only difference is the piece: one long sharp blade here, several tines or a round bowl there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik snijd het brood met een mes.<br><span class="voorbeeld-en">I cut the bread with a knife.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lang plat voorwerp met een scherpe rand aan een kant en een kort handvat ligt op een tafel.</dd>
+</dl>
+<p class="id">mes.png · A2 · bestek</p>
+</article>
+<article id="vork" class="kaart" data-id="vork" data-band="a2" data-kind="noun" data-article="de" data-plural="vorken" data-dim="no" data-cluster="bestek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 58">#58</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de vork</h3>
+<p class="gloss">fork</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">vorken</span></p>
+<p class="vlaggen"><span>kind of cutlery</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A fork lying flat on the table line, seen from above, with four long parallel tines at one end, a short neck and a slim handle, the same length as the knife would be. No food.</dd>
+<dt>Must read</dt><dd class="must">four parallel tines on a slim handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a knife with a single blade (mes); a spoon with a round bowl (lepel); a garden rake (not the card); a trident (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="mes lepel">Pair with mes and lepel. The only difference is the piece: four parallel tines here, one blade or one round bowl there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Pak een vork uit de la.<br><span class="voorbeeld-en">Take a fork from the drawer.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een plat voorwerp met vier lange pinnen naast elkaar aan een dunne steel ligt op een tafel.</dd>
+</dl>
+<p class="id">vork.png · A2 · bestek</p>
+</article>
+<article id="lepel" class="kaart" data-id="lepel" data-band="a2" data-kind="noun" data-article="de" data-plural="lepels" data-dim="no" data-cluster="bestek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 59">#59</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de lepel</h3>
+<p class="gloss">spoon</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">lepels</span></p>
+<p class="vlaggen"><span>kind of cutlery</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A spoon lying flat on the table line, seen from above, with a round deep bowl at one end, a short neck and a slim handle, the same length as the knife would be. No food.</dd>
+<dt>Must read</dt><dd class="must">a round deep bowl on a slim handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a knife with a straight blade (mes); a fork with tines (vork); a ladle with a long handle (not the card); a shovel (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="mes vork">Pair with mes and vork. The only difference is the piece: a round bowl here, a straight blade or tines there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik eet soep met een lepel.<br><span class="voorbeeld-en">I eat soup with a spoon.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een plat voorwerp met een ronde holle kom aan een dunne steel ligt op een tafel.</dd>
+</dl>
+<p class="id">lepel.png · A2 · bestek</p>
+</article></div></section>
+<section class="cluster" data-cluster="jas-trui" data-band="a2"><h2><span class="woorden">de jas · de trui</span></h2><p class="as">outer coat or knitted top · 2 cards</p><p class="zin">De jas is voor de regen en de trui is voor binnen.<span class="en">The coat is for the rain and the jumper is for indoors.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult torso garment shown laid flat on a plain table line, seen from the front, same size on the page, no hanger, no person. Only the garment changes: a long coat with a front zip, collar and pockets, or a knitted jumper with a round neck and ribbed cuffs.</p><div class="kaarten"><article id="jas" class="kaart" data-id="jas" data-band="a2" data-kind="noun" data-article="de" data-plural="jassen" data-dim="no" data-cluster="jas-trui" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 60">#60</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de jas</h3>
+<p class="gloss">coat</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">jassen</span></p>
+<p class="vlaggen"><span>outer coat or knitted top</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A long coat laid flat on the table line, seen from the front, with two long sleeves, a collar, a full-length zip with a flap, two pockets and a hem reaching below the hip. No hood; the cloth is plain and thick.</dd>
+<dt>Must read</dt><dd class="must">a long coat with a zip, a collar and pockets.</dd>
+<dt>Avoid</dt><dd class="avoid">a knitted jumper with a round neck and no zip (trui); a waistcoat with no sleeves (not the card); a dress (not the card); a short shirt (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="trui">Pair with trui. The only difference is the garment: a zip, a collar and pockets here, a soft round neck and ribbed cuffs there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het regent, dus ik pak mijn jas.<br><span class="voorbeeld-en">It is raining, so I take my coat.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lang kledingstuk met mouwen, een kraag, een rits en twee zakken ligt plat op een tafel.</dd>
+</dl>
+<p class="id">jas.png · A2 · jas-trui</p>
+</article>
+<article id="trui" class="kaart" data-id="trui" data-band="a2" data-kind="noun" data-article="de" data-plural="truien" data-dim="no" data-cluster="jas-trui" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 61">#61</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de trui</h3>
+<p class="gloss">jumper</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">truien</span></p>
+<p class="vlaggen"><span>outer coat or knitted top</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A knitted jumper laid flat on the table line, seen from the front, with two long sleeves, a round neck band, ribbed cuffs and a ribbed hem, and a simple knit pattern of vertical lines. No zip, no pockets, no collar.</dd>
+<dt>Must read</dt><dd class="must">a soft round neck, ribbed cuffs and no zip or pockets.</dd>
+<dt>Avoid</dt><dd class="avoid">a long coat with a zip and pockets (jas); a shirt with buttons (not the card); a scarf (not the card); a waistcoat with no sleeves (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="jas">Pair with jas. The only difference is the garment: a ribbed round neck with no zip here, a zip, collar and pockets there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn oma breit een warme trui.<br><span class="voorbeeld-en">My grandmother is knitting a warm jumper.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gebreid kledingstuk met mouwen, een ronde hals en geribbelde randen ligt plat op een tafel.</dd>
+</dl>
+<p class="id">trui.png · A2 · jas-trui</p>
+</article></div></section>
+<section class="cluster" data-cluster="bagage" data-band="a2"><h2><span class="woorden">de tas · de koffer</span></h2><p class="as">bag or suitcase · 2 cards</p><p class="zin">Ik doe mijn boek in de tas, maar mijn kleren gaan in de koffer.<span class="en">I put my book in the bag, but my clothes go in the suitcase.</span></p><p class="frame"><strong>Fixed frame.</strong> one carried container standing on a flat ground line beside a plain wall, seen side-on, whole object, same height on the page, no tag, no sticker. Only the container changes: a soft bag with two shoulder handles, or a hard rectangular suitcase on small wheels.</p><div class="kaarten"><article id="tas" class="kaart" data-id="tas" data-band="a2" data-kind="noun" data-article="de" data-plural="tassen" data-dim="no" data-cluster="bagage" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 62">#62</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de tas</h3>
+<p class="gloss">bag</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">tassen</span></p>
+<p class="vlaggen"><span>bag or suitcase</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A soft bag with two looped shoulder handles, rounded corners and a short top flap, standing on the ground line against a plain wall, seen side-on. The sides slump a little; it is about the size of a loaf of bread and a half.</dd>
+<dt>Must read</dt><dd class="must">a soft slumping bag with two looped handles.</dd>
+<dt>Avoid</dt><dd class="avoid">a hard rectangular suitcase with wheels (koffer); a backpack with two shoulder straps (not the card); a paper bag (not the card); a basket (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="koffer">Pair with koffer. The only difference is the container: soft with two handles here, hard and square with wheels there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij draagt een zware tas.<br><span class="voorbeeld-en">She carries a heavy bag.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een zachte zak met twee lussen om vast te pakken staat tegen een muur.</dd>
+</dl>
+<p class="id">tas.png · A2 · bagage</p>
+</article>
+<article id="koffer" class="kaart" data-id="koffer" data-band="a2" data-kind="noun" data-article="de" data-plural="koffers" data-dim="no" data-cluster="bagage" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 63">#63</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de koffer</h3>
+<p class="gloss">suitcase</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">koffers</span></p>
+<p class="vlaggen"><span>bag or suitcase</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A hard rectangular suitcase with sharp corners, two clasps on the front, a telescopic pull handle at the top and four small wheels, standing upright on the ground line against a plain wall, seen side-on.</dd>
+<dt>Must read</dt><dd class="must">a hard box with sharp corners, clasps and small wheels.</dd>
+<dt>Avoid</dt><dd class="avoid">a soft bag with two looped handles (tas); a rucksack (not the card); a wooden chest (kist); a cardboard box (doos).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tas">Pair with tas. The only difference is the container: hard, square and on wheels here, soft with two handles there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn koffer is nog niet ingepakt.<br><span class="voorbeeld-en">My suitcase is not packed yet.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een harde rechthoekige bak met twee sloten, een lange trekstang en kleine wieltjes staat tegen een muur.</dd>
+</dl>
+<p class="id">koffer.png · A2 · bagage</p>
+</article></div></section>
+<section class="cluster" data-cluster="vogel-vis" data-band="a2"><h2><span class="woorden">de vogel · de vis</span></h2><p class="as">air or water animal · 2 cards</p><p class="zin">De vogel vliegt in de lucht en de vis zwemt in het water.<span class="en">The bird flies in the air and the fish swims in the water.</span></p><p class="frame"><strong>Fixed frame.</strong> one animal seen side-on, whole figure, against a plain background, same size on the page, no water line, no sky detail. Only the animal changes: a bird with two wings and a beak, or a fish with fins and a tail.</p><div class="kaarten"><article id="vogel" class="kaart" data-id="vogel" data-band="a2" data-kind="noun" data-article="de" data-plural="vogels" data-dim="no" data-cluster="vogel-vis" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 64">#64</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de vogel</h3>
+<p class="gloss">bird</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">vogels</span></p>
+<p class="vlaggen"><span>air or water animal</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small bird seen side-on, whole figure, perched on a thin branch line against plain background, with two folded wings, a pointed beak, a round head, two thin legs gripping the branch and a short fan tail. No water, no sky detail.</dd>
+<dt>Must read</dt><dd class="must">a pointed beak, folded wings and thin legs gripping a branch.</dd>
+<dt>Avoid</dt><dd class="avoid">a fish with fins and a tail (vis); a bat with leathery wings (not the card); a butterfly (not the card); a chicken with a big comb (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vis">Pair with vis. The only difference is the animal: a beak, wings and thin legs here, fins, scales and a tail fin there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een vogel zit op het dak.<br><span class="voorbeeld-en">A bird sits on the roof.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een klein dier met een spitse snavel, twee vleugels en dunne pootjes zit op een tak.</dd>
+</dl>
+<p class="id">vogel.png · A2 · vogel-vis</p>
+</article>
+<article id="vis" class="kaart" data-id="vis" data-band="a2" data-kind="noun" data-article="de" data-plural="vissen" data-dim="no" data-cluster="vogel-vis" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 65">#65</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de vis</h3>
+<p class="gloss">fish</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">vissen</span></p>
+<p class="vlaggen"><span>air or water animal</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A single fish seen side-on, whole figure, against plain background, with an oval scaled body, a round eye, two small fins on the belly and back, a big fan tail and a gill line behind the head. No water line, no bubbles.</dd>
+<dt>Must read</dt><dd class="must">an oval scaled body with fins and a fan tail.</dd>
+<dt>Avoid</dt><dd class="avoid">a bird with wings and a beak (vogel); a shark with a huge fin (not the card); a whale (not the card); a dolphin (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vogel">Pair with vogel. The only difference is the animal: scales, fins and a tail fin here, a beak, wings and thin legs there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De vis zwemt in de rivier.<br><span class="voorbeeld-en">The fish swims in the river.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een ovaal dier met schubben, kleine vinnen en een grote staart.</dd>
+</dl>
+<p class="id">vis.png · A2 · vogel-vis</p>
+</article></div></section>
+<section class="cluster" data-cluster="servies" data-band="a2"><h2><span class="woorden">het bord · de schaal</span></h2><p class="as">plate or dish · 2 cards</p><p class="zin">Ik eet van het bord, maar de aardappels liggen in de schaal.<span class="en">I eat from the plate, but the potatoes are in the serving dish.</span></p><p class="frame"><strong>Fixed frame.</strong> one empty dish standing on a flat table line, seen from three-quarter above, whole object, same viewpoint and table line, no food, no pattern. Only the dish changes: a flat round plate with a shallow rim, or a larger serving dish with sloping sides.</p><div class="kaarten"><article id="bord" class="kaart" data-id="bord" data-band="a2" data-kind="noun" data-article="het" data-plural="borden" data-dim="no" data-cluster="servies" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 66">#66</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het bord</h3>
+<p class="gloss">plate</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">borden</span></p>
+<p class="vlaggen"><span>plate or dish</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A flat round dinner plate seen from three-quarter above, standing on the table line, with a wide flat middle and a thin low rim, about as wide as two hands. No food, no pattern, no cutlery.</dd>
+<dt>Must read</dt><dd class="must">a wide flat middle with a thin low rim.</dd>
+<dt>Avoid</dt><dd class="avoid">a large serving dish with sloping sides (schaal); a saucer under a cup (not the card); a frying pan with a handle (not the card); a round tray (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="schaal">Pair with schaal. The only difference is the dish: a wide flat middle here, a large dish with sloping sides there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zet het bord op de tafel.<br><span class="voorbeeld-en">Put the plate on the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een groot plat rond voorwerp met een smalle lage rand staat op een tafel.</dd>
+</dl>
+<p class="id">bord.png · A2 · servies</p>
+</article>
+<article id="schaal" class="kaart" data-id="schaal" data-band="a2" data-kind="noun" data-article="de" data-plural="schalen" data-dim="no" data-cluster="servies" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 67">#67</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de schaal</h3>
+<p class="gloss">dish, serving bowl</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">schalen</span></p>
+<p class="vlaggen"><span>plate or dish</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A large round serving dish seen from three-quarter above, standing on the table line, with wide sloping sides, a small flat foot and a wide round rim, clearly wider than a plate and deeper than it. No food, no pattern.</dd>
+<dt>Must read</dt><dd class="must">a wide serving dish with sloping sides, clearly larger and deeper than a plate.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat plate with a low rim (bord); a small soup bowl (not the card); a flower pot (not the card); a bucket (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bord">Pair with bord. The only difference is the dish: a large dish with sloping sides here, a flat plate with a low rim there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Er liggen appels in de schaal.<br><span class="voorbeeld-en">There are apples in the dish.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een groot rond voorwerp met schuine wanden en een kleine voet staat op een tafel.</dd>
+</dl>
+<p class="id">schaal.png · A2 · servies</p>
+</article></div></section>
+<section class="cluster" data-cluster="lichtbron" data-band="a2"><h2><span class="woorden">de lamp · de kaars</span></h2><p class="as">lamp or candle · 2 cards</p><p class="zin">De lamp heeft een snoer, maar de kaars heeft een vlam.<span class="en">The lamp has a cable, but the candle has a flame.</span></p><p class="frame"><strong>Fixed frame.</strong> one light source standing on a flat table line against a plain wall, seen side-on, same height on the page. Only the source changes: an electric lamp with a shade and a cable, or a candle on a small holder with a flame.</p><div class="kaarten"><article id="lamp" class="kaart" data-id="lamp" data-band="a2" data-kind="noun" data-article="de" data-plural="lampen" data-dim="no" data-cluster="lichtbron" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 68">#68</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de lamp</h3>
+<p class="gloss">lamp</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">lampen</span></p>
+<p class="vlaggen"><span>lamp or candle</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An electric table lamp standing on the table line, seen side-on, with a round base, a slim stand, a cone-shaped shade, short rays of light shown by six short strokes under the shade, and a cable curling away along the table. No flame.</dd>
+<dt>Must read</dt><dd class="must">a cone shade with short light strokes and a cable.</dd>
+<dt>Avoid</dt><dd class="avoid">a candle with a small flame (kaars); a torch (not the card); a ceiling light (not the card); a fire (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kaars">Pair with kaars. The only difference is the source: a shade with a cable and short strokes here, a wax stick with a small flame there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De lamp is kapot.<br><span class="voorbeeld-en">The lamp is broken.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een voorwerp met een ronde voet, een kegelvormige kap en een snoer dat over de tafel kronkelt.</dd>
+</dl>
+<p class="id">lamp.png · A2 · lichtbron</p>
+</article>
+<article id="kaars" class="kaart" data-id="kaars" data-band="a2" data-kind="noun" data-article="de" data-plural="kaarsen" data-dim="no" data-cluster="lichtbron" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 69">#69</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kaars</h3>
+<p class="gloss">candle</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kaarsen</span></p>
+<p class="vlaggen"><span>lamp or candle</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A tall candle on a small round holder standing on the table line, seen side-on, with a smooth wax stick, a short wick and a small teardrop flame on top, with two drips running down the side. No cable, no shade.</dd>
+<dt>Must read</dt><dd class="must">a wax stick with a small teardrop flame and drips.</dd>
+<dt>Avoid</dt><dd class="avoid">an electric lamp with a shade and cable (lamp); a cigarette (not the card); a torch with a handle (not the card); a firework (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="lamp">Pair with lamp. The only difference is the source: a wax stick with a small flame here, a shade with a cable there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij steekt een kaars aan.<br><span class="voorbeeld-en">She lights a candle.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lange staaf op een klein schoteltje met een druppelvormig vlammetje bovenop.</dd>
+</dl>
+<p class="id">kaars.png · A2 · lichtbron</p>
+</article></div></section>
+<section class="cluster" data-cluster="schrijfgerei" data-band="a2"><h2><span class="woorden">de pen · het potlood</span></h2><p class="as">pen or pencil · 2 cards</p><p class="zin">Ik schrijf met de pen, maar mijn zus tekent met het potlood.<span class="en">I write with the pen, but my sister draws with the pencil.</span></p><p class="frame"><strong>Fixed frame.</strong> one writing tool lying flat on a plain table line, seen from above, whole object, same length on the page, no paper, no cap. Only the tool changes: a ballpoint pen with a metal clip, or a wooden pencil with a sharpened tip and a rubber on the end.</p><div class="kaarten"><article id="pen" class="kaart" data-id="pen" data-band="a2" data-kind="noun" data-article="de" data-plural="pennen" data-dim="no" data-cluster="schrijfgerei" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 70">#70</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de pen</h3>
+<p class="gloss">pen</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">pennen</span></p>
+<p class="vlaggen"><span>pen or pencil</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A ballpoint pen lying flat on the table line, seen from above, with a slim round barrel, a metal clip along one side, a small ballpoint tip at one end and a push-button at the other end. A thin line trails from the tip.</dd>
+<dt>Must read</dt><dd class="must">a slim barrel with a clip and a ballpoint tip, no wood.</dd>
+<dt>Avoid</dt><dd class="avoid">a wooden pencil with a hexagonal body and a rubber end (potlood); a paintbrush (not the card); a marker with a thick tip (not the card); a feather quill (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="potlood">Pair with potlood. The only difference is the tool: a smooth barrel with a clip and a ballpoint tip here, a faceted wooden body with a rubber end there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Heb je een pen voor mij?<br><span class="voorbeeld-en">Do you have a pen for me?</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gladde buis met een klem en een metalen punt ligt op een tafel, met een lijntje erachter.</dd>
+</dl>
+<p class="id">pen.png · A2 · schrijfgerei</p>
+</article>
+<article id="potlood" class="kaart" data-id="potlood" data-band="a2" data-kind="noun" data-article="het" data-plural="potloden" data-dim="no" data-cluster="schrijfgerei" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 71">#71</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het potlood</h3>
+<p class="gloss">pencil</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">potloden</span></p>
+<p class="vlaggen"><span>pen or pencil</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A wooden pencil lying flat on the table line, seen from above, with a hexagonal body showing facets, a sharpened cone of wood and a dark point at one end and a small rubber in a metal band at the other end. No line trails from it.</dd>
+<dt>Must read</dt><dd class="must">a faceted wooden body with a sharpened cone and a rubber on the end.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth pen with a clip and a ballpoint tip (pen); a crayon with a blunt end (not the card); a stick (not the card); a paintbrush (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="pen">Pair with pen. The only difference is the tool: a faceted wooden body with a sharpened tip and a rubber here, a smooth barrel with a clip and a ballpoint tip there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik teken met een potlood.<br><span class="voorbeeld-en">I draw with a pencil.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een zeskantig houten staafje met een scherpe kegel aan een kant en een gummetje aan de andere ligt op een tafel.</dd>
+</dl>
+<p class="id">potlood.png · A2 · schrijfgerei</p>
+</article></div></section>
+<section class="cluster" data-cluster="sleutel-slot" data-band="a2"><h2><span class="woorden">de sleutel · het slot</span></h2><p class="as">key or lock · 2 cards</p><p class="zin">De sleutel past in het slot.<span class="en">The key fits in the lock.</span></p><p class="frame"><strong>Fixed frame.</strong> one small metal object seen from the front on a plain background, same size on the page, no ring, no label. Only the object changes: a key with a round bow and a toothed blade, or a padlock with a curved shackle and a keyhole.</p><div class="kaarten"><article id="sleutel" class="kaart" data-id="sleutel" data-band="a2" data-kind="noun" data-article="de" data-plural="sleutels" data-dim="no" data-cluster="sleutel-slot" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 72">#72</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de sleutel</h3>
+<p class="gloss">key</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">sleutels</span></p>
+<p class="vlaggen"><span>key or lock</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A single metal key seen from the front, upright, with a round loop at the top, a straight shaft and a toothed blade at the bottom with three notches. No ring, no label, no lock.</dd>
+<dt>Must read</dt><dd class="must">a round loop at the top and a toothed blade at the bottom.</dd>
+<dt>Avoid</dt><dd class="avoid">a padlock with a curved shackle (slot); a coin (not the card); a bottle opener (not the card); a screw (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="slot">Pair with slot. The only difference is the object: a loop and a toothed blade here, a curved shackle and a keyhole there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ben mijn sleutel kwijt.<br><span class="voorbeeld-en">I have lost my key.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een smal metalen voorwerp met een ronde lus bovenaan en een getand uiteinde.</dd>
+</dl>
+<p class="id">sleutel.png · A2 · sleutel-slot</p>
+</article>
+<article id="slot" class="kaart" data-id="slot" data-band="a2" data-kind="noun" data-article="het" data-plural="sloten" data-dim="no" data-cluster="sleutel-slot" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 73">#73</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het slot</h3>
+<p class="gloss">lock</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">sloten</span></p>
+<p class="vlaggen"><span>key or lock</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A padlock seen from the front, hanging upright, with a thick rectangular body, a curved metal shackle on top that is closed, and a round keyhole in the middle of the body. No key, no chain.</dd>
+<dt>Must read</dt><dd class="must">a closed curved shackle above a body with a keyhole.</dd>
+<dt>Avoid</dt><dd class="avoid">a key with a toothed blade (sleutel); a combination lock with number wheels (not the card); a door bolt (not the card); a chain (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="sleutel">Pair with sleutel. The only difference is the object: a closed shackle and a keyhole here, a loop and a toothed blade there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het slot zit vast.<br><span class="voorbeeld-en">The lock is stuck.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dik blokje met een gebogen beugel erboven en een gaatje in het midden.</dd>
+</dl>
+<p class="id">slot.png · A2 · sleutel-slot</p>
+</article></div></section>
+<section class="cluster" data-cluster="tijdmeter" data-band="a2"><h2><span class="woorden">de klok · het horloge</span></h2><p class="as">wall clock or wristwatch · 2 cards</p><p class="zin">De klok hangt aan de muur en het horloge zit om mijn pols.<span class="en">The clock hangs on the wall and the watch is round my wrist.</span></p><p class="frame"><strong>Fixed frame.</strong> one round timepiece shown whole against a plain background, same size on the page, no numbers or marks other than twelve plain dots and two hands. Only the object changes: a wall clock hanging on a nail, or a watch on a wrist strap lying flat.</p><div class="kaarten"><article id="klok" class="kaart" data-id="klok" data-band="a2" data-kind="noun" data-article="de" data-plural="klokken" data-dim="no" data-cluster="tijdmeter" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 74">#74</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de klok</h3>
+<p class="gloss">clock</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">klokken</span></p>
+<p class="vlaggen"><span>wall clock or wristwatch</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A round wall clock hanging on a nail on a plain wall, seen from the front, with a thick round frame, twelve plain dots around the edge, a short hour hand and a long minute hand. The whole clock is about as wide as a dinner plate and hangs by itself.</dd>
+<dt>Must read</dt><dd class="must">a round clock hanging from a nail with two hands.</dd>
+<dt>Avoid</dt><dd class="avoid">a watch on a wrist strap (horloge); a compass (not the card); a barometer (not the card); a plate on a wall (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="horloge">Pair with horloge. The only difference is the object: a large round face hanging on a nail here, a small face on a strap there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De klok hangt in de keuken.<br><span class="voorbeeld-en">The clock hangs in the kitchen.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een grote ronde schijf met twee wijzers hangt aan een spijker aan de muur.</dd>
+</dl>
+<p class="id">klok.png · A2 · tijdmeter</p>
+</article>
+<article id="horloge" class="kaart" data-id="horloge" data-band="a2" data-kind="noun" data-article="het" data-plural="horloges" data-dim="no" data-cluster="tijdmeter" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 75">#75</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het horloge</h3>
+<p class="gloss">watch</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">horloges</span></p>
+<p class="vlaggen"><span>wall clock or wristwatch</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A wristwatch lying flat on the table line, seen from above, with a small round face with twelve plain dots and two hands, joined to a strap with a buckle that curls round in a loop. The face is only as wide as a coin.</dd>
+<dt>Must read</dt><dd class="must">a small round face joined to a looped strap with a buckle.</dd>
+<dt>Avoid</dt><dd class="avoid">a large wall clock hanging on a nail (klok); a bracelet with no face (not the card); a stopwatch with a button (not the card); a compass (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="klok">Pair with klok. The only difference is the object: a small face on a strap here, a large face on a nail there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn vader draagt een duur horloge.<br><span class="voorbeeld-en">My father wears an expensive watch.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een heel klein rond wijzerplaatje met twee wijzers zit vast aan een bandje met een gesp.</dd>
+</dl>
+<p class="id">horloge.png · A2 · tijdmeter</p>
+</article></div></section>
+<section class="cluster" data-cluster="kleding-onder" data-band="a2"><h2><span class="woorden">de broek · de rok · de jurk</span></h2><p class="as">trousers, skirt or dress · 3 cards</p><p class="zin">De broek heeft twee pijpen, de rok heeft er geen en de jurk is één stuk.<span class="en">The trousers have two legs, the skirt has none and the dress is one piece.</span></p><p class="frame"><strong>Fixed frame.</strong> one garment shown laid flat on a plain table line, seen from the front, same height on the page, no hanger, no belt buckle detail, no person. Only the garment changes: trousers with two legs, a skirt with one wide opening, or a dress with a top and a skirt in one piece.</p><div class="kaarten"><article id="broek" class="kaart" data-id="broek" data-band="a2" data-kind="noun" data-article="de" data-plural="broeken" data-dim="no" data-cluster="kleding-onder" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 76">#76</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de broek</h3>
+<p class="gloss">trousers</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">broeken</span></p>
+<p class="vlaggen"><span>trousers, skirt or dress</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A pair of trousers laid flat on the table line, seen from the front, with a waistband, a short fly with a button, two separate legs reaching to the ankle and two side pockets. Plain cloth, no belt.</dd>
+<dt>Must read</dt><dd class="must">two separate long legs joined at the waistband.</dd>
+<dt>Avoid</dt><dd class="avoid">a skirt with one wide opening (rok); a dress with a top part (jurk); shorts with short legs (not the card); a pair of tights (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rok jurk">Pair with rok and jurk. The only difference is the garment: two separate long legs here, one wide opening or one piece with a top there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn broek is te kort.<br><span class="voorbeeld-en">My trousers are too short.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kledingstuk met twee aparte lange pijpen die boven aan elkaar zitten.</dd>
+</dl>
+<p class="id">broek.png · A2 · kleding-onder</p>
+</article>
+<article id="rok" class="kaart" data-id="rok" data-band="a2" data-kind="noun" data-article="de" data-plural="rokken" data-dim="no" data-cluster="kleding-onder" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 77">#77</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de rok</h3>
+<p class="gloss">skirt</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">rokken</span></p>
+<p class="vlaggen"><span>trousers, skirt or dress</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A skirt laid flat on the table line, seen from the front, with a waistband at the top and one wide opening below it that flares slightly to a straight hem reaching to the knee. One piece of cloth, no legs, no top part.</dd>
+<dt>Must read</dt><dd class="must">one wide opening below a waistband with no legs.</dd>
+<dt>Avoid</dt><dd class="avoid">trousers with two separate legs (broek); a dress with a top part (jurk); a kilt with a pattern (not the card); a cape (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="broek jurk">Pair with broek and jurk. The only difference is the garment: one wide opening below a waistband here, two legs or a top part there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij draagt een korte rok.<br><span class="voorbeeld-en">She wears a short skirt.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kledingstuk met een band bovenaan en daaronder één wijde opening zonder pijpen.</dd>
+</dl>
+<p class="id">rok.png · A2 · kleding-onder</p>
+</article>
+<article id="jurk" class="kaart" data-id="jurk" data-band="a2" data-kind="noun" data-article="de" data-plural="jurken" data-dim="no" data-cluster="kleding-onder" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 78">#78</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de jurk</h3>
+<p class="gloss">dress</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">jurken</span></p>
+<p class="vlaggen"><span>trousers, skirt or dress</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A dress laid flat on the table line, seen from the front, with two short sleeves, a round neckline, a fitted top part joined at the waist to a wide skirt falling to the knee, all in one piece of cloth. No belt, no collar.</dd>
+<dt>Must read</dt><dd class="must">a top with sleeves and a wide skirt in one piece.</dd>
+<dt>Avoid</dt><dd class="avoid">trousers with two legs (broek); a skirt with a waistband only (rok); a nightshirt with no waist (not the card); a long robe (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="broek rok">Pair with broek and rok. The only difference is the garment: a top and a skirt in one piece here, two legs or a skirt alone there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij heeft een nieuwe jurk gekocht.<br><span class="voorbeeld-en">She has bought a new dress.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kledingstuk uit één stuk met korte mouwen, een ronde hals en onderaan een wijde zoom.</dd>
+</dl>
+<p class="id">jurk.png · A2 · kleding-onder</p>
+</article></div></section>
+<section class="cluster" data-cluster="opberger" data-band="a2"><h2><span class="woorden">de doos · de kist</span></h2><p class="as">box or chest · 2 cards</p><p class="zin">De doos is licht, maar de kist is zwaar.<span class="en">The box is light, but the chest is heavy.</span></p><p class="frame"><strong>Fixed frame.</strong> one container standing on a flat floor line against a plain wall, seen three-quarter from the front, whole object, same size on the page, no label. Only the container changes: a light cardboard box with folded flaps, or a heavy wooden chest with a rounded lid, hinges and a lock.</p><div class="kaarten"><article id="doos" class="kaart" data-id="doos" data-band="a2" data-kind="noun" data-article="de" data-plural="dozen" data-dim="no" data-cluster="opberger" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 79">#79</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de doos</h3>
+<p class="gloss">box</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">dozen</span></p>
+<p class="vlaggen"><span>box or chest</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A light cardboard box with four folded flaps open at the top, straight flat sides, a few creases at the corners and a small cut-out handle on one side, standing on the floor line against a plain wall, seen three-quarter. It is about the size of a microwave.</dd>
+<dt>Must read</dt><dd class="must">thin flat sides with open folded flaps on top.</dd>
+<dt>Avoid</dt><dd class="avoid">a heavy wooden chest with a rounded lid and a lock (kist); a suitcase with wheels (koffer); a crate with slats (not the card); a gift box with a bow (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kist">Pair with kist. The only difference is the container: thin flat folded sides with open flaps here, thick wood with a rounded lid and lock there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De doos staat in de kamer.<br><span class="voorbeeld-en">The box stands in the room.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een bak van dun, gevouwen materiaal met open kleppen bovenop staat tegen een muur.</dd>
+</dl>
+<p class="id">doos.png · A2 · opberger</p>
+</article>
+<article id="kist" class="kaart" data-id="kist" data-band="a2" data-kind="noun" data-article="de" data-plural="kisten" data-dim="no" data-cluster="opberger" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 80">#80</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kist</h3>
+<p class="gloss">chest</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kisten</span></p>
+<p class="vlaggen"><span>box or chest</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A heavy wooden chest with thick planks, iron bands around it, a rounded lid with two hinges at the back and a lock at the front, standing on the floor line against a plain wall, seen three-quarter. It is about as big as the cardboard box would be.</dd>
+<dt>Must read</dt><dd class="must">thick planks with iron bands, a rounded lid and a lock.</dd>
+<dt>Avoid</dt><dd class="avoid">a light cardboard box with open flaps (doos); a coffin (not the card); a treasure chest with coins spilling out (not the card); a suitcase with wheels (koffer).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="doos">Pair with doos. The only difference is the container: thick planks with a rounded lid and lock here, thin folded sides with open flaps there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de kist liggen oude boeken.<br><span class="voorbeeld-en">Old books lie in the chest.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een zware houten bak met ijzeren banden, een bol deksel en een slot staat tegen een muur.</dd>
+</dl>
+<p class="id">kist.png · A2 · opberger</p>
+</article></div></section>
+<section class="cluster" data-cluster="ei-getal" data-band="a2"><h2><span class="woorden">het ei · de eieren</span></h2><p class="as">one or more (irregular plural) · 2 cards</p><p class="zin">Hier staat het ei, daar staan de eieren.<span class="en">Here stands the egg, over there stand the eggs.</span></p><p class="frame"><strong>Fixed frame.</strong> an egg standing upright in a plain egg cup, every egg identical in size and style, on a flat table line against a plain wall. Only the number of eggs changes: one egg in one cup, or three eggs in three cups side by side.</p><div class="kaarten"><article id="ei-een" class="kaart" data-id="ei-een" data-band="a2" data-kind="noun" data-article="het" data-plural="eieren" data-dim="no" data-cluster="ei-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 81">#81</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het ei</h3>
+<p class="gloss">egg</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">eieren</span></p>
+<p class="vlaggen"><span>one or more (irregular plural)</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One egg standing upright in a plain egg cup, on a flat table line against a plain wall, with a smooth oval shell. Empty table on both sides of the cup.</dd>
+<dt>Must read</dt><dd class="must">one single egg in one cup with empty table beside it.</dd>
+<dt>Avoid</dt><dd class="avoid">three eggs in three cups (ei-meer); a cracked egg with a yolk (not the card); a fried egg in a pan (not the card); a bird's nest (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ei-meer">Pair with ei-meer. The only difference is the number: one egg in one cup here, three identical eggs in three cups there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik eet elke dag een ei.<br><span class="voorbeeld-en">I eat an egg every day.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een enkel glad ovaal voorwerp staat rechtop in een klein bekertje.</dd>
+</dl>
+<p class="id">ei-een.png · A2 · ei-getal</p>
+</article>
+<article id="ei-meer" class="kaart" data-id="ei-meer" data-band="a2" data-kind="noun" data-article="de" data-plural="eieren" data-dim="no" data-cluster="ei-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 82">#82</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de eieren</h3>
+<p class="gloss">eggs</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">eieren</span></p>
+<p class="vlaggen"><span>one or more (irregular plural)</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Three identical eggs, each standing upright in its own plain egg cup, evenly spaced side by side on one flat table line against a plain wall, each with a smooth oval shell and the same size as the single egg.</dd>
+<dt>Must read</dt><dd class="must">three identical eggs in three cups with gaps between.</dd>
+<dt>Avoid</dt><dd class="avoid">one egg alone (ei-een); a box of twelve eggs (not the card); two eggs (not the card); a nest of eggs (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ei-een">Pair with ei-een. The only difference is the number: three identical eggs in three cups here, one egg in one cup there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij eten zes eieren bij het ontbijt.<br><span class="voorbeeld-en">We eat six eggs at breakfast.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke gladde ovalen staan elk in een apart bekertje naast elkaar.</dd>
+</dl>
+<p class="id">ei-meer.png · A2 · ei-getal</p>
+</article></div></section>
+<section class="cluster" data-cluster="muis-getal" data-band="a2"><h2><span class="woorden">de muis · de muizen</span></h2><p class="as">one or more · 2 cards</p><p class="zin">Hier zit de muis, daar zitten de muizen.<span class="en">Here sits the mouse, over there sit the mice.</span></p><p class="frame"><strong>Fixed frame.</strong> a small mouse seen side-on on a flat ground line against a plain wall, every mouse identical in size and style, round ears, long thin tail. Only the number of mice changes: one mouse, or three mice side by side.</p><div class="kaarten"><article id="muis-een" class="kaart" data-id="muis-een" data-band="a2" data-kind="noun" data-article="de" data-plural="muizen" data-dim="no" data-cluster="muis-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 83">#83</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de muis</h3>
+<p class="gloss">mouse</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">muizen</span></p>
+<p class="vlaggen"><span>one or more</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One small mouse seen side-on on the ground line against a plain wall, with round ears, a pointed nose, whiskers, a round body and a long thin tail, standing in the middle of the picture with empty ground on both sides.</dd>
+<dt>Must read</dt><dd class="must">one single small mouse with empty ground on both sides.</dd>
+<dt>Avoid</dt><dd class="avoid">three mice in a row (muis-meer); a rat with a thick tail (not the card); a computer mouse (not the card); a hamster (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="muis-meer">Pair with muis-meer. The only difference is the number: one mouse here, three identical mice side by side there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De muis zit in het gat.<br><span class="voorbeeld-en">The mouse sits in the hole.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een klein knaagdier met ronde oren en een lange dunne staart staat alleen op de grond.</dd>
+</dl>
+<p class="id">muis-een.png · A2 · muis-getal</p>
+</article>
+<article id="muis-meer" class="kaart" data-id="muis-meer" data-band="a2" data-kind="noun" data-article="de" data-plural="muizen" data-dim="no" data-cluster="muis-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 84">#84</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de muizen</h3>
+<p class="gloss">mice</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">muizen</span></p>
+<p class="vlaggen"><span>one or more</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Three identical small mice seen side-on, evenly spaced side by side on one ground line against a plain wall, each with round ears, a pointed nose, whiskers and a long thin tail, each the same size as the single mouse, with gaps between them.</dd>
+<dt>Must read</dt><dd class="must">three identical mice with gaps between them.</dd>
+<dt>Avoid</dt><dd class="avoid">one mouse alone (muis-een); a swarm of many mice (not the card); two mice (not the card); a rat (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="muis-een">Pair with muis-een. The only difference is the number: three identical mice here, one mouse alone there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De muizen eten brood.<br><span class="voorbeeld-en">The mice eat bread.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke kleine knaagdieren met lange staarten staan naast elkaar met ruimte ertussen.</dd>
+</dl>
+<p class="id">muis-meer.png · A2 · muis-getal</p>
+</article></div></section>
+<section class="cluster" data-cluster="glas-getal" data-band="a2"><h2><span class="woorden">het glas · de glazen</span></h2><p class="as">one or more (irregular plural) · 2 cards</p><p class="zin">Hier staat het glas, daar staan de glazen.<span class="en">Here stands the glass, over there stand the glasses.</span></p><p class="frame"><strong>Fixed frame.</strong> a plain straight drinking glass with a thick base and no stem (the glas card drawing) standing on a flat table line against a plain wall, every glass identical in size and style, no liquid. Only the number of glasses changes: one glass, or three glasses side by side with gaps.</p><div class="kaarten"><article id="glas-een" class="kaart" data-id="glas-een" data-band="a2" data-kind="noun" data-article="het" data-plural="glazen" data-dim="no" data-cluster="glas-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 85">#85</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het glas</h3>
+<p class="gloss">glass</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">glazen</span></p>
+<p class="vlaggen"><span>one or more (irregular plural)</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same drawing as the glas card: one plain straight drinking glass with a thick flat base, no stem and no handle, two short slanted strokes showing it is transparent, standing on a flat table line against a plain wall, empty. Empty table on both sides.</dd>
+<dt>Must read</dt><dd class="must">one single glass with empty table beside it.</dd>
+<dt>Avoid</dt><dd class="avoid">three glasses side by side (glas-meer); a glass with a straw (not the card); a bottle (not the card); a cup with a handle (kopje).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="glas-meer">Pair with glas-meer. The only difference is the number: one glass here, three identical glasses side by side there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het glas is stuk.<br><span class="voorbeeld-en">The glass is broken.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een enkel doorzichtig recht vat zonder oor staat alleen op een tafel.</dd>
+</dl>
+<p class="id">glas-een.png · A2 · glas-getal</p>
+</article>
+<article id="glas-meer" class="kaart" data-id="glas-meer" data-band="a2" data-kind="noun" data-article="de" data-plural="glazen" data-dim="no" data-cluster="glas-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 86">#86</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de glazen</h3>
+<p class="gloss">glasses</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">glazen</span></p>
+<p class="vlaggen"><span>one or more (irregular plural)</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Three copies of the glas drawing: identical plain straight drinking glasses with thick flat bases, no stem and no handle, each with two transparency strokes, evenly spaced side by side on one flat table line against a plain wall, empty, each the same size as the single glass.</dd>
+<dt>Must read</dt><dd class="must">three identical glasses with gaps between.</dd>
+<dt>Avoid</dt><dd class="avoid">one glass alone (glas-een); a row of mugs (beker); two glasses touching (not the card); a tray of glasses (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="glas-een">Pair with glas-een. The only difference is the number: three identical glasses here, one glass alone there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De glazen staan op de plank.<br><span class="voorbeeld-en">The glasses stand on the shelf.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke doorzichtige rechte vaten zonder oor staan naast elkaar op een tafel.</dd>
+</dl>
+<p class="id">glas-meer.png · A2 · glas-getal</p>
+</article></div></section>
+<section class="cluster" data-cluster="blad-getal" data-band="a2"><h2><span class="woorden">het blad · de bladeren</span></h2><p class="as">one or more (irregular plural) · 2 cards</p><p class="zin">Hier ligt het blad, daar liggen de bladeren.<span class="en">Here lies the leaf, over there lie the leaves.</span></p><p class="frame"><strong>Fixed frame.</strong> a single leaf with a stalk, a pointed oval, a central vein and four side veins (the blad card drawing), lying on a plain ground line seen from slightly above, every leaf identical in size. Only the number of leaves changes: one leaf, or five leaves spread apart on the ground.</p><div class="kaarten"><article id="blad-een" class="kaart" data-id="blad-een" data-band="a2" data-kind="noun" data-article="het" data-plural="bladeren" data-dim="no" data-cluster="blad-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 87">#87</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het blad</h3>
+<p class="gloss">leaf</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">bladeren</span></p>
+<p class="vlaggen"><span>one or more (irregular plural)</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same drawing as the blad card: one single leaf with a stalk, a pointed oval shape, a central vein and four side veins on each side, lying on the ground line seen from slightly above, with empty ground around it.</dd>
+<dt>Must read</dt><dd class="must">one single leaf with empty ground around it.</dd>
+<dt>Avoid</dt><dd class="avoid">five leaves spread out (blad-meer); a branch with several leaves (not the card); a feather (not the card); a whole tree (boom).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="blad-meer">Pair with blad-meer. The only difference is the number: one leaf here, five identical leaves spread apart there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het blad is nat.<br><span class="voorbeeld-en">The leaf is wet.</span></dd>
+<dt>Alt text</dt><dd class="alt">Eén plat spits ovaal vlak met een steeltje ligt alleen op de grond.</dd>
+</dl>
+<p class="id">blad-een.png · A2 · blad-getal</p>
+</article>
+<article id="blad-meer" class="kaart" data-id="blad-meer" data-band="a2" data-kind="noun" data-article="de" data-plural="bladeren" data-dim="no" data-cluster="blad-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 88">#88</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de bladeren</h3>
+<p class="gloss">leaves</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">bladeren</span></p>
+<p class="vlaggen"><span>one or more (irregular plural)</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Five copies of the blad drawing: identical leaves, each with a stalk, a pointed oval shape, a central vein and four side veins on each side, lying on the ground line seen from slightly above, spread apart with gaps, each the same size as the single leaf.</dd>
+<dt>Must read</dt><dd class="must">five identical leaves spread apart on the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">one leaf alone (blad-een); a pile of leaves heaped together (not the card); a branch with leaves (not the card); a bunch of flowers (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="blad-een">Pair with blad-een. The only difference is the number: five identical leaves spread apart here, one leaf alone there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bladeren vallen in de herfst.<br><span class="voorbeeld-en">The leaves fall in autumn.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf gelijke platte ovale vlakken met steeltjes liggen verspreid op de grond.</dd>
+</dl>
+<p class="id">blad-meer.png · A2 · blad-getal</p>
+</article></div></section>
+<section class="cluster" data-cluster="hoofddeksel" data-band="a2"><h2><span class="woorden">de hoed · de pet</span></h2><p class="as">hat or cap · 2 cards</p><p class="zin">De hoed heeft een brede rand, maar de pet heeft een klep.<span class="en">The hat has a wide brim, but the cap has a peak.</span></p><p class="frame"><strong>Fixed frame.</strong> one head covering seen from the side, whole object, resting on a flat table line against a plain wall, same width on the page, no badge, no text, no ribbon. Only the covering changes: a hat with a wide brim all round, or a cap with a rounded crown and a stiff peak at the front.</p><div class="kaarten"><article id="hoed" class="kaart" data-id="hoed" data-band="a2" data-kind="noun" data-article="de" data-plural="hoeden" data-dim="no" data-cluster="hoofddeksel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 89">#89</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de hoed</h3>
+<p class="gloss">hat</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">hoeden</span></p>
+<p class="vlaggen"><span>hat or cap</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A hat seen from the side resting on the table line, with a round crown with a flat top, a wide brim all round about as wide as two fingers beyond the crown, and a plain band at the base of the crown. No peak, no badge, no ribbon bow.</dd>
+<dt>Must read</dt><dd class="must">a wide brim running all round a round crown.</dd>
+<dt>Avoid</dt><dd class="avoid">a cap with a stiff peak at the front only (pet); a woolly hat with no brim (not the card); a helmet (not the card); a bowl turned upside down (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="pet">Pair with pet. The only difference is the shape: a brim all round here, a peak at the front only there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij draagt een hoed in de zon.<br><span class="voorbeeld-en">He wears a hat in the sun.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hoofddeksel met een ronde kop en een brede rand die helemaal rondom loopt.</dd>
+</dl>
+<p class="id">hoed.png · A2 · hoofddeksel</p>
+</article>
+<article id="pet" class="kaart" data-id="pet" data-band="a2" data-kind="noun" data-article="de" data-plural="petten" data-dim="no" data-cluster="hoofddeksel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 90">#90</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de pet</h3>
+<p class="gloss">cap</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">petten</span></p>
+<p class="vlaggen"><span>hat or cap</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A cap seen from the side resting on the table line, with a soft rounded crown, a button on top and a short stiff peak sticking out at the front only. No brim at the back or sides, no badge, no text.</dd>
+<dt>Must read</dt><dd class="must">a stiff peak at the front only, none at the back or sides.</dd>
+<dt>Avoid</dt><dd class="avoid">a hat with a brim all round (hoed); a woolly hat with no peak (not the card); a helmet (not the card); a visor with no crown (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="hoed">Pair with hoed. The only difference is the shape: a peak at the front only here, a brim all round there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn broer draagt altijd een pet.<br><span class="voorbeeld-en">My brother always wears a cap.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hoofddeksel met een zachte ronde kop en een stevige klep die alleen voorop uitsteekt.</dd>
+</dl>
+<p class="id">pet.png · A2 · hoofddeksel</p>
+</article></div></section>
+<section class="cluster" data-cluster="deken-dekbed" data-band="a2"><h2><span class="woorden">de deken · het dekbed</span></h2><p class="as">blanket or duvet · 2 cards</p><p class="zin">De deken is dun, het dekbed is dik en zacht.<span class="en">The blanket is thin, the duvet is thick and soft.</span></p><p class="frame"><strong>Fixed frame.</strong> one bed cover spread over a made bed with one plain pillow, seen from the side and a little above, the same bed at the same size on the page, no person, no pattern. Only the cover changes: a thin flat blanket with a stitched border, or a thick puffy duvet with stitched squares.</p><div class="kaarten"><article id="deken" class="kaart" data-id="deken" data-band="a2" data-kind="noun" data-article="de" data-plural="dekens" data-dim="no" data-cluster="deken-dekbed" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 91">#91</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de deken</h3>
+<p class="gloss">blanket</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">dekens</span></p>
+<p class="vlaggen"><span>blanket or duvet</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A made bed seen from the side and a little above, with one plain pillow at the head and a thin flat woollen blanket spread over the mattress: it lies close to the mattress, hangs straight down at the side and has a stitched border along its edge. No person, no pattern.</dd>
+<dt>Must read</dt><dd class="must">a thin flat cover lying close to the mattress with a stitched border.</dd>
+<dt>Avoid</dt><dd class="avoid">a thick puffy cover with stitched squares (dekbed); a sheet (laken); a towel (handdoek); a rug on the floor (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="dekbed">Pair with dekbed. The only difference is the thing: a thin flat cover here, a thick puffy cover with stitched squares there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het is koud, pak een extra deken.<br><span class="voorbeeld-en">It is cold, take an extra blanket.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dunne platte lap met een gestikte rand ligt over een matras met één kussen.</dd>
+</dl>
+<p class="id">deken.png · A2 · deken-dekbed</p>
+</article>
+<article id="dekbed" class="kaart" data-id="dekbed" data-band="a2" data-kind="noun" data-article="het" data-plural="dekbedden" data-dim="no" data-cluster="deken-dekbed" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 92">#92</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het dekbed</h3>
+<p class="gloss">duvet</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">dekbedden</span></p>
+<p class="vlaggen"><span>blanket or duvet</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same made bed seen from the side and a little above, with the same plain pillow, and a thick puffy duvet spread over the mattress: it rises well above the mattress, is quilted into soft stitched squares and folds over at the top edge. No person, no pattern.</dd>
+<dt>Must read</dt><dd class="must">a thick puffy cover quilted into stitched squares.</dd>
+<dt>Avoid</dt><dd class="avoid">a thin flat cover with a stitched border (deken); a sleeping bag (not the card); a mattress (not the card); a pile of pillows (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="deken">Pair with deken. The only difference is the thing: a thick puffy cover with stitched squares here, a thin flat cover there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de winter slaap ik onder een warm dekbed.<br><span class="voorbeeld-en">In winter I sleep under a warm duvet.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dikke bolle laag met gestikte vakken ligt over een matras met één kussen.</dd>
+</dl>
+<p class="id">dekbed.png · A2 · deken-dekbed</p>
+</article></div></section>
+<section class="cluster" data-cluster="terras-balkon" data-band="a2"><h2><span class="woorden">het terras · het balkon</span></h2><p class="as">outdoor space below or upstairs · 2 cards</p><p class="zin">Wij zitten op het terras, de buren zitten op het balkon.<span class="en">We sit on the terrace, the neighbours sit on the balcony.</span></p><p class="frame"><strong>Fixed frame.</strong> one block of flats seen from the front with a small round table and two chairs outside, plain sky, the same building at the same size on the page, no person. Only where the table stands changes: on a paved floor at ground level, or on a railed ledge sticking out from an upper floor.</p><div class="kaarten"><article id="terras" class="kaart" data-id="terras" data-band="a2" data-kind="noun" data-article="het" data-plural="terrassen" data-dim="no" data-cluster="terras-balkon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 93">#93</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het terras</h3>
+<p class="gloss">terrace, patio</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">terrassen</span></p>
+<p class="vlaggen"><span>outdoor space below or upstairs</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The front of a block of flats with a paved floor at ground level in front of the door, and on it a small round table with two chairs. The upper floors have plain windows and no ledges. Plain sky, no person, no umbrella.</dd>
+<dt>Must read</dt><dd class="must">a table with chairs on a paved floor at ground level.</dd>
+<dt>Avoid</dt><dd class="avoid">a table on a railed ledge upstairs (balkon); a cafe with a signboard (not the card); a garden with grass (not the card); a roof terrace (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="balkon">Pair with balkon. The only difference is the thing: the table on the paved ground here, on a railed ledge upstairs there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de zomer eten we op het terras.<br><span class="voorbeeld-en">In summer we eat on the terrace.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een rond tafeltje met twee stoelen staat op de stenen vloer voor de deur van een flatgebouw.</dd>
+</dl>
+<p class="id">terras.png · A2 · terras-balkon</p>
+</article>
+<article id="balkon" class="kaart" data-id="balkon" data-band="a2" data-kind="noun" data-article="het" data-plural="balkons" data-dim="no" data-cluster="terras-balkon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 94">#94</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het balkon</h3>
+<p class="gloss">balcony</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">balkons</span></p>
+<p class="vlaggen"><span>outdoor space below or upstairs</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The front of the same block of flats with a ledge sticking out from an upper floor, closed by a railing of upright bars, and on it the same small round table with two chairs. The ground in front of the door is empty. Plain sky, no person.</dd>
+<dt>Must read</dt><dd class="must">a table with chairs on a railed ledge on an upper floor.</dd>
+<dt>Avoid</dt><dd class="avoid">a table on the paved ground floor (terras); a window box with plants (not the card); a fire escape stair (not the card); a roof terrace (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="terras">Pair with terras. The only difference is the thing: the table on a railed ledge upstairs here, on the paved ground there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn balkon kijkt uit op de tuin.<br><span class="voorbeeld-en">My balcony looks out over the garden.</span></dd>
+<dt>Alt text</dt><dd class="alt">Hetzelfde flatgebouw, met een uitstekende vloer met hekwerk hoog aan de gevel en daarop een tafeltje met twee stoelen.</dd>
+</dl>
+<p class="id">balkon.png · A2 · terras-balkon</p>
+</article></div></section>
+<section class="cluster" data-cluster="mand-emmer" data-band="a2"><h2><span class="woorden">de mand · de emmer</span></h2><p class="as">basket or bucket · 2 cards</p><p class="zin">De appels gaan in de mand en het water gaat in de emmer.<span class="en">The apples go in the basket and the water goes in the bucket.</span></p><p class="frame"><strong>Fixed frame.</strong> one empty container with a carrying handle over the top, standing on a flat floor line against a plain wall, seen side-on, the same height on the page, nothing inside. Only the container changes: a woven basket with a curved handle, or a smooth metal bucket with a thin wire handle.</p><div class="kaarten"><article id="mand" class="kaart" data-id="mand" data-band="a2" data-kind="noun" data-article="de" data-plural="manden" data-dim="no" data-cluster="mand-emmer" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 95">#95</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de mand</h3>
+<p class="gloss">basket</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">manden</span></p>
+<p class="vlaggen"><span>basket or bucket</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An empty woven basket standing on the floor line, seen side-on: an oval body of crossing woven strips, a thick rim and a curved woven handle arching over the top from side to side. Nothing inside, no cloth, no lid.</dd>
+<dt>Must read</dt><dd class="must">a body of crossing woven strips with a curved handle over the top.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth metal bucket with a thin wire handle (emmer); a laundry basket with no handle (not the card); a handbag (not the card); a box (doos).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="emmer">Pair with emmer. The only difference is the thing: woven strips with a woven handle here, smooth metal with a wire handle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Oma neemt een mand mee naar de markt.<br><span class="voorbeeld-en">Grandma takes a basket to the market.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lege bak van gevlochten repen met een gebogen hengsel erover staat op de vloer.</dd>
+</dl>
+<p class="id">mand.png · A2 · mand-emmer</p>
+</article>
+<article id="emmer" class="kaart" data-id="emmer" data-band="a2" data-kind="noun" data-article="de" data-plural="emmers" data-dim="no" data-cluster="mand-emmer" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 96">#96</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de emmer</h3>
+<p class="gloss">bucket</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">emmers</span></p>
+<p class="vlaggen"><span>basket or bucket</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An empty metal bucket standing on the floor line, seen side-on: smooth walls that widen toward the top, a rolled rim, two small clips on the sides and a thin wire handle arching over the top. Nothing inside, no mop.</dd>
+<dt>Must read</dt><dd class="must">smooth widening walls with a thin wire handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a woven basket with a curved woven handle (mand); a watering can with a spout (not the card); a cooking pot (not the card); a bin with a lid (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="mand">Pair with mand. The only difference is the thing: smooth metal with a wire handle here, woven strips with a woven handle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij vult de emmer met water.<br><span class="voorbeeld-en">He fills the bucket with water.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lege gladde bak die naar boven breder wordt, met een dun ijzeren hengsel, staat op de vloer.</dd>
+</dl>
+<p class="id">emmer.png · A2 · mand-emmer</p>
+</article></div></section>
+<section class="cluster" data-cluster="mond" data-band="a2"><h2><span class="woorden">de tong · de tand · de lip</span></h2><p class="as">part of the mouth · 3 cards</p><p class="zin">De tong proeft, de tand bijt en de lip is zacht.<span class="en">The tongue tastes, the tooth bites and the lip is soft.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult face seen from the front, close up from the nose to the chin, mouth wide open as when saying aah, the same face at the same size on the page; a small ring marks the featured part at normal size. Only the ringed part changes: the tongue, one tooth or the lower lip.</p><div class="kaarten"><article id="tong" class="kaart" data-id="tong" data-band="a2" data-kind="noun" data-article="de" data-plural="tongen" data-dim="no" data-cluster="mond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 97">#97</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de tong</h3>
+<p class="gloss">tongue</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">tongen</span></p>
+<p class="vlaggen"><span>part of the mouth</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An adult face close up from the nose to the chin, mouth wide open as when saying aah, with a small ring around the tongue: the soft rounded shape lying on the floor of the mouth behind the lower teeth, with a line down its middle. Teeth and lips are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the soft rounded shape on the floor of the mouth.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around one tooth (tand); a ring around the lower lip (lip); a tongue sticking out (not the card); a dog's tongue (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tand lip">Pair with tand and lip. The only difference is the ringed part: the soft shape on the floor of the mouth here, one tooth or the lower lip there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De soep is heet, pas op je tong.<br><span class="voorbeeld-en">The soup is hot, mind your tongue.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een wijd open mond van dichtbij, met een cirkel om het zachte ronde deel achter de onderste rij.</dd>
+</dl>
+<p class="id">tong.png · A2 · mond</p>
+</article>
+<article id="tand" class="kaart" data-id="tand" data-band="a2" data-kind="noun" data-article="de" data-plural="tanden" data-dim="no" data-cluster="mond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 98">#98</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de tand</h3>
+<p class="gloss">tooth</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">tanden</span></p>
+<p class="vlaggen"><span>part of the mouth</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same open mouth close up, with a small ring around one front tooth in the upper row: a single tooth with a flat biting edge and a smooth front, among the other teeth. Tongue and lips are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around one single front tooth in the upper row.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the tongue (tong); a ring around the lower lip (lip); a toothbrush (tandenborstel); an animal's fang (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tong lip">Pair with tong and lip. The only difference is the ringed part: one front tooth here, the tongue or the lower lip there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik poets mijn tanden twee keer per dag.<br><span class="voorbeeld-en">I brush my teeth twice a day.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde open mond, met een cirkel om één voorste element in de bovenste rij.</dd>
+</dl>
+<p class="id">tand.png · A2 · mond</p>
+</article>
+<article id="lip" class="kaart" data-id="lip" data-band="a2" data-kind="noun" data-article="de" data-plural="lippen" data-dim="no" data-cluster="mond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 99">#99</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de lip</h3>
+<p class="gloss">lip</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">lippen</span></p>
+<p class="vlaggen"><span>part of the mouth</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same open mouth close up, with a small ring around the lower lip: the soft curved edge below the opening, with a faint line marking its border and small upright creases. Tongue and teeth are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the soft curved lower edge of the mouth.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the tongue (tong); a ring around one tooth (tand); a lipstick (not the card); a moustache (snor).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tong tand">Pair with tong and tand. The only difference is the ringed part: the soft lower edge of the mouth here, the tongue or one tooth there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn lip is droog van de kou.<br><span class="voorbeeld-en">My lip is dry from the cold.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde open mond, met een cirkel om de zachte gebogen onderrand.</dd>
+</dl>
+<p class="id">lip.png · A2 · mond</p>
+</article></div></section>
+<section class="cluster" data-cluster="armgewricht" data-band="a2"><h2><span class="woorden">de schouder · de elleboog · de pols</span></h2><p class="as">joint of the arm · 3 cards</p><p class="zin">De arm buigt bij de schouder, de elleboog en de pols.<span class="en">The arm bends at the shoulder, the elbow and the wrist.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult standing whole-figure, front view, plain clothes, arms hanging slightly away from the body, on a flat ground line against a plain wall, the same figure at the same size on the page; a small ring marks one joint at normal size. Only the ringed joint changes: the shoulder, the elbow or the wrist.</p><div class="kaarten"><article id="schouder" class="kaart" data-id="schouder" data-band="a2" data-kind="noun" data-article="de" data-plural="schouders" data-dim="no" data-cluster="armgewricht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 100">#100</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de schouder</h3>
+<p class="gloss">shoulder</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">schouders</span></p>
+<p class="vlaggen"><span>joint of the arm</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An adult standing whole-figure, front view, plain clothes, arms hanging slightly away from the body, with a small ring around one shoulder: the rounded top of the arm where it joins the body below the neck. The other joints are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the rounded top where the arm meets the body.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the elbow (elleboog); a ring around the wrist (pols); a ring around the hip (heup); a ring around the neck (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="elleboog pols">Pair with elleboog and pols. The only difference is the ringed joint: where the arm meets the body here, the elbow or the wrist there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik draag mijn tas over mijn schouder.<br><span class="voorbeeld-en">I carry my bag over my shoulder.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een staande volwassene van voren, met een cirkel om de bovenkant van de arm waar die aan het lijf vastzit.</dd>
+</dl>
+<p class="id">schouder.png · A2 · armgewricht</p>
+</article>
+<article id="elleboog" class="kaart" data-id="elleboog" data-band="a2" data-kind="noun" data-article="de" data-plural="ellebogen" data-dim="no" data-cluster="armgewricht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 101">#101</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de elleboog</h3>
+<p class="gloss">elbow</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">ellebogen</span></p>
+<p class="vlaggen"><span>joint of the arm</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same standing adult, front view, with a small ring around one elbow: the bend in the middle of the arm between the upper arm and the forearm, shown with a slight point. The other joints are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the bend in the middle of the arm.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the shoulder (schouder); a ring around the wrist (pols); a ring around the knee (knie); a bent arm showing a muscle (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="schouder pols">Pair with schouder and pols. The only difference is the ringed joint: the bend in the middle of the arm here, the shoulder or the wrist there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij stoot zijn elleboog tegen de tafel.<br><span class="voorbeeld-en">He bumps his elbow against the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde volwassene, met een cirkel om de knik midden in de arm.</dd>
+</dl>
+<p class="id">elleboog.png · A2 · armgewricht</p>
+</article>
+<article id="pols" class="kaart" data-id="pols" data-band="a2" data-kind="noun" data-article="de" data-plural="polsen" data-dim="no" data-cluster="armgewricht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 102">#102</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de pols</h3>
+<p class="gloss">wrist</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">polsen</span></p>
+<p class="vlaggen"><span>joint of the arm</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same standing adult, front view, with a small ring around one wrist: the narrow joint between the forearm and the hand, just above the palm. No watch, no bracelet. The other joints are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the narrow joint between forearm and hand.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the elbow (elleboog); a ring around the shoulder (schouder); a wristwatch (horloge); a bracelet (armband).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="schouder elleboog">Pair with schouder and elleboog. The only difference is the ringed joint: the narrow joint above the hand here, the elbow or the shoulder there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De dokter voelt aan mijn pols.<br><span class="voorbeeld-en">The doctor feels my wrist.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde volwassene, met een cirkel om het smalle stuk tussen onderarm en hand.</dd>
+</dl>
+<p class="id">pols.png · A2 · armgewricht</p>
+</article></div></section>
+<section class="cluster" data-cluster="beengewricht" data-band="a2"><h2><span class="woorden">de heup · de knie · de enkel</span></h2><p class="as">joint of the leg · 3 cards</p><p class="zin">Het been buigt bij de heup, de knie en de enkel.<span class="en">The leg bends at the hip, the knee and the ankle.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult standing whole-figure, front view, plain clothes, arms hanging slightly away from the body, on a flat ground line against a plain wall, the same figure at the same size on the page; a small ring marks one joint at normal size. Only the ringed joint changes: the hip, the knee or the ankle.</p><div class="kaarten"><article id="heup" class="kaart" data-id="heup" data-band="a2" data-kind="noun" data-article="de" data-plural="heupen" data-dim="no" data-cluster="beengewricht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 103">#103</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de heup</h3>
+<p class="gloss">hip</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">heupen</span></p>
+<p class="vlaggen"><span>joint of the leg</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An adult standing whole-figure, front view, plain clothes, arms hanging slightly away from the body, with a small ring around one hip: the rounded side of the body where the leg joins it, just below the waist. The other joints are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the side of the body where the leg begins.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the knee (knie); a ring around the ankle (enkel); a ring around the shoulder (schouder); a ring around a waist belt (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="knie enkel">Pair with knie and enkel. The only difference is the ringed joint: where the leg meets the body here, the knee or the ankle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Oma heeft een nieuwe heup gekregen.<br><span class="voorbeeld-en">Grandma has had a new hip.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een staande volwassene van voren, met een cirkel om de zijkant van het lijf waar het been begint.</dd>
+</dl>
+<p class="id">heup.png · A2 · beengewricht</p>
+</article>
+<article id="knie" class="kaart" data-id="knie" data-band="a2" data-kind="noun" data-article="de" data-plural="knieën" data-dim="no" data-cluster="beengewricht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 104">#104</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de knie</h3>
+<p class="gloss">knee</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">knieën</span></p>
+<p class="vlaggen"><span>joint of the leg</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same standing adult, front view, with a small ring around one knee: the joint in the middle of the leg between the thigh and the shin, with a small round kneecap. The other joints are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the joint in the middle of the leg.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the hip (heup); a ring around the ankle (enkel); a ring around the elbow (elleboog); a person kneeling (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="heup enkel">Pair with heup and enkel. The only difference is the ringed joint: the middle of the leg here, the hip or the ankle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ben op mijn knie gevallen.<br><span class="voorbeeld-en">I fell on my knee.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde volwassene, met een cirkel om het gewricht midden in het been, met een ronde schijf ervoor.</dd>
+</dl>
+<p class="id">knie.png · A2 · beengewricht</p>
+</article>
+<article id="enkel" class="kaart" data-id="enkel" data-band="a2" data-kind="noun" data-article="de" data-plural="enkels" data-dim="no" data-cluster="beengewricht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 105">#105</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de enkel</h3>
+<p class="gloss">ankle</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">enkels</span></p>
+<p class="vlaggen"><span>joint of the leg</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same standing adult, front view, with a small ring around one ankle: the narrow joint just above the foot, with a small round bump on each side. Plain shoes, no sock pattern. The other joints are drawn but not ringed.</dd>
+<dt>Must read</dt><dd class="must">a ring around the narrow joint just above the foot.</dd>
+<dt>Avoid</dt><dd class="avoid">a ring around the knee (knie); a ring around the hip (heup); a ring around the foot (voet); an ankle chain (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="heup knie">Pair with heup and knie. The only difference is the ringed joint: just above the foot here, the knee or the hip there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij heeft zijn enkel verstuikt.<br><span class="voorbeeld-en">He has sprained his ankle.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde volwassene, met een cirkel om het smalle stuk vlak boven de voet.</dd>
+</dl>
+<p class="id">enkel.png · A2 · beengewricht</p>
+</article></div></section>
+<section class="cluster" data-cluster="kam-tandenborstel" data-band="a2"><h2><span class="woorden">de kam · de tandenborstel</span></h2><p class="as">comb or toothbrush · 2 cards</p><p class="zin">De kam is voor je haar, de tandenborstel voor je tanden.<span class="en">The comb is for your hair, the toothbrush for your teeth.</span></p><p class="frame"><strong>Fixed frame.</strong> one small grooming tool lying flat on a plain shelf line, seen from above, whole object, the same length on the page, no toothpaste, no hair. Only the tool changes: a flat comb with a row of thin teeth, or a toothbrush with a long handle and a small tuft of bristles.</p><div class="kaarten"><article id="kam" class="kaart" data-id="kam" data-band="a2" data-kind="noun" data-article="de" data-plural="kammen" data-dim="no" data-cluster="kam-tandenborstel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 106">#106</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kam</h3>
+<p class="gloss">comb</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kammen</span></p>
+<p class="vlaggen"><span>comb or toothbrush</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A flat comb lying on a shelf line, seen from above: a straight narrow spine along one side and one long row of thin even teeth, wider-spaced at one end and closer at the other. No handle, no hair caught in it.</dd>
+<dt>Must read</dt><dd class="must">a straight spine with one long row of thin teeth.</dd>
+<dt>Avoid</dt><dd class="avoid">a long handle with a small tuft of bristles (tandenborstel); a hairbrush with many bristles (not the card); a fork (vork); a rake (hark).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tandenborstel">Pair with tandenborstel. The only difference is the thing: a spine with a long row of thin teeth here, a long handle with a small tuft of bristles there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik heb mijn kam niet bij me.<br><span class="voorbeeld-en">I do not have my comb with me.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een platte rechte strook met een lange rij dunne pennetjes ligt op een plank.</dd>
+</dl>
+<p class="id">kam.png · A2 · kam-tandenborstel</p>
+</article>
+<article id="tandenborstel" class="kaart" data-id="tandenborstel" data-band="a2" data-kind="noun" data-article="de" data-plural="tandenborstels" data-dim="no" data-cluster="kam-tandenborstel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 107">#107</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de tandenborstel</h3>
+<p class="gloss">toothbrush</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">tandenborstels</span></p>
+<p class="vlaggen"><span>comb or toothbrush</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A toothbrush lying on the same shelf line, seen from above: a long slim handle with a slight bend near the head and, at the end, a small rectangular tuft of short upright bristles. No toothpaste, no cup.</dd>
+<dt>Must read</dt><dd class="must">a long slim handle ending in a small tuft of bristles.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat strip with a long row of teeth (kam); a paintbrush (kwast); a hairbrush (not the card); an electric toothbrush on a stand (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kam">Pair with kam. The only difference is the thing: a long handle with a small tuft of bristles here, a spine with a long row of teeth there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Neem je tandenborstel mee op reis.<br><span class="voorbeeld-en">Take your toothbrush on the trip.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lange dunne steel met aan het eind een klein plukje korte haartjes ligt op een plank.</dd>
+</dl>
+<p class="id">tandenborstel.png · A2 · kam-tandenborstel</p>
+</article></div></section>
+<section class="cluster" data-cluster="schuur-kas" data-band="a2"><h2><span class="woorden">de schuur · de kas</span></h2><p class="as">garden building · 2 cards</p><p class="zin">De fietsen staan in de schuur, de tomaten groeien in de kas.<span class="en">The bikes are kept in the shed, the tomatoes grow in the greenhouse.</span></p><p class="frame"><strong>Fixed frame.</strong> one small garden building standing on a flat grass line under plain sky, seen from the front at a slight angle, the same size and shape on the page, a pitched roof and a door, no person. Only the walls and roof change: solid planks with nothing visible, or glass panes with young plants inside.</p><div class="kaarten"><article id="schuur" class="kaart" data-id="schuur" data-band="a2" data-kind="noun" data-article="de" data-plural="schuren" data-dim="no" data-cluster="schuur-kas" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 108">#108</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de schuur</h3>
+<p class="gloss">shed, barn</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">schuren</span></p>
+<p class="vlaggen"><span>garden building</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small garden building with a pitched roof and a door, seen at a slight angle on a grass line: walls of solid wooden planks with wood grain lines, a closed plank door with a latch, and no windows. Plain sky, nothing visible inside.</dd>
+<dt>Must read</dt><dd class="must">walls and door of solid planks with nothing visible inside.</dd>
+<dt>Avoid</dt><dd class="avoid">walls of clear glass panes with plants inside (kas); a garage (not the card); a dog kennel (not the card); a house with windows (huis).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kas">Pair with kas. The only difference is the thing: solid plank walls here, clear glass panes with plants inside there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De grasmaaier staat in de schuur.<br><span class="voorbeeld-en">The lawnmower is in the shed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een klein houten gebouwtje met een schuin dak en een plankendeur, zonder ramen, staat in het gras.</dd>
+</dl>
+<p class="id">schuur.png · A2 · schuur-kas</p>
+</article>
+<article id="kas" class="kaart" data-id="kas" data-band="a2" data-kind="noun" data-article="de" data-plural="kassen" data-dim="no" data-cluster="schuur-kas" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 109">#109</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kas</h3>
+<p class="gloss">greenhouse</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kassen</span></p>
+<p class="vlaggen"><span>garden building</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small garden building with the same pitched roof and door shape, seen at a slight angle on a grass line: walls and roof of clear glass panes in a thin frame, shown by a few slanted shine strokes, with rows of young plants on a table inside.</dd>
+<dt>Must read</dt><dd class="must">walls and roof of clear glass panes with plants visible inside.</dd>
+<dt>Avoid</dt><dd class="avoid">walls of solid planks (schuur); a conservatory attached to a house (not the card); a shop window (not the card); a glass bus shelter (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="schuur">Pair with schuur. The only difference is the thing: clear glass panes with plants inside here, solid plank walls there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn opa kweekt groenten in een kas.<br><span class="voorbeeld-en">My grandad grows vegetables in a greenhouse.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gebouwtje van doorzichtige ruiten in een dun frame, met rijen jonge plantjes binnen.</dd>
+</dl>
+<p class="id">kas.png · A2 · schuur-kas</p>
+</article></div></section>
+<section class="cluster" data-cluster="kruispunt-rotonde" data-band="a2"><h2><span class="woorden">het kruispunt · de rotonde</span></h2><p class="as">where roads meet · 2 cards</p><p class="zin">Op het kruispunt kruisen de wegen elkaar, op de rotonde rijd je in een cirkel.<span class="en">At the crossroads the roads cross, at the roundabout you drive in a circle.</span></p><p class="frame"><strong>Fixed frame.</strong> one meeting of four roads seen straight from above, the roads as plain strips with edge lines and grass in the corners, the same size on the page, no cars, no signs, no arrows. Only the middle changes: the roads cross in an open square, or they meet around a round island.</p><div class="kaarten"><article id="kruispunt" class="kaart" data-id="kruispunt" data-band="a2" data-kind="noun" data-article="het" data-plural="kruispunten" data-dim="no" data-cluster="kruispunt-rotonde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 110">#110</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het kruispunt</h3>
+<p class="gloss">crossroads, junction</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">kruispunten</span></p>
+<p class="vlaggen"><span>where roads meet</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Four straight roads meeting at right angles, seen straight from above, each a plain strip with edge lines and grass in the four corners, crossing in an open square in the middle with nothing in it. No cars, no traffic lights, no signs, no arrows.</dd>
+<dt>Must read</dt><dd class="must">four straight roads crossing in an open square.</dd>
+<dt>Avoid</dt><dd class="avoid">four roads meeting around a round island (rotonde); a junction of only three roads (not the card); a bridge over a road (not the card); a road with traffic lights (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rotonde">Pair with rotonde. The only difference is the thing: roads crossing in an open square here, roads meeting around a round island there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Sla bij het kruispunt linksaf.<br><span class="voorbeeld-en">Turn left at the crossroads.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vier rechte wegen komen van bovenaf gezien samen in een open vierkant, met gras in de hoeken.</dd>
+</dl>
+<p class="id">kruispunt.png · A2 · kruispunt-rotonde</p>
+</article>
+<article id="rotonde" class="kaart" data-id="rotonde" data-band="a2" data-kind="noun" data-article="de" data-plural="rotondes" data-dim="no" data-cluster="kruispunt-rotonde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 111">#111</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de rotonde</h3>
+<p class="gloss">roundabout</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">rotondes</span></p>
+<p class="vlaggen"><span>where roads meet</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same four straight roads seen straight from above, with grass in the corners, but in the middle they meet around a round grassy island with a ring of road circling it. No cars, no signs, no arrows, nothing on the island.</dd>
+<dt>Must read</dt><dd class="must">a round island in the middle with a ring of road around it.</dd>
+<dt>Avoid</dt><dd class="avoid">roads crossing in an open square (kruispunt); a round lawn in a park (not the card); a car park (not the card); a clock face (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kruispunt">Pair with kruispunt. The only difference is the thing: roads meeting around a round island here, roads crossing in an open square there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Neem de tweede afslag op de rotonde.<br><span class="voorbeeld-en">Take the second exit at the roundabout.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde vier wegen komen samen rond een rond eilandje met gras, met een cirkel van weg eromheen.</dd>
+</dl>
+<p class="id">rotonde.png · A2 · kruispunt-rotonde</p>
+</article></div></section>
+<section class="cluster" data-cluster="winterkleding" data-band="a2"><h2><span class="woorden">de sjaal · de muts · de handschoen</span></h2><p class="as">winter accessory · 3 cards</p><p class="zin">De sjaal gaat om je nek, de muts op je hoofd en de handschoen aan je hand.<span class="en">The scarf goes round your neck, the hat on your head and the glove on your hand.</span></p><p class="frame"><strong>Fixed frame.</strong> one knitted winter item lying flat on a plain table line, seen from above, the same knit lines and the same size on the page, no person, no pattern. Only the item changes: a long scarf with fringed ends, a round hat with a folded brim, or a glove with separate fingers.</p><div class="kaarten"><article id="sjaal" class="kaart" data-id="sjaal" data-band="a2" data-kind="noun" data-article="de" data-plural="sjaals" data-dim="no" data-cluster="winterkleding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 112">#112</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de sjaal</h3>
+<p class="gloss">scarf</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">sjaals</span></p>
+<p class="vlaggen"><span>winter accessory</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A long knitted scarf lying flat on a table line, seen from above, in a loose curve: a long narrow strip with ribbed knit lines and short fringes at both ends. No pattern, no person.</dd>
+<dt>Must read</dt><dd class="must">a long narrow knitted strip with fringes at both ends.</dd>
+<dt>Avoid</dt><dd class="avoid">a round hat with a folded brim (muts); a glove with fingers (handschoen); a tie (not the card); a towel (handdoek).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="muts handschoen">Pair with muts and handschoen. The only difference is the thing: a long fringed strip here, a round hat or a glove with fingers there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Doe je sjaal om, het is koud.<br><span class="voorbeeld-en">Put your scarf on, it is cold.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lange smalle gebreide strook met franjes aan beide uiteinden ligt op tafel.</dd>
+</dl>
+<p class="id">sjaal.png · A2 · winterkleding</p>
+</article>
+<article id="muts" class="kaart" data-id="muts" data-band="a2" data-kind="noun" data-article="de" data-plural="mutsen" data-dim="no" data-cluster="winterkleding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 113">#113</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de muts</h3>
+<p class="gloss">woolly hat, beanie</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">mutsen</span></p>
+<p class="vlaggen"><span>winter accessory</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A knitted hat lying flat on the same table line, seen from the front: a rounded dome with ribbed knit lines, a folded-up brim along the bottom and a small bobble on top. No pattern, no peak, no person.</dd>
+<dt>Must read</dt><dd class="must">a knitted rounded dome with a folded brim and a bobble.</dd>
+<dt>Avoid</dt><dd class="avoid">a long fringed strip (sjaal); a glove with fingers (handschoen); a cap with a peak (pet); a hat with a wide brim (hoed).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="sjaal handschoen">Pair with sjaal and handschoen. The only difference is the thing: a knitted dome with a bobble here, a fringed strip or a glove there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de winter draag ik een muts.<br><span class="voorbeeld-en">In winter I wear a woolly hat.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gebreide ronde koepel met een omgeslagen rand en een bolletje bovenop ligt op tafel.</dd>
+</dl>
+<p class="id">muts.png · A2 · winterkleding</p>
+</article>
+<article id="handschoen" class="kaart" data-id="handschoen" data-band="a2" data-kind="noun" data-article="de" data-plural="handschoenen" data-dim="no" data-cluster="winterkleding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 114">#114</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de handschoen</h3>
+<p class="gloss">glove</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">handschoenen</span></p>
+<p class="vlaggen"><span>winter accessory</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A knitted glove lying flat on the same table line, seen from above: a ribbed cuff and a hand shape with four separate fingers and a thumb, with knit lines. No pattern, no person.</dd>
+<dt>Must read</dt><dd class="must">a knitted hand shape with four separate fingers and a thumb.</dd>
+<dt>Avoid</dt><dd class="avoid">a long fringed strip (sjaal); a round hat with a brim (muts); a mitten with no fingers (not the card); a boxing glove (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="sjaal muts">Pair with sjaal and muts. The only difference is the thing: a knitted hand shape here, a fringed strip or a round hat there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ben een handschoen kwijt.<br><span class="voorbeeld-en">I have lost a glove.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gebreid omhulsel met vier aparte vingers en een duim ligt plat op tafel.</dd>
+</dl>
+<p class="id">handschoen.png · A2 · winterkleding</p>
+</article></div></section>
+<section class="cluster" data-cluster="kraan" data-band="a2"><h2><span class="woorden">de kraan · de kraan</span></h2><p class="as">same word, two things · 2 cards</p><p class="zin">De kraan in de keuken lekt, de kraan op de bouw is hoog.<span class="en">The tap in the kitchen drips, the crane on the building site is tall.</span></p><p class="frame"><strong>Fixed frame.</strong> one thing called de kraan, seen side-on against a plain background, the same size on the page, no person. Only the thing changes: a water tap fixed above a sink, or a tall building crane with a long arm and a hook.</p><div class="kaarten"><article id="kraan-water" class="kaart" data-id="kraan-water" data-band="a2" data-kind="noun" data-article="de" data-plural="kranen" data-dim="no" data-cluster="kraan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 115">#115</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kraan</h3>
+<p class="gloss">tap</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kranen</span></p>
+<p class="vlaggen"><span>same word, two things</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A water tap seen side-on, fixed to a plain wall above the edge of a sink: a curved spout pointing down into the sink and a round turning handle on top. No water, no cup, no hand, no crane.</dd>
+<dt>Must read</dt><dd class="must">a curved spout over a sink with a turning handle on top.</dd>
+<dt>Avoid</dt><dd class="avoid">a tall crane with a long arm (kraan-bouw); a shower head (not the card); a garden hose (slang-tuin); a watering can (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kraan-bouw">Pair with kraan-bouw. The only difference is the thing: a tap above a sink here, a tall building crane there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Doe de kraan dicht, alsjeblieft.<br><span class="voorbeeld-en">Turn off the tap, please.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gebogen tuit met een draaiknop erboven hangt boven een gootsteen.</dd>
+</dl>
+<p class="id">kraan-water.png · A2 · kraan</p>
+</article>
+<article id="kraan-bouw" class="kaart" data-id="kraan-bouw" data-band="a2" data-kind="noun" data-article="de" data-plural="kranen" data-dim="no" data-cluster="kraan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 116">#116</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kraan</h3>
+<p class="gloss">crane (machine)</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kranen</span></p>
+<p class="vlaggen"><span>same word, two things</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A tall building crane seen side-on against plain sky: a narrow lattice tower standing on a flat ground line, a long horizontal arm on top with a short counterweight arm, a small cabin, and a cable with a hook hanging down. No load, no logo, no tap.</dd>
+<dt>Must read</dt><dd class="must">a tall lattice tower with a long arm and a hanging hook.</dd>
+<dt>Avoid</dt><dd class="avoid">a tap above a sink (kraan-water); a crane bird (not the card); a phone mast (not the card); an electricity pylon (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kraan-water">Pair with kraan-water. The only difference is the thing: a tall building crane here, a tap above a sink there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een hoge kraan tilt de stenen op.<br><span class="voorbeeld-en">A tall crane lifts the bricks.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hoge toren van open vakwerk met een lange arm bovenop en een haak aan een kabel.</dd>
+</dl>
+<p class="id">kraan-bouw.png · A2 · kraan</p>
+</article></div></section>
+<section class="cluster" data-cluster="oven-magnetron" data-band="a2"><h2><span class="woorden">de oven · de magnetron</span></h2><p class="as">oven or microwave · 2 cards</p><p class="zin">In de oven bak ik brood, in de magnetron warm ik soep op.<span class="en">In the oven I bake bread, in the microwave I heat up soup.</span></p><p class="frame"><strong>Fixed frame.</strong> one closed kitchen appliance set into a plain cupboard wall at chest height, seen from the front, the same width on the page, no food, no person. Only the appliance changes: an oven with a square door, racks and a bar handle, or a microwave, a low wide box with a side door and blank buttons.</p><div class="kaarten"><article id="oven" class="kaart" data-id="oven" data-band="a2" data-kind="noun" data-article="de" data-plural="ovens" data-dim="no" data-cluster="oven-magnetron" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 117">#117</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de oven</h3>
+<p class="gloss">oven</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">ovens</span></p>
+<p class="vlaggen"><span>oven or microwave</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A built-in oven set into a plain kitchen cupboard wall at chest height, seen from the front: a nearly square door with a large window showing two racks inside, a long bar handle across the top of the door and a row of plain round knobs above it. Door shut, no food.</dd>
+<dt>Must read</dt><dd class="must">a square door with racks behind the window and a bar handle across the top.</dd>
+<dt>Avoid</dt><dd class="avoid">a low wide box with a side door and a button panel (magnetron); a washing machine with a round door (not the card); a dishwasher (not the card); a fireplace (haard).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="magnetron">Pair with magnetron. The only difference is the thing: a square door with racks and a bar handle here, a low wide box with a side door and buttons there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het brood ligt in de oven.<br><span class="voorbeeld-en">The bread is in the oven.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een ingebouwd keukenapparaat met een vierkante deur, twee roosters achter het raam en een lange greep over de hele breedte.</dd>
+</dl>
+<p class="id">oven.png · A2 · oven-magnetron</p>
+</article>
+<article id="magnetron" class="kaart" data-id="magnetron" data-band="a2" data-kind="noun" data-article="de" data-plural="magnetrons" data-dim="no" data-cluster="oven-magnetron" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 118">#118</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de magnetron</h3>
+<p class="gloss">microwave oven</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">magnetrons</span></p>
+<p class="vlaggen"><span>oven or microwave</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A built-in microwave set into the same plain kitchen cupboard wall at chest height, seen from the front: a low wide box with a door hinged at the side, a small window with a round turning plate inside, and beside the door a narrow panel of blank buttons with no numbers. Door shut, no food.</dd>
+<dt>Must read</dt><dd class="must">a low wide box with a side door and a narrow panel of buttons.</dd>
+<dt>Avoid</dt><dd class="avoid">a square door with racks and a bar handle across the top (oven); a television (not the card); a washing machine (not the card); a toaster (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="oven">Pair with oven. The only difference is the thing: a low wide box with a side door and buttons here, a square door with racks and a bar handle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik warm de soep op in de magnetron.<br><span class="voorbeeld-en">I heat up the soup in the microwave.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een laag breed keukenapparaat met een deur opzij, een rond draaiplateau achter het raampje en een smalle strook knoppen.</dd>
+</dl>
+<p class="id">magnetron.png · A2 · oven-magnetron</p>
+</article></div></section>
+<section class="cluster" data-cluster="tomaat-paprika" data-band="a2"><h2><span class="woorden">de tomaat · de paprika</span></h2><p class="as">tomato or pepper · 2 cards</p><p class="zin">De tomaat is rond, de paprika is hoekig.<span class="en">The tomato is round, the pepper is angular.</span></p><p class="frame"><strong>Fixed frame.</strong> one whole vegetable lying on a plain cutting board on a table line, seen side-on, the same size on the page, no knife, no other food. Only the vegetable changes: a round smooth tomato with a small star of leaves on top, or a bell pepper with a blocky lobed body and a thick stalk.</p><div class="kaarten"><article id="tomaat" class="kaart" data-id="tomaat" data-band="a2" data-kind="noun" data-article="de" data-plural="tomaten" data-dim="no" data-cluster="tomaat-paprika" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 119">#119</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de tomaat</h3>
+<p class="gloss">tomato</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">tomaten</span></p>
+<p class="vlaggen"><span>tomato or pepper</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A tomato lying on a cutting board, seen side-on: a round smooth slightly flattened ball with a shine stroke and, on top, a small star of pointed leaves around a short stalk. No slice, no knife.</dd>
+<dt>Must read</dt><dd class="must">a round smooth ball with a small star of leaves on top.</dd>
+<dt>Avoid</dt><dd class="avoid">a blocky lobed body with a thick stalk (paprika); an apple with a stalk and one leaf (appel); a cherry (kers); an orange (sinaasappel).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="paprika">Pair with paprika. The only difference is the thing: a round smooth ball here, a blocky lobed body there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik snijd een tomaat voor de salade.<br><span class="voorbeeld-en">I cut a tomato for the salad.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een ronde gladde bol met een klein sterretje van blaadjes bovenop ligt op een plankje.</dd>
+</dl>
+<p class="id">tomaat.png · A2 · tomaat-paprika</p>
+</article>
+<article id="paprika" class="kaart" data-id="paprika" data-band="a2" data-kind="noun" data-article="de" data-plural="paprika&#x27;s" data-dim="no" data-cluster="tomaat-paprika" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 120">#120</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de paprika</h3>
+<p class="gloss">bell pepper</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">paprika's</span></p>
+<p class="vlaggen"><span>tomato or pepper</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A bell pepper lying on the same cutting board, seen side-on: a blocky body with three or four rounded lobes at the bottom, deep folds down the sides, a shine stroke and a thick curved stalk on top. No slice, no knife.</dd>
+<dt>Must read</dt><dd class="must">a blocky body with lobes at the bottom and a thick stalk.</dd>
+<dt>Avoid</dt><dd class="avoid">a round smooth ball with a star of leaves (tomaat); a chilli pepper (not the card); an apple (appel); a pumpkin (pompoen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tomaat">Pair with tomaat. The only difference is the thing: a blocky lobed body here, a round smooth ball there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze vult de paprika met rijst.<br><span class="voorbeeld-en">She fills the pepper with rice.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hoekige vrucht met bobbels onderaan, diepe plooien en een dikke gebogen steel ligt op een plankje.</dd>
+</dl>
+<p class="id">paprika.png · A2 · tomaat-paprika</p>
+</article></div></section>
+<section class="cluster" data-cluster="citroen-sinaasappel" data-band="a2"><h2><span class="woorden">de citroen · de sinaasappel</span></h2><p class="as">lemon or orange · 2 cards</p><p class="zin">De citroen is zuur, de sinaasappel is zoet.<span class="en">The lemon is sour, the orange is sweet.</span></p><p class="frame"><strong>Fixed frame.</strong> one citrus fruit lying whole on a plain table line beside a cut half showing its segments, seen side-on, the same size on the page, no knife, no leaf. Only the shape changes: a lemon, oval with a pointed tip at each end, or a sinaasappel, perfectly round with a small dimple.</p><div class="kaarten"><article id="citroen" class="kaart" data-id="citroen" data-band="a2" data-kind="noun" data-article="de" data-plural="citroenen" data-dim="no" data-cluster="citroen-sinaasappel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 121">#121</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de citroen</h3>
+<p class="gloss">lemon</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">citroenen</span></p>
+<p class="vlaggen"><span>lemon or orange</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A lemon lying whole on a table line beside one cut half of it, seen side-on: an oval fruit with a small pointed tip at each end, skin dotted with tiny pores, and the cut half showing a wheel of segments. No leaf, no glass, no knife.</dd>
+<dt>Must read</dt><dd class="must">an oval fruit with a pointed tip at each end, beside its cut half.</dd>
+<dt>Avoid</dt><dd class="avoid">a perfectly round fruit with a dimple (sinaasappel); a lime (not the card); an egg (ei-een); a lemon slice on a glass (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="sinaasappel">Pair with sinaasappel. The only difference is the thing: an oval fruit with pointed tips here, a perfectly round fruit there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Doe wat citroen in de thee.<br><span class="voorbeeld-en">Put some lemon in the tea.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een ovale vrucht met aan beide kanten een puntje en een schil vol stipjes ligt op tafel, naast een doorgesneden helft met partjes.</dd>
+</dl>
+<p class="id">citroen.png · A2 · citroen-sinaasappel</p>
+</article>
+<article id="sinaasappel" class="kaart" data-id="sinaasappel" data-band="a2" data-kind="noun" data-article="de" data-plural="sinaasappels" data-dim="no" data-cluster="citroen-sinaasappel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 122">#122</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de sinaasappel</h3>
+<p class="gloss">orange (fruit)</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">sinaasappels</span></p>
+<p class="vlaggen"><span>lemon or orange</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A sinaasappel lying whole on the same table line beside one cut half of it, seen side-on: a perfectly round citrus fruit with a small dimple on top, skin dotted with tiny pores, and the cut half showing a wheel of segments. No leaf, no knife.</dd>
+<dt>Must read</dt><dd class="must">a perfectly round fruit with a small dimple, beside its cut half.</dd>
+<dt>Avoid</dt><dd class="avoid">an oval fruit with pointed tips (citroen); a round fruit with no cut half (not the card); a tomato (tomaat); a peach (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="citroen">Pair with citroen. The only difference is the thing: a perfectly round fruit here, an oval fruit with pointed tips there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik pers een sinaasappel voor het ontbijt.<br><span class="voorbeeld-en">I squeeze an orange for breakfast.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een helemaal ronde vrucht met een kuiltje bovenop en een schil vol stipjes ligt op tafel, naast een doorgesneden helft met partjes.</dd>
+</dl>
+<p class="id">sinaasappel.png · A2 · citroen-sinaasappel</p>
+</article></div></section>
+<section class="cluster" data-cluster="koekje-wafel" data-band="a2"><h2><span class="woorden">het koekje · de wafel</span></h2><p class="as">biscuit or waffle · 2 cards</p><p class="zin">Het koekje is rond, de wafel heeft vakjes.<span class="en">The biscuit is round, the waffle has little squares.</span></p><p class="frame"><strong>Fixed frame.</strong> one baked sweet lying flat on a small plain plate, seen from above, whole piece, the same size on the page, no cup, no cream. Only the sweet changes: a small round biscuit with a crimped edge, or a square waffle with a grid of deep square holes.</p><div class="kaarten"><article id="koekje" class="kaart" data-id="koekje" data-band="a2" data-kind="noun" data-article="het" data-plural="koekjes" data-dim="yes" data-cluster="koekje-wafel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 123">#123</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het koekje</h3>
+<p class="gloss">biscuit, cookie</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">koekjes</span><span class="dim" title="verkleinwoord">verkleinwoord van de koek</span></p>
+<p class="vlaggen"><span>biscuit or waffle</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small round biscuit lying flat on a plate, seen from above: a flat disc with a crimped wavy edge and a few small pricked holes in the middle. No icing, no bite taken, no cup.</dd>
+<dt>Must read</dt><dd class="must">a small flat round disc with a crimped edge.</dd>
+<dt>Avoid</dt><dd class="avoid">a square with a grid of deep holes (wafel); a coin (not the card); a cracker (not the card); a pancake (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="wafel">Pair with wafel. The only difference is the thing: a small round disc with a crimped edge here, a square with a grid of deep holes there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Bij de koffie krijg je een koekje.<br><span class="voorbeeld-en">You get a biscuit with your coffee.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een klein plat rond schijfje met een gekartelde rand en een paar gaatjes ligt op een bordje.</dd>
+</dl>
+<p class="id">koekje.png · A2 · koekje-wafel</p>
+</article>
+<article id="wafel" class="kaart" data-id="wafel" data-band="a2" data-kind="noun" data-article="de" data-plural="wafels" data-dim="no" data-cluster="koekje-wafel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 124">#124</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de wafel</h3>
+<p class="gloss">waffle</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">wafels</span></p>
+<p class="vlaggen"><span>biscuit or waffle</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A square waffle lying flat on the same plate, seen from above: a thick square with a raised grid of crossing ridges forming deep square holes, and slightly rounded corners. No cream, no fruit, no syrup.</dd>
+<dt>Must read</dt><dd class="must">a thick square with a grid of deep square holes.</dd>
+<dt>Avoid</dt><dd class="avoid">a small round disc with a crimped edge (koekje); a cracker (not the card); a slice of toast (not the card); a chessboard (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="koekje">Pair with koekje. The only difference is the thing: a square with a grid of deep holes here, a small round disc there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Op de markt eten we een warme wafel.<br><span class="voorbeeld-en">At the market we eat a warm waffle.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dik vierkant met een raster van diepe vierkante vakjes ligt op een bordje.</dd>
+</dl>
+<p class="id">wafel.png · A2 · koekje-wafel</p>
+</article></div></section>
+<section class="cluster" data-cluster="bes" data-band="a2"><h2><span class="woorden">de kers · de aardbei · de framboos</span></h2><p class="as">small soft fruit · 3 cards</p><p class="zin">De kers heeft een pit, de aardbei heeft zaadjes en de framboos is zacht.<span class="en">The cherry has a stone, the strawberry has seeds and the raspberry is soft.</span></p><p class="frame"><strong>Fixed frame.</strong> one small soft fruit lying on a plain table line, seen side-on, drawn large enough to show its surface, the same size on the page, no bowl, no cream. Only the fruit changes: a smooth round cherry on a long stalk, a heart-shaped strawberry with seeds and a leafy cap, or a raspberry made of tiny round bumps.</p><div class="kaarten"><article id="kers" class="kaart" data-id="kers" data-band="a2" data-kind="noun" data-article="de" data-plural="kersen" data-dim="no" data-cluster="bes" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 125">#125</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kers</h3>
+<p class="gloss">cherry</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kersen</span></p>
+<p class="vlaggen"><span>small soft fruit</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A cherry lying on a table line, seen side-on: a smooth round fruit with a shine stroke and a long thin stalk rising from a small dip on top. No leaf, no second cherry, no seeds on the skin.</dd>
+<dt>Must read</dt><dd class="must">a smooth round fruit on a long thin stalk.</dd>
+<dt>Avoid</dt><dd class="avoid">a heart shape with seeds and a leafy cap (aardbei); a fruit of tiny bumps (framboos); a tomato (tomaat); a grape (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aardbei framboos">Pair with aardbei and framboos. The only difference is the thing: a smooth round fruit on a long stalk here, a seeded heart shape or a fruit of tiny bumps there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In juni zijn de kersen rijp.<br><span class="voorbeeld-en">In June the cherries are ripe.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een glad rond vruchtje met een lange dunne steel ligt op tafel.</dd>
+</dl>
+<p class="id">kers.png · A2 · bes</p>
+</article>
+<article id="aardbei" class="kaart" data-id="aardbei" data-band="a2" data-kind="noun" data-article="de" data-plural="aardbeien" data-dim="no" data-cluster="bes" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 126">#126</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de aardbei</h3>
+<p class="gloss">strawberry</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">aardbeien</span></p>
+<p class="vlaggen"><span>small soft fruit</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A strawberry lying on the same table line, seen side-on: a heart-shaped fruit, wide at the top and pointed at the bottom, dotted all over with tiny seeds, with a cap of small pointed leaves and a short stalk on top.</dd>
+<dt>Must read</dt><dd class="must">a heart-shaped fruit dotted with seeds under a leafy cap.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth round fruit on a long stalk (kers); a fruit of tiny round bumps (framboos); a heart symbol (not the card); a pine cone (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kers framboos">Pair with kers and framboos. The only difference is the thing: a seeded heart shape here, a smooth round fruit on a stalk or a fruit of tiny bumps there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik eet graag aardbeien met slagroom.<br><span class="voorbeeld-en">I like eating strawberries with whipped cream.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hartvormig vruchtje vol kleine zaadjes met een kroontje van blaadjes ligt op tafel.</dd>
+</dl>
+<p class="id">aardbei.png · A2 · bes</p>
+</article>
+<article id="framboos" class="kaart" data-id="framboos" data-band="a2" data-kind="noun" data-article="de" data-plural="frambozen" data-dim="no" data-cluster="bes" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 127">#127</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de framboos</h3>
+<p class="gloss">raspberry</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">frambozen</span></p>
+<p class="vlaggen"><span>small soft fruit</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A raspberry lying on the same table line, seen side-on: a rounded cone made of many tiny round bumps packed together, with a small hollow at the wide end. No leaves, no stalk.</dd>
+<dt>Must read</dt><dd class="must">a rounded cone made of many tiny round bumps.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth round fruit on a stalk (kers); a heart-shaped fruit with seeds (aardbei); a blackberry on a bramble (not the card); a bunch of grapes (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kers aardbei">Pair with kers and aardbei. The only difference is the thing: a cone of tiny bumps here, a smooth round fruit on a stalk or a seeded heart shape there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De framboos groeit aan een struik.<br><span class="voorbeeld-en">The raspberry grows on a bush.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een bol kegeltje van heel veel kleine bolletjes tegen elkaar ligt op tafel.</dd>
+</dl>
+<p class="id">framboos.png · A2 · bes</p>
+</article></div></section>
+<section class="cluster" data-cluster="pompoen-meloen" data-band="a2"><h2><span class="woorden">de pompoen · de meloen</span></h2><p class="as">pumpkin or melon · 2 cards</p><p class="zin">De pompoen heeft ribbels, de meloen heeft een netje op de schil.<span class="en">The pumpkin has ribs, the melon has a net on its skin.</span></p><p class="frame"><strong>Fixed frame.</strong> one large round fruit lying on a plain table line, seen side-on, whole and uncut, the same size on the page, no knife, no candle, no face. Only the skin and top change: a pumpkin with deep ribs and a thick woody stalk, or a melon with a smooth net-patterned skin and no stalk.</p><div class="kaarten"><article id="pompoen" class="kaart" data-id="pompoen" data-band="a2" data-kind="noun" data-article="de" data-plural="pompoenen" data-dim="no" data-cluster="pompoen-meloen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 128">#128</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de pompoen</h3>
+<p class="gloss">pumpkin</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">pompoenen</span></p>
+<p class="vlaggen"><span>pumpkin or melon</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A pumpkin lying on a table line, seen side-on: a big round slightly flattened fruit with deep curved ribs running from top to bottom and a thick twisted woody stalk on top. No face carved in it, no candle.</dd>
+<dt>Must read</dt><dd class="must">deep curved ribs and a thick woody stalk on top.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth skin with a net pattern (meloen); a carved lantern face (not the card); a ball (not the card); a tomato (tomaat).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="meloen">Pair with meloen. The only difference is the thing: deep ribs and a woody stalk here, a smooth net-patterned skin there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Van de pompoen maken we soep.<br><span class="voorbeeld-en">We make soup from the pumpkin.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een grote ronde vrucht met diepe ribbels van boven naar beneden en een dikke houten steel ligt op tafel.</dd>
+</dl>
+<p class="id">pompoen.png · A2 · pompoen-meloen</p>
+</article>
+<article id="meloen" class="kaart" data-id="meloen" data-band="a2" data-kind="noun" data-article="de" data-plural="meloenen" data-dim="no" data-cluster="pompoen-meloen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 129">#129</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de meloen</h3>
+<p class="gloss">melon</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">meloenen</span></p>
+<p class="vlaggen"><span>pumpkin or melon</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A melon lying on the same table line, seen side-on: a big round slightly oval fruit with a smooth skin covered in a fine net of raised lines, and only a small scar where the stalk was. No ribs, no slice.</dd>
+<dt>Must read</dt><dd class="must">a smooth oval fruit covered in a fine net pattern.</dd>
+<dt>Avoid</dt><dd class="avoid">deep ribs and a woody stalk (pompoen); a striped watermelon (not the card); a ball (not the card); a coconut (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="pompoen">Pair with pompoen. The only difference is the thing: a smooth net-patterned skin here, deep ribs and a woody stalk there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een stuk meloen is lekker fris.<br><span class="voorbeeld-en">A piece of melon is nice and fresh.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een grote ovale vrucht met een gladde schil vol fijne netlijntjes ligt op tafel.</dd>
+</dl>
+<p class="id">meloen.png · A2 · pompoen-meloen</p>
+</article></div></section>
+<section class="cluster" data-cluster="noot" data-band="a2"><h2><span class="woorden">de pinda · de walnoot · de amandel</span></h2><p class="as">kind of nut · 3 cards</p><p class="zin">De pinda zit in een dop, de walnoot is rond en de amandel is plat.<span class="en">The peanut is in a pod, the walnut is round and the almond is flat.</span></p><p class="frame"><strong>Fixed frame.</strong> one nut lying on a plain table line, seen from above, whole and closed, the same size on the page, no bowl, no nutcracker. Only the nut changes: a peanut in a long pod with a waist, a walnut with a round wrinkled shell, or an almond, flat, oval and pointed.</p><div class="kaarten"><article id="pinda" class="kaart" data-id="pinda" data-band="a2" data-kind="noun" data-article="de" data-plural="pinda&#x27;s" data-dim="no" data-cluster="noot" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 130">#130</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de pinda</h3>
+<p class="gloss">peanut</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">pinda's</span></p>
+<p class="vlaggen"><span>kind of nut</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A peanut in its shell lying on a table line, seen from above: a long pod pinched in the middle like a waist, with a fine criss-cross net pattern on the shell. Closed, no loose nuts.</dd>
+<dt>Must read</dt><dd class="must">a long pod pinched in the middle with a net pattern.</dd>
+<dt>Avoid</dt><dd class="avoid">a round wrinkled shell (walnoot); a flat pointed oval (amandel); a bean pod (not the card); a cocoon (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="walnoot amandel">Pair with walnoot and amandel. The only difference is the thing: a long pod with a waist here, a round wrinkled shell or a flat pointed oval there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De aap eet een pinda.<br><span class="voorbeeld-en">The monkey eats a peanut.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een langwerpig dopje met een insnoering in het midden en een fijn netpatroon ligt op tafel.</dd>
+</dl>
+<p class="id">pinda.png · A2 · noot</p>
+</article>
+<article id="walnoot" class="kaart" data-id="walnoot" data-band="a2" data-kind="noun" data-article="de" data-plural="walnoten" data-dim="no" data-cluster="noot" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 131">#131</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de walnoot</h3>
+<p class="gloss">walnut</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">walnoten</span></p>
+<p class="vlaggen"><span>kind of nut</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A walnut in its shell lying on the same table line, seen from above: a round shell with deep twisting wrinkles and a raised seam around the middle. Closed, no cracked pieces.</dd>
+<dt>Must read</dt><dd class="must">a round shell with deep wrinkles and a seam around the middle.</dd>
+<dt>Avoid</dt><dd class="avoid">a long pod with a waist (pinda); a flat pointed oval (amandel); a brain (not the card); a stone (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="pinda amandel">Pair with pinda and amandel. The only difference is the thing: a round wrinkled shell here, a long pod with a waist or a flat pointed oval there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Onder de boom liggen veel walnoten.<br><span class="voorbeeld-en">Lots of walnuts lie under the tree.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een ronde dop met diepe kronkelige rimpels en een naad rondom ligt op tafel.</dd>
+</dl>
+<p class="id">walnoot.png · A2 · noot</p>
+</article>
+<article id="amandel" class="kaart" data-id="amandel" data-band="a2" data-kind="noun" data-article="de" data-plural="amandelen" data-dim="no" data-cluster="noot" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 132">#132</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de amandel</h3>
+<p class="gloss">almond</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">amandelen</span></p>
+<p class="vlaggen"><span>kind of nut</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An almond lying on the same table line, seen from above: a flat oval nut, rounded at one end and pointed at the other, with small pits and fine lengthwise lines on its skin. No shell pieces.</dd>
+<dt>Must read</dt><dd class="must">a flat oval nut pointed at one end with fine lines.</dd>
+<dt>Avoid</dt><dd class="avoid">a long pod with a waist (pinda); a round wrinkled shell (walnoot); a fruit stone (not the card); a leaf (blad).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="pinda walnoot">Pair with pinda and walnoot. The only difference is the thing: a flat pointed oval here, a long pod with a waist or a round wrinkled shell there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In dit koekje zitten amandelen.<br><span class="voorbeeld-en">There are almonds in this biscuit.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een platte ovale kern, aan één kant spits, met kleine putjes en fijne lijntjes ligt op tafel.</dd>
+</dl>
+<p class="id">amandel.png · A2 · noot</p>
+</article></div></section>
+<section class="cluster" data-cluster="pan" data-band="a2"><h2><span class="woorden">de steelpan · de koekenpan</span></h2><p class="as">deep or flat pan · 2 cards</p><p class="zin">In de steelpan warm ik melk op, in de koekenpan bak ik eieren.<span class="en">In the saucepan I warm up milk, in the frying pan I fry eggs.</span></p><p class="frame"><strong>Fixed frame.</strong> one empty cooking pan resting on a flat hob line, seen side-on, the same handle length on the page, no lid, no food, no flame. Only the pan changes: a deep saucepan with straight high sides, or a frying pan with a wide flat base and low sloping sides.</p><div class="kaarten"><article id="steelpan" class="kaart" data-id="steelpan" data-band="a2" data-kind="noun" data-article="de" data-plural="steelpannen" data-dim="no" data-cluster="pan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 133">#133</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de steelpan</h3>
+<p class="gloss">saucepan</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">steelpannen</span></p>
+<p class="vlaggen"><span>deep or flat pan</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An empty saucepan seen side-on on a hob line: a deep round pot with straight high sides, a flat base, a small pouring lip and one long straight handle sticking out to the side. No lid, no food, no flame.</dd>
+<dt>Must read</dt><dd class="must">a deep pot with straight high sides and one long handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a wide flat pan with low sloping sides (koekenpan); a pot with two small handles (not the card); a mug (beker); a kettle (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="koekenpan">Pair with koekenpan. The only difference is the thing: a deep pot with high sides here, a wide flat base with low sides there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De melk kookt over in de steelpan.<br><span class="voorbeeld-en">The milk boils over in the saucepan.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een diepe ronde pot met hoge rechte wanden en één lange greep opzij staat op het fornuis.</dd>
+</dl>
+<p class="id">steelpan.png · A2 · pan</p>
+</article>
+<article id="koekenpan" class="kaart" data-id="koekenpan" data-band="a2" data-kind="noun" data-article="de" data-plural="koekenpannen" data-dim="no" data-cluster="pan" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 134">#134</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de koekenpan</h3>
+<p class="gloss">frying pan</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">koekenpannen</span></p>
+<p class="vlaggen"><span>deep or flat pan</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">An empty frying pan seen side-on on the same hob line: a wide flat base, low sloping sides, a wide open top and one long straight handle sticking out to the side. No lid, no egg, no flame.</dd>
+<dt>Must read</dt><dd class="must">a wide flat base with low sloping sides and one long handle.</dd>
+<dt>Avoid</dt><dd class="avoid">a deep pot with straight high sides (steelpan); a wok (not the card); a plate (bord); a tray (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="steelpan">Pair with steelpan. The only difference is the thing: a wide flat base with low sides here, a deep pot with high sides there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik bak een ei in de koekenpan.<br><span class="voorbeeld-en">I fry an egg in the frying pan.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een brede platte bak met lage schuine randen en één lange greep opzij staat op het fornuis.</dd>
+</dl>
+<p class="id">koekenpan.png · A2 · pan</p>
+</article></div></section>
+<section class="cluster" data-cluster="handdoek-laken" data-band="a2"><h2><span class="woorden">de handdoek · het laken</span></h2><p class="as">towel or sheet · 2 cards</p><p class="zin">Met de handdoek droog ik me af, het laken ligt op het bed.<span class="en">I dry myself with the towel, the sheet lies on the bed.</span></p><p class="frame"><strong>Fixed frame.</strong> one textile hanging over a plain wooden rail on a bare indoor wall, seen from the front, the same rail on the page, no pattern, no person. Only the textile changes: a small thick towel with a hanging loop and a woven border, or a large thin flat sheet hanging almost to the floor.</p><div class="kaarten"><article id="handdoek" class="kaart" data-id="handdoek" data-band="a2" data-kind="noun" data-article="de" data-plural="handdoeken" data-dim="no" data-cluster="handdoek-laken" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 135">#135</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de handdoek</h3>
+<p class="gloss">towel</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">handdoeken</span></p>
+<p class="vlaggen"><span>towel or sheet</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small thick towel hanging folded over a plain wooden rail fixed to a bare indoor wall, seen from the front: a soft rectangle with a loop for hanging at one corner, a woven border across both ends and a thick looped texture. Bare floor below, nothing else on the rail.</dd>
+<dt>Must read</dt><dd class="must">a small thick rectangle with a hanging loop and a woven border.</dd>
+<dt>Avoid</dt><dd class="avoid">a large thin sheet hanging almost to the ground (laken); a scarf (sjaal); a flag (not the card); a tablecloth (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="laken">Pair with laken. The only difference is the thing: a small thick rectangle with a loop here, a large thin sheet almost to the ground there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Neem een handdoek mee naar het zwembad.<br><span class="voorbeeld-en">Take a towel to the swimming pool.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kleine dikke lap met een lusje en een geweven rand hangt over een houten stang aan de muur.</dd>
+</dl>
+<p class="id">handdoek.png · A2 · handdoek-laken</p>
+</article>
+<article id="laken" class="kaart" data-id="laken" data-band="a2" data-kind="noun" data-article="het" data-plural="lakens" data-dim="no" data-cluster="handdoek-laken" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 136">#136</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het laken</h3>
+<p class="gloss">sheet (bed)</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">lakens</span></p>
+<p class="vlaggen"><span>towel or sheet</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A large thin flat sheet hanging over the same plain wooden rail on the bare indoor wall, seen from the front: a wide plain rectangle with a narrow hem, falling in long soft folds almost to the floor. No loop, no border, nothing else on the rail.</dd>
+<dt>Must read</dt><dd class="must">a large thin rectangle falling almost to the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">a small thick towel with a loop (handdoek); a curtain (not the card); a tent (not the card); a sail (zeil).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="handdoek">Pair with handdoek. The only difference is the thing: a large thin sheet almost to the ground here, a small thick rectangle with a loop there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik leg een schoon laken op het bed.<br><span class="voorbeeld-en">I put a clean sheet on the bed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een grote dunne platte lap met een smalle zoom hangt over een houten stang in lange plooien bijna tot de vloer.</dd>
+</dl>
+<p class="id">laken.png · A2 · handdoek-laken</p>
+</article></div></section>
+<section class="cluster" data-cluster="stofzuiger-bezem" data-band="a2"><h2><span class="woorden">de stofzuiger · de bezem</span></h2><p class="as">floor-cleaning tool · 2 cards</p><p class="zin">De stofzuiger maakt lawaai, de bezem is stil.<span class="en">The vacuum cleaner is noisy, the broom is quiet.</span></p><p class="frame"><strong>Fixed frame.</strong> one floor-cleaning tool standing against a plain wall on a flat floor line, seen side-on, the same height on the page, no person, no dust pile. Only the tool changes: a vacuum cleaner with a body on wheels, a hose and a long tube, or a broom with a long stick and a row of bristles.</p><div class="kaarten"><article id="stofzuiger" class="kaart" data-id="stofzuiger" data-band="a2" data-kind="noun" data-article="de" data-plural="stofzuigers" data-dim="no" data-cluster="stofzuiger-bezem" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 137">#137</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de stofzuiger</h3>
+<p class="gloss">vacuum cleaner</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">stofzuigers</span></p>
+<p class="vlaggen"><span>floor-cleaning tool</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A vacuum cleaner standing against a wall: a rounded body on small wheels on the floor, a ribbed hose curving up to a long straight tube leaning against the wall, and a flat floor nozzle at the bottom. A power cable lies coiled. No person.</dd>
+<dt>Must read</dt><dd class="must">a body on wheels with a ribbed hose and a long tube.</dd>
+<dt>Avoid</dt><dd class="avoid">a long stick with a row of bristles (bezem); a mop and bucket (not the card); a leaf blower (not the card); a robot cleaner (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bezem">Pair with bezem. The only difference is the thing: a body on wheels with a hose here, a long stick with bristles there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De stofzuiger staat in de gangkast.<br><span class="voorbeeld-en">The vacuum cleaner is in the hall cupboard.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een rond apparaat op wieltjes met een geribbelde slang en een lange buis staat tegen de muur.</dd>
+</dl>
+<p class="id">stofzuiger.png · A2 · stofzuiger-bezem</p>
+</article>
+<article id="bezem" class="kaart" data-id="bezem" data-band="a2" data-kind="noun" data-article="de" data-plural="bezems" data-dim="no" data-cluster="stofzuiger-bezem" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 138">#138</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de bezem</h3>
+<p class="gloss">broom</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">bezems</span></p>
+<p class="vlaggen"><span>floor-cleaning tool</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A broom leaning against the same wall: a long straight wooden stick and, at the bottom, a wide wooden head with a dense row of long stiff bristles touching the floor. No dustpan, no person, no dust.</dd>
+<dt>Must read</dt><dd class="must">a long stick with a wide head of stiff bristles at the bottom.</dd>
+<dt>Avoid</dt><dd class="avoid">a body on wheels with a hose (stofzuiger); a rake (hark); a mop (not the card); a bundle of twigs (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stofzuiger">Pair with stofzuiger. The only difference is the thing: a long stick with bristles here, a body on wheels with a hose there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Veeg de vloer met de bezem.<br><span class="voorbeeld-en">Sweep the floor with the broom.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lange houten stok met onderaan een brede kop vol stugge haren leunt tegen de muur.</dd>
+</dl>
+<p class="id">bezem.png · A2 · stofzuiger-bezem</p>
+</article></div></section>
+<section class="cluster" data-cluster="stopcontact-schakelaar" data-band="a2"><h2><span class="woorden">het stopcontact · de schakelaar</span></h2><p class="as">socket or switch · 2 cards</p><p class="zin">Het stopcontact is voor de stekker, de schakelaar is voor het licht.<span class="en">The socket is for the plug, the switch is for the light.</span></p><p class="frame"><strong>Fixed frame.</strong> one small square plate fixed on a plain wall, seen straight from the front, the same size and position on the page, no cable, no hand, no plug. Only the plate changes: a socket with two round holes, or a light switch with one wide rocker button.</p><div class="kaarten"><article id="stopcontact" class="kaart" data-id="stopcontact" data-band="a2" data-kind="noun" data-article="het" data-plural="stopcontacten" data-dim="no" data-cluster="stopcontact-schakelaar" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 139">#139</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het stopcontact</h3>
+<p class="gloss">socket, power point</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">stopcontacten</span></p>
+<p class="vlaggen"><span>socket or switch</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A square wall plate seen straight from the front on a plain wall: a round sunken face with two round holes side by side and two small metal earth clips at top and bottom. No plug, no cable, no hand.</dd>
+<dt>Must read</dt><dd class="must">a round sunken face with two round holes.</dd>
+<dt>Avoid</dt><dd class="avoid">a single rocker button (schakelaar); a face with two eyes (not the card); a doorbell (not the card); a computer port (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="schakelaar">Pair with schakelaar. The only difference is the thing: a round face with two holes here, one wide rocker button there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Is er hier ergens een stopcontact?<br><span class="voorbeeld-en">Is there a socket somewhere here?</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vierkant plaatje op de muur met een verzonken rondje met twee ronde gaatjes.</dd>
+</dl>
+<p class="id">stopcontact.png · A2 · stopcontact-schakelaar</p>
+</article>
+<article id="schakelaar" class="kaart" data-id="schakelaar" data-band="a2" data-kind="noun" data-article="de" data-plural="schakelaars" data-dim="no" data-cluster="stopcontact-schakelaar" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 140">#140</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de schakelaar</h3>
+<p class="gloss">switch</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">schakelaars</span></p>
+<p class="vlaggen"><span>socket or switch</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A square wall plate seen straight from the front on the same plain wall, the same size: one wide flat rocker button filling most of the plate, pressed in at the top edge. No holes, no lamp, no hand.</dd>
+<dt>Must read</dt><dd class="must">one wide flat rocker button filling the plate.</dd>
+<dt>Avoid</dt><dd class="avoid">a round face with two holes (stopcontact); a doorbell (not the card); a thermostat (not the card); a phone (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stopcontact">Pair with stopcontact. The only difference is the thing: one wide rocker button here, a round face with two holes there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De schakelaar zit naast de deur.<br><span class="voorbeeld-en">The switch is next to the door.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vierkant plaatje op de muur met één brede platte knop die bovenaan ingedrukt is.</dd>
+</dl>
+<p class="id">schakelaar.png · A2 · stopcontact-schakelaar</p>
+</article></div></section>
+<section class="cluster" data-cluster="sok-kous" data-band="a2"><h2><span class="woorden">de sok · de kous</span></h2><p class="as">sock or stocking · 2 cards</p><p class="zin">De sok is kort, de kous is lang.<span class="en">The sock is short, the stocking is long.</span></p><p class="frame"><strong>Fixed frame.</strong> one piece of legwear lying flat on a plain table line, seen from the side, the same foot size on the page, no shoe, no pattern, no person. Only the length changes: a short sock that ends above the ankle, or a long stocking that reaches up past the knee.</p><div class="kaarten"><article id="sok" class="kaart" data-id="sok" data-band="a2" data-kind="noun" data-article="de" data-plural="sokken" data-dim="no" data-cluster="sok-kous" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 141">#141</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de sok</h3>
+<p class="gloss">sock</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">sokken</span></p>
+<p class="vlaggen"><span>sock or stocking</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A short sock lying flat on a table line, seen from the side: a foot part with a rounded toe and heel, and a short ribbed cuff that ends just above the ankle. No pattern, no shoe, no hole.</dd>
+<dt>Must read</dt><dd class="must">a foot shape with a short ribbed cuff just above the ankle.</dd>
+<dt>Avoid</dt><dd class="avoid">a long leg part reaching past the knee (kous); a flip-flop (slipper); a glove (handschoen); a boot (laars).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kous">Pair with kous. The only difference is the thing: a short cuff above the ankle here, a long leg part past the knee there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik heb een gat in mijn sok.<br><span class="voorbeeld-en">I have a hole in my sock.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een voetvormig stukje stof met een ronde punt en een korte geribbelde rand ligt op tafel.</dd>
+</dl>
+<p class="id">sok.png · A2 · sok-kous</p>
+</article>
+<article id="kous" class="kaart" data-id="kous" data-band="a2" data-kind="noun" data-article="de" data-plural="kousen" data-dim="no" data-cluster="sok-kous" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 142">#142</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de kous</h3>
+<p class="gloss">stocking</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">kousen</span></p>
+<p class="vlaggen"><span>sock or stocking</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A long stocking lying flat on the same table line, seen from the side: the same foot part with a rounded toe and heel, continuing into a long thin leg part that reaches up past the knee, with a band at the top. No pattern, no shoe.</dd>
+<dt>Must read</dt><dd class="must">the same foot shape continuing into a long leg part past the knee.</dd>
+<dt>Avoid</dt><dd class="avoid">a short cuff just above the ankle (sok); tights for two legs (not the card); a leg warmer (not the card); a sleeve (mouw).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="sok">Pair with sok. The only difference is the thing: a long leg part past the knee here, a short cuff above the ankle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Oma draagt kousen onder haar rok.<br><span class="voorbeeld-en">Grandma wears stockings under her skirt.</span></dd>
+<dt>Alt text</dt><dd class="alt">Hetzelfde voetvormige stukje stof, maar met een lang dun beenstuk tot boven de knie.</dd>
+</dl>
+<p class="id">kous.png · A2 · sok-kous</p>
+</article></div></section>
+<section class="cluster" data-cluster="sandaal-slipper" data-band="a2"><h2><span class="woorden">de sandaal · de slipper</span></h2><p class="as">sandal or flip-flop · 2 cards</p><p class="zin">De sandaal heeft een gesp, de slipper heeft een bandje tussen je tenen.<span class="en">The sandal has a buckle, the flip-flop has a strap between your toes.</span></p><p class="frame"><strong>Fixed frame.</strong> one open summer shoe lying flat on a plain floor line, seen from above, the same sole shape and size on the page, no foot, no pattern. Only the straps change: a sandal with straps across the foot and a buckled strap round the heel, or a flip-flop with only a thin forked strap from between the toes.</p><div class="kaarten"><article id="sandaal" class="kaart" data-id="sandaal" data-band="a2" data-kind="noun" data-article="de" data-plural="sandalen" data-dim="no" data-cluster="sandaal-slipper" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 143">#143</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de sandaal</h3>
+<p class="gloss">sandal</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">sandalen</span></p>
+<p class="vlaggen"><span>sandal or flip-flop</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A sandal lying flat on a floor line, seen from above: a flat foot-shaped sole with two crossing straps over the front of the foot and one strap with a small buckle going round the back of the heel. No foot, no pattern.</dd>
+<dt>Must read</dt><dd class="must">crossing straps over the front and a buckled strap round the heel.</dd>
+<dt>Avoid</dt><dd class="avoid">only a thin strap from between the toes (slipper); a closed shoe (schoen); a boot (laars); a sock (sok).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="slipper">Pair with slipper. The only difference is the thing: crossing straps and a buckled heel strap here, only a thin forked strap there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de zomer loop ik op sandalen.<br><span class="voorbeeld-en">In summer I walk in sandals.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een platte zool met gekruiste bandjes voorop en een bandje met een gespje om de hiel ligt op de vloer.</dd>
+</dl>
+<p class="id">sandaal.png · A2 · sandaal-slipper</p>
+</article>
+<article id="slipper" class="kaart" data-id="slipper" data-band="a2" data-kind="noun" data-article="de" data-plural="slippers" data-dim="no" data-cluster="sandaal-slipper" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 144">#144</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de slipper</h3>
+<p class="gloss">flip-flop</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">slippers</span></p>
+<p class="vlaggen"><span>sandal or flip-flop</span><span>A2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A flip-flop lying flat on the same floor line, seen from above: the same flat foot-shaped sole with only one thin forked strap that starts between the first two toes and splits to both sides. No heel strap, no foot.</dd>
+<dt>Must read</dt><dd class="must">a flat sole with only a thin forked strap from between the toes.</dd>
+<dt>Avoid</dt><dd class="avoid">crossing straps with a buckled heel strap (sandaal); a closed house shoe (not the card); a shoe (schoen); a sock (sok).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="sandaal">Pair with sandaal. The only difference is the thing: only a thin forked strap here, crossing straps and a buckled heel strap there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Op het strand draag ik slippers.<br><span class="voorbeeld-en">On the beach I wear flip-flops.</span></dd>
+<dt>Alt text</dt><dd class="alt">Dezelfde platte zool met alleen een dun gevorkt bandje dat tussen de tenen begint.</dd>
+</dl>
+<p class="id">slipper.png · A2 · sandaal-slipper</p>
+</article></div></section>
+</main>
+</body>
+</html>

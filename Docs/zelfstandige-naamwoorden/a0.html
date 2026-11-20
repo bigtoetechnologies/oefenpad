@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zelfstandige naamwoorden — A0</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.vormen .art::before{content:"lidwoord"}
+.vormen .mv::before{content:"meervoud"}
+.vormen .dim{color:var(--grijs);font-weight:400}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Zelfstandige naamwoorden — A0</h1>
+<p class="lead">The home, the person, the vehicle and the town, plus the plural huis/huizen.</p>
+<div class="sum"><span>5 contrast sets</span><span>11 nouns</span><span>frames #1–#11</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html" class="hier">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="woning" data-band="a0"><h2><span class="woorden">het huis · de flat</span></h2><p class="as">kind of home · 2 cards</p><p class="zin">Het gezin woont in het huis, maar de student woont in de flat.<span class="en">The family lives in the house, but the student lives in the flat.</span></p><p class="frame"><strong>Fixed frame.</strong> one whole building seen from the front on a flat ground line, centred, same size on the page, open sky with no clouds, no people. Only the kind of building changes: a house with its own roof and door, or a tall block of stacked homes.</p><div class="kaarten"><article id="huis" class="kaart" data-id="huis" data-band="a0" data-kind="noun" data-article="het" data-plural="huizen" data-dim="no" data-cluster="woning" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 1">#1</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het huis</h3>
+<p class="gloss">house</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">huizen</span></p>
+<p class="vlaggen"><span>kind of home</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A single detached two-storey house with a pitched roof, a chimney, one front door at ground level and two windows upstairs, standing alone on the ground line. Nothing is stacked on top of it and no neighbour touches it. The huis-een and huis-meer cards reuse this drawing.</dd>
+<dt>Must read</dt><dd class="must">one house with its own pitched roof and its own front door at ground level.</dd>
+<dt>Avoid</dt><dd class="avoid">a tall block with many identical floors (flat); a row of joined houses sharing walls (not the card); a shed or hut with no windows (not a home); a castle with towers (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="flat">Pair with flat. The only difference is the building: one low house with its own door and roof here, a tall block of many identical floors there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij wonen in een huis met een tuin.<br><span class="voorbeeld-en">We live in a house with a garden.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een laag gebouw met een schuin dak, een schoorsteen en een deur aan de voorkant.</dd>
+</dl>
+<p class="id">huis.png · A0 · woning</p>
+</article>
+<article id="flat" class="kaart" data-id="flat" data-band="a0" data-kind="noun" data-article="de" data-plural="flats" data-dim="no" data-cluster="woning" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 2">#2</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de flat</h3>
+<p class="gloss">flat, block of flats</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">flats</span></p>
+<p class="vlaggen"><span>kind of home</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A tall rectangular block with six identical floors of windows, a small balcony under each upper window, a flat roof and one shared entrance door at ground level, standing alone on the ground line. No people, no sign, no neighbouring building.</dd>
+<dt>Must read</dt><dd class="must">one tall block of stacked identical floors with balconies and a flat roof.</dd>
+<dt>Avoid</dt><dd class="avoid">a single low house with a pitched roof (huis); a row of terraced houses (huis); an office tower with no balconies (not the card); a hotel with a sign (needs text).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="huis">Pair with huis. The only difference is the building: a tall block of many identical floors with balconies here, one low house with its own roof there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij woont in een flat in de stad.<br><span class="voorbeeld-en">She lives in a flat in the city.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hoog gebouw met zes verdiepingen, kleine balkons en een plat dak.</dd>
+</dl>
+<p class="id">flat.png · A0 · woning</p>
+</article></div></section>
+<section class="cluster" data-cluster="persoon" data-band="a0"><h2><span class="woorden">de man · de vrouw</span></h2><p class="as">adult man or woman · 2 cards</p><p class="zin">De man staat links en de vrouw staat rechts.<span class="en">The man stands on the left and the woman stands on the right.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain shirt and trousers stands whole-figure, front view, arms down, on a flat ground line against a plain wall, same body, same distance and same size on the page, no jewellery. Only the hair changes: short hair with a beard, or long hair and no beard.</p><div class="kaarten"><article id="man" class="kaart" data-id="man" data-band="a0" data-kind="noun" data-article="de" data-plural="mannen" data-dim="no" data-cluster="persoon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 3">#3</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de man</h3>
+<p class="gloss">man</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">mannen</span></p>
+<p class="vlaggen"><span>adult man or woman</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One adult man in plain shirt and trousers, whole-figure, front view, arms down, on the ground line against a plain wall. Short cropped hair and a short beard; body, face shape and clothes are exactly as on the vrouw card. No jewellery.</dd>
+<dt>Must read</dt><dd class="must">short cropped hair and a short beard on an adult.</dd>
+<dt>Avoid</dt><dd class="avoid">a figure with long hair and no beard (vrouw); a boy with no beard (not the card); a bald head with no beard (not the card); an adult in a dress (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vrouw">Pair with vrouw. The only difference is the hair: short hair and a beard here, long hair and no beard there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De man leest een boek.<br><span class="voorbeeld-en">The man is reading a book.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene met kort haar en een baard staat rechtop tegen een lege muur.</dd>
+</dl>
+<p class="id">man.png · A0 · persoon</p>
+</article>
+<article id="vrouw" class="kaart" data-id="vrouw" data-band="a0" data-kind="noun" data-article="de" data-plural="vrouwen" data-dim="no" data-cluster="persoon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 4">#4</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de vrouw</h3>
+<p class="gloss">woman</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">vrouwen</span></p>
+<p class="vlaggen"><span>adult man or woman</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One adult woman in plain shirt and trousers, whole-figure, front view, arms down, on the ground line against a plain wall. Long hair falling past the shoulders and a smooth chin with no beard; body, face shape and clothes are exactly as on the man card. No jewellery.</dd>
+<dt>Must read</dt><dd class="must">long hair past the shoulders and no beard.</dd>
+<dt>Avoid</dt><dd class="avoid">a figure with short hair and a beard (man); a girl with a small body (not the card); a long-haired figure with a beard (not the card); a short-haired figure with no beard (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="man">Pair with man. The only difference is the hair: long hair and no beard here, short hair and a beard there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De vrouw werkt in een winkel.<br><span class="voorbeeld-en">The woman works in a shop.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene met lang haar en zonder baard staat rechtop tegen een lege muur.</dd>
+</dl>
+<p class="id">vrouw.png · A0 · persoon</p>
+</article></div></section>
+<section class="cluster" data-cluster="voertuig" data-band="a0"><h2><span class="woorden">de auto · de bus · de fiets</span></h2><p class="as">kind of vehicle · 3 cards</p><p class="zin">Ik ga met de auto, met de bus of met de fiets.<span class="en">I go by car, by bus or by bicycle.</span></p><p class="frame"><strong>Fixed frame.</strong> one vehicle seen side-on, whole object, wheels touching a flat road line, centred, same height on the page, a plain low wall behind, no driver or passengers visible. Only the kind of vehicle changes: a car, a bus or a bicycle.</p><div class="kaarten"><article id="auto" class="kaart" data-id="auto" data-band="a0" data-kind="noun" data-article="de" data-plural="auto&#x27;s" data-dim="no" data-cluster="voertuig" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 5">#5</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de auto</h3>
+<p class="gloss">car</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">auto's</span></p>
+<p class="vlaggen"><span>kind of vehicle</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A small passenger car seen side-on, two of four wheels visible, two side doors, a sloping windscreen, a roof and a short boot, wheels on a flat road line, no driver. Two small side windows show empty seats; the body is short and boxy.</dd>
+<dt>Must read</dt><dd class="must">a short closed car body with doors and two side windows on four wheels.</dd>
+<dt>Avoid</dt><dd class="avoid">a long vehicle with a row of six windows (bus); a bicycle with two thin spoked wheels (fiets); a lorry with a box on the back (not the card); a train (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bus fiets">Pair with bus and fiets. The only difference is the vehicle: a short body with two windows here, a long body with a row of windows or two thin wheels there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn vader heeft een nieuwe auto.<br><span class="voorbeeld-en">My father has a new car.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een korte gesloten wagen met twee deuren staat op een rechte weg.</dd>
+</dl>
+<p class="id">auto.png · A0 · voertuig</p>
+</article>
+<article id="bus" class="kaart" data-id="bus" data-band="a0" data-kind="noun" data-article="de" data-plural="bussen" data-dim="no" data-cluster="voertuig" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 6">#6</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de bus</h3>
+<p class="gloss">bus</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">bussen</span></p>
+<p class="vlaggen"><span>kind of vehicle</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A long bus seen side-on, flat roof, a row of six large passenger windows, a front door with one step, two wheels visible, on a flat road line, no driver. It is clearly more than twice as long as a car would be, with a plain front.</dd>
+<dt>Must read</dt><dd class="must">a long body with a row of six windows and a door with a step.</dd>
+<dt>Avoid</dt><dd class="avoid">a short car with two side windows (auto); a bicycle (fiets); a tram on rails (not the card); a lorry with no windows (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="auto fiets">Pair with auto and fiets. The only difference is the vehicle: a very long body with a row of windows here, a short body or two thin wheels there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bus komt om acht uur.<br><span class="voorbeeld-en">The bus comes at eight o'clock.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een heel lang voertuig met een rij grote ramen en een deur met een trede.</dd>
+</dl>
+<p class="id">bus.png · A0 · voertuig</p>
+</article>
+<article id="fiets" class="kaart" data-id="fiets" data-band="a0" data-kind="noun" data-article="de" data-plural="fietsen" data-dim="no" data-cluster="voertuig" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 7">#7</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de fiets</h3>
+<p class="gloss">bicycle</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">fietsen</span></p>
+<p class="vlaggen"><span>kind of vehicle</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A plain bicycle seen side-on, two large thin spoked wheels, a slim frame, a saddle, handlebars and two pedals, resting on a small kickstand on the road line, no rider. The wheels are large compared with the frame.</dd>
+<dt>Must read</dt><dd class="must">two thin spoked wheels, handlebars and a saddle with no body around them.</dd>
+<dt>Avoid</dt><dd class="avoid">a car with doors and a roof (auto); a long bus with a row of windows (bus); a motorbike with a thick engine block (not the card); a unicycle with one wheel (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="auto bus">Pair with auto and bus. The only difference is the vehicle: two thin wheels and an open frame here, a closed body with windows there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ga met de fiets naar school.<br><span class="voorbeeld-en">I go to school by bicycle.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee dunne wielen met een smal frame, een zadel en een stuur staan op een standaard.</dd>
+</dl>
+<p class="id">fiets.png · A0 · voertuig</p>
+</article></div></section>
+<section class="cluster" data-cluster="plaats" data-band="a0"><h2><span class="woorden">de stad · het dorp</span></h2><p class="as">size of a settlement · 2 cards</p><p class="zin">De stad is groot, maar het dorp is klein.<span class="en">The city is big, but the village is small.</span></p><p class="frame"><strong>Fixed frame.</strong> a wide view of a settlement from a gentle rise on the ground line, same viewpoint, plain sky, one road leading in from the front edge of the picture. Only the size of the settlement changes: a dense city of tall blocks, or a few low houses around a small square.</p><div class="kaarten"><article id="stad" class="kaart" data-id="stad" data-band="a0" data-kind="noun" data-article="de" data-plural="steden" data-dim="no" data-cluster="plaats" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 8">#8</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de stad</h3>
+<p class="gloss">city</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">steden</span></p>
+<p class="vlaggen"><span>size of a settlement</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A wide view of a city from a gentle rise: about ten tall blocks of many floors standing close together, one high tower among them and one road leading in from the front with three small cars on it. Rows of identical windows on each block.</dd>
+<dt>Must read</dt><dd class="must">tall blocks packed close together with a tower and one road.</dd>
+<dt>Avoid</dt><dd class="avoid">a few low houses round a small square (dorp); a single house in a field (not the card); a tall block on its own (flat); a crowd of people with no buildings (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="dorp">Pair with dorp. The only difference is the size of the place: a dense group of tall blocks with a tower here, a few low houses round a square there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Utrecht is een grote stad.<br><span class="voorbeeld-en">Utrecht is a big city.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een groep hoge gebouwen staat dicht op elkaar, met een toren en een weg met drie kleine wagens.</dd>
+</dl>
+<p class="id">stad.png · A0 · plaats</p>
+</article>
+<article id="dorp" class="kaart" data-id="dorp" data-band="a0" data-kind="noun" data-article="het" data-plural="dorpen" data-dim="no" data-cluster="plaats" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 9">#9</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het dorp</h3>
+<p class="gloss">village</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">dorpen</span></p>
+<p class="vlaggen"><span>size of a settlement</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">A wide view of a small village from a gentle rise: about eight low houses with pitched roofs around a small square with one tree, a narrow lane, and open fields beyond with a few fence posts. Same viewpoint and sky as the city; everything is low.</dd>
+<dt>Must read</dt><dd class="must">a few low houses round a small square with one tree and open land beyond.</dd>
+<dt>Avoid</dt><dd class="avoid">tall blocks and a tower filling the picture (stad); a single farmhouse alone (not the card); a row of seaside huts (not the card); a car park or a market (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stad">Pair with stad. The only difference is the size of the place: a few low houses round a square here, a crowd of tall blocks there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn oma woont in een klein dorp.<br><span class="voorbeeld-en">My grandmother lives in a small village.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een paar lage gebouwen staan rond een klein plein met een boom, en daarachter ligt open land.</dd>
+</dl>
+<p class="id">dorp.png · A0 · plaats</p>
+</article></div></section>
+<section class="cluster" data-cluster="huis-getal" data-band="a0"><h2><span class="woorden">het huis · de huizen</span></h2><p class="as">one or more · 2 cards</p><p class="zin">Hier staat het huis, daar staan de huizen.<span class="en">Here stands the house, over there stand the houses.</span></p><p class="frame"><strong>Fixed frame.</strong> a detached two-storey house with a pitched roof, a chimney, one door and two windows (the huis card drawing) on a flat ground line, every house identical in size and style, plain sky, same viewpoint. Only the number of houses changes: one house, or three houses side by side with gaps between them.</p><div class="kaarten"><article id="huis-een" class="kaart" data-id="huis-een" data-band="a0" data-kind="noun" data-article="het" data-plural="huizen" data-dim="no" data-cluster="huis-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 10">#10</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">het huis</h3>
+<p class="gloss">house</p>
+<p class="vormen"><span class="art" title="lidwoord">het</span><span class="mv" title="meervoud">huizen</span></p>
+<p class="vlaggen"><span>one or more</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">The same drawing as the huis card: one detached two-storey house with a pitched roof, a chimney, one front door and two windows, in the middle of the picture on a flat ground line under plain sky, with empty ground on both sides.</dd>
+<dt>Must read</dt><dd class="must">one single house with empty ground on both sides.</dd>
+<dt>Avoid</dt><dd class="avoid">three houses in a row (huizen); a terrace of joined houses (not the card); a tall block (flat); a shed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="huis-meer">Pair with huis-meer. The only difference is the number: one house here, three identical houses side by side there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het huis heeft een hoge deur.<br><span class="voorbeeld-en">The house has a tall door.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een enkel gebouw met een schuin dak en een schoorsteen staat in het midden op een vlakke grond.</dd>
+</dl>
+<p class="id">huis-een.png · A0 · huis-getal</p>
+</article>
+<article id="huis-meer" class="kaart" data-id="huis-meer" data-band="a0" data-kind="noun" data-article="de" data-plural="huizen" data-dim="no" data-cluster="huis-getal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 11">#11</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">de huizen</h3>
+<p class="gloss">houses</p>
+<p class="vormen"><span class="art" title="lidwoord">de</span><span class="mv" title="meervoud">huizen</span></p>
+<p class="vlaggen"><span>one or more</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">Three copies of the huis drawing: identical detached two-storey houses with pitched roofs, chimneys, one front door and two windows each, evenly spaced with gaps of empty ground between them on one flat ground line under plain sky, each the same size as the single house.</dd>
+<dt>Must read</dt><dd class="must">three identical houses separated by gaps.</dd>
+<dt>Avoid</dt><dd class="avoid">one house alone (huis); a terrace of joined houses (not the card); three tall blocks (flat); two houses (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="huis-een">Pair with huis-een. The only difference is the number: three identical houses with gaps here, one house alone there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De huizen staan aan het plein.<br><span class="voorbeeld-en">The houses stand on the square.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke gebouwen met schuine daken en schoorstenen staan naast elkaar met ruimte ertussen.</dd>
+</dl>
+<p class="id">huis-meer.png · A0 · huis-getal</p>
+</article></div></section>
+</main>
+</body>
+</html>

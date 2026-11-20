@@ -1,0 +1,10 @@
+ZELFSTANDIGE NAAMWOORDEN - SCENE BRIEF (adapted from tools/_bn_tmp/scenes/BRIEF.txt)
+Same shape as the adjective family: TSV per band, clusters.tsv (cluster, frame, sentence_nl, sentence_en) and cards.tsv
+(id, scene, must, avoid, contrast, example_nl, example_en, alt). Differences:
+- The unit is a concrete, drawable noun in a contrast set of two or three look-alike or often-confused nouns.
+- article (de/het), plural and the diminutive flag live in clusters.txt and selection.json, not in the TSV.
+  The lexicon has no article/plural column, so every form was written from certain knowledge; none was looked up.
+- The Dutch contrast sentence uses the article of every member (het huis / de flat).
+- Singular/plural sets ("-getal") have ids <lemma>-een and <lemma>-meer; the drawing differs only in number (1 vs 3, or 2 for legs, 5 for leaves).
+- alt text never contains the noun, its plural or its partner.
+- Same hard rules: no text in art, no colour as meaning, no souvenir imagery, no brands, no religious symbols.

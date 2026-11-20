@@ -1,0 +1,4127 @@
+{
+ "a0": [
+  {
+   "id": "woning",
+   "axis": "kind of home",
+   "members": [
+    {
+     "id": "huis",
+     "lemma": "huis",
+     "gloss": "house",
+     "article": "het",
+     "plural": "huizen",
+     "dim": "",
+     "base": "",
+     "rank": 121
+    },
+    {
+     "id": "flat",
+     "lemma": "flat",
+     "gloss": "flat, block of flats",
+     "article": "de",
+     "plural": "flats",
+     "dim": "",
+     "base": "",
+     "rank": 2595
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "persoon",
+   "axis": "adult man or woman",
+   "members": [
+    {
+     "id": "man",
+     "lemma": "man",
+     "gloss": "man",
+     "article": "de",
+     "plural": "mannen",
+     "dim": "",
+     "base": "",
+     "rank": 91
+    },
+    {
+     "id": "vrouw",
+     "lemma": "vrouw",
+     "gloss": "woman",
+     "article": "de",
+     "plural": "vrouwen",
+     "dim": "",
+     "base": "",
+     "rank": 125
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "voertuig",
+   "axis": "kind of vehicle",
+   "members": [
+    {
+     "id": "auto",
+     "lemma": "auto",
+     "gloss": "car",
+     "article": "de",
+     "plural": "auto's",
+     "dim": "",
+     "base": "",
+     "rank": 210
+    },
+    {
+     "id": "bus",
+     "lemma": "bus",
+     "gloss": "bus",
+     "article": "de",
+     "plural": "bussen",
+     "dim": "",
+     "base": "",
+     "rank": 718
+    },
+    {
+     "id": "fiets",
+     "lemma": "fiets",
+     "gloss": "bicycle",
+     "article": "de",
+     "plural": "fietsen",
+     "dim": "",
+     "base": "",
+     "rank": 919
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "plaats",
+   "axis": "size of a settlement",
+   "members": [
+    {
+     "id": "stad",
+     "lemma": "stad",
+     "gloss": "city",
+     "article": "de",
+     "plural": "steden",
+     "dim": "",
+     "base": "",
+     "rank": 139
+    },
+    {
+     "id": "dorp",
+     "lemma": "dorp",
+     "gloss": "village",
+     "article": "het",
+     "plural": "dorpen",
+     "dim": "",
+     "base": "",
+     "rank": 514
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "huis-getal",
+   "axis": "one or more",
+   "members": [
+    {
+     "id": "huis-een",
+     "lemma": "huis",
+     "gloss": "house",
+     "article": "het",
+     "plural": "huizen",
+     "dim": "",
+     "base": "",
+     "rank": 121
+    },
+    {
+     "id": "huis-meer",
+     "lemma": "huizen",
+     "gloss": "houses",
+     "article": "de",
+     "plural": "huizen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  }
+ ],
+ "a1": [
+  {
+   "id": "zitplek",
+   "axis": "kind of seat",
+   "members": [
+    {
+     "id": "stoel",
+     "lemma": "stoel",
+     "gloss": "chair",
+     "article": "de",
+     "plural": "stoelen",
+     "dim": "",
+     "base": "",
+     "rank": 1447
+    },
+    {
+     "id": "bank",
+     "lemma": "bank",
+     "gloss": "sofa",
+     "article": "de",
+     "plural": "banken",
+     "dim": "",
+     "base": "",
+     "rank": 550
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "schoeisel",
+   "axis": "shoe or boot",
+   "members": [
+    {
+     "id": "schoen",
+     "lemma": "schoen",
+     "gloss": "shoe",
+     "article": "de",
+     "plural": "schoenen",
+     "dim": "",
+     "base": "",
+     "rank": 2976
+    },
+    {
+     "id": "laars",
+     "lemma": "laars",
+     "gloss": "boot",
+     "article": "de",
+     "plural": "laarzen",
+     "dim": "",
+     "base": "",
+     "rank": 6469
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: schoen niveau B1, herkomst bijlage8;spel:fashion, rank 2976; laars niveau open, herkomst bijlage8;spel:fashion, rank 6469. Basis: judgment, not lexicon data. Note: schoen is basic clothing a beginner needs.",
+   "band": "a1"
+  },
+  {
+   "id": "huisdier",
+   "axis": "cat or dog",
+   "members": [
+    {
+     "id": "kat",
+     "lemma": "kat",
+     "gloss": "cat",
+     "article": "de",
+     "plural": "katten",
+     "dim": "",
+     "base": "",
+     "rank": 1345
+    },
+    {
+     "id": "hond",
+     "lemma": "hond",
+     "gloss": "dog",
+     "article": "de",
+     "plural": "honden",
+     "dim": "",
+     "base": "",
+     "rank": 648
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "boerderijdier",
+   "axis": "farm animal",
+   "members": [
+    {
+     "id": "koe",
+     "lemma": "koe",
+     "gloss": "cow",
+     "article": "de",
+     "plural": "koeien",
+     "dim": "",
+     "base": "",
+     "rank": 3067
+    },
+    {
+     "id": "schaap",
+     "lemma": "schaap",
+     "gloss": "sheep",
+     "article": "het",
+     "plural": "schapen",
+     "dim": "",
+     "base": "",
+     "rank": 3739
+    },
+    {
+     "id": "varken",
+     "lemma": "varken",
+     "gloss": "pig",
+     "article": "het",
+     "plural": "varkens",
+     "dim": "",
+     "base": "",
+     "rank": 4637
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: koe niveau open, herkomst bijlage8, rank 3067; schaap niveau open, herkomst bijlage8, rank 3739; varken niveau open, herkomst bijlage8, rank 4637. Basis: judgment, not lexicon data. Note: koe, schaap and varken are basic animal words a beginner needs.",
+   "band": "a1"
+  },
+  {
+   "id": "fruit",
+   "axis": "kind of fruit",
+   "members": [
+    {
+     "id": "appel",
+     "lemma": "appel",
+     "gloss": "apple",
+     "article": "de",
+     "plural": "appels",
+     "dim": "",
+     "base": "",
+     "rank": 2804
+    },
+    {
+     "id": "peer",
+     "lemma": "peer",
+     "gloss": "pear",
+     "article": "de",
+     "plural": "peren",
+     "dim": "",
+     "base": "",
+     "rank": 4234
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: appel niveau open, herkomst bijlage8;spel:food, rank 2804; peer niveau none, herkomst spel:food, rank 4234. Basis: judgment, not lexicon data. Note: appel and peer are basic food words a beginner needs.",
+   "band": "a1"
+  },
+  {
+   "id": "opening",
+   "axis": "window or door",
+   "members": [
+    {
+     "id": "raam",
+     "lemma": "raam",
+     "gloss": "window",
+     "article": "het",
+     "plural": "ramen",
+     "dim": "",
+     "base": "",
+     "rank": 1570
+    },
+    {
+     "id": "deur",
+     "lemma": "deur",
+     "gloss": "door",
+     "article": "de",
+     "plural": "deuren",
+     "dim": "",
+     "base": "",
+     "rank": 659
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "lezen",
+   "axis": "book or newspaper",
+   "members": [
+    {
+     "id": "boek",
+     "lemma": "boek",
+     "gloss": "book",
+     "article": "het",
+     "plural": "boeken",
+     "dim": "",
+     "base": "",
+     "rank": 280
+    },
+    {
+     "id": "krant",
+     "lemma": "krant",
+     "gloss": "newspaper",
+     "article": "de",
+     "plural": "kranten",
+     "dim": "",
+     "base": "",
+     "rank": 923
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "hand-voet",
+   "axis": "hand or foot",
+   "members": [
+    {
+     "id": "hand",
+     "lemma": "hand",
+     "gloss": "hand",
+     "article": "de",
+     "plural": "handen",
+     "dim": "",
+     "base": "",
+     "rank": 261
+    },
+    {
+     "id": "voet",
+     "lemma": "voet",
+     "gloss": "foot",
+     "article": "de",
+     "plural": "voeten",
+     "dim": "",
+     "base": "",
+     "rank": 993
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "gezicht",
+   "axis": "part of the face",
+   "members": [
+    {
+     "id": "oog",
+     "lemma": "oog",
+     "gloss": "eye",
+     "article": "het",
+     "plural": "ogen",
+     "dim": "",
+     "base": "",
+     "rank": 743
+    },
+    {
+     "id": "oor",
+     "lemma": "oor",
+     "gloss": "ear",
+     "article": "het",
+     "plural": "oren",
+     "dim": "",
+     "base": "",
+     "rank": 2451
+    },
+    {
+     "id": "neus",
+     "lemma": "neus",
+     "gloss": "nose",
+     "article": "de",
+     "plural": "neuzen",
+     "dim": "",
+     "base": "",
+     "rank": 1238
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "ledemaat",
+   "axis": "arm or leg",
+   "members": [
+    {
+     "id": "arm",
+     "lemma": "arm",
+     "gloss": "arm",
+     "article": "de",
+     "plural": "armen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    },
+    {
+     "id": "been",
+     "lemma": "been",
+     "gloss": "leg",
+     "article": "het",
+     "plural": "benen",
+     "dim": "",
+     "base": "",
+     "rank": 1378
+    }
+   ],
+   "rank_band": "a2",
+   "override": "Lexicon: arm (noun) niveau A1, top2000 1, herkomst bijlage8, no usable rank; been niveau A1, top2000 1, herkomst bijlage8, rank 1378. Basis: coursebook (arm (noun), been). Note: body parts sit with hand/voet.",
+   "band": "a1"
+  },
+  {
+   "id": "plant",
+   "axis": "tree, flower or leaf",
+   "members": [
+    {
+     "id": "boom",
+     "lemma": "boom",
+     "gloss": "tree",
+     "article": "de",
+     "plural": "bomen",
+     "dim": "",
+     "base": "",
+     "rank": 979
+    },
+    {
+     "id": "bloem",
+     "lemma": "bloem",
+     "gloss": "flower",
+     "article": "de",
+     "plural": "bloemen",
+     "dim": "",
+     "base": "",
+     "rank": 2428
+    },
+    {
+     "id": "blad",
+     "lemma": "blad",
+     "gloss": "leaf",
+     "article": "het",
+     "plural": "bladeren",
+     "dim": "",
+     "base": "",
+     "rank": 1842
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "bos",
+   "axis": "same word, het or de",
+   "members": [
+    {
+     "id": "bos-woud",
+     "lemma": "bos",
+     "gloss": "forest",
+     "article": "het",
+     "plural": "bossen",
+     "dim": "",
+     "base": "",
+     "rank": 808
+    },
+    {
+     "id": "bos-bos",
+     "lemma": "bos",
+     "gloss": "bunch (of flowers)",
+     "article": "de",
+     "plural": "bossen",
+     "dim": "",
+     "base": "",
+     "rank": 808
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "hemel",
+   "axis": "sun, moon or star",
+   "members": [
+    {
+     "id": "zon",
+     "lemma": "zon",
+     "gloss": "sun",
+     "article": "de",
+     "plural": "zonnen",
+     "dim": "",
+     "base": "",
+     "rank": 685
+    },
+    {
+     "id": "maan",
+     "lemma": "maan",
+     "gloss": "moon",
+     "article": "de",
+     "plural": "manen",
+     "dim": "",
+     "base": "",
+     "rank": 1510
+    },
+    {
+     "id": "ster",
+     "lemma": "ster",
+     "gloss": "star",
+     "article": "de",
+     "plural": "sterren",
+     "dim": "",
+     "base": "",
+     "rank": 1446
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "kamers",
+   "axis": "room in a house",
+   "members": [
+    {
+     "id": "kamer",
+     "lemma": "kamer",
+     "gloss": "room, living room",
+     "article": "de",
+     "plural": "kamers",
+     "dim": "",
+     "base": "",
+     "rank": 328
+    },
+    {
+     "id": "keuken",
+     "lemma": "keuken",
+     "gloss": "kitchen",
+     "article": "de",
+     "plural": "keukens",
+     "dim": "",
+     "base": "",
+     "rank": 1161
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "schip",
+   "axis": "boat or ship",
+   "members": [
+    {
+     "id": "boot",
+     "lemma": "boot",
+     "gloss": "boat",
+     "article": "de",
+     "plural": "boten",
+     "dim": "",
+     "base": "",
+     "rank": 1086
+    },
+    {
+     "id": "schip",
+     "lemma": "schip",
+     "gloss": "ship",
+     "article": "het",
+     "plural": "schepen",
+     "dim": "",
+     "base": "",
+     "rank": 698
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "kind-getal",
+   "axis": "one or more (irregular plural)",
+   "members": [
+    {
+     "id": "kind-een",
+     "lemma": "kind",
+     "gloss": "child",
+     "article": "het",
+     "plural": "kinderen",
+     "dim": "",
+     "base": "",
+     "rank": 276
+    },
+    {
+     "id": "kind-meer",
+     "lemma": "kinderen",
+     "gloss": "children",
+     "article": "de",
+     "plural": "kinderen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "schip-getal",
+   "axis": "one or more (irregular plural)",
+   "members": [
+    {
+     "id": "schip-een",
+     "lemma": "schip",
+     "gloss": "ship",
+     "article": "het",
+     "plural": "schepen",
+     "dim": "",
+     "base": "",
+     "rank": 698
+    },
+    {
+     "id": "schip-meer",
+     "lemma": "schepen",
+     "gloss": "ships",
+     "article": "de",
+     "plural": "schepen",
+     "dim": "",
+     "base": "",
+     "rank": 1594
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "been-getal",
+   "axis": "one or more",
+   "members": [
+    {
+     "id": "been-een",
+     "lemma": "been",
+     "gloss": "leg",
+     "article": "het",
+     "plural": "benen",
+     "dim": "",
+     "base": "",
+     "rank": 1378
+    },
+    {
+     "id": "been-meer",
+     "lemma": "benen",
+     "gloss": "legs",
+     "article": "de",
+     "plural": "benen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "override": "Lexicon: been niveau A1, top2000 1, herkomst bijlage8, rank 1378. Basis: coursebook (been). Note: kept beside arm/been, so the leg is taught once.",
+   "band": "a1"
+  },
+  {
+   "id": "boom-getal",
+   "axis": "one or more",
+   "members": [
+    {
+     "id": "boom-een",
+     "lemma": "boom",
+     "gloss": "tree",
+     "article": "de",
+     "plural": "bomen",
+     "dim": "",
+     "base": "",
+     "rank": 979
+    },
+    {
+     "id": "boom-meer",
+     "lemma": "bomen",
+     "gloss": "trees",
+     "article": "de",
+     "plural": "bomen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  }
+ ],
+ "a2": [
+  {
+   "id": "drinkgerei",
+   "axis": "kind of drinking vessel",
+   "members": [
+    {
+     "id": "kopje",
+     "lemma": "kopje",
+     "gloss": "cup",
+     "article": "het",
+     "plural": "kopjes",
+     "dim": "yes",
+     "base": "de kop",
+     "rank": null
+    },
+    {
+     "id": "glas",
+     "lemma": "glas",
+     "gloss": "glass",
+     "article": "het",
+     "plural": "glazen",
+     "dim": "",
+     "base": "",
+     "rank": 1189
+    },
+    {
+     "id": "beker",
+     "lemma": "beker",
+     "gloss": "mug, beaker",
+     "article": "de",
+     "plural": "bekers",
+     "dim": "",
+     "base": "",
+     "rank": 1930
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "bestek",
+   "axis": "kind of cutlery",
+   "members": [
+    {
+     "id": "mes",
+     "lemma": "mes",
+     "gloss": "knife",
+     "article": "het",
+     "plural": "messen",
+     "dim": "",
+     "base": "",
+     "rank": 2157
+    },
+    {
+     "id": "vork",
+     "lemma": "vork",
+     "gloss": "fork",
+     "article": "de",
+     "plural": "vorken",
+     "dim": "",
+     "base": "",
+     "rank": 5892
+    },
+    {
+     "id": "lepel",
+     "lemma": "lepel",
+     "gloss": "spoon",
+     "article": "de",
+     "plural": "lepels",
+     "dim": "",
+     "base": "",
+     "rank": 5739
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "jas-trui",
+   "axis": "outer coat or knitted top",
+   "members": [
+    {
+     "id": "jas",
+     "lemma": "jas",
+     "gloss": "coat",
+     "article": "de",
+     "plural": "jassen",
+     "dim": "",
+     "base": "",
+     "rank": 1586
+    },
+    {
+     "id": "trui",
+     "lemma": "trui",
+     "gloss": "jumper",
+     "article": "de",
+     "plural": "truien",
+     "dim": "",
+     "base": "",
+     "rank": 2891
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "bagage",
+   "axis": "bag or suitcase",
+   "members": [
+    {
+     "id": "tas",
+     "lemma": "tas",
+     "gloss": "bag",
+     "article": "de",
+     "plural": "tassen",
+     "dim": "",
+     "base": "",
+     "rank": 1271
+    },
+    {
+     "id": "koffer",
+     "lemma": "koffer",
+     "gloss": "suitcase",
+     "article": "de",
+     "plural": "koffers",
+     "dim": "",
+     "base": "",
+     "rank": 2785
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "vogel-vis",
+   "axis": "air or water animal",
+   "members": [
+    {
+     "id": "vogel",
+     "lemma": "vogel",
+     "gloss": "bird",
+     "article": "de",
+     "plural": "vogels",
+     "dim": "",
+     "base": "",
+     "rank": 1577
+    },
+    {
+     "id": "vis",
+     "lemma": "vis",
+     "gloss": "fish",
+     "article": "de",
+     "plural": "vissen",
+     "dim": "",
+     "base": "",
+     "rank": 1176
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "servies",
+   "axis": "plate or dish",
+   "members": [
+    {
+     "id": "bord",
+     "lemma": "bord",
+     "gloss": "plate",
+     "article": "het",
+     "plural": "borden",
+     "dim": "",
+     "base": "",
+     "rank": 1754
+    },
+    {
+     "id": "schaal",
+     "lemma": "schaal",
+     "gloss": "dish, serving bowl",
+     "article": "de",
+     "plural": "schalen",
+     "dim": "",
+     "base": "",
+     "rank": 1470
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "lichtbron",
+   "axis": "lamp or candle",
+   "members": [
+    {
+     "id": "lamp",
+     "lemma": "lamp",
+     "gloss": "lamp",
+     "article": "de",
+     "plural": "lampen",
+     "dim": "",
+     "base": "",
+     "rank": 3113
+    },
+    {
+     "id": "kaars",
+     "lemma": "kaars",
+     "gloss": "candle",
+     "article": "de",
+     "plural": "kaarsen",
+     "dim": "",
+     "base": "",
+     "rank": 5270
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: lamp niveau open, herkomst bijlage8;spel:reels, rank 3113; kaars niveau B1, herkomst bijlage8;spel:household, rank 5270. Basis: judgment, not lexicon data. Note: lamp is an everyday household word.",
+   "band": "a2"
+  },
+  {
+   "id": "schrijfgerei",
+   "axis": "pen or pencil",
+   "members": [
+    {
+     "id": "pen",
+     "lemma": "pen",
+     "gloss": "pen",
+     "article": "de",
+     "plural": "pennen",
+     "dim": "",
+     "base": "",
+     "rank": 2011
+    },
+    {
+     "id": "potlood",
+     "lemma": "potlood",
+     "gloss": "pencil",
+     "article": "het",
+     "plural": "potloden",
+     "dim": "",
+     "base": "",
+     "rank": 6112
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "sleutel-slot",
+   "axis": "key or lock",
+   "members": [
+    {
+     "id": "sleutel",
+     "lemma": "sleutel",
+     "gloss": "key",
+     "article": "de",
+     "plural": "sleutels",
+     "dim": "",
+     "base": "",
+     "rank": 1803
+    },
+    {
+     "id": "slot",
+     "lemma": "slot",
+     "gloss": "lock",
+     "article": "het",
+     "plural": "sloten",
+     "dim": "",
+     "base": "",
+     "rank": 1244
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "tijdmeter",
+   "axis": "wall clock or wristwatch",
+   "members": [
+    {
+     "id": "klok",
+     "lemma": "klok",
+     "gloss": "clock",
+     "article": "de",
+     "plural": "klokken",
+     "dim": "",
+     "base": "",
+     "rank": 1761
+    },
+    {
+     "id": "horloge",
+     "lemma": "horloge",
+     "gloss": "watch",
+     "article": "het",
+     "plural": "horloges",
+     "dim": "",
+     "base": "",
+     "rank": 2637
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "kleding-onder",
+   "axis": "trousers, skirt or dress",
+   "members": [
+    {
+     "id": "broek",
+     "lemma": "broek",
+     "gloss": "trousers",
+     "article": "de",
+     "plural": "broeken",
+     "dim": "",
+     "base": "",
+     "rank": 1140
+    },
+    {
+     "id": "rok",
+     "lemma": "rok",
+     "gloss": "skirt",
+     "article": "de",
+     "plural": "rokken",
+     "dim": "",
+     "base": "",
+     "rank": 3949
+    },
+    {
+     "id": "jurk",
+     "lemma": "jurk",
+     "gloss": "dress",
+     "article": "de",
+     "plural": "jurken",
+     "dim": "",
+     "base": "",
+     "rank": 2156
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "opberger",
+   "axis": "box or chest",
+   "members": [
+    {
+     "id": "doos",
+     "lemma": "doos",
+     "gloss": "box",
+     "article": "de",
+     "plural": "dozen",
+     "dim": "",
+     "base": "",
+     "rank": 1954
+    },
+    {
+     "id": "kist",
+     "lemma": "kist",
+     "gloss": "chest",
+     "article": "de",
+     "plural": "kisten",
+     "dim": "",
+     "base": "",
+     "rank": 3767
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "ei-getal",
+   "axis": "one or more (irregular plural)",
+   "members": [
+    {
+     "id": "ei-een",
+     "lemma": "ei",
+     "gloss": "egg",
+     "article": "het",
+     "plural": "eieren",
+     "dim": "",
+     "base": "",
+     "rank": 2109
+    },
+    {
+     "id": "ei-meer",
+     "lemma": "eieren",
+     "gloss": "eggs",
+     "article": "de",
+     "plural": "eieren",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "muis-getal",
+   "axis": "one or more",
+   "members": [
+    {
+     "id": "muis-een",
+     "lemma": "muis",
+     "gloss": "mouse",
+     "article": "de",
+     "plural": "muizen",
+     "dim": "",
+     "base": "",
+     "rank": 3298
+    },
+    {
+     "id": "muis-meer",
+     "lemma": "muizen",
+     "gloss": "mice",
+     "article": "de",
+     "plural": "muizen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: muis niveau open, herkomst bijlage8;spel:technology, rank 3298. Basis: judgment, not lexicon data. Note: muis is a common animal word and sits with the other plural sets.",
+   "band": "a2"
+  },
+  {
+   "id": "glas-getal",
+   "axis": "one or more (irregular plural)",
+   "members": [
+    {
+     "id": "glas-een",
+     "lemma": "glas",
+     "gloss": "glass",
+     "article": "het",
+     "plural": "glazen",
+     "dim": "",
+     "base": "",
+     "rank": 1189
+    },
+    {
+     "id": "glas-meer",
+     "lemma": "glazen",
+     "gloss": "glasses",
+     "article": "de",
+     "plural": "glazen",
+     "dim": "",
+     "base": "",
+     "rank": 2596
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "blad-getal",
+   "axis": "one or more (irregular plural)",
+   "members": [
+    {
+     "id": "blad-een",
+     "lemma": "blad",
+     "gloss": "leaf",
+     "article": "het",
+     "plural": "bladeren",
+     "dim": "",
+     "base": "",
+     "rank": 1842
+    },
+    {
+     "id": "blad-meer",
+     "lemma": "bladeren",
+     "gloss": "leaves",
+     "article": "de",
+     "plural": "bladeren",
+     "dim": "",
+     "base": "",
+     "rank": 2702
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "hoofddeksel",
+   "axis": "hat or cap",
+   "members": [
+    {
+     "id": "hoed",
+     "lemma": "hoed",
+     "gloss": "hat",
+     "article": "de",
+     "plural": "hoeden",
+     "dim": "",
+     "base": "",
+     "rank": 3198
+    },
+    {
+     "id": "pet",
+     "lemma": "pet",
+     "gloss": "cap",
+     "article": "de",
+     "plural": "petten",
+     "dim": "",
+     "base": "",
+     "rank": 3119
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: hoed niveau open, herkomst bijlage8, rank 3198; pet niveau open, herkomst bijlage8, rank 3119. Basis: judgment, not lexicon data. Note: hoed and pet sit with the other clothing.",
+   "band": "a2"
+  },
+  {
+   "id": "deken-dekbed",
+   "axis": "blanket or duvet",
+   "members": [
+    {
+     "id": "deken",
+     "lemma": "deken",
+     "gloss": "blanket",
+     "article": "de",
+     "plural": "dekens",
+     "dim": "",
+     "base": "",
+     "rank": 2813
+    },
+    {
+     "id": "dekbed",
+     "lemma": "dekbed",
+     "gloss": "duvet",
+     "article": "het",
+     "plural": "dekbedden",
+     "dim": "",
+     "base": "",
+     "rank": 7924
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: deken niveau open, herkomst bijlage8;spel:household, rank 2813; dekbed niveau none, herkomst les:taalcompleet;les:register, rank 7924. Basis: judgment, not lexicon data. Note: a blanket or a duvet is on every bed.",
+   "band": "a2"
+  },
+  {
+   "id": "terras-balkon",
+   "axis": "outdoor space below or upstairs",
+   "members": [
+    {
+     "id": "terras",
+     "lemma": "terras",
+     "gloss": "terrace, patio",
+     "article": "het",
+     "plural": "terrassen",
+     "dim": "",
+     "base": "",
+     "rank": 3028
+    },
+    {
+     "id": "balkon",
+     "lemma": "balkon",
+     "gloss": "balcony",
+     "article": "het",
+     "plural": "balkons",
+     "dim": "",
+     "base": "",
+     "rank": 3516
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: terras niveau A1, herkomst bijlage8;spel:household, rank 3028; balkon niveau A1, herkomst bijlage8, rank 3516. Basis: coursebook (terras, balkon).",
+   "band": "a2"
+  },
+  {
+   "id": "mand-emmer",
+   "axis": "basket or bucket",
+   "members": [
+    {
+     "id": "mand",
+     "lemma": "mand",
+     "gloss": "basket",
+     "article": "de",
+     "plural": "manden",
+     "dim": "",
+     "base": "",
+     "rank": 3729
+    },
+    {
+     "id": "emmer",
+     "lemma": "emmer",
+     "gloss": "bucket",
+     "article": "de",
+     "plural": "emmers",
+     "dim": "",
+     "base": "",
+     "rank": 4321
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: mand niveau open, herkomst bijlage8;spel:household, rank 3729; emmer niveau A1, top2000 1, herkomst bijlage8;spel:household, rank 4321. Basis: coursebook (emmer).",
+   "band": "a2"
+  },
+  {
+   "id": "mond",
+   "axis": "part of the mouth",
+   "members": [
+    {
+     "id": "tong",
+     "lemma": "tong",
+     "gloss": "tongue",
+     "article": "de",
+     "plural": "tongen",
+     "dim": "",
+     "base": "",
+     "rank": 2533
+    },
+    {
+     "id": "tand",
+     "lemma": "tand",
+     "gloss": "tooth",
+     "article": "de",
+     "plural": "tanden",
+     "dim": "",
+     "base": "",
+     "rank": 3695
+    },
+    {
+     "id": "lip",
+     "lemma": "lip",
+     "gloss": "lip",
+     "article": "de",
+     "plural": "lippen",
+     "dim": "",
+     "base": "",
+     "rank": 5340
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: tong niveau open, herkomst bijlage8, rank 2533; tand niveau open, herkomst bijlage8;spel:dinosaurs, rank 3695; lip niveau open, herkomst bijlage8, rank 5340. Basis: judgment, not lexicon data. Note: tand and tong are daily words, from brushing teeth to the dentist.",
+   "band": "a2"
+  },
+  {
+   "id": "armgewricht",
+   "axis": "joint of the arm",
+   "members": [
+    {
+     "id": "schouder",
+     "lemma": "schouder",
+     "gloss": "shoulder",
+     "article": "de",
+     "plural": "schouders",
+     "dim": "",
+     "base": "",
+     "rank": 2977
+    },
+    {
+     "id": "elleboog",
+     "lemma": "elleboog",
+     "gloss": "elbow",
+     "article": "de",
+     "plural": "ellebogen",
+     "dim": "",
+     "base": "",
+     "rank": 6532
+    },
+    {
+     "id": "pols",
+     "lemma": "pols",
+     "gloss": "wrist",
+     "article": "de",
+     "plural": "polsen",
+     "dim": "",
+     "base": "",
+     "rank": 3890
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: schouder niveau A1, top2000 1, herkomst bijlage8, rank 2977; elleboog niveau open, herkomst bijlage8, rank 6532; pols niveau A1, herkomst bijlage8, rank 3890. Basis: coursebook (schouder, pols).",
+   "band": "a2"
+  },
+  {
+   "id": "beengewricht",
+   "axis": "joint of the leg",
+   "members": [
+    {
+     "id": "heup",
+     "lemma": "heup",
+     "gloss": "hip",
+     "article": "de",
+     "plural": "heupen",
+     "dim": "",
+     "base": "",
+     "rank": 5855
+    },
+    {
+     "id": "knie",
+     "lemma": "knie",
+     "gloss": "knee",
+     "article": "de",
+     "plural": "knieën",
+     "dim": "",
+     "base": "",
+     "rank": 2671
+    },
+    {
+     "id": "enkel",
+     "lemma": "enkel",
+     "gloss": "ankle",
+     "article": "de",
+     "plural": "enkels",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: heup niveau open, herkomst bijlage8, rank 5855; knie niveau A1, top2000 1, herkomst bijlage8, rank 2671; enkel (noun) niveau A1, herkomst bijlage8, no usable rank. Basis: coursebook (knie, enkel (noun)). Note: a learner needs the joints at the doctor.",
+   "band": "a2"
+  },
+  {
+   "id": "kam-tandenborstel",
+   "axis": "comb or toothbrush",
+   "members": [
+    {
+     "id": "kam",
+     "lemma": "kam",
+     "gloss": "comb",
+     "article": "de",
+     "plural": "kammen",
+     "dim": "",
+     "base": "",
+     "rank": 4513
+    },
+    {
+     "id": "tandenborstel",
+     "lemma": "tandenborstel",
+     "gloss": "toothbrush",
+     "article": "de",
+     "plural": "tandenborstels",
+     "dim": "",
+     "base": "",
+     "rank": 7677
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: kam niveau none, herkomst spel:dinosaurs, rank 4513; tandenborstel niveau none, herkomst kaikki, rank 7677. Basis: judgment, not lexicon data. Note: comb and toothbrush are daily washing things.",
+   "band": "a2"
+  },
+  {
+   "id": "schuur-kas",
+   "axis": "garden building",
+   "members": [
+    {
+     "id": "schuur",
+     "lemma": "schuur",
+     "gloss": "shed, barn",
+     "article": "de",
+     "plural": "schuren",
+     "dim": "",
+     "base": "",
+     "rank": 2839
+    },
+    {
+     "id": "kas",
+     "lemma": "kas",
+     "gloss": "greenhouse",
+     "article": "de",
+     "plural": "kassen",
+     "dim": "",
+     "base": "",
+     "rank": 4100
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: schuur niveau A1, top2000 1, herkomst bijlage8, rank 2839; kas niveau open, herkomst bijlage8, rank 4100. Basis: coursebook (schuur).",
+   "band": "a2"
+  },
+  {
+   "id": "kruispunt-rotonde",
+   "axis": "where roads meet",
+   "members": [
+    {
+     "id": "kruispunt",
+     "lemma": "kruispunt",
+     "gloss": "crossroads, junction",
+     "article": "het",
+     "plural": "kruispunten",
+     "dim": "",
+     "base": "",
+     "rank": 3933
+    },
+    {
+     "id": "rotonde",
+     "lemma": "rotonde",
+     "gloss": "roundabout",
+     "article": "de",
+     "plural": "rotondes",
+     "dim": "",
+     "base": "",
+     "rank": 3950
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: kruispunt niveau open, herkomst bijlage8, rank 3933; rotonde niveau none, herkomst spel:travel, rank 3950. Basis: judgment, not lexicon data. Note: every route description and cycle trip uses them.",
+   "band": "a2"
+  },
+  {
+   "id": "winterkleding",
+   "axis": "winter accessory",
+   "members": [
+    {
+     "id": "sjaal",
+     "lemma": "sjaal",
+     "gloss": "scarf",
+     "article": "de",
+     "plural": "sjaals",
+     "dim": "",
+     "base": "",
+     "rank": 4826
+    },
+    {
+     "id": "muts",
+     "lemma": "muts",
+     "gloss": "woolly hat, beanie",
+     "article": "de",
+     "plural": "mutsen",
+     "dim": "",
+     "base": "",
+     "rank": 5207
+    },
+    {
+     "id": "handschoen",
+     "lemma": "handschoen",
+     "gloss": "glove",
+     "article": "de",
+     "plural": "handschoenen",
+     "dim": "",
+     "base": "",
+     "rank": 7546
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: sjaal niveau open, herkomst bijlage8;spel:fashion, rank 4826; muts niveau open, herkomst bijlage8, rank 5207; handschoen niveau open, herkomst bijlage8;spel:fashion, rank 7546. Basis: judgment, not lexicon data. Note: scarf, hat and gloves are daily winter clothing.",
+   "band": "a2"
+  },
+  {
+   "id": "kraan",
+   "axis": "same word, two things",
+   "members": [
+    {
+     "id": "kraan-water",
+     "lemma": "kraan",
+     "gloss": "tap",
+     "article": "de",
+     "plural": "kranen",
+     "dim": "",
+     "base": "",
+     "rank": 3932
+    },
+    {
+     "id": "kraan-bouw",
+     "lemma": "kraan",
+     "gloss": "crane (machine)",
+     "article": "de",
+     "plural": "kranen",
+     "dim": "",
+     "base": "",
+     "rank": 3932
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: kraan niveau open, herkomst bijlage8;spel:household, rank 3932. Basis: judgment, not lexicon data. Note: the tap is in every kitchen; the crane moves with it as its partner.",
+   "band": "a2"
+  },
+  {
+   "id": "oven-magnetron",
+   "axis": "oven or microwave",
+   "members": [
+    {
+     "id": "oven",
+     "lemma": "oven",
+     "gloss": "oven",
+     "article": "de",
+     "plural": "ovens",
+     "dim": "",
+     "base": "",
+     "rank": 3160
+    },
+    {
+     "id": "magnetron",
+     "lemma": "magnetron",
+     "gloss": "microwave oven",
+     "article": "de",
+     "plural": "magnetrons",
+     "dim": "",
+     "base": "",
+     "rank": 6688
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: oven niveau open, herkomst bijlage8;spel:household, rank 3160; magnetron niveau none, herkomst kaikki, rank 6688. Basis: judgment, not lexicon data. Note: oven and microwave are in nearly every kitchen.",
+   "band": "a2"
+  },
+  {
+   "id": "tomaat-paprika",
+   "axis": "tomato or pepper",
+   "members": [
+    {
+     "id": "tomaat",
+     "lemma": "tomaat",
+     "gloss": "tomato",
+     "article": "de",
+     "plural": "tomaten",
+     "dim": "",
+     "base": "",
+     "rank": 5031
+    },
+    {
+     "id": "paprika",
+     "lemma": "paprika",
+     "gloss": "bell pepper",
+     "article": "de",
+     "plural": "paprika's",
+     "dim": "",
+     "base": "",
+     "rank": 7393
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: tomaat niveau A1, top2000 1, herkomst bijlage8;spel:food, rank 5031; paprika niveau none, herkomst spel:food, rank 7393. Basis: coursebook (tomaat).",
+   "band": "a2"
+  },
+  {
+   "id": "citroen-sinaasappel",
+   "axis": "lemon or orange",
+   "members": [
+    {
+     "id": "citroen",
+     "lemma": "citroen",
+     "gloss": "lemon",
+     "article": "de",
+     "plural": "citroenen",
+     "dim": "",
+     "base": "",
+     "rank": 5183
+    },
+    {
+     "id": "sinaasappel",
+     "lemma": "sinaasappel",
+     "gloss": "orange (fruit)",
+     "article": "de",
+     "plural": "sinaasappels",
+     "dim": "",
+     "base": "",
+     "rank": 8172
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: citroen niveau none, herkomst spel:food, rank 5183; sinaasappel niveau none, herkomst spel:food, rank 8172. Basis: judgment, not lexicon data. Note: citroen and sinaasappel are everyday shopping words.",
+   "band": "a2"
+  },
+  {
+   "id": "koekje-wafel",
+   "axis": "biscuit or waffle",
+   "members": [
+    {
+     "id": "koekje",
+     "lemma": "koekje",
+     "gloss": "biscuit, cookie",
+     "article": "het",
+     "plural": "koekjes",
+     "dim": "yes",
+     "base": "de koek",
+     "rank": 5273
+    },
+    {
+     "id": "wafel",
+     "lemma": "wafel",
+     "gloss": "waffle",
+     "article": "de",
+     "plural": "wafels",
+     "dim": "",
+     "base": "",
+     "rank": 8607
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: koekje niveau none, herkomst spel:food, rank 5273; wafel niveau none, herkomst spel:food, rank 8607. Basis: judgment, not lexicon data. Note: koekje is an everyday food word.",
+   "band": "a2"
+  },
+  {
+   "id": "bes",
+   "axis": "small soft fruit",
+   "members": [
+    {
+     "id": "kers",
+     "lemma": "kers",
+     "gloss": "cherry",
+     "article": "de",
+     "plural": "kersen",
+     "dim": "",
+     "base": "",
+     "rank": 7290
+    },
+    {
+     "id": "aardbei",
+     "lemma": "aardbei",
+     "gloss": "strawberry",
+     "article": "de",
+     "plural": "aardbeien",
+     "dim": "",
+     "base": "",
+     "rank": 7921
+    },
+    {
+     "id": "framboos",
+     "lemma": "framboos",
+     "gloss": "raspberry",
+     "article": "de",
+     "plural": "frambozen",
+     "dim": "",
+     "base": "",
+     "rank": 8545
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: kers niveau none, herkomst spel:food, rank 7290; aardbei niveau none, herkomst spel:food, rank 7921; framboos niveau none, herkomst spel:food, rank 8545. Basis: judgment, not lexicon data. Note: strawberries and cherries are everyday shopping fruit.",
+   "band": "a2"
+  },
+  {
+   "id": "pompoen-meloen",
+   "axis": "pumpkin or melon",
+   "members": [
+    {
+     "id": "pompoen",
+     "lemma": "pompoen",
+     "gloss": "pumpkin",
+     "article": "de",
+     "plural": "pompoenen",
+     "dim": "",
+     "base": "",
+     "rank": 6488
+    },
+    {
+     "id": "meloen",
+     "lemma": "meloen",
+     "gloss": "melon",
+     "article": "de",
+     "plural": "meloenen",
+     "dim": "",
+     "base": "",
+     "rank": 8069
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: pompoen niveau none, herkomst spel:food, rank 6488; meloen niveau none, herkomst spel:food, rank 8069. Basis: judgment, not lexicon data. Note: pumpkin and melon are everyday shopping produce.",
+   "band": "a2"
+  },
+  {
+   "id": "noot",
+   "axis": "kind of nut",
+   "members": [
+    {
+     "id": "pinda",
+     "lemma": "pinda",
+     "gloss": "peanut",
+     "article": "de",
+     "plural": "pinda's",
+     "dim": "",
+     "base": "",
+     "rank": 8136
+    },
+    {
+     "id": "walnoot",
+     "lemma": "walnoot",
+     "gloss": "walnut",
+     "article": "de",
+     "plural": "walnoten",
+     "dim": "",
+     "base": "",
+     "rank": 8442
+    },
+    {
+     "id": "amandel",
+     "lemma": "amandel",
+     "gloss": "almond",
+     "article": "de",
+     "plural": "amandelen",
+     "dim": "",
+     "base": "",
+     "rank": 8797
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: pinda niveau none, herkomst spel:food, rank 8136; walnoot niveau none, herkomst spel:food, rank 8442; amandel niveau none, herkomst spel:food, rank 8797. Basis: judgment, not lexicon data. Note: the peanut is an everyday food; walnut and almond move with it.",
+   "band": "a2"
+  },
+  {
+   "id": "pan",
+   "axis": "deep or flat pan",
+   "members": [
+    {
+     "id": "steelpan",
+     "lemma": "steelpan",
+     "gloss": "saucepan",
+     "article": "de",
+     "plural": "steelpannen",
+     "dim": "",
+     "base": "",
+     "rank": 9215
+    },
+    {
+     "id": "koekenpan",
+     "lemma": "koekenpan",
+     "gloss": "frying pan",
+     "article": "de",
+     "plural": "koekenpannen",
+     "dim": "",
+     "base": "",
+     "rank": 8691
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: steelpan niveau none, herkomst spel:household, rank 9215; koekenpan niveau none, herkomst spel:household, rank 8691. Basis: judgment, not lexicon data. Note: saucepan and frying pan are used daily.",
+   "band": "a2"
+  },
+  {
+   "id": "handdoek-laken",
+   "axis": "towel or sheet",
+   "members": [
+    {
+     "id": "handdoek",
+     "lemma": "handdoek",
+     "gloss": "towel",
+     "article": "de",
+     "plural": "handdoeken",
+     "dim": "",
+     "base": "",
+     "rank": 5125
+    },
+    {
+     "id": "laken",
+     "lemma": "laken",
+     "gloss": "sheet (bed)",
+     "article": "het",
+     "plural": "lakens",
+     "dim": "",
+     "base": "",
+     "rank": 6015
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: handdoek niveau open, herkomst bijlage8;spel:household, rank 5125; laken niveau open, herkomst bijlage8, rank 6015. Basis: judgment, not lexicon data. Note: handdoek and laken are daily household words.",
+   "band": "a2"
+  },
+  {
+   "id": "stofzuiger-bezem",
+   "axis": "floor-cleaning tool",
+   "members": [
+    {
+     "id": "stofzuiger",
+     "lemma": "stofzuiger",
+     "gloss": "vacuum cleaner",
+     "article": "de",
+     "plural": "stofzuigers",
+     "dim": "",
+     "base": "",
+     "rank": 6637
+    },
+    {
+     "id": "bezem",
+     "lemma": "bezem",
+     "gloss": "broom",
+     "article": "de",
+     "plural": "bezems",
+     "dim": "",
+     "base": "",
+     "rank": 7345
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: stofzuiger niveau none, herkomst kaikki, rank 6637; bezem niveau none, herkomst spel:household, rank 7345. Basis: judgment, not lexicon data. Note: the vacuum cleaner and the broom are daily cleaning tools.",
+   "band": "a2"
+  },
+  {
+   "id": "stopcontact-schakelaar",
+   "axis": "socket or switch",
+   "members": [
+    {
+     "id": "stopcontact",
+     "lemma": "stopcontact",
+     "gloss": "socket, power point",
+     "article": "het",
+     "plural": "stopcontacten",
+     "dim": "",
+     "base": "",
+     "rank": 7865
+    },
+    {
+     "id": "schakelaar",
+     "lemma": "schakelaar",
+     "gloss": "switch",
+     "article": "de",
+     "plural": "schakelaars",
+     "dim": "",
+     "base": "",
+     "rank": 7245
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: stopcontact niveau none, herkomst spel:household, rank 7865; schakelaar niveau none, herkomst spel:household, rank 7245. Basis: judgment, not lexicon data. Note: every room has a socket and a light switch.",
+   "band": "a2"
+  },
+  {
+   "id": "sok-kous",
+   "axis": "sock or stocking",
+   "members": [
+    {
+     "id": "sok",
+     "lemma": "sok",
+     "gloss": "sock",
+     "article": "de",
+     "plural": "sokken",
+     "dim": "",
+     "base": "",
+     "rank": 6338
+    },
+    {
+     "id": "kous",
+     "lemma": "kous",
+     "gloss": "stocking",
+     "article": "de",
+     "plural": "kousen",
+     "dim": "",
+     "base": "",
+     "rank": 8266
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: sok niveau open, herkomst bijlage8, rank 6338; kous niveau open, herkomst bijlage8, rank 8266. Basis: judgment, not lexicon data. Note: sok is a daily clothing word.",
+   "band": "a2"
+  },
+  {
+   "id": "sandaal-slipper",
+   "axis": "sandal or flip-flop",
+   "members": [
+    {
+     "id": "sandaal",
+     "lemma": "sandaal",
+     "gloss": "sandal",
+     "article": "de",
+     "plural": "sandalen",
+     "dim": "",
+     "base": "",
+     "rank": 8803
+    },
+    {
+     "id": "slipper",
+     "lemma": "slipper",
+     "gloss": "flip-flop",
+     "article": "de",
+     "plural": "slippers",
+     "dim": "",
+     "base": "",
+     "rank": 8320
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: sandaal niveau none, herkomst spel:fashion, rank 8803; slipper niveau none, herkomst spel:fashion, rank 8320. Basis: judgment, not lexicon data. Note: sandals and flip-flops are everyday summer footwear.",
+   "band": "a2"
+  }
+ ],
+ "b1": [
+  {
+   "id": "pad",
+   "axis": "same word, het or de",
+   "members": [
+    {
+     "id": "pad-weg",
+     "lemma": "pad",
+     "gloss": "path",
+     "article": "het",
+     "plural": "paden",
+     "dim": "",
+     "base": "",
+     "rank": 1101
+    },
+    {
+     "id": "pad-dier",
+     "lemma": "pad",
+     "gloss": "toad",
+     "article": "de",
+     "plural": "padden",
+     "dim": "",
+     "base": "",
+     "rank": 1101
+    }
+   ],
+   "rank_band": "a2",
+   "override": "Lexicon: pad niveau open, herkomst bijlage8;spel:animals;spel:travel, rank 1101. Basis: judgment, not lexicon data. Note: de pad (toad) is a rare word; the single lexicon row for pad is taken to be the path sense (inference).",
+   "band": "b1"
+  },
+  {
+   "id": "konijn-haas",
+   "axis": "rabbit or hare",
+   "members": [
+    {
+     "id": "konijn",
+     "lemma": "konijn",
+     "gloss": "rabbit",
+     "article": "het",
+     "plural": "konijnen",
+     "dim": "",
+     "base": "",
+     "rank": 3338
+    },
+    {
+     "id": "haas",
+     "lemma": "haas",
+     "gloss": "hare",
+     "article": "de",
+     "plural": "hazen",
+     "dim": "",
+     "base": "",
+     "rank": 4669
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "haai-dolfijn",
+   "axis": "shark or dolphin",
+   "members": [
+    {
+     "id": "haai",
+     "lemma": "haai",
+     "gloss": "shark",
+     "article": "de",
+     "plural": "haaien",
+     "dim": "",
+     "base": "",
+     "rank": 4157
+    },
+    {
+     "id": "dolfijn",
+     "lemma": "dolfijn",
+     "gloss": "dolphin",
+     "article": "de",
+     "plural": "dolfijnen",
+     "dim": "",
+     "base": "",
+     "rank": 5724
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "vlinder-mot",
+   "axis": "butterfly or moth",
+   "members": [
+    {
+     "id": "vlinder",
+     "lemma": "vlinder",
+     "gloss": "butterfly",
+     "article": "de",
+     "plural": "vlinders",
+     "dim": "",
+     "base": "",
+     "rank": 4197
+    },
+    {
+     "id": "mot",
+     "lemma": "mot",
+     "gloss": "moth",
+     "article": "de",
+     "plural": "motten",
+     "dim": "",
+     "base": "",
+     "rank": 5073
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "ezel-pony",
+   "axis": "donkey or pony",
+   "members": [
+    {
+     "id": "ezel",
+     "lemma": "ezel",
+     "gloss": "donkey",
+     "article": "de",
+     "plural": "ezels",
+     "dim": "",
+     "base": "",
+     "rank": 3721
+    },
+    {
+     "id": "pony",
+     "lemma": "pony",
+     "gloss": "pony",
+     "article": "de",
+     "plural": "pony's",
+     "dim": "",
+     "base": "",
+     "rank": 4284
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "nest-kooi",
+   "axis": "nest or cage",
+   "members": [
+    {
+     "id": "nest",
+     "lemma": "nest",
+     "gloss": "nest",
+     "article": "het",
+     "plural": "nesten",
+     "dim": "",
+     "base": "",
+     "rank": 2678
+    },
+    {
+     "id": "kooi",
+     "lemma": "kooi",
+     "gloss": "cage",
+     "article": "de",
+     "plural": "kooien",
+     "dim": "",
+     "base": "",
+     "rank": 3339
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "vogeldeel",
+   "axis": "part of a bird",
+   "members": [
+    {
+     "id": "staart",
+     "lemma": "staart",
+     "gloss": "tail",
+     "article": "de",
+     "plural": "staarten",
+     "dim": "",
+     "base": "",
+     "rank": 2613
+    },
+    {
+     "id": "poot",
+     "lemma": "poot",
+     "gloss": "leg, paw (of an animal)",
+     "article": "de",
+     "plural": "poten",
+     "dim": "",
+     "base": "",
+     "rank": 4821
+    },
+    {
+     "id": "vleugel",
+     "lemma": "vleugel",
+     "gloss": "wing",
+     "article": "de",
+     "plural": "vleugels",
+     "dim": "",
+     "base": "",
+     "rank": 4490
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "beek-vijver",
+   "axis": "running or still water",
+   "members": [
+    {
+     "id": "beek",
+     "lemma": "beek",
+     "gloss": "stream, brook",
+     "article": "de",
+     "plural": "beken",
+     "dim": "",
+     "base": "",
+     "rank": 2699
+    },
+    {
+     "id": "vijver",
+     "lemma": "vijver",
+     "gloss": "pond",
+     "article": "de",
+     "plural": "vijvers",
+     "dim": "",
+     "base": "",
+     "rank": 4127
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "woestijn-moeras",
+   "axis": "dry or wet land",
+   "members": [
+    {
+     "id": "woestijn",
+     "lemma": "woestijn",
+     "gloss": "desert",
+     "article": "de",
+     "plural": "woestijnen",
+     "dim": "",
+     "base": "",
+     "rank": 2509
+    },
+    {
+     "id": "moeras",
+     "lemma": "moeras",
+     "gloss": "marsh, swamp",
+     "article": "het",
+     "plural": "moerassen",
+     "dim": "",
+     "base": "",
+     "rank": 4934
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "bootdeel",
+   "axis": "part of a sailing boat",
+   "members": [
+    {
+     "id": "anker",
+     "lemma": "anker",
+     "gloss": "anchor",
+     "article": "het",
+     "plural": "ankers",
+     "dim": "",
+     "base": "",
+     "rank": 4906
+    },
+    {
+     "id": "zeil",
+     "lemma": "zeil",
+     "gloss": "sail",
+     "article": "het",
+     "plural": "zeilen",
+     "dim": "",
+     "base": "",
+     "rank": 4718
+    },
+    {
+     "id": "mast",
+     "lemma": "mast",
+     "gloss": "mast",
+     "article": "de",
+     "plural": "masten",
+     "dim": "",
+     "base": "",
+     "rank": 5941
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "hek-schutting",
+   "axis": "open or closed fence",
+   "members": [
+    {
+     "id": "hek",
+     "lemma": "hek",
+     "gloss": "fence, railings, gate",
+     "article": "het",
+     "plural": "hekken",
+     "dim": "",
+     "base": "",
+     "rank": 2706
+    },
+    {
+     "id": "schutting",
+     "lemma": "schutting",
+     "gloss": "board fence",
+     "article": "de",
+     "plural": "schuttingen",
+     "dim": "",
+     "base": "",
+     "rank": 8002
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "kelder-zolder",
+   "axis": "space under or at the top of a house",
+   "members": [
+    {
+     "id": "kelder",
+     "lemma": "kelder",
+     "gloss": "cellar, basement",
+     "article": "de",
+     "plural": "kelders",
+     "dim": "",
+     "base": "",
+     "rank": 2826
+    },
+    {
+     "id": "zolder",
+     "lemma": "zolder",
+     "gloss": "attic, loft",
+     "article": "de",
+     "plural": "zolders",
+     "dim": "",
+     "base": "",
+     "rank": 3400
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "gezichtsdeel",
+   "axis": "area of the face",
+   "members": [
+    {
+     "id": "wang",
+     "lemma": "wang",
+     "gloss": "cheek",
+     "article": "de",
+     "plural": "wangen",
+     "dim": "",
+     "base": "",
+     "rank": 2539
+    },
+    {
+     "id": "kin",
+     "lemma": "kin",
+     "gloss": "chin",
+     "article": "de",
+     "plural": "kinnen",
+     "dim": "",
+     "base": "",
+     "rank": 5063
+    },
+    {
+     "id": "voorhoofd",
+     "lemma": "voorhoofd",
+     "gloss": "forehead",
+     "article": "het",
+     "plural": "voorhoofden",
+     "dim": "",
+     "base": "",
+     "rank": 3897
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "vinger",
+   "axis": "digit of the hand",
+   "members": [
+    {
+     "id": "duim",
+     "lemma": "duim",
+     "gloss": "thumb",
+     "article": "de",
+     "plural": "duimen",
+     "dim": "",
+     "base": "",
+     "rank": 3232
+    },
+    {
+     "id": "pink",
+     "lemma": "pink",
+     "gloss": "little finger",
+     "article": "de",
+     "plural": "pinken",
+     "dim": "",
+     "base": "",
+     "rank": 3019
+    },
+    {
+     "id": "wijsvinger",
+     "lemma": "wijsvinger",
+     "gloss": "index finger",
+     "article": "de",
+     "plural": "wijsvingers",
+     "dim": "",
+     "base": "",
+     "rank": 8394
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "rolstoel-kinderwagen",
+   "axis": "seat on wheels",
+   "members": [
+    {
+     "id": "rolstoel",
+     "lemma": "rolstoel",
+     "gloss": "wheelchair",
+     "article": "de",
+     "plural": "rolstoelen",
+     "dim": "",
+     "base": "",
+     "rank": 3488
+    },
+    {
+     "id": "kinderwagen",
+     "lemma": "kinderwagen",
+     "gloss": "pram, pushchair",
+     "article": "de",
+     "plural": "kinderwagens",
+     "dim": "",
+     "base": "",
+     "rank": 8189
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "boomdeel",
+   "axis": "part of a tree",
+   "members": [
+    {
+     "id": "tak",
+     "lemma": "tak",
+     "gloss": "branch",
+     "article": "de",
+     "plural": "takken",
+     "dim": "",
+     "base": "",
+     "rank": 2980
+    },
+    {
+     "id": "stam",
+     "lemma": "stam",
+     "gloss": "trunk",
+     "article": "de",
+     "plural": "stammen",
+     "dim": "",
+     "base": "",
+     "rank": 3024
+    },
+    {
+     "id": "wortel",
+     "lemma": "wortel",
+     "gloss": "root",
+     "article": "de",
+     "plural": "wortels",
+     "dim": "",
+     "base": "",
+     "rank": 4428
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "vrachtwagen-bestelwagen",
+   "axis": "big or small goods vehicle",
+   "members": [
+    {
+     "id": "vrachtwagen",
+     "lemma": "vrachtwagen",
+     "gloss": "lorry, truck",
+     "article": "de",
+     "plural": "vrachtwagens",
+     "dim": "",
+     "base": "",
+     "rank": 2537
+    },
+    {
+     "id": "bestelwagen",
+     "lemma": "bestelwagen",
+     "gloss": "van, delivery van",
+     "article": "de",
+     "plural": "bestelwagens",
+     "dim": "",
+     "base": "",
+     "rank": 6826
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "helikopter-drone",
+   "axis": "machine that hovers",
+   "members": [
+    {
+     "id": "helikopter",
+     "lemma": "helikopter",
+     "gloss": "helicopter",
+     "article": "de",
+     "plural": "helikopters",
+     "dim": "",
+     "base": "",
+     "rank": 3290
+    },
+    {
+     "id": "drone",
+     "lemma": "drone",
+     "gloss": "drone",
+     "article": "de",
+     "plural": "drones",
+     "dim": "",
+     "base": "",
+     "rank": 4320
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "lijn",
+   "axis": "cable, rope or thread",
+   "members": [
+    {
+     "id": "kabel",
+     "lemma": "kabel",
+     "gloss": "cable",
+     "article": "de",
+     "plural": "kabels",
+     "dim": "",
+     "base": "",
+     "rank": 3108
+    },
+    {
+     "id": "touw",
+     "lemma": "touw",
+     "gloss": "rope",
+     "article": "het",
+     "plural": "touwen",
+     "dim": "",
+     "base": "",
+     "rank": 3596
+    },
+    {
+     "id": "draad",
+     "lemma": "draad",
+     "gloss": "thread, wire",
+     "article": "de",
+     "plural": "draden",
+     "dim": "",
+     "base": "",
+     "rank": 3100
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "gereedschap",
+   "axis": "hand tool",
+   "members": [
+    {
+     "id": "hamer",
+     "lemma": "hamer",
+     "gloss": "hammer",
+     "article": "de",
+     "plural": "hamers",
+     "dim": "",
+     "base": "",
+     "rank": 3829
+    },
+    {
+     "id": "zaag",
+     "lemma": "zaag",
+     "gloss": "saw",
+     "article": "de",
+     "plural": "zagen",
+     "dim": "",
+     "base": "",
+     "rank": 6061
+    },
+    {
+     "id": "tang",
+     "lemma": "tang",
+     "gloss": "pliers",
+     "article": "de",
+     "plural": "tangen",
+     "dim": "",
+     "base": "",
+     "rank": 5091
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "sluiting",
+   "axis": "button or zip",
+   "members": [
+    {
+     "id": "knoop",
+     "lemma": "knoop",
+     "gloss": "button (on clothes)",
+     "article": "de",
+     "plural": "knopen",
+     "dim": "",
+     "base": "",
+     "rank": 3573
+    },
+    {
+     "id": "rits",
+     "lemma": "rits",
+     "gloss": "zip",
+     "article": "de",
+     "plural": "ritsen",
+     "dim": "",
+     "base": "",
+     "rank": 6789
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "sieraad",
+   "axis": "necklace or bracelet",
+   "members": [
+    {
+     "id": "ketting",
+     "lemma": "ketting",
+     "gloss": "necklace, chain",
+     "article": "de",
+     "plural": "kettingen",
+     "dim": "",
+     "base": "",
+     "rank": 2519
+    },
+    {
+     "id": "armband",
+     "lemma": "armband",
+     "gloss": "bracelet",
+     "article": "de",
+     "plural": "armbanden",
+     "dim": "",
+     "base": "",
+     "rank": 4435
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "gezichtshaar",
+   "axis": "beard or moustache",
+   "members": [
+    {
+     "id": "baard",
+     "lemma": "baard",
+     "gloss": "beard",
+     "article": "de",
+     "plural": "baarden",
+     "dim": "",
+     "base": "",
+     "rank": 3183
+    },
+    {
+     "id": "snor",
+     "lemma": "snor",
+     "gloss": "moustache",
+     "article": "de",
+     "plural": "snorren",
+     "dim": "",
+     "base": "",
+     "rank": 4524
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "naald-speld",
+   "axis": "needle or pin",
+   "members": [
+    {
+     "id": "naald",
+     "lemma": "naald",
+     "gloss": "needle",
+     "article": "de",
+     "plural": "naalden",
+     "dim": "",
+     "base": "",
+     "rank": 4226
+    },
+    {
+     "id": "speld",
+     "lemma": "speld",
+     "gloss": "pin",
+     "article": "de",
+     "plural": "spelden",
+     "dim": "",
+     "base": "",
+     "rank": 7503
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "piano-orgel",
+   "axis": "keyboard instrument",
+   "members": [
+    {
+     "id": "piano",
+     "lemma": "piano",
+     "gloss": "piano",
+     "article": "de",
+     "plural": "piano's",
+     "dim": "",
+     "base": "",
+     "rank": 2571
+    },
+    {
+     "id": "orgel",
+     "lemma": "orgel",
+     "gloss": "organ (instrument)",
+     "article": "het",
+     "plural": "orgels",
+     "dim": "",
+     "base": "",
+     "rank": 3998
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "eend-zwaan",
+   "axis": "duck or swan",
+   "members": [
+    {
+     "id": "eend",
+     "lemma": "eend",
+     "gloss": "duck",
+     "article": "de",
+     "plural": "eenden",
+     "dim": "",
+     "base": "",
+     "rank": 4089
+    },
+    {
+     "id": "zwaan",
+     "lemma": "zwaan",
+     "gloss": "swan",
+     "article": "de",
+     "plural": "zwanen",
+     "dim": "",
+     "base": "",
+     "rank": 5237
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "olifant-neushoorn",
+   "axis": "large thick-skinned animal",
+   "members": [
+    {
+     "id": "olifant",
+     "lemma": "olifant",
+     "gloss": "elephant",
+     "article": "de",
+     "plural": "olifanten",
+     "dim": "",
+     "base": "",
+     "rank": 3299
+    },
+    {
+     "id": "neushoorn",
+     "lemma": "neushoorn",
+     "gloss": "rhinoceros",
+     "article": "de",
+     "plural": "neushoorns",
+     "dim": "",
+     "base": "",
+     "rank": 7486
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "tijger-jaguar",
+   "axis": "striped or spotted big cat",
+   "members": [
+    {
+     "id": "tijger",
+     "lemma": "tijger",
+     "gloss": "tiger",
+     "article": "de",
+     "plural": "tijgers",
+     "dim": "",
+     "base": "",
+     "rank": 3955
+    },
+    {
+     "id": "jaguar",
+     "lemma": "jaguar",
+     "gloss": "jaguar",
+     "article": "de",
+     "plural": "jaguars",
+     "dim": "",
+     "base": "",
+     "rank": 6007
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "slang",
+   "axis": "same word, two things",
+   "members": [
+    {
+     "id": "slang-dier",
+     "lemma": "slang",
+     "gloss": "snake",
+     "article": "de",
+     "plural": "slangen",
+     "dim": "",
+     "base": "",
+     "rank": 2936
+    },
+    {
+     "id": "slang-tuin",
+     "lemma": "slang",
+     "gloss": "hose",
+     "article": "de",
+     "plural": "slangen",
+     "dim": "",
+     "base": "",
+     "rank": 2936
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "vlieg-mug",
+   "axis": "small flying insect",
+   "members": [
+    {
+     "id": "vlieg",
+     "lemma": "vlieg",
+     "gloss": "fly",
+     "article": "de",
+     "plural": "vliegen",
+     "dim": "",
+     "base": "",
+     "rank": 2987
+    },
+    {
+     "id": "mug",
+     "lemma": "mug",
+     "gloss": "mosquito",
+     "article": "de",
+     "plural": "muggen",
+     "dim": "",
+     "base": "",
+     "rank": 7163
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "kikker-schildpad",
+   "axis": "frog or tortoise",
+   "members": [
+    {
+     "id": "kikker",
+     "lemma": "kikker",
+     "gloss": "frog",
+     "article": "de",
+     "plural": "kikkers",
+     "dim": "",
+     "base": "",
+     "rank": 4101
+    },
+    {
+     "id": "schildpad",
+     "lemma": "schildpad",
+     "gloss": "tortoise, turtle",
+     "article": "de",
+     "plural": "schildpadden",
+     "dim": "",
+     "base": "",
+     "rank": 4415
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "wond-pleister",
+   "axis": "wound or plaster",
+   "members": [
+    {
+     "id": "wond",
+     "lemma": "wond",
+     "gloss": "wound",
+     "article": "de",
+     "plural": "wonden",
+     "dim": "",
+     "base": "",
+     "rank": 5368
+    },
+    {
+     "id": "pleister",
+     "lemma": "pleister",
+     "gloss": "sticking plaster",
+     "article": "de",
+     "plural": "pleisters",
+     "dim": "",
+     "base": "",
+     "rank": 7875
+    }
+   ],
+   "rank_band": "b2",
+   "override": "Lexicon: wond niveau open, herkomst bijlage8, rank 5368; pleister niveau none, herkomst les:taalcompleet, rank 7875. Basis: coursebook (pleister). Note: first-aid words a learner needs at the doctor.",
+   "band": "b1"
+  }
+ ],
+ "b2": [
+  {
+   "id": "hert-geit",
+   "axis": "antlers or horns",
+   "members": [
+    {
+     "id": "hert",
+     "lemma": "hert",
+     "gloss": "deer",
+     "article": "het",
+     "plural": "herten",
+     "dim": "",
+     "base": "",
+     "rank": 5060
+    },
+    {
+     "id": "geit",
+     "lemma": "geit",
+     "gloss": "goat",
+     "article": "de",
+     "plural": "geiten",
+     "dim": "",
+     "base": "",
+     "rank": 5656
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "ooievaar-reiger",
+   "axis": "long-legged bird",
+   "members": [
+    {
+     "id": "ooievaar",
+     "lemma": "ooievaar",
+     "gloss": "stork",
+     "article": "de",
+     "plural": "ooievaars",
+     "dim": "",
+     "base": "",
+     "rank": 7933
+    },
+    {
+     "id": "reiger",
+     "lemma": "reiger",
+     "gloss": "heron",
+     "article": "de",
+     "plural": "reigers",
+     "dim": "",
+     "base": "",
+     "rank": 8436
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "uil-papegaai",
+   "axis": "owl or parrot",
+   "members": [
+    {
+     "id": "uil",
+     "lemma": "uil",
+     "gloss": "owl",
+     "article": "de",
+     "plural": "uilen",
+     "dim": "",
+     "base": "",
+     "rank": 5635
+    },
+    {
+     "id": "papegaai",
+     "lemma": "papegaai",
+     "gloss": "parrot",
+     "article": "de",
+     "plural": "papegaaien",
+     "dim": "",
+     "base": "",
+     "rank": 7575
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "slak-rups",
+   "axis": "slow crawling animal",
+   "members": [
+    {
+     "id": "slak",
+     "lemma": "slak",
+     "gloss": "snail",
+     "article": "de",
+     "plural": "slakken",
+     "dim": "",
+     "base": "",
+     "rank": 6337
+    },
+    {
+     "id": "rups",
+     "lemma": "rups",
+     "gloss": "caterpillar",
+     "article": "de",
+     "plural": "rupsen",
+     "dim": "",
+     "base": "",
+     "rank": 7019
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "krokodil-hagedis",
+   "axis": "large or small reptile",
+   "members": [
+    {
+     "id": "krokodil",
+     "lemma": "krokodil",
+     "gloss": "crocodile",
+     "article": "de",
+     "plural": "krokodillen",
+     "dim": "",
+     "base": "",
+     "rank": 6543
+    },
+    {
+     "id": "hagedis",
+     "lemma": "hagedis",
+     "gloss": "lizard",
+     "article": "de",
+     "plural": "hagedissen",
+     "dim": "",
+     "base": "",
+     "rank": 7927
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "krab-kreeft",
+   "axis": "crab or lobster",
+   "members": [
+    {
+     "id": "krab",
+     "lemma": "krab",
+     "gloss": "crab",
+     "article": "de",
+     "plural": "krabben",
+     "dim": "",
+     "base": "",
+     "rank": 7905
+    },
+    {
+     "id": "kreeft",
+     "lemma": "kreeft",
+     "gloss": "lobster",
+     "article": "de",
+     "plural": "kreeften",
+     "dim": "",
+     "base": "",
+     "rank": 5402
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "otter-bever",
+   "axis": "otter or beaver",
+   "members": [
+    {
+     "id": "otter",
+     "lemma": "otter",
+     "gloss": "otter",
+     "article": "de",
+     "plural": "otters",
+     "dim": "",
+     "base": "",
+     "rank": 7874
+    },
+    {
+     "id": "bever",
+     "lemma": "bever",
+     "gloss": "beaver",
+     "article": "de",
+     "plural": "bevers",
+     "dim": "",
+     "base": "",
+     "rank": 6588
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "mossel-oester",
+   "axis": "mussel or oyster",
+   "members": [
+    {
+     "id": "mossel",
+     "lemma": "mossel",
+     "gloss": "mussel",
+     "article": "de",
+     "plural": "mosselen",
+     "dim": "",
+     "base": "",
+     "rank": 8108
+    },
+    {
+     "id": "oester",
+     "lemma": "oester",
+     "gloss": "oyster",
+     "article": "de",
+     "plural": "oesters",
+     "dim": "",
+     "base": "",
+     "rank": 8370
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "kwal-inktvis",
+   "axis": "soft sea animal",
+   "members": [
+    {
+     "id": "kwal",
+     "lemma": "kwal",
+     "gloss": "jellyfish",
+     "article": "de",
+     "plural": "kwallen",
+     "dim": "",
+     "base": "",
+     "rank": 7818
+    },
+    {
+     "id": "inktvis",
+     "lemma": "inktvis",
+     "gloss": "squid",
+     "article": "de",
+     "plural": "inktvissen",
+     "dim": "",
+     "base": "",
+     "rank": 7221
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "sprinkhaan-krekel",
+   "axis": "grasshopper or cricket",
+   "members": [
+    {
+     "id": "sprinkhaan",
+     "lemma": "sprinkhaan",
+     "gloss": "grasshopper",
+     "article": "de",
+     "plural": "sprinkhanen",
+     "dim": "",
+     "base": "",
+     "rank": 8587
+    },
+    {
+     "id": "krekel",
+     "lemma": "krekel",
+     "gloss": "cricket (insect)",
+     "article": "de",
+     "plural": "krekels",
+     "dim": "",
+     "base": "",
+     "rank": 8563
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "eekhoorn-egel",
+   "axis": "small garden animal",
+   "members": [
+    {
+     "id": "eekhoorn",
+     "lemma": "eekhoorn",
+     "gloss": "squirrel",
+     "article": "de",
+     "plural": "eekhoorns",
+     "dim": "",
+     "base": "",
+     "rank": 6749
+    },
+    {
+     "id": "egel",
+     "lemma": "egel",
+     "gloss": "hedgehog",
+     "article": "de",
+     "plural": "egels",
+     "dim": "",
+     "base": "",
+     "rank": 8036
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "telescoop-verrekijker",
+   "axis": "telescope or binoculars",
+   "members": [
+    {
+     "id": "telescoop",
+     "lemma": "telescoop",
+     "gloss": "telescope",
+     "article": "de",
+     "plural": "telescopen",
+     "dim": "",
+     "base": "",
+     "rank": 6873
+    },
+    {
+     "id": "verrekijker",
+     "lemma": "verrekijker",
+     "gloss": "binoculars",
+     "article": "de",
+     "plural": "verrekijkers",
+     "dim": "",
+     "base": "",
+     "rank": 7939
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "zeef-vergiet",
+   "axis": "sieve or colander",
+   "members": [
+    {
+     "id": "zeef",
+     "lemma": "zeef",
+     "gloss": "sieve",
+     "article": "de",
+     "plural": "zeven",
+     "dim": "",
+     "base": "",
+     "rank": 8482
+    },
+    {
+     "id": "vergiet",
+     "lemma": "vergiet",
+     "gloss": "colander",
+     "article": "het",
+     "plural": "vergieten",
+     "dim": "",
+     "base": "",
+     "rank": 8571
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "haard-kachel",
+   "axis": "fireplace or stove",
+   "members": [
+    {
+     "id": "haard",
+     "lemma": "haard",
+     "gloss": "fireplace",
+     "article": "de",
+     "plural": "haarden",
+     "dim": "",
+     "base": "",
+     "rank": 5057
+    },
+    {
+     "id": "kachel",
+     "lemma": "kachel",
+     "gloss": "stove, heater",
+     "article": "de",
+     "plural": "kachels",
+     "dim": "",
+     "base": "",
+     "rank": 5545
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "schep-hark",
+   "axis": "garden tool",
+   "members": [
+    {
+     "id": "schep",
+     "lemma": "schep",
+     "gloss": "shovel, spade",
+     "article": "de",
+     "plural": "scheppen",
+     "dim": "",
+     "base": "",
+     "rank": 7400
+    },
+    {
+     "id": "hark",
+     "lemma": "hark",
+     "gloss": "rake",
+     "article": "de",
+     "plural": "harken",
+     "dim": "",
+     "base": "",
+     "rank": 8610
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "kwast-penseel",
+   "axis": "wide or fine brush",
+   "members": [
+    {
+     "id": "kwast",
+     "lemma": "kwast",
+     "gloss": "paintbrush (wide)",
+     "article": "de",
+     "plural": "kwasten",
+     "dim": "",
+     "base": "",
+     "rank": 7996
+    },
+    {
+     "id": "penseel",
+     "lemma": "penseel",
+     "gloss": "artist's brush",
+     "article": "het",
+     "plural": "penselen",
+     "dim": "",
+     "base": "",
+     "rank": 8538
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "kruk-fauteuil",
+   "axis": "simple or padded seat",
+   "members": [
+    {
+     "id": "kruk",
+     "lemma": "kruk",
+     "gloss": "stool",
+     "article": "de",
+     "plural": "krukken",
+     "dim": "",
+     "base": "",
+     "rank": 8064
+    },
+    {
+     "id": "fauteuil",
+     "lemma": "fauteuil",
+     "gloss": "armchair",
+     "article": "de",
+     "plural": "fauteuils",
+     "dim": "",
+     "base": "",
+     "rank": 8752
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "spijker-schroef",
+   "axis": "nail or screw",
+   "members": [
+    {
+     "id": "spijker",
+     "lemma": "spijker",
+     "gloss": "nail",
+     "article": "de",
+     "plural": "spijkers",
+     "dim": "",
+     "base": "",
+     "rank": 6340
+    },
+    {
+     "id": "schroef",
+     "lemma": "schroef",
+     "gloss": "screw",
+     "article": "de",
+     "plural": "schroeven",
+     "dim": "",
+     "base": "",
+     "rank": 6408
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "schroevendraaier-moersleutel",
+   "axis": "screwdriver or spanner",
+   "members": [
+    {
+     "id": "schroevendraaier",
+     "lemma": "schroevendraaier",
+     "gloss": "screwdriver",
+     "article": "de",
+     "plural": "schroevendraaiers",
+     "dim": "",
+     "base": "",
+     "rank": 8223
+    },
+    {
+     "id": "moersleutel",
+     "lemma": "moersleutel",
+     "gloss": "spanner, wrench",
+     "article": "de",
+     "plural": "moersleutels",
+     "dim": "",
+     "base": "",
+     "rank": 9318
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "mouw-kraag",
+   "axis": "part of a shirt",
+   "members": [
+    {
+     "id": "mouw",
+     "lemma": "mouw",
+     "gloss": "sleeve",
+     "article": "de",
+     "plural": "mouwen",
+     "dim": "",
+     "base": "",
+     "rank": 6181
+    },
+    {
+     "id": "kraag",
+     "lemma": "kraag",
+     "gloss": "collar",
+     "article": "de",
+     "plural": "kragen",
+     "dim": "",
+     "base": "",
+     "rank": 7070
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "oorbel-broche",
+   "axis": "earring or brooch",
+   "members": [
+    {
+     "id": "oorbel",
+     "lemma": "oorbel",
+     "gloss": "earring",
+     "article": "de",
+     "plural": "oorbellen",
+     "dim": "",
+     "base": "",
+     "rank": 8371
+    },
+    {
+     "id": "broche",
+     "lemma": "broche",
+     "gloss": "brooch",
+     "article": "de",
+     "plural": "broches",
+     "dim": "",
+     "base": "",
+     "rank": 8332
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "racket-peddel",
+   "axis": "strung racket or solid paddle",
+   "members": [
+    {
+     "id": "racket",
+     "lemma": "racket",
+     "gloss": "racket",
+     "article": "het",
+     "plural": "rackets",
+     "dim": "",
+     "base": "",
+     "rank": 8731
+    },
+    {
+     "id": "peddel",
+     "lemma": "peddel",
+     "gloss": "paddle",
+     "article": "de",
+     "plural": "peddels",
+     "dim": "",
+     "base": "",
+     "rank": 8758
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "snorkel-zwembril",
+   "axis": "snorkel or goggles",
+   "members": [
+    {
+     "id": "snorkel",
+     "lemma": "snorkel",
+     "gloss": "snorkel",
+     "article": "de",
+     "plural": "snorkels",
+     "dim": "",
+     "base": "",
+     "rank": 9149
+    },
+    {
+     "id": "zwembril",
+     "lemma": "zwembril",
+     "gloss": "swimming goggles",
+     "article": "de",
+     "plural": "zwembrillen",
+     "dim": "",
+     "base": "",
+     "rank": 9326
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "kano-kajak",
+   "axis": "open or closed small boat",
+   "members": [
+    {
+     "id": "kano",
+     "lemma": "kano",
+     "gloss": "canoe",
+     "article": "de",
+     "plural": "kano's",
+     "dim": "",
+     "base": "",
+     "rank": 6309
+    },
+    {
+     "id": "kajak",
+     "lemma": "kajak",
+     "gloss": "kayak",
+     "article": "de",
+     "plural": "kajaks",
+     "dim": "",
+     "base": "",
+     "rank": 8716
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "viool-cello",
+   "axis": "small or large string instrument",
+   "members": [
+    {
+     "id": "viool",
+     "lemma": "viool",
+     "gloss": "violin",
+     "article": "de",
+     "plural": "violen",
+     "dim": "",
+     "base": "",
+     "rank": 5232
+    },
+    {
+     "id": "cello",
+     "lemma": "cello",
+     "gloss": "cello",
+     "article": "de",
+     "plural": "cello's",
+     "dim": "",
+     "base": "",
+     "rank": 7780
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "trompet-trombone",
+   "axis": "trumpet or trombone",
+   "members": [
+    {
+     "id": "trompet",
+     "lemma": "trompet",
+     "gloss": "trumpet",
+     "article": "de",
+     "plural": "trompetten",
+     "dim": "",
+     "base": "",
+     "rank": 7757
+    },
+    {
+     "id": "trombone",
+     "lemma": "trombone",
+     "gloss": "trombone",
+     "article": "de",
+     "plural": "trombones",
+     "dim": "",
+     "base": "",
+     "rank": 8570
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "rund-getal",
+   "axis": "one or more (irregular plural)",
+   "members": [
+    {
+     "id": "rund-een",
+     "lemma": "rund",
+     "gloss": "cow, bull or ox (one animal)",
+     "article": "het",
+     "plural": "runderen",
+     "dim": "",
+     "base": "",
+     "rank": 7093
+    },
+    {
+     "id": "rund-meer",
+     "lemma": "runderen",
+     "gloss": "cattle",
+     "article": "de",
+     "plural": "runderen",
+     "dim": "",
+     "base": "",
+     "rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  }
+ ],
+ "_no_rank": {
+  "enkel": "the bare form enkel is not in the frequency list and the row \"enkel (noun)\" has a placeholder rank; the set is banded by knie (2671)"
+ },
+ "_coursebook_sense": {
+  "wortel": "the coursebook A1 sense is carrot; the boomdeel card draws the root"
+ },
+ "_coursebook_for": {
+  "a0": [
+   "A1",
+   "les:nig"
+  ],
+  "a1": [
+   "A1",
+   "les:nig"
+  ],
+  "a2": [
+   "A1",
+   "les:nig"
+  ],
+  "b1": [
+   "A1",
+   "B1",
+   "les:nig",
+   "les:register",
+   "les:taalcompleet"
+  ]
+ },
+ "_lex_row": {
+  "arm": "arm (noun)",
+  "enkel": "enkel (noun)"
+ },
+ "_judgment_ceiling": "a2",
+ "_everyday_review": {
+  "pad": [
+   "b1",
+   "kept",
+   "de pad (toad) is not an everyday word"
+  ],
+  "konijn-haas": [
+   "b1",
+   "kept",
+   "pet and wild animal, not a daily-life item"
+  ],
+  "haai-dolfijn": [
+   "b1",
+   "kept",
+   "sea animals"
+  ],
+  "vlinder-mot": [
+   "b1",
+   "kept",
+   "insects"
+  ],
+  "ezel-pony": [
+   "b1",
+   "kept",
+   "animals rarely met in daily life"
+  ],
+  "nest-kooi": [
+   "b1",
+   "kept",
+   "animal homes"
+  ],
+  "vogeldeel": [
+   "b1",
+   "kept",
+   "parts of an animal"
+  ],
+  "beek-vijver": [
+   "b1",
+   "kept",
+   "landscape words"
+  ],
+  "woestijn-moeras": [
+   "b1",
+   "kept",
+   "landscape words"
+  ],
+  "bootdeel": [
+   "b1",
+   "kept",
+   "sailing terms"
+  ],
+  "hek-schutting": [
+   "b1",
+   "kept",
+   "the open or closed fence is a fine distinction, not a daily need"
+  ],
+  "deken-dekbed": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "kelder-zolder": [
+   "b1",
+   "kept",
+   "house spaces many newcomers in flats do not have"
+  ],
+  "mond": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "gezichtsdeel": [
+   "b1",
+   "kept",
+   "face detail beyond the A1 face set"
+  ],
+  "vinger": [
+   "b1",
+   "kept",
+   "finger names beyond hand and finger"
+  ],
+  "rolstoel-kinderwagen": [
+   "b1",
+   "kept",
+   "mobility aids, not a daily item for most learners"
+  ],
+  "kam-tandenborstel": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "boomdeel": [
+   "b1",
+   "kept",
+   "parts of a tree"
+  ],
+  "vrachtwagen-bestelwagen": [
+   "b1",
+   "kept",
+   "goods vehicles a learner sees but rarely names"
+  ],
+  "helikopter-drone": [
+   "b1",
+   "kept",
+   "rare in daily life"
+  ],
+  "kruispunt-rotonde": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "lijn": [
+   "b1",
+   "kept",
+   "material distinctions"
+  ],
+  "gereedschap": [
+   "b1",
+   "kept",
+   "DIY tools"
+  ],
+  "sluiting": [
+   "b1",
+   "kept",
+   "parts of clothing, not the clothing itself"
+  ],
+  "sieraad": [
+   "b1",
+   "kept",
+   "jewellery, not a daily need"
+  ],
+  "gezichtshaar": [
+   "b1",
+   "kept",
+   "describing appearance, not a daily item"
+  ],
+  "naald-speld": [
+   "b1",
+   "kept",
+   "sewing"
+  ],
+  "winterkleding": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "piano-orgel": [
+   "b1",
+   "kept",
+   "instruments"
+  ],
+  "eend-zwaan": [
+   "b1",
+   "kept",
+   "birds"
+  ],
+  "olifant-neushoorn": [
+   "b1",
+   "kept",
+   "zoo animals"
+  ],
+  "tijger-jaguar": [
+   "b1",
+   "kept",
+   "zoo animals"
+  ],
+  "kraan": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "slang": [
+   "b1",
+   "kept",
+   "snake and hose, neither a daily item"
+  ],
+  "vlieg-mug": [
+   "b1",
+   "kept",
+   "insects"
+  ],
+  "oven-magnetron": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "kikker-schildpad": [
+   "b1",
+   "kept",
+   "animals"
+  ],
+  "bes": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "stofzuiger-bezem": [
+   "b1",
+   "promoted",
+   null
+  ],
+  "wond-pleister": [
+   "b1",
+   "kept",
+   "injury words: the wound is not a daily item, and the plaster moves with it"
+  ],
+  "hert-geit": [
+   "b2",
+   "kept",
+   "animals"
+  ],
+  "ooievaar-reiger": [
+   "b2",
+   "kept",
+   "birds"
+  ],
+  "uil-papegaai": [
+   "b2",
+   "kept",
+   "birds"
+  ],
+  "slak-rups": [
+   "b2",
+   "kept",
+   "garden animals"
+  ],
+  "krokodil-hagedis": [
+   "b2",
+   "kept",
+   "reptiles"
+  ],
+  "krab-kreeft": [
+   "b2",
+   "kept",
+   "sea animals"
+  ],
+  "otter-bever": [
+   "b2",
+   "kept",
+   "wild animals"
+  ],
+  "mossel-oester": [
+   "b2",
+   "kept",
+   "shellfish, not everyday shopping"
+  ],
+  "kwal-inktvis": [
+   "b2",
+   "kept",
+   "sea animals"
+  ],
+  "sprinkhaan-krekel": [
+   "b2",
+   "kept",
+   "insects"
+  ],
+  "eekhoorn-egel": [
+   "b2",
+   "kept",
+   "wild animals"
+  ],
+  "telescoop-verrekijker": [
+   "b2",
+   "kept",
+   "optical instruments"
+  ],
+  "pompoen-meloen": [
+   "b2",
+   "promoted",
+   null
+  ],
+  "noot": [
+   "b2",
+   "promoted",
+   null
+  ],
+  "pan": [
+   "b2",
+   "promoted",
+   null
+  ],
+  "zeef-vergiet": [
+   "b2",
+   "kept",
+   "kitchen tools beyond the daily pan"
+  ],
+  "haard-kachel": [
+   "b2",
+   "kept",
+   "most homes heat with radiators"
+  ],
+  "schep-hark": [
+   "b2",
+   "kept",
+   "garden tools"
+  ],
+  "kwast-penseel": [
+   "b2",
+   "kept",
+   "painting tools"
+  ],
+  "kruk-fauteuil": [
+   "b2",
+   "kept",
+   "seat distinctions beyond the A1 chair and sofa"
+  ],
+  "stopcontact-schakelaar": [
+   "b2",
+   "promoted",
+   null
+  ],
+  "spijker-schroef": [
+   "b2",
+   "kept",
+   "DIY"
+  ],
+  "schroevendraaier-moersleutel": [
+   "b2",
+   "kept",
+   "DIY tools"
+  ],
+  "mouw-kraag": [
+   "b2",
+   "kept",
+   "parts of clothing, not the clothing itself"
+  ],
+  "sandaal-slipper": [
+   "b2",
+   "promoted",
+   null
+  ],
+  "oorbel-broche": [
+   "b2",
+   "kept",
+   "jewellery, not a daily need"
+  ],
+  "racket-peddel": [
+   "b2",
+   "kept",
+   "sports gear"
+  ],
+  "snorkel-zwembril": [
+   "b2",
+   "kept",
+   "holiday gear"
+  ],
+  "kano-kajak": [
+   "b2",
+   "kept",
+   "boats"
+  ],
+  "viool-cello": [
+   "b2",
+   "kept",
+   "instruments"
+  ],
+  "trompet-trombone": [
+   "b2",
+   "kept",
+   "instruments"
+  ],
+  "rund-getal": [
+   "b2",
+   "kept",
+   "a farming word; the everyday animal is the A1 cow"
+  ]
+ }
+}
