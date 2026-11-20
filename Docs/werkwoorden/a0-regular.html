@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwoorden — A0 regelmatig</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>Werkwoorden — A0 · regelmatig</h1>
+<p class="lead">Survival: the first weeks. Being, having, going, eating, and the modals that hold every sentence together. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</p>
+<p class="lead">One card per verb: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, and the Dutch alt text. Sorted by lexicon frequency rank.</p>
+<div class="sum"><span>6 werkwoorden</span><span class="framereeks">frames #25–#30</span><span>rang 52–247</span><span>6 getekend</span><span>0 overgeslagen</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html" class="hier">A0 regelmatig</a><a href="a1-irregular.html">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html">B1 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
+<div class="filters"><button data-filter="alles" aria-pressed="true">alles</button><button data-filter="Abstract &amp; general">Abstract &amp; general</button><button data-filter="Arts &amp; media">Arts &amp; media</button><button data-filter="Education &amp; learning">Education &amp; learning</button><button data-filter="Technology &amp; tools">Technology &amp; tools</button><button data-filter="Work &amp; jobs">Work &amp; jobs</button></div>
+</header>
+<main>
+<section class="sectiekop"><h2>A0 · regelmatig</h2><p>6 verbs with a weak past, rank 52 to 247. One drawing each, in the Voorzetselpaden style. Cards without a drawing stay as proposals.</p></section>
+<div class="kaarten">
+<article id="maken" class="kaart" data-id="maken" data-band="a0" data-kind="verb" data-regularity="regular" data-domain="Technology &amp; tools" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 25">#25</span>
+<img class="beeld" src="../../assets/verbs/maken.png" alt="Iemand zit aan een tafel en zet met een hamer een kistje in elkaar uit losse planken." loading="lazy">
+<h3 class="chunk">maken</h3>
+<p class="gloss">to make</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 52</span><span>Technology &amp; tools</span><span class="getekend">getekend</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits at a plain table, holding a small wooden box together with both hands; a hammer lies beside three loose planks and a few nails, and one nail stands half driven into the box. The box is clearly being assembled out of the planks.</dd>
+<dt>Must read</dt><dd class="must">a new box being made from loose planks and nails.</dd>
+<dt>Avoid</dt><dd class="avoid">a screwdriver and a broken chair leg (repareren); a pot on a stove and a spoon (koken); a brush on paper (tekenen); the finished box held up to show it.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand zit aan een tafel en zet met een hamer een kistje in elkaar uit losse planken.</dd>
+</dl>
+<p class="id">maken.png · rang 52 · A0 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="werken" class="kaart" data-id="werken" data-band="a0" data-kind="verb" data-regularity="regular" data-domain="Work &amp; jobs" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 26">#26</span>
+<img class="beeld" src="../../assets/verbs/werken.png" alt="Iemand zit achter een bureau met beide handen op het toetsenbord van een laptop." loading="lazy">
+<h3 class="chunk">werken</h3>
+<p class="gloss">to work</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 152</span><span>Work &amp; jobs</span><span class="getekend">getekend</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits at a plain desk seen from the side, both hands on the keyboard of an open laptop, eyes on the screen; a stack of papers and a pen beside it, a plain office chair. No second person, and the screen shows no text.</dd>
+<dt>Must read</dt><dd class="must">a person occupied at a desk with their work in front of them.</dd>
+<dt>Avoid</dt><dd class="avoid">a person digging with a spade (graven); a person at a workbench (maken); a person asleep at the desk; a boss pointing at the door.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand zit achter een bureau met beide handen op het toetsenbord van een laptop.</dd>
+</dl>
+<p class="id">werken.png · rang 152 · A0 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="gebruiken" class="kaart" data-id="gebruiken" data-band="a0" data-kind="verb" data-regularity="regular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 27">#27</span>
+<img class="beeld" src="../../assets/verbs/gebruiken.png" alt="Een volwassene staat aan het aanrecht en draait met een schroevendraaier een schroef in een plank." loading="lazy">
+<h3 class="chunk">gebruiken</h3>
+<p class="gloss">to use</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 216</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at a kitchen counter, gripping a plain screwdriver with one hand, the flat tip already seated in the slot of a single screw in a small wooden board, that elbow drawn back to turn it. The other hand presses the board flat on the counter. No hammer, no loose parts.</dd>
+<dt>Must read</dt><dd class="must">one hand turning a screwdriver in a screw.</dd>
+<dt>Avoid</dt><dd class="avoid">the screwdriver lying untouched beside the board (maken); a screwdriver over a broken chair leg (repareren); a hand held out with the screwdriver on its palm (geven); one adult seated at a laptop (werken).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat aan het aanrecht en draait met een schroevendraaier een schroef in een plank.</dd>
+</dl>
+<p class="id">gebruiken.png · rang 216 · A0 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="spelen" class="kaart" data-id="spelen" data-band="a0" data-kind="verb" data-regularity="regular" data-domain="Arts &amp; media" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 28">#28</span>
+<img class="beeld" src="../../assets/verbs/spelen.png" alt="Een kind hurkt op de grond en duwt met beide handen een kleine bal over de vloer." loading="lazy">
+<h3 class="chunk">spelen</h3>
+<p class="gloss">to play</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 218</span><span>Arts &amp; media</span><span class="getekend">getekend</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one child crouches on the floor with both hands out, pushing a small round ball away from the fingertips; the ball sits halfway between the child's hands and the rim of an upturned cup two hand-widths away. The child grins at the ball. Plain floor, nothing else in the picture.</dd>
+<dt>Must read</dt><dd class="must">a child pushing a toy ball across the floor with both hands.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult at a workbench with planks and a hammer (maken); a child bent over an open book (leren); a child asleep on a mat; a bat and an open field.</dd>
+<dt>Alt text</dt><dd class="alt">Een kind hurkt op de grond en duwt met beide handen een kleine bal over de vloer.</dd>
+</dl>
+<p class="id">spelen.png · rang 218 · A0 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="zorgen" class="kaart" data-id="zorgen" data-band="a0" data-kind="verb" data-regularity="regular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 29">#29</span>
+<img class="beeld" src="../../assets/verbs/zorgen.png" alt="Een volwassene knielt bij een kind op een krukje en slaat met beide handen een deken om de schouders." loading="lazy">
+<h3 class="chunk">zorgen</h3>
+<p class="gloss">to take care (of)</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 223</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult kneels beside a small child seated on a low stool, wrapping a blanket around the child's shoulders with both hands; a glass of water stands on a low table nearby. The adult leans in and looks at the child, and the child looks back.</dd>
+<dt>Must read</dt><dd class="must">two people, one wrapping a blanket around the other.</dd>
+<dt>Avoid</dt><dd class="avoid">a child alone bent over a book (leren); one adult at a workbench (maken); two people passing the glass between them (geven); a person holding their head in their hands.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene knielt bij een kind op een krukje en slaat met beide handen een deken om de schouders.</dd>
+</dl>
+<p class="id">zorgen.png · rang 223 · A0 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="leren" class="kaart" data-id="leren" data-band="a0" data-kind="verb" data-regularity="regular" data-domain="Education &amp; learning" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 30">#30</span>
+<img class="beeld" src="../../assets/verbs/leren.png" alt="Een kind zit aan een tafel voor een open boek; een volwassene staat erachter en wijst naar de bladzijde." loading="lazy">
+<h3 class="chunk">leren</h3>
+<p class="gloss">to learn</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 247</span><span>Education &amp; learning</span><span class="getekend">getekend</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one child sits at a plain table, seen from the side, both hands open on a large picture book showing two unlettered shapes, eyes down on the page; a grown adult stands behind the child's shoulder, leaning in, and one finger points at the page. No desk, no laptop, no other furniture.</dd>
+<dt>Must read</dt><dd class="must">two people bent over an open book, one pointing at the page.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult alone at a laptop (werken); a person at a workbench with planks (maken); a hand turning a screwdriver (gebruiken); a child pushing a ball on the floor (spelen).</dd>
+<dt>Alt text</dt><dd class="alt">Een kind zit aan een tafel voor een open boek; een volwassene staat erachter en wijst naar de bladzijde.</dd>
+</dl>
+<p class="id">leren.png · rang 247 · A0 regelmatig · lexicon woorden.tsv</p>
+</article>
+</div>
+</main>
+
+<script>
+(function(){
+  var bar=document.querySelector('.filters'); if(!bar) return;
+  var cards=[].slice.call(document.querySelectorAll('.kaart'));
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var want=b.dataset.filter;
+    [].forEach.call(bar.querySelectorAll('button'),function(x){
+      x.setAttribute('aria-pressed', String(x===b)); });
+    cards.forEach(function(c){
+      c.hidden = !(want==='alles' || c.dataset.domain===want);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

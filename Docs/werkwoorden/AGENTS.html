@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Werkwoorden — working notes for agents — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="../index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="../project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="../product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="../game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="../designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="../decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="../accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="../accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="../games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="../games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="../prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="../prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="../prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="../game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="../voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="../voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="../story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="../story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="../story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="../uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="../verb-games-plan.html" data-path="Docs/verb-games-plan.html">Verb games — plan and questions</a></li><li><a href="../reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="../review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="../lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="../lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="../lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="../lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="../design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="../voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="../voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="../voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="../voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="../voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="../voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="../voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="../voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="../voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="../voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="../voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="../voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="../voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Werkwoorden</summary><ul><li><a href="AGENTS.html" data-path="Docs/werkwoorden/AGENTS.html" aria-current="page">Working notes for agents</a></li><li><a href="index.html" data-path="Docs/werkwoorden/index.html">Overview — every verb</a></li><li><a href="a0-irregular.html" data-path="Docs/werkwoorden/a0-irregular.html">A0 irregular</a></li><li><a href="a0-regular.html" data-path="Docs/werkwoorden/a0-regular.html">A0 regular</a></li><li><a href="a1-irregular.html" data-path="Docs/werkwoorden/a1-irregular.html">A1 irregular</a></li><li><a href="a1-regular.html" data-path="Docs/werkwoorden/a1-regular.html">A1 regular</a></li><li><a href="a2-irregular.html" data-path="Docs/werkwoorden/a2-irregular.html">A2 irregular</a></li><li><a href="a2-regular.html" data-path="Docs/werkwoorden/a2-regular.html">A2 regular</a></li><li><a href="b1-irregular.html" data-path="Docs/werkwoorden/b1-irregular.html">B1 irregular</a></li><li><a href="b1-regular.html" data-path="Docs/werkwoorden/b1-regular.html">B1 regular</a></li><li><a href="matrix.html" data-path="Docs/werkwoorden/matrix.html">Matrix</a></li><li><a href="backlog.html" data-path="Docs/werkwoorden/backlog.html">Backlog</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Bijvoeglijke naamwoorden</summary><ul><li><a href="../bijvoeglijke-naamwoorden/index.html" data-path="Docs/bijvoeglijke-naamwoorden/index.html">Overview</a></li><li><a href="../bijvoeglijke-naamwoorden/a0.html" data-path="Docs/bijvoeglijke-naamwoorden/a0.html">A0 band</a></li><li><a href="../bijvoeglijke-naamwoorden/a1.html" data-path="Docs/bijvoeglijke-naamwoorden/a1.html">A1 band</a></li><li><a href="../bijvoeglijke-naamwoorden/a2.html" data-path="Docs/bijvoeglijke-naamwoorden/a2.html">A2 band</a></li><li><a href="../bijvoeglijke-naamwoorden/b1.html" data-path="Docs/bijvoeglijke-naamwoorden/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Zelfstandige naamwoorden</summary><ul><li><a href="../zelfstandige-naamwoorden/index.html" data-path="Docs/zelfstandige-naamwoorden/index.html">Overview</a></li><li><a href="../zelfstandige-naamwoorden/a0.html" data-path="Docs/zelfstandige-naamwoorden/a0.html">A0 band</a></li><li><a href="../zelfstandige-naamwoorden/a1.html" data-path="Docs/zelfstandige-naamwoorden/a1.html">A1 band</a></li><li><a href="../zelfstandige-naamwoorden/a2.html" data-path="Docs/zelfstandige-naamwoorden/a2.html">A2 band</a></li><li><a href="../zelfstandige-naamwoorden/b1.html" data-path="Docs/zelfstandige-naamwoorden/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Bijwoorden</summary><ul><li><a href="../bijwoorden/index.html" data-path="Docs/bijwoorden/index.html">Overview</a></li><li><a href="../bijwoorden/a0.html" data-path="Docs/bijwoorden/a0.html">A0 band</a></li><li><a href="../bijwoorden/a1.html" data-path="Docs/bijwoorden/a1.html">A1 band</a></li><li><a href="../bijwoorden/a2.html" data-path="Docs/bijwoorden/a2.html">A2 band</a></li><li><a href="../bijwoorden/b1.html" data-path="Docs/bijwoorden/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Scheidbare werkwoorden</summary><ul><li><a href="../scheidbare-werkwoorden/index.html" data-path="Docs/scheidbare-werkwoorden/index.html">Overview</a></li><li><a href="../scheidbare-werkwoorden/a2.html" data-path="Docs/scheidbare-werkwoorden/a2.html">A2 band</a></li><li><a href="../scheidbare-werkwoorden/b1.html" data-path="Docs/scheidbare-werkwoorden/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Vaste uitdrukkingen</summary><ul><li><a href="../vaste-uitdrukkingen/index.html" data-path="Docs/vaste-uitdrukkingen/index.html">Overview</a></li><li><a href="../vaste-uitdrukkingen/a0.html" data-path="Docs/vaste-uitdrukkingen/a0.html">A0 band</a></li><li><a href="../vaste-uitdrukkingen/a1.html" data-path="Docs/vaste-uitdrukkingen/a1.html">A1 band</a></li><li><a href="../vaste-uitdrukkingen/a2.html" data-path="Docs/vaste-uitdrukkingen/a2.html">A2 band</a></li><li><a href="../vaste-uitdrukkingen/b1.html" data-path="Docs/vaste-uitdrukkingen/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="../voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="../voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="../voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="../design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="../design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="../archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="../archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="../archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="../archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="../archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="../archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="../archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="../archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="../archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="../archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="../archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Docs</a><span>/</span><span>Content plans</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Werkwoorden — working notes for agents</h1>
+      <p class="lede">One card per verb with a picture brief; irregular verbs also carry the past and perfect forms. How the pages were built, and how to change them.</p>
+      <p class="doc-meta">Docs/werkwoorden/AGENTS.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-band-pages-are-the-master">The band pages are the master</a></li><li class="toc-h2"><a href="#the-card">The card</a></li><li class="toc-h2"><a href="#conventions">Conventions</a></li><li class="toc-h2"><a href="#tools">Tools</a></li><li class="toc-h2"><a href="#how-a-verb-was-chosen">How a verb was chosen</a></li><li class="toc-h2"><a href="#pitfalls">Pitfalls</a></li></ul></details>
+    <article class="prose">
+<h2 id="the-band-pages-are-the-master">The band pages are the master</h2>
+<p>The eight band pages hold every verb, one card each:</p>
+<p><a href="a0-irregular.html"><code>a0-irregular.html</code></a>, <a href="a0-regular.html"><code>a0-regular.html</code></a>,
+<a href="a1-irregular.html"><code>a1-irregular.html</code></a>, <a href="a1-regular.html"><code>a1-regular.html</code></a>,
+<a href="a2-irregular.html"><code>a2-irregular.html</code></a>, <a href="a2-regular.html"><code>a2-regular.html</code></a>,
+<a href="b1-irregular.html"><code>b1-irregular.html</code></a>, <a href="b1-regular.html"><code>b1-regular.html</code></a></p>
+<p>Edit those. They are the master copy of the content.</p>
+<p>The pages were generated once, on 19 November 2026, by <code>tools/build-verb-cards.py</code> from
+<code>tools/_ww_tmp/selection.json</code> and the scene notes in <code>tools/_ww_tmp/scenes/</code>. From then
+on the HTML is hand-edited, exactly as the Voorzetselpaden band pages are. Rerunning the
+script overwrites all eight pages, so run it only when you mean to rebuild.</p>
+<p>On 20 November 2026 the eight pages were checked byte for byte against the builder's output
+(identical, so nobody had hand-edited them) and then rebuilt from the sources to apply the
+review fixes. Sources and pages agree as of that date. Before the next rebuild, run the builder
+with <code>--out</code> to a scratch folder and diff it against the pages; rebuild only if they match.</p>
+<p><code>index.html</code>, <code>matrix.html</code> and <code>backlog.html</code> are generated output. Do not hand-edit
+them; change the source and rebuild.</p>
+<p>No game data is generated from these pages yet. When a verb game ships, this is where
+<code>verbs.json</code> comes from, and the importer should behave like the preposition one: read only
+cards that carry <code>class="beeld"</code> plus text, and skip the rest.</p>
+<h2 id="the-card">The card</h2>
+<p>One card per verb, in the base form. There is deliberately no example sentence, no
+<code>Build</code> and no <code>Check question</code>: the card teaches what the verb means.</p>
+<p><strong>Forms follow predictability (decided 20 November 2026).</strong> A form a learner cannot predict is
+vocabulary, like <em>de</em> or <em>het</em> on a noun, so it goes on the card. A form that follows a rule is
+grammar, taught once elsewhere. Irregular cards therefore carry the past singular and the perfect
+(auxiliary plus participle), for example <em>liep</em> and <em>heeft/is gelopen</em>. Regular cards carry the base
+form only. Other persons, the plural and the other tenses stay out. Source: Bijlage 3b, via
+<code>tools/lexicon/werkwoorden-vormen.tsv</code>.</p>
+<div class="table-wrap">
+<table>
+<thead><tr><th>Field</th><th>What goes in it</th><th>Language</th></tr></thead>
+<tbody>
+<tr><td><code>Scene</code></td><td>The action drawn, as a brief for the illustrator: who, doing what, with which objects.</td><td>English</td></tr>
+<tr><td><code>Must read</code></td><td>The one mark that has to be legible at thumbnail size. One clause.</td><td>English</td></tr>
+<tr><td><code>Avoid</code></td><td>Three to five near-miss actions, each with the competing verb in brackets.</td><td>English</td></tr>
+<tr><td><code>Alt text</code></td><td>One sentence describing the picture for a screen reader.</td><td>Dutch</td></tr>
+<tr><td><code>Past</code> and <code>Perfect</code> (<code>p.vormen</code>)</td><td>Irregular cards only. Past singular, then auxiliary plus participle: <code>was</code>, <code>is geweest</code>. Two forms joined by a slash are both correct. <code>zullen</code> has no participle and says so.</td><td>Dutch</td></tr>
+</tbody>
+</table>
+</div>
+<p>The metadata sits in the flags and the footer: <code>data-regularity</code>, the frequency rank,
+the lexicon domain, the band, and the frame number.</p>
+<p><strong>Abstract verbs.</strong> A drawing cannot show "to be able to". For core A0 and A1 verbs only,
+a conventional pictogram is allowed — a thought bubble, a lightbulb, a balance, a question
+mark, a flexed arm, a weight on the back — and the scene must say in words that this is a
+convention, so a reviewer can see the card is not a literal picture. Above A1 an abstract
+verb gets no picture: it goes on <a href="backlog.html">the backlog</a>.</p>
+<h2 id="conventions">Conventions</h2>
+<ul>
+<li><strong>One card, one verb, one drawing.</strong> A second sense does not get a second card in
+  this pass. <code>vinden</code> is <em>to find</em>, not <em>to think</em>; <code>scheppen</code> is <em>to scoop</em>, not <em>to create</em>, so it is regular.</li>
+<li><strong>A card without a picture stays on the page.</strong> Never delete the markup. It carries
+  <code>div.geenbeeld</code> and <code>data-status="proposal"</code>; when the drawing arrives, put the
+  PNG in <code>assets/verbs/&lt;slug&gt;.png</code> and rerun <code>build-verb-cards.py</code>. A card counts as drawn when that
+  file exists: the builder swaps the <code>div</code> for <code>&lt;img class="beeld"&gt;</code>, sets <code>data-status="drawn"</code> and
+  updates the counts. Draw with <code>tools/grok/grok.py verbprompt &lt;page&gt; --batch N</code> (seven cards a batch), then review every image against its
+  Scene and Must read before copying it in. All 90 A0 and A1 cards were drawn on 20 November 2026. Weak spots: <code>krijgen</code> follows its brief but reads close to <code>geven</code>, and <code>kiezen</code> shows an open hand beside two jars, not a hand above one.
+  When a drawn card's brief changes, list its slug in <code>tools/_ww_tmp/redraw.tsv</code>: the card then shows
+  <code>opnieuw tekenen</code> and <code>data-status="redraw"</code> until the new PNG replaces the old one.
+  <code>hebben</code> and <code>zien</code> are listed; <code>doen.png</code> and <code>laten.png</code> belong to cards that became SKIP on 20 November.</li>
+<li><strong>Alt text never names the verb,</strong> and never uses a form of it, nor a noun built on its
+  stem (<em>zwemmer</em>, <em>weegschaal</em>). It describes the picture. That keeps it honest for a screen
+  reader and stops it leaking the answer in a game. <code>check-verb-cards.py</code> tests this.</li>
+<li><strong>The artwork is one cobalt line drawing.</strong> Scene and Must name no colour (red, gold, grey),
+  no text, digits or numbers, no souvenir imagery (cheese, tulips) and no religious marker.
+  The checker tests these too, and that no two cards share an English gloss.</li>
+<li><strong><code>data-id</code> is the slug</strong>, and it equals the <code>&lt;slug&gt;.png</code> in the footer and
+  the <code>id</code> on the article. Rename all three together.</li>
+<li><strong>The frame number runs on</strong> across the eight pages: A0 irregular first, then A0
+  regular, and so on to B1 regular. Within a page the cards are in frequency order. Adding
+  a card renumbers everything after it; rerun the builder or renumber by hand.</li>
+<li><strong>The level is the lexicon's frequency rank,</strong> not the <code>niveau</code> column in
+  <code>woorden.tsv</code>. That column is the coursebook tier (<code>A1</code>, <code>B1</code>, <code>open</code>) and has
+  nothing to do with CEFR.</li>
+<li><strong>Regular and irregular never share a page.</strong> A learner meets <code>zijn</code> before
+  <code>werken</code>, and the two pages are read in that order.</li>
+</ul>
+<h2 id="tools">Tools</h2>
+<pre><code class="language-sh">python3 tools/_ww_tmp/select.py       # selection.json, the eight page TSVs, backlog_seed.tsv
+python3 tools/build-verb-forms.py     # tools/lexicon/werkwoorden-vormen.tsv, from Bijlage 3b
+python3 tools/build-verb-cards.py     # the eight band pages, index.html, matrix.html, backlog.html
+python3 tools/check-verb-cards.py     # asserts ids, fields, frames, counts, anchors, and the content rules above
+</code></pre>
+<p><code>select.py</code> reads the lexicon TSVs in <code>tools/lexicon/</code> and the two appendices in
+<code>/media/tony/Data/Dutch</code> (Bijlage 3b, irregular verbs; Bijlage 4, separable verbs). It is
+the only place a verb's band, regularity or rank is decided. A verb is irregular when Bijlage 3b
+lists it, when it is a prefix on a listed base (<code>vervangen</code>, <code>bezoeken</code>, <code>beschrijven</code>), or
+when it is in <code>EXTRA_IRREGULAR</code> (strong verbs the appendix lacks: <code>meten</code>, <code>heffen</code>,
+<code>laden</code>). A verb is separable when Bijlage 4 or the hand list says so, or when it starts with
+an unambiguous separable particle on a known verb (<code>nadenken</code>, <code>ophouden</code>). Separable verbs
+belong to the Scheidbare werkwoorden family, so <code>aanvallen</code>, <code>loslaten</code> and <code>overnemen</code> left
+these pages on 20 November; their scene rows are kept in <code>tools/_ww_tmp/scenes/retired.tsv</code>.</p>
+<p><code>build-verb-forms.py</code> reads Bijlage 3b and writes one row per irregular verb: past singular, past plural, auxiliary
+(<code>hebben</code>, <code>zijn</code> or <code>hebben/zijn</code> where the appendix marks it optional) and participle. Rows the appendix cannot supply cleanly (<code>willen</code>, <code>zullen</code>,
+the <code>EXTRA_IRREGULAR</code> verbs) are in its <code>MANUAL</code> table; prefixed verbs take the base verb's forms
+(<code>vervangen</code>: <em>verving, heeft vervangen</em>), with the auxiliary corrected in <code>AUX</code> where it differs
+(<code>vertrekken</code>: <em>is vertrokken</em>). Where the appendix is wrong for the carded sense, <code>CORRECT</code>
+overrides it: <code>wijken</code> takes <em>zijn</em>, <code>springen</code> and <code>scheiden</code> take <em>hebben/zijn</em>. The plural is stored but not shown.
+Once a page is hand-edited, correct a form on the page and in the TSV, or a rebuild reverts it.</p>
+<p><code>build-verb-cards.py</code> refuses to run if a page has no scene row for one of its verbs, so a
+missing row fails loudly instead of producing a blank card. A scene row that begins with
+<code>SKIP:</code> drops the verb from the page and lists it on the backlog with the reason. Frame
+numbers are assigned only to the cards that are actually drawn, so the eight pages run #1 to #201
+with no gaps.</p>
+<h2 id="how-a-verb-was-chosen">How a verb was chosen</h2>
+<p>Bands are cut by frequency rank from <code>tools/lexicon/woorden-frequentie.tsv</code>: A0 up to 250,
+A1 251–1000, A2 1001–2500, B1 2501–5000. Above 5000 is the separate lexicon work and has no
+cards here.</p>
+<p>A0 and A1 keep every usable verb. A2 and B1 keep every irregular plus the top sixty
+regulars, because the regular tail is long and these pages had to finish. "Every irregular" includes
+the prefixed ones since the 20 November review, so most of the new ones are SKIP rows: abstract verbs
+such as <code>verwijzen</code> or <code>overwinnen</code> whose only picture is another card.</p>
+<p>354 verbs were selected. 201 got a card; 153 were written up as <code>SKIP</code> because no honest
+single drawing carries them — abstract or idiom-only meanings, or the same action as a neighbour.
+A further 445 were held back before writing: 161 separable, 10 reflexive, 4 sensitive, 5 odd lemmas,
+263 regulars below the cut, and 2 both separable and reflexive. Every one is on
+<a href="backlog.html"><code>backlog.html</code></a> with its reason, so nothing is lost by not having a
+card yet.</p>
+<h2 id="pitfalls">Pitfalls</h2>
+<ul>
+<li>The lexicon writes some verbs with a parenthetical, <code>zijn (verb)</code>, <code>eten (verb)</code>,
+  <code>kosten (verb)</code>. Strip it before a lookup or the verb silently disappears.</li>
+<li>Those same senses come back from wordfreq with a nonsense rank (zipf 2.38, rank ~9000).
+  <code>select.py</code> overrides seven by hand: zijn 1, eten 250, kosten 450, leven 550, bestaan
+  1400, kussen 1800, optreden 3000.</li>
+<li>The opposite problem: a verb spelled like a common noun plural (<code>boeken</code>, <code>landen</code>,
+  <code>plaatsen</code>, <code>stemmen</code>, <code>wijken</code>, <code>golven</code>) gets the noun's frequency and lands a band or two
+  too early. <code>rank_of</code> moves ten of them one band later by hand. That is judgement, not a lemma
+  count; a POS-tagged frequency list would settle it.</li>
+<li><code>woorden-woordsoort.tsv</code> carries a noun row <em>and</em> a verb row for the same spelling
+  (<code>eten</code>, <code>kussen</code>, <code>leven</code>, <code>bestaan</code>, <code>optreden</code>). Dedupe by lemma, keep the
+  verb row, and take the lowest rank.</li>
+<li>The domain tag comes from <code>woorden-domein.tsv</code>, which files a lemma under its most
+  common nominal sense. Several dozen verbs would have read absurdly — <code>bellen</code> as Sport
+  &amp; games, <code>veranderen</code> as Food &amp; drink, <code>breken</code> as Time. Those are overridden in a
+  <code>DOMAIN</code> map in <code>select.py</code>; add to it rather than editing the lexicon.</li>
+<li>Separable detection reads Bijlage 4 with a regex and then filters the hits against the
+  verb list. The raw parse also throws up <code>bijlage</code>, <code>ijlage</code> and <code>van</code>, which are not
+  verbs; a hand-written list in <code>select.py</code> covers what the appendix misses.</li>
+<li>The scene notes are TSV. A tab inside a field breaks the row silently, which is why the
+  builder checks every verb against the page TSV before it writes anything.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="../voorzetselpaden/AGENTS.html"><span>Previous</span>Voorzetselpaden working notes</a><a class="next" href="index.html"><span>Next</span>Werkwoorden overview</a></nav>
+    <footer class="footer">
+      <code>Docs/werkwoorden/AGENTS.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

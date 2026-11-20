@@ -1,0 +1,204 @@
+WERKWOORDEN — SCENE BRIEF FOR ONE PAGE
+=====================================
+
+Each card in Docs/werkwoorden/ stands for one Dutch verb in its base form. The
+card is a picture brief: one drawing, in the same cobalt-on-white style as
+Docs/voorzetselpaden/, that makes the verb's meaning obvious. There are no
+example sentences and no conjugation material on these cards. The drawing has
+to carry the verb on its own.
+
+Write one row per verb, in the exact order of your page TSV.
+
+
+THE FIELDS
+----------
+raw values, tab-separated, five columns, header row first:
+
+  verb<TAB>scene<TAB>must<TAB>avoid<TAB>alt
+
+verb   the infinitive, copied exactly from your page TSV.
+scene  English. What is drawn, as a brief for the illustrator. 35–55 words.
+       Say who, what they do, and where. Name every object that must be
+       visible. Always a person ("one adult", "two adults a metre apart",
+       "a child"), never "someone".
+must   English. The single thing that must be readable at thumbnail size, in
+       one short clause ending in a full stop. One mark, not a list.
+avoid  English. Three to five near-miss actions, separated by semicolons, each
+       with the competing verb in brackets. This is what stops the drawing
+       turning into a neighbour. Example:
+         both feet off the ground and the body leaning forward (rennen);
+         a raised knee and a straight swinging arm (marcheren);
+         a walking stick; speed lines or dust puffs.
+alt    Dutch. One sentence for a screen reader, at most 20 words. Describe the
+       picture; never name the verb, and never use a form of it. If the
+       picture is of two people passing a box, write "Twee mensen staan
+       tegenover elkaar met een doos tussen hun handen." — not "geven".
+
+No tab characters and no line breaks inside a field. No double quotes. Plain
+hyphens only.
+
+
+WHAT MAKES A GOOD SCENE
+-----------------------
+- One action, caught at its clearest moment. A verb is a moment in time, not a
+  pose: the box is halfway between two pairs of hands, the foot is lifting off.
+- Every object named must be drawable as one bold shape at 170 px wide. A
+  bicycle, a kettle, a key, a spade, a letter: fine. A crowd, a city, weather:
+  no.
+- People look at the thing they are acting on. Two people who interact face
+  each other.
+- Say what is NOT in the picture when the frame would otherwise be busy: "no
+  second person, no furniture, nothing else in the picture."
+- The scene has to be telling apart from its neighbours. Read the avoid lists
+  on your whole page before you write: no two verbs may end up with the same
+  action.
+- Keep the register of the level. A0 verbs are body, food, home, moving about.
+  A2 and B1 verbs may need an office, a shop, a classroom, a hospital, a
+  building site.
+
+
+ABSTRACT VERBS — A CLOSED LIST OF CONVENTIONS
+---------------------------------------------
+A drawing cannot show "to be able to". For the core A0 and A1 verbs only, a
+conventional pictogram is allowed, because it is the one a learner already
+knows from signage and cartoons:
+
+  thought bubble with a question mark   thinking, wondering
+  thought bubble with a bright lightbulb  knowing, having an idea
+  two pans on a balance                 weighing, judging
+  a single bold question mark over a head  not knowing
+  a raised arm with a flexed fist       being able to
+  a heavy weight pressing down on a back   having to
+  both hands reaching for an object behind glass  wanting
+  an arrow pointing forward past a doorway  the future, will
+
+Rules for these:
+- Only for A0 and A1. Say the words "This is the conventional metaphor for ..."
+  in the scene so a reviewer can see the card is not a literal picture.
+- One symbol only, drawn bold, and nothing else symbolic in the frame.
+- Never write letters, numbers or words in the drawing.
+- The symbol must differ from the symbol used for the neighbouring abstract
+  verb on the same page. Denken gets the bubble with a question mark, weten
+  gets the bubble with a lightbulb; they may not both use a bubble.
+
+Beyond A0 and A1, an abstract or figurative verb is NOT drawn. Write:
+
+  verb<TAB>SKIP: <one sentence why><TAB>-<TAB>-<TAB>-
+
+Use SKIP for metaphors that only work in Dutch idiom (ontbreken, blijken,
+gelden, heten, schijnen, lijken, behoren) rather than inventing a symbol, and
+for any verb whose only picture would be the picture of another verb on the
+same page.
+
+
+EXAMPLES
+--------
+These eight are already written and are the standard to match. Four are
+literal, two use an allowed convention, one is a two-person action, one is a
+SKIP.
+
+lopen   A0 irregular, rank 292
+scene  one adult walks from left to right over empty ground, caught
+       mid-stride: the front foot flat on the ground, the back foot just
+       lifted on its toes, the arms swinging in opposition, back straight,
+       eyes ahead. Nothing else in the picture.
+must   an ordinary unhurried walk, one foot down and one just leaving the
+       ground.
+avoid  both feet off the ground and the body leaning forward (rennen); a
+       raised knee and a straight swinging arm (marcheren); a person standing
+       still beside a bicycle (fietsen); a walking stick; speed lines or dust
+       puffs.
+alt    Een volwassene is midden in een stap: de voorste voet staat plat op de
+       grond, de achterste voet is net van de vloer.
+
+geven   A0 irregular, rank 112
+scene  two adults stand facing each other an arm's length apart. The person
+       on the left holds out a closed cardboard box with both hands; the
+       person on the right has both hands already closed around the far side
+       of the box, so only hands and box touch. Both look at the box.
+must   a box passing from hand to hand between two people who face each other.
+avoid  one person alone pressing a box to the chest (hebben); an open empty
+       palm held out (vragen); coins and notes on a counter (betalen); a box
+       with a ribbon and bow (cadeau); one hand lifted in a wave (zwaaien).
+alt    Twee mensen staan tegenover elkaar met een doos tussen hun handen.
+
+denken   A0 irregular, rank 194 — allowed convention
+scene  one adult sits on a plain chair, chin on one fist, that elbow on the
+       knee, eyes looking up and away. Above and beside the head floats a
+       conventional thought bubble: three small circles rising to one large
+       cloud outline, and inside the cloud a single bold question mark. This
+       is the conventional metaphor for thinking; draw it plainly and add no
+       other symbol.
+must   a seated person with a thought bubble and a question mark above the
+       head.
+avoid  a light bulb inside the bubble (weten); a book and a pen (studeren);
+       two people with speech bubbles (praten); a bare question mark floating
+       with no head beneath it; a hand pressed to the mouth (twijfelen).
+alt    Iemand zit op een stoel met de kin op de vuist; boven het hoofd hangt
+       een gedachtewolk met een vraagteken.
+
+zijn   A0 irregular, rank 1 — allowed convention
+scene  one adult stands facing the viewer, feet apart and planted, and lays
+       an open palm flat on their own chest; the other arm hangs relaxed at
+       the side. The figure stands alone in the middle of the frame. This is
+       the conventional "this is me" gesture for being; draw it plainly and
+       put nothing else in the picture.
+must   a standing person with an open palm on their own chest.
+avoid  a hand pointing away at someone else (wijzen); a hand pressed to the
+       stomach (buikpijn); arms folded across the chest (boos); a name tag,
+       badge or any lettering; both hands raised.
+alt    Iemand staat recht voor de kijker met een open handpalm op de eigen
+       borst.
+
+maken   A0 regular, rank 52
+scene  one adult sits at a plain table, holding a small wooden box together
+       with both hands; a hammer lies beside three loose planks and a few
+       nails, and one nail stands half driven into the box. The box is clearly
+       being assembled out of the planks.
+must   a new box being made from loose planks and nails.
+avoid  a screwdriver and a broken chair leg (repareren); a pot on a stove and
+       a spoon (koken); a brush on paper (tekenen); the finished box held up
+       to show it.
+alt    Iemand zit aan een tafel en zet met een hamer een kistje in elkaar uit
+       losse planken.
+
+werken   A0 regular, rank 152
+scene  one adult sits at a plain desk seen from the side, both hands on the
+       keyboard of an open laptop, eyes on the screen; a stack of papers and
+       a pen beside it, a plain office chair. No second person, and the screen
+       shows no text.
+must   a person occupied at a desk with their work in front of them.
+avoid  a person digging with a spade (graven); a person at a workbench
+       (maken); a person asleep at the desk; a boss pointing at the door.
+alt    Iemand zit achter een bureau met beide handen op het toetsenbord van
+       een laptop.
+
+vergeten   A1 irregular, rank 396
+scene  one adult walks away from a small table, looking back over one
+       shoulder with a slight frown; a bunch of keys on a round ring lies
+       alone on the table behind them, and one hand is raised to the side of
+       the head.
+must   keys left behind on the table while the person walks off.
+avoid  a person kneeling to look under a sofa (zoeken); the keys held up in
+       triumph (vinden); a crossed-out calendar; a hand over the mouth.
+alt    Iemand loopt bij een tafel vandaan en kijkt om; op de tafel blijft een
+       bos sleutels liggen.
+
+besluiten   A2 irregular, rank 2178 — SKIP
+scene  SKIP: a decision has no single picturable action; a fork in the road
+       would read as kiezen and a gavel as rechtspreken.
+must   -
+avoid  -
+alt    -
+
+
+BEFORE YOU FINISH
+-----------------
+1. The file has a header row and one row per verb, in the order of your page
+   TSV.
+2. awk -F'\t' 'NF!=5{print NR": "NF}' on the file prints nothing, and the
+   number of lines is one more than the number of verbs on your page.
+3. No two scenes on the page use the same action.
+4. Every alt text is Dutch, one sentence, under 20 words, and does not contain
+   the verb.
+5. Every convention used is named as a convention in its scene.

@@ -5,6 +5,7 @@ Chrome must already be running with --remote-debugging-port (default 9333) and
 be signed in to grok.com; see README.md. Needs the websocket-client package.
 
     grok.py prompt BAND CHUNK [--only ID ...]    print a batch prompt built from the current cards
+    grok.py verbprompt PAGE [--batch N] [--size K]  print a prompt for one batch of werkwoorden cards
     grok.py new                                  open a fresh Grok chat
     grok.py compose PROMPT [REF ...]             attach references, type the prompt
     grok.py send                                 press Send, print the chat URL
@@ -188,11 +189,47 @@ def cmd_eval(a):
     print(json.dumps(Tab().js(a.js), ensure_ascii=False))
 
 
+def cmd_verbprompt(a):
+    """Base prompt plus one batch of cards from a Docs/werkwoorden band page, e.g. a0-irregular."""
+    import re as _re, html as _html
+    page = ROOT / "Docs/werkwoorden" / (a.page.removesuffix(".html") + ".html")
+    text = page.read_text(encoding="utf-8")
+    cards = []
+    for m in _re.finditer(r'<article id="([^"]+)".*?</article>', text, flags=_re.S):
+        blk = m.group(0)
+        if 'class="geenbeeld"' not in blk and not a.only:      # already drawn; --only redraws
+            continue
+        dd = {k: _html.unescape(v).strip() for k, v in _re.findall(r'<dd class="(\w+)">(.*?)</dd>', blk, flags=_re.S)}
+        verb = _html.unescape(_re.search(r'<h3 class="chunk">(.*?)</h3>', blk).group(1))
+        gloss = _html.unescape(_re.search(r'<p class="gloss">(.*?)</p>', blk).group(1))
+        cards.append({"id": m.group(1), "verb": verb, "gloss": gloss, **dd})
+    if a.only:
+        cards = [c for c in cards if c["id"] in a.only]
+    else:
+        cards = cards[(a.batch - 1) * a.size: a.batch * a.size]
+    if not cards:
+        sys.exit("no cards in that batch")
+    def sentence(v):
+        v = v[0].upper() + v[1:]
+        return v if v[-1] in ".!?" else v + "."
+    scenes = []
+    for c in cards:
+        scenes.append(f"{c['id']}.png — {c['verb']} ({c['gloss']})\nScene: {sentence(c['scene'])}\n"
+                      f"Must read: {c['must']}\nAvoid: {c['avoid']}")
+    zipname = a.zip or f"oefenpad-ww-{a.page.removesuffix('.html')}-{a.batch}.zip"
+    base = (ROOT / "Docs/werkwoorden/base-prompt.txt").read_text(encoding="utf-8").rstrip()
+    print(base + "\n\nTHE SCENES\n" + "\n\n".join(scenes) +
+          f"\n\nDELIVERY\nReturn one zip named {zipname} containing exactly these files and nothing else:\n"
+          + ", ".join(c["id"] + ".png" for c in cards) + "\nAttach the zip to your reply.")
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("prompt"); p.add_argument("band"); p.add_argument("chunk")
     p.add_argument("--only", nargs="+"); p.add_argument("--zip")
+    p = sub.add_parser("verbprompt"); p.add_argument("page"); p.add_argument("--batch", type=int, default=1)
+    p.add_argument("--size", type=int, default=7); p.add_argument("--only", nargs="+"); p.add_argument("--zip")
     sub.add_parser("new")
     p = sub.add_parser("compose"); p.add_argument("prompt"); p.add_argument("refs", nargs="*")
     sub.add_parser("send")

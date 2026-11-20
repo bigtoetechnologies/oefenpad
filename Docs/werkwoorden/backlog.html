@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwoorden — backlog</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>Werkwoorden — backlog</h1>
+<p class="lead">What still needs a card: the verbs held back from the eight band pages, and the other word classes.</p>
+<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html">A0 regelmatig</a><a href="a1-irregular.html">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html">B1 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
+</header>
+<main>
+<section class="sectiekop"><h2>Backlog</h2><p>Everything that still needs a card, and why it does not have one yet. The counts are from <code>tools/_ww_tmp/backlog_seed.tsv</code>, written by <code>select.py</code>.</p></section>
+<table><thead><tr><th>Group</th><th class='n'>Verbs</th><th>Why they wait</th></tr></thead><tbody>
+<tr><td><a href="#scheidbaar">Scheidbare werkwoorden</a></td><td class="n">161</td><td class="blurb">The separable half needs a card of its own: two halves that only make sense together, and a particle the picture has to place. One of these is also reflexive.</td></tr>
+<tr><td><a href="#wederkerend">Wederkerende werkwoorden</a></td><td class="n">10</td><td class="blurb">The drawing needs the person acting on themselves, and the card needs the pronoun. Deferred until the card shape has a field for it.</td></tr>
+<tr><td><a href="#gevoelig">Gevoelige werkwoorden</a></td><td class="n">4</td><td class="blurb">Usable in a lesson, but not in an app that has to be safe on a phone at a bus stop.</td></tr>
+<tr><td><a href="#zeldzaam">Zeldzaam of kapot lemma</a></td><td class="n">5</td><td class="blurb">In the lexicon but not worth a card: either a parsing artefact or a form no A0-A1 learner meets.</td></tr>
+<tr><td><a href="#voorbij-de-grens">Voorbij de paginagrens</a></td><td class="n">263</td><td class="blurb">Regular verbs that sit below the top sixty on their band. They are sound candidates; the page was capped at sixty to keep this pass finishable.</td></tr>
+<tr class="totaal"><td>Total</td><td class="n">445</td><td></td></tr>
+</tbody></table>
+<section class="sectiekop" id="scheidbaar"><h2>Scheidbare werkwoorden</h2><p>The separable half needs a card of its own: two halves that only make sense together, and a particle the picture has to place. One of these is also reflexive.</p></section>
+<table><thead><tr><th>Verb</th><th>English</th><th class='n'>Rang</th><th>Band</th><th>Reason</th></tr></thead><tbody>
+<tr><td>mee-eten</td><td>to eat along with others, to join others for a meal</td><td class="n">259</td><td>A1</td><td class="mono">separable</td></tr>
+<tr><td>voorkomen</td><td>to occur</td><td class="n">478</td><td>A1</td><td class="mono">separable</td></tr>
+<tr><td>tv-kijken</td><td>to watch television</td><td class="n">510</td><td>A1</td><td class="mono">separable</td></tr>
+<tr><td>voorstellen</td><td>to propose</td><td class="n">898</td><td>A1</td><td class="mono">separable</td></tr>
+<tr><td>doorgaan</td><td>to continue</td><td class="n">1286</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>oplossen</td><td>to solve</td><td class="n">1294</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>opnemen</td><td>to record</td><td class="n">1353</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aanvallen</td><td>to attack</td><td class="n">1376</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>meedoen</td><td>to participate</td><td class="n">1416</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>omgaan</td><td>to handle</td><td class="n">1485</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>bijdragen</td><td>to contribute</td><td class="n">1500</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>samenwerken</td><td>to collaborate</td><td class="n">1593</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>inzetten</td><td>to bring into action</td><td class="n">1617</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>ophalen</td><td>to collect</td><td class="n">1660</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>nadenken</td><td>to think</td><td class="n">1717</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aanbieden</td><td>to offer</td><td class="n">1732</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>uitleggen</td><td>to explain</td><td class="n">1807</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>uitvoeren</td><td>to perform</td><td class="n">1833</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>deelnemen</td><td>to participate</td><td class="n">1845</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>plaatsvinden</td><td>to take place</td><td class="n">1857</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>opstaan</td><td>to stand up</td><td class="n">1893</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>meenemen</td><td>to take</td><td class="n">1937</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aanmelden</td><td>to apply, to announce</td><td class="n">2021</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aanpakken</td><td>to tackle</td><td class="n">2096</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>afsluiten</td><td>to close</td><td class="n">2140</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aankomen</td><td>to arrive</td><td class="n">2171</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>opgeven</td><td>to give</td><td class="n">2230</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aannemen</td><td>to assume</td><td class="n">2244</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aanpassen</td><td>to adjust</td><td class="n">2245</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>aangeven</td><td>to hand</td><td class="n">2325</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>uitmaken</td><td>to decide</td><td class="n">2347</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>voorbereiden</td><td>to prepare</td><td class="n">2350</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>ophouden</td><td>to stop</td><td class="n">2373</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>toegeven</td><td>to admit</td><td class="n">2381</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>opzetten</td><td>to set up</td><td class="n">2407</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>terugkeren</td><td>to return</td><td class="n">2413</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>uitkomen</td><td>to come out</td><td class="n">2417</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>opstellen</td><td>to draw up</td><td class="n">2452</td><td>A2</td><td class="mono">separable</td></tr>
+<tr><td>opzoeken</td><td>to visit</td><td class="n">2524</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>toevoegen</td><td>to add</td><td class="n">2532</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aanvragen</td><td>to request, to apply for</td><td class="n">2547</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitgaan</td><td>to go out</td><td class="n">2578</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>overkomen</td><td>to happen to</td><td class="n">2607</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>overnemen</td><td>to take over</td><td class="n">2608</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opruimen</td><td>to tidy up</td><td class="n">2716</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>schoonmaken</td><td>to clean</td><td class="n">2719</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opbouwen</td><td>to yield</td><td class="n">2761</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitzien</td><td>to look</td><td class="n">2769</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>vasthouden</td><td>to hold</td><td class="n">2770</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>doorgeven</td><td>to pass on</td><td class="n">2816</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opleveren</td><td>to yield</td><td class="n">2836</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitzoeken</td><td>to select, to choose</td><td class="n">2844</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>inzien</td><td>to see</td><td class="n">2867</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>loslaten</td><td>to let go, to release</td><td class="n">2870</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>instellen</td><td>to set</td><td class="n">2965</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>oproepen</td><td>to call</td><td class="n">2971</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>optreden</td><td>to appear</td><td class="n">3000</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afwachten</td><td>to wait</td><td class="n">3045</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>indienen</td><td>to present, to file</td><td class="n">3060</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>invullen</td><td>to fill in</td><td class="n">3063</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitgeven</td><td>to spend</td><td class="n">3076</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aansluiten</td><td>to connect</td><td class="n">3087</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>doorbrengen</td><td>to spend</td><td class="n">3099</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afnemen</td><td>to take (away)</td><td class="n">3135</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afvragen</td><td>to wonder</td><td class="n">3136</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>innemen</td><td>to swallow</td><td class="n">3201</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitoefenen</td><td>to exercise</td><td class="n">3263</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>ingaan</td><td>to enter</td><td class="n">3291</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>rondlopen</td><td>to walk about</td><td class="n">3307</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>toestaan</td><td>to allow</td><td class="n">3311</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>volhouden</td><td>to maintain</td><td class="n">3313</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aandoen</td><td>to cause</td><td class="n">3318</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>doorlopen</td><td>to keep on walking</td><td class="n">3329</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>meemaken</td><td>to experience</td><td class="n">3341</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>toepassen</td><td>to apply</td><td class="n">3356</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aantrekken</td><td>to put on</td><td class="n">3367</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>de-installeren</td><td>to uninstall</td><td class="n">3372</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>terugkomen</td><td>to return</td><td class="n">3392</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>oplopen</td><td>to increase</td><td class="n">3431</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitbrengen</td><td>to publish, to release</td><td class="n">3441</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>tegenhouden</td><td>to stop</td><td class="n">3493</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afleggen</td><td>to do</td><td class="n">3514</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afspreken</td><td>to arrange</td><td class="n">3515</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>invoeren</td><td>to introduce</td><td class="n">3532</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aanzetten</td><td>to encourage</td><td class="n">3557</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>ingrijpen</td><td>to intervene</td><td class="n">3572</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>na-apen</td><td>to imitate</td><td class="n">3582</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opkomen</td><td>to come up</td><td class="n">3583</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afvallen</td><td>to fall down</td><td class="n">3605</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitbreiden</td><td>to expand</td><td class="n">3650</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>tegenkomen</td><td>to encounter</td><td class="n">3696</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>toenemen</td><td>to increase</td><td class="n">3799</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitspreken</td><td>to pronounce</td><td class="n">3801</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afmaken</td><td>to finish</td><td class="n">3812</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opmaken</td><td>to conclude</td><td class="n">3845</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afschaffen</td><td>to abolish</td><td class="n">3868</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>binnenkomen</td><td>to enter</td><td class="n">3873</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>inpakken</td><td>to pack (up)</td><td class="n">3927</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>vastleggen</td><td>to fix</td><td class="n">3959</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>achterlaten</td><td>to leave behind</td><td class="n">3966</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>meewerken</td><td>to contribute</td><td class="n">3992</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aanspreken</td><td>to address</td><td class="n">4026</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aftreden</td><td>to resign, abdicate</td><td class="n">4028</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>voordoen</td><td>to occur</td><td class="n">4068</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>weghalen</td><td>to remove</td><td class="n">4130</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afdrukken</td><td>to print from a computer printer</td><td class="n">4137</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opgroeien</td><td>to grow up</td><td class="n">4173</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>terugtrekken</td><td>to withdraw</td><td class="n">4188</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>oprichten</td><td>to establish, to found</td><td class="n">4230</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aanmaken</td><td>to produce on a large scale, to manufacture</td><td class="n">4244</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>oppassen</td><td>to babysit</td><td class="n">4279</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>weggaan</td><td>to leave</td><td class="n">4300</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>langskomen</td><td>to pass by, to come round</td><td class="n">4338</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>oversteken</td><td>to cross</td><td class="n">4347</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitsterven</td><td>to die (out)</td><td class="n">4362</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitzetten</td><td>to turn off</td><td class="n">4363</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>voorlezen</td><td>to read (aloud)</td><td class="n">4369</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>bijhouden</td><td>to keep (up)</td><td class="n">4381</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>ophangen</td><td>to hang</td><td class="n">4409</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opsluiten</td><td>to lock up</td><td class="n">4410</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opvoeden</td><td>to raise</td><td class="n">4411</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitproberen</td><td>to try out</td><td class="n">4422</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aangaan</td><td>to start</td><td class="n">4431</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aanhouden</td><td>to stop, to arrest</td><td class="n">4432</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opleggen</td><td>to impose</td><td class="n">4471</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>vaststellen</td><td>to determine</td><td class="n">4486</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aantonen</td><td>to demonstrate</td><td class="n">4495</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>inhouden</td><td>to deduct</td><td class="n">4511</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitdelen</td><td>to distribute</td><td class="n">4529</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitkijken</td><td>to watch</td><td class="n">4530</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitzenden</td><td>to broadcast</td><td class="n">4532</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aanleggen</td><td>to build</td><td class="n">4539</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>intrekken</td><td>to retract</td><td class="n">4557</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opladen</td><td>to charge, recharge</td><td class="n">4567</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opvolgen</td><td>to succeed, to follow</td><td class="n">4568</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opvangen</td><td>to take care of</td><td class="n">4624</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>overstappen</td><td>to change over</td><td class="n">4625</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>toelaten</td><td>to allow</td><td class="n">4635</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>inhuren</td><td>to hire</td><td class="n">4675</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>nakijken</td><td>to watch, to follow | to check</td><td class="n">4685</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>samenstellen</td><td>to compose, to put together</td><td class="n">4701</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afbreken</td><td>to break off/down</td><td class="n">4722</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>inleveren</td><td>to hand in</td><td class="n">4744</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opdoen</td><td>to gain</td><td class="n">4753</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>oppakken</td><td>to arrest</td><td class="n">4755</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>thuiskomen</td><td>to come home</td><td class="n">4771</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>inhalen</td><td>to overtake</td><td class="n">4805</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitstellen</td><td>to delay</td><td class="n">4832</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afgeven</td><td>to deliver</td><td class="n">4842</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>invallen</td><td>to stand in</td><td class="n">4866</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>terugvinden</td><td>to find again</td><td class="n">4885</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>uitschakelen</td><td>to eliminate</td><td class="n">4887</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>afleiden</td><td>to distract</td><td class="n">4902</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>aftellen</td><td>to count down</td><td class="n">4904</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>bijwonen</td><td>to attend</td><td class="n">4910</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>meegaan</td><td>to go (along) with</td><td class="n">4932</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>nagaan</td><td>to check</td><td class="n">4935</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>nakomen</td><td>to fulfill</td><td class="n">4936</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>opheffen</td><td>to lift</td><td class="n">4941</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>overbrengen</td><td>to transfer</td><td class="n">4942</td><td>B1</td><td class="mono">separable</td></tr>
+<tr><td>toekijken</td><td>to watch</td><td class="n">4959</td><td>B1</td><td class="mono">separable</td></tr>
+</tbody></table>
+<section class="sectiekop" id="wederkerend"><h2>Wederkerende werkwoorden</h2><p>The drawing needs the person acting on themselves, and the card needs the pronoun. Deferred until the card shape has a field for it.</p></section>
+<table><thead><tr><th>Verb</th><th>English</th><th class='n'>Rang</th><th>Band</th><th>Reason</th></tr></thead><tbody>
+<tr><td>richten</td><td>to focus</td><td class="n">1265</td><td>A2</td><td class="mono">reflexive</td></tr>
+<tr><td>gedragen</td><td>to behave</td><td class="n">1433</td><td>A2</td><td class="mono">reflexive</td></tr>
+<tr><td>bevinden</td><td>to find</td><td class="n">1581</td><td>A2</td><td class="mono">reflexive</td></tr>
+<tr><td>wagen</td><td>car</td><td class="n">1695</td><td>A2</td><td class="mono">reflexive</td></tr>
+<tr><td>schamen</td><td>to be ashamed</td><td class="n">3213</td><td>B1</td><td class="mono">reflexive</td></tr>
+<tr><td>bemoeien</td><td>to interfere</td><td class="n">3323</td><td>B1</td><td class="mono">reflexive</td></tr>
+<tr><td>concentreren</td><td>to concentrate</td><td class="n">3613</td><td>B1</td><td class="mono">reflexive</td></tr>
+<tr><td>vervelen</td><td>to be bored</td><td class="n">4368</td><td>B1</td><td class="mono">reflexive</td></tr>
+<tr><td>omdraaien</td><td>to turn (round)</td><td class="n">4617</td><td>B1</td><td class="mono">reflexive</td></tr>
+<tr><td>veroorloven</td><td>to permit</td><td class="n">4892</td><td>B1</td><td class="mono">reflexive</td></tr>
+</tbody></table>
+<section class="sectiekop" id="gevoelig"><h2>Gevoelige werkwoorden</h2><p>Usable in a lesson, but not in an app that has to be safe on a phone at a bus stop.</p></section>
+<table><thead><tr><th>Verb</th><th>English</th><th class='n'>Rang</th><th>Band</th><th>Reason</th></tr></thead><tbody>
+<tr><td>doden</td><td>to kill</td><td class="n">430</td><td>A1</td><td class="mono">sensitive</td></tr>
+<tr><td>neuken</td><td>to screw</td><td class="n">948</td><td>A1</td><td class="mono">sensitive</td></tr>
+<tr><td>schieten</td><td>to shoot</td><td class="n">1572</td><td>A2</td><td class="mono">sensitive</td></tr>
+<tr><td>vermoorden</td><td>to murder</td><td class="n">2089</td><td>A2</td><td class="mono">sensitive</td></tr>
+</tbody></table>
+<section class="sectiekop" id="zeldzaam"><h2>Zeldzaam of kapot lemma</h2><p>In the lexicon but not worth a card: either a parsing artefact or a form no A0-A1 learner meets.</p></section>
+<table><thead><tr><th>Verb</th><th>English</th><th class='n'>Rang</th><th>Band</th><th>Reason</th></tr></thead><tbody>
+<tr><td>dagen</td><td>to summon</td><td class="n">153</td><td>A0</td><td class="mono">odd/rare</td></tr>
+<tr><td>ogen</td><td>to look</td><td class="n">353</td><td>A1</td><td class="mono">odd/rare</td></tr>
+<tr><td>sporen</td><td>to travel by train</td><td class="n">1219</td><td>A2</td><td class="mono">odd/rare</td></tr>
+<tr><td>cc'en</td><td>to cc</td><td class="n">1284</td><td>A2</td><td class="mono">odd/rare</td></tr>
+<tr><td>onderwerpen</td><td>to subject</td><td class="n">1352</td><td>A2</td><td class="mono">odd/rare</td></tr>
+</tbody></table>
+<section class="sectiekop" id="voorbij-de-grens"><h2>Voorbij de paginagrens</h2><p>Regular verbs that sit below the top sixty on their band. They are sound candidates; the page was capped at sixty to keep this pass finishable.</p></section>
+<table><thead><tr><th>Verb</th><th>English</th><th class='n'>Rang</th><th>Band</th><th>Reason</th></tr></thead><tbody>
+<tr><td>oefenen</td><td>to practise, to exercise</td><td class="n">1620</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>rekenen</td><td>to count</td><td class="n">1624</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>ondersteunen</td><td>to support</td><td class="n">1658</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>roken</td><td>to smoke</td><td class="n">1664</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>klagen</td><td>to complain</td><td class="n">1683</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>keren</td><td>to turn (back)</td><td class="n">1700</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>merken</td><td>to notice</td><td class="n">1714</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kenmerken</td><td>to characterize</td><td class="n">1739</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>realiseren</td><td>to realize</td><td class="n">1745</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verdedigen</td><td>to defend</td><td class="n">1748</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>ontsnappen</td><td>to relax</td><td class="n">1766</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>sporten</td><td>to play sport, to exercise</td><td class="n">1771</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>wandelen</td><td>to walk</td><td class="n">1780</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>investeren</td><td>to invest</td><td class="n">1794</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kussen</td><td>to kiss</td><td class="n">1800</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verhuizen</td><td>to move (house)</td><td class="n">1809</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>negeren</td><td>to ignore</td><td class="n">1854</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>veroorzaken</td><td>to cause</td><td class="n">1865</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>drukken</td><td>to print</td><td class="n">1880</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>rollen</td><td>to roll</td><td class="n">1895</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>tellen</td><td>to count</td><td class="n">1896</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>trainen</td><td>to train</td><td class="n">1898</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>eisen</td><td>to demand</td><td class="n">1900</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verklaren</td><td>to explain</td><td class="n">1900</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bezorgen</td><td>to give</td><td class="n">1904</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vullen</td><td>to fill</td><td class="n">1923</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>rennen</td><td>to run</td><td class="n">1942</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bedanken</td><td>to thank</td><td class="n">1949</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>overtuigen</td><td>to convince</td><td class="n">1976</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>voegen</td><td>to add</td><td class="n">1984</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lukken</td><td>to succeed</td><td class="n">2007</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schreeuwen</td><td>to shout</td><td class="n">2050</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verhogen</td><td>to increase</td><td class="n">2057</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beantwoorden</td><td>to answer</td><td class="n">2064</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>downloaden</td><td>to download</td><td class="n">2069</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>versterken</td><td>to strengthen</td><td class="n">2090</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>besteden</td><td>to spend</td><td class="n">2100</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>branden</td><td>to burn</td><td class="n">2102</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>durven</td><td>to dare</td><td class="n">2108</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>handelen</td><td>to act</td><td class="n">2114</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lenen</td><td>to borrow</td><td class="n">2121</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>spellen</td><td>to spell</td><td class="n">2133</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>stimuleren</td><td>to stimulate</td><td class="n">2134</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vergroten</td><td>to enlarge</td><td class="n">2137</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vernietigen</td><td>to destroy</td><td class="n">2138</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>informeren</td><td>to inform</td><td class="n">2155</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bevestigen</td><td>to confirm</td><td class="n">2180</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bewaren</td><td>to keep</td><td class="n">2181</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>produceren</td><td>to produce</td><td class="n">2200</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>herkennen</td><td>to recognize</td><td class="n">2222</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verspreiden</td><td>to spread</td><td class="n">2242</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>slagen</td><td>to succeed</td><td class="n">2276</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beperken</td><td>to limit</td><td class="n">2285</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>besparen</td><td>to save</td><td class="n">2287</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>communiceren</td><td>to communicate</td><td class="n">2289</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verplaatsen</td><td>to move</td><td class="n">2320</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>weigeren</td><td>to refuse</td><td class="n">2323</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>danken</td><td>to thank, to owe</td><td class="n">2333</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>plegen</td><td>to commit</td><td class="n">2343</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>wisselen</td><td>to exchange</td><td class="n">2353</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beslissen</td><td>to decide</td><td class="n">2356</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>rusten</td><td>to rest</td><td class="n">2375</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>streven</td><td>to pursue, to strive (for)</td><td class="n">2377</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>trappen</td><td>to kick</td><td class="n">2382</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verminderen</td><td>to reduce</td><td class="n">2383</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>scoren</td><td>to score</td><td class="n">2411</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verwerken</td><td>to process</td><td class="n">2419</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>wennen</td><td>to get used to</td><td class="n">2420</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bevorderen</td><td>to promote</td><td class="n">2427</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>filmen</td><td>to film</td><td class="n">2433</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>groeten</td><td>to greet</td><td class="n">2436</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>haten</td><td>to hate</td><td class="n">2488</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kloppen</td><td>to knock, to beat</td><td class="n">2491</td><td>A2</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vertegenwoordigen</td><td>to represent</td><td class="n">3173</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vervoeren</td><td>to transport</td><td class="n">3174</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>achterhalen</td><td>to retrieve, to recover</td><td class="n">3180</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bestuderen</td><td>to study</td><td class="n">3184</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>besturen</td><td>to govern | to drive</td><td class="n">3185</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>douchen</td><td>to shower, to take a shower</td><td class="n">3190</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>ruimen</td><td>to clean up</td><td class="n">3212</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>twijfelen</td><td>to doubt</td><td class="n">3218</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>voeden</td><td>to feed</td><td class="n">3219</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>winkelen</td><td>to shop</td><td class="n">3220</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beweren</td><td>to claim</td><td class="n">3226</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>plassen</td><td>to have a pee</td><td class="n">3250</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>ruilen</td><td>to exchange</td><td class="n">3256</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verrassen</td><td>to surprise</td><td class="n">3267</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>blokkeren</td><td>to block</td><td class="n">3281</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>chatten</td><td>to chat</td><td class="n">3282</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>erkennen</td><td>to recognize</td><td class="n">3287</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>onderhandelen</td><td>to negotiate</td><td class="n">3300</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>respecteren</td><td>to respect</td><td class="n">3305</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schakelen</td><td>to switch</td><td class="n">3308</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bevrijden</td><td>to free</td><td class="n">3325</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>falen</td><td>to fail</td><td class="n">3330</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>repareren</td><td>to repair</td><td class="n">3350</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>scheppen</td><td>to scoop, to shovel</td><td class="n">3352</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>snappen</td><td>to understand</td><td class="n">3353</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verkennen</td><td>to explore</td><td class="n">3360</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verlagen</td><td>to lower</td><td class="n">3361</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>zoenen</td><td>to kiss</td><td class="n">3364</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>hakken</td><td>to cut/hew (out)</td><td class="n">3378</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>installeren</td><td>to install</td><td class="n">3380</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vertonen</td><td>to show</td><td class="n">3397</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>benoemen</td><td>to appoint</td><td class="n">3454</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>oordelen</td><td>to judge</td><td class="n">3482</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verbazen</td><td>to surprise</td><td class="n">3496</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vermelden</td><td>to mention</td><td class="n">3499</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>voorspellen</td><td>to predict</td><td class="n">3504</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>checken</td><td>to check</td><td class="n">3521</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>pesten</td><td>to bully</td><td class="n">3541</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>pikken</td><td>to pinch</td><td class="n">3542</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schaffen</td><td>to procure</td><td class="n">3544</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>storten</td><td>to deposit</td><td class="n">3546</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>variëren</td><td>to vary</td><td class="n">3550</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verrichten</td><td>to perform</td><td class="n">3551</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verzetten</td><td>to move</td><td class="n">3552</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>voetballen</td><td>to play football</td><td class="n">3553</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>fotograferen</td><td>to photograph</td><td class="n">3567</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>knopen</td><td>to knot, to tie</td><td class="n">3574</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>passeren</td><td>to pass</td><td class="n">3584</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>uploaden</td><td>upload</td><td class="n">3598</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vermaken</td><td>to entertain</td><td class="n">3599</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>veroveren</td><td>to conquer</td><td class="n">3601</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>begeleiden</td><td>to accompany, to coach</td><td class="n">3609</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>geraken</td><td>to get</td><td class="n">3618</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>regeren</td><td>to reign, to govern</td><td class="n">3644</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>uiten</td><td>to express</td><td class="n">3651</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>worstelen</td><td>to struggle</td><td class="n">3661</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>klikken</td><td>to click</td><td class="n">3677</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>menen</td><td>to believe, to think</td><td class="n">3678</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>plakken</td><td>to stick</td><td class="n">3685</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schaatsen</td><td>to skate</td><td class="n">3690</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>smaken</td><td>to taste</td><td class="n">3692</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>staren</td><td>to stare</td><td class="n">3694</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verwelkomen</td><td>to welcome</td><td class="n">3702</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>wekken</td><td>to wake up</td><td class="n">3705</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>aanvaarden</td><td>to accept</td><td class="n">3708</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beloven</td><td>to promise</td><td class="n">3709</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>duiden</td><td>to point at</td><td class="n">3720</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>hardlopen</td><td>to run fast, race on foot</td><td class="n">3765</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>knippen</td><td>to cut</td><td class="n">3769</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>serveren</td><td>to serve</td><td class="n">3793</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>daten</td><td>to date</td><td class="n">3821</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lunchen</td><td>to have lunch</td><td class="n">3839</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>mailen</td><td>to mail, to post</td><td class="n">3840</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>twitteren</td><td>to tweet</td><td class="n">3857</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beheren</td><td>to manage</td><td class="n">3869</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>benaderen</td><td>to approach</td><td class="n">3871</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>klaarmaken</td><td>to prepare</td><td class="n">3879</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>remmen</td><td>to brake</td><td class="n">3893</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>ademen</td><td>to breathe</td><td class="n">3907</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beledigen</td><td>to offend</td><td class="n">3908</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>dreigen</td><td>to threaten</td><td class="n">3914</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kletsen</td><td>to chat</td><td class="n">3931</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>slepen</td><td>to drag</td><td class="n">3951</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>financieren</td><td>to finance</td><td class="n">3980</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>opereren</td><td>to operate</td><td class="n">3997</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>regenen</td><td>to rain</td><td class="n">4003</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>slikken</td><td>to swallow</td><td class="n">4007</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>stammen</td><td>to date</td><td class="n">4011</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verstrekken</td><td>to provide</td><td class="n">4014</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>analyseren</td><td>to analyse</td><td class="n">4029</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>dumpen</td><td>to dump</td><td class="n">4039</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>integreren</td><td>to integrate</td><td class="n">4047</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vervolgen</td><td>to continue</td><td class="n">4064</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>adviseren</td><td>to advise</td><td class="n">4072</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bedreigen</td><td>to threaten</td><td class="n">4080</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bekennen</td><td>to confess</td><td class="n">4081</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bewerken</td><td>to work</td><td class="n">4083</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kappen</td><td>to cut (down)</td><td class="n">4099</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>overleggen</td><td>to consult</td><td class="n">4111</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>stralen</td><td>to shine</td><td class="n">4122</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>zwaaien</td><td>to wave</td><td class="n">4135</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bewaken</td><td>to guard</td><td class="n">4141</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>doneren</td><td>to donate</td><td class="n">4149</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>inloggen</td><td>to log in</td><td class="n">4161</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kennismaken</td><td>to acquaint, to make someone's acquaintance</td><td class="n">4164</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>koppelen</td><td>to couple</td><td class="n">4167</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>plukken</td><td>to pick</td><td class="n">4175</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>shoppen</td><td>to shop</td><td class="n">4183</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>uitnodigen</td><td>to invite</td><td class="n">4190</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verven</td><td>to paint</td><td class="n">4194</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verwennen</td><td>to pamper</td><td class="n">4195</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>zeuren</td><td>to whine, to nag</td><td class="n">4201</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>demonstreren</td><td>to show</td><td class="n">4209</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>focussen</td><td>to focus</td><td class="n">4212</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>gokken</td><td>to gamble</td><td class="n">4216</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>opletten</td><td>to pay attention</td><td class="n">4229</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verpesten</td><td>to infect, poison</td><td class="n">4238</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>versieren</td><td>to decorate</td><td class="n">4239</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verspillen</td><td>to waste</td><td class="n">4240</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>versturen</td><td>to send</td><td class="n">4241</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beschuldigen</td><td>to accuse</td><td class="n">4247</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>likken</td><td>to lick</td><td class="n">4266</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>logeren</td><td>to stay</td><td class="n">4267</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>ondertekenen</td><td>to sign</td><td class="n">4274</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>pasen</td><td>to give, to pass</td><td class="n">4282</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>tweeten</td><td>to tweet</td><td class="n">4292</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verleiden</td><td>to seduce</td><td class="n">4295</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bedoelen</td><td>to intend</td><td class="n">4308</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>dekken</td><td>to cover</td><td class="n">4319</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>gebruikmaken</td><td>to make use</td><td class="n">4326</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kwetsen</td><td>to hurt</td><td class="n">4336</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>boeien</td><td>to entertain</td><td class="n">4382</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lanceren</td><td>to launch</td><td class="n">4401</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lokken</td><td>to lure</td><td class="n">4404</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bemachtigen</td><td>to acquire with difficulty</td><td class="n">4440</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bewonderen</td><td>to admire</td><td class="n">4441</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>feliciteren</td><td>to congratulate</td><td class="n">4454</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lekken</td><td>to leak</td><td class="n">4467</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>pleiten</td><td>to plead</td><td class="n">4472</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schrappen</td><td>to delete, to cancel</td><td class="n">4481</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vrijen</td><td>to make love</td><td class="n">4535</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>zaaien</td><td>to sow</td><td class="n">4538</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bedienen</td><td>to serve</td><td class="n">4543</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>juichen</td><td>to cheer</td><td class="n">4558</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verschaffen</td><td>to provide</td><td class="n">4581</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beschadigen</td><td>to damage</td><td class="n">4589</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bloggen</td><td>to blog</td><td class="n">4592</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>mengen</td><td>to mix</td><td class="n">4612</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>slopen</td><td>to demolish</td><td class="n">4632</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>vegen</td><td>to sweep</td><td class="n">4638</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verbouwen</td><td>to renovate</td><td class="n">4639</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verenigen</td><td>to unite</td><td class="n">4640</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verstoren</td><td>to disturb</td><td class="n">4642</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>belanden</td><td>to end up</td><td class="n">4651</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>beleggen</td><td>to convene</td><td class="n">4652</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>benadrukken</td><td>to emphasize</td><td class="n">4653</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bezighouden</td><td>to occupy</td><td class="n">4657</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>boren</td><td>to drill</td><td class="n">4659</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>flirten</td><td>to flirt</td><td class="n">4665</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>poetsen</td><td>to clean</td><td class="n">4693</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>pompen</td><td>to pump</td><td class="n">4694</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>racen</td><td>to have a speed contest, to race</td><td class="n">4696</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>bezetten</td><td>to occupy</td><td class="n">4732</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>klaarkomen</td><td>to get ready</td><td class="n">4745</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>naaien</td><td>to sew</td><td class="n">4750</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>paren</td><td>to mate</td><td class="n">4759</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>reserveren</td><td>to reserve</td><td class="n">4765</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schetsen</td><td>to sketch</td><td class="n">4767</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>scheuren</td><td>to tear</td><td class="n">4768</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verkrachten</td><td>to rape</td><td class="n">4776</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>waarborgen</td><td>to ensure, guarantee</td><td class="n">4781</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>genereren</td><td>to generate</td><td class="n">4797</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>isoleren</td><td>to isolate</td><td class="n">4806</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kraken</td><td>to crunch, to crack</td><td class="n">4809</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>protesteren</td><td>to protest</td><td class="n">4822</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>schaken</td><td>to play chess</td><td class="n">4825</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>skiën</td><td>to ski</td><td class="n">4827</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verlichten</td><td>to light, to illuminate</td><td class="n">4835</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>acteren</td><td>perform</td><td class="n">4841</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>belonen</td><td>to reward</td><td class="n">4845</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>berekenen</td><td>to calculate</td><td class="n">4846</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>discussiëren</td><td>to discuss</td><td class="n">4856</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>kleden</td><td>to dress</td><td class="n">4867</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>lesgeven</td><td>to teach in class</td><td class="n">4870</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>verhinderen</td><td>to prevent</td><td class="n">4891</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>voortzetten</td><td>to continue</td><td class="n">4895</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>benutten</td><td>to make use of</td><td class="n">4908</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>rapporteren</td><td>to report</td><td class="n">4948</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>hechten</td><td>to attach</td><td class="n">4990</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+<tr><td>interviewen</td><td>to interview</td><td class="n">4997</td><td>B1</td><td class="mono">beyond page cap</td></tr>
+</tbody></table>
+<section class="sectiekop" id="geen-beeld"><h2>Verbs the writer could not draw</h2><p>Abstract or figurative verbs with no honest single action, held out of the band pages.</p></section>
+<table><thead><tr><th>Verb</th><th>Band</th><th class='n'>Rang</th><th>Why no picture</th></tr></thead><tbody>
+<tr><td>worden</td><td>A0 onregelmatig</td><td class="n">35</td><td>becoming is an arrow from one state to another and would show no person; any figure standing in two boxes would read as zijn or staan, and the change itself cannot be drawn without letters or numbers.</td></tr>
+<tr><td>doen</td><td>A0 onregelmatig</td><td class="n">48</td><td>doing has no action of its own; the hammer-and-nail scene reads as maken or slaan, and no doen convention is on the closed list (review M5).</td></tr>
+<tr><td>laten</td><td>A0 onregelmatig</td><td class="n">84</td><td>an auxiliary (laten zien, laten vallen) with no picture of its own; the box scene read as geven (review H10).</td></tr>
+<tr><td>ontstaan</td><td>A1 onregelmatig</td><td class="n">637</td><td>a beginning out of nothing has no single picturable action; a flame, a chick from an egg or a sprouting seed each read as a literal object (branden, uitkomen, groeien) rather than as this verb.</td></tr>
+<tr><td>begrijpen</td><td>A1 onregelmatig</td><td class="n">645</td><td>understanding has no single picturable action; the lightbulb bubble belongs to weten on the A0 page and the same head-and-bubble picture would turn into that card.</td></tr>
+<tr><td>lijken</td><td>A1 onregelmatig</td><td class="n">705</td><td>seeming is a judgement, not an action; the only honest pictogram is a comparison of two identical portraits, which is a sign rather than one moment of an action.</td></tr>
+<tr><td>voorzien</td><td>A1 onregelmatig</td><td class="n">842</td><td>providing is giving plus a need, and the giving half would be the picture of geven or brengen on another page; nothing on the frame marks out who is being provided for.</td></tr>
+<tr><td>proberen</td><td>A1 regelmatig</td><td class="n">354</td><td>the picture would be an adult forcing a key into a lock that does not fit, but that is the literal action of duwen and the strain is the key itself; a bar on a balance would be the weighing symbol, so no honest mark is left.</td></tr>
+<tr><td>stellen</td><td>A1 regelmatig</td><td class="n">367</td><td>posing a question is abstract and would reuse the speech bubbles of praten or the balance of a debate; the nearest literal sense, putting a box somewhere, is exactly the picture of zetten on this page.</td></tr>
+<tr><td>veranderen</td><td>A1 regelmatig</td><td class="n">476</td><td>change can only be shown as a before and after of the same object, which needs two frames or letters; a person swapping one jacket for another is the single action of kiezen or aantrekken.</td></tr>
+<tr><td>vormen</td><td>A1 regelmatig</td><td class="n">479</td><td>to form something reads either as making with the hands, which is maken on the A0 page, or as a hand at a potter's wheel, which is one object's action and not this verb; no honest single action is left.</td></tr>
+<tr><td>kennen</td><td>A1 regelmatig</td><td class="n">504</td><td>the scene relied on a face card as a symbol for knowing someone, which is not on the closed list (review M3).</td></tr>
+<tr><td>noemen</td><td>A1 regelmatig</td><td class="n">506</td><td>to name something is spoken; any picture of it would be a speech bubble pointing at an object, which is the same mark as spreken or praten, and writing the word in would break the no-letters rule.</td></tr>
+<tr><td>leven</td><td>A1 regelmatig</td><td class="n">550</td><td>being alive has no action; the heart and the pulse line are both symbols outside the closed list (same ruling as review M3).</td></tr>
+<tr><td>gebeuren</td><td>A1 regelmatig</td><td class="n">570</td><td>something happening has no single picturable action; a crashing pot, a burst tyre or a stumble would each read as that object's own action (vallen), and no allowed A1 convention covers it.</td></tr>
+<tr><td>geloven</td><td>A1 regelmatig</td><td class="n">611</td><td>the scene relied on a tick as a symbol for believing, which is not on the closed list and means wrong in several countries (review M3).</td></tr>
+<tr><td>bereiken</td><td>A1 regelmatig</td><td class="n">621</td><td>reaching a goal is abstract; the stair scene is stappen and no listed convention fits (review M9, H9).</td></tr>
+<tr><td>hopen</td><td>A1 regelmatig</td><td class="n">725</td><td>the scene relied on an umbrella as a symbol for hoping, which is not on the closed list of conventions (review M3).</td></tr>
+<tr><td>prijzen</td><td>A1 regelmatig</td><td class="n">759</td><td>to price something is the same mark as kosten on this page, a sign beside an object, and the word prijzen is mostly praise, which has no single picturable action.</td></tr>
+<tr><td>reageren</td><td>A1 regelmatig</td><td class="n">950</td><td>reacting is a change of face in response to something, so the picture needs both a cause and a response, which is two moments or a comic pair; alone it is just a surprised face, which is schrikken.</td></tr>
+<tr><td>verbeteren</td><td>A1 regelmatig</td><td class="n">988</td><td>improving is a before and after, the same object twice or a rising arrow, which needs numbers or two frames; a hand writing on paper is schrijven and a hand crossing out a line is a sign not an action.</td></tr>
+<tr><td>verwachten</td><td>A1 regelmatig</td><td class="n">990</td><td>expecting is inner; the scene was a person looking out, which is kijken (review M8).</td></tr>
+<tr><td>ervaren</td><td>A2 onregelmatig</td><td class="n">1040</td><td>to experience something worth drawing needs a named event, such as a fall or a storm, and the drawing would read as that event; the inner half has no single picturable mark at A2.</td></tr>
+<tr><td>bewijzen</td><td>A2 onregelmatig</td><td class="n">1180</td><td>proving is an argument landing, and a person adding up on an abacus would show the sum and not the proof; proving has no single action of its own.</td></tr>
+<tr><td>bespreken</td><td>A2 onregelmatig</td><td class="n">1279</td><td>discussing is talking over a subject; the best picture is two people with a bar each above the head, which is praten on the A1 page, and adding papers would only turn it into spreken.</td></tr>
+<tr><td>behouden</td><td>A2 onregelmatig</td><td class="n">1379</td><td>keeping is houden, the same box held to the chest (review M8).</td></tr>
+<tr><td>bestaan</td><td>A2 onregelmatig</td><td class="n">1400</td><td>existing has no action and nothing to point at; the only honest picture would be a person standing alone, which is the picture of zijn on the A0 page, and no other symbol is allowed here.</td></tr>
+<tr><td>lijden</td><td>A2 onregelmatig</td><td class="n">1534</td><td>suffering has no visible action of its own; a frowning face or a bandage on an arm is the picture of pijn or gewond rather than a verb.</td></tr>
+<tr><td>vermogen</td><td>A2 onregelmatig</td><td class="n">1602</td><td>a formal modal; the only picture would be the flexed arm of kunnen.</td></tr>
+<tr><td>overlijden</td><td>A2 onregelmatig</td><td class="n">1622</td><td>dying is drawn on the sterven card; a second deathbed would be the same picture.</td></tr>
+<tr><td>ondernemen</td><td>A2 onregelmatig</td><td class="n">1656</td><td>undertaking is abstract; any single action would be another verb.</td></tr>
+<tr><td>bedenken</td><td>A2 onregelmatig</td><td class="n">1696</td><td>thinking up something new has no picture of its own; the bubble and the lightbulb belong to denken and weten on the A0 page and are banned at A2.</td></tr>
+<tr><td>treden</td><td>A2 onregelmatig</td><td class="n">1747</td><td>modern use is idiom (in werking treden, optreden); the stair scene is stappen (review H9).</td></tr>
+<tr><td>raden</td><td>A2 onregelmatig</td><td class="n">1801</td><td>guessing is an inner act; the closest visible act is asking, which is praten on another page, and the question mark in a cloud is an A0 mark.</td></tr>
+<tr><td>verslaan</td><td>A2 onregelmatig</td><td class="n">1810</td><td>defeating is the moment of winnen seen from the other side; same picture.</td></tr>
+<tr><td>verschijnen</td><td>A2 onregelmatig</td><td class="n">1837</td><td>the same picture as a person stepping through a doorway (gaan) or walking out of mist (verdwijnen); the difference needs two frames.</td></tr>
+<tr><td>liegen</td><td>A2 onregelmatig</td><td class="n">1852</td><td>there is no picture of its own that is not a speech bubble, which is praten on another page; a long nose or crossed fingers is a cartoon mark, not a scene.</td></tr>
+<tr><td>blijken</td><td>A2 onregelmatig</td><td class="n">1877</td><td>turning out is a judgement about what something really was, which is idiom and not a scene; nothing visible separates it from vinden or denken.</td></tr>
+<tr><td>onderhouden</td><td>A2 onregelmatig</td><td class="n">1889</td><td>maintaining is a routine, and any single moment reads as repareren.</td></tr>
+<tr><td>verwijzen</td><td>A2 onregelmatig</td><td class="n">2016</td><td>referring is abstract; the picture would be the pointing arm of wijzen.</td></tr>
+<tr><td>ontwerpen</td><td>A2 onregelmatig</td><td class="n">2080</td><td>designing at a drawing table is the picture of tekenen.</td></tr>
+<tr><td>verlopen</td><td>A2 onregelmatig</td><td class="n">2088</td><td>expiring or going a certain way is abstract; a date passing needs digits.</td></tr>
+<tr><td>besluiten</td><td>A2 onregelmatig</td><td class="n">2178</td><td>a decision has no single picturable action; a fork in the road would read as kiezen and a gavel as rechtspreken.</td></tr>
+<tr><td>onthouden</td><td>A2 onregelmatig</td><td class="n">2196</td><td>remembering is inner; any scene is an invented sign (review M9).</td></tr>
+<tr><td>gelden</td><td>A2 onregelmatig</td><td class="n">2219</td><td>a rule applying is idiom; a sign with a tick or a cross needs letters and a symbol, and neither is allowed on this page.</td></tr>
+<tr><td>laden</td><td>A2 onregelmatig</td><td class="n">2224</td><td>loading a van is the lossen picture with the direction reversed.</td></tr>
+<tr><td>vermijden</td><td>A2 onregelmatig</td><td class="n">2241</td><td>avoiding is turning away from one thing while aiming at the other, so it needs both the thing avoided and the goal; the only honest picture is a near-miss, which reads as wijken on this page.</td></tr>
+<tr><td>onderscheiden</td><td>A2 onregelmatig</td><td class="n">2269</td><td>telling things apart is inner; the picture would be vergelijken.</td></tr>
+<tr><td>heten</td><td>A2 onregelmatig</td><td class="n">2367</td><td>to be called is located in a name and a name is letters; writing the word in the drawing is forbidden.</td></tr>
+<tr><td>ontbreken</td><td>A2 onregelmatig</td><td class="n">2372</td><td>something missing IS the empty place, and an empty place cannot be seen without the thing that should be there; the picture would show the object or its absence, never the verb.</td></tr>
+<tr><td>verblijven</td><td>A2 onregelmatig</td><td class="n">2418</td><td>staying somewhere is a state; the picture would be wonen or blijven.</td></tr>
+<tr><td>bestrijden</td><td>A2 onregelmatig</td><td class="n">2426</td><td>opposing something abstract has no visible action, and the literal sense is the fist fight already drawn for vechten on this page.</td></tr>
+<tr><td>verkrijgen</td><td>A2 onregelmatig</td><td class="n">2466</td><td>obtaining is krijgen in a formal register; same picture.</td></tr>
+<tr><td>melden</td><td>A2 regelmatig</td><td class="n">1007</td><td>reporting is speech; the scene reads as vertellen or praten (review M9).</td></tr>
+<tr><td>hoeven</td><td>A2 regelmatig</td><td class="n">1064</td><td>needing and not needing are modal meanings with no object in the world to draw; any picture of them would be a convention from the A0 and A1 brief, and those are not allowed on this page.</td></tr>
+<tr><td>organiseren</td><td>A2 regelmatig</td><td class="n">1070</td><td>organising is abstract, and the scene needed numbered cards, which is text in the artwork (review H5, M9).</td></tr>
+<tr><td>wensen</td><td>A2 regelmatig</td><td class="n">1078</td><td>wishing is a private idea with no action; the birthday cake convention is idiom, and a clasped hands or candle picture would be the same wish token that hopen uses on the A1 page.</td></tr>
+<tr><td>dienen</td><td>A2 regelmatig</td><td class="n">1088</td><td>serving as something or being of use is a relational meaning with no action of its own; a waiter carrying a tray would be the single picture of brengen or geven on other pages.</td></tr>
+<tr><td>ontwikkelen</td><td>A2 regelmatig</td><td class="n">1100</td><td>developing is a slow change over time and has no single moment; any picture would need two frames or a before and after, and a person holding up a small seedling is the picture of planten on this page.</td></tr>
+<tr><td>plaatsen</td><td>A2 regelmatig</td><td class="n">1100</td><td>a synonym of zetten and leggen; the tree scene was planten (review M8).</td></tr>
+<tr><td>verschillen</td><td>A2 regelmatig</td><td class="n">1136</td><td>differing means comparing two things and reporting a difference, so the picture would be two objects plus an added comparison mark or number; the two-jars picture already belongs to kiezen on the A1 page.</td></tr>
+<tr><td>bepalen</td><td>A2 regelmatig</td><td class="n">1179</td><td>determining is a judgement about what will happen and has no action in the world; a person marking one line on a chart would need a choice between objects, which is the picture of kiezen.</td></tr>
+<tr><td>betekenen</td><td>A2 regelmatig</td><td class="n">1205</td><td>meaning is a link between a word and a thing and can only be drawn as a sign with an arrow or as lettering, both of which the brief forbids, and the sign would pair with tonen on this page.</td></tr>
+<tr><td>grenzen</td><td>A2 regelmatig</td><td class="n">1209</td><td>bordering is a line between two areas and needs two named countries; without letters it would be an unexplained fence line, and every fence on these pages already stands for a garden or a field.</td></tr>
+<tr><td>herinneren</td><td>A2 regelmatig</td><td class="n">1212</td><td>remembering is a private act that can only be drawn with the thought bubble convention, which belongs to denken on the A0 page and is not allowed here.</td></tr>
+<tr><td>duren</td><td>A2 regelmatig</td><td class="n">1254</td><td>lasting is how long something takes and has no action; a person waiting under a clock is the picture of wachten on the A1 page, and a clock alone is an object, not a verb.</td></tr>
+<tr><td>creëren</td><td>A2 regelmatig</td><td class="n">1363</td><td>creating is a general word for making something new and would take the picture of maken or bouwen; any distinct scene would be a second verb on this page for the same act, and no honest single action is left.</td></tr>
+<tr><td>regelen</td><td>A2 regelmatig</td><td class="n">1445</td><td>arranging is the same office action as organiseren on this page; a second picture of it at this level would duplicate that scene, which the brief forbids.</td></tr>
+<tr><td>behandelen</td><td>A2 regelmatig</td><td class="n">1474</td><td>treating is a sequence of care; the bandage is verbinden and the stethoscope is onderzoeken (review M8).</td></tr>
+<tr><td>bevatten</td><td>A2 regelmatig</td><td class="n">1499</td><td>containing is a state, not an action; an open box with things in it is a picture of hebben or of verzamelen, and an arrow into the box would be a symbol the brief does not allow here.</td></tr>
+<tr><td>behoren</td><td>A2 regelmatig</td><td class="n">1522</td><td>belonging is ownership or membership, which is a fixed relation and not an action; a name tag on a coat or a house key would need letters or would read as hebben.</td></tr>
+<tr><td>kampen</td><td>A2 regelmatig</td><td class="n">1529</td><td>struggling with something is a state of trouble, not a pictureable action; the closest literal scene would be two people wrestling, which the brief would read as aanvallen on this same page.</td></tr>
+<tr><td>overleven</td><td>A2 regelmatig</td><td class="n">1540</td><td>surviving is only visible after a disaster and needs a context of ruin to make sense; a person alone with a torn coat at a wrecked building would read as a destitute stranger, not as this verb.</td></tr>
+<tr><td>ontdekken</td><td>A2 regelmatig</td><td class="n">1566</td><td>the key found in the soil is the drawing of vinden (review M8).</td></tr>
+<tr><td>getuigen</td><td>A2 regelmatig</td><td class="n">1584</td><td>witnessing is the second person in a scene, so the picture would be an onlooker with no distinguishing mark; it would duplicate ontmoeten or aanvallen depending on what is watched, and a raised right hand would be a courtroom idiom.</td></tr>
+<tr><td>accepteren</td><td>A2 regelmatig</td><td class="n">1606</td><td>accepting is inner; a handshake or a hand taking something reads as afspreken or pakken.</td></tr>
+<tr><td>strijden</td><td>B1 onregelmatig</td><td class="n">2576</td><td>fighting has no honest single moment beyond two raised fists, which is nearest slaan, while a tug of war is the picture of trekken; nothing is left that reads as this verb alone.</td></tr>
+<tr><td>verzinnen</td><td>B1 onregelmatig</td><td class="n">2581</td><td>inventing a story lives only in the head, and every mark for it is a convention allowed at A0 and A1 only; an adult holding a new object would read as maken.</td></tr>
+<tr><td>voldoen</td><td>B1 onregelmatig</td><td class="n">2583</td><td>meeting a requirement is shown by a tick, which is a writing mark and so an invented symbol, and any pass or fail outcome is the picture of a test or a judgement rather than of filling a need.</td></tr>
+<tr><td>dwingen</td><td>B1 onregelmatig</td><td class="n">2634</td><td>forcing is abstract; the blocked-door scene reads as duwen or tegenhouden (review M9).</td></tr>
+<tr><td>ondergaan</td><td>B1 onregelmatig</td><td class="n">2680</td><td>undergoing something is passive, so the picture must show the cause acting and not this verb; a person in a scanner or a dentist’s chair reads as the machine or the dentist acting instead.</td></tr>
+<tr><td>overwegen</td><td>B1 onregelmatig</td><td class="n">2837</td><td>considering is weighing up options; the balance and the thought bubble are the A1 conventions and are not allowed here, and the literal weighing is the picture of wegen.</td></tr>
+<tr><td>vergeven</td><td>B1 onregelmatig</td><td class="n">2893</td><td>forgiving is inner; an open hand to a bowed head reads as troosten or helpen (review M9).</td></tr>
+<tr><td>vervallen</td><td>B1 onregelmatig</td><td class="n">2895</td><td>lapsing or expiring is shown by a date passing or a struck-through document, which needs numbers or writing; the sense of crumbling away is an object in decay, not this verb’s action.</td></tr>
+<tr><td>betrekken</td><td>B1 onregelmatig</td><td class="n">2905</td><td>involving someone is adding a further person to a group, so the picture is a group of adults and differs from samenwerken only by one extra arm; nothing in the frame marks this verb.</td></tr>
+<tr><td>treffen</td><td>B1 onregelmatig</td><td class="n">2939</td><td>hitting reads as slaan on the A1 page and the nearest other moment is a bullet in a target, which is a sign rather than a person's action; no honest scene is left for this verb.</td></tr>
+<tr><td>bevallen</td><td>B1 onregelmatig</td><td class="n">2950</td><td>pleasing is an inner judgement with no action; the other sense, giving birth, is a hospital scene that is a single happening and would need medical detail no thumbnail can carry.</td></tr>
+<tr><td>klinken</td><td>B1 onregelmatig</td><td class="n">2967</td><td>a sound is not visible; the bold curved lines already draw horen on the A1 page, and any literal bell would show the object rather than the verb.</td></tr>
+<tr><td>genezen</td><td>B1 onregelmatig</td><td class="n">2997</td><td>curing is invisible and its only marks are a cross, a bandage or a hospital bed, which show health care and not this act; a healed patient reads as gezond worden.</td></tr>
+<tr><td>verdragen</td><td>B1 onregelmatig</td><td class="n">3080</td><td>bearing or tolerating is inner.</td></tr>
+<tr><td>bevelen</td><td>B1 onregelmatig</td><td class="n">3186</td><td>commanding is a speech act; the only mark for it, an arm pointing ahead, already means wijzen on the A2 page, and a row of listening people would read as a group scene rather than this verb.</td></tr>
+<tr><td>bezitten</td><td>B1 onregelmatig</td><td class="n">3227</td><td>owning is hebben in a formal register; same picture.</td></tr>
+<tr><td>verzoeken</td><td>B1 onregelmatig</td><td class="n">3268</td><td>requesting is vragen in a formal register; same picture.</td></tr>
+<tr><td>begaan</td><td>B1 onregelmatig</td><td class="n">3322</td><td>committing an act is abstract.</td></tr>
+<tr><td>overvallen</td><td>B1 onregelmatig</td><td class="n">3780</td><td>an armed hold-up is not safe imagery for this app.</td></tr>
+<tr><td>verraden</td><td>B1 onregelmatig</td><td class="n">3802</td><td>betraying is abstract.</td></tr>
+<tr><td>zenden</td><td>B1 onregelmatig</td><td class="n">3806</td><td>sending is the same hand-to-hand moment as geven, and a postal van or an envelope in a letter slot is a sign for the post rather than this action; the online sense cannot be drawn at all.</td></tr>
+<tr><td>betreden</td><td>B1 onregelmatig</td><td class="n">3815</td><td>entering is the step of stappen through a doorway; same picture.</td></tr>
+<tr><td>werpen</td><td>B1 onregelmatig</td><td class="n">3865</td><td>a synonym of gooien with the same drawing (review M8).</td></tr>
+<tr><td>doorstaan</td><td>B1 onregelmatig</td><td class="n">3874</td><td>enduring is inner.</td></tr>
+<tr><td>wijken</td><td>B1 onregelmatig</td><td class="n">4000</td><td>giving way is drawn as a cyclist pulling aside for a lorry, which reads as remmen or uitwijken (review M9).</td></tr>
+<tr><td>omgeven</td><td>B1 onregelmatig</td><td class="n">4109</td><td>surrounding is a state, not an action.</td></tr>
+<tr><td>spinnen</td><td>B1 onregelmatig</td><td class="n">4120</td><td>the common senses are a cat purring, which is a sound, and spinning thread, a craft few learners meet.</td></tr>
+<tr><td>bedragen</td><td>B1 onregelmatig</td><td class="n">4138</td><td>amounting to needs a number in the picture.</td></tr>
+<tr><td>overwinnen</td><td>B1 onregelmatig</td><td class="n">4232</td><td>overcoming is winnen in a figurative sense; same picture.</td></tr>
+<tr><td>doorbreken</td><td>B1 onregelmatig</td><td class="n">4250</td><td>breaking through is the picture of breken.</td></tr>
+<tr><td>ontkomen</td><td>B1 onregelmatig</td><td class="n">4346</td><td>escaping is the running figure of vluchten.</td></tr>
+<tr><td>heffen</td><td>B1 onregelmatig</td><td class="n">4393</td><td>raising a glass is idiom and levying a tax is abstract; lifting is tillen.</td></tr>
+<tr><td>wijten</td><td>B1 onregelmatig</td><td class="n">4493</td><td>blaming is abstract; a pointing finger is wijzen.</td></tr>
+<tr><td>ontbijten</td><td>B1 onregelmatig</td><td class="n">4566</td><td>breakfast is the picture of eten; only the time of day differs, which needs a sun or a clock.</td></tr>
+<tr><td>ontslaan</td><td>B1 onregelmatig</td><td class="n">4688</td><td>dismissing someone is an office talk; any single moment reads as praten or vertrekken.</td></tr>
+<tr><td>begeven</td><td>B1 onregelmatig</td><td class="n">4788</td><td>giving way (of a chair or a bridge) reads as breken, and the common use is reflexive.</td></tr>
+<tr><td>verwijten</td><td>B1 onregelmatig</td><td class="n">4837</td><td>reproaching is abstract; a pointing finger is wijzen.</td></tr>
+<tr><td>schelen</td><td>B1 regelmatig</td><td class="n">2504</td><td>caring about a difference is an unspoken change of attitude, not an action; a comparison of two objects reads as vergelijken and two framed pictures as verschillen, so no honest single mark is left at this level.</td></tr>
+<tr><td>lichten</td><td>B1 regelmatig</td><td class="n">2522</td><td>the literal sense would be lifting one corner of a heavy object, which is the same raised object as tillen and barely differs from pakken; the figurative sense of lifting a restriction has no picturable action at all.</td></tr>
+<tr><td>waarderen</td><td>B1 regelmatig</td><td class="n">2538</td><td>appreciation is an inner judgement; two hands pressed to the heart read as houden van and a raised thumb reads as goedkeuren, so the card would be the picture of another verb.</td></tr>
+<tr><td>eindigen</td><td>B1 regelmatig</td><td class="n">2593</td><td>ending is abstract; the zipper scene reads as dichtdoen (review M9).</td></tr>
+<tr><td>behalen</td><td>B1 regelmatig</td><td class="n">2627</td><td>the score sense needs a diploma or a number and the travel sense is reaching a place, which is aankomen; a raised certificate would also read as presenteren, and nothing in a frame marks out what has been achieved.</td></tr>
+<tr><td>beleven</td><td>B1 regelmatig</td><td class="n">2628</td><td>experience is an inner event spread over time, so it can only be drawn as a face in the middle of something happening, and that face reads as schrikken or genieten; there is no single picturable action.</td></tr>
+<tr><td>beseffen</td><td>B1 regelmatig</td><td class="n">2629</td><td>realising something is a silent change of understanding; the only marks are the thought bubble or the lightbulb, and both are A1 conventions that may not be used on this page.</td></tr>
+<tr><td>profiteren</td><td>B1 regelmatig</td><td class="n">2647</td><td>taking advantage of something has no honest single action; a person keeping a gift or a discount is the picture of krijgen or kopen, and an upward arrow is a symbol this level does not allow.</td></tr>
+<tr><td>promoten</td><td>B1 regelmatig</td><td class="n">2648</td><td>promoting is the act of advertising, so it would be the picture of reclame maken; the literal other sense, moving a pawn up a board, needs a whole game laid out in the frame, which no learner reads at a glance.</td></tr>
+<tr><td>garanderen</td><td>B1 regelmatig</td><td class="n">2666</td><td>a promise of certainty is abstract; the only marks are a seal, a signed contract or a handshake, and those read as ondertekenen or afspreken, while a guarantee card has no picturable action at all.</td></tr>
+<tr><td>ontkennen</td><td>B1 regelmatig</td><td class="n">2681</td><td>denying is saying no to a claim, so the picture needs two speakers and a speech bubble, which is praten; a head shake alone is the same mark as weigeren and does not say what is denied.</td></tr>
+<tr><td>verzorgen</td><td>B1 regelmatig</td><td class="n">2691</td><td>caring is many actions, and each single moment is another card: verbinden, voeren, wassen (review M8).</td></tr>
+<tr><td>beoordelen</td><td>B1 regelmatig</td><td class="n">2700</td><td>judging is inner; a balance is the convention of wegen and a mark sheet needs text (review M9).</td></tr>
+<tr><td>beschikken</td><td>B1 regelmatig</td><td class="n">2741</td><td>having something at one’s disposal is a state, not an action; an open cupboard or a held-out bunch of keys reads as hebben or pakken and says nothing about who may use what.</td></tr>
+<tr><td>beëindigen</td><td>B1 regelmatig</td><td class="n">2808</td><td>terminating is abstract; the phone hang-up reads as bellen or ophangen (review M9).</td></tr>
+<tr><td>functioneren</td><td>B1 regelmatig</td><td class="n">2821</td><td>working as it should is a state of a machine, shown by a running engine or a spinning motor, and a person checking it is testen or controleren; nothing in a single frame marks the difference.</td></tr>
+<tr><td>identificeren</td><td>B1 regelmatig</td><td class="n">2866</td><td>identification is checking one thing against another, which reads as vergelijken; the only other marks are a fingerprint or an identity card, and an identity card needs writing on it.</td></tr>
+<tr><td>rijen</td><td>B1 regelmatig</td><td class="n">2883</td><td>forming a row is an arrangement of people at rest, so it is the same picture as staan in a line; the sense of raking row on row, as of soil or text, has no single picturable action.</td></tr>
+<tr><td>combineren</td><td>B1 regelmatig</td><td class="n">2910</td><td>combining is putting two things together, which is the picture of mengen; two unlike objects on one table would need a before and after to say that they have been united.</td></tr>
+<tr><td>inspireren</td><td>B1 regelmatig</td><td class="n">2918</td><td>inspiration is an inner spark; the only marks are the lightbulb or a rising arrow, and both are conventions this page may not use, while a person gazing at a painting is only kijken.</td></tr>
+<tr><td>publiceren</td><td>B1 regelmatig</td><td class="n">2931</td><td>publishing is abstract and needs printed text to read (review M9).</td></tr>
+<tr><td>verlengen</td><td>B1 regelmatig</td><td class="n">2940</td><td>lengthening is a before and after, which one frame cannot show (review M9).</td></tr>
+<tr><td>vervullen</td><td>B1 regelmatig</td><td class="n">2942</td><td>filling a container is the concrete picture, but it appears as a hand pouring water into a glass, which is the picture of inschenken, while the figurative sense, fulfilling a duty or a promise, has no single action.</td></tr>
+<tr><td>handhaven</td><td>B1 regelmatig</td><td class="n">2961</td><td>maintaining or enforcing is an ongoing duty, so the only picture is an officer standing guard, which is staan and already the picture of other verbs; the literal sense, keeping a thing intact, is hebben.</td></tr>
+<tr><td>herhalen</td><td>B1 regelmatig</td><td class="n">2963</td><td>repeating is the same action done twice, so it needs two frames or a caption; a teacher with a raised finger is onderwijzen, and a raised hand with a fist would be a symbol this page does not allow.</td></tr>
+<tr><td>toetsen</td><td>B1 regelmatig</td><td class="n">2982</td><td>testing is another person’s judgement of a product or a pupil, which is the picture of beoordelen or keuren; a finger tapping keys on a keyboard is the separate verb typen, so no distinct mark is left.</td></tr>
+<tr><td>posten</td><td>B1 regelmatig</td><td class="n">3020</td><td>same drawing as sturen, an envelope at a postbox (review M8).</td></tr>
+<tr><td>vertalen</td><td>B1 regelmatig</td><td class="n">3036</td><td>translating is between two languages, which needs text or flags in the artwork.</td></tr>
+<tr><td>verzekeren</td><td>B1 regelmatig</td><td class="n">3038</td><td>insuring or assuring is abstract.</td></tr>
+<tr><td>vrezen</td><td>B1 regelmatig</td><td class="n">3039</td><td>fearing is inner; a frightened face is schrikken.</td></tr>
+<tr><td>bereiden</td><td>B1 regelmatig</td><td class="n">3047</td><td>preparing food is the picture of koken.</td></tr>
+<tr><td>stranden</td><td>B1 regelmatig</td><td class="n">3072</td><td>the common sense is figurative (talks that fail); a boat on a beach is a state, not an action.</td></tr>
+<tr><td>wijzigen</td><td>B1 regelmatig</td><td class="n">3084</td><td>changing is veranderen in a formal register, and a before and after needs two frames.</td></tr>
+<tr><td>beschouwen</td><td>B1 regelmatig</td><td class="n">3091</td><td>considering is inner.</td></tr>
+<tr><td>beïnvloeden</td><td>B1 regelmatig</td><td class="n">3093</td><td>influencing is abstract.</td></tr>
+<tr><td>vestigen</td><td>B1 regelmatig</td><td class="n">3129</td><td>settling or establishing is abstract.</td></tr>
+<tr><td>beheersen</td><td>B1 regelmatig</td><td class="n">3139</td><td>mastering or controlling is abstract.</td></tr>
+<tr><td>dalen</td><td>B1 regelmatig</td><td class="n">3141</td><td>a still picture cannot tell a balloon coming down from the stijgen balloon going up.</td></tr>
+<tr><td>staken</td><td>B1 regelmatig</td><td class="n">3165</td><td>a strike is shown with placards, which need text; ceasing is abstract.</td></tr>
+<tr><td>verlenen</td><td>B1 regelmatig</td><td class="n">3172</td><td>granting is abstract.</td></tr>
+</tbody></table>
+<div class="uitleg"><h2>Word classes still to come</h2><p>The werkwoorden pages are the second card family after Voorzetselpaden. The same shape, one card per item with a scene brief, is still owed for:</p><ul><li><strong>Bijvoeglijke naamwoorden</strong> — adjectives with a comparability the picture can show: groot, duur, leeg, nat, moe.</li><li><strong>Bijwoorden</strong> — adverbs and adverbial phrases of time and manner: gisteren, straks, plotseling, meteen.</li><li><strong>Zelfstandige naamwoorden</strong> — nouns with their article and plural, which is where the lexicon already carries verified data.</li><li><strong>Vaste uitdrukkingen</strong> — fixed chunks that are not verb + preposition: op tijd, ter plekke, met opzet.</li><li><strong>Scheidbare werkwoorden</strong> — the group above, but with their own brief: two halves, one drawing or two.</li><li><strong>Vervoegingen</strong> — conjugation drills. On 20 November the owner decided that unpredictable forms are vocabulary: irregular cards now carry the past singular and the perfect. Regular forms, other persons and the other tenses stay out; whether a game drills them is still open (see <code>Docs/verb-games-plan.html</code>).</li><li><strong>Voorbeeldzinnen</strong> — dropped from this pass on purpose. If they come back, they come back as a separate field, not as part of the picture brief.</li></ul><h2>To make this list smaller</h2><p>Add a verb to <code>tools/_ww_tmp/select.py</code> (or lift it out of the deferred set), rerun it, write the scene row in <code>tools/_ww_tmp/scenes/&lt;page&gt;.tsv</code>, and rerun <code>tools/build-verb-cards.py</code>. The frame numbers renumber themselves.</p></div>
+</main>
+</body>
+</html>

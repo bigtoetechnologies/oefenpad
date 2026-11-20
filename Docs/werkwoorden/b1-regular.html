@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwoorden — B1 regelmatig</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>Werkwoorden — B1 · regelmatig</h1>
+<p class="lead">The wider vocabulary: institutions, nature, the workshop, and verbs of argument and judgement. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</p>
+<p class="lead">One card per verb: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, and the Dutch alt text. Sorted by lexicon frequency rank.</p>
+<div class="sum"><span>20 werkwoorden</span><span class="framereeks">frames #182–#201</span><span>rang 2528–3162</span><span>0 getekend</span><span>40 overgeslagen</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html">A0 regelmatig</a><a href="a1-irregular.html">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html" class="hier">B1 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
+<div class="filters"><button data-filter="alles" aria-pressed="true">alles</button><button data-filter="Movement &amp; position">Movement &amp; position</button><button data-filter="Abstract &amp; general">Abstract &amp; general</button><button data-filter="Communication &amp; language">Communication &amp; language</button><button data-filter="Arts &amp; media">Arts &amp; media</button><button data-filter="Body &amp; health">Body &amp; health</button><button data-filter="Food &amp; drink">Food &amp; drink</button><button data-filter="House &amp; home">House &amp; home</button><button data-filter="Law &amp; conflict">Law &amp; conflict</button><button data-filter="Money &amp; trade">Money &amp; trade</button><button data-filter="Places &amp; geography">Places &amp; geography</button><button data-filter="Quantity &amp; measure">Quantity &amp; measure</button><button data-filter="Society &amp; politics">Society &amp; politics</button><button data-filter="Transport &amp; travel">Transport &amp; travel</button></div>
+</header>
+<main>
+<section class="sectiekop"><h2>B1 · regelmatig</h2><p>20 verbs with a weak past, rank 2528 to 3162. One drawing each, in the Voorzetselpaden style. Cards without a drawing stay as proposals.</p></section>
+<div class="kaarten">
+<article id="proeven" class="kaart" data-id="proeven" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Food &amp; drink" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 182">#182</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">proeven</h3>
+<p class="gloss">to taste</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2528</span><span>Food &amp; drink</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at a kitchen worktop with eyes closed, lips and tongue just taking the tip of a spoon that half rises out of a steaming pan; the other hand is cupped underneath to catch a drip. The face shows the taste arriving and nobody else is in the room.</dd>
+<dt>Must read</dt><dd class="must">lips touching a raised spoon above a steaming pan.</dd>
+<dt>Avoid</dt><dd class="avoid">the spoon tipped fully into an open mouth and the head back (eten); a hand fanning the air above the pan (ruiken); a thumbs up held beside a plate; a nod of the head (keuren); a full plate held up to the viewer.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene heeft de ogen dicht en de lippen raken net de lepel boven een dampende pan.</dd>
+</dl>
+<p class="id">proeven.png · rang 2528 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="arresteren" class="kaart" data-id="arresteren" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Law &amp; conflict" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 183">#183</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">arresteren</h3>
+<p class="gloss">to arrest</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2551</span><span>Law &amp; conflict</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">close up on two pairs of hands: an officer's hands close a pair of handcuffs round two wrists held out together; the officer's sleeve shows a plain cuff band, and nothing else is in the frame.</dd>
+<dt>Must read</dt><dd class="must">handcuffs closing round two wrists held out together.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult sitting behind a high wooden desk (rechtspreken); two adults in a fist fight (vechten); one hand pulling another person by the arm (wegsturen); a handshake between two adults (afspreken); bars or a prison cell.</dd>
+<dt>Alt text</dt><dd class="alt">Een agent sluit handboeien om twee polsen die naar voren worden gehouden.</dd>
+</dl>
+<p class="id">arresteren.png · rang 2551 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="huren" class="kaart" data-id="huren" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="House &amp; home" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 184">#184</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">huren</h3>
+<p class="gloss">to rent</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2600</span><span>House &amp; home</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult hands over a key on a plain round ring and a folded lease to a second adult whose open hand is already closing on the key; the second adult stands on a doorstep inside the door frame, and a suitcase waits on the step below. Both look at the key.</dd>
+<dt>Must read</dt><dd class="must">key and lease passing between two pairs of hands at a front door.</dd>
+<dt>Avoid</dt><dd class="avoid">coins pushed across a shop counter (betalen); two adults shaking hands with nothing in them (afspreken); a suitcase alone in an empty room; a sign hanging from a door; the key held up in triumph (vinden).</dd>
+<dt>Alt text</dt><dd class="alt">Bij een voordeur geeft iemand een sleutel en een gevouwen contract aan een nieuwkomer met een koffer.</dd>
+</dl>
+<p class="id">huren.png · rang 2600 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="sparen" class="kaart" data-id="sparen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Money &amp; trade" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 185">#185</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">sparen</h3>
+<p class="gloss">to save (money)</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2612</span><span>Money &amp; trade</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult drops a single coin into the slot of a ceramic piggy bank held steady in the other hand, the coin standing in mid-air a finger’s width above the slot; a small tin of coins stands closed beside it and no shop counter is in the frame.</dd>
+<dt>Must read</dt><dd class="must">one coin halfway down into the slot of a piggy bank.</dd>
+<dt>Avoid</dt><dd class="avoid">coins pushed across a counter (betalen); a coin held up close to one eye; a piggy bank smashed open; a purse held tight to the chest (houden); banknotes fanned out like a prize.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand laat een muntje net boven de gleuf van een aardewerken varkentje zakken.</dd>
+</dl>
+<p class="id">sparen.png · rang 2612 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="waarschuwen" class="kaart" data-id="waarschuwen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Communication &amp; language" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 186">#186</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">waarschuwen</h3>
+<p class="gloss">to warn</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2656</span><span>Communication &amp; language</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult holds up one flat palm towards a second adult who is walking towards the edge of a cliff with eyes fixed ahead; the first adult’s mouth is open mid-shout and the raised arm stretches out. The second adult is one stride from the drop.</dd>
+<dt>Must read</dt><dd class="must">a raised flat palm and a shout stopping a walker at the cliff edge.</dd>
+<dt>Avoid</dt><dd class="avoid">a red triangle on a stick beside the path (verbieden); a hand chopping the air near a phone (onderbreken); a finger wagging in another person’s face (berispen); a door held shut; a siren with nobody present.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene steekt een open hand op naar iemand die bijna over de rand van een klif stapt.</dd>
+</dl>
+<p class="id">waarschuwen.png · rang 2656 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="zeilen" class="kaart" data-id="zeilen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Transport &amp; travel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 187">#187</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">zeilen</h3>
+<p class="gloss">to sail (with a sail)</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2694</span><span>Transport &amp; travel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at the tiller of a small sailing boat and holds the mainsheet taut with the other hand; the wind has the big white sail curved out to one side and the hull is heeled over, a white spray at the bow. The boat sits on open water, not in a harbour.</dd>
+<dt>Must read</dt><dd class="must">a sail filled by the wind and one hand on the tiller.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult rowing with both oars (roeien); a motorboat with no sail; a ship’s wheel turned by two hands on a big deck; a person standing on a dock with a suitcase (reizen); a flag on a pole (zwaaien).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat aan het roer van een bootje; de wind bolt het grote witte doek aan de mast.</dd>
+</dl>
+<p class="id">zeilen.png · rang 2694 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="bladeren" class="kaart" data-id="bladeren" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Movement &amp; position" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 188">#188</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">bladeren</h3>
+<p class="gloss">to glance through</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2702</span><span>Movement &amp; position</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands holding an open book with the pages fanned half turned, one hand caught in the very act of turning a leaf, and the eyes fixed on the lower page; the book is held up clear of the body, and there is no chair, no table and nobody else.</dd>
+<dt>Must read</dt><dd class="must">a hand turning one page of a book held open in the other.</dd>
+<dt>Avoid</dt><dd class="avoid">a finger running down a column of text (lezen); a thumb pressed to a tablet (typen); a closed book pressed to the chest (houden); a hand smoothing a folder of loose sheets.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand houdt een boek open en slaat met de vrije hand een bladzijde om.</dd>
+</dl>
+<p class="id">bladeren.png · rang 2702 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="presenteren" class="kaart" data-id="presenteren" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Communication &amp; language" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 189">#189</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">presenteren</h3>
+<p class="gloss">to present</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2765</span><span>Communication &amp; language</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands beside a tall flip chart with one open palm laid flat against the board and the other arm sweeping up towards its top; the flip chart pages are blank, and one adult sits facing the board with their heads up and eyes on it. No lettering on the board.</dd>
+<dt>Must read</dt><dd class="must">one open palm held flat on a flip chart facing an audience.</dd>
+<dt>Avoid</dt><dd class="avoid">a trophy held up in both hands (winnen); a sheet of paper handed over (geven); a shopkeeper turning a price sign (kosten); two adults shaking hands (afspreken).</dd>
+<dt>Alt text</dt><dd class="alt">Een spreker legt een open hand op een leeg flipovervel en wijst met de andere arm naar boven.</dd>
+</dl>
+<p class="id">presenteren.png · rang 2765 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="schilderen" class="kaart" data-id="schilderen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Arts &amp; media" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 190">#190</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">schilderen</h3>
+<p class="gloss">to paint</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2767</span><span>Arts &amp; media</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at a wooden easel and lays a loaded brush on the canvas, the bristles just touching the wet paint; a paint pot and rags sit on a table at hand, and the other hand holds a palette with three blobs of colour. The canvas shows only broad strokes.</dd>
+<dt>Must read</dt><dd class="must">a brush touching wet paint on a canvas on an easel.</dd>
+<dt>Avoid</dt><dd class="avoid">a pencil on a sheet of paper (tekenen); a roller on a long wall; a camera held up to the eye (fotograferen); a pen and a signature; a brush emptying into a pot.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat aan een ezel en zet de kwast op het doek, naast potten verf.</dd>
+</dl>
+<p class="id">schilderen.png · rang 2767 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="typen" class="kaart" data-id="typen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Abstract &amp; general" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 191">#191</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">typen</h3>
+<p class="gloss">to type</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2793</span><span>Abstract &amp; general</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">two hands seen from above over a laptop keyboard, close up, one finger striking a key and the other fingers raised mid-move; only the hands and the keys fill the frame, and no screen and no person show.</dd>
+<dt>Must read</dt><dd class="must">fingers caught mid-strike on keys, close up.</dd>
+<dt>Avoid</dt><dd class="avoid">a pen on paper (schrijven); a whole person at a desk with a laptop (werken); a finger on a phone screen (bellen); a page being turned (lezen).</dd>
+<dt>Alt text</dt><dd class="alt">Twee handen boven een toetsenbord, van bovenaf gezien; één vinger raakt net een toets.</dd>
+</dl>
+<p class="id">typen.png · rang 2793 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="klappen" class="kaart" data-id="klappen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Abstract &amp; general" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 192">#192</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">klappen</h3>
+<p class="gloss">to clap</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2827</span><span>Abstract &amp; general</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands facing the viewer and brings both open palms together in front of the chest at the very moment of contact, fingers spread, elbows out; a second adult a metre away watches with a smile. There is no music, no stage and nothing to hold in either hand.</dd>
+<dt>Must read</dt><dd class="must">two flat palms meeting in the air in front of the chest.</dd>
+<dt>Avoid</dt><dd class="avoid">one palm tapping a table top; a handshake between two people (afspreken); arms raised in the air with open mouths (juichen); a fist thumped on a door (kloppen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene slaat de platte handen tegen elkaar vlak voor de borst.</dd>
+</dl>
+<p class="id">klappen.png · rang 2827 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="straffen" class="kaart" data-id="straffen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Abstract &amp; general" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 193">#193</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">straffen</h3>
+<p class="gloss">to punish</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2937</span><span>Abstract &amp; general</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult shrinks on a chair while a second adult stands over them with one pointing finger raised and the head lowered towards the first; the seated adult’s arms are pulled in and their eyes are down. Both adults, and no parent or child is shown, and no belt or cane.</dd>
+<dt>Must read</dt><dd class="must">one raised pointing finger above a person sitting down.</dd>
+<dt>Avoid</dt><dd class="avoid">a police officer with handcuffs (arresteren); a cane or a belt raised in the air; an open hand swung at a face (slaan); two adults in a fist fight (vechten); a locked cell door.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand zit ineengezakt op een stoel terwijl een staande volwassene een vinger op hen richt.</dd>
+</dl>
+<p class="id">straffen.png · rang 2937 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="verbranden" class="kaart" data-id="verbranden" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Body &amp; health" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 194">#194</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">verbranden</h3>
+<p class="gloss">to burn</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2984</span><span>Body &amp; health</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult reaches into a brick oven with a cloth-wrapped hand and turns a loaf with the other hand, eyes narrowed; the crust nearest one end is blackened and a thin curl of smoke rises from it. The withdrawn hand is drawn back from the heat.</dd>
+<dt>Must read</dt><dd class="must">a blackened loaf with smoke rising from an oven.</dd>
+<dt>Avoid</dt><dd class="avoid">a finger held under a cold tap (afkoelen); a candle burning upright on a table; a pot boiling over (koken); a person asleep on a beach; a whole plate of burnt food shown to the viewer.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand draait een brood in de oven; aan een kant is de korst zwart en stijgt rook op.</dd>
+</dl>
+<p class="id">verbranden.png · rang 2984 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="verdelen" class="kaart" data-id="verdelen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Movement &amp; position" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 195">#195</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">verdelen</h3>
+<p class="gloss">to divide</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 2985</span><span>Movement &amp; position</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult cuts a loaf in two on a board with a bread knife, and one half slides onto a plate held out by a second adult; only these two figures are in the picture.</dd>
+<dt>Must read</dt><dd class="must">a loaf cut in two with one half going onto an outstretched plate.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult handing a whole loaf to a second (geven); a shopkeeper taking coins (betalen); two adults each holding an end of a loaf (delen); a tray of drinks set down in front of a group.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand snijdt een brood doormidden en schuift een helft op het bord van een wachtende.</dd>
+</dl>
+<p class="id">verdelen.png · rang 2985 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="registreren" class="kaart" data-id="registreren" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Society &amp; politics" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 196">#196</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">registreren</h3>
+<p class="gloss">to register</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 3022</span><span>Society &amp; politics</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands behind a low counter and brings a round rubber stamp down onto a closed folder, the stamp’s base a finger’s width above the cover; a second folder already stamped with a dark ring lies beside it, and a stack of blank sheets waits at hand.</dd>
+<dt>Must read</dt><dd class="must">one rubber stamp pressing down on a folder at a counter.</dd>
+<dt>Avoid</dt><dd class="avoid">an ink pad beside a pile of envelopes (posten); a hand held up showing a thumb print (identificeren); a pen on a form (schrijven); a price sign on a shelf (kosten); a laptop (typen).</dd>
+<dt>Alt text</dt><dd class="alt">Iemand achter een balie drukt een ronde stempel op een map; een tweede map is al gestempeld.</dd>
+</dl>
+<p class="id">registreren.png · rang 3022 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="schatten" class="kaart" data-id="schatten" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Quantity &amp; measure" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 197">#197</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">schatten</h3>
+<p class="gloss">to estimate</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 3023</span><span>Quantity &amp; measure</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at arm’s length from a stack of five loose bricks and frames them between a thumb and forefinger, one eye closed and the other fixed on the stack; the other arm hangs at the side. No measuring tool of any kind is in the frame.</dd>
+<dt>Must read</dt><dd class="must">one squeezed eye sizing up a stack between thumb and forefinger.</dd>
+<dt>Avoid</dt><dd class="avoid">a tape measure or a ruler (meten); a calculator and loose coins; a balance with two pans (wegen); bare hands at the sides while looking away (kijken).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene houdt een stapel stenen tussen duim en wijsvinger, met een oog dicht.</dd>
+</dl>
+<p class="id">schatten.png · rang 3023 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="stromen" class="kaart" data-id="stromen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Movement &amp; position" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 198">#198</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">stromen</h3>
+<p class="gloss">to flow</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 3026</span><span>Movement &amp; position</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands with a garden hose held low and lets water run out along a narrow channel dug between two raised beds; the water lies in the channel as one dark ribbon flowing away in the direction the hand points. A bucket stands dry beside a spade.</dd>
+<dt>Must read</dt><dd class="must">water running as one ribbon along a dug channel.</dd>
+<dt>Avoid</dt><dd class="avoid">a kettle on a stove (koken); a person staring at a tap; a barrel carried full in both arms (tillen); a row of wet paving stones (regen); a stream with nobody about.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene laat water uit een tuinslang door een gegraven geul lopen.</dd>
+</dl>
+<p class="id">stromen.png · rang 3026 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="duwen" class="kaart" data-id="duwen" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Movement &amp; position" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 199">#199</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">duwen</h3>
+<p class="gloss">to push</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 3053</span><span>Movement &amp; position</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult leans into a large closed wooden crate on a bare floor with both palms flat against its side, the arms straight, the body slanted and the back foot braced; the crate has slid a hand's width, shown by a short scrape on the floor.</dd>
+<dt>Must read</dt><dd class="must">a whole body leaning into a crate with both palms flat on it.</dd>
+<dt>Avoid</dt><dd class="avoid">a rope pulled towards the body (trekken); a drawer slid shut with one palm (schuiven); the crate lifted off the floor (tillen); a foot kicking the crate (schoppen).</dd>
+<dt>Alt text</dt><dd class="alt">Iemand leunt met beide handpalmen tegen een grote kist; de achterste voet zet zich schrap.</dd>
+</dl>
+<p class="id">duwen.png · rang 3053 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="schudden" class="kaart" data-id="schudden" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Movement &amp; position" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 200">#200</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">schudden</h3>
+<p class="gloss">to shake</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 3070</span><span>Movement &amp; position</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands and holds a closed bottle upright in one fist at chest height, moving it hard up and down; two short curved movement marks sit above and below the bottle, and the other hand hangs free.</dd>
+<dt>Must read</dt><dd class="must">a closed bottle in a fist with movement marks above and below it.</dd>
+<dt>Avoid</dt><dd class="avoid">a bottle tipped to pour into a glass (gieten); a bottle at the lips (drinken); two people clasping hands (begroeten); a hand waving in the air (zwaaien).</dd>
+<dt>Alt text</dt><dd class="alt">Iemand houdt een dichte fles stevig vast; korte boogjes boven en onder de fles tonen een beweging op en neer.</dd>
+</dl>
+<p class="id">schudden.png · rang 3070 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="parkeren" class="kaart" data-id="parkeren" data-band="b1" data-kind="verb" data-regularity="regular" data-domain="Places &amp; geography" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 201">#201</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">parkeren</h3>
+<p class="gloss">to park</p>
+<p class="vlaggen"><span>regelmatig</span><span>rang 3162</span><span>Places &amp; geography</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult reverses a small car into a gap between two cars standing at the kerb, seen from above and to the side; the driver's head is turned to look back over the shoulder, and the car is half into the gap. No sign and no lettering.</dd>
+<dt>Must read</dt><dd class="must">a car half reversed into a gap between two others at the kerb.</dd>
+<dt>Avoid</dt><dd class="avoid">a car moving along an open road (rijden); a car at a fuel pump (tanken); a car with its bonnet open (repareren); a sign with a letter on it.</dd>
+<dt>Alt text</dt><dd class="alt">Een auto rijdt achteruit een lege plek in tussen twee stilstaande auto's langs de stoep; de bestuurder kijkt achterom.</dd>
+</dl>
+<p class="id">parkeren.png · rang 3162 · B1 regelmatig · lexicon woorden.tsv</p>
+</article>
+</div>
+</main>
+
+<script>
+(function(){
+  var bar=document.querySelector('.filters'); if(!bar) return;
+  var cards=[].slice.call(document.querySelectorAll('.kaart'));
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var want=b.dataset.filter;
+    [].forEach.call(bar.querySelectorAll('button'),function(x){
+      x.setAttribute('aria-pressed', String(x===b)); });
+    cards.forEach(function(c){
+      c.hidden = !(want==='alles' || c.dataset.domain===want);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

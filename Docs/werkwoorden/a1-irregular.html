@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwoorden — A1 onregelmatig</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>Werkwoorden — A1 · onregelmatig</h1>
+<p class="lead">Everyday life outside the house: buying, waiting, driving, talking, and the first verbs of feeling. The strong verbs. They carry the most frequent meanings, so they come first in every band.</p>
+<p class="lead">One card per verb: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, and the Dutch alt text. Sorted by lexicon frequency rank.</p>
+<div class="sum"><span>33 werkwoorden</span><span class="framereeks">frames #31–#63</span><span>rang 256–992</span><span>33 getekend</span><span>4 overgeslagen</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html">A0 regelmatig</a><a href="a1-irregular.html" class="hier">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html">B1 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
+<div class="filters"><button data-filter="alles" aria-pressed="true">alles</button><button data-filter="Movement &amp; position">Movement &amp; position</button><button data-filter="Abstract &amp; general">Abstract &amp; general</button><button data-filter="Communication &amp; language">Communication &amp; language</button><button data-filter="Money &amp; trade">Money &amp; trade</button><button data-filter="Thought &amp; knowledge">Thought &amp; knowledge</button><button data-filter="Transport &amp; travel">Transport &amp; travel</button><button data-filter="Arts &amp; media">Arts &amp; media</button><button data-filter="Body &amp; health">Body &amp; health</button><button data-filter="Emotion &amp; feeling">Emotion &amp; feeling</button><button data-filter="Food &amp; drink">Food &amp; drink</button><button data-filter="People &amp; relations">People &amp; relations</button><button data-filter="Sport &amp; games">Sport &amp; games</button><button data-filter="Time">Time</button></div>
+</header>
+<main>
+<section class="sectiekop"><h2>A1 · onregelmatig</h2><p>33 verbs with a strong past, rank 256 to 992. One drawing each, in the Voorzetselpaden style. Cards without a drawing stay as proposals.</p></section>
+<div class="kaarten">
+<article id="brengen" class="kaart" data-id="brengen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 31">#31</span>
+<img class="beeld" src="../../assets/verbs/brengen.png" alt="Een volwassene draagt een dichte doos met twee handen naar een halfopen deur, waar al een hand naar de doos reikt." loading="lazy">
+<h3 class="chunk">brengen</h3>
+<p class="gloss">to bring</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 256</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">bracht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gebracht</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult walks towards a plain front door holding a closed cardboard box level in both hands, eyes on the door; the door stands ajar and an empty adult hand reaches out towards the box. The box has just touched that hand and the carrier has not let go.</dd>
+<dt>Must read</dt><dd class="must">a box carried towards a half-open door where a hand reaches out to take it.</dd>
+<dt>Avoid</dt><dd class="avoid">a box already in the hands of the second person with the first one gone (geven); a parcel laid down on a doorstep with nobody there (zetten); both arms up with a full crate on top of the head (dragen); a van at the kerb with boxes inside (rijden).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene draagt een dichte doos met twee handen naar een halfopen deur, waar al een hand naar de doos reikt.</dd>
+</dl>
+<p class="id">brengen.png · rang 256 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="lopen" class="kaart" data-id="lopen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 32">#32</span>
+<img class="beeld" src="../../assets/verbs/lopen.png" alt="Een volwassene is midden in een stap: de voorste voet staat plat op de grond, de achterste voet is net van de vloer." loading="lazy">
+<h3 class="chunk">lopen</h3>
+<p class="gloss">to walk</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 292</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">liep</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft/is gelopen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult walks from left to right over empty ground, caught mid-stride: the front foot flat on the ground, the back foot just lifted on its toes, the arms swinging in opposition, back straight, eyes ahead. Nothing else in the picture.</dd>
+<dt>Must read</dt><dd class="must">an ordinary unhurried walk, one foot down and one just leaving the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">both feet off the ground and the body leaning forward (rennen); a raised knee and a straight swinging arm (marcheren); a person standing still beside a bicycle (fietsen); a walking stick; speed lines or dust puffs.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene is midden in een stap: de voorste voet staat plat op de grond, de achterste voet is net van de vloer.</dd>
+</dl>
+<p class="id">lopen.png · rang 292 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="mogen" class="kaart" data-id="mogen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 33">#33</span>
+<img class="beeld" src="../../assets/verbs/mogen.png" alt="Een poortwachter tilt een slagboom op en wuift een voorbijganger met een open hand door." loading="lazy">
+<h3 class="chunk">mogen</h3>
+<p class="gloss">to be allowed</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 293</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">mocht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gemogen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult in a plain cap lifts a long barrier arm across a path with one hand and waves a second adult through with the other open hand; the second adult is mid-step, passing under the raised arm. A literal scene, no symbol, and nothing is written anywhere.</dd>
+<dt>Must read</dt><dd class="must">a barrier lifted and a hand waving a person through.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat palm held up in front of a closed barrier to stop someone (stoppen); a heavy sack on the back (moeten); a raised arm with a flexed fist (kunnen); a ticket or coins handed over (betalen); a sign with an arrow.</dd>
+<dt>Alt text</dt><dd class="alt">Een poortwachter tilt een slagboom op en wuift een voorbijganger met een open hand door.</dd>
+</dl>
+<p class="id">mogen.png · rang 293 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="beginnen" class="kaart" data-id="beginnen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Time" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 34">#34</span>
+<img class="beeld" src="../../assets/verbs/beginnen.png" alt="Een volwassene zit aan een tafel en tilt net het voorplat van een gesloten schrift op, met een dichte pennenbak ernaast." loading="lazy">
+<h3 class="chunk">beginnen</h3>
+<p class="gloss">to begin</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 298</span><span>Time</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">begon</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">is begonnen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits at a plain table with a closed notebook and a closed pen case in front of them; the hands lift the front cover, raised a hand width off the table, the first blank page showing. The moment is the cover coming up, not later.</dd>
+<dt>Must read</dt><dd class="must">the cover of a closed notebook being lifted for the first time.</dd>
+<dt>Avoid</dt><dd class="avoid">an open notebook already half full on the table (schrijven); a hand placed flat on a shut book with the pen lid on (wachten); a person walking through an open door into a room (verlaten); a bell or a whistle; a stopwatch.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zit aan een tafel en tilt net het voorplat van een gesloten schrift op, met een dichte pennenbak ernaast.</dd>
+</dl>
+<p class="id">beginnen.png · rang 298 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="zoeken" class="kaart" data-id="zoeken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 35">#35</span>
+<img class="beeld" src="../../assets/verbs/zoeken.png" alt="Een volwassene knielt bij een lage bank, houdt een kussen opgetild en tast met de andere hand onder de zitting." loading="lazy">
+<h3 class="chunk">zoeken</h3>
+<p class="gloss">to search</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 304</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">zocht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gezocht</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult kneels on the floor beside a low sofa, one hand holding the seat cushion lifted and tipped forward while the other hand reaches into the gap beneath it, the head bent down and the eyes on that dark gap. Nothing of the lost object is visible.</dd>
+<dt>Must read</dt><dd class="must">a hand reaching under a lifted cushion with the face bent close.</dd>
+<dt>Avoid</dt><dd class="avoid">an object held up in a raised hand (vinden); a person walking away from a table with keys left on it (vergeten); a big magnifying glass held to one eye (onderzoeken); a hand shielding the eyes looking into the distance (kijken).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene knielt bij een lage bank, houdt een kussen opgetild en tast met de andere hand onder de zitting.</dd>
+</dl>
+<p class="id">zoeken.png · rang 304 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="lezen" class="kaart" data-id="lezen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Communication &amp; language" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 36">#36</span>
+<img class="beeld" src="../../assets/verbs/lezen.png" alt="Een volwassene zit aan een tafel met een open boek, beide handen aan de rand en de ogen op de bladzijden." loading="lazy">
+<h3 class="chunk">lezen</h3>
+<p class="gloss">to read</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 307</span><span>Communication &amp; language</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">las</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gelezen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits at a plain table with an open book lying flat in front of them, both hands resting at its edges, the head bowed and the eyes on the pages; the pages show short plain lines of print and no letters. A mug stands off to the side, untouched.</dd>
+<dt>Must read</dt><dd class="must">eyes turned down on an open book held flat on the table.</dd>
+<dt>Avoid</dt><dd class="avoid">a pen touching the paper (schrijven); a laptop screen with both hands on the keys (werken); a person holding a book up with one finger marking the place (leren); a closed book.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zit aan een tafel met een open boek, beide handen aan de rand en de ogen op de bladzijden.</dd>
+</dl>
+<p class="id">lezen.png · rang 307 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="liggen" class="kaart" data-id="liggen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 37">#37</span>
+<img class="beeld" src="../../assets/verbs/liggen.png" alt="Een volwassene rust met gestrekte benen op de rug op een opgemaakt bed, de ogen open en naar boven gericht." loading="lazy">
+<h3 class="chunk">liggen</h3>
+<p class="gloss">to lie</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 332</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">lag</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gelegen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult lies flat on their back on a made bed on top of the covers, both arms at their sides, the head on a pillow, eyes wide open and looking up at the ceiling. The blanket is not pulled up and the knees are straight. Nothing else in the room.</dd>
+<dt>Must read</dt><dd class="must">a person flat on their back on the bed with both eyes open.</dd>
+<dt>Avoid</dt><dd class="avoid">closed eyes and a blanket pulled up to the chin (slapen); the body bent up at the waist with the feet on the floor (zitten); the body curled on one side with both knees drawn up (slapen); a book or a phone in the hands.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene rust met gestrekte benen op de rug op een opgemaakt bed, de ogen open en naar boven gericht.</dd>
+</dl>
+<p class="id">liggen.png · rang 332 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="kopen" class="kaart" data-id="kopen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Money &amp; trade" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 38">#38</span>
+<img class="beeld" src="../../assets/verbs/kopen.png" alt="Een volwassene legt een briefje geld op de toonbank; de winkelier schuift er een papieren zak met appels naartoe." loading="lazy">
+<h3 class="chunk">kopen</h3>
+<p class="gloss">to buy</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 381</span><span>Money &amp; trade</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">kocht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gekocht</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at a plain counter and pushes a folded banknote across it towards a shopkeeper, who is sliding a paper bag of apples back the other way; the note and the bag are both halfway along the counter, and the two adults face each other.</dd>
+<dt>Must read</dt><dd class="must">a note and a bag of apples meeting on the counter between two people.</dd>
+<dt>Avoid</dt><dd class="avoid">a price tag or a till display (betalen); a bag lifted off the counter and taken away while the hand still holds a coin (halen); the same bag held out at a market stall with the person turned away (verkopen); a credit card.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene legt een briefje geld op de toonbank; de winkelier schuift er een papieren zak met appels naartoe.</dd>
+</dl>
+<p class="id">kopen.png · rang 381 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="vergeten" class="kaart" data-id="vergeten" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Thought &amp; knowledge" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 39">#39</span>
+<img class="beeld" src="../../assets/verbs/vergeten.png" alt="Iemand loopt bij een tafel vandaan en kijkt om; op de tafel blijft een bos sleutels liggen." loading="lazy">
+<h3 class="chunk">vergeten</h3>
+<p class="gloss">to forget</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 396</span><span>Thought &amp; knowledge</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">vergat</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft/is vergeten</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult walks away from a small table, looking back over one shoulder with a slight frown; a bunch of keys on a round ring lies alone on the table behind them, and one hand is raised to the side of the head.</dd>
+<dt>Must read</dt><dd class="must">keys left behind on the table while the person walks off.</dd>
+<dt>Avoid</dt><dd class="avoid">a person kneeling to look under a sofa (zoeken); the keys held up in triumph (vinden); a crossed-out calendar; a hand over the mouth.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand loopt bij een tafel vandaan en kijkt om; op de tafel blijft een bos sleutels liggen.</dd>
+</dl>
+<p class="id">vergeten.png · rang 396 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="vallen" class="kaart" data-id="vallen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 40">#40</span>
+<img class="beeld" src="../../assets/verbs/vallen.png" alt="Een volwassene raakt uit balans: het lichaam helt voorover, beide armen zwaaien en de achterste voet is los van de grond." loading="lazy">
+<h3 class="chunk">vallen</h3>
+<p class="gloss">to fall</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 425</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">viel</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">is gevallen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult is caught off balance on empty ground: the body tilted sharply forward with both arms flung out, the back foot off the ground, the front heel just lifting, the mouth open and the eyes wide. Neither hand touches the floor and the body is still above it.</dd>
+<dt>Must read</dt><dd class="must">an adult tipping over in mid-air with both arms flung out.</dd>
+<dt>Avoid</dt><dd class="avoid">both feet flat with the body bent at the waist and the hands on the knees (bukken); a person already on the floor with one hand pushing the ground (opstaan); a person crouching on a low stool (zitten); a pushed-over chair.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene raakt uit balans: het lichaam helt voorover, beide armen zwaaien en de achterste voet is los van de grond.</dd>
+</dl>
+<p class="id">vallen.png · rang 425 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="rijden" class="kaart" data-id="rijden" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Transport &amp; travel" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 41">#41</span>
+<img class="beeld" src="../../assets/verbs/rijden.png" alt="Een volwassene zit achter het stuur van een auto op een weg met een witte streep, de handen aan het wiel." loading="lazy">
+<h3 class="chunk">rijden</h3>
+<p class="gloss">to drive</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 461</span><span>Transport &amp; travel</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">reed</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft/is gereden</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits behind the steering wheel of a plain car seen from the side, both hands on the wheel and eyes on the road ahead; the headlights are lit and the wheels sit on a stretch of road with a single white dashed line. Through the window only the driver is visible.</dd>
+<dt>Must read</dt><dd class="must">a person at a steering wheel with the car on a road.</dd>
+<dt>Avoid</dt><dd class="avoid">a bare bicycle with a rider leaning forward (fietsen); a person standing beside an open bonnet (repareren); a hand on a bus door handle (instappen); a person walking along the road (lopen); an aeroplane above clouds (vliegen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zit achter het stuur van een auto op een weg met een witte streep, de handen aan het wiel.</dd>
+</dl>
+<p class="id">rijden.png · rang 461 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="kiezen" class="kaart" data-id="kiezen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Thought &amp; knowledge" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 42">#42</span>
+<img class="beeld" src="../../assets/verbs/kiezen.png" alt="Een volwassene staat bij een tafel met twee potten en houdt de hand boven een van de twee, zonder die aan te raken." loading="lazy">
+<h3 class="chunk">kiezen</h3>
+<p class="gloss">to choose</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 517</span><span>Thought &amp; knowledge</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">koos</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gekozen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at a plain table with two jars side by side, one tall and one round; the right hand is lifted and held still open above the round jar, both eyes on it. The hand has not touched a jar.</dd>
+<dt>Must read</dt><dd class="must">one hand hovering above one of two jars while the other jar stays untouched.</dd>
+<dt>Avoid</dt><dd class="avoid">two jars already in the hands and both carried (dragen); one jar lifted off the table and held up (nemen); coins counted into a palm (betalen); a person pointing with a straight finger at a menu (wijzen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat bij een tafel met twee potten en houdt de hand boven een van de twee, zonder die aan te raken.</dd>
+</dl>
+<p class="id">kiezen.png · rang 517 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="schrijven" class="kaart" data-id="schrijven" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Communication &amp; language" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 43">#43</span>
+<img class="beeld" src="../../assets/verbs/schrijven.png" alt="Een volwassene zit aan een tafel en duwt een pen op een vel papier waarop al een paar korte strepen staan." loading="lazy">
+<h3 class="chunk">schrijven</h3>
+<p class="gloss">to write</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 518</span><span>Communication &amp; language</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">schreef</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft geschreven</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits at a table with a single sheet of paper flat in front of them, a pen gripped in one hand with the nib pressed to the paper, a short line of plain marks just made, and the eyes on the tip. The other hand holds the paper steady.</dd>
+<dt>Must read</dt><dd class="must">a pen point pressed to paper on which marks have just appeared.</dd>
+<dt>Avoid</dt><dd class="avoid">eyes on grey print lines inside an open book (lezen); a keyboard under both hands (werken); a brush with a picture on the page (tekenen); a pen held up and capped.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zit aan een tafel en duwt een pen op een vel papier waarop al een paar korte strepen staan.</dd>
+</dl>
+<p class="id">schrijven.png · rang 518 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="slapen" class="kaart" data-id="slapen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Body &amp; health" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 44">#44</span>
+<img class="beeld" src="../../assets/verbs/slapen.png" alt="Een volwassene ligt onder een deken tot de schouders, de ogen dicht en het gezicht rustig; naast het bed staat een wekker." loading="lazy">
+<h3 class="chunk">slapen</h3>
+<p class="gloss">to sleep</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 528</span><span>Body &amp; health</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">sliep</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft geslapen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult lies in a bed with the blanket pulled up to the shoulders, the head on a pillow, both eyes closed, the mouth relaxed and both arms outside the covers. The room is dim and a round alarm clock sits on a small bedside table.</dd>
+<dt>Must read</dt><dd class="must">closed eyes and the face at rest under the blanket.</dd>
+<dt>Avoid</dt><dd class="avoid">open eyes looking at the ceiling with the blanket flat (liggen); a person sitting up on the floor with the head on a table (zitten); wide open mouth and a hand over it (geeuwen); a person walking in pyjamas (lopen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene ligt onder een deken tot de schouders, de ogen dicht en het gezicht rustig; naast het bed staat een wekker.</dd>
+</dl>
+<p class="id">slapen.png · rang 528 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="spreken" class="kaart" data-id="spreken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Communication &amp; language" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 45">#45</span>
+<img class="beeld" src="../../assets/verbs/spreken.png" alt="Een volwassene staat alleen voor de kijker met een open hand op borsthoogte en de mond open; naast het hoofd hangt een tekstballon." loading="lazy">
+<h3 class="chunk">spreken</h3>
+<p class="gloss">to speak</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 563</span><span>Communication &amp; language</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">sprak</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gesproken</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands facing the viewer with one hand raised to chest height, the palm turned up and the fingers spread, mouth open mid-word; the other hand rests at the side. A single bold speech bubble with a plain line inside floats beside the head, and no second person is in the picture.</dd>
+<dt>Must read</dt><dd class="must">one adult mid-word with a speech bubble, facing the viewer alone.</dd>
+<dt>Avoid</dt><dd class="avoid">a second person facing them, both with short bars in two bubbles (praten); two bubbles and one hand passing a box (vertellen); a phone at the ear (bellen); a row of listeners in chairs (luisteren); letters inside the bubble.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat alleen voor de kijker met een open hand op borsthoogte en de mond open; naast het hoofd hangt een tekstballon.</dd>
+</dl>
+<p class="id">spreken.png · rang 563 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="dragen" class="kaart" data-id="dragen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 46">#46</span>
+<img class="beeld" src="../../assets/verbs/dragen.png" alt="Een volwassene loopt met een hoge doos tegen de borst, de armen eromheen en de kin erachter verborgen." loading="lazy">
+<h3 class="chunk">dragen</h3>
+<p class="gloss">to carry</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 586</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">droeg</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gedragen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult walks left to right carrying a tall cardboard box with both arms wrapped around it, the box pressed against the chest and high enough to hide the chin, the back leaning slightly away from the weight, the eyes peering over the top edge of the box.</dd>
+<dt>Must read</dt><dd class="must">both arms hugging a tall box against the chest while walking.</dd>
+<dt>Avoid</dt><dd class="avoid">a crate balanced on the head with both arms up (brengen); a box passing from hand to hand between two people (geven); an arm hanging down with a shopping bag in the fingers (houden); a person lifting a box off the floor (tillen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene loopt met een hoge doos tegen de borst, de armen eromheen en de kin erachter verborgen.</dd>
+</dl>
+<p class="id">dragen.png · rang 586 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="winnen" class="kaart" data-id="winnen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Sport &amp; games" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 47">#47</span>
+<img class="beeld" src="../../assets/verbs/winnen.png" alt="Een volwassene steekt beide armen omhoog met een beker in een hand, een rozet op de borst en papieren snippers in de lucht." loading="lazy">
+<h3 class="chunk">winnen</h3>
+<p class="gloss">to win</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 605</span><span>Sport &amp; games</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">won</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gewonnen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands on a low step with both arms raised in a V and an open mouth, a cup held high in one hand; a small rosette is pinned to the chest and pieces of paper fall around them. One other adult stands behind, looking down, arms hanging, holding nothing.</dd>
+<dt>Must read</dt><dd class="must">one adult with both arms up and a cup held high, a paper rosette on the chest.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult alone holding up a key with a quiet smile (vinden); two people shaking hands at a table with coins on it (delen); a person running past a ribbon (rennen); a crowd and a stadium; a scoreboard with figures.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene steekt beide armen omhoog met een beker in een hand, een rozet op de borst en papieren snippers in de lucht.</dd>
+</dl>
+<p class="id">winnen.png · rang 605 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="genieten" class="kaart" data-id="genieten" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 48">#48</span>
+<img class="beeld" src="../../assets/verbs/genieten.png" alt="Een volwassene zit met het hoofd achterover en de ogen dicht te glimlachen, een volle kop onder de neus." loading="lazy">
+<h3 class="chunk">genieten</h3>
+<p class="gloss">to enjoy</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 612</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">genoot</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft genoten</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits relaxed on a plain chair with the head tipped back, both eyes closed and a wide open smile; one hand holds a full steaming cup close under the nose, and nothing else is in the room.</dd>
+<dt>Must read</dt><dd class="must">a wide closed-eyed smile with a cup held under the nose.</dd>
+<dt>Avoid</dt><dd class="avoid">an open mouth with both hands on the belly and the head thrown back (lachen); a person holding up a cup as a prize (winnen); a fork lifted to an open mouth (eten); a nose bent close to food on a table (ruiken); a sun or a heart drawn above the head.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zit met het hoofd achterover en de ogen dicht te glimlachen, een volle kop onder de neus.</dd>
+</dl>
+<p class="id">genieten.png · rang 612 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="trekken" class="kaart" data-id="trekken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 49">#49</span>
+<img class="beeld" src="../../assets/verbs/trekken.png" alt="Een volwassene staat schrap met beide voeten uit elkaar en houdt een strak touw met twee handen vast, het lichaam achterover." loading="lazy">
+<h3 class="chunk">trekken</h3>
+<p class="gloss">to pull</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 641</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">trok</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft/is getrokken</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands braced with both feet apart and leans back, both hands closed around a long rope that runs over the shoulder towards the right edge of the frame; the elbows bend, the rope is taut, and nothing is attached at the far end.</dd>
+<dt>Must read</dt><dd class="must">a taut rope taken in both hands with the body leaning back.</dd>
+<dt>Avoid</dt><dd class="avoid">a rope slack in one hand with both people close together (houden); a palm flat against a box and pushing it forward (duwen); a heavy box wrapped in both arms (dragen); a horse or a cart at the end of the rope; a winch.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat schrap met beide voeten uit elkaar en houdt een strak touw met twee handen vast, het lichaam achterover.</dd>
+</dl>
+<p class="id">trekken.png · rang 641 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="bieden" class="kaart" data-id="bieden" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Money &amp; trade" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 50">#50</span>
+<img class="beeld" src="../../assets/verbs/bieden.png" alt="Een volwassene houdt een opgevouwen briefje op een open handpalm naar de winkelier, die een lamp vasthoudt en de andere hand ophoudt." loading="lazy">
+<h3 class="chunk">bieden</h3>
+<p class="gloss">to offer</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 657</span><span>Money &amp; trade</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">bood</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft geboden</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult at a plain counter holds out one folded banknote flat on an open palm towards a shopkeeper, who stands facing them with a lamp in one hand and the other palm raised and turned down. The note is offered and not yet taken, and no till or price card is in the frame.</dd>
+<dt>Must read</dt><dd class="must">a note held out flat on an open palm towards a shopkeeper who has not taken it.</dd>
+<dt>Avoid</dt><dd class="avoid">a note pushed flat along the counter beside a paper bag (kopen); one hand held palm-up and empty with no note (vragen); a cardboard box passing between two people (geven); a note pressed back into the same hand (krijgen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene houdt een opgevouwen briefje op een open handpalm naar de winkelier, die een lamp vasthoudt en de andere hand ophoudt.</dd>
+</dl>
+<p class="id">bieden.png · rang 657 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="verlaten" class="kaart" data-id="verlaten" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 51">#51</span>
+<img class="beeld" src="../../assets/verbs/verlaten.png" alt="Een volwassene stapt met de rug naar ons door een deuropening naar buiten en trekt de deur achter zich dicht." loading="lazy">
+<h3 class="chunk">verlaten</h3>
+<p class="gloss">to leave (a place)</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 676</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">verliet</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft verlaten</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult steps through a plain doorway out of a room, seen from behind, one foot already on the far side of the threshold; the near hand pulls the door shut behind them, so the room with one chair inside is only half visible. The direction of travel is out, away from the chair.</dd>
+<dt>Must read</dt><dd class="must">a person seen from behind stepping out through a door and pulling it shut.</dd>
+<dt>Avoid</dt><dd class="avoid">both people facing each other across a threshold with two open palms (praten); a person standing still inside a room beside a chair (blijven); a hand laid on a door handle with the body facing the room (sluiten); a person arriving through the door towards the viewer (komen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene stapt met de rug naar ons door een deuropening naar buiten en trekt de deur achter zich dicht.</dd>
+</dl>
+<p class="id">verlaten.png · rang 676 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="drinken" class="kaart" data-id="drinken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Food &amp; drink" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 52">#52</span>
+<img class="beeld" src="../../assets/verbs/drinken.png" alt="Een volwassene staat met het hoofd achterover en een schuin gehouden halfleeg glas aan de lippen; naast hem staat een kan water." loading="lazy">
+<h3 class="chunk">drinken</h3>
+<p class="gloss">to drink</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 678</span><span>Food &amp; drink</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">dronk</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gedronken</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands with the head tipped back and a plain glass held to the lips with one hand, the glass tilted and half empty, a few drops at the rim, the eyes shut. The other hand hangs at the side. A full jug of water stands on a table to the side.</dd>
+<dt>Must read</dt><dd class="must">a tilted glass at the lips with the head tipped back.</dd>
+<dt>Avoid</dt><dd class="avoid">a plate, a fork and a full mouth (eten); a raised bottle held away from the mouth (proosten); a closed cup on a table with both hands beside it (wachten); a tap running into a sink (wassen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat met het hoofd achterover en een schuin gehouden halfleeg glas aan de lippen; naast hem staat een kan water.</dd>
+</dl>
+<p class="id">drinken.png · rang 678 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="sluiten" class="kaart" data-id="sluiten" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Movement &amp; position" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 53">#53</span>
+<img class="beeld" src="../../assets/verbs/sluiten.png" alt="Een volwassene duwt van binnen met een vlakke hand een deur dicht, met nog een smalle kier en het oog op die kier." loading="lazy">
+<h3 class="chunk">sluiten</h3>
+<p class="gloss">to close</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 731</span><span>Movement &amp; position</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">sloot</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gesloten</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult faces a door from inside the room and pushes it shut with the flat of one hand on the door face, the other hand on the handle; the door is a hand width from its frame, with a dark sliver of the room beyond still showing and the person looking at the gap.</dd>
+<dt>Must read</dt><dd class="must">a door pushed nearly shut with a hand flat on it and a sliver of gap left.</dd>
+<dt>Avoid</dt><dd class="avoid">a person seen from behind stepping out through a doorway (verlaten); a key turned in a lock with a padlock visible (op slot doen); a hand held flat high on a barrier beside a round sign (mogen); a wide-open door with the frame empty.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene duwt van binnen met een vlakke hand een deur dicht, met nog een smalle kier en het oog op die kier.</dd>
+</dl>
+<p class="id">sluiten.png · rang 731 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="verkopen" class="kaart" data-id="verkopen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Money &amp; trade" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 54">#54</span>
+<img class="beeld" src="../../assets/verbs/verkopen.png" alt="Een volwassene achter een marktkraam houdt een zak appels naar een klant, die een mandje vasthoudt en de handen nog niet uitsteekt." loading="lazy">
+<h3 class="chunk">verkopen</h3>
+<p class="gloss">to sell</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 764</span><span>Money &amp; trade</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">verkocht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft verkocht</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult behind a market stall holds out a paper bag of apples with both hands towards a customer, both looking at the bag; the hands of the customer are still at their sides carrying a small basket. A plain stack of folded notes and a row of apples lie on the stall between them.</dd>
+<dt>Must read</dt><dd class="must">an apple bag held out over a stall towards a customer with full hands.</dd>
+<dt>Avoid</dt><dd class="avoid">the customer already holding the bag and reaching back with a note (kopen); a note pushed across a counter (betalen); an empty market stall with no person behind it (huren); two adults shaking hands at a table (delen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene achter een marktkraam houdt een zak appels naar een klant, die een mandje vasthoudt en de handen nog niet uitsteekt.</dd>
+</dl>
+<p class="id">verkopen.png · rang 764 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="slaan" class="kaart" data-id="slaan" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 55">#55</span>
+<img class="beeld" src="../../assets/verbs/slaan.png" alt="Een volwassene staat opzij en zwaait een houten slagplank met beide handen naar een balletje in de lucht." loading="lazy">
+<h3 class="chunk">slaan</h3>
+<p class="gloss">to hit</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 774</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">sloeg</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft geslagen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands side-on and swings a flat wooden bat down onto a ball in the air at hip height; both hands grip the handle, the elbows bent, the shoulders turned and the eyes on the ball. The ball has just left the bat and the ground below is empty.</dd>
+<dt>Must read</dt><dd class="must">a flat bat swung with both hands at a small ball in the air.</dd>
+<dt>Avoid</dt><dd class="avoid">a hand flat on a door pushing it shut (sluiten); two open palms meeting high above the head (klappen); a hammer on a nail in a plank (hameren); a fist drawn back with nothing in front of it (meppen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat opzij en zwaait een houten slagplank met beide handen naar een balletje in de lucht.</dd>
+</dl>
+<p class="id">slaan.png · rang 774 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="vervangen" class="kaart" data-id="vervangen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 56">#56</span>
+<img class="beeld" src="../../assets/verbs/vervangen.png" alt="Iemand houdt op de hurken bij een fiets een lekke band omhoog, los van het wiel." loading="lazy">
+<h3 class="chunk">vervangen</h3>
+<p class="gloss">to replace</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 776</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">verving</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft vervangen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult kneels beside a bicycle and lifts a flat tyre out of the front fork with both hands, a small pump and a second tyre already on the ground beside them; the old tyre is clear of the rim and held up, and the rest of the bicycle stays whole.</dd>
+<dt>Must read</dt><dd class="must">a flat tyre held up in both hands, clear of the bicycle wheel.</dd>
+<dt>Avoid</dt><dd class="avoid">a pump in one hand against a bare tyre (repareren); a box carried towards a half-open door (brengen); one note offered flat on a palm (bieden); a coin and a price sign on a counter (betalen).</dd>
+<dt>Alt text</dt><dd class="alt">Iemand houdt op de hurken bij een fiets een lekke band omhoog, los van het wiel.</dd>
+</dl>
+<p class="id">vervangen.png · rang 776 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="bekijken" class="kaart" data-id="bekijken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 57">#57</span>
+<img class="beeld" src="../../assets/verbs/bekijken.png" alt="Iemand staat voor een ingelijste tekening en kijkt er voorover naar." loading="lazy">
+<h3 class="chunk">bekijken</h3>
+<p class="gloss">to look at</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 807</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">bekeek</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft bekeken</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands in front of a picture hanging on a wall and leans in with both hands behind the back and the eyes fixed on the frame; the picture shows two plain shapes. A second adult is not in the room, and no other object is in the frame.</dd>
+<dt>Must read</dt><dd class="must">one adult leaning towards a hanging framed picture, hands behind the back.</dd>
+<dt>Avoid</dt><dd class="avoid">two people facing each other with a bar above each head (praten); a leaflet held in two hands before the eyes (lezen); a hand behind an ear beside a radio (luisteren); a person holding a magnifying glass up to the frame (onderzoeken).</dd>
+<dt>Alt text</dt><dd class="alt">Iemand staat voor een ingelijste tekening en kijkt er voorover naar.</dd>
+</dl>
+<p class="id">bekijken.png · rang 807 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="verliezen" class="kaart" data-id="verliezen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Abstract &amp; general" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 58">#58</span>
+<img class="beeld" src="../../assets/verbs/verliezen.png" alt="Een volwassene staat met hangende schouders bij een schaakbord met alleen zwarte stukken en een gescheurd rozet ernaast." loading="lazy">
+<h3 class="chunk">verliezen</h3>
+<p class="gloss">to lose</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 841</span><span>Abstract &amp; general</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">verloor</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft/is verloren</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands at a plain table with the shoulders slumped and the head low, both hands in the pockets, looking down at a small chessboard on the table where only black pieces stand; a folded paper rosette torn in two lies next to the board, and no other person is in the picture.</dd>
+<dt>Must read</dt><dd class="must">a slumped figure looking down at a chessboard with nothing of theirs left on it.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult with both arms raised and a cup held high (winnen); a hand closing over a key on the ground (vinden); a person on their knees reaching under a sofa (zoeken); a purse with coins spilled on the floor (vallen).</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat met hangende schouders bij een schaakbord met alleen zwarte stukken en een gescheurd rozet ernaast.</dd>
+</dl>
+<p class="id">verliezen.png · rang 841 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="onderzoeken" class="kaart" data-id="onderzoeken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Thought &amp; knowledge" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 59">#59</span>
+<img class="beeld" src="../../assets/verbs/onderzoeken.png" alt="Iemand bekijkt op de hurken bij een fiets het wiel met een vergrootglas, van dichtbij." loading="lazy">
+<h3 class="chunk">onderzoeken</h3>
+<p class="gloss">to investigate</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 926</span><span>Thought &amp; knowledge</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">onderzocht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft onderzocht</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult kneels beside a broken bicycle and holds a large round magnifying glass up at arm's length, looking through it at the bent rear wheel; the other hand turns the wheel slowly. Two loose screws lie on the ground, and a spanner lies flat nearby.</dd>
+<dt>Must read</dt><dd class="must">a magnifying glass held up to a bicycle wheel.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat tyre held up in both hands off the fork (vervangen); a person leaning close to a hanging picture (bekijken); a hammer and planks on a table (maken); a pointer on a wall chart (wijzen).</dd>
+<dt>Alt text</dt><dd class="alt">Iemand bekijkt op de hurken bij een fiets het wiel met een vergrootglas, van dichtbij.</dd>
+</dl>
+<p class="id">onderzoeken.png · rang 926 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="bezoeken" class="kaart" data-id="bezoeken" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="People &amp; relations" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 60">#60</span>
+<img class="beeld" src="../../assets/verbs/bezoeken.png" alt="Iemand stapt in de deuropening binnen met een bos bloemen voor een ander." loading="lazy">
+<h3 class="chunk">bezoeken</h3>
+<p class="gloss">to visit</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 938</span><span>People &amp; relations</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">bezocht</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft bezocht</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">two adults stand in a doorway facing each other: the visitor steps in with a bunch of flowers held out in both hands, and the resident stands back with a hand on the open door and smiles. Behind the resident a lit room is visible, and the doorway frames both.</dd>
+<dt>Must read</dt><dd class="must">a bunch of flowers held out in a doorway to a person who has the door open.</dd>
+<dt>Avoid</dt><dd class="avoid">a box carried away towards a closed door and laid down outside (brengen); one adult walking alone through an empty room (wonen); two adults at a market stall (kopen); a crowd of many people in a hall.</dd>
+<dt>Alt text</dt><dd class="alt">Iemand stapt in de deuropening binnen met een bos bloemen voor een ander.</dd>
+</dl>
+<p class="id">bezoeken.png · rang 938 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="lachen" class="kaart" data-id="lachen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Emotion &amp; feeling" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 61">#61</span>
+<img class="beeld" src="../../assets/verbs/lachen.png" alt="Een volwassene gooit het hoofd achterover met een wijd open mond, de ogen tot streepjes dicht en een hand op de buik." loading="lazy">
+<h3 class="chunk">lachen</h3>
+<p class="gloss">to laugh</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 946</span><span>Emotion &amp; feeling</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">lachte</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gelachen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands facing slightly away with the head thrown back, the mouth wide open, both eyes squeezed shut in curved lines, one hand flat on the belly and the shoulders lifted; the chest is clearly shaking. The mouth is open for laughing, with no sound shown.</dd>
+<dt>Must read</dt><dd class="must">a head thrown back with a wide open mouth and eyes squeezed shut.</dd>
+<dt>Avoid</dt><dd class="avoid">a person alone with a hand raised and a speech bubble, the mouth open in words (spreken); a person with the head tipped back beside an open notebook (zingen); a hand over the mouth with wide eyes (schrikken); a single tear on a straight face (huilen); a smiling face with the mouth closed.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene gooit het hoofd achterover met een wijd open mond, de ogen tot streepjes dicht en een hand op de buik.</dd>
+</dl>
+<p class="id">lachen.png · rang 946 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="zingen" class="kaart" data-id="zingen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Arts &amp; media" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 62">#62</span>
+<img class="beeld" src="../../assets/verbs/zingen.png" alt="Een volwassene staat alleen met het hoofd iets geheven en de mond open; uit de mond waaieren een paar gebogen lijnen." loading="lazy">
+<h3 class="chunk">zingen</h3>
+<p class="gloss">to sing</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 956</span><span>Arts &amp; media</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">zong</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft gezongen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands in the middle of empty ground with the head slightly lifted and the mouth open, one hand pressed flat on the chest, the other stretched out to the side, eyes closed. A few bold curved lines spread from the open mouth, and no other person or object is in the picture.</dd>
+<dt>Must read</dt><dd class="must">an open mouth with curved lines spreading from it, one hand on the chest.</dd>
+<dt>Avoid</dt><dd class="avoid">a face bent double with a hand on the belly (lachen); a microphone at the mouth (spreken); a tall stand with a sheet of paper on it (lezen); a guitar or a piano; letters inside the curved lines.</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat alleen met het hoofd iets geheven en de mond open; uit de mond waaieren een paar gebogen lijnen.</dd>
+</dl>
+<p class="id">zingen.png · rang 956 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+<article id="vliegen" class="kaart" data-id="vliegen" data-band="a1" data-kind="verb" data-regularity="irregular" data-domain="Transport &amp; travel" data-status="drawn" data-severity="">
+<span class="framenummer" title="Frame 63">#63</span>
+<img class="beeld" src="../../assets/verbs/vliegen.png" alt="Een klein toestel met vleugels gaat horizontaal door de lucht, boven twee platte wolken." loading="lazy">
+<h3 class="chunk">vliegen</h3>
+<p class="gloss">to fly</p>
+<p class="vlaggen"><span>onregelmatig</span><span>rang 992</span><span>Transport &amp; travel</span><span class="getekend">getekend</span></p>
+<p class="vormen"><span class="imp" title="verleden tijd, enkelvoud">vloog</span><span class="perf" title="voltooid deelwoord met hulpwerkwoord">heeft/is gevlogen</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">a small aeroplane in side view travels level across an empty sky, wings straight and nose slightly up, with two bold flat clouds below it and no ground in the picture; a pilot's head shows in the cockpit window.</dd>
+<dt>Must read</dt><dd class="must">an aeroplane in the air with clouds below it.</dd>
+<dt>Avoid</dt><dd class="avoid">a bird with both wings spread (fladderen); an aeroplane touching a runway (landen); a hot-air balloon leaving a field (stijgen); a person with both arms out jumping (springen); a jet trail across the sky.</dd>
+<dt>Alt text</dt><dd class="alt">Een klein toestel met vleugels gaat horizontaal door de lucht, boven twee platte wolken.</dd>
+</dl>
+<p class="id">vliegen.png · rang 992 · A1 onregelmatig · lexicon woorden.tsv</p>
+</article>
+</div>
+</main>
+
+<script>
+(function(){
+  var bar=document.querySelector('.filters'); if(!bar) return;
+  var cards=[].slice.call(document.querySelectorAll('.kaart'));
+  bar.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var want=b.dataset.filter;
+    [].forEach.call(bar.querySelectorAll('button'),function(x){
+      x.setAttribute('aria-pressed', String(x===b)); });
+    cards.forEach(function(c){
+      c.hidden = !(want==='alles' || c.dataset.domain===want);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

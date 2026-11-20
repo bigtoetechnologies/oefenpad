@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwoorden — beeldplannen</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+</style>
+</head>
+<body>
+<header>
+<h1>Werkwoorden — beeldplannen</h1>
+<p class="lead">One card per Dutch verb for every band from A0 to B1: the base form (irregular verbs add the past and perfect), a picture brief, and the frequency rank that put it there.</p>
+<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html">A0 regelmatig</a><a href="a1-irregular.html">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html">B1 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
+</header>
+<main>
+<table>
+<thead><tr><th>Page</th><th class='n'>Cards</th><th class='n'>Skipped</th><th class='n'>Frames</th><th class='n'>Rank</th><th>What it is</th></tr></thead>
+<tbody>
+<tr><td><a href="a0-irregular.html">A0 · onregelmatig</a></td><td class="n">24</td><td class="n">3</td><td class="n">#1–#24</td><td class="n">1–250</td><td class="blurb">Survival: the first weeks. Being, having, going, eating, and the modals that hold every sentence together. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
+<tr><td><a href="a0-regular.html">A0 · regelmatig</a></td><td class="n">6</td><td class="n">0</td><td class="n">#25–#30</td><td class="n">52–247</td><td class="blurb">Survival: the first weeks. Being, having, going, eating, and the modals that hold every sentence together. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
+<tr><td><a href="a1-irregular.html">A1 · onregelmatig</a></td><td class="n">33</td><td class="n">4</td><td class="n">#31–#63</td><td class="n">256–992</td><td class="blurb">Everyday life outside the house: buying, waiting, driving, talking, and the first verbs of feeling. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
+<tr><td><a href="a1-regular.html">A1 · regelmatig</a></td><td class="n">28</td><td class="n">15</td><td class="n">#64–#91</td><td class="n">262–1000</td><td class="blurb">Everyday life outside the house: buying, waiting, driving, talking, and the first verbs of feeling. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
+<tr><td><a href="a2-irregular.html">A2 · onregelmatig</a></td><td class="n">22</td><td class="n">31</td><td class="n">#92–#113</td><td class="n">1077–2468</td><td class="blurb">Work, society and the first abstract verbs: proving, comparing, deciding, and the verbs of the body. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
+<tr><td><a href="a2-regular.html">A2 · regelmatig</a></td><td class="n">37</td><td class="n">23</td><td class="n">#114–#150</td><td class="n">1011–1615</td><td class="blurb">Work, society and the first abstract verbs: proving, comparing, deciding, and the verbs of the body. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
+<tr><td><a href="b1-irregular.html">B1 · onregelmatig</a></td><td class="n">31</td><td class="n">37</td><td class="n">#151–#181</td><td class="n">2510–4575</td><td class="blurb">The wider vocabulary: institutions, nature, the workshop, and verbs of argument and judgement. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
+<tr><td><a href="b1-regular.html">B1 · regelmatig</a></td><td class="n">20</td><td class="n">40</td><td class="n">#182–#201</td><td class="n">2528–3162</td><td class="blurb">The wider vocabulary: institutions, nature, the workshop, and verbs of argument and judgement. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
+<tr class="totaal"><td>Total</td><td class="n">201</td><td class="n">153</td><td class="n">#1–#201</td><td></td><td>201 cards, 153 skipped, 445 verbs held back</td></tr>
+</tbody>
+</table>
+<div class="uitleg">
+<h2>What these pages are</h2>
+<p>One card per Dutch verb, in its base form. Each card carries a picture brief: <em>Scene</em> (what is drawn), <em>Must read</em> (the one mark that has to be legible at thumbnail size), <em>Avoid</em> (the near-miss actions, each with the competing verb) and <em>Alt text</em> (Dutch, for a screen reader). The art is the Voorzetselpaden style: flat cobalt #2B50C8 on white, no text. The brief is in <a href="base-prompt.txt">base-prompt.txt</a>.</p>
+<p>90 of 201 cards are drawn so far: a card counts as drawn when <code>assets/verbs/&lt;slug&gt;.png</code> exists, and the rest are proposals.</p>
+<p>Irregular cards also carry the forms a learner cannot predict: the past singular and the perfect (auxiliary plus participle), taken from Bijlage 3b into <code>tools/lexicon/werkwoorden-vormen.tsv</code>. Regular cards carry the base form only, because <em>-te/-de</em> and <em>ge-</em> are one rule taught once. There are no example sentences and no contrast pairs in this pass.</p>
+<h2>How the bands were cut</h2>
+<p>By lexicon frequency rank, from <code>tools/lexicon/woorden-frequentie.tsv</code>: A0 up to 250, A1 up to 1000, A2 up to 2500, B1 up to 5000. Irregular and regular verbs are separate pages, because a learner meets them in a different order. The ranks were cross-checked against the coursebook appendices in <code>/media/tony/Data/Dutch</code> (Bijlage 3b for irregular verbs, Bijlage 4 for separable verbs), which is also what the cross-check in <code>Docs/voorzetselpaden/</code> used.</p>
+<h2>What is not here</h2>
+<p>Separable verbs, reflexive verbs, a handful of sensitive or rare lemmas, and the regular verbs below the A2 and B1 cut: that is 445 verbs, listed with their reason on <a href="backlog.html">backlog.html</a>. A further 153 selected verbs have no honest single drawing and are listed there too, under "Verbs the writer could not draw". The same page also tracks the other word classes still to be given cards.</p>
+<h2>Where the words came from</h2>
+<p><code>tools/_ww_tmp/select.py</code> writes the selection; <code>tools/build-verb-cards.py</code> turns it, plus the scene notes in <code>tools/_ww_tmp/scenes/</code>, into these pages. Conventions and the rerun recipe are in <a href="AGENTS.html">AGENTS.html</a>.</p>
+</div>
+</main>
+</body>
+</html>
