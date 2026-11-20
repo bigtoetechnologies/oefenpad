@@ -33,10 +33,10 @@ OUT = os.path.join(ROOT, "Docs", "bijwoorden")
 BANDS = ["a0", "a1", "a2", "b1"]   # no B2 band for this family (owner ruling 20 Nov 2026)
 
 BAND_LEAD = {
-    "a0": "Company, place, amount and state: also and only, on and off, at home and on the way, a lot and few, enough and too many, finished and busy.",
+    "a0": "Company, place, amount and state: also and only, on and off, at home and on the way, a lot and few, enough and too many, finished and busy, on board and overboard.",
     "a1": "Where things are and which way: used up and left over, upstairs and downstairs, left and right, everywhere and nowhere, in and out, more and fewer, day and night.",
-    "a2": "Aim, movement and route: on target and off, up and down, forward and backward, straight on and turning, together and apart, front and back of a queue, next door and further on.",
-    "b1": "Finer places and postures: top, halfway and bottom of the stairs, front and back seat, middle and aside, upright and upside down, on the front and back of a bike, across and slantwise, underground and above ground, on one's feet and going flying, leaning back and bending forward, on board and overboard, at the top and at the bottom of a cupboard.",
+    "a2": "Aim, movement and route: on target and off, up and down, forward and backward, straight on and turning, together and apart, front and back of a queue, next door and further on, across and slantwise.",
+    "b1": "Finer places and postures: top, halfway and bottom of the stairs, front and back seat, middle and aside, upright and upside down, on the front and back of a bike, underground and above ground, on one's feet and going flying, leaning back and bending forward, at the top and at the bottom of a cupboard.",
 }
 
 

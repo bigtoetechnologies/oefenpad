@@ -35,6 +35,8 @@ REASON = {
 EVERYDAY = {
     'vooraan-achteraan': ('a2', 'queuing at the shop till, the bus stop and the doctor is daily life, and joining a queue at the back is something a newcomer does every day'),
     'verderop-hiernaast': ('a2', 'the neighbours next door and the shop a little further on are how a newcomer hears directions in the street every day'),
+    'dwars-schuin': ('a2', 'a car parked across the road, a picture hanging on a slant and a line drawn diagonally are things a newcomer sees and has to name in daily life (owner ruling, November)'),
+    'boord': ('a0', 'getting on and off a ferry or a water bus is part of daily travel in the Netherlands, so the owner places the pair in the first band (owner ruling, November)'),
 }
 COURSEBOOK_FOR = {'a0': {'A1', 'les:nig'}, 'a1': {'A1', 'les:nig'}, 'a2': {'A1', 'les:nig'},
                   'b1': {'A1', 'les:nig', 'B1', 'les:register', 'les:taalcompleet'}}

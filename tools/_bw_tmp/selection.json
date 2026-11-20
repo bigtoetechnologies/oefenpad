@@ -359,6 +359,25 @@
      "rank": 10
     }
    ]
+  },
+  {
+   "id": "boord",
+   "axis": "on a boat or in the water",
+   "band": "a0",
+   "members": [
+    {
+     "id": "aan-boord",
+     "lemma": "aan boord",
+     "gloss": "on board",
+     "rank": null
+    },
+    {
+     "id": "overboord",
+     "lemma": "overboord",
+     "gloss": "overboard",
+     "rank": 5819
+    }
+   ]
   }
  ],
  "a1": [
@@ -662,6 +681,25 @@
    ]
   },
   {
+   "id": "dwars-schuin",
+   "axis": "angle of a trunk over a path",
+   "band": "a2",
+   "members": [
+    {
+     "id": "dwars",
+     "lemma": "dwars",
+     "gloss": "across (at a right angle)",
+     "rank": 2592
+    },
+    {
+     "id": "schuin",
+     "lemma": "schuin",
+     "gloss": "slantwise, diagonally",
+     "rank": 5086
+    }
+   ]
+  },
+  {
    "id": "verderop-hiernaast",
    "axis": "place of a shop in a street",
    "band": "a2",
@@ -784,25 +822,6 @@
    ]
   },
   {
-   "id": "dwars-schuin",
-   "axis": "angle of a trunk over a path",
-   "band": "b1",
-   "members": [
-    {
-     "id": "dwars",
-     "lemma": "dwars",
-     "gloss": "across (at a right angle)",
-     "rank": 2592
-    },
-    {
-     "id": "schuin",
-     "lemma": "schuin",
-     "gloss": "slantwise, diagonally",
-     "rank": 5086
-    }
-   ]
-  },
-  {
    "id": "ondergronds-bovengronds",
    "axis": "level of a train",
    "band": "b1",
@@ -856,25 +875,6 @@
      "lemma": "voorover",
      "gloss": "forward (bending forward)",
      "rank": 6726
-    }
-   ]
-  },
-  {
-   "id": "boord",
-   "axis": "on a boat or in the water",
-   "band": "b1",
-   "members": [
-    {
-     "id": "aan-boord",
-     "lemma": "aan boord",
-     "gloss": "on board",
-     "rank": null
-    },
-    {
-     "id": "overboord",
-     "lemma": "overboord",
-     "gloss": "overboard",
-     "rank": 5819
     }
    ]
   },
