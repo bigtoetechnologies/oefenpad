@@ -22,6 +22,24 @@ Asserts
   - a "conventional" symbol appears only on A0 and A1 pages
   - no two cards share the same English gloss
   - irregular cards show exactly the forms in werkwoorden-vormen.tsv
+  B1/B2 pass (20 Nov 2026):
+  - every hand-set rank (rank_source handmatig) has a reason, moves the verb to
+    another band than its lexicon rank, and is listed on index.html
+  - every SKIP row and every "later pass" backlog row carries a reason
+  - no card's slug is also a card id in another family's Docs/<family>/ pages
+  - scenes have at least 30 words and alt texts at most 20 (errors on b1-regular
+    and the B2 pages, warnings on the older pages)
+  Fix pass 2 (20 Nov 2026, after the B1/B2 review):
+  - alt text uses no word on the short (unlengthened) stem either (gras for
+    grazen) nor a listed cognate (zaad for zaaien, druppel for druipen)
+  - alt text uses no form of a verb its own Avoid names as a competitor (giet on
+    the mengen card); a form of another card on the same page is a warning
+  - Avoid names no colour either, and alt names no Dutch colour other than wit
+    or zwart
+  - Scene and Must ask for no musical notes (a notation glyph is a readable mark)
+  - a SKIP row may not give "two senses" as its reason (the family picks one
+    sense and cards it), and a "Duplicate of <family>:<id>" reason must name a
+    card that exists in that family
 
 Run:  python3 tools/check-verb-cards.py
 """
@@ -37,7 +55,7 @@ OUT = os.path.join(ROOT, "Docs", "werkwoorden")
 TMP = os.path.join(ROOT, "tools", "_ww_tmp")
 SCENES = os.path.join(TMP, "scenes")
 
-BANDS = ["A0", "A1", "A2", "B1"]
+BANDS = ["A0", "A1", "A2", "B1", "B2"]
 REGS = ["irregular", "regular"]
 
 errors = []
@@ -45,6 +63,14 @@ errors = []
 
 def err(msg):
     errors.append(msg)
+
+
+warnings = []
+LENGTH_STRICT = {"b1-regular", "b2-irregular", "b2-regular"}
+
+
+def warn(msg):
+    warnings.append(msg)
 
 
 def page_key(band, reg):
@@ -85,6 +111,7 @@ def cards(path):
     return found, text
 
 
+VERBS = {r["verb"] for r in json.load(open(os.path.join(TMP, "selection.json"), encoding="utf-8"))}
 FORMS_TSV = os.path.join(ROOT, "tools", "lexicon", "werkwoorden-vormen.tsv")
 FORMS = {r["verb"]: r for r in read_tsv(FORMS_TSV)}
 
@@ -97,6 +124,18 @@ ALT_ALLOW = {
     "doen": {"doek", "doeken"},
     "leven": {"levensmiddelen"},
     "zien": {"ziek"},
+    # Accepted exception (review L3): the picture is a ball, and no honest Dutch
+    # describes it without the word.
+    "voetballen": {"bal"},
+}
+
+# Nouns on another root of the same verb, which the stem test cannot see.
+COGNATES = {
+    "zaaien": ("zaad", "zaai"),
+    "druipen": ("druppel", "drup"),
+    "grazen": ("gras",),
+    "zwaaien": ("zwaai",),
+    "voetballen": ("voetbal",),
 }
 
 
@@ -140,9 +179,18 @@ def own_forms(verb):
     return {x for x in forms if len(x) >= 2}
 
 
+def short_stem(inf):
+    """The stem before vowel doubling and devoicing rules: grazen -> gras."""
+    s = inf[:-2] if inf.endswith("en") else inf
+    if len(s) >= 2 and s[-1] == s[-2] and s[-1] not in "aeiou":
+        s = s[:-1]
+    return s[:-1] + {"z": "s", "v": "f"}.get(s[-1], s[-1]) if s else s
+
+
 def alt_leaks(verb, alt):
     forms = own_forms(verb)
     st = stem_of(verb)
+    sh = short_stem(verb)
     hits = []
     for tok in re.findall(r"[a-zëéïöü]+", alt.lower()):
         if tok in ALT_ALLOW.get(verb, ()):
@@ -156,11 +204,36 @@ def alt_leaks(verb, alt):
         elif len(st) >= 4 and st in tok:
             # A noun built on the stem leaks the answer too: zwemmer, weegschaal.
             hits.append(tok)
+        elif len(sh) >= 4 and sh != st and tok.startswith(sh):
+            hits.append(tok)
+        elif any(tok.startswith(c) for c in COGNATES.get(verb, ())):
+            hits.append(tok)
     return hits
 
 
+# Posture and looking verbs nearly every alt text needs; a form of one of these
+# is not treated as naming a competitor.
+BASIC = {"staan", "zitten", "liggen", "houden", "kijken", "lopen", "zijn", "hebben"}
+
+
+def form_hits(verb, alt):
+    """Tokens of alt that are a finite, past or participle form of verb.  The
+    bare stem and the infinitive are left out: they are usually a noun or an
+    adjective (fiets, open, het eten)."""
+    if verb in BASIC:
+        return []
+    forms = own_forms(verb) - {verb, stem_of(verb)}
+    out = []
+    for tok in re.findall(r"[a-zëéïöü]+", alt.lower()):
+        cands = {tok} | {tok[len(p):] for p in PREFIXES if tok.startswith(p) and len(tok) - len(p) >= 3}
+        if {c for c in cands & forms if len(c) >= 3}:
+            out.append(tok)
+    return out
+
+
 COLOUR_RE = re.compile(r"\b(red|green|yellow|gold|golden|grey|gray|blue|orange|purple|pink|brown|silver)\b", re.I)
-TEXT_RE = re.compile(r"\b(numbered|numbers?|digits?|lettering|letters|text|written|words|labelled)\b", re.I)
+TEXT_RE = re.compile(r"\b(numbered|numbers?|digits?|lettering|letters|text|written|words|labelled|musical notes?|notation)\b", re.I)
+COLOUR_NL_RE = re.compile(r"\b(rood|rode|groen|groene|geel|gele|goud|gouden|grijs|grijze|blauw|blauwe|oranje|paars|paarse|roze|bruin|bruine|zilver|zilveren|muzieknootjes?|muzieknoten)\b", re.I)
 NEG_RE = re.compile(r"\b(no|not|nothing|without|never|nor|blank)\b", re.I)
 SOUVENIR_RE = re.compile(r"\b(cheese|kaas|tulips?|tulpen?|windmills?|molen|clogs?|klompen?|cross|kruis)\b", re.I)
 
@@ -176,6 +249,15 @@ def content_checks(key, c, verb):
         err(f"{key}: {verb} alt uses a form of its own verb: {tok}")
     if re.search(r"\(" + re.escape(verb) + r"\)", dd.get("avoid", "")):
         err(f"{key}: {verb} Avoid names its own verb as the competitor")
+    strict = err if key in LENGTH_STRICT else warn
+    for m in COLOUR_RE.finditer(dd.get("avoid", "")):
+        strict(f"{key}: {verb} avoid names a colour: {m.group(0)}")
+    for m in COLOUR_NL_RE.finditer(dd.get("alt", "")):
+        err(f"{key}: {verb} alt names a colour or a notation glyph: {m.group(0)}")
+    for comp in re.findall(r"\(([a-zëéïöü]+)\)", dd.get("avoid", "")):
+        if comp != verb and comp in VERBS:
+            for tok in form_hits(comp, dd.get("alt", "")):
+                strict(f"{key}: {verb} alt uses {tok}, a form of {comp}, the competitor its Avoid names")
     for field in ("scene", "must"):
         text = dd.get(field, "")
         for m in COLOUR_RE.finditer(text):
@@ -186,6 +268,13 @@ def content_checks(key, c, verb):
     for field in ("scene", "must", "alt"):
         for m in SOUVENIR_RE.finditer(dd.get(field, "")):
             err(f"{key}: {verb} {field} has souvenir or religious imagery: {m.group(0)}")
+    # Length rules are enforced on the pages written or extended in the B1/B2
+    # pass; older pages only warn, because their cards stay as reviewed.
+    report = err if key in LENGTH_STRICT else warn
+    if len(dd.get("scene", "").split()) < 30:
+        report(f"{key}: {verb} scene is under 30 words; the brief asks for 35-55")
+    if len(dd.get("alt", "").split()) > 20:
+        report(f"{key}: {verb} alt text is over 20 words")
     if "conventional" in dd.get("scene", "").lower() and key[:2] not in ("a0", "a1"):
         err(f"{key}: {verb} uses a conventional symbol above A1")
 
@@ -244,6 +333,16 @@ for band in BANDS:
             if has.get(c["id"]) != want:
                 err(f"{key}: {c['id']} {'lacks' if want else 'must not have'} the past/perfect line")
 
+# A form of another B1/B2 card in an alt text (review L2: leunt on duwen, buigt
+# on ontwijken).  Warning only: the word may be the honest description.
+late = [(key, c, html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1)))
+        for key, (found, _t) in by_page.items() if key[:2] in ("b1", "b2") for c in found]
+late_verbs = {v for _k, _c, v in late}
+for key, c, verb in late:
+    for other in late_verbs - {verb}:
+        for tok in form_hits(other, c["dd"].get("alt", "")):
+            warn(f"{key}: {verb} alt uses {tok}, a form of {other}, another B1/B2 card")
+
 for gloss, verbs in glosses.items():
     if len(verbs) > 1:
         err(f"gloss {gloss!r} shared by {', '.join(verbs)}: add a qualifier")
@@ -295,6 +394,70 @@ for band in BANDS:
             if (r["scene"] or "").strip().upper().startswith("SKIP"):
                 if f"<td>{html.escape(r['verb'])}</td>" not in backlog:
                     err(f"backlog missing skipped verb {r['verb']} ({key})")
+
+# 6. Hand-set ranks: a reason, a different band, shown on the overview.
+def band_of(rank):
+    for band, top in (("A0", 250), ("A1", 1000), ("A2", 2500), ("B1", 5000), ("B2", 10000)):
+        if rank <= top:
+            return band
+    return None
+
+
+selection = json.load(open(os.path.join(TMP, "selection.json"), encoding="utf-8"))
+for r in selection:
+    if r.get("rank_source") != "handmatig":
+        continue
+    if not r.get("rank_reason"):
+        err(f"rank override for {r['verb']} has no reason")
+    if band_of(r.get("raw_rank", 0)) == band_of(r["rank"]):
+        err(f"rank override for {r['verb']} repeats the lexicon band {band_of(r['rank'])}")
+    if f"<td>{html.escape(r['verb'])}</td><td class=\"n\">{r.get('raw_rank')}</td>" not in index:
+        err(f"index.html does not list the rank override for {r['verb']}")
+
+# 7. Reasons for every SKIP row and every later-pass backlog row.
+def dup_target_exists(fam, cid):
+    d = os.path.join(ROOT, "Docs", fam)
+    if not os.path.isdir(d):
+        return False
+    return any(f'data-id="{cid}"' in open(os.path.join(d, f), encoding="utf-8").read()
+               for f in os.listdir(d) if f.endswith(".html"))
+
+
+for band in BANDS:
+    for reg in REGS:
+        for r in read_tsv(os.path.join(SCENES, page_key(band, reg) + ".tsv")):
+            s = (r["scene"] or "").strip()
+            if s.upper().startswith("SKIP") and len(s[4:].strip(" :")) < 15:
+                err(f"{page_key(band, reg)}: SKIP row for {r['verb']} has no reason")
+            if s.upper().startswith("SKIP") and re.search(r"\btwo (\w+ )?senses\b", s, re.I):
+                warn(f"{page_key(band, reg)}: SKIP row for {r['verb']} gives two senses as the reason; the family picks one sense and cards it")
+            if s.upper().startswith("SKIP"):
+                for fam, cid in re.findall(r"\b([a-z-]+):([a-z0-9-]+)", s):
+                    if not dup_target_exists(fam, cid):
+                        err(f"{page_key(band, reg)}: SKIP row for {r['verb']} cites {fam}:{cid}, which is not a card there")
+for r in read_tsv(os.path.join(TMP, "backlog_seed.tsv")):
+    if r.get("reason") == "later pass" and not (r.get("note") or "").strip():
+        err(f"backlog: later-pass verb {r['verb']} has no note")
+
+# 8. No card id shared with another family's cards.
+DOCS = os.path.join(ROOT, "Docs")
+other_ids = {}
+for fam in os.listdir(DOCS):
+    d = os.path.join(DOCS, fam)
+    if fam == "werkwoorden" or not os.path.isdir(d):
+        continue
+    for f in os.listdir(d):
+        if f.endswith(".html"):
+            for m in re.finditer(r'<article[^>]*data-id="([^"]+)"', open(os.path.join(d, f), encoding="utf-8").read()):
+                other_ids.setdefault(m.group(1), f"{fam}/{f}")
+for slug, key in seen.items():
+    if slug in other_ids:
+        err(f"{key}: card {slug} is also a card in {other_ids[slug]}")
+
+if warnings:
+    print(f"warnings {len(warnings)} (older pages, not errors)")
+    for w in warnings:
+        print("  " + w)
 
 if errors:
     print(f"FAIL {len(errors)} problem(s)")

@@ -74,8 +74,8 @@ tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:no
 <body>
 <header>
 <h1>Werkwoorden — beeldplannen</h1>
-<p class="lead">One card per Dutch verb for every band from A0 to B1: the base form (irregular verbs add the past and perfect), a picture brief, and the frequency rank that put it there.</p>
-<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html">A0 regelmatig</a><a href="a1-irregular.html">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html">B1 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
+<p class="lead">One card per Dutch verb for every band from A0 to B2: the base form (irregular verbs add the past and perfect), a picture brief, and the frequency rank that put it there.</p>
+<nav class="banden"><a href="index.html">overview</a><a href="a0-irregular.html">A0 onregelmatig</a><a href="a0-regular.html">A0 regelmatig</a><a href="a1-irregular.html">A1 onregelmatig</a><a href="a1-regular.html">A1 regelmatig</a><a href="a2-irregular.html">A2 onregelmatig</a><a href="a2-regular.html">A2 regelmatig</a><a href="b1-irregular.html">B1 onregelmatig</a><a href="b1-regular.html">B1 regelmatig</a><a href="b2-irregular.html">B2 onregelmatig</a><a href="b2-regular.html">B2 regelmatig</a><a href="matrix.html">matrix</a><a href="backlog.html">backlog</a></nav>
 </header>
 <main>
 <table>
@@ -88,19 +88,63 @@ tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:no
 <tr><td><a href="a2-irregular.html">A2 · onregelmatig</a></td><td class="n">22</td><td class="n">31</td><td class="n">#92–#113</td><td class="n">1077–2468</td><td class="blurb">Work, society and the first abstract verbs: proving, comparing, deciding, and the verbs of the body. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
 <tr><td><a href="a2-regular.html">A2 · regelmatig</a></td><td class="n">37</td><td class="n">23</td><td class="n">#114–#150</td><td class="n">1011–1615</td><td class="blurb">Work, society and the first abstract verbs: proving, comparing, deciding, and the verbs of the body. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
 <tr><td><a href="b1-irregular.html">B1 · onregelmatig</a></td><td class="n">31</td><td class="n">37</td><td class="n">#151–#181</td><td class="n">2510–4575</td><td class="blurb">The wider vocabulary: institutions, nature, the workshop, and verbs of argument and judgement. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
-<tr><td><a href="b1-regular.html">B1 · regelmatig</a></td><td class="n">20</td><td class="n">40</td><td class="n">#182–#201</td><td class="n">2528–3162</td><td class="blurb">The wider vocabulary: institutions, nature, the workshop, and verbs of argument and judgement. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
-<tr class="totaal"><td>Total</td><td class="n">201</td><td class="n">153</td><td class="n">#1–#201</td><td></td><td>201 cards, 153 skipped, 445 verbs held back</td></tr>
+<tr><td><a href="b1-regular.html">B1 · regelmatig</a></td><td class="n">57</td><td class="n">169</td><td class="n">#182–#238</td><td class="n">2528–4827</td><td class="blurb">The wider vocabulary: institutions, nature, the workshop, and verbs of argument and judgement. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
+<tr><td><a href="b2-irregular.html">B2 · onregelmatig</a></td><td class="n">18</td><td class="n">64</td><td class="n">#239–#256</td><td class="n">5080–9044</td><td class="blurb">The long tail: crafts, the garden, the body and its noises, and the everyday verbs a learner reads before speaking. The strong verbs. They carry the most frequent meanings, so they come first in every band.</td></tr>
+<tr><td><a href="b2-regular.html">B2 · regelmatig</a></td><td class="n">44</td><td class="n">388</td><td class="n">#257–#300</td><td class="n">5204–8862</td><td class="blurb">The long tail: crafts, the garden, the body and its noises, and the everyday verbs a learner reads before speaking. The weak verbs, past in -te or -de. Regular, so later on the ladder and easier once met.</td></tr>
+<tr class="totaal"><td>Total</td><td class="n">300</td><td class="n">734</td><td class="n">#1–#300</td><td></td><td>300 cards + 734 skipped = 1034 selected; 603 more held back before selection</td></tr>
 </tbody>
 </table>
 <div class="uitleg">
+<h2 id="tellingen">What the counts mean</h2>
+<p>The two numbers without a card count different verbs and never overlap. Together they are the 1337 verbs with no card yet, all listed on <a href="backlog.html">backlog.html</a>.</p>
+<table><thead><tr><th>Count</th><th class='n'>Verbs</th><th>Definition</th></tr></thead><tbody>
+<tr><td>Selected</td><td class="n">1034</td><td>Every verb <code>select.py</code> put on one of the ten band pages, in <code>selection.json</code>. Each one has a scene row. Selected = cards + skipped.</td></tr>
+<tr><td>Cards</td><td class="n">300</td><td>Selected verbs whose scene row is a picture brief: one card, one frame number.</td></tr>
+<tr><td>Skipped</td><td class="n">734</td><td>Selected verbs whose scene row begins with <code>SKIP:</code>, because no honest single drawing carries them. The reason is about the picture.</td></tr>
+<tr><td>Held back</td><td class="n">603</td><td>Verbs <code>select.py</code> set aside before any scene was written, in <code>backlog_seed.tsv</code>: separable, reflexive, sensitive, odd lemmas, A2 regulars below the cut, and drawable verbs left for a later pass. They are on no band page.</td></tr>
+</tbody></table>
 <h2>What these pages are</h2>
 <p>One card per Dutch verb, in its base form. Each card carries a picture brief: <em>Scene</em> (what is drawn), <em>Must read</em> (the one mark that has to be legible at thumbnail size), <em>Avoid</em> (the near-miss actions, each with the competing verb) and <em>Alt text</em> (Dutch, for a screen reader). The art is the Voorzetselpaden style: flat cobalt #2B50C8 on white, no text. The brief is in <a href="base-prompt.txt">base-prompt.txt</a>.</p>
-<p>90 of 201 cards are drawn so far: a card counts as drawn when <code>assets/verbs/&lt;slug&gt;.png</code> exists, and the rest are proposals.</p>
+<p>90 of 300 cards are drawn so far: a card counts as drawn when <code>assets/verbs/&lt;slug&gt;.png</code> exists, and the rest are proposals.</p>
 <p>Irregular cards also carry the forms a learner cannot predict: the past singular and the perfect (auxiliary plus participle), taken from Bijlage 3b into <code>tools/lexicon/werkwoorden-vormen.tsv</code>. Regular cards carry the base form only, because <em>-te/-de</em> and <em>ge-</em> are one rule taught once. There are no example sentences and no contrast pairs in this pass.</p>
 <h2>How the bands were cut</h2>
-<p>By lexicon frequency rank, from <code>tools/lexicon/woorden-frequentie.tsv</code>: A0 up to 250, A1 up to 1000, A2 up to 2500, B1 up to 5000. Irregular and regular verbs are separate pages, because a learner meets them in a different order. The ranks were cross-checked against the coursebook appendices in <code>/media/tony/Data/Dutch</code> (Bijlage 3b for irregular verbs, Bijlage 4 for separable verbs), which is also what the cross-check in <code>Docs/voorzetselpaden/</code> used.</p>
+<p>By lexicon frequency rank, from <code>tools/lexicon/woorden-frequentie.tsv</code>: A0 up to 250, A1 up to 1000, A2 up to 2500, B1 up to 5000, B2 up to 10,000. Irregular and regular verbs are separate pages, because a learner meets them in a different order. The ranks were cross-checked against the coursebook appendices in <code>/media/tony/Data/Dutch</code> (Bijlage 3b for irregular verbs, Bijlage 4 for separable verbs), which is also what the cross-check in <code>Docs/voorzetselpaden/</code> used.</p>
+<h2 id="rang-handmatig">Ranks set by hand</h2>
+<p>The rank is the frequency of the spelling, not of the verb. Where the spelling is mostly a noun plural, or where wordfreq gave the verb row no score of its own, <code>select.py</code> sets the rank by hand. Each override moves the verb to another band; <code>check-verb-cards.py</code> fails one that does not. The ranks for noun plurals are judgement, not a lemma count.</p>
+<table><thead><tr><th>Verb</th><th class='n'>Lexicon rank</th><th>Band</th><th class='n'>Rank used</th><th>Band</th><th>Why</th></tr></thead><tbody>
+<tr><td>zijn</td><td class="n">9177</td><td>B2</td><td class="n">1</td><td>A0</td><td class="blurb">wordfreq gave the verb row no score of its own (zipf 2.38); the verb is the commonest word</td></tr>
+<tr><td>eten</td><td class="n">9165</td><td>B2</td><td class="n">250</td><td>A0</td><td class="blurb">wordfreq gave the verb row no score of its own (zipf 2.38); core A0 verb</td></tr>
+<tr><td>kosten</td><td class="n">9167</td><td>B2</td><td class="n">450</td><td>A1</td><td class="blurb">wordfreq gave the verb row no score of its own (zipf 2.38); everyday shop verb</td></tr>
+<tr><td>leven</td><td class="n">9168</td><td>B2</td><td class="n">550</td><td>A1</td><td class="blurb">wordfreq gave the verb row no score of its own (zipf 2.38); common A1 verb</td></tr>
+<tr><td>plaatsen</td><td class="n">329</td><td>A1</td><td class="n">1100</td><td>A2</td><td class="blurb">the spelling is mostly the plural of plaats</td></tr>
+<tr><td>landen</td><td class="n">338</td><td>A1</td><td class="n">1300</td><td>A2</td><td class="blurb">the spelling is mostly the plural of land</td></tr>
+<tr><td>bestaan</td><td class="n">9162</td><td>B2</td><td class="n">1400</td><td>A2</td><td class="blurb">wordfreq gave the verb row no score of its own (zipf 2.38); placed in A2</td></tr>
+<tr><td>stemmen</td><td class="n">531</td><td>A1</td><td class="n">1400</td><td>A2</td><td class="blurb">the spelling is mostly the plural of stem</td></tr>
+<tr><td>boeken</td><td class="n">443</td><td>A1</td><td class="n">1500</td><td>A2</td><td class="blurb">the spelling is mostly the plural of boek</td></tr>
+<tr><td>plannen</td><td class="n">695</td><td>A1</td><td class="n">1600</td><td>A2</td><td class="blurb">the spelling is mostly the plural of plan</td></tr>
+<tr><td>graven</td><td class="n">2221</td><td>A2</td><td class="n">3000</td><td>B1</td><td class="blurb">the spelling is mostly the plural of graf</td></tr>
+<tr><td>wijken</td><td class="n">1813</td><td>A2</td><td class="n">4000</td><td>B1</td><td class="blurb">the spelling is mostly the plural of wijk</td></tr>
+<tr><td>golven</td><td class="n">2960</td><td>B1</td><td class="n">6000</td><td>B2</td><td class="blurb">the spelling is mostly the plural of golf</td></tr>
+<tr><td>hakken</td><td class="n">3378</td><td>B1</td><td class="n">6000</td><td>B2</td><td class="blurb">the spelling is also the plural of hak (heels); the verb alone is placed one band later</td></tr>
+<tr><td>remmen</td><td class="n">3893</td><td>B1</td><td class="n">6000</td><td>B2</td><td class="blurb">the spelling is also the plural of rem (the brakes); the verb alone is placed one band later</td></tr>
+</tbody></table>
+<h2 id="b1-b2">B1 completed and B2 added (20 November 2026)</h2>
+<p>The cap of sixty regulars was lifted for B1 and B2: every usable verb in those bands is now on a page, as a card or as a SKIP row with its reason. B1 now has 88 cards and B2 62. The budget for this pass was up to 120 new cards; the pass added 83 (27 in B1, 56 in B2). The review fix pass the same day added 11 more (verbs wrongly skipped for "two senses" or "another family drew it", plus gieten and wenken) and moved schaatsen back to B1. A third pass replaced every remaining "two senses" reason: ruimen, schakelen, pikken, isoleren and stoken were carded in their most drawable sense, and the other twenty kept SKIP with a reason about the picture. The B1/B2 pages stop short because 658 B1 and B2 verbs have no honest single drawing. Most of the B1/B2 tail is abstract, administrative, a screen action, a kind of speaking, or the same picture as a card that already exists. 2 drawable verbs wait for a later pass, each with its reason on the backlog.</p>
+<h2 id="overlap">Lemmas another family also carries</h2>
+<p>These verbs have a card here and a related card in another family. The scenes differ, so nothing is redrawn, but a game should not serve both cards of a pair in one round.</p>
+<table><thead><tr><th>Werkwoorden</th><th>Other family</th><th>Their card</th></tr></thead><tbody>
+<tr><td>tillen</td><td>Scheidbare werkwoorden</td><td>optillen</td></tr>
+<tr><td>vouwen</td><td>Scheidbare werkwoorden</td><td>opvouwen, uitvouwen</td></tr>
+<tr><td>drogen</td><td>Scheidbare werkwoorden</td><td>afdrogen</td></tr>
+<tr><td>schillen</td><td>Bijvoeglijke naamwoorden</td><td>geschild</td></tr>
+<tr><td>waaien</td><td>Bijvoeglijke naamwoorden</td><td>winderig</td></tr>
+<tr><td>strijken</td><td>Voorzetselpaden</td><td>een hekel hebben aan (strijken)</td></tr>
+<tr><td>schommelen</td><td>Voorzetselpaden</td><td>vechten om (de schommel)</td></tr>
+<tr><td>zwaaien</td><td>Voorzetselpaden</td><td>zwaaien naar (four cards)</td></tr>
+<tr><td>ondertekenen</td><td>Voorzetselpaden</td><td>een contract ondertekenen met (five cards)</td></tr>
+</tbody></table>
 <h2>What is not here</h2>
-<p>Separable verbs, reflexive verbs, a handful of sensitive or rare lemmas, and the regular verbs below the A2 and B1 cut: that is 445 verbs, listed with their reason on <a href="backlog.html">backlog.html</a>. A further 153 selected verbs have no honest single drawing and are listed there too, under "Verbs the writer could not draw". The same page also tracks the other word classes still to be given cards.</p>
+<p>Separable verbs, reflexive verbs, a handful of sensitive or rare lemmas, the regular verbs below the A2 cut, and a few drawable B1/B2 verbs left for a later pass: these 603 verbs were held back before selection and are listed with their reason on <a href="backlog.html">backlog.html</a>. The 734 skipped verbs were selected but have no honest single drawing; they are listed there too, under "Verbs the writer could not draw". The same page also tracks the other word classes still to be given cards.</p>
 <h2>Where the words came from</h2>
 <p><code>tools/_ww_tmp/select.py</code> writes the selection; <code>tools/build-verb-cards.py</code> turns it, plus the scene notes in <code>tools/_ww_tmp/scenes/</code>, into these pages. Conventions and the rerun recipe are in <a href="AGENTS.html">AGENTS.html</a>.</p>
 </div>

@@ -1,11 +1,16 @@
 #!/usr/bin/env python3
-"""Build the A0-B1 verb-card selection for Docs/werkwoorden.
+"""Build the A0-B2 verb-card selection for Docs/werkwoorden.
 
 Selection is by lexicon frequency rank:
   A0  rank <= 250
   A1  rank 251-1000
   A2  all irregulars in 1001-2500 + the top 60 regulars
-  B1  all irregulars in 2501-5000 + the top 60 regulars
+  B1  every usable verb in 2501-5000 (the regular cap was lifted 20 Nov 2026)
+  B2  every usable verb in 5001-10000
+
+From B1 on, every usable verb is on a page: either as a card or as a SKIP row
+with its reason in scenes/<page>.tsv.  Drawable verbs left for a later pass are
+in LATER and go to the backlog with that reason.
 
 A verb is irregular when Bijlage 3b lists it, when it is an inseparable or
 separable prefix on a listed base (vervangen, bezoeken, beschrijven), or when
@@ -40,6 +45,12 @@ def norm(nl):
 
 
 GLOSS = {
+    # Fix pass 3, 20 Nov 2026: the carded sense of a former "two senses" SKIP.
+    "ruimen": "to clear (snow, rubble)",
+    "schakelen": "to change gear",
+    "isoleren": "to insulate",
+    "pikken": "to peck",
+    "stoken": "to stoke (a fire)",
     "zorgen": "to take care (of)",
     "worden": "to become",
     "kunnen": "to be able to",
@@ -56,7 +67,7 @@ GLOSS = {
     "steken": "to stick (in)",
     "wijken": "to give way",
     "verstaan": "to understand (what is said)",
-    "schuiven": "to slide",
+    "schuiven": "to slide (something), to push",
     "zwijgen": "to be silent",
     "scheppen": "to scoop, to shovel",
     "scheiden": "to separate",
@@ -110,6 +121,37 @@ GLOSS = {
     "eisen": "to demand",
     "reageren": "to react",
     "dromen": "to dream",
+    # B1/B2 pass, 20 Nov 2026: one sense per card, the sense drawn.
+    "douchen": "to shower", "voeden": "to feed (a baby)", "winkelen": "to go shopping",
+    "ruilen": "to swap", "repareren": "to repair", "zoenen": "to kiss",
+    "voetballen": "to play football", "fotograferen": "to take a photo",
+    "plakken": "to stick (on)", "verwelkomen": "to welcome", "wekken": "to wake (someone)",
+    "knippen": "to cut (with scissors)", "serveren": "to serve (food)", "slikken": "to swallow",
+    "plukken": "to pick (fruit)", "versieren": "to decorate", "likken": "to lick",
+    "zaaien": "to sow", "juichen": "to cheer", "mengen": "to mix", "slopen": "to demolish",
+    "vegen": "to sweep", "boren": "to drill", "poetsen": "to brush (teeth)",
+    "scheuren": "to tear", "kraken": "to crack (a nut)", "schaken": "to play chess",
+    "skiën": "to ski", "smelten": "to melt", "fluiten": "to whistle", "schuilen": "to shelter",
+    "glijden": "to slide (down)", "knijpen": "to pinch", "wrijven": "to rub", "vouwen": "to fold",
+    "stinken": "to stink", "waaien": "to blow (wind)", "sluipen": "to sneak",
+    "behangen": "to wallpaper", "rijgen": "to thread (beads)", "druipen": "to drip",
+    "ontwijken": "to dodge", "verjagen": "to chase away", "schaatsen": "to skate",
+    "remmen": "to brake", "hakken": "to chop (wood)", "smeren": "to spread (butter)",
+    "krabben": "to scratch", "knuffelen": "to cuddle", "persen": "to squeeze (juice)",
+    "drogen": "to dry", "zweten": "to sweat", "hoesten": "to cough",
+    "blussen": "to put out (a fire)", "tanken": "to fill up (fuel)", "tillen": "to lift",
+    "botsen": "to bump (into)", "toveren": "to do magic", "troosten": "to comfort",
+    "lassen": "to weld", "pinnen": "to pay by card", "grazen": "to graze",
+    "verpakken": "to pack, to package", "blaffen": "to bark", "picknicken": "to picnic",
+    "knielen": "to kneel", "fluisteren": "to whisper", "struikelen": "to trip",
+    "gapen": "to yawn", "wippen": "to seesaw", "strelen": "to stroke", "wringen": "to wring (out)",
+    "broeden": "to brood (eggs)", "gluren": "to peek", "mikken": "to aim",
+    "brullen": "to roar", "schillen": "to peel", "stapelen": "to stack",
+    "reiken": "to reach (for)", "golfen": "to play golf", "mediteren": "to meditate",
+    "warmen": "to warm (up)", "bloeden": "to bleed",
+    # Review fix pass, 20 Nov 2026: verbs carded after the B1/B2 review.
+    "dekken": "to set (the table)", "zwaaien": "to wave (a flag)", "strijken": "to iron",
+    "schommelen": "to swing (on a swing)", "gieten": "to pour", "wenken": "to beckon",
 }
 
 
@@ -117,6 +159,13 @@ GLOSS = {
 # sense.  For a verb card the tag should name what the action is about, so a few
 # dozen are corrected by hand.  Everything not listed keeps the lexicon value.
 DOMAIN = {
+    # Fix pass 3, 20 Nov 2026: the carded sense of a former "two senses" SKIP.
+    "pikken": "Animals", "isoleren": "House & home", "stoken": "House & home",
+    "schakelen": "Transport & travel", "ruimen": "Nature & weather",
+    # Review fix pass, 20 Nov 2026.
+    "zwaaien": "Movement & position", "dekken": "House & home", "strijken": "House & home",
+    "wenken": "Communication & language", "schoppen": "Movement & position", "roeren": "Food & drink",
+    "lekken": "House & home", "ondertekenen": "Work & jobs", "gieten": "Plants & farming",
     "liggen": "Movement & position", "vallen": "Movement & position",
     "trekken": "Movement & position", "stappen": "Movement & position",
     "treden": "Movement & position", "graven": "Movement & position",
@@ -139,6 +188,22 @@ DOMAIN = {
     "ruiken": "Body & health", "wonen": "House & home",
     "grenzen": "Places & geography", "handhaven": "Law & conflict",
     "wensen": "Emotion & feeling",
+    # B1/B2 pass, 20 Nov 2026: the new cards, by what the drawn action is about.
+    "douchen": "House & home", "poetsen": "House & home", "vegen": "House & home", "versieren": "House & home", "behangen": "House & home", "vouwen": "House & home", "verpakken": "House & home", "drogen": "House & home", "wringen": "House & home", "wekken": "House & home", "knippen": "House & home", "druipen": "House & home",
+    "mengen": "Food & drink", "schillen": "Food & drink", "smeren": "Food & drink", "kraken": "Food & drink", "likken": "Food & drink", "voeden": "Food & drink", "serveren": "Food & drink", "persen": "Food & drink",
+    "zoenen": "People & relations", "knuffelen": "People & relations", "verwelkomen": "People & relations", "ruilen": "People & relations", "knijpen": "People & relations",
+    "troosten": "Emotion & feeling",
+    "repareren": "Technology & tools", "boren": "Technology & tools", "lassen": "Technology & tools", "slopen": "Technology & tools", "hakken": "Technology & tools",
+    "zaaien": "Plants & farming", "plukken": "Plants & farming", "verjagen": "Plants & farming",
+    "grazen": "Animals", "broeden": "Animals", "blaffen": "Animals", "brullen": "Animals",
+    "smelten": "Nature & weather", "waaien": "Nature & weather", "schuilen": "Nature & weather",
+    "voetballen": "Sport & games", "schaatsen": "Sport & games", "skiën": "Sport & games", "schaken": "Sport & games", "golfen": "Sport & games", "glijden": "Sport & games", "wippen": "Sport & games", "mikken": "Sport & games", "picknicken": "Sport & games", "stapelen": "Sport & games",
+    "slikken": "Body & health", "zweten": "Body & health", "hoesten": "Body & health", "bloeden": "Body & health", "krabben": "Body & health", "gapen": "Body & health", "wrijven": "Body & health", "warmen": "Body & health", "stinken": "Body & health", "mediteren": "Body & health",
+    "sluipen": "Movement & position", "ontwijken": "Movement & position", "struikelen": "Movement & position", "knielen": "Movement & position", "leunen": "Movement & position", "reiken": "Movement & position", "tillen": "Movement & position", "gluren": "Movement & position",
+    "fluisteren": "Communication & language", "plakken": "Communication & language",
+    "fluiten": "Arts & media", "toveren": "Arts & media", "fotograferen": "Arts & media", "rijgen": "Arts & media",
+    "tanken": "Transport & travel", "remmen": "Transport & travel", "botsen": "Transport & travel", "blussen": "Work & jobs",
+    "pinnen": "Money & trade", "winkelen": "Money & trade",
 }
 
 
@@ -174,7 +239,7 @@ EXTRA_IRREGULAR = {
     "meten", "heffen", "laden", "spinnen", "stoten", "bergen", "werven",
     "schenden", "spannen", "weven", "barsten", "malen", "zouten", "melken",
     "zwellen", "vlechten", "schrijden", "rijzen", "kijven", "delven",
-    "zwelgen", "wreken", "wijten",
+    "zwelgen", "wreken", "wijten", "wringen",
 }
 
 # Bijlage 3b lists the strong sense, but the carded sense is weak.
@@ -254,6 +319,20 @@ def separable_lemmas(verb_keys):
         "nadenken", "ophouden", "toegeven", "terugkomen", "tegenhouden",
         "afspreken", "weggaan", "ophangen", "overstappen", "voorbereiden",
         "doorlopen", "overbrengen", "oversteken", "voordoen", "doorgeven",
+        # B1/B2 pass, 20 Nov 2026: particle verbs the rules above miss.
+        "hardlopen", "klaarmaken", "kennismaken", "gebruikmaken", "klaarkomen",
+        "lesgeven", "uitnodigen", "opletten", "inloggen", "bezighouden", "voortzetten",
+        "overgaan", "weergeven", "overgeven", "overdragen", "overlaten", "overlopen",
+        "overblijven", "doornemen", "voorbijgaan", "achterblijven", "onderduiken",
+        "opbergen", "doortrekken", "onderbrengen", "omkomen", "voorgaan",
+        "doorverwijzen", "eruitzien", "voorafgaan", "voornemen", "overhouden",
+        "voorschrijven", "weerzien", "autorijden", "kwijtraken", "overhalen",
+        "overeenkomen", "omkleden", "vrijlaten", "teleurstellen", "waarmaken",
+        "goedkeuren", "overmaken", "wegwezen", "ademhalen", "liefhebben", "stopzetten",
+        "uitroeien", "lastigvallen", "doorzetten", "doorsturen", "doodgaan",
+        "voorleggen", "oprapen", "bekendmaken", "inzamelen", "doodschieten",
+        "terugblikken", "geruststellen", "goedkomen", "uitputten", "verderkomen",
+        "vrijkomen", "doorvoeren", "omzetten", "vreemdgaan",
     }
     for key in verb_keys:
         for p in SEPARABLE_PARTICLES:
@@ -261,6 +340,40 @@ def separable_lemmas(verb_keys):
             if key.startswith(p) and len(rest) >= 4 and rest in verb_keys:
                 found.add(key)
     return {w for w in found if w in verb_keys}
+
+
+# Why each hand-set rank differs from the lexicon's.  Printed on the overview
+# page; check-verb-cards.py fails an override that lands in the same band as the
+# lexicon rank, because then it changes nothing and only hides the number.
+RANK_REASON = {
+    "zijn": "wordfreq gave the verb row no score of its own (zipf 2.38); the verb is the commonest word",
+    "eten": "wordfreq gave the verb row no score of its own (zipf 2.38); core A0 verb",
+    "kosten": "wordfreq gave the verb row no score of its own (zipf 2.38); everyday shop verb",
+    "leven": "wordfreq gave the verb row no score of its own (zipf 2.38); common A1 verb",
+    "bestaan": "wordfreq gave the verb row no score of its own (zipf 2.38); placed in A2",
+    "kussen": "wordfreq gave the verb row no score of its own (zipf 2.38); placed in A2",
+    "optreden": "wordfreq gave the verb row no score of its own (zipf 2.38); placed in B1",
+    "boeken": "the spelling is mostly the plural of boek",
+    "landen": "the spelling is mostly the plural of land",
+    "plaatsen": "the spelling is mostly the plural of plaats",
+    "stemmen": "the spelling is mostly the plural of stem",
+    "plannen": "the spelling is mostly the plural of plan",
+    "keren": "the spelling is mostly the plural of keer",
+    "eisen": "the spelling is mostly the plural of eis",
+    "wijken": "the spelling is mostly the plural of wijk",
+    "graven": "the spelling is mostly the plural of graf",
+    "golven": "the spelling is mostly the plural of golf",
+    "remmen": "the spelling is also the plural of rem (the brakes); the verb alone is placed one band later",
+    "hakken": "the spelling is also the plural of hak (heels); the verb alone is placed one band later",
+}
+
+
+# Drawable B1/B2 verbs not carded in the 20 Nov 2026 pass, with the reason.
+# gieten and wenken were carded in the review fix pass the same day.
+LATER = {
+    "bedekken": "drawable, but Voorzetselpaden already draws it four times (bedekken met een deken, deksel, zeil, zand); a fifth cover-up picture would be the same scene.",
+    "schuren": "drawable (sandpaper on a plank), but the spelling is also the plural of schuur, so the band needs a lemma count first.",
+}
 
 
 def rank_of(raw, lexicon_rank, tier, top2000):
@@ -278,6 +391,10 @@ def rank_of(raw, lexicon_rank, tier, top2000):
         "boeken": 1500, "landen": 1300, "plaatsen": 1100, "stemmen": 1400,
         "plannen": 1600, "keren": 1700, "eisen": 1900,
         "wijken": 4000, "graven": 3000, "golven": 6000,
+        # B1/B2 pass, 20 Nov 2026: noun plurals that inflate a B1 verb.
+        # schaatsen was here too; the review of 20 Nov 2026 reverted it (the
+        # singular schaats is rarer than the verb, so the plural cannot carry it).
+        "remmen": 6000, "hakken": 6000,
     }
     key = norm(raw)
     if key in manual:
@@ -305,6 +422,8 @@ def main():
                 "gloss": short_gloss(r["en"], key),
                 "rank": rank,
                 "rank_source": source,
+                "raw_rank": freq.get(r["nl"], 10**9),
+                "rank_reason": RANK_REASON.get(key, "") if source == "handmatig" else "",
                 "tier": r["niveau"],
                 "top2000": r["top2000"],
                 "domain": DOMAIN.get(key) or domain.get(key, ""),
@@ -314,8 +433,15 @@ def main():
             }
 
     separable = separable_lemmas(set(verbs))
-    sensitive = {"doden", "neuken", "schieten", "vermoorden"}
-    odd = {"dagen", "ogen", "lesgven", "cc'en", "onderwerpen", "sporen"}
+    sensitive = {"doden", "neuken", "schieten", "vermoorden",
+                 # B1/B2 pass: sexual, violent or bodily-crude.
+                 "verkrachten", "vrijen", "paren", "masturberen", "pissen", "plassen",
+                 "kotsen", "executeren", "martelen", "ontvoeren", "bombarderen",
+                 "slachten", "verdrinken", "naaien", "flirten", "verleiden"}
+    odd = {"dagen", "ogen", "lesgven", "cc'en", "onderwerpen", "sporen",
+           # B1/B2 pass: not verbs, misparsed, or a noun plural ranked as a verb.
+           "pasen", "pleistoceen", "paleoceen", "misburik", "stammen", "kondigen",
+           "schaffen", "geraken"}
     for key, v in verbs.items():
         v["separable"] = key in separable or "-" in key
         v["sensitive"] = key in sensitive
@@ -334,6 +460,8 @@ def main():
             return "A2"
         if r <= 5000:
             return "B1"
+        if r <= 10000:
+            return "B2"
         return None
 
     selected = []
@@ -360,8 +488,17 @@ def main():
             continue
         selected.append(v)
 
-    # A2/B1 regulars are capped; irregulars are all kept.
-    for b, cap in (("A2", 60), ("B1", 60)):
+    # A2 regulars are capped; irregulars are all kept.  B1 and B2 keep every
+    # usable verb except the drawable ones in LATER, which wait for a later pass.
+    for v in selected:
+        if v["key"] in LATER and band(v) in ("B1", "B2"):
+            deferred.append({
+                "verb": v["key"], "gloss": v["gloss"], "rank": v["rank"],
+                "band": band(v), "reason": "later pass",
+                "note": LATER[v["key"]],
+            })
+    selected = [v for v in selected if not (v["key"] in LATER and band(v) in ("B1", "B2"))]
+    for b, cap in (("A2", 60),):
         pool = [v for v in selected if band(v) == b and not v["irregular"]]
         pool.sort(key=lambda v: v["rank"])
         keep = {v["key"] for v in pool[:cap]}
@@ -385,6 +522,8 @@ def main():
             "gloss": v["gloss"],
             "rank": v["rank"],
             "rank_source": v["rank_source"],
+            "raw_rank": v["raw_rank"],
+            "rank_reason": v["rank_reason"],
             "domain": v["domain"],
             "tier": v["tier"],
         })
@@ -394,7 +533,7 @@ def main():
         json.dump(records, fh, ensure_ascii=False, indent=2)
 
     pages = {}
-    for b in ("A0", "A1", "A2", "B1"):
+    for b in ("A0", "A1", "A2", "B1", "B2"):
         for reg in ("regular", "irregular"):
             sub = [r for r in records if r["band"] == b and r["regularity"] == reg]
             pages[f"{b.lower()}-{reg}"] = sub
@@ -404,9 +543,9 @@ def main():
                     fh.write(f"{r['verb']}\t{r['slug']}\t{r['gloss']}\t{r['rank']}\t{r['domain']}\n")
 
     with open(os.path.join(OUT, "backlog_seed.tsv"), "w", encoding="utf-8") as fh:
-        fh.write("verb\tgloss\trank\tband\treason\n")
+        fh.write("verb\tgloss\trank\tband\treason\tnote\n")
         for r in sorted(deferred, key=lambda r: (r["band"], r["rank"])):
-            fh.write(f"{r['verb']}\t{r['gloss']}\t{r['rank']}\t{r['band']}\t{r['reason']}\n")
+            fh.write(f"{r['verb']}\t{r['gloss']}\t{r['rank']}\t{r['band']}\t{r['reason']}\t{r.get('note', '')}\n")
 
     for name, sub in pages.items():
         irr = sum(1 for r in sub if r["regularity"] == "irregular")
