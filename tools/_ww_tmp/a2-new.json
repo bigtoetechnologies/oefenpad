@@ -1,0 +1,513 @@
+[
+{
+"verb": "oefenen",
+"slug": "oefenen",
+"gloss": "to practise, to exercise",
+"rank": "1620",
+"domain": "Education & learning"
+},
+{
+"verb": "rekenen",
+"slug": "rekenen",
+"gloss": "to count",
+"rank": "1624",
+"domain": "Quantity & measure"
+},
+{
+"verb": "ondersteunen",
+"slug": "ondersteunen",
+"gloss": "to support",
+"rank": "1658",
+"domain": "Character & behaviour"
+},
+{
+"verb": "roken",
+"slug": "roken",
+"gloss": "to smoke",
+"rank": "1664",
+"domain": "Abstract & general"
+},
+{
+"verb": "klagen",
+"slug": "klagen",
+"gloss": "to complain",
+"rank": "1683",
+"domain": "Law & conflict"
+},
+{
+"verb": "keren",
+"slug": "keren",
+"gloss": "to turn (back)",
+"rank": "1700",
+"domain": "Movement & position"
+},
+{
+"verb": "merken",
+"slug": "merken",
+"gloss": "to notice",
+"rank": "1714",
+"domain": "Thought & knowledge"
+},
+{
+"verb": "kenmerken",
+"slug": "kenmerken",
+"gloss": "to characterize",
+"rank": "1739",
+"domain": "Abstract & general"
+},
+{
+"verb": "realiseren",
+"slug": "realiseren",
+"gloss": "to realize",
+"rank": "1745",
+"domain": "Thought & knowledge"
+},
+{
+"verb": "verdedigen",
+"slug": "verdedigen",
+"gloss": "to defend",
+"rank": "1748",
+"domain": "Abstract & general"
+},
+{
+"verb": "ontsnappen",
+"slug": "ontsnappen",
+"gloss": "to relax",
+"rank": "1766",
+"domain": "Emotion & feeling"
+},
+{
+"verb": "sporten",
+"slug": "sporten",
+"gloss": "to play sport, to exercise",
+"rank": "1771",
+"domain": "Sport & games"
+},
+{
+"verb": "wandelen",
+"slug": "wandelen",
+"gloss": "to walk",
+"rank": "1780",
+"domain": "Movement & position"
+},
+{
+"verb": "investeren",
+"slug": "investeren",
+"gloss": "to invest",
+"rank": "1794",
+"domain": "Money & trade"
+},
+{
+"verb": "kussen",
+"slug": "kussen",
+"gloss": "to kiss",
+"rank": "1800",
+"domain": "Abstract & general"
+},
+{
+"verb": "verhuizen",
+"slug": "verhuizen",
+"gloss": "to move (house)",
+"rank": "1809",
+"domain": "House & home"
+},
+{
+"verb": "negeren",
+"slug": "negeren",
+"gloss": "to ignore",
+"rank": "1854",
+"domain": "Abstract & general"
+},
+{
+"verb": "veroorzaken",
+"slug": "veroorzaken",
+"gloss": "to cause",
+"rank": "1865",
+"domain": "Abstract & general"
+},
+{
+"verb": "drukken",
+"slug": "drukken",
+"gloss": "to print",
+"rank": "1880",
+"domain": "Abstract & general"
+},
+{
+"verb": "rollen",
+"slug": "rollen",
+"gloss": "to roll",
+"rank": "1895",
+"domain": "Food & drink"
+},
+{
+"verb": "tellen",
+"slug": "tellen",
+"gloss": "to count",
+"rank": "1896",
+"domain": "Quantity & measure"
+},
+{
+"verb": "trainen",
+"slug": "trainen",
+"gloss": "to train",
+"rank": "1898",
+"domain": "Sport & games"
+},
+{
+"verb": "eisen",
+"slug": "eisen",
+"gloss": "to demand",
+"rank": "1900",
+"domain": "Money & trade"
+},
+{
+"verb": "verklaren",
+"slug": "verklaren",
+"gloss": "to explain",
+"rank": "1900",
+"domain": "Communication & language"
+},
+{
+"verb": "bezorgen",
+"slug": "bezorgen",
+"gloss": "to give",
+"rank": "1904",
+"domain": "Abstract & general"
+},
+{
+"verb": "vullen",
+"slug": "vullen",
+"gloss": "to fill",
+"rank": "1923",
+"domain": "Society & politics"
+},
+{
+"verb": "rennen",
+"slug": "rennen",
+"gloss": "to run",
+"rank": "1942",
+"domain": "Movement & position"
+},
+{
+"verb": "bedanken",
+"slug": "bedanken",
+"gloss": "to thank",
+"rank": "1949",
+"domain": "Communication & language"
+},
+{
+"verb": "overtuigen",
+"slug": "overtuigen",
+"gloss": "to convince",
+"rank": "1976",
+"domain": "Abstract & general"
+},
+{
+"verb": "voegen",
+"slug": "voegen",
+"gloss": "to add",
+"rank": "1984",
+"domain": "Abstract & general"
+},
+{
+"verb": "lukken",
+"slug": "lukken",
+"gloss": "to succeed",
+"rank": "2007",
+"domain": "Abstract & general"
+},
+{
+"verb": "schreeuwen",
+"slug": "schreeuwen",
+"gloss": "to shout",
+"rank": "2050",
+"domain": "Communication & language"
+},
+{
+"verb": "verhogen",
+"slug": "verhogen",
+"gloss": "to increase",
+"rank": "2057",
+"domain": "Quantity & measure"
+},
+{
+"verb": "beantwoorden",
+"slug": "beantwoorden",
+"gloss": "to answer",
+"rank": "2064",
+"domain": "Communication & language"
+},
+{
+"verb": "downloaden",
+"slug": "downloaden",
+"gloss": "to download",
+"rank": "2069",
+"domain": "Technology & tools"
+},
+{
+"verb": "versterken",
+"slug": "versterken",
+"gloss": "to strengthen",
+"rank": "2090",
+"domain": "Abstract & general"
+},
+{
+"verb": "besteden",
+"slug": "besteden",
+"gloss": "to spend",
+"rank": "2100",
+"domain": "Abstract & general"
+},
+{
+"verb": "branden",
+"slug": "branden",
+"gloss": "to burn",
+"rank": "2102",
+"domain": "Body & health"
+},
+{
+"verb": "durven",
+"slug": "durven",
+"gloss": "to dare",
+"rank": "2108",
+"domain": "Abstract & general"
+},
+{
+"verb": "handelen",
+"slug": "handelen",
+"gloss": "to act",
+"rank": "2114",
+"domain": "Abstract & general"
+},
+{
+"verb": "lenen",
+"slug": "lenen",
+"gloss": "to borrow",
+"rank": "2121",
+"domain": "Money & trade"
+},
+{
+"verb": "spellen",
+"slug": "spellen",
+"gloss": "to spell",
+"rank": "2133",
+"domain": "Sport & games"
+},
+{
+"verb": "stimuleren",
+"slug": "stimuleren",
+"gloss": "to stimulate",
+"rank": "2134",
+"domain": "Abstract & general"
+},
+{
+"verb": "vergroten",
+"slug": "vergroten",
+"gloss": "to enlarge",
+"rank": "2137",
+"domain": "Abstract & general"
+},
+{
+"verb": "vernietigen",
+"slug": "vernietigen",
+"gloss": "to destroy",
+"rank": "2138",
+"domain": "Abstract & general"
+},
+{
+"verb": "informeren",
+"slug": "informeren",
+"gloss": "to inform",
+"rank": "2155",
+"domain": "Communication & language"
+},
+{
+"verb": "bevestigen",
+"slug": "bevestigen",
+"gloss": "to confirm",
+"rank": "2180",
+"domain": "Abstract & general"
+},
+{
+"verb": "bewaren",
+"slug": "bewaren",
+"gloss": "to keep",
+"rank": "2181",
+"domain": "Abstract & general"
+},
+{
+"verb": "produceren",
+"slug": "produceren",
+"gloss": "to produce",
+"rank": "2200",
+"domain": "Abstract & general"
+},
+{
+"verb": "herkennen",
+"slug": "herkennen",
+"gloss": "to recognize",
+"rank": "2222",
+"domain": "Abstract & general"
+},
+{
+"verb": "verspreiden",
+"slug": "verspreiden",
+"gloss": "to spread",
+"rank": "2242",
+"domain": "Abstract & general"
+},
+{
+"verb": "slagen",
+"slug": "slagen",
+"gloss": "to succeed",
+"rank": "2276",
+"domain": "Abstract & general"
+},
+{
+"verb": "beperken",
+"slug": "beperken",
+"gloss": "to limit",
+"rank": "2285",
+"domain": "Abstract & general"
+},
+{
+"verb": "besparen",
+"slug": "besparen",
+"gloss": "to save",
+"rank": "2287",
+"domain": "Money & trade"
+},
+{
+"verb": "communiceren",
+"slug": "communiceren",
+"gloss": "to communicate",
+"rank": "2289",
+"domain": "Abstract & general"
+},
+{
+"verb": "verplaatsen",
+"slug": "verplaatsen",
+"gloss": "to move",
+"rank": "2320",
+"domain": "Movement & position"
+},
+{
+"verb": "weigeren",
+"slug": "weigeren",
+"gloss": "to refuse",
+"rank": "2323",
+"domain": "Abstract & general"
+},
+{
+"verb": "danken",
+"slug": "danken",
+"gloss": "to thank, to owe",
+"rank": "2333",
+"domain": "Communication & language"
+},
+{
+"verb": "plegen",
+"slug": "plegen",
+"gloss": "to commit",
+"rank": "2343",
+"domain": "Abstract & general"
+},
+{
+"verb": "wisselen",
+"slug": "wisselen",
+"gloss": "to exchange",
+"rank": "2353",
+"domain": "Abstract & general"
+},
+{
+"verb": "beslissen",
+"slug": "beslissen",
+"gloss": "to decide",
+"rank": "2356",
+"domain": "Thought & knowledge"
+},
+{
+"verb": "rusten",
+"slug": "rusten",
+"gloss": "to rest",
+"rank": "2375",
+"domain": "Abstract & general"
+},
+{
+"verb": "streven",
+"slug": "streven",
+"gloss": "to pursue, to strive (for)",
+"rank": "2377",
+"domain": "Abstract & general"
+},
+{
+"verb": "trappen",
+"slug": "trappen",
+"gloss": "to kick",
+"rank": "2382",
+"domain": "Transport & travel"
+},
+{
+"verb": "verminderen",
+"slug": "verminderen",
+"gloss": "to reduce",
+"rank": "2383",
+"domain": "Quantity & measure"
+},
+{
+"verb": "scoren",
+"slug": "scoren",
+"gloss": "to score",
+"rank": "2411",
+"domain": "Sport & games"
+},
+{
+"verb": "verwerken",
+"slug": "verwerken",
+"gloss": "to process",
+"rank": "2419",
+"domain": "Abstract & general"
+},
+{
+"verb": "wennen",
+"slug": "wennen",
+"gloss": "to get used to",
+"rank": "2420",
+"domain": "Abstract & general"
+},
+{
+"verb": "bevorderen",
+"slug": "bevorderen",
+"gloss": "to promote",
+"rank": "2427",
+"domain": "Abstract & general"
+},
+{
+"verb": "filmen",
+"slug": "filmen",
+"gloss": "to film",
+"rank": "2433",
+"domain": "Arts & media"
+},
+{
+"verb": "groeten",
+"slug": "groeten",
+"gloss": "to greet",
+"rank": "2436",
+"domain": "Communication & language"
+},
+{
+"verb": "haten",
+"slug": "haten",
+"gloss": "to hate",
+"rank": "2488",
+"domain": "Emotion & feeling"
+},
+{
+"verb": "kloppen",
+"slug": "kloppen",
+"gloss": "to knock, to beat",
+"rank": "2491",
+"domain": "Abstract & general"
+}
+]
