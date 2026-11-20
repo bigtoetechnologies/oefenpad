@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijvoeglijke naamwoorden — B2</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijvoeglijke naamwoorden — B2</h1>
+<p class="lead">Material and state: temper, slope, solid and hollow, liquid, see-through, direction, creases, ice, crispness and fertile soil.</p>
+<div class="sum"><span>14 contrast sets</span><span>28 adjectives</span><span>frames #130–#157</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html" class="hier">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="temperament" data-band="b2"><h2><span class="woorden">agressief · mak</span></h2><p class="as">temper of a horse · 2 cards</p><p class="zin">Vroeger was het paard agressief, maar nu is het mak.<span class="en">The horse used to be aggressive, but now it is tame.</span></p><p class="frame"><strong>Fixed frame.</strong> one horse standing in a plain field behind a low wooden fence, seen from the side, whole animal, same size and place on the page, one man standing outside the fence holding out an open hand. Only the horse's posture changes.</p><div class="kaarten"><article id="agressief" class="kaart" data-id="agressief" data-band="b2" data-kind="adjective" data-cluster="temperament" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 130">#130</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">agressief</h3>
+<p class="gloss">aggressive</p>
+<p class="vlaggen"><span>temper of a horse</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one horse in a plain field behind a low wooden fence, side view, whole animal, one man outside the fence holding out an open hand. The horse rears onto its hind legs, ears pinned flat back, mouth open showing teeth, front hooves kicking toward the man. The man leans back, his hand still out.</dd>
+<dt>Must read</dt><dd class="must">the rearing horse with ears pinned back and teeth showing.</dd>
+<dt>Avoid</dt><dd class="avoid">the horse lowering its nose into the man's hand (mak); a horse galloping with speed lines (snel); a horse lying down (moe); a horse jumping over the fence (dapper).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="mak">Pair with mak. The only difference is the horse: rearing with pinned ears and teeth here, nose lowered into the man's hand there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Die hond is agressief, blijf uit de buurt.<br><span class="voorbeeld-en">That dog is aggressive, stay away.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een paard steigert achter het hek met de oren plat en de tanden bloot; een man staat ervoor met uitgestoken hand.</dd>
+</dl>
+<p class="id">agressief.png · B2 · temperament</p>
+</article>
+<article id="mak" class="kaart" data-id="mak" data-band="b2" data-kind="adjective" data-cluster="temperament" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 131">#131</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">mak</h3>
+<p class="gloss">tame, docile</p>
+<p class="vlaggen"><span>temper of a horse</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same horse in a plain field behind a low wooden fence, side view, whole animal, one man outside the fence holding out an open hand. All four hooves stand on the ground, ears forward, head lowered over the fence, and the horse's soft nose rests on the man's open palm. The man smiles.</dd>
+<dt>Must read</dt><dd class="must">the horse's lowered nose resting on the man's open palm.</dd>
+<dt>Avoid</dt><dd class="avoid">the horse rearing with ears pinned back (agressief); the horse asleep standing with closed eyes (slaperig); the horse grazing with its back to the man (rustig); a thin horse with ribs showing (mager).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="agressief">Pair with agressief. The only difference is the horse: nose lowered into the man's hand here, rearing with pinned ears and teeth there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dit paard is mak, je mag het aaien.<br><span class="voorbeeld-en">This horse is tame, you can stroke it.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een paard buigt zijn hoofd over het hek en legt zijn neus in de open hand van een man.</dd>
+</dl>
+<p class="id">mak.png · B2 · temperament</p>
+</article></div></section>
+<section class="cluster" data-cluster="helling" data-band="b2"><h2><span class="woorden">steil · vlak</span></h2><p class="as">slope of a road · 2 cards</p><p class="zin">Eerst is de weg vlak, daarna wordt hij steil.<span class="en">At first the road is flat, then it gets steep.</span></p><p class="frame"><strong>Fixed frame.</strong> one cyclist on a plain road seen from the side, whole figure and bicycle, same size and place on the page, one bare tree beside the road and a plain horizon line, no wind lines. Only the slope of the road and the cyclist's effort change.</p><div class="kaarten"><article id="steil" class="kaart" data-id="steil" data-band="b2" data-kind="adjective" data-cluster="helling" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 132">#132</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">steil</h3>
+<p class="gloss">steep</p>
+<p class="vlaggen"><span>slope of a road</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one cyclist on a plain road, side view, whole figure and bicycle, one bare tree beside the road, plain horizon line. The road climbs sharply upward to the right. The cyclist stands on the pedals, leaning far forward, mouth open, three sweat drops flying from his brow. No wind lines.</dd>
+<dt>Must read</dt><dd class="must">the road rising at a sharp angle with the cyclist standing on the pedals.</dd>
+<dt>Avoid</dt><dd class="avoid">a level road with the cyclist sitting upright (vlak); a rider leaning into wind lines on a level road (tegen de wind in); a tall tower or pole (hoog); the cyclist racing with speed lines (snel); a road with a sharp bend (krom).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vlak">Pair with vlak. The only difference is the road: climbing sharply here, level there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De trap naar de zolder is steil.<br><span class="voorbeeld-en">The stairs to the attic are steep.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser staat op de trappers en leunt ver naar voren op een weg die sterk omhoog loopt.</dd>
+</dl>
+<p class="id">steil.png · B2 · helling</p>
+</article>
+<article id="vlak" class="kaart" data-id="vlak" data-band="b2" data-kind="adjective" data-cluster="helling" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 133">#133</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vlak</h3>
+<p class="gloss">level (ground)</p>
+<p class="vlaggen"><span>slope of a road</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same cyclist on a plain road, side view, whole figure and bicycle, one bare tree beside the road, plain horizon line. The road runs perfectly level across the page, parallel to the horizon. The cyclist sits upright on the saddle, hands loose on the handlebars, face relaxed.</dd>
+<dt>Must read</dt><dd class="must">a level road parallel to the horizon with the cyclist sitting upright.</dd>
+<dt>Avoid</dt><dd class="avoid">the road climbing sharply with the cyclist standing on the pedals (steil); a squashed flat pillow (plat); a cyclist standing still with one foot down (langzaam); a wide road with two lanes (breed).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="steil">Pair with steil. The only difference is the road: level here, climbing sharply there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Fietsen is makkelijk op een vlakke weg.<br><span class="voorbeeld-en">Cycling is easy on a flat road.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser zit rechtop op het zadel en rijdt over een weg die gelijk loopt met de horizon.</dd>
+</dl>
+<p class="id">vlak.png · B2 · helling</p>
+</article></div></section>
+<section class="cluster" data-cluster="binnenkant" data-band="b2"><h2><span class="woorden">massief · hol</span></h2><p class="as">inside of a trunk · 2 cards</p><p class="zin">Deze boomstam is massief, maar die boomstam is hol.<span class="en">This tree trunk is solid, but that tree trunk is hollow.</span></p><p class="frame"><strong>Fixed frame.</strong> one thick tree trunk lying on its side on a flat ground line, seen from the cut end at a slight angle so both the bark and the cut face show, a small stone beside it for scale, same size and place on the page. Only the inside of the trunk changes.</p><div class="kaarten"><article id="massief" class="kaart" data-id="massief" data-band="b2" data-kind="adjective" data-cluster="binnenkant" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 134">#134</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">massief</h3>
+<p class="gloss">solid (not hollow)</p>
+<p class="vlaggen"><span>inside of a trunk</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one thick tree trunk lying on its side on a flat ground line, seen from the cut end at a slight angle, a small stone beside it for scale. The cut face is filled right to the centre with tight growth rings drawn as fine lines. No opening anywhere in the wood.</dd>
+<dt>Must read</dt><dd class="must">a cut end filled with rings right to the centre.</dd>
+<dt>Avoid</dt><dd class="avoid">a cut end with a large empty opening in the middle (hol); a log split along its length (kapot); a very long log (lang); a thin branch (dun).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="hol">Pair with hol. The only difference is the cut end: full of rings to the centre here, an empty opening inside a thin wall of wood there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Deze tafel is van massief eikenhout.<br><span class="voorbeeld-en">This table is made of solid oak.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dikke boomstam ligt op de grond; aan het zaagvlak zie je jaarringen tot in het midden.</dd>
+</dl>
+<p class="id">massief.png · B2 · binnenkant</p>
+</article>
+<article id="hol" class="kaart" data-id="hol" data-band="b2" data-kind="adjective" data-cluster="binnenkant" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 135">#135</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">hol</h3>
+<p class="gloss">hollow</p>
+<p class="vlaggen"><span>inside of a trunk</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same thick tree trunk lying on its side on a flat ground line, seen from the cut end at a slight angle, a small stone beside it for scale. Only a thin outer wall of wood with a few rings remains; the middle is an empty round opening through which the far end shows as a small circle.</dd>
+<dt>Must read</dt><dd class="must">a thin wall of wood around an empty round opening you can see through.</dd>
+<dt>Avoid</dt><dd class="avoid">a cut end full of rings to the centre (massief); an empty bucket (leeg); a log split in two halves (kapot); a burrow going down into the ground (diep).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="massief">Pair with massief. The only difference is the cut end: an empty opening inside a thin wall of wood here, full of rings to the centre there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De oude boom is van binnen hol.<br><span class="voorbeeld-en">The old tree is hollow inside.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een dikke boomstam ligt op de grond; aan het zaagvlak zie je alleen een dunne rand hout met een groot gat in het midden.</dd>
+</dl>
+<p class="id">hol.png · B2 · binnenkant</p>
+</article></div></section>
+<section class="cluster" data-cluster="vorm-stof" data-band="b2"><h2><span class="woorden">vast · vloeibaar</span></h2><p class="as">state of matter · 2 cards</p><p class="zin">Deze boter is vast, maar die boter is vloeibaar.<span class="en">This butter is solid, but that butter is liquid.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain plate on a plain table, seen from the front at a slight angle from above, same size and place on the page, a butter knife lying beside the plate. On the plate lies the same amount of butter. Only the state of the butter changes.</p><div class="kaarten"><article id="vast" class="kaart" data-id="vast" data-band="b2" data-kind="adjective" data-cluster="vorm-stof" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 136">#136</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vast</h3>
+<p class="gloss">solid (not liquid)</p>
+<p class="vlaggen"><span>state of matter</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain plate on a plain table, front view slightly from above, a butter knife lying beside it. On the plate stands a neat rectangular block of butter with sharp corners and straight edges, one thin curl shaved off the top lying beside it. Nothing runs across the plate.</dd>
+<dt>Must read</dt><dd class="must">a block of butter with sharp corners standing on the plate.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat pool of butter spreading to the rim (vloeibaar); butter dented by a knife (zacht); a bowl of ice cubes (koud); a block of wood (hard); a stack of thin slices (dun).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vloeibaar">Pair with vloeibaar. The only difference is the butter: a block with sharp corners here, a flat spreading pool there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">IJs is vast, water is vloeibaar.<br><span class="voorbeeld-en">Ice is solid, water is liquid.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een blok boter met scherpe hoeken ligt op een bord; er ligt een mes naast.</dd>
+</dl>
+<p class="id">vast.png · B2 · vorm-stof</p>
+</article>
+<article id="vloeibaar" class="kaart" data-id="vloeibaar" data-band="b2" data-kind="adjective" data-cluster="vorm-stof" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 137">#137</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vloeibaar</h3>
+<p class="gloss">liquid</p>
+<p class="vlaggen"><span>state of matter</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain plate on a plain table, front view slightly from above, a butter knife beside it. The butter has become a flat pool with a smooth wavy edge spreading almost to the rim of the plate, one drop running down over the edge. No block or corner is left.</dd>
+<dt>Must read</dt><dd class="must">a flat pool of butter spreading to the rim with one drop over the edge.</dd>
+<dt>Avoid</dt><dd class="avoid">a block with sharp corners (vast); a candle with wax drips running down (gesmolten); steam rising from a hot pan (heet); a spilled glass of water (nat); a soft block dented by a knife (zacht).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vast">Pair with vast. The only difference is the butter: a flat spreading pool here, a block with sharp corners there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zeep bestaat ook in vloeibare vorm.<br><span class="voorbeeld-en">Soap also comes in liquid form.</span></dd>
+<dt>Alt text</dt><dd class="alt">Op een bord ligt een platte plas boter die tot aan de rand loopt; er druipt een druppel over de rand.</dd>
+</dl>
+<p class="id">vloeibaar.png · B2 · vorm-stof</p>
+</article></div></section>
+<section class="cluster" data-cluster="transparantie" data-band="b2"><h2><span class="woorden">doorzichtig · ondoorzichtig</span></h2><p class="as">see-through or not · 2 cards</p><p class="zin">Deze pot is doorzichtig, maar die pot is ondoorzichtig.<span class="en">This jar is see-through, but that jar is opaque.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain open jar without a lid standing on a plain table, seen from the front, same shape, size and place on the page, plain wall with one straight skirting line behind. The jar holds ten marbles. Only the material of the jar body changes.</p><div class="kaarten"><article id="doorzichtig" class="kaart" data-id="doorzichtig" data-band="b2" data-kind="adjective" data-cluster="transparantie" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 138">#138</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">doorzichtig</h3>
+<p class="gloss">see-through</p>
+<p class="vlaggen"><span>see-through or not</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain open jar without a lid on a plain table, front view, plain wall with a straight skirting line behind. The jar body is a clear outline only: through it the whole pile of ten marbles shows, from the bottom up to one marble at the neck, and the skirting line runs on behind the jar.</dd>
+<dt>Must read</dt><dd class="must">the skirting line and all ten marbles showing through the jar body.</dd>
+<dt>Avoid</dt><dd class="avoid">a jar body with a clay texture hiding the marbles (ondoorzichtig); an empty clear jar (leeg); a jar full to the brim (vol); a glass of clean water (zuiver).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ondoorzichtig">Pair with ondoorzichtig. The only difference is the jar body: the marbles and the skirting line show through it here, a clay texture hides them there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De douchedeur is van doorzichtig glas.<br><span class="voorbeeld-en">The shower door is made of clear glass.</span></dd>
+<dt>Alt text</dt><dd class="alt">In een open glazen pot zie je alle tien knikkers liggen, en ook de plint van de muur erachter.</dd>
+</dl>
+<p class="id">doorzichtig.png · B2 · transparantie</p>
+</article>
+<article id="ondoorzichtig" class="kaart" data-id="ondoorzichtig" data-band="b2" data-kind="adjective" data-cluster="transparantie" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 139">#139</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ondoorzichtig</h3>
+<p class="gloss">opaque</p>
+<p class="vlaggen"><span>see-through or not</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain open jar without a lid on a plain table, front view, plain wall with a straight skirting line behind. The jar body is drawn with a rough clay texture of short dots, and the skirting line stops at its edges. Only the top marble shows at the open neck; the other nine cannot be seen.</dd>
+<dt>Must read</dt><dd class="must">the skirting line stopping at the jar edges and only the top marble showing.</dd>
+<dt>Avoid</dt><dd class="avoid">a jar with all marbles and the skirting line showing through (doorzichtig); a jar with a closed lid (dicht); a smeared dirty glass jar (vuil); a dark room around the jar (donker).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="doorzichtig">Pair with doorzichtig. The only difference is the jar body: a clay texture hides the marbles here, they and the skirting line show through it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De gordijnen in de slaapkamer zijn ondoorzichtig.<br><span class="voorbeeld-en">The curtains in the bedroom are opaque.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een open aardewerken pot; alleen de bovenste knikker steekt boven de rand uit.</dd>
+</dl>
+<p class="id">ondoorzichtig.png · B2 · transparantie</p>
+</article></div></section>
+<section class="cluster" data-cluster="richting" data-band="b2"><h2><span class="woorden">horizontaal · verticaal</span></h2><p class="as">direction · 2 cards</p><p class="zin">Deze buis is horizontaal, maar die buis is verticaal.<span class="en">This pipe is horizontal, but that pipe is vertical.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain kitchen wall seen straight from the front, a small sink at the bottom left, same size and viewpoint on the page, one long straight pipe fixed to the wall with three clips. Only the direction of the pipe changes.</p><div class="kaarten"><article id="horizontaal" class="kaart" data-id="horizontaal" data-band="b2" data-kind="adjective" data-cluster="richting" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 140">#140</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">horizontaal</h3>
+<p class="gloss">horizontal</p>
+<p class="vlaggen"><span>direction</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain kitchen wall seen straight from the front, a small sink at the bottom left. One long straight pipe with three clips runs across the wall from left to right, parallel to the floor and the top of the sink, at the height of the sink's edge. Nothing else on the wall.</dd>
+<dt>Must read</dt><dd class="must">the pipe running across the wall parallel to the floor.</dd>
+<dt>Avoid</dt><dd class="avoid">the pipe running from floor to ceiling (verticaal); a pipe sloping up at an angle (schuin); a pipe with a sharp bend (krom); a very long thin pipe (lang).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="verticaal">Pair with verticaal. The only difference is the direction: across the wall parallel to the floor here, straight up from floor to ceiling there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een horizontale lijn loopt van links naar rechts.<br><span class="voorbeeld-en">A horizontal line runs from left to right.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een buis met drie klemmen loopt van links naar rechts over de keukenmuur, evenwijdig aan de vloer.</dd>
+</dl>
+<p class="id">horizontaal.png · B2 · richting</p>
+</article>
+<article id="verticaal" class="kaart" data-id="verticaal" data-band="b2" data-kind="adjective" data-cluster="richting" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 141">#141</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">verticaal</h3>
+<p class="gloss">vertical</p>
+<p class="vlaggen"><span>direction</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain kitchen wall seen straight from the front, a small sink at the bottom left. The same long straight pipe with three clips now runs straight up the wall from the floor to the ceiling, beside the sink, parallel to the side edge of the wall. Nothing else on the wall.</dd>
+<dt>Must read</dt><dd class="must">the pipe running straight up from floor to ceiling.</dd>
+<dt>Avoid</dt><dd class="avoid">the pipe running across parallel to the floor (horizontaal); a pipe sloping at an angle (schuin); a tall pole in a field (hoog); a person sitting up straight (rechtop).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="horizontaal">Pair with horizontaal. The only difference is the direction: straight up from floor to ceiling here, across the wall parallel to the floor there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een verticale lijn loopt van boven naar beneden.<br><span class="voorbeeld-en">A vertical line runs from top to bottom.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een buis met drie klemmen loopt naast de gootsteen van de vloer tot aan het plafond.</dd>
+</dl>
+<p class="id">verticaal.png · B2 · richting</p>
+</article></div></section>
+<section class="cluster" data-cluster="gehoorzaamheid" data-band="b2"><h2><span class="woorden">koppig · gehoorzaam</span></h2><p class="as">obedience · 2 cards</p><p class="zin">Gisteren was de ezel koppig, maar vandaag is hij gehoorzaam.<span class="en">Yesterday the donkey was stubborn, but today it is obedient.</span></p><p class="frame"><strong>Fixed frame.</strong> one donkey and one man on a plain dirt path, seen from the side, whole figures, same size and place on the page, the man in front holding a rope tied to the donkey's halter, a low fence behind. Only the donkey's posture and the rope change.</p><div class="kaarten"><article id="koppig" class="kaart" data-id="koppig" data-band="b2" data-kind="adjective" data-cluster="gehoorzaamheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 142">#142</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">koppig</h3>
+<p class="gloss">stubborn</p>
+<p class="vlaggen"><span>obedience</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one donkey and one man on a plain dirt path, side view, whole figures, a low fence behind. The man leans forward pulling a tight straight rope over his shoulder. The donkey sits back on its haunches, front legs stiff and braced, ears flat back, head turned away from the man.</dd>
+<dt>Must read</dt><dd class="must">the donkey braced back on its haunches against a tight rope.</dd>
+<dt>Avoid</dt><dd class="avoid">the donkey walking behind the man on a slack rope (gehoorzaam); the donkey lying asleep (moe); a heavy cart behind the donkey (zwaar); the donkey kicking with its hind legs (agressief).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="gehoorzaam">Pair with gehoorzaam. The only difference is the donkey and the rope: braced back on a tight rope here, walking along on a slack rope there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn zoontje is soms erg koppig.<br><span class="voorbeeld-en">My little son is sometimes very stubborn.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man trekt aan een strak touw, maar de ezel zet zich schrap en kijkt weg.</dd>
+</dl>
+<p class="id">koppig.png · B2 · gehoorzaamheid</p>
+</article>
+<article id="gehoorzaam" class="kaart" data-id="gehoorzaam" data-band="b2" data-kind="adjective" data-cluster="gehoorzaamheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 143">#143</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">gehoorzaam</h3>
+<p class="gloss">obedient</p>
+<p class="vlaggen"><span>obedience</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same donkey and man on a plain dirt path, side view, whole figures, a low fence behind. The man walks upright, the rope hanging in a loose loop from his hand. The donkey walks one step behind him with its head level, ears forward, one front hoof lifted mid-step.</dd>
+<dt>Must read</dt><dd class="must">the donkey walking behind the man on a slack, looping rope.</dd>
+<dt>Avoid</dt><dd class="avoid">the donkey braced back on a tight rope (koppig); the donkey running ahead with speed lines (snel); the man riding on the donkey (moe); a dog sitting still beside an untouched slipper (braaf); the donkey grazing at the roadside (hongerig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="koppig">Pair with koppig. The only difference is the donkey and the rope: walking along on a slack rope here, braced back on a tight rope there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen zijn gehoorzaam en luisteren goed.<br><span class="voorbeeld-en">The children are obedient and listen well.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man loopt met een los hangend touw; de ezel stapt rustig achter hem aan.</dd>
+</dl>
+<p class="id">gehoorzaam.png · B2 · gehoorzaamheid</p>
+</article></div></section>
+<section class="cluster" data-cluster="vrijgevigheid" data-band="b2"><h2><span class="woorden">gierig · vrijgevig</span></h2><p class="as">sharing · 2 cards</p><p class="zin">Vroeger was de jongen gierig, maar nu is hij vrijgevig.<span class="en">The boy used to be stingy, but now he is generous.</span></p><p class="frame"><strong>Fixed frame.</strong> two children standing side by side on a plain floor line, seen from the front, whole figures, same size and place on the page, the boy on the left holding a full bag of sweets, the girl on the right with empty hands. Only what the boy does with the bag changes.</p><div class="kaarten"><article id="gierig" class="kaart" data-id="gierig" data-band="b2" data-kind="adjective" data-cluster="vrijgevigheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 144">#144</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">gierig</h3>
+<p class="gloss">stingy</p>
+<p class="vlaggen"><span>sharing</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">two children on a plain floor line, front view, whole figures. The boy on the left hugs a full bag of sweets to his chest with both arms and turns his shoulder away from the girl, lips pressed tight. The girl on the right holds out one open empty hand toward him.</dd>
+<dt>Must read</dt><dd class="must">the boy clutching the full bag and turning away from the girl's open hand.</dd>
+<dt>Avoid</dt><dd class="avoid">the boy holding the open bag out to the girl (vrijgevig); the boy with full cheeks eating sweets (hongerig); the boy hiding behind the girl (verlegen); the boy shouting with V-brows (boos).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vrijgevig">Pair with vrijgevig. The only difference is the bag: clutched to the boy's chest away from the girl here, held out open to her there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij is te gierig om te betalen.<br><span class="voorbeeld-en">He is too stingy to pay.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een jongen drukt een volle zak snoep tegen zijn borst en draait weg van een meisje met een open hand.</dd>
+</dl>
+<p class="id">gierig.png · B2 · vrijgevigheid</p>
+</article>
+<article id="vrijgevig" class="kaart" data-id="vrijgevig" data-band="b2" data-kind="adjective" data-cluster="vrijgevigheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 145">#145</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vrijgevig</h3>
+<p class="gloss">generous</p>
+<p class="vlaggen"><span>sharing</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same two children on a plain floor line, front view, whole figures. The boy on the left holds the full bag of sweets out toward the girl, top open, smiling. The girl on the right takes one sweet from the bag, smiling too. Nothing else in the picture.</dd>
+<dt>Must read</dt><dd class="must">the boy holding out the open bag and the girl taking a sweet.</dd>
+<dt>Avoid</dt><dd class="avoid">the boy clutching the bag and turning away (gierig); the boy throwing sweets in the air (blij); the boy paying a shopkeeper (rijk); the two children hugging (lief).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="gierig">Pair with gierig. The only difference is the bag: held out open to the girl here, clutched to the boy's chest away from her there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn oma is altijd erg vrijgevig.<br><span class="voorbeeld-en">My grandma is always very generous.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een jongen houdt een meisje een open zak snoep voor; ze pakt er lachend een snoepje uit.</dd>
+</dl>
+<p class="id">vrijgevig.png · B2 · vrijgevigheid</p>
+</article></div></section>
+<section class="cluster" data-cluster="strijkgoed" data-band="b2"><h2><span class="woorden">gekreukt · gestreken</span></h2><p class="as">creases · 2 cards</p><p class="zin">Dit overhemd is gekreukt, maar dat overhemd is gestreken.<span class="en">This shirt is creased, but that shirt is ironed.</span></p><p class="frame"><strong>Fixed frame.</strong> one long-sleeved shirt hanging on a plain coat hanger from a hook on a plain wall, seen from the front, whole shirt, same size and place on the page. Only the surface of the shirt changes.</p><div class="kaarten"><article id="gekreukt" class="kaart" data-id="gekreukt" data-band="b2" data-kind="adjective" data-cluster="strijkgoed" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 146">#146</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">gekreukt</h3>
+<p class="gloss">creased, crumpled</p>
+<p class="vlaggen"><span>creases</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one long-sleeved shirt on a plain coat hanger hanging from a hook on a plain wall, front view, whole shirt. Dozens of short zigzag crease lines cover the front and sleeves, the collar is bent over, one sleeve is twisted and the hem curls up at one corner.</dd>
+<dt>Must read</dt><dd class="must">zigzag crease lines all over the shirt and a bent collar.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth shirt with one sharp fold down each sleeve (gestreken); a shirt with stains (vuil); a shirt with a hole (kapot); a sheet of sloping handwriting (slordig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="gestreken">Pair with gestreken. The only difference is the surface: covered in crease lines here, smooth with one sharp fold down each sleeve there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Na de reis is mijn jurk gekreukt.<br><span class="voorbeeld-en">After the trip my dress is creased.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een overhemd aan een kleerhanger zit vol kleine vouwen; de kraag staat scheef.</dd>
+</dl>
+<p class="id">gekreukt.png · B2 · strijkgoed</p>
+</article>
+<article id="gestreken" class="kaart" data-id="gestreken" data-band="b2" data-kind="adjective" data-cluster="strijkgoed" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 147">#147</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">gestreken</h3>
+<p class="gloss">ironed</p>
+<p class="vlaggen"><span>creases</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same long-sleeved shirt on a plain coat hanger hanging from a hook on a plain wall, front view, whole shirt. The fabric is smooth with no crease lines, the collar stands up straight, the sleeves hang flat with one sharp straight fold line down each, and the hem lies straight.</dd>
+<dt>Must read</dt><dd class="must">a smooth shirt with one sharp fold line down each sleeve.</dd>
+<dt>Avoid</dt><dd class="avoid">a shirt covered in zigzag creases (gekreukt); a shirt with sparkle marks (schoon); a shirt with a price label (nieuw); an iron giving off steam (heet).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="gekreukt">Pair with gekreukt. The only difference is the surface: smooth with one sharp fold down each sleeve here, covered in crease lines there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zijn overhemd is altijd netjes gestreken.<br><span class="voorbeeld-en">His shirt is always neatly ironed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een glad overhemd aan een kleerhanger, met een scherpe vouw in elke mouw.</dd>
+</dl>
+<p class="id">gestreken.png · B2 · strijkgoed</p>
+</article></div></section>
+<section class="cluster" data-cluster="vijver" data-band="b2"><h2><span class="woorden">bevroren · ontdooid</span></h2><p class="as">ice on a pond · 2 cards</p><p class="zin">Gisteren was de vijver bevroren, maar vandaag is hij ontdooid.<span class="en">Yesterday the pond was frozen, but today it has thawed.</span></p><p class="frame"><strong>Fixed frame.</strong> one small round pond in a plain park, seen from the side at a slight angle, one bare tree and one bench beside it, one duck on the pond, same size and place on the page. Only the surface of the pond and how the duck is on it change.</p><div class="kaarten"><article id="bevroren" class="kaart" data-id="bevroren" data-band="b2" data-kind="adjective" data-cluster="vijver" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 148">#148</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">bevroren</h3>
+<p class="gloss">frozen</p>
+<p class="vlaggen"><span>ice on a pond</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one small round pond in a plain park, side view at a slight angle, one bare tree and one bench beside it. The surface is a hard flat sheet of ice with a few thin crack lines, and the duck stands on top of the ice, slipping, wings half spread.</dd>
+<dt>Must read</dt><dd class="must">the duck standing on a flat sheet of ice with crack lines.</dd>
+<dt>Avoid</dt><dd class="avoid">the duck swimming with ripples round it (ontdooid); a person shivering (koud); a man slipping on a wet floor (glad); snow falling on the park (winters).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ontdooid">Pair with ontdooid. The only difference is the surface: a flat sheet of ice the duck stands on here, open water with ripples the duck swims in there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De groente in de vriezer is bevroren.<br><span class="voorbeeld-en">The vegetables in the freezer are frozen.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een eend staat op het ijs van een vijver in het park; er lopen dunne barsten door het ijs.</dd>
+</dl>
+<p class="id">bevroren.png · B2 · vijver</p>
+</article>
+<article id="ontdooid" class="kaart" data-id="ontdooid" data-band="b2" data-kind="adjective" data-cluster="vijver" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 149">#149</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ontdooid</h3>
+<p class="gloss">thawed</p>
+<p class="vlaggen"><span>ice on a pond</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same small round pond in a plain park, side view at a slight angle, one bare tree and one bench beside it. The surface is open water with round ripple lines, two small flat pieces of ice float near the edge, and the duck swims in the middle, ripples spreading from its body.</dd>
+<dt>Must read</dt><dd class="must">the duck swimming in open water with two small pieces of ice at the edge.</dd>
+<dt>Avoid</dt><dd class="avoid">the duck standing on a sheet of ice (bevroren); a duck in summer sun beside flowers (warm); rain falling on the pond (nat); a deep lake with a diver (diep).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bevroren">Pair with bevroren. The only difference is the surface: open water with ripples the duck swims in here, a flat sheet of ice the duck stands on there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het vlees is nu helemaal ontdooid.<br><span class="voorbeeld-en">The meat has now completely thawed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een eend zwemt in het open water van een vijver; aan de rand drijven twee kleine stukjes ijs.</dd>
+</dl>
+<p class="id">ontdooid.png · B2 · vijver</p>
+</article></div></section>
+<section class="cluster" data-cluster="sla" data-band="b2"><h2><span class="woorden">knapperig · slap</span></h2><p class="as">crispness · 2 cards</p><p class="zin">Deze sla is knapperig, maar die sla is slap.<span class="en">This lettuce is crisp, but that lettuce is limp.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain round bowl of lettuce leaves on a plain table, seen from the front, same size and place on the page, a small fork resting beside the bowl. Only the shape of the leaves changes.</p><div class="kaarten"><article id="knapperig" class="kaart" data-id="knapperig" data-band="b2" data-kind="adjective" data-cluster="sla" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 150">#150</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">knapperig</h3>
+<p class="gloss">crispy, crunchy</p>
+<p class="vlaggen"><span>crispness</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain round bowl of lettuce leaves on a plain table, front view, a small fork resting beside the bowl. The leaves stand up firm and curved out of the bowl with ruffled edges, and one leaf on the table is snapped in two with a clean straight break and two short crack lines at the break.</dd>
+<dt>Must read</dt><dd class="must">firm leaves standing up out of the bowl and one leaf snapped clean in two.</dd>
+<dt>Avoid</dt><dd class="avoid">leaves hanging limp over the rim of the bowl (slap); a row of stiff sticks (stijf); a bowl of leaves with water drops (nat); an upright plant in a pot with full leaves (levend); an empty bowl (leeg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="slap">Pair with slap. The only difference is the leaves: standing up firm with one snapped clean here, hanging limp over the rim there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het brood van de bakker is knapperig.<br><span class="voorbeeld-en">The baker's bread is crusty.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kom sla waarin de bladeren rechtop staan; op tafel ligt een blad dat in twee stukken is gebroken.</dd>
+</dl>
+<p class="id">knapperig.png · B2 · sla</p>
+</article>
+<article id="slap" class="kaart" data-id="slap" data-band="b2" data-kind="adjective" data-cluster="sla" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 151">#151</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">slap</h3>
+<p class="gloss">limp, soggy</p>
+<p class="vlaggen"><span>crispness</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain round bowl of lettuce leaves on a plain table, front view, a small fork resting beside the bowl. The leaves are soft and limp: they fold over the rim and hang down the outside of the bowl like wet cloth, and one leaf lies folded flat on the table. No water drops.</dd>
+<dt>Must read</dt><dd class="must">leaves hanging limp down the outside of the bowl.</dd>
+<dt>Avoid</dt><dd class="avoid">firm leaves standing up out of the bowl (knapperig); a wet bowl with drops (nat); a bent bare plant in a pot (dood); a man with drooping shoulders (moe); a sagging football (leeggelopen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="knapperig">Pair with knapperig. The only difference is the leaves: hanging limp over the rim here, standing up firm with one snapped clean there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Na twee dagen is de sla slap.<br><span class="voorbeeld-en">After two days the lettuce is limp.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kom sla waarvan de bladeren over de rand naar beneden hangen; op tafel ligt een gevouwen blad.</dd>
+</dl>
+<p class="id">slap.png · B2 · sla</p>
+</article></div></section>
+<section class="cluster" data-cluster="bodem" data-band="b2"><h2><span class="woorden">vruchtbaar · dor</span></h2><p class="as">fertility of soil · 2 cards</p><p class="zin">Deze grond is vruchtbaar, maar die grond is dor.<span class="en">This soil is fertile, but that soil is barren.</span></p><p class="frame"><strong>Fixed frame.</strong> one small field seen from the side at a slight angle, a plain horizon line behind it, a low fence along the front, a farmer standing at the fence, same size and place on the page. Only the ground and what grows in it change.</p><div class="kaarten"><article id="vruchtbaar" class="kaart" data-id="vruchtbaar" data-band="b2" data-kind="adjective" data-cluster="bodem" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 152">#152</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vruchtbaar</h3>
+<p class="gloss">fertile</p>
+<p class="vlaggen"><span>fertility of soil</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one small field seen from the side at a slight angle, a plain horizon line, a low fence along the front, a farmer standing at the fence. The soil is soft and crumbly, drawn as small rounded clumps, and five even rows of tall leafy bean plants grow in it, heavy with pods. The farmer stands with his arms at his sides, the same in both drawings.</dd>
+<dt>Must read</dt><dd class="must">five rows of tall leafy plants in soft crumbly soil.</dd>
+<dt>Avoid</dt><dd class="avoid">cracked bare ground with a few dead stalks (dor); a single huge plant (groot); a field flooded with water (nat); a garden full of flowers (mooi).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="dor">Pair with dor. The only difference is the field: soft soil with rows of tall leafy plants here, cracked bare ground with dead stalks there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Langs de rivier is de grond vruchtbaar.<br><span class="voorbeeld-en">Along the river the soil is fertile.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een boer staat bij een akker met vijf rijen hoge bonenplanten in zachte, kruimelige aarde.</dd>
+</dl>
+<p class="id">vruchtbaar.png · B2 · bodem</p>
+</article>
+<article id="dor" class="kaart" data-id="dor" data-band="b2" data-kind="adjective" data-cluster="bodem" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 153">#153</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">dor</h3>
+<p class="gloss">barren, parched</p>
+<p class="vlaggen"><span>fertility of soil</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same small field seen from the side at a slight angle, a plain horizon line, a low fence along the front, a farmer standing at the fence. The ground is hard and split by a web of deep cracks, with three short dead stalks bent over and no leaves. The farmer stands with his arms at his sides, the same in both drawings.</dd>
+<dt>Must read</dt><dd class="must">hard ground split by a web of cracks with dead stalks.</dd>
+<dt>Avoid</dt><dd class="avoid">soft soil with rows of tall plants (vruchtbaar); a dry towel on a line (droog); a sandy beach in the sun (warm); a dead plant in a pot (dood).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vruchtbaar">Pair with vruchtbaar. The only difference is the field: cracked bare ground with dead stalks here, soft soil with rows of tall leafy plants there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Na de lange zomer is het gras dor.<br><span class="voorbeeld-en">After the long summer the grass is parched.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een boer staat bij een akker met harde, gebarsten grond en drie dode stengels.</dd>
+</dl>
+<p class="id">dor.png · B2 · bodem</p>
+</article></div></section>
+<section class="cluster" data-cluster="bal" data-band="b2"><h2><span class="woorden">opgepompt · leeggelopen</span></h2><p class="as">air in a ball · 2 cards</p><p class="zin">Gisteren was de bal leeggelopen, maar nu is hij opgepompt.<span class="en">Yesterday the ball had gone flat, but now it is pumped up.</span></p><p class="frame"><strong>Fixed frame.</strong> one football on a plain flat ground line, seen from the side, same size and place on the page, a small hand pump lying beside it, plain background, no writing on the ball. Only the amount of air in the ball changes.</p><div class="kaarten"><article id="opgepompt" class="kaart" data-id="opgepompt" data-band="b2" data-kind="adjective" data-cluster="bal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 154">#154</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opgepompt</h3>
+<p class="gloss">pumped up</p>
+<p class="vlaggen"><span>air in a ball</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one football on a plain flat ground line, side view, a small hand pump lying beside it, plain background. The ball is perfectly round and firm, touching the ground at one small point, its panel lines curved evenly. No writing on the ball.</dd>
+<dt>Must read</dt><dd class="must">a perfectly round ball touching the ground at one point.</dd>
+<dt>Avoid</dt><dd class="avoid">a sagging ball sitting flat on the ground (leeggelopen); a huge beach ball (groot); a balloon floating up (licht); a ball with a burst hole (kapot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="leeggelopen">Pair with leeggelopen. The only difference is the ball: perfectly round and firm here, sagging flat on the ground there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De banden van mijn fiets zijn opgepompt.<br><span class="voorbeeld-en">The tyres of my bike are pumped up.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kogelronde voetbal raakt de grond maar in één puntje.</dd>
+</dl>
+<p class="id">opgepompt.png · B2 · bal</p>
+</article>
+<article id="leeggelopen" class="kaart" data-id="leeggelopen" data-band="b2" data-kind="adjective" data-cluster="bal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 155">#155</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">leeggelopen</h3>
+<p class="gloss">deflated</p>
+<p class="vlaggen"><span>air in a ball</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same football on a plain flat ground line, side view, a small hand pump lying beside it, plain background. The ball sags like a soft cushion, its bottom flattened wide against the ground, the top caved in with a deep dent and its panel lines wrinkled. No writing on the ball.</dd>
+<dt>Must read</dt><dd class="must">a sagging ball with a caved-in top flattened on the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">a perfectly round firm ball (opgepompt); a flat round disc (plat); an empty bag (leeg); a ball with a torn seam (kapot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opgepompt">Pair with opgepompt. The only difference is the ball: sagging flat on the ground here, perfectly round and firm there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn achterband is helemaal leeggelopen.<br><span class="voorbeeld-en">My back tyre has gone completely flat.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een slappe voetbal is ingezakt op de grond, met een diepe deuk in de bovenkant.</dd>
+</dl>
+<p class="id">leeggelopen.png · B2 · bal</p>
+</article></div></section>
+<section class="cluster" data-cluster="tapijt" data-band="b2"><h2><span class="woorden">opgerold · uitgerold</span></h2><p class="as">rolled or flat · 2 cards</p><p class="zin">Eerst is het tapijt opgerold, daarna ligt het uitgerold op de vloer.<span class="en">First the rug is rolled up, then it lies rolled out on the floor.</span></p><p class="frame"><strong>Fixed frame.</strong> one rug on a plain wooden floor in an empty room, seen from the front at a slight angle from above, same size and place on the page, a plain wall behind. Only whether the rug lies rolled or flat changes.</p><div class="kaarten"><article id="opgerold" class="kaart" data-id="opgerold" data-band="b2" data-kind="adjective" data-cluster="tapijt" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 156">#156</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opgerold</h3>
+<p class="gloss">rolled up (rug, mat)</p>
+<p class="vlaggen"><span>rolled or flat</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one rug on a plain wooden floor in an empty room, front view slightly from above, plain wall behind. The rug is rolled into one tight long tube lying along the wall, the spiral of its end visible at one side and a fringe sticking out. The floorboards lie bare across the whole room.</dd>
+<dt>Must read</dt><dd class="must">a tight rug roll with a spiral end and bare floorboards.</dd>
+<dt>Avoid</dt><dd class="avoid">the rug lying flat across the floor (uitgerold); a hollow log on the floor (hol); a sleeping bag with a man in it (warm); a folded towel (netjes).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="uitgerold">Pair with uitgerold. The only difference is the rug: a tight roll against the wall here, lying flat across the floor there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De slaapzak zit opgerold in de tas.<br><span class="voorbeeld-en">The sleeping bag is rolled up in the bag.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een tapijt ligt als een dikke koker tegen de muur; de houten vloer is bloot.</dd>
+</dl>
+<p class="id">opgerold.png · B2 · tapijt</p>
+</article>
+<article id="uitgerold" class="kaart" data-id="uitgerold" data-band="b2" data-kind="adjective" data-cluster="tapijt" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 157">#157</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">uitgerold</h3>
+<p class="gloss">rolled out</p>
+<p class="vlaggen"><span>rolled or flat</span><span>B2</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same rug on a plain wooden floor in an empty room, front view slightly from above, plain wall behind. The rug lies completely flat in the middle of the room, a wide rectangle with a simple border line and fringes on both short ends, covering most of the floorboards, its corners straight.</dd>
+<dt>Must read</dt><dd class="must">a flat rectangle of rug covering most of the floor.</dd>
+<dt>Avoid</dt><dd class="avoid">a tight rug roll against the wall (opgerold); a rug with wrinkles and a bump (gekreukt); a wet rug with drops (nat); a huge rug filling the whole room (groot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opgerold">Pair with opgerold. The only difference is the rug: lying flat across the floor here, a tight roll against the wall there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het deeg ligt uitgerold op tafel.<br><span class="voorbeeld-en">The dough lies rolled out on the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een tapijt met franjes ligt plat midden in de kamer op de houten vloer.</dd>
+</dl>
+<p class="id">uitgerold.png · B2 · tapijt</p>
+</article></div></section>
+</main>
+</body>
+</html>

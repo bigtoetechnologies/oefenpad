@@ -1,0 +1,1832 @@
+{
+ "a0": [
+  {
+   "id": "grootte",
+   "axis": "size",
+   "members": [
+    {
+     "id": "groot",
+     "lemma": "groot",
+     "gloss": "big",
+     "rank": 169,
+     "split_rank": null
+    },
+    {
+     "id": "klein",
+     "lemma": "klein",
+     "gloss": "small",
+     "rank": 319,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "leeftijd-spullen",
+   "axis": "age of an object",
+   "members": [
+    {
+     "id": "nieuw",
+     "lemma": "nieuw",
+     "gloss": "new",
+     "rank": 192,
+     "split_rank": null
+    },
+    {
+     "id": "oud-spullen",
+     "lemma": "oud",
+     "gloss": "old (thing)",
+     "rank": 294,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "deur",
+   "axis": "open or shut",
+   "members": [
+    {
+     "id": "open",
+     "lemma": "open",
+     "gloss": "open",
+     "rank": 202,
+     "split_rank": null
+    },
+    {
+     "id": "dicht",
+     "lemma": "dicht",
+     "gloss": "closed",
+     "rank": 541,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "lengte",
+   "axis": "length",
+   "members": [
+    {
+     "id": "lang",
+     "lemma": "lang",
+     "gloss": "long",
+     "rank": 147,
+     "split_rank": null
+    },
+    {
+     "id": "kort",
+     "lemma": "kort",
+     "gloss": "short",
+     "rank": 422,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "tempo",
+   "axis": "speed",
+   "members": [
+    {
+     "id": "snel",
+     "lemma": "snel",
+     "gloss": "fast",
+     "rank": 117,
+     "split_rank": null
+    },
+    {
+     "id": "langzaam",
+     "lemma": "langzaam",
+     "gloss": "slow",
+     "rank": 1006,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "uiterlijk",
+   "axis": "looks of a thing",
+   "members": [
+    {
+     "id": "mooi",
+     "lemma": "mooi",
+     "gloss": "beautiful",
+     "rank": 176,
+     "split_rank": null
+    },
+    {
+     "id": "lelijk",
+     "lemma": "lelijk",
+     "gloss": "ugly",
+     "rank": 2672,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  },
+  {
+   "id": "tijdstip",
+   "axis": "time of day",
+   "members": [
+    {
+     "id": "vroeg",
+     "lemma": "vroeg",
+     "gloss": "early",
+     "rank": 287,
+     "split_rank": null
+    },
+    {
+     "id": "laat",
+     "lemma": "laat",
+     "gloss": "late (too late)",
+     "rank": 94,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "band": "a0"
+  }
+ ],
+ "a1": [
+  {
+   "id": "leeftijd-mensen",
+   "axis": "age of a person",
+   "members": [
+    {
+     "id": "jong",
+     "lemma": "jong",
+     "gloss": "young",
+     "rank": 588,
+     "split_rank": null
+    },
+    {
+     "id": "oud-mensen",
+     "lemma": "oud",
+     "gloss": "old (person)",
+     "rank": 294,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "inhoud",
+   "axis": "contents of a container",
+   "members": [
+    {
+     "id": "vol",
+     "lemma": "vol",
+     "gloss": "full",
+     "rank": 296,
+     "split_rank": null
+    },
+    {
+     "id": "leeg",
+     "lemma": "leeg",
+     "gloss": "empty",
+     "rank": 1149,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "hoogte",
+   "axis": "height",
+   "members": [
+    {
+     "id": "hoog",
+     "lemma": "hoog",
+     "gloss": "high",
+     "rank": 554,
+     "split_rank": null
+    },
+    {
+     "id": "laag",
+     "lemma": "laag",
+     "gloss": "low",
+     "rank": null,
+     "split_rank": 9597
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "temperatuur",
+   "axis": "temperature",
+   "members": [
+    {
+     "id": "heet",
+     "lemma": "heet",
+     "gloss": "hot",
+     "rank": 582,
+     "split_rank": null
+    },
+    {
+     "id": "warm",
+     "lemma": "warm",
+     "gloss": "warm",
+     "rank": 795,
+     "split_rank": null
+    },
+    {
+     "id": "koud",
+     "lemma": "koud",
+     "gloss": "cold",
+     "rank": 1029,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "gewicht",
+   "axis": "weight",
+   "members": [
+    {
+     "id": "zwaar",
+     "lemma": "zwaar",
+     "gloss": "heavy",
+     "rank": 714,
+     "split_rank": null
+    },
+    {
+     "id": "licht-gewicht",
+     "lemma": "licht",
+     "gloss": "light (not heavy)",
+     "rank": null,
+     "split_rank": 9599
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "hardheid",
+   "axis": "hardness of a surface",
+   "members": [
+    {
+     "id": "hard",
+     "lemma": "hard",
+     "gloss": "hard",
+     "rank": 433,
+     "split_rank": null
+    },
+    {
+     "id": "zacht",
+     "lemma": "zacht",
+     "gloss": "soft",
+     "rank": 1868,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "kracht",
+   "axis": "strength",
+   "members": [
+    {
+     "id": "sterk",
+     "lemma": "sterk",
+     "gloss": "strong",
+     "rank": 471,
+     "split_rank": null
+    },
+    {
+     "id": "zwak",
+     "lemma": "zwak",
+     "gloss": "weak",
+     "rank": 1730,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "stemming",
+   "axis": "emotion shown on the face",
+   "members": [
+    {
+     "id": "blij",
+     "lemma": "blij",
+     "gloss": "happy",
+     "rank": 290,
+     "split_rank": null
+    },
+    {
+     "id": "verdrietig",
+     "lemma": "verdrietig",
+     "gloss": "sad",
+     "rank": 2580,
+     "split_rank": null
+    },
+    {
+     "id": "boos",
+     "lemma": "boos",
+     "gloss": "angry",
+     "rank": 702,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "gezondheid",
+   "axis": "health",
+   "members": [
+    {
+     "id": "ziek",
+     "lemma": "ziek",
+     "gloss": "ill",
+     "rank": 796,
+     "split_rank": null
+    },
+    {
+     "id": "gezond",
+     "lemma": "gezond",
+     "gloss": "healthy",
+     "rank": 1042,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "netheid",
+   "axis": "cleanliness",
+   "members": [
+    {
+     "id": "schoon",
+     "lemma": "schoon",
+     "gloss": "clean",
+     "rank": 1105,
+     "split_rank": null
+    },
+    {
+     "id": "vuil",
+     "lemma": "vuil",
+     "gloss": "dirty",
+     "rank": 2321,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "override": "a1",
+   "override_reason": "clean/dirty is a first-year inburgering topic (review M14)",
+   "band": "a1"
+  },
+  {
+   "id": "nattigheid",
+   "axis": "wetness",
+   "members": [
+    {
+     "id": "nat",
+     "lemma": "nat",
+     "gloss": "wet",
+     "rank": 1823,
+     "split_rank": null
+    },
+    {
+     "id": "droog",
+     "lemma": "droog",
+     "gloss": "dry",
+     "rank": 1525,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "override": "a1",
+   "override_reason": "wet/dry is a first-year inburgering topic (review M14)",
+   "band": "a1"
+  },
+  {
+   "id": "afstand",
+   "axis": "distance",
+   "members": [
+    {
+     "id": "dichtbij",
+     "lemma": "dichtbij",
+     "gloss": "near",
+     "rank": 1141,
+     "split_rank": null
+    },
+    {
+     "id": "ver",
+     "lemma": "ver",
+     "gloss": "far",
+     "rank": 440,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "prijs",
+   "axis": "price",
+   "members": [
+    {
+     "id": "duur",
+     "lemma": "duur",
+     "gloss": "expensive",
+     "rank": null,
+     "split_rank": 9586
+    },
+    {
+     "id": "goedkoop",
+     "lemma": "goedkoop",
+     "gloss": "cheap",
+     "rank": 1758,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "override": "a1",
+   "override_reason": "duur has no plain lexicon row; goedkoop (1758) alone gives A2, but price is a first-year shopping topic",
+   "band": "a1"
+  },
+  {
+   "id": "wakker",
+   "axis": "awake or sleepy",
+   "members": [
+    {
+     "id": "wakker",
+     "lemma": "wakker",
+     "gloss": "awake",
+     "rank": 536,
+     "split_rank": null
+    },
+    {
+     "id": "slaperig",
+     "lemma": "slaperig",
+     "gloss": "sleepy",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "vermogen",
+   "axis": "money",
+   "members": [
+    {
+     "id": "arm",
+     "lemma": "arm",
+     "gloss": "poor",
+     "rank": null,
+     "split_rank": 9579
+    },
+    {
+     "id": "rijk",
+     "lemma": "rijk",
+     "gloss": "rich",
+     "rank": null,
+     "split_rank": 9614
+    }
+   ],
+   "rank_band": null,
+   "override": "a1",
+   "override_reason": "arm and rijk have no plain lexicon row (only split homograph entries); money words are first-year inburgering topics",
+   "band": "a1"
+  },
+  {
+   "id": "drukte",
+   "axis": "crowding",
+   "members": [
+    {
+     "id": "rustig",
+     "lemma": "rustig",
+     "gloss": "quiet (not busy)",
+     "rank": 603,
+     "split_rank": null
+    },
+    {
+     "id": "druk",
+     "lemma": "druk",
+     "gloss": "busy, crowded",
+     "rank": 291,
+     "split_rank": 9584
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "gevaar",
+   "axis": "danger",
+   "members": [
+    {
+     "id": "veilig",
+     "lemma": "veilig",
+     "gloss": "safe",
+     "rank": 472,
+     "split_rank": null
+    },
+    {
+     "id": "gevaarlijk",
+     "lemma": "gevaarlijk",
+     "gloss": "dangerous",
+     "rank": 1232,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  },
+  {
+   "id": "energie",
+   "axis": "energy",
+   "members": [
+    {
+     "id": "moe",
+     "lemma": "moe",
+     "gloss": "tired",
+     "rank": null,
+     "split_rank": 9606
+    },
+    {
+     "id": "fit",
+     "lemma": "fit",
+     "gloss": "fit",
+     "rank": 2665,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a1",
+   "override_reason": "moe has no plain lexicon row; fit (2665) alone would put the core word moe in B1",
+   "band": "a1"
+  },
+  {
+   "id": "weer",
+   "axis": "weather",
+   "members": [
+    {
+     "id": "zonnig",
+     "lemma": "zonnig",
+     "gloss": "sunny",
+     "rank": 5517,
+     "split_rank": null
+    },
+    {
+     "id": "bewolkt",
+     "lemma": "bewolkt",
+     "gloss": "cloudy",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "override": "a1",
+   "override_reason": "weather is a first-year inburgering topic; bewolkt has no lexicon row and zonnig (5517) gives B2",
+   "band": "a1"
+  },
+  {
+   "id": "verdeling",
+   "axis": "fair share",
+   "members": [
+    {
+     "id": "eerlijk",
+     "lemma": "eerlijk",
+     "gloss": "fair (an even share)",
+     "rank": 597,
+     "split_rank": null
+    },
+    {
+     "id": "oneerlijk",
+     "lemma": "oneerlijk",
+     "gloss": "unfair (an uneven share)",
+     "rank": 4275,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "band": "a1"
+  }
+ ],
+ "a2": [
+  {
+   "id": "dikte",
+   "axis": "thickness of an object",
+   "members": [
+    {
+     "id": "dik",
+     "lemma": "dik",
+     "gloss": "thick",
+     "rank": 1339,
+     "split_rank": null
+    },
+    {
+     "id": "dun",
+     "lemma": "dun",
+     "gloss": "thin",
+     "rank": 3052,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "breedte",
+   "axis": "width of a path",
+   "members": [
+    {
+     "id": "breed",
+     "lemma": "breed",
+     "gloss": "wide",
+     "rank": 1426,
+     "split_rank": null
+    },
+    {
+     "id": "smal",
+     "lemma": "smal",
+     "gloss": "narrow",
+     "rank": 5024,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "diepte",
+   "axis": "depth of water",
+   "members": [
+    {
+     "id": "diep",
+     "lemma": "diep",
+     "gloss": "deep",
+     "rank": 941,
+     "split_rank": null
+    },
+    {
+     "id": "ondiep",
+     "lemma": "ondiep",
+     "gloss": "shallow",
+     "rank": 7084,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "override": "a2",
+   "override_reason": "ondiep ranks 7084; the rare partner moves the set up one band (review M15)",
+   "band": "a2"
+  },
+  {
+   "id": "geluid",
+   "axis": "volume",
+   "members": [
+    {
+     "id": "stil",
+     "lemma": "stil",
+     "gloss": "silent, quiet (no sound)",
+     "rank": 712,
+     "split_rank": null
+    },
+    {
+     "id": "luid",
+     "lemma": "luid",
+     "gloss": "loud (formal)",
+     "rank": 3203,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "override": "a2",
+   "override_reason": "luid (3203) is written register; the rare partner moves the set up one band (review M1)",
+   "band": "a2"
+  },
+  {
+   "id": "licht",
+   "axis": "brightness of a room",
+   "members": [
+    {
+     "id": "donker",
+     "lemma": "donker",
+     "gloss": "dark",
+     "rank": 1477,
+     "split_rank": null
+    },
+    {
+     "id": "licht-kamer",
+     "lemma": "licht",
+     "gloss": "light, bright",
+     "rank": null,
+     "split_rank": 9599
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "leven",
+   "axis": "living or not",
+   "members": [
+    {
+     "id": "levend",
+     "lemma": "levend",
+     "gloss": "alive",
+     "rank": 2040,
+     "split_rank": null
+    },
+    {
+     "id": "dood",
+     "lemma": "dood",
+     "gloss": "dead",
+     "rank": null,
+     "split_rank": 9582
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "aanwezigheid",
+   "axis": "present or absent",
+   "members": [
+    {
+     "id": "aanwezig",
+     "lemma": "aanwezig",
+     "gloss": "present",
+     "rank": 480,
+     "split_rank": null
+    },
+    {
+     "id": "afwezig",
+     "lemma": "afwezig",
+     "gloss": "absent",
+     "rank": 4074,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "override": "a2",
+   "override_reason": "afwezig ranks 4074; the rare partner moves the set up one band (review M15)",
+   "band": "a2"
+  },
+  {
+   "id": "smaak",
+   "axis": "taste",
+   "members": [
+    {
+     "id": "zoet",
+     "lemma": "zoet",
+     "gloss": "sweet",
+     "rank": 2622,
+     "split_rank": null
+    },
+    {
+     "id": "zuur",
+     "lemma": "zuur",
+     "gloss": "sour",
+     "rank": 3365,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a2",
+   "override_reason": "taste is an everyday topic; zoet (2622) gives B1 (review M14)",
+   "band": "a2"
+  },
+  {
+   "id": "snede",
+   "axis": "edge",
+   "members": [
+    {
+     "id": "scherp",
+     "lemma": "scherp",
+     "gloss": "sharp",
+     "rank": 1595,
+     "split_rank": null
+    },
+    {
+     "id": "bot",
+     "lemma": "bot",
+     "gloss": "blunt",
+     "rank": 2555,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "pasvorm",
+   "axis": "fit",
+   "members": [
+    {
+     "id": "wijd",
+     "lemma": "wijd",
+     "gloss": "loose, baggy",
+     "rank": 4370,
+     "split_rank": null
+    },
+    {
+     "id": "strak",
+     "lemma": "strak",
+     "gloss": "tight",
+     "rank": 2687,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a2",
+   "override_reason": "wijd (4370) and strak (2687) give B1, but clothing fit is an A2 shopping topic (review H2)",
+   "band": "a2"
+  },
+  {
+   "id": "staat",
+   "axis": "condition",
+   "members": [
+    {
+     "id": "heel",
+     "lemma": "heel",
+     "gloss": "whole",
+     "rank": 64,
+     "split_rank": null
+    },
+    {
+     "id": "kapot",
+     "lemma": "kapot",
+     "gloss": "broken",
+     "rank": 1066,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "override": "a2",
+   "override_reason": "heel ranks 64 as the adverb \"very\"; banded by kapot (1066) plus one band for the whole/broken sense",
+   "band": "a2"
+  },
+  {
+   "id": "moed",
+   "axis": "courage",
+   "members": [
+    {
+     "id": "bang",
+     "lemma": "bang",
+     "gloss": "afraid",
+     "rank": 399,
+     "split_rank": null
+    },
+    {
+     "id": "dapper",
+     "lemma": "dapper",
+     "gloss": "brave",
+     "rank": 3975,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a1",
+   "override": "a2",
+   "override_reason": "dapper ranks 3975; the rare partner moves the set up one band (review M15)",
+   "band": "a2"
+  },
+  {
+   "id": "tevredenheid",
+   "axis": "satisfaction",
+   "members": [
+    {
+     "id": "tevreden",
+     "lemma": "tevreden",
+     "gloss": "satisfied",
+     "rank": 1173,
+     "split_rank": null
+    },
+    {
+     "id": "ontevreden",
+     "lemma": "ontevreden",
+     "gloss": "dissatisfied",
+     "rank": 4277,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "gezelschap",
+   "axis": "company",
+   "members": [
+    {
+     "id": "eenzaam",
+     "lemma": "eenzaam",
+     "gloss": "lonely",
+     "rank": 3977,
+     "split_rank": null
+    },
+    {
+     "id": "gezellig",
+     "lemma": "gezellig",
+     "gloss": "cosy, sociable",
+     "rank": 1208,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "spanning",
+   "axis": "muscles",
+   "members": [
+    {
+     "id": "gespannen",
+     "lemma": "gespannen",
+     "gloss": "tense",
+     "rank": 3106,
+     "split_rank": null
+    },
+    {
+     "id": "ontspannen",
+     "lemma": "ontspannen",
+     "gloss": "relaxed",
+     "rank": 2406,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "vorm-bol",
+   "axis": "shape",
+   "members": [
+    {
+     "id": "plat",
+     "lemma": "plat",
+     "gloss": "flat (not rounded)",
+     "rank": 2272,
+     "split_rank": null
+    },
+    {
+     "id": "bol",
+     "lemma": "bol",
+     "gloss": "bulging, rounded",
+     "rank": 2477,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a2",
+   "band": "a2"
+  },
+  {
+   "id": "stevigheid",
+   "axis": "steadiness",
+   "members": [
+    {
+     "id": "stevig",
+     "lemma": "stevig",
+     "gloss": "sturdy, firm",
+     "rank": 2530,
+     "split_rank": null
+    },
+    {
+     "id": "wankel",
+     "lemma": "wankel",
+     "gloss": "wobbly",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a2",
+   "override_reason": "Everyday promotion. Lexicon: stevig niveau B1, herkomst bijlage8, rank 2530; wankel no woorden.tsv row, no usable rank. Basis: judgment, not lexicon data. Note: a sturdy or a wobbly chair, table or ladder is daily home life.",
+   "everyday": true,
+   "band": "a2"
+  },
+  {
+   "id": "lucht",
+   "axis": "air in a room",
+   "members": [
+    {
+     "id": "fris",
+     "lemma": "fris",
+     "gloss": "fresh (air)",
+     "rank": 2957,
+     "split_rank": null
+    },
+    {
+     "id": "benauwd",
+     "lemma": "benauwd",
+     "gloss": "stuffy",
+     "rank": 7855,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a2",
+   "override_reason": "Everyday promotion. Lexicon: fris niveau B1, herkomst bijlage8, rank 2957; benauwd niveau B1, herkomst bijlage8, rank 7855. Basis: judgment, not lexicon data. Note: airing a stuffy room is daily home life.",
+   "everyday": true,
+   "band": "a2"
+  },
+  {
+   "id": "orde",
+   "axis": "order on a desk",
+   "members": [
+    {
+     "id": "keurig",
+     "lemma": "keurig",
+     "gloss": "neat, tidy",
+     "rank": 3930,
+     "split_rank": null
+    },
+    {
+     "id": "rommelig",
+     "lemma": "rommelig",
+     "gloss": "messy",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a2",
+   "override_reason": "Everyday promotion. Lexicon: keurig niveau open, herkomst bijlage8, rank 3930; rommelig no woorden.tsv row, no usable rank. Basis: judgment, not lexicon data. Note: a tidy or a messy room or desk is daily home life.",
+   "everyday": true,
+   "band": "a2"
+  },
+  {
+   "id": "kruiding",
+   "axis": "seasoning",
+   "members": [
+    {
+     "id": "flauw",
+     "lemma": "flauw",
+     "gloss": "bland",
+     "rank": 3194,
+     "split_rank": null
+    },
+    {
+     "id": "pittig",
+     "lemma": "pittig",
+     "gloss": "spicy, hot",
+     "rank": 5682,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "a2",
+   "override_reason": "Everyday promotion. Lexicon: flauw niveau B1, herkomst bijlage8, rank 3194; pittig niveau A1, herkomst bijlage8, rank 5682. Basis: judgment, with coursebook support (pittig). Note: bland or spicy food is daily kitchen and table talk.",
+   "everyday": true,
+   "band": "a2"
+  },
+  {
+   "id": "bereiding",
+   "axis": "raw or cooked",
+   "members": [
+    {
+     "id": "rauw",
+     "lemma": "rauw",
+     "gloss": "raw",
+     "rank": 5288,
+     "split_rank": null
+    },
+    {
+     "id": "gekookt",
+     "lemma": "gekookt",
+     "gloss": "boiled",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "override": "a2",
+   "override_reason": "Everyday promotion. Lexicon: rauw niveau open, herkomst bijlage8, rank 5288; gekookt no woorden.tsv row, no usable rank. Basis: judgment, not lexicon data. Note: a raw or a boiled egg is daily cooking.",
+   "everyday": true,
+   "band": "a2"
+  },
+  {
+   "id": "wind",
+   "axis": "wind",
+   "members": [
+    {
+     "id": "winderig",
+     "lemma": "winderig",
+     "gloss": "windy",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "windstil",
+     "lemma": "windstil",
+     "gloss": "still, without wind",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "a2",
+   "override_reason": "winderig and windstil have no lexicon row; banded by the base noun wind (911), one band up for the derived forms, after the A1 weather set",
+   "band": "a2"
+  }
+ ],
+ "b1": [
+  {
+   "id": "vorm-lijn",
+   "axis": "straightness",
+   "members": [
+    {
+     "id": "recht",
+     "lemma": "recht",
+     "gloss": "straight",
+     "rank": null,
+     "split_rank": 9613
+    },
+    {
+     "id": "krom",
+     "lemma": "krom",
+     "gloss": "bent, curved",
+     "rank": 6544,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "override": "b1",
+   "override_reason": "recht has no plain lexicon row; krom (6544) alone gives B2, one band too late for a basic shape word",
+   "band": "b1"
+  },
+  {
+   "id": "oppervlak",
+   "axis": "surface",
+   "members": [
+    {
+     "id": "glad",
+     "lemma": "glad",
+     "gloss": "smooth",
+     "rank": 3332,
+     "split_rank": null
+    },
+    {
+     "id": "ruw",
+     "lemma": "ruw",
+     "gloss": "rough",
+     "rank": 4700,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "rijpheid",
+   "axis": "ripeness",
+   "members": [
+    {
+     "id": "rijp",
+     "lemma": "rijp",
+     "gloss": "ripe",
+     "rank": 4237,
+     "split_rank": null
+    },
+    {
+     "id": "onrijp",
+     "lemma": "onrijp",
+     "gloss": "unripe",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "schuchter",
+   "axis": "shyness",
+   "members": [
+    {
+     "id": "verlegen",
+     "lemma": "verlegen",
+     "gloss": "shy",
+     "rank": 4366,
+     "split_rank": null
+    },
+    {
+     "id": "brutaal",
+     "lemma": "brutaal",
+     "gloss": "cheeky",
+     "rank": 6898,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "rust",
+   "axis": "nerves",
+   "members": [
+    {
+     "id": "zenuwachtig",
+     "lemma": "zenuwachtig",
+     "gloss": "nervous",
+     "rank": 3447,
+     "split_rank": null
+    },
+    {
+     "id": "kalm",
+     "lemma": "kalm",
+     "gloss": "calm",
+     "rank": 3928,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "beleefdheid",
+   "axis": "manners",
+   "members": [
+    {
+     "id": "beleefd",
+     "lemma": "beleefd",
+     "gloss": "polite",
+     "rank": 3405,
+     "split_rank": null
+    },
+    {
+     "id": "onbeleefd",
+     "lemma": "onbeleefd",
+     "gloss": "rude",
+     "rank": 8318,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "zorg",
+   "axis": "care in writing",
+   "members": [
+    {
+     "id": "zorgvuldig",
+     "lemma": "zorgvuldig",
+     "gloss": "careful",
+     "rank": 3448,
+     "split_rank": null
+    },
+    {
+     "id": "slordig",
+     "lemma": "slordig",
+     "gloss": "sloppy, careless",
+     "rank": 5356,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "comfort",
+   "axis": "comfort of a seat",
+   "members": [
+    {
+     "id": "comfortabel",
+     "lemma": "comfortabel",
+     "gloss": "comfortable",
+     "rank": 4207,
+     "split_rank": null
+    },
+    {
+     "id": "ongemakkelijk",
+     "lemma": "ongemakkelijk",
+     "gloss": "uncomfortable",
+     "rank": 3843,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "gedrag",
+   "axis": "behaviour of a dog",
+   "members": [
+    {
+     "id": "braaf",
+     "lemma": "braaf",
+     "gloss": "good, well-behaved",
+     "rank": 4851,
+     "split_rank": null
+    },
+    {
+     "id": "stout",
+     "lemma": "stout",
+     "gloss": "naughty",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "versiering",
+   "axis": "decoration of a hall",
+   "members": [
+    {
+     "id": "feestelijk",
+     "lemma": "feestelijk",
+     "gloss": "festive",
+     "rank": 4740,
+     "split_rank": null
+    },
+    {
+     "id": "kaal",
+     "lemma": "kaal",
+     "gloss": "bare",
+     "rank": 4098,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "geduld",
+   "axis": "patience",
+   "members": [
+    {
+     "id": "geduldig",
+     "lemma": "geduldig",
+     "gloss": "patient",
+     "rank": 4859,
+     "split_rank": null
+    },
+    {
+     "id": "ongeduldig",
+     "lemma": "ongeduldig",
+     "gloss": "impatient",
+     "rank": 6325,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "waterkwaliteit",
+   "axis": "water quality",
+   "members": [
+    {
+     "id": "zuiver",
+     "lemma": "zuiver",
+     "gloss": "pure, clean (water)",
+     "rank": 3555,
+     "split_rank": null
+    },
+    {
+     "id": "vervuild",
+     "lemma": "vervuild",
+     "gloss": "polluted",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "beweeglijkheid",
+   "axis": "suppleness",
+   "members": [
+    {
+     "id": "soepel",
+     "lemma": "soepel",
+     "gloss": "supple, flexible",
+     "rank": 4357,
+     "split_rank": null
+    },
+    {
+     "id": "stijf",
+     "lemma": "stijf",
+     "gloss": "stiff",
+     "rank": 5089,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "gitaar",
+   "axis": "kind of guitar",
+   "members": [
+    {
+     "id": "akoestisch",
+     "lemma": "akoestisch",
+     "gloss": "acoustic",
+     "rank": 8100,
+     "split_rank": null
+    },
+    {
+     "id": "elektrisch",
+     "lemma": "elektrisch",
+     "gloss": "electric",
+     "rank": 3375,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "band": "b1"
+  },
+  {
+   "id": "patroon",
+   "axis": "pattern",
+   "members": [
+    {
+     "id": "gestreept",
+     "lemma": "gestreept",
+     "gloss": "striped",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "geruit",
+     "lemma": "geruit",
+     "gloss": "checked",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "gestippeld",
+     "lemma": "gestippeld",
+     "gloss": "dotted",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "b1",
+   "override_reason": "gestreept, geruit and gestippeld have no lexicon row; banded by the base noun streep (3217)",
+   "band": "b1"
+  }
+ ],
+ "b2": [
+  {
+   "id": "temperament",
+   "axis": "temper of a horse",
+   "members": [
+    {
+     "id": "agressief",
+     "lemma": "agressief",
+     "gloss": "aggressive",
+     "rank": 3368,
+     "split_rank": null
+    },
+    {
+     "id": "mak",
+     "lemma": "mak",
+     "gloss": "tame, docile",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b1",
+   "override": "b2",
+   "override_reason": "mak has no lexicon row and is rare; the rare partner moves the set up one band from agressief (3368)",
+   "band": "b2"
+  },
+  {
+   "id": "helling",
+   "axis": "slope of a road",
+   "members": [
+    {
+     "id": "steil",
+     "lemma": "steil",
+     "gloss": "steep",
+     "rank": 7315,
+     "split_rank": null
+    },
+    {
+     "id": "vlak",
+     "lemma": "vlak",
+     "gloss": "level (ground)",
+     "rank": null,
+     "split_rank": 8703
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "binnenkant",
+   "axis": "inside of a trunk",
+   "members": [
+    {
+     "id": "massief",
+     "lemma": "massief",
+     "gloss": "solid (not hollow)",
+     "rank": 5811,
+     "split_rank": null
+    },
+    {
+     "id": "hol",
+     "lemma": "hol",
+     "gloss": "hollow",
+     "rank": null,
+     "split_rank": 9594
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "vorm-stof",
+   "axis": "state of matter",
+   "members": [
+    {
+     "id": "vast",
+     "lemma": "vast",
+     "gloss": "solid (not liquid)",
+     "rank": 235,
+     "split_rank": null
+    },
+    {
+     "id": "vloeibaar",
+     "lemma": "vloeibaar",
+     "gloss": "liquid",
+     "rank": 6055,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "a0",
+   "override": "b2",
+   "override_reason": "vast ranks 235 for the senses \"fixed, steady, certainly\"; the solid-matter sense drawn here is rare, so the set follows vloeibaar (6055)",
+   "band": "b2"
+  },
+  {
+   "id": "transparantie",
+   "axis": "see-through or not",
+   "members": [
+    {
+     "id": "doorzichtig",
+     "lemma": "doorzichtig",
+     "gloss": "see-through",
+     "rank": 6902,
+     "split_rank": null
+    },
+    {
+     "id": "ondoorzichtig",
+     "lemma": "ondoorzichtig",
+     "gloss": "opaque",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "richting",
+   "axis": "direction",
+   "members": [
+    {
+     "id": "horizontaal",
+     "lemma": "horizontaal",
+     "gloss": "horizontal",
+     "rank": 5801,
+     "split_rank": null
+    },
+    {
+     "id": "verticaal",
+     "lemma": "verticaal",
+     "gloss": "vertical",
+     "rank": 5512,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "gehoorzaamheid",
+   "axis": "obedience",
+   "members": [
+    {
+     "id": "koppig",
+     "lemma": "koppig",
+     "gloss": "stubborn",
+     "rank": 6098,
+     "split_rank": null
+    },
+    {
+     "id": "gehoorzaam",
+     "lemma": "gehoorzaam",
+     "gloss": "obedient",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "vrijgevigheid",
+   "axis": "sharing",
+   "members": [
+    {
+     "id": "gierig",
+     "lemma": "gierig",
+     "gloss": "stingy",
+     "rank": 8362,
+     "split_rank": null
+    },
+    {
+     "id": "vrijgevig",
+     "lemma": "vrijgevig",
+     "gloss": "generous",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "strijkgoed",
+   "axis": "creases",
+   "members": [
+    {
+     "id": "gekreukt",
+     "lemma": "gekreukt",
+     "gloss": "creased, crumpled",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "gestreken",
+     "lemma": "gestreken",
+     "gloss": "ironed",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "b2",
+   "override_reason": "gekreukt and gestreken have no lexicon row; banded by the base verb strijken (5428)",
+   "band": "b2"
+  },
+  {
+   "id": "vijver",
+   "axis": "ice on a pond",
+   "members": [
+    {
+     "id": "bevroren",
+     "lemma": "bevroren",
+     "gloss": "frozen",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "ontdooid",
+     "lemma": "ontdooid",
+     "gloss": "thawed",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "b2",
+   "override_reason": "bevroren and ontdooid have no lexicon row; banded by the base verb bevriezen (7440)",
+   "band": "b2"
+  },
+  {
+   "id": "sla",
+   "axis": "crispness",
+   "members": [
+    {
+     "id": "knapperig",
+     "lemma": "knapperig",
+     "gloss": "crispy, crunchy",
+     "rank": 8665,
+     "split_rank": null
+    },
+    {
+     "id": "slap",
+     "lemma": "slap",
+     "gloss": "limp, soggy",
+     "rank": 5296,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "bodem",
+   "axis": "fertility of soil",
+   "members": [
+    {
+     "id": "vruchtbaar",
+     "lemma": "vruchtbaar",
+     "gloss": "fertile",
+     "rank": 7199,
+     "split_rank": null
+    },
+    {
+     "id": "dor",
+     "lemma": "dor",
+     "gloss": "barren, parched",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": "b2",
+   "band": "b2"
+  },
+  {
+   "id": "bal",
+   "axis": "air in a ball",
+   "members": [
+    {
+     "id": "opgepompt",
+     "lemma": "opgepompt",
+     "gloss": "pumped up",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "leeggelopen",
+     "lemma": "leeggelopen",
+     "gloss": "deflated",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "b2",
+   "override_reason": "opgepompt and leeggelopen have no lexicon row; banded by the base verb oppompen (8788)",
+   "band": "b2"
+  },
+  {
+   "id": "schil",
+   "axis": "peel",
+   "members": [
+    {
+     "id": "geschild",
+     "lemma": "geschild",
+     "gloss": "peeled",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "ongeschild",
+     "lemma": "ongeschild",
+     "gloss": "unpeeled",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "b2",
+   "override_reason": "geschild and ongeschild have no lexicon row; banded by the base verb schillen (7584)",
+   "band": "b2"
+  },
+  {
+   "id": "tapijt",
+   "axis": "rolled or flat",
+   "members": [
+    {
+     "id": "opgerold",
+     "lemma": "opgerold",
+     "gloss": "rolled up (rug, mat)",
+     "rank": null,
+     "split_rank": null
+    },
+    {
+     "id": "uitgerold",
+     "lemma": "uitgerold",
+     "gloss": "rolled out",
+     "rank": null,
+     "split_rank": null
+    }
+   ],
+   "rank_band": null,
+   "override": "b2",
+   "override_reason": "opgerold and uitgerold have no lexicon row and nor do oprollen or uitrollen; plain rollen (1895) is a different verb, so the set stays in B2",
+   "band": "b2"
+  }
+ ]
+}

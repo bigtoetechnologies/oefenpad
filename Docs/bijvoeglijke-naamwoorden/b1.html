@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijvoeglijke naamwoorden — B1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijvoeglijke naamwoorden — B1</h1>
+<p class="lead">The wider pairs: straightness, surface, shyness, nerves, manners, care, comfort, behaviour, decoration, patience, water quality, suppleness, guitars and patterns.</p>
+<div class="sum"><span>14 contrast sets</span><span>29 adjectives</span><span>frames #101–#129</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html" class="hier">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="vorm-lijn" data-band="b1"><h2><span class="woorden">recht · krom</span></h2><p class="as">straightness · 2 cards</p><p class="zin">Deze stok is recht, maar die stok is krom.<span class="en">This stick is straight, but that stick is bent.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain wooden stick lying across the full width of the page on a plain flat ground line, seen from the side, same length and thickness, nothing else in the picture except a small stone at each end as reference. Only the shape of the stick changes.</p><div class="kaarten"><article id="recht" class="kaart" data-id="recht" data-band="b1" data-kind="adjective" data-cluster="vorm-lijn" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 101">#101</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">recht</h3>
+<p class="gloss">straight</p>
+<p class="vlaggen"><span>straightness</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain wooden stick lies across the full width of the page on a plain flat ground line, side view, both ends touching two small stones. The stick lies perfectly level, and a thin straight guide line is drawn just above it, parallel and equal in length, so no part of the stick bends away.</dd>
+<dt>Must read</dt><dd class="must">a stick lying dead level beside a parallel straight guide line.</dd>
+<dt>Avoid</dt><dd class="avoid">a stick with one smooth arc (krom); a leaning stick (scheef); a stick tilted upward at one end (schuin); a short stick (kort).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="krom">Pair with krom. The only difference is the shape of the stick: perfectly straight here, one smooth arc there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Teken een rechte lijn op het papier.<br><span class="voorbeeld-en">Draw a straight line on the paper.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lange stok ligt waterpas tussen twee stenen, met een evenwijdige lijn erboven.</dd>
+</dl>
+<p class="id">recht.png · B1 · vorm-lijn</p>
+</article>
+<article id="krom" class="kaart" data-id="krom" data-band="b1" data-kind="adjective" data-cluster="vorm-lijn" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 102">#102</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">krom</h3>
+<p class="gloss">bent, curved</p>
+<p class="vlaggen"><span>straightness</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain wooden stick lies across the full width of the page on a plain flat ground line, side view, both ends touching two small stones. The stick bends in one smooth arc in the middle, like a banana. A thin straight guide line above it shows how far the middle bends away, and a small gap shows under the middle.</dd>
+<dt>Must read</dt><dd class="must">a stick with a strong arc and a visible gap under its middle.</dd>
+<dt>Avoid</dt><dd class="avoid">a perfectly level stick (recht); a stick leaning on one stone (scheef); a zigzag stick (not the card); a coiled rope (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="recht">Pair with recht. The only difference is the shape of the stick: one smooth arc here, perfectly straight there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De oude man loopt met een kromme rug.<br><span class="voorbeeld-en">The old man walks with a bent back.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een stok buigt in het midden als een boog tussen twee stenen.</dd>
+</dl>
+<p class="id">krom.png · B1 · vorm-lijn</p>
+</article></div></section>
+<section class="cluster" data-cluster="oppervlak" data-band="b1"><h2><span class="woorden">glad · ruw</span></h2><p class="as">surface · 2 cards</p><p class="zin">Deze steen is glad, maar die steen is ruw.<span class="en">This stone is smooth, but that stone is rough.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult hand, palm up, seen from the side, holding one plain stone about the size of an egg, same hand, same viewpoint, same size on the page, plain background. Only the surface of the stone changes.</p><div class="kaarten"><article id="glad" class="kaart" data-id="glad" data-band="b1" data-kind="adjective" data-cluster="oppervlak" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 103">#103</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">glad</h3>
+<p class="gloss">smooth</p>
+<p class="vlaggen"><span>surface</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult hand, palm up, seen from the side against a plain background, holds one egg-sized pebble that is perfectly smooth: a clean even oval outline with no bumps, no cracks and no dots. Nothing else is in the picture.</dd>
+<dt>Must read</dt><dd class="must">a clean even oval stone with no bumps.</dd>
+<dt>Avoid</dt><dd class="avoid">a stone covered in bumps and cracks (ruw); a round ball (not the card); a stone in water with drops (nat); a flat sheet of ice (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ruw">Pair with ruw. The only difference is the stone's surface: a clean even oval here, bumps and cracks there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De tafel is glad en schoon.<br><span class="voorbeeld-en">The table is smooth and clean.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hand houdt een ovale steen zonder bulten, barsten of stippen.</dd>
+</dl>
+<p class="id">glad.png · B1 · oppervlak</p>
+</article>
+<article id="ruw" class="kaart" data-id="ruw" data-band="b1" data-kind="adjective" data-cluster="oppervlak" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 104">#104</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ruw</h3>
+<p class="gloss">rough</p>
+<p class="vlaggen"><span>surface</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult hand, palm up, seen from the side against a plain background, holds one stone the size of an egg but with a jagged outline, many small bumps, short crack lines and scattered dots all over it, and tiny stone flakes lying on the palm.</dd>
+<dt>Must read</dt><dd class="must">a jagged stone with bumps, cracks and speckles and no shine.</dd>
+<dt>Avoid</dt><dd class="avoid">a clean even oval stone (glad); a stone with moss (not the card); a sharp spike (scherp); a heavy boulder (zwaar).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="glad">Pair with glad. The only difference is the stone's surface: jagged with bumps and cracks here, a clean even oval there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De muur voelt ruw aan.<br><span class="voorbeeld-en">The wall feels rough.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hand houdt een hoekige steen met bulten, barsten en stippen.</dd>
+</dl>
+<p class="id">ruw.png · B1 · oppervlak</p>
+</article></div></section>
+<section class="cluster" data-cluster="schuchter" data-band="b1"><h2><span class="woorden">verlegen · brutaal</span></h2><p class="as">shyness · 2 cards</p><p class="zin">Op school is hij verlegen, maar thuis is hij brutaal.<span class="en">At school he is shy, but at home he is cheeky.</span></p><p class="frame"><strong>Fixed frame.</strong> one child standing alone on a plain floor line, whole figure facing the viewer, same size and place on the page, plain wall behind, simple outlined clothes. Only the child's posture and face change.</p><div class="kaarten"><article id="verlegen" class="kaart" data-id="verlegen" data-band="b1" data-kind="adjective" data-cluster="schuchter" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 105">#105</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">verlegen</h3>
+<p class="gloss">shy</p>
+<p class="vlaggen"><span>shyness</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one child stands alone on a plain floor line facing the viewer, plain wall behind, with the shoulders pulled in, the head tilted down and the eyes looking sideways at the floor, one hand twisting the hem of the shirt and the other arm hiding behind the back. The mouth is small and closed and one foot turns inward.</dd>
+<dt>Must read</dt><dd class="must">a child with hunched shoulders, lowered head, and hands twisting the shirt.</dd>
+<dt>Avoid</dt><dd class="avoid">a child with hands on hips and a wide grin (brutaal); a crying child (verdrietig); a child hiding fully behind a wall (bang); a sleeping child (slaperig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="brutaal">Pair with brutaal. The only difference is the child's pose: shoulders in and head down here, chin up and hands on hips there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn zusje is verlegen bij vreemden.<br><span class="voorbeeld-en">My little sister is shy around strangers.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kind staat met de schouders naar voren en kijkt naar de grond.</dd>
+</dl>
+<p class="id">verlegen.png · B1 · schuchter</p>
+</article>
+<article id="brutaal" class="kaart" data-id="brutaal" data-band="b1" data-kind="adjective" data-cluster="schuchter" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 106">#106</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">brutaal</h3>
+<p class="gloss">cheeky</p>
+<p class="vlaggen"><span>shyness</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one child stands alone on a plain floor line facing the viewer, plain wall behind, with feet wide, chest out, chin raised and both fists on the hips. One brow is arched, the eyes look straight at the viewer, and the mouth is a wide grin with the tongue sticking out.</dd>
+<dt>Must read</dt><dd class="must">a child with fists on hips, chin up, grinning with tongue out.</dd>
+<dt>Avoid</dt><dd class="avoid">a child twisting the shirt with head down (verlegen); an angry child with a frowning face (boos); a child waving hello (vriendelijk); a child jumping with joy (blij).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="verlegen">Pair with verlegen. The only difference is the child's pose: chin up, fists on hips and a cheeky grin here, head down and hands twisting the shirt there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De brutale jongen steekt zijn tong uit.<br><span class="voorbeeld-en">The cheeky boy sticks out his tongue.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kind staat met de handen in de zij en steekt de tong uit.</dd>
+</dl>
+<p class="id">brutaal.png · B1 · schuchter</p>
+</article></div></section>
+<section class="cluster" data-cluster="rust" data-band="b1"><h2><span class="woorden">zenuwachtig · kalm</span></h2><p class="as">nerves · 2 cards</p><p class="zin">Voor het gesprek is hij zenuwachtig, maar daarna is hij kalm.<span class="en">Before the interview he is nervous, but afterwards he is calm.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult man sitting on a plain chair in a plain waiting room, whole figure seen from the front, same size and place on the page, one plain closed door behind. Only the man's posture, hands and face change.</p><div class="kaarten"><article id="zenuwachtig" class="kaart" data-id="zenuwachtig" data-band="b1" data-kind="adjective" data-cluster="rust" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 107">#107</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">zenuwachtig</h3>
+<p class="gloss">nervous</p>
+<p class="vlaggen"><span>nerves</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult man sits on the edge of a plain chair in a plain waiting room, whole figure from the front, a closed door behind. Both hands wring together in the lap, one foot taps with short tap marks under the toe, the brows tilt up and in, and the eyes glance toward the door.</dd>
+<dt>Must read</dt><dd class="must">wringing hands and a tapping foot on the chair edge.</dd>
+<dt>Avoid</dt><dd class="avoid">a man sitting back with open hands and a soft smile (kalm); a person with clenched fists and neck lines (gespannen); a person leaning away from a threat (bang); a person crying (verdrietig); a person asleep in the chair (slaperig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kalm">Pair with kalm. The only difference is the posture and the hands: on the chair edge with wringing hands and a tapping foot here, leaning back with open hands there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ben zenuwachtig voor het examen.<br><span class="voorbeeld-en">I am nervous before the exam.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit op de rand van een stoel, wrijft zijn handen over elkaar en tikt met één voet.</dd>
+</dl>
+<p class="id">zenuwachtig.png · B1 · rust</p>
+</article>
+<article id="kalm" class="kaart" data-id="kalm" data-band="b1" data-kind="adjective" data-cluster="rust" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 108">#108</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">kalm</h3>
+<p class="gloss">calm</p>
+<p class="vlaggen"><span>nerves</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult man sits well back on a plain chair in a plain waiting room, whole figure from the front, a closed door behind. His shoulders are low, both hands rest open on the thighs and both feet stand flat on the floor. The brows are level, the eyes open and steady, and the mouth shows a slight smile.</dd>
+<dt>Must read</dt><dd class="must">a man leaning back in the chair with open hands and steady open eyes.</dd>
+<dt>Avoid</dt><dd class="avoid">a man on the chair edge wringing the hands (zenuwachtig); a person asleep with Z marks (slapen); a standing person with arms dangling loose (ontspannen); a person laughing out loud (blij).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="zenuwachtig">Pair with zenuwachtig. The only difference is the posture and the hands: leaning back with open hands here, on the chair edge with wringing hands and a tapping foot there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Blijf kalm, het komt goed.<br><span class="voorbeeld-en">Stay calm, it will be fine.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit achterover in een stoel met open handen op zijn knieën.</dd>
+</dl>
+<p class="id">kalm.png · B1 · rust</p>
+</article></div></section>
+<section class="cluster" data-cluster="beleefdheid" data-band="b1"><h2><span class="woorden">beleefd · onbeleefd</span></h2><p class="as">manners · 2 cards</p><p class="zin">Gisteren was de man beleefd, maar vandaag is hij onbeleefd.<span class="en">Yesterday the man was polite, but today he is rude.</span></p><p class="frame"><strong>Fixed frame.</strong> one man walking through a plain glass shop door, seen from the side, whole figure, a woman carrying two full shopping bags one step behind him, same sizes and places on the page, plain wall. Only what the man does with the door changes.</p><div class="kaarten"><article id="beleefd" class="kaart" data-id="beleefd" data-band="b1" data-kind="adjective" data-cluster="beleefdheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 109">#109</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">beleefd</h3>
+<p class="gloss">polite</p>
+<p class="vlaggen"><span>manners</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one man stands at a plain glass shop door, side view, and holds it wide open with one arm, his body turned toward a woman carrying two full shopping bags one step behind him. He smiles at her and nods; she walks through. Plain wall behind.</dd>
+<dt>Must read</dt><dd class="must">the man holding the door open for the woman behind him.</dd>
+<dt>Avoid</dt><dd class="avoid">the man letting the door swing shut in front of the woman (onbeleefd); the man and woman laughing together (vrolijk); the man shouting with V-brows (boos); the man carrying her bags for her (behulpzaam).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="onbeleefd">Pair with onbeleefd. The only difference is the door: held open for the woman here, swinging shut in front of her there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het kind zegt beleefd dank je wel.<br><span class="voorbeeld-en">The child politely says thank you.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man houdt de glazen deur open voor een vrouw met twee volle tassen.</dd>
+</dl>
+<p class="id">beleefd.png · B1 · beleefdheid</p>
+</article>
+<article id="onbeleefd" class="kaart" data-id="onbeleefd" data-band="b1" data-kind="adjective" data-cluster="beleefdheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 110">#110</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">onbeleefd</h3>
+<p class="gloss">rude</p>
+<p class="vlaggen"><span>manners</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one man walks through a plain glass shop door, side view, without looking back. The door swings shut behind him, two short swing marks at its edge, right in front of a woman carrying two full shopping bags one step behind him. She stops short, eyebrows raised, mouth open. Plain wall behind.</dd>
+<dt>Must read</dt><dd class="must">the door swinging shut in front of the woman while the man walks on.</dd>
+<dt>Avoid</dt><dd class="avoid">the man holding the door open for the woman (beleefd); the man shouting with V-brows (boos); the man running with long strides (haastig); the woman crying with tears (verdrietig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="beleefd">Pair with beleefd. The only difference is the door: swinging shut in front of the woman here, held open for her there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het is onbeleefd om niet te groeten.<br><span class="voorbeeld-en">It is rude not to say hello.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man loopt door de glazen deur, die vlak voor een vrouw met twee volle tassen dichtvalt.</dd>
+</dl>
+<p class="id">onbeleefd.png · B1 · beleefdheid</p>
+</article></div></section>
+<section class="cluster" data-cluster="zorg" data-band="b1"><h2><span class="woorden">zorgvuldig · slordig</span></h2><p class="as">care in writing · 2 cards</p><p class="zin">Dit briefje is zorgvuldig geschreven, maar dat briefje is slordig geschreven.<span class="en">This note is carefully written, but that note is sloppily written.</span></p><p class="frame"><strong>Fixed frame.</strong> one sheet of notepaper lying flat on a plain table, seen from straight above, same size and place on the page, a pen lying beside it. On the paper sit five rows of greeked strokes, no letters or digits. Only how the strokes are laid out changes.</p><div class="kaarten"><article id="zorgvuldig" class="kaart" data-id="zorgvuldig" data-band="b1" data-kind="adjective" data-cluster="zorg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 111">#111</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">zorgvuldig</h3>
+<p class="gloss">careful</p>
+<p class="vlaggen"><span>care in writing</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one sheet of notepaper lying flat on a plain table, seen from straight above, a pen beside it. Five rows of short greeked strokes, no letters or digits, run in straight even lines with equal gaps and a neat margin on the left. The paper is flat and unfolded.</dd>
+<dt>Must read</dt><dd class="must">five straight, evenly spaced rows of strokes with a neat left margin.</dd>
+<dt>Avoid</dt><dd class="avoid">rows sloping into each other with ink blots (slordig); a tidy stack of papers (netjes); a blank sheet (leeg); a crumpled sheet (gekreukt); a torn sheet (kapot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="slordig">Pair with slordig. The only difference is the strokes: straight even rows here, sloping crowded rows with blots there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij vult het formulier zorgvuldig in.<br><span class="voorbeeld-en">He fills in the form carefully.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een briefje op tafel met vijf rechte, gelijke regels streepjes en een pen ernaast.</dd>
+</dl>
+<p class="id">zorgvuldig.png · B1 · zorg</p>
+</article>
+<article id="slordig" class="kaart" data-id="slordig" data-band="b1" data-kind="adjective" data-cluster="zorg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 112">#112</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">slordig</h3>
+<p class="gloss">sloppy, careless</p>
+<p class="vlaggen"><span>care in writing</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same sheet of notepaper lying flat on a plain table, seen from straight above, a pen beside it. Five rows of greeked strokes, no letters or digits, slope downhill, crowd into each other and run off the right edge; two ink blots and one crossed-out stroke sit among them.</dd>
+<dt>Must read</dt><dd class="must">sloping, crowded rows running off the edge, with two ink blots.</dd>
+<dt>Avoid</dt><dd class="avoid">straight even rows with a neat margin (zorgvuldig); a crumpled sheet (gekreukt); a sheet with coffee stains only (vuil); papers spread over a desk (rommelig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="zorgvuldig">Pair with zorgvuldig. The only difference is the strokes: sloping crowded rows with blots here, straight even rows there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Je handschrift is erg slordig.<br><span class="voorbeeld-en">Your handwriting is very sloppy.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een briefje op tafel met scheve regels streepjes die in elkaar lopen, en twee inktvlekken.</dd>
+</dl>
+<p class="id">slordig.png · B1 · zorg</p>
+</article></div></section>
+<section class="cluster" data-cluster="comfort" data-band="b1"><h2><span class="woorden">comfortabel · ongemakkelijk</span></h2><p class="as">comfort of a seat · 2 cards</p><p class="zin">Deze stoel zit comfortabel, maar die stoel zit ongemakkelijk.<span class="en">This chair is comfortable, but that chair is uncomfortable.</span></p><p class="frame"><strong>Fixed frame.</strong> one woman sitting on a seat in a plain room, seen from the side, whole figure, same size and place on the page, a small side table with a cup beside her, plain wall. Only the seat and how she sits on it change.</p><div class="kaarten"><article id="comfortabel" class="kaart" data-id="comfortabel" data-band="b1" data-kind="adjective" data-cluster="comfort" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 113">#113</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">comfortabel</h3>
+<p class="gloss">comfortable</p>
+<p class="vlaggen"><span>comfort of a seat</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one woman sitting in a wide armchair with thick soft cushions and armrests, side view, whole figure, plain room, a small side table with a cup beside her. She leans back deep into the cushions, legs stretched out, hands resting on the armrests, eyes open, a soft smile.</dd>
+<dt>Must read</dt><dd class="must">the woman sunk back with her legs stretched out.</dd>
+<dt>Avoid</dt><dd class="avoid">the woman perched on the edge of a hard chair rubbing her back (ongemakkelijk); a finger pressing into a soft cushion (zacht); the woman asleep with closed eyes (slaperig); the woman with loose shoulders on any chair (ontspannen); a huge armchair dwarfing her (groot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ongemakkelijk">Pair with ongemakkelijk. The only difference is how she sits: sunk back with legs stretched out in a soft armchair here, perched on the edge of a hard chair rubbing her back there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Deze schoenen zijn heel comfortabel.<br><span class="voorbeeld-en">These shoes are very comfortable.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw leunt diep achterover in een brede fauteuil met dikke kussens.</dd>
+</dl>
+<p class="id">comfortabel.png · B1 · comfort</p>
+</article>
+<article id="ongemakkelijk" class="kaart" data-id="ongemakkelijk" data-band="b1" data-kind="adjective" data-cluster="comfort" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 114">#114</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ongemakkelijk</h3>
+<p class="gloss">uncomfortable</p>
+<p class="vlaggen"><span>comfort of a seat</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same woman sitting on a hard narrow wooden chair with a straight back, side view, whole figure, plain room, a small side table with a cup beside her. She perches on the front edge, back stiff, one hand rubbing her lower back, her mouth pulled to one side.</dd>
+<dt>Must read</dt><dd class="must">the woman perched on the front edge, rubbing her back.</dd>
+<dt>Avoid</dt><dd class="avoid">the woman sunk back in a soft armchair (comfortabel); an empty hard wooden seat (hard); the woman holding her stomach (ziek); the woman with clenched fists and neck lines (gespannen); a chair with one short leg (wankel).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="comfortabel">Pair with comfortabel. The only difference is how she sits: perched on the edge of a hard chair rubbing her back here, sunk back with legs stretched out in a soft armchair there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik slaap slecht in dit ongemakkelijke bed.<br><span class="voorbeeld-en">I sleep badly in this uncomfortable bed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit op het randje van een harde, smalle houten stoel en wrijft over haar rug.</dd>
+</dl>
+<p class="id">ongemakkelijk.png · B1 · comfort</p>
+</article></div></section>
+<section class="cluster" data-cluster="gedrag" data-band="b1"><h2><span class="woorden">braaf · stout</span></h2><p class="as">behaviour of a dog · 2 cards</p><p class="zin">Vandaag is de hond braaf, maar gisteren was hij stout.<span class="en">Today the dog is good, but yesterday it was naughty.</span></p><p class="frame"><strong>Fixed frame.</strong> one dog in a plain kitchen, seen from the side, whole animal, same size and place on the page, a slipper on the floor in front of it, plain wall behind. Only what the dog does with the slipper changes.</p><div class="kaarten"><article id="braaf" class="kaart" data-id="braaf" data-band="b1" data-kind="adjective" data-cluster="gedrag" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 115">#115</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">braaf</h3>
+<p class="gloss">good, well-behaved</p>
+<p class="vlaggen"><span>behaviour of a dog</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one dog sits upright in a plain kitchen, side view, whole animal, tail curled around its front paws, ears up, mouth closed, looking ahead. One slipper lies untouched on the floor in front of its paws. Plain wall, no other objects.</dd>
+<dt>Must read</dt><dd class="must">the dog sitting upright beside an untouched slipper.</dd>
+<dt>Avoid</dt><dd class="avoid">the dog shaking a torn slipper with scraps on the floor (stout); the dog lying asleep (slaperig); the dog showing its teeth (agressief); the dog cowering with its tail down (bang); a dog walking at heel on a slack lead (gehoorzaam).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stout">Pair with stout. The only difference is the slipper: lying untouched in front of the sitting dog here, torn in the dog's mouth there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Onze hond is lief en braaf.<br><span class="voorbeeld-en">Our dog is sweet and well-behaved.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hond zit rechtop in de keuken; de pantoffel voor zijn poten is nog heel.</dd>
+</dl>
+<p class="id">braaf.png · B1 · gedrag</p>
+</article>
+<article id="stout" class="kaart" data-id="stout" data-band="b1" data-kind="adjective" data-cluster="gedrag" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 116">#116</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">stout</h3>
+<p class="gloss">naughty</p>
+<p class="vlaggen"><span>behaviour of a dog</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one dog stands in a plain kitchen, side view, whole animal, the slipper held in its mouth and shaken, a torn strip hanging from it and three small scraps on the floor. Tail high, front paws spread playfully. Plain wall, no other objects.</dd>
+<dt>Must read</dt><dd class="must">the dog shaking a torn slipper, scraps on the floor.</dd>
+<dt>Avoid</dt><dd class="avoid">the dog sitting beside an untouched slipper (braaf); the dog baring its teeth and growling (agressief); the dog eating from a bowl (hongerig); the dog running with speed lines (snel).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="braaf">Pair with braaf. The only difference is the slipper: torn in the dog's mouth here, lying untouched in front of the sitting dog there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het stoute kind verstopt de sleutels.<br><span class="voorbeeld-en">The naughty child hides the keys.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een hond schudt een kapotte pantoffel heen en weer; er liggen stukjes op de vloer.</dd>
+</dl>
+<p class="id">stout.png · B1 · gedrag</p>
+</article></div></section>
+<section class="cluster" data-cluster="versiering" data-band="b1"><h2><span class="woorden">feestelijk · kaal</span></h2><p class="as">decoration of a hall · 2 cards</p><p class="zin">Vandaag ziet de zaal er feestelijk uit, maar gisteren was hij kaal.<span class="en">Today the hall looks festive, but yesterday it was bare.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain rectangular hall seen from the front, back wall, two side walls and floor, one long table in the middle, same size and viewpoint on the page, no people. Only what hangs on the walls and stands on the table changes.</p><div class="kaarten"><article id="feestelijk" class="kaart" data-id="feestelijk" data-band="b1" data-kind="adjective" data-cluster="versiering" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 117">#117</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">feestelijk</h3>
+<p class="gloss">festive</p>
+<p class="vlaggen"><span>decoration of a hall</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain rectangular hall seen from the front, one long table in the middle, no people. Paper garlands hang in loops along the back wall, a bunch of balloons is tied to each table end, and the table carries a cloth, plates and a cake with candles. No banners, no letters.</dd>
+<dt>Must read</dt><dd class="must">garlands, balloons and a laid table with a cake.</dd>
+<dt>Avoid</dt><dd class="avoid">the same hall with bare walls and an empty table (kaal); a crowd of dancing people (druk); a hall lit by candles only (donker); a child blowing out candles (blij).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kaal">Pair with kaal. The only difference is the decoration: garlands, balloons and a laid table here, bare walls and an empty table there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het was een feestelijke avond met vrienden.<br><span class="voorbeeld-en">It was a festive evening with friends.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een zaal met slingers aan de muur, ballonnen bij de tafel en een taart met kaarsjes.</dd>
+</dl>
+<p class="id">feestelijk.png · B1 · versiering</p>
+</article>
+<article id="kaal" class="kaart" data-id="kaal" data-band="b1" data-kind="adjective" data-cluster="versiering" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 118">#118</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">kaal</h3>
+<p class="gloss">bare</p>
+<p class="vlaggen"><span>decoration of a hall</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain rectangular hall seen from the front, one long table in the middle, no people. The walls are completely bare, and the table top is empty, without a cloth. No other furniture, no letters.</dd>
+<dt>Must read</dt><dd class="must">bare walls and an empty table without a cloth.</dd>
+<dt>Avoid</dt><dd class="avoid">garlands, balloons and a laid table (feestelijk); a hall full of boxes (rommelig); a hall with broken windows (kapot); the same hall without the table (leeg).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="feestelijk">Pair with feestelijk. The only difference is the decoration: bare walls and an empty table here, garlands, balloons and a laid table there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zonder posters is de muur kaal.<br><span class="voorbeeld-en">Without posters the wall is bare.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een zaal met lege muren en een lege tafel zonder kleed.</dd>
+</dl>
+<p class="id">kaal.png · B1 · versiering</p>
+</article></div></section>
+<section class="cluster" data-cluster="geduld" data-band="b1"><h2><span class="woorden">geduldig · ongeduldig</span></h2><p class="as">patience · 2 cards</p><p class="zin">Eerst wachtte de vrouw geduldig, maar nu is ze ongeduldig.<span class="en">At first the woman waited patiently, but now she is impatient.</span></p><p class="frame"><strong>Fixed frame.</strong> one woman standing last in a short queue of three adults in front of a plain shop counter with a shopkeeper behind it, side view, whole figures, same size and place on the page, plain wall, nothing with writing. Only the woman's posture changes.</p><div class="kaarten"><article id="geduldig" class="kaart" data-id="geduldig" data-band="b1" data-kind="adjective" data-cluster="geduld" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 119">#119</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">geduldig</h3>
+<p class="gloss">patient</p>
+<p class="vlaggen"><span>patience</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one woman standing last in a queue of three adults at a plain shop counter, side view, whole figure, a shopkeeper behind the counter, plain wall, nothing with writing. She stands upright in line, hands loosely clasped in front of her, face relaxed with a slight smile, gaze resting on the back of the person ahead.</dd>
+<dt>Must read</dt><dd class="must">the woman standing upright in line, hands loosely clasped in front.</dd>
+<dt>Avoid</dt><dd class="avoid">the woman leaning out of the line with crossed arms (ongeduldig); the man seated with hands in his lap (kalm); the woman waiting alone at a bus stop (vroeg); the woman wringing her hands and tapping her foot (zenuwachtig); the woman yawning (slaperig).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ongeduldig">Pair with ongeduldig. The only difference is the woman: standing upright in line with clasped hands here, leaning out of the line with crossed arms there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De verpleegkundige is altijd heel geduldig.<br><span class="voorbeeld-en">The nurse is always very patient.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat als laatste in de rij bij de toonbank, rechtop, met de handen losjes voor zich.</dd>
+</dl>
+<p class="id">geduldig.png · B1 · geduld</p>
+</article>
+<article id="ongeduldig" class="kaart" data-id="ongeduldig" data-band="b1" data-kind="adjective" data-cluster="geduld" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 120">#120</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">ongeduldig</h3>
+<p class="gloss">impatient</p>
+<p class="vlaggen"><span>patience</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same woman last in the queue of three adults at the plain shop counter, side view, whole figure, a shopkeeper behind the counter, plain wall, nothing with writing. She leans sideways out of the line to look at the counter, arms crossed, lips pressed together, one heel raised.</dd>
+<dt>Must read</dt><dd class="must">the woman leaning out of the line with crossed arms to look at the counter.</dd>
+<dt>Avoid</dt><dd class="avoid">the woman standing upright in line with clasped hands (geduldig); the woman wringing her hands and tapping her foot (zenuwachtig); the woman shouting with V-brows (boos); the woman running for the door (laat).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="geduldig">Pair with geduldig. The only difference is the woman: leaning out of the line with crossed arms here, standing upright in line with clasped hands there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wees niet zo ongeduldig, we zijn er bijna.<br><span class="voorbeeld-en">Don't be so impatient, we are almost there.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat als laatste in de rij, armen over elkaar, en buigt opzij om naar de toonbank te kijken.</dd>
+</dl>
+<p class="id">ongeduldig.png · B1 · geduld</p>
+</article></div></section>
+<section class="cluster" data-cluster="waterkwaliteit" data-band="b1"><h2><span class="woorden">zuiver · vervuild</span></h2><p class="as">water quality · 2 cards</p><p class="zin">Hier is het water zuiver, maar daar is het vervuild.<span class="en">Here the water is pure, but there it is polluted.</span></p><p class="frame"><strong>Fixed frame.</strong> one small stream running across the page between two grassy banks, seen from the side at a slight angle, one bush on the far bank, same size and place on the page. Only what is in the water changes.</p><div class="kaarten"><article id="zuiver" class="kaart" data-id="zuiver" data-band="b1" data-kind="adjective" data-cluster="waterkwaliteit" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 121">#121</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">zuiver</h3>
+<p class="gloss">pure, clean (water)</p>
+<p class="vlaggen"><span>water quality</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one small stream between two grassy banks, side view at a slight angle, one bush on the far bank. Three small fish swim near the bottom, pebbles show on the stream bed, and a few smooth ripple lines mark the surface. Nothing floats on the water.</dd>
+<dt>Must read</dt><dd class="must">fish and pebbles showing through the water, nothing floating.</dd>
+<dt>Avoid</dt><dd class="avoid">bottles, a can and a dead fish floating on the surface (vervuild); a muddy puddle on a path (vuil); a jar you can see through (doorzichtig); a stream frozen over (bevroren).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vervuild">Pair with vervuild. The only difference is the water: fish and pebbles showing and nothing floating here, bottles, a can and a dead fish floating there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dit kraanwater is zuiver en veilig.<br><span class="voorbeeld-en">This tap water is pure and safe.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een beekje tussen twee oevers; je ziet visjes en steentjes op de bodem.</dd>
+</dl>
+<p class="id">zuiver.png · B1 · waterkwaliteit</p>
+</article>
+<article id="vervuild" class="kaart" data-id="vervuild" data-band="b1" data-kind="adjective" data-cluster="waterkwaliteit" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 122">#122</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vervuild</h3>
+<p class="gloss">polluted</p>
+<p class="vlaggen"><span>water quality</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same small stream between two grassy banks, side view at a slight angle, one bush on the far bank. Two plastic bottles, a crushed can and a carrier bag float on the surface, one fish floats belly-up, and an oily wavy line trails across the water. The stream bed cannot be seen.</dd>
+<dt>Must read</dt><dd class="must">bottles, a can and a belly-up fish floating on the water.</dd>
+<dt>Avoid</dt><dd class="avoid">fish and pebbles showing, nothing floating (zuiver); a shirt with stains (vuil); a dead plant in a pot (dood); a rubbish bin with flies (vies).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="zuiver">Pair with zuiver. The only difference is the water: bottles, a can and a dead fish floating here, fish and pebbles showing and nothing floating there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De lucht in de stad is vervuild.<br><span class="voorbeeld-en">The air in the city is polluted.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een beekje tussen twee oevers; er drijven flessen, een blikje, een tas en een dode vis.</dd>
+</dl>
+<p class="id">vervuild.png · B1 · waterkwaliteit</p>
+</article></div></section>
+<section class="cluster" data-cluster="beweeglijkheid" data-band="b1"><h2><span class="woorden">soepel · stijf</span></h2><p class="as">suppleness · 2 cards</p><p class="zin">Na het sporten is de man soepel, maar 's ochtends is hij stijf.<span class="en">After exercise the man is supple, but in the morning he is stiff.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult man in a plain T-shirt and trousers standing on a flat floor line, seen from the side, whole figure, same size and place on the page, bending forward from the hips toward his toes, plain wall behind. Only how far he reaches changes.</p><div class="kaarten"><article id="soepel" class="kaart" data-id="soepel" data-band="b1" data-kind="adjective" data-cluster="beweeglijkheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 123">#123</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">soepel</h3>
+<p class="gloss">supple, flexible</p>
+<p class="vlaggen"><span>suppleness</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult man in a plain T-shirt and trousers on a flat floor line, side view, whole figure, plain wall behind. He bends forward from the hips with straight legs, and his flat palms rest on the floor beside his toes. His back curves smoothly and his face is relaxed.</dd>
+<dt>Must read</dt><dd class="must">palms flat on the floor beside the toes with straight legs.</dd>
+<dt>Avoid</dt><dd class="avoid">the man stuck halfway, fingertips at his knees, one hand on his lower back (stijf); the man jumping high (fit); the man lying on the floor (moe); the man bent over a walking stick (oud).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stijf">Pair with stijf. The only difference is the reach: palms flat on the floor here, fingertips stuck at the knees there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een kat is heel soepel.<br><span class="voorbeeld-en">A cat is very supple.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man buigt voorover met gestrekte benen en zet zijn handen plat naast zijn tenen.</dd>
+</dl>
+<p class="id">soepel.png · B1 · beweeglijkheid</p>
+</article>
+<article id="stijf" class="kaart" data-id="stijf" data-band="b1" data-kind="adjective" data-cluster="beweeglijkheid" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 124">#124</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">stijf</h3>
+<p class="gloss">stiff</p>
+<p class="vlaggen"><span>suppleness</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same adult man in a plain T-shirt and trousers on a flat floor line, side view, whole figure, plain wall behind. He bends forward only halfway, his fingertips stuck just below his knees, one hand pressed to his lower back, his back straight as a board, his face screwed up.</dd>
+<dt>Must read</dt><dd class="must">fingertips stuck at the knees and one hand pressed to the lower back.</dd>
+<dt>Avoid</dt><dd class="avoid">palms flat on the floor beside the toes (soepel); the man bent with age over a walking stick (oud); the man with clenched fists and neck lines (gespannen); the man holding his stomach (ziek).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="soepel">Pair with soepel. The only difference is the reach: fingertips stuck at the knees here, palms flat on the floor there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Na de lange reis zijn mijn benen stijf.<br><span class="voorbeeld-en">After the long journey my legs are stiff.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man buigt half voorover; zijn vingers komen tot net onder de knie en één hand drukt op zijn rug.</dd>
+</dl>
+<p class="id">stijf.png · B1 · beweeglijkheid</p>
+</article></div></section>
+<section class="cluster" data-cluster="gitaar" data-band="b1"><h2><span class="woorden">akoestisch · elektrisch</span></h2><p class="as">kind of guitar · 2 cards</p><p class="zin">Deze gitaar is akoestisch, maar die gitaar is elektrisch.<span class="en">This guitar is acoustic, but that guitar is electric.</span></p><p class="frame"><strong>Fixed frame.</strong> one woman sitting on a plain stool, seen from the front, whole figure, same size and place on the page, playing a guitar held across her lap, plain wall and floor. Only the guitar and what it is connected to change.</p><div class="kaarten"><article id="akoestisch" class="kaart" data-id="akoestisch" data-band="b1" data-kind="adjective" data-cluster="gitaar" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 125">#125</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">akoestisch</h3>
+<p class="gloss">acoustic</p>
+<p class="vlaggen"><span>kind of guitar</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one woman on a plain stool, front view, whole figure, plain wall and floor. Across her lap she plays a guitar with a deep rounded body and a round sound hole under the strings. No cable and no amplifier; three small curved sound lines rise from the sound hole.</dd>
+<dt>Must read</dt><dd class="must">the round sound hole in a deep guitar body, with no cable.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat solid guitar with a cable to an amplifier (elektrisch); a tiny ukulele (klein); the woman singing with a wide-open mouth (luid); a guitar with a snapped string (kapot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="elektrisch">Pair with elektrisch. The only difference is the guitar: a deep body with a sound hole and no cable here, a flat solid body with a cable to an amplifier there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij speelt akoestische muziek in het café.<br><span class="voorbeeld-en">He plays acoustic music in the café.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw speelt gitaar; in de bolle klankkast zit een rond gat en er hangt geen snoer aan.</dd>
+</dl>
+<p class="id">akoestisch.png · B1 · gitaar</p>
+</article>
+<article id="elektrisch" class="kaart" data-id="elektrisch" data-band="b1" data-kind="adjective" data-cluster="gitaar" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 126">#126</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">elektrisch</h3>
+<p class="gloss">electric</p>
+<p class="vlaggen"><span>kind of guitar</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same woman on a plain stool, front view, whole figure, plain wall and floor. Across her lap she plays a guitar with a flat, thin, solid body and no sound hole. A cable runs from the guitar to a plain box amplifier on the floor with blank knobs and no numerals; three sound lines come from the amplifier.</dd>
+<dt>Must read</dt><dd class="must">a cable from the flat guitar to an amplifier box on the floor.</dd>
+<dt>Avoid</dt><dd class="avoid">a deep guitar with a round sound hole and no cable (akoestisch); a microphone on a stand (luid); a guitar with a snapped string (kapot); a lamp with a cord and rays (licht).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="akoestisch">Pair with akoestisch. The only difference is the guitar: a flat solid body with a cable to an amplifier here, a deep body with a sound hole and no cable there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij hebben een elektrische fiets gekocht.<br><span class="voorbeeld-en">We bought an electric bike.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw speelt gitaar; een snoer loopt van de platte gitaar naar een versterker op de grond.</dd>
+</dl>
+<p class="id">elektrisch.png · B1 · gitaar</p>
+</article></div></section>
+<section class="cluster" data-cluster="patroon" data-band="b1"><h2><span class="woorden">gestreept · geruit · gestippeld</span></h2><p class="as">pattern · 3 cards</p><p class="zin">Het eerste shirt is gestreept, het tweede is geruit en het derde is gestippeld.<span class="en">The first shirt is striped, the second is checked and the third is dotted.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain short-sleeved T-shirt laid flat on a plain table, seen from straight above, whole shirt, same size, outline and place on the page in every drawing, no logo, no letters. Only the pattern on the fabric changes.</p><div class="kaarten"><article id="gestreept" class="kaart" data-id="gestreept" data-band="b1" data-kind="adjective" data-cluster="patroon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 127">#127</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">gestreept</h3>
+<p class="gloss">striped</p>
+<p class="vlaggen"><span>pattern</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain short-sleeved T-shirt laid flat on a plain table, seen from straight above, whole shirt. Seven straight lines of even width run across the front and the sleeves, evenly spaced from collar to hem and all parallel. No other marks, no logo, no letters.</dd>
+<dt>Must read</dt><dd class="must">evenly spaced straight lines across the whole shirt.</dd>
+<dt>Avoid</dt><dd class="avoid">a grid of crossing lines (geruit); round dots spread over the shirt (gestippeld); a plain shirt without marks (effen); a shirt with crease lines (gekreukt).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="geruit gestippeld">Pair with geruit, gestippeld. The only difference is the pattern: parallel lines here, a grid of squares or round dots there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij draagt een gestreepte trui.<br><span class="voorbeeld-en">He is wearing a striped jumper.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een T-shirt op tafel met zeven rechte, evenwijdige lijnen van kraag tot zoom.</dd>
+</dl>
+<p class="id">gestreept.png · B1 · patroon</p>
+</article>
+<article id="geruit" class="kaart" data-id="geruit" data-band="b1" data-kind="adjective" data-cluster="patroon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 128">#128</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">geruit</h3>
+<p class="gloss">checked</p>
+<p class="vlaggen"><span>pattern</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain short-sleeved T-shirt laid flat on a plain table, seen from straight above, whole shirt. Straight lines run both across and up and down the front and sleeves, crossing to form an even grid of squares from collar to hem. No other marks, no logo, no letters.</dd>
+<dt>Must read</dt><dd class="must">an even grid of crossing lines forming squares.</dd>
+<dt>Avoid</dt><dd class="avoid">parallel lines in one direction only (gestreept); round dots spread over the shirt (gestippeld); a plain shirt without marks (effen); a shirt with crease lines (gekreukt).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="gestreept gestippeld">Pair with gestreept, gestippeld. The only difference is the pattern: a grid of squares here, parallel lines or round dots there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Opa heeft een geruit overhemd aan.<br><span class="voorbeeld-en">Grandpa is wearing a checked shirt.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een T-shirt op tafel met lijnen die elkaar kruisen en kleine vierkantjes vormen.</dd>
+</dl>
+<p class="id">geruit.png · B1 · patroon</p>
+</article>
+<article id="gestippeld" class="kaart" data-id="gestippeld" data-band="b1" data-kind="adjective" data-cluster="patroon" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 129">#129</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">gestippeld</h3>
+<p class="gloss">dotted</p>
+<p class="vlaggen"><span>pattern</span><span>B1</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same plain short-sleeved T-shirt laid flat on a plain table, seen from straight above, whole shirt. Small round dots of equal size are spread evenly over the front and sleeves in neat staggered rows, from collar to hem. No lines, no other marks, no logo, no letters.</dd>
+<dt>Must read</dt><dd class="must">small round dots spread evenly over the whole shirt.</dd>
+<dt>Avoid</dt><dd class="avoid">parallel lines (gestreept); a grid of squares (geruit); a few dirty spots and stains (vuil); a plain shirt without marks (effen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="gestreept geruit">Pair with gestreept, geruit. The only difference is the pattern: round dots here, parallel lines or a grid of squares there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze draagt een gestippelde jurk.<br><span class="voorbeeld-en">She is wearing a polka-dot dress.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een T-shirt op tafel vol kleine ronde puntjes in nette rijen.</dd>
+</dl>
+<p class="id">gestippeld.png · B1 · patroon</p>
+</article></div></section>
+</main>
+</body>
+</html>

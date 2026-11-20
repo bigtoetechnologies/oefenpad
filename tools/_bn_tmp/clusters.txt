@@ -1,0 +1,81 @@
+# cluster-id ; axis (what changes) ; members as id=lemma:gloss, separated by |
+grootte ; size ; groot=groot:big|klein=klein:small
+leeftijd-spullen ; age of an object ; nieuw=nieuw:new|oud-spullen=oud:old (thing)
+leeftijd-mensen ; age of a person ; jong=jong:young|oud-mensen=oud:old (person)
+deur ; open or shut ; open=open:open|dicht=dicht:closed
+lengte ; length ; lang=lang:long|kort=kort:short
+tempo ; speed ; snel=snel:fast|langzaam=langzaam:slow
+uiterlijk ; looks of a thing ; mooi=mooi:beautiful|lelijk=lelijk:ugly
+inhoud ; contents of a container ; vol=vol:full|leeg=leeg:empty
+hoogte ; height ; hoog=hoog:high|laag=laag:low
+temperatuur ; temperature ; heet=heet:hot|warm=warm:warm|koud=koud:cold
+gewicht ; weight ; zwaar=zwaar:heavy|licht-gewicht=licht:light (not heavy)
+hardheid ; hardness of a surface ; hard=hard:hard|zacht=zacht:soft
+kracht ; strength ; sterk=sterk:strong|zwak=zwak:weak
+stemming ; emotion shown on the face ; blij=blij:happy|verdrietig=verdrietig:sad|boos=boos:angry
+tijdstip ; time of day ; vroeg=vroeg:early|laat=laat:late (too late)
+gezondheid ; health ; ziek=ziek:ill|gezond=gezond:healthy
+netheid ; cleanliness ; schoon=schoon:clean|vuil=vuil:dirty
+nattigheid ; wetness ; nat=nat:wet|droog=droog:dry
+dikte ; thickness of an object ; dik=dik:thick|dun=dun:thin
+breedte ; width of a path ; breed=breed:wide|smal=smal:narrow
+diepte ; depth of water ; diep=diep:deep|ondiep=ondiep:shallow
+afstand ; distance ; dichtbij=dichtbij:near|ver=ver:far
+prijs ; price ; duur=duur:expensive|goedkoop=goedkoop:cheap
+wakker ; awake or sleepy ; wakker=wakker:awake|slaperig=slaperig:sleepy
+geluid ; volume ; stil=stil:silent, quiet (no sound)|luid=luid:loud (formal)
+licht ; brightness of a room ; donker=donker:dark|licht-kamer=licht:light, bright
+vermogen ; money ; arm=arm:poor|rijk=rijk:rich
+drukte ; crowding ; rustig=rustig:quiet (not busy)|druk=druk:busy, crowded
+gevaar ; danger ; veilig=veilig:safe|gevaarlijk=gevaarlijk:dangerous
+leven ; living or not ; levend=levend:alive|dood=dood:dead
+aanwezigheid ; present or absent ; aanwezig=aanwezig:present|afwezig=afwezig:absent
+smaak ; taste ; zoet=zoet:sweet|zuur=zuur:sour
+vorm-lijn ; straightness ; recht=recht:straight|krom=krom:bent, curved
+snede ; edge ; scherp=scherp:sharp|bot=bot:blunt
+oppervlak ; surface ; glad=glad:smooth|ruw=ruw:rough
+pasvorm ; fit ; wijd=wijd:loose, baggy|strak=strak:tight
+staat ; condition ; heel=heel:whole|kapot=kapot:broken
+rijpheid ; ripeness ; rijp=rijp:ripe|onrijp=onrijp:unripe
+energie ; energy ; moe=moe:tired|fit=fit:fit
+moed ; courage ; bang=bang:afraid|dapper=dapper:brave
+schuchter ; shyness ; verlegen=verlegen:shy|brutaal=brutaal:cheeky
+rust ; nerves ; zenuwachtig=zenuwachtig:nervous|kalm=kalm:calm
+tevredenheid ; satisfaction ; tevreden=tevreden:satisfied|ontevreden=ontevreden:dissatisfied
+gezelschap ; company ; eenzaam=eenzaam:lonely|gezellig=gezellig:cosy, sociable
+weer ; weather ; zonnig=zonnig:sunny|bewolkt=bewolkt:cloudy
+verdeling ; fair share ; eerlijk=eerlijk:fair (an even share)|oneerlijk=oneerlijk:unfair (an uneven share)
+spanning ; muscles ; gespannen=gespannen:tense|ontspannen=ontspannen:relaxed
+vorm-bol ; shape ; plat=plat:flat (not rounded)|bol=bol:bulging, rounded
+# B1/B2 expansion, 20 Nov 2026
+stevigheid ; steadiness ; stevig=stevig:sturdy, firm|wankel=wankel:wobbly
+beleefdheid ; manners ; beleefd=beleefd:polite|onbeleefd=onbeleefd:rude
+zorg ; care in writing ; zorgvuldig=zorgvuldig:careful|slordig=slordig:sloppy, careless
+comfort ; comfort of a seat ; comfortabel=comfortabel:comfortable|ongemakkelijk=ongemakkelijk:uncomfortable
+gedrag ; behaviour of a dog ; braaf=braaf:good, well-behaved|stout=stout:naughty
+versiering ; decoration of a hall ; feestelijk=feestelijk:festive|kaal=kaal:bare
+lucht ; air in a room ; fris=fris:fresh (air)|benauwd=benauwd:stuffy
+geduld ; patience ; geduldig=geduldig:patient|ongeduldig=ongeduldig:impatient
+waterkwaliteit ; water quality ; zuiver=zuiver:pure, clean (water)|vervuild=vervuild:polluted
+orde ; order on a desk ; keurig=keurig:neat, tidy|rommelig=rommelig:messy
+beweeglijkheid ; suppleness ; soepel=soepel:supple, flexible|stijf=stijf:stiff
+gitaar ; kind of guitar ; akoestisch=akoestisch:acoustic|elektrisch=elektrisch:electric
+temperament ; temper of a horse ; agressief=agressief:aggressive|mak=mak:tame, docile
+kruiding ; seasoning ; flauw=flauw:bland|pittig=pittig:spicy, hot
+helling ; slope of a road ; steil=steil:steep|vlak=vlak:level (ground)
+binnenkant ; inside of a trunk ; massief=massief:solid (not hollow)|hol=hol:hollow
+vorm-stof ; state of matter ; vast=vast:solid (not liquid)|vloeibaar=vloeibaar:liquid
+transparantie ; see-through or not ; doorzichtig=doorzichtig:see-through|ondoorzichtig=ondoorzichtig:opaque
+richting ; direction ; horizontaal=horizontaal:horizontal|verticaal=verticaal:vertical
+gehoorzaamheid ; obedience ; koppig=koppig:stubborn|gehoorzaam=gehoorzaam:obedient
+vrijgevigheid ; sharing ; gierig=gierig:stingy|vrijgevig=vrijgevig:generous
+bereiding ; raw or cooked ; rauw=rauw:raw|gekookt=gekookt:boiled
+strijkgoed ; creases ; gekreukt=gekreukt:creased, crumpled|gestreken=gestreken:ironed
+patroon ; pattern ; gestreept=gestreept:striped|geruit=geruit:checked|gestippeld=gestippeld:dotted
+vijver ; ice on a pond ; bevroren=bevroren:frozen|ontdooid=ontdooid:thawed
+sla ; crispness ; knapperig=knapperig:crispy, crunchy|slap=slap:limp, soggy
+bodem ; fertility of soil ; vruchtbaar=vruchtbaar:fertile|dor=dor:barren, parched
+bal ; air in a ball ; opgepompt=opgepompt:pumped up|leeggelopen=leeggelopen:deflated
+wind ; wind ; winderig=winderig:windy|windstil=windstil:still, without wind
+schil ; peel ; geschild=geschild:peeled|ongeschild=ongeschild:unpeeled
+tapijt ; rolled or flat ; opgerold=opgerold:rolled up (rug, mat)|uitgerold=uitgerold:rolled out

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijvoeglijke naamwoorden — overview</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijvoeglijke naamwoorden — overview</h1>
+<p class="lead">One card per adjective, taught as contrast pairs. Picture briefs only; no art yet.</p>
+
+<nav class="banden"><a href="index.html" class="hier">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<table><thead><tr><th>Band</th><th>Sets</th><th>Adjectives</th><th>Frames</th><th>Content</th></tr></thead><tbody><tr><td><a href="a0.html">A0</a></td><td class="n">7</td><td class="n">14</td><td class="n">#1–#14</td><td class="blurb">Size, age, speed and the open door: the pairs a learner meets in the first weeks.</td></tr><tr><td><a href="a1.html">A1</a></td><td class="n">20</td><td class="n">42</td><td class="n">#15–#56</td><td class="blurb">Everyday contrasts: temperature, weight, feelings, health, clean and wet, weather, distance, danger and a fair share.</td></tr><tr><td><a href="a2.html">A2</a></td><td class="n">22</td><td class="n">44</td><td class="n">#57–#100</td><td class="blurb">Finer pairs: depth, sound, light, taste, edges, fit, courage, presence, company, tension and wind, plus the everyday pairs sturdy, fresh air, tidy, spicy and raw.</td></tr><tr><td><a href="b1.html">B1</a></td><td class="n">14</td><td class="n">29</td><td class="n">#101–#129</td><td class="blurb">The wider pairs: straightness, surface, shyness, nerves, manners, care, comfort, behaviour, decoration, patience, water quality, suppleness, guitars and patterns.</td></tr><tr><td><a href="b2.html">B2</a></td><td class="n">14</td><td class="n">28</td><td class="n">#130–#157</td><td class="blurb">Material and state: temper, slope, solid and hollow, liquid, see-through, direction, creases, ice, crispness and fertile soil.</td></tr><tr class="totaal"><td>Total</td><td class="n">77</td><td class="n">157</td><td></td><td></td></tr></tbody></table>
+<div class="uitleg">
+<h2>How the cards work</h2>
+<p>Adjectives are taught in <strong>contrast sets</strong>: two or three words on one axis (groot/klein, heet/warm/koud).
+Every drawing in a set is the same picture with one visible thing changed, so the learner sees the pair, not the word.</p>
+<p>A card carries the adjective, an English gloss, the scene brief, the one mark that must read, the near misses,
+the contrast note naming its partner and the single point of difference, an example sentence, and the alt text.
+Each set also carries a fixed frame and one Dutch sentence using every member.</p>
+<h2>How a set was placed</h2>
+<p>A set sits in the band of its most frequent member (frequency rank in <code>tools/lexicon/woorden-frequentie.tsv</code>:
+A0 up to 250, A1 251–1000, A2 1001–2500, B1 2501–5000, B2 5001–10000): the learner already knows one half and the card teaches its partner.
+Ranks are looked up by exact lemma. Homograph split rows such as <code>hol (adj)</code> are ranked after the real list, so their number is not a frequency and is not used.</p>
+<p>Homograph ranks were checked by hand: laat (verb laten), vroeg (verb vragen) and heel (adverb) overstate frequency; the time words stay in A0 by rank, and heel/kapot is banded by kapot.
+Where the rank band is wrong for the sense drawn, or no member has a usable rank, the set takes an <code>OVERRIDE</code> in
+<code>tools/_bn_tmp/select.py</code>. Every override and its reason:</p>
+<table><thead><tr><th>Set</th><th>Rank band</th><th>Placed</th><th>Reason</th></tr></thead><tbody><tr><td><code>netheid</code></td><td>A2</td><td>A1</td><td>clean/dirty is a first-year inburgering topic (review M14)</td></tr><tr><td><code>nattigheid</code></td><td>A2</td><td>A1</td><td>wet/dry is a first-year inburgering topic (review M14)</td></tr><tr><td><code>prijs</code></td><td>A2</td><td>A1</td><td>duur has no plain lexicon row; goedkoop (1758) alone gives A2, but price is a first-year shopping topic</td></tr><tr><td><code>vermogen</code></td><td>NONE</td><td>A1</td><td>arm and rijk have no plain lexicon row (only split homograph entries); money words are first-year inburgering topics</td></tr><tr><td><code>energie</code></td><td>B1</td><td>A1</td><td>moe has no plain lexicon row; fit (2665) alone would put the core word moe in B1</td></tr><tr><td><code>weer</code></td><td>B2</td><td>A1</td><td>weather is a first-year inburgering topic; bewolkt has no lexicon row and zonnig (5517) gives B2</td></tr><tr><td><code>diepte</code></td><td>A1</td><td>A2</td><td>ondiep ranks 7084; the rare partner moves the set up one band (review M15)</td></tr><tr><td><code>geluid</code></td><td>A1</td><td>A2</td><td>luid (3203) is written register; the rare partner moves the set up one band (review M1)</td></tr><tr><td><code>aanwezigheid</code></td><td>A1</td><td>A2</td><td>afwezig ranks 4074; the rare partner moves the set up one band (review M15)</td></tr><tr><td><code>smaak</code></td><td>B1</td><td>A2</td><td>taste is an everyday topic; zoet (2622) gives B1 (review M14)</td></tr><tr><td><code>pasvorm</code></td><td>B1</td><td>A2</td><td>wijd (4370) and strak (2687) give B1, but clothing fit is an A2 shopping topic (review H2)</td></tr><tr><td><code>staat</code></td><td>A0</td><td>A2</td><td>heel ranks 64 as the adverb "very"; banded by kapot (1066) plus one band for the whole/broken sense</td></tr><tr><td><code>moed</code></td><td>A1</td><td>A2</td><td>dapper ranks 3975; the rare partner moves the set up one band (review M15)</td></tr><tr><td><code>wind</code></td><td>NONE</td><td>A2</td><td>winderig and windstil have no lexicon row; banded by the base noun wind (911), one band up for the derived forms, after the A1 weather set</td></tr><tr><td><code>vorm-lijn</code></td><td>B2</td><td>B1</td><td>recht has no plain lexicon row; krom (6544) alone gives B2, one band too late for a basic shape word</td></tr><tr><td><code>patroon</code></td><td>NONE</td><td>B1</td><td>gestreept, geruit and gestippeld have no lexicon row; banded by the base noun streep (3217)</td></tr><tr><td><code>temperament</code></td><td>B1</td><td>B2</td><td>mak has no lexicon row and is rare; the rare partner moves the set up one band from agressief (3368)</td></tr><tr><td><code>vorm-stof</code></td><td>A0</td><td>B2</td><td>vast ranks 235 for the senses "fixed, steady, certainly"; the solid-matter sense drawn here is rare, so the set follows vloeibaar (6055)</td></tr><tr><td><code>strijkgoed</code></td><td>NONE</td><td>B2</td><td>gekreukt and gestreken have no lexicon row; banded by the base verb strijken (5428)</td></tr><tr><td><code>vijver</code></td><td>NONE</td><td>B2</td><td>bevroren and ontdooid have no lexicon row; banded by the base verb bevriezen (7440)</td></tr><tr><td><code>bal</code></td><td>NONE</td><td>B2</td><td>opgepompt and leeggelopen have no lexicon row; banded by the base verb oppompen (8788)</td></tr><tr><td><code>schil</code></td><td>NONE</td><td>B2</td><td>geschild and ongeschild have no lexicon row; banded by the base verb schillen (7584)</td></tr><tr><td><code>tapijt</code></td><td>NONE</td><td>B2</td><td>opgerold and uitgerold have no lexicon row and nor do oprollen or uitrollen; plain rollen (1895) is a different verb, so the set stays in B2</td></tr></tbody></table>
+<h2>Everyday sets promoted by judgment</h2>
+<p>Everyday items sit at the lowest sensible level, A2 at the highest (owner rule, 20 Nov 2026). Where frequency rank put a set
+of daily home, food or shopping words in B1 or B2, the whole set moved to A2. The lexicon facts are printed as read from
+<code>tools/lexicon/woorden.tsv</code> and <code>woorden-frequentie.tsv</code>; the move itself is judgment, not lexicon data.
+5 sets moved:</p>
+<table><thead><tr><th>Set</th><th>Rank band</th><th>Placed</th><th>Reason</th></tr></thead><tbody><tr><td><code>stevigheid</code></td><td>B1</td><td>A2</td><td>Everyday promotion. Lexicon: stevig niveau B1, herkomst bijlage8, rank 2530; wankel no woorden.tsv row, no usable rank. Basis: judgment, not lexicon data. Note: a sturdy or a wobbly chair, table or ladder is daily home life.</td></tr><tr><td><code>lucht</code></td><td>B1</td><td>A2</td><td>Everyday promotion. Lexicon: fris niveau B1, herkomst bijlage8, rank 2957; benauwd niveau B1, herkomst bijlage8, rank 7855. Basis: judgment, not lexicon data. Note: airing a stuffy room is daily home life.</td></tr><tr><td><code>orde</code></td><td>B1</td><td>A2</td><td>Everyday promotion. Lexicon: keurig niveau open, herkomst bijlage8, rank 3930; rommelig no woorden.tsv row, no usable rank. Basis: judgment, not lexicon data. Note: a tidy or a messy room or desk is daily home life.</td></tr><tr><td><code>kruiding</code></td><td>B1</td><td>A2</td><td>Everyday promotion. Lexicon: flauw niveau B1, herkomst bijlage8, rank 3194; pittig niveau A1, herkomst bijlage8, rank 5682. Basis: judgment, with coursebook support (pittig). Note: bland or spicy food is daily kitchen and table talk.</td></tr><tr><td><code>bereiding</code></td><td>B2</td><td>A2</td><td>Everyday promotion. Lexicon: rauw niveau open, herkomst bijlage8, rank 5288; gekookt no woorden.tsv row, no usable rank. Basis: judgment, not lexicon data. Note: a raw or a boiled egg is daily cooking.</td></tr></tbody></table>
+<h2>Left out on purpose</h2>
+<ul><li>Colours (rood, blauw, groen ...): the art style is one cobalt on white, so colour cannot carry meaning.</li>
+<li>Abstract adjectives (belangrijk, mogelijk, nodig ...): no honest single picture; they follow the abstract-verb rule.</li>
+<li>Dutch cliché food (chips, cheese, herring): souvenir imagery, so knapperig/slap is drawn as a bowl of lettuce, not a paper cone of chips.</li></ul>
+<h2>Cards written up as SKIP</h2><ul><li><code>rijp</code> (B1, rijpheid): ripeness is carried by colour, which the cobalt-only style excludes; drawn by size it reads groot/klein (review 20 Nov 2026, H9).</li><li><code>onrijp</code> (B1, rijpheid): ripeness is carried by colour, which the cobalt-only style excludes; drawn by size it reads groot/klein (review 20 Nov 2026, H9).</li><li><code>geschild</code> (B2, schil): duplicate of werkwoorden:schillen, which draws the same apple with one long curl of peel; Werkwoorden has priority.</li><li><code>ongeschild</code> (B2, schil): duplicate of werkwoorden:schillen, which draws the same apple with one long curl of peel; Werkwoorden has priority.</li></ul>
+<h2>Words shared with other families</h2>
+<p>Where two families card the same item or scene, the higher family keeps it (Werkwoorden, Voorzetselpaden, Bijvoeglijke naamwoorden, Zelfstandige naamwoorden, Bijwoorden, Scheidbare werkwoorden, Vaste uitdrukkingen; owner ruling, 20 Nov 2026).
+This family keeps opgepompt/leeggelopen, so Scheidbare werkwoorden drops oppompen/leeglopen; it keeps horizontaal/verticaal and opgerold, so Bijwoorden drops them.
+It drops geschild/ongeschild, which repeats Werkwoorden schillen.</p>
+<h2>Why B1 and B2 have fewer than 20 new sets</h2>
+<p>The brief asked for at least 20 new contrast sets in each of B1 and B2. The 20 Nov 2026 expansion added 15 to B1 (5 of them since promoted to A2 as everyday sets) and 14 to B2;
+the candidates below were checked and dropped.</p>
+<table><thead><tr><th>Reason</th><th>Candidates</th></tr></thead><tbody><tr><td>Colour</td><td>rijp/onrijp, bleek, blond, bont, grauw and every colour word carry meaning by colour, which the cobalt-only art excludes.</td></tr><tr><td>Already carded</td><td>droevig, treurig, somber, opgewekt and woedend repeat blij/verdrietig/boos; traag and vlug repeat snel/langzaam; uitgeput and vermoeid repeat moe; smerig repeats vuil; onveilig repeats veilig.</td></tr><tr><td>Belongs in a lower band</td><td>A lower band is a reason to card a pair lower, not to drop it. eerlijk/oneerlijk (597; an even versus an uneven split of one cake) is carded in A1. krap/ruim (545) stays out as too close to wijd/strak. vrolijk (1779) repeats blij. houten/ijzeren (1343) and gemeen/aardig (912) have not yet been checked for A1/A2. agressief is carded in B2 with mak.</td></tr><tr><td>No honest partner</td><td>nauw (wijd and breed are carded), kaal in the sense bald (Dutch says veel haar, not an adjective), versleten (nieuw and heel are carded), halfvol (vol/leeg is carded).</td></tr><tr><td>No single picture</td><td>vochtig (damp shows nothing that droog does not), vaag, zeldzaam, betrouwbaar, waardevol and the other abstract adjectives.</td></tr><tr><td>Scene carded elsewhere</td><td>vredig/onrustig as a sleeping child repeats Werkwoorden slapen; geschoren/ongeschoren repeats Werkwoorden scheren; ingepakt/uitgepakt repeats Scheidbare werkwoorden inpakken/uitpakken; geschild/ongeschild repeats Werkwoorden schillen (written up as SKIP).</td></tr><tr><td>Unkind to draw</td><td>slank/dik and other body-shape pairs were left out as unkind to draw.</td></tr><tr><td>Later, owner's call on tone</td><td>dronken/nuchter (2106, A2 by rank) is parked: a drunk figure next to a sober one needs the owner's call on tone before it is drawn.</td></tr></tbody></table>
+<h2>Tools</h2>
+<pre><code>python3 tools/_bn_tmp/select.py        # selection.json from clusters.txt
+python3 tools/build-adjective-cards.py # the five band pages and this overview
+python3 tools/check-adjective-cards.py # asserts ids, fields, pairs, counts</code></pre>
+</div>
+</main>
+</body>
+</html>

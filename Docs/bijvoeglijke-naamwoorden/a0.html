@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bijvoeglijke naamwoorden — A0</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Bijvoeglijke naamwoorden — A0</h1>
+<p class="lead">Size, age, speed and the open door: the pairs a learner meets in the first weeks.</p>
+<div class="sum"><span>7 contrast sets</span><span>14 adjectives</span><span>frames #1–#14</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html" class="hier">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="grootte" data-band="a0"><h2><span class="woorden">groot · klein</span></h2><p class="as">size · 2 cards</p><p class="zin">Deze kist is groot, maar die kist is klein.<span class="en">This crate is big, but that crate is small.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes stands whole-figure, side view, on a flat ground line beside a single plain wooden crate with a lid, same distance from the viewer, a plain low wall behind. Only the size of the crate changes.</p><div class="kaarten"><article id="groot" class="kaart" data-id="groot" data-band="a0" data-kind="adjective" data-cluster="grootte" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 1">#1</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">groot</h3>
+<p class="gloss">big</p>
+<p class="vlaggen"><span>size</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult in plain clothes stands whole-figure, side view, beside one huge plain wooden crate with a lid whose top rises far above the adult's head and whose width is more than twice the shoulders. The adult looks small beside it and the wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">a crate towering far above the person's head.</dd>
+<dt>Avoid</dt><dd class="avoid">a crate the size of a shoe (klein); a tall thin shape (hoog); a long low box (lang); a heavy crate with a person bending under it (zwaar).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="klein">Pair with klein. The only difference is the crate: far above the person's head here, no higher than the person's shoe there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ons nieuwe huis is erg groot.<br><span class="voorbeeld-en">Our new house is very big.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat naast een enorme kist die veel hoger is dan zijn hoofd.</dd>
+</dl>
+<p class="id">groot.png · A0 · grootte</p>
+</article>
+<article id="klein" class="kaart" data-id="klein" data-band="a0" data-kind="adjective" data-cluster="grootte" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 2">#2</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">klein</h3>
+<p class="gloss">small</p>
+<p class="vlaggen"><span>size</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult in plain clothes stands whole-figure, side view, beside one tiny plain wooden crate with a lid that is no higher than the adult's shoe and no wider than a hand. The adult looks like a giant beside it and the wall behind is plain.</dd>
+<dt>Must read</dt><dd class="must">a crate no higher than the person's shoe.</dd>
+<dt>Avoid</dt><dd class="avoid">a huge crate beside the person (groot); a short person on tiptoe (klein, the person sense); a thin line or sliver (dun); a crate far away drawn small by distance (ver).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="groot">Pair with groot. The only difference is the crate: shoe height here, far above the person's head there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De hond van de buren is klein.<br><span class="voorbeeld-en">The neighbours' dog is small.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat naast een kist die niet hoger is dan zijn schoen.</dd>
+</dl>
+<p class="id">klein.png · A0 · grootte</p>
+</article></div></section>
+<section class="cluster" data-cluster="leeftijd-spullen" data-band="a0"><h2><span class="woorden">nieuw · oud (spullen)</span></h2><p class="as">age of an object · 2 cards</p><p class="zin">Deze stoel is nieuw, maar die stoel is oud.<span class="en">This chair is new, but that chair is old.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain wooden chair seen side-on, whole object, standing on a flat floor line against a plain wall, centred, same size on the page. Only the chair changes: unmarked and still half in its packing box, or cracked and patched.</p><div class="kaarten"><article id="nieuw" class="kaart" data-id="nieuw" data-band="a0" data-kind="adjective" data-cluster="leeftijd-spullen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 3">#3</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">nieuw</h3>
+<p class="gloss">new</p>
+<p class="vlaggen"><span>age of an object</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain wooden chair seen side-on on a flat floor line against a plain wall, standing half out of an opened cardboard packing box, the flaps folded down round its legs. The legs are straight and the seat and back smooth and unmarked. No bow. The wall is bare.</dd>
+<dt>Must read</dt><dd class="must">a smooth unmarked chair standing half out of its packing box.</dd>
+<dt>Avoid</dt><dd class="avoid">a chair with cracks, a patched leg and a cobweb (oud-spullen); a chair with a bow tied on it (not the card); a chair on a shop shelf with a price tag (duur); a chair with a cushion (zacht).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="oud-spullen">Pair with oud-spullen. The only difference is the wear: smooth and still half in its packing box here, cracked and patched with a cobweb there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik heb een nieuwe fiets.<br><span class="voorbeeld-en">I have a new bike.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een stoel met gladde poten staat half in een opengevouwen kartonnen doos.</dd>
+</dl>
+<p class="id">nieuw.png · A0 · leeftijd-spullen</p>
+</article>
+<article id="oud-spullen" class="kaart" data-id="oud-spullen" data-band="a0" data-kind="adjective" data-cluster="leeftijd-spullen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 4">#4</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">oud</h3>
+<p class="gloss">old (thing)</p>
+<p class="vlaggen"><span>age of an object</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain wooden chair seen side-on on a flat floor line against a plain wall, with a long crack in the seat, a split back rail, one leg propped up with a folded wedge, and a cobweb in the corner of the back. The wall is bare.</dd>
+<dt>Must read</dt><dd class="must">a cracked, patched chair with a cobweb.</dd>
+<dt>Avoid</dt><dd class="avoid">a smooth unmarked chair half out of its packing box (nieuw); a broken chair lying in pieces (kapot); a dirty chair with mud spots (vuil); an old person sitting on the chair (oud-mensen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="nieuw">Pair with nieuw. The only difference is the wear: cracked and patched with a cobweb here, smooth and still half in its packing box there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Onze keukentafel is al heel oud.<br><span class="voorbeeld-en">Our kitchen table is already very old.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een stoel met een barst in de zitting, een steunblokje onder één poot en een spinnenweb.</dd>
+</dl>
+<p class="id">oud-spullen.png · A0 · leeftijd-spullen</p>
+</article></div></section>
+<section class="cluster" data-cluster="deur" data-band="a0"><h2><span class="woorden">open · dicht</span></h2><p class="as">open or shut · 2 cards</p><p class="zin">Deze deur is open, maar die deur is dicht.<span class="en">This door is open, but that door is closed.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain wooden door in a plain wall, seen from the front at the same distance, whole door and frame visible, a flat floor line below, a round handle on the right side. Only whether the door stands open or sits shut changes.</p><div class="kaarten"><article id="open" class="kaart" data-id="open" data-band="a0" data-kind="adjective" data-cluster="deur" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 5">#5</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">open</h3>
+<p class="gloss">open</p>
+<p class="vlaggen"><span>open or shut</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain wooden door in a plain wall, seen from the front, swung wide open towards the viewer so the empty doorway shows a plain room beyond, the hinges on the left, a round handle on the free edge. A flat floor line runs below and nobody is in view.</dd>
+<dt>Must read</dt><dd class="must">a door swung wide with the doorway empty.</dd>
+<dt>Avoid</dt><dd class="avoid">a door shut in its frame (dicht); a door standing slightly ajar with a thin gap (open, not wide); a door with a person walking through (lopen); a door with a key in the lock (slot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="dicht">Pair with dicht. The only difference is the door leaf: swung wide with a gap to the room here, flush in the frame there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De winkel is op zondag open.<br><span class="voorbeeld-en">The shop is open on Sunday.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een deur is ver naar voren gedraaid; door het gat in de muur zie je een lege kamer.</dd>
+</dl>
+<p class="id">open.png · A0 · deur</p>
+</article>
+<article id="dicht" class="kaart" data-id="dicht" data-band="a0" data-kind="adjective" data-cluster="deur" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 6">#6</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">dicht</h3>
+<p class="gloss">closed</p>
+<p class="vlaggen"><span>open or shut</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain wooden door in a plain wall, seen from the front, fitted flat and flush in its frame with no gap around it, the hinges on the left, a round handle on the right. A flat floor line runs below and nobody is in view.</dd>
+<dt>Must read</dt><dd class="must">a door flat in its frame with no gap.</dd>
+<dt>Avoid</dt><dd class="avoid">a door swung wide with a room beyond (open); a door with a small gap showing light (open); a door with a large key (slot); a door with a person knocking (kloppen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="open">Pair with open. The only difference is the door leaf: flat in the frame with no gap here, swung wide there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het raam in de keuken is dicht.<br><span class="voorbeeld-en">The window in the kitchen is closed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een deur past precies in de muur en je ziet alleen de ronde deurknop.</dd>
+</dl>
+<p class="id">dicht.png · A0 · deur</p>
+</article></div></section>
+<section class="cluster" data-cluster="lengte" data-band="a0"><h2><span class="woorden">lang · kort</span></h2><p class="as">length · 2 cards</p><p class="zin">Deze sjaal is lang, maar die sjaal is kort.<span class="en">This scarf is long, but that scarf is short.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult stands whole-figure, front view, arms hanging, on a flat ground line with a plain wall behind, wearing one plain scarf hung round the neck, same distance from the viewer. Only the length of the scarf changes.</p><div class="kaarten"><article id="lang" class="kaart" data-id="lang" data-band="a0" data-kind="adjective" data-cluster="lengte" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 7">#7</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">lang</h3>
+<p class="gloss">long</p>
+<p class="vlaggen"><span>length</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands whole-figure, front view, arms hanging, on a flat ground line with a plain wall behind, wearing a plain scarf hung round the neck whose two ends reach down to the knees. A small plain stool of fixed height stands on the ground beside the person.</dd>
+<dt>Must read</dt><dd class="must">a scarf hanging down to the knees.</dd>
+<dt>Avoid</dt><dd class="avoid">a scarf ending at the chin (kort); a tall person (lang, the person sense: needs its own card); a thick scarf wrapped many times (dik); a scarf lying coiled on the ground (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="kort">Pair with kort. The only difference is the scarf ends: down at the knees here, level with the chin there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn zus heeft heel lang haar.<br><span class="voorbeeld-en">My sister has very long hair.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man heeft een sjaal om zijn nek; de uiteinden hangen tot zijn knieën.</dd>
+</dl>
+<p class="id">lang.png · A0 · lengte</p>
+</article>
+<article id="kort" class="kaart" data-id="kort" data-band="a0" data-kind="adjective" data-cluster="lengte" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 8">#8</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">kort</h3>
+<p class="gloss">short</p>
+<p class="vlaggen"><span>length</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult stands whole-figure, front view, arms hanging, on a flat ground line with a plain wall behind, wearing a plain scarf round the neck whose two ends stop at the chin. A small plain stool of fixed height stands on the ground beside the person.</dd>
+<dt>Must read</dt><dd class="must">a scarf ending at the chin.</dd>
+<dt>Avoid</dt><dd class="avoid">a scarf hanging down to the knees (lang); a small person next to the stool (klein); a thin scarf (dun); a scarf coiled on the ground (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="lang">Pair with lang. The only difference is the scarf ends: level with the chin here, down at the knees there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn broer heeft altijd kort haar.<br><span class="voorbeeld-en">My brother always has short hair.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man heeft een sjaal om zijn nek; de uiteinden eindigen bij zijn kin.</dd>
+</dl>
+<p class="id">kort.png · A0 · lengte</p>
+</article></div></section>
+<section class="cluster" data-cluster="tempo" data-band="a0"><h2><span class="woorden">snel · langzaam</span></h2><p class="as">speed · 2 cards</p><p class="zin">Deze fietser is snel, maar die fietser is langzaam.<span class="en">This cyclist is fast, but that cyclist is slow.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult on a plain bicycle in a long plain street, side view, whole figure, same distance from the viewer, a plain low wall behind and a flat ground line. Only the pace of the cyclist changes.</p><div class="kaarten"><article id="snel" class="kaart" data-id="snel" data-band="a0" data-kind="adjective" data-cluster="tempo" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 9">#9</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">snel</h3>
+<p class="gloss">fast</p>
+<p class="vlaggen"><span>speed</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult on a plain bicycle seen side-on, leaning forward, legs mid-turn, three bold speed lines trailing behind the bike and the wheels drawn slightly apart from the ground line. A small stone marker well behind the bike shows how far they have come from the start line.</dd>
+<dt>Must read</dt><dd class="must">a leaning cyclist with long speed lines behind the bike.</dd>
+<dt>Avoid</dt><dd class="avoid">an upright rider with no lines (langzaam); a parked bike with a rider sitting still (not the card); dust clouds or smoke (not the style); a car or train (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="langzaam">Pair with langzaam. The only difference is the pace: speed lines and a leaning rider here, an upright rider with a snail at the wheel there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Deze trein is heel snel.<br><span class="voorbeeld-en">This train is very fast.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser leunt naar voren; achter de fiets lopen drie lange strepen.</dd>
+</dl>
+<p class="id">snel.png · A0 · tempo</p>
+</article>
+<article id="langzaam" class="kaart" data-id="langzaam" data-band="a0" data-kind="adjective" data-cluster="tempo" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 10">#10</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">langzaam</h3>
+<p class="gloss">slow</p>
+<p class="vlaggen"><span>speed</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult on a plain bicycle seen side-on, sitting upright with both hands on the handlebar, feet barely turning the pedals, no speed lines. A small snail crawls on the ground right beside the front wheel, and a stone marker just behind the bike shows it has barely left the start line.</dd>
+<dt>Must read</dt><dd class="must">an upright cyclist with a snail beside the wheel.</dd>
+<dt>Avoid</dt><dd class="avoid">a leaning cyclist with speed lines (snel); a parked bike with a rider sitting still (not the card); a sleeping snail with eyes shut (not the card); a person walking uphill (steil).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="snel">Pair with snel. The only difference is the pace: an upright rider with a snail at the wheel here, speed lines and a leaning rider there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De oude bus rijdt heel langzaam.<br><span class="voorbeeld-en">The old bus drives very slowly.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser zit rechtop; naast het voorwiel kruipt een slak.</dd>
+</dl>
+<p class="id">langzaam.png · A0 · tempo</p>
+</article></div></section>
+<section class="cluster" data-cluster="uiterlijk" data-band="a0"><h2><span class="woorden">mooi · lelijk</span></h2><p class="as">looks of a thing · 2 cards</p><p class="zin">Deze vaas is mooi, maar die vaas is lelijk.<span class="en">This vase is beautiful, but that vase is ugly.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain vase, intact, holding one flower that is not a tulip, stands centred on a plain table, front view, same size on the page, a plain wall behind; one adult at the right, head and shoulders, looks at it. Only the pattern on the vase and the onlooker's face change.</p><div class="kaarten"><article id="mooi" class="kaart" data-id="mooi" data-band="a0" data-kind="adjective" data-cluster="uiterlijk" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 11">#11</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">mooi</h3>
+<p class="gloss">beautiful</p>
+<p class="vlaggen"><span>looks of a thing</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain vase holding one flower with a straight stem and a round head of petals, not a tulip, stands centred on a plain table, front view. The vase is intact and smooth with an even, regular swirl pattern. One adult at the right, head and shoulders, looks at it with raised brows and a soft smile.</dd>
+<dt>Must read</dt><dd class="must">an even swirl on the vase and an admiring face beside it.</dd>
+<dt>Avoid</dt><dd class="avoid">the same vase with clashing blotches and a grimacing onlooker (lelijk); a vase with a large bow (not the card); a tidy empty vase (leeg); a vase broken in pieces (kapot).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="lelijk">Pair with lelijk. The only difference is the pattern and the onlooker: an even swirl and an admiring face here, clashing blotches and a grimace there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wat een mooie tuin heb jij!<br><span class="voorbeeld-en">What a beautiful garden you have!</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vaas met een regelmatig krulpatroon en één bloem; een man ernaast kijkt er glimlachend naar.</dd>
+</dl>
+<p class="id">mooi.png · A0 · uiterlijk</p>
+</article>
+<article id="lelijk" class="kaart" data-id="lelijk" data-band="a0" data-kind="adjective" data-cluster="uiterlijk" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 12">#12</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">lelijk</h3>
+<p class="gloss">ugly</p>
+<p class="vlaggen"><span>looks of a thing</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one plain vase holding one flower with a straight stem and a round head of petals, not a tulip, stands centred on a plain table, front view. The vase is intact, the same shape, covered in clashing blotches and jagged stripes that collide. One adult at the right, head and shoulders, pulls the brows together, wrinkles the nose and twists the mouth sideways.</dd>
+<dt>Must read</dt><dd class="must">clashing blotches on the vase and a grimacing face beside it.</dd>
+<dt>Avoid</dt><dd class="avoid">the same vase with an even swirl and an admiring onlooker (mooi); a vase broken in pieces (kapot); a vase with a wilted flower (dood); a dirty vase with mud spots (vuil); an onlooker with V-shaped brows and a tight mouth (boos).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="mooi">Pair with mooi. The only difference is the pattern and the onlooker: clashing blotches and a grimace here, an even swirl and an admiring face there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik vind die jas echt lelijk.<br><span class="voorbeeld-en">I think that coat is really ugly.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vaas vol botsende vlekken en strepen met één bloem; een man ernaast trekt een vies gezicht.</dd>
+</dl>
+<p class="id">lelijk.png · A0 · uiterlijk</p>
+</article></div></section>
+<section class="cluster" data-cluster="tijdstip" data-band="a0"><h2><span class="woorden">vroeg · laat</span></h2><p class="as">time of day · 2 cards</p><p class="zin">Vandaag ben ik vroeg, maar gisteren was ik te laat.<span class="en">Today I am early, but yesterday I was late.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes with a bag at a plain bus stop, whole figure, side view, a post with a blank sign plate, a plain road, a flat ground line and one plain bus on the road. Only where the bus is and what the adult does change.</p><div class="kaarten"><article id="vroeg" class="kaart" data-id="vroeg" data-band="a0" data-kind="adjective" data-cluster="tijdstip" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 13">#13</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vroeg</h3>
+<p class="gloss">early</p>
+<p class="vlaggen"><span>time of day</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult in plain clothes with a bag stands calmly at a plain bus stop beside a post with a blank sign plate, whole figure, side view. Far down the plain road at the left, one plain bus is still approaching, drawn small. The adult waits, relaxed, looking toward it. No sun, moon, clock or numerals.</dd>
+<dt>Must read</dt><dd class="must">the adult waiting while the bus is still far away and coming.</dd>
+<dt>Avoid</dt><dd class="avoid">the bus driving off with the adult running after it (laat); a sun rising at the horizon (ochtend); a moon and stars (nacht); the adult stepping onto the bus (instappen); a clock face (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="laat">Pair with laat. The only difference is the bus and the adult: the bus still coming and the adult waiting here, the bus driving off and the adult running after it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bakker begint heel vroeg.<br><span class="voorbeeld-en">The baker starts very early.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met een tas wacht bij een bushalte; de bus is nog ver weg en komt eraan.</dd>
+</dl>
+<p class="id">vroeg.png · A0 · tijdstip</p>
+</article>
+<article id="laat" class="kaart" data-id="laat" data-band="a0" data-kind="adjective" data-cluster="tijdstip" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 14">#14</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">laat</h3>
+<p class="gloss">late (too late)</p>
+<p class="vlaggen"><span>time of day</span><span>A0</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the same adult in plain clothes with a bag at the plain bus stop beside a post with a blank sign plate, whole figure, side view. The plain bus is already pulling away at the right edge of the road, and the adult runs after it, one arm raised, mouth open, bag swinging. No sun, moon, clock or numerals.</dd>
+<dt>Must read</dt><dd class="must">the bus driving off while the adult runs after it.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult waiting while the bus is still coming (vroeg); a moon and stars over a house (nacht); a sun rising at the horizon (ochtend); a person running with speed lines and no bus (snel); a clock face (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vroeg">Pair with vroeg. The only difference is the bus and the adult: the bus driving off and the adult running after it here, the bus still coming and the adult waiting there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ben te laat voor de bus.<br><span class="voorbeeld-en">I am too late for the bus.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met een tas rent achter een bus aan die net wegrijdt van de halte.</dd>
+</dl>
+<p class="id">laat.png · A0 · tijdstip</p>
+</article></div></section>
+</main>
+</body>
+</html>
