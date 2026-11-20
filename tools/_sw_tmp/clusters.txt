@@ -1,0 +1,61 @@
+# cluster-id ; axis (what changes) ; members as id=lemma:gloss, separated by |
+lamp ; lamp lit or unlit ; aandoen=aandoen:to switch on (a light)|uitdoen=uitdoen:to switch off (a light)
+radio ; radio playing or silent ; aanzetten=aanzetten:to turn on|uitzetten=uitzetten:to turn off
+deur ; door open, shut or locked ; opendoen=opendoen:to open (a door)|dichtdoen=dichtdoen:to close (a door)|afsluiten=afsluiten:to lock
+koffer ; suitcase filling or emptying ; inpakken=inpakken:to pack|uitpakken=uitpakken:to unpack
+bus ; into or out of a vehicle ; instappen=instappen:to get in (a vehicle)|uitstappen=uitstappen:to get out, to get off
+telefoon ; call made or ended ; opbellen=opbellen:to phone, to ring up|ophangen=ophangen:to hang up (a phone)
+station ; train arriving or pulling out ; aankomen=aankomen:to arrive|wegrijden=wegrijden:to drive off, to pull out
+paraplu ; taken along or left behind ; meenemen=meenemen:to take along|achterlaten=achterlaten:to leave behind
+kamer ; tidying or cleaning ; opruimen=opruimen:to tidy up|schoonmaken=schoonmaken:to clean
+jas ; coat on or off ; aantrekken=aantrekken:to put on (clothes)|uittrekken=uittrekken:to take off (clothes)
+bed ; rising or lying in ; opstaan=opstaan:to get up|uitslapen=uitslapen:to sleep in
+bestelbus ; loading or unloading ; inladen=inladen:to load|uitladen=uitladen:to unload
+vliegtuig ; take-off (SKIP: no separable partner) ; opstijgen=opstijgen:to take off (a plane)
+kind ; collecting or dropping off ; ophalen=ophalen:to pick up (a person)|wegbrengen=wegbrengen:to take away, to drop off
+pakket ; posting or collecting a parcel ; opsturen=opsturen:to send off|afhalen=afhalen:to collect
+bord ; plate finished or food left ; opeten=opeten:to eat up|overlaten=overlaten:to leave over
+afwas ; washing or drying dishes ; afwassen=afwassen:to wash up|afdrogen=afdrogen:to dry (dishes)
+cadeau ; giving or taking a gift ; aanbieden=aanbieden:to offer|aannemen=aannemen:to accept
+uitje ; joining or staying home ; meegaan=meegaan:to go along|thuisblijven=thuisblijven:to stay at home
+voordeur ; coming home or leaving ; thuiskomen=thuiskomen:to come home|weggaan=weggaan:to leave, to go away
+kaars ; flame lit or put out ; aansteken=aansteken:to light|uitblazen=uitblazen:to blow out
+kraan ; tap running or off ; opendraaien=opendraaien:to turn on (a tap)|dichtdraaien=dichtdraaien:to turn off (a tap)
+kaart ; map folded or unfolded ; opvouwen=opvouwen:to fold up|uitvouwen=uitvouwen:to unfold
+afval ; litter thrown or picked up ; weggooien=weggooien:to throw away|oprapen=oprapen:to pick up (from the ground)
+doos ; box lifted or set down ; optillen=optillen:to lift up|neerzetten=neerzetten:to put down
+boot ; boat tied or loose ; vastbinden=vastbinden:to tie up|losbinden=losbinden:to untie
+blik ; looking at or away ; aankijken=aankijken:to look at (a person)|wegkijken=wegkijken:to look away
+oefening ; showing or copying ; voordoen=voordoen:to demonstrate (show how)|nadoen=nadoen:to copy
+beweging ; standing still or walking about ; stilstaan=stilstaan:to stand still|rondlopen=rondlopen:to walk around
+woordenboek ; reading or writing ; opzoeken=opzoeken:to look up|opschrijven=opschrijven:to write down
+klas ; handing out or handing in ; uitdelen=uitdelen:to hand out|inleveren=inleveren:to hand in
+laptop ; cable plugged or loose ; aansluiten=aansluiten:to connect (plug in)|loskoppelen=loskoppelen:to disconnect
+vaas ; falling alone or knocked ; omvallen=omvallen:to fall over|omgooien=omgooien:to knock over
+brood ; passing or holding ; doorgeven=doorgeven:to pass on|vasthouden=vasthouden:to hold on to
+werk ; working on or resting ; doorwerken=doorwerken:to work on, to keep working|uitrusten=uitrusten:to rest
+# expansion 2026-11-20: B1 completion and the B2 band (batch 2; examples 5-9 words)
+klimrek ; hands closing on a bar or letting go ; vastpakken=vastpakken:to grab hold of|loslaten=loslaten:to let go
+formulier ; filling in or crossing out ; invullen=invullen:to fill in (a form)|doorstrepen=doorstrepen:to cross out
+hond ; dog running off or coming back ; weglopen=weglopen:to run away, to run off|terugkomen=terugkomen:to come back
+zon ; sun rising or setting ; opkomen=opkomen:to rise (the sun)|ondergaan=ondergaan:to set (the sun)
+printer ; sheet printed or scanned ; afdrukken=afdrukken:to print|inscannen=inscannen:to scan (in)
+kooi ; bird shut in or set free ; opsluiten=opsluiten:to lock up, to shut in|vrijlaten=vrijlaten:to set free, to release
+tent ; tent going up or coming down ; opzetten=opzetten:to put up (a tent)|afbreken=afbreken:to take down (a tent)
+wissel ; coming on or watching ; invallen=invallen:to come on as a substitute|toekijken=toekijken:to look on, to watch
+hek ; gate held shut or opened ; tegenhouden=tegenhouden:to hold back, to stop|doorlaten=doorlaten:to let through
+stoel ; chair put back or taken away ; terugzetten=terugzetten:to put back|weghalen=weghalen:to take away, to remove
+koffie ; adding or stirring ; toevoegen=toevoegen:to add|omroeren=omroeren:to stir
+adem ; breathing in, holding or out ; inademen=inademen:to breathe in|inhouden=inhouden:to hold (your breath)|uitademen=uitademen:to breathe out
+speelgoed ; toy snatched or given back ; afpakken=afpakken:to snatch, to take away|teruggeven=teruggeven:to give back
+poortje ; checking in or out ; inchecken=inchecken:to check in|uitchecken=uitchecken:to check out
+gordel ; seat belt on or undone ; omdoen=omdoen:to put on (a belt)|losmaken=losmaken:to undo, to unfasten
+bibliotheek ; book lent or brought back ; uitlenen=uitlenen:to lend|terugbrengen=terugbrengen:to bring back
+tafel ; table laid or cleared ; klaarzetten=klaarzetten:to set out|afruimen=afruimen:to clear (the table)
+vaatwasser ; loading or unloading ; inruimen=inruimen:to load (a dishwasher)|uitruimen=uitruimen:to unload (a dishwasher)
+fiets ; getting on or off a bike ; opstappen=opstappen:to get on (a bike)|afstappen=afstappen:to get off (a bike)
+rits ; zip up or down ; dichtritsen=dichtritsen:to zip up|openritsen=openritsen:to unzip
+bad ; bath filling or emptying ; vollopen=vollopen:to fill up|leeglopen=leeglopen:to empty, to drain
+tribune ; cheering or booing ; aanmoedigen=aanmoedigen:to cheer on|uitjouwen=uitjouwen:to boo
+luchtbed ; mouth or pump ; opblazen=opblazen:to blow up (inflate)|oppompen=oppompen:to pump up
+pasta ; draining or serving ; afgieten=afgieten:to drain|opscheppen=opscheppen:to serve up

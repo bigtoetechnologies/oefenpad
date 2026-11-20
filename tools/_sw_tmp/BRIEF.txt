@@ -1,0 +1,30 @@
+SCHEIDBARE WERKWOORDEN - SCENE BRIEF (adapted from tools/_bn_tmp/scenes/BRIEF.txt)
+=================================================================================
+Each card in Docs/scheidbare-werkwoorden/ stands for one Dutch separable verb. Every
+partner is separable too; a verb that already has a card in another family (vertrekken,
+landen: Werkwoorden) is never reused here.
+Verbs are learned as CONTRAST SETS: two (sometimes three) verbs that are particle
+opposites (aandoen/uitdoen) or share a stem and are separated by one visible thing.
+The drawings of a set are the SAME picture with ONE visible thing changed.
+
+Card fields (TSV, header first, UTF-8, no tab or line break inside a field):
+  id, scene, must, avoid, contrast, split, example_nl, example_en, perfect, alt
+  scene     English, 35-55 words. Starts "One drawing, one panel." (one drawing per card,
+            as in Docs/werkwoorden/AGENTS.html): a change is drawn mid-action, with a
+            small arrow where direction is the difference. Same camera viewpoint for
+            every card of a set. Names every object that must be visible.
+  must      the one mark readable at thumbnail size. One clause.
+  avoid     3-5 near misses, partner first, each with the competing verb in brackets.
+  contrast  "Pair with <ids>." then the single point of difference.
+  split     the main-clause split form, finite verb first, "..." for the gap: "doe ... aan".
+  example_nl one main-clause sentence that shows the split (ik bel jou op), 4-9 words.
+  perfect   auxiliary + participle: "heeft opgebeld". ge- sits between particle and stem;
+            hebben/zijn checked.
+  alt       Dutch screen-reader sentence. Never contains the infinitive, the finite verb
+            from split, the participle (with or without the particle), a word built on
+            the stem (landingsbaan, schrift), the particle at the end of a clause, or any
+            of these forms of the partner. Avoid another card's finite verb with its
+            particle (zet ... uit) too: it leaks in a game with distractors.
+Hard rules: no text/numbers in the drawing (any clock face is blank, no numerals),
+no canals (boats sit on a pond or lake), colour never carries meaning, no brands, no
+religious symbols, no souvenir imagery, English glosses only, SKIP: <reason> if undrawable.

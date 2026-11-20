@@ -1,0 +1,1504 @@
+{
+ "a2": [
+  {
+   "id": "lamp",
+   "axis": "lamp lit or unlit",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "aandoen",
+     "lemma": "aandoen",
+     "gloss": "to switch on (a light)",
+     "rank": 3318,
+     "separable": true
+    },
+    {
+     "id": "uitdoen",
+     "lemma": "uitdoen",
+     "gloss": "to switch off (a light)",
+     "rank": 8202,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by aandoen 3318; switching lights on and off is daily routine",
+    "lexicon": "aandoen niveau A1, herkomst bijlage8, rank 3318; uitdoen niveau none, herkomst les:nig, rank 8202",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "radio",
+   "axis": "radio playing or silent",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "aanzetten",
+     "lemma": "aanzetten",
+     "gloss": "to turn on",
+     "rank": 3557,
+     "separable": true
+    },
+    {
+     "id": "uitzetten",
+     "lemma": "uitzetten",
+     "gloss": "to turn off",
+     "rank": 4363,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by aanzetten 3557; switching a device on and off is daily routine, like the lamp set",
+    "lexicon": "aanzetten niveau open, herkomst bijlage8, rank 3557; uitzetten niveau B1, herkomst bijlage8, rank 4363",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "deur",
+   "axis": "door open, shut or locked",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "opendoen",
+     "lemma": "opendoen",
+     "gloss": "to open (a door)",
+     "rank": 8519,
+     "separable": true
+    },
+    {
+     "id": "dichtdoen",
+     "lemma": "dichtdoen",
+     "gloss": "to close (a door)",
+     "rank": 8840,
+     "separable": true
+    },
+    {
+     "id": "afsluiten",
+     "lemma": "afsluiten",
+     "gloss": "to lock",
+     "rank": 2140,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "koffer",
+   "axis": "suitcase filling or emptying",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "inpakken",
+     "lemma": "inpakken",
+     "gloss": "to pack",
+     "rank": 3927,
+     "separable": true
+    },
+    {
+     "id": "uitpakken",
+     "lemma": "uitpakken",
+     "gloss": "to unpack",
+     "rank": 5765,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by inpakken 3927; packing for a trip is an early everyday task",
+    "lexicon": "inpakken niveau open, herkomst bijlage8, rank 3927; uitpakken niveau open, herkomst bijlage8, rank 5765",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "bus",
+   "axis": "into or out of a vehicle",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "instappen",
+     "lemma": "instappen",
+     "gloss": "to get in (a vehicle)",
+     "rank": 7644,
+     "separable": true
+    },
+    {
+     "id": "uitstappen",
+     "lemma": "uitstappen",
+     "gloss": "to get out, to get off",
+     "rank": 5363,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by uitstappen 5363; getting on and off public transport is everyday from the first weeks",
+    "lexicon": "instappen niveau none, herkomst les:nig, rank 7644; uitstappen niveau open, herkomst bijlage8, rank 5363",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "telefoon",
+   "axis": "call made or ended",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "opbellen",
+     "lemma": "opbellen",
+     "gloss": "to phone, to ring up",
+     "rank": 8777,
+     "separable": true
+    },
+    {
+     "id": "ophangen",
+     "lemma": "ophangen",
+     "gloss": "to hang up (a phone)",
+     "rank": 4409,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by ophangen 4409; phoning a GP or school is needed early",
+    "lexicon": "opbellen niveau open, herkomst bijlage8, rank 8777; ophangen niveau open, herkomst bijlage8, rank 4409",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "station",
+   "axis": "train arriving or pulling out",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "aankomen",
+     "lemma": "aankomen",
+     "gloss": "to arrive",
+     "rank": 2171,
+     "separable": true
+    },
+    {
+     "id": "wegrijden",
+     "lemma": "wegrijden",
+     "gloss": "to drive off, to pull out",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "paraplu",
+   "axis": "taken along or left behind",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "meenemen",
+     "lemma": "meenemen",
+     "gloss": "to take along",
+     "rank": 1937,
+     "separable": true
+    },
+    {
+     "id": "achterlaten",
+     "lemma": "achterlaten",
+     "gloss": "to leave behind",
+     "rank": 3966,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "kamer",
+   "axis": "tidying or cleaning",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "opruimen",
+     "lemma": "opruimen",
+     "gloss": "to tidy up",
+     "rank": 2716,
+     "separable": true
+    },
+    {
+     "id": "schoonmaken",
+     "lemma": "schoonmaken",
+     "gloss": "to clean",
+     "rank": 2719,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by opruimen 2716; tidying and cleaning are daily household tasks",
+    "lexicon": "opruimen niveau open, herkomst bijlage8, rank 2716; schoonmaken niveau open, herkomst bijlage8, rank 2719",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "jas",
+   "axis": "coat on or off",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "aantrekken",
+     "lemma": "aantrekken",
+     "gloss": "to put on (clothes)",
+     "rank": 3367,
+     "separable": true
+    },
+    {
+     "id": "uittrekken",
+     "lemma": "uittrekken",
+     "gloss": "to take off (clothes)",
+     "rank": 5886,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by aantrekken 3367; dressing is daily routine",
+    "lexicon": "aantrekken niveau B1, herkomst bijlage8, rank 3367; uittrekken niveau open, herkomst bijlage8, rank 5886",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "bed",
+   "axis": "rising or lying in",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "opstaan",
+     "lemma": "opstaan",
+     "gloss": "to get up",
+     "rank": 1893,
+     "separable": true
+    },
+    {
+     "id": "uitslapen",
+     "lemma": "uitslapen",
+     "gloss": "to sleep in",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "kind",
+   "axis": "collecting or dropping off",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "ophalen",
+     "lemma": "ophalen",
+     "gloss": "to pick up (a person)",
+     "rank": 1660,
+     "separable": true
+    },
+    {
+     "id": "wegbrengen",
+     "lemma": "wegbrengen",
+     "gloss": "to take away, to drop off",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "bord",
+   "axis": "plate finished or food left",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opeten",
+     "lemma": "opeten",
+     "gloss": "to eat up",
+     "rank": 5213,
+     "separable": true
+    },
+    {
+     "id": "overlaten",
+     "lemma": "overlaten",
+     "gloss": "to leave over",
+     "rank": 6865,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by opeten 5213; eating up and leaving food is language of every meal",
+    "lexicon": "opeten niveau open, herkomst bijlage8, rank 5213; overlaten niveau open, herkomst bijlage8, rank 6865",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "afwas",
+   "axis": "washing or drying dishes",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "afwassen",
+     "lemma": "afwassen",
+     "gloss": "to wash up",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "afdrogen",
+     "lemma": "afdrogen",
+     "gloss": "to dry (dishes)",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2, no member ranked; washing and drying up is daily household language",
+    "lexicon": "afwassen not in woorden.tsv, no rank; afdrogen not in woorden.tsv, no rank",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "cadeau",
+   "axis": "giving or taking a gift",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "aanbieden",
+     "lemma": "aanbieden",
+     "gloss": "to offer",
+     "rank": 1732,
+     "separable": true
+    },
+    {
+     "id": "aannemen",
+     "lemma": "aannemen",
+     "gloss": "to accept",
+     "rank": 2244,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "uitje",
+   "axis": "joining or staying home",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "meegaan",
+     "lemma": "meegaan",
+     "gloss": "to go along",
+     "rank": 4932,
+     "separable": true
+    },
+    {
+     "id": "thuisblijven",
+     "lemma": "thuisblijven",
+     "gloss": "to stay at home",
+     "rank": 6130,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by meegaan 4932; going along or staying at home (when ill, for a delivery) is said every week",
+    "lexicon": "meegaan niveau open, herkomst bijlage8, rank 4932; thuisblijven niveau none, herkomst kaikki, rank 6130",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "voordeur",
+   "axis": "coming home or leaving",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "thuiskomen",
+     "lemma": "thuiskomen",
+     "gloss": "to come home",
+     "rank": 4771,
+     "separable": true
+    },
+    {
+     "id": "weggaan",
+     "lemma": "weggaan",
+     "gloss": "to leave, to go away",
+     "rank": 4300,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by weggaan 4300; coming home and leaving are daily routine",
+    "lexicon": "thuiskomen niveau B1, herkomst bijlage8, rank 4771; weggaan niveau open, herkomst bijlage8, rank 4300",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "kraan",
+   "axis": "tap running or off",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opendraaien",
+     "lemma": "opendraaien",
+     "gloss": "to turn on (a tap)",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "dichtdraaien",
+     "lemma": "dichtdraaien",
+     "gloss": "to turn off (a tap)",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2, no member ranked; turning a tap on and off is a daily household action",
+    "lexicon": "opendraaien not in woorden.tsv, no rank; dichtdraaien not in woorden.tsv, no rank",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "afval",
+   "axis": "litter thrown or picked up",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "weggooien",
+     "lemma": "weggooien",
+     "gloss": "to throw away",
+     "rank": 5837,
+     "separable": true
+    },
+    {
+     "id": "oprapen",
+     "lemma": "oprapen",
+     "gloss": "to pick up (from the ground)",
+     "rank": 7934,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by weggooien 5837; throwing rubbish away is a daily household action",
+    "lexicon": "weggooien niveau B1, herkomst bijlage8, rank 5837; oprapen niveau open, herkomst bijlage8, rank 7934",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "tent",
+   "axis": "tent going up or coming down",
+   "band": "a2",
+   "batch": 2,
+   "by_rank": "a2",
+   "members": [
+    {
+     "id": "opzetten",
+     "lemma": "opzetten",
+     "gloss": "to put up (a tent)",
+     "rank": 2407,
+     "separable": true
+    },
+    {
+     "id": "afbreken",
+     "lemma": "afbreken",
+     "gloss": "to take down (a tent)",
+     "rank": 4722,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "poortje",
+   "axis": "checking in or out",
+   "band": "a2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "inchecken",
+     "lemma": "inchecken",
+     "gloss": "to check in",
+     "rank": 6911,
+     "separable": true
+    },
+    {
+     "id": "uitchecken",
+     "lemma": "uitchecken",
+     "gloss": "to check out",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by inchecken 6911; checking in and out with a transport card comes with every train or bus ride, like the bus set",
+    "lexicon": "inchecken niveau none, herkomst kaikki, rank 6911; uitchecken not in woorden.tsv, no rank",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "gordel",
+   "axis": "seat belt on or undone",
+   "band": "a2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "omdoen",
+     "lemma": "omdoen",
+     "gloss": "to put on (a belt)",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "losmaken",
+     "lemma": "losmaken",
+     "gloss": "to undo, to unfasten",
+     "rank": 8066,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by losmaken 8066; putting on and undoing a seat belt is part of every car ride",
+    "lexicon": "omdoen not in woorden.tsv, no rank; losmaken niveau open, herkomst bijlage8, rank 8066",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "tafel",
+   "axis": "table laid or cleared",
+   "band": "a2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "klaarzetten",
+     "lemma": "klaarzetten",
+     "gloss": "to set out",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "afruimen",
+     "lemma": "afruimen",
+     "gloss": "to clear (the table)",
+     "rank": 9345,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by afruimen 9345; laying and clearing the table happen at every meal",
+    "lexicon": "klaarzetten not in woorden.tsv, no rank; afruimen niveau none, herkomst les:taalcompleet, rank 9345",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "vaatwasser",
+   "axis": "loading or unloading",
+   "band": "a2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "inruimen",
+     "lemma": "inruimen",
+     "gloss": "to load (a dishwasher)",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "uitruimen",
+     "lemma": "uitruimen",
+     "gloss": "to unload (a dishwasher)",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2, no member ranked; loading and unloading the dishwasher is a daily household task, like the afwas set",
+    "lexicon": "inruimen not in woorden.tsv, no rank; uitruimen not in woorden.tsv, no rank",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "rits",
+   "axis": "zip up or down",
+   "band": "a2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "dichtritsen",
+     "lemma": "dichtritsen",
+     "gloss": "to zip up",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "openritsen",
+     "lemma": "openritsen",
+     "gloss": "to unzip",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2, no member ranked; zipping a coat up and down is daily dressing, like the jas set",
+    "lexicon": "dichtritsen not in woorden.tsv, no rank; openritsen not in woorden.tsv, no rank",
+    "basis": "judgment"
+   }
+  }
+ ],
+ "b2": [
+  {
+   "id": "bestelbus",
+   "axis": "loading or unloading",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "inladen",
+     "lemma": "inladen",
+     "gloss": "to load",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "uitladen",
+     "lemma": "uitladen",
+     "gloss": "to unload",
+     "rank": 8977,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "vliegtuig",
+   "axis": "take-off (SKIP: no separable partner)",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opstijgen",
+     "lemma": "opstijgen",
+     "gloss": "to take off (a plane)",
+     "rank": 6927,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "kaars",
+   "axis": "flame lit or put out",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "aansteken",
+     "lemma": "aansteken",
+     "gloss": "to light",
+     "rank": 8054,
+     "separable": true
+    },
+    {
+     "id": "uitblazen",
+     "lemma": "uitblazen",
+     "gloss": "to blow out",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "kaart",
+   "axis": "map folded or unfolded",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opvouwen",
+     "lemma": "opvouwen",
+     "gloss": "to fold up",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "uitvouwen",
+     "lemma": "uitvouwen",
+     "gloss": "to unfold",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "boot",
+   "axis": "boat tied or loose",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "vastbinden",
+     "lemma": "vastbinden",
+     "gloss": "to tie up",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "losbinden",
+     "lemma": "losbinden",
+     "gloss": "to untie",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "vaas",
+   "axis": "falling alone or knocked",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "omvallen",
+     "lemma": "omvallen",
+     "gloss": "to fall over",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "omgooien",
+     "lemma": "omgooien",
+     "gloss": "to knock over",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "werk",
+   "axis": "working on or resting",
+   "band": "b2",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "doorwerken",
+     "lemma": "doorwerken",
+     "gloss": "to work on, to keep working",
+     "rank": 7453,
+     "separable": true
+    },
+    {
+     "id": "uitrusten",
+     "lemma": "uitrusten",
+     "gloss": "to rest",
+     "rank": 6051,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "adem",
+   "axis": "breathing in, holding or out",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "inademen",
+     "lemma": "inademen",
+     "gloss": "to breathe in",
+     "rank": 6680,
+     "separable": true
+    },
+    {
+     "id": "inhouden",
+     "lemma": "inhouden",
+     "gloss": "to hold (your breath)",
+     "rank": 4511,
+     "separable": true
+    },
+    {
+     "id": "uitademen",
+     "lemma": "uitademen",
+     "gloss": "to breathe out",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "homograph",
+    "reason": "inhouden 4511 ranks B1 through to contain and to deduct; the drawn sense rides on inademen 6680",
+    "lexicon": "inademen niveau none, herkomst kaikki, rank 6680; inhouden niveau open, herkomst bijlage8, rank 4511; uitademen not in woorden.tsv, no rank",
+    "basis": "rank correction"
+   }
+  },
+  {
+   "id": "speelgoed",
+   "axis": "toy snatched or given back",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "afpakken",
+     "lemma": "afpakken",
+     "gloss": "to snatch, to take away",
+     "rank": 6437,
+     "separable": true
+    },
+    {
+     "id": "teruggeven",
+     "lemma": "teruggeven",
+     "gloss": "to give back",
+     "rank": 6713,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "bibliotheek",
+   "axis": "book lent or brought back",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "uitlenen",
+     "lemma": "uitlenen",
+     "gloss": "to lend",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "terugbrengen",
+     "lemma": "terugbrengen",
+     "gloss": "to bring back",
+     "rank": 5157,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "fiets",
+   "axis": "getting on or off a bike",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opstappen",
+     "lemma": "opstappen",
+     "gloss": "to get on (a bike)",
+     "rank": 6031,
+     "separable": true
+    },
+    {
+     "id": "afstappen",
+     "lemma": "afstappen",
+     "gloss": "to get off (a bike)",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "bad",
+   "axis": "bath filling or emptying",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "vollopen",
+     "lemma": "vollopen",
+     "gloss": "to fill up",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "leeglopen",
+     "lemma": "leeglopen",
+     "gloss": "to empty, to drain",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "tribune",
+   "axis": "cheering or booing",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "aanmoedigen",
+     "lemma": "aanmoedigen",
+     "gloss": "to cheer on",
+     "rank": 5172,
+     "separable": true
+    },
+    {
+     "id": "uitjouwen",
+     "lemma": "uitjouwen",
+     "gloss": "to boo",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "luchtbed",
+   "axis": "mouth or pump",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opblazen",
+     "lemma": "opblazen",
+     "gloss": "to blow up (inflate)",
+     "rank": 6328,
+     "separable": true
+    },
+    {
+     "id": "oppompen",
+     "lemma": "oppompen",
+     "gloss": "to pump up",
+     "rank": 8788,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "pasta",
+   "axis": "draining or serving",
+   "band": "b2",
+   "batch": 2,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "afgieten",
+     "lemma": "afgieten",
+     "gloss": "to drain",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "opscheppen",
+     "lemma": "opscheppen",
+     "gloss": "to serve up",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  }
+ ],
+ "b1": [
+  {
+   "id": "pakket",
+   "axis": "posting or collecting a parcel",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "opsturen",
+     "lemma": "opsturen",
+     "gloss": "to send off",
+     "rank": 5868,
+     "separable": true
+    },
+    {
+     "id": "afhalen",
+     "lemma": "afhalen",
+     "gloss": "to collect",
+     "rank": 5645,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by afhalen 5645; posting and collecting parcels is a weekly task",
+    "lexicon": "opsturen niveau B1, herkomst bijlage8, rank 5868; afhalen niveau open, herkomst bijlage8, rank 5645",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "doos",
+   "axis": "box lifted or set down",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "optillen",
+     "lemma": "optillen",
+     "gloss": "to lift up",
+     "rank": 8422,
+     "separable": true
+    },
+    {
+     "id": "neerzetten",
+     "lemma": "neerzetten",
+     "gloss": "to put down",
+     "rank": 5342,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by neerzetten 5342; lifting and putting down is work and moving language",
+    "lexicon": "optillen niveau none, herkomst les:taalcompleet, rank 8422; neerzetten niveau open, herkomst bijlage8, rank 5342",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "blik",
+   "axis": "looking at or away",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b2",
+   "members": [
+    {
+     "id": "aankijken",
+     "lemma": "aankijken",
+     "gloss": "to look at (a person)",
+     "rank": 5839,
+     "separable": true
+    },
+    {
+     "id": "wegkijken",
+     "lemma": "wegkijken",
+     "gloss": "to look away",
+     "rank": null,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B2 by aankijken 5839; looking at someone and looking away is common in speech",
+    "lexicon": "aankijken niveau B1, herkomst bijlage8, rank 5839; wegkijken not in woorden.tsv, no rank",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "oefening",
+   "axis": "showing or copying",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "voordoen",
+     "lemma": "voordoen",
+     "gloss": "to demonstrate (show how)",
+     "rank": 4068,
+     "separable": true
+    },
+    {
+     "id": "nadoen",
+     "lemma": "nadoen",
+     "gloss": "to copy",
+     "rank": 7565,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "beweging",
+   "axis": "standing still or walking about",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "stilstaan",
+     "lemma": "stilstaan",
+     "gloss": "to stand still",
+     "rank": 5152,
+     "separable": true
+    },
+    {
+     "id": "rondlopen",
+     "lemma": "rondlopen",
+     "gloss": "to walk around",
+     "rank": 3307,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "woordenboek",
+   "axis": "reading or writing",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "opzoeken",
+     "lemma": "opzoeken",
+     "gloss": "to look up",
+     "rank": 2524,
+     "separable": true
+    },
+    {
+     "id": "opschrijven",
+     "lemma": "opschrijven",
+     "gloss": "to write down",
+     "rank": 6485,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "klas",
+   "axis": "handing out or handing in",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "uitdelen",
+     "lemma": "uitdelen",
+     "gloss": "to hand out",
+     "rank": 4529,
+     "separable": true
+    },
+    {
+     "id": "inleveren",
+     "lemma": "inleveren",
+     "gloss": "to hand in",
+     "rank": 4744,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "laptop",
+   "axis": "cable plugged or loose",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "aansluiten",
+     "lemma": "aansluiten",
+     "gloss": "to connect (plug in)",
+     "rank": 3087,
+     "separable": true
+    },
+    {
+     "id": "loskoppelen",
+     "lemma": "loskoppelen",
+     "gloss": "to disconnect",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "brood",
+   "axis": "passing or holding",
+   "band": "b1",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "doorgeven",
+     "lemma": "doorgeven",
+     "gloss": "to pass on",
+     "rank": 2816,
+     "separable": true
+    },
+    {
+     "id": "vasthouden",
+     "lemma": "vasthouden",
+     "gloss": "to hold on to",
+     "rank": 2770,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "klimrek",
+   "axis": "hands closing on a bar or letting go",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "vastpakken",
+     "lemma": "vastpakken",
+     "gloss": "to grab hold of",
+     "rank": null,
+     "separable": true
+    },
+    {
+     "id": "loslaten",
+     "lemma": "loslaten",
+     "gloss": "to let go",
+     "rank": 2870,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "formulier",
+   "axis": "filling in or crossing out",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "invullen",
+     "lemma": "invullen",
+     "gloss": "to fill in (a form)",
+     "rank": 3063,
+     "separable": true
+    },
+    {
+     "id": "doorstrepen",
+     "lemma": "doorstrepen",
+     "gloss": "to cross out",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "hond",
+   "axis": "dog running off or coming back",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "weglopen",
+     "lemma": "weglopen",
+     "gloss": "to run away, to run off",
+     "rank": 5440,
+     "separable": true
+    },
+    {
+     "id": "terugkomen",
+     "lemma": "terugkomen",
+     "gloss": "to come back",
+     "rank": 3392,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "zon",
+   "axis": "sun rising or setting",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "opkomen",
+     "lemma": "opkomen",
+     "gloss": "to rise (the sun)",
+     "rank": 3583,
+     "separable": true
+    },
+    {
+     "id": "ondergaan",
+     "lemma": "ondergaan",
+     "gloss": "to set (the sun)",
+     "rank": 2680,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "printer",
+   "axis": "sheet printed or scanned",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "afdrukken",
+     "lemma": "afdrukken",
+     "gloss": "to print",
+     "rank": 4137,
+     "separable": true
+    },
+    {
+     "id": "inscannen",
+     "lemma": "inscannen",
+     "gloss": "to scan (in)",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "kooi",
+   "axis": "bird shut in or set free",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "opsluiten",
+     "lemma": "opsluiten",
+     "gloss": "to lock up, to shut in",
+     "rank": 4410,
+     "separable": true
+    },
+    {
+     "id": "vrijlaten",
+     "lemma": "vrijlaten",
+     "gloss": "to set free, to release",
+     "rank": 6059,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "wissel",
+   "axis": "coming on or watching",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "invallen",
+     "lemma": "invallen",
+     "gloss": "to come on as a substitute",
+     "rank": 4866,
+     "separable": true
+    },
+    {
+     "id": "toekijken",
+     "lemma": "toekijken",
+     "gloss": "to look on, to watch",
+     "rank": 4959,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "hek",
+   "axis": "gate held shut or opened",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "tegenhouden",
+     "lemma": "tegenhouden",
+     "gloss": "to hold back, to stop",
+     "rank": 3493,
+     "separable": true
+    },
+    {
+     "id": "doorlaten",
+     "lemma": "doorlaten",
+     "gloss": "to let through",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "stoel",
+   "axis": "chair put back or taken away",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "terugzetten",
+     "lemma": "terugzetten",
+     "gloss": "to put back",
+     "rank": 8523,
+     "separable": true
+    },
+    {
+     "id": "weghalen",
+     "lemma": "weghalen",
+     "gloss": "to take away, to remove",
+     "rank": 4130,
+     "separable": true
+    }
+   ]
+  },
+  {
+   "id": "koffie",
+   "axis": "adding or stirring",
+   "band": "b1",
+   "batch": 2,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "toevoegen",
+     "lemma": "toevoegen",
+     "gloss": "to add",
+     "rank": 2532,
+     "separable": true
+    },
+    {
+     "id": "omroeren",
+     "lemma": "omroeren",
+     "gloss": "to stir",
+     "rank": null,
+     "separable": true
+    }
+   ]
+  }
+ ]
+}

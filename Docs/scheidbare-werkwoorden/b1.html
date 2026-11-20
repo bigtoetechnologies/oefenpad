@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scheidbare werkwoorden — B1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Scheidbare werkwoorden — B1</h1>
+<p class="lead">The wider pairs: posting, boxes, looking, copying, moving, words, handing out and in, cables and passing on; then grabbing and letting go, forms, a dog, a printer, a cage, a substitute, a gate, a chair and coffee.</p>
+<div class="sum"><span>18 contrast sets</span><span>36 verbs</span><span>frames #52–#87</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html" class="hier">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="pakket" data-band="b1"><h2><span class="woorden">opsturen · afhalen</span></h2><p class="as">posting or collecting a parcel · 2 cards</p><p class="zin">Ik stuur het pakket op en mijn buurman haalt zijn pakket af.<span class="en">I send the parcel off and my neighbour collects his parcel.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain parcel wrapped in simple paper and string, a plain counter with a flat top seen from the front, one adult in plain clothes on the customer side, same distance from the viewer, a plain wall behind. Only whether the adult hands the parcel in or takes it away changes.</p><div class="kaarten"><article id="opsturen" class="kaart" data-id="opsturen" data-band="b1" data-kind="separable-verb" data-cluster="pakket" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 52">#52</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opsturen</h3>
+<p class="gloss">to send off</p>
+<p class="vlaggen"><span>posting or collecting a parcel</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult at the customer side of a counter pushes a plain wrapped parcel across the top with both hands flat on it, the clerk's empty hand waiting on the far side, a small arrow showing the parcel moving away from the adult.</dd>
+<dt>Must read</dt><dd class="must">both hands pushing a parcel across the counter away from the adult.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult taking the parcel from the clerk's hands (afhalen); an adult dropping a letter in a postbox (not the card); an adult carrying a parcel up the stairs (not the card); an adult handing a gift to a friend (aanbieden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="afhalen">Pair with afhalen. The only difference is the direction: the parcel moves away from the adult here, towards the adult there.</dd>
+<dt>Split form</dt><dd class="split">stuur ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik stuur het pakket op.<br><span class="voorbeeld-en">I send off the parcel.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgestuurd</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene schuift een pakje over een balie naar een medewerker toe.</dd>
+</dl>
+<p class="id">opsturen.png · B1 · pakket</p>
+</article>
+<article id="afhalen" class="kaart" data-id="afhalen" data-band="b1" data-kind="separable-verb" data-cluster="pakket" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 53">#53</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">afhalen</h3>
+<p class="gloss">to collect</p>
+<p class="vlaggen"><span>posting or collecting a parcel</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult stands at the customer side of the same counter and pulls a plain wrapped parcel towards their chest with both hands, the clerk's hands letting go of the far side, a small arrow showing the parcel moving toward the adult.</dd>
+<dt>Must read</dt><dd class="must">both hands drawing a parcel across the counter towards the adult.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult pushing the parcel across to the clerk (opsturen); an adult carrying a parcel through a front door (meenemen); an adult picking up a child at a gate (ophalen); an adult receiving a gift from a friend (aannemen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opsturen">Pair with opsturen. The only difference is the direction: the parcel moves towards the adult here, away from the adult there.</dd>
+<dt>Split form</dt><dd class="split">haal ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik haal het pakket af.<br><span class="voorbeeld-en">I collect the parcel.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgehaald</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene trekt met twee handen een pakje over een balie naar zich toe.</dd>
+</dl>
+<p class="id">afhalen.png · B1 · pakket</p>
+</article></div></section>
+<section class="cluster" data-cluster="doos" data-band="b1"><h2><span class="woorden">optillen · neerzetten</span></h2><p class="as">box lifted or set down · 2 cards</p><p class="zin">Ik til de doos op en zet hem daarna op tafel neer.<span class="en">I lift the box up and then put it down on the table.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain cardboard box with two flap lines on top seen side-on, one adult in plain clothes whole-figure, a flat floor line, same size on the page, a plain wall behind. Only whether the box is lifted off the floor or set down on a table changes.</p><div class="kaarten"><article id="optillen" class="kaart" data-id="optillen" data-band="b1" data-kind="separable-verb" data-cluster="doos" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 54">#54</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">optillen</h3>
+<p class="gloss">to lift up</p>
+<p class="vlaggen"><span>box lifted or set down</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult with bent knees and a straight back lifts a plain cardboard box clear of the floor with both hands under it, the box a hand's width above the floor and the knees still bent, a small arrow pointing upward. A plain table stands empty beside them.</dd>
+<dt>Must read</dt><dd class="must">a box a hand's width above the floor with bent knees and an upward arrow.</dd>
+<dt>Avoid</dt><dd class="avoid">the box standing flat on the table with the hands letting go (neerzetten); an adult pushing a box along the floor (not the card); an adult carrying the box through a doorway (meenemen); an adult picking up a ball (oprapen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="neerzetten">Pair with neerzetten. The only difference is the box: a hand's width above the floor here, standing flat on the table there.</dd>
+<dt>Split form</dt><dd class="split">til ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik til de doos op.<br><span class="voorbeeld-en">I lift up the box.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgetild</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene met gebogen knieën houdt een doos met beide handen een stuk boven de vloer.</dd>
+</dl>
+<p class="id">optillen.png · B1 · doos</p>
+</article>
+<article id="neerzetten" class="kaart" data-id="neerzetten" data-band="b1" data-kind="separable-verb" data-cluster="doos" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 55">#55</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">neerzetten</h3>
+<p class="gloss">to put down</p>
+<p class="vlaggen"><span>box lifted or set down</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult stands upright beside a plain table and lowers the same cardboard box until its base just meets the table top, both hands still under the box and the arms at a slight bend. A small downward arrow sits above the box.</dd>
+<dt>Must read</dt><dd class="must">a box base just touching the table with hands still under it.</dd>
+<dt>Avoid</dt><dd class="avoid">the box lifted off the floor by an adult with bent knees (optillen); a glass lowered onto a table (not the card); a box dropped from height with a crash burst (not the card); a box left on a doorstep (achterlaten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="optillen">Pair with optillen. The only difference is the box: its base meeting the table here, a hand's width above the floor there.</dd>
+<dt>Split form</dt><dd class="split">zet ... neer</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik zet de doos op tafel neer.<br><span class="voorbeeld-en">I put the box down on the table.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft neergezet</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene laat een doos met beide handen zakken tot hij op een tafel staat.</dd>
+</dl>
+<p class="id">neerzetten.png · B1 · doos</p>
+</article></div></section>
+<section class="cluster" data-cluster="blik" data-band="b1"><h2><span class="woorden">aankijken · wegkijken</span></h2><p class="as">looking at or away · 2 cards</p><p class="zin">Ik kijk mijn buurman aan, maar hij kijkt weg.<span class="en">I look at my neighbour, but he looks away.</span></p><p class="frame"><strong>Fixed frame.</strong> two adults seen from the shoulders up, side by side on a plain bench in profile, same distance from the viewer, a plain wall behind. Only whether the second adult's face turns towards the first with eyes open wide, or turns the other way changes.</p><div class="kaarten"><article id="aankijken" class="kaart" data-id="aankijken" data-band="b1" data-kind="separable-verb" data-cluster="blik" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 56">#56</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">aankijken</h3>
+<p class="gloss">to look at (a person)</p>
+<p class="vlaggen"><span>looking at or away</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. Two adults sit side by side on a bench, and the nearer one turns the whole head to face the other, eyes open wide, with a short dotted line from the eyes to the other person's eyes. The second adult faces forward.</dd>
+<dt>Must read</dt><dd class="must">a turned head with a dotted line from the eyes to the other person's eyes.</dd>
+<dt>Avoid</dt><dd class="avoid">the head turned away from the other person (wegkijken); both adults staring forward with no turn of the head (not the card); an adult looking through a window (not the card); an adult squinting at a map (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="wegkijken">Pair with wegkijken. The only difference is the head: turned towards the other person with a dotted line here, turned away from them there.</dd>
+<dt>Split form</dt><dd class="split">kijk ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kijk mijn buurman aan.<br><span class="voorbeeld-en">I look at my neighbour.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangekeken</dd>
+<dt>Alt text</dt><dd class="alt">Twee volwassenen zitten op een bankje en één draait het hoofd naar de ander met wijd open ogen.</dd>
+</dl>
+<p class="id">aankijken.png · B1 · blik</p>
+</article>
+<article id="wegkijken" class="kaart" data-id="wegkijken" data-band="b1" data-kind="separable-verb" data-cluster="blik" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 57">#57</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">wegkijken</h3>
+<p class="gloss">to look away</p>
+<p class="vlaggen"><span>looking at or away</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. Two adults sit side by side on the same bench, and the nearer one turns the whole head the other way, the chin pointing to the far edge of the picture, eyes cast away, a dotted line from the eyes towards the edge. The second adult faces forward.</dd>
+<dt>Must read</dt><dd class="must">a head turned away with a dotted line from the eyes towards the edge.</dd>
+<dt>Avoid</dt><dd class="avoid">the head turned towards the other person with a dotted line (aankijken); an adult closing both eyes (not the card); an adult looking at a watch (not the card); an adult ducking behind a newspaper (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aankijken">Pair with aankijken. The only difference is the head: turned away with a dotted line to the edge here, turned towards the other person there.</dd>
+<dt>Split form</dt><dd class="split">kijk ... weg</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kijk snel weg.<br><span class="voorbeeld-en">I quickly look away.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft weggekeken</dd>
+<dt>Alt text</dt><dd class="alt">Twee volwassenen zitten op een bankje en één draait het gezicht naar de andere kant.</dd>
+</dl>
+<p class="id">wegkijken.png · B1 · blik</p>
+</article></div></section>
+<section class="cluster" data-cluster="oefening" data-band="b1"><h2><span class="woorden">voordoen · nadoen</span></h2><p class="as">showing or copying · 2 cards</p><p class="zin">De juf doet de beweging voor en het kind doet de juf na.<span class="en">The teacher shows the movement and the child copies the teacher.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes and one child stand whole-figure, facing the viewer, side by side on a flat floor line in a plain room, same distance from the viewer, a plain wall behind. The adult always has both arms raised. Only whether the child's arms are still down or raised too changes.</p><div class="kaarten"><article id="voordoen" class="kaart" data-id="voordoen" data-band="b1" data-kind="separable-verb" data-cluster="oefening" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 58">#58</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">voordoen</h3>
+<p class="gloss">to demonstrate (show how)</p>
+<p class="vlaggen"><span>showing or copying</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult stands with both arms raised high above the head, mouth closed and eyes on the child, while the child stands beside them with both arms still down by its sides, watching the adult.</dd>
+<dt>Must read</dt><dd class="must">the adult's raised arms with the child's arms still down.</dd>
+<dt>Avoid</dt><dd class="avoid">the child raising its arms to match the adult (nadoen); an adult waving goodbye (not the card); an adult lifting a child (optillen); an adult explaining with a pointing stick at a board (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="nadoen">Pair with nadoen. The only difference is the child's arms: still down here, raised to match the adult there.</dd>
+<dt>Split form</dt><dd class="split">doe ... voor</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik doe de beweging voor.<br><span class="voorbeeld-en">I show the movement.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft voorgedaan</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene houdt beide armen hoog terwijl een kind met de armen langs het lichaam toekijkt.</dd>
+</dl>
+<p class="id">voordoen.png · B1 · oefening</p>
+</article>
+<article id="nadoen" class="kaart" data-id="nadoen" data-band="b1" data-kind="separable-verb" data-cluster="oefening" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 59">#59</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">nadoen</h3>
+<p class="gloss">to copy</p>
+<p class="vlaggen"><span>showing or copying</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult stands with both arms raised high above the head, and the child beside them raises both arms too, matching the adult's pose, with a concentrated frown and eyes on the adult. Both figures now hold the same pose.</dd>
+<dt>Must read</dt><dd class="must">the child's arms raised to match the adult's raised arms.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult with raised arms and the child's arms still down (voordoen); a child waving at a friend (not the card); a child jumping with both arms in the air (not the card); a child hiding behind an adult (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="voordoen">Pair with voordoen. The only difference is the child's arms: raised to match the adult here, still down there.</dd>
+<dt>Split form</dt><dd class="split">doet ... na</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het kind doet de juf na.<br><span class="voorbeeld-en">The child copies the teacher.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft nagedaan</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene en een kind houden allebei de armen hoog en het kind let goed op de volwassene.</dd>
+</dl>
+<p class="id">nadoen.png · B1 · oefening</p>
+</article></div></section>
+<section class="cluster" data-cluster="beweging" data-band="b1"><h2><span class="woorden">stilstaan · rondlopen</span></h2><p class="as">standing still or walking about · 2 cards</p><p class="zin">Ik sta even stil, maar daarna loop ik weer rond.<span class="en">I stand still for a moment, but then I walk around again.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain open room with a flat floor line and one plain chair in the corner, one adult in plain clothes, same viewpoint and size on the page, a plain wall behind. A dotted footprint trail crosses the floor to the adult. Only whether it ends at planted feet or carries on past a lifted foot changes.</p><div class="kaarten"><article id="stilstaan" class="kaart" data-id="stilstaan" data-band="b1" data-kind="separable-verb" data-cluster="beweging" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 60">#60</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">stilstaan</h3>
+<p class="gloss">to stand still</p>
+<p class="vlaggen"><span>standing still or walking about</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A looping dotted path of small footprints curls round the chair in the corner and ends at the adult, who stands upright with both feet planted side by side and arms hanging. No footprints lie ahead of the adult.</dd>
+<dt>Must read</dt><dd class="must">a footprint trail ending at two planted feet.</dd>
+<dt>Avoid</dt><dd class="avoid">the trail carrying on past a lifted foot (rondlopen); an adult running with speed lines (not the card); an adult sleeping on a chair (uitslapen); an adult standing at a door waiting (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="rondlopen">Pair with rondlopen. The only difference is the trail: it ends at two planted feet here, it carries on past a lifted foot there.</dd>
+<dt>Split form</dt><dd class="split">sta ... stil</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik sta even stil.<br><span class="voorbeeld-en">I stand still for a moment.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft stilgestaan</dd>
+<dt>Alt text</dt><dd class="alt">Een stippellijn met voetafdrukken eindigt bij een volwassene die met beide voeten naast elkaar op één plek in een lege kamer blijft.</dd>
+</dl>
+<p class="id">stilstaan.png · B1 · beweging</p>
+</article>
+<article id="rondlopen" class="kaart" data-id="rondlopen" data-band="b1" data-kind="separable-verb" data-cluster="beweging" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 61">#61</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">rondlopen</h3>
+<p class="gloss">to walk around</p>
+<p class="vlaggen"><span>standing still or walking about</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. The same looping dotted path of small footprints curls round the chair and reaches the adult, who walks on with a long step, one foot lifted, and the footprints carry on ahead past the adult across the floor. The arms swing gently.</dd>
+<dt>Must read</dt><dd class="must">a footprint trail carrying on past a lifted foot.</dd>
+<dt>Avoid</dt><dd class="avoid">the trail ending at two planted feet (stilstaan); an adult running in a straight line (not the card); an adult walking out through a door (weggaan); an adult stepping on a bus (instappen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stilstaan">Pair with stilstaan. The only difference is the trail: it carries on past a lifted foot here, it ends at two planted feet there.</dd>
+<dt>Split form</dt><dd class="split">loop ... rond</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik loop in de kamer rond.<br><span class="voorbeeld-en">I walk around in the room.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft rondgelopen</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zet een grote stap en achter de voeten kronkelt een stippellijn met voetafdrukken door de kamer.</dd>
+</dl>
+<p class="id">rondlopen.png · B1 · beweging</p>
+</article></div></section>
+<section class="cluster" data-cluster="woordenboek" data-band="b1"><h2><span class="woorden">opzoeken · opschrijven</span></h2><p class="as">reading or writing · 2 cards</p><p class="zin">Ik zoek het woord op en daarna schrijf ik het op.<span class="en">I look up the word and then I write it down.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes sits whole-figure, side view, at a plain table with one thick closed book to the left and one plain notepad to the right, same distance from the viewer, a plain wall behind. Only whether the hand is on the book or holds a pen on the notepad changes.</p><div class="kaarten"><article id="opzoeken" class="kaart" data-id="opzoeken" data-band="b1" data-kind="separable-verb" data-cluster="woordenboek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 62">#62</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opzoeken</h3>
+<p class="gloss">to look up</p>
+<p class="vlaggen"><span>reading or writing</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult leans over a thick open dictionary on the table with one finger running down a column of plain wavy lines, the head tilted and the eyes on the page. The notepad lies untouched on the right with its page blank.</dd>
+<dt>Must read</dt><dd class="must">a finger running down a column in a thick open book.</dd>
+<dt>Avoid</dt><dd class="avoid">the hand writing in the notepad with a pen (opschrijven); an adult reading a newspaper (not the card); an adult visiting a friend at a front door (not this sense); an adult pointing at a map (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opschrijven">Pair with opschrijven. The only difference is the hand: a finger on the open book here, a pen on the notepad there.</dd>
+<dt>Split form</dt><dd class="split">zoek ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik zoek het woord op.<br><span class="voorbeeld-en">I look up the word.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgezocht</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene laat een vinger langs een kolom in een dik opengeslagen boek lopen.</dd>
+</dl>
+<p class="id">opzoeken.png · B1 · woordenboek</p>
+</article>
+<article id="opschrijven" class="kaart" data-id="opschrijven" data-band="b1" data-kind="separable-verb" data-cluster="woordenboek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 63">#63</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opschrijven</h3>
+<p class="gloss">to write down</p>
+<p class="vlaggen"><span>reading or writing</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult sits at the same table with the pen in the right hand, writing wavy lines on the notepad with the page half filled, the head tilted over the pad. The thick book lies closed to the left.</dd>
+<dt>Must read</dt><dd class="must">a pen with wavy lines appearing on the notepad beside a closed book.</dd>
+<dt>Avoid</dt><dd class="avoid">a finger running down the open book (opzoeken); an adult drawing a picture on the pad (not the card); an adult typing on a laptop (not the card); an adult reading a letter aloud (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opzoeken">Pair with opzoeken. The only difference is the hand: a pen on the notepad here, a finger on the open book there.</dd>
+<dt>Split form</dt><dd class="split">schrijf ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik schrijf het woord op.<br><span class="voorbeeld-en">I write the word down.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgeschreven</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene trekt met een pen golvende regels op een blok naast een dichtgeslagen boek.</dd>
+</dl>
+<p class="id">opschrijven.png · B1 · woordenboek</p>
+</article></div></section>
+<section class="cluster" data-cluster="klas" data-band="b1"><h2><span class="woorden">uitdelen · inleveren</span></h2><p class="as">handing out or handing in · 2 cards</p><p class="zin">De juf deelt de toets uit en de leerlingen leveren hem weer in.<span class="en">The teacher hands out the test and the students hand it in again.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain classroom seen from the front with a teacher's desk at the front and a student's desk at the side, one teacher and one student, same distance from the viewer, a plain wall behind. Only the direction of the loose paper sheets changes: from the teacher to the student, or from the student to the desk.</p><div class="kaarten"><article id="uitdelen" class="kaart" data-id="uitdelen" data-band="b1" data-kind="separable-verb" data-cluster="klas" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 64">#64</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">uitdelen</h3>
+<p class="gloss">to hand out</p>
+<p class="vlaggen"><span>handing out or handing in</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A teacher stands in front of a desk with a stack of paper sheets in one hand and holds one sheet out to a student at the side desk, the student's hand just reaching up for it, a small arrow from the teacher towards the student.</dd>
+<dt>Must read</dt><dd class="must">a sheet held out from the teacher's stack towards a reaching student.</dd>
+<dt>Avoid</dt><dd class="avoid">a student putting a sheet down on the teacher's desk (inleveren); a teacher writing on a board (not the card); a person passing a loaf along a table (doorgeven); a teacher holding a wrapped present out (aanbieden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="inleveren">Pair with inleveren. The only difference is the direction: sheets move from the teacher to the student here, from the student to the teacher's desk there.</dd>
+<dt>Split form</dt><dd class="split">deel ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik deel de toets uit.<br><span class="voorbeeld-en">I hand out the test.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgedeeld</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene bij een bureau geeft een vel papier aan een leerling die zijn hand opsteekt.</dd>
+</dl>
+<p class="id">uitdelen.png · B1 · klas</p>
+</article>
+<article id="inleveren" class="kaart" data-id="inleveren" data-band="b1" data-kind="separable-verb" data-cluster="klas" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 65">#65</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">inleveren</h3>
+<p class="gloss">to hand in</p>
+<p class="vlaggen"><span>handing out or handing in</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A student stands at the teacher's desk and lays one paper sheet on top of a small stack already lying there, the teacher seated behind it with a pen, a small arrow from the student towards the desk.</dd>
+<dt>Must read</dt><dd class="must">a sheet laid down on a stack on the teacher's desk.</dd>
+<dt>Avoid</dt><dd class="avoid">a teacher holding a sheet out to a student (uitdelen); a student writing at a desk (not the card); a student throwing a sheet in a bin (weggooien); a student posting a letter (opsturen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="uitdelen">Pair with uitdelen. The only difference is the direction: the sheet moves from the student to the teacher's desk here, from the teacher to the student there.</dd>
+<dt>Split form</dt><dd class="split">lever ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik lever de toets in.<br><span class="voorbeeld-en">I hand in the test.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingeleverd</dd>
+<dt>Alt text</dt><dd class="alt">Een leerling legt een vel papier op een stapeltje op het bureau van een leraar die met een pen zit.</dd>
+</dl>
+<p class="id">inleveren.png · B1 · klas</p>
+</article></div></section>
+<section class="cluster" data-cluster="laptop" data-band="b1"><h2><span class="woorden">aansluiten · loskoppelen</span></h2><p class="as">cable plugged or loose · 2 cards</p><p class="zin">Ik sluit de laptop aan en later koppel ik hem weer los.<span class="en">I plug in the laptop and later I unplug it again.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain laptop open on a plain table seen from the front, a wall socket low on the plain wall behind, a cable with a plug lying between them, same distance from the viewer. Only whether the plug is in the socket or lies apart from it changes.</p><div class="kaarten"><article id="aansluiten" class="kaart" data-id="aansluiten" data-band="b1" data-kind="separable-verb" data-cluster="laptop" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 66">#66</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">aansluiten</h3>
+<p class="gloss">to connect (plug in)</p>
+<p class="vlaggen"><span>cable plugged or loose</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A hand pushes the plug on a cable into a wall socket until it is flush, the cable running in a straight line from the open laptop on the table to the socket; three short charge lines beside the laptop's corner show it receives power.</dd>
+<dt>Must read</dt><dd class="must">a plug flush in the wall socket with the cable running straight to the laptop.</dd>
+<dt>Avoid</dt><dd class="avoid">the plug pulled out and lying apart from the socket (loskoppelen); a lamp being lit (aandoen); a radio playing with sound lines (aanzetten); a hand tying a rope (vastbinden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="loskoppelen">Pair with loskoppelen. The only difference is the plug: pushed flush into the socket here, drawn out and apart from it there.</dd>
+<dt>Split form</dt><dd class="split">sluit ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik sluit de laptop aan.<br><span class="voorbeeld-en">I plug in the laptop.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangesloten</dd>
+<dt>Alt text</dt><dd class="alt">Een hand duwt een stekker in een stopcontact en de kabel loopt strak naar een open laptop.</dd>
+</dl>
+<p class="id">aansluiten.png · B1 · laptop</p>
+</article>
+<article id="loskoppelen" class="kaart" data-id="loskoppelen" data-band="b1" data-kind="separable-verb" data-cluster="laptop" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 67">#67</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">loskoppelen</h3>
+<p class="gloss">to disconnect</p>
+<p class="vlaggen"><span>cable plugged or loose</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A hand pulls the plug of the cable out of the wall socket, the plug a clear hand's width from the socket and the cable curving loose in the air, a small arrow pointing away from the wall; the open laptop sits on the table with no charge lines.</dd>
+<dt>Must read</dt><dd class="must">a plug a hand's width from the socket with the cable loose in the air.</dd>
+<dt>Avoid</dt><dd class="avoid">the plug pushed flush into the socket (aansluiten); a hand pulling a tooth (not the card); a radio switched off with no sound lines (uitzetten); a tap turned off (dichtdraaien).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aansluiten">Pair with aansluiten. The only difference is the plug: drawn out from the socket here, pushed flush into it there.</dd>
+<dt>Split form</dt><dd class="split">koppel ... los</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik koppel de laptop los.<br><span class="voorbeeld-en">I unplug the laptop.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft losgekoppeld</dd>
+<dt>Alt text</dt><dd class="alt">Een hand trekt een stekker uit het stopcontact en de kabel zwaait vrij door de lucht.</dd>
+</dl>
+<p class="id">loskoppelen.png · B1 · laptop</p>
+</article></div></section>
+<section class="cluster" data-cluster="brood" data-band="b1"><h2><span class="woorden">doorgeven · vasthouden</span></h2><p class="as">passing or holding · 2 cards</p><p class="zin">Ik geef het brood door, maar mijn buurman houdt zijn brood vast.<span class="en">I pass the bread on, but my neighbour holds on to his bread.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain table with a round loaf of bread on a board, three seated adults seen from the front in a row, same distance from the viewer, a plain wall behind. Only whether the loaf moves along the row from hand to hand or stays in one hand's grip changes.</p><div class="kaarten"><article id="doorgeven" class="kaart" data-id="doorgeven" data-band="b1" data-kind="separable-verb" data-cluster="brood" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 68">#68</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">doorgeven</h3>
+<p class="gloss">to pass on</p>
+<p class="vlaggen"><span>passing or holding</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. Three seated adults in a row at a table, and the left one hands a bread board with a loaf to the middle one, whose hands are just taking the board, the right-hand adult's hands resting open on the table, a small arrow along the row.</dd>
+<dt>Must read</dt><dd class="must">a loaf on a board travelling from the left hand to the middle one.</dd>
+<dt>Avoid</dt><dd class="avoid">the loaf held still in a single pair of hands (vasthouden); a loaf being offered as a present with flat hands (aanbieden); a loaf thrown into the air (weggooien); a loaf being sliced with a knife (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vasthouden">Pair with vasthouden. The only difference is the loaf: it moves on to the next person's hands here, it stays in one person's grip there.</dd>
+<dt>Split form</dt><dd class="split">geef ... door</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik geef het brood door.<br><span class="voorbeeld-en">I pass on the bread.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft doorgegeven</dd>
+<dt>Alt text</dt><dd class="alt">Drie volwassenen zitten aan een tafel en de eerste reikt een broodplank met een brood naar de tweede.</dd>
+</dl>
+<p class="id">doorgeven.png · B1 · brood</p>
+</article>
+<article id="vasthouden" class="kaart" data-id="vasthouden" data-band="b1" data-kind="separable-verb" data-cluster="brood" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 69">#69</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vasthouden</h3>
+<p class="gloss">to hold on to</p>
+<p class="vlaggen"><span>passing or holding</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. Three seated adults in a row at a table, and the middle one grips the bread board with the loaf in both hands against the chest, knuckles tight, while the other two sit with hands resting on the table and look at the loaf. No arrow along the row.</dd>
+<dt>Must read</dt><dd class="must">two tight hands gripping the loaf at the chest with no arrow along the row.</dd>
+<dt>Avoid</dt><dd class="avoid">the loaf moving along the row with a small arrow (doorgeven); a loaf held out on flat hands (aanbieden); a hand grabbing a rope on a boat (vastbinden); a loaf lying alone on the table (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="doorgeven">Pair with doorgeven. The only difference is the loaf: gripped tight in one pair of hands here, moving on to the next hands there.</dd>
+<dt>Split form</dt><dd class="split">houd ... vast</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik houd het brood vast.<br><span class="voorbeeld-en">I hold on to the bread.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft vastgehouden</dd>
+<dt>Alt text</dt><dd class="alt">Drie volwassenen zitten aan een tafel en de middelste drukt een brood op een plank met beide handen tegen zich aan.</dd>
+</dl>
+<p class="id">vasthouden.png · B1 · brood</p>
+</article></div></section>
+<section class="cluster" data-cluster="klimrek" data-band="b1"><h2><span class="woorden">vastpakken · loslaten</span></h2><p class="as">hands closing on a bar or letting go · 2 cards</p><p class="zin">Ik pak de stang vast en laat hem dan weer los.<span class="en">I grab the bar and then let go of it again.</span></p><p class="frame"><strong>Fixed frame.</strong> one child in plain clothes under a single horizontal bar of a plain climbing frame in a playground, seen from the side at the same distance, a soft flat mat below, the bar near the top of the picture. Only whether the hands close on the bar or open below it changes.</p><div class="kaarten"><article id="vastpakken" class="kaart" data-id="vastpakken" data-band="b1" data-kind="separable-verb" data-cluster="klimrek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 70">#70</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vastpakken</h3>
+<p class="gloss">to grab hold of</p>
+<p class="vlaggen"><span>hands closing on a bar or letting go</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A child stands on tiptoe on the mat under the bar of a climbing frame, and both hands are just closing round the bar, fingers curling over it, arms stretched straight up. A small arrow points up at the hands. Both feet are still on the mat.</dd>
+<dt>Must read</dt><dd class="must">two hands curling shut round the bar above a child on tiptoe.</dd>
+<dt>Avoid</dt><dd class="avoid">the hands opening with the child dropping to the mat (loslaten); a child hanging still with both hands round the bar (vasthouden); a child lifting a box from the floor (optillen); a hand snatching at a rail (grijpen); a child climbing a ladder (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="loslaten">Pair with loslaten. The only difference is the hands: closing round the bar here, opening below it there.</dd>
+<dt>Split form</dt><dd class="split">pak ... vast</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik pak de stang stevig vast.<br><span class="voorbeeld-en">I grab the bar firmly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft vastgepakt</dd>
+<dt>Alt text</dt><dd class="alt">Een kind staat op de tenen onder een stang van een klimrek en de vingers krullen om de stang.</dd>
+</dl>
+<p class="id">vastpakken.png · B1 · klimrek</p>
+</article>
+<article id="loslaten" class="kaart" data-id="loslaten" data-band="b1" data-kind="separable-verb" data-cluster="klimrek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 71">#71</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">loslaten</h3>
+<p class="gloss">to let go</p>
+<p class="vlaggen"><span>hands closing on a bar or letting go</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A child under the bar of the same climbing frame has just opened both hands, fingers spread a hand's width below the bar, and drops towards the mat with knees bent. A small arrow points down from the hands. The feet are a little above the mat.</dd>
+<dt>Must read</dt><dd class="must">two open hands just below the bar and a child dropping to the mat.</dd>
+<dt>Avoid</dt><dd class="avoid">hands closing round the bar on tiptoe (vastpakken); a child hanging still from the bar (vasthouden); a child falling off a bike (not the card); a box being set down (neerzetten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vastpakken">Pair with vastpakken. The only difference is the hands: opening below the bar here, closing round it there.</dd>
+<dt>Split form</dt><dd class="split">laat ... los</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik laat de stang voorzichtig los.<br><span class="voorbeeld-en">I carefully let go of the bar.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft losgelaten</dd>
+<dt>Alt text</dt><dd class="alt">Een kind spreidt de vingers onder de stang van een klimrek en zakt met gebogen knieën naar de mat.</dd>
+</dl>
+<p class="id">loslaten.png · B1 · klimrek</p>
+</article></div></section>
+<section class="cluster" data-cluster="formulier" data-band="b1"><h2><span class="woorden">invullen · doorstrepen</span></h2><p class="as">filling in or crossing out · 2 cards</p><p class="zin">Ik vul het formulier in en streep een fout door.<span class="en">I fill in the form and cross out a mistake.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult at a plain table seen over the shoulder at the same distance, a sheet with a column of boxes filled with short greeked strokes, one pen in the hand, a plain wall behind. Only what the pen leaves on the sheet changes.</p><div class="kaarten"><article id="invullen" class="kaart" data-id="invullen" data-band="b1" data-kind="separable-verb" data-cluster="formulier" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 72">#72</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">invullen</h3>
+<p class="gloss">to fill in (a form)</p>
+<p class="vlaggen"><span>filling in or crossing out</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult at a table writes in an empty box on a sheet, the pen tip in the box and three short greeked strokes already inside it; the boxes above are filled with strokes and the boxes below are still empty. No line runs through any strokes.</dd>
+<dt>Must read</dt><dd class="must">a pen tip inside a box with fresh strokes and empty boxes below.</dd>
+<dt>Avoid</dt><dd class="avoid">a straight line drawn through a row of strokes (doorstrepen); a pen writing in a notebook (opschrijven); a sheet handed to a teacher (inleveren); a sheet coming out of a printer (afdrukken).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="doorstrepen">Pair with doorstrepen. The only difference is the pen: adding strokes inside an empty box here, drawing one line through finished strokes there.</dd>
+<dt>Split form</dt><dd class="split">vul ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik vul het formulier helemaal in.<br><span class="voorbeeld-en">I fill in the whole form.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingevuld</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene zet met een pen krabbels in een leeg vakje op een vel met een kolom vakjes.</dd>
+</dl>
+<p class="id">invullen.png · B1 · formulier</p>
+</article>
+<article id="doorstrepen" class="kaart" data-id="doorstrepen" data-band="b1" data-kind="separable-verb" data-cluster="formulier" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 73">#73</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">doorstrepen</h3>
+<p class="gloss">to cross out</p>
+<p class="vlaggen"><span>filling in or crossing out</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult at the same table holds the pen at the end of one straight line drawn right through a row of greeked strokes in a filled box, the line reaching past both ends of the strokes. The boxes above keep their strokes and the boxes below are still empty.</dd>
+<dt>Must read</dt><dd class="must">one straight line running through a row of strokes, the pen at its end.</dd>
+<dt>Avoid</dt><dd class="avoid">a pen adding strokes to an empty box (invullen); a sheet torn in two (not the card); a pen writing in a notebook (opschrijven); a sheet crumpled into a ball (weggooien).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="invullen">Pair with invullen. The only difference is the pen: drawing one line through finished strokes here, adding strokes to an empty box there.</dd>
+<dt>Split form</dt><dd class="split">streep ... door</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik streep een fout snel door.<br><span class="voorbeeld-en">I quickly cross out a mistake.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft doorgestreept</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene trekt met een pen een rechte lijn dwars over een rij krabbels in een vakje.</dd>
+</dl>
+<p class="id">doorstrepen.png · B1 · formulier</p>
+</article></div></section>
+<section class="cluster" data-cluster="hond" data-band="b1"><h2><span class="woorden">weglopen · terugkomen</span></h2><p class="as">dog running off or coming back · 2 cards</p><p class="zin">Onze hond loopt weg, maar hij komt snel terug.<span class="en">Our dog runs off, but he comes back quickly.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes stands at the left edge of a plain park lawn, seen from the side at the same distance, a dog on the grass in the middle, a low hedge behind. Only the direction the dog runs, away from the adult or towards the adult, changes.</p><div class="kaarten"><article id="weglopen" class="kaart" data-id="weglopen" data-band="b1" data-kind="separable-verb" data-cluster="hond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 74">#74</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">weglopen</h3>
+<p class="gloss">to run away, to run off</p>
+<p class="vlaggen"><span>dog running off or coming back</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A dog on the lawn runs to the right, away from the adult at the left edge, its back to the adult and its tail out behind; a small arrow points right. The adult stands upright with one arm stretched towards the dog and the mouth open.</dd>
+<dt>Must read</dt><dd class="must">a dog running off to the right with its back to the adult.</dd>
+<dt>Avoid</dt><dd class="avoid">the dog running towards a crouching adult (terugkomen); a dog walking calmly on a lead (not the card); an adult walking out of a front door (weggaan); a dog lying asleep (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="terugkomen">Pair with terugkomen. The only difference is the dog: running away from the adult here, running back to the adult there.</dd>
+<dt>Split form</dt><dd class="split">loopt ... weg</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Onze hond loopt steeds weg.<br><span class="voorbeeld-en">Our dog keeps running off.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is weggelopen</dd>
+<dt>Alt text</dt><dd class="alt">Een hond rent over het gras naar rechts, met de rug naar een volwassene die een arm uitstrekt.</dd>
+</dl>
+<p class="id">weglopen.png · B1 · hond</p>
+</article>
+<article id="terugkomen" class="kaart" data-id="terugkomen" data-band="b1" data-kind="separable-verb" data-cluster="hond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 75">#75</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">terugkomen</h3>
+<p class="gloss">to come back</p>
+<p class="vlaggen"><span>dog running off or coming back</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. The same dog on the lawn runs to the left, towards the adult at the left edge, its face to the adult and its ears flying; a small arrow points left. The adult crouches with both hands open to meet the dog.</dd>
+<dt>Must read</dt><dd class="must">a dog running towards a crouching adult with open hands.</dd>
+<dt>Avoid</dt><dd class="avoid">the dog running off with its back to the adult (weglopen); an adult arriving at a front door (thuiskomen); a dog sitting beside the adult (not the card); a train pulling into a station (aankomen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="weglopen">Pair with weglopen. The only difference is the dog: running back to the adult here, running away from the adult there.</dd>
+<dt>Split form</dt><dd class="split">komt ... terug</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Onze hond komt altijd snel terug.<br><span class="voorbeeld-en">Our dog always comes back quickly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is teruggekomen</dd>
+<dt>Alt text</dt><dd class="alt">Een hond rent over het gras naar een volwassene die gehurkt met open handen wacht.</dd>
+</dl>
+<p class="id">terugkomen.png · B1 · hond</p>
+</article></div></section>
+<section class="cluster" data-cluster="printer" data-band="b1"><h2><span class="woorden">afdrukken · inscannen</span></h2><p class="as">sheet printed or scanned · 2 cards</p><p class="zin">Ik druk de brief af en scan hem daarna in.<span class="en">I print the letter and then scan it in.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain printer with a flat glass lid on top and a paper tray at the front, on a plain desk, one adult's hand beside it, seen from the same front angle and distance. Only where the sheet is, sliding out of the front or lying under the raised lid, changes.</p><div class="kaarten"><article id="afdrukken" class="kaart" data-id="afdrukken" data-band="b1" data-kind="separable-verb" data-cluster="printer" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 76">#76</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">afdrukken</h3>
+<p class="gloss">to print</p>
+<p class="vlaggen"><span>sheet printed or scanned</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A plain printer on a desk pushes a sheet with greeked strokes half out of the front slot into the tray, two short motion lines beside it and a small arrow pointing out. The glass lid on top is shut and an adult's hand waits by the tray.</dd>
+<dt>Must read</dt><dd class="must">a sheet sliding half out of the front slot with an outward arrow.</dd>
+<dt>Avoid</dt><dd class="avoid">a sheet laid face down on the glass under the raised lid (inscannen); a sheet being written on with a pen (invullen); a cable pulled from a laptop (loskoppelen); a parcel handed over a counter (opsturen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="inscannen">Pair with inscannen. The only difference is the sheet: sliding out of the front here, lying on the glass under the lid there.</dd>
+<dt>Split form</dt><dd class="split">druk ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik druk de brief even af.<br><span class="voorbeeld-en">I quickly print the letter.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgedrukt</dd>
+<dt>Alt text</dt><dd class="alt">Uit de voorkant van een printer schuift een vel met krabbels naar de bak.</dd>
+</dl>
+<p class="id">afdrukken.png · B1 · printer</p>
+</article>
+<article id="inscannen" class="kaart" data-id="inscannen" data-band="b1" data-kind="separable-verb" data-cluster="printer" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 77">#77</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">inscannen</h3>
+<p class="gloss">to scan (in)</p>
+<p class="vlaggen"><span>sheet printed or scanned</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult raises the glass lid of the same printer with one hand and with the other lays a sheet with greeked strokes face down on the glass, a small arrow pointing down onto it. The front slot and tray are empty.</dd>
+<dt>Must read</dt><dd class="must">a sheet laid face down on the glass under a raised lid.</dd>
+<dt>Avoid</dt><dd class="avoid">a sheet sliding out of the front slot (afdrukken); a letter put into an envelope (opsturen); the lid of a box being lifted (optillen); a photo taken with a phone (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="afdrukken">Pair with afdrukken. The only difference is the sheet: laid on the glass under the lid here, sliding out of the front there.</dd>
+<dt>Split form</dt><dd class="split">scan ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik scan mijn paspoort even in.<br><span class="voorbeeld-en">I quickly scan my passport.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingescand</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene houdt de klep van een printer omhoog en legt een vel omgekeerd op het glas.</dd>
+</dl>
+<p class="id">inscannen.png · B1 · printer</p>
+</article></div></section>
+<section class="cluster" data-cluster="kooi" data-band="b1"><h2><span class="woorden">opsluiten · vrijlaten</span></h2><p class="as">bird shut in or set free · 2 cards</p><p class="zin">Ik sluit de vogel op, maar mijn zus laat hem vrij.<span class="en">I shut the bird in, but my sister lets it go.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain round birdcage with a small door on a table by an open window, one small bird, an adult's hand at the cage door, seen from the same side angle and distance. Only whether the bird sits inside as the door swings shut or flies out through the open door changes.</p><div class="kaarten"><article id="opsluiten" class="kaart" data-id="opsluiten" data-band="b1" data-kind="separable-verb" data-cluster="kooi" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 78">#78</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">opsluiten</h3>
+<p class="gloss">to lock up, to shut in</p>
+<p class="vlaggen"><span>bird shut in or set free</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A small bird sits on the perch inside a round cage on a table, and an adult's hand pushes the small cage door shut, the door a finger's width from the frame with a small curved arrow. The open window behind is empty.</dd>
+<dt>Must read</dt><dd class="must">a hand pushing the cage door shut on a bird inside.</dd>
+<dt>Avoid</dt><dd class="avoid">the bird flying out of the open door (vrijlaten); a hand locking a front door with a key (afsluiten); a bird sitting on a branch outside (not the card); a lid closing on a box (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="vrijlaten">Pair with vrijlaten. The only difference is the bird and its door: bird inside as the door shuts here, bird flying out of the open door there.</dd>
+<dt>Split form</dt><dd class="split">sluit ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik sluit de vogel 's nachts op.<br><span class="voorbeeld-en">I shut the bird in at night.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgesloten</dd>
+<dt>Alt text</dt><dd class="alt">Een hand duwt het deurtje van een vogelkooi dicht terwijl een vogeltje binnen op een stokje zit.</dd>
+</dl>
+<p class="id">opsluiten.png · B1 · kooi</p>
+</article>
+<article id="vrijlaten" class="kaart" data-id="vrijlaten" data-band="b1" data-kind="separable-verb" data-cluster="kooi" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 79">#79</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">vrijlaten</h3>
+<p class="gloss">to set free, to release</p>
+<p class="vlaggen"><span>bird shut in or set free</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. An adult's hand holds the small door of the same round cage wide open, and the bird flies out through it towards the open window, wings spread, a small arrow ahead of it. The perch inside the cage is empty.</dd>
+<dt>Must read</dt><dd class="must">a bird with spread wings leaving the open cage door.</dd>
+<dt>Avoid</dt><dd class="avoid">the bird inside as a hand pushes the door shut (opsluiten); a bird flying high over a field (not the card); an adult opening a front door (opendoen); a hand opening a cage door with no bird (openen); a child dropping from a bar (loslaten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="opsluiten">Pair with opsluiten. The only difference is the bird and its door: bird flying out of the open door here, bird inside as the door shuts there.</dd>
+<dt>Split form</dt><dd class="split">laat ... vrij</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik laat de vogel buiten vrij.<br><span class="voorbeeld-en">I let the bird go outside.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft vrijgelaten</dd>
+<dt>Alt text</dt><dd class="alt">Een hand houdt het deurtje van een vogelkooi wijd open en een vogeltje vliegt eruit naar het raam.</dd>
+</dl>
+<p class="id">vrijlaten.png · B1 · kooi</p>
+</article></div></section>
+<section class="cluster" data-cluster="wissel" data-band="b1"><h2><span class="woorden">invallen · toekijken</span></h2><p class="as">coming on or watching · 2 cards</p><p class="zin">Ik kijk eerst toe en val daarna in.<span class="en">First I watch, and then I come on as a substitute.</span></p><p class="frame"><strong>Fixed frame.</strong> the edge of a plain football pitch seen from the side at the same distance, a straight side line, a low bench on the grass outside it, a ball on the pitch with two players further off, and one player in kit in front. Only whether that player sits on the bench or steps over the side line changes.</p><div class="kaarten"><article id="invallen" class="kaart" data-id="invallen" data-band="b1" data-kind="separable-verb" data-cluster="wissel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 80">#80</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">invallen</h3>
+<p class="gloss">to come on as a substitute</p>
+<p class="vlaggen"><span>coming on or watching</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A player in kit steps over the side line onto the pitch, one foot on the grass inside the line and the other still outside, arms swinging and eyes on the ball; a small arrow points onto the pitch. The bench behind is empty.</dd>
+<dt>Must read</dt><dd class="must">one foot crossing the side line onto the pitch beside an empty bench.</dd>
+<dt>Avoid</dt><dd class="avoid">the player sitting on the bench watching (toekijken); a person tripping and falling (not the card); a person stepping off a bus (uitstappen); two players kicking the ball (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="toekijken">Pair with toekijken. The only difference is the player: stepping onto the pitch here, sitting on the bench there.</dd>
+<dt>Split form</dt><dd class="split">val ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In de tweede helft val ik in.<br><span class="voorbeeld-en">I come on as a substitute in the second half.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is ingevallen</dd>
+<dt>Alt text</dt><dd class="alt">Een speler zet een voet over de zijlijn op het gras terwijl de bank erachter leeg is.</dd>
+</dl>
+<p class="id">invallen.png · B1 · wissel</p>
+</article>
+<article id="toekijken" class="kaart" data-id="toekijken" data-band="b1" data-kind="separable-verb" data-cluster="wissel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 81">#81</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">toekijken</h3>
+<p class="gloss">to look on, to watch</p>
+<p class="vlaggen"><span>coming on or watching</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. The same player in kit sits on the low bench outside the side line, hands on the knees, head turned to follow the ball on the pitch; both feet are flat on the grass outside the line. A dotted sight line runs from the eyes to the ball.</dd>
+<dt>Must read</dt><dd class="must">a seated player on the bench with a sight line to the ball.</dd>
+<dt>Avoid</dt><dd class="avoid">the player stepping over the side line (invallen); a person looking away from someone (wegkijken); a person resting in an armchair (uitrusten); a crowd cheering in a stand (aanmoedigen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="invallen">Pair with invallen. The only difference is the player: sitting on the bench here, stepping onto the pitch there.</dd>
+<dt>Split form</dt><dd class="split">kijk ... toe</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Vandaag kijk ik alleen maar toe.<br><span class="voorbeeld-en">Today I only watch.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft toegekeken</dd>
+<dt>Alt text</dt><dd class="alt">Een speler zit op een bank naast het veld en volgt met zijn ogen de bal.</dd>
+</dl>
+<p class="id">toekijken.png · B1 · wissel</p>
+</article></div></section>
+<section class="cluster" data-cluster="hek" data-band="b1"><h2><span class="woorden">tegenhouden · doorlaten</span></h2><p class="as">gate held shut or opened · 2 cards</p><p class="zin">Ik houd de hond eerst tegen en laat hem dan door.<span class="en">First I hold the dog back and then I let it through.</span></p><p class="frame"><strong>Fixed frame.</strong> a low garden gate standing wide open in a plain fence, one adult in plain clothes at the gap, seen from the side at the same distance, a dog on the path outside, a plain house wall behind. Only whether the adult stands in the gap or has stepped aside out of it changes.</p><div class="kaarten"><article id="tegenhouden" class="kaart" data-id="tegenhouden" data-band="b1" data-kind="separable-verb" data-cluster="hek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 82">#82</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">tegenhouden</h3>
+<p class="gloss">to hold back, to stop</p>
+<p class="vlaggen"><span>gate held shut or opened</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. The low garden gate stands wide open. An adult stands square in the gap, legs apart, leaning forward with one hand flat on the chest of the dog, which pushes forward with its front paws on the path outside and cannot pass.</dd>
+<dt>Must read</dt><dd class="must">an adult filling the open gap with a hand on the dog's chest.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult stepped aside with the dog trotting through (doorlaten); a dog barking at a gate (blaffen); a person tying a dog to a post (vastbinden); a dog running off across a lawn (weglopen); a hand pushing a cage door shut (opsluiten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="doorlaten">Pair with doorlaten. The only difference is the adult: standing in the open gap and stopping the dog here, stepped aside to let it pass there.</dd>
+<dt>Split form</dt><dd class="split">houd ... tegen</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik houd de hond bij het hek tegen.<br><span class="voorbeeld-en">I hold the dog back at the gate.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft tegengehouden</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat wijdbeens in een open tuinhek met een hand op de borst van een hond die naar voren duwt.</dd>
+</dl>
+<p class="id">tegenhouden.png · B1 · hek</p>
+</article>
+<article id="doorlaten" class="kaart" data-id="doorlaten" data-band="b1" data-kind="separable-verb" data-cluster="hek" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 83">#83</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">doorlaten</h3>
+<p class="gloss">to let through</p>
+<p class="vlaggen"><span>gate held shut or opened</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. The same low garden gate stands wide open. The adult has stepped aside out of the gap, back against the fence and one arm sweeping towards the path, and the dog trots through the gap onto the path inside, a small arrow along its way.</dd>
+<dt>Must read</dt><dd class="must">a dog trotting through the open gap past an adult standing aside.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult in the gap with a hand on the dog's chest (tegenhouden); an adult opening a front door (opendoen); a person walking a dog on a lead (not the card); a bird flying out of a cage (vrijlaten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tegenhouden">Pair with tegenhouden. The only difference is the adult: stepped aside to let the dog pass here, standing in the open gap and stopping it there.</dd>
+<dt>Split form</dt><dd class="split">laat ... door</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Bij het hek laat ik de hond door.<br><span class="voorbeeld-en">At the gate I let the dog through.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft doorgelaten</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene staat opzij naast het hek en een hond draaft langs hem naar het huis.</dd>
+</dl>
+<p class="id">doorlaten.png · B1 · hek</p>
+</article></div></section>
+<section class="cluster" data-cluster="stoel" data-band="b1"><h2><span class="woorden">terugzetten · weghalen</span></h2><p class="as">chair put back or taken away · 2 cards</p><p class="zin">Ik haal de stoel weg en zet hem later terug.<span class="en">I take the chair away and put it back later.</span></p><p class="frame"><strong>Fixed frame.</strong> a plain square table seen from the front at the same distance, three adults seated at it on plain chairs, one empty side, a short stack of plain chairs against the wall at the right, one standing adult with both hands on a fourth chair, a plain wall behind. Only where the fourth chair is changes.</p><div class="kaarten"><article id="terugzetten" class="kaart" data-id="terugzetten" data-band="b1" data-kind="separable-verb" data-cluster="stoel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 84">#84</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">terugzetten</h3>
+<p class="gloss">to put back</p>
+<p class="vlaggen"><span>chair put back or taken away</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. Three adults sit at a square table. The standing adult pushes the fourth chair in at the empty side, its seat already tucked under the table edge and both hands on its back; a small arrow points in towards the table. The stack against the wall stays short.</dd>
+<dt>Must read</dt><dd class="must">a fourth chair tucked in under the table edge at the empty side.</dd>
+<dt>Avoid</dt><dd class="avoid">the fourth chair carried away towards the stack at the wall (weghalen); a person sitting down on a chair (not the card); a box put down on the floor (neerzetten); plates set out on a table (klaarzetten).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="weghalen">Pair with weghalen. The only difference is the fourth chair: tucked in at the table here, carried off towards the stack at the wall there.</dd>
+<dt>Split form</dt><dd class="split">zet ... terug</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik zet de stoel netjes terug.<br><span class="voorbeeld-en">I put the chair back neatly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft teruggezet</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene schuift een vierde stoel onder de rand van een tafel waar drie mensen zitten.</dd>
+</dl>
+<p class="id">terugzetten.png · B1 · stoel</p>
+</article>
+<article id="weghalen" class="kaart" data-id="weghalen" data-band="b1" data-kind="separable-verb" data-cluster="stoel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 85">#85</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">weghalen</h3>
+<p class="gloss">to take away, to remove</p>
+<p class="vlaggen"><span>chair put back or taken away</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. Three adults sit at the same square table, the fourth side bare. The standing adult carries the fourth chair, lifted off the floor, a step from the table towards the short stack of chairs against the wall at the right; a small arrow points to the stack.</dd>
+<dt>Must read</dt><dd class="must">a fourth chair carried off the floor towards the stack at the wall.</dd>
+<dt>Avoid</dt><dd class="avoid">the fourth chair tucked in at the table (terugzetten); a person getting up from a chair (opstaan); a box lifted from the floor (optillen); a person tidying toys into a box (opruimen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="terugzetten">Pair with terugzetten. The only difference is the fourth chair: carried off towards the stack at the wall here, tucked in at the table there.</dd>
+<dt>Split form</dt><dd class="split">haal ... weg</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik haal die oude stoel weg.<br><span class="voorbeeld-en">I take that old chair away.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft weggehaald</dd>
+<dt>Alt text</dt><dd class="alt">Een volwassene draagt een vierde stoel van de tafel naar een stapel stoelen tegen de muur.</dd>
+</dl>
+<p class="id">weghalen.png · B1 · stoel</p>
+</article></div></section>
+<section class="cluster" data-cluster="koffie" data-band="b1"><h2><span class="woorden">toevoegen · omroeren</span></h2><p class="as">adding or stirring · 2 cards</p><p class="zin">Ik voeg suiker toe en roer de koffie om.<span class="en">I add sugar and stir the coffee.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult's hand above a plain cup of coffee on a saucer on a plain table, seen from the side at the same distance, a small spoon in the hand, a sugar bowl beside the cup. Only what the spoon does, tipping sugar in or circling in the coffee, changes.</p><div class="kaarten"><article id="toevoegen" class="kaart" data-id="toevoegen" data-band="b1" data-kind="separable-verb" data-cluster="koffie" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 86">#86</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">toevoegen</h3>
+<p class="gloss">to add</p>
+<p class="vlaggen"><span>adding or stirring</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A hand holds a small spoon heaped with sugar above a cup of coffee and tips it, so a stream of grains falls into the coffee; a small arrow points down into the cup. The sugar bowl beside the cup stands open.</dd>
+<dt>Must read</dt><dd class="must">a tipped spoon pouring a stream of sugar grains into the cup.</dd>
+<dt>Avoid</dt><dd class="avoid">the spoon circling inside the coffee (omroeren); a jug pouring milk into a glass (not the card); a hand blowing on a hot cup (not the card); a cup offered to someone (aanbieden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="omroeren">Pair with omroeren. The only difference is the spoon: tipping sugar into the cup here, circling inside the coffee there.</dd>
+<dt>Split form</dt><dd class="split">voeg ... toe</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik voeg een schepje suiker toe.<br><span class="voorbeeld-en">I add a spoonful of sugar.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft toegevoegd</dd>
+<dt>Alt text</dt><dd class="alt">Een hand houdt een lepeltje schuin boven een kop koffie en er valt suiker in de kop.</dd>
+</dl>
+<p class="id">toevoegen.png · B1 · koffie</p>
+</article>
+<article id="omroeren" class="kaart" data-id="omroeren" data-band="b1" data-kind="separable-verb" data-cluster="koffie" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 87">#87</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk">omroeren</h3>
+<p class="gloss">to stir</p>
+<p class="vlaggen"><span>adding or stirring</span><span>B1</span><span>separable</span><span>1 panel</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">One drawing, one panel. A hand holds a small spoon upright in the same cup of coffee and moves it round, with two curved swirl lines on the surface and a small circular arrow above the cup. The sugar bowl beside the cup has its lid on.</dd>
+<dt>Must read</dt><dd class="must">a spoon upright in the cup with swirl lines and a circular arrow.</dd>
+<dt>Avoid</dt><dd class="avoid">a tipped spoon pouring sugar into the cup (toevoegen); a hand turning a tap (opendraaien); a hand washing a cup (afwassen); a person drinking from the cup (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="toevoegen">Pair with toevoegen. The only difference is the spoon: circling inside the coffee here, tipping sugar into the cup there.</dd>
+<dt>Split form</dt><dd class="split">roer ... om</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik roer de koffie even om.<br><span class="voorbeeld-en">I give the coffee a stir.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft omgeroerd</dd>
+<dt>Alt text</dt><dd class="alt">Een hand beweegt een lepeltje in kringetjes door een kop koffie en er komen golfjes op het oppervlak.</dd>
+</dl>
+<p class="id">omroeren.png · B1 · koffie</p>
+</article></div></section>
+</main>
+</body>
+</html>
