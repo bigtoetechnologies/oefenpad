@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Explanation cards pilot — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+
+.mock{margin:0;border:2px solid var(--kobalt);border-radius:14px;padding:14px;background:var(--papier)}
+.mock .pic{border:1.5px dashed var(--lijn);border-radius:10px;padding:18px 10px;text-align:center;font-size:12.5px;color:var(--grijs)}
+.mock .tekst{margin:12px 0 4px;font-size:17px;font-weight:600;line-height:1.45}
+.mock .tekst p{margin:2px 0}
+.mock .vraag{margin:10px 0 8px;font-size:17px;font-weight:800;color:var(--kobalt)}
+.mock .knoppen{display:flex;gap:10px}
+.mock .knoppen span{flex:1;text-align:center;padding:8px;border:2px solid var(--kobalt);border-radius:10px;font-weight:800;font-size:16px}
+.mock .uitkomst{margin-top:8px;font-size:12px;color:var(--grijs)}
+.mocks{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px;margin:1em 0}
+.ok{color:var(--kobalt);font-weight:700}.fout{color:var(--rood);font-weight:700}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="verb-games-plan.html" data-path="Docs/verb-games-plan.html">Verb games — plan and questions</a></li><li><a href="reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Werkwoorden</summary><ul><li><a href="werkwoorden/AGENTS.html" data-path="Docs/werkwoorden/AGENTS.html">Working notes for agents</a></li><li><a href="werkwoorden/index.html" data-path="Docs/werkwoorden/index.html">Overview — every verb</a></li><li><a href="werkwoorden/a0-irregular.html" data-path="Docs/werkwoorden/a0-irregular.html">A0 irregular</a></li><li><a href="werkwoorden/a0-regular.html" data-path="Docs/werkwoorden/a0-regular.html">A0 regular</a></li><li><a href="werkwoorden/a1-irregular.html" data-path="Docs/werkwoorden/a1-irregular.html">A1 irregular</a></li><li><a href="werkwoorden/a1-regular.html" data-path="Docs/werkwoorden/a1-regular.html">A1 regular</a></li><li><a href="werkwoorden/a2-irregular.html" data-path="Docs/werkwoorden/a2-irregular.html">A2 irregular</a></li><li><a href="werkwoorden/a2-regular.html" data-path="Docs/werkwoorden/a2-regular.html">A2 regular</a></li><li><a href="werkwoorden/b1-irregular.html" data-path="Docs/werkwoorden/b1-irregular.html">B1 irregular</a></li><li><a href="werkwoorden/b1-regular.html" data-path="Docs/werkwoorden/b1-regular.html">B1 regular</a></li><li><a href="werkwoorden/b2-irregular.html" data-path="Docs/werkwoorden/b2-irregular.html">B2 irregular</a></li><li><a href="werkwoorden/b2-regular.html" data-path="Docs/werkwoorden/b2-regular.html">B2 regular</a></li><li><a href="werkwoorden/matrix.html" data-path="Docs/werkwoorden/matrix.html">Matrix</a></li><li><a href="werkwoorden/backlog.html" data-path="Docs/werkwoorden/backlog.html">Backlog</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Card families</summary><ul><li><a href="card-families-handover.html" data-path="Docs/card-families-handover.html">Card families handover</a></li><li><a href="lexicon/themes-to-card.html" data-path="Docs/lexicon/themes-to-card.html">Words still to teach, by theme</a></li><li><a href="explanation-cards-pilot.html" data-path="Docs/explanation-cards-pilot.html">Explanation cards pilot</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Bijvoeglijke naamwoorden</summary><ul><li><a href="bijvoeglijke-naamwoorden/index.html" data-path="Docs/bijvoeglijke-naamwoorden/index.html">Overview</a></li><li><a href="bijvoeglijke-naamwoorden/a0.html" data-path="Docs/bijvoeglijke-naamwoorden/a0.html">A0 band</a></li><li><a href="bijvoeglijke-naamwoorden/a1.html" data-path="Docs/bijvoeglijke-naamwoorden/a1.html">A1 band</a></li><li><a href="bijvoeglijke-naamwoorden/a2.html" data-path="Docs/bijvoeglijke-naamwoorden/a2.html">A2 band</a></li><li><a href="bijvoeglijke-naamwoorden/b1.html" data-path="Docs/bijvoeglijke-naamwoorden/b1.html">B1 band</a></li><li><a href="bijvoeglijke-naamwoorden/b2.html" data-path="Docs/bijvoeglijke-naamwoorden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Zelfstandige naamwoorden</summary><ul><li><a href="zelfstandige-naamwoorden/index.html" data-path="Docs/zelfstandige-naamwoorden/index.html">Overview</a></li><li><a href="zelfstandige-naamwoorden/a0.html" data-path="Docs/zelfstandige-naamwoorden/a0.html">A0 band</a></li><li><a href="zelfstandige-naamwoorden/a1.html" data-path="Docs/zelfstandige-naamwoorden/a1.html">A1 band</a></li><li><a href="zelfstandige-naamwoorden/a2.html" data-path="Docs/zelfstandige-naamwoorden/a2.html">A2 band</a></li><li><a href="zelfstandige-naamwoorden/b1.html" data-path="Docs/zelfstandige-naamwoorden/b1.html">B1 band</a></li><li><a href="zelfstandige-naamwoorden/b2.html" data-path="Docs/zelfstandige-naamwoorden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Bijwoorden</summary><ul><li><a href="bijwoorden/index.html" data-path="Docs/bijwoorden/index.html">Overview</a></li><li><a href="bijwoorden/a0.html" data-path="Docs/bijwoorden/a0.html">A0 band</a></li><li><a href="bijwoorden/a1.html" data-path="Docs/bijwoorden/a1.html">A1 band</a></li><li><a href="bijwoorden/a2.html" data-path="Docs/bijwoorden/a2.html">A2 band</a></li><li><a href="bijwoorden/b1.html" data-path="Docs/bijwoorden/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Scheidbare werkwoorden</summary><ul><li><a href="scheidbare-werkwoorden/index.html" data-path="Docs/scheidbare-werkwoorden/index.html">Overview</a></li><li><a href="scheidbare-werkwoorden/a2.html" data-path="Docs/scheidbare-werkwoorden/a2.html">A2 band</a></li><li><a href="scheidbare-werkwoorden/b1.html" data-path="Docs/scheidbare-werkwoorden/b1.html">B1 band</a></li><li><a href="scheidbare-werkwoorden/b2.html" data-path="Docs/scheidbare-werkwoorden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Vaste uitdrukkingen</summary><ul><li><a href="vaste-uitdrukkingen/index.html" data-path="Docs/vaste-uitdrukkingen/index.html">Overview</a></li><li><a href="vaste-uitdrukkingen/a0.html" data-path="Docs/vaste-uitdrukkingen/a0.html">A0 band</a></li><li><a href="vaste-uitdrukkingen/a1.html" data-path="Docs/vaste-uitdrukkingen/a1.html">A1 band</a></li><li><a href="vaste-uitdrukkingen/a2.html" data-path="Docs/vaste-uitdrukkingen/a2.html">A2 band</a></li><li><a href="vaste-uitdrukkingen/b1.html" data-path="Docs/vaste-uitdrukkingen/b1.html">B1 band</a></li><li><a href="vaste-uitdrukkingen/b2.html" data-path="Docs/vaste-uitdrukkingen/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Docs</a><span>/</span><span>Card families</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Explanation cards pilot</h1>
+      <p class="lede">Skipped verbs rebuilt as picture cards, picture-plus-question cards or short Dutch scenes, one card per sense, so the owner can judge the format before any rule changes.</p>
+      <p class="doc-meta">Docs/explanation-cards-pilot.html · built by tools/build-explanation-pilot.py</p>
+    </header>
+    <article class="prose">
+<h2 id="what">What this pilot tests</h2>
+<p>It tests whether verbs with no honest single drawing can be taught with a picture, a short Dutch scene and one yes/no question. No drawings exist; each card is a brief and a static mock of the game screen.</p>
+<div class="table-wrap"><table><thead><tr><th>Tier</th><th>When</th><th>The learner gets</th></tr></thead><tbody>
+<tr><td>1. Picture</td><td>One mark carries the meaning</td><td>A single picture, as in the existing families</td></tr>
+<tr><td>2. Picture + check</td><td>The picture is clear but could be misread</td><td>The picture and one yes/no question</td></tr>
+<tr><td>3. Scene + text</td><td>No single picture carries the verb</td><td>A fuller scene, two to four short Dutch sentences and one question</td></tr>
+</tbody></table></div>
+<p>The Dutch sits beside the picture, never inside it, so the no-text-in-artwork rule holds. Two earlier rules were amended for this card type on 20 November 2026: no example sentences on verb cards, and meaning never in a sentence the learner must parse. The rules are in <code>Docs/decisions.html</code>.</p>
+
+<h2 id="senses">Senses and examples</h2>
+<p>A verb gets one card per sense, and each card shows four examples. The senses come from Dutch Wiktionary (nl.wiktionary.org), read 20 November 2026, not from the English gloss.</p>
+<div class="table-wrap"><table><thead><tr><th>Verb</th><th>Sense cards here</th><th>Wiktionary lists</th><th>Not covered yet</th></tr></thead><tbody>
+<tr><td>laten</td><td>allow; have done / show (laten zien)</td><td>7 senses</td><td>"Laat dat!", leave unchanged, let go (een traan laten), leave behind, "let it be". There is no separate laten zien entry: it sits under the causative sense.</td></tr>
+<tr><td>twijfelen</td><td>doubt oneself; waver between two things</td><td>4 senses</td><td>doubt whether something is true (twijfelen aan)</td></tr>
+<tr><td>vertegenwoordigen</td><td>act in the name of a group</td><td>1 sense</td><td>none; logo and expression uses are not listed</td></tr>
+<tr><td>aarzelen</td><td>hesitate</td><td>1 sense</td><td>none</td></tr>
+</tbody></table></div>
+<p>The other six verbs keep one example each for now. Examples 2 to 4 carry a scene line only; their alt text is written when they are drawn.</p>
+
+<h2 id="pair">Aarzelen and twijfelen overlap</h2>
+<p>Dutch Wiktionary glosses aarzelen as "onzeker zijn, twijfelen" and lists twijfelen among its synonyms, so the two are not a clean contrast pair. The pilot therefore teaches them from different scenes: aarzelen is a pause before acting, twijfelen is doubting oneself or being unable to choose between two things. No shared door scene is used.</p>
+
+<h2 id="check">Vocabulary check</h2>
+<p>Every Dutch word on a card is at or below the card's band by lemma rank, except the verb itself. A failing row means the build fails. The page holds 30 examples in 12 cards.</p>
+<div class="table-wrap"><table><thead><tr><th>Card</th><th>Band</th><th>Examples</th><th>Highest word</th><th>Result</th></tr></thead><tbody>
+<tr><td><a href="#worden-to-become">worden</a> <span>(to become)</span></td><td>A0</td><td>1</td><td>al (rank 250)</td><td class="ok">OK</td></tr><tr><td><a href="#laten-toestaan-dat-iets-gebeurt">laten</a> <span>(to allow)</span></td><td>A0</td><td>4</td><td>naar (rank 250)</td><td class="ok">OK</td></tr><tr><td><a href="#laten-veroorzaken-dat-het-gebeurt">laten</a> <span>(to have something done; laten zien, to show)</span></td><td>A1</td><td>4</td><td>fiets (rank 919)</td><td class="ok">OK</td></tr><tr><td><a href="#begrijpen-to-understand">begrijpen</a> <span>(to understand)</span></td><td>A1</td><td>1</td><td>luistert (rank 726)</td><td class="ok">OK</td></tr><tr><td><a href="#hopen-to-hope">hopen</a> <span>(to hope)</span></td><td>A1</td><td>1</td><td>zon (rank 685)</td><td class="ok">OK</td></tr><tr><td><a href="#proberen-to-try">proberen</a> <span>(to try)</span></td><td>A1</td><td>1</td><td>fiets (rank 919)</td><td class="ok">OK</td></tr><tr><td><a href="#twijfelen-geen-vertrouwen-in-iets-of-iem">twijfelen</a> <span>(doubting oneself)</span></td><td>B1</td><td>4</td><td>sprong (rank 2722)</td><td class="ok">OK</td></tr><tr><td><a href="#twijfelen-tussen-twee-dingen-niet-kunnen">twijfelen</a> <span>(to be unable to choose)</span></td><td>B1</td><td>4</td><td>jurken (rank 2156)</td><td class="ok">OK</td></tr><tr><td><a href="#beweren-to-claim">beweren</a> <span>(to claim)</span></td><td>B1</td><td>1</td><td>fiets (rank 919)</td><td class="ok">OK</td></tr><tr><td><a href="#vertegenwoordigen-spreken-of-aanwezig-zi">vertegenwoordigen</a> <span>(Wiktionary lists one sense)</span></td><td>B1</td><td>4</td><td>lawaai (rank 3011)</td><td class="ok">OK</td></tr><tr><td><a href="#aarzelen-onzeker-zijn-twijfelen">aarzelen</a> <span>(to hesitate)</span></td><td>B2</td><td>4</td><td>springt (rank 1722)</td><td class="ok">OK</td></tr><tr><td><a href="#vermoeden-to-suspect-to-guess">vermoeden</a> <span>(to suspect, to guess)</span></td><td>B2</td><td>1</td><td>buurman (rank 2909)</td><td class="ok">OK</td></tr>
+</tbody></table></div>
+<details><summary>How the check works and where it is weak</summary>
+<ul>
+<li>Bands by lemma rank: A0 up to 250, A1 to 1000, A2 to 2500, B1 to 5000, B2 to 10000 (<code>tools/lexicon/woorden-niveau.tsv</code>). A card can carry a band set by hand when one sense is later than the lemma.</li>
+<li>Inflected forms are mapped to lemmas by suffix rules and a small table. Where a form has several homograph keys the best rank is used, so the check is generous there.</li>
+<li>Names are exempt. The check does not judge grammar or naturalness: a native speaker has not read any of this text.</li>
+</ul></details>
+
+<h2 id="hand">Ranks set by hand</h2>
+<p>The lexicon rank is wrong for these words, as it was for the verb pages, so the check uses the rank below. Each is judgement, not a count.</p>
+<div class="table-wrap"><table><thead><tr><th>Word</th><th>Rank used</th><th>Band</th><th>Why</th></tr></thead><tbody>
+<tr><td>is</td><td>1</td><td>A0</td><td>form of zijn; wordfreq gave the verb row no score of its own</td></tr><tr><td>zijn</td><td>1</td><td>A0</td><td>verb and possessive; wordfreq gave the verb row no score of its own</td></tr><tr><td>dan</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>naar</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>te</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>al</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>haar</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>moet</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>alle</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>dat</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>waar</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>maar</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>goed</td><td>250</td><td>A0</td><td>closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement</td></tr><tr><td>morgen</td><td>450</td><td>A1</td><td>everyday time word; the lexicon rank is the noun morning, A1 by judgement</td></tr>
+</tbody></table></div>
+
+<h2 id="cards">The cards</h2>
+<h3 id="worden-to-become">worden — to become</h3><p><strong>Band A0</strong> (lemma rank 35) · <strong>Tier 3</strong> · 1 example. Skip reason today: becoming is an arrow from one state to another and would show no person.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>Three panels in a row, the same figure at three sizes: small, taller, tall. The figure is the same in every panel, drawn at the same stroke weight.</td></tr><tr><th>Must read</th><td>The same figure, three sizes, left to right.</td></tr><tr><th>Alt text (Dutch)</th><td>Drie tekeningen naast elkaar van dezelfde persoon: eerst klein, dan groter, dan groot.</td></tr><tr><th>Note</th><td>The picture shows the change; the text names it. Neither works alone.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The same figure, three sizes, left to right.</div><div class="tekst"><p>Eerst is Sam niet groot.</p><p>Later wordt hij groot.</p></div><div class="vraag">Is Sam nu al groot?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to become.</div></div></div><p><em>One example so far; not expanded to four yet.</em></p><h3 id="laten-toestaan-dat-iets-gebeurt">laten — toestaan dat iets gebeurt (to allow)</h3><p><strong>Band A0</strong> (lemma rank 84) · <strong>Tier 3</strong> · 4 examples. Skip reason today: an auxiliary with no picture of its own; the box scene read as geven.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A parent stands at an open door with one hand held out flat towards the garden. A child stands in the doorway looking out.</td></tr><tr><th>Must read</th><td>The open flat hand: permission, not a push.</td></tr><tr><th>Alt text (Dutch)</th><td>Een volwassene staat bij een open deur en wijst met een open hand naar buiten. Een kind staat in de deuropening.</td></tr><tr><th>Note</th><td>Wiktionary sense 2. Example 4 shows a refusal, so the verb cannot be read as pushing someone.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The open flat hand: permission, not a push.</div><div class="tekst"><p>Sam wil buiten spelen.</p><p>Zijn moeder zegt: ja.</p><p>Zij laat Sam buiten spelen.</p></div><div class="vraag">Speelt Sam nu buiten?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to let, to allow.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A woman steps aside at an open door with a flat open hand; a man waits on the step.</div><div class="tekst"><p>De man wil naar binnen gaan.</p><p>De vrouw zegt: ja.</p><p>Zij laat de man naar binnen gaan.</p></div><div class="vraag">Gaat de man naar binnen?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to let, to allow.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A father holds the car door open with a flat hand; Sam sits on the seat.</div><div class="tekst"><p>Sam wil in de auto zitten.</p><p>Zijn vader zegt: ja.</p><p>Hij laat Sam in de auto zitten.</p></div><div class="vraag">Zit Sam in de auto?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to let, to allow.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A man stands in a doorway with one palm raised; Sam stands outside.</div><div class="tekst"><p>Sam wil naar binnen.</p><p>De man zegt: nee.</p><p>Hij laat Sam niet naar binnen gaan.</p></div><div class="vraag">Gaat Sam naar binnen?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to let, to allow.</div></div></div><h3 id="laten-veroorzaken-dat-het-gebeurt">laten — veroorzaken dat het gebeurt (to have something done; laten zien, to show)</h3><p><strong>Band A1</strong> (lemma rank 84) · <strong>Tier 3</strong> · 4 examples. Band set by hand: laten is A0 by lemma rank, but this sense (laten zien, laten maken) is A1 by judgement. Wiktionary lists laten zien under this causative sense, not as a separate entry.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>Anna holds a photo out towards Piet, who leans in to look. The photo's back faces us: no picture shown inside it.</td></tr><tr><th>Must read</th><td>The held-out photo and the leaning figure: one gives, one sees.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon houdt een foto omhoog naar een ander, die zich naar voren buigt om te kijken.</td></tr><tr><th>Note</th><td>Two meanings of one pattern: the person shows, or the person arranges for someone else to act.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The held-out photo and the leaning figure: one gives, one sees.</div><div class="tekst"><p>Anna heeft een nieuwe foto.</p><p>Zij laat de foto aan Piet zien.</p><p>Nu ziet Piet de foto.</p></div><div class="vraag">Ziet Piet de foto nu?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to have done, to show.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A bicycle on a shop counter; a mechanic works on it; Piet stands back with hands in pockets.</div><div class="tekst"><p>Piet laat zijn fiets maken.</p><p>Hij maakt de fiets niet zelf.</p><p>Een man in de winkel maakt de fiets.</p></div><div class="vraag">Maakt Piet de fiets zelf?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to have done, to show.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">Sam at an open front door with a sweep of the hand inward; Anna on the threshold.</div><div class="tekst"><p>Sam heeft een nieuw huis.</p><p>Hij laat Anna zijn huis zien.</p><p>Zij gaat naar binnen en ziet de kamer.</p></div><div class="vraag">Ziet Anna het huis?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to have done, to show.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">Anna at a door pointing inside; a man walks up the path.</div><div class="tekst"><p>Anna heeft een probleem.</p><p>Zij kan het niet zelf doen.</p><p>Zij laat haar vader komen.</p><p>Haar vader komt naar het huis.</p></div><div class="vraag">Komt de vader naar het huis?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to have done, to show.</div></div></div><h3 id="begrijpen-to-understand">begrijpen — to understand</h3><p><strong>Band A1</strong> (lemma rank 645) · <strong>Tier 3</strong> · 1 example. Skip reason today: understanding has no single picturable action.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>Two panels: a figure frowning at a drawing, then the same figure with a raised head and open eyes beside the same drawing.</td></tr><tr><th>Must read</th><td>The same drawing in both panels; only the face changes.</td></tr><tr><th>Alt text (Dutch)</th><td>Twee tekeningen: eerst kijkt iemand fronsend naar een plaatje, daarna kijkt dezelfde persoon blij naar hetzelfde plaatje.</td></tr><tr><th>Note</th><td>Two panels need the larger card size, not the 170 px thumbnail.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The same drawing in both panels; only the face changes.</div><div class="tekst"><p>Anna luistert naar Piet.</p><p>Eerst weet zij het niet.</p><p>Dan zegt Piet het nog een keer.</p><p>Nu begrijpt zij het.</p></div><div class="vraag">Weet Anna het nu?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to understand.</div></div></div><p><em>One example so far; not expanded to four yet.</em></p><h3 id="hopen-to-hope">hopen — to hope</h3><p><strong>Band A1</strong> (lemma rank 725) · <strong>Tier 3</strong> · 1 example. Skip reason today: the umbrella symbol is not on the closed list of conventions.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A figure at a window looks out, hands together near the chin. Outside is a plain sky with one small shape that could be a cloud or a sun.</td></tr><tr><th>Must read</th><td>The unresolved sky: the figure does not yet know the outcome.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon staat bij een raam met de handen bij de kin en kijkt naar de lucht buiten.</td></tr><tr><th>Note</th><td>Hope is wanting plus not knowing; the question tests the not-knowing.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The unresolved sky: the figure does not yet know the outcome.</div><div class="tekst"><p>Els wil morgen buiten zijn.</p><p>Zij weet niet of er morgen zon is.</p><p>Zij hoopt van wel.</p></div><div class="vraag">Weet Els al of er zon is?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to hope.</div></div></div><p><em>One example so far; not expanded to four yet.</em></p><h3 id="proberen-to-try">proberen — to try</h3><p><strong>Band A1</strong> (lemma rank 354) · <strong>Tier 3</strong> · 1 example. Skip reason today: the key-in-the-wrong-lock picture is the literal action, not the verb.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A figure bent over a bicycle with a wrench, a tyre half off, sweat marks near the head. A second bicycle stands finished and upright in the background.</td></tr><tr><th>Must read</th><td>Work in progress next to the finished bicycle.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon werkt aan een fiets met een sleutel; de band zit half los. Op de achtergrond staat een heel gemaakte fiets.</td></tr><tr><th>Note</th><td>Sense chosen: attempt without success yet.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: Work in progress next to the finished bicycle.</div><div class="tekst"><p>Piet probeert zijn fiets te maken.</p><p>Hij werkt al een uur.</p><p>Het is nog niet goed.</p></div><div class="vraag">Is de fiets nu al klaar?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to try.</div></div></div><p><em>One example so far; not expanded to four yet.</em></p><h3 id="twijfelen-geen-vertrouwen-in-iets-of-iem">twijfelen — geen vertrouwen in iets of iemand hebben (doubting oneself)</h3><p><strong>Band B1</strong> (lemma rank 3218) · <strong>Tier 2</strong> · 4 examples. Skip reason today: a thought, feeling or attitude, not a visible action.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A figure stands at the edge of a platform with a wide gap to a second platform. One foot forward, weight on the back foot. A split thought bubble: one half a small figure landing on the far side, the other the same figure falling into the gap.</td></tr><tr><th>Must read</th><td>The split thought bubble: two possible outcomes, none chosen.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon staat aan de rand van een brede kloof. In een gedachtewolk landt een figuurtje aan de overkant, en valt een figuurtje in de kloof.</td></tr><tr><th>Note</th><td>Wiktionary sense 4. Replaces the earlier two-sweaters idea: it shows doubt about one's own ability.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The split thought bubble: two possible outcomes, none chosen.</div><div class="tekst"><p>Jan staat voor de sprong.</p><p>Hij denkt: kan ik dat wel?</p><p>Hij twijfelt aan zichzelf.</p></div><div class="vraag">Is Jan zeker dat hij kan springen?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to doubt (oneself).</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure at a desk with books; a thought bubble showing a sheet with a tick and the same sheet crossed out (marks, no letters).</div><div class="tekst"><p>Eva heeft morgen een examen.</p><p>Zij heeft veel geleerd.</p><p>Maar zij twijfelt aan zichzelf.</p></div><div class="vraag">Is Eva zeker van zichzelf?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to doubt (oneself).</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure at the front of a row of seated figures; the thought bubble shows a figure speaking and the same figure silent.</div><div class="tekst"><p>Piet moet voor de groep praten.</p><p>Hij denkt: kan ik dat?</p><p>Hij twijfelt aan zichzelf.</p></div><div class="vraag">Denkt Piet dat hij het goed kan?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to doubt (oneself).</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure at a door marked by a bag and a desk; the thought bubble splits into two outcomes.</div><div class="tekst"><p>Anna wil een nieuwe baan.</p><p>De baan is moeilijk.</p><p>Zij twijfelt aan zichzelf.</p></div><div class="vraag">Weet Anna zeker dat zij het kan?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to doubt (oneself).</div></div></div><h3 id="twijfelen-tussen-twee-dingen-niet-kunnen">twijfelen — tussen twee dingen niet kunnen kiezen (to be unable to choose)</h3><p><strong>Band B1</strong> (lemma rank 3218) · <strong>Tier 3</strong> · 4 examples. Wiktionary senses 1 and 3 (twijfelen tussen; geen keuze kunnen maken), merged: they differ only in wording.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A figure holds up two identical sweaters, one in each hand, and looks from one to the other. Nothing is chosen yet.</td></tr><tr><th>Must read</th><td>The eyes and head turned between the two, with neither sweater put down.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon houdt in elke hand een trui omhoog en kijkt van de ene naar de andere.</td></tr><tr><th>Note</th><td>Example 4 shows doubt ending, which makes the verb's boundary visible.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The eyes and head turned between the two, with neither sweater put down.</div><div class="tekst"><p>In de winkel hangen twee jurken.</p><p>Eva wil één jurk kopen.</p><p>Zij twijfelt tussen de lange en de korte jurk.</p></div><div class="vraag">Heeft Eva al een jurk gekozen?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to waver between two things.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure at a fork in a path, one arrow to each side, standing still between them.</div><div class="tekst"><p>Sam kan in Utrecht wonen of in Delft.</p><p>Hij twijfelt tussen Utrecht en Delft.</p></div><div class="vraag">Weet Sam al waar hij gaat wonen?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to waver between two things.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure at a table with a menu card (strokes only); a waiter with a pad, waiting.</div><div class="tekst"><p>In het restaurant is er soep of vis.</p><p>Piet twijfelt tussen soep en vis.</p><p>De man wacht.</p></div><div class="vraag">Heeft Piet al gekozen?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to waver between two things.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">Two panels: a figure between two bicycles; the same figure wheeling one away.</div><div class="tekst"><p>Eerst twijfelt Els tussen twee fietsen.</p><p>Dan kiest zij één fiets.</p></div><div class="vraag">Twijfelt Els nu nog?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to waver between two things.</div></div></div><h3 id="beweren-to-claim">beweren — to claim</h3><p><strong>Band B1</strong> (lemma rank 3226) · <strong>Tier 3</strong> · 1 example. Skip reason today: speech whose content is the meaning; the picture would be the praten card.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A figure on a low box, one finger raised, chest out. A second figure stands with crossed arms and one raised eyebrow.</td></tr><tr><th>Must read</th><td>The raised finger against the crossed arms.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon staat op een kistje met een opgestoken vinger. Een ander staat met de armen over elkaar en kijkt twijfelend.</td></tr><tr><th>Note</th><td>Contrast partner: twijfelen (certain claim against unsure listener).</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The raised finger against the crossed arms.</div><div class="tekst"><p>Mark zegt: mijn fiets is de snelste van de stad.</p><p>Niemand heeft het gezien.</p><p>Mark beweert het.</p></div><div class="vraag">Weet iedereen dat het waar is?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to claim.</div></div></div><p><em>One example so far; not expanded to four yet.</em></p><h3 id="vertegenwoordigen-spreken-of-aanwezig-zi">vertegenwoordigen — spreken of aanwezig zijn in naam van een groep of organisatie (Wiktionary lists one sense)</h3><p><strong>Band B1</strong> (lemma rank 3173) · <strong>Tier 3</strong> · 4 examples. Skip reason today: abstract; any picture would stand in for another verb.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A row of small figures stands behind one larger figure at a table. Only the larger figure reaches across to shake hands with a person on the other side.</td></tr><tr><th>Must read</th><td>One figure steps forward from a group while the rest stay back.</td></tr><tr><th>Alt text (Dutch)</th><td>Een rij kleine figuurtjes staat achter één groter figuur aan een tafel. Alleen dat figuur geeft een hand aan iemand aan de overkant.</td></tr><tr><th>Note</th><td>Group, person and country, one sense. Logo and facial-expression uses are not in Wiktionary for this verb; Dutch seems to use other verbs there (unverified).</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: One figure steps forward from a group while the rest stay back.</div><div class="tekst"><p>De buren hebben een probleem met het lawaai.</p><p>Zij kiezen Els.</p><p>Els praat voor alle buren met de gemeente.</p><p>Els vertegenwoordigt de buurt.</p></div><div class="vraag">Praat Els alleen voor zichzelf?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to represent.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">An empty chair with a crown on it at one side of a hall; a younger figure standing in the doorway of the hall.</div><div class="tekst"><p>De koning kan niet naar het feest in een ander land komen.</p><p>Zijn zoon gaat wel.</p><p>Hij vertegenwoordigt zijn vader.</p></div><div class="vraag">Is de koning zelf op het feest?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to represent.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure with a folder at a high desk facing a judge; Piet stands outside the open door.</div><div class="tekst"><p>Piet heeft een probleem met zijn huis.</p><p>Hij gaat niet zelf naar de rechter.</p><p>Zijn advocaat gaat.</p><p>De advocaat vertegenwoordigt Piet.</p></div><div class="vraag">Praat Piet zelf met de rechter?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to represent.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure on a pitch beside a flag (no emblem, strokes only), a crowd behind a fence.</div><div class="tekst"><p>Anna speelt voor Nederland in een ander land.</p><p>Zij vertegenwoordigt Nederland.</p></div><div class="vraag">Speelt Anna voor Nederland?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to represent.</div></div></div><h3 id="aarzelen-onzeker-zijn-twijfelen">aarzelen — onzeker zijn, twijfelen (to hesitate)</h3><p><strong>Band B2</strong> (lemma rank 8085) · <strong>Tier 3</strong> · 4 examples. Skip reason today: a thought, feeling or attitude, not a visible action.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>A figure stands at a closed door with one hand raised towards the handle, not touching it. The other hand is pulled back to the chest.</td></tr><tr><th>Must read</th><td>The hand stopped short of the handle.</td></tr><tr><th>Alt text (Dutch)</th><td>Een persoon staat bij een dichte deur met een hand vlak voor de klink, maar raakt die niet aan.</td></tr><tr><th>Note</th><td>Wiktionary has one sense, glossed as twijfelen; its examples are all 'pause, then act'. The pair below turns that into the contrast.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: The hand stopped short of the handle.</div><div class="tekst"><p>Piet staat bij de deur.</p><p>Hij aarzelt even.</p><p>Dan doet hij de deur open.</p></div><div class="vraag">Is de deur nu open?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to hesitate.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure with a raised hand and an open mouth held back; second panel: the mouth open and speaking.</div><div class="tekst"><p>Eva moet iets zeggen.</p><p>Zij aarzelt even.</p><p>Dan zegt zij het toch.</p></div><div class="vraag">Zegt Eva het uiteindelijk?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to hesitate.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">A figure with an arm raised straight up at once, no pause marks.</div><div class="tekst"><p>De vrouw heeft een vraag.</p><p>Zij aarzelt niet.</p><p>Zij stelt de vraag meteen.</p></div><div class="vraag">Wacht zij lang?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to hesitate.</div></div><div class="mock" aria-label="Mock of the game screen"><div class="pic">Two panels: a figure at the edge, knees bent and still; the same figure mid-air above the water.</div><div class="tekst"><p>Sam staat voor het water.</p><p>Hij aarzelt even.</p><p>Dan springt hij erin.</p></div><div class="vraag">Springt Sam in het water?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>ja</b>. Then the gloss: to hesitate.</div></div></div><h3 id="vermoeden-to-suspect-to-guess">vermoeden — to suspect, to guess</h3><p><strong>Band B2</strong> (lemma rank 9185) · <strong>Tier 3</strong> · 1 example. Skip reason today: a thought, feeling or attitude, not a visible action.</p><div class="table-wrap"><table><tbody><tr><th>Scene (example 1)</th><td>Front of a house at dusk: the windows are dark and a car stands at the door. A figure on the pavement looks up, finger at the chin.</td></tr><tr><th>Must read</th><td>Dark windows with the car outside.</td></tr><tr><th>Alt text (Dutch)</th><td>Een huis in de avond met donkere ramen. Voor de deur staat een auto. Een persoon op de stoep kijkt omhoog.</td></tr><tr><th>Note</th><td>The picture gives the evidence; the text gives the guess.</td></tr></tbody></table></div><div class="mocks"><div class="mock" aria-label="Mock of the game screen"><div class="pic">picture: Dark windows with the car outside.</div><div class="tekst"><p>Het huis van de buurman is donker.</p><p>Maar zijn auto staat voor de deur.</p><p>Eva vermoedt: hij slaapt.</p></div><div class="vraag">Weet Eva zeker dat hij slaapt?</div><div class="knoppen"><span>ja</span><span>nee</span></div><div class="uitkomst">Right answer: <b>nee</b>. Then the gloss: to suspect, to guess.</div></div></div><p><em>One example so far; not expanded to four yet.</em></p>
+
+<h2 id="open">What is open</h2>
+<div class="table-wrap"><table><thead><tr><th>Item</th><th>Note</th></tr></thead><tbody>
+<tr><td>Native check</td><td>All Dutch text and alt text here is AI-written and unchecked by a native speaker.</td></tr>
+<tr><td>Rules</td><td>Recorded in <code>Docs/decisions.html</code> and <code>Docs/project-rules.html</code> on 20 November 2026.</td></tr>
+<tr><td>Six verbs with one example</td><td>worden, begrijpen, hopen, proberen, beweren, vermoeden.</td></tr>
+<tr><td>Alt text for examples 2 to 4</td><td>Scene lines only; alt text is written at drawing time.</td></tr>
+<tr><td>Larger card size</td><td>Two-panel scenes (begrijpen, worden, aarzelen) do not read at 170 px. Needs a larger size on tier 3 cards.</td></tr>
+<tr><td>Drawings</td><td>None made; the illustrator batch costs money and the owner said not to draw yet.</td></tr>
+</tbody></table></div>
+    </article>
+    <footer class="footer">
+      <code>Docs/explanation-cards-pilot.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>

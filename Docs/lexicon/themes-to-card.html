@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Words still to teach, grouped by theme — Oefenpad documentation</title>
+<!-- Oefenpad documentation. This page is the document; edit it directly. -->
+<style>
+:root{
+  --kobalt:#2B50C8; --kobalt-donker:#1e3a96; --inkt:#15181f; --grijs:#5b6270;
+  --papier:#fff; --paneel:#f5f7fb; --lijn:#dfe3ec; --code-bg:#eef1f8;
+  --oranje:#b36b00; --rood:#b3261e;
+  --letter:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --top:56px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--inkt:#e8eaf0; --grijs:#a3abb8; --papier:#12151c; --paneel:#171b24;
+    --lijn:#2a3140; --code-bg:#1d2330; --kobalt:#7d9cff; --kobalt-donker:#a9bfff;
+    --oranje:#e0a04a; --rood:#ff8a80;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--letter);background:var(--papier);color:var(--inkt);
+  line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--kobalt);text-decoration-thickness:1px;text-underline-offset:2px}
+a:hover{color:var(--kobalt-donker)}
+.skip{position:absolute;left:-999px;top:0;background:var(--kobalt);color:#fff;
+  padding:8px 12px;z-index:100}
+.skip:focus{left:8px;top:8px}
+.top{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:14px;
+  height:var(--top);padding:0 20px;background:var(--papier);border-bottom:1px solid var(--lijn)}
+.brand{display:flex;align-items:baseline;gap:8px;font-weight:800;font-size:17px;
+  letter-spacing:-.02em;text-decoration:none;color:var(--inkt)}
+.brand span{font-weight:500;font-size:12px;color:var(--grijs);letter-spacing:.02em}
+.top .spacer{flex:1}
+.top-link{font-size:13px;text-decoration:none}
+#nav-toggle{display:none;align-items:center;gap:7px;padding:6px 11px;font:inherit;
+  font-size:13px;font-weight:600;color:var(--inkt);background:var(--paneel);
+  border:1px solid var(--lijn);border-radius:7px;cursor:pointer}
+.shell{display:grid;grid-template-columns:296px minmax(0,1fr)}
+#sidebar{position:sticky;top:var(--top);height:calc(100vh - var(--top));
+  overflow:auto;padding:18px 14px 48px;background:var(--paneel);
+  border-right:1px solid var(--lijn);font-size:14px}
+.search{position:sticky;top:0;z-index:2;padding:0 0 10px;background:var(--paneel)}
+.search input{width:100%;padding:8px 10px;border:1px solid var(--lijn);border-radius:8px;
+  background:var(--papier);color:inherit;font:inherit;font-size:13px}
+.search input::placeholder{color:var(--grijs)}
+.nav-home{display:block;margin:2px 0 4px;padding:6px 8px;border-radius:6px;
+  font-weight:700;text-decoration:none;color:var(--inkt)}
+.nav-home[aria-current="page"]{background:var(--kobalt);color:#fff}
+.nav-group{margin-top:12px;border-top:1px solid var(--lijn);padding-top:9px}
+.nav-group summary{cursor:pointer;list-style:none;display:flex;align-items:center;
+  justify-content:space-between;gap:8px;padding:2px 6px;font-size:10.5px;
+  font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.nav-group summary::-webkit-details-marker{display:none}
+.nav-group summary:after{content:"+";font-size:14px;font-weight:600;line-height:1}
+.nav-group[open] summary:after{content:"–"}
+.nav-group ul{list-style:none;margin:5px 0 0;padding:0}
+.nav-group li a{display:block;padding:3px 8px;border-radius:5px;text-decoration:none;
+  color:var(--inkt);font-size:13.5px;line-height:1.35}
+.nav-group li a:hover{background:rgba(43,80,200,.08)}
+.nav-group li a[aria-current="page"]{background:var(--kobalt);color:#fff}
+main{width:100%;max-width:1040px;margin:0 auto;padding:34px 48px 80px}
+.crumbs{display:flex;flex-wrap:wrap;gap:6px;font-size:12px;color:var(--grijs);
+  margin-bottom:18px}
+.crumbs a{color:var(--grijs)}
+.doc-head{margin-bottom:26px}
+.doc-head h1{margin:0 0 8px;font-size:clamp(26px,3.4vw,38px);line-height:1.12;
+  letter-spacing:-.025em}
+.lede{margin:0;color:var(--grijs);font-size:16px;max-width:70ch}
+.doc-meta{margin-top:12px;font-size:12px;color:var(--grijs);font-family:var(--mono)}
+.page-toc{margin:22px 0 30px;padding:10px 16px 12px;border:1px solid var(--lijn);
+  border-radius:9px;background:var(--paneel);font-size:13px}
+.page-toc summary{cursor:pointer;font-size:10.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--grijs)}
+.page-toc[open] summary{margin-bottom:6px}
+.page-toc ul{list-style:none;margin:0;padding:0;columns:2;column-gap:28px}
+.page-toc li{margin:2px 0;break-inside:avoid}
+.page-toc .toc-h3{margin-left:12px;font-size:12.5px}
+.prose{max-width:84ch}
+.prose h2{margin:2.5em 0 .6em;padding-top:.9em;border-top:1px solid var(--lijn);
+  font-size:1.4rem;line-height:1.25;letter-spacing:-.015em}
+.prose h3{margin:1.9em 0 .5em;font-size:1.1rem;line-height:1.3}
+.prose h4{margin:1.5em 0 .4em;font-size:1rem;color:var(--grijs);
+  text-transform:uppercase;letter-spacing:.04em}
+.prose p,.prose li{line-height:1.68}
+.prose ul,.prose ol{padding-left:1.35em;margin:.7em 0}
+.prose li+li{margin-top:.22em}
+.prose code{background:var(--code-bg);padding:.1em .34em;border-radius:4px;
+  font-family:var(--mono);font-size:.88em}
+.prose pre{background:var(--code-bg);border:1px solid var(--lijn);border-radius:8px;
+  padding:14px 16px;overflow:auto;line-height:1.5}
+.prose pre code{background:none;padding:0;font-size:.85em}
+.prose blockquote{margin:1.4em 0;padding:.15em 0 .15em 16px;
+  border-left:3px solid var(--kobalt);color:var(--grijs)}
+.prose blockquote p{margin:.55em 0}
+.prose hr{border:0;border-top:1px solid var(--lijn);margin:2.3em 0}
+.prose img{max-width:100%;height:auto}
+.table-wrap{overflow-x:auto;margin:1.2em 0;border:1px solid var(--lijn);border-radius:8px}
+.prose table{border-collapse:collapse;width:100%;font-size:.92rem;line-height:1.5}
+.prose th,.prose td{padding:8px 12px;border-bottom:1px solid var(--lijn);
+  text-align:left;vertical-align:top}
+.prose thead th{background:var(--paneel);font-size:.78rem;text-transform:uppercase;
+  letter-spacing:.045em;color:var(--grijs)}
+.prose tbody tr:last-child td{border-bottom:0}
+.prose tbody tr:nth-child(even){background:rgba(43,80,200,.035)}
+.prose details{margin:1.2em 0;padding:10px 14px;border:1px solid var(--lijn);
+  border-radius:8px;background:var(--paneel)}
+.prose details summary{cursor:pointer;font-weight:600}
+.prose details[open] summary{margin-bottom:.35em}
+.prose details>.table-wrap:last-child,.prose details>ul:last-child,
+.prose details>p:last-child{margin-bottom:0}
+.pager{display:flex;gap:16px;margin-top:52px;padding-top:20px;
+  border-top:1px solid var(--lijn);font-size:14px}
+.pager a{max-width:48%;text-decoration:none}
+.pager .next{margin-left:auto;text-align:right}
+.pager span{display:block;font-size:10.5px;text-transform:uppercase;
+  letter-spacing:.08em;color:var(--grijs)}
+.footer{margin-top:36px;font-size:12px;color:var(--grijs);line-height:1.6}
+.footer code{font-family:var(--mono);font-size:.95em}
+#scrim{display:none}
+.index-head{max-width:74ch;margin-bottom:34px}
+.eyebrow{margin:0 0 6px;font-size:11px;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--kobalt)}
+.index-head h1{margin:0 0 10px;font-size:clamp(30px,4vw,44px);line-height:1.08;
+  letter-spacing:-.03em}
+.index-stats{margin-top:14px;font-size:13px;color:var(--grijs)}
+.index-group{margin-top:38px}
+.index-group h2{margin:0;padding-top:10px;border-top:2px solid var(--kobalt);
+  font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--grijs)}
+.index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:12px;margin-top:14px}
+.index-card{display:flex;flex-direction:column;gap:5px;padding:14px 16px;
+  border:1px solid var(--lijn);border-radius:10px;text-decoration:none;
+  color:var(--inkt);background:var(--papier)}
+.index-card:hover{border-color:var(--kobalt);background:var(--paneel)}
+.index-card b{font-size:15px;line-height:1.3;letter-spacing:-.01em}
+.index-card span{font-size:13px;color:var(--grijs);line-height:1.45}
+.index-card code{font-size:11px;color:var(--grijs);font-family:var(--mono);
+  margin-top:auto;padding-top:4px}
+.index-note{margin-top:44px;padding:16px 18px;border:1px dashed var(--lijn);
+  border-radius:9px;font-size:13px;color:var(--grijs);max-width:74ch}
+.index-note code{font-family:var(--mono);font-size:.95em}
+@media (max-width:980px){
+  #nav-toggle{display:inline-flex}
+  .shell{display:block}
+  #sidebar{position:fixed;inset:0 auto 0 0;width:min(86vw,320px);height:100vh;
+    z-index:40;transform:translateX(-101%);transition:transform .18s ease;
+    box-shadow:0 0 40px rgba(0,0,0,.25);padding-top:16px}
+  body.nav-open #sidebar{transform:none}
+  #scrim{position:fixed;inset:0;z-index:35;background:rgba(8,12,20,.45)}
+  body.nav-open #scrim{display:block}
+  main{padding:26px 20px 64px}
+  .page-toc ul{columns:1}
+  .doc-head h1{font-size:28px}
+}
+@media print{
+  .top,#sidebar,.pager,#scrim,.page-toc,.skip{display:none}
+  .shell{display:block}
+  main{padding:0;max-width:none}
+  .prose{max-width:none}
+  a{color:inherit;text-decoration:none}
+  .table-wrap{overflow:visible}
+  .prose details{border:0;padding:0;background:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top">
+  <button id="nav-toggle" type="button" aria-controls="sidebar" aria-expanded="false">Menu</button>
+  <a class="brand" href="../index.html">Oefenpad <span>documentation</span></a>
+  <span class="spacer"></span>
+  <a class="top-link" href="../../index.html">Site</a>
+</header>
+<div class="shell">
+  <aside id="sidebar" aria-label="Documentation menu">
+    <div class="search"><input id="nav-filter" type="search" placeholder="Filter documents…" aria-label="Filter documents"></div>
+    <a class="nav-home" href="../index.html">Overview</a>
+    <details class="nav-group" data-open="1" open><summary>Start here</summary><ul><li><a href="../project-rules.html" data-path="Docs/project-rules.html">Project rules</a></li><li><a href="../product.html" data-path="Docs/product.html">Product brief</a></li><li><a href="../game-catalogue.html" data-path="Docs/game-catalogue.html">Game catalogue</a></li><li><a href="../designguide.html" data-path="Docs/designguide.html">Design guide</a></li><li><a href="../decisions.html" data-path="Docs/decisions.html">Decisions and open questions</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Accounts</summary><ul><li><a href="../accounts.html" data-path="Docs/accounts.html">Accounts and sign-up</a></li><li><a href="../accounts-handover.html" data-path="Docs/accounts-handover.html">Accounts handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Games</summary><ul><li><a href="../games.html" data-path="Docs/games.html">Games build spec</a></li><li><a href="../games-backend.html" data-path="Docs/games-backend.html">Games backend</a></li><li><a href="../prepositions.html" data-path="Docs/prepositions.html">Voorzetselpaden spec</a></li><li><a href="../prepositions-implementation.html" data-path="Docs/prepositions-implementation.html">Voorzetselpaden implementation</a></li><li><a href="../prepositions-roadmap.html" data-path="Docs/prepositions-roadmap.html">Voorzetselpaden roadmap</a></li><li><a href="../game-art.html" data-path="Docs/game-art.html">Game art</a></li><li><a href="../voorzetselpaden-art-redo.html" data-path="Docs/voorzetselpaden-art-redo.html">Voorzetselpaden art to redo</a></li><li><a href="../voorzetselpaden-content-checks.html" data-path="Docs/voorzetselpaden-content-checks.html">Voorzetselpaden content checks</a></li><li><a href="../story-machine.html" data-path="Docs/story-machine.html">Story Machine spec</a></li><li><a href="../story-machine-art.html" data-path="Docs/story-machine-art.html">Story Machine art</a></li><li><a href="../story-machine-words.html" data-path="Docs/story-machine-words.html">Story Machine words</a></li><li><a href="../uit-elkaar.html" data-path="Docs/uit-elkaar.html">Uit Elkaar</a></li><li><a href="../verb-games-plan.html" data-path="Docs/verb-games-plan.html">Verb games — plan and questions</a></li><li><a href="../reuse-bigtoegames.html" data-path="Docs/reuse-bigtoegames.html">Reuse from BigToe Games</a></li><li><a href="../review-handover.html" data-path="Docs/review-handover.html">Review and hardening handover</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Lexicon</summary><ul><li><a href="../lexicon/index.html" data-path="Docs/lexicon/index.html">Lexicon overview</a></li><li><a href="../lexicon/bronnen.html" data-path="Docs/lexicon/bronnen.html">Where the 10,000 words come from</a></li><li><a href="../lexicon/aanvulling.html" data-path="Docs/lexicon/aanvulling.html">The next ~3,000 words</a></li><li><a href="../lexicon/gloss-audit.html" data-path="Docs/lexicon/gloss-audit.html">English gloss audit</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Design history</summary><ul><li><a href="../design-process.html" data-path="Docs/design-process.html">How the home page was designed</a></li></ul></details>
+    <details class="nav-group" data-open="1" open><summary>Content checks</summary><ul><li><a href="../voorzetselpaden/AGENTS.html" data-path="Docs/voorzetselpaden/AGENTS.html">Working notes for agents</a></li><li><a href="../voorzetselpaden/dutchgrammar-check.html" data-path="Docs/voorzetselpaden/dutchgrammar-check.html">dutchgrammar.com list checked</a></li><li><a href="../voorzetselpaden/verb-prep-check-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-check-2026-11-15.html">ZiN and Heard Dutch Here checked</a></li><li><a href="../voorzetselpaden/verb-prep-verification-2026-11-15.html" data-path="Docs/voorzetselpaden/verb-prep-verification-2026-11-15.html">Verifying the additions</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Content plans</summary><ul><li><a href="../voorzetselpaden/index.html" data-path="Docs/voorzetselpaden/index.html">Master index — every frame</a></li><li><a href="../voorzetselpaden/a0.html" data-path="Docs/voorzetselpaden/a0.html">A0 band</a></li><li><a href="../voorzetselpaden/a1.html" data-path="Docs/voorzetselpaden/a1.html">A1 band</a></li><li><a href="../voorzetselpaden/a2.html" data-path="Docs/voorzetselpaden/a2.html">A2 band</a></li><li><a href="../voorzetselpaden/a2-pairs.html" data-path="Docs/voorzetselpaden/a2-pairs.html">A2 pairs</a></li><li><a href="../voorzetselpaden/a2-plus.html" data-path="Docs/voorzetselpaden/a2-plus.html">A2+ band</a></li><li><a href="../voorzetselpaden/b1.html" data-path="Docs/voorzetselpaden/b1.html">B1 band</a></li><li><a href="../voorzetselpaden/b1-plus.html" data-path="Docs/voorzetselpaden/b1-plus.html">B1+ band</a></li><li><a href="../voorzetselpaden/b2.html" data-path="Docs/voorzetselpaden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Werkwoorden</summary><ul><li><a href="../werkwoorden/AGENTS.html" data-path="Docs/werkwoorden/AGENTS.html">Working notes for agents</a></li><li><a href="../werkwoorden/index.html" data-path="Docs/werkwoorden/index.html">Overview — every verb</a></li><li><a href="../werkwoorden/a0-irregular.html" data-path="Docs/werkwoorden/a0-irregular.html">A0 irregular</a></li><li><a href="../werkwoorden/a0-regular.html" data-path="Docs/werkwoorden/a0-regular.html">A0 regular</a></li><li><a href="../werkwoorden/a1-irregular.html" data-path="Docs/werkwoorden/a1-irregular.html">A1 irregular</a></li><li><a href="../werkwoorden/a1-regular.html" data-path="Docs/werkwoorden/a1-regular.html">A1 regular</a></li><li><a href="../werkwoorden/a2-irregular.html" data-path="Docs/werkwoorden/a2-irregular.html">A2 irregular</a></li><li><a href="../werkwoorden/a2-regular.html" data-path="Docs/werkwoorden/a2-regular.html">A2 regular</a></li><li><a href="../werkwoorden/b1-irregular.html" data-path="Docs/werkwoorden/b1-irregular.html">B1 irregular</a></li><li><a href="../werkwoorden/b1-regular.html" data-path="Docs/werkwoorden/b1-regular.html">B1 regular</a></li><li><a href="../werkwoorden/b2-irregular.html" data-path="Docs/werkwoorden/b2-irregular.html">B2 irregular</a></li><li><a href="../werkwoorden/b2-regular.html" data-path="Docs/werkwoorden/b2-regular.html">B2 regular</a></li><li><a href="../werkwoorden/matrix.html" data-path="Docs/werkwoorden/matrix.html">Matrix</a></li><li><a href="../werkwoorden/backlog.html" data-path="Docs/werkwoorden/backlog.html">Backlog</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Card families</summary><ul><li><a href="../card-families-handover.html" data-path="Docs/card-families-handover.html">Card families handover</a></li><li><a href="../lexicon/themes-to-card.html" data-path="Docs/lexicon/themes-to-card.html">Words still to teach, by theme</a></li><li><a href="../explanation-cards-pilot.html" data-path="Docs/explanation-cards-pilot.html">Explanation cards pilot</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Bijvoeglijke naamwoorden</summary><ul><li><a href="../bijvoeglijke-naamwoorden/index.html" data-path="Docs/bijvoeglijke-naamwoorden/index.html">Overview</a></li><li><a href="../bijvoeglijke-naamwoorden/a0.html" data-path="Docs/bijvoeglijke-naamwoorden/a0.html">A0 band</a></li><li><a href="../bijvoeglijke-naamwoorden/a1.html" data-path="Docs/bijvoeglijke-naamwoorden/a1.html">A1 band</a></li><li><a href="../bijvoeglijke-naamwoorden/a2.html" data-path="Docs/bijvoeglijke-naamwoorden/a2.html">A2 band</a></li><li><a href="../bijvoeglijke-naamwoorden/b1.html" data-path="Docs/bijvoeglijke-naamwoorden/b1.html">B1 band</a></li><li><a href="../bijvoeglijke-naamwoorden/b2.html" data-path="Docs/bijvoeglijke-naamwoorden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Zelfstandige naamwoorden</summary><ul><li><a href="../zelfstandige-naamwoorden/index.html" data-path="Docs/zelfstandige-naamwoorden/index.html">Overview</a></li><li><a href="../zelfstandige-naamwoorden/a0.html" data-path="Docs/zelfstandige-naamwoorden/a0.html">A0 band</a></li><li><a href="../zelfstandige-naamwoorden/a1.html" data-path="Docs/zelfstandige-naamwoorden/a1.html">A1 band</a></li><li><a href="../zelfstandige-naamwoorden/a2.html" data-path="Docs/zelfstandige-naamwoorden/a2.html">A2 band</a></li><li><a href="../zelfstandige-naamwoorden/b1.html" data-path="Docs/zelfstandige-naamwoorden/b1.html">B1 band</a></li><li><a href="../zelfstandige-naamwoorden/b2.html" data-path="Docs/zelfstandige-naamwoorden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Bijwoorden</summary><ul><li><a href="../bijwoorden/index.html" data-path="Docs/bijwoorden/index.html">Overview</a></li><li><a href="../bijwoorden/a0.html" data-path="Docs/bijwoorden/a0.html">A0 band</a></li><li><a href="../bijwoorden/a1.html" data-path="Docs/bijwoorden/a1.html">A1 band</a></li><li><a href="../bijwoorden/a2.html" data-path="Docs/bijwoorden/a2.html">A2 band</a></li><li><a href="../bijwoorden/b1.html" data-path="Docs/bijwoorden/b1.html">B1 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Scheidbare werkwoorden</summary><ul><li><a href="../scheidbare-werkwoorden/index.html" data-path="Docs/scheidbare-werkwoorden/index.html">Overview</a></li><li><a href="../scheidbare-werkwoorden/a2.html" data-path="Docs/scheidbare-werkwoorden/a2.html">A2 band</a></li><li><a href="../scheidbare-werkwoorden/b1.html" data-path="Docs/scheidbare-werkwoorden/b1.html">B1 band</a></li><li><a href="../scheidbare-werkwoorden/b2.html" data-path="Docs/scheidbare-werkwoorden/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Vaste uitdrukkingen</summary><ul><li><a href="../vaste-uitdrukkingen/index.html" data-path="Docs/vaste-uitdrukkingen/index.html">Overview</a></li><li><a href="../vaste-uitdrukkingen/a0.html" data-path="Docs/vaste-uitdrukkingen/a0.html">A0 band</a></li><li><a href="../vaste-uitdrukkingen/a1.html" data-path="Docs/vaste-uitdrukkingen/a1.html">A1 band</a></li><li><a href="../vaste-uitdrukkingen/a2.html" data-path="Docs/vaste-uitdrukkingen/a2.html">A2 band</a></li><li><a href="../vaste-uitdrukkingen/b1.html" data-path="Docs/vaste-uitdrukkingen/b1.html">B1 band</a></li><li><a href="../vaste-uitdrukkingen/b2.html" data-path="Docs/vaste-uitdrukkingen/b2.html">B2 band</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Band matrices</summary><ul><li><a href="../voorzetselpaden/matrix-a0.html" data-path="Docs/voorzetselpaden/matrix-a0.html">A0 matrix</a></li><li><a href="../voorzetselpaden/matrix-a1.html" data-path="Docs/voorzetselpaden/matrix-a1.html">A1 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2.html" data-path="Docs/voorzetselpaden/matrix-a2.html">A2 matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-pairs.html" data-path="Docs/voorzetselpaden/matrix-a2-pairs.html">A2 pairs matrix</a></li><li><a href="../voorzetselpaden/matrix-a2-plus.html" data-path="Docs/voorzetselpaden/matrix-a2-plus.html">A2+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b1.html" data-path="Docs/voorzetselpaden/matrix-b1.html">B1 matrix</a></li><li><a href="../voorzetselpaden/matrix-b1-plus.html" data-path="Docs/voorzetselpaden/matrix-b1-plus.html">B1+ matrix</a></li><li><a href="../voorzetselpaden/matrix-b2.html" data-path="Docs/voorzetselpaden/matrix-b2.html">B2 matrix</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Design prototypes</summary><ul><li><a href="../design-options/index.html" data-path="Docs/design-options/index.html">Home-page prototypes</a></li><li><a href="../design-options/game-chrome/index.html" data-path="Docs/design-options/game-chrome/index.html">Game chrome prototypes</a></li><li><a href="../archive/identity-2026-10-31/sheet.html" data-path="Docs/archive/identity-2026-10-31/sheet.html">Identity sheet</a></li></ul></details>
+    <details class="nav-group" data-open="0"><summary>Archive</summary><ul><li><a href="../archive/Concept.html" data-path="Docs/archive/Concept.html">Quick Wins in Dutch — concept</a></li><li><a href="../archive/rethink-2026-11-16/README.html" data-path="Docs/archive/rethink-2026-11-16/README.html">Rethink: structure and art</a></li><li><a href="../archive/suggestions.html" data-path="Docs/archive/suggestions.html">Brainstorm</a></li><li><a href="../archive/todo.html" data-path="Docs/archive/todo.html">Scratch list</a></li><li><a href="../archive/mvp.html" data-path="Docs/archive/mvp.html">MVP experiments</a></li><li><a href="../archive/designguide-delft-2026-10-31.html" data-path="Docs/archive/designguide-delft-2026-10-31.html">Design guide, Delft</a></li><li><a href="../archive/preposition-review-findings-2026-11-10.html" data-path="Docs/archive/preposition-review-findings-2026-11-10.html">Prepositions art review</a></li><li><a href="../archive/prepositions-art-handover-2026-11-10.html" data-path="Docs/archive/prepositions-art-handover-2026-11-10.html">Prepositions art handover</a></li><li><a href="../archive/prepositions-art-prompts-2026-11-12.html" data-path="Docs/archive/prepositions-art-prompts-2026-11-12.html">Art prompt history</a></li><li><a href="../archive/prepositions-art-redraw-prompts.html" data-path="Docs/archive/prepositions-art-redraw-prompts.html">Redraw prompts</a></li></ul></details>
+  </aside>
+  <div id="scrim"></div>
+  <main id="main">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="../index.html">Docs</a><span>/</span><span>Lexicon</span>
+    </nav>
+    <header class="doc-head">
+      <h1>Words still to teach, grouped by theme</h1>
+      <p class="lede">The master words that have no card yet, regrouped by semantic domain instead of by CEFR level.</p>
+      <p class="doc-meta">Docs/lexicon/themes-to-card.html</p>
+    </header>
+    <details class="page-toc" open><summary>On this page</summary><ul><li class="toc-h2"><a href="#the-answer-in-one-paragraph">The answer in one paragraph</a></li><li class="toc-h2"><a href="#definitions">Definitions and caveats</a></li><li class="toc-h2"><a href="#themes">The themes in numbers</a></li><li class="toc-h2"><a href="#by-theme">The most frequent words per theme</a></li><li class="toc-h2"><a href="#how-to-teach-these">How to teach these</a></li></ul></details>
+    <article class="prose">
+<h2 id="the-answer-in-one-paragraph">The answer in one paragraph</h2>
+<p><strong>9,194 of the 10,000 master words have no card</strong>, and about <strong>5,681</strong> of those are plausible candidates for picture cards. The themes are the 29 semantic domains already tagged in <code>tools/lexicon/woorden-domein.tsv</code>; nothing was re-tagged by hand. The five themes with the most imageable uncarded words are Arts & media, Animals, Nature & weather, Work & jobs and Body & health. The full list is <code>tools/lexicon/themes-to-card.tsv</code>, rebuilt by <code>tools/build-themes-page.py</code>.</p>
+<h2 id="definitions">Definitions and caveats</h2>
+<p><strong>Carded</strong> means the headword appears as a card in Werkwoorden, Bijvoeglijke naamwoorden, Zelfstandige naamwoorden, Bijwoorden, Scheidbare werkwoorden or Vaste uitdrukkingen. Sense ids and plural cards map to their lemma; a sense key such as <code>bank (zitplaats)</code> counts when its base word is carded in a family of the same part of speech. Voorzetselpaden is not counted, and prepositions are function words, so they fall outside picture cards anyway.</p>
+<p><strong>The domain tags are noisy.</strong> A lemma is filed under its most common nominal sense, so a verb or adjective can sit in a theme that fits only its noun. The part-of-speech tags are noisy too, and a few lemmas are tagged <code>phrase</code> or fall under the wrong class. Treat every count as a starting point for the owner, not a measurement.</p>
+<p><strong>Imageable estimate.</strong> The themes Abstract &amp; general, Function words and Names, and the parts of speech function, name and interjection, count as not imageable. Everything else counts as an imageable candidate. This is a rough rule: many words in the remaining themes are still abstract or specialist.</p>
+<h2 id="themes">The themes in numbers</h2>
+<p>Sorted by imageable estimate, largest first. The last column lists the existing card families that already hold at least one word of the theme.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Theme</th><th>Master words</th><th>Carded</th><th>Uncarded</th><th>Noun</th><th>Verb</th><th>Adj</th><th>Adv</th><th>Other</th><th>Imageable estimate</th><th>Families already touching it</th></tr></thead>
+<tbody>
+<tr><td><a href="#theme-arts-media">Arts &amp; media</a></td><td>414</td><td>14</td><td>400</td><td>371</td><td>14</td><td>15</td><td>0</td><td>0</td><td>400</td><td>Werkwoorden (5), Bijvoeglijke naamwoorden (1), Zelfstandige naamwoorden (8)</td></tr>
+<tr><td><a href="#theme-animals">Animals</a></td><td>450</td><td>67</td><td>383</td><td>364</td><td>10</td><td>9</td><td>0</td><td>0</td><td>383</td><td>Werkwoorden (8), Bijvoeglijke naamwoorden (3), Zelfstandige naamwoorden (56)</td></tr>
+<tr><td><a href="#theme-nature-weather">Nature &amp; weather</a></td><td>377</td><td>18</td><td>359</td><td>324</td><td>12</td><td>21</td><td>2</td><td>0</td><td>359</td><td>Werkwoorden (4), Bijvoeglijke naamwoorden (3), Zelfstandige naamwoorden (11)</td></tr>
+<tr><td><a href="#theme-work-jobs">Work &amp; jobs</a></td><td>290</td><td>3</td><td>287</td><td>255</td><td>21</td><td>11</td><td>0</td><td>0</td><td>287</td><td>Werkwoorden (1), Scheidbare werkwoorden (1), Bijvoeglijke naamwoorden (1)</td></tr>
+<tr><td><a href="#theme-body-health">Body &amp; health</a></td><td>322</td><td>57</td><td>265</td><td>210</td><td>30</td><td>21</td><td>4</td><td>0</td><td>265</td><td>Werkwoorden (13), Scheidbare werkwoorden (2), Bijvoeglijke naamwoorden (9), Zelfstandige naamwoorden (29), Bijwoorden (4)</td></tr>
+<tr><td><a href="#theme-food-drink">Food &amp; drink</a></td><td>295</td><td>36</td><td>259</td><td>234</td><td>17</td><td>8</td><td>0</td><td>0</td><td>259</td><td>Werkwoorden (6), Scheidbare werkwoorden (1), Bijvoeglijke naamwoorden (1), Zelfstandige naamwoorden (28)</td></tr>
+<tr><td><a href="#theme-movement-position">Movement &amp; position</a></td><td>349</td><td>96</td><td>253</td><td>71</td><td>147</td><td>9</td><td>26</td><td>0</td><td>253</td><td>Werkwoorden (48), Scheidbare werkwoorden (29), Bijvoeglijke naamwoorden (4), Bijwoorden (15)</td></tr>
+<tr><td><a href="#theme-house-home">House &amp; home</a></td><td>303</td><td>62</td><td>241</td><td>217</td><td>19</td><td>5</td><td>0</td><td>0</td><td>241</td><td>Werkwoorden (10), Scheidbare werkwoorden (8), Bijvoeglijke naamwoorden (6), Zelfstandige naamwoorden (36), Bijwoorden (2)</td></tr>
+<tr><td><a href="#theme-time">Time</a></td><td>251</td><td>13</td><td>238</td><td>104</td><td>23</td><td>18</td><td>93</td><td>0</td><td>238</td><td>Werkwoorden (6), Scheidbare werkwoorden (1), Bijvoeglijke naamwoorden (3), Zelfstandige naamwoorden (1), Bijwoorden (2)</td></tr>
+<tr><td><a href="#theme-society-politics">Society &amp; politics</a></td><td>234</td><td>4</td><td>230</td><td>199</td><td>8</td><td>23</td><td>0</td><td>0</td><td>230</td><td>Werkwoorden (2), Bijwoorden (2)</td></tr>
+<tr><td><a href="#theme-thought-knowledge">Thought &amp; knowledge</a></td><td>229</td><td>10</td><td>219</td><td>153</td><td>47</td><td>19</td><td>0</td><td>0</td><td>219</td><td>Werkwoorden (8), Scheidbare werkwoorden (2)</td></tr>
+<tr><td><a href="#theme-transport-travel">Transport &amp; travel</a></td><td>241</td><td>26</td><td>215</td><td>186</td><td>21</td><td>3</td><td>5</td><td>0</td><td>215</td><td>Werkwoorden (9), Scheidbare werkwoorden (1), Zelfstandige naamwoorden (16)</td></tr>
+<tr><td><a href="#theme-people-relations">People &amp; relations</a></td><td>218</td><td>10</td><td>208</td><td>168</td><td>24</td><td>16</td><td>0</td><td>0</td><td>208</td><td>Werkwoorden (6), Scheidbare werkwoorden (1), Zelfstandige naamwoorden (2), Bijwoorden (1)</td></tr>
+<tr><td><a href="#theme-technology-tools">Technology &amp; tools</a></td><td>221</td><td>21</td><td>200</td><td>172</td><td>15</td><td>13</td><td>0</td><td>0</td><td>200</td><td>Werkwoorden (6), Scheidbare werkwoorden (2), Bijvoeglijke naamwoorden (1), Zelfstandige naamwoorden (12)</td></tr>
+<tr><td><a href="#theme-sport-games">Sport &amp; games</a></td><td>218</td><td>19</td><td>199</td><td>167</td><td>22</td><td>9</td><td>1</td><td>0</td><td>199</td><td>Werkwoorden (13), Zelfstandige naamwoorden (6)</td></tr>
+<tr><td><a href="#theme-communication-language">Communication &amp; language</a></td><td>256</td><td>22</td><td>234</td><td>131</td><td>60</td><td>5</td><td>1</td><td>37</td><td>198</td><td>Werkwoorden (16), Scheidbare werkwoorden (4), Bijvoeglijke naamwoorden (2)</td></tr>
+<tr><td><a href="#theme-plants-farming">Plants &amp; farming</a></td><td>200</td><td>12</td><td>188</td><td>169</td><td>12</td><td>7</td><td>0</td><td>0</td><td>188</td><td>Werkwoorden (3), Bijvoeglijke naamwoorden (1), Zelfstandige naamwoorden (8)</td></tr>
+<tr><td><a href="#theme-money-trade">Money &amp; trade</a></td><td>204</td><td>17</td><td>187</td><td>139</td><td>38</td><td>10</td><td>0</td><td>0</td><td>187</td><td>Werkwoorden (12), Scheidbare werkwoorden (1), Bijvoeglijke naamwoorden (3), Zelfstandige naamwoorden (1)</td></tr>
+<tr><td><a href="#theme-law-conflict">Law &amp; conflict</a></td><td>167</td><td>1</td><td>166</td><td>127</td><td>27</td><td>12</td><td>0</td><td>0</td><td>166</td><td>Werkwoorden (1)</td></tr>
+<tr><td><a href="#theme-quantity-measure">Quantity &amp; measure</a></td><td>226</td><td>10</td><td>216</td><td>98</td><td>16</td><td>16</td><td>25</td><td>61</td><td>155</td><td>Werkwoorden (3), Scheidbare werkwoorden (1), Bijvoeglijke naamwoorden (1), Zelfstandige naamwoorden (1), Bijwoorden (4)</td></tr>
+<tr><td><a href="#theme-character-behaviour">Character &amp; behaviour</a></td><td>155</td><td>19</td><td>136</td><td>66</td><td>22</td><td>48</td><td>0</td><td>0</td><td>136</td><td>Werkwoorden (4), Scheidbare werkwoorden (2), Bijvoeglijke naamwoorden (12), Zelfstandige naamwoorden (1)</td></tr>
+<tr><td><a href="#theme-clothing-appearance">Clothing &amp; appearance</a></td><td>166</td><td>31</td><td>135</td><td>116</td><td>13</td><td>5</td><td>1</td><td>0</td><td>135</td><td>Werkwoorden (1), Scheidbare werkwoorden (1), Bijvoeglijke naamwoorden (1), Zelfstandige naamwoorden (28)</td></tr>
+<tr><td><a href="#theme-emotion-feeling">Emotion &amp; feeling</a></td><td>147</td><td>13</td><td>134</td><td>72</td><td>33</td><td>28</td><td>1</td><td>0</td><td>134</td><td>Werkwoorden (5), Bijvoeglijke naamwoorden (8)</td></tr>
+<tr><td><a href="#theme-places-geography">Places &amp; geography</a></td><td>124</td><td>3</td><td>121</td><td>106</td><td>3</td><td>12</td><td>0</td><td>0</td><td>121</td><td>Werkwoorden (1), Zelfstandige naamwoorden (2)</td></tr>
+<tr><td><a href="#theme-religion-belief">Religion &amp; belief</a></td><td>117</td><td>2</td><td>115</td><td>103</td><td>4</td><td>8</td><td>0</td><td>0</td><td>115</td><td>Werkwoorden (2)</td></tr>
+<tr><td><a href="#theme-education-learning">Education &amp; learning</a></td><td>117</td><td>3</td><td>114</td><td>95</td><td>16</td><td>3</td><td>0</td><td>0</td><td>114</td><td>Werkwoorden (3)</td></tr>
+<tr><td><a href="#theme-war-military">War &amp; military</a></td><td>76</td><td>0</td><td>76</td><td>66</td><td>7</td><td>3</td><td>0</td><td>0</td><td>76</td><td>none</td></tr>
+<tr><td><a href="#theme-abstract-general">Abstract &amp; general</a></td><td>3,167</td><td>212</td><td>2,955</td><td>1,561</td><td>581</td><td>642</td><td>171</td><td>0</td><td>0</td><td>Werkwoorden (104), Scheidbare werkwoorden (19), Bijvoeglijke naamwoorden (70), Zelfstandige naamwoorden (2), Bijwoorden (17)</td></tr>
+<tr><td><a href="#theme-function-words">Function words</a></td><td>147</td><td>5</td><td>142</td><td>1</td><td>0</td><td>0</td><td>1</td><td>140</td><td>0</td><td>Bijwoorden (5)</td></tr>
+<tr><td><a href="#theme-names">Names</a></td><td>319</td><td>0</td><td>319</td><td>4</td><td>0</td><td>0</td><td>0</td><td>315</td><td>0</td><td>none</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>10,000</strong></td><td><strong>806</strong></td><td><strong>9,194</strong></td><td><strong>6,049</strong></td><td><strong>1,262</strong></td><td><strong>999</strong></td><td><strong>331</strong></td><td><strong>553</strong></td><td><strong>5,681</strong></td><td></td></tr>
+</tbody></table></div>
+<h2 id="by-theme">The most frequent words per theme</h2>
+<p>Each block lists the 30 most frequent uncarded words of the theme, whatever their part of speech, by frequency rank (1 is the most frequent). The contrast note names opposites only where both words appear in the list shown.</p>
+<details id="theme-arts-media"><summary>Arts &amp; media — 400 uncarded, 400 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>foto</td><td>noun</td><td>photo</td><td>162</td></tr>
+<tr><td>film</td><td>noun</td><td>film</td><td>215</td></tr>
+<tr><td>video</td><td>noun</td><td>video</td><td>231</td></tr>
+<tr><td>artikel</td><td>noun</td><td>a) article b) product, object</td><td>238</td></tr>
+<tr><td>verhaal</td><td>noun</td><td>story</td><td>255</td></tr>
+<tr><td>muziek</td><td>noun</td><td>music</td><td>267</td></tr>
+<tr><td>media</td><td>noun</td><td>media</td><td>346</td></tr>
+<tr><td>actie</td><td>noun</td><td>action</td><td>397</td></tr>
+<tr><td>beeld</td><td>noun</td><td>statue</td><td>453</td></tr>
+<tr><td>lijst</td><td>noun</td><td>list</td><td>459</td></tr>
+<tr><td>serie</td><td>noun</td><td>series</td><td>527</td></tr>
+<tr><td>bron</td><td>noun</td><td>source</td><td>578</td></tr>
+<tr><td>kunst</td><td>noun</td><td>art</td><td>627</td></tr>
+<tr><td>band</td><td>noun</td><td>bond</td><td>644</td></tr>
+<tr><td>festival</td><td>noun</td><td>festival</td><td>689</td></tr>
+<tr><td>museum</td><td>noun</td><td>museum</td><td>707</td></tr>
+<tr><td>gouden</td><td>adj</td><td>gold</td><td>861</td></tr>
+<tr><td>maat</td><td>noun</td><td>1) size 2) rhythm 3) mate</td><td>875</td></tr>
+<tr><td>aflevering</td><td>noun</td><td>episode</td><td>884</td></tr>
+<tr><td>uitgebreid</td><td>adj</td><td>extensive</td><td>910</td></tr>
+<tr><td>album</td><td>noun</td><td>album</td><td>936</td></tr>
+<tr><td>ontwerp</td><td>noun</td><td>design</td><td>949</td></tr>
+<tr><td>vertaling</td><td>noun</td><td>translation</td><td>974</td></tr>
+<tr><td>editie</td><td>noun</td><td>edition</td><td>1001</td></tr>
+<tr><td>verwijderd</td><td>noun</td><td>deleted</td><td>1137</td></tr>
+<tr><td>auteur</td><td>noun</td><td>author</td><td>1139</td></tr>
+<tr><td>pers</td><td>noun</td><td>a) press (journalists) b) press</td><td>1168</td></tr>
+<tr><td>concert</td><td>noun</td><td>concert</td><td>1181</td></tr>
+<tr><td>reeks</td><td>noun</td><td>series</td><td>1217</td></tr>
+<tr><td>thema</td><td>noun</td><td>theme</td><td>1223</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-animals"><summary>Animals — 383 uncarded, 383 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>was</td><td>noun</td><td>wax</td><td>23</td></tr>
+<tr><td>gent</td><td>noun</td><td>bird of the Sulidae family</td><td>1146</td></tr>
+<tr><td>paard</td><td>noun</td><td>horse</td><td>1167</td></tr>
+<tr><td>big</td><td>adj</td><td>piglet, little pig</td><td>1206</td></tr>
+<tr><td>dier</td><td>noun</td><td>animal</td><td>1382</td></tr>
+<tr><td>lagen</td><td>noun</td><td>strata</td><td>1415</td></tr>
+<tr><td>jan-van-gent</td><td>noun</td><td>the northern gannet, Morus bassanus</td><td>1436</td></tr>
+<tr><td>steek</td><td>noun</td><td>stitch, twinge</td><td>1628</td></tr>
+<tr><td>das</td><td>noun</td><td>badger</td><td>1701</td></tr>
+<tr><td>bas</td><td>noun</td><td>bass</td><td>1875</td></tr>
+<tr><td>hoorn</td><td>noun</td><td>receiver, horn</td><td>1883</td></tr>
+<tr><td>kip</td><td>noun</td><td>chicken</td><td>1886</td></tr>
+<tr><td>wolf</td><td>noun</td><td>wolf</td><td>1987</td></tr>
+<tr><td>brak</td><td>noun</td><td>brackish</td><td>2024</td></tr>
+<tr><td>beer</td><td>noun</td><td>bear</td><td>2248</td></tr>
+<tr><td>leeuw</td><td>noun</td><td>lion</td><td>2263</td></tr>
+<tr><td>ruil</td><td>noun</td><td>exchange</td><td>2503</td></tr>
+<tr><td>luis</td><td>noun</td><td>louse</td><td>2565</td></tr>
+<tr><td>vos</td><td>noun</td><td>fox</td><td>2616</td></tr>
+<tr><td>mol</td><td>noun</td><td>mole</td><td>2676</td></tr>
+<tr><td>aap</td><td>noun</td><td>monkey</td><td>2853</td></tr>
+<tr><td>jaap</td><td>noun</td><td>gash, a deep cut</td><td>2966</td></tr>
+<tr><td>imago</td><td>noun</td><td>image</td><td>3059</td></tr>
+<tr><td>verdragen</td><td>verb</td><td>to bear</td><td>3080</td></tr>
+<tr><td>uitgestorven</td><td>adj</td><td>extinct</td><td>3126</td></tr>
+<tr><td>innemen</td><td>verb</td><td>a) to swallow b) to take up</td><td>3201</td></tr>
+<tr><td>levenslang</td><td>noun</td><td>lifelong</td><td>3202</td></tr>
+<tr><td>gif</td><td>noun</td><td>venom</td><td>3289</td></tr>
+<tr><td>dierentuin</td><td>noun</td><td>zoo</td><td>3327</td></tr>
+<tr><td>spin</td><td>noun</td><td>spider</td><td>3354</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-nature-weather"><summary>Nature &amp; weather — 359 uncarded, 359 imageable</summary>
+<p>Contrast pairs visible in this list: zomer / winter.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>zeker</td><td>adj</td><td>certain</td><td>136</td></tr>
+<tr><td>natuurlijk</td><td>adv</td><td>natural</td><td>170</td></tr>
+<tr><td>bekend</td><td>adj</td><td>(well-)known</td><td>204</td></tr>
+<tr><td>seizoen</td><td>noun</td><td>season</td><td>424</td></tr>
+<tr><td>omgeving</td><td>noun</td><td>environment, surroundings</td><td>436</td></tr>
+<tr><td>zee</td><td>noun</td><td>sea</td><td>513</td></tr>
+<tr><td>energie</td><td>noun</td><td>energy</td><td>551</td></tr>
+<tr><td>ruimte</td><td>noun</td><td>space</td><td>560</td></tr>
+<tr><td>zomer</td><td>noun</td><td>summer</td><td>607</td></tr>
+<tr><td>lucht</td><td>noun</td><td>air</td><td>614</td></tr>
+<tr><td>val</td><td>noun</td><td>fall</td><td>617</td></tr>
+<tr><td>rivier</td><td>noun</td><td>river</td><td>819</td></tr>
+<tr><td>wind</td><td>noun</td><td>wind</td><td>911</td></tr>
+<tr><td>regen</td><td>noun</td><td>rain</td><td>969</td></tr>
+<tr><td>storm</td><td>noun</td><td>storm</td><td>1013</td></tr>
+<tr><td>zeeland</td><td>noun</td><td>land adjacent to the sea, coastal land</td><td>1080</td></tr>
+<tr><td>winter</td><td>noun</td><td>winter</td><td>1115</td></tr>
+<tr><td>berg</td><td>noun</td><td>mountain</td><td>1118</td></tr>
+<tr><td>milieu</td><td>noun</td><td>environment</td><td>1191</td></tr>
+<tr><td>sfeer</td><td>noun</td><td>atmosphere</td><td>1196</td></tr>
+<tr><td>missie</td><td>noun</td><td>mission</td><td>1351</td></tr>
+<tr><td>steen</td><td>noun</td><td>stone</td><td>1355</td></tr>
+<tr><td>oceaan</td><td>noun</td><td>ocean</td><td>1390</td></tr>
+<tr><td>stenen</td><td>adj</td><td>stone</td><td>1420</td></tr>
+<tr><td>kim</td><td>noun</td><td>horizon</td><td>1438</td></tr>
+<tr><td>klimaat</td><td>noun</td><td>climate</td><td>1483</td></tr>
+<tr><td>mist</td><td>noun</td><td>fog</td><td>1565</td></tr>
+<tr><td>star</td><td>noun</td><td>stiff, frozen</td><td>1574</td></tr>
+<tr><td>lente</td><td>noun</td><td>spring</td><td>1588</td></tr>
+<tr><td>ijs</td><td>noun</td><td>ice</td><td>1651</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-work-jobs"><summary>Work &amp; jobs — 287 uncarded, 287 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>werk</td><td>noun</td><td>work</td><td>106</td></tr>
+<tr><td>bedrijf</td><td>noun</td><td>business</td><td>359</td></tr>
+<tr><td>project</td><td>noun</td><td>project</td><td>414</td></tr>
+<tr><td>site</td><td>noun</td><td>site</td><td>446</td></tr>
+<tr><td>baan</td><td>noun</td><td>job</td><td>539</td></tr>
+<tr><td>opdracht</td><td>noun</td><td>task</td><td>670</td></tr>
+<tr><td>generaal</td><td>noun</td><td>general</td><td>738</td></tr>
+<tr><td>schrijver</td><td>noun</td><td>writer</td><td>744</td></tr>
+<tr><td>directeur</td><td>noun</td><td>director</td><td>767</td></tr>
+<tr><td>kantoor</td><td>noun</td><td>office</td><td>771</td></tr>
+<tr><td>voorzitter</td><td>noun</td><td>chairman, chair</td><td>793</td></tr>
+<tr><td>officieel</td><td>adj</td><td>official</td><td>802</td></tr>
+<tr><td>interview</td><td>noun</td><td>interview</td><td>833</td></tr>
+<tr><td>afdeling</td><td>noun</td><td>department</td><td>870</td></tr>
+<tr><td>beroep</td><td>noun</td><td>profession</td><td>900</td></tr>
+<tr><td>rapport</td><td>noun</td><td>report</td><td>986</td></tr>
+<tr><td>melden</td><td>verb</td><td>to report</td><td>1007</td></tr>
+<tr><td>personeel</td><td>noun</td><td>staff</td><td>1010</td></tr>
+<tr><td>baas</td><td>noun</td><td>boss</td><td>1038</td></tr>
+<tr><td>vergadering</td><td>noun</td><td>meeting</td><td>1153</td></tr>
+<tr><td>verslag</td><td>noun</td><td>report</td><td>1154</td></tr>
+<tr><td>kader</td><td>noun</td><td>frame(work)</td><td>1160</td></tr>
+<tr><td>medewerker</td><td>noun</td><td>employee</td><td>1164</td></tr>
+<tr><td>handel</td><td>noun</td><td>trade</td><td>1211</td></tr>
+<tr><td>taak</td><td>noun</td><td>task</td><td>1220</td></tr>
+<tr><td>tijdelijk</td><td>adj</td><td>temporary</td><td>1224</td></tr>
+<tr><td>unie</td><td>noun</td><td>union</td><td>1225</td></tr>
+<tr><td>verantwoordelijkheid</td><td>noun</td><td>responsibility</td><td>1226</td></tr>
+<tr><td>journalist</td><td>noun</td><td>journalist</td><td>1236</td></tr>
+<tr><td>collega</td><td>noun</td><td>colleague</td><td>1251</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-body-health"><summary>Body &amp; health — 265 uncarded, 265 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>terug</td><td>adv</td><td>back</td><td>92</td></tr>
+<tr><td>toe</td><td>adv</td><td>towards</td><td>118</td></tr>
+<tr><td>hoofd</td><td>noun</td><td>head</td><td>275</td></tr>
+<tr><td>lichaam</td><td>noun</td><td>body</td><td>364</td></tr>
+<tr><td>hart</td><td>noun</td><td>heart</td><td>391</td></tr>
+<tr><td>pijn</td><td>noun</td><td>pain</td><td>485</td></tr>
+<tr><td>dr</td><td>noun</td><td>Dr, doctor</td><td>515</td></tr>
+<tr><td>ziekenhuis</td><td>noun</td><td>hospital</td><td>537</td></tr>
+<tr><td>gezicht</td><td>noun</td><td>face</td><td>581</td></tr>
+<tr><td>baby</td><td>noun</td><td>baby</td><td>716</td></tr>
+<tr><td>mond</td><td>noun</td><td>mouth</td><td>742</td></tr>
+<tr><td>verband</td><td>noun</td><td>a) link b) bandage</td><td>747</td></tr>
+<tr><td>gezondheid</td><td>noun</td><td>health</td><td>769</td></tr>
+<tr><td>rug</td><td>noun</td><td>back</td><td>787</td></tr>
+<tr><td>afspraak</td><td>noun</td><td>appointment</td><td>913</td></tr>
+<tr><td>slaap</td><td>noun</td><td>sleep</td><td>930</td></tr>
+<tr><td>ziekte</td><td>noun</td><td>disease</td><td>935</td></tr>
+<tr><td>behandeling</td><td>noun</td><td>treatment</td><td>957</td></tr>
+<tr><td>afhankelijk</td><td>adj</td><td>dependent</td><td>977</td></tr>
+<tr><td>arts</td><td>noun</td><td>physician</td><td>996</td></tr>
+<tr><td>bewust</td><td>adj</td><td>conscious, aware</td><td>1020</td></tr>
+<tr><td>bloed</td><td>noun</td><td>blood</td><td>1021</td></tr>
+<tr><td>droom</td><td>noun</td><td>dream</td><td>1026</td></tr>
+<tr><td>gewond</td><td>noun</td><td>injured</td><td>1093</td></tr>
+<tr><td>operatie</td><td>noun</td><td>operation</td><td>1166</td></tr>
+<tr><td>temperatuur</td><td>noun</td><td>temperature</td><td>1222</td></tr>
+<tr><td>huid</td><td>noun</td><td>skin</td><td>1410</td></tr>
+<tr><td>zwanger</td><td>adj</td><td>pregnant</td><td>1451</td></tr>
+<tr><td>instantie</td><td>noun</td><td>body, organization</td><td>1461</td></tr>
+<tr><td>toilet</td><td>noun</td><td>toilet</td><td>1472</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-food-drink"><summary>Food &amp; drink — 259 uncarded, 259 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>kom</td><td>noun</td><td>bowl</td><td>160</td></tr>
+<tr><td>water</td><td>noun</td><td>water</td><td>190</td></tr>
+<tr><td>mee-eten</td><td>verb</td><td>to eat along with others, to join others for a meal</td><td>259</td></tr>
+<tr><td>lekker</td><td>adj</td><td>tasty</td><td>285</td></tr>
+<tr><td>veranderen</td><td>verb</td><td>to change</td><td>476</td></tr>
+<tr><td>markt</td><td>noun</td><td>market</td><td>602</td></tr>
+<tr><td>koffie</td><td>noun</td><td>coffee</td><td>634</td></tr>
+<tr><td>rekening</td><td>noun</td><td>bill</td><td>892</td></tr>
+<tr><td>oranje</td><td>noun</td><td>orange</td><td>927</td></tr>
+<tr><td>vlees</td><td>noun</td><td>meat</td><td>932</td></tr>
+<tr><td>honger</td><td>noun</td><td>hunger</td><td>962</td></tr>
+<tr><td>wijn</td><td>noun</td><td>wine</td><td>1016</td></tr>
+<tr><td>voedsel</td><td>noun</td><td>food</td><td>1055</td></tr>
+<tr><td>thee</td><td>noun</td><td>tea</td><td>1074</td></tr>
+<tr><td>olie</td><td>noun</td><td>oil</td><td>1099</td></tr>
+<tr><td>restaurant</td><td>noun</td><td>restaurant</td><td>1104</td></tr>
+<tr><td>bier</td><td>noun</td><td>beer</td><td>1119</td></tr>
+<tr><td>brood</td><td>noun</td><td>bread</td><td>1281</td></tr>
+<tr><td>ontbijt</td><td>noun</td><td>breakfast</td><td>1318</td></tr>
+<tr><td>trek</td><td>noun</td><td>appetite</td><td>1372</td></tr>
+<tr><td>smaak</td><td>noun</td><td>taste</td><td>1573</td></tr>
+<tr><td>lunch</td><td>noun</td><td>lunch</td><td>1589</td></tr>
+<tr><td>kaas</td><td>noun</td><td>cheese</td><td>1760</td></tr>
+<tr><td>maal</td><td>noun</td><td>1) time 2) meal</td><td>1762</td></tr>
+<tr><td>beslag</td><td>noun</td><td>a) batter b) fittings</td><td>1786</td></tr>
+<tr><td>melk</td><td>noun</td><td>milk</td><td>1797</td></tr>
+<tr><td>rollen</td><td>verb</td><td>to roll</td><td>1895</td></tr>
+<tr><td>beurs</td><td>noun</td><td>stock market, exchange market</td><td>1903</td></tr>
+<tr><td>pot</td><td>noun</td><td>pot</td><td>1913</td></tr>
+<tr><td>recept</td><td>noun</td><td>recipe</td><td>1941</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-movement-position"><summary>Movement &amp; position — 253 uncarded, 253 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>samen</td><td>adv</td><td>together</td><td>113</td></tr>
+<tr><td>top</td><td>noun</td><td>top</td><td>313</td></tr>
+<tr><td>kant</td><td>noun</td><td>side</td><td>337</td></tr>
+<tr><td>stellen</td><td>verb</td><td>to put</td><td>367</td></tr>
+<tr><td>richting</td><td>noun</td><td>direction</td><td>508</td></tr>
+<tr><td>daarnaast</td><td>adv</td><td>beside it</td><td>519</td></tr>
+<tr><td>hierdoor</td><td>adv</td><td>because of this, through this</td><td>722</td></tr>
+<tr><td>hieronder</td><td>adv</td><td>below</td><td>723</td></tr>
+<tr><td>positie</td><td>noun</td><td>position</td><td>730</td></tr>
+<tr><td>stichting</td><td>noun</td><td>foundation, institution</td><td>775</td></tr>
+<tr><td>zover</td><td>adv</td><td>so far</td><td>779</td></tr>
+<tr><td>keren</td><td>verb</td><td>to turn</td><td>874</td></tr>
+<tr><td>neer</td><td>noun</td><td>down, downwards</td><td>889</td></tr>
+<tr><td>hoek</td><td>noun</td><td>corner</td><td>920</td></tr>
+<tr><td>o.a.</td><td>noun</td><td>amongst other things</td><td>966</td></tr>
+<tr><td>rondom</td><td>noun</td><td>all round</td><td>1195</td></tr>
+<tr><td>kont</td><td>noun</td><td>bottom</td><td>1292</td></tr>
+<tr><td>ontslag</td><td>noun</td><td>to escape</td><td>1442</td></tr>
+<tr><td>rand</td><td>noun</td><td>edge</td><td>1490</td></tr>
+<tr><td>nabij</td><td>adv</td><td>near</td><td>1538</td></tr>
+<tr><td>voren</td><td>adv</td><td>forward</td><td>1604</td></tr>
+<tr><td>inzetten</td><td>verb</td><td>to bring into action</td><td>1617</td></tr>
+<tr><td>bedenken</td><td>verb</td><td>to think (up)</td><td>1696</td></tr>
+<tr><td>hierop</td><td>adv</td><td>(up)on this</td><td>1709</td></tr>
+<tr><td>bodem</td><td>noun</td><td>bottom</td><td>1733</td></tr>
+<tr><td>wandelen</td><td>verb</td><td>to walk</td><td>1780</td></tr>
+<tr><td>zijde, zij</td><td>noun</td><td>side</td><td>1781</td></tr>
+<tr><td>rennen</td><td>verb</td><td>to run</td><td>1942</td></tr>
+<tr><td>doorheen</td><td>adv</td><td>through</td><td>1997</td></tr>
+<tr><td>erachter</td><td>noun</td><td>behind (it, them)</td><td>2031</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-house-home"><summary>House &amp; home — 241 uncarded, 241 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>huis-aan-huis</td><td>noun</td><td>door to door</td><td>245</td></tr>
+<tr><td>buurt</td><td>noun</td><td>neighbourhood</td><td>379</td></tr>
+<tr><td>stap</td><td>noun</td><td>step</td><td>447</td></tr>
+<tr><td>bed</td><td>noun</td><td>bed</td><td>452</td></tr>
+<tr><td>ruim</td><td>noun</td><td>spacious</td><td>545</td></tr>
+<tr><td>gebouw</td><td>noun</td><td>building</td><td>552</td></tr>
+<tr><td>gang</td><td>noun</td><td>corridor</td><td>737</td></tr>
+<tr><td>wijk</td><td>noun</td><td>district, neighbourhood</td><td>748</td></tr>
+<tr><td>bouw</td><td>noun</td><td>construction</td><td>755</td></tr>
+<tr><td>bureau</td><td>noun</td><td>desk</td><td>828</td></tr>
+<tr><td>muur</td><td>noun</td><td>wall</td><td>837</td></tr>
+<tr><td>tafel</td><td>noun</td><td>table</td><td>838</td></tr>
+<tr><td>dak</td><td>noun</td><td>roof</td><td>886</td></tr>
+<tr><td>woning</td><td>noun</td><td>house</td><td>934</td></tr>
+<tr><td>bad</td><td>noun</td><td>bath</td><td>1059</td></tr>
+<tr><td>deur-aan-deur</td><td>noun</td><td>door to door</td><td>1184</td></tr>
+<tr><td>trap</td><td>noun</td><td>stairs</td><td>1246</td></tr>
+<tr><td>studio</td><td>noun</td><td>studio</td><td>1270</td></tr>
+<tr><td>appartement</td><td>noun</td><td>apartment</td><td>1359</td></tr>
+<tr><td>kabinet</td><td>noun</td><td>cabinet</td><td>1387</td></tr>
+<tr><td>gas</td><td>noun</td><td>gas</td><td>1432</td></tr>
+<tr><td>omgaan</td><td>verb</td><td>to handle</td><td>1485</td></tr>
+<tr><td>kast</td><td>noun</td><td>cupboard</td><td>1508</td></tr>
+<tr><td>plein</td><td>noun</td><td>square</td><td>1569</td></tr>
+<tr><td>huur</td><td>noun</td><td>rent</td><td>1616</td></tr>
+<tr><td>villa</td><td>noun</td><td>villa</td><td>1634</td></tr>
+<tr><td>zaal</td><td>noun</td><td>hall</td><td>1639</td></tr>
+<tr><td>poort</td><td>noun</td><td>gate</td><td>1689</td></tr>
+<tr><td>verdieping</td><td>noun</td><td>floor</td><td>1693</td></tr>
+<tr><td>treden</td><td>verb</td><td>to step</td><td>1747</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-time"><summary>Time — 238 uncarded, 238 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>nog</td><td>adv</td><td>still</td><td>27</td></tr>
+<tr><td>nu</td><td>adv</td><td>now</td><td>36</td></tr>
+<tr><td>jaar</td><td>noun</td><td>year</td><td>39</td></tr>
+<tr><td>toch</td><td>adv</td><td>yet</td><td>65</td></tr>
+<tr><td>dag</td><td>noun</td><td>day</td><td>66</td></tr>
+<tr><td>tijd</td><td>noun</td><td>time</td><td>70</td></tr>
+<tr><td>altijd</td><td>adv</td><td>always</td><td>79</td></tr>
+<tr><td>uur</td><td>noun</td><td>hour</td><td>96</td></tr>
+<tr><td>steeds</td><td>adv</td><td>always</td><td>97</td></tr>
+<tr><td>keer</td><td>noun</td><td>time, occasion</td><td>99</td></tr>
+<tr><td>nooit</td><td>adv</td><td>never</td><td>107</td></tr>
+<tr><td>zo-even</td><td>adj</td><td>just now</td><td>115</td></tr>
+<tr><td>vandaag</td><td>adv</td><td>today</td><td>150</td></tr>
+<tr><td>dagen</td><td>verb</td><td>a) to summon b) to dawn</td><td>153</td></tr>
+<tr><td>vaak</td><td>adv</td><td>often</td><td>167</td></tr>
+<tr><td>week</td><td>noun</td><td>week</td><td>177</td></tr>
+<tr><td>moment</td><td>noun</td><td>time, moment</td><td>184</td></tr>
+<tr><td>later</td><td>adv</td><td>later, subsequent</td><td>207</td></tr>
+<tr><td>soms</td><td>adv</td><td>sometimes</td><td>212</td></tr>
+<tr><td>ooit</td><td>adv</td><td>one day</td><td>232</td></tr>
+<tr><td>begin</td><td>noun</td><td>start</td><td>239</td></tr>
+<tr><td>langs</td><td>adj</td><td>past</td><td>317</td></tr>
+<tr><td>maand</td><td>noun</td><td>month</td><td>324</td></tr>
+<tr><td>voordat</td><td>noun</td><td>before</td><td>347</td></tr>
+<tr><td>geschiedenis</td><td>noun</td><td>history</td><td>350</td></tr>
+<tr><td>vervolgens</td><td>adv</td><td>then</td><td>357</td></tr>
+<tr><td>meteen</td><td>adv</td><td>immediately</td><td>372</td></tr>
+<tr><td>leeftijd</td><td>noun</td><td>age</td><td>382</td></tr>
+<tr><td>toekomst</td><td>noun</td><td>future</td><td>386</td></tr>
+<tr><td>avond</td><td>noun</td><td>evening</td><td>388</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-society-politics"><summary>Society &amp; politics — 230 uncarded, 230 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>staat</td><td>noun</td><td>state</td><td>69</td></tr>
+<tr><td>land</td><td>noun</td><td>country</td><td>134</td></tr>
+<tr><td>gemeente</td><td>noun</td><td>municipality</td><td>282</td></tr>
+<tr><td>partij</td><td>noun</td><td>party</td><td>312</td></tr>
+<tr><td>minister</td><td>noun</td><td>minister</td><td>385</td></tr>
+<tr><td>president</td><td>noun</td><td>president</td><td>406</td></tr>
+<tr><td>regering</td><td>noun</td><td>government</td><td>496</td></tr>
+<tr><td>overheid</td><td>noun</td><td>government</td><td>543</td></tr>
+<tr><td>feest</td><td>noun</td><td>party</td><td>647</td></tr>
+<tr><td>bevolking</td><td>noun</td><td>population</td><td>656</td></tr>
+<tr><td>burgemeester</td><td>noun</td><td>mayor</td><td>665</td></tr>
+<tr><td>overzicht</td><td>noun</td><td>survey</td><td>709</td></tr>
+<tr><td>minister-president</td><td>noun</td><td>ministry</td><td>741</td></tr>
+<tr><td>beleid</td><td>noun</td><td>policy</td><td>751</td></tr>
+<tr><td>beweging</td><td>noun</td><td>movement</td><td>753</td></tr>
+<tr><td>vrijheid</td><td>noun</td><td>freedom</td><td>778</td></tr>
+<tr><td>openbaar</td><td>adj</td><td>public</td><td>804</td></tr>
+<tr><td>koninkrijk</td><td>noun</td><td>kingdom</td><td>814</td></tr>
+<tr><td>premier</td><td>noun</td><td>prime minister</td><td>852</td></tr>
+<tr><td>sociaal</td><td>adj</td><td>social</td><td>880</td></tr>
+<tr><td>internationaal</td><td>adj</td><td>international</td><td>921</td></tr>
+<tr><td>maatschappij</td><td>noun</td><td>society</td><td>924</td></tr>
+<tr><td>samenleving</td><td>noun</td><td>society</td><td>929</td></tr>
+<tr><td>buitenland</td><td>noun</td><td>foreign country, abroad</td><td>940</td></tr>
+<tr><td>parlement</td><td>noun</td><td>parliament</td><td>985</td></tr>
+<tr><td>campagne</td><td>noun</td><td>campaign</td><td>1023</td></tr>
+<tr><td>ministerie</td><td>noun</td><td>prime minister</td><td>1032</td></tr>
+<tr><td>oud-premier</td><td>noun</td><td>ex-prime minister</td><td>1048</td></tr>
+<tr><td>republiek</td><td>noun</td><td>republic</td><td>1050</td></tr>
+<tr><td>ex-president</td><td>noun</td><td>ex-president</td><td>1090</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-thought-knowledge"><summary>Thought &amp; knowledge — 219 uncarded, 219 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>onderzoek</td><td>noun</td><td>research</td><td>220</td></tr>
+<tr><td>probleem</td><td>noun</td><td>problem</td><td>229</td></tr>
+<tr><td>idee</td><td>noun</td><td>idea</td><td>246</td></tr>
+<tr><td>reden</td><td>noun</td><td>reason</td><td>339</td></tr>
+<tr><td>aandacht</td><td>noun</td><td>attention</td><td>348</td></tr>
+<tr><td>kennen</td><td>verb</td><td>to know</td><td>504</td></tr>
+<tr><td>feit</td><td>noun</td><td>fact</td><td>579</td></tr>
+<tr><td>kennis</td><td>noun</td><td>a) knowledge b) acquantaince</td><td>589</td></tr>
+<tr><td>keuze</td><td>noun</td><td>choice</td><td>590</td></tr>
+<tr><td>geloven</td><td>verb</td><td>to believe</td><td>611</td></tr>
+<tr><td>controle</td><td>noun</td><td>control</td><td>632</td></tr>
+<tr><td>begrijpen</td><td>verb</td><td>to understand</td><td>645</td></tr>
+<tr><td>oplossing</td><td>noun</td><td>solution</td><td>671</td></tr>
+<tr><td>bewijs</td><td>noun</td><td>proof</td><td>754</td></tr>
+<tr><td>goud</td><td>noun</td><td>gold</td><td>831</td></tr>
+<tr><td>besluit</td><td>noun</td><td>decision</td><td>858</td></tr>
+<tr><td>beslissing</td><td>noun</td><td>decision</td><td>1060</td></tr>
+<tr><td>categorie</td><td>noun</td><td>category</td><td>1061</td></tr>
+<tr><td>twijfel</td><td>noun</td><td>doubt</td><td>1110</td></tr>
+<tr><td>aanleiding</td><td>noun</td><td>reason, occasion</td><td>1155</td></tr>
+<tr><td>bewijzen</td><td>verb</td><td>to prove</td><td>1180</td></tr>
+<tr><td>herinneren</td><td>verb</td><td>to remember</td><td>1212</td></tr>
+<tr><td>concept</td><td>noun</td><td>concept</td><td>1252</td></tr>
+<tr><td>richten (zich)</td><td>verb</td><td>to focus</td><td>1265</td></tr>
+<tr><td>wetenschap</td><td>noun</td><td>science</td><td>1278</td></tr>
+<tr><td>cc</td><td>noun</td><td>category</td><td>1283</td></tr>
+<tr><td>it-oplossing</td><td>noun</td><td>IT solution</td><td>1289</td></tr>
+<tr><td>oplossen</td><td>verb</td><td>to solve</td><td>1294</td></tr>
+<tr><td>begrip</td><td>noun</td><td>understanding</td><td>1303</td></tr>
+<tr><td>theorie</td><td>noun</td><td>theory</td><td>1396</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-transport-travel"><summary>Transport &amp; travel — 215 uncarded, 215 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>weg</td><td>noun</td><td>path</td><td>102</td></tr>
+<tr><td>straat</td><td>noun</td><td>street</td><td>497</td></tr>
+<tr><td>reis</td><td>noun</td><td>trip, journey</td><td>526</td></tr>
+<tr><td>hotel</td><td>noun</td><td>hotel</td><td>600</td></tr>
+<tr><td>vakantie</td><td>noun</td><td>holiday</td><td>652</td></tr>
+<tr><td>stuur</td><td>noun</td><td>steering wheel, handlebars</td><td>684</td></tr>
+<tr><td>last</td><td>noun</td><td>load</td><td>692</td></tr>
+<tr><td>trein</td><td>noun</td><td>train</td><td>791</td></tr>
+<tr><td>grens</td><td>noun</td><td>border</td><td>812</td></tr>
+<tr><td>station</td><td>noun</td><td>station</td><td>821</td></tr>
+<tr><td>vlucht</td><td>noun</td><td>a) flight b) escape</td><td>866</td></tr>
+<tr><td>vervoer</td><td>noun</td><td>transport</td><td>896</td></tr>
+<tr><td>brug</td><td>noun</td><td>bridge</td><td>939</td></tr>
+<tr><td>auto-ongeluk</td><td>noun</td><td>car accident</td><td>1018</td></tr>
+<tr><td>verkeer</td><td>noun</td><td>traffic</td><td>1054</td></tr>
+<tr><td>route</td><td>noun</td><td>route</td><td>1170</td></tr>
+<tr><td>vliegtuig</td><td>noun</td><td>plane</td><td>1177</td></tr>
+<tr><td>grenzen</td><td>verb</td><td>to border</td><td>1209</td></tr>
+<tr><td>sporen</td><td>verb</td><td>to travel by train</td><td>1219</td></tr>
+<tr><td>platform</td><td>noun</td><td>a platform, flat surface, notably a dais or stage</td><td>1262</td></tr>
+<tr><td>vertrek</td><td>noun</td><td>a) room b) departure</td><td>1276</td></tr>
+<tr><td>haven</td><td>noun</td><td>harbour</td><td>1386</td></tr>
+<tr><td>vliegveld</td><td>noun</td><td>airport</td><td>1635</td></tr>
+<tr><td>ingang</td><td>noun</td><td>entrance</td><td>1653</td></tr>
+<tr><td>wagen (zich)</td><td>verb</td><td>car</td><td>1695</td></tr>
+<tr><td>kapitein</td><td>noun</td><td>captain</td><td>1712</td></tr>
+<tr><td>chauffeur</td><td>noun</td><td>driver</td><td>1734</td></tr>
+<tr><td>metro</td><td>noun</td><td>metro</td><td>1799</td></tr>
+<tr><td>luchthaven</td><td>noun</td><td>airport</td><td>1853</td></tr>
+<tr><td>transport</td><td>noun</td><td>transport</td><td>1862</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-people-relations"><summary>People &amp; relations — 208 uncarded, 208 imageable</summary>
+<p>Contrast pairs visible in this list: jongen / meisje; vader / moeder; zoon / dochter.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>mensen</td><td>noun</td><td>people</td><td>41</td></tr>
+<tr><td>paar</td><td>noun</td><td>couple</td><td>161</td></tr>
+<tr><td>familie</td><td>noun</td><td>family</td><td>178</td></tr>
+<tr><td>groep</td><td>noun</td><td>group</td><td>206</td></tr>
+<tr><td>vader</td><td>noun</td><td>father</td><td>234</td></tr>
+<tr><td>moeder</td><td>noun</td><td>mother</td><td>248</td></tr>
+<tr><td>meisje</td><td>noun</td><td>girl</td><td>266</td></tr>
+<tr><td>zoon</td><td>noun</td><td>son</td><td>272</td></tr>
+<tr><td>ouders</td><td>noun</td><td>parents</td><td>311</td></tr>
+<tr><td>dochter</td><td>noun</td><td>daughter</td><td>370</td></tr>
+<tr><td>persoon</td><td>noun</td><td>person</td><td>373</td></tr>
+<tr><td>contact</td><td>noun</td><td>contact</td><td>380</td></tr>
+<tr><td>lid</td><td>noun</td><td>member</td><td>383</td></tr>
+<tr><td>mens</td><td>noun</td><td>human</td><td>412</td></tr>
+<tr><td>club</td><td>noun</td><td>club</td><td>463</td></tr>
+<tr><td>vriend</td><td>noun</td><td>friend</td><td>473</td></tr>
+<tr><td>jongen</td><td>noun</td><td>boy</td><td>482</td></tr>
+<tr><td>koning</td><td>noun</td><td>king</td><td>491</td></tr>
+<tr><td>broer</td><td>noun</td><td>brother</td><td>501</td></tr>
+<tr><td>stel</td><td>noun</td><td>set, couple</td><td>530</td></tr>
+<tr><td>vriendin</td><td>noun</td><td>a) (female) friend b) girlfriend</td><td>535</td></tr>
+<tr><td>relatie</td><td>noun</td><td>relation</td><td>544</td></tr>
+<tr><td>bekende</td><td>noun</td><td>acquintance</td><td>568</td></tr>
+<tr><td>geslacht</td><td>noun</td><td>sex</td><td>624</td></tr>
+<tr><td>huwelijk</td><td>noun</td><td>marriage</td><td>649</td></tr>
+<tr><td>seks</td><td>noun</td><td>sex</td><td>675</td></tr>
+<tr><td>gezin</td><td>noun</td><td>family</td><td>679</td></tr>
+<tr><td>jeugd</td><td>noun</td><td>youth</td><td>691</td></tr>
+<tr><td>volk</td><td>noun</td><td>people</td><td>701</td></tr>
+<tr><td>ex</td><td>noun</td><td>ex</td><td>783</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-technology-tools"><summary>Technology &amp; tools — 200 uncarded, 200 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>website</td><td>noun</td><td>website</td><td>180</td></tr>
+<tr><td>online</td><td>noun</td><td>online</td><td>183</td></tr>
+<tr><td>programma</td><td>noun</td><td>programme, program</td><td>331</td></tr>
+<tr><td>gegeven</td><td>noun</td><td>fact, data</td><td>361</td></tr>
+<tr><td>internet</td><td>noun</td><td>internet</td><td>403</td></tr>
+<tr><td>telefoon</td><td>noun</td><td>telephone number</td><td>448</td></tr>
+<tr><td>tv-kijken</td><td>verb</td><td>to watch television</td><td>510</td></tr>
+<tr><td>radio</td><td>noun</td><td>radio</td><td>583</td></tr>
+<tr><td>tv-programma</td><td>noun</td><td>television program</td><td>651</td></tr>
+<tr><td>toegang</td><td>noun</td><td>access</td><td>713</td></tr>
+<tr><td>app</td><td>noun</td><td>app</td><td>715</td></tr>
+<tr><td>mail</td><td>noun</td><td>e-mail</td><td>727</td></tr>
+<tr><td>it&#x27;er</td><td>noun</td><td>information technology specialist</td><td>770</td></tr>
+<tr><td>netwerk</td><td>noun</td><td>network</td><td>784</td></tr>
+<tr><td>camera</td><td>noun</td><td>camera</td><td>829</td></tr>
+<tr><td>account</td><td>noun</td><td>a subscription to an electronic service</td><td>899</td></tr>
+<tr><td>e-mail</td><td>noun</td><td>e-mail</td><td>902</td></tr>
+<tr><td>code</td><td>noun</td><td>code</td><td>959</td></tr>
+<tr><td>motor</td><td>noun</td><td>engine, motorcycle</td><td>1008</td></tr>
+<tr><td>televisie</td><td>noun</td><td>television</td><td>1036</td></tr>
+<tr><td>tv-show</td><td>noun</td><td>television show</td><td>1053</td></tr>
+<tr><td>computer</td><td>noun</td><td>computer</td><td>1121</td></tr>
+<tr><td>industrie</td><td>noun</td><td>industry</td><td>1213</td></tr>
+<tr><td>techniek</td><td>noun</td><td>technique</td><td>1221</td></tr>
+<tr><td>stroom</td><td>noun</td><td>a) flow b) stream c) electricity</td><td>1245</td></tr>
+<tr><td>technologie</td><td>noun</td><td>technology</td><td>1297</td></tr>
+<tr><td>data</td><td>noun</td><td>data</td><td>1307</td></tr>
+<tr><td>kleuren-tv</td><td>noun</td><td>a colour television</td><td>1315</td></tr>
+<tr><td>auto-industrie</td><td>noun</td><td>car industry</td><td>1360</td></tr>
+<tr><td>machine</td><td>noun</td><td>machine</td><td>1388</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-sport-games"><summary>Sport &amp; games — 199 uncarded, 199 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>team</td><td>noun</td><td>team</td><td>286</td></tr>
+<tr><td>wedstrijd</td><td>noun</td><td>match</td><td>368</td></tr>
+<tr><td>uiteindelijk</td><td>adj</td><td>final</td><td>375</td></tr>
+<tr><td>doel</td><td>noun</td><td>goal</td><td>390</td></tr>
+<tr><td>spel</td><td>noun</td><td>game</td><td>470</td></tr>
+<tr><td>kop</td><td>noun</td><td>a) head b) cup</td><td>492</td></tr>
+<tr><td>kracht</td><td>noun</td><td>strength</td><td>555</td></tr>
+<tr><td>slag</td><td>noun</td><td>blow</td><td>593</td></tr>
+<tr><td>voetbal</td><td>noun</td><td>football</td><td>619</td></tr>
+<tr><td>sport</td><td>noun</td><td>sport</td><td>630</td></tr>
+<tr><td>stand</td><td>noun</td><td>a) position b) score</td><td>662</td></tr>
+<tr><td>opleiding</td><td>noun</td><td>training</td><td>785</td></tr>
+<tr><td>finale</td><td>adj</td><td>final</td><td>846</td></tr>
+<tr><td>speler</td><td>noun</td><td>player</td><td>970</td></tr>
+<tr><td>bal</td><td>noun</td><td>ball</td><td>978</td></tr>
+<tr><td>training</td><td>noun</td><td>training, practice</td><td>1015</td></tr>
+<tr><td>selectie</td><td>noun</td><td>selection</td><td>1073</td></tr>
+<tr><td>kampioen</td><td>noun</td><td>champion</td><td>1095</td></tr>
+<tr><td>golf</td><td>noun</td><td>wave</td><td>1190</td></tr>
+<tr><td>spoor</td><td>noun</td><td>a) trace b) track</td><td>1198</td></tr>
+<tr><td>stadion</td><td>noun</td><td>stadium</td><td>1199</td></tr>
+<tr><td>coach</td><td>noun</td><td>coach</td><td>1250</td></tr>
+<tr><td>ring</td><td>noun</td><td>ring</td><td>1296</td></tr>
+<tr><td>trainer</td><td>noun</td><td>trainer</td><td>1299</td></tr>
+<tr><td>race</td><td>noun</td><td>race</td><td>1324</td></tr>
+<tr><td>opnemen</td><td>verb</td><td>to record</td><td>1353</td></tr>
+<tr><td>ploeg</td><td>noun</td><td>team</td><td>1443</td></tr>
+<tr><td>podium</td><td>noun</td><td>stage</td><td>1488</td></tr>
+<tr><td>cup</td><td>noun</td><td>cup</td><td>1502</td></tr>
+<tr><td>zwembad</td><td>noun</td><td>swimming pool</td><td>1520</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-communication-language"><summary>Communication &amp; language — 234 uncarded, 198 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>ja</td><td>interjection</td><td>yes</td><td>81</td></tr>
+<tr><td>vraag</td><td>noun</td><td>question</td><td>155</td></tr>
+<tr><td>nee</td><td>interjection</td><td>no</td><td>157</td></tr>
+<tr><td>nieuws</td><td>noun</td><td>news</td><td>179</td></tr>
+<tr><td>informatie</td><td>noun</td><td>information</td><td>225</td></tr>
+<tr><td>dank</td><td>noun</td><td>thanks</td><td>281</td></tr>
+<tr><td>hoor</td><td>interjection</td><td>you know</td><td>284</td></tr>
+<tr><td>bedankt</td><td>noun</td><td>thanks</td><td>321</td></tr>
+<tr><td>orde</td><td>noun</td><td>order</td><td>334</td></tr>
+<tr><td>vorm</td><td>noun</td><td>form</td><td>376</td></tr>
+<tr><td>woord</td><td>noun</td><td>word</td><td>377</td></tr>
+<tr><td>oh</td><td>interjection</td><td>oh</td><td>404</td></tr>
+<tr><td>antwoord</td><td>noun</td><td>answer</td><td>427</td></tr>
+<tr><td>bericht</td><td>noun</td><td>message</td><td>428</td></tr>
+<tr><td>stem</td><td>noun</td><td>a) voice b) vote</td><td>462</td></tr>
+<tr><td>vormen</td><td>verb</td><td>to form</td><td>479</td></tr>
+<tr><td>titel</td><td>noun</td><td>title</td><td>509</td></tr>
+<tr><td>raad</td><td>noun</td><td>advice</td><td>525</td></tr>
+<tr><td>tekst</td><td>noun</td><td>text</td><td>547</td></tr>
+<tr><td>sorry</td><td>interjection</td><td>sorry</td><td>562</td></tr>
+<tr><td>taal</td><td>noun</td><td>language</td><td>574</td></tr>
+<tr><td>gesprek</td><td>noun</td><td>conversation</td><td>613</td></tr>
+<tr><td>mening</td><td>noun</td><td>opinion</td><td>681</td></tr>
+<tr><td>post</td><td>noun</td><td>post</td><td>683</td></tr>
+<tr><td>brief</td><td>noun</td><td>letter</td><td>717</td></tr>
+<tr><td>hoi</td><td>interjection</td><td>hi</td><td>724</td></tr>
+<tr><td>bel</td><td>noun</td><td>bell</td><td>766</td></tr>
+<tr><td>advies</td><td>noun</td><td>advice</td><td>797</td></tr>
+<tr><td>hallo</td><td>interjection</td><td>hello</td><td>849</td></tr>
+<tr><td>teken</td><td>noun</td><td>sign</td><td>894</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-plants-farming"><summary>Plants &amp; farming — 188 uncarded, 188 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>den</td><td>noun</td><td>pine</td><td>214</td></tr>
+<tr><td>ja-stem</td><td>noun</td><td>yea vote</td><td>522</td></tr>
+<tr><td>nee-stem</td><td>noun</td><td>nay vote</td><td>591</td></tr>
+<tr><td>haag</td><td>noun</td><td>hedge</td><td>599</td></tr>
+<tr><td>vergeet-mij-niet</td><td>noun</td><td>a forget-me-not, flower of the genus Myosotis</td><td>763</td></tr>
+<tr><td>tuin</td><td>noun</td><td>garden</td><td>952</td></tr>
+<tr><td>veld</td><td>noun</td><td>field</td><td>971</td></tr>
+<tr><td>ervaren</td><td>verb</td><td>to experience</td><td>1040</td></tr>
+<tr><td>as</td><td>noun</td><td>a) axis b) ash</td><td>1083</td></tr>
+<tr><td>groei</td><td>noun</td><td>growth</td><td>1210</td></tr>
+<tr><td>hout</td><td>noun</td><td>wood</td><td>1478</td></tr>
+<tr><td>schieten</td><td>verb</td><td>to shoot</td><td>1572</td></tr>
+<tr><td>boerderij</td><td>noun</td><td>farm</td><td>1582</td></tr>
+<tr><td>vak</td><td>noun</td><td>field, profession</td><td>1632</td></tr>
+<tr><td>boer</td><td>noun</td><td>farmer</td><td>1642</td></tr>
+<tr><td>landbouw</td><td>noun</td><td>agriculture</td><td>1684</td></tr>
+<tr><td>plant</td><td>noun</td><td>plant</td><td>1767</td></tr>
+<tr><td>gras</td><td>noun</td><td>grass</td><td>1882</td></tr>
+<tr><td>stabiel</td><td>adj</td><td>stable</td><td>2345</td></tr>
+<tr><td>roos</td><td>noun</td><td>rose</td><td>2502</td></tr>
+<tr><td>rijst</td><td>noun</td><td>rice</td><td>2610</td></tr>
+<tr><td>stal</td><td>adj</td><td>stable</td><td>2885</td></tr>
+<tr><td>iris</td><td>noun</td><td>iris</td><td>3421</td></tr>
+<tr><td>achtertuin</td><td>noun</td><td>backyard</td><td>3558</td></tr>
+<tr><td>wiet</td><td>noun</td><td>weed, marijuana</td><td>3866</td></tr>
+<tr><td>bloei</td><td>noun</td><td>bloom</td><td>3909</td></tr>
+<tr><td>doorn</td><td>noun</td><td>thorn, sharp extremity of a plant</td><td>3976</td></tr>
+<tr><td>wei</td><td>noun</td><td>pasture, field</td><td>4131</td></tr>
+<tr><td>zaad</td><td>noun</td><td>seed</td><td>4302</td></tr>
+<tr><td>els</td><td>noun</td><td>alder</td><td>4598</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-money-trade"><summary>Money &amp; trade — 187 uncarded, 187 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>geld</td><td>noun</td><td>money</td><td>163</td></tr>
+<tr><td>prijs</td><td>noun</td><td>price</td><td>330</td></tr>
+<tr><td>euro</td><td>noun</td><td>euro</td><td>344</td></tr>
+<tr><td>economie</td><td>noun</td><td>economy</td><td>596</td></tr>
+<tr><td>ontstaan</td><td>verb</td><td>to withdraw</td><td>637</td></tr>
+<tr><td>procent</td><td>noun</td><td>per cent</td><td>638</td></tr>
+<tr><td>waard</td><td>adj</td><td>worth</td><td>642</td></tr>
+<tr><td>schuld</td><td>noun</td><td>a) debt b) blame</td><td>674</td></tr>
+<tr><td>schade</td><td>noun</td><td>damage</td><td>711</td></tr>
+<tr><td>winkel</td><td>noun</td><td>shop</td><td>749</td></tr>
+<tr><td>prijzen</td><td>verb</td><td>a) to price b) to praise</td><td>759</td></tr>
+<tr><td>waarde</td><td>noun</td><td>value</td><td>794</td></tr>
+<tr><td>risico</td><td>noun</td><td>risk</td><td>854</td></tr>
+<tr><td>dollar</td><td>noun</td><td>dollar</td><td>872</td></tr>
+<tr><td>eisen</td><td>verb</td><td>to demand</td><td>917</td></tr>
+<tr><td>verlies</td><td>noun</td><td>loss</td><td>973</td></tr>
+<tr><td>boodschap</td><td>noun</td><td>1) message 2) purchase, shopping</td><td>1022</td></tr>
+<tr><td>schat</td><td>noun</td><td>treasure, dear</td><td>1072</td></tr>
+<tr><td>verkoop</td><td>noun</td><td>sale</td><td>1111</td></tr>
+<tr><td>effect</td><td>noun</td><td>a) effect b) share</td><td>1126</td></tr>
+<tr><td>ton</td><td>noun</td><td>a) barrel b) 1000 kilo c) 100,000 euro</td><td>1134</td></tr>
+<tr><td>geregeld</td><td>noun</td><td>regularly</td><td>1147</td></tr>
+<tr><td>klant</td><td>noun</td><td>customer</td><td>1162</td></tr>
+<tr><td>winst</td><td>noun</td><td>profit</td><td>1247</td></tr>
+<tr><td>post-it</td><td>noun</td><td>post-it, post-it note</td><td>1323</td></tr>
+<tr><td>aanbod</td><td>noun</td><td>offer</td><td>1402</td></tr>
+<tr><td>korting</td><td>noun</td><td>discount</td><td>1414</td></tr>
+<tr><td>vermogen</td><td>verb</td><td>a) power b) fortune</td><td>1602</td></tr>
+<tr><td>financieel</td><td>adj</td><td>financial</td><td>1646</td></tr>
+<tr><td>investeren</td><td>verb</td><td>to invest</td><td>1794</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-law-conflict"><summary>Law &amp; conflict — 166 uncarded, 166 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>politie</td><td>noun</td><td>police</td><td>187</td></tr>
+<tr><td>zin</td><td>noun</td><td>a) sentence b) sense</td><td>417</td></tr>
+<tr><td>wet</td><td>noun</td><td>law</td><td>442</td></tr>
+<tr><td>brand</td><td>noun</td><td>fire</td><td>622</td></tr>
+<tr><td>moord</td><td>noun</td><td>murder</td><td>628</td></tr>
+<tr><td>wacht</td><td>noun</td><td>1) watch 2) guard</td><td>655</td></tr>
+<tr><td>rechter</td><td>noun</td><td>judge</td><td>696</td></tr>
+<tr><td>proces</td><td>noun</td><td>trial</td><td>773</td></tr>
+<tr><td>rechten</td><td>noun</td><td>law</td><td>786</td></tr>
+<tr><td>gevangenis</td><td>noun</td><td>prison</td><td>810</td></tr>
+<tr><td>advocaat</td><td>noun</td><td>lawyer</td><td>826</td></tr>
+<tr><td>toestemming</td><td>noun</td><td>permission</td><td>839</td></tr>
+<tr><td>vuur</td><td>noun</td><td>fire</td><td>867</td></tr>
+<tr><td>ongeluk</td><td>noun</td><td>accident</td><td>878</td></tr>
+<tr><td>vrede</td><td>noun</td><td>peace</td><td>954</td></tr>
+<tr><td>contract</td><td>noun</td><td>contract</td><td>1025</td></tr>
+<tr><td>rechtbank</td><td>noun</td><td>court</td><td>1049</td></tr>
+<tr><td>akkoord</td><td>noun</td><td>a) agreement b) chord</td><td>1082</td></tr>
+<tr><td>overeenkomst</td><td>noun</td><td>agreement</td><td>1215</td></tr>
+<tr><td>schuldig</td><td>adj</td><td>guilty</td><td>1218</td></tr>
+<tr><td>ruzie</td><td>noun</td><td>quarrel, row</td><td>1371</td></tr>
+<tr><td>agent</td><td>noun</td><td>policeman</td><td>1404</td></tr>
+<tr><td>cel</td><td>noun</td><td>cell</td><td>1428</td></tr>
+<tr><td>justitie</td><td>noun</td><td>justice</td><td>1437</td></tr>
+<tr><td>regel</td><td>noun</td><td>rule</td><td>1444</td></tr>
+<tr><td>klacht</td><td>noun</td><td>complaint</td><td>1562</td></tr>
+<tr><td>getuigen</td><td>verb</td><td>to witness</td><td>1584</td></tr>
+<tr><td>getuige</td><td>noun</td><td>witness</td><td>1647</td></tr>
+<tr><td>conflict</td><td>noun</td><td>conflict</td><td>1678</td></tr>
+<tr><td>klagen</td><td>verb</td><td>to complain</td><td>1683</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-quantity-measure"><summary>Quantity &amp; measure — 216 uncarded, 155 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>twee</td><td>function</td><td>two</td><td>56</td></tr>
+<tr><td>eerste</td><td>function</td><td>first</td><td>59</td></tr>
+<tr><td>drie</td><td>function</td><td>three</td><td>108</td></tr>
+<tr><td>een, één</td><td>function</td><td>one</td><td>109</td></tr>
+<tr><td>aantal</td><td>noun</td><td>number</td><td>111</td></tr>
+<tr><td>deel</td><td>noun</td><td>part</td><td>119</td></tr>
+<tr><td>allemaal</td><td>adv</td><td>all</td><td>129</td></tr>
+<tr><td>tweede</td><td>function</td><td>second</td><td>185</td></tr>
+<tr><td>men</td><td>function</td><td>one, you</td><td>200</td></tr>
+<tr><td>vier</td><td>function</td><td>four</td><td>222</td></tr>
+<tr><td>ongeveer</td><td>adv</td><td>about</td><td>249</td></tr>
+<tr><td>vijf</td><td>function</td><td>five</td><td>251</td></tr>
+<tr><td>meest</td><td>adv</td><td>most</td><td>260</td></tr>
+<tr><td>zowel</td><td>adv</td><td>both</td><td>279</td></tr>
+<tr><td>miljoen</td><td>function</td><td>million</td><td>302</td></tr>
+<tr><td>zoveel</td><td>adv</td><td>so much</td><td>305</td></tr>
+<tr><td>nummer</td><td>noun</td><td>number</td><td>310</td></tr>
+<tr><td>beide</td><td>noun</td><td>both</td><td>349</td></tr>
+<tr><td>stuk</td><td>noun</td><td>piece</td><td>356</td></tr>
+<tr><td>zes</td><td>function</td><td>six</td><td>369</td></tr>
+<tr><td>zat</td><td>adj</td><td>plenty</td><td>387</td></tr>
+<tr><td>tien</td><td>function</td><td>ten</td><td>395</td></tr>
+<tr><td>derde</td><td>function</td><td>third</td><td>410</td></tr>
+<tr><td>hoeveel</td><td>adv</td><td>how many, how much</td><td>421</td></tr>
+<tr><td>meter</td><td>noun</td><td>metre</td><td>435</td></tr>
+<tr><td>onderdeel</td><td>noun</td><td>part</td><td>437</td></tr>
+<tr><td>hoogte</td><td>noun</td><td>height</td><td>521</td></tr>
+<tr><td>acht</td><td>function</td><td>eight</td><td>538</td></tr>
+<tr><td>half</td><td>function</td><td>half</td><td>542</td></tr>
+<tr><td>helft</td><td>noun</td><td>half</td><td>553</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-character-behaviour"><summary>Character &amp; behaviour — 136 uncarded, 136 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>gewoon</td><td>noun</td><td>usual, normal</td><td>90</td></tr>
+<tr><td>soort</td><td>noun</td><td>kind of</td><td>233</td></tr>
+<tr><td>normaal</td><td>adj</td><td>normal</td><td>494</td></tr>
+<tr><td>bijzonder</td><td>adj</td><td>special</td><td>609</td></tr>
+<tr><td>invloed</td><td>noun</td><td>influence</td><td>626</td></tr>
+<tr><td>respect</td><td>noun</td><td>esteem</td><td>697</td></tr>
+<tr><td>speciaal</td><td>adj</td><td>special</td><td>700</td></tr>
+<tr><td>serieus</td><td>adj</td><td>serious</td><td>745</td></tr>
+<tr><td>verantwoordelijk</td><td>adj</td><td>responsible</td><td>762</td></tr>
+<tr><td>gedrag</td><td>noun</td><td>behaviour</td><td>768</td></tr>
+<tr><td>natuur</td><td>noun</td><td>nature</td><td>801</td></tr>
+<tr><td>grappig</td><td>adj</td><td>funny</td><td>811</td></tr>
+<tr><td>geweld</td><td>noun</td><td>violence</td><td>903</td></tr>
+<tr><td>vreemd</td><td>adj</td><td>strange, foreign</td><td>955</td></tr>
+<tr><td>kritiek</td><td>noun</td><td>criticism</td><td>983</td></tr>
+<tr><td>raar</td><td>adj</td><td>strange</td><td>1132</td></tr>
+<tr><td>dom</td><td>noun</td><td>stupid</td><td>1142</td></tr>
+<tr><td>status</td><td>noun</td><td>status</td><td>1151</td></tr>
+<tr><td>ernstig</td><td>adj</td><td>serious</td><td>1383</td></tr>
+<tr><td>gedragen (zich)</td><td>verb</td><td>to behave</td><td>1433</td></tr>
+<tr><td>vriendelijk</td><td>adj</td><td>friendly</td><td>1496</td></tr>
+<tr><td>patiënt</td><td>adj</td><td>patient</td><td>1542</td></tr>
+<tr><td>competitie</td><td>noun</td><td>competition</td><td>1609</td></tr>
+<tr><td>ondersteunen</td><td>verb</td><td>to support</td><td>1658</td></tr>
+<tr><td>houding</td><td>noun</td><td>attitude</td><td>1710</td></tr>
+<tr><td>vrolijk</td><td>adj</td><td>cheerful, merry</td><td>1779</td></tr>
+<tr><td>geduld</td><td>noun</td><td>patience</td><td>1848</td></tr>
+<tr><td>liegen</td><td>verb</td><td>to lie</td><td>1852</td></tr>
+<tr><td>aard</td><td>noun</td><td>nature</td><td>1872</td></tr>
+<tr><td>uniek</td><td>adj</td><td>unique</td><td>1919</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-clothing-appearance"><summary>Clothing &amp; appearance — 135 uncarded, 135 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>stijl</td><td>noun</td><td>style</td><td>908</td></tr>
+<tr><td>kleding</td><td>noun</td><td>clothing</td><td>922</td></tr>
+<tr><td>leer</td><td>noun</td><td>1) leather 2) doctrine</td><td>963</td></tr>
+<tr><td>pak</td><td>noun</td><td>1) suit 2) bunch</td><td>984</td></tr>
+<tr><td>collectie</td><td>noun</td><td>collection</td><td>1024</td></tr>
+<tr><td>stof</td><td>noun</td><td>dust</td><td>1152</td></tr>
+<tr><td>slim</td><td>noun</td><td>smart, clever</td><td>1197</td></tr>
+<tr><td>jack</td><td>noun</td><td>jacket</td><td>1290</td></tr>
+<tr><td>boord</td><td>noun</td><td>collar</td><td>1305</td></tr>
+<tr><td>zak</td><td>noun</td><td>bag</td><td>1331</td></tr>
+<tr><td>kleren</td><td>noun</td><td>clothes</td><td>1346</td></tr>
+<tr><td>shirt</td><td>noun</td><td>a T-shirt or other shirt, typically including undershirts</td><td>1394</td></tr>
+<tr><td>T-shirt</td><td>noun</td><td>T-shirt</td><td>1424</td></tr>
+<tr><td>knap</td><td>noun</td><td>a) good-looking b) smart, clever, able</td><td>1654</td></tr>
+<tr><td>mode</td><td>noun</td><td>fashion</td><td>1715</td></tr>
+<tr><td>zijde</td><td>noun</td><td>silk</td><td>1751</td></tr>
+<tr><td>naakt</td><td>adj</td><td>nude, naked</td><td>1969</td></tr>
+<tr><td>rit</td><td>noun</td><td>ride</td><td>1979</td></tr>
+<tr><td>make-up</td><td>noun</td><td>makeup</td><td>2225</td></tr>
+<tr><td>bril</td><td>noun</td><td>(pair of ) glasses</td><td>2250</td></tr>
+<tr><td>doek</td><td>noun</td><td>cloth</td><td>2744</td></tr>
+<tr><td>zoom</td><td>noun</td><td>hem</td><td>2799</td></tr>
+<tr><td>jasje</td><td>noun</td><td>jacket</td><td>3007</td></tr>
+<tr><td>helm</td><td>noun</td><td>helmet</td><td>3148</td></tr>
+<tr><td>staken</td><td>verb</td><td>a) to cease b) to strike c) to tie</td><td>3165</td></tr>
+<tr><td>streep</td><td>noun</td><td>stripe</td><td>3217</td></tr>
+<tr><td>sieraden</td><td>noun</td><td>jewelry</td><td>3309</td></tr>
+<tr><td>outfit</td><td>noun</td><td>outfit</td><td>3540</td></tr>
+<tr><td>achterzijde</td><td>noun</td><td>backside, reverse</td><td>3559</td></tr>
+<tr><td>knopen</td><td>verb</td><td>to knot, to tie</td><td>3574</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-emotion-feeling"><summary>Emotion &amp; feeling — 134 uncarded, 134 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>graag</td><td>adv</td><td>gladly, with pleasure</td><td>144</td></tr>
+<tr><td>hoop</td><td>noun</td><td>a) hope b) pile</td><td>199</td></tr>
+<tr><td>zorg</td><td>noun</td><td>a) care b) worry</td><td>278</td></tr>
+<tr><td>gevoel</td><td>noun</td><td>feeling</td><td>345</td></tr>
+<tr><td>gelukkig</td><td>adj</td><td>happy</td><td>362</td></tr>
+<tr><td>liefde</td><td>noun</td><td>love</td><td>384</td></tr>
+<tr><td>plezier</td><td>noun</td><td>pleasure</td><td>592</td></tr>
+<tr><td>haat</td><td>noun</td><td>hate</td><td>625</td></tr>
+<tr><td>geluk</td><td>noun</td><td>happiness, luck</td><td>633</td></tr>
+<tr><td>hopen</td><td>verb</td><td>to hope</td><td>725</td></tr>
+<tr><td>jammer</td><td>noun</td><td>a pity</td><td>799</td></tr>
+<tr><td>angst</td><td>noun</td><td>fear</td><td>827</td></tr>
+<tr><td>spijt</td><td>noun</td><td>regret</td><td>1012</td></tr>
+<tr><td>verliefd</td><td>adj</td><td>in love</td><td>1037</td></tr>
+<tr><td>interesse</td><td>noun</td><td>interest</td><td>1065</td></tr>
+<tr><td>verrassing</td><td>noun</td><td>surprise</td><td>1473</td></tr>
+<tr><td>enthousiast</td><td>adj</td><td>enthusiastic</td><td>1557</td></tr>
+<tr><td>spanning</td><td>noun</td><td>tension</td><td>1666</td></tr>
+<tr><td>paniek</td><td>noun</td><td>panic</td><td>1688</td></tr>
+<tr><td>stress</td><td>noun</td><td>stress</td><td>1692</td></tr>
+<tr><td>gerust</td><td>adj</td><td>calm</td><td>1706</td></tr>
+<tr><td>moed</td><td>noun</td><td>courage</td><td>1716</td></tr>
+<tr><td>passie</td><td>noun</td><td>passion</td><td>1719</td></tr>
+<tr><td>ontsnappen</td><td>verb</td><td>to relax</td><td>1766</td></tr>
+<tr><td>verdriet</td><td>noun</td><td>sadness</td><td>1836</td></tr>
+<tr><td>dankbaar</td><td>adj</td><td>grateful</td><td>1844</td></tr>
+<tr><td>triest</td><td>adj</td><td>sad</td><td>1918</td></tr>
+<tr><td>vrees</td><td>noun</td><td>fear</td><td>2017</td></tr>
+<tr><td>schande</td><td>noun</td><td>shame, disgrace</td><td>2049</td></tr>
+<tr><td>jaloers</td><td>adj</td><td>jealous</td><td>2078</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-places-geography"><summary>Places &amp; geography — 121 uncarded, 121 imageable</summary>
+<p>Contrast pairs visible in this list: noord / zuid; oost / west.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>plaats</td><td>noun</td><td>place</td><td>116</td></tr>
+<tr><td>wereld</td><td>noun</td><td>world</td><td>158</td></tr>
+<tr><td>zuid</td><td>noun</td><td>south</td><td>237</td></tr>
+<tr><td>gebied</td><td>noun</td><td>area</td><td>240</td></tr>
+<tr><td>regio</td><td>noun</td><td>region</td><td>250</td></tr>
+<tr><td>noord</td><td>noun</td><td>north</td><td>325</td></tr>
+<tr><td>plaatsen</td><td>verb</td><td>to place</td><td>329</td></tr>
+<tr><td>plek</td><td>noun</td><td>place, spot</td><td>366</td></tr>
+<tr><td>provincie</td><td>noun</td><td>province</td><td>394</td></tr>
+<tr><td>centrum</td><td>noun</td><td>centre</td><td>400</td></tr>
+<tr><td>eiland</td><td>noun</td><td>island</td><td>481</td></tr>
+<tr><td>kaart</td><td>noun</td><td>map</td><td>571</td></tr>
+<tr><td>west</td><td>noun</td><td>west</td><td>577</td></tr>
+<tr><td>park</td><td>noun</td><td>park</td><td>629</td></tr>
+<tr><td>aarde</td><td>noun</td><td>earth</td><td>643</td></tr>
+<tr><td>oosten</td><td>noun</td><td>east</td><td>708</td></tr>
+<tr><td>oost</td><td>noun</td><td>east</td><td>803</td></tr>
+<tr><td>locatie</td><td>noun</td><td>location</td><td>815</td></tr>
+<tr><td>hoofdstad</td><td>noun</td><td>capital</td><td>832</td></tr>
+<tr><td>zuiden</td><td>noun</td><td>south</td><td>882</td></tr>
+<tr><td>noorden</td><td>noun</td><td>north</td><td>890</td></tr>
+<tr><td>strand</td><td>noun</td><td>beach</td><td>951</td></tr>
+<tr><td>kust</td><td>noun</td><td>coast</td><td>1005</td></tr>
+<tr><td>district</td><td>noun</td><td>district</td><td>1125</td></tr>
+<tr><td>oma</td><td>noun</td><td>grandma</td><td>1130</td></tr>
+<tr><td>monument</td><td>noun</td><td>monument</td><td>1537</td></tr>
+<tr><td>schepen</td><td>noun</td><td>local councillor</td><td>1594</td></tr>
+<tr><td>erfgoed</td><td>noun</td><td>heritage</td><td>1679</td></tr>
+<tr><td>zone</td><td>noun</td><td>zone</td><td>1729</td></tr>
+<tr><td>streek</td><td>noun</td><td>a) region b) trick</td><td>1830</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-religion-belief"><summary>Religion &amp; belief — 115 uncarded, 115 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>god</td><td>noun</td><td>god</td><td>402</td></tr>
+<tr><td>geloof</td><td>noun</td><td>faith, religion</td><td>411</td></tr>
+<tr><td>kerk</td><td>noun</td><td>church</td><td>572</td></tr>
+<tr><td>islam</td><td>noun</td><td>Islam</td><td>813</td></tr>
+<tr><td>geest</td><td>noun</td><td>mind, spirit</td><td>982</td></tr>
+<tr><td>paus</td><td>noun</td><td>pope</td><td>1241</td></tr>
+<tr><td>non</td><td>noun</td><td>nun</td><td>1369</td></tr>
+<tr><td>ziel</td><td>noun</td><td>soul</td><td>1640</td></tr>
+<tr><td>anti-islam</td><td>noun</td><td>anti-Islamic</td><td>1676</td></tr>
+<tr><td>religie</td><td>noun</td><td>religion</td><td>1720</td></tr>
+<tr><td>Bijbel</td><td>noun</td><td>bible</td><td>1871</td></tr>
+<tr><td>hel</td><td>noun</td><td>hell</td><td>1907</td></tr>
+<tr><td>zonde</td><td>noun</td><td>sin</td><td>1927</td></tr>
+<tr><td>tempel</td><td>noun</td><td>temple</td><td>2052</td></tr>
+<tr><td>wonder</td><td>noun</td><td>miracle</td><td>2212</td></tr>
+<tr><td>moslim</td><td>noun</td><td>Muslim</td><td>2265</td></tr>
+<tr><td>priester</td><td>noun</td><td>priest</td><td>2409</td></tr>
+<tr><td>moskee</td><td>noun</td><td>mosque</td><td>2494</td></tr>
+<tr><td>draak</td><td>noun</td><td>dragon</td><td>2560</td></tr>
+<tr><td>heilig</td><td>adj</td><td>holy</td><td>2861</td></tr>
+<tr><td>engel</td><td>noun</td><td>angel</td><td>2955</td></tr>
+<tr><td>paradijs</td><td>noun</td><td>paradise</td><td>3018</td></tr>
+<tr><td>dominee</td><td>noun</td><td>vicar</td><td>3051</td></tr>
+<tr><td>zegen</td><td>noun</td><td>blessing</td><td>3085</td></tr>
+<tr><td>klooster</td><td>noun</td><td>monastery</td><td>3111</td></tr>
+<tr><td>gebed</td><td>noun</td><td>prayer</td><td>3146</td></tr>
+<tr><td>legende</td><td>noun</td><td>legend</td><td>3152</td></tr>
+<tr><td>zee-engel</td><td>noun</td><td>angel shark, shark of the family Squatinidae</td><td>3178</td></tr>
+<tr><td>duivel</td><td>noun</td><td>devil</td><td>3192</td></tr>
+<tr><td>godsdienst</td><td>noun</td><td>religion</td><td>3196</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-education-learning"><summary>Education &amp; learning — 114 uncarded, 114 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>alles</td><td>noun</td><td>everything</td><td>86</td></tr>
+<tr><td>school</td><td>noun</td><td>school</td><td>211</td></tr>
+<tr><td>onderwijs</td><td>noun</td><td>education</td><td>365</td></tr>
+<tr><td>universiteit</td><td>noun</td><td>university</td><td>511</td></tr>
+<tr><td>les</td><td>noun</td><td>lesson</td><td>556</td></tr>
+<tr><td>middel</td><td>noun</td><td>means</td><td>740</td></tr>
+<tr><td>college</td><td>noun</td><td>lecture</td><td>885</td></tr>
+<tr><td>studie</td><td>noun</td><td>study</td><td>1035</td></tr>
+<tr><td>klasse</td><td>noun</td><td>class</td><td>1067</td></tr>
+<tr><td>test</td><td>noun</td><td>test</td><td>1108</td></tr>
+<tr><td>klas</td><td>noun</td><td>class</td><td>1163</td></tr>
+<tr><td>professor</td><td>noun</td><td>professor</td><td>1169</td></tr>
+<tr><td>uiteraard</td><td>noun</td><td>of course, naturally</td><td>1174</td></tr>
+<tr><td>bibliotheek</td><td>noun</td><td>library</td><td>1361</td></tr>
+<tr><td>instituut</td><td>noun</td><td>institute</td><td>1481</td></tr>
+<tr><td>student</td><td>noun</td><td>student</td><td>1513</td></tr>
+<tr><td>leraar</td><td>noun</td><td>teacher</td><td>1532</td></tr>
+<tr><td>oefenen</td><td>verb</td><td>to practise, to exercise</td><td>1620</td></tr>
+<tr><td>docent</td><td>noun</td><td>teacher, lecturer</td><td>1755</td></tr>
+<tr><td>cursus</td><td>noun</td><td>course</td><td>1788</td></tr>
+<tr><td>promotie</td><td>noun</td><td>promotion a) to obtain one’s doctoral degree b) to be</td><td>1858</td></tr>
+<tr><td>wiskunde</td><td>noun</td><td>mathematics</td><td>1925</td></tr>
+<tr><td>leerling</td><td>noun</td><td>pupil</td><td>1968</td></tr>
+<tr><td>diploma</td><td>noun</td><td>diploma</td><td>1996</td></tr>
+<tr><td>fles</td><td>noun</td><td>bottle</td><td>2032</td></tr>
+<tr><td>proef</td><td>noun</td><td>test</td><td>2234</td></tr>
+<tr><td>hoogleraar</td><td>noun</td><td>professor</td><td>2259</td></tr>
+<tr><td>basisschool</td><td>noun</td><td>primary school</td><td>2284</td></tr>
+<tr><td>examen</td><td>noun</td><td>examination</td><td>2295</td></tr>
+<tr><td>master</td><td>noun</td><td>Master&#x27;s student</td><td>2339</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-war-military"><summary>War &amp; military — 76 uncarded, 76 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>oorlog</td><td>noun</td><td>war</td><td>326</td></tr>
+<tr><td>leger</td><td>noun</td><td>army</td><td>458</td></tr>
+<tr><td>strijd</td><td>noun</td><td>battle</td><td>631</td></tr>
+<tr><td>wapen</td><td>noun</td><td>weapon</td><td>824</td></tr>
+<tr><td>overwinning</td><td>noun</td><td>victory</td><td>928</td></tr>
+<tr><td>verzet</td><td>noun</td><td>resistance</td><td>1400</td></tr>
+<tr><td>carrière</td><td>noun</td><td>career, a person&#x27;s occupation</td><td>1406</td></tr>
+<tr><td>war</td><td>noun</td><td>confusion, disarray</td><td>1423</td></tr>
+<tr><td>soldaat</td><td>noun</td><td>soldier</td><td>1665</td></tr>
+<tr><td>wereldoorlog</td><td>noun</td><td>world war</td><td>1672</td></tr>
+<tr><td>verslaan</td><td>verb</td><td>to defeat</td><td>1810</td></tr>
+<tr><td>vijand</td><td>noun</td><td>enemy</td><td>1838</td></tr>
+<tr><td>kolonel</td><td>noun</td><td>colonel</td><td>2005</td></tr>
+<tr><td>luitenant</td><td>noun</td><td>lieutenant</td><td>2042</td></tr>
+<tr><td>bestand</td><td>noun</td><td>a) file b) truce</td><td>2179</td></tr>
+<tr><td>nederlaag</td><td>noun</td><td>defeat</td><td>2227</td></tr>
+<tr><td>burgeroorlog</td><td>noun</td><td>civil war</td><td>2253</td></tr>
+<tr><td>bezetting</td><td>noun</td><td>a) occupation b) cast</td><td>2357</td></tr>
+<tr><td>bom</td><td>noun</td><td>bomb</td><td>2429</td></tr>
+<tr><td>luitenant-generaal</td><td>adj</td><td>lieutenant general</td><td>2445</td></tr>
+<tr><td>weerstand</td><td>noun</td><td>resistance</td><td>2617</td></tr>
+<tr><td>tank</td><td>noun</td><td>a) (fuel) tank b) tank (army vehicle)</td><td>2652</td></tr>
+<tr><td>beleg</td><td>noun</td><td>siege</td><td>2740</td></tr>
+<tr><td>kogel</td><td>noun</td><td>bullet</td><td>3010</td></tr>
+<tr><td>zege</td><td>noun</td><td>victory</td><td>3133</td></tr>
+<tr><td>alliantie</td><td>noun</td><td>alliance</td><td>3277</td></tr>
+<tr><td>invasie</td><td>noun</td><td>military invasion</td><td>3381</td></tr>
+<tr><td>schild</td><td>noun</td><td>shield</td><td>3390</td></tr>
+<tr><td>zwaard</td><td>noun</td><td>sword</td><td>3509</td></tr>
+<tr><td>troep</td><td>noun</td><td>a) army b) mess</td><td>3649</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-abstract-general"><summary>Abstract &amp; general — 2,955 uncarded, 0 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>niet</td><td>adv</td><td>not</td><td>10</td></tr>
+<tr><td>een-op-een</td><td>noun</td><td>one-on-one</td><td>12</td></tr>
+<tr><td>wat</td><td>noun</td><td>what</td><td>24</td></tr>
+<tr><td>zo</td><td>adv</td><td>so</td><td>30</td></tr>
+<tr><td>wel</td><td>adv</td><td>~ rather</td><td>32</td></tr>
+<tr><td>worden</td><td>verb</td><td>to be</td><td>35</td></tr>
+<tr><td>hoe</td><td>adv</td><td>how</td><td>40</td></tr>
+<tr><td>wil</td><td>noun</td><td>will</td><td>46</td></tr>
+<tr><td>doen</td><td>verb</td><td>to do</td><td>48</td></tr>
+<tr><td>hier</td><td>adv</td><td>here</td><td>49</td></tr>
+<tr><td>dus</td><td>adv</td><td>so</td><td>50</td></tr>
+<tr><td>echt</td><td>adj</td><td>real</td><td>60</td></tr>
+<tr><td>eens</td><td>adv</td><td>once, (not) even</td><td>61</td></tr>
+<tr><td>uit-en-te-na</td><td>noun</td><td>comprehensively, thoroughly</td><td>62</td></tr>
+<tr><td>daar</td><td>adv</td><td>there</td><td>63</td></tr>
+<tr><td>mee</td><td>adv</td><td>with</td><td>68</td></tr>
+<tr><td>iets</td><td>noun</td><td>something</td><td>72</td></tr>
+<tr><td>omdat</td><td>noun</td><td>because</td><td>74</td></tr>
+<tr><td>laten</td><td>verb</td><td>to let</td><td>84</td></tr>
+<tr><td>waarom</td><td>adv</td><td>why</td><td>85</td></tr>
+<tr><td>even</td><td>adv</td><td>just</td><td>89</td></tr>
+<tr><td>eigen</td><td>adj</td><td>own</td><td>98</td></tr>
+<tr><td>iedereen</td><td>adj</td><td>everyone</td><td>101</td></tr>
+<tr><td>iemand</td><td>noun</td><td>someone</td><td>103</td></tr>
+<tr><td>nodig</td><td>adj</td><td>necessary</td><td>123</td></tr>
+<tr><td>beter</td><td>adj</td><td>better</td><td>130</td></tr>
+<tr><td>erg</td><td>adv</td><td>very</td><td>131</td></tr>
+<tr><td>naam</td><td>noun</td><td>name</td><td>135</td></tr>
+<tr><td>misschien</td><td>adj</td><td>maybe</td><td>138</td></tr>
+<tr><td>anders</td><td>adv</td><td>otherwise</td><td>141</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-function-words"><summary>Function words — 142 uncarded, 0 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>de</td><td>function</td><td>the</td><td>1</td></tr>
+<tr><td>van</td><td>function</td><td>of</td><td>2</td></tr>
+<tr><td>een</td><td>function</td><td>a</td><td>3</td></tr>
+<tr><td>en</td><td>function</td><td>and</td><td>4</td></tr>
+<tr><td>in</td><td>function</td><td>in</td><td>5</td></tr>
+<tr><td>ik</td><td>function</td><td>I</td><td>7</td></tr>
+<tr><td>voor</td><td>function</td><td>a) for b) in front of</td><td>8</td></tr>
+<tr><td>met</td><td>function</td><td>with</td><td>9</td></tr>
+<tr><td>die</td><td>function</td><td>a) that, those b) that, who</td><td>11</td></tr>
+<tr><td>als</td><td>function</td><td>when</td><td>13</td></tr>
+<tr><td>er</td><td>function</td><td>there</td><td>14</td></tr>
+<tr><td>om</td><td>function</td><td>(a)round</td><td>15</td></tr>
+<tr><td>hij</td><td>function</td><td>he</td><td>17</td></tr>
+<tr><td>door</td><td>function</td><td>through</td><td>19</td></tr>
+<tr><td>bij</td><td>function</td><td>near (to)</td><td>21</td></tr>
+<tr><td>dit</td><td>function</td><td>this</td><td>22</td></tr>
+<tr><td>of</td><td>function</td><td>or</td><td>25</td></tr>
+<tr><td>deze</td><td>function</td><td>this, these</td><td>28</td></tr>
+<tr><td>geen</td><td>function</td><td>no</td><td>31</td></tr>
+<tr><td>tot</td><td>function</td><td>to</td><td>33</td></tr>
+<tr><td>u</td><td>function</td><td>you</td><td>34</td></tr>
+<tr><td>na</td><td>function</td><td>after</td><td>42</td></tr>
+<tr><td>ons</td><td>function</td><td>a) us b) our</td><td>43</td></tr>
+<tr><td>onze</td><td>function</td><td>our</td><td>45</td></tr>
+<tr><td>zich</td><td>function</td><td>herself, himself, itself, themselves</td><td>47</td></tr>
+<tr><td>tegen</td><td>function</td><td>against, towards</td><td>51</td></tr>
+<tr><td>onder</td><td>function</td><td>under</td><td>54</td></tr>
+<tr><td>hun</td><td>function</td><td>a) their b) (to) them</td><td>55</td></tr>
+<tr><td>jij, je</td><td>function</td><td>you</td><td>67</td></tr>
+<tr><td>zoals</td><td>function</td><td>as</td><td>71</td></tr>
+</tbody></table></div>
+</details>
+<details id="theme-names"><summary>Names — 319 uncarded, 0 imageable</summary>
+<p>Contrast pairs: none obvious.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Lemma</th><th>Pos</th><th>Gloss</th><th>Rank</th></tr></thead>
+<tbody>
+<tr><td>nederland</td><td>name</td><td>netherlands</td><td>122</td></tr>
+<tr><td>september</td><td>name</td><td>September</td><td>193</td></tr>
+<tr><td>maart</td><td>name</td><td>March</td><td>208</td></tr>
+<tr><td>amsterdam</td><td>name</td><td>amsterdam</td><td>227</td></tr>
+<tr><td>april</td><td>name</td><td>April</td><td>228</td></tr>
+<tr><td>oktober</td><td>name</td><td>October</td><td>254</td></tr>
+<tr><td>november</td><td>name</td><td>November</td><td>263</td></tr>
+<tr><td>december</td><td>name</td><td>December</td><td>299</td></tr>
+<tr><td>mei</td><td>name</td><td>May</td><td>308</td></tr>
+<tr><td>januari</td><td>name</td><td>January</td><td>316</td></tr>
+<tr><td>juli</td><td>name</td><td>July</td><td>352</td></tr>
+<tr><td>februari</td><td>name</td><td>February</td><td>360</td></tr>
+<tr><td>juni</td><td>name</td><td>June</td><td>363</td></tr>
+<tr><td>augustus</td><td>name</td><td>August</td><td>378</td></tr>
+<tr><td>frankrijk</td><td>name</td><td>france</td><td>465</td></tr>
+<tr><td>londen</td><td>name</td><td>london</td><td>693</td></tr>
+<tr><td>spanje</td><td>name</td><td>spain</td><td>699</td></tr>
+<tr><td>parijs</td><td>name</td><td>paris</td><td>758</td></tr>
+<tr><td>japan</td><td>name</td><td>japan</td><td>834</td></tr>
+<tr><td>turkije</td><td>name</td><td>turkey</td><td>909</td></tr>
+<tr><td>mexico</td><td>name</td><td>mexico</td><td>1031</td></tr>
+<tr><td>india</td><td>name</td><td>india</td><td>1159</td></tr>
+<tr><td>canada</td><td>name</td><td>canada</td><td>1207</td></tr>
+<tr><td>griekenland</td><td>name</td><td>greece</td><td>1255</td></tr>
+<tr><td>held</td><td>name</td><td>hero</td><td>1310</td></tr>
+<tr><td>zweden</td><td>name</td><td>sweden</td><td>1375</td></tr>
+<tr><td>berlijn</td><td>name</td><td>berlin</td><td>1380</td></tr>
+<tr><td>polen</td><td>name</td><td>poland</td><td>1392</td></tr>
+<tr><td>madrid</td><td>name</td><td>madrid</td><td>1440</td></tr>
+<tr><td>barcelona</td><td>name</td><td>barcelona</td><td>1456</td></tr>
+</tbody></table></div>
+</details>
+<h2 id="how-to-teach-these">How to teach these</h2>
+<p>The owner has decided four things for this group.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Decision</th><th>Meaning</th></tr></thead>
+<tbody>
+<tr><td>Image-based cards</td><td>The picture carries the meaning.</td></tr>
+<tr><td>No example sentences</td><td>A card shows the word and the picture only.</td></tr>
+<tr><td>Contrast pairs only where obvious</td><td>Opposites are paired when the list itself shows them; no pair is forced.</td></tr>
+<tr><td>No language-level bands</td><td>This group is organised by theme, not by A0 to B2.</td></tr>
+</tbody></table></div>
+<p>Three questions are still open and are not answered here.</p>
+<ol>
+<li>Card format: what a card for this group contains and how it is laid out.</li>
+<li>Who draws: who produces the artwork for the chosen words.</li>
+<li>Order of themes: which theme comes first and which words within it.</li>
+</ol>
+    </article>
+    <nav class="pager" aria-label="Previous and next document"><a class="prev" href="index.html"><span>Prev</span>Lexicon overview</a></nav>
+    <footer class="footer">
+      <code>Docs/lexicon/themes-to-card.html</code> · Oefenpad documentation. This page is the document.
+    </footer>
+  </main>
+</div>
+<script>
+(function(){
+  var body=document.body;
+  var btn=document.getElementById('nav-toggle');
+  var scrim=document.getElementById('scrim');
+  function setNav(open){
+    body.classList.toggle('nav-open',open);
+    if(btn) btn.setAttribute('aria-expanded',open?'true':'false');
+  }
+  if(btn) btn.addEventListener('click',function(){setNav(!body.classList.contains('nav-open'));});
+  if(scrim) scrim.addEventListener('click',function(){setNav(false);});
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape') setNav(false);
+  });
+
+  var toc=document.querySelector('details.page-toc');
+  if(toc && window.matchMedia('(max-width:980px)').matches) toc.open=false;
+
+  var input=document.getElementById('nav-filter');
+  if(!input) return;
+  var groups=Array.prototype.slice.call(document.querySelectorAll('.nav-group'));
+  function apply(){
+    var q=input.value.trim().toLowerCase();
+    groups.forEach(function(g){
+      var shown=0;
+      Array.prototype.forEach.call(g.querySelectorAll('li'),function(li){
+        var a=li.querySelector('a');
+        if(!a) return;
+        var hay=(a.textContent+' '+(a.getAttribute('data-path')||'')).toLowerCase();
+        var hit=!q || hay.indexOf(q)!==-1;
+        li.hidden=!hit;
+        if(hit) shown++;
+      });
+      g.hidden=!!q && shown===0;
+      if(q) g.open=shown>0;
+      else g.open=g.getAttribute('data-open')==='1';
+    });
+  }
+  input.addEventListener('input',apply);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){input.value='';apply();input.blur();}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='/' && document.activeElement!==input &&
+       !/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)){
+      e.preventDefault();input.focus();
+    }
+  });
+})();
+</script>
+</body>
+</html>
