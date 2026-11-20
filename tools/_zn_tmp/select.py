@@ -64,6 +64,7 @@ OVERRIDE = {
     'pan':           ('a2', 'judgment', 'saucepan and frying pan are used daily'),
     'stopcontact-schakelaar': ('a2', 'judgment', 'every room has a socket and a light switch'),
     'sandaal-slipper': ('a2', 'judgment', 'sandals and flip-flops are everyday summer footwear'),
+    'vinger':        ('a2', 'judgment', 'a finger is a beginner body word like hand and voet; thumb, little finger and index finger move with it (owner ruling)'),
 }
 
 # Highest band a 'judgment' promotion may reach: everyday items sit at A2 at the highest.
@@ -91,7 +92,7 @@ EVERYDAY_REVIEW = {
     'kelder-zolder': ('b1', 'kept', 'house spaces many newcomers in flats do not have'),
     'mond': ('b1', 'promoted', None),
     'gezichtsdeel': ('b1', 'kept', 'face detail beyond the A1 face set'),
-    'vinger': ('b1', 'kept', 'finger names beyond hand and finger'),
+    'vinger': ('b1', 'promoted', None),
     'rolstoel-kinderwagen': ('b1', 'kept', 'mobility aids, not a daily item for most learners'),
     'kam-tandenborstel': ('b1', 'promoted', None),
     'boomdeel': ('b1', 'kept', 'parts of a tree'),

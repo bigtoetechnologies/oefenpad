@@ -1445,6 +1445,45 @@
    "band": "a2"
   },
   {
+   "id": "vinger",
+   "axis": "digit of the hand",
+   "members": [
+    {
+     "id": "duim",
+     "lemma": "duim",
+     "gloss": "thumb",
+     "article": "de",
+     "plural": "duimen",
+     "dim": "",
+     "base": "",
+     "rank": 3232
+    },
+    {
+     "id": "pink",
+     "lemma": "pink",
+     "gloss": "little finger",
+     "article": "de",
+     "plural": "pinken",
+     "dim": "",
+     "base": "",
+     "rank": 3019
+    },
+    {
+     "id": "wijsvinger",
+     "lemma": "wijsvinger",
+     "gloss": "index finger",
+     "article": "de",
+     "plural": "wijsvingers",
+     "dim": "",
+     "base": "",
+     "rank": 8394
+    }
+   ],
+   "rank_band": "b1",
+   "override": "Lexicon: duim niveau open, herkomst bijlage8, rank 3232; pink niveau open, herkomst bijlage8, rank 3019; wijsvinger niveau open, herkomst bijlage8, rank 8394. Basis: judgment, not lexicon data. Note: a finger is a beginner body word like hand and voet; thumb, little finger and index finger move with it (owner ruling).",
+   "band": "a2"
+  },
+  {
    "id": "kam-tandenborstel",
    "axis": "comb or toothbrush",
    "members": [
@@ -2388,44 +2427,6 @@
      "dim": "",
      "base": "",
      "rank": 3897
-    }
-   ],
-   "rank_band": "b1",
-   "band": "b1"
-  },
-  {
-   "id": "vinger",
-   "axis": "digit of the hand",
-   "members": [
-    {
-     "id": "duim",
-     "lemma": "duim",
-     "gloss": "thumb",
-     "article": "de",
-     "plural": "duimen",
-     "dim": "",
-     "base": "",
-     "rank": 3232
-    },
-    {
-     "id": "pink",
-     "lemma": "pink",
-     "gloss": "little finger",
-     "article": "de",
-     "plural": "pinken",
-     "dim": "",
-     "base": "",
-     "rank": 3019
-    },
-    {
-     "id": "wijsvinger",
-     "lemma": "wijsvinger",
-     "gloss": "index finger",
-     "article": "de",
-     "plural": "wijsvingers",
-     "dim": "",
-     "base": "",
-     "rank": 8394
     }
    ],
    "rank_band": "b1",
@@ -3835,8 +3836,8 @@
   ],
   "vinger": [
    "b1",
-   "kept",
-   "finger names beyond hand and finger"
+   "promoted",
+   null
   ],
   "rolstoel-kinderwagen": [
    "b1",
