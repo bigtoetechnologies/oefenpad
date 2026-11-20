@@ -1,0 +1,1312 @@
+[
+ {
+  "verb": "stranden",
+  "sense": "aan de grond vastlopen (of a boat: to run aground)",
+  "gloss": "to run aground",
+  "forms": [
+   "stranden",
+   "strandt"
+  ],
+  "picture": "A small boat sits tilted in shallow water with its bottom in the sand. The water around it is low, and a few metres further out the water is deep.",
+  "mark": "The boat stuck in the sand while deeper water lies just beyond it.",
+  "alt": "Een kleine boot zit schuin vast in ondiep water. Een eind verderop is het water diep.",
+  "note": "Wiktionary sense 1. Sense 2 (a plan or talk gets stuck) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Het schip vaart naar de haven.",
+     "Er is te weinig water.",
+     "Het schip strandt in het zand."
+    ],
+    "question": "Zit het schip vast?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Een grote boot vaart over de rivier.",
+     "Het water is diep genoeg.",
+     "De boot strandt niet."
+    ],
+    "question": "Zit de boot vast in het zand?",
+    "answer": "nee",
+    "scene": "A big boat sails freely in the middle of a wide river."
+   },
+   {
+    "text": [
+     "De vissers varen terug naar huis.",
+     "In de mist zien zij het land niet.",
+     "Hun boot strandt."
+    ],
+    "question": "Kan de boot van de vissers nog varen?",
+    "answer": "nee",
+    "scene": "A fishing boat stuck in sand in thick mist, two men on deck looking down."
+   },
+   {
+    "text": [
+     "Een boot vaart langs de kust.",
+     "Daar is te weinig water.",
+     "De boot strandt."
+    ],
+    "question": "Zit de boot nu vast?",
+    "answer": "ja",
+    "scene": "A boat tilted on a sandbank near the shore, water low around it."
+   }
+  ]
+ },
+ {
+  "verb": "verdragen",
+  "sense": "bestand zijn tegen iets ergs (to bear, to stand)",
+  "gloss": "to bear, to stand",
+  "forms": [
+   "verdragen",
+   "verdraagt"
+  ],
+  "picture": "A person at a loud event holds both hands over their ears with the face pinched shut. Big speakers stand beside them.",
+  "mark": "The hands pressed over the ears: the sound is too much to stand.",
+  "alt": "Een persoon bij een groot feest houdt beide handen op de oren. Naast hem staan grote luidsprekers.",
+  "note": "Wiktionary sense 1. Sense 2 (food one cannot digest) is left out as medical.",
+  "examples": [
+   {
+    "text": [
+     "Sam is op een concert.",
+     "De muziek is erg hard.",
+     "Hij kan het geluid niet verdragen."
+    ],
+    "question": "Is het geluid te hard voor Sam?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het is een hete dag.",
+     "Eva zit in de zon.",
+     "Zij kan de hitte niet verdragen."
+    ],
+    "question": "Is de hitte te veel voor Eva?",
+    "answer": "ja",
+    "scene": "A woman in direct sun fanning herself, sweat drops, a glass of water in her hand."
+   },
+   {
+    "text": [
+     "Anna woont naast een drukke weg.",
+     "Er is de hele dag veel lawaai.",
+     "Zij verdraagt het lawaai goed."
+    ],
+    "question": "Is het lawaai een probleem voor Anna?",
+    "answer": "nee",
+    "scene": "A woman reading calmly by an open window, busy road outside."
+   },
+   {
+    "text": [
+     "Het is buiten erg koud.",
+     "Jan loopt een uur door de sneeuw.",
+     "Hij verdraagt de kou goed."
+    ],
+    "question": "Heeft Jan het te koud?",
+    "answer": "nee",
+    "scene": "A man in thick coat and gloves walking cheerfully through snow."
+   }
+  ]
+ },
+ {
+  "verb": "wijzigen",
+  "sense": "zodanig aan iets werken dat het anders wordt (to change, to alter)",
+  "gloss": "to change, to alter",
+  "forms": [
+   "wijzigen",
+   "wijzigt"
+  ],
+  "picture": "A person holds a pencil over a weekly planner and crosses out one entry, with a new entry drawn on the next day. Strokes only, no letters.",
+  "mark": "The crossed-out entry and the new one beside it: the same thing, made different.",
+  "alt": "Een persoon houdt een potlood boven een weekplanner. Er staat een streep door één afspraak en op de volgende dag staat een nieuwe.",
+  "note": "Wiktionary sense 1. The object stays the same thing but becomes different.",
+  "examples": [
+   {
+    "text": [
+     "Sam heeft een afspraak op maandag.",
+     "Hij kan toch niet op maandag.",
+     "Hij wijzigt de afspraak naar dinsdag."
+    ],
+    "question": "Is de afspraak nu op dinsdag?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna schrijft een brief.",
+     "Zij leest de brief nog een keer.",
+     "Zij wijzigt de laatste zin."
+    ],
+    "question": "Is de laatste zin nog dezelfde?",
+    "answer": "nee",
+    "scene": "A woman with a pencil crossing out the last line of a sheet and writing a new one."
+   },
+   {
+    "text": [
+     "Het menu van het restaurant is goed.",
+     "De kok wijzigt het menu niet."
+    ],
+    "question": "Is het menu nu anders?",
+    "answer": "nee",
+    "scene": "A cook looks at a menu card on the wall and leaves it untouched."
+   },
+   {
+    "text": [
+     "Els heeft een plan voor de tuin.",
+     "De grote boom is weg, dus het plan is niet meer goed.",
+     "Zij wijzigt het plan."
+    ],
+    "question": "Maakt Els het plan anders?",
+    "answer": "ja",
+    "scene": "A woman redrawing a garden sketch at a table, an eraser beside it."
+   }
+  ]
+ },
+ {
+  "verb": "beschouwen",
+  "sense": "bekijken als, vinden (to regard as)",
+  "gloss": "to regard as, to consider",
+  "forms": [
+   "beschouwen",
+   "beschouwt"
+  ],
+  "picture": "Two friends sit close on a bench. One has an arm around the other's shoulders. A thought bubble above one of them shows both people holding hands as children.",
+  "mark": "The thought bubble: the picture in the mind of how this person sees the other.",
+  "alt": "Twee mensen zitten dicht bij elkaar op een bank. Boven het hoofd van één van hen staat een gedachtewolk met twee kinderen die hand in hand lopen.",
+  "note": "Wiktionary sense 1: beschouwen als. The text names the role (friend, family) that one person gives another.",
+  "examples": [
+   {
+    "text": [
+     "Jan en Piet kennen elkaar al lang.",
+     "Zij helpen elkaar altijd.",
+     "Jan beschouwt Piet als zijn vriend."
+    ],
+    "question": "Is Piet voor Jan een vriend?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els werkt veel thuis.",
+     "Haar hond ligt altijd naast haar stoel.",
+     "Zij beschouwt hem als een lid van de familie."
+    ],
+    "question": "Is de hond voor Els gewoon een dier?",
+    "answer": "nee",
+    "scene": "A woman at a desk, a dog lying against her feet, a family photo on the wall."
+   },
+   {
+    "text": [
+     "Eva vindt de buurman erg aardig.",
+     "Hij helpt haar vaak met de tuin.",
+     "Zij beschouwt hem als een vriend."
+    ],
+    "question": "Ziet Eva hem als een vriend?",
+    "answer": "ja",
+    "scene": "A woman and an older man talking over a garden fence, smiling."
+   },
+   {
+    "text": [
+     "Sam krijgt een brief van de bank.",
+     "Hij beschouwt de brief als belangrijk."
+    ],
+    "question": "Denkt Sam dat de brief niet belangrijk is?",
+    "answer": "nee",
+    "scene": "A man opening an envelope at once, standing in the hallway."
+   }
+  ]
+ },
+ {
+  "verb": "beïnvloeden",
+  "sense": "iemand of iets proberen te veranderen, invloed hebben op (to influence)",
+  "gloss": "to influence",
+  "forms": [
+   "beïnvloeden",
+   "beïnvloedt"
+  ],
+  "picture": "A tall person stands behind a smaller one and points with a flat hand in one direction. The small person looks the way the hand points.",
+  "mark": "The flat hand pointing and the smaller person looking the same way.",
+  "alt": "Een grote persoon staat achter een kleinere en wijst met een vlakke hand naar links. De kleine persoon kijkt dezelfde kant op.",
+  "note": "Wiktionary sense 1. Examples 2 and 4 show no influence, so the verb is not just 'to talk to'.",
+  "examples": [
+   {
+    "text": [
+     "De vader van Anna is kok.",
+     "Anna wil ook graag kok worden.",
+     "Haar vader beïnvloedt haar keuze."
+    ],
+    "question": "Kiest Anna dit werk door haar vader?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het is erg koud buiten.",
+     "Piet wil toch gaan fietsen.",
+     "De kou beïnvloedt hem niet."
+    ],
+    "question": "Blijft Piet thuis door de kou?",
+    "answer": "nee",
+    "scene": "A man in a coat wheeling a bicycle out of the front door in the cold."
+   },
+   {
+    "text": [
+     "Veel kinderen kijken naar een bekende zanger.",
+     "Zij dragen allemaal dezelfde kleren als hij.",
+     "De zanger beïnvloedt hen."
+    ],
+    "question": "Willen de kinderen zijn zoals de zanger?",
+    "answer": "ja",
+    "scene": "Three children in the same clothes as a singer on a poster behind them."
+   },
+   {
+    "text": [
+     "Sam wil een blauwe auto kopen.",
+     "Zijn vrienden zeggen: koop een andere.",
+     "Zij beïnvloeden hem niet."
+    ],
+    "question": "Koopt Sam een andere auto?",
+    "answer": "nee",
+    "scene": "A man shaking his head in front of a blue car while two friends point at another car."
+   }
+  ]
+ },
+ {
+  "verb": "vestigen",
+  "sense": "zich ergens vestigen: er gaan wonen (to settle)",
+  "gloss": "to settle (somewhere)",
+  "forms": [
+   "vestigen",
+   "vestigt"
+  ],
+  "picture": "A woman stands in front of a house with a few boxes at her feet. She holds one key up.",
+  "mark": "The boxes and the key: she is arriving to stay.",
+  "alt": "Een vrouw staat voor een huis met een paar dozen naast zich. Zij houdt een sleutel omhoog.",
+  "note": "Wiktionary sense 3 (zich vestigen). Senses 1 and 2 (to found an office, to turn attention) are left out.",
+  "examples": [
+   {
+    "text": [
+     "Anna komt uit Spanje.",
+     "Zij vindt werk in Nederland.",
+     "Zij vestigt zich in Utrecht."
+    ],
+    "question": "Gaat Anna in Utrecht wonen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan woont nu in een hotel.",
+     "Hij zoekt een huis in een klein dorp.",
+     "Maar hij vestigt zich niet in het dorp, want het is te stil."
+    ],
+    "question": "Gaat Jan in het dorp wonen?",
+    "answer": "nee",
+    "scene": "A man with a suitcase at a hotel window, looking at a quiet empty village street."
+   },
+   {
+    "text": [
+     "Els reist een jaar rond de wereld.",
+     "Daarna komt zij terug naar huis.",
+     "Zij vestigt zich niet in een ander land."
+    ],
+    "question": "Gaat Els in een ander land wonen?",
+    "answer": "nee",
+    "scene": "A woman with a backpack boarding a plane, a map behind her."
+   },
+   {
+    "text": [
+     "Mark en Eva krijgen een kind.",
+     "Hun huis in de stad is te klein.",
+     "Zij vestigen zich in een dorp."
+    ],
+    "question": "Gaan Mark en Eva in een dorp wonen?",
+    "answer": "ja",
+    "scene": "A couple with a baby carrying boxes into a house on a quiet village street."
+   }
+  ]
+ },
+ {
+  "verb": "beheersen",
+  "sense": "zich beheersen: de baas zijn over je eigen gevoelens (to restrain oneself)",
+  "gloss": "to control oneself",
+  "forms": [
+   "beheersen",
+   "beheerst"
+  ],
+  "picture": "A man stands with clenched fists at his sides, jaw tight, and a long slow breath shown as a small cloud in front of his mouth. He stands still.",
+  "mark": "The clenched fists held still and the slow breath: the feeling is there but held back.",
+  "alt": "Een man staat stil met gebalde vuisten langs zijn lijf. Voor zijn mond staat een klein wolkje van een lange, rustige ademhaling.",
+  "note": "Wiktionary sense 2 (reflexive). Example 3 shows failing to hold back.",
+  "examples": [
+   {
+    "text": [
+     "Jan is erg boos op zijn broer.",
+     "Hij wil schreeuwen.",
+     "Maar hij beheerst zich."
+    ],
+    "question": "Schreeuwt Jan?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Eva krijgt een slecht cijfer.",
+     "Zij is boos.",
+     "Maar zij beheerst zich."
+    ],
+    "question": "Blijft Eva rustig?",
+    "answer": "ja",
+    "scene": "A girl looking at a paper with a frown but sitting still with her hands flat on the desk."
+   },
+   {
+    "text": [
+     "Piet wil het laatste stuk taart.",
+     "Hij heeft al veel taart op.",
+     "Hij kan zich niet beheersen."
+    ],
+    "question": "Neemt Piet het stuk taart?",
+    "answer": "ja",
+    "scene": "A man's hand reaching for the last slice on a cake plate, the other slices gone."
+   },
+   {
+    "text": [
+     "Een kind ziet een grote doos snoep.",
+     "Het wil alles pakken.",
+     "Maar het beheerst zich."
+    ],
+    "question": "Neemt het kind alles?",
+    "answer": "nee",
+    "scene": "A child holding one sweet and closing the box lid, eyes on the rest."
+   }
+  ]
+ },
+ {
+  "verb": "beheersen",
+  "sense": "volledig kennen of kunnen (to master a language or skill)",
+  "gloss": "to master (a language, a skill)",
+  "forms": [
+   "beheersen",
+   "beheerst"
+  ],
+  "picture": "A woman sits at a piano and plays with both hands, relaxed, looking at the audience instead of her hands. A few listeners clap.",
+  "mark": "Her relaxed look at the audience: she does not need to think about her hands.",
+  "alt": "Een vrouw speelt piano met beide handen en kijkt ontspannen naar het publiek in plaats van naar haar handen. Een paar mensen klappen.",
+  "note": "Wiktionary sense 3. Different from the first card: this is skill, not feeling.",
+  "examples": [
+   {
+    "text": [
+     "Anna speelt al tien jaar piano.",
+     "Zij beheerst haar instrument."
+    ],
+    "question": "Kan Anna goed piano spelen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam leert sinds een week koken.",
+     "Hij beheerst het koken nog niet."
+    ],
+    "question": "Kan Sam al goed koken?",
+    "answer": "nee",
+    "scene": "A man at a stove with one pot, a cookbook open and a puzzled face."
+   },
+   {
+    "text": [
+     "Piet leert al lang Engels.",
+     "Hij beheerst de taal."
+    ],
+    "question": "Kan Piet goed Engels?",
+    "answer": "ja",
+    "scene": "A man chatting easily with a tourist, an English book under his arm."
+   },
+   {
+    "text": [
+     "Eva leert zwemmen.",
+     "Zij beheerst het zwemmen nog niet."
+    ],
+    "question": "Kan Eva al goed zwemmen?",
+    "answer": "nee",
+    "scene": "A girl holding the pool edge with both hands, an instructor next to her."
+   }
+  ]
+ },
+ {
+  "verb": "dalen",
+  "sense": "naar beneden gaan (to go down, to descend)",
+  "gloss": "to go down, to descend",
+  "forms": [
+   "dalen",
+   "daalt"
+  ],
+  "picture": "A small aeroplane flies low over a runway with its nose tipped down and its wheels out. Trees and a building at the end of the runway are seen from just above.",
+  "mark": "The nose tipped down towards the runway close below: the plane is coming down.",
+  "alt": "Een klein vliegtuig vliegt laag boven een landingsbaan met de neus naar beneden. De wielen zijn al uit.",
+  "note": "Wiktionary sense 1. Example 4 shows a thing that stays at one height.",
+  "examples": [
+   {
+    "text": [
+     "Het vliegtuig is hoog in de lucht.",
+     "Het wil landen.",
+     "Het daalt langzaam."
+    ],
+    "question": "Gaat het vliegtuig omhoog?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Sam loopt in de bergen.",
+     "Hij daalt naar het dorp."
+    ],
+    "question": "Loopt Sam naar beneden?",
+    "answer": "ja",
+    "scene": "A hiker on a steep path, a village in the valley far below."
+   },
+   {
+    "text": [
+     "De lift staat op de tiende verdieping.",
+     "Anna drukt op de knop.",
+     "De lift daalt."
+    ],
+    "question": "Gaat de lift naar beneden?",
+    "answer": "ja",
+    "scene": "A woman pressing a lift button, the lift cabin drawn halfway down the shaft."
+   },
+   {
+    "text": [
+     "Een ballon hangt hoog boven het veld.",
+     "Hij daalt niet."
+    ],
+    "question": "Komt de ballon naar de grond?",
+    "answer": "nee",
+    "scene": "A balloon hanging still in the sky above a field, children looking up."
+   }
+  ]
+ },
+ {
+  "verb": "dalen",
+  "sense": "lager worden, minder worden (of price, temperature: to fall)",
+  "gloss": "to fall, to drop (price, temperature)",
+  "forms": [
+   "dalen",
+   "daalt"
+  ],
+  "picture": "A river bank with large stones. A dark wet band runs along the stones well above the water, where the water stood before. The water is now clearly lower.",
+  "mark": "The wet band on the stones above the water: the level has gone down.",
+  "alt": "Een rivier met grote stenen op de oever. Op de stenen zit een donkere natte rand, een eind boven het water.",
+  "note": "Wiktionary sense 2 (less valuable), widened to temperature and water level. Example 4 shows no change.",
+  "examples": [
+   {
+    "text": [
+     "Het water in de rivier is hoog.",
+     "Het regent niet meer.",
+     "Het water daalt."
+    ],
+    "question": "Is er straks minder water in de rivier?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het is herfst.",
+     "De temperatuur daalt elke dag."
+    ],
+    "question": "Is het straks nog zo warm als nu?",
+    "answer": "nee",
+    "scene": "People in coats and scarves on a street, their breath visible, frost on the car windows."
+   },
+   {
+    "text": [
+     "Sam koopt elke week appels.",
+     "Nu daalt de prijs."
+    ],
+    "question": "Betaalt Sam straks minder?",
+    "answer": "ja",
+    "scene": "A man at a fruit stall hands over a single coin for a full bag of apples and smiles."
+   },
+   {
+    "text": [
+     "Piet koopt elke dag brood.",
+     "De prijs daalt niet."
+    ],
+    "question": "Betaalt Piet nu minder voor zijn brood?",
+    "answer": "nee",
+    "scene": "A shop shelf with loaves, a shopper looking at the shelf and shrugging."
+   }
+  ]
+ },
+ {
+  "verb": "staken",
+  "sense": "een werkonderbreking houden voor betere voorwaarden (to strike)",
+  "gloss": "to strike (stop work in protest)",
+  "forms": [
+   "staken",
+   "staakt",
+   "staakten"
+  ],
+  "picture": "A group of people in work vests stand in a line next to a parked bus with its doors shut, arms crossed. A driver's seat inside is empty.",
+  "mark": "The crossed arms next to the parked bus with an empty driver's seat: they stay outside and do not work.",
+  "alt": "Een groep mensen in werkvesten staat met de armen over elkaar naast een geparkeerde bus met gesloten deuren. De stoel van de chauffeur is leeg.",
+  "note": "Wiktionary sense 1. Sense 2 (to end something) is left out as rare in this form.",
+  "examples": [
+   {
+    "text": [
+     "De chauffeurs van de bus willen meer geld.",
+     "Zij staken vandaag."
+    ],
+    "question": "Rijdt de bus vandaag?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Op de school van Eva staken vandaag veel mensen.",
+     "Maar haar juf staakt niet."
+    ],
+    "question": "Krijgt de klas van Eva vandaag les?",
+    "answer": "ja",
+    "scene": "A teacher at the front of a full classroom, writing on the board."
+   },
+   {
+    "text": [
+     "Op het station staan veel mensen.",
+     "Het personeel van de trein staakt.",
+     "De mensen moeten wachten."
+    ],
+    "question": "Rijden de treinen?",
+    "answer": "nee",
+    "scene": "A crowded platform and an empty track, workers in vests standing together at the end."
+   },
+   {
+    "text": [
+     "Gisteren staakten de mensen van de fabriek.",
+     "Vandaag staken zij niet meer."
+    ],
+    "question": "Werken de mensen van de fabriek vandaag?",
+    "answer": "ja",
+    "scene": "Factory workers at their machines, busy."
+   }
+  ]
+ },
+ {
+  "verb": "verlenen",
+  "sense": "iemand iets geven of toestaan: hulp verlenen (to grant, to give)",
+  "gloss": "to grant, to give (help, access)",
+  "forms": [
+   "verlenen",
+   "verleent"
+  ],
+  "picture": "A car stands at the roadside with its bonnet open and a woman beside it. A man who has parked behind it bends over her engine with a tool in his hand.",
+  "mark": "The man bent over her engine: help is given.",
+  "alt": "Een auto staat langs de weg met de motorkap open. Een vrouw staat ernaast. Een man buigt zich over de motor.",
+  "note": "Wiktionary sense 1. Formal; in speech people say 'helpen'. Used with objects like hulp and toegang.",
+  "examples": [
+   {
+    "text": [
+     "De auto van Anna staat stil langs de weg.",
+     "Een man stopt.",
+     "Hij verleent haar hulp."
+    ],
+    "question": "Helpt de man Anna?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan wil op het dak van de school werken.",
+     "Hij vraagt het hoofd van de school om toestemming.",
+     "Het hoofd verleent hem toestemming."
+    ],
+    "question": "Mag Jan op het dak werken?",
+    "answer": "ja",
+    "scene": "A man with a ladder at a school door; a woman nods and points up at the roof."
+   },
+   {
+    "text": [
+     "Eva wil met haar hond de winkel in.",
+     "De eigenaar verleent geen toestemming."
+    ],
+    "question": "Mag de hond mee naar binnen?",
+    "answer": "nee",
+    "scene": "A woman with a dog on a lead at a shop door; the shop owner in the doorway shakes his head."
+   },
+   {
+    "text": [
+     "De bibliotheek is om vijf uur dicht.",
+     "Een vrouw komt om half zes.",
+     "De man achter de balie verleent haar geen toegang."
+    ],
+    "question": "Mag de vrouw naar binnen?",
+    "answer": "nee",
+    "scene": "A woman at a closed door; a man behind the counter inside holds up a palm."
+   }
+  ]
+ },
+ {
+  "verb": "vervoeren",
+  "sense": "personen of dingen naar een andere plek brengen (to transport)",
+  "gloss": "to transport, to carry",
+  "forms": [
+   "vervoeren",
+   "vervoert"
+  ],
+  "picture": "A bus on a road with several children visible in its windows. A school building stands at the end of the road.",
+  "mark": "The children inside the moving bus: people carried from one place to another.",
+  "alt": "Een bus rijdt over een weg en in de ramen zitten kinderen. Aan het eind van de weg staat een school.",
+  "note": "Wiktionary sense 1. Example 4 shows an empty vehicle.",
+  "examples": [
+   {
+    "text": [
+     "De bus rijdt elke ochtend naar de school.",
+     "Hij vervoert veel kinderen."
+    ],
+    "question": "Zitten er kinderen in de bus?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Een grote vrachtwagen staat voor de winkel.",
+     "Hij vervoert tafels naar de stad."
+    ],
+    "question": "Rijden de tafels mee in de wagen?",
+    "answer": "ja",
+    "scene": "A big lorry with the back open and tables strapped inside."
+   },
+   {
+    "text": [
+     "Piet heeft een kleine auto.",
+     "Hij kan geen kast vervoeren.",
+     "De kast is te groot."
+    ],
+    "question": "Kan Piet de kast met zijn auto meenemen?",
+    "answer": "nee",
+    "scene": "A man looking at a tall wardrobe next to a tiny car."
+   },
+   {
+    "text": [
+     "Het is zomer en de school is dicht.",
+     "De bus staat op de parkeerplaats.",
+     "Hij vervoert nu niemand."
+    ],
+    "question": "Zitten er mensen in de bus?",
+    "answer": "nee",
+    "scene": "A parked empty bus with open doors; the driver reads a paper on a bench outside."
+   }
+  ]
+ },
+ {
+  "verb": "achterhalen",
+  "sense": "te weten komen door te zoeken (to track down, to find out)",
+  "gloss": "to find out, to track down",
+  "forms": [
+   "achterhalen",
+   "achterhaalt"
+  ],
+  "picture": "A woman at a table with a photo of a man in one hand and a magnifying glass in the other. A trail of small notes goes across the table to an address card.",
+  "mark": "The trail of notes across the table ending at one card: finding out step by step.",
+  "alt": "Een vrouw zit aan een tafel met een foto van een man in de ene hand en een vergrootglas in de andere. Een rij briefjes loopt over de tafel naar één kaartje.",
+  "note": "Wiktionary sense 1. The thing exists; you search until you know it. Examples 2 and 4 show failing.",
+  "examples": [
+   {
+    "text": [
+     "Anna vindt een foto in een oud boek.",
+     "Zij wil weten wie de man op de foto is.",
+     "Na een week achterhaalt zij zijn naam."
+    ],
+    "question": "Weet Anna nu wie de man is?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan krijgt een brief zonder naam.",
+     "Hij wil weten van wie die is.",
+     "Hij achterhaalt het niet."
+    ],
+    "question": "Weet Jan wie de brief stuurt?",
+    "answer": "nee",
+    "scene": "A man turning an unsigned letter over, puzzled, a pile of other letters on the table."
+   },
+   {
+    "text": [
+     "De computer van Mark doet het niet.",
+     "Hij zoekt wat er mis is.",
+     "Na een uur achterhaalt hij de oorzaak."
+    ],
+    "question": "Weet Mark waarom de computer niet werkt?",
+    "answer": "ja",
+    "scene": "A man at a desk holding up a cable with a broken end next to a computer."
+   },
+   {
+    "text": [
+     "Een bus komt te laat.",
+     "Eva wil weten waarom.",
+     "Zij kan de reden niet achterhalen."
+    ],
+    "question": "Weet Eva waarom de bus te laat is?",
+    "answer": "nee",
+    "scene": "A woman at a bus stop looking at her watch and at an empty road, shrugging."
+   }
+  ]
+ },
+ {
+  "verb": "bestuderen",
+  "sense": "je er grondig in verdiepen (to study closely)",
+  "gloss": "to study (closely)",
+  "forms": [
+   "bestuderen",
+   "bestudeert"
+  ],
+  "picture": "A woman bends over a table with an open book, one finger on a line, a notebook open beside her. A lamp lights the page close up.",
+  "mark": "The bent head and finger on one line: long, careful reading.",
+  "alt": "Een vrouw buigt zich over een open boek op een tafel met één vinger op een regel. Naast haar ligt een open schrift en een lamp schijnt op de bladzijde.",
+  "note": "Wiktionary sense 1. Closer than reading; examples 3 and 4 show looking without care.",
+  "examples": [
+   {
+    "text": [
+     "Els heeft een boek over dieren.",
+     "Zij bestudeert het boek."
+    ],
+    "question": "Leest Els het boek goed?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan wil een nieuwe telefoon kopen.",
+     "Hij leest veel over drie telefoons.",
+     "Hij bestudeert alle verschillen."
+    ],
+    "question": "Kijkt Jan goed naar de telefoons voordat hij koopt?",
+    "answer": "ja",
+    "scene": "A man at a table with three phones in a row and a notebook, comparing them."
+   },
+   {
+    "text": [
+     "Sam krijgt een kaart van de stad.",
+     "Hij bestudeert de kaart niet."
+    ],
+    "question": "Kijkt Sam lang en goed naar de kaart?",
+    "answer": "nee",
+    "scene": "A man glancing at a map and already walking on."
+   },
+   {
+    "text": [
+     "Anna heeft een dik boek over geschiedenis.",
+     "Zij legt het op de plank.",
+     "Zij bestudeert het nog niet."
+    ],
+    "question": "Heeft Anna al iets uit het boek geleerd?",
+    "answer": "nee",
+    "scene": "A woman putting a thick closed book on a shelf next to others."
+   }
+  ]
+ },
+ {
+  "verb": "besturen",
+  "sense": "zorgen dat een voertuig of toestel doet wat je wilt (to drive, to steer, to control)",
+  "gloss": "to drive, to steer, to control",
+  "forms": [
+   "besturen",
+   "bestuurt"
+  ],
+  "picture": "A man sits in a car with both hands on the wheel and eyes on the road. The road ahead bends to the left and the front wheels are turned left.",
+  "mark": "The hands on the wheel and the turned front wheels: he decides where it goes.",
+  "alt": "Een man zit in een auto met beide handen aan het stuur en kijkt naar de weg. De weg buigt naar links en de voorwielen staan links.",
+  "note": "Wiktionary sense 1. Senses about governing a country or leading a group are left out.",
+  "examples": [
+   {
+    "text": [
+     "Jan zit in de auto.",
+     "Hij heeft zijn handen aan het stuur.",
+     "Hij bestuurt de auto."
+    ],
+    "question": "Kiest Jan zelf de richting van de auto?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Op het meer vaart een kleine boot.",
+     "Eva zit achterin.",
+     "Zij bestuurt de boot."
+    ],
+    "question": "Kiest Eva zelf de richting van de boot?",
+    "answer": "ja",
+    "scene": "A woman at the back of a small boat holding the tiller."
+   },
+   {
+    "text": [
+     "Sam heeft een kleine auto om mee te spelen.",
+     "Hij staat op het gras met zijn telefoon in zijn handen.",
+     "Hij bestuurt de auto met zijn telefoon."
+    ],
+    "question": "Zit Sam in de auto?",
+    "answer": "nee",
+    "scene": "A boy on the grass holding a phone in both hands, a toy car on the path."
+   },
+   {
+    "text": [
+     "Anna zit naast haar vader in de auto.",
+     "Haar vader rijdt.",
+     "Anna bestuurt de auto niet."
+    ],
+    "question": "Kiest Anna zelf de richting van de auto?",
+    "answer": "nee",
+    "scene": "A girl in the passenger seat looking out the window, her father at the wheel."
+   }
+  ]
+ },
+ {
+  "verb": "bevelen",
+  "sense": "een dwingende opdracht geven (to order, to command)",
+  "gloss": "to order, to command",
+  "forms": [
+   "bevelen",
+   "beveelt"
+  ],
+  "picture": "A man in a tracksuit stands at the edge of a field with one arm straight out and a pointing finger. Players on the field look at him, ready to move.",
+  "mark": "The straight arm and the pointing finger: not a question but an order.",
+  "alt": "Een man in een trainingspak staat aan de rand van een veld met één arm recht vooruit en wijst met een vinger. Spelers op het veld kijken naar hem, klaar om te gaan.",
+  "note": "Wiktionary sense 1. Stronger than vragen: the others have no choice. Formal and rare in daily speech.",
+  "examples": [
+   {
+    "text": [
+     "De trainer staat op het veld.",
+     "Hij zegt hard: kom hier!",
+     "Hij beveelt de spelers om te komen."
+    ],
+    "question": "Moeten de spelers komen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De juf zegt streng tegen de klas: zit stil!",
+     "Zij beveelt de kinderen om stil te zitten."
+    ],
+    "question": "Moeten de kinderen stil zijn?",
+    "answer": "ja",
+    "scene": "A teacher with a raised finger at the front of the class, children hurrying to their chairs."
+   },
+   {
+    "text": [
+     "De baas vraagt vriendelijk of Jan koffie wil halen.",
+     "Hij beveelt het niet."
+    ],
+    "question": "Moet Jan de koffie halen?",
+    "answer": "nee",
+    "scene": "A boss with open hands smiling at a man at a desk."
+   },
+   {
+    "text": [
+     "Het schip ligt in de haven.",
+     "De kapitein beveelt de bemanning om te wachten."
+    ],
+    "question": "Mag de bemanning nu vertrekken?",
+    "answer": "nee",
+    "scene": "A captain with a flat hand held up to his crew on the deck of a ship in the harbour."
+   }
+  ]
+ },
+ {
+  "verb": "beweren",
+  "sense": "stellig zeggen wat anderen niet zeker weten (to claim, to assert)",
+  "gloss": "to claim, to assert",
+  "forms": [
+   "beweren",
+   "beweert"
+  ],
+  "picture": "A man stands with his chest out and a hand on his heart, speaking. Two others look at him sideways with raised eyebrows.",
+  "mark": "The raised eyebrows of the listeners: they are not sure it is true.",
+  "alt": "Een man staat met zijn borst vooruit en een hand op zijn hart, terwijl hij praat. Twee anderen kijken hem schuin aan met opgetrokken wenkbrauwen.",
+  "note": "Wiktionary sense 1. The speaker is sure; others are not. Examples 2 and 4 show doubt.",
+  "examples": [
+   {
+    "text": [
+     "Jan beweert dat hij een heel goed kok is.",
+     "Maar niemand weet of dat waar is."
+    ],
+    "question": "Zegt Jan dat hij goed kan koken?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva beweert dat zij gisteren de hele dag thuis was.",
+     "Maar de buurvrouw heeft haar in de stad gezien."
+    ],
+    "question": "Is het zeker waar wat Eva zegt?",
+    "answer": "nee",
+    "scene": "A woman speaking to a neighbour at a door; a thought bubble of the neighbour shows Eva in a street."
+   },
+   {
+    "text": [
+     "De lucht is blauw.",
+     "Toch beweert Sam dat het morgen regent."
+    ],
+    "question": "Denkt Sam dat het morgen regent?",
+    "answer": "ja",
+    "scene": "A man looking at a clear sky with one finger raised."
+   },
+   {
+    "text": [
+     "Piet beweert dat zijn fiets heel snel is.",
+     "Anna lacht en zegt: laat maar zien."
+    ],
+    "question": "Gelooft Anna hem meteen?",
+    "answer": "nee",
+    "scene": "A man patting his bicycle proudly while a woman smiles and shrugs."
+   }
+  ]
+ },
+ {
+  "verb": "bezitten",
+  "sense": "iets in eigendom hebben (to own, to possess)",
+  "gloss": "to own, to possess",
+  "forms": [
+   "bezitten",
+   "bezit"
+  ],
+  "picture": "A man stands in front of three houses in a row with a key ring in his hand. A small drawn key hangs on each front door.",
+  "mark": "The key ring in the man's hand and a key on each door: these houses are his.",
+  "alt": "Een man staat voor drie huizen op een rij met een sleutelbos in zijn hand. Aan elke voordeur hangt een sleuteltje.",
+  "note": "Wiktionary sense 1. Examples 2 and 4 show using without owning.",
+  "examples": [
+   {
+    "text": [
+     "Mark heeft veel geld.",
+     "Hij bezit drie huizen in de stad."
+    ],
+    "question": "Zijn de huizen van Mark?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els rijdt elke dag op een fiets.",
+     "Maar zij bezit zelf geen fiets."
+    ],
+    "question": "Is de fiets van Els?",
+    "answer": "nee",
+    "scene": "A woman riding a borrowed bicycle, the neighbour waving from his door."
+   },
+   {
+    "text": [
+     "Jan heeft een kleine boerderij.",
+     "Hij bezit ook veel land bij de boerderij."
+    ],
+    "question": "Is dat land van Jan?",
+    "answer": "ja",
+    "scene": "A farmer standing on a hill and looking over fields all around his farm."
+   },
+   {
+    "text": [
+     "De school gebruikt het gebouw.",
+     "Maar de school bezit het gebouw niet."
+    ],
+    "question": "Is het gebouw van de school?",
+    "answer": "nee",
+    "scene": "Children going into a large building; a man in a suit outside holds the keys."
+   }
+  ]
+ },
+ {
+  "verb": "verrassen",
+  "sense": "iemand onverwacht blij maken (to surprise someone pleasantly)",
+  "gloss": "to surprise (pleasantly)",
+  "forms": [
+   "verrassen",
+   "verrast",
+   "verrassen"
+  ],
+  "picture": "A woman stands in a doorway holding a bunch of flowers behind her back. An older woman in the room looks up with wide eyes and open mouth.",
+  "mark": "The wide eyes of the woman who did not expect the visitor, and the flowers hidden behind the back.",
+  "alt": "Een vrouw staat in een deuropening met bloemen achter haar rug. Een oudere vrouw in de kamer kijkt op met grote ogen en een open mond.",
+  "note": "Wiktionary sense 2. The listener did not expect it, and is glad. Examples 3 and 4 show no surprise.",
+  "examples": [
+   {
+    "text": [
+     "Anna wil iets leuks doen voor haar moeder.",
+     "Zij komt zonder te bellen langs met bloemen.",
+     "Zij verrast haar moeder."
+    ],
+    "question": "Weet de moeder dat Anna komt?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Het is de verjaardag van Jan.",
+     "Zijn vrienden staan met een taart voor de deur.",
+     "Zij verrassen hem."
+    ],
+    "question": "Weet Jan dat zijn vrienden komen?",
+    "answer": "nee",
+    "scene": "A man at his door seeing three friends with a cake with candles."
+   },
+   {
+    "text": [
+     "Mark vertelt Eva alles over het feest.",
+     "Hij verrast haar niet."
+    ],
+    "question": "Weet Eva dat er een feest komt?",
+    "answer": "ja",
+    "scene": "A man and a woman at a table with party plans, both calm."
+   },
+   {
+    "text": [
+     "De zus van Piet komt vanavond langs.",
+     "Haar bezoek verrast hem niet."
+    ],
+    "question": "Weet Piet dat zijn zus komt?",
+    "answer": "ja",
+    "scene": "A man laying the table for two, a phone beside the plates."
+   }
+  ]
+ },
+ {
+  "verb": "verzoeken",
+  "sense": "beleefd vragen om iets te doen (to request, to ask formally)",
+  "gloss": "to request (politely, formally)",
+  "forms": [
+   "verzoeken",
+   "verzoekt"
+  ],
+  "picture": "A man in uniform stands at the front of an aeroplane cabin with a microphone in one hand and the other hand held out, palm down, towards the seats. People stand in the aisle.",
+  "mark": "The palm-down hand: a polite but clear request to sit.",
+  "alt": "Een man in uniform staat voorin een vliegtuig met een microfoon in de ene hand en de andere hand met de palm naar beneden naar de stoelen. Mensen staan in het gangpad.",
+  "note": "Wiktionary sense 1. Formal; polite but still a request. Used in announcements.",
+  "examples": [
+   {
+    "text": [
+     "Het vliegtuig gaat zo landen.",
+     "De piloot verzoekt de mensen te gaan zitten."
+    ],
+    "question": "Wil de piloot dat de mensen gaan zitten?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het concert begint zo.",
+     "De presentator verzoekt de mensen hun telefoon uit te zetten."
+    ],
+    "question": "Wil de presentator dat de telefoons uit zijn?",
+    "answer": "ja",
+    "scene": "A presenter on stage with a microphone and a hand raised, people in the hall holding phones."
+   },
+   {
+    "text": [
+     "De juf schrijft een brief aan de ouders.",
+     "Zij verzoekt de ouders niet om geld."
+    ],
+    "question": "Moeten de ouders geld geven?",
+    "answer": "nee",
+    "scene": "A teacher writing a letter at her desk, an empty box next to it."
+   },
+   {
+    "text": [
+     "In de bibliotheek praten de kinderen hard.",
+     "De vrouw bij de balie verzoekt hen stil te zijn."
+    ],
+    "question": "Mogen de kinderen hard blijven praten?",
+    "answer": "nee",
+    "scene": "A woman at a library desk with a finger at her lips; children whisper at a table."
+   }
+  ]
+ },
+ {
+  "verb": "blokkeren",
+  "sense": "de weg of toegang versperren (to block a way)",
+  "gloss": "to block (a way)",
+  "forms": [
+   "blokkeren",
+   "blokkeert"
+  ],
+  "picture": "A large tree trunk lies across a narrow road. A bus stands before it, and the driver looks at the trunk with both hands on the wheel.",
+  "mark": "The trunk across the whole width of the road: nothing gets past.",
+  "alt": "Een grote boomstam ligt dwars over een smalle weg. Een bus staat ervoor en de chauffeur kijkt naar de stam.",
+  "note": "Wiktionary sense 1. Examples 2 and 4 show that something near a way does not block it.",
+  "examples": [
+   {
+    "text": [
+     "Een grote boom ligt op de weg.",
+     "De boom blokkeert de weg."
+    ],
+    "question": "Kan de bus langs de boom?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Een grote doos staat naast de deur van de winkel.",
+     "De doos blokkeert de deur niet."
+    ],
+    "question": "Kan Anna naar binnen?",
+    "answer": "ja",
+    "scene": "A woman walks past a big box standing against the wall into a shop."
+   },
+   {
+    "text": [
+     "Piet zet zijn auto voor de garage van de buurman.",
+     "Nu blokkeert hij de garage."
+    ],
+    "question": "Kan de buurman weg met zijn auto?",
+    "answer": "nee",
+    "scene": "A car parked right in front of a garage door; a neighbour stands with his keys, looking cross."
+   },
+   {
+    "text": [
+     "Jan zet zijn fiets in de gang.",
+     "De fiets blokkeert de gang niet."
+    ],
+    "question": "Kunnen mensen langs de fiets lopen?",
+    "answer": "ja",
+    "scene": "A man leaning a bicycle against the wall, a wide gap left in the hallway."
+   }
+  ]
+ },
+ {
+  "verb": "blokkeren",
+  "sense": "zorgen dat iets niet meer gebruikt kan worden (to block a card, an account, a number)",
+  "gloss": "to block (a card, a number)",
+  "forms": [
+   "blokkeren",
+   "blokkeert"
+  ],
+  "picture": "A woman stands at a cash machine with a phone to her ear and her bank card in the other hand. A metal flap is shut over the card slot.",
+  "mark": "The shut flap over the slot: the card can no longer be used.",
+  "alt": "Een vrouw staat bij een geldautomaat met een telefoon aan haar oor en een pasje in haar hand. Voor de gleuf zit een dicht metalen klepje.",
+  "note": "Wiktionary sense 3 (and 2). The thing still exists, but it no longer works.",
+  "examples": [
+   {
+    "text": [
+     "Anna ziet dat een vreemde man haar code heeft gezien.",
+     "Zij belt de bank.",
+     "De bank blokkeert haar kaart."
+    ],
+    "question": "Kan Anna nog met die kaart betalen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan krijgt veel vervelende berichten van iemand die hij niet kent.",
+     "Hij blokkeert het nummer in zijn telefoon."
+    ],
+    "question": "Krijgt Jan nog berichten van dat nummer?",
+    "answer": "nee",
+    "scene": "A man puts his phone face down on a table and turns away from it, relieved."
+   },
+   {
+    "text": [
+     "Eva en Mark zijn al lang vrienden.",
+     "Zij blokkeert hem niet."
+    ],
+    "question": "Kan Mark Eva een bericht sturen?",
+    "answer": "ja",
+    "scene": "A woman reading messages on her phone and smiling."
+   },
+   {
+    "text": [
+     "Sam denkt dat hij zijn tas kwijt is.",
+     "Dan vindt hij de tas onder de stoel.",
+     "Hij gaat de rekening niet blokkeren."
+    ],
+    "question": "Kan Sam zijn geld nog gebruiken?",
+    "answer": "ja",
+    "scene": "A man picking up a bag from under a chair, relieved."
+   }
+  ]
+ },
+ {
+  "verb": "chatten",
+  "sense": "korte berichten typen naar iemand die online is (to chat)",
+  "gloss": "to chat (by typed messages)",
+  "forms": [
+   "chatten",
+   "chat",
+   "chatten"
+  ],
+  "picture": "A girl on a sofa types on a phone with her thumbs, smiling. A small cloud of message bubbles (empty) floats over the phone.",
+  "mark": "The thumbs on the screen and the message bubbles: talking by typing.",
+  "alt": "Een meisje zit op een bank en typt met haar duimen op een telefoon, terwijl zij lacht. Boven de telefoon zweven lege berichtenwolkjes.",
+  "note": "Wiktionary sense 1. Typed messages in real time, not speaking.",
+  "examples": [
+   {
+    "text": [
+     "Eva zit op de bank met haar telefoon.",
+     "Haar vriendin woont in een ander land.",
+     "Zij chatten de hele avond."
+    ],
+    "question": "Schrijven Eva en haar vriendin berichten?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan en zijn zus wonen ver van elkaar.",
+     "Zij chatten elke dag."
+    ],
+    "question": "Spreken Jan en zijn zus met hun stem?",
+    "answer": "nee",
+    "scene": "A man at a laptop typing and smiling at the screen in a quiet room."
+   },
+   {
+    "text": [
+     "Piet belt zijn opa.",
+     "Zij praten lang met elkaar.",
+     "Zij chatten niet."
+    ],
+    "question": "Typt Piet berichten naar zijn opa?",
+    "answer": "nee",
+    "scene": "A man with a phone at his ear, an old man laughing in an armchair."
+   },
+   {
+    "text": [
+     "Anna wacht in de rij.",
+     "Zij pakt haar telefoon.",
+     "Zij chat met een vriend."
+    ],
+    "question": "Schrijft Anna iets op haar telefoon?",
+    "answer": "ja",
+    "scene": "A woman in a queue looking down at her phone and typing."
+   }
+  ]
+ },
+ {
+  "verb": "erkennen",
+  "sense": "toegeven dat iets waar is (to admit, to acknowledge)",
+  "gloss": "to admit, to acknowledge",
+  "forms": [
+   "erkennen",
+   "erkent"
+  ],
+  "picture": "A boy stands in front of a woman with a broken glass on the floor between them. He holds one hand up to his chest and looks at her.",
+  "mark": "The hand on the chest and the eyes on her: he says it was him.",
+  "alt": "Een jongen staat voor een vrouw met een kapot glas op de grond tussen hen in. Hij legt een hand op zijn borst en kijkt haar aan.",
+  "note": "Wiktionary sense 1. The sense of accepting a country or a diploma officially is left out.",
+  "examples": [
+   {
+    "text": [
+     "Jan heeft een glas laten vallen.",
+     "Zijn moeder vraagt wie het was.",
+     "Jan erkent dat hij het was."
+    ],
+    "question": "Zegt Jan dat het zijn schuld is?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam komt te laat op school.",
+     "De juf vraagt waarom.",
+     "Sam erkent niet dat het zijn schuld is."
+    ],
+    "question": "Zegt Sam dat het zijn schuld is?",
+    "answer": "nee",
+    "scene": "A boy at the classroom door with his arms crossed, the teacher looking at the clock."
+   },
+   {
+    "text": [
+     "Eva maakt iets verkeerd in haar werk.",
+     "Haar baas wijst erop.",
+     "Zij erkent dat het niet goed is."
+    ],
+    "question": "Zegt Eva dat het niet goed is?",
+    "answer": "ja",
+    "scene": "A woman at a desk nodding as her boss points at a page."
+   },
+   {
+    "text": [
+     "Het raam is kapot.",
+     "Anna vraagt haar broer of hij het was.",
+     "Hij erkent niets en kijkt weg."
+    ],
+    "question": "Zegt hij dat hij het was?",
+    "answer": "nee",
+    "scene": "A boy with a football under his arm looks away from his sister; a broken window behind them."
+   }
+  ]
+ }
+]

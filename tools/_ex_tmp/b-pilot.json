@@ -1,0 +1,217 @@
+[
+ {
+  "verb": "twijfelen",
+  "sense": "geen vertrouwen in iets of iemand hebben (doubting oneself)",
+  "gloss": "to doubt (oneself)",
+  "forms": [
+   "twijfelen",
+   "twijfelt"
+  ],
+  "picture": "A figure stands at the edge of a platform with a wide gap to a second platform. One foot forward, weight on the back foot. A split thought bubble: one half a small figure landing on the far side, the other the same figure falling into the gap.",
+  "mark": "The split thought bubble: two possible outcomes, none chosen.",
+  "alt": "Een persoon staat aan de rand van een brede kloof. In een gedachtewolk landt een figuurtje aan de overkant, en valt een figuurtje in de kloof.",
+  "note": "Wiktionary sense 4. Replaces the earlier two-sweaters idea: it shows doubt about one's own ability.",
+  "examples": [
+   {
+    "text": [
+     "Jan staat voor de sprong.",
+     "Hij denkt: kan ik dat wel?",
+     "Hij twijfelt aan zichzelf."
+    ],
+    "question": "Is Jan zeker dat hij kan springen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Eva heeft morgen een examen.",
+     "Zij heeft veel geleerd.",
+     "Maar zij twijfelt aan zichzelf."
+    ],
+    "question": "Is Eva zeker van zichzelf?",
+    "answer": "nee",
+    "scene": "A figure at a desk with books; a thought bubble showing a sheet with a tick and the same sheet crossed out (marks, no letters)."
+   },
+   {
+    "text": [
+     "Piet moet voor de groep praten.",
+     "Hij denkt: kan ik dat?",
+     "Hij twijfelt aan zichzelf."
+    ],
+    "question": "Denkt Piet dat hij het goed kan?",
+    "answer": "nee",
+    "scene": "A figure at the front of a row of seated figures; the thought bubble shows a figure speaking and the same figure silent."
+   },
+   {
+    "text": [
+     "Anna wil een nieuwe baan.",
+     "De baan is moeilijk.",
+     "Zij twijfelt aan zichzelf."
+    ],
+    "question": "Weet Anna zeker dat zij het kan?",
+    "answer": "nee",
+    "scene": "A figure at a door marked by a bag and a desk; the thought bubble splits into two outcomes."
+   }
+  ]
+ },
+ {
+  "verb": "twijfelen",
+  "sense": "tussen twee dingen niet kunnen kiezen (to be unable to choose)",
+  "gloss": "to waver between two things",
+  "forms": [
+   "twijfelen",
+   "twijfelt"
+  ],
+  "picture": "A figure holds up two identical sweaters, one in each hand, and looks from one to the other. Nothing is chosen yet.",
+  "mark": "The eyes and head turned between the two, with neither sweater put down.",
+  "alt": "Een persoon houdt in elke hand een trui omhoog en kijkt van de ene naar de andere.",
+  "note": "Example 4 shows doubt ending, which makes the verb's boundary visible.",
+  "examples": [
+   {
+    "text": [
+     "In de winkel hangen twee jurken.",
+     "Eva wil één jurk kopen.",
+     "Zij twijfelt tussen de lange en de korte jurk."
+    ],
+    "question": "Heeft Eva al een jurk gekozen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Sam kan in Utrecht wonen of in Delft.",
+     "Hij twijfelt tussen Utrecht en Delft."
+    ],
+    "question": "Weet Sam al waar hij gaat wonen?",
+    "answer": "nee",
+    "scene": "A figure at a fork in a path, one arrow to each side, standing still between them."
+   },
+   {
+    "text": [
+     "In het restaurant is er soep of vis.",
+     "Piet twijfelt tussen soep en vis.",
+     "De man wacht."
+    ],
+    "question": "Heeft Piet al gekozen?",
+    "answer": "nee",
+    "scene": "A figure at a table with a menu card (strokes only); a waiter with a pad, waiting."
+   },
+   {
+    "text": [
+     "Eerst twijfelt Els tussen twee fietsen.",
+     "Dan kiest zij één fiets."
+    ],
+    "question": "Twijfelt Els nu nog?",
+    "answer": "nee",
+    "scene": "Two panels: a figure between two bicycles; the same figure wheeling one away."
+   }
+  ]
+ },
+ {
+  "verb": "vertegenwoordigen",
+  "sense": "spreken of aanwezig zijn in naam van een groep of organisatie (Wiktionary lists one sense)",
+  "gloss": "to represent",
+  "forms": [
+   "vertegenwoordigen",
+   "vertegenwoordigt"
+  ],
+  "picture": "A row of small figures stands behind one larger figure at a table. Only the larger figure reaches across to shake hands with a person on the other side.",
+  "mark": "One figure steps forward from a group while the rest stay back.",
+  "alt": "Een rij kleine figuurtjes staat achter één groter figuur aan een tafel. Alleen dat figuur geeft een hand aan iemand aan de overkant.",
+  "note": "Group, person and country, one sense. Logo and facial-expression uses are not in Wiktionary for this verb; Dutch seems to use other verbs there (unverified).",
+  "examples": [
+   {
+    "text": [
+     "De buren hebben een probleem met het lawaai.",
+     "Zij kiezen Els.",
+     "Els praat voor alle buren met de gemeente.",
+     "Els vertegenwoordigt de buurt."
+    ],
+    "question": "Praat Els alleen voor zichzelf?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De koning kan niet naar het feest in een ander land komen.",
+     "Zijn zoon gaat wel.",
+     "Hij vertegenwoordigt zijn vader."
+    ],
+    "question": "Is de koning zelf op het feest?",
+    "answer": "nee",
+    "scene": "An empty chair with a crown on it at one side of a hall; a younger figure standing in the doorway of the hall."
+   },
+   {
+    "text": [
+     "Piet heeft een probleem met zijn huis.",
+     "Hij gaat niet zelf naar de rechter.",
+     "Zijn advocaat gaat.",
+     "De advocaat vertegenwoordigt Piet."
+    ],
+    "question": "Praat Piet zelf met de rechter?",
+    "answer": "nee",
+    "scene": "A figure with a folder at a high desk facing a judge; Piet stands outside the open door."
+   },
+   {
+    "text": [
+     "Anna speelt voor Nederland in een ander land.",
+     "Zij vertegenwoordigt Nederland."
+    ],
+    "question": "Speelt Anna voor Nederland?",
+    "answer": "ja",
+    "scene": "A figure on a pitch beside a flag (no emblem, strokes only), a crowd behind a fence."
+   }
+  ]
+ },
+ {
+  "verb": "aarzelen",
+  "sense": "onzeker zijn, twijfelen (to hesitate)",
+  "gloss": "to hesitate",
+  "forms": [
+   "aarzelen",
+   "aarzelt"
+  ],
+  "picture": "A figure stands at a closed door with one hand raised towards the handle, not touching it. The other hand is pulled back to the chest.",
+  "mark": "The hand stopped short of the handle.",
+  "alt": "Een persoon staat bij een dichte deur met een hand vlak voor de klink, maar raakt die niet aan.",
+  "note": "Wiktionary has one sense, glossed as twijfelen; its examples are all 'pause, then act'. The pair below turns that into the contrast.",
+  "examples": [
+   {
+    "text": [
+     "Piet staat bij de deur.",
+     "Hij aarzelt even.",
+     "Dan doet hij de deur open."
+    ],
+    "question": "Is de deur nu open?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva moet iets zeggen.",
+     "Zij aarzelt even.",
+     "Dan zegt zij het toch."
+    ],
+    "question": "Zegt Eva het uiteindelijk?",
+    "answer": "ja",
+    "scene": "A figure with a raised hand and an open mouth held back; second panel: the mouth open and speaking."
+   },
+   {
+    "text": [
+     "De vrouw heeft een vraag.",
+     "Zij aarzelt niet.",
+     "Zij stelt de vraag meteen."
+    ],
+    "question": "Wacht zij lang?",
+    "answer": "nee",
+    "scene": "A figure with an arm raised straight up at once, no pause marks."
+   },
+   {
+    "text": [
+     "Sam staat voor het water.",
+     "Hij aarzelt even.",
+     "Dan springt hij erin."
+    ],
+    "question": "Springt Sam in het water?",
+    "answer": "ja",
+    "scene": "Two panels: a figure at the edge, knees bent and still; the same figure mid-air above the water."
+   }
+  ]
+ }
+]

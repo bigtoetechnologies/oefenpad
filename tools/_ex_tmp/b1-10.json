@@ -1,0 +1,381 @@
+[
+ {
+  "verb": "kleden",
+  "sense": "kleren aandoen bij een ander (to dress someone)",
+  "gloss": "to dress (someone)",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4867",
+  "forms": [
+   "kleedt"
+  ],
+  "picture": "A mother kneels in front of a small boy and pulls a thick coat closed over his chest. A scarf and hat lie on a chair beside them.",
+  "mark": "The adult's hands closing the coat on a child who stands still.",
+  "alt": "Een vrouw hurkt voor een klein kind en doet een dikke jas dicht. Op een stoel liggen een sjaal en een muts.",
+  "note": "Wiktionary sense 1. Bare kleden with an object is natural mainly with an adverb (warm, netjes); the usual form is aankleden. Reflexive use is a separate card.",
+  "examples": [
+   {
+    "text": [
+     "Het is koud buiten.",
+     "Els en haar zoon gaan naar het park.",
+     "Zij kleedt hem warm."
+    ],
+    "question": "Heeft de jongen warme kleren aan?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De baby slaapt in bed.",
+     "Het is warm in huis.",
+     "Mark kleedt hem niet warm."
+    ],
+    "question": "Heeft de baby warme kleren aan?",
+    "answer": "nee",
+    "scene": "A father leans over a cot where a baby lies under a thin sheet; a window shows sun."
+   },
+   {
+    "text": [
+     "De kinderen spelen een toneelstuk.",
+     "Anna is de juf.",
+     "Zij kleedt de kinderen in lange jassen en grote hoeden."
+    ],
+    "question": "Doet de juf de kinderen andere kleren aan?",
+    "answer": "ja",
+    "scene": "A teacher helps a child into a long coat; other children wait in a row in long coats and big hats."
+   },
+   {
+    "text": [
+     "Mark moet vandaag vroeg werken.",
+     "De buurvrouw kleedt zijn dochter netjes."
+    ],
+    "question": "Kleedt Mark zijn dochter zelf?",
+    "answer": "nee",
+    "scene": "A neighbour buttons a small girl's dress in a hallway; a man with a bag stands at the door."
+   }
+  ]
+ },
+ {
+  "verb": "kleden",
+  "sense": "zich kleden: kleren kiezen en aandoen (to dress oneself in a certain way)",
+  "gloss": "to dress (oneself)",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4867",
+  "forms": [
+   "kleedt"
+  ],
+  "picture": "A man stands in front of a mirror pulling a thick sweater on over his head. A scarf hangs over his arm.",
+  "mark": "One person dressing himself, facing the mirror.",
+  "alt": "Een man staat voor een spiegel en trekt een dikke trui aan. Over zijn arm hangt een sjaal.",
+  "note": "Wiktionary sense 2 (zich ~). Examples 2 and 3 show that the verb names how one chooses clothes, also when the choice is not warm or nice.",
+  "examples": [
+   {
+    "text": [
+     "Het is koud buiten.",
+     "Jan pakt zijn warme jas.",
+     "Hij kleedt zich warm."
+    ],
+    "question": "Doet Jan warme kleren aan?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva gaat naar een feest.",
+     "Zij kleedt zich niet mooi."
+    ],
+    "question": "Doet Eva mooie kleren aan?",
+    "answer": "nee",
+    "scene": "A woman in a plain old sweater and trousers waits at a door with a gift in her hand."
+   },
+   {
+    "text": [
+     "Het is zomer en het strand is vol.",
+     "Piet kleedt zich niet warm."
+    ],
+    "question": "Heeft Piet een warme jas aan?",
+    "answer": "nee",
+    "scene": "A man in a thin shirt and shorts walks on sand under the sun."
+   },
+   {
+    "text": [
+     "Els werkt bij een bank.",
+     "Zij kleedt zich netjes voor haar klanten."
+    ],
+    "question": "Draagt Els mooie kleren?",
+    "answer": "ja",
+    "scene": "A woman in a jacket and neat skirt stands at a desk across from a customer."
+   }
+  ]
+ },
+ {
+  "verb": "verhinderen",
+  "sense": "voorkomen dat iets gebeurt (to prevent)",
+  "gloss": "to prevent",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4891",
+  "forms": [
+   "verhindert"
+  ],
+  "picture": "A low fence runs round a garden. A dog stands at the fence with its front paws on it, looking at the street.",
+  "mark": "The fence between the dog and the street: it stops the dog.",
+  "alt": "Een laag hek staat om een tuin. Een hond staat tegen het hek en kijkt naar de straat.",
+  "note": "Wiktionary sense 1 (the only sense). Mild scenes with objects, so no one is hurt.",
+  "examples": [
+   {
+    "text": [
+     "De hond wil naar de straat.",
+     "Maar er staat een hek om de tuin.",
+     "Het hek verhindert dat de hond de straat op gaat."
+    ],
+    "question": "Is de hond nog in de tuin?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Er liggen papieren op de tafel.",
+     "De wind is sterk.",
+     "Eva doet het raam dicht.",
+     "Zo verhindert zij dat de papieren op de grond vallen."
+    ],
+    "question": "Vallen de papieren op de grond?",
+    "answer": "nee",
+    "scene": "A woman closes a window; on the table behind her lie papers; a curtain hangs still."
+   },
+   {
+    "text": [
+     "Piet wil met zijn auto weg.",
+     "Een grote vrachtwagen staat voor de garage.",
+     "De vrachtwagen verhindert dat hij de straat op rijdt."
+    ],
+    "question": "Rijdt Piet nu de straat op?",
+    "answer": "nee",
+    "scene": "A small car in a garage; a big truck stands in front of the open door."
+   },
+   {
+    "text": [
+     "Het wordt koud vannacht.",
+     "Jan doet een deken over de plant.",
+     "De deken verhindert dat de plant het koud krijgt."
+    ],
+    "question": "Blijft de plant gezond?",
+    "answer": "ja",
+    "scene": "A man spreads a blanket over a plant in a pot in a dark garden."
+   }
+  ]
+ },
+ {
+  "verb": "benutten",
+  "sense": "nuttig gebruiken wat er is (to make use of)",
+  "gloss": "to make use of",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4908",
+  "forms": [
+   "benut"
+  ],
+  "picture": "A woman builds a shelf into the empty space under a staircase and puts books and a lamp on it. A tape measure hangs from her pocket.",
+  "mark": "The shelf filling a space that was empty: a thing put to use.",
+  "alt": "Een vrouw maakt een kast onder een trap en zet er boeken en een lamp op. Uit haar zak hangt een meetlint.",
+  "note": "Wiktionary sense 1. Example 2 and 4 show the verb needs something that was there and then used, so unused chances give nee.",
+  "examples": [
+   {
+    "text": [
+     "De zon schijnt.",
+     "Eva heeft vandaag vrij.",
+     "Zij benut de dag om te fietsen."
+    ],
+    "question": "Fietst Eva vandaag?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft een week vakantie.",
+     "Hij ligt de hele week op de bank.",
+     "Hij benut zijn tijd niet."
+    ],
+    "question": "Doet Jan veel in zijn vakantie?",
+    "answer": "nee",
+    "scene": "A man lies on a sofa with his eyes closed; a bag stands packed and unused by the door."
+   },
+   {
+    "text": [
+     "Anna heeft een klein huis.",
+     "Zij zet een kast onder de trap.",
+     "Zo benut zij de ruimte."
+    ],
+    "question": "Gebruikt Anna de ruimte onder de trap?",
+    "answer": "ja",
+    "scene": "A woman puts a cupboard into a narrow space under stairs."
+   },
+   {
+    "text": [
+     "Piet krijgt een kans op een nieuwe baan.",
+     "Hij belt niet.",
+     "Hij benut de kans niet."
+    ],
+    "question": "Doet Piet iets met de kans?",
+    "answer": "nee",
+    "scene": "A man sits with a phone on the table in front of him, his hands folded."
+   }
+  ]
+ },
+ {
+  "verb": "rapporteren",
+  "sense": "vertellen wat je weet aan iemand die het moet weten (to report)",
+  "gloss": "to report (to someone)",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4948",
+  "forms": [
+   "rapporteert"
+  ],
+  "picture": "A man in work clothes stands in an office doorway and points back at a factory floor through a window. A woman behind a desk looks up and listens.",
+  "mark": "The pointing hand and the listening person: news passed on to someone in charge.",
+  "alt": "Een man in werkkleren staat in de deur van een kantoor en wijst naar de fabriek achter het raam. Een vrouw achter een bureau luistert.",
+  "note": "Wiktionary sense 1 (uitbrengen van een verslag). Used for passing on facts to a boss or office; melden is the plainer word.",
+  "examples": [
+   {
+    "text": [
+     "Mark werkt in een fabriek.",
+     "Een machine is stuk.",
+     "Hij rapporteert het aan zijn baas."
+    ],
+    "question": "Weet de baas van de machine?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els ziet een gat in de weg.",
+     "Zij denkt: de gemeente weet het al wel.",
+     "Zij rapporteert het niet."
+    ],
+    "question": "Belt Els de gemeente?",
+    "answer": "nee",
+    "scene": "A woman stands beside a hole in the road with her hands in her pockets."
+   },
+   {
+    "text": [
+     "Jan kijkt een week naar het verkeer.",
+     "Nu staat hij voor de groep.",
+     "Hij rapporteert wat hij weet."
+    ],
+    "question": "Hoort de groep wat Jan weet?",
+    "answer": "ja",
+    "scene": "A man with papers stands before a row of listening people at a table."
+   },
+   {
+    "text": [
+     "Piet ziet dat de lamp in de gang van het kantoor stuk is.",
+     "Hij zegt het tegen niemand.",
+     "Hij rapporteert het niet."
+    ],
+    "question": "Weet de baas van de lamp?",
+    "answer": "nee",
+    "scene": "A man walks past a dark lamp in a hallway without looking up."
+   }
+  ]
+ },
+ {
+  "verb": "hechten",
+  "sense": "belang toewijzen aan iets: hechten aan (to attach importance to)",
+  "gloss": "to attach importance to",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4990",
+  "forms": [
+   "hecht"
+  ],
+  "picture": "A man kneels in a garden and gently ties a thin young tree to a stick. Around him the beds are neat, with a watering can set exactly in line.",
+  "mark": "The careful hands on the young tree: something that clearly matters to him.",
+  "alt": "Een man zit geknield in een tuin en bindt een jong boompje voorzichtig vast aan een stok. De bedden zijn netjes en de gieter staat precies op een rij.",
+  "note": "Wiktionary sense 2 (hechten aan). The medical sense (stitching a wound) is left out as medical distress. Example 2 and 4 show low importance.",
+  "examples": [
+   {
+    "text": [
+     "Piet wil een mooie tuin.",
+     "Elke dag werkt hij daar.",
+     "Hij hecht veel waarde aan zijn tuin."
+    ],
+    "question": "Is de tuin belangrijk voor Piet?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft veel geld.",
+     "Zij geeft het snel uit.",
+     "Zij hecht niet veel waarde aan geld."
+    ],
+    "question": "Is geld belangrijk voor Els?",
+    "answer": "nee",
+    "scene": "A woman leaves a shop with many bags and a light shrug."
+   },
+   {
+    "text": [
+     "Anna liegt nooit.",
+     "Zij hecht veel waarde aan eerlijke mensen."
+    ],
+    "question": "Is het belangrijk voor Anna dat mensen eerlijk zijn?",
+    "answer": "ja",
+    "scene": "Two women talk at a table; one holds her hand open on her chest."
+   },
+   {
+    "text": [
+     "Sam hecht weinig waarde aan mooie kleren.",
+     "Hij draagt een oude broek."
+    ],
+    "question": "Vindt Sam mooie kleren belangrijk?",
+    "answer": "nee",
+    "scene": "A young man in a faded old sweater sits on a bench, an empty clothes shop behind him."
+   }
+  ]
+ },
+ {
+  "verb": "interviewen",
+  "sense": "een vraaggesprek met iemand houden (to interview)",
+  "gloss": "to interview",
+  "band": "B1",
+  "band_why": "Intended band B1 by task; lemma rank is 4997",
+  "forms": [
+   "interviewt",
+   "interviewen"
+  ],
+  "picture": "A woman holds a small microphone out towards a man in a chair. She has a notebook on her knee; he is talking.",
+  "mark": "The microphone held out towards the other person: she asks, he answers.",
+  "alt": "Een vrouw houdt een kleine microfoon naar een man in een stoel. Zij heeft een schrift op haar knie en hij praat.",
+  "note": "Wiktionary sense 1 (the only sense). Examples 3 and 4 show a planned interview that does not happen and someone who only listens.",
+  "examples": [
+   {
+    "text": [
+     "Een vrouw van de krant gaat naar de burgemeester.",
+     "Zij interviewt hem over de stad."
+    ],
+    "question": "Stelt de vrouw vragen aan de burgemeester?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva moet voor school iets over vroeger schrijven.",
+     "Zij belt haar opa.",
+     "Zij interviewt hem over vroeger."
+    ],
+    "question": "Stelt Eva vragen aan haar opa?",
+    "answer": "ja",
+    "scene": "A girl on the sofa holds a phone to her ear and writes in a notebook."
+   },
+   {
+    "text": [
+     "De journalist wil de zangeres interviewen.",
+     "Maar zij heeft geen tijd.",
+     "Zij gaat weg."
+    ],
+    "question": "Praat de journalist met de zangeres?",
+    "answer": "nee",
+    "scene": "A man with a microphone stands in a hall; a woman walks away through a door."
+   },
+   {
+    "text": [
+     "Sam luistert naar de radio.",
+     "Een man interviewt een bakker."
+    ],
+    "question": "Stelt Sam vragen aan de bakker?",
+    "answer": "nee",
+    "scene": "A boy sits at a kitchen table beside a radio."
+   }
+  ]
+ }
+]

@@ -15,54 +15,13 @@ there. Unresolved words fail the build.
 Usage: python3 tools/build-explanation-pilot.py
 """
 import csv, html, os, re, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from explanation_lib import *
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LEX = os.path.join(ROOT, "tools", "lexicon")
 OUT = os.path.join(ROOT, "Docs", "explanation-cards-pilot.html")
 TEMPLATE = os.path.join(ROOT, "Docs", "card-families-handover.html")
 
-BANDS = [("A0", 250), ("A1", 1000), ("A2", 2500), ("B1", 5000), ("B2", 10000)]
-def band_of(rank):
-    for b, top in BANDS:
-        if rank <= top:
-            return b
-    return "B2+"
-CEIL = dict(BANDS)
-
-NAMES = {"sam", "jan", "els", "mark", "anna", "piet", "eva", "utrecht", "delft", "nederland"}
-
-# surface form -> lemma, for forms the suffix rules cannot reach
-INFL = {
-    "wordt": "worden", "zegt": "zeggen", "mag": "mogen", "weet": "weten",
-    "kan": "kunnen", "is": "zijn", "ben": "zijn", "heeft": "hebben",
-    "denkt": "denken", "ziet": "zien", "ging": "gaan", "gaat": "gaan",
-    "staat": "staan", "komt": "komen", "doet": "doen", "laat": "laten",
-    "hij": "hij", "zijn": "zijn", "hen": "hen", "zij": "zij, ze",
-    "ze": "zij, ze", "wij": "wij, we", "we": "wij, we", "je": "jij, je",
-    "mijn": "mijn, m’n", "ik": "ik", "heb": "hebben", "geen": "geen",
-    "gemaakt": "maken", "gezien": "zien", "geweest": "zijn",
-    "beste": "goed", "snelste": "snel", "grootste": "groot",
-    "nog": "nog", "al": "al (pron)", "dan": "dan (conj)", "maar": "maar (conj)",
-    "waar": "waar", "wat": "wat", "wie": "wie", "of": "of", "dat": "dat (conj)",
-    "ja": "ja", "nee": "nee", "niet": "niet", "wel": "wel",
-    "praat": "praten", "zit": "zitten", "maakt": "maken", "geleerd": "leren", "gekozen": "kiezen", "kiest": "kiezen", "één": "een, één", "jurken": "jurk", "speelt": "spelen", "werkt": "werken", "alle": "al (pron)", "snelste": "snel",
-}
-
-# Hand-set ranks. wordfreq conflates these with homographs or gives the row
-# no score, so the lexicon rank is far too high. The page prints each one.
-CORE = "closed-class or core everyday word; wordfreq rank is a homograph artefact, A0 by judgement"
-OVERRIDES = {
-    "is": (1, "form of zijn; wordfreq gave the verb row no score of its own"),
-    "zijn": (1, "verb and possessive; wordfreq gave the verb row no score of its own"),
-    "dan": (250, CORE), "naar": (250, CORE), "te": (250, CORE), "al": (250, CORE), "haar": (250, CORE), "moet": (250, CORE), "alle": (250, CORE),
-    "dat": (250, CORE), "waar": (250, CORE), "maar": (250, CORE), "goed": (250, CORE),
-    "morgen": (450, "everyday time word; the lexicon rank is the noun morning, A1 by judgement"),
-}
-
-# ----------------------------------------------------------------------
-# Pilot data. rank/band come from the lexicon at build time.
-# forms = surface forms of the verb itself (exempt from the ceiling)
-# ----------------------------------------------------------------------
 def ex(text, question, answer, scene=None):
     return dict(text=text, question=question, answer=answer, scene=scene)
 
@@ -216,55 +175,12 @@ ENTRIES = [
   note="The picture gives the evidence; the text gives the guess."),
 ]
 
+MOVED = {"worden", "laten", "begrijpen", "hopen", "proberen"}
+ENTRIES = []  # every pilot card now lives in tools/_ex_tmp/*.json and the family pages
 PAIR = []
 PAIR_NOTE = ""
 
 # ----------------------------------------------------------------------
-def load_ranks():
-    r = {}
-    for row in csv.DictReader(open(os.path.join(LEX, "woorden-niveau.tsv"), encoding="utf-8"), delimiter="\t"):
-        r[row["nl"]] = int(row["rang"])
-    return r
-
-def lookup(word, ranks):
-    """Best lemma rank for a surface form, or None."""
-    w = word.lower().replace("’", "'")
-    if w in OVERRIDES: return (OVERRIDES[w][0], w)
-    cands = []
-    if w in INFL: cands.append(INFL[w])
-    cands.append(w)
-    for suf in ("t", "en", "e", "s", "de", "te", "n"):
-        if w.endswith(suf) and len(w) > len(suf) + 2:
-            cands.append(w[: -len(suf)])
-            cands.append(w[: -len(suf)] + "en")
-    best = None
-    for c in cands:
-        for k, v in ranks.items():
-            if k == c or k.startswith(c + " (") or k.startswith(c + ","):
-                if best is None or v < best[0]:
-                    best = (v, k)
-        if best: return best
-    return None
-
-def card_band(en, ranks):
-    return en.get("band") or band_of(ranks[en.get("key", en["verb"])])
-
-def check_ex(forms, example, band, ranks):
-    ceil = CEIL[band]
-    worst, bad, unknown = (0, ""), [], []
-    for sentence in example["text"] + [example["question"]]:
-        for tok in re.findall(r"[A-Za-zÀ-ÿ'’]+", sentence):
-            lw = tok.lower()
-            if lw in NAMES or lw in forms: continue
-            hit = lookup(tok, ranks)
-            if hit is None:
-                unknown.append(tok); continue
-            if hit[0] > worst[0]: worst = (hit[0], tok)
-            if hit[0] > ceil: bad.append(f"{tok} ({band_of(hit[0])}, rank {hit[0]})")
-    return worst, bad, unknown
-
-def e(s): return html.escape(s, quote=False)
-
 CSS = """
 .mock{margin:0;border:2px solid var(--kobalt);border-radius:14px;padding:14px;background:var(--papier)}
 .mock .pic{border:1.5px dashed var(--lijn);border-radius:10px;padding:18px 10px;text-align:center;font-size:12.5px;color:var(--grijs)}
@@ -358,12 +274,11 @@ def main():
 <h2 id="senses">Senses and examples</h2>
 <p>A verb gets one card per sense, and each card shows four examples. The senses come from {e(SRC)}, not from the English gloss.</p>
 <div class="table-wrap"><table><thead><tr><th>Verb</th><th>Sense cards here</th><th>Wiktionary lists</th><th>Not covered yet</th></tr></thead><tbody>
-<tr><td>laten</td><td>allow; have done / show (laten zien)</td><td>7 senses</td><td>"Laat dat!", leave unchanged, let go (een traan laten), leave behind, "let it be". There is no separate laten zien entry: it sits under the causative sense.</td></tr>
 <tr><td>twijfelen</td><td>doubt oneself; waver between two things</td><td>4 senses</td><td>doubt whether something is true (twijfelen aan)</td></tr>
 <tr><td>vertegenwoordigen</td><td>act in the name of a group</td><td>1 sense</td><td>none; logo and expression uses are not listed</td></tr>
 <tr><td>aarzelen</td><td>hesitate</td><td>1 sense</td><td>none</td></tr>
 </tbody></table></div>
-<p>The other six verbs keep one example each for now. Examples 2 to 4 carry a scene line only; their alt text is written when they are drawn.</p>
+<p>The pilot is finished: every pilot card now lives in <a href="explanation-cards/index.html">Explanation cards</a>, which covers A0 to B2 and is the page to use. This page stays as the record of the pilot and its three tiers.</p>
 
 <h2 id="pair">Aarzelen and twijfelen overlap</h2>
 <p>Dutch Wiktionary glosses aarzelen as "onzeker zijn, twijfelen" and lists twijfelen among its synonyms, so the two are not a clean contrast pair. The pilot therefore teaches them from different scenes: aarzelen is a pause before acting, twijfelen is doubting oneself or being unable to choose between two things. No shared door scene is used.</p>
@@ -393,7 +308,7 @@ def main():
 <div class="table-wrap"><table><thead><tr><th>Item</th><th>Note</th></tr></thead><tbody>
 <tr><td>Native check</td><td>All Dutch text and alt text here is AI-written and unchecked by a native speaker.</td></tr>
 <tr><td>Rules</td><td>Recorded in <code>Docs/decisions.html</code> and <code>Docs/project-rules.html</code> on 20 November 2026.</td></tr>
-<tr><td>Six verbs with one example</td><td>worden, begrijpen, hopen, proberen, beweren, vermoeden.</td></tr>
+
 <tr><td>Alt text for examples 2 to 4</td><td>Scene lines only; alt text is written at drawing time.</td></tr>
 <tr><td>Larger card size</td><td>Two-panel scenes (begrijpen, worden, aarzelen) do not read at 170 px. Needs a larger size on tier 3 cards.</td></tr>
 <tr><td>Drawings</td><td>None made; the illustrator batch costs money and the owner said not to draw yet.</td></tr>

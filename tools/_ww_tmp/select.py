@@ -4,7 +4,7 @@
 Selection is by lexicon frequency rank:
   A0  rank <= 250
   A1  rank 251-1000
-  A2  all irregulars in 1001-2500 + the top 60 regulars
+  A2  every usable verb in 1001-2500 (the regular cap of 60 was lifted 20 Nov 2026)
   B1  every usable verb in 2501-5000 (the regular cap was lifted 20 Nov 2026)
   B2  every usable verb in 5001-10000
 
@@ -45,6 +45,11 @@ def norm(nl):
 
 
 GLOSS = {
+    "bezorgen": "to deliver", "wandelen": "to go for a walk", "verplaatsen": "to move (an object)",
+    "ondersteunen": "to support (help)", "rekenen": "to calculate", "tellen": "to count (things)",
+    "kussen": "to kiss (on the cheek)", "branden": "to burn (a fire)", "trappen": "to kick (a can, a ball)",
+    "ontsnappen": "to escape",  # the lexicon gloss 'to relax' is a data error
+
     # Fix pass 3, 20 Nov 2026: the carded sense of a former "two senses" SKIP.
     "ruimen": "to clear (snow, rubble)",
     "schakelen": "to change gear",
@@ -498,7 +503,7 @@ def main():
                 "note": LATER[v["key"]],
             })
     selected = [v for v in selected if not (v["key"] in LATER and band(v) in ("B1", "B2"))]
-    for b, cap in (("A2", 60),):
+    for b, cap in (("A2", 10**6),):  # cap lifted 20 Nov 2026: every usable A2 regular is selected
         pool = [v for v in selected if band(v) == b and not v["irregular"]]
         pool.sort(key=lambda v: v["rank"])
         keep = {v["key"] for v in pool[:cap]}

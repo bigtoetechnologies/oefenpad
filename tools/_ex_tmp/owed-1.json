@@ -1,0 +1,403 @@
+[
+ {
+  "verb": "overlijden",
+  "sense": "ophouden met leven, gezegd van mensen (to pass away)",
+  "gloss": "to die, to pass away",
+  "forms": ["overlijden", "overlijdt", "overleden", "overleed"],
+  "picture": "Eva sits on a sofa holding a framed photo of a smiling old woman in her lap. On a low table beside her stand a vase of flowers and one lit candle. Her face is calm.",
+  "mark": "The photo held in the lap next to flowers and a candle: quiet remembering, no distress.",
+  "alt": "Een jonge vrouw zit rustig op de bank met een foto van een oude vrouw. Naast haar staan bloemen en een kaars.",
+  "note": "Wiktionary sense 1; sense 2 (verouderd: overgaan in een andere toestand) is left out. Calm scenes only: old people, family, flowers, no illness.",
+  "examples": [
+   {
+    "text": ["De oma van Eva was al heel oud.", "Vorige week is zij overleden.", "Eva kijkt naar een foto van haar oma."],
+    "question": "Kan Eva nog bij haar oma op bezoek?",
+    "answer": "nee"
+   },
+   {
+    "text": ["Piet krijgt een kaart met de post.", "Zijn oude leraar is overleden.", "Piet stuurt een kaart terug naar de familie."],
+    "question": "Heeft de familie van de leraar verdriet?",
+    "answer": "ja",
+    "scene": "A man stands at his front door reading a folded card with a small flower on the front; the letterbox flap is open behind him."
+   },
+   {
+    "text": ["De oude vrouw naast Mark is gisteren rustig overleden.", "Mark brengt bloemen naar haar familie."],
+    "question": "Kan Mark nog met de oude vrouw praten?",
+    "answer": "nee",
+    "scene": "A man at a neighbour's front door hands a bunch of flowers to a middle-aged woman, who takes them with both hands."
+   },
+   {
+    "text": ["Anna luistert naar de radio.", "Een bekende zanger is overleden.", "Hij was al heel oud."],
+    "question": "Nemen veel mensen nu afscheid van de zanger?",
+    "answer": "ja",
+    "scene": "A woman sits at a kitchen table beside a radio, a cup of tea in her hands, listening with a still face."
+   }
+  ]
+ },
+ {
+  "verb": "genezen",
+  "sense": "gezond worden, herstellen van een verwonding of ziekte (to heal, to get better)",
+  "gloss": "to heal, to get better",
+  "forms": ["genezen", "geneest", "genas"],
+  "picture": "Sam peels a plaster off his finger and looks at the skin underneath. The skin is smooth and whole. He smiles.",
+  "mark": "The plaster coming off a finger that is whole again.",
+  "alt": "Een man trekt een pleister van zijn vinger. De huid eronder is weer heel. Hij lacht.",
+  "note": "Wiktionary sense 1 (intransitive, the body part or person gets better). Sense 3 (a doctor cures someone) and sense 5 (figurative) are left out as medical or rare.",
+  "examples": [
+   {
+    "text": ["Sam snijdt bij het koken in zijn vinger.", "Na een week is de vinger genezen."],
+    "question": "Is de vinger van Sam beter?",
+    "answer": "ja"
+   },
+   {
+    "text": ["Els valt met de fiets.", "Haar voet doet veel pijn.", "Na een maand is de voet genezen."],
+    "question": "Kan Els al gewoon lopen?",
+    "answer": "ja",
+    "scene": "A woman walks easily along a street pushing her bicycle beside her."
+   },
+   {
+    "text": ["Jan is ziek en blijft thuis.", "Na drie dagen is hij nog niet genezen."],
+    "question": "Is Jan al gezond?",
+    "answer": "nee",
+    "scene": "A man sits on a sofa under a blanket with a cup of tea and a box of tissues."
+   },
+   {
+    "text": ["Anna pakt een hete pan.", "Haar hand doet pijn.", "Een week later is de hand genezen."],
+    "question": "Doet de hand van Anna nog pijn?",
+    "answer": "nee",
+    "scene": "A woman lifts a pan from the stove with an oven glove, her other hand bare and fine."
+   }
+  ]
+ },
+ {
+  "verb": "pesten",
+  "sense": "jennen, iemand voor de grap boos maken (to tease, to annoy)",
+  "gloss": "to tease, to annoy",
+  "band": "A2",
+  "band_why": "pesten is B1 by lemma rank (3541); children and parents use the teasing sense daily, so A2 by judgement",
+  "forms": ["pesten", "pest", "gepest"],
+  "picture": "A tall boy holds a ball high above his head with a grin. His little sister stands on her toes and reaches for it, but cannot get it.",
+  "mark": "The ball held just out of reach and the grin: teasing, not hurting.",
+  "alt": "Een lange jongen houdt een bal hoog boven zijn hoofd en lacht. Zijn kleine zus probeert de bal te pakken.",
+  "note": "Wiktionary sense 1 (jennen) in its mild, family sense: siblings, pets, a joke. Bullying is left out on purpose.",
+  "examples": [
+   {
+    "text": ["Mark pest zijn kleine zus.", "Hij houdt haar bal hoog in de lucht."],
+    "question": "Wil Mark zijn zus een beetje boos maken?",
+    "answer": "ja"
+   },
+   {
+    "text": ["De kat van Jan pest de hond.", "Hij gaat steeds in het bed van de hond liggen."],
+    "question": "Laat de kat de hond met rust?",
+    "answer": "nee",
+    "scene": "A cat curled up in a dog's bed, looking pleased; a big dog stands next to it looking at it."
+   },
+   {
+    "text": ["Anna pest haar vader.", "Zij pakt steeds zijn krant af."],
+    "question": "Doet Anna dit voor de grap?",
+    "answer": "ja",
+    "scene": "A girl hides a folded newspaper behind her back and laughs; her father in an armchair holds out an empty hand."
+   },
+   {
+    "text": ["Sam heeft een kleine broer.", "Sam pest hem nooit.", "Ze spelen samen in de tuin."],
+    "question": "Doet Sam vervelend tegen zijn broer?",
+    "answer": "nee",
+    "scene": "Two boys, one older, kneel side by side in a garden building something in the sand."
+   }
+  ]
+ },
+ {
+  "verb": "treden",
+  "sense": "ergens heen bewegen met een stap (to step: naar voren, binnen, naar buiten)",
+  "gloss": "to step (forward, in, out)",
+  "forms": ["treden", "treedt", "trad", "getreden"],
+  "picture": "A row of children stands against a wall in a classroom. One girl has taken one step forward out of the row. A teacher looks at her.",
+  "mark": "The one girl one step in front of the row.",
+  "alt": "Een rij kinderen staat tegen de muur. Een meisje staat een stap voor de rij. Een leraar kijkt naar haar.",
+  "note": "Wiktionary sense 2. A written, story-telling verb: in speech Dutch says stappen or lopen. In dienst treden has its own card.",
+  "examples": [
+   {
+    "text": ["De leraar vraagt: wie wil helpen?", "Els treedt naar voren."],
+    "question": "Staat Els nu voor de rij?",
+    "answer": "ja"
+   },
+   {
+    "text": ["Het is een mooie dag.", "Jan doet de deur open en treedt naar buiten."],
+    "question": "Is Jan nog in huis?",
+    "answer": "nee",
+    "scene": "A man steps over the threshold of his front door onto the garden path, one foot outside."
+   },
+   {
+    "text": ["De deur gaat open.", "Piet treedt de zaal binnen.", "Iedereen kijkt naar hem."],
+    "question": "Is Piet nu in de zaal?",
+    "answer": "ja",
+    "scene": "A man in a suit steps through a doorway into a hall full of seated people, who turn their heads towards him."
+   },
+   {
+    "text": ["De man op het podium roept de naam van Anna.", "Maar Anna treedt niet naar voren."],
+    "question": "Loopt Anna naar de man toe?",
+    "answer": "nee",
+    "scene": "A man on a low stage holds his hand out towards the audience; a woman in the front row stays seated."
+   }
+  ]
+ },
+ {
+  "verb": "treden",
+  "sense": "in dienst treden: gaan werken bij een werkgever (to join an employer)",
+  "gloss": "to join (an employer), to start a job",
+  "band": "B1",
+  "band_why": "treden is A2 by lemma rank; in dienst treden is a fixed phrase of the job and letter register, B1 by judgement",
+  "forms": ["treden", "treedt", "trad", "getreden"],
+  "picture": "In the doorway of a bakery a man in an apron shakes hands with a young woman. He holds a second apron out to her with his other hand.",
+  "mark": "The handshake and the apron offered: she is joining the bakery.",
+  "alt": "Een bakker geeft een jonge vrouw een hand. In zijn andere hand houdt hij een schort voor haar.",
+  "note": "Not a numbered sense on Wiktionary; the fixed phrase in dienst treden (and uit dienst treden, example three) is the commonest everyday use of the verb.",
+  "examples": [
+   {
+    "text": ["Anna zoekt al lang een baan.", "Maandag treedt zij in dienst bij de bakker."],
+    "question": "Gaat Anna bij de bakker werken?",
+    "answer": "ja"
+   },
+   {
+    "text": ["Mark was een jaar zonder werk.", "Nu treedt hij in dienst bij een groot bedrijf."],
+    "question": "Heeft Mark nu een baan?",
+    "answer": "ja",
+    "scene": "A man in a shirt and tie walks through the glass doors of a large office building with a bag over his shoulder."
+   },
+   {
+    "text": ["Eva werkt al lang bij de bank.", "Na de zomer treedt zij uit dienst."],
+    "question": "Blijft Eva bij de bank werken?",
+    "answer": "nee",
+    "scene": "A woman carries a box with a plant and a mug out of an office; two colleagues wave."
+   },
+   {
+    "text": ["Piet wordt de nieuwe leraar op de school.", "Hij treedt na de zomer in dienst."],
+    "question": "Geeft Piet voor de zomer al les op de school?",
+    "answer": "nee",
+    "scene": "A man looks through the window of an empty classroom from the school playground."
+   }
+  ]
+ },
+ {
+  "verb": "vermogen",
+  "sense": "in staat zijn iets te bereiken, kunnen (formeel: to be able to, to achieve)",
+  "gloss": "to be able to, to achieve (formal)",
+  "band": "B2",
+  "band_why": "the lexicon rank (1602) belongs to the noun het vermogen; the verb is formal and written, B2 by judgement",
+  "forms": ["vermogen", "vermag", "vermocht"],
+  "picture": "One man leans with both hands against the back of a big truck stuck in mud. The wheels sit deep in the mud and the truck has not moved.",
+  "mark": "One man straining against a truck that does not move.",
+  "alt": "Een man duwt met twee handen tegen een grote vrachtwagen. De wielen zitten diep in de modder.",
+  "note": "Wiktionary senses 4 and 5. The verb lives in written Dutch (Geld vermag veel, maar niet alles); the everyday word is the noun het vermogen (fortune, power, capacity), which this card does not teach.",
+  "examples": [
+   {
+    "text": ["Een vrachtwagen zit vast in de modder.", "Sam duwt zo hard als hij kan.", "Maar alleen vermag hij niets."],
+    "question": "Komt de vrachtwagen in beweging?",
+    "answer": "nee"
+   },
+   {
+    "text": ["Het is een grote rommel in de tuin van Eva.", "Haar buren komen helpen.", "Samen vermogen zij veel in één dag."],
+    "question": "Is de tuin aan het eind van de dag mooi?",
+    "answer": "ja",
+    "scene": "Four people work in a garden together: one digs, one rakes, one carries a full bag of leaves, one cuts a hedge."
+   },
+   {
+    "text": ["Piet heeft veel geld.", "Toch voelt hij zich eenzaam.", "Zijn geld vermag daar niets tegen."],
+    "question": "Helpt het geld van Piet tegen zijn eenzaamheid?",
+    "answer": "nee",
+    "scene": "A man sits alone at the end of a long dining table in a large, expensive room."
+   },
+   {
+    "text": ["Anna leest slecht.", "Haar nieuwe leraar geeft haar elke week boeken.", "Een goede leraar vermag veel."],
+    "question": "Kan een goede leraar veel voor een kind betekenen?",
+    "answer": "ja",
+    "scene": "A girl and a teacher sit side by side at a small table, the girl reading aloud from an open book."
+   }
+  ]
+ },
+ {
+  "verb": "plegen",
+  "sense": "zorgen voor, uitvoeren (overleg, onderhoud, verzet plegen)",
+  "gloss": "to carry out, to hold (talks), to do (maintenance)",
+  "band": "B1",
+  "band_why": "plegen is A2 by lemma rank; these fixed phrases (overleg plegen, onderhoud plegen) belong to work and news register, B1 by judgement",
+  "forms": ["plegen", "pleegt", "pleegde", "gepleegd"],
+  "picture": "Three colleagues sit leaning towards each other around a small table with coffee cups. One talks with an open hand; the other two listen.",
+  "mark": "Three heads bent together over one table: a talk to decide something.",
+  "alt": "Drie collega's zitten dicht bij elkaar aan een tafel met koffie. Een man praat, de anderen luisteren.",
+  "note": "Wiktionary sense 2 (zorgen voor). Sense 1 (a crime) is left out on purpose; plegen with a crime is the commonest use, so learners will meet it, but not on a card.",
+  "examples": [
+   {
+    "text": ["Het team van Mark heeft een probleem.", "Daarom pleegt Mark overleg met zijn team."],
+    "question": "Praten Mark en zijn team samen over het probleem?",
+    "answer": "ja"
+   },
+   {
+    "text": ["Piet heeft een oude boot.", "Elk voorjaar pleegt hij onderhoud aan de boot."],
+    "question": "Zorgt Piet goed voor zijn boot?",
+    "answer": "ja",
+    "scene": "A man paints the side of a small boat that stands on blocks on dry land."
+   },
+   {
+    "text": ["Er komt een grote weg door het dorp van Eva.", "Eva en haar buren plegen verzet."],
+    "question": "Zijn Eva en haar buren blij met de weg?",
+    "answer": "nee",
+    "scene": "A group of villagers stand together in front of a digger on a field, arms crossed."
+   },
+   {
+    "text": ["Jan is de baas van een winkel.", "Hij pleegt nooit overleg met zijn personeel."],
+    "question": "Vraagt Jan zijn personeel om hun mening?",
+    "answer": "nee",
+    "scene": "A shop manager stands alone behind the counter; two staff members stock shelves with their backs to him."
+   }
+  ]
+ },
+ {
+  "verb": "plegen",
+  "sense": "plegen te: gewend zijn om te doen, vaak doen (used to, to be in the habit of)",
+  "gloss": "to be in the habit of, used to",
+  "band": "B2",
+  "band_why": "plegen is A2 by lemma rank; plegen te (mostly placht) is a written, slightly old-fashioned pattern, B2 by judgement",
+  "forms": ["plegen", "pleegt", "placht", "plachten"],
+  "picture": "An old man sits on a park bench by a pond and throws pieces of bread to a group of ducks.",
+  "mark": "The old man and the ducks gathered at his feet, as if they know him.",
+  "alt": "Een oude man zit op een bank bij het water en gooit brood naar de eenden.",
+  "note": "Wiktionary sense 3. Mostly in the past tense placht, in stories and in the phrase zoals hij placht te zeggen.",
+  "examples": [
+   {
+    "text": ["De opa van Sam placht de eenden te voeren.", "Hij ging dan met oud brood naar het park."],
+    "question": "Ging opa maar heel soms naar de eenden?",
+    "answer": "nee"
+   },
+   {
+    "text": ["Eerst werken, dan spelen.", "Zo placht Anna het te zeggen."],
+    "question": "Gebruikte Anna deze woorden vaak?",
+    "answer": "ja",
+    "scene": "A mother points at a pile of schoolbooks on a table while a boy with a football waits at the door."
+   },
+   {
+    "text": ["Els placht op zondag lang in bed te blijven.", "Nu heeft zij een hond en staat zij vroeg op."],
+    "question": "Was Els vroeger op zondag lang in bed?",
+    "answer": "ja",
+    "scene": "A woman in a coat walks a dog along a quiet street in early morning light."
+   },
+   {
+    "text": ["Vroeger placht Mark met de trein naar zijn werk te gaan.", "Nu werkt hij thuis."],
+    "question": "Ging Mark vroeger meestal met de auto naar zijn werk?",
+    "answer": "nee",
+    "scene": "A man works at a computer at his kitchen table, a cup of coffee beside him."
+   }
+  ]
+ },
+ {
+  "verb": "voegen",
+  "sense": "zich voegen bij: bij een groep komen, meedoen (to join)",
+  "gloss": "to join (a group)",
+  "band": "B1",
+  "band_why": "voegen is A2 by lemma rank; zich voegen bij is a reflexive pattern of written and careful speech, B1 by judgement",
+  "forms": ["voegen", "voegt", "voegde", "gevoegd"],
+  "picture": "Three friends sit at a table outside a cafe. A man pulls up a fourth chair and sits down with them; they turn to greet him.",
+  "mark": "The fourth chair pulled up to the group.",
+  "alt": "Drie vrienden zitten buiten aan een tafel. Een man zet er een stoel bij en gaat zitten.",
+  "note": "Not on Wiktionary: the page gives only the legal sense and pointing brickwork, both left out. Zich voegen bij is the use a Dutch speaker meets most; toevoegen (to add) is a separate verb.",
+  "examples": [
+   {
+    "text": ["Sam ziet zijn vrienden op een terras.", "Hij voegt zich bij hen."],
+    "question": "Zit Sam nu alleen?",
+    "answer": "nee"
+   },
+   {
+    "text": ["De kinderen spelen voetbal.", "Eva kijkt eerst even.", "Dan voegt zij zich bij het spel."],
+    "question": "Speelt Eva mee?",
+    "answer": "ja",
+    "scene": "A girl runs onto a grass field towards a group of children playing football."
+   },
+   {
+    "text": ["Op het feest praten mensen in een kring.", "Piet voegt zich niet bij hen."],
+    "question": "Praat Piet mee met de groep?",
+    "answer": "nee",
+    "scene": "At a party a circle of people talk and laugh; a man stands apart near the door with a glass."
+   },
+   {
+    "text": ["Een groep mensen loopt langs het huis van Anna.", "Zij trekt haar schoenen aan en voegt zich bij de groep."],
+    "question": "Loopt Anna met de groep mee?",
+    "answer": "ja",
+    "scene": "A woman in walking shoes steps from her garden gate into a line of walkers on a country road."
+   }
+  ]
+ },
+ {
+  "verb": "voorzien",
+  "sense": "~ van: de beschikking geven over, uitrusten met (to provide with, to equip with)",
+  "gloss": "to provide with, to equip with",
+  "band": "A2",
+  "band_why": "voorzien is A1 by lemma rank; the van pattern and the passive is voorzien van (house and hotel adverts) are A2 by judgement",
+  "forms": ["voorzien", "voorziet"],
+  "picture": "A hotel room with a made bed. Through an open side door a small shower is visible. A woman with a suitcase looks in with a pleased face.",
+  "mark": "The shower inside the room, seen through the open door.",
+  "alt": "Een hotelkamer met een bed. Door een open deur zie je een kleine douche. Een vrouw met een koffer kijkt naar binnen.",
+  "note": "Wiktionary sense 3. Example three uses the active pattern iemand van iets voorzien.",
+  "examples": [
+   {
+    "text": ["Eva neemt een kamer in een hotel.", "De kamer is voorzien van een eigen douche."],
+    "question": "Moet Eva voor de douche naar de gang?",
+    "answer": "nee"
+   },
+   {
+    "text": ["Mark verkoopt zijn oude fiets.", "De fiets is voorzien van nieuwe banden."],
+    "question": "Zitten er nieuwe banden op de fiets?",
+    "answer": "ja",
+    "scene": "A man stands beside a bicycle with shiny new tyres; a buyer bends down to look at the wheels."
+   },
+   {
+    "text": ["Jan gaat naar een nieuwe school.", "De school voorziet alle leerlingen van een computer."],
+    "question": "Moet Jan zelf een computer kopen?",
+    "answer": "nee",
+    "scene": "A teacher hands out closed laptop computers to a row of pupils at their desks."
+   },
+   {
+    "text": ["Anna gaat een lange dag op reis.", "Haar moeder voorziet haar van brood en fruit."],
+    "question": "Krijgt Anna iets mee voor onderweg?",
+    "answer": "ja",
+    "scene": "A mother puts sandwiches and an apple into a girl's backpack at the front door."
+   }
+  ]
+ },
+ {
+  "verb": "voorzien",
+  "sense": "herkennen als toekomstige ontwikkeling, zien aankomen (to foresee)",
+  "gloss": "to foresee, to see coming",
+  "band": "B1",
+  "band_why": "voorzien is A1 by lemma rank; the sense to foresee is abstract and mostly in the perfect (dat had ik niet voorzien), B1 by judgement",
+  "forms": ["voorzien", "voorziet", "voorzag"],
+  "picture": "A man with an empty shopping bag stands in front of a shop whose door is shut and whose inside is dark. He has one hand on his head.",
+  "mark": "The empty bag and the hand on the head in front of the dark shop: he did not see this coming.",
+  "alt": "Een man met een lege tas staat voor een winkel. De deur is dicht en binnen is het donker. Hij houdt een hand op zijn hoofd.",
+  "note": "Wiktionary sense 1. The commonest spoken form is dat had ik niet voorzien; the checker cannot resolve had, so example one uses heeft.",
+  "examples": [
+   {
+    "text": ["Piet wil brood kopen.", "Maar de winkel is vandaag dicht.", "Dat heeft hij niet voorzien."],
+    "question": "Is Piet verbaasd?",
+    "answer": "ja"
+   },
+   {
+    "text": ["Els voorziet veel drukte op de weg.", "Zij gaat daarom vroeg van huis."],
+    "question": "Denkt Els dat de weg leeg is?",
+    "answer": "nee",
+    "scene": "A woman locks her front door at dawn, car keys in hand, the street still dark and quiet."
+   },
+   {
+    "text": ["Sam geeft zaterdag een feest.", "Hij voorziet een drukke avond."],
+    "question": "Denkt Sam dat er veel gasten komen?",
+    "answer": "ja",
+    "scene": "A man carries a stack of extra chairs into a living room decorated with paper garlands."
+   },
+   {
+    "text": ["Mark leest het nieuwe plan van zijn baas.", "Hij voorziet een groot probleem."],
+    "question": "Denkt Mark dat alles goed gaat?",
+    "answer": "nee",
+    "scene": "A man at a desk holds a sheet of paper and frowns, one hand on his chin."
+   }
+  ]
+ }
+]

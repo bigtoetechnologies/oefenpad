@@ -1,0 +1,1239 @@
+[
+ {
+  "verb": "ontwikkelen",
+  "sense": "een aanwezige aanleg tot bloei brengen (to develop a skill)",
+  "gloss": "to develop (a skill, a talent)",
+  "forms": [
+   "ontwikkelt",
+   "ontwikkelen"
+  ],
+  "picture": "Els sits at a table drawing. On the wall behind her hang three drawings in a row, each with more detail than the one before.",
+  "mark": "The row of drawings growing in detail: slow improvement.",
+  "alt": "Een meisje tekent aan een tafel. Aan de muur hangen drie tekeningen op een rij, steeds mooier.",
+  "note": "Wiktionary sense 1. Example 4 shows no practice, so no development.",
+  "examples": [
+   {
+    "text": [
+     "Els tekent elke dag.",
+     "Zij wordt steeds beter.",
+     "Zo ontwikkelt zij haar talent."
+    ],
+    "question": "Wordt Els beter in tekenen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan speelt voetbal.",
+     "Hij traint elke avond met zijn team.",
+     "Zo ontwikkelt hij zijn spel."
+    ],
+    "question": "Wordt Jan beter in voetbal?",
+    "answer": "ja",
+    "scene": "A young man practises with a ball on a field in the evening, two team-mates beside him."
+   },
+   {
+    "text": [
+     "Anna leert koken.",
+     "Zij maakt elke week iets nieuws.",
+     "Zo ontwikkelt zij zich als kok."
+    ],
+    "question": "Leert Anna niets nieuws?",
+    "answer": "nee",
+    "scene": "A woman at a stove stirring a pot; three different dishes she made earlier stand on the table."
+   },
+   {
+    "text": [
+     "Piet kan goed zingen.",
+     "Hij zingt nooit.",
+     "Hij ontwikkelt zijn stem niet."
+    ],
+    "question": "Wordt de stem van Piet beter?",
+    "answer": "nee",
+    "scene": "A man with his mouth closed in a chair, a microphone untouched on a stand."
+   }
+  ],
+  "band": "A2",
+  "band_why": "ontwikkelen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "plaatsen",
+  "sense": "op een bepaalde plaats zetten (to place)",
+  "gloss": "to place, to put in a position",
+  "forms": [
+   "plaatst",
+   "plaatsen"
+  ],
+  "picture": "A woman carefully puts a vase on a shelf in the middle of an empty wall. Her hands are still on the vase.",
+  "mark": "The careful hands setting an object exactly at one spot.",
+  "alt": "Een vrouw zet voorzichtig een vaas midden op een plank. Haar handen houden de vaas nog vast.",
+  "note": "Wiktionary sense 1. Sense 2 (qualify for a competition) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Eva heeft een boek.",
+     "Zij plaatst het boek op de tafel.",
+     "Nu staat het boek daar."
+    ],
+    "question": "Staat het boek op de tafel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De man heeft een kast.",
+     "Hij plaatst de kast tegen de muur.",
+     "Daar staat de kast nu."
+    ],
+    "question": "Staat de kast in de tuin?",
+    "answer": "nee",
+    "scene": "A man pushes a wardrobe against a wall."
+   },
+   {
+    "text": [
+     "Sam heeft een stoel.",
+     "Hij plaatst de stoel in de tuin.",
+     "Daar zit hij graag."
+    ],
+    "question": "Staat de stoel nu in de tuin?",
+    "answer": "ja",
+    "scene": "A man puts a chair on the grass under a tree."
+   },
+   {
+    "text": [
+     "Els heeft een nieuwe klok.",
+     "Zij wil hem op de tafel plaatsen.",
+     "Maar zij houdt hem nog in haar hand."
+    ],
+    "question": "Staat de klok al op de tafel?",
+    "answer": "nee",
+    "scene": "A woman holds a clock, looking at a table with an empty spot."
+   }
+  ],
+  "band": "A2",
+  "band_why": "plaatsen reads as the plural of plaats (lexicon rank 329, homograph artefact); the verb sense 'to place' is A2 by judgement"
+ },
+ {
+  "verb": "verschillen",
+  "sense": "in bepaalde opzichten niet hetzelfde zijn (to differ)",
+  "gloss": "to differ, to be different",
+  "forms": [
+   "verschillen",
+   "verschilt"
+  ],
+  "picture": "Two bicycles side by side: one tall with a basket, one small with a bell. A girl points at one, then the other.",
+  "mark": "Two objects of the same kind with clear unlike parts.",
+  "alt": "Twee fietsen staan naast elkaar. De ene is groot met een mand, de andere is klein met een bel.",
+  "note": "Wiktionary sense 1. Example 4 shows two things that are the same, so nothing differs.",
+  "examples": [
+   {
+    "text": [
+     "Hier staan twee fietsen.",
+     "De ene is groot, de andere is klein.",
+     "Ze verschillen veel."
+    ],
+    "question": "Zijn de fietsen even groot?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Sam heeft een lange jas.",
+     "Zijn broer heeft een korte jas.",
+     "De jas van Sam verschilt van de jas van zijn broer."
+    ],
+    "question": "Zijn de jassen anders?",
+    "answer": "ja",
+    "scene": "Two men side by side in a long coat and a short coat."
+   },
+   {
+    "text": [
+     "Het huis van Anna is oud.",
+     "Het huis van Eva is nieuw.",
+     "De twee huizen verschillen veel."
+    ],
+    "question": "Zijn de huizen anders?",
+    "answer": "ja",
+    "scene": "An old house with a crooked roof next to a new house with straight clean lines."
+   },
+   {
+    "text": [
+     "Jan heeft twee boeken.",
+     "Ze zijn precies hetzelfde.",
+     "Ze verschillen niet."
+    ],
+    "question": "Zijn de boeken anders?",
+    "answer": "nee",
+    "scene": "Two identical books on a table."
+   }
+  ],
+  "band": "A2",
+  "band_why": "verschillen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "bepalen",
+  "sense": "vaststellen, voorschrijven, regelen (to decide, to fix)",
+  "gloss": "to decide, to fix, to set",
+  "forms": [
+   "bepaalt",
+   "bepalen",
+   "bepaald"
+  ],
+  "picture": "A man stands at a table with a big calendar. He puts a finger on one day. A group of friends watch him.",
+  "mark": "The finger on one chosen day: a choice that is made once.",
+  "alt": "Een man staat bij een tafel met een grote kalender. Hij legt zijn vinger op één dag. Een paar vrienden kijken toe.",
+  "note": "Wiktionary sense 2. The influence sense (sense 3) has its own card.",
+  "examples": [
+   {
+    "text": [
+     "De man bepaalt de dag van het feest.",
+     "Hij kiest vrijdag.",
+     "Zijn vrienden vinden het goed."
+    ],
+    "question": "Kiezen de vrienden de dag?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Els en Mark willen samen koffie drinken.",
+     "Els bepaalt de tijd.",
+     "Zij zegt: vier uur."
+    ],
+    "question": "Kiest Els de tijd?",
+    "answer": "ja",
+    "scene": "Two people at a cafe table; a round clock with hands only on the wall."
+   },
+   {
+    "text": [
+     "Jan en Piet willen allebei spelen.",
+     "De trainer bepaalt dat Jan mag spelen.",
+     "Piet moet wachten."
+    ],
+    "question": "Kiest de trainer wie er speelt?",
+    "answer": "ja",
+    "scene": "A coach points at one boy on a bench while another waits."
+   },
+   {
+    "text": [
+     "Sam wil een plek voor de tent kiezen.",
+     "Hij weet het nog niet.",
+     "Hij heeft de plek nog niet bepaald."
+    ],
+    "question": "Heeft Sam een plek gekozen?",
+    "answer": "nee",
+    "scene": "A man with a tent bag looks across a field, hands open."
+   }
+  ],
+  "band": "A2",
+  "band_why": "bepalen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "bepalen",
+  "sense": "beslissend beïnvloeden (to determine, to influence)",
+  "gloss": "to determine, to decide the outcome of",
+  "forms": [
+   "bepaalt",
+   "bepalen"
+  ],
+  "picture": "Dark clouds over a park. A family under one umbrella looks up. A picnic basket stands unopened beside them.",
+  "mark": "The cloud above the unopened basket: the rain decides the plan.",
+  "alt": "Donkere wolken hangen boven een park. Een gezin staat onder een paraplu bij een mand.",
+  "note": "Wiktionary sense 3. A thing, not a person, usually does the determining.",
+  "examples": [
+   {
+    "text": [
+     "Het gezin is in het park.",
+     "Er komt regen.",
+     "De regen bepaalt wat zij doen.",
+     "Zij gaan naar huis."
+    ],
+    "question": "Blijven zij in het park?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Eva ziet twee boeken.",
+     "Zij heeft weinig geld.",
+     "De prijs bepaalt wat zij koopt."
+    ],
+    "question": "Denkt Eva aan de prijs?",
+    "answer": "ja",
+    "scene": "A woman in a shop holds a small purse and looks at two books on a shelf."
+   },
+   {
+    "text": [
+     "Mark heeft veel tijd.",
+     "Het werk bepaalt zijn dag niet.",
+     "Hij gaat fietsen."
+    ],
+    "question": "Moet Mark vandaag werken?",
+    "answer": "nee",
+    "scene": "A man on a bicycle in the sun, a closed bag on the back."
+   },
+   {
+    "text": [
+     "Els heeft werk in een andere stad.",
+     "Haar werk bepaalt waar zij moet wonen.",
+     "Zij gaat naar die stad."
+    ],
+    "question": "Gaat Els wonen waar haar werk is?",
+    "answer": "ja",
+    "scene": "A woman with a suitcase at a train, a city skyline behind."
+   }
+  ],
+  "band": "A2",
+  "band_why": "bepalen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "betekenen",
+  "sense": "ergens voor staan, als inhoud hebben (to mean)",
+  "gloss": "to mean, to stand for",
+  "forms": [
+   "betekent",
+   "betekenen"
+  ],
+  "picture": "A road sign with a plain picture of a bicycle. A boy points at it and a man next to him explains with an open hand.",
+  "mark": "The sign and the pointing boy: one thing stands for another.",
+  "alt": "Een jongen wijst naar een verkeersbord met een fiets. Een man legt iets uit met zijn hand.",
+  "note": "Wiktionary sense 1. The words in the text carry the meaning, not the picture.",
+  "examples": [
+   {
+    "text": [
+     "Op het bord staat een fiets.",
+     "Dat betekent: hier mogen fietsen rijden.",
+     "Sam gaat hier met zijn fiets."
+    ],
+    "question": "Mogen fietsen hier rijden?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De bel gaat.",
+     "Dat betekent: de les is klaar.",
+     "Iedereen gaat naar huis."
+    ],
+    "question": "Is de les klaar?",
+    "answer": "ja",
+    "scene": "A school building with a bell above the door and a few pupils walking out."
+   },
+   {
+    "text": [
+     "Anna ziet een bord met een kop koffie.",
+     "Dat betekent: hier is een café.",
+     "Zij heeft geen geld bij zich."
+    ],
+    "question": "Is het bord voor een school?",
+    "answer": "nee",
+    "scene": "A sign with a coffee cup picture on a post outside a small cafe."
+   },
+   {
+    "text": [
+     "Els ziet een woord in een boek.",
+     "Zij weet niet wat het betekent.",
+     "Zij vraagt het aan Sam."
+    ],
+    "question": "Weet Els wat het woord betekent?",
+    "answer": "nee",
+    "scene": "A woman with an open book, one finger on a line, a man next to her."
+   }
+  ],
+  "band": "A2",
+  "band_why": "betekenen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "betekenen",
+  "sense": "ergens toe doen, een waarde hebben (to matter, to be worth)",
+  "gloss": "to matter, to mean something to someone",
+  "forms": [
+   "betekent",
+   "betekenen"
+  ],
+  "picture": "A girl hands a small hand-drawn card to her grandmother. The grandmother holds it with both hands and smiles.",
+  "mark": "Both hands holding a small card: a small thing that counts a lot.",
+  "alt": "Een meisje geeft een kleine kaart aan haar oma. Oma houdt de kaart met twee handen vast en lacht.",
+  "note": "Wiktionary sense 2. Used with voor: something means a lot to someone.",
+  "examples": [
+   {
+    "text": [
+     "Eva heeft een kaart voor oma.",
+     "Oma lacht.",
+     "De kaart betekent veel voor haar."
+    ],
+    "question": "Betekent de kaart veel voor oma?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft een oude fiets van zijn vader.",
+     "Hij gebruikt hem elke dag.",
+     "Die fiets betekent veel voor Jan."
+    ],
+    "question": "Betekent de fiets veel voor Jan?",
+    "answer": "ja",
+    "scene": "A man cleaning an old bicycle with a cloth."
+   },
+   {
+    "text": [
+     "Piet krijgt een oude doos.",
+     "Hij gooit hem weg.",
+     "De doos betekent niets voor hem."
+    ],
+    "question": "Is de doos belangrijk voor Piet?",
+    "answer": "nee",
+    "scene": "A man putting a box into a bin."
+   },
+   {
+    "text": [
+     "Sam heeft een oude klok.",
+     "Hij wil hem niet.",
+     "De klok betekent weinig voor hem."
+    ],
+    "question": "Is de klok belangrijk voor Sam?",
+    "answer": "nee",
+    "scene": "A clock on a shelf, a man turning away."
+   }
+  ],
+  "band": "A2",
+  "band_why": "betekenen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "grenzen",
+  "sense": "aan als aansluitende buur hebben (to border)",
+  "gloss": "to border, to be next to",
+  "forms": [
+   "grenst",
+   "grenzen"
+  ],
+  "picture": "A top-down view of two gardens. A low wall runs between them. In one garden a woman waters flowers, in the other a man sits in a chair.",
+  "mark": "The low wall between two gardens: two areas touch at one line.",
+  "alt": "Twee tuinen liggen naast elkaar. Een lage muur loopt tussen de tuinen. In de ene tuin geeft een vrouw de bloemen water, in de andere zit een man in een stoel.",
+  "note": "Wiktionary sense 1 (grenzen aan). Examples 3 and 4 show places that do not touch.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft een tuin.",
+     "De tuin van Anna grenst aan de tuin van Jan.",
+     "Zij praten vaak samen bij de muur."
+    ],
+    "question": "Zijn de tuinen naast elkaar?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het park is bij het bos.",
+     "Het park grenst aan het bos.",
+     "Hier gaan veel mensen wandelen."
+    ],
+    "question": "Grenst het park aan het bos?",
+    "answer": "ja",
+    "scene": "A park with a path and, directly next to it, a wood with tall trees."
+   },
+   {
+    "text": [
+     "Els woont in deze straat.",
+     "Mark woont in een andere straat.",
+     "Hun huizen grenzen niet aan elkaar."
+    ],
+    "question": "Staan de huizen naast elkaar?",
+    "answer": "nee",
+    "scene": "Two houses on two different streets with a road between."
+   },
+   {
+    "text": [
+     "De school is in het dorp.",
+     "Het park is ver weg.",
+     "De school grenst niet aan het park."
+    ],
+    "question": "Is de school naast het park?",
+    "answer": "nee",
+    "scene": "A school at one end of a map, a park at the far end, a road between."
+   }
+  ],
+  "band": "A2",
+  "band_why": "grenzen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "herinneren",
+  "sense": "uit het geheugen opdiepen (zich herinneren, to remember)",
+  "gloss": "to remember",
+  "forms": [
+   "herinner",
+   "herinnert",
+   "herinneren"
+  ],
+  "picture": "A man stands in front of an old school building and smiles at it. One hand rests on the gate.",
+  "mark": "The man smiling at his old school: the past comes back to him.",
+  "alt": "Een man staat voor een oude school. Hij kijkt ernaar en lacht.",
+  "note": "Wiktionary sense 2, always with zich. Example 4 shows the opposite, a gap in memory.",
+  "examples": [
+   {
+    "text": [
+     "Sam staat bij zijn oude school.",
+     "Hij ziet de klas nog voor zich.",
+     "Hij herinnert zich de leraar."
+    ],
+    "question": "Weet Sam nog wie de leraar was?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft een foto van een tuin.",
+     "Zij weet nog hoe de tuin was.",
+     "Zij herinnert zich de bloemen."
+    ],
+    "question": "Is Els de bloemen vergeten?",
+    "answer": "nee",
+    "scene": "A woman looking at a photo of a garden."
+   },
+   {
+    "text": [
+     "Jan zoekt zijn jas.",
+     "Hij denkt na.",
+     "Dan herinnert hij zich: de jas is op school."
+    ],
+    "question": "Is de jas op school?",
+    "answer": "ja",
+    "scene": "A man with a hand on his head; a coat on a hook in a classroom drawn small at the side."
+   },
+   {
+    "text": [
+     "Anna ziet een man.",
+     "Hij zegt: hallo, Anna!",
+     "Maar Anna herinnert zich hem niet."
+    ],
+    "question": "Weet Anna wie de man is?",
+    "answer": "nee",
+    "scene": "A smiling man waves at a woman; she looks back at him with a puzzled face."
+   }
+  ],
+  "band": "A2",
+  "band_why": "herinneren is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "herinneren",
+  "sense": "opnieuw in gedachte brengen (iemand aan iets herinneren, to remind)",
+  "gloss": "to remind someone of something",
+  "forms": [
+   "herinnert",
+   "herinneren"
+  ],
+  "picture": "A mother stands in the hall and points at a bag on the floor. A boy with a coat on looks at the bag.",
+  "mark": "The pointing hand and the forgotten bag: one person brings the thing back to another.",
+  "alt": "Een moeder staat in de gang en wijst naar een tas op de vloer. Een jongen met een jas aan kijkt naar de tas.",
+  "note": "Wiktionary sense 1. Someone reminds someone, with aan.",
+  "examples": [
+   {
+    "text": [
+     "Sam wil naar school gaan.",
+     "Zijn tas staat nog in de gang.",
+     "Zijn moeder herinnert hem aan de tas."
+    ],
+    "question": "Zegt zijn moeder iets over de tas?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft morgen een feest.",
+     "Mark maakt een kaart voor haar.",
+     "De kaart herinnert haar aan het feest."
+    ],
+    "question": "Is Els het feest vergeten?",
+    "answer": "nee",
+    "scene": "A note held to a fridge by a magnet, a woman looking at it."
+   },
+   {
+    "text": [
+     "Jan zet de radio aan.",
+     "Hij hoort een oud lied.",
+     "Het lied herinnert hem aan zijn vakantie."
+    ],
+    "question": "Denkt Jan aan zijn vakantie?",
+    "answer": "ja",
+    "scene": "A man sits by a radio with his eyes closed, smiling."
+   },
+   {
+    "text": [
+     "Anna denkt zelf aan alles.",
+     "Piet herinnert haar nooit aan het werk.",
+     "Dat is niet nodig."
+    ],
+    "question": "Moet Piet iets over het werk tegen Anna zeggen?",
+    "answer": "nee",
+    "scene": "A man with a closed mouth, a woman with a bag."
+   }
+  ],
+  "band": "A2",
+  "band_why": "herinneren is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "duren",
+  "sense": "een bepaalde tijd in beslag nemen (to last)",
+  "gloss": "to last, to take (time)",
+  "forms": [
+   "duurt",
+   "duren"
+  ],
+  "picture": "A woman sits on a bench at a bus stop with a big round clock on a pole. She looks at the clock and waits.",
+  "mark": "The clock and the waiting person: time going by.",
+  "alt": "Een vrouw zit op een bank bij een bushalte met een grote klok. Zij kijkt naar de klok en wacht.",
+  "note": "Wiktionary sense 1 (absolute). Example 4 shows a short time.",
+  "examples": [
+   {
+    "text": [
+     "Jan wacht op de bus.",
+     "De bus komt over een uur.",
+     "Het duurt lang."
+    ],
+    "question": "Moet Jan lang wachten?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam gaat met de trein.",
+     "De reis duurt twee uur.",
+     "Hij zit bij het raam."
+    ],
+    "question": "Zit Sam lang in de trein?",
+    "answer": "ja",
+    "scene": "A man in a train seat with a window showing fields."
+   },
+   {
+    "text": [
+     "Anna ziet een film.",
+     "Hij duurt drie uur."
+    ],
+    "question": "Is de film kort?",
+    "answer": "nee",
+    "scene": "A woman in a chair in front of a screen with a round clock beside it."
+   },
+   {
+    "text": [
+     "Eva belt haar zus.",
+     "Zij zegt alleen: ik kom morgen.",
+     "Het gesprek duurt maar even."
+    ],
+    "question": "Duurt het gesprek lang?",
+    "answer": "nee",
+    "scene": "A woman with a phone at her ear, already lowering it after a few words."
+   }
+  ],
+  "band": "A2",
+  "band_why": "duren is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "creëren",
+  "sense": "iets nieuws maken, iets scheppen (to create)",
+  "gloss": "to create, to make something new",
+  "forms": [
+   "creëert",
+   "creëren",
+   "creëer"
+  ],
+  "picture": "A boy stands at a table with sheets of paper. In front of him stands a small new folded paper boat.",
+  "mark": "The new paper boat that was not there before.",
+  "alt": "Een jongen staat bij een tafel met papier. Voor hem staat een klein nieuw bootje van papier.",
+  "note": "Wiktionary: one sense. It stresses that what is made is new and did not exist before.",
+  "examples": [
+   {
+    "text": [
+     "Sam heeft papier.",
+     "Hij maakt er een boot van.",
+     "Zo creëert hij een nieuwe boot."
+    ],
+    "question": "Is er nu een boot?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna houdt van muziek.",
+     "Zij maakt een nieuw lied.",
+     "Zij creëert iets nieuws."
+    ],
+    "question": "Maakt Anna iets nieuws?",
+    "answer": "ja",
+    "scene": "A woman with a guitar and a blank music sheet on a stand."
+   },
+   {
+    "text": [
+     "Jan heeft een plan.",
+     "Hij maakt een nieuw spel.",
+     "Hij creëert een spel voor zijn vrienden."
+    ],
+    "question": "Is het spel oud?",
+    "answer": "nee",
+    "scene": "A man with a board game he is drawing, friends watching."
+   },
+   {
+    "text": [
+     "Piet heeft een oud boek.",
+     "Hij leest er alleen in.",
+     "Hij creëert niets."
+    ],
+    "question": "Maakt Piet iets nieuws?",
+    "answer": "nee",
+    "scene": "A man with an old book in his lap, hands empty."
+   }
+  ],
+  "band": "A2",
+  "band_why": "creëren is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "regelen",
+  "sense": "zorgen dat een gewenst effect bereikt wordt (to arrange)",
+  "gloss": "to arrange, to sort out",
+  "forms": [
+   "regelt",
+   "regelen",
+   "geregeld"
+  ],
+  "picture": "A woman at a table has a phone to her ear and a list in her hand. A man beside her nods and smiles.",
+  "mark": "The phone and the list: she gets it done for someone.",
+  "alt": "Een vrouw zit aan een tafel met een telefoon aan haar oor. Zij heeft een lijstje in haar hand en een man naast haar lacht.",
+  "note": "Wiktionary: one sense. The person arranges it so that it is done; it is not the same as doing the work.",
+  "examples": [
+   {
+    "text": [
+     "Eva en Sam gaan op reis.",
+     "Eva belt het hotel.",
+     "Zij regelt een kamer."
+    ],
+    "question": "Hebben zij een kamer in het hotel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Mark wil een taxi.",
+     "Hij pakt de telefoon.",
+     "Hij regelt de taxi voor morgen."
+    ],
+    "question": "Is er een taxi voor morgen?",
+    "answer": "ja",
+    "scene": "A man with a phone, a car on the road at the side."
+   },
+   {
+    "text": [
+     "Els heeft een feest.",
+     "Haar vriend regelt de muziek.",
+     "Hij vraagt een vriend."
+    ],
+    "question": "Regelt Els de muziek zelf?",
+    "answer": "nee",
+    "scene": "A woman at a door and a man with a phone near a speaker."
+   },
+   {
+    "text": [
+     "Jan heeft een probleem met zijn fiets.",
+     "Hij praat met de man van de winkel.",
+     "Maar die regelt het niet."
+    ],
+    "question": "Is het probleem nu weg?",
+    "answer": "nee",
+    "scene": "A man at a shop counter with a bicycle, the shop owner shrugging."
+   }
+  ],
+  "band": "A2",
+  "band_why": "regelen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "behandelen",
+  "sense": "bespreken, spreken of schrijven over (to deal with, to discuss)",
+  "gloss": "to cover, to deal with a subject",
+  "forms": [
+   "behandelt",
+   "behandelen",
+   "behandeld"
+  ],
+  "picture": "A teacher stands at a board with a big drawn sun and a small circle for earth. Four children sit at desks with open books.",
+  "mark": "The teacher at the drawing and the pupils with open books: one subject is covered.",
+  "alt": "Een leraar staat bij een bord met een grote zon en een kleine cirkel. Vier kinderen zitten met een boek open aan hun tafel.",
+  "note": "Wiktionary sense 2. The medical sense is left out here.",
+  "examples": [
+   {
+    "text": [
+     "De leraar behandelt vandaag de zon.",
+     "De kinderen hebben hun boek open.",
+     "De klas luistert."
+    ],
+    "question": "Gaat de les over de zon?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva heeft een boek.",
+     "Het boek behandelt veel dieren.",
+     "Eva ziet een hond op een foto."
+    ],
+    "question": "Gaat het boek over muziek?",
+    "answer": "nee",
+    "scene": "A woman with an open book showing a dog."
+   },
+   {
+    "text": [
+     "Er is een vergadering.",
+     "De baas behandelt eerst de planning.",
+     "Daarna is er koffie."
+    ],
+    "question": "Praat de baas eerst over de planning?",
+    "answer": "ja",
+    "scene": "People at a table, one man standing with a paper, a coffee pot at the side."
+   },
+   {
+    "text": [
+     "Sam heeft een vraag.",
+     "Maar er is geen tijd meer.",
+     "De man behandelt de vraag niet."
+    ],
+    "question": "Praat de man over de vraag?",
+    "answer": "nee",
+    "scene": "A man with a raised hand, another man holding a paper."
+   }
+  ],
+  "band": "A2",
+  "band_why": "behandelen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "behandelen",
+  "sense": "op een bepaalde manier omgaan met een mens of een dier (to treat)",
+  "gloss": "to treat (someone or something in a certain way)",
+  "forms": [
+   "behandelt",
+   "behandelen"
+  ],
+  "picture": "A boy kneels on the grass and gently strokes a small dog. The dog looks calm.",
+  "mark": "The gentle hand on the dog: how one person goes about another.",
+  "alt": "Een jongen zit op het gras en aait voorzichtig een hond. De hond ligt rustig.",
+  "note": "Wiktionary sense 4. Used with a manner: goed, slecht, met zorg. Medical treatment is left out.",
+  "examples": [
+   {
+    "text": [
+     "Sam heeft een kleine hond.",
+     "Hij speelt rustig met de hond.",
+     "Hij behandelt de hond goed."
+    ],
+    "question": "Is Sam aardig voor de hond?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft een kat en een hond.",
+     "Zij is voor allebei aardig.",
+     "Zij behandelt de kat en de hond even goed."
+    ],
+    "question": "Is Els aardig voor allebei?",
+    "answer": "ja",
+    "scene": "A woman sitting with a cat on one knee and a dog on the other."
+   },
+   {
+    "text": [
+     "Anna heeft een oud boek.",
+     "Zij is voorzichtig.",
+     "Zij behandelt het boek met zorg."
+    ],
+    "question": "Behandelt Anna het boek slecht?",
+    "answer": "nee",
+    "scene": "A woman holding an old book with both hands."
+   },
+   {
+    "text": [
+     "De man heeft een nieuwe fiets.",
+     "Hij laat de fiets in de regen staan.",
+     "Hij behandelt de fiets slecht."
+    ],
+    "question": "Is de man voorzichtig met zijn fiets?",
+    "answer": "nee",
+    "scene": "A bicycle on its side in the rain, a man walking away."
+   }
+  ],
+  "band": "A2",
+  "band_why": "behandelen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "bevatten",
+  "sense": "omvatten, in zich sluiten (to contain)",
+  "gloss": "to contain, to hold inside",
+  "forms": [
+   "bevat",
+   "bevatten"
+  ],
+  "picture": "An open box on a table, drawn with a cut-away front so three books are visible inside.",
+  "mark": "The box with its contents visible inside.",
+  "alt": "Een open doos staat op een tafel. In de doos zitten drie boeken.",
+  "note": "Wiktionary sense 1. The understand sense (sense 2) is left out as rare.",
+  "examples": [
+   {
+    "text": [
+     "Er staat een doos op tafel.",
+     "In de doos zitten boeken.",
+     "De doos bevat boeken."
+    ],
+    "question": "Zitten er boeken in de doos?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva heeft een glas.",
+     "Er zit melk in.",
+     "Het glas bevat melk."
+    ],
+    "question": "Bevat het glas melk?",
+    "answer": "ja",
+    "scene": "A glass of milk on a table."
+   },
+   {
+    "text": [
+     "Jan heeft een tas.",
+     "Hij maakt hem open.",
+     "De tas bevat alleen een jas."
+    ],
+    "question": "Zit er een boek in de tas?",
+    "answer": "nee",
+    "scene": "An open bag with just a coat inside."
+   },
+   {
+    "text": [
+     "De kast is nieuw.",
+     "Hij is leeg.",
+     "De kast bevat niets."
+    ],
+    "question": "Bevat de kast een jas?",
+    "answer": "nee",
+    "scene": "An empty wardrobe with the doors open."
+   }
+  ],
+  "band": "A2",
+  "band_why": "bevatten is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "behoren",
+  "sense": "deel uitmaken van (behoren tot, to belong to)",
+  "gloss": "to belong to, to be part of",
+  "forms": [
+   "behoort",
+   "behoren"
+  ],
+  "picture": "Five children stand together in a row wearing the same plain cap. One sixth child stands a little apart without a cap.",
+  "mark": "The row of same caps and the one apart: who is in the group.",
+  "alt": "Vijf kinderen staan naast elkaar met dezelfde pet. Een zesde kind staat apart zonder pet.",
+  "note": "Wiktionary sense 2 (behoren tot): to be part of a group. Examples 3 and 4 show someone outside it.",
+  "examples": [
+   {
+    "text": [
+     "Sam speelt in een team.",
+     "Het team is groot.",
+     "Sam behoort tot het team."
+    ],
+    "question": "Hoort Sam bij het team?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De kat en de hond zijn dieren.",
+     "Een vis is ook een dier.",
+     "Zij behoren allemaal tot de dieren."
+    ],
+    "question": "Is een vis een dier?",
+    "answer": "ja",
+    "scene": "A cat, a dog and a fish in a bowl standing together."
+   },
+   {
+    "text": [
+     "Els staat naast een groep.",
+     "Zij zingt niet mee.",
+     "Zij behoort niet tot de groep."
+    ],
+    "question": "Hoort Els bij de groep?",
+    "answer": "nee",
+    "scene": "A woman standing beside a group of singers."
+   },
+   {
+    "text": [
+     "Piet staat bij de poort.",
+     "Het team speelt op het veld.",
+     "Hij behoort niet tot het team."
+    ],
+    "question": "Hoort Piet bij het team?",
+    "answer": "nee",
+    "scene": "A man at a gate watching a team on a field."
+   }
+  ],
+  "band": "A2",
+  "band_why": "behoren is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "kampen",
+  "sense": "moeilijkheden ondervinden (kampen met, to struggle with)",
+  "gloss": "to struggle with, to have trouble with",
+  "forms": [
+   "kampt",
+   "kampen"
+  ],
+  "picture": "A man at a desk faces a computer. He holds his head with one hand and looks tired. A small cup stands next to him.",
+  "mark": "The hand to the head at the computer: an ongoing small trouble.",
+  "alt": "Een man zit achter een computer. Hij houdt zijn hoofd met één hand vast en kijkt moe. Naast hem staat een kopje.",
+  "note": "Wiktionary: one sense, always with met. Kept to small everyday troubles.",
+  "examples": [
+   {
+    "text": [
+     "De computer van Jan is oud.",
+     "Hij doet het vaak niet.",
+     "Jan kampt steeds met dat probleem."
+    ],
+    "question": "Werkt de computer goed?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna heeft een oud huis.",
+     "Het dak is niet goed.",
+     "Zij kampt met water in de kamer."
+    ],
+    "question": "Is het dak helemaal goed?",
+    "answer": "nee",
+    "scene": "A woman with a bucket under a drip in a ceiling."
+   },
+   {
+    "text": [
+     "Het is druk op de weg.",
+     "Elke auto staat stil.",
+     "Veel mensen kampen met de drukte."
+    ],
+    "question": "Hebben de mensen een probleem op de weg?",
+    "answer": "ja",
+    "scene": "A road full of cars standing in a line."
+   },
+   {
+    "text": [
+     "Els heeft een mooie tuin.",
+     "Alles groeit goed.",
+     "Zij kampt nergens mee."
+    ],
+    "question": "Heeft Els een probleem met de tuin?",
+    "answer": "nee",
+    "scene": "A woman smiling in a garden full of flowers."
+   }
+  ],
+  "band": "A2",
+  "band_why": "kampen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "overleven",
+  "sense": "in leven blijven ondanks moeilijke omstandigheden (to survive)",
+  "gloss": "to survive, to come through",
+  "forms": [
+   "overleeft",
+   "overleven"
+  ],
+  "picture": "A small potted plant stands outside a front door in the snow. Its leaves are still upright.",
+  "mark": "The upright leaves in the snow: it keeps going.",
+  "alt": "Een kleine plant in een pot staat buiten in de sneeuw. De bladeren staan nog omhoog.",
+  "note": "Wiktionary sense 1, kept to plants and objects. Distress scenes with people are left out on purpose.",
+  "examples": [
+   {
+    "text": [
+     "De winter is koud.",
+     "De plant staat buiten in een pot.",
+     "De plant overleeft de winter."
+    ],
+    "question": "Is de plant na de winter nog goed?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De kaart is van papier.",
+     "De kaart is buiten in de regen.",
+     "De kaart overleeft de regen niet."
+    ],
+    "question": "Is de kaart na de regen nog goed?",
+    "answer": "nee",
+    "scene": "A paper card lying wet and curled on a garden table in the rain."
+   },
+   {
+    "text": [
+     "De zomer is heel warm.",
+     "De boom heeft veel water.",
+     "De boom overleeft de zomer."
+    ],
+    "question": "Is de boom na de zomer nog goed?",
+    "answer": "ja",
+    "scene": "A tree in a sunny field with a full watering can beside it."
+   },
+   {
+    "text": [
+     "De bloem staat in de zon.",
+     "Er is geen water.",
+     "De bloem overleeft de week niet."
+    ],
+    "question": "Is de bloem na een week nog goed?",
+    "answer": "nee",
+    "scene": "A drooping flower in a vase on a sunny table, empty watering can nearby."
+   }
+  ],
+  "band": "A2",
+  "band_why": "overleven is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "ontdekken",
+  "sense": "iets vinden of leren waarvan het bestaan niet bekend was (to discover)",
+  "gloss": "to discover, to find out (for the first time)",
+  "forms": [
+   "ontdekt",
+   "ontdekken"
+  ],
+  "picture": "A boy pulls a cupboard aside and finds a small door behind it. He looks at the door with wide eyes.",
+  "mark": "The small door behind the cupboard and the wide eyes: first time seeing something.",
+  "alt": "Een jongen schuift een kast opzij en ziet een klein deurtje. Hij kijkt er met grote ogen naar.",
+  "note": "Wiktionary sense 1. The geography sense (sense 2) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Sam speelt thuis.",
+     "Hij ziet iets achter de kast.",
+     "Hij ontdekt een kleine kamer."
+    ],
+    "question": "Ziet Sam een kamer?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna wandelt door het bos.",
+     "Zij ziet een open plek met een bank.",
+     "Zij ontdekt een mooie plek."
+    ],
+    "question": "Is de plek nieuw voor Anna?",
+    "answer": "ja",
+    "scene": "A woman parting branches and finding a small clearing with a bench."
+   },
+   {
+    "text": [
+     "Jan heeft een oude jas.",
+     "Hij doet zijn hand in de zak.",
+     "Hij ontdekt een brief."
+    ],
+    "question": "Is de zak leeg?",
+    "answer": "nee",
+    "scene": "A man pulling a folded paper out of a coat pocket."
+   },
+   {
+    "text": [
+     "Els loopt elke dag door de straat.",
+     "Zij kent de straat goed.",
+     "Zij ontdekt niets nieuws."
+    ],
+    "question": "Ziet Els iets nieuws?",
+    "answer": "nee",
+    "scene": "A woman walking along a plain street she knows, looking straight ahead."
+   }
+  ],
+  "band": "A2",
+  "band_why": "ontdekken is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "getuigen",
+  "sense": "bewijzen dat iets of iemand bepaalde eigenschappen heeft (getuigen van, to show, to bear witness to)",
+  "gloss": "to show, to testify to a quality",
+  "forms": [
+   "getuigt",
+   "getuigen"
+  ],
+  "picture": "A tidy garden in full bloom, with straight paths and clean edges. A man stands at the gate looking at it with admiration.",
+  "mark": "The tidy garden seen by a man: the garden itself shows how much care was given.",
+  "alt": "Een mooie tuin vol bloemen met rechte paden. Een man staat bij het hek en kijkt er met bewondering naar.",
+  "note": "Wiktionary sense 2 (getuigen van): a thing shows a quality. The witness sense (sense 1) is left out because it is about crime and court.",
+  "examples": [
+   {
+    "text": [
+     "De tuin is netjes.",
+     "Alles is mooi.",
+     "De tuin getuigt van veel zorg."
+    ],
+    "question": "Werkt iemand veel in de tuin?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft een kamer.",
+     "Het bed is gemaakt.",
+     "Haar kamer getuigt van orde."
+    ],
+    "question": "Zorgt Els goed voor haar kamer?",
+    "answer": "ja",
+    "scene": "A tidy room with a made bed and books in a row."
+   },
+   {
+    "text": [
+     "Het boek is mooi gemaakt.",
+     "Elke pagina is goed.",
+     "Het boek getuigt van veel werk."
+    ],
+    "question": "Is het boek met haast gemaakt?",
+    "answer": "nee",
+    "scene": "A man turning pages of a neat handmade book."
+   },
+   {
+    "text": [
+     "Het huis is vuil.",
+     "Alles ligt door elkaar.",
+     "Dit getuigt niet van zorg."
+    ],
+    "question": "Zorgt iemand goed voor het huis?",
+    "answer": "nee",
+    "scene": "A room with things piled in a heap on the floor."
+   }
+  ],
+  "band": "A2",
+  "band_why": "getuigen is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ },
+ {
+  "verb": "accepteren",
+  "sense": "aannemen, graag ontvangen (to accept)",
+  "gloss": "to accept, to take willingly",
+  "forms": [
+   "accepteert",
+   "accepteren"
+  ],
+  "picture": "A woman holds out a small gift to a man at a front door. He takes it with both hands and smiles.",
+  "mark": "Both hands taking the gift: he takes it willingly.",
+  "alt": "Een vrouw geeft een klein cadeau aan een man bij een voordeur. Hij neemt het met twee handen aan en lacht.",
+  "note": "Wiktionary senses 1 and 2 merged: to say yes to something offered. Examples 3 and 4 show a refusal.",
+  "examples": [
+   {
+    "text": [
+     "Eva heeft een cadeau voor Jan.",
+     "Hij is blij.",
+     "Hij accepteert het cadeau."
+    ],
+    "question": "Wil Jan het cadeau?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna vraagt Sam op haar feest.",
+     "Hij heeft tijd.",
+     "Hij accepteert de uitnodiging."
+    ],
+    "question": "Gaat Sam naar het feest?",
+    "answer": "ja",
+    "scene": "A woman holds out a card at a door; a man nods and smiles."
+   },
+   {
+    "text": [
+     "Mark wil betalen in een winkel.",
+     "Hij heeft alleen een kaart.",
+     "De winkel accepteert de kaart niet."
+    ],
+    "question": "Kan Mark met de kaart betalen?",
+    "answer": "nee",
+    "scene": "A man holding a bank card to a machine on a shop counter, the shop owner shaking his head."
+   },
+   {
+    "text": [
+     "De man wil Els naar huis brengen.",
+     "Zij wil liever fietsen.",
+     "Zij accepteert het aanbod niet."
+    ],
+    "question": "Gaat Els met de auto mee?",
+    "answer": "nee",
+    "scene": "A man in a car with the door open; a woman shaking her head, walking on."
+   }
+  ],
+  "band": "A2",
+  "band_why": "accepteren is B1 or A2 by lemma rank only by a small margin; the sense is intended as A2 by judgement (explicit band)"
+ }
+]

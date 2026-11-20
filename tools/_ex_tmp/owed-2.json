@@ -1,0 +1,673 @@
+[
+ {
+  "verb": "wijken",
+  "sense": "voor iets uit de weg gaan; moeten wijken voor: plaats maken voor iets nieuws (to make way for)",
+  "gloss": "to make way for, to give way to",
+  "forms": [
+   "wijken",
+   "wijkt"
+  ],
+  "picture": "Anna stands in a small sunny back garden beside a fresh tree stump. Next to the stump lie the cut trunk and branches; a garden chair stands in the sun.",
+  "mark": "The fresh stump beside the sunny chair: the old tree gave way.",
+  "alt": "Een vrouw staat in een kleine tuin in de zon naast een stronk van een boom. Ernaast liggen de stam en de takken, en er staat een tuinstoel.",
+  "note": "Wiktionary sense 1 (voor iets uit de weg gaan) in its everyday form 'moeten wijken voor', as in the news ('bomen moeten wijken voor woningen'). Example 4 shows something that does not have to give way.",
+  "examples": [
+   {
+    "text": [
+     "Anna wil meer zon in haar tuin.",
+     "De oude boom moet wijken."
+    ],
+    "question": "Gaat de oude boom weg?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Er komt een nieuwe school in de straat van Jan.",
+     "Een paar oude huizen moeten daarvoor wijken."
+    ],
+    "question": "Blijven de oude huizen staan?",
+    "answer": "nee",
+    "scene": "A man watches from his front step as a digger stands in front of a row of half-empty old houses."
+   },
+   {
+    "text": [
+     "Eva krijgt een nieuw bed.",
+     "Haar kamer is klein.",
+     "De oude kast moet wijken voor het bed."
+    ],
+    "question": "Blijft de kast in de kamer?",
+    "answer": "nee",
+    "scene": "Two men carry a wardrobe out of a small bedroom while a new bed waits in the doorway; a woman points to the empty wall."
+   },
+   {
+    "text": [
+     "Er komt een nieuwe weg door het dorp.",
+     "Moet het park van Mark daarvoor wijken?",
+     "Nee, gelukkig niet."
+    ],
+    "question": "Kan Mark nog in het park spelen?",
+    "answer": "ja",
+    "scene": "A boy kicks a ball under the trees of a park; beyond the hedge, road workers lay a new road along the park's edge."
+   }
+  ]
+ },
+ {
+  "verb": "wijken",
+  "sense": "niet wijken: niet weggaan, blijven staan of bij iemand blijven (not to budge, not to leave someone's side)",
+  "gloss": "not to budge; not to leave someone's side",
+  "forms": [
+   "wijken",
+   "wijkt"
+  ],
+  "picture": "Els walks through a living room carrying a basket of washing. A young dog walks pressed against her leg, its eyes on her face.",
+  "mark": "The dog pressed against her leg, step for step.",
+  "alt": "Een vrouw loopt met een mand was door de kamer. Een klein hondje loopt vlak tegen haar been aan.",
+  "note": "The negative fixed uses of Wiktionary sense 1 (niet van iemands zijde wijken, geen stap wijken), which are how the verb mostly lives in speech; Wiktionary sense 2 (a danger that passes) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Els heeft een jonge hond.",
+     "De hond wijkt de hele dag niet van haar zijde."
+    ],
+    "question": "Blijft de hond steeds bij Els?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet loopt op een pad in het bos.",
+     "Er staat een paard op het pad.",
+     "Het paard wijkt geen stap."
+    ],
+    "question": "Kan Piet langs het paard?",
+    "answer": "nee",
+    "scene": "A man stands on a narrow forest path, facing a large horse that stands across the path."
+   },
+   {
+    "text": [
+     "Jan ligt op het strand op een mooie plek.",
+     "Een man wil die plek ook hebben.",
+     "Maar Jan wijkt niet."
+    ],
+    "question": "Heeft Jan zijn plek nog?",
+    "answer": "ja",
+    "scene": "A man lies on a towel on a beach, arms folded; another man stands over him holding a rolled towel."
+   },
+   {
+    "text": [
+     "De zoon van Anna gaat voor het eerst naar school.",
+     "Hij wijkt de eerste dag niet van haar zijde."
+    ],
+    "question": "Gaat de jongen meteen met de andere kinderen spelen?",
+    "answer": "nee",
+    "scene": "A small boy holds his mother's coat in a school playground while other children play behind them."
+   }
+  ]
+ },
+ {
+  "verb": "zenden",
+  "sense": "sturen, in formele taal (to send, formal)",
+  "gloss": "to send (formal)",
+  "forms": [
+   "zenden",
+   "zendt",
+   "zend"
+  ],
+  "picture": "Eva sits at a desk in a bank office folding papers into an envelope. A stamped, blank envelope lies ready beside a small post tray.",
+  "mark": "The papers going into the envelope at the office desk.",
+  "alt": "Een vrouw zit aan een bureau in een bank en doet papieren in een envelop.",
+  "note": "Wiktionary's only sense (sturen), in the register where it is still used: letters and messages from banks, firms and offices ('hierbij zend ik u'). In speech Dutch uses sturen.",
+  "examples": [
+   {
+    "text": [
+     "Eva werkt bij een bank.",
+     "Een klant wil zijn papieren hebben.",
+     "Eva zendt hem de papieren per post."
+    ],
+    "question": "Krijgt de klant de papieren thuis?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Mark schrijft een brief aan de gemeente.",
+     "Er zit een groot gat in zijn straat.",
+     "Hij schrijft: hierbij zend ik u een foto van het gat."
+    ],
+    "question": "Zit er een foto bij de brief van Mark?",
+    "answer": "ja",
+    "scene": "A man at a kitchen table slides a photo of a hole in a road into an envelope next to a blank letter."
+   },
+   {
+    "text": [
+     "Piet koopt een boek bij een winkel.",
+     "De winkel zendt het boek naar zijn huis."
+    ],
+    "question": "Moet Piet het boek in de winkel halen?",
+    "answer": "nee",
+    "scene": "A delivery man hands a small parcel to a man at his front door."
+   },
+   {
+    "text": [
+     "Het bedrijf zendt Sam elke maand een rekening.",
+     "Deze maand zendt het bedrijf geen rekening."
+    ],
+    "question": "Krijgt Sam deze maand een rekening?",
+    "answer": "nee",
+    "scene": "A man opens an empty letterbox at his front door."
+   }
+  ]
+ },
+ {
+  "verb": "zenden",
+  "sense": "met een radio signalen of berichten door de lucht sturen (to transmit, to broadcast)",
+  "gloss": "to transmit (by radio)",
+  "forms": [
+   "zenden",
+   "zendt"
+  ],
+  "picture": "Piet sits at a table in an attic with a radio set and a desk microphone, speaking into it. A tall antenna stands on the roof above the attic window.",
+  "mark": "Piet speaking into the radio microphone under the roof antenna.",
+  "alt": "Een man zit op zolder aan een tafel met een radio en een microfoon. Op het dak staat een hoge antenne.",
+  "note": "Not a separate sense on Wiktionary (which gives only sturen); this is the radio use of zenden, as in 'zenden en ontvangen'. Broadcasting a programme is mostly uitzenden, a separate verb.",
+  "examples": [
+   {
+    "text": [
+     "Piet heeft op zolder een radio met een microfoon.",
+     "Hij zendt elke avond."
+    ],
+    "question": "Kunnen mensen ver weg Piet horen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els en haar zoon hebben elk een kleine radio.",
+     "De radio van Els kan alleen ontvangen.",
+     "Hij kan niet zenden."
+    ],
+    "question": "Hoort de zoon wat Els zegt?",
+    "answer": "nee",
+    "scene": "A woman in a garden holds a small handheld radio to her mouth; her son, across the lawn, holds another to his ear, looking puzzled."
+   },
+   {
+    "text": [
+     "Een schip is ver op zee.",
+     "Kapitein Jan zendt een bericht naar de haven."
+    ],
+    "question": "Krijgt de haven een bericht van het schip?",
+    "answer": "ja",
+    "scene": "A captain on the bridge of a ship at sea speaks into a radio handset; far away on the coast, a harbour building with a mast."
+   },
+   {
+    "text": [
+     "Mark maakt radio op een boot op zee.",
+     "Van daar zendt hij muziek naar het land."
+    ],
+    "question": "Kunnen mensen de muziek alleen op de boot horen?",
+    "answer": "nee",
+    "scene": "A boat with a tall mast lies at anchor off a coast; a man sits at a microphone in its cabin; on the beach, people sit around a small radio."
+   }
+  ]
+ },
+ {
+  "verb": "offeren",
+  "sense": "als offer aanbieden aan een god (to make an offering)",
+  "gloss": "to offer (to a god), to make an offering",
+  "forms": [
+   "offeren",
+   "offert"
+  ],
+  "picture": "In front of a stone temple, a woman kneels and sets a small woven basket with flowers and a little rice on a step before a statue. A traveller with a backpack, Els, stands a little behind and watches.",
+  "mark": "The basket of flowers set down before the statue.",
+  "alt": "Een vrouw zet bij een tempel een klein mandje met bloemen en rijst voor een beeld. Een reiziger met een rugzak kijkt toe.",
+  "note": "Wiktionary sense 1 (als offer aanbieden), kept to mild offerings of flowers, food and drink; sense 2 (killing an animal) and the slang senses (betalen) are left out. The figurative 'giving up something' is opofferen, a separate verb.",
+  "examples": [
+   {
+    "text": [
+     "Els is op reis in een warm land.",
+     "Bij een tempel ziet zij een vrouw.",
+     "De vrouw offert bloemen en rijst aan de goden."
+    ],
+    "question": "Geeft de vrouw iets aan de goden?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan is in een museum.",
+     "Hij kijkt naar een oud schilderij.",
+     "Daarop offeren mensen brood en wijn aan een god."
+    ],
+    "question": "Eten de mensen op het schilderij het brood zelf?",
+    "answer": "nee",
+    "scene": "A man in a museum looks at a large old painting in which people in robes lay bread and a jug before a stone altar."
+   },
+   {
+    "text": [
+     "Piet bezoekt een tempel.",
+     "Hij kijkt naar de mensen bij het beeld.",
+     "Zelf offert hij niets."
+    ],
+    "question": "Legt Piet iets bij het beeld?",
+    "answer": "nee",
+    "scene": "A man with his hands in his pockets stands at the back of a temple hall while others place flowers before a statue."
+   },
+   {
+    "text": [
+     "De buurvrouw van Eva viert een feest uit haar land.",
+     "Zij offert fruit aan haar goden, bij een klein beeld in de kamer."
+    ],
+    "question": "Staat het fruit bij het beeld?",
+    "answer": "ja",
+    "scene": "A woman places a bowl of fruit before a small statue on a low table at home; Eva stands in the doorway holding a gift."
+   }
+  ]
+ },
+ {
+  "verb": "bezien",
+  "sense": "in ogenschouw nemen, in vaste uitdrukkingen: van dichtbij bezien, van ver bezien (seen from close up, from far away)",
+  "gloss": "seen (from close up, from a distance)",
+  "forms": [
+   "bezien"
+  ],
+  "picture": "Eva stands with her nose almost against a large painting in a gallery. Seen as a whole the painting shows a forest; the part right in front of her face is only loose dots.",
+  "mark": "Her face close to the canvas, where the forest breaks into dots.",
+  "alt": "Een vrouw staat met haar neus bijna tegen een groot schilderij van een bos. Vlak voor haar ziet het schilderij eruit als losse stippen.",
+  "note": "Wiktionary sense 1 (in ogenschouw nemen), carded only in the fixed phrases where the verb lives (van dichtbij bezien, vanaf ... bezien); bare bezien in a main clause is rare and stiff.",
+  "examples": [
+   {
+    "text": [
+     "Eva kijkt naar een groot schilderij.",
+     "Van ver is het een bos.",
+     "Van dichtbij bezien zijn het alleen stippen."
+    ],
+    "question": "Zijn het van dichtbij alleen stippen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan vindt in de tuin een kleine ronde steen.",
+     "Van dichtbij bezien is het een oude munt."
+    ],
+    "question": "Is het een munt?",
+    "answer": "ja",
+    "scene": "A man kneels in a garden bed holding a small round object close to his eye."
+   },
+   {
+    "text": [
+     "Piet staat boven op een toren.",
+     "Vanaf de toren bezien lijkt elke auto net speelgoed."
+    ],
+    "question": "Lijkt elke auto vanaf de toren groot?",
+    "answer": "nee",
+    "scene": "A man leans on the railing at the top of a tall tower, looking down at tiny cars in the streets far below."
+   },
+   {
+    "text": [
+     "De muur van het huis van Anna lijkt glad.",
+     "Van dichtbij bezien zit hij vol kleine scheuren."
+    ],
+    "question": "Is de muur van dichtbij glad?",
+    "answer": "nee",
+    "scene": "A woman bends close to the wall of her house, running a finger along it."
+   }
+  ]
+ },
+ {
+  "verb": "bezien",
+  "sense": "het valt (nog) te bezien: het is nog niet zeker (it remains to be seen)",
+  "gloss": "it remains to be seen",
+  "forms": [
+   "bezien"
+  ],
+  "picture": "Jan stands in his garden next to a laid table for an evening meal outside, holding a stack of plates. He looks up at a heavy grey sky.",
+  "mark": "Jan's upward look at the grey sky, plates in hand: he cannot know yet.",
+  "alt": "Een man staat in de tuin naast een gedekte tafel en houdt borden vast. Hij kijkt omhoog naar een grijze lucht.",
+  "note": "The fixed phrase 'het valt (nog) te bezien', not a numbered sense on Wiktionary; it is the most common live use of bezien.",
+  "examples": [
+   {
+    "text": [
+     "Jan wil vanavond buiten eten.",
+     "De lucht is grijs.",
+     "Het valt nog te bezien of het droog blijft."
+    ],
+    "question": "Weet Jan zeker dat het droog blijft?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna praat vandaag met een bedrijf over een nieuwe baan.",
+     "Of zij de baan krijgt, valt nog te bezien."
+    ],
+    "question": "Moet Anna nog afwachten?",
+    "answer": "ja",
+    "scene": "A woman in a smart jacket walks out of an office building, looking at her phone."
+   },
+   {
+    "text": [
+     "Sam zet een nieuwe plant in de schaduw.",
+     "Of de plant daar goed groeit, valt te bezien."
+    ],
+    "question": "Weet Sam al hoe de plant groeit?",
+    "answer": "nee",
+    "scene": "A man kneels in the shade of a wall, pressing soil around a young plant."
+   },
+   {
+    "text": [
+     "Er ligt veel sneeuw.",
+     "Of de trein van Eva morgen rijdt, valt nog te bezien."
+    ],
+    "question": "Is het nog onzeker of de trein rijdt?",
+    "answer": "ja",
+    "scene": "A woman with a suitcase stands at her window looking out at deep snow on the street."
+   }
+  ]
+ },
+ {
+  "verb": "bestrijden",
+  "sense": "de strijd aanbinden met iets lastigs (to fight a nuisance or a problem)",
+  "gloss": "to combat, to fight (weeds, pests, fire)",
+  "band": "B1",
+  "band_why": "bestrijden is A2 by lemma rank, but the things it is used against (brand via brandweer, kou, vliegen) are B1 words, so the mild sense is carded at B1",
+  "forms": [
+   "bestrijden",
+   "bestrijdt"
+  ],
+  "picture": "Behind a school building a large rubbish container is on fire. Jan, a firefighter in helmet and jacket, aims a hose at it; a fire engine stands behind him.",
+  "mark": "The hose aimed at the burning container.",
+  "alt": "Achter een school staat een grote container in brand. Een brandweerman spuit er water op met een slang.",
+  "note": "Wiktionary's only sense (de strijd aanbinden), in its everyday use against fire, cold and pests; fighting people or arguing against a claim is left out. Onkruid and gladheid, the most typical objects, are above B1 or not in the lexicon. Example 3 shows doing nothing.",
+  "examples": [
+   {
+    "text": [
+     "Achter de school brandt een container.",
+     "Jan werkt bij de brandweer.",
+     "Hij bestrijdt de brand met water."
+    ],
+    "question": "Laat Jan het vuur gewoon branden?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Het is koud in het oude huis van Anna.",
+     "Zij bestrijdt de kou met een warme trui en hete thee."
+    ],
+    "question": "Doet Anna iets tegen de kou?",
+    "answer": "ja",
+    "scene": "A woman in a thick jumper sits in a chilly old room holding a steaming mug in both hands."
+   },
+   {
+    "text": [
+     "In de zomer komen er veel vliegen in de keuken van Els.",
+     "Zij bestrijdt de vliegen niet."
+    ],
+    "question": "Laat Els de vliegen met rust?",
+    "answer": "ja",
+    "scene": "A woman sits reading at her kitchen table while flies sit on the fruit bowl."
+   },
+   {
+    "text": [
+     "Het is winter en er ligt ijs op de wegen.",
+     "Mark rijdt met een grote wagen zout door de stad.",
+     "Zo bestrijdt hij het ijs."
+    ],
+    "question": "Laat Mark het ijs liggen?",
+    "answer": "nee",
+    "scene": "At night, a man drives a big truck down an empty icy street, salt spreading from the back."
+   }
+  ]
+ },
+ {
+  "verb": "baren",
+  "sense": "zorgen baren: zorgen veroorzaken (to cause worry)",
+  "gloss": "to cause (worry)",
+  "forms": [
+   "baren",
+   "baart"
+  ],
+  "picture": "Piet stands in his living room looking up at a damp patch on the ceiling. A bucket stands on the floor beneath it; his hand rests on the back of his neck.",
+  "mark": "The look up at the damp patch, hand on the neck.",
+  "alt": "Een man staat in de kamer en kijkt omhoog naar een natte plek aan het plafond. Op de vloer staat een emmer.",
+  "note": "The fixed phrase 'zorgen baren', one of the two live uses of baren; Wiktionary sense 1 (giving birth) is formal and medical and is left out, sense 2 (schreeuwen) is archaic.",
+  "examples": [
+   {
+    "text": [
+     "Het dak van Piet is oud.",
+     "Bij regen komt er water binnen.",
+     "Dat baart hem zorgen."
+    ],
+    "question": "Maakt Piet zich zorgen over het dak?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Er zit een kleine vlek op de nieuwe jas van Anna.",
+     "Dat baart haar geen zorgen."
+    ],
+    "question": "Maakt Anna zich zorgen om de vlek?",
+    "answer": "nee",
+    "scene": "A woman glances at a small spot on her coat sleeve and smiles as she walks on."
+   },
+   {
+    "text": [
+     "Jan is boer.",
+     "Er valt al een maand geen regen.",
+     "De droogte baart hem zorgen."
+    ],
+    "question": "Is Jan rustig over het weer?",
+    "answer": "nee",
+    "scene": "A farmer stands in a dry, cracked field, looking at a cloudless sky."
+   },
+   {
+    "text": [
+     "Els heeft morgen een groot examen.",
+     "Het examen baart haar geen zorgen."
+    ],
+    "question": "Is Els rustig over het examen?",
+    "answer": "ja",
+    "scene": "A young woman lies relaxed on a sofa with a closed book on her chest."
+   }
+  ]
+ },
+ {
+  "verb": "baren",
+  "sense": "opzien baren: veel aandacht trekken (to cause a stir)",
+  "gloss": "to cause (a stir)",
+  "forms": [
+   "baren",
+   "baart",
+   "opzien"
+  ],
+  "picture": "Mark rides a horse down a village shopping street and stops in front of the baker's. People on the pavement turn and stare; a child points.",
+  "mark": "The horse outside the shop and the people turning to stare.",
+  "alt": "Een man rijdt op een paard door een winkelstraat en stopt bij de bakker. De mensen op straat kijken naar hem.",
+  "note": "The fixed phrase 'opzien baren', not on Wiktionary as a sense; opzien is listed in forms because it only occurs inside this phrase here and the lexicon has no entry for it.",
+  "examples": [
+   {
+    "text": [
+     "Mark gaat op zijn paard naar de bakker.",
+     "Dat baart opzien in het dorp."
+    ],
+    "question": "Kijken de mensen naar Mark?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva draagt een grote hoed met bloemen.",
+     "In de stad baart dat geen opzien."
+    ],
+    "question": "Kijken veel mensen naar de hoed van Eva?",
+    "answer": "nee",
+    "scene": "A woman in a wide hat walks along a busy city street; nobody around her looks up."
+   },
+   {
+    "text": [
+     "Een jongen van twaalf wint een groot toernooi.",
+     "Dat baart veel opzien."
+    ],
+    "question": "Vinden de mensen het gewoon?",
+    "answer": "nee",
+    "scene": "A boy holds up a cup on a stage while a crowd of adults rises from their seats."
+   },
+   {
+    "text": [
+     "Sam bouwt een klein huis op wielen.",
+     "Het staat voor zijn deur.",
+     "Het baart veel opzien in de straat."
+    ],
+    "question": "Praten de buren over het huis van Sam?",
+    "answer": "ja",
+    "scene": "A tiny wooden house on wheels stands in front of a terraced house; neighbours gather around it."
+   }
+  ]
+ },
+ {
+  "verb": "linken",
+  "sense": "webpagina's met een link verbinden (to link, on the web)",
+  "gloss": "to link (to a web page)",
+  "forms": [
+   "linken",
+   "linkt"
+  ],
+  "picture": "Anna types on a laptop at a kitchen table. In the next room Sam sits on a sofa holding a phone; its screen shows a photo of a cake.",
+  "mark": "The cake photo open on Sam's phone while Anna types.",
+  "alt": "Een vrouw typt op een laptop aan de keukentafel. In de kamer ernaast zit een man met een telefoon met een foto van een taart.",
+  "note": "Wiktionary sense 2 (informatica). Sense 1 (verbinden, 'iets aan iets linken') and sense 4 (bedriegen, informal and dated) are left out; the adjective 'link' (sly, risky) is a different word.",
+  "examples": [
+   {
+    "text": [
+     "Anna stuurt Sam een bericht over een taart.",
+     "In het bericht linkt zij naar het recept."
+    ],
+    "question": "Kan Sam het recept direct openen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan schrijft op zijn site over zijn vakantie.",
+     "Hij linkt naar de site van het hotel."
+    ],
+    "question": "Moet een lezer zelf naar de site van het hotel zoeken?",
+    "answer": "nee",
+    "scene": "A man at a desk with a laptop, holiday photos of a beach hotel spread beside him."
+   },
+   {
+    "text": [
+     "Eva schrijft op haar site over een leuke film.",
+     "Zij linkt niet naar de film."
+    ],
+    "question": "Staat er in het stuk van Eva een link naar de film?",
+    "answer": "nee",
+    "scene": "A woman types on a laptop on a sofa, a bowl of popcorn beside her."
+   },
+   {
+    "text": [
+     "Piet heeft een site over oude treinen.",
+     "Veel andere sites linken naar zijn site."
+    ],
+    "question": "Komen er via andere sites mensen op de site van Piet?",
+    "answer": "ja",
+    "scene": "A man sits at a computer surrounded by model trains on shelves."
+   }
+  ]
+ },
+ {
+  "verb": "vertragen",
+  "sense": "later laten gebeuren; vertraagd zijn: later komen dan gepland (to delay; to be delayed)",
+  "gloss": "to delay; to be delayed",
+  "forms": [
+   "vertragen",
+   "vertraagt",
+   "vertraagd"
+  ],
+  "picture": "Jan stands on a station platform with a suitcase beside him, looking down the empty track. Other travellers sit on benches or lean against a wall.",
+  "mark": "The empty track and the waiting people: the train is not there.",
+  "alt": "Een man staat met een koffer op het perron en kijkt naar het lege spoor. Andere mensen zitten op een bank te wachten.",
+  "note": "Wiktionary sense 1 (langzamer doen worden) in its time use, mostly as the participle 'vertraagd'; the speed use has its own card.",
+  "examples": [
+   {
+    "text": [
+     "Jan wacht op de trein naar huis.",
+     "De trein is vandaag vertraagd."
+    ],
+    "question": "Komt de trein van Jan op tijd?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna gaat op vakantie.",
+     "Haar vliegtuig is niet vertraagd."
+    ],
+    "question": "Vertrekt Anna op tijd?",
+    "answer": "ja",
+    "scene": "A woman with a backpack walks straight onto a plane up the boarding stairs."
+   },
+   {
+    "text": [
+     "Piet bouwt een brug.",
+     "De sneeuw vertraagt het werk."
+    ],
+    "question": "Gaat het werk door de sneeuw minder snel?",
+    "answer": "ja",
+    "scene": "Builders in heavy coats stand idle beside a half-built bridge covered in snow."
+   },
+   {
+    "text": [
+     "Els wacht op een pakket.",
+     "Door de drukte is het vertraagd."
+    ],
+    "question": "Komt het pakket op tijd?",
+    "answer": "nee",
+    "scene": "A woman looks out of her front door at an empty street."
+   }
+  ]
+ },
+ {
+  "verb": "vertragen",
+  "sense": "langzamer gaan of langzamer doen worden (to slow down)",
+  "gloss": "to slow down",
+  "forms": [
+   "vertragen",
+   "vertraagt"
+  ],
+  "picture": "Anna rides a bicycle down a steep hill road towards a sharp bend. Her hands squeeze the brakes and her body leans back.",
+  "mark": "The hands on the brakes before the bend.",
+  "alt": "Een vrouw fietst een steile weg af naar een scherpe bocht. Haar handen zitten aan de remmen.",
+  "note": "Wiktionary sense 1 (langzamer doen worden), here of speed; example 4 shows a driver who does not slow down.",
+  "examples": [
+   {
+    "text": [
+     "Anna fietst snel de berg af.",
+     "Voor de bocht vertraagt zij."
+    ],
+    "question": "Gaat Anna in de bocht minder snel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Kapitein Jan vaart naar de haven.",
+     "Hij vertraagt niet."
+    ],
+    "question": "Vaart de boot minder snel de haven in?",
+    "answer": "nee",
+    "scene": "A small boat speeds straight into a harbour entrance; a captain at the wheel."
+   },
+   {
+    "text": [
+     "Eva loopt een lange wedstrijd.",
+     "Na een uur vertraagt zij een beetje."
+    ],
+    "question": "Loopt Eva aan het eind even snel?",
+    "answer": "nee",
+    "scene": "A tired runner in a long race, behind other runners, face red."
+   },
+   {
+    "text": [
+     "Sam rijdt in zijn auto.",
+     "Er is niemand op de weg.",
+     "Hij vertraagt niet."
+    ],
+    "question": "Rijdt Sam even snel door?",
+    "answer": "ja",
+    "scene": "A car drives along an empty country road between fields."
+   }
+  ]
+ }
+]

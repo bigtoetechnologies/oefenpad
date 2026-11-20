@@ -304,7 +304,7 @@ def build():
                 f'<span class="framereeks">frames #{first}–#{last}</span>'
                 f'<span>rang {min(ranks)}–{max(ranks)}</span>'
                 f'<span>{sum(1 for r in rows if r["slug"] in DRAWN)} getekend</span>'
-                f'<span>{page_skips} overgeslagen</span>'
+                f'<span>{page_skips} met uitlegkaart</span>'
                 "</div>"
             )
             html_out.append('<nav class="banden">' + "".join(navhtml) + "</nav>")
@@ -485,6 +485,22 @@ def override_rows(records):
     return rows
 
 
+def explanation_cards():
+    """verb -> (band page, anchor) for every explanation card on the family pages."""
+    import glob, json, re as _re, sys as _sys
+    _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from explanation_lib import band_of, load_ranks
+    ranks = load_ranks()
+    out = {}
+    for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), "_ex_tmp", "*.json"))):
+        for c in json.load(open(f, encoding="utf-8")):
+            if c.get("hold"): continue
+            band = (c.get("band") or band_of(ranks[c.get("key", c["verb"])])).lower()
+            anchor = _re.sub(r"[^a-z]+", "-", (c["verb"] + "-" + c["sense"].split("(")[0]).lower()).strip("-")[:40]
+            out.setdefault(c["verb"], (band, anchor))
+            if c.get("key"): out.setdefault(c["key"].split(" (")[0], (band, anchor))
+    return out
+
 def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
     skipped_by_page = {}
     for r in skipped:
@@ -516,14 +532,14 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
         counts[r["reason"]] = counts.get(r["reason"], 0) + 1
     body = "\n".join([
         "<table>",
-        "<thead><tr><th>Page</th><th class='n'>Cards</th><th class='n'>Skipped</th>"
+        "<thead><tr><th>Page</th><th class='n'>Cards</th><th class='n'>Explanation card</th>"
         "<th class='n'>Frames</th><th class='n'>Rank</th><th>What it is</th></tr></thead>",
         "<tbody>",
         "\n".join(lines),
         f'<tr class="totaal"><td>Total</td><td class="n">{n_cards}</td>'
         f'<td class="n">{len(skipped)}</td>'
         f'<td class="n">#1–#{total_frames}</td><td></td>'
-        f'<td>{n_cards} cards + {len(skipped)} skipped = {n_cards + len(skipped)} selected; '
+        f'<td>{n_cards} picture cards + {len(skipped)} explanation cards = {n_cards + len(skipped)} selected; '
         f'{len(backlog)} more held back before selection</td></tr>',
         "</tbody>",
         "</table>",
@@ -535,12 +551,13 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
         "<table><thead><tr><th>Count</th><th class='n'>Verbs</th><th>Definition</th></tr></thead><tbody>",
         f'<tr><td>Selected</td><td class="n">{n_cards + len(skipped)}</td><td>Every verb '
         "<code>select.py</code> put on one of the ten band pages, in <code>selection.json</code>. "
-        "Each one has a scene row. Selected = cards + skipped.</td></tr>",
+        "Each one has a scene row. Selected = picture cards + explanation cards.</td></tr>",
         f'<tr><td>Cards</td><td class="n">{n_cards}</td><td>Selected verbs whose scene row is a picture '
         "brief: one card, one frame number.</td></tr>",
-        f'<tr><td>Skipped</td><td class="n">{len(skipped)}</td><td>Selected verbs whose scene row begins '
-        "with <code>SKIP:</code>, because no honest single drawing carries them. The reason is about the "
-        "picture.</td></tr>",
+        f'<tr><td>Explanation card</td><td class="n">{len(skipped)}</td><td>Selected verbs whose scene row begins '
+        "with <code>SKIP:</code>: no honest single drawing carries them, so they are taught with an explanation card "
+        "(a picture, a short Dutch scene and a question) instead. The reason is about the picture. See "
+        "<a href=\"../explanation-cards/index.html\">Explanation cards</a>.</td></tr>",
         f'<tr><td>Held back</td><td class="n">{len(backlog)}</td><td>Verbs <code>select.py</code> set aside '
         "before any scene was written, in <code>backlog_seed.tsv</code>: separable, reflexive, sensitive, "
         "odd lemmas, A2 regulars below the cut, and drawable verbs left for a later pass. They are on no "
@@ -672,11 +689,11 @@ def write_backlog(backlog, skipped):
         n = len(groups.get(key, []))
         parts.append(f'<tr><td><a href="#{REASON_ANCHOR.get(key, key)}">{title}</a></td><td class="n">{n}</td><td class="blurb">{why}</td></tr>')
     parts.append(f'<tr class="totaal"><td>Held back before selection</td><td class="n">{len(backlog)}</td>'
-                 '<td class="blurb">In <code>backlog_seed.tsv</code>; on no band page.</td></tr>')
-    parts.append(f'<tr><td><a href="#geen-beeld">Verbs the writer could not draw</a></td><td class="n">{len(skipped)}</td>'
-                 '<td class="blurb">Selected for a band page, but the scene row is SKIP: no honest single drawing.</td></tr>')
+                 '<td class="blurb">In <code>backlog_seed.tsv</code>; on no band page. Still need cards: see the handover.</td></tr>')
+    parts.append(f'<tr><td><a href="#geen-beeld">Verbs taught by explanation card</a></td><td class="n">{len(skipped)}</td>'
+                 '<td class="blurb">Selected for a band page; no honest single drawing, so each gets an explanation card.</td></tr>')
     parts.append(f'<tr class="totaal"><td>Total without a card</td><td class="n">{len(backlog) + len(skipped)}</td>'
-                 '<td class="blurb">Held back plus skipped. The two groups never overlap; the overview '
+                 '<td class="blurb">Held back plus explanation-card verbs. The two groups never overlap; the overview '
                  'defines both.</td></tr>')
     parts.append("</tbody></table>")
 
@@ -697,14 +714,16 @@ def write_backlog(backlog, skipped):
 
     if skipped:
         parts.append(
-            '<section class="sectiekop" id="geen-beeld"><h2>Verbs the writer could not draw</h2>'
-            "<p>Abstract or figurative verbs with no honest single action, held out of the band pages.</p></section>"
+            '<section class="sectiekop" id="geen-beeld"><h2>Verbs taught by explanation card</h2>'
+            "<p>Abstract or figurative verbs with no honest single action. They have no picture card; each is taught with a picture, a short Dutch scene and a question.</p></section>"
         )
-        parts.append("<table><thead><tr><th>Verb</th><th>Band</th><th class='n'>Rang</th><th>Why no picture</th></tr></thead><tbody>")
+        parts.append("<table><thead><tr><th>Verb</th><th>Band</th><th class='n'>Rang</th><th>Why no single picture</th><th>Explanation card</th></tr></thead><tbody>")
+        excards = explanation_cards()
         for r in skipped:
             parts.append(
                 f'<tr><td>{esc(r["verb"])}</td><td>{r["band"]} {LABEL[r["regularity"]]}</td>'
-                f'<td class="n">{r["rank"]}</td><td>{esc(r["reason"])}</td></tr>'
+                f'<td class="n">{r["rank"]}</td><td>{esc(r["reason"])}</td>'
+                f'<td>{("<a href=\"../explanation-cards/" + excards[r["verb"]][0] + ".html#" + excards[r["verb"]][1] + "\">card</a>") if r["verb"] in excards else "to be written"}</td></tr>'
             )
         parts.append("</tbody></table>")
 

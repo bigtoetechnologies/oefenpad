@@ -1,0 +1,555 @@
+[
+ {
+  "verb": "doen",
+  "sense": "een actie ondernemen (to do)",
+  "gloss": "to do",
+  "forms": [
+   "doen",
+   "doet"
+  ],
+  "picture": "A person sits at a table with a pen and one sheet of paper, bent over the work. Beside the table stands a second person with arms hanging, doing nothing.",
+  "mark": "The bent, busy figure against the idle one: one acts, one does not.",
+  "alt": "Een persoon zit gebogen aan een tafel met een pen en een blad. Naast de tafel staat een ander met de armen langs het lichaam.",
+  "note": "Wiktionary sense 1. Example 3 shows the verb with nothing to do, so doen is read as acting, not as a particular activity.",
+  "examples": [
+   {
+    "text": [
+     "Jan heeft veel werk.",
+     "Hij doet zijn werk."
+    ],
+    "question": "Werkt Jan nu?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Wat doet de man?",
+     "Hij maakt de auto."
+    ],
+    "question": "Maakt de man iets?",
+    "answer": "ja",
+    "scene": "A man in overalls at a car with a tool in his hand."
+   },
+   {
+    "text": [
+     "Sam doet niets.",
+     "Hij zit maar."
+    ],
+    "question": "Werkt Sam?",
+    "answer": "nee",
+    "scene": "A boy sits on a sofa with empty hands."
+   },
+   {
+    "text": [
+     "Er is veel werk.",
+     "Els en Piet doen het samen.",
+     "Zij werken goed."
+    ],
+    "question": "Doet Els het werk alleen?",
+    "answer": "nee",
+    "scene": "Two figures carry one long box together between them."
+   }
+  ]
+ },
+ {
+  "verb": "worden",
+  "sense": "to become",
+  "gloss": "to become",
+  "band": "A0",
+  "band_why": "worden is A0 by lemma rank",
+  "forms": [
+   "worden",
+   "wordt"
+  ],
+  "picture": "Three panels in a row, the same figure at three sizes: small, taller, tall. The figure is the same in every panel, drawn at the same stroke weight.",
+  "mark": "The same figure, three sizes, left to right.",
+  "alt": "Drie tekeningen naast elkaar van dezelfde persoon: eerst klein, dan groter, dan groot.",
+  "note": "The picture shows the change; the text names it. Neither works alone.",
+  "examples": [
+   {
+    "text": [
+     "Eerst is Sam niet groot.",
+     "Later wordt hij groot."
+    ],
+    "question": "Blijft Sam even groot?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan is nieuw op zijn werk.",
+     "Hij werkt veel.",
+     "Dan wordt hij goed in zijn werk."
+    ],
+    "question": "Is Jan later goed in zijn werk?",
+    "answer": "ja",
+    "scene": "Two panels: a man with empty hands and a worried face; the same man with a tool and a smile."
+   },
+   {
+    "text": [
+     "De man heeft geen geld.",
+     "Hij werkt veel.",
+     "Hij wordt een man met geld."
+    ],
+    "question": "Heeft de man later geld?",
+    "answer": "ja",
+    "scene": "Two panels: a man with empty open hands; the same man holding a full bag."
+   },
+   {
+    "text": [
+     "Het is nog niet laat.",
+     "Sam speelt buiten.",
+     "Dan wordt het laat."
+    ],
+    "question": "Is het nu al laat?",
+    "answer": "nee",
+    "scene": "Two panels: a boy plays outside under a high sun; the same boy under a low sun."
+   }
+  ]
+ },
+ {
+  "verb": "begrijpen",
+  "sense": "to understand",
+  "gloss": "to understand",
+  "band": "A1",
+  "band_why": "begrijpen is A1 by lemma rank",
+  "forms": [
+   "begrijpen",
+   "begrijpt"
+  ],
+  "picture": "Two panels: a figure frowning at a drawing, then the same figure with a raised head and open eyes beside the same drawing.",
+  "mark": "The same drawing in both panels; only the face changes.",
+  "alt": "Twee tekeningen: eerst kijkt iemand fronsend naar een plaatje, daarna kijkt dezelfde persoon blij naar hetzelfde plaatje.",
+  "note": "Two panels need the larger card size, not the 170 px thumbnail. Example 2 shows the failure to understand.",
+  "examples": [
+   {
+    "text": [
+     "Anna luistert naar Piet.",
+     "Eerst weet zij het niet.",
+     "Dan zegt Piet het nog een keer.",
+     "Nu begrijpt zij het."
+    ],
+    "question": "Weet Anna het nu?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De man praat heel snel.",
+     "Eva hoort de woorden.",
+     "Zij begrijpt hem niet."
+    ],
+    "question": "Begrijpt Eva de man?",
+    "answer": "nee",
+    "scene": "A man talking fast with many small speech marks; a woman frowns and tilts her head."
+   },
+   {
+    "text": [
+     "Sam heeft een nieuw spel.",
+     "Els weet niet hoe het werkt.",
+     "Sam laat het zien.",
+     "Nu begrijpt Els het spel."
+    ],
+    "question": "Weet Els nu hoe het werkt?",
+    "answer": "ja",
+    "scene": "Two figures at a board game; one points at a piece, the other has raised head and open eyes."
+   },
+   {
+    "text": [
+     "Jan heeft een brief.",
+     "Hij begrijpt niet wat er staat.",
+     "Hij vraagt zijn vader om hulp."
+    ],
+    "question": "Weet Jan al wat er staat?",
+    "answer": "nee",
+    "scene": "A boy holds a sheet with a frown; his father leans in beside him."
+   }
+  ]
+ },
+ {
+  "verb": "hopen",
+  "sense": "wensen dat iets gebeurt (to hope)",
+  "gloss": "to hope",
+  "band": "A1",
+  "band_why": "hopen is A1 by lemma rank",
+  "forms": [
+   "hopen",
+   "hoopt"
+  ],
+  "picture": "A figure at a window looks out, hands together near the chin. Outside is a plain sky with one small shape that could be a cloud or a sun.",
+  "mark": "The unresolved sky: the figure does not yet know the outcome.",
+  "alt": "Een persoon staat bij een raam met de handen bij de kin en kijkt naar de lucht buiten.",
+  "note": "Hope is wanting plus not knowing; the question tests the not-knowing.",
+  "examples": [
+   {
+    "text": [
+     "Els wil morgen buiten zijn.",
+     "Zij weet niet of er morgen zon is.",
+     "Zij hoopt van wel."
+    ],
+    "question": "Weet Els al of er zon is?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Piet wacht op een brief.",
+     "Hij hoopt dat de brief morgen komt."
+    ],
+    "question": "Wil Piet dat de brief komt?",
+    "answer": "ja",
+    "scene": "A man at a front door beside a letterbox, looking down the street."
+   },
+   {
+    "text": [
+     "Anna speelt een spel met Mark.",
+     "Zij hoopt dat zij wint."
+    ],
+    "question": "Wil Anna graag winnen?",
+    "answer": "ja",
+    "scene": "A girl at a table with a board game, hands together near her chin."
+   },
+   {
+    "text": [
+     "Jan wil een fiets.",
+     "Zijn vader zegt: misschien.",
+     "Jan hoopt op een fiets."
+    ],
+    "question": "Heeft Jan al een fiets?",
+    "answer": "nee",
+    "scene": "A boy looks at a bicycle in a shop window while his father stands behind him."
+   }
+  ]
+ },
+ {
+  "verb": "proberen",
+  "sense": "een poging doen (to try)",
+  "gloss": "to try",
+  "band": "A1",
+  "band_why": "proberen is A1 by lemma rank",
+  "forms": [
+   "proberen",
+   "probeert"
+  ],
+  "picture": "A figure bent over a bicycle with a wrench, a tyre half off, sweat marks near the head. A second bicycle stands finished and upright in the background.",
+  "mark": "Work in progress next to the finished bicycle.",
+  "alt": "Een persoon werkt aan een fiets met een sleutel; de band zit half los. Op de achtergrond staat een fiets die al klaar is.",
+  "note": "Sense chosen: attempt without success yet. Example 2 shows the attempt that works, so the verb is not tied to failure.",
+  "examples": [
+   {
+    "text": [
+     "Piet probeert zijn fiets te maken.",
+     "Hij werkt al een uur.",
+     "Het is nog niet goed."
+    ],
+    "question": "Is de fiets nu al klaar?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De deur is dicht.",
+     "Anna probeert de deur open te maken.",
+     "Dan gaat de deur open."
+    ],
+    "question": "Gaat de deur open?",
+    "answer": "ja",
+    "scene": "A woman with both hands on a door that stands slightly open."
+   },
+   {
+    "text": [
+     "Het kind probeert te lopen.",
+     "Het valt op de grond.",
+     "Het probeert het nog een keer."
+    ],
+    "question": "Wil het kind lopen?",
+    "answer": "ja",
+    "scene": "A small child on the floor, one leg under it, arms held up to rise."
+   },
+   {
+    "text": [
+     "Els probeert Jan te bellen.",
+     "Hij is niet thuis.",
+     "Zij praat niet met hem."
+    ],
+    "question": "Praat Els nu met Jan?",
+    "answer": "nee",
+    "scene": "A woman holds a phone to her ear and looks at an empty chair in a room."
+   }
+  ]
+ },
+ {
+  "verb": "ontstaan",
+  "sense": "beginnen te bestaan (to come into being)",
+  "gloss": "to arise, to come into being",
+  "band": "A1",
+  "band_why": "ontstaan is A1 by lemma rank",
+  "forms": [
+   "ontstaat",
+   "ontstaan"
+  ],
+  "picture": "Two panels: a bare patch of road under a grey sky with no puddle; then the same road with a wide puddle in the middle and falling rain lines.",
+  "mark": "The same patch of road in both panels: empty first, a puddle after.",
+  "alt": "Twee tekeningen van dezelfde weg: eerst droog, daarna met een grote plas in het midden en regen erboven.",
+  "note": "Sense: something that was not there starts to exist. Example 4 shows nothing arising.",
+  "examples": [
+   {
+    "text": [
+     "Het is een dag met veel regen.",
+     "Op de weg ontstaat water.",
+     "Eerst was er geen water."
+    ],
+    "question": "Was er eerst water op de weg?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Sam en Anna hebben twee boeken en een bal.",
+     "Zij maken er samen een spel van.",
+     "Zo ontstaat een nieuw spel."
+    ],
+    "question": "Is er nu een nieuw spel?",
+    "answer": "ja",
+    "scene": "Two children at a table with two books and a ball arranged as a game board."
+   },
+   {
+    "text": [
+     "Veel mensen komen op een plek wonen.",
+     "Zij bouwen een huis, en dan nog een huis.",
+     "Zo ontstaat een dorp."
+    ],
+    "question": "Is er later een dorp?",
+    "answer": "ja",
+    "scene": "Two panels: an empty field; the same field with a group of small houses."
+   },
+   {
+    "text": [
+     "Mark en Eva willen iets anders.",
+     "Zij praten er rustig over.",
+     "Er ontstaat geen probleem."
+    ],
+    "question": "Is er een probleem?",
+    "answer": "nee",
+    "scene": "A man and a woman talk calmly at a table, both with open hands."
+   }
+  ]
+ },
+ {
+  "verb": "lijken",
+  "sense": "de indruk geven (to seem)",
+  "gloss": "to seem",
+  "band": "A1",
+  "band_why": "lijken is A1 by lemma rank",
+  "forms": [
+   "lijkt"
+  ],
+  "picture": "A house seen from the front with every window dark and a closed door. In one upstairs window a faint figure leans on a sill.",
+  "mark": "Dark windows against the small figure: how it looks differs from how it is.",
+  "alt": "Een huis van voren met donkere ramen en een dichte deur. In een raam boven leunt een klein figuurtje.",
+  "note": "Sense: how something looks differs from or points to how it is. Wiktionary not checked for this verb; sense chosen from knowledge.",
+  "examples": [
+   {
+    "text": [
+     "Het huis is stil.",
+     "Het lijkt of niemand thuis is.",
+     "Maar Anna is boven."
+    ],
+    "question": "Is er echt niemand thuis?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Het water is stil.",
+     "Het lijkt heel diep.",
+     "Maar het is niet diep."
+    ],
+    "question": "Is het water diep?",
+    "answer": "nee",
+    "scene": "A figure stands in a pond with water only up to the ankle."
+   },
+   {
+    "text": [
+     "Sam kijkt naar de lucht.",
+     "Het lijkt of er regen komt.",
+     "Dan komt de regen."
+    ],
+    "question": "Komt er regen?",
+    "answer": "ja",
+    "scene": "A boy under a heavy sky with a few rain lines starting."
+   },
+   {
+    "text": [
+     "Anna heeft een nieuw boek.",
+     "Het lijkt een mooi boek.",
+     "Zij vindt het ook mooi."
+    ],
+    "question": "Vindt Anna het boek mooi?",
+    "answer": "ja",
+    "scene": "A girl holds an open book and smiles."
+   }
+  ]
+ },
+ {
+  "verb": "lijken",
+  "sense": "gelijk zijn aan iets of iemand: lijken op (to resemble)",
+  "gloss": "to look like, to resemble",
+  "band": "A1",
+  "band_why": "lijken is A1 by lemma rank",
+  "forms": [
+   "lijken",
+   "lijkt"
+  ],
+  "picture": "A mother and a daughter stand side by side, same long hair and same nose, one tall and one small. Their faces are drawn with the same simple lines.",
+  "mark": "Two figures drawn with the same hair and face lines.",
+  "alt": "Een moeder en haar dochter staan naast elkaar. Zij hebben allebei lang haar en dezelfde neus.",
+  "note": "Sense: lijken op, being alike. Example 2 and 4 show the negative.",
+  "examples": [
+   {
+    "text": [
+     "Anna en haar moeder lijken op elkaar.",
+     "Zij hebben lang haar."
+    ],
+    "question": "Lijkt Anna op haar moeder?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft een broer.",
+     "De twee jongens lijken niet op elkaar.",
+     "Jan is groot en zijn broer is klein."
+    ],
+    "question": "Lijkt Jan op zijn broer?",
+    "answer": "nee",
+    "scene": "Two boys side by side, one tall with short hair, one small with long hair."
+   },
+   {
+    "text": [
+     "Sam ziet een auto.",
+     "De auto lijkt op de auto van zijn vader.",
+     "Hij is ook nieuw."
+    ],
+    "question": "Lijkt de auto op de auto van zijn vader?",
+    "answer": "ja",
+    "scene": "Two cars of the same shape side by side; a boy points at them."
+   },
+   {
+    "text": [
+     "De fiets van Els is klein.",
+     "De fiets van Eva is groot.",
+     "Zij lijken niet op elkaar."
+    ],
+    "question": "Zijn zij hetzelfde?",
+    "answer": "nee",
+    "scene": "Two bicycles side by side, one small, one big."
+   }
+  ]
+ },
+ {
+  "verb": "voorzien",
+  "sense": "uitrusten met iets (voorzien van, to provide with)",
+  "gloss": "to provide with, to equip with",
+  "band": "A1",
+  "band_why": "voorzien is A1 by lemma rank",
+  "forms": [
+   "voorziet"
+  ],
+  "picture": "A man at a house fits a pipe and a tap to the wall; water runs from the tap.",
+  "mark": "The water running from the new tap.",
+  "alt": "Een man staat bij een huis en zet een buis en een kraan aan de muur. Er komt water uit de kraan.",
+  "note": "Sense: voorzien van, making sure something has what it needs. Wiktionary not checked; the sense foresee (expect) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Het huis heeft geen water.",
+     "Jan voorziet het huis van water.",
+     "Nu heeft het huis water."
+    ],
+    "question": "Heeft het huis nu water?",
+    "answer": "ja",
+    "scene": "A man at a house with a pipe and a tap; water runs from the tap."
+   },
+   {
+    "text": [
+     "Anna gaat op reis.",
+     "Zij heeft geen geld mee.",
+     "Niemand voorziet haar van geld."
+    ],
+    "question": "Heeft Anna geld?",
+    "answer": "nee",
+    "scene": "A woman with a bag and empty open hands at a bus stop."
+   },
+   {
+    "text": [
+     "Piet wil een nieuwe fiets.",
+     "Zijn vader voorziet hem van geld.",
+     "Nu kan hij de fiets kopen."
+    ],
+    "question": "Krijgt Piet geld van zijn vader?",
+    "answer": "ja",
+    "scene": "A father hands a boy a few coins; a bicycle stands in a shop window."
+   },
+   {
+    "text": [
+     "Het huis heeft geen deur.",
+     "Een man voorziet het huis van een deur.",
+     "Nu is er een deur."
+    ],
+    "question": "Is er nu een deur?",
+    "answer": "ja",
+    "scene": "A man fits a door into the empty doorway of a house."
+   }
+  ],
+  "hold": "formal register at A1; reviewer recommends B1 or dropping"
+ },
+ {
+  "verb": "stellen",
+  "sense": "een vraag stellen (to ask a question)",
+  "gloss": "to ask (a question)",
+  "band": "A1",
+  "band_why": "stellen is A1 by lemma rank",
+  "forms": [
+   "stelt",
+   "stellen"
+  ],
+  "picture": "A woman stands in front of a man at a desk, one hand raised with a finger up and her head tilted; the man looks up at her, ready to answer.",
+  "mark": "The raised finger and tilted head of the woman, and the man looking up at her.",
+  "alt": "Een vrouw staat voor een man aan een bureau en steekt een vinger op. De man kijkt naar haar.",
+  "note": "Sense: een vraag stellen. Wiktionary not checked; the sense of placing a thing is left out as dated. Example 2 shows an unasked question.",
+  "examples": [
+   {
+    "text": [
+     "Anna weet het niet.",
+     "Zij stelt een vraag aan de man.",
+     "De man geeft antwoord."
+    ],
+    "question": "Zegt de man iets terug?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft een vraag voor zijn vader.",
+     "Hij wil niet praten.",
+     "Hij stelt de vraag niet."
+    ],
+    "question": "Weet zijn vader wat Jan wil weten?",
+    "answer": "nee",
+    "scene": "A boy at a table with a hand halfway raised, looking down; his father reads."
+   },
+   {
+    "text": [
+     "Een man is in de winkel.",
+     "Hij stelt een vraag.",
+     "De vrouw zegt: daar."
+    ],
+    "question": "Zegt de vrouw waar iets is?",
+    "answer": "ja",
+    "scene": "A man at a shop counter with a finger up; the woman behind it points left."
+   },
+   {
+    "text": [
+     "Eva heeft een vraag over de bus.",
+     "Zij stelt de vraag aan een man.",
+     "Hij weet het ook niet."
+    ],
+    "question": "Weet de man het?",
+    "answer": "nee",
+    "scene": "A woman at a bus stop speaks to a man who shrugs."
+   }
+  ]
+ }
+]

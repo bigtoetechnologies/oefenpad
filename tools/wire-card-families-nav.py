@@ -12,6 +12,7 @@ FAMILIES = [
     ("bijwoorden", "Bijwoorden", "Adverbs as contrast pairs"),
     ("scheidbare-werkwoorden", "Scheidbare werkwoorden", "Separable verbs, split form and perfect"),
     ("vaste-uitdrukkingen", "Vaste uitdrukkingen", "Fixed chunks as contrast pairs"),
+    ("explanation-cards", "Explanation cards", "Skipped verbs as picture, scene and question"),
 ]
 SINGLES = [
     ("card-families-handover.html", "Card families handover", "State, rules, rebuild commands and open items."),

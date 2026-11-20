@@ -1,0 +1,111 @@
+[
+ {
+  "verb": "laten",
+  "sense": "toestaan dat iets gebeurt (to allow)",
+  "gloss": "to let, to allow",
+  "forms": [
+   "laat",
+   "laten"
+  ],
+  "picture": "A parent stands at an open door with one hand held out flat towards the garden. A child stands in the doorway looking out.",
+  "mark": "The open flat hand: permission, not a push.",
+  "alt": "Een volwassene staat bij een open deur en wijst met een open hand naar buiten. Een kind staat in de deuropening.",
+  "note": "Wiktionary sense 2. Example 4 shows a refusal, so the verb cannot be read as pushing someone.",
+  "examples": [
+   {
+    "text": [
+     "Sam wil buiten spelen.",
+     "Zijn moeder zegt: ja.",
+     "Zij laat Sam buiten spelen."
+    ],
+    "question": "Speelt Sam nu buiten?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De man wil naar binnen gaan.",
+     "De vrouw zegt: ja.",
+     "Zij laat de man naar binnen gaan."
+    ],
+    "question": "Gaat de man naar binnen?",
+    "answer": "ja",
+    "scene": "A woman steps aside at an open door with a flat open hand; a man waits on the step."
+   },
+   {
+    "text": [
+     "Sam wil in de auto zitten.",
+     "Zijn vader zegt: ja.",
+     "Hij laat Sam in de auto zitten."
+    ],
+    "question": "Zit Sam in de auto?",
+    "answer": "ja",
+    "scene": "A father holds the car door open with a flat hand; Sam sits on the seat."
+   },
+   {
+    "text": [
+     "Sam wil naar binnen.",
+     "De man zegt: nee.",
+     "Hij laat Sam niet naar binnen gaan."
+    ],
+    "question": "Gaat Sam naar binnen?",
+    "answer": "nee",
+    "scene": "A man stands in a doorway with one palm raised; Sam stands outside."
+   }
+  ]
+ },
+ {
+  "verb": "laten",
+  "sense": "veroorzaken dat het gebeurt (to have something done; laten zien, to show)",
+  "gloss": "to have done, to show",
+  "band": "A1",
+  "band_why": "laten is A0 by lemma rank, but this sense (laten zien, laten maken) is A1 by judgement",
+  "forms": [
+   "laat",
+   "laten"
+  ],
+  "picture": "Anna holds a photo out towards Piet, who leans in to look. The photo's back faces us: no picture shown inside it.",
+  "mark": "The held-out photo and the leaning figure: one gives, one sees.",
+  "alt": "Een persoon houdt een foto omhoog naar een ander, die zich naar voren buigt om te kijken.",
+  "note": "Two meanings of one pattern: the person shows, or the person arranges for someone else to act.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft een nieuwe foto.",
+     "Zij laat de foto aan Piet zien."
+    ],
+    "question": "Ziet Piet de foto nu?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet laat zijn fiets maken.",
+     "Hij maakt de fiets niet zelf.",
+     "Een man in de winkel maakt de fiets."
+    ],
+    "question": "Maakt Piet de fiets zelf?",
+    "answer": "nee",
+    "scene": "A bicycle on a shop counter; a mechanic works on it; Piet stands back with hands in pockets."
+   },
+   {
+    "text": [
+     "Sam heeft een nieuw huis.",
+     "Hij laat Anna zijn huis zien.",
+     "Zij gaat met hem naar binnen."
+    ],
+    "question": "Ziet Anna het huis?",
+    "answer": "ja",
+    "scene": "Sam at an open front door with a sweep of the hand inward; Anna on the threshold."
+   },
+   {
+    "text": [
+     "Anna heeft een probleem met de deur.",
+     "Zij kan het niet alleen.",
+     "Zij laat haar vader komen."
+    ],
+    "question": "Komt de vader naar Anna?",
+    "answer": "ja",
+    "scene": "Anna at a door pointing inside; a man walks up the path."
+   }
+  ]
+ }
+]

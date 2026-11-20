@@ -1,0 +1,1080 @@
+[
+ {
+  "verb": "ontwerpen",
+  "sense": "bedenken en uitwerken op papier (to design)",
+  "gloss": "to design",
+  "forms": [
+   "ontwerpt",
+   "ontwerpen"
+  ],
+  "picture": "Eva sits at a table with a large sheet of paper and a pencil. On the paper is a half-finished plan of a chair, drawn in lines only.",
+  "mark": "The pencil on the sheet with a new, unfinished shape: an idea drawn out, not copied.",
+  "alt": "Een vrouw zit aan een tafel met een groot vel papier en een potlood. Op het papier staat een half af plan van een stoel.",
+  "note": "Wiktionary sense 1. The object does not exist yet; the plan on paper comes first. Example 4 shows the edge: buying a finished table is not designing it.",
+  "examples": [
+   {
+    "text": [
+     "Eva wil een nieuwe stoel.",
+     "Ze ontwerpt de stoel op papier.",
+     "Er is nog geen stoel, alleen een plan."
+    ],
+    "question": "Is er al een echte stoel?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan ontwerpt een tuin.",
+     "Hij tekent de bomen en het water op papier.",
+     "De tuin zelf is nog leeg."
+    ],
+    "question": "Is de tuin nog alleen een plan?",
+    "answer": "ja",
+    "scene": "A man at a table draws a garden plan with trees and a pond; the plan is on paper."
+   },
+   {
+    "text": [
+     "Anna ontwerpt een jurk voor haar zus.",
+     "Ze tekent de jurk op papier.",
+     "Daarna maakt ze de jurk."
+    ],
+    "question": "Tekent Anna eerst de jurk?",
+    "answer": "ja",
+    "scene": "A woman draws a dress on paper; her sister stands beside her."
+   },
+   {
+    "text": [
+     "Piet koopt een tafel in de winkel.",
+     "Hij gaat met de tafel naar huis.",
+     "Hij maakt de tafel niet zelf."
+    ],
+    "question": "Ontwerpt Piet de tafel?",
+    "answer": "nee",
+    "scene": "A man carries a finished table out of a shop."
+   }
+  ]
+ },
+ {
+  "verb": "verlopen",
+  "sense": "zijn geldigheid verliezen (to expire)",
+  "gloss": "to expire",
+  "forms": [
+   "verlopen"
+  ],
+  "picture": "Sam stands at a counter holding a small card out to a woman behind it. She shakes her head gently and pushes it back. A calendar hangs on the wall behind her with no numbers on it.",
+  "mark": "The card pushed back across the counter: it no longer works.",
+  "alt": "Een man staat bij een balie en geeft een kaartje aan een vrouw. Zij schudt haar hoofd en schuift het kaartje terug.",
+  "note": "Wiktionary sense 1. Something worked before and no longer works; no digits are needed. Example 3 shows the edge: it has not yet expired.",
+  "examples": [
+   {
+    "text": [
+     "Sam wil met zijn kaart naar binnen.",
+     "De kaart is verlopen.",
+     "De vrouw zegt: nee, dat kan niet."
+    ],
+    "question": "Kan Sam met de kaart naar binnen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Els heeft melk in huis.",
+     "De melk is verlopen.",
+     "Ze gooit de melk weg."
+    ],
+    "question": "Is de melk te oud?",
+    "answer": "ja",
+    "scene": "A woman holds a carton of milk in her kitchen and shakes her head."
+   },
+   {
+    "text": [
+     "Mark heeft een kaartje voor de bus.",
+     "Het kaartje is van vandaag.",
+     "Het is nog niet verlopen."
+    ],
+    "question": "Kan Mark met het kaartje de bus in?",
+    "answer": "ja",
+    "scene": "A man shows a bus ticket to a driver, who nods."
+   },
+   {
+    "text": [
+     "Anna wil met de trein.",
+     "Haar kaartje is verlopen.",
+     "Daarom koopt ze een nieuw kaartje."
+    ],
+    "question": "Is het oude kaartje nog goed?",
+    "answer": "nee",
+    "scene": "A woman at a ticket machine in a station swaps an old bent card for a new one."
+   }
+  ]
+ },
+ {
+  "verb": "besluiten",
+  "sense": "vaststellen hoe het moet, een keuze maken (to decide)",
+  "gloss": "to decide",
+  "forms": [
+   "besluit",
+   "besluiten"
+  ],
+  "picture": "Jan stands in a bicycle shop between two bicycles, one hand pressed firmly on the saddle of one of them. His face is calm and sure.",
+  "mark": "The hand pressed on one saddle: the choice is made.",
+  "alt": "Een man staat in een winkel tussen twee fietsen. Hij legt zijn hand stevig op het zadel van een van de twee.",
+  "note": "Wiktionary sense 1. A choice that has been made, with the plan that follows from it; the sense of afsluiten is left out.",
+  "examples": [
+   {
+    "text": [
+     "Jan wil een nieuwe fiets kopen.",
+     "Hij zoekt lang in de winkel.",
+     "Dan besluit hij: ik koop deze fiets."
+    ],
+    "question": "Weet Jan nu welke fiets hij koopt?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva en Sam denken lang na.",
+     "Gaan ze naar het strand of naar het bos?",
+     "Ze besluiten naar het bos te gaan."
+    ],
+    "question": "Gaan Eva en Sam naar het bos?",
+    "answer": "ja",
+    "scene": "Two people at a kitchen table with a map; one points at a forest, the other nods."
+   },
+   {
+    "text": [
+     "Piet weet het nog niet.",
+     "Hij wil eerst met zijn vrouw praten.",
+     "Hij besluit nu nog niets."
+    ],
+    "question": "Weet Piet al wat hij gaat doen?",
+    "answer": "nee",
+    "scene": "A man at a window, hand on chin, and a woman in the next room waiting."
+   },
+   {
+    "text": [
+     "Anna is ziek.",
+     "Ze besluit thuis te blijven.",
+     "Ze belt de school."
+    ],
+    "question": "Gaat Anna vandaag naar school?",
+    "answer": "nee",
+    "scene": "A girl in pyjamas with a blanket round her shoulders hangs her school bag back on its hook by the front door, a phone in her other hand."
+   }
+  ]
+ },
+ {
+  "verb": "onthouden",
+  "sense": "in het geheugen bewaren (to remember, to keep in mind)",
+  "gloss": "to remember, to keep in mind",
+  "forms": [
+   "onthoudt",
+   "onthouden"
+  ],
+  "picture": "Sam walks along a street, counting the turns on his fingers, one finger per turn; he holds no map. A small thought bubble shows a house at the end of the route.",
+  "mark": "The fingers counting the turns: the route is kept, not looked up.",
+  "alt": "Een man loopt door een straat en telt de bochten op zijn vingers. Hij heeft geen kaart bij zich. Een gedachtewolkje toont een huis.",
+  "note": "Wiktionary sense 1. Keeping something in the mind on purpose; the refusing and withholding senses are left out. Example 4 shows the edge: forgetting.",
+  "examples": [
+   {
+    "text": [
+     "Sam gaat naar het huis van Els.",
+     "Hij onthoudt de weg: links, rechts, rechts.",
+     "Hij loopt zo naar het huis."
+    ],
+    "question": "Heeft Sam een kaart nodig?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna leert nieuwe woorden.",
+     "Ze onthoudt de woorden.",
+     "Morgen weet ze alles nog."
+    ],
+    "question": "Weet Anna de woorden morgen nog?",
+    "answer": "ja",
+    "scene": "A woman reads a list at a desk, then closes her eyes with a smile."
+   },
+   {
+    "text": [
+     "Piet hoort de naam van een nieuwe vriend.",
+     "Hij onthoudt de naam goed.",
+     "De volgende dag weet hij de naam nog."
+    ],
+    "question": "Weet Piet de naam nog?",
+    "answer": "ja",
+    "scene": "Two men shake hands in a garden."
+   },
+   {
+    "text": [
+     "Eva is de weg vergeten.",
+     "Ze heeft de weg niet onthouden.",
+     "Ze vraagt een man op straat."
+    ],
+    "question": "Weet Eva de weg?",
+    "answer": "nee",
+    "scene": "A woman with a puzzled face asks a man on the street; he points ahead."
+   }
+  ]
+ },
+ {
+  "verb": "gelden",
+  "sense": "in werking zijn, van kracht zijn (to apply, to hold)",
+  "gloss": "to apply, to hold",
+  "forms": [
+   "geldt",
+   "gelden"
+  ],
+  "picture": "A park entrance with a fence. A woman walks in with a small dog on a lead; a man beside the gate points at the dog and then at the ground, calm and friendly.",
+  "mark": "The pointing hand: one rule covers everyone who enters, here the dog.",
+  "alt": "Bij de ingang van een park staat een man bij het hek. Hij wijst naar een kleine hond aan een lijn. Een vrouw loopt naar binnen.",
+  "note": "Wiktionary sense 2. A rule or price that applies to a person or a situation; example 4 shows the edge: a rule that does not apply to someone.",
+  "examples": [
+   {
+    "text": [
+     "In het park moet de hond aan de lijn.",
+     "Die regel geldt voor alle honden.",
+     "Dus Els houdt haar hond aan de lijn."
+    ],
+    "question": "Mag de hond van Els los lopen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Op school moet je stil zijn.",
+     "Die regel geldt voor iedereen.",
+     "Ook Sam is stil."
+    ],
+    "question": "Geldt de regel voor Sam?",
+    "answer": "ja",
+    "scene": "A classroom of quiet children at their desks, a teacher with a finger to her lips."
+   },
+   {
+    "text": [
+     "In de bus mag je niet drinken.",
+     "Dat geldt ook voor Jan.",
+     "Hij stopt zijn fles in zijn tas."
+    ],
+    "question": "Geldt de regel ook voor Jan?",
+    "answer": "ja",
+    "scene": "A man on a bus puts a bottle away in his bag."
+   },
+   {
+    "text": [
+     "In de trein moet je een kaartje hebben.",
+     "Dat geldt niet voor kleine kinderen.",
+     "De zoon van Jan is nog klein."
+    ],
+    "question": "Moet de zoon van Jan een kaartje kopen?",
+    "answer": "nee",
+    "scene": "A father pays at a gate; a small boy walks through beside him."
+   }
+  ]
+ },
+ {
+  "verb": "laden",
+  "sense": "van een lading voorzien (to load)",
+  "gloss": "to load",
+  "forms": [
+   "laadt",
+   "laden"
+  ],
+  "picture": "Mark stands behind an open car. He lifts a box from the pavement into the back, where other boxes already stand.",
+  "mark": "The box going into the car, not out of it.",
+  "alt": "Een man staat achter een open auto. Hij tilt een doos van de grond in de auto, waar al meer dozen staan.",
+  "note": "Wiktionary sense 1. Things go into a vehicle; the opposite (lossen) is already drawn on another page. Examples 2 and 3 show the edge: not yet loaded, no more room.",
+  "examples": [
+   {
+    "text": [
+     "Mark heeft veel spullen.",
+     "Hij laadt ze in de auto.",
+     "Straks is de auto vol."
+    ],
+    "question": "Gaan de spullen in de auto?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els staat bij de auto.",
+     "De spullen staan nog op straat.",
+     "Ze laadt ze nog niet in de auto."
+    ],
+    "question": "Zijn de spullen al in de auto?",
+    "answer": "nee",
+    "scene": "A woman stands beside an open car; boxes stand on the pavement."
+   },
+   {
+    "text": [
+     "De auto van Piet is al vol.",
+     "Hij laadt niets meer in de auto.",
+     "Hij laat de laatste doos staan."
+    ],
+    "question": "Gaat de laatste doos mee?",
+    "answer": "nee",
+    "scene": "A man looks at a full car and a single box left on the ground."
+   },
+   {
+    "text": [
+     "Sam koopt een nieuwe tafel.",
+     "Hij laadt de tafel achter in de auto.",
+     "Dan gaat hij naar huis."
+    ],
+    "question": "Gaat de tafel in de auto?",
+    "answer": "ja",
+    "scene": "A man slides a table into the back of a car."
+   }
+  ]
+ },
+ {
+  "verb": "laden",
+  "sense": "van elektrische energie voorzien (to charge)",
+  "gloss": "to charge",
+  "forms": [
+   "laadt",
+   "laden"
+  ],
+  "picture": "A phone lies on a table, a cable running from it to a wall socket. Sam sits at the table and watches, with a cup beside him.",
+  "mark": "The cable between the phone and the wall.",
+  "alt": "Een telefoon ligt op een tafel met een snoer naar het stopcontact. Een man zit ernaast met een kopje.",
+  "note": "Wiktionary sense 2. Giving a device energy so that it works again; the load sense above is a different picture.",
+  "examples": [
+   {
+    "text": [
+     "De telefoon van Sam is leeg.",
+     "Hij laadt de telefoon op.",
+     "Na een uur is de telefoon vol."
+    ],
+    "question": "Kan Sam de telefoon na een uur gebruiken?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna heeft een computer.",
+     "Die is bijna leeg.",
+     "Ze laadt hem op."
+    ],
+    "question": "Krijgt de computer stroom?",
+    "answer": "ja",
+    "scene": "A computer on a table, cable to the wall, a woman sitting nearby."
+   },
+   {
+    "text": [
+     "Piet is de hele dag weg.",
+     "Hij laadt zijn telefoon niet op.",
+     "In de avond is de telefoon leeg."
+    ],
+    "question": "Is de telefoon vol?",
+    "answer": "nee",
+    "scene": "A man outside at dusk holding a dark phone, his hand to his head."
+   },
+   {
+    "text": [
+     "Eva zit in bed met een boek.",
+     "Haar telefoon is bijna leeg.",
+     "Ze laadt hem op naast het bed."
+    ],
+    "question": "Is de telefoon morgen leeg?",
+    "answer": "nee",
+    "scene": "A woman reads in bed; a phone with a cable to the wall sits on the bedside table."
+   }
+  ]
+ },
+ {
+  "verb": "vermijden",
+  "sense": "proberen te ontwijken (to avoid)",
+  "gloss": "to avoid",
+  "forms": [
+   "vermijdt",
+   "vermijden"
+  ],
+  "picture": "A woman walks on a pavement. Ahead lies a big puddle; she steps onto the grass to go around it and keeps her eyes on the puddle.",
+  "mark": "The step to the side, the puddle left behind on the path.",
+  "alt": "Een vrouw loopt op een stoep. Voor haar ligt een grote plas. Zij loopt over het gras om de plas heen.",
+  "note": "Wiktionary sense 1. Keeping away from something unwanted on purpose; works for a place, a person and an event.",
+  "examples": [
+   {
+    "text": [
+     "Er staat veel water op straat.",
+     "Els vermijdt het water.",
+     "Ze gaat over het gras."
+    ],
+    "question": "Blijven de voeten van Els droog?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan ziet een drukke straat.",
+     "Hij vermijdt de straat.",
+     "Hij kiest een rustige weg."
+    ],
+    "question": "Loopt Jan door de drukke straat?",
+    "answer": "nee",
+    "scene": "A man turns away from a busy road onto a quiet lane."
+   },
+   {
+    "text": [
+     "Sam heeft geen zin in een gesprek.",
+     "Hij ziet zijn vriend en gaat de andere kant op.",
+     "Zo vermijdt hij het gesprek."
+    ],
+    "question": "Praat Sam met zijn vriend?",
+    "answer": "nee",
+    "scene": "A man crosses to the other side of the street while a friend waves."
+   },
+   {
+    "text": [
+     "Anna houdt niet van drukte.",
+     "Ze vermijdt het feest in de stad.",
+     "Ze wil thuis zijn."
+    ],
+    "question": "Blijft Anna thuis?",
+    "answer": "ja",
+    "scene": "A woman reads on a sofa at home; through the window, a distant crowd."
+   }
+  ]
+ },
+ {
+  "verb": "onderscheiden",
+  "sense": "een verschil waarnemen (to tell apart, to distinguish)",
+  "gloss": "to tell apart, to distinguish",
+  "forms": [
+   "onderscheidt",
+   "onderscheiden"
+  ],
+  "picture": "Two almost identical bicycles stand side by side; one has a bag on the rack. A man points at the bag.",
+  "mark": "The pointing finger on the one detail that differs.",
+  "alt": "Twee bijna gelijke fietsen staan naast elkaar. Aan een van de twee hangt een tas. Een man wijst naar die tas.",
+  "note": "Wiktionary sense 2. Seeing which is which by a difference; the medal sense and the reflexive sense are left out.",
+  "examples": [
+   {
+    "text": [
+     "Twee fietsen staan naast elkaar.",
+     "Ze zien er bijna hetzelfde uit.",
+     "Sam onderscheidt zijn fiets aan de tas."
+    ],
+    "question": "Weet Sam welke fiets van hem is?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els ziet twee meisjes.",
+     "Ze zien er bijna hetzelfde uit.",
+     "Els onderscheidt ze aan het haar."
+    ],
+    "question": "Weet Els wie wie is?",
+    "answer": "ja",
+    "scene": "A woman looks at two girls, one with long hair and one with short."
+   },
+   {
+    "text": [
+     "Het is donker in de kamer.",
+     "Jan onderscheidt de stoel niet van de tafel.",
+     "Hij gaat tegen de stoel aan."
+    ],
+    "question": "Ziet Jan het verschil?",
+    "answer": "nee",
+    "scene": "A man with arms out in a dark room near a chair."
+   },
+   {
+    "text": [
+     "Twee kleine honden zijn in het park.",
+     "Anna onderscheidt ze niet.",
+     "Ze weet niet welke hond van haar is."
+    ],
+    "question": "Weet Anna welke hond van haar is?",
+    "answer": "nee",
+    "scene": "A woman looks puzzled at two similar dogs on the grass."
+   }
+  ]
+ },
+ {
+  "verb": "heten",
+  "sense": "op een bepaalde wijze genoemd worden (to be called)",
+  "gloss": "to be called",
+  "forms": [
+   "heet",
+   "heten"
+  ],
+  "picture": "Two people shake hands outside a front door. One holds a hand to their own chest and the other leans in to listen.",
+  "mark": "The hand on the chest: this is me, this is my name.",
+  "alt": "Twee mensen schudden elkaar de hand voor een deur. Een van hen legt de andere hand op de borst.",
+  "note": "Wiktionary sense 1. A name that people use for someone or something; example 2 uses it for a pet and example 4 for a place.",
+  "examples": [
+   {
+    "text": [
+     "Een man staat voor de deur.",
+     "Hij zegt: hallo, ik heet Piet.",
+     "Zijn vrouw heet Els."
+    ],
+    "question": "Heet de man Piet?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna heeft een kleine hond.",
+     "De hond heet Sam.",
+     "Hij luistert goed als ze zijn naam zegt."
+    ],
+    "question": "Heet de hond Sam?",
+    "answer": "ja",
+    "scene": "A woman kneels and strokes a small dog that looks up at her."
+   },
+   {
+    "text": [
+     "Er is een nieuw kind in de klas.",
+     "De leraar vraagt: hoe heet jij?",
+     "Het kind zegt: ik heet Eva."
+    ],
+    "question": "Heet het kind Sam?",
+    "answer": "nee",
+    "scene": "A teacher bends to a small child at a desk; classmates look on."
+   },
+   {
+    "text": [
+     "Jan gaat naar een mooie oude stad.",
+     "De stad heet Delft.",
+     "Hij kijkt naar de oude huizen."
+    ],
+    "question": "Heet de stad Utrecht?",
+    "answer": "nee",
+    "scene": "A man points along a street of old houses towards a tower."
+   }
+  ]
+ },
+ {
+  "verb": "ontbreken",
+  "sense": "niet aanwezig zijn terwijl het wel zou moeten (to be missing)",
+  "gloss": "to be missing",
+  "forms": [
+   "ontbreekt",
+   "ontbreken"
+  ],
+  "picture": "A table laid for four. Three plates have a glass beside them; at the fourth place there is a plate but no glass. A woman stands by it, hands on hips, looking down.",
+  "mark": "The empty spot next to the fourth plate: the one thing that should be there.",
+  "alt": "Een tafel is gedekt voor vier mensen. Bij drie borden staat een glas, bij het vierde bord niet. Een vrouw staat ernaast en kijkt naar beneden.",
+  "note": "Wiktionary sense 1. Something expected is not there; example 4 shows the edge: nothing is missing.",
+  "examples": [
+   {
+    "text": [
+     "Els maakt de tafel klaar.",
+     "Bij het vierde bord ontbreekt een glas.",
+     "Ze pakt een glas."
+    ],
+    "question": "Mist er iets op tafel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam speelt een spel met kaarten.",
+     "Een kaart ontbreekt.",
+     "Hij zoekt onder de tafel."
+    ],
+    "question": "Zijn alle kaarten er?",
+    "answer": "nee",
+    "scene": "A man at a table with a card game, one gap in the row of cards."
+   },
+   {
+    "text": [
+     "Piet komt op school.",
+     "Een kind ontbreekt in de klas.",
+     "De leraar vraagt waar het kind is."
+    ],
+    "question": "Is iedereen er?",
+    "answer": "nee",
+    "scene": "A teacher looks around a classroom with one empty desk."
+   },
+   {
+    "text": [
+     "Er is een bord voor iedereen.",
+     "Er ontbreekt niets.",
+     "Anna is blij."
+    ],
+    "question": "Heeft iedereen een bord?",
+    "answer": "ja",
+    "scene": "A woman smiles at a fully set table: every place has a plate and a glass."
+   }
+  ]
+ },
+ {
+  "verb": "verblijven",
+  "sense": "tijdelijk wonen, ergens tijd doorbrengen (to stay)",
+  "gloss": "to stay (temporarily)",
+  "forms": [
+   "verblijft",
+   "verblijven"
+  ],
+  "picture": "A man with a small suitcase sits on a bed in a plain hotel room, looking out of the window at the sea. His coat hangs on a hook.",
+  "mark": "The suitcase and coat: someone is here for a while, then leaves.",
+  "alt": "Een man zit met een kleine koffer op een bed in een hotelkamer. Hij kijkt uit het raam naar de zee.",
+  "note": "Wiktionary sense 1. A short stay away from home; example 3 draws the boundary with living at home.",
+  "examples": [
+   {
+    "text": [
+     "Jan is op vakantie.",
+     "Hij verblijft een week in een hotel.",
+     "Daarna gaat hij naar huis."
+    ],
+    "question": "Is Jan maar kort in het hotel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els gaat naar haar zus in een andere stad.",
+     "Ze verblijft twee dagen bij haar zus.",
+     "Ze slaapt in een kamer in het huis."
+    ],
+    "question": "Slaapt Els bij haar zus?",
+    "answer": "ja",
+    "scene": "A woman with a bag enters a guest room with a made bed."
+   },
+   {
+    "text": [
+     "Sam woont al lang in dit dorp.",
+     "Hij is hier niet op bezoek.",
+     "Hij verblijft hier niet, hij woont hier."
+    ],
+    "question": "Is Sam hier maar kort?",
+    "answer": "nee",
+    "scene": "A man waters plants at his own front door in a village."
+   },
+   {
+    "text": [
+     "Anna werkt in een ander land.",
+     "Ze verblijft daar een maand in een klein huis.",
+     "Daarna komt ze terug."
+    ],
+    "question": "Blijft Anna altijd in dat land?",
+    "answer": "nee",
+    "scene": "A woman with a suitcase stands at the door of a small rented house."
+   }
+  ]
+ },
+ {
+  "verb": "bestrijden",
+  "sense": "de strijd aanbinden met iets (to fight, to combat)",
+  "gloss": "to fight, to combat (a problem)",
+  "forms": [
+   "bestrijdt",
+   "bestrijden"
+  ],
+  "picture": "A woman wipes a shelf with a cloth: the wiped half of the shelf is clean, the other half still thick with dust, and a small cloud of dust drifts from the cloth.",
+  "mark": "The clean half next to the dusty half: the dust is being dealt with, not ignored.",
+  "alt": "Een vrouw veegt een plank in haar kamer schoon met een doek. Er stijgt wat stof op.",
+  "note": "Wiktionary sense 1, kept to nuisances and problems: dust, rubbish, a smell. No people are fought.",
+  "examples": [
+   {
+    "text": [
+     "Els heeft veel stof in huis.",
+     "Ze bestrijdt het stof elke week.",
+     "Het huis is schoon."
+    ],
+    "question": "Doet Els iets tegen het stof?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Er is veel afval in de straat.",
+     "De mensen in de buurt bestrijden het afval samen.",
+     "Ze maken de straat schoon."
+    ],
+    "question": "Doen de mensen iets tegen het afval?",
+    "answer": "ja",
+    "scene": "Neighbours with gloves and bags pick up rubbish along a pavement."
+   },
+   {
+    "text": [
+     "Er is een slechte geur in huis.",
+     "Jan bestrijdt de geur niet.",
+     "Hij doet geen raam open."
+    ],
+    "question": "Doet Jan iets tegen de geur?",
+    "answer": "nee",
+    "scene": "A man sits on a sofa pinching his nose, a full rubbish bin beside him and the window shut."
+   },
+   {
+    "text": [
+     "Er is vuil in het bos.",
+     "Eva en Els bestrijden het vuil.",
+     "Ze halen het uit het bos."
+    ],
+    "question": "Is het vuil nog in het bos?",
+    "answer": "nee",
+    "scene": "Two friends carry bags of rubbish out of a forest."
+   }
+  ],
+  "hold": "natural objects (ongedierte, onkruid, muggen) sit above A2; examples 2 and 4 repeat each other"
+ },
+ {
+  "verb": "verkrijgen",
+  "sense": "in bezit krijgen, verwerven (to obtain)",
+  "gloss": "to obtain",
+  "forms": [
+   "verkrijgt",
+   "verkrijgen"
+  ],
+  "picture": "A young woman stands at an office counter and holds up a new passport in both hands, smiling. The man behind the counter nods, a stamp in his hand.",
+  "mark": "The passport held high: after the counter, she now has it.",
+  "alt": "Een jonge vrouw staat bij een loket en houdt een nieuw paspoort omhoog. De man achter het loket knikt.",
+  "note": "Wiktionary sense 1. A formal and slightly stiff word for getting something after a process; it needs effort, so examples 2 and 3 show a try that fails.",
+  "examples": [
+   {
+    "text": [
+     "Anna wil op reis.",
+     "Ze verkrijgt een paspoort.",
+     "Nu mag ze op reis."
+    ],
+    "question": "Heeft Anna een paspoort?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam zoekt een kaartje voor het feest.",
+     "Alle kaartjes zijn weg.",
+     "Hij verkrijgt geen kaartje."
+    ],
+    "question": "Heeft Sam een kaartje?",
+    "answer": "nee",
+    "scene": "A man stands at a ticket window with its shutter pulled down, his empty hands turned up."
+   },
+   {
+    "text": [
+     "Jan vraagt geld aan de bank.",
+     "De bank zegt nee.",
+     "Hij verkrijgt het geld niet."
+    ],
+    "question": "Krijgt Jan geld van de bank?",
+    "answer": "nee",
+    "scene": "A man at a desk in a bank; the woman opposite shakes her head and pushes a paper back to him."
+   },
+   {
+    "text": [
+     "Eva leert drie jaar hard.",
+     "Dan verkrijgt ze haar diploma.",
+     "Haar ouders zijn blij."
+    ],
+    "question": "Heeft Eva nu een diploma?",
+    "answer": "ja",
+    "scene": "A young woman holds up a rolled diploma with a ribbon to her smiling parents in a garden."
+   }
+  ]
+ },
+ {
+  "verb": "melden",
+  "sense": "iets rapporteren, bekendmaken (to report, to notify)",
+  "gloss": "to report, to notify",
+  "forms": [
+   "meldt",
+   "melden"
+  ],
+  "picture": "A man hands a lost bag across a counter to a police officer, who listens and notes it. Both stand calmly.",
+  "mark": "The bag handed over and the listening officer: a fact is passed to someone in charge.",
+  "alt": "Een man geeft een tas aan een agent achter een tafel. De agent luistert en maakt een aantekening.",
+  "note": "Wiktionary sense 1. Telling an office or a person in charge a fact they need; telling a friend a story is vertellen.",
+  "examples": [
+   {
+    "text": [
+     "Jan vindt een tas in de bus.",
+     "Hij meldt het bij de politie.",
+     "De politie weet het nu."
+    ],
+    "question": "Weet de politie van de tas?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els is ziek.",
+     "Ze belt haar werk.",
+     "Ze meldt dat ze vandaag niet komt."
+    ],
+    "question": "Weet de baas dat Els niet komt?",
+    "answer": "ja",
+    "scene": "A woman in a dressing gown on the phone; a cup of tea beside her."
+   },
+   {
+    "text": [
+     "Er is een gat in de weg.",
+     "Sam meldt het niet.",
+     "Niemand anders weet het."
+    ],
+    "question": "Vertelt Sam het aan iemand?",
+    "answer": "nee",
+    "scene": "A man walks past a hole in the road with his hands in his pockets."
+   },
+   {
+    "text": [
+     "Eva ziet water in de keuken.",
+     "Ze belt meteen en meldt het.",
+     "Een man komt snel."
+    ],
+    "question": "Weet de man van het water?",
+    "answer": "ja",
+    "scene": "A woman on a phone in a kitchen, a puddle on the floor."
+   }
+  ]
+ },
+ {
+  "verb": "hoeven",
+  "sense": "niet verplicht zijn (not to have to)",
+  "gloss": "not to have to, no need to",
+  "forms": [
+   "hoeft",
+   "hoeven"
+  ],
+  "picture": "A man at a door holds out a coat to a woman. She shakes her head with a smile and shows her open hands: nothing is needed.",
+  "mark": "The open hands and the headshake: nothing more is needed.",
+  "alt": "Een man houdt een jas omhoog bij een deur. Een vrouw schudt lachend haar hoofd en houdt haar lege handen open.",
+  "note": "Wiktionary sense 1. Used almost only with niet or geen; it says that something is not required.",
+  "examples": [
+   {
+    "text": [
+     "Het is mooi en warm buiten.",
+     "Els hoeft geen jas aan te doen."
+    ],
+    "question": "Kan Els zonder jas naar buiten?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet heeft genoeg brood.",
+     "Hij hoeft geen brood te kopen.",
+     "Hij gaat niet naar de winkel."
+    ],
+    "question": "Gaat Piet naar de winkel?",
+    "answer": "nee",
+    "scene": "A man looks into a full bread bin and closes it."
+   },
+   {
+    "text": [
+     "De deur is open.",
+     "Jan hoeft niet te bellen.",
+     "Hij gaat zo naar binnen."
+    ],
+    "question": "Moet Jan eerst bellen?",
+    "answer": "nee",
+    "scene": "A man walks through an open door; a bell is beside it."
+   },
+   {
+    "text": [
+     "Anna heeft een kaart voor de bus.",
+     "Ze hoeft niet te betalen.",
+     "Ze gaat zo de bus in."
+    ],
+    "question": "Kan Anna de bus in zonder te betalen?",
+    "answer": "ja",
+    "scene": "A woman shows a card and steps onto a bus."
+   }
+  ]
+ },
+ {
+  "verb": "organiseren",
+  "sense": "iets, vaak een evenement, tot stand brengen (to organise)",
+  "gloss": "to organise, to arrange",
+  "forms": [
+   "organiseert",
+   "organiseren"
+  ],
+  "picture": "Two women at a long table in a garden carry plates and chairs; one points at where a chair should stand, the other carries a pile of plates.",
+  "mark": "The pointing hand and the carried things: someone is preparing it for others.",
+  "alt": "Twee vrouwen staan bij een lange tafel in een tuin. Een wijst waar een stoel moet staan, de ander draagt borden.",
+  "note": "Wiktionary sense 2. Making an event happen by arranging the things and people for it.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft haar verjaardag.",
+     "Haar zus organiseert een feest.",
+     "Ze maakt de tafel klaar in de tuin."
+    ],
+    "question": "Maakt de zus een feest voor Anna?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan houdt van voetbal.",
+     "Hij organiseert een wedstrijd voor de kinderen in de straat."
+    ],
+    "question": "Zorgt Jan voor de wedstrijd?",
+    "answer": "ja",
+    "scene": "A man marks a pitch with jackets on a grass patch while children arrive."
+   },
+   {
+    "text": [
+     "Sam wil geen drukte.",
+     "Hij organiseert niets voor zijn verjaardag.",
+     "Hij wil thuis een boek lezen."
+    ],
+    "question": "Organiseert Sam een feest?",
+    "answer": "nee",
+    "scene": "A man reads in a chair at home, an empty table beside him."
+   },
+   {
+    "text": [
+     "Eva wil met haar vrienden op reis.",
+     "Niemand organiseert de reis.",
+     "Dus er is geen reis."
+    ],
+    "question": "Is er een reis?",
+    "answer": "nee",
+    "scene": "Four friends sit at a table with a map; nobody has a pen in hand."
+   }
+  ]
+ },
+ {
+  "verb": "wensen",
+  "sense": "verlangen, op iets hopen (to wish, to want)",
+  "gloss": "to wish, to want",
+  "forms": [
+   "wenst",
+   "wensen"
+  ],
+  "picture": "A child sits at a window on a rainy day, chin on hands, looking up at a clear patch of sky. On the sill is a small toy boat.",
+  "mark": "The chin on the hands and the look to the sky: wanting something that is not there yet.",
+  "alt": "Een kind zit bij een raam op een regenachtige dag met de kin op de handen. Het kijkt naar een stukje lucht.",
+  "note": "Wiktionary sense 1. A wish for something for oneself; example 4 shows the opposite: nothing more is wanted.",
+  "examples": [
+   {
+    "text": [
+     "Het regent al een week.",
+     "Sam wenst een dag met zon.",
+     "Hij wil buiten spelen."
+    ],
+    "question": "Wil Sam dat het droog wordt?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft een klein huis.",
+     "Ze wenst een groot huis.",
+     "Maar ze heeft er geen geld voor."
+    ],
+    "question": "Heeft Els een groot huis?",
+    "answer": "nee",
+    "scene": "A woman measures a small room with her arms stretched."
+   },
+   {
+    "text": [
+     "Piet is in een winkel.",
+     "De man vraagt: wat wenst u?",
+     "Piet wil brood."
+    ],
+    "question": "Wil Piet brood?",
+    "answer": "ja",
+    "scene": "A shopkeeper behind a counter, a man points at a loaf."
+   },
+   {
+    "text": [
+     "Anna heeft alles wat ze wil.",
+     "Ze wenst niets meer.",
+     "Ze is blij met haar huis."
+    ],
+    "question": "Wenst Anna iets?",
+    "answer": "nee",
+    "scene": "A woman sits satisfied in a living room with a cup of tea."
+   }
+  ]
+ },
+ {
+  "verb": "wensen",
+  "sense": "op iets hopen voor iemand, toewensen (to wish someone something)",
+  "gloss": "to wish someone (well)",
+  "forms": [
+   "wenst",
+   "wensen"
+  ],
+  "picture": "Two women at a garden gate. One waves with a smile at the other, who leaves with a bag on a sunny morning.",
+  "mark": "The wave of the hand: a kind word goes with the person who leaves.",
+  "alt": "Twee vrouwen staan bij een tuinhek. Een van hen zwaait en lacht naar de ander, die wegloopt met een tas.",
+  "note": "Wiktionary sense 2. Hoping that someone gets something good; the thing wished is for the other person.",
+  "examples": [
+   {
+    "text": [
+     "Jan gaat op reis.",
+     "Zijn zus wenst hem een fijne reis.",
+     "Jan lacht."
+    ],
+    "question": "Wenst zijn zus hem iets moois?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva heeft haar verjaardag.",
+     "Haar vrienden wensen haar veel geluk.",
+     "Ze zingen een lied."
+    ],
+    "question": "Willen de vrienden dat Eva een fijne dag heeft?",
+    "answer": "ja",
+    "scene": "Friends around a table with a small cake; a woman smiles."
+   },
+   {
+    "text": [
+     "Els gaat naar een feest.",
+     "Anna wenst haar veel plezier.",
+     "Els gaat blij weg."
+    ],
+    "question": "Hoopt Anna dat Els het leuk heeft?",
+    "answer": "ja",
+    "scene": "Two women at a door; one leaves with a smile."
+   },
+   {
+    "text": [
+     "Mark gaat vroeg op reis.",
+     "Zijn broer slaapt nog.",
+     "Hij wenst Mark dus geen fijne reis."
+    ],
+    "question": "Wenst de broer Mark een fijne reis?",
+    "answer": "nee",
+    "scene": "A man with a suitcase walks out of a house; through a window his brother lies asleep in bed."
+   }
+  ]
+ },
+ {
+  "verb": "dienen",
+  "sense": "van nut zijn, bedoeld zijn voor (to serve as, to be for)",
+  "gloss": "to serve as, to be for",
+  "forms": [
+   "dient",
+   "dienen"
+  ],
+  "picture": "In a garden an old wooden crate stands upside down between two chairs with a cup of coffee on it. Sam sits on one chair.",
+  "mark": "The cup on the crate: the crate is being used as a table.",
+  "alt": "In een tuin staat een oude houten doos tussen twee stoelen. Er staat een kopje koffie op. Een man zit ernaast.",
+  "note": "Wiktionary sense 2, with dienen om te and dienen als. The formal sense moeten is left out. Example 3 shows the edge: it serves no purpose.",
+  "examples": [
+   {
+    "text": [
+     "Sam heeft een oude doos.",
+     "Die doos dient als tafel in de tuin.",
+     "Hij zet zijn koffie op de doos."
+    ],
+    "question": "Gebruikt Sam de doos als tafel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna heeft een tas.",
+     "Die tas dient om boeken in te doen.",
+     "Ze gaat ermee naar school."
+    ],
+    "question": "Doet Anna boeken in de tas?",
+    "answer": "ja",
+    "scene": "A woman packs books into a bag in a hallway."
+   },
+   {
+    "text": [
+     "Piet heeft een mooi glas op de kast.",
+     "Het dient nergens voor.",
+     "Hij gebruikt het nooit."
+    ],
+    "question": "Gebruikt Piet het glas?",
+    "answer": "nee",
+    "scene": "A tall glass stands unused on a high shelf, a man looking up at it."
+   },
+   {
+    "text": [
+     "Jan heeft een kaart van de stad.",
+     "De kaart dient om de weg te vinden.",
+     "Hij vindt de weg."
+    ],
+    "question": "Helpt de kaart Jan?",
+    "answer": "ja",
+    "scene": "A man holds a city map open at a corner and points down a street."
+   }
+  ]
+ }
+]

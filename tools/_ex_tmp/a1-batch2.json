@@ -1,0 +1,1087 @@
+[
+ {
+  "verb": "veranderen",
+  "sense": "zodanig aan iets werken dat het anders wordt (to change something)",
+  "gloss": "to change, to make different",
+  "forms": [
+   "verandert",
+   "veranderen"
+  ],
+  "picture": "A woman pushes a table across a room; on the floor, a clear empty patch where it stood.",
+  "mark": "The table caught mid-move and the empty patch behind it.",
+  "alt": "Een vrouw duwt een tafel door een kamer. Op de vloer is een lege plek waar de tafel stond.",
+  "note": "Wiktionary sense 1. Examples 3 and 4 show nothing changed, so the verb is the act, not the result.",
+  "examples": [
+   {
+    "text": [
+     "Eva vindt de kamer niet mooi.",
+     "Zij verandert de kamer.",
+     "De tafel staat nu bij de deur."
+    ],
+    "question": "Staat de tafel nu bij de deur?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam heeft een oud plan.",
+     "Hij verandert het plan.",
+     "Nu is het plan anders."
+    ],
+    "question": "Is het plan nu anders?",
+    "answer": "ja",
+    "scene": "A man at a table draws over a plan on paper with a thick marker."
+   },
+   {
+    "text": [
+     "Anna heeft een oude fiets.",
+     "Zij verandert de fiets niet.",
+     "De fiets is nog oud."
+    ],
+    "question": "Is de fiets nu anders?",
+    "answer": "nee",
+    "scene": "Anna stands with folded arms beside an old bicycle."
+   },
+   {
+    "text": [
+     "Piet heeft een brief.",
+     "De brief is goed.",
+     "Hij verandert niets."
+    ],
+    "question": "Is de brief nu anders?",
+    "answer": "nee",
+    "scene": "A man looks at a letter and puts his pen down."
+   }
+  ]
+ },
+ {
+  "verb": "veranderen",
+  "sense": "het proces van anders worden (to become different)",
+  "gloss": "to change, to become different",
+  "forms": [
+   "verandert",
+   "veranderen",
+   "veranderd"
+  ],
+  "picture": "A woman holds a photo of a small child next to her own face and looks at it.",
+  "mark": "The child photo next to the grown face: then and now.",
+  "alt": "Een vrouw houdt een foto van een klein kind naast haar gezicht.",
+  "note": "Wiktionary sense 3. Nobody does the changing; something just becomes different.",
+  "examples": [
+   {
+    "text": [
+     "Anna was klein.",
+     "Nu is zij groot.",
+     "Zij is veranderd."
+    ],
+    "question": "Is Anna nu groot?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Er komt een nieuwe straat.",
+     "Er komt een nieuw huis.",
+     "De stad verandert."
+    ],
+    "question": "Is de stad nog hetzelfde?",
+    "answer": "nee",
+    "scene": "A street with old houses and a new building going up."
+   },
+   {
+    "text": [
+     "Eerst is er zon.",
+     "Dan komt er regen.",
+     "De lucht verandert."
+    ],
+    "question": "Is de lucht nu anders?",
+    "answer": "ja",
+    "scene": "Two panels: the same street under sun, then under rain."
+   },
+   {
+    "text": [
+     "Jan doet elke dag hetzelfde.",
+     "Hij gaat naar zijn werk.",
+     "Hij verandert niet."
+    ],
+    "question": "Is Jan anders dan vroeger?",
+    "answer": "nee",
+    "scene": "A man walks the same road to work on two different days."
+   }
+  ]
+ },
+ {
+  "verb": "vormen",
+  "sense": "in de juiste vorm brengen (to shape)",
+  "gloss": "to shape, to form",
+  "forms": [
+   "vormt",
+   "vormen"
+  ],
+  "picture": "Eva stands in front of Sam and makes a heart shape with both hands.",
+  "mark": "Two hands closed into a heart.",
+  "alt": "Een vrouw staat voor een man en maakt met haar handen de vorm van een hart.",
+  "note": "Wiktionary sense 1. Hands (or a person) bring something into a shape; example 3 shows the shape not made.",
+  "examples": [
+   {
+    "text": [
+     "Eva staat voor Sam.",
+     "Zij vormt een hart met haar handen.",
+     "Sam ziet het hart."
+    ],
+    "question": "Ziet Sam een hart?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Een jongen heeft aarde in zijn handen.",
+     "Hij vormt een bal.",
+     "De bal is klein."
+    ],
+    "question": "Is de bal van aarde?",
+    "answer": "ja",
+    "scene": "A boy crouches in a garden and presses soil into a ball."
+   },
+   {
+    "text": [
+     "Anna wil een bal maken.",
+     "Zij heeft niets in haar handen.",
+     "Zij vormt geen bal."
+    ],
+    "question": "Heeft Anna een bal?",
+    "answer": "nee",
+    "scene": "A woman holds out two open empty hands."
+   },
+   {
+    "text": [
+     "Een man heeft vlees in zijn handen.",
+     "Hij vormt er een bal van."
+    ],
+    "question": "Is het vlees nu een bal?",
+    "answer": "ja",
+    "scene": "A man at a table rolls a lump of meat between his palms."
+   }
+  ]
+ },
+ {
+  "verb": "vormen",
+  "sense": "deel uitmaken van, samen iets zijn (to make up, to form a group)",
+  "gloss": "to form, to make up",
+  "forms": [
+   "vormen"
+  ],
+  "picture": "Five people stand one behind the other at a door.",
+  "mark": "The straight line of people, each behind the one before.",
+  "alt": "Vijf mensen staan achter elkaar bij een deur.",
+  "note": "Wiktionary sense 2. Several things together are one new thing: a line, a group; examples 3 and 4 show the group not formed.",
+  "examples": [
+   {
+    "text": [
+     "De mensen staan achter elkaar.",
+     "Zij vormen een rij.",
+     "De eerste man staat bij de deur."
+    ],
+    "question": "Staan de mensen in een rij?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Vier mensen spelen samen.",
+     "Zij vormen een groep.",
+     "Zij zijn een team."
+    ],
+    "question": "Zijn de vier mensen een groep?",
+    "answer": "ja",
+    "scene": "Four adults pass a ball in a circle in a park."
+   },
+   {
+    "text": [
+     "Sam en Els staan op straat.",
+     "Zij kennen elkaar niet.",
+     "Zij vormen geen groep."
+    ],
+    "question": "Vormen Sam en Els een groep?",
+    "answer": "nee",
+    "scene": "Two strangers stand far apart on a pavement, looking away from each other."
+   },
+   {
+    "text": [
+     "Een boom, een huis en een auto staan langs de weg.",
+     "Zij staan niet naast elkaar.",
+     "Zij vormen geen rij."
+    ],
+    "question": "Vormen de boom, het huis en de auto een rij?",
+    "answer": "nee",
+    "scene": "A tree, a house and a car scattered at different places along a road."
+   }
+  ]
+ },
+ {
+  "verb": "kennen",
+  "sense": "bekend, vertrouwd zijn met (to know a person or place)",
+  "gloss": "to know (a person or place)",
+  "forms": [
+   "kent",
+   "kennen"
+  ],
+  "picture": "Sam and Els wave to each other across a street; a stranger beside Sam looks at Els blankly.",
+  "mark": "The two waving hands and the stranger who does not wave.",
+  "alt": "Twee mensen zwaaien naar elkaar over een straat. Een derde man staat er alleen bij.",
+  "note": "Wiktionary sense 1. Knowing a person or place, not knowing a fact (weten).",
+  "examples": [
+   {
+    "text": [
+     "Sam ziet Els op straat.",
+     "Hij zegt: dag Els.",
+     "Hij kent Els."
+    ],
+    "question": "Kent Sam Els?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Een vrouw ziet een man.",
+     "Zij zegt niets.",
+     "Zij kent de man niet."
+    ],
+    "question": "Kent de vrouw de man?",
+    "answer": "nee",
+    "scene": "A woman passes a man on a pavement with her eyes straight ahead."
+   },
+   {
+    "text": [
+     "Anna is al lang in deze stad.",
+     "Zij is hier elke dag.",
+     "Zij kent de straat goed."
+    ],
+    "question": "Kent Anna de straat?",
+    "answer": "ja",
+    "scene": "A woman cycles confidently through a street without looking at a map."
+   },
+   {
+    "text": [
+     "Piet is nieuw in de stad.",
+     "Hij kent de weg niet.",
+     "Hij vraagt het aan een vrouw."
+    ],
+    "question": "Kent Piet de weg?",
+    "answer": "nee",
+    "scene": "A man holds a map and points down a street while a woman answers."
+   }
+  ]
+ },
+ {
+  "verb": "kennen",
+  "sense": "door studie of oefening geleerd hebben (to know by heart, to master)",
+  "gloss": "to know (something learned)",
+  "forms": [
+   "kent",
+   "kennen"
+  ],
+  "picture": "Eva stands with a closed book at her side and speaks to a small group.",
+  "mark": "The closed book: she does not need it.",
+  "alt": "Een vrouw staat met een gesloten boek langs haar zij en praat tegen een groepje.",
+  "note": "Wiktionary sense 2. Knowing something you have learned, such as words, a text or a number.",
+  "examples": [
+   {
+    "text": [
+     "Eva heeft het boek dicht.",
+     "Zij zegt alle woorden.",
+     "Zij kent de tekst."
+    ],
+    "question": "Kent Eva de tekst?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan leert de woorden nu.",
+     "Hij heeft ze niet in zijn hoofd.",
+     "Hij kent de woorden nog niet."
+    ],
+    "question": "Kent Jan de woorden al?",
+    "answer": "nee",
+    "scene": "A boy at a desk with a word list, frowning."
+   },
+   {
+    "text": [
+     "Er is een les.",
+     "De vrouw vraagt naar een woord.",
+     "Mark zegt niets.",
+     "Hij kent het woord niet."
+    ],
+    "question": "Zegt Mark het woord?",
+    "answer": "nee",
+    "scene": "A woman with a hand raised towards a boy who sits with his mouth closed."
+   },
+   {
+    "text": [
+     "Anna wil haar moeder bellen.",
+     "Zij kent het nummer.",
+     "Zij belt meteen."
+    ],
+    "question": "Kan Anna meteen bellen?",
+    "answer": "ja",
+    "scene": "A woman dials a phone from memory, with nothing written in front of her."
+   }
+  ]
+ },
+ {
+  "verb": "noemen",
+  "sense": "met een naam aanduiden (to give a name)",
+  "gloss": "to name, to call",
+  "forms": [
+   "noemt",
+   "noemen"
+  ],
+  "picture": "A boy kneels beside a basket with a small puppy, one hand on his chest and the other stroking the puppy.",
+  "mark": "A hand on his own chest, a hand on the puppy: this one is mine, and gets a name.",
+  "alt": "Een jongen zit bij een mand met een klein hondje. Hij legt één hand op zijn borst en één hand op het hondje.",
+  "note": "Wiktionary sense 1. The name is given by someone; the thing did not have it before.",
+  "examples": [
+   {
+    "text": [
+     "Sam heeft een nieuwe hond.",
+     "Hij noemt de hond Piet.",
+     "De hond heet nu Piet."
+    ],
+    "question": "Heet de hond Piet?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva en Sam hebben een baby.",
+     "Zij noemen de baby Anna.",
+     "Anna is een mooie naam."
+    ],
+    "question": "Heet de baby Els?",
+    "answer": "nee",
+    "scene": "Two parents lean over a cot with a baby between them."
+   },
+   {
+    "text": [
+     "Mark heeft een nieuwe auto.",
+     "Hij noemt de auto Eva.",
+     "Nu heeft de auto een naam."
+    ],
+    "question": "Heeft de auto nu een naam?",
+    "answer": "ja",
+    "scene": "A man pats the roof of a car and smiles."
+   },
+   {
+    "text": [
+     "Anna heeft een nieuwe fiets.",
+     "Zij geeft hem geen naam.",
+     "Zij noemt hem gewoon: mijn fiets."
+    ],
+    "question": "Heeft Anna een naam voor de fiets?",
+    "answer": "nee",
+    "scene": "A woman stands beside a bicycle, shrugging."
+   }
+  ]
+ },
+ {
+  "verb": "noemen",
+  "sense": "vermelden door het uitspreken van de naam (to mention by name)",
+  "gloss": "to name, to mention",
+  "forms": [
+   "noemt",
+   "noemen"
+  ],
+  "picture": "A woman holds a list in one hand and speaks; one person in a small group raises a hand.",
+  "mark": "The raised hand answering the speaking woman.",
+  "alt": "Een vrouw houdt een lijst vast en spreekt. Iemand in een groepje steekt een hand op.",
+  "note": "Wiktionary sense 2. Saying a name aloud; examples 2 and 4 show the name not said.",
+  "examples": [
+   {
+    "text": [
+     "Een vrouw heeft een lijst.",
+     "Zij noemt de naam Eva.",
+     "Eva staat op."
+    ],
+    "question": "Staat Eva op?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els vraagt: wie is je vriend?",
+     "Sam zegt niets.",
+     "Hij noemt geen naam."
+    ],
+    "question": "Weet Els de naam?",
+    "answer": "nee",
+    "scene": "Two people at a table; one has her mouth open, the other keeps his lips closed."
+   },
+   {
+    "text": [
+     "Mark belt zijn vriend.",
+     "Hij noemt zijn naam.",
+     "De vriend zegt: dag Mark."
+    ],
+    "question": "Weet de vriend wie belt?",
+    "answer": "ja",
+    "scene": "A man holds a phone to his ear and speaks."
+   },
+   {
+    "text": [
+     "Een vrouw staat bij de deur.",
+     "Zij vraagt naar de naam van de man.",
+     "De man noemt zijn naam niet."
+    ],
+    "question": "Noemt de man zijn naam?",
+    "answer": "nee",
+    "scene": "A woman at a door with an open hand towards a man who keeps his lips shut."
+   }
+  ]
+ },
+ {
+  "verb": "leven",
+  "sense": "het doormaken van het leven (to be alive)",
+  "gloss": "to live, to be alive",
+  "key": "leven (verb)",
+  "band": "A1",
+  "band_why": "leven has lemma rank 9168 in the lexicon, a homograph artefact (the noun leven and the verb are merged); the verb is A1 by judgement",
+  "forms": [
+   "leeft",
+   "leven"
+  ],
+  "picture": "A woman kneels in a garden beside a dog; its head is up and its eyes are open.",
+  "mark": "The lifted head and open eyes of the dog.",
+  "alt": "Een vrouw zit in een tuin bij een hond. De hond heeft zijn kop omhoog en zijn ogen open.",
+  "note": "Wiktionary sense 1. Being alive, not the place where someone lives (wonen).",
+  "examples": [
+   {
+    "text": [
+     "Eva vindt een hond in de tuin.",
+     "De hond ziet haar.",
+     "Hij leeft."
+    ],
+    "question": "Leeft de hond?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft een boom.",
+     "De boom krijgt geen water.",
+     "Nu leeft de boom niet meer."
+    ],
+    "question": "Leeft de boom?",
+    "answer": "nee",
+    "scene": "A man stands beside a bare dry tree with an empty watering can."
+   },
+   {
+    "text": [
+     "Sam heeft een oude vader.",
+     "Hij is erg oud.",
+     "Maar hij leeft nog."
+    ],
+    "question": "Leeft de vader nog?",
+    "answer": "ja",
+    "scene": "An old man with a stick walks along a path in a park."
+   },
+   {
+    "text": [
+     "Mensen hebben water nodig.",
+     "Zonder water leeft een mens niet.",
+     "Dat weet iedereen."
+    ],
+    "question": "Leeft een mens zonder water?",
+    "answer": "nee",
+    "scene": "A person drinks from a glass at a table."
+   }
+  ]
+ },
+ {
+  "verb": "gebeuren",
+  "sense": "plaatshebben, werkelijkheid worden (to happen)",
+  "gloss": "to happen",
+  "forms": [
+   "gebeurt",
+   "gebeuren"
+  ],
+  "picture": "Two people stand on a pavement, both looking in the same direction with raised hands.",
+  "mark": "Two faces turned the same way with hands raised.",
+  "alt": "Twee mensen staan op de stoep. Zij kijken allebei dezelfde kant op en houden hun handen omhoog.",
+  "note": "Wiktionary sense 1, the only one. Examples cover something, nothing, sometimes and not knowing.",
+  "examples": [
+   {
+    "text": [
+     "Sam hoort een hard geluid.",
+     "Hij gaat naar buiten.",
+     "Er gebeurt iets op straat."
+    ],
+    "question": "Gebeurt er iets op straat?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het is stil in het huis.",
+     "Er gebeurt niets.",
+     "Eva zit op de bank."
+    ],
+    "question": "Gebeurt er iets in het huis?",
+    "answer": "nee",
+    "scene": "A woman sits on a sofa in a quiet room."
+   },
+   {
+    "text": [
+     "De bus komt niet.",
+     "Dat gebeurt soms.",
+     "Jan wacht op een andere bus."
+    ],
+    "question": "Gebeurt het soms dat de bus niet komt?",
+    "answer": "ja",
+    "scene": "A man waits at a bus stop looking down an empty road."
+   },
+   {
+    "text": [
+     "Els hoort mensen praten.",
+     "Zij vraagt: wat is er?",
+     "Zij weet niet wat er gebeurt."
+    ],
+    "question": "Weet Els wat er gebeurt?",
+    "answer": "nee",
+    "scene": "A woman at a window with a hand to her ear."
+   }
+  ]
+ },
+ {
+  "verb": "geloven",
+  "sense": "overtuigd zijn dat iets waar is (to believe that something is true)",
+  "gloss": "to believe (that)",
+  "forms": [
+   "gelooft",
+   "geloven"
+  ],
+  "picture": "Anna listens to Piet, who talks with open hands; she nods slowly.",
+  "mark": "Anna's slow nod while Piet speaks.",
+  "alt": "Een vrouw luistert naar een man die met open handen praat. Zij knikt langzaam.",
+  "note": "Wiktionary sense 1. Believing a statement (geloven dat). Believing a person is the next card.",
+  "examples": [
+   {
+    "text": [
+     "Piet zegt: mijn vader komt vandaag.",
+     "Anna weet dat hij altijd komt.",
+     "Zij gelooft dat hij komt."
+    ],
+    "question": "Gelooft Anna dat de vader komt?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam zegt: ik kan vliegen.",
+     "Zijn vader zegt: nee.",
+     "Hij gelooft het niet."
+    ],
+    "question": "Gelooft de vader het?",
+    "answer": "nee",
+    "scene": "A boy with spread arms stands on a table; his father shakes his head."
+   },
+   {
+    "text": [
+     "Eva ziet haar vriend niet.",
+     "Zijn auto staat voor het huis.",
+     "Zij gelooft dat hij thuis is."
+    ],
+    "question": "Gelooft Eva dat haar vriend thuis is?",
+    "answer": "ja",
+    "scene": "A woman looks at a house with a car parked in front."
+   },
+   {
+    "text": [
+     "Jan hoort een verhaal.",
+     "Het is niet waar.",
+     "Hij gelooft het niet."
+    ],
+    "question": "Denkt Jan dat het verhaal waar is?",
+    "answer": "nee",
+    "scene": "A man listens with a raised eyebrow to a group around a table."
+   }
+  ]
+ },
+ {
+  "verb": "geloven",
+  "sense": "zich door iemand laten overtuigen (to believe a person)",
+  "gloss": "to believe (someone)",
+  "forms": [
+   "gelooft",
+   "geloven"
+  ],
+  "picture": "A man sits behind a desk and looks at a woman across it; his hand lies open on the desk.",
+  "mark": "The open hand on the desk: the listener accepts.",
+  "alt": "Een man zit achter een bureau en kijkt naar een vrouw. Zijn hand ligt open op het bureau.",
+  "note": "Wiktionary sense 2. Accepting what a person says; the person is the object (iemand geloven).",
+  "examples": [
+   {
+    "text": [
+     "Els zegt: ik ben ziek.",
+     "Haar vader hoort het.",
+     "Hij gelooft haar."
+    ],
+    "question": "Gelooft de vader Els?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan zegt: ik heb het boek niet.",
+     "Zijn moeder ziet het boek op zijn bed.",
+     "Zij gelooft hem niet."
+    ],
+    "question": "Gelooft de moeder hem?",
+    "answer": "nee",
+    "scene": "A mother with folded arms and a boy; a book lies on his bed."
+   },
+   {
+    "text": [
+     "Anna zegt: dit is waar.",
+     "Haar vriend gelooft haar.",
+     "Hij gaat met haar mee."
+    ],
+    "question": "Gaat de vriend met Anna mee?",
+    "answer": "ja",
+    "scene": "Two people walk away together, she points the way."
+   },
+   {
+    "text": [
+     "Mark zegt: ik heb veel geld.",
+     "Niemand gelooft hem.",
+     "Iedereen weet dat hij weinig heeft."
+    ],
+    "question": "Gelooft iemand Mark?",
+    "answer": "nee",
+    "scene": "A man in a plain coat speaks to a group that shakes its heads."
+   }
+  ]
+ },
+ {
+  "verb": "bereiken",
+  "sense": "fysiek het doel halen (to reach a place)",
+  "gloss": "to reach, to arrive at",
+  "forms": [
+   "bereikt",
+   "bereiken"
+  ],
+  "picture": "A walker stands on a hilltop with both arms raised; a path winds up behind.",
+  "mark": "The raised arms at the end of the path.",
+  "alt": "Een wandelaar staat boven op een heuvel met de armen omhoog. Achter hem loopt een pad omhoog.",
+  "note": "Wiktionary sense 1. Getting to the place you were going to; examples 3 and 4 show the place not reached.",
+  "examples": [
+   {
+    "text": [
+     "Sam loopt naar boven.",
+     "Het is ver.",
+     "Na een uur bereikt hij de top."
+    ],
+    "question": "Is Sam boven?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De trein gaat naar de stad.",
+     "Het is al nacht.",
+     "De trein bereikt de stad."
+    ],
+    "question": "Is de trein in de stad?",
+    "answer": "ja",
+    "scene": "A train pulls into a station with tall buildings behind it."
+   },
+   {
+    "text": [
+     "Els wil naar de brug.",
+     "Haar fiets is stuk.",
+     "Zij bereikt de brug niet."
+    ],
+    "question": "Bereikt Els de brug?",
+    "answer": "nee",
+    "scene": "A woman stands with a broken bicycle far from a bridge."
+   },
+   {
+    "text": [
+     "Het kind wil het boek pakken.",
+     "Het boek is te hoog.",
+     "Het bereikt het boek niet."
+    ],
+    "question": "Heeft het kind het boek?",
+    "answer": "nee",
+    "scene": "A small child on tiptoe, arm stretched towards a high shelf."
+   }
+  ]
+ },
+ {
+  "verb": "bereiken",
+  "sense": "het informeren van personen (to get hold of a person)",
+  "gloss": "to reach (a person), to get hold of",
+  "forms": [
+   "bereikt",
+   "bereiken"
+  ],
+  "picture": "A woman sits at a table with a phone at her ear; her other hand is raised, waiting.",
+  "mark": "The phone at the ear and the waiting hand.",
+  "alt": "Een vrouw zit aan een tafel met een telefoon tegen haar oor. Haar andere hand is omhoog.",
+  "note": "Wiktionary sense 2. Getting someone on the phone or by message; the person, not the place, is reached.",
+  "examples": [
+   {
+    "text": [
+     "Anna belt Piet.",
+     "Piet zegt: hallo.",
+     "Zij bereikt Piet."
+    ],
+    "question": "Bereikt Anna Piet?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan belt zijn vader.",
+     "Niemand zegt iets.",
+     "Hij bereikt zijn vader niet."
+    ],
+    "question": "Bereikt Jan zijn vader?",
+    "answer": "nee",
+    "scene": "A man listens to a phone while an empty chair stands behind him."
+   },
+   {
+    "text": [
+     "Els stuurt een bericht.",
+     "Haar vriend ziet het meteen.",
+     "Zij bereikt haar vriend."
+    ],
+    "question": "Ziet de vriend het bericht?",
+    "answer": "ja",
+    "scene": "A woman types on a phone; across town a man looks at his phone."
+   },
+   {
+    "text": [
+     "Sam belt het kantoor.",
+     "Het kantoor is dicht.",
+     "Hij bereikt niemand."
+    ],
+    "question": "Bereikt Sam iemand?",
+    "answer": "nee",
+    "scene": "A man with a phone at his ear in front of a closed door."
+   }
+  ]
+ },
+ {
+  "verb": "prijzen",
+  "sense": "iemand lof toezwaaien (to praise)",
+  "gloss": "to praise",
+  "band": "A2",
+  "band_why": "the praise sense is later than the noun-driven A1 lemma rank (759); A2 by judgement",
+  "forms": [
+   "prijst",
+   "prijzen"
+  ],
+  "picture": "A man smiles at a girl and holds up the photo she made; his other hand is open towards her.",
+  "mark": "The smile and the open hand towards the girl.",
+  "alt": "Een man lacht naar een meisje. Hij houdt haar foto omhoog en houdt zijn andere hand open naar haar toe.",
+  "note": "Wiktionary sense 1 of the strong verb. Praising a person for what they did; the price sense (a shop sets a price) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Eva maakt een mooie foto.",
+     "De leraar ziet het.",
+     "Hij prijst Eva."
+    ],
+    "question": "Prijst de leraar Eva?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna maakt een slecht plan.",
+     "De baas ziet het werk.",
+     "Hij prijst haar niet."
+    ],
+    "question": "Prijst de baas Anna?",
+    "answer": "nee",
+    "scene": "A man at a desk looks at a page with a frown."
+   },
+   {
+    "text": [
+     "Jan wint de race.",
+     "Iedereen klapt.",
+     "Zij prijzen hem."
+    ],
+    "question": "Prijzen de mensen Jan?",
+    "answer": "ja",
+    "scene": "A runner crosses a line while a crowd claps."
+   },
+   {
+    "text": [
+     "De kok maakt een soep.",
+     "De soep is niet lekker.",
+     "De gasten prijzen de soep niet."
+    ],
+    "question": "Prijzen de gasten de soep?",
+    "answer": "nee",
+    "scene": "Guests at a table push their plates away."
+   }
+  ]
+ },
+ {
+  "verb": "reageren",
+  "sense": "iets doen als reactie op een nieuwe situatie (to react)",
+  "gloss": "to react, to respond",
+  "forms": [
+   "reageert",
+   "reageren"
+  ],
+  "picture": "A man at a table looks at his phone with raised eyebrows and an open mouth, his thumb already on the screen.",
+  "mark": "The raised eyebrows and the thumb already on the screen: he answers at once.",
+  "alt": "Een man zit aan een tafel en kijkt naar zijn telefoon met opgetrokken wenkbrauwen en open mond. Zijn duim ligt al op het scherm.",
+  "note": "Wiktionary sense 1, used with 'op'. Examples 2 and 4 show no reaction.",
+  "examples": [
+   {
+    "text": [
+     "Anna stuurt een bericht aan Piet.",
+     "Piet ziet het.",
+     "Hij reageert meteen."
+    ],
+    "question": "Reageert Piet op het bericht?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Er is een hard geluid.",
+     "Het kind hoort het niet.",
+     "Het reageert niet."
+    ],
+    "question": "Reageert het kind op het geluid?",
+    "answer": "nee",
+    "scene": "A child plays on the floor while a door slams behind it."
+   },
+   {
+    "text": [
+     "Een auto komt snel.",
+     "Eva gaat meteen weg.",
+     "Zij reageert snel."
+    ],
+    "question": "Gaat Eva weg?",
+    "answer": "ja",
+    "scene": "A woman steps off the road as a car approaches."
+   },
+   {
+    "text": [
+     "Sam praat tegen zijn vriend.",
+     "Zijn vriend hoort het niet.",
+     "Hij reageert niet."
+    ],
+    "question": "Reageert de vriend?",
+    "answer": "nee",
+    "scene": "One man speaks across a street; the other walks on with headphones."
+   }
+  ]
+ },
+ {
+  "verb": "verbeteren",
+  "sense": "beter maken, de kwaliteit verhogen (to make better)",
+  "gloss": "to improve, to make better",
+  "forms": [
+   "verbetert",
+   "verbeteren"
+  ],
+  "picture": "Two workers smooth a road; behind them the road is flat, ahead of them it is full of holes.",
+  "mark": "The flat road behind the workers against the holes ahead.",
+  "alt": "Twee mannen werken aan een weg. Achter hen is de weg vlak, voor hen zitten er gaten in.",
+  "note": "Wiktionary sense 1. Someone does something so that a thing becomes better; examples 3 and 4 show it not becoming better.",
+  "examples": [
+   {
+    "text": [
+     "De weg is slecht.",
+     "De stad verbetert de weg.",
+     "Nu is de weg goed."
+    ],
+    "question": "Is de weg nu beter?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet leert elke dag Nederlands.",
+     "Hij verbetert zijn Nederlands.",
+     "Hij praat steeds beter."
+    ],
+    "question": "Wordt zijn Nederlands beter?",
+    "answer": "ja",
+    "scene": "A man reads a book at a table with a notebook open beside it."
+   },
+   {
+    "text": [
+     "Anna speelt elke week voetbal.",
+     "Zij leert niets nieuws.",
+     "Zij verbetert haar spel niet."
+    ],
+    "question": "Speelt Anna nu beter?",
+    "answer": "nee",
+    "scene": "A woman kicks a ball well wide of a goal on a field."
+   },
+   {
+    "text": [
+     "Sam heeft een mooie tekst.",
+     "Mark maakt er een slechte tekst van.",
+     "Hij verbetert de tekst niet."
+    ],
+    "question": "Verbetert Mark de tekst?",
+    "answer": "nee",
+    "scene": "A man scribbles over a neat page while another man watches."
+   }
+  ]
+ },
+ {
+  "verb": "verbeteren",
+  "sense": "van fouten ontdoen (to correct)",
+  "gloss": "to correct",
+  "forms": [
+   "verbetert",
+   "verbeteren"
+  ],
+  "picture": "A woman bends over a sheet and puts a pen on one line.",
+  "mark": "The pen on one line of the sheet.",
+  "alt": "Een vrouw buigt zich over een blad en zet haar pen op één regel.",
+  "note": "Wiktionary sense 2. Taking the mistakes out of a text or work; example 3 shows nothing to correct.",
+  "examples": [
+   {
+    "text": [
+     "Een vrouw ziet de tekst van Eva.",
+     "Een woord is verkeerd.",
+     "Zij verbetert het woord."
+    ],
+    "question": "Is het woord nu goed?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet heeft een brief.",
+     "Er staan drie woorden verkeerd in de brief.",
+     "Anna verbetert de brief."
+    ],
+    "question": "Staan er nu nog verkeerde woorden in de brief?",
+    "answer": "nee",
+    "scene": "A woman with a pen crosses out words in a letter."
+   },
+   {
+    "text": [
+     "Jan ziet zijn werk.",
+     "Alles is goed.",
+     "Hij verbetert niets."
+    ],
+    "question": "Verbetert Jan iets?",
+    "answer": "nee",
+    "scene": "A man looks at a clean page with a pen lying beside it."
+   },
+   {
+    "text": [
+     "Een man heeft het werk van de kinderen.",
+     "Hij verbetert het werk van elk kind.",
+     "Hij is nog niet klaar."
+    ],
+    "question": "Kijkt de man of het werk goed is?",
+    "answer": "ja",
+    "scene": "A man at a desk with a tall pile of pages."
+   }
+  ]
+ },
+ {
+  "verb": "verbeteren",
+  "sense": "beter worden (to get better)",
+  "gloss": "to improve, to get better",
+  "forms": [
+   "verbetert",
+   "verbeteren"
+  ],
+  "picture": "A boy at a desk with two drawings of the same house side by side: an earlier messy one and a later neat one.",
+  "mark": "The neat drawing next to the messy one.",
+  "alt": "Een jongen zit aan een bureau met twee tekeningen van hetzelfde huis: eerst een rommelige, dan een nette.",
+  "note": "Wiktionary sense 3. Nobody makes it better; it gets better by itself.",
+  "examples": [
+   {
+    "text": [
+     "Sam leert elke dag.",
+     "Zijn werk verbetert.",
+     "Het werk is nu goed."
+    ],
+    "question": "Is het werk nu goed?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Mark slaapt slecht.",
+     "Zijn slaap verbetert niet.",
+     "Ook nu slaapt hij slecht."
+    ],
+    "question": "Slaapt Mark nu goed?",
+    "answer": "nee",
+    "scene": "A man sits on the edge of his bed in the morning, eyes half closed."
+   },
+   {
+    "text": [
+     "De koffie op het werk is eerst niet lekker.",
+     "Nu is er nieuwe koffie.",
+     "De koffie verbetert."
+    ],
+    "question": "Is de koffie nu beter?",
+    "answer": "ja",
+    "scene": "A woman at an office desk sips from a cup and smiles."
+   },
+   {
+    "text": [
+     "Jan doet niets voor school.",
+     "Zijn werk verbetert niet.",
+     "Het is nog slecht."
+    ],
+    "question": "Wordt het werk beter?",
+    "answer": "nee",
+    "scene": "A boy sits on a sofa with a book closed on his knee."
+   }
+  ]
+ },
+ {
+  "verb": "verwachten",
+  "sense": "ergens van uitgaan, iets als vooronderstelling aannemen (to expect)",
+  "gloss": "to expect",
+  "forms": [
+   "verwacht",
+   "verwachten"
+  ],
+  "picture": "A woman stands at her front door and looks at the clock on the wall; behind her is a table with two cups.",
+  "mark": "The two cups and the glance at the clock.",
+  "alt": "Een vrouw staat bij de voordeur. Achter haar staat een tafel met twee kopjes. Zij kijkt naar de klok aan de muur.",
+  "note": "Wiktionary sense 1, the only one. Examples 2 and 3 show an expectation that is not met or is wrong.",
+  "examples": [
+   {
+    "text": [
+     "Anna wacht bij de deur.",
+     "Zij verwacht een vriend.",
+     "De vriend komt zo."
+    ],
+    "question": "Verwacht Anna iemand?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan ziet geen zon.",
+     "Hij verwacht regen.",
+     "Hij gaat met zijn auto."
+    ],
+    "question": "Verwacht Jan zon?",
+    "answer": "nee",
+    "scene": "A man looks up at a heavy cloudy sky."
+   },
+   {
+    "text": [
+     "Els gaat naar de winkel.",
+     "Zij verwacht dat de winkel open is.",
+     "Maar de winkel is dicht."
+    ],
+    "question": "Denkt Els dat de winkel open is?",
+    "answer": "ja",
+    "scene": "A woman stands in front of a closed shop door with a bag in her hand."
+   },
+   {
+    "text": [
+     "Het is zomer.",
+     "Sam en Eva verwachten zon.",
+     "Het is vaak warm in de zomer."
+    ],
+    "question": "Verwachten Sam en Eva regen?",
+    "answer": "nee",
+    "scene": "Two people in light clothes carry a beach bag along a path."
+   }
+  ]
+ }
+]

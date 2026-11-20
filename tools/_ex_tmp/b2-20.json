@@ -1,0 +1,780 @@
+[
+ {
+  "verb": "bestemmen",
+  "sense": "een doel of bestemming aanwijzen (to designate for)",
+  "gloss": "to designate, to intend for",
+  "forms": [
+   "bestemd",
+   "bestemt",
+   "bestemmen"
+  ],
+  "picture": "A woman sets one wrapped book apart on a small table beside an empty child's chair, away from a pile of other parcels on the floor.",
+  "mark": "The one book set apart for one person.",
+  "alt": "Een vrouw zet één ingepakt boek apart op een tafeltje naast een kinderstoel. Andere pakjes liggen op de grond.",
+  "note": "Wiktionary sense 1. Sense 2 (zenden aan, bewaren voor) is left out; it overlaps. The usual form is bestemd voor.",
+  "examples": [
+   {
+    "text": [
+     "Anna koopt een mooi boek.",
+     "Het is bestemd voor haar zus."
+    ],
+    "question": "Krijgt de zus van Anna het boek straks?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan doet elke week geld in een pot.",
+     "Dat geld is bestemd voor een nieuwe fiets."
+    ],
+    "question": "Koopt Jan later een fiets met dit geld?",
+    "answer": "ja",
+    "scene": "A man drops coins into a jar on a shelf; a bicycle leans against the wall behind him."
+   },
+   {
+    "text": [
+     "Els heeft twee kamers.",
+     "De kleine kamer is bestemd voor de computer."
+    ],
+    "question": "Staat de computer straks in de grote kamer?",
+    "answer": "nee",
+    "scene": "A woman stands in a small room with a desk and a computer; a bigger room is seen through the door."
+   },
+   {
+    "text": [
+     "Eva zet een pan soep op tafel.",
+     "De pan is bestemd voor haar opa."
+    ],
+    "question": "Eet Eva zelf de soep?",
+    "answer": "nee",
+    "scene": "A woman puts a pan on a table; an old man sits at the table with a spoon."
+   }
+  ]
+ },
+ {
+  "verb": "verifiëren",
+  "sense": "nagaan, controleren of iets klopt (to verify)",
+  "gloss": "to verify, to check that it is true",
+  "forms": [
+   "verifieert",
+   "verifiëren"
+  ],
+  "picture": "A woman at a table holds her phone in one hand and points with the other at a laptop screen, looking from one to the other with a frown.",
+  "mark": "The woman comparing two things: phone in one hand, finger on the laptop.",
+  "alt": "Een vrouw zit aan tafel. Zij houdt haar telefoon vast en wijst met haar andere hand naar een laptop.",
+  "note": "Wiktionary sense 1. The verb is formal; the card shows checking a claim against another source.",
+  "examples": [
+   {
+    "text": [
+     "Eva krijgt een bericht op haar telefoon: een winkel geeft veel korting.",
+     "Zij verifieert eerst of dat waar is."
+    ],
+    "question": "Gelooft Eva het bericht meteen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De bank belt Mark.",
+     "De vrouw verifieert zijn naam en zijn adres."
+    ],
+    "question": "Weet de vrouw dan zeker dat het echt Mark is?",
+    "answer": "ja",
+    "scene": "A woman with a headset at a desk looks at a computer, a telephone beside her."
+   },
+   {
+    "text": [
+     "Anna schrijft een lange tekst.",
+     "Zij verifieert elk feit in een boek."
+    ],
+    "question": "Gelooft Anna zonder te kijken dat alles juist is?",
+    "answer": "nee",
+    "scene": "A woman sits at a table with a laptop and an open book, one finger on a page."
+   },
+   {
+    "text": [
+     "Jan hoort dat de trein later komt.",
+     "Hij verifieert dat bij het loket.",
+     "De man daar kijkt in zijn computer en zegt: ja."
+    ],
+    "question": "Weet Jan nu zeker dat de trein later komt?",
+    "answer": "ja",
+    "scene": "A man stands at a ticket desk; the clerk behind glass looks at a screen."
+   }
+  ],
+  "key": "verifieren"
+ },
+ {
+  "verb": "peinzen",
+  "sense": "heel diep nadenken (to ponder)",
+  "gloss": "to ponder, to think deeply",
+  "forms": [
+   "peinst",
+   "peinzen"
+  ],
+  "picture": "A man sits still on a bench by a lake, chin on his fist, looking at the water. Nothing else in the scene moves.",
+  "mark": "The chin on the fist and the still body: thinking, not doing.",
+  "alt": "Een man zit stil op een bankje bij een meer. Hij steunt zijn kin op zijn vuist en kijkt naar het water.",
+  "note": "Wiktionary sense 1. Example 2 and 4 show active people who do not ponder.",
+  "examples": [
+   {
+    "text": [
+     "Els moet kiezen tussen twee banen.",
+     "Zij zit lang stil en peinst."
+    ],
+    "question": "Denkt Els na over haar keuze?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Mark loopt snel door het huis en praat aan de telefoon.",
+     "Hij peinst niet."
+    ],
+    "question": "Zit Mark rustig te denken?",
+    "answer": "nee",
+    "scene": "A man hurries through a room with a phone at his ear."
+   },
+   {
+    "text": [
+     "Anna staat bij het raam met een kop thee.",
+     "Zij peinst over haar werk."
+    ],
+    "question": "Denkt Anna aan haar werk?",
+    "answer": "ja",
+    "scene": "A woman stands at a window holding a cup, looking out."
+   },
+   {
+    "text": [
+     "Jan speelt een spel op zijn telefoon.",
+     "Hij peinst niet over zijn probleem."
+    ],
+    "question": "Denkt Jan nu diep na over zijn probleem?",
+    "answer": "nee",
+    "scene": "A man on a sofa laughs at his phone."
+   }
+  ]
+ },
+ {
+  "verb": "ontsleutelen",
+  "sense": "een versleutelde tekst leesbaar maken (to decrypt)",
+  "gloss": "to decrypt",
+  "forms": [
+   "ontsleutelt",
+   "ontsleutelen"
+  ],
+  "picture": "A woman at a laptop holds up a large key in one hand. On the screen is a dense grid of random squiggles on one side and a neat page on the other.",
+  "mark": "The key in her hand next to the unreadable and readable screens.",
+  "alt": "Een vrouw zit aan een laptop en houdt een grote sleutel omhoog. Op het scherm staan krullen en een nette pagina.",
+  "note": "Wiktionary sense 1 (cryptography). The key image stands for the code or password.",
+  "examples": [
+   {
+    "text": [
+     "Jan heeft een bestand dat niemand kan lezen.",
+     "Hij typt zijn wachtwoord.",
+     "Zo ontsleutelt hij het bestand."
+    ],
+    "question": "Kan Jan het bestand daarna lezen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva heeft het wachtwoord niet.",
+     "Zij ontsleutelt het bestand niet."
+    ],
+    "question": "Kan Eva het bestand lezen?",
+    "answer": "nee",
+    "scene": "A woman frowns at a laptop with an unreadable screen; her hands rest in her lap."
+   },
+   {
+    "text": [
+     "Anna krijgt een geheim bericht van haar zus.",
+     "Met een code ontsleutelt zij het bericht."
+    ],
+    "question": "Kan Anna het bericht daarna lezen?",
+    "answer": "ja",
+    "scene": "A woman at a kitchen table has a letter and a small card with a pattern, reading the letter."
+   },
+   {
+    "text": [
+     "De politie heeft de telefoon van een dief.",
+     "Zij kan de berichten niet ontsleutelen."
+    ],
+    "question": "Weet de politie wat er in de berichten staat?",
+    "answer": "nee",
+    "scene": "Two police officers look puzzled at a phone on a desk."
+   }
+  ]
+ },
+ {
+  "verb": "tutten",
+  "sense": "treuzelen, tijd verdoen (to dawdle)",
+  "gloss": "to dawdle, to waste time",
+  "forms": [
+   "tut",
+   "tutten"
+  ],
+  "picture": "A boy sits on a staircase with one shoe on and the other in his hand, looking at a toy car. His mother waits at the open front door with a bag.",
+  "mark": "The half-dressed boy playing while the mother waits.",
+  "alt": "Een jongen zit op de trap met één schoen aan. Hij speelt met een autootje. Zijn moeder wacht bij de open deur.",
+  "note": "Wiktionary sense 1. Informal. Sense 2 (beauty care) is its own card.",
+  "examples": [
+   {
+    "text": [
+     "Sam moet naar school.",
+     "Zijn moeder wacht bij de deur.",
+     "Hij zit op de trap te tutten."
+    ],
+    "question": "Is Sam al klaar om te gaan?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan wil snel klaar zijn.",
+     "Hij zit niet te tutten en doet alles meteen."
+    ],
+    "question": "Duurt het lang voordat Jan klaar is?",
+    "answer": "nee",
+    "scene": "A man quickly puts on a coat and picks up a bag."
+   },
+   {
+    "text": [
+     "Anna en Eva gaan uit eten.",
+     "Eva wacht al op het terras.",
+     "Anna is thuis nog aan het tutten."
+    ],
+    "question": "Verliest Anna tijd?",
+    "answer": "ja",
+    "scene": "A woman at home looks for a scarf in a drawer while a second woman waits alone at a cafe table."
+   },
+   {
+    "text": [
+     "Mark moet over een uur weg.",
+     "Hij staat nog in de keuken te tutten met zijn koffie."
+    ],
+    "question": "Is Mark bezig met belangrijke dingen?",
+    "answer": "nee",
+    "scene": "A man stirs a cup of coffee slowly in a kitchen, coat still on the chair."
+   }
+  ]
+ },
+ {
+  "verb": "tutten",
+  "sense": "langdurig met schoonheidsverzorging bezig zijn (to fuss over one's looks)",
+  "gloss": "to fuss over one's looks",
+  "forms": [
+   "tut",
+   "tutten"
+  ],
+  "picture": "A woman sits at a mirror with a hairbrush in her hand. A shelf beside the mirror is full of small jars and bottles.",
+  "mark": "The brush and the crowded shelf: long care for the face and hair.",
+  "alt": "Een vrouw zit voor een spiegel met een haarborstel. Naast de spiegel staat een plank vol potjes en flesjes.",
+  "note": "Wiktionary sense 2. Informal; the card shows long attention to looks, not dawdling in general.",
+  "examples": [
+   {
+    "text": [
+     "Eva heeft vanavond een feest.",
+     "Zij zit een uur te tutten voor de spiegel."
+    ],
+    "question": "Maakt Eva zich mooi?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft haast.",
+     "Hij trekt een jas aan en gaat weg.",
+     "Hij staat niet te tutten."
+    ],
+    "question": "Staat Jan lang voor de spiegel?",
+    "answer": "nee",
+    "scene": "A man in a hurry pulls on a coat at the door."
+   },
+   {
+    "text": [
+     "Piet staat bij de spiegel.",
+     "Hij doet zijn haar en zijn das, steeds opnieuw.",
+     "Hij staat te tutten."
+    ],
+    "question": "Duurt het lang voor Piet klaar is?",
+    "answer": "ja",
+    "scene": "A man adjusts his tie in a mirror and combs his hair."
+   },
+   {
+    "text": [
+     "Anna werkt in de tuin.",
+     "Zij draagt oude kleren en heeft geen tijd om te tutten."
+    ],
+    "question": "Zorgt Anna lang voor haar haar?",
+    "answer": "nee",
+    "scene": "A woman in old clothes digs in a garden."
+   }
+  ],
+  "hold": "Speakers say zich optutten; bare tutten for grooming is marginal. The dawdle card covers the verb."
+ },
+ {
+  "verb": "pocheren",
+  "sense": "koken in heet water dat net niet kookt (to poach)",
+  "gloss": "to poach",
+  "forms": [
+   "pocheert",
+   "pocheren"
+  ],
+  "picture": "A woman at a stove looks into a pan of still water. In one hand she holds an egg just above the water.",
+  "mark": "The egg going into calm, still water in a pan.",
+  "alt": "Een vrouw staat bij het fornuis en kijkt in een pan met rustig water. Boven het water houdt zij een ei.",
+  "note": "Wiktionary sense 1 (cooking). The scene must show still water, not boiling or frying.",
+  "examples": [
+   {
+    "text": [
+     "Eva zet een pan op het vuur.",
+     "Zij pocheert een ei."
+    ],
+    "question": "Ligt het ei straks in water?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan heeft een ei.",
+     "Hij pocheert het niet, hij bakt het in een pan."
+    ],
+    "question": "Ligt het ei van Jan in water?",
+    "answer": "nee",
+    "scene": "A man cooks an egg in a flat pan."
+   },
+   {
+    "text": [
+     "Mark maakt eten voor zijn vrouw.",
+     "Hij pocheert vis."
+    ],
+    "question": "Bakt Mark de vis in olie?",
+    "answer": "nee",
+    "scene": "A man lowers two pieces of fish into a pan with a spoon."
+   },
+   {
+    "text": [
+     "Sam kijkt naar zijn vader.",
+     "Zijn vader pocheert peren.",
+     "Het water in de pan is rustig."
+    ],
+    "question": "Liggen de peren in heet water?",
+    "answer": "ja",
+    "scene": "A boy stands on a chair next to his father at the stove, looking into a pan with pears in it."
+   }
+  ]
+ },
+ {
+  "verb": "pensioneren",
+  "sense": "stoppen met werken en van pensioen genieten (to retire)",
+  "gloss": "to retire",
+  "forms": [
+   "pensioneert",
+   "pensioneren",
+   "gepensioneerd"
+  ],
+  "picture": "An older man carries a box with a plant and a lamp out of an office door. Two colleagues stand behind him and wave.",
+  "mark": "The box in his arms and the farewell: leaving work for good.",
+  "alt": "Een oudere man loopt met een doos uit een kantoor. In de doos staan een plant en een lamp. Twee collega's zwaaien.",
+  "note": "Wiktionary sense 1. Sense 2 (to give someone a pension) is left out: the employer's view is rare for learners.",
+  "examples": [
+   {
+    "text": [
+     "Jan werkt al veertig jaar op kantoor.",
+     "Vanaf morgen is hij gepensioneerd.",
+     "De mensen op kantoor geven hem een cadeau."
+    ],
+    "question": "Is dit de laatste werkdag van Jan?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els is gepensioneerd.",
+     "Zij is vaak op reis."
+    ],
+    "question": "Gaat Els nog elke dag naar haar werk?",
+    "answer": "nee",
+    "scene": "An older woman at an airport with a suitcase and a big smile."
+   },
+   {
+    "text": [
+     "Mark is nog jong en sterk.",
+     "Hij wil nog niet pensioneren."
+    ],
+    "question": "Blijft Mark nog werken?",
+    "answer": "ja",
+    "scene": "A young man in work clothes carries tools to a van."
+   },
+   {
+    "text": [
+     "Piet is kok in een groot restaurant.",
+     "Vorige week is hij gepensioneerd.",
+     "Nu maakt hij alleen thuis eten."
+    ],
+    "question": "Staat Piet nog elke dag in het restaurant?",
+    "answer": "nee",
+    "scene": "An older man in an apron cooks alone at a home stove."
+   }
+  ]
+ },
+ {
+  "verb": "blesseren",
+  "sense": "zich lichamelijk bezeren, vooral bij sport of werk (to injure oneself)",
+  "gloss": "to injure oneself, to hurt a body part",
+  "forms": [
+   "blesseert",
+   "blesseren"
+  ],
+  "picture": "A runner sits on the grass beside a path and holds his ankle. A bandage is wrapped around it and his running shoes are on.",
+  "mark": "The hand on the bandaged ankle: a small injury from sport.",
+  "alt": "Een hardloper zit in het gras naast een pad. Hij houdt zijn enkel vast. Er zit een verband omheen.",
+  "note": "Wiktionary sense 2 (reflexive). A mild sports injury; the severe sense 1 (to hurt someone) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Piet loopt hard in het park.",
+     "Hij valt en blesseert zich aan zijn enkel."
+    ],
+    "question": "Heeft Piet pijn aan zijn enkel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva valt van haar fiets.",
+     "Zij staat meteen weer op en lacht.",
+     "Zij blesseert zich niet."
+    ],
+    "question": "Heeft Eva pijn?",
+    "answer": "nee",
+    "scene": "A woman stands next to a fallen bicycle and brushes off her coat."
+   },
+   {
+    "text": [
+     "Els speelt tennis.",
+     "Zij draait te snel en blesseert zich aan haar knie."
+    ],
+    "question": "Heeft Els pijn aan haar knie?",
+    "answer": "ja",
+    "scene": "A woman sits on a tennis court holding her knee, her racket on the ground."
+   },
+   {
+    "text": [
+     "Jan doet eerst oefeningen.",
+     "Daarna gaat hij hardlopen.",
+     "Zo blesseert hij zich niet."
+    ],
+    "question": "Krijgt Jan pijn bij het lopen?",
+    "answer": "nee",
+    "scene": "A man stretches his legs on a path before running."
+   }
+  ]
+ },
+ {
+  "verb": "gelukken",
+  "sense": "een goede afloop hebben, lukken (to succeed)",
+  "gloss": "to succeed, to work out",
+  "forms": [
+   "gelukt",
+   "gelukken"
+  ],
+  "picture": "A woman holds up a round cake tin with a tall, perfectly risen cake. Her arms are raised and she is smiling.",
+  "mark": "The proud raised cake: it worked out.",
+  "alt": "Een vrouw houdt een ronde vorm omhoog met een hoge taart erin. Zij lacht en heeft haar armen omhoog.",
+  "note": "Wiktionary sense 1. Formal as a verb; in speech it is mostly het is gelukt.",
+  "examples": [
+   {
+    "text": [
+     "Anna bakt voor het eerst een taart.",
+     "Zij haalt de taart uit de vorm.",
+     "Het is gelukt!"
+    ],
+    "question": "Is de taart goed?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva gooit drie keer een bal naar een doos.",
+     "Het is haar niet gelukt."
+    ],
+    "question": "Zit de bal in de doos?",
+    "answer": "nee",
+    "scene": "A woman stands with a ball in her hands in front of a box on the floor."
+   },
+   {
+    "text": [
+     "Mark leert fietsen zonder handen.",
+     "Eerst valt hij.",
+     "Daarna is het hem gelukt."
+    ],
+    "question": "Kan Mark nu zonder handen fietsen?",
+    "answer": "ja",
+    "scene": "A young man rides a bicycle with his arms spread wide."
+   },
+   {
+    "text": [
+     "Sam wil een toren van boeken bouwen.",
+     "Het is hem niet gelukt."
+    ],
+    "question": "Staat de toren van boeken er nu?",
+    "answer": "nee",
+    "scene": "A boy sits among books scattered on the floor."
+   }
+  ]
+ },
+ {
+  "verb": "proeflezen",
+  "sense": "een tekst lezen om fouten te vinden (to proofread)",
+  "gloss": "to proofread",
+  "forms": [
+   "proeflezen"
+  ],
+  "picture": "A man at a desk holds a printed page and a pen. The pen touches one line of the page, and a pile of pages lies beside him.",
+  "mark": "The pen on one line of the page: reading to find mistakes.",
+  "alt": "Een man zit aan een bureau met een pen en een bedrukt papier. De pen wijst naar één regel. Naast hem ligt een stapel papier.",
+  "note": "Not on Wiktionary (page failed to load); sense not checked on Wiktionary. Meaning: read a text to find and correct mistakes before it is sent or printed.",
+  "examples": [
+   {
+    "text": [
+     "Els schrijft een lange tekst.",
+     "Jan wil de tekst proeflezen voordat zij hem stuurt."
+    ],
+    "question": "Zoekt Jan fouten in de tekst?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het bedrijf heeft een nieuwe folder.",
+     "Mark mag hem proeflezen.",
+     "Hij vindt twee fouten."
+    ],
+    "question": "Leest Mark de folder voor zijn plezier?",
+    "answer": "nee",
+    "scene": "A man in an office reads a leaflet with a pen in hand."
+   },
+   {
+    "text": [
+     "Eva schrijft een mooi gedicht.",
+     "Sam leest het alleen voor zijn plezier.",
+     "Hij wil het niet proeflezen."
+    ],
+    "question": "Zoekt Sam naar fouten in het gedicht?",
+    "answer": "nee",
+    "scene": "A boy sits on a sofa with a sheet of paper, smiling."
+   },
+   {
+    "text": [
+     "Anna schrijft een brief voor een nieuwe baan.",
+     "Haar vader gaat de brief proeflezen."
+    ],
+    "question": "Zoekt haar vader fouten in de brief?",
+    "answer": "ja",
+    "scene": "An older man reads a letter at a kitchen table with a pen in his hand; his daughter waits beside him."
+   }
+  ]
+ },
+ {
+  "verb": "spijten",
+  "sense": "berouw veroorzaken, iemand een slecht gevoel geven over wat gebeurd is (to regret)",
+  "gloss": "to be sorry, to regret",
+  "forms": [
+   "spijt",
+   "spijten"
+  ],
+  "picture": "A boy stands with his head down and his hands clasped in front of him. At his feet lie the pieces of a broken vase.",
+  "mark": "The bowed head and clasped hands over the broken vase: regret.",
+  "alt": "Een jongen staat met zijn hoofd naar beneden en zijn handen in elkaar. Aan zijn voeten liggen de stukken van een vaas.",
+  "note": "Wiktionary sense 1 (impersonal: het spijt mij). Sense 2 (obsolete) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Sam laat de vaas van zijn moeder vallen.",
+     "De vaas is kapot.",
+     "Het spijt hem erg."
+    ],
+    "question": "Vindt Sam het jammer?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet lacht om de nieuwe hoed van zijn zus.",
+     "Zij wordt boos.",
+     "Het spijt hem niet."
+    ],
+    "question": "Voelt Piet zich schuldig?",
+    "answer": "nee",
+    "scene": "A boy laughs while his sister in a big hat frowns at him."
+   },
+   {
+    "text": [
+     "Eva was gisteren boos op haar buurman.",
+     "Nu zit zij thuis en denkt daaraan.",
+     "Het spijt haar dat zij zo boos was."
+    ],
+    "question": "Wil Eva dat zij niet zo boos was?",
+    "answer": "ja",
+    "scene": "A woman sits on a sofa with her chin in her hand."
+   },
+   {
+    "text": [
+     "Jan stopt met zijn baan.",
+     "Hij is blij.",
+     "Het spijt hem niet."
+    ],
+    "question": "Wil Jan zijn oude baan terug?",
+    "answer": "nee",
+    "scene": "A man walks out of an office door with a smile and a bag."
+   }
+  ]
+ },
+ {
+  "verb": "verbijsteren",
+  "sense": "in verwarring of grote verbazing brengen (to bewilder)",
+  "gloss": "to bewilder, to astonish",
+  "forms": [
+   "verbijstert",
+   "verbijsteren",
+   "verbijsterd"
+  ],
+  "picture": "A woman holds an empty open wallet in both hands and stares at it with wide eyes and an open mouth.",
+  "mark": "The wide eyes and open mouth: shock and confusion.",
+  "alt": "Een vrouw houdt een lege open portemonnee in haar handen. Zij kijkt ernaar met grote ogen en een open mond.",
+  "note": "Wiktionary sense 1. The usual form is the adjective verbijsterd.",
+  "examples": [
+   {
+    "text": [
+     "Anna kijkt in haar portemonnee.",
+     "Al haar geld is weg.",
+     "Zij is verbijsterd."
+    ],
+    "question": "Is Anna erg verbaasd?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Mark ziet zijn vriend elke dag op het werk.",
+     "Dat verbijstert hem niet."
+    ],
+    "question": "Is Mark erg verbaasd?",
+    "answer": "nee",
+    "scene": "Two men chat calmly at a coffee machine."
+   },
+   {
+    "text": [
+     "De man op het podium laat de kaarten verdwijnen.",
+     "Piet kijkt met open mond.",
+     "Hij is verbijsterd."
+    ],
+    "question": "Begrijpt Piet wat er gebeurt?",
+    "answer": "nee",
+    "scene": "A man in the audience stares at a stage with his mouth open."
+   },
+   {
+    "text": [
+     "Eva weet al dat haar buurman gaat verhuizen.",
+     "Het nieuws verbijstert haar niet."
+    ],
+    "question": "Is het nieuws een grote verrassing voor Eva?",
+    "answer": "nee",
+    "scene": "A woman talks over a garden fence, calm."
+   }
+  ]
+ },
+ {
+  "verb": "volleyen",
+  "sense": "volleybal spelen (to play volleyball)",
+  "gloss": "to play volleyball",
+  "forms": [
+   "volleyen",
+   "volleyt"
+  ],
+  "picture": "Two people stand on sand facing each other with a net between them. One has both hands raised to hit a ball in the air.",
+  "mark": "The net between two players and the raised hands under the ball.",
+  "alt": "Twee mensen staan op het zand tegenover elkaar met een net ertussen. Eén van hen heeft beide handen omhoog onder een bal.",
+  "note": "Wiktionary sense 1 (sport). Informal verb. The football and tennis volley is left out.",
+  "examples": [
+   {
+    "text": [
+     "Sam en Eva staan op het strand.",
+     "Tussen hen hangt een net.",
+     "Zij volleyen."
+    ],
+    "question": "Slaan zij een bal over het net?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan is bij het zwembad.",
+     "Hij zwemt en volleyt niet."
+    ],
+    "question": "Speelt Jan met een bal over een net?",
+    "answer": "nee",
+    "scene": "A man swims in a pool; a net is not visible."
+   },
+   {
+    "text": [
+     "De school heeft een sporthal.",
+     "De kinderen volleyen daar elke woensdag."
+    ],
+    "question": "Spelen de kinderen met een bal over een net?",
+    "answer": "ja",
+    "scene": "Children in a hall hit a ball over a high net."
+   },
+   {
+    "text": [
+     "Anna ligt met een boek in de zon.",
+     "Zij volleyt niet."
+    ],
+    "question": "Speelt Anna nu met een bal?",
+    "answer": "nee",
+    "scene": "A woman reads on a towel in the sun."
+   }
+  ]
+ },
+ {
+  "verb": "doemen",
+  "sense": "tot een slecht lot veroordelen (to doom)",
+  "gloss": "to doom",
+  "forms": [
+   "gedoemd"
+  ],
+  "picture": "A small old boat is tied to a jetty on calm water. It has a big hole in its side and water runs in. A man stands on the jetty and looks down at the hole.",
+  "mark": "The big hole in the boat: a bad end is certain.",
+  "alt": "Een klein oud bootje ligt aan een steiger op rustig water. Er zit een groot gat in de zijkant. Een man staat op de steiger en kijkt naar het gat.",
+  "note": "Wiktionary sense 1. Almost only the participle gedoemd is used; literary, so the card is kept simple.",
+  "examples": [
+   {
+    "text": [
+     "De oude boot van Jan heeft een groot gat.",
+     "Het water komt erin.",
+     "De boot is gedoemd te zinken."
+    ],
+    "question": "Blijft de boot drijven?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna bouwt een kasteel van zand vlak bij het water.",
+     "De golven komen naar het kasteel toe.",
+     "Het is gedoemd te verdwijnen."
+    ],
+    "question": "Gaan de golven het kasteel kapot maken?",
+    "answer": "ja",
+    "scene": "A woman kneels at a sand castle near the waves."
+   },
+   {
+    "text": [
+     "Piet opent een dure winkel in een klein dorp.",
+     "Er komt bijna niemand.",
+     "Zijn winkel is gedoemd te mislukken."
+    ],
+    "question": "Wordt de winkel een succes?",
+    "answer": "nee",
+    "scene": "A man stands alone in an empty shop on a quiet village street."
+   },
+   {
+    "text": [
+     "Het is zaterdag en het weer is mooi.",
+     "Maar Sam is gedoemd om binnen te blijven en te werken."
+    ],
+    "question": "Kan Sam kiezen om naar buiten te gaan?",
+    "answer": "nee",
+    "scene": "A man works at a desk indoors while the sun shines through the window."
+   }
+  ]
+ }
+]

@@ -1,0 +1,1432 @@
+[
+ {
+  "verb": "stimuleren",
+  "sense": "maatregelen nemen om iets te bevorderen (to encourage)",
+  "gloss": "to encourage, to stimulate",
+  "forms": [
+   "stimuleert",
+   "stimuleren"
+  ],
+  "picture": "A teacher sits next to a girl at a table, both looking at an open book. A small pile of books stands at the girl's elbow and the teacher nods.",
+  "mark": "The teacher's nod and the pile of books: someone helps a habit grow.",
+  "alt": "Een leraar zit naast een meisje aan een tafel. Ze kijken samen in een open boek en hij knikt.",
+  "note": "Wiktionary sense 1. Example 3 shows no help, so no encouraging.",
+  "examples": [
+   {
+    "text": [
+     "Eva leest niet graag.",
+     "Haar leraar geeft haar leuke boeken en leest samen met haar.",
+     "Zo stimuleert de leraar Eva om te lezen."
+    ],
+    "question": "Helpt de leraar Eva om meer te lezen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De stad maakt veel nieuwe wegen voor fietsen.",
+     "Zo stimuleert de stad de mensen om te fietsen."
+    ],
+    "question": "Wil de stad dat mensen met de auto gaan?",
+    "answer": "nee",
+    "scene": "A wide bike path along a street with three people cycling on it."
+   },
+   {
+    "text": [
+     "Piet speelt graag gitaar.",
+     "Zijn vader zegt: stop daarmee.",
+     "Hij stimuleert zijn zoon niet."
+    ],
+    "question": "Wil de vader dat Piet gitaar speelt?",
+    "answer": "nee",
+    "scene": "A boy with a guitar, his father in the doorway with arms crossed, looking away."
+   },
+   {
+    "text": [
+     "Sam sport niet vaak.",
+     "Zijn vrienden komen elke week langs en sporten mee.",
+     "Zo stimuleren zij Sam."
+    ],
+    "question": "Helpen de vrienden Sam bij het sporten?",
+    "answer": "ja",
+    "scene": "Sam and two friends jogging together in a park."
+   }
+  ]
+ },
+ {
+  "verb": "vergroten",
+  "sense": "groter doen worden (to enlarge)",
+  "gloss": "to enlarge, to make bigger",
+  "forms": [
+   "vergroot",
+   "vergroten"
+  ],
+  "picture": "A hand holds a magnifying glass over a small flower on a table. Through the glass the flower appears much bigger than the real one beside it.",
+  "mark": "The same flower drawn small beside the glass and large inside it.",
+  "alt": "Een hand houdt een vergrootglas boven een klein bloemetje. In het glas lijkt de bloem veel groter.",
+  "note": "Wiktionary sense 1. Examples 1 and 3 end with the thing small, so the learner has to read the verb for the direction.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft een kleine foto.",
+     "Zij vergroot de foto op de computer."
+    ],
+    "question": "Is de foto nu klein?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De tuin van Jan is te klein.",
+     "Hij koopt grond naast zijn huis.",
+     "Zo vergroot hij zijn tuin."
+    ],
+    "question": "Heeft Jan nu meer tuin?",
+    "answer": "ja",
+    "scene": "A man stands at a fence between his small garden and a bigger empty piece of land."
+   },
+   {
+    "text": [
+     "Piet heeft een kleine kamer.",
+     "Hij haalt een muur weg.",
+     "Zo vergroot hij zijn kamer."
+    ],
+    "question": "Heeft Piet nu minder ruimte?",
+    "answer": "nee",
+    "scene": "A man with a hammer at a wall, a half-broken wall opening into the next room."
+   },
+   {
+    "text": [
+     "Els heeft een klein bedrijf.",
+     "Zij koopt een tweede winkel.",
+     "Zo vergroot zij haar bedrijf."
+    ],
+    "question": "Heeft Els nu meer winkels?",
+    "answer": "ja",
+    "scene": "A woman stands between two shop fronts of the same size, a key in her hand."
+   }
+  ]
+ },
+ {
+  "verb": "vernietigen",
+  "sense": "een einde maken aan, volledig tenietdoen (to destroy)",
+  "gloss": "to destroy, to wipe out",
+  "forms": [
+   "vernietigt",
+   "vernietigen"
+  ],
+  "picture": "A woman feeds a sheet of paper into a shredder. Thin strips of paper hang out of the bottom.",
+  "mark": "The strips: the paper is gone as paper, not just torn once.",
+  "alt": "Een vrouw stopt een vel papier in een machine. Onderaan hangen smalle reepjes papier.",
+  "note": "Wiktionary sense 1, with harmless objects only. Example 3 shows damage that leaves the thing existing, so it is not vernietigen.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft een oude brief.",
+     "Zij wil de brief niet bewaren.",
+     "Zij vernietigt de brief."
+    ],
+    "question": "Heeft Anna de brief nog?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Sam bouwt een kasteel van zand.",
+     "Dan komt er een golf.",
+     "De golf vernietigt het kasteel."
+    ],
+    "question": "Is het kasteel weg?",
+    "answer": "ja",
+    "scene": "A flat beach with a wave reaching a smooth patch of sand where nothing stands any more."
+   },
+   {
+    "text": [
+     "Eva heeft een foto.",
+     "Haar broer schrijft met een pen op de foto.",
+     "Hij vernietigt de foto niet."
+    ],
+    "question": "Is de foto weg?",
+    "answer": "nee",
+    "scene": "A photo on a table with a pen line across it, a boy holding the pen."
+   },
+   {
+    "text": [
+     "Jan heeft een lijst.",
+     "Niemand mag de lijst lezen.",
+     "Hij gooit de lijst in het vuur.",
+     "Zo vernietigt hij hem."
+    ],
+    "question": "Is de lijst weg?",
+    "answer": "ja",
+    "scene": "A man stands with empty hands over a small metal bin; only ash lies in the bin."
+   }
+  ]
+ },
+ {
+  "verb": "informeren",
+  "sense": "iemand inlichten over iets (to inform)",
+  "gloss": "to inform, to let someone know",
+  "forms": [
+   "informeert",
+   "informeren"
+  ],
+  "picture": "A teacher stands in front of a small group of parents and holds up one sheet of paper. The parents sit and listen.",
+  "mark": "One person speaking with a sheet, a group listening.",
+  "alt": "Een leraar staat voor een groepje ouders en houdt een papier omhoog. De ouders zitten en luisteren.",
+  "note": "Wiktionary sense 1 (informeren over). Sense 2 (informeren naar, to ask about) and the reflexive sense are left out.",
+  "examples": [
+   {
+    "text": [
+     "Er is morgen geen school.",
+     "De leraar informeert de ouders daarover."
+    ],
+    "question": "Weten de ouders nu dat er geen school is?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De trein komt te laat.",
+     "De man bij de trein zegt er niets over.",
+     "Hij informeert de mensen niet."
+    ],
+    "question": "Weten de mensen het van de man?",
+    "answer": "nee",
+    "scene": "A man in a uniform beside a train looking at a board, a few people waiting without looking at him."
+   },
+   {
+    "text": [
+     "Eva gaat verhuizen.",
+     "Zij stuurt haar vrienden een bericht.",
+     "Zo informeert zij haar vrienden."
+    ],
+    "question": "Weten haar vrienden dat zij gaat verhuizen?",
+    "answer": "ja",
+    "scene": "A woman at a table with a phone in her hand, boxes behind her."
+   },
+   {
+    "text": [
+     "Piet gaat op reis.",
+     "Hij zegt niets tegen zijn baas.",
+     "Hij informeert zijn baas niet."
+    ],
+    "question": "Weet de baas dat Piet op reis gaat?",
+    "answer": "nee",
+    "scene": "A man with a suitcase walks past his boss's closed office door."
+   }
+  ]
+ },
+ {
+  "verb": "bevestigen",
+  "sense": "iemand mededelen dat iets klopt of doorgaat (to confirm)",
+  "gloss": "to confirm",
+  "forms": [
+   "bevestigt",
+   "bevestigen"
+  ],
+  "picture": "A woman behind a desk nods firmly and gives a thumbs-up to a man leaning on the other side of it.",
+  "mark": "The firm nod and the thumbs-up: yes, that is right.",
+  "alt": "Een vrouw achter een bureau knikt en steekt haar duim omhoog naar een man aan de andere kant.",
+  "note": "Wiktionary sense 1. The sense of fastening something is a separate card. Example 3 shows no confirmation.",
+  "examples": [
+   {
+    "text": [
+     "Jan vraagt: komt u morgen om negen uur?",
+     "Anna zegt: ja, ik kom.",
+     "Zij bevestigt de afspraak."
+    ],
+    "question": "Komt Anna morgen om negen uur?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het hotel krijgt een bericht van Els.",
+     "Het hotel schrijft terug: de kamer is voor u.",
+     "Zo bevestigt het hotel dat de kamer voor Els is."
+    ],
+    "question": "Heeft Els een kamer?",
+    "answer": "ja",
+    "scene": "A woman reads a message on a phone in front of a hotel door."
+   },
+   {
+    "text": [
+     "Mark vraagt: is het feest om acht uur?",
+     "Eva weet het niet zeker.",
+     "Zij bevestigt het niet."
+    ],
+    "question": "Weet Mark nu zeker dat het feest om acht uur is?",
+    "answer": "nee",
+    "scene": "A man holds out his phone to a woman who shrugs."
+   },
+   {
+    "text": [
+     "Piet zegt: ik kom zaterdag.",
+     "Zijn zus vraagt aan hun moeder: komt Piet echt?",
+     "Zijn moeder bevestigt het: ja, hij komt."
+    ],
+    "question": "Zegt de moeder dat Piet niet komt?",
+    "answer": "nee",
+    "scene": "A mother in a kitchen nods at her daughter, a phone on the table."
+   }
+  ]
+ },
+ {
+  "verb": "bevestigen",
+  "sense": "vastmaken (to fasten, to attach)",
+  "gloss": "to fasten, to attach",
+  "forms": [
+   "bevestigt",
+   "bevestigen"
+  ],
+  "picture": "A man holds a wooden shelf against a wall and turns a screw into it with a screwdriver. Two screws already sit in the shelf.",
+  "mark": "The screw holding the shelf to the wall.",
+  "alt": "Een man houdt een plank tegen de muur en draait er een schroef in. Er zitten al twee schroeven in de plank.",
+  "note": "Wiktionary sense 2. A separate card from confirming; Dutch uses the same word for both.",
+  "examples": [
+   {
+    "text": [
+     "Jan heeft een kast.",
+     "Hij bevestigt de kast aan de muur."
+    ],
+    "question": "Zit de kast vast?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna heeft een bord.",
+     "Zij bevestigt het bord aan de deur."
+    ],
+    "question": "Hangt het bord los?",
+    "answer": "nee",
+    "scene": "A woman holds a round sign against a door and turns a screwdriver."
+   },
+   {
+    "text": [
+     "Els heeft een tas.",
+     "Zij bevestigt de tas aan haar fiets."
+    ],
+    "question": "Zit de tas vast aan de fiets?",
+    "answer": "ja",
+    "scene": "A woman pulls a strap tight around a bag on a bike rack."
+   },
+   {
+    "text": [
+     "Mark zet zijn tent op.",
+     "Hij bevestigt de tent niet aan de grond.",
+     "Nu komt de wind."
+    ],
+    "question": "Zit de tent vast aan de grond?",
+    "answer": "nee",
+    "scene": "A tent on a field with no pegs, a tree bending in the wind."
+   }
+  ]
+ },
+ {
+  "verb": "bewaren",
+  "sense": "ervoor zorgen dat iets niet verloren gaat, voor later (to keep, to store)",
+  "gloss": "to keep, to store for later",
+  "forms": [
+   "bewaart",
+   "bewaren"
+  ],
+  "picture": "A man puts a small stack of old photos into a box and slides the box onto a shelf.",
+  "mark": "The box on the shelf with the lid on: kept, not thrown away.",
+  "alt": "Een man stopt oude foto's in een doos en schuift de doos op een plank.",
+  "note": "Wiktionary sense 1. Example 3 shows a thing thrown away, which is the opposite.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft een mooie kaart.",
+     "Zij bewaart de kaart in een doos."
+    ],
+    "question": "Gooit Anna de kaart weg?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan heeft nog soep over.",
+     "Hij doet de soep in een pot.",
+     "Hij bewaart de soep voor morgen."
+    ],
+    "question": "Gooit Jan de soep weg?",
+    "answer": "nee",
+    "scene": "A man puts a lid on a jar of soup."
+   },
+   {
+    "text": [
+     "Els krijgt een brief van haar oma.",
+     "Zij leest de brief.",
+     "Zij bewaart de brief niet."
+    ],
+    "question": "Heeft Els de brief later nog?",
+    "answer": "ja",
+    "scene": "A woman drops a letter into a waste bin."
+   },
+   {
+    "text": [
+     "Piet vindt een oude pen.",
+     "Hij legt de pen in een doos.",
+     "Hij bewaart de pen."
+    ],
+    "question": "Heeft Piet de pen later nog?",
+    "answer": "ja",
+    "scene": "A man closes a small wooden box with a pen inside."
+   }
+  ]
+ },
+ {
+  "verb": "produceren",
+  "sense": "bij voortduring vervaardigen (to produce)",
+  "gloss": "to produce, to make in large amounts",
+  "forms": [
+   "produceert",
+   "produceren"
+  ],
+  "picture": "A long belt carries a row of identical bicycles through a factory. A worker stands beside the belt.",
+  "mark": "The row of identical bicycles: many of the same thing.",
+  "alt": "In een fabriek rijdt een lange band met een rij gelijke fietsen. Een werker staat ernaast.",
+  "note": "Wiktionary sense 1. The things produced are common ones: bikes, milk, power.",
+  "examples": [
+   {
+    "text": [
+     "In de fabriek staan machines.",
+     "Zij maken elke dag veel fietsen.",
+     "De fabriek produceert fietsen."
+    ],
+    "question": "Maakt de fabriek fietsen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els heeft een bedrijf.",
+     "Het bedrijf produceert elke dag veel borden."
+    ],
+    "question": "Koopt het bedrijf borden?",
+    "answer": "nee",
+    "scene": "A woman beside a high stack of plates on a table in a workshop."
+   },
+   {
+    "text": [
+     "De school heeft een tuin.",
+     "Daar groeit fruit voor alle kinderen.",
+     "De tuin produceert fruit."
+    ],
+    "question": "Geeft de tuin fruit?",
+    "answer": "ja",
+    "scene": "A school garden with fruit trees and a child holding a full basket."
+   },
+   {
+    "text": [
+     "De fabriek is dicht.",
+     "Er werkt niemand.",
+     "Zij produceert nu niets."
+    ],
+    "question": "Maakt de fabriek nu iets?",
+    "answer": "nee",
+    "scene": "A factory with closed doors and a still belt inside, seen through a window."
+   }
+  ]
+ },
+ {
+  "verb": "herkennen",
+  "sense": "waarnemen en beseffen wie of wat het is (to recognize)",
+  "gloss": "to recognize",
+  "forms": [
+   "herkent",
+   "herkennen"
+  ],
+  "picture": "Two people on a station platform. A woman points and smiles at a man in the crowd, who opens his arms.",
+  "mark": "The pointing finger and the smile: she knows who it is.",
+  "alt": "Op een perron wijst een vrouw lachend naar een man in de menigte. Hij opent zijn armen.",
+  "note": "Wiktionary sense 1. Examples 3 and 4 show not knowing, which the learner meets as the edge of the sense.",
+  "examples": [
+   {
+    "text": [
+     "Anna ziet een man in de winkel.",
+     "Het is een oude vriend.",
+     "Zij herkent hem meteen."
+    ],
+    "question": "Weet Anna wie de man is?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan hoort een lied op de radio.",
+     "Hij herkent het lied meteen."
+    ],
+    "question": "Is het lied nieuw voor Jan?",
+    "answer": "nee",
+    "scene": "A man in a kitchen with a radio, his finger tapping on the table."
+   },
+   {
+    "text": [
+     "Eva ziet een foto van haar vader als kind.",
+     "Hij ziet er heel anders uit.",
+     "Zij herkent hem niet."
+    ],
+    "question": "Weet Eva wie op de foto staat?",
+    "answer": "nee",
+    "scene": "A woman looks at an old photo with a puzzled face."
+   },
+   {
+    "text": [
+     "Sam komt na lange tijd terug in zijn dorp.",
+     "Er staan nieuwe huizen en nieuwe winkels.",
+     "Hij herkent zijn straat bijna niet."
+    ],
+    "question": "Weet Sam meteen dat dit zijn straat is?",
+    "answer": "nee",
+    "scene": "A man with a bag stands in a street full of new buildings and looks around."
+   }
+  ]
+ },
+ {
+  "verb": "verspreiden",
+  "sense": "over een groter oppervlak uitbreiden, in omloop brengen (to spread)",
+  "gloss": "to spread, to distribute",
+  "forms": [
+   "verspreidt",
+   "verspreiden"
+  ],
+  "picture": "A woman scatters seed by hand across a field in a wide arc. Small dots hang in the air along the arc and lie spread across the ground.",
+  "mark": "The wide arc of hand and dots: spread out, not in one heap.",
+  "alt": "Een vrouw gooit met haar hand zaad in een brede boog over een veld. Overal liggen en vliegen kleine puntjes.",
+  "note": "Wiktionary sense 1. The reflexive use (het nieuws verspreidt zich) is left out as the same idea.",
+  "examples": [
+   {
+    "text": [
+     "Jan heeft een zak zand.",
+     "Hij verspreidt het zand over het pad."
+    ],
+    "question": "Ligt het zand op één plek?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Eva heeft veel kaarten voor haar feest.",
+     "Zij verspreidt de kaarten in de hele straat."
+    ],
+    "question": "Krijgen veel huizen een kaart?",
+    "answer": "ja",
+    "scene": "A woman walks along a street and drops a card in each letterbox."
+   },
+   {
+    "text": [
+     "Het nieuws is leuk.",
+     "Sam vertelt het aan iedereen.",
+     "Hij verspreidt het nieuws."
+    ],
+    "question": "Weten veel mensen het nieuws nu?",
+    "answer": "ja",
+    "scene": "A man talks to a group of neighbours, who turn and tell others."
+   },
+   {
+    "text": [
+     "Els heeft zout in haar hand.",
+     "Zij laat het zout op één plek vallen.",
+     "Zij verspreidt het zout niet."
+    ],
+    "question": "Ligt het zout overal?",
+    "answer": "nee",
+    "scene": "A woman tips her hand over a plate; one small heap of grains sits on it."
+   }
+  ]
+ },
+ {
+  "verb": "slagen",
+  "sense": "een examen of toets goed afsluiten (to pass an exam)",
+  "gloss": "to pass (an exam)",
+  "forms": [
+   "slaagt",
+   "slagen",
+   "geslaagd"
+  ],
+  "picture": "A young man jumps with raised arms in front of a school door. In one hand he holds a rolled-up paper.",
+  "mark": "The jumping figure with the rolled paper: he made it.",
+  "alt": "Een jongeman springt met opgeheven armen voor een schooldeur. Hij heeft een opgerold papier in zijn hand.",
+  "note": "Wiktionary sense 2. Slagen in (to succeed in doing something) is a separate card.",
+  "examples": [
+   {
+    "text": [
+     "Sam doet een examen.",
+     "De leraar zegt: dat is goed.",
+     "Sam is geslaagd."
+    ],
+    "question": "Moet Sam het examen opnieuw doen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Eva doet examen voor haar rijbewijs.",
+     "Zij rijdt goed.",
+     "Zij slaagt voor het examen."
+    ],
+    "question": "Mag Eva nu in de auto rijden?",
+    "answer": "ja",
+    "scene": "A woman in a car smiles and holds a card, a man next to her gives a thumbs-up."
+   },
+   {
+    "text": [
+     "Jan leert niet voor zijn examen.",
+     "Hij weet bijna niets.",
+     "Hij slaagt niet voor het examen."
+    ],
+    "question": "Krijgt Jan een diploma?",
+    "answer": "nee",
+    "scene": "A boy at a desk looking at a blank paper with his head in his hand."
+   },
+   {
+    "text": [
+     "Piet en Mark doen samen examen.",
+     "Piet slaagt.",
+     "Mark slaagt niet."
+    ],
+    "question": "Moet Mark het examen opnieuw doen?",
+    "answer": "ja",
+    "scene": "Two boys at the school door, one jumping and the other with his head down."
+   }
+  ]
+ },
+ {
+  "verb": "slagen",
+  "sense": "erin lukken iets te bereiken na moeite (to succeed)",
+  "gloss": "to succeed (in doing something)",
+  "forms": [
+   "slaagt",
+   "slagen"
+  ],
+  "picture": "A boy stands on a chair next to a high shelf and holds a book he has just taken from it. His other hand is raised.",
+  "mark": "The book in his hand and the raised arm: it worked.",
+  "alt": "Een jongen staat op een stoel naast een hoge plank en houdt een boek vast dat hij er net af heeft gehaald. Zijn andere hand is omhoog.",
+  "note": "Wiktionary sense 1 (slagen in). Example 2 and 4 show not succeeding, so the learner reads the result, not the effort.",
+  "examples": [
+   {
+    "text": [
+     "Sam wil een boek van de kast pakken.",
+     "Hij is te klein.",
+     "Met een stoel slaagt hij er toch in."
+    ],
+    "question": "Heeft Sam het boek nu?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna wil de deur openen.",
+     "Zij heeft geen sleutel.",
+     "Zij slaagt er niet in."
+    ],
+    "question": "Is de deur open?",
+    "answer": "nee",
+    "scene": "A woman pulls at a locked door handle."
+   },
+   {
+    "text": [
+     "Jan wil zijn fiets maken.",
+     "Hij werkt een uur lang.",
+     "Hij slaagt erin."
+    ],
+    "question": "Is de fiets nu goed?",
+    "answer": "ja",
+    "scene": "A man next to an upside-down bike wipes his hands and smiles."
+   },
+   {
+    "text": [
+     "Eva wil een mooie taart maken.",
+     "Zij slaagt er niet in."
+    ],
+    "question": "Is de taart goed?",
+    "answer": "nee",
+    "scene": "A woman holds a dark flat cake on a plate with a sad face."
+   }
+  ]
+ },
+ {
+  "verb": "beperken",
+  "sense": "een grens stellen aan hoeveel of hoe vaak (to limit)",
+  "gloss": "to limit, to restrict",
+  "forms": [
+   "beperkt",
+   "beperken"
+  ],
+  "picture": "A mother holds a full bowl of sweets and a child reaches for it. The child holds only one sweet in the hand.",
+  "mark": "The child's hand with one sweet and the bowl still full: a limit.",
+  "alt": "Een moeder houdt een bak snoep vast. Een kind pakt er één stuk uit; de bak blijft vol.",
+  "note": "Wiktionary sense 1. The reflexive use is left out.",
+  "examples": [
+   {
+    "text": [
+     "Sam wil veel chocolade.",
+     "Zijn moeder geeft hem één stuk per dag.",
+     "Zij beperkt zijn chocolade."
+    ],
+    "question": "Mag Sam zoveel chocolade pakken als hij wil?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De zaal is klein.",
+     "Er mogen maar tien mensen naar binnen.",
+     "De baas beperkt het aantal mensen."
+    ],
+    "question": "Mogen er veel mensen naar binnen?",
+    "answer": "nee",
+    "scene": "A man at the door of a small room holds out an arm to a queue."
+   },
+   {
+    "text": [
+     "Els wil minder koffie drinken.",
+     "Nu drinkt zij maar één kop per dag.",
+     "Zij beperkt haar koffie."
+    ],
+    "question": "Drinkt Els minder koffie dan eerst?",
+    "answer": "ja",
+    "scene": "A woman with one cup on a table, a full coffee pot behind her."
+   },
+   {
+    "text": [
+     "Jan wil niet de hele dag op de computer werken.",
+     "Hij beperkt zijn werk tot de ochtend."
+    ],
+    "question": "Werkt Jan alleen in de ochtend?",
+    "answer": "ja",
+    "scene": "A man closes his laptop while the sun is still low in the window."
+   }
+  ]
+ },
+ {
+  "verb": "besparen",
+  "sense": "minder van iets gebruiken of uitgeven (to save)",
+  "gloss": "to save (energy, money, time)",
+  "forms": [
+   "bespaart",
+   "besparen"
+  ],
+  "picture": "A woman turns a knob on a radio to switch it off. The room around her is empty and a plug lies on the floor.",
+  "mark": "The hand on the knob and the empty room.",
+  "alt": "Een vrouw draait aan een knop om de radio uit te zetten. Er is verder niemand in de kamer.",
+  "note": "Wiktionary senses 1 and 2 together: using or spending less is one idea in practice. The figurative sense (to spare someone something) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Niemand is in de kamer.",
+     "Anna zet de radio uit.",
+     "Zo bespaart zij stroom."
+    ],
+    "question": "Gebruikt de radio nu nog stroom?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan neemt een korte douche.",
+     "Zo bespaart hij water."
+    ],
+    "question": "Gebruikt Jan veel water?",
+    "answer": "nee",
+    "scene": "A man in a shower with a small clock beside it."
+   },
+   {
+    "text": [
+     "Els gaat op de fiets naar haar werk.",
+     "Zij betaalt niets voor de auto.",
+     "Zo bespaart zij geld."
+    ],
+    "question": "Houdt Els geld over?",
+    "answer": "ja",
+    "scene": "A woman cycles past a parked car."
+   },
+   {
+    "text": [
+     "Sam wast zijn handen.",
+     "Hij laat het water lopen.",
+     "Hij bespaart geen water."
+    ],
+    "question": "Gebruikt Sam veel water?",
+    "answer": "ja",
+    "scene": "A boy at a sink with the water running over his hands, soap beside him."
+   }
+  ]
+ },
+ {
+  "verb": "communiceren",
+  "sense": "met elkaar in contact zijn en informatie uitwisselen (to communicate)",
+  "gloss": "to communicate",
+  "forms": [
+   "communiceren"
+  ],
+  "picture": "Two people stand on either side of a glass wall. One points and the other makes shapes with both hands, and both look at each other.",
+  "mark": "Both people use their hands and look at each other: a message goes both ways.",
+  "alt": "Twee mensen staan aan weerszijden van een glazen wand. Ze gebaren met hun handen en kijken naar elkaar.",
+  "note": "Wiktionary sense 2 (the communion sense is left out). Example 3 shows communication failing.",
+  "examples": [
+   {
+    "text": [
+     "Anna en Piet spreken niet dezelfde taal.",
+     "Zij praten met hun handen.",
+     "Zo communiceren zij."
+    ],
+    "question": "Begrijpen zij elkaar een beetje?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan woont ver van zijn zus.",
+     "Zij sturen elke dag een bericht.",
+     "Zij communiceren via de telefoon."
+    ],
+    "question": "Praten Jan en zijn zus via berichten?",
+    "answer": "ja",
+    "scene": "A man and a woman in two different rooms, each with a phone in hand."
+   },
+   {
+    "text": [
+     "Het is te druk in de zaal.",
+     "Mark en Eva kunnen elkaar niet horen.",
+     "Zij kunnen niet communiceren."
+    ],
+    "question": "Kunnen zij goed met elkaar praten?",
+    "answer": "nee",
+    "scene": "Two people at a party table with their hands over their ears and a speaker between them."
+   },
+   {
+    "text": [
+     "De baas praat elke week met alle mensen.",
+     "Zij communiceren goed."
+    ],
+    "question": "Praten de baas en de mensen weinig met elkaar?",
+    "answer": "nee",
+    "scene": "A boss and four people around a table, all looking at each other."
+   }
+  ]
+ },
+ {
+  "verb": "danken",
+  "sense": "erkentelijkheid betonen voor hulp of een gift (to thank)",
+  "gloss": "to thank",
+  "forms": [
+   "dankt",
+   "danken"
+  ],
+  "picture": "A woman hands a small box to a man who stands next to a bicycle he has just helped her with. Her other hand is on her chest.",
+  "mark": "The hand on the chest and the handed gift: thanks.",
+  "alt": "Een vrouw geeft een doosje aan een man naast een fiets. Haar andere hand ligt op haar borst.",
+  "note": "Wiktionary sense 1. Danken is formal; in speech people say bedanken or dank je wel, so the card keeps the examples written and polite.",
+  "examples": [
+   {
+    "text": [
+     "Een vriend helpt Anna met haar fiets.",
+     "Anna geeft hem een doos chocolade.",
+     "Zij dankt haar vriend voor de hulp."
+    ],
+    "question": "Is Anna blij met de hulp van haar vriend?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan krijgt een mooi cadeau van Eva.",
+     "Hij schrijft haar een kaartje.",
+     "Hij dankt Eva voor het cadeau."
+    ],
+    "question": "Zegt Jan dank voor het cadeau?",
+    "answer": "ja",
+    "scene": "A man at a desk writes a card, a wrapped gift beside it."
+   },
+   {
+    "text": [
+     "Els krijgt een fiets van haar oma.",
+     "Zij zegt niets en loopt weg.",
+     "Zij dankt haar oma niet."
+    ],
+    "question": "Zegt Els dank?",
+    "answer": "nee",
+    "scene": "A woman rides away on a new bike, her grandmother waves in the background."
+   },
+   {
+    "text": [
+     "Een man houdt de deur voor Sam open.",
+     "Sam zegt: dank u wel.",
+     "Hij dankt de man."
+    ],
+    "question": "Is Sam boos op de man?",
+    "answer": "nee",
+    "scene": "A man holds a door open for another man who nods as he walks in."
+   }
+  ]
+ },
+ {
+  "verb": "plegen",
+  "sense": "gewend zijn te doen, vaak doen (plegen te + infinitief) (to be in the habit of)",
+  "gloss": "to be in the habit of",
+  "forms": [
+   "pleegt",
+   "plegen"
+  ],
+  "picture": "An old man walks along a path at dusk with a dog beside him. Behind him a house with a lit window.",
+  "mark": "The same path at the same hour: a habit.",
+  "alt": "Een oude man wandelt in de schemering met een hond over een pad. Achter hem staat een huis met een verlicht raam.",
+  "note": "Wiktionary sense 3, formal and written. Sense 1 (to commit, mostly a crime) is left out as a sensitive scene; sense 2 is a fixed phrase (overleg plegen).",
+  "examples": [
+   {
+    "text": [
+     "Opa drinkt thee om zes uur.",
+     "Daarna pleegt hij te wandelen."
+    ],
+    "question": "Wandelt Opa meestal na de thee?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els staat vroeg op.",
+     "Zij pleegt eerst koffie te drinken."
+    ],
+    "question": "Drinkt Els meestal eerst koffie?",
+    "answer": "ja",
+    "scene": "A woman at a kitchen table at sunrise with a cup of coffee."
+   },
+   {
+    "text": [
+     "Jan werkt van maandag tot vrijdag.",
+     "Hij pleegt op zondag niet te werken."
+    ],
+    "question": "Werkt Jan meestal op zondag?",
+    "answer": "nee",
+    "scene": "A man in a garden chair with a newspaper, a closed office door seen through a window."
+   },
+   {
+    "text": [
+     "Mark komt altijd op tijd.",
+     "Hij pleegt niet laat te komen."
+    ],
+    "question": "Komt Mark meestal laat?",
+    "answer": "nee",
+    "scene": "A man arrives at a door while a clock on the wall shows an early hour."
+   }
+  ],
+  "hold": "formal and old-fashioned: plegen te + infinitive is written Dutch; a learner at A2 says meestal or altijd instead, so the card would teach a stiff pattern"
+ },
+ {
+  "verb": "beslissen",
+  "sense": "kiezen tussen mogelijkheden en vaststellen wat er gebeurt (to decide)",
+  "gloss": "to decide",
+  "forms": [
+   "beslist",
+   "beslissen"
+  ],
+  "picture": "A woman stands in front of two coats on a rack. She holds one coat by the sleeve and has turned her back on the other.",
+  "mark": "The hand on one coat: the choice is made.",
+  "alt": "Een vrouw staat voor twee jassen aan een rek. Zij pakt één jas bij de mouw en kijkt niet naar de andere.",
+  "note": "Wiktionary senses 1 and 2 are one idea here: choose, and then it is settled. Example 3 shows the decision not yet made.",
+  "examples": [
+   {
+    "text": [
+     "Sam heeft twee jassen.",
+     "Hij kijkt er lang naar.",
+     "Dan beslist hij: ik pak deze."
+    ],
+    "question": "Weet Sam nu welke jas hij neemt?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els en Jan zijn in de stad.",
+     "Zij weten niet wat zij gaan doen.",
+     "Jan beslist: wij gaan naar huis."
+    ],
+    "question": "Gaan zij naar huis?",
+    "answer": "ja",
+    "scene": "A man and a woman on a busy shopping street; he points back towards a row of houses, she nods."
+   },
+   {
+    "text": [
+     "Anna wil een kat of een hond.",
+     "Zij weet het nog niet.",
+     "Zij beslist nog niet."
+    ],
+    "question": "Heeft Anna al gekozen?",
+    "answer": "nee",
+    "scene": "A woman between a cat on one chair and a dog on another, finger on her chin."
+   },
+   {
+    "text": [
+     "Het regent hard.",
+     "Mark beslist: wij gaan niet naar het strand."
+    ],
+    "question": "Gaat Mark naar het strand?",
+    "answer": "nee",
+    "scene": "A man looks out of a window at rain, a bag on the floor behind him."
+   }
+  ]
+ },
+ {
+  "verb": "streven",
+  "sense": "een doel willen bereiken en daar moeite voor doen (to strive)",
+  "gloss": "to strive (for)",
+  "forms": [
+   "streeft",
+   "streven"
+  ],
+  "picture": "A boy stands at the bottom of a hill and looks at a flag on top. One foot is already on the first step of the path.",
+  "mark": "The foot on the first step and the eyes on the flag: effort towards a goal.",
+  "alt": "Een jongen staat onderaan een heuvel en kijkt naar een vlag op de top. Hij zet zijn voet op de eerste stap van het pad.",
+  "note": "Wiktionary sense 1 (streven naar). Examples 3 and 4 show no goal or a quiet goal.",
+  "examples": [
+   {
+    "text": [
+     "Eva wil een diploma halen.",
+     "Zij leert elke avond.",
+     "Zij streeft naar een diploma."
+    ],
+    "question": "Werkt Eva voor een doel?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De mensen in de straat willen een mooie straat.",
+     "Zij planten bloemen en maken alles schoon.",
+     "Zij streven naar een mooie straat."
+    ],
+    "question": "Doen de mensen moeite voor hun straat?",
+    "answer": "ja",
+    "scene": "Neighbours plant flowers along a pavement, one picks up litter."
+   },
+   {
+    "text": [
+     "Piet wil niets bereiken.",
+     "Hij blijft de hele dag op de bank.",
+     "Hij streeft nergens naar."
+    ],
+    "question": "Heeft Piet een doel?",
+    "answer": "nee",
+    "scene": "A man lying on a sofa with his eyes closed."
+   },
+   {
+    "text": [
+     "Mark streeft naar rust.",
+     "Hij gaat niet op reis en werkt weinig."
+    ],
+    "question": "Wil Mark het druk hebben?",
+    "answer": "nee",
+    "scene": "A man in a small garden with a cup of tea and a slow cat."
+   }
+  ]
+ },
+ {
+  "verb": "verminderen",
+  "sense": "minder worden, afnemen (to decrease)",
+  "gloss": "to decrease, to become less",
+  "forms": [
+   "vermindert",
+   "verminderen"
+  ],
+  "picture": "A market square seen from above. The left half is full of people, the right half has only a few.",
+  "mark": "Many people on one side, few on the other: the crowd gets thinner.",
+  "alt": "Een marktplein van boven gezien. Links staan veel mensen, rechts maar een paar.",
+  "note": "Wiktionary sense 1 (intransitive). The transitive sense (to make less) is a separate card.",
+  "examples": [
+   {
+    "text": [
+     "Op de markt is het druk.",
+     "Aan het einde van de dag vermindert de drukte."
+    ],
+    "question": "Zijn er later minder mensen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De trein rijdt snel.",
+     "Bij het station vermindert de snelheid."
+    ],
+    "question": "Rijdt de trein later snel?",
+    "answer": "nee",
+    "scene": "A train slowing along a platform with people waiting."
+   },
+   {
+    "text": [
+     "De storm is sterk.",
+     "Na een uur vermindert de wind."
+    ],
+    "question": "Is de wind later sterker?",
+    "answer": "nee",
+    "scene": "Trees bending to one side, then the same trees standing straight."
+   },
+   {
+    "text": [
+     "Het regent al een uur.",
+     "De regen vermindert niet."
+    ],
+    "question": "Regent het minder?",
+    "answer": "nee",
+    "scene": "A window with heavy rain running down it."
+   }
+  ]
+ },
+ {
+  "verb": "verminderen",
+  "sense": "kleiner maken, doen afnemen (to reduce)",
+  "gloss": "to reduce, to make less",
+  "forms": [
+   "vermindert",
+   "verminderen"
+  ],
+  "picture": "A woman at a table holds a spoon with a little sugar above a cup of tea. Next to her a sugar bowl is still almost full.",
+  "mark": "One small spoon over the cup: she takes less.",
+  "alt": "Een vrouw houdt een lepeltje met een beetje suiker boven een kopje thee. Naast haar staat een bijna volle suikerpot.",
+  "note": "Wiktionary sense 2 (transitive): someone makes a thing less. The intransitive sense is a separate card.",
+  "examples": [
+   {
+    "text": [
+     "Anna wil minder suiker in haar thee.",
+     "Nu doet zij maar een beetje.",
+     "Zij vermindert de suiker."
+    ],
+    "question": "Doet Anna nu minder suiker in haar thee?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan rijdt te hard in het dorp.",
+     "Hij ziet een school.",
+     "Hij vermindert de snelheid."
+    ],
+    "question": "Rijdt Jan nu snel?",
+    "answer": "nee",
+    "scene": "A man in a car near a school building with children outside."
+   },
+   {
+    "text": [
+     "Els heeft veel afval.",
+     "Zij koopt minder spullen in plastic.",
+     "Zo vermindert zij het afval."
+    ],
+    "question": "Maakt Els minder afval?",
+    "answer": "ja",
+    "scene": "A woman puts a loose carrot, not wrapped, in her shopping bag."
+   },
+   {
+    "text": [
+     "Piet werkt zes dagen per week.",
+     "Hij blijft zes dagen werken.",
+     "Hij vermindert zijn werk niet."
+    ],
+    "question": "Werkt Piet nu minder?",
+    "answer": "nee",
+    "scene": "A man at a desk on a sunny morning while his family leaves for the park without him."
+   }
+  ]
+ },
+ {
+  "verb": "verwerken",
+  "sense": "een grondstof gebruiken om een product te maken (to process into)",
+  "gloss": "to process, to turn into",
+  "forms": [
+   "verwerkt",
+   "verwerken"
+  ],
+  "picture": "A man saws a plank at a bench. Next to him a pile of rough boards and a finished small cupboard.",
+  "mark": "Boards, saw and cupboard in one line: raw material to product.",
+  "alt": "Een man zaagt een plank op een werkbank. Naast hem liggen ruwe planken en staat een klein kastje.",
+  "note": "Wiktionary sense 1. Sense 2 (to digest) and sense 3 (to come to terms with a hard event) are left out; the latter is a sensitive scene.",
+  "examples": [
+   {
+    "text": [
+     "Jan heeft hout.",
+     "Hij verwerkt het hout tot een kast."
+    ],
+    "question": "Maakt Jan een kast van het hout?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het bedrijf heeft oud papier.",
+     "Het verwerkt het papier tot nieuwe dozen."
+    ],
+    "question": "Maakt het bedrijf boeken van het papier?",
+    "answer": "nee",
+    "scene": "A machine in a workshop with old paper going in and flat boxes coming out."
+   },
+   {
+    "text": [
+     "Het bedrijf heeft zand.",
+     "Het verwerkt het zand tot glas."
+    ],
+    "question": "Wordt het zand glas?",
+    "answer": "ja",
+    "scene": "A pile of sand next to a glass bottle on a factory belt."
+   },
+   {
+    "text": [
+     "De boer heeft melk.",
+     "Hij drinkt de melk gewoon op.",
+     "Hij verwerkt de melk niet."
+    ],
+    "question": "Maakt de boer iets van de melk?",
+    "answer": "nee",
+    "scene": "A farmer drinks a glass of milk at a kitchen table."
+   }
+  ]
+ },
+ {
+  "verb": "wennen",
+  "sense": "gewoon worden, vertrouwd raken (to get used to)",
+  "gloss": "to get used to",
+  "forms": [
+   "went",
+   "wennen"
+  ],
+  "picture": "A boy stands at a classroom door with his bag on his back. He looks around the room with a small smile.",
+  "mark": "The small smile of a boy in a new place: no longer strange.",
+  "alt": "Een jongen staat bij de deur van een klas met zijn tas op zijn rug. Hij kijkt rond en lacht een beetje.",
+  "note": "Wiktionary sense 1. Sense 2 (to make someone familiar) is left out. The examples show time passing.",
+  "examples": [
+   {
+    "text": [
+     "Sam gaat naar een nieuwe school.",
+     "De eerste dag is alles vreemd.",
+     "Na een week went het."
+    ],
+    "question": "Voelt Sam zich na een week beter op school?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva woont nu in een andere stad.",
+     "Zij kent nog niemand.",
+     "Zij moet nog wennen."
+    ],
+    "question": "Voelt Eva zich al helemaal thuis?",
+    "answer": "nee",
+    "scene": "A woman alone in a new flat among boxes."
+   },
+   {
+    "text": [
+     "Jan heeft een nieuwe baan.",
+     "Eerst is het werk heel vreemd.",
+     "Na een tijd went hij eraan."
+    ],
+    "question": "Is het werk later gewoon voor Jan?",
+    "answer": "ja",
+    "scene": "A man at a desk in a new office, relaxed, with a cup of coffee."
+   },
+   {
+    "text": [
+     "Het is koud in het nieuwe huis.",
+     "Anna kan niet wennen aan het huis."
+    ],
+    "question": "Is Anna blij met het huis?",
+    "answer": "nee",
+    "scene": "A woman in a coat and scarf sits inside a room, her breath visible."
+   }
+  ]
+ },
+ {
+  "verb": "bevorderen",
+  "sense": "een hogere rang of functie geven (to promote)",
+  "gloss": "to promote (to a higher job)",
+  "forms": [
+   "bevordert",
+   "bevorderen",
+   "bevorderd"
+  ],
+  "picture": "On a staircase a boss shakes the hand of a worker. The worker stands one step higher than the boss.",
+  "mark": "The worker one step above: a higher position.",
+  "alt": "Op een trap geeft een baas een hand aan een werker. De werker staat een trede hoger dan de baas.",
+  "note": "Wiktionary sense 1. Sense 2 (to encourage) is a separate card. Example 2 shows a refusal.",
+  "examples": [
+   {
+    "text": [
+     "Piet werkt al lang bij de winkel.",
+     "Hij werkt hard en goed.",
+     "De baas bevordert hem tot chef."
+    ],
+    "question": "Is Piet nu chef?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan komt vaak te laat.",
+     "De baas bevordert hem niet."
+    ],
+    "question": "Wordt Jan chef?",
+    "answer": "nee",
+    "scene": "A man arrives at an office door while a clock shows a late hour; the boss shakes his head."
+   },
+   {
+    "text": [
+     "Els is al lang leraar.",
+     "Nu wordt zij bevorderd tot baas van de school."
+    ],
+    "question": "Heeft Els nu een betere baan?",
+    "answer": "ja",
+    "scene": "A woman at a large desk in a school office, a class of children behind a glass door."
+   },
+   {
+    "text": [
+     "Mark is nieuw bij het bedrijf.",
+     "Hij werkt nog maar een week.",
+     "De baas bevordert hem niet."
+    ],
+    "question": "Krijgt Mark een betere baan?",
+    "answer": "nee",
+    "scene": "A man with a new badge carrying a box into an office."
+   }
+  ],
+  "band": "A2",
+  "band_why": "intended A2 by judgement; the promotion sense is a work word"
+ },
+ {
+  "verb": "bevorderen",
+  "sense": "helpen dat iets beter wordt of meer gebeurt (to promote, to be good for)",
+  "gloss": "to promote, to help along",
+  "forms": [
+   "bevordert",
+   "bevorderen"
+  ],
+  "picture": "A man cycles through a green park. A tree and a bench stand along the path and the man smiles.",
+  "mark": "The smiling cyclist: the activity does something good.",
+  "alt": "Een man fietst door een groen park. Langs het pad staan een boom en een bank. Hij lacht.",
+  "note": "Wiktionary sense 2. A thing, not a person, usually does the helping; stimuleren has a person who takes measures.",
+  "examples": [
+   {
+    "text": [
+     "Jan fietst elke dag.",
+     "Het fietsen bevordert zijn gezondheid."
+    ],
+    "question": "Is fietsen goed voor Jan?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva slaapt genoeg.",
+     "Genoeg slaap bevordert het leren."
+    ],
+    "question": "Helpt slaap bij het leren?",
+    "answer": "ja",
+    "scene": "A girl asleep in bed, a school bag on the chair."
+   },
+   {
+    "text": [
+     "Mark drinkt koffie in de avond.",
+     "Koffie bevordert de slaap niet."
+    ],
+    "question": "Is koffie goed voor de slaap?",
+    "answer": "nee",
+    "scene": "A man with a big cup of coffee at night, a bed behind him."
+   },
+   {
+    "text": [
+     "Kinderen lezen een boek met hun ouders.",
+     "Lezen bevordert de taal van kinderen."
+    ],
+    "question": "Maakt lezen de taal van kinderen minder goed?",
+    "answer": "nee",
+    "scene": "A father and a child on a sofa with one book."
+   }
+  ],
+  "band": "A2",
+  "band_why": "intended A2 by judgement"
+ },
+ {
+  "verb": "groeten",
+  "sense": "een wens of beleefdheid richten tot iemand met woord of gebaar (to greet)",
+  "gloss": "to greet",
+  "forms": [
+   "groet",
+   "groeten"
+  ],
+  "picture": "Two people on a street. One lifts a hand in a wave towards the other, who nods back.",
+  "mark": "The raised hand: a greeting.",
+  "alt": "Twee mensen op straat. De een steekt een hand op, de ander knikt terug.",
+  "note": "Wiktionary sense 1. Examples 3 and 4 show not greeting.",
+  "examples": [
+   {
+    "text": [
+     "Anna ziet haar vriend op straat.",
+     "Zij steekt haar hand op en zegt: dag.",
+     "Zij groet haar vriend."
+    ],
+    "question": "Zegt Anna dag tegen haar vriend?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam komt de klas in.",
+     "Hij zegt: goedemorgen.",
+     "Hij groet de leraar."
+    ],
+    "question": "Zegt Sam iets tegen de leraar?",
+    "answer": "ja",
+    "scene": "A boy at the classroom door with a hand up, a teacher at a desk."
+   },
+   {
+    "text": [
+     "Jan loopt langs een oude vrouw.",
+     "Hij kijkt naar de grond.",
+     "Hij groet haar niet."
+    ],
+    "question": "Zegt Jan dag?",
+    "answer": "nee",
+    "scene": "A man walking past an old woman at a gate, eyes down."
+   },
+   {
+    "text": [
+     "Twee mensen steken hun hand op naar Eva.",
+     "Eva doet alsof zij niets ziet.",
+     "Zij groet niet terug."
+    ],
+    "question": "Steekt Eva ook haar hand op?",
+    "answer": "nee",
+    "scene": "Two people at a door raise a hand; a woman on a bike looks straight ahead."
+   }
+  ]
+ },
+ {
+  "verb": "haten",
+  "sense": "een grote hekel hebben aan iets of iemand (to hate)",
+  "gloss": "to hate, to dislike strongly",
+  "forms": [
+   "haat",
+   "haten"
+  ],
+  "picture": "A girl sits in front of a plate with a fish on it, arms crossed. She pushes the plate away with her nose wrinkled.",
+  "mark": "The pushed-away plate and the wrinkled nose: she cannot stand it.",
+  "alt": "Een meisje zit voor een bord met een vis erop, met haar armen over elkaar. Ze schuift het bord weg en trekt haar neus op.",
+  "note": "Wiktionary sense 2 (een hekel hebben aan). Sense 1 (ill feeling towards a person) is left out as a heavy scene; the examples use things.",
+  "examples": [
+   {
+    "text": [
+     "Els zit voor een bord met vis.",
+     "Zij zet het bord weg.",
+     "Zij haat vis."
+    ],
+    "question": "Is Els blij met de vis?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Jan staat elke dag om vijf uur op.",
+     "Hij wil nog slapen.",
+     "Hij haat het om vroeg op te staan."
+    ],
+    "question": "Wil Jan liever laat opstaan?",
+    "answer": "ja",
+    "scene": "A man sits on the edge of a bed in the dark with a clock on the table."
+   },
+   {
+    "text": [
+     "Sam speelt buiten in de regen.",
+     "Hij lacht.",
+     "Hij haat de regen niet."
+    ],
+    "question": "Is Sam boos om de regen?",
+    "answer": "nee",
+    "scene": "A boy jumping in puddles with a smile."
+   },
+   {
+    "text": [
+     "Piet staat in de rij.",
+     "Hij kijkt steeds naar de klok.",
+     "Hij haat wachten."
+    ],
+    "question": "Wil Piet snel weg uit de rij?",
+    "answer": "ja",
+    "scene": "A man in a long queue looking at a wall clock."
+   }
+  ]
+ }
+]

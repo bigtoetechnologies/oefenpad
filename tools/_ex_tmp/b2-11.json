@@ -1,0 +1,1335 @@
+[
+ {
+  "verb": "consumeren",
+  "sense": "voeding nuttigen (to eat or drink)",
+  "gloss": "to consume (food or drink)",
+  "forms": [
+   "consumeert"
+  ],
+  "picture": "A woman sits at a small round table in a cafe with a cup in front of her. She holds the cup with both hands.",
+  "mark": "The cup in her hands: she is eating or drinking.",
+  "alt": "Een vrouw zit aan een klein rond tafeltje in een café. Zij houdt een kopje met beide handen vast.",
+  "note": "Wiktionary sense 1 (food). The economic sense (using goods and services) is left out. Examples 3 and 4 show someone who consumes nothing.",
+  "examples": [
+   {
+    "text": [
+     "Eva zit in een café.",
+     "Zij consumeert een kop thee."
+    ],
+    "question": "Drinkt Eva iets?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan staat bij een kraam op het plein.",
+     "Hij consumeert een stuk brood."
+    ],
+    "question": "Eet Jan iets?",
+    "answer": "ja",
+    "scene": "A man stands at a market stall holding a bread roll with a bite taken out of it."
+   },
+   {
+    "text": [
+     "Mark zit al een uur aan de bar.",
+     "Hij consumeert niets.",
+     "Voor hem staat een leeg glas."
+    ],
+    "question": "Drinkt Mark nu iets?",
+    "answer": "nee",
+    "scene": "A man sits at a bar counter with an empty glass in front of him and his hands in his lap."
+   },
+   {
+    "text": [
+     "Piet zit aan tafel met zijn vrienden.",
+     "Hij consumeert niets."
+    ],
+    "question": "Eet Piet mee?",
+    "answer": "nee",
+    "scene": "A man sits at a table full of plates; his own place is empty and his hands rest on his knees."
+   }
+  ]
+ },
+ {
+  "verb": "ontbinden",
+  "sense": "een organisatie opheffen (to dissolve an organisation)",
+  "gloss": "to dissolve (a club, an organisation)",
+  "forms": [
+   "ontbinden"
+  ],
+  "picture": "Several people stack chairs in a small club room and carry boxes out. One person switches off the light at the door.",
+  "mark": "Stacked chairs and boxes leaving: the room is being emptied for good.",
+  "alt": "Mensen stapelen stoelen in een kleine clubruimte en dragen dozen naar buiten. Een persoon doet bij de deur het licht uit.",
+  "note": "Wiktionary sense 1. The chemistry, mathematics and decay senses are left out.",
+  "examples": [
+   {
+    "text": [
+     "De mensen van de club komen voor het laatst bij elkaar.",
+     "Zij ontbinden de club."
+    ],
+    "question": "Komt de club daarna nog bij elkaar?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Het koor heeft te weinig zangers.",
+     "De zangers ontbinden het koor."
+    ],
+    "question": "Is het koor daarna voorbij?",
+    "answer": "ja",
+    "scene": "Singers put their music stands away and walk out of a church hall together, the last one holding the door."
+   },
+   {
+    "text": [
+     "De club van de straat heeft weinig mensen.",
+     "Mark vraagt: stoppen wij?",
+     "Anna zegt: nee.",
+     "Zij ontbinden de club niet."
+    ],
+    "question": "Gaat de club door?",
+    "answer": "ja",
+    "scene": "Mark and Anna sit at a table with a few neighbours; Anna shakes her head and the others look relieved."
+   },
+   {
+    "text": [
+     "De voetbalclub heeft geen geld meer.",
+     "De mensen komen bij elkaar.",
+     "Zij ontbinden de club."
+    ],
+    "question": "Speelt de club volgend jaar nog?",
+    "answer": "nee",
+    "scene": "A group of men stand around a football goal and shake hands; a bag of balls lies on the grass."
+   }
+  ]
+ },
+ {
+  "verb": "reanimeren",
+  "sense": "wat in slechte conditie is weer beter maken (figurative: to revive)",
+  "gloss": "to revive, to bring back to life (figurative)",
+  "forms": [
+   "reanimeert",
+   "reanimeren"
+  ],
+  "picture": "A woman kneels in a dry, empty garden with a spade. Small plants in pots stand beside her, ready to be planted.",
+  "mark": "New plants ready in an empty garden: something worn out is being given life again.",
+  "alt": "Een vrouw knielt met een schep in een droge, lege tuin. Naast haar staan kleine planten in potten.",
+  "note": "Wiktionary sense 2 (figurative). The medical sense (resuscitation) is left out as distressing; this is the mild everyday sense.",
+  "examples": [
+   {
+    "text": [
+     "De tuin van Els is droog en leeg.",
+     "Zij zet nieuwe planten neer.",
+     "Zij reanimeert de tuin."
+    ],
+    "question": "Wordt de tuin weer mooi?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet heeft een oude fiets in de schuur.",
+     "Hij reanimeert de fiets niet."
+    ],
+    "question": "Wordt de fiets beter?",
+    "answer": "nee",
+    "scene": "A man looks at an old rusty bicycle in a shed and turns away with his hands in his pockets."
+   },
+   {
+    "text": [
+     "De bioscoop is oud en bijna leeg.",
+     "De nieuwe eigenaar koopt nieuwe stoelen.",
+     "Hij reanimeert de bioscoop."
+    ],
+    "question": "Gaat het beter met de bioscoop?",
+    "answer": "ja",
+    "scene": "A man in a cinema hall fits a new seat next to a row of old worn seats."
+   },
+   {
+    "text": [
+     "De straat met winkels is rustig.",
+     "De mensen van de winkels wachten af.",
+     "Zij reanimeren de straat niet."
+    ],
+    "question": "Doen de mensen van de winkels iets voor de straat?",
+    "answer": "nee",
+    "scene": "Shopkeepers stand in their doorways with folded arms looking along a quiet empty street."
+   }
+  ]
+ },
+ {
+  "verb": "schorsen",
+  "sense": "voorlopig of tijdelijk verbieden een functie uit te voeren (to suspend a person)",
+  "gloss": "to suspend (a person, for a time)",
+  "forms": [
+   "schorst",
+   "schorsen"
+  ],
+  "picture": "A young man in ordinary clothes sits in the stand beside the pitch with a sports bag at his feet, while his team-mates in football shirts play on the grass.",
+  "mark": "He sits in ordinary clothes beside the pitch while his team plays: he is kept out for a time.",
+  "alt": "Een jongeman in gewone kleren zit naast het veld met een sporttas aan zijn voeten. Zijn teamgenoten in voetbalshirts spelen op het gras.",
+  "note": "Wiktionary sense 1. Sense 2 (a meeting) gets its own card.",
+  "examples": [
+   {
+    "text": [
+     "Mark komt te laat bij de training.",
+     "De club schorst Mark voor een wedstrijd."
+    ],
+    "question": "Speelt Mark de volgende wedstrijd?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna doet niet wat de leraar vraagt.",
+     "De school schorst haar voor drie dagen."
+    ],
+    "question": "Is Anna drie dagen thuis?",
+    "answer": "ja",
+    "scene": "A girl sits at a kitchen table at home with a school bag on the floor, looking out of the window."
+   },
+   {
+    "text": [
+     "Piet werkt in een kleine winkel.",
+     "Er is een klacht over hem.",
+     "De eigenaar schorst Piet niet."
+    ],
+    "question": "Werkt Piet morgen?",
+    "answer": "ja",
+    "scene": "A man stands behind a shop counter and a shop owner nods at him from the doorway."
+   },
+   {
+    "text": [
+     "Els werkt bij de gemeente.",
+     "Zij maakt een grote fout.",
+     "Haar baas schorst haar."
+    ],
+    "question": "Werkt Els deze week op kantoor?",
+    "answer": "nee",
+    "scene": "A woman puts on her coat and leaves an office with only her handbag; her colleagues watch from their desks."
+   }
+  ]
+ },
+ {
+  "verb": "schorsen",
+  "sense": "een vergadering of rechtszitting tijdelijk onderbreken (to adjourn a meeting)",
+  "gloss": "to adjourn (a meeting, a hearing)",
+  "forms": [
+   "schorst",
+   "schorsen"
+  ],
+  "picture": "A woman sits at the head of a long table and lays one flat hand on the tabletop. The people around the table lean back and some stand up.",
+  "mark": "The flat hand on the table and people standing: the meeting stops for a while.",
+  "alt": "Een vrouw zit aan het hoofd van een lange tafel en legt een vlakke hand op het tafelblad. De mensen om de tafel leunen achterover en sommigen staan op.",
+  "note": "Wiktionary sense 2. The sense is a pause, not an end.",
+  "examples": [
+   {
+    "text": [
+     "De vergadering duurt al lang.",
+     "De voorzitter schorst de vergadering."
+    ],
+    "question": "Is er nu een pauze?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De rechter heeft nog veel vragen.",
+     "Hij schorst de zitting niet."
+    ],
+    "question": "Is er nu een pauze?",
+    "answer": "nee",
+    "scene": "A judge in a robe leans forward over his desk to ask a question; people in the room sit upright."
+   },
+   {
+    "text": [
+     "De gemeenteraad is het niet eens.",
+     "De voorzitter schorst de vergadering."
+    ],
+    "question": "Moeten de mensen even wachten?",
+    "answer": "ja",
+    "scene": "Council members stand in small groups at the back of a room with cups; the chair sits alone at her table."
+   },
+   {
+    "text": [
+     "Eva leidt de vergadering van de ouders.",
+     "Er is veel te bespreken.",
+     "Zij schorst de vergadering niet."
+    ],
+    "question": "Krijgen de ouders nu een pauze?",
+    "answer": "nee",
+    "scene": "Parents sit close around a table in a school room, all talking at once; Eva listens at the head."
+   }
+  ]
+ },
+ {
+  "verb": "telefoneren",
+  "sense": "een telefoon gebruiken (to phone)",
+  "gloss": "to phone, to make a phone call",
+  "forms": [
+   "telefoneert"
+  ],
+  "picture": "A woman sits on a sofa with a phone held to her ear, her other hand resting on her knee.",
+  "mark": "The phone at her ear.",
+  "alt": "Een vrouw zit op een bank met een telefoon tegen haar oor. Haar andere hand ligt op haar knie.",
+  "note": "Wiktionary sense 1. The verb is a bit formal; the text uses it as a plain action.",
+  "examples": [
+   {
+    "text": [
+     "Eva zit op de bank.",
+     "Zij telefoneert met haar zus."
+    ],
+    "question": "Praat Eva met iemand?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan loopt over straat.",
+     "Zijn telefoon zit in zijn jas.",
+     "Hij telefoneert niet."
+    ],
+    "question": "Gebruikt Jan zijn telefoon?",
+    "answer": "nee",
+    "scene": "A man walks along a street with his hands in his coat pockets, looking ahead."
+   },
+   {
+    "text": [
+     "Mark werkt op kantoor.",
+     "Hij telefoneert met een klant."
+    ],
+    "question": "Schrijft Mark een brief aan de klant?",
+    "answer": "nee",
+    "scene": "A man at a desk with a phone at his ear and a pen in his other hand, looking at his screen."
+   },
+   {
+    "text": [
+     "Anna wil haar vader spreken.",
+     "Zij telefoneert vanuit de tuin."
+    ],
+    "question": "Heeft Anna een telefoon bij zich?",
+    "answer": "ja",
+    "scene": "A woman stands among flower beds with a phone at her ear."
+   }
+  ]
+ },
+ {
+  "verb": "tolereren",
+  "sense": "toelaten en dulden (to put up with)",
+  "gloss": "to tolerate, to put up with",
+  "forms": [
+   "tolereert"
+  ],
+  "picture": "A woman sits on a sofa with a big dog lying on the cushion beside her. She looks at the dog and sighs, but does not push it off.",
+  "mark": "Her sigh and still hands: she dislikes it but lets it be.",
+  "alt": "Een vrouw zit op een bank met een grote hond naast zich op het kussen. Zij kijkt naar de hond en zucht, maar duwt hem niet weg.",
+  "note": "Wiktionary sense 1. The sense is allowing something you do not like, which is why the examples show a mild dislike.",
+  "examples": [
+   {
+    "text": [
+     "De hond ligt op de bank.",
+     "Anna houdt daar niet van, maar zij tolereert het."
+    ],
+    "question": "Stuurt Anna de hond weg?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De buren maken vaak lawaai.",
+     "Jan tolereert dat niet."
+    ],
+    "question": "Wil Jan dat de buren stil zijn?",
+    "answer": "ja",
+    "scene": "A man stands at a neighbour's front door with a hand raised to knock, looking serious."
+   },
+   {
+    "text": [
+     "De leraar tolereert geen telefoons in de klas.",
+     "Sam heeft zijn telefoon in zijn tas."
+    ],
+    "question": "Mag Sam zijn telefoon in de klas gebruiken?",
+    "answer": "nee",
+    "scene": "A boy at a school desk zips his bag closed with a phone inside while the teacher watches."
+   },
+   {
+    "text": [
+     "De kinderen spelen op straat.",
+     "De buurman vindt het te druk, maar hij tolereert het."
+    ],
+    "question": "Mogen de kinderen blijven spelen?",
+    "answer": "ja",
+    "scene": "A man at an upstairs window looks down at children playing with a ball, his arms folded."
+   }
+  ]
+ },
+ {
+  "verb": "verschuiven",
+  "sense": "naar een andere datum, tijdstip of bestemming verplaatsen (to postpone)",
+  "gloss": "to postpone, to move to another time",
+  "forms": [
+   "verschuiven",
+   "verschuift",
+   "verschoven"
+  ],
+  "picture": "Two colleagues sit at a table. One holds a phone to her ear and shakes her head, the other holds a pen over a notebook and looks up.",
+  "mark": "The shaking head and the pen held back: the plan cannot stay as it was.",
+  "alt": "Twee collega's zitten aan een tafel. De een houdt een telefoon tegen haar oor en schudt haar hoofd, de ander houdt een pen boven een schrift en kijkt op.",
+  "note": "Wiktionary sense 3 (time). Sense 1 and 2 (moving over the ground) get their own card.",
+  "examples": [
+   {
+    "text": [
+     "Els heeft morgen een afspraak met Jan.",
+     "Jan belt: hij is ziek.",
+     "Els en Jan verschuiven de afspraak."
+    ],
+    "question": "Is de afspraak nog morgen?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna heeft vrijdag een afspraak bij de kapper.",
+     "Zij verschuift de afspraak naar zaterdag."
+    ],
+    "question": "Gaat Anna op zaterdag naar de kapper?",
+    "answer": "ja",
+    "scene": "A woman stands in her hallway with her coat on a hook and a phone in her hand, smiling."
+   },
+   {
+    "text": [
+     "Mark wil zijn feest verschuiven.",
+     "Zijn gasten kunnen dan niet komen.",
+     "Hij verschuift het feest niet."
+    ],
+    "question": "Is het feest nog op dezelfde dag?",
+    "answer": "ja",
+    "scene": "A man in a living room with balloons looks at a group of friends who shake their heads."
+   },
+   {
+    "text": [
+     "Sam en Eva gaan zondag naar het strand.",
+     "Het regent hard.",
+     "Zij verschuiven hun plan naar volgende week."
+    ],
+    "question": "Gaan Sam en Eva zondag naar het strand?",
+    "answer": "nee",
+    "scene": "Two people stand at a window watching rain, their bags packed by the door."
+   }
+  ]
+ },
+ {
+  "verb": "verschuiven",
+  "sense": "iets in contact met de grond doen voortbewegen (to slide, to shift something)",
+  "gloss": "to shift, to slide (something across the floor)",
+  "forms": [
+   "verschuiven",
+   "verschuift"
+  ],
+  "picture": "A man bends and pushes a tall cupboard sideways across a floor. His feet are braced and a pale mark on the floor shows where it stood.",
+  "mark": "The pale patch on the floor next to the cupboard in its new place.",
+  "alt": "Een man buigt voorover en duwt een hoge kast opzij over de vloer. Zijn voeten staan stevig en een lichte plek op de vloer toont waar de kast stond.",
+  "note": "Wiktionary sense 2. The sense is moving an object a short way over the floor.",
+  "examples": [
+   {
+    "text": [
+     "De kast staat in de weg.",
+     "Sam wil meer ruimte.",
+     "Hij verschuift de kast."
+    ],
+    "question": "Staat de kast nog op dezelfde plek?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Anna wil de bank verschuiven.",
+     "Zij kan het niet alleen."
+    ],
+    "question": "Staat de bank nog op dezelfde plek?",
+    "answer": "ja",
+    "scene": "A woman pushes with both hands against the side of a big sofa that does not move."
+   },
+   {
+    "text": [
+     "De stoelen in de klas staan in rijen.",
+     "Mark en Piet verschuiven de stoelen in een kring."
+    ],
+    "question": "Staan de stoelen nog in rijen?",
+    "answer": "nee",
+    "scene": "Two boys drag chairs across a classroom floor into a ring."
+   },
+   {
+    "text": [
+     "Els vindt de plant mooi bij het raam.",
+     "Zij verschuift de plant niet."
+    ],
+    "question": "Staat de plant nog bij het raam?",
+    "answer": "ja",
+    "scene": "A woman looks at a plant on a windowsill in the light and nods, hands behind her back."
+   }
+  ]
+ },
+ {
+  "verb": "witwassen",
+  "sense": "een kwalijke zaak vergoelijkend trachten voor te stellen (figurative: to whitewash a name)",
+  "gloss": "to whitewash (a reputation, a mistake)",
+  "forms": [
+   "witwassen"
+  ],
+  "picture": "A man in a suit scrubs a dark stained jacket in a basin of water while a crowd of people stands around watching him.",
+  "mark": "He scrubs the stained jacket in front of watching people.",
+  "alt": "Een man in een pak schrobt een donkere, vlekkerige jas in een bak water. Een groep mensen staat om hem heen te kijken.",
+  "note": "Wiktionary sense 1 (figurative). The money-laundering sense is left out as crime. The literal sense 3 (washing white) is rare, so it is not used. The figurative sense is the common one for a reputation.",
+  "examples": [
+   {
+    "text": [
+     "De eigenaar van de fabriek gooit veel vuil in het water.",
+     "Nu geeft hij geld aan een park.",
+     "Hij wil zijn naam witwassen."
+    ],
+    "question": "Wil de eigenaar beter lijken dan hij is?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva maakt een fout op haar werk.",
+     "Zij zegt eerlijk wat er mis is.",
+     "Zij wil niets witwassen."
+    ],
+    "question": "Verbergt Eva haar fout?",
+    "answer": "nee",
+    "scene": "A woman stands in front of colleagues at a table and speaks openly with her hands spread."
+   },
+   {
+    "text": [
+     "Het hotel krijgt slechte kritiek.",
+     "Nu zegt de baas in de krant dat alles goed was.",
+     "Hij wil de fouten witwassen."
+    ],
+    "question": "Zegt de baas dat er fouten zijn?",
+    "answer": "nee",
+    "scene": "A hotel owner holds up a newspaper in the lobby while guests with suitcases look doubtful."
+   },
+   {
+    "text": [
+     "De politicus doet iets slechts.",
+     "Nu helpt hij kinderen op school.",
+     "Mensen denken dat hij zijn naam wil witwassen."
+    ],
+    "question": "Denken de mensen dat hij zijn naam beter wil maken?",
+    "answer": "ja",
+    "scene": "A man in a suit kneels next to schoolchildren while a photographer stands in front of him."
+   }
+  ]
+ },
+ {
+  "verb": "exporteren",
+  "sense": "goederen naar het buitenland uitvoeren (to export goods)",
+  "gloss": "to export (goods)",
+  "forms": [
+   "exporteert"
+  ],
+  "picture": "Dock workers load crates of apples onto a large ship at a quay. A truck stands behind them, its back open.",
+  "mark": "Crates going from the truck onto a ship.",
+  "alt": "Havenarbeiders laden kisten appels op een groot schip aan een kade. Achter hen staat een vrachtwagen met open achterkant.",
+  "note": "Wiktionary sense 1. The computing sense is left out.",
+  "examples": [
+   {
+    "text": [
+     "De boer heeft veel appels.",
+     "Hij exporteert de appels."
+    ],
+    "question": "Kopen mensen in andere landen de appels?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het bedrijf van Piet maakt fietsen.",
+     "Hij exporteert zijn fietsen."
+    ],
+    "question": "Blijven de fietsen in het land?",
+    "answer": "nee",
+    "scene": "A man stands in a bicycle factory next to a row of new bicycles packed in boxes on a pallet."
+   },
+   {
+    "text": [
+     "Anna heeft een winkel met bloemen.",
+     "Zij verkoopt alleen aan mensen in de stad.",
+     "Zij exporteert niets."
+    ],
+    "question": "Gaan de bloemen naar het buitenland?",
+    "answer": "nee",
+    "scene": "A woman hands a bunch of flowers over a shop counter to a customer on the street side."
+   },
+   {
+    "text": [
+     "In dit land maken ze mooie tafels.",
+     "Schepen brengen ze weg.",
+     "Het land exporteert veel tafels."
+    ],
+    "question": "Kopen mensen in andere landen deze tafels?",
+    "answer": "ja",
+    "scene": "Rows of new tables wrapped in plastic wait on a quay beside a large ship."
+   }
+  ]
+ },
+ {
+  "verb": "ontcijferen",
+  "sense": "qua betekenis duiden en begrijpen (to decipher)",
+  "gloss": "to decipher, to make out",
+  "forms": [
+   "ontcijferd",
+   "ontcijferen"
+  ],
+  "picture": "A woman holds an old letter close to her face with a magnifying glass. The page is covered in faint, tangled handwriting.",
+  "mark": "The letter held close and the magnifying glass: the writing is hard to read.",
+  "alt": "Een vrouw houdt een oude brief dicht bij haar gezicht met een vergrootglas. De bladzijde staat vol vaag, warrig handschrift.",
+  "note": "Wiktionary sense 1. The sense includes success: after deciphering, you know what it says.",
+  "examples": [
+   {
+    "text": [
+     "Eva vindt een oude brief van haar opa.",
+     "Het handschrift is heel slecht.",
+     "Na een uur heeft zij de brief ontcijferd."
+    ],
+    "question": "Weet Eva nu wat er in de brief staat?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan krijgt een brief van zijn buurman.",
+     "Het handschrift is zo slecht dat hij het niet kan ontcijferen."
+    ],
+    "question": "Begrijpt Jan de brief?",
+    "answer": "nee",
+    "scene": "A man frowns at a small scribbled note held at arm's length in his kitchen."
+   },
+   {
+    "text": [
+     "Sam en zijn zus vinden een geheime code.",
+     "Zij ontcijferen de code samen."
+    ],
+    "question": "Weten zij wat de code betekent?",
+    "answer": "ja",
+    "scene": "A boy and a girl lean over a sheet of paper with symbols, the girl pointing at it with a pencil."
+   },
+   {
+    "text": [
+     "Piet vindt een recept van zijn oma.",
+     "Het papier is oud en nat.",
+     "Hij kan niet ontcijferen wat er staat."
+    ],
+    "question": "Weet Piet hoeveel suiker nodig is?",
+    "answer": "nee",
+    "scene": "A cook holds up a wet, stained page in a kitchen and shrugs."
+   }
+  ]
+ },
+ {
+  "verb": "profileren",
+  "sense": "zich op een geplande manier bekend maken (to present oneself as)",
+  "gloss": "to present oneself as, to make a name as",
+  "forms": [
+   "profileert"
+  ],
+  "picture": "A man in a chef's apron stands at a market stall and holds up a plate of food. Passers-by stop and look at him.",
+  "mark": "The plate held up towards the people who stop.",
+  "alt": "Een man in een keukenschort staat bij een kraam en houdt een bord eten omhoog. Voorbijgangers blijven staan en kijken naar hem.",
+  "note": "Wiktionary sense 1 (reflexive, zich profileren). It is deliberate: the person wants to be known as something.",
+  "examples": [
+   {
+    "text": [
+     "Piet maakt elke dag eten voor de buurt.",
+     "Hij profileert zich als kok."
+    ],
+    "question": "Wil Piet dat mensen hem als kok kennen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Els wil voorzitter worden.",
+     "Zij praat op elke bijeenkomst over haar plannen.",
+     "Zij profileert zich als de nieuwe leider."
+    ],
+    "question": "Wil Els dat mensen haar als leider zien?",
+    "answer": "ja",
+    "scene": "A woman stands at the front of a room and speaks with an open hand, her listeners seated in rows."
+   },
+   {
+    "text": [
+     "Jan is erg stil op school.",
+     "Hij praat nooit over wat hij kan.",
+     "Hij profileert zich niet."
+    ],
+    "question": "Wil Jan dat mensen naar hem kijken?",
+    "answer": "nee",
+    "scene": "A boy sits at the back of a classroom with his head down while others laugh and talk."
+   },
+   {
+    "text": [
+     "Het bedrijf maakt simpele schoenen.",
+     "Het profileert zich niet als duur merk."
+    ],
+    "question": "Wil het bedrijf dat mensen het een duur merk vinden?",
+    "answer": "nee",
+    "scene": "A plain shoe shop with simple shoes in rows on shelves and nobody calling out to the street."
+   }
+  ]
+ },
+ {
+  "verb": "trachten",
+  "sense": "een poging in het werk stellen (to try, to attempt)",
+  "gloss": "to try, to attempt",
+  "forms": [
+   "tracht"
+  ],
+  "picture": "A man stands on a ladder and stretches out one hand towards a cat in a tree. His fingers do not touch the cat yet.",
+  "mark": "The outstretched hand that has not reached the cat.",
+  "alt": "Een man staat op een ladder en steekt een hand uit naar een kat in een boom. Zijn vingers raken de kat nog niet.",
+  "note": "Wiktionary sense 1. The verb is formal and only says the person tries, not that it works.",
+  "examples": [
+   {
+    "text": [
+     "De kat van Anna zit hoog in een boom.",
+     "Piet staat op een ladder.",
+     "Hij tracht de kat te pakken."
+    ],
+    "question": "Doet Piet zijn best om de kat te pakken?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva wil de bus halen.",
+     "Zij loopt hard over straat.",
+     "Zij tracht de bus te halen."
+    ],
+    "question": "Is Eva zeker op tijd?",
+    "answer": "nee",
+    "scene": "A woman runs along a pavement with a bag in her hand while a bus stands at a stop in the distance."
+   },
+   {
+    "text": [
+     "De twee mannen praten over het weer.",
+     "Mark tracht de ander niet te overtuigen."
+    ],
+    "question": "Doet Mark zijn best om de ander te overtuigen?",
+    "answer": "nee",
+    "scene": "Two men sit on a bench and talk calmly, one with his hand open on his knee."
+   },
+   {
+    "text": [
+     "Het kind van Els huilt in de winkel.",
+     "Zij tracht rustig te blijven."
+    ],
+    "question": "Doet Els haar best om rustig te blijven?",
+    "answer": "ja",
+    "scene": "A woman in a shop breathes in with closed eyes while a child tugs at her coat."
+   }
+  ]
+ },
+ {
+  "verb": "verbreden",
+  "sense": "breder maken (to widen)",
+  "gloss": "to widen, to broaden",
+  "forms": [
+   "verbreedt",
+   "verbreden"
+  ],
+  "picture": "A woman kneels at the edge of a narrow garden path and lays new stones beside it. A wheelbarrow of stones stands nearby.",
+  "mark": "New stones laid beside the old narrow strip.",
+  "alt": "Een vrouw knielt aan de rand van een smal tuinpad en legt nieuwe stenen ernaast. Een kruiwagen met stenen staat vlakbij.",
+  "note": "Wiktionary sense 1. Only the literal sense (wider in space) is used.",
+  "examples": [
+   {
+    "text": [
+     "Eva heeft een klein pad in haar tuin.",
+     "Zij verbreedt het pad met nieuwe stenen."
+    ],
+    "question": "Kunnen er nu twee mensen naast elkaar lopen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "De opa van Mark komt niet door de deur met zijn rolstoel.",
+     "Mark heeft geen geld om de deur te verbreden."
+    ],
+    "question": "Is er nu meer ruimte bij de deur?",
+    "answer": "nee",
+    "scene": "A boy stands at a narrow door looking at a wheelchair that does not fit through it."
+   },
+   {
+    "text": [
+     "De weg naar het dorp is smal.",
+     "De gemeente verbreedt de weg."
+    ],
+    "question": "Is er daarna meer ruimte op de weg?",
+    "answer": "ja",
+    "scene": "Road workers lay a new strip of road along the edge of a narrow country road to a village."
+   },
+   {
+    "text": [
+     "Anna zet een extra plank aan het eind van haar tafel.",
+     "Zij verbreedt de tafel niet."
+    ],
+    "question": "Is er meer ruimte aan de zijkant van de tafel?",
+    "answer": "nee",
+    "scene": "A woman slides an extra board onto the end of a long table; the sides stay the same."
+   }
+  ]
+ },
+ {
+  "verb": "behartigen",
+  "sense": "zich inzetten voor een bepaalde zaak, de belangen behartigen (to look after someone's interests)",
+  "gloss": "to look after (someone's interests)",
+  "forms": [
+   "behartigt"
+  ],
+  "picture": "A man stands and speaks to a group of people across a table, with one open hand turned towards a woman who sits beside him.",
+  "mark": "The open hand turned towards the seated woman: he speaks for her.",
+  "alt": "Een man staat en spreekt tot een groep mensen aan de overkant van een tafel. Hij wijst met een open hand naar een vrouw die naast hem zit.",
+  "note": "Wiktionary sense 1 and 2. The verb is nearly always used with belangen.",
+  "examples": [
+   {
+    "text": [
+     "Anna heeft een probleem met de eigenaar van haar huis.",
+     "Jan gaat met haar naar het gesprek.",
+     "Hij behartigt haar belangen."
+    ],
+    "question": "Doet Jan iets voor Anna?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Eva zit in een groep van ouders op de school.",
+     "Zij behartigt de belangen van alle ouders."
+    ],
+    "question": "Werkt Eva alleen voor zichzelf?",
+    "answer": "nee",
+    "scene": "A woman sits at a table in a school hall listening to several parents who speak to her."
+   },
+   {
+    "text": [
+     "Piet zit in de raad van het dorp.",
+     "Hij behartigt de belangen van de inwoners niet."
+    ],
+    "question": "Helpt Piet de inwoners?",
+    "answer": "nee",
+    "scene": "A man in a council room looks at his own papers while villagers wait behind him."
+   },
+   {
+    "text": [
+     "Een man van de vakbond praat met de baas.",
+     "Hij behartigt de belangen van de werknemers."
+    ],
+    "question": "Staat de man aan de kant van de werknemers?",
+    "answer": "ja",
+    "scene": "A man in a jacket stands in front of a group of workers in overalls and speaks to a manager."
+   }
+  ]
+ },
+ {
+  "verb": "betreuren",
+  "sense": "leedwezen tonen over iets, iets jammer vinden (to regret, to be sorry about)",
+  "gloss": "to regret, to be sorry about",
+  "forms": [
+   "betreurt"
+  ],
+  "picture": "A woman stands at a window and watches a removal van drive off. Her shoulders hang and one hand rests under her chin.",
+  "mark": "Her low shoulders and the hand at her chin as the van leaves.",
+  "alt": "Een vrouw staat bij een raam en kijkt naar een verhuiswagen die wegrijdt. Haar schouders hangen en één hand rust onder haar kin.",
+  "note": "Wiktionary sense 1. Example 2 and 4 show someone who does not feel sorry, so the verb reads as a feeling and not as a loss.",
+  "examples": [
+   {
+    "text": [
+     "De buurman van Eva gaat verhuizen.",
+     "Zij vindt hem erg aardig.",
+     "Zij betreurt zijn vertrek."
+    ],
+    "question": "Vindt Eva zijn vertrek jammer?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna heeft een nieuwe baan.",
+     "Zij betreurt haar keuze niet."
+    ],
+    "question": "Heeft Anna spijt van haar keuze?",
+    "answer": "nee",
+    "scene": "A woman sits at a new desk and smiles at her screen."
+   },
+   {
+    "text": [
+     "Mark heeft de bus gemist.",
+     "Hij betreurt het dat hij laat is."
+    ],
+    "question": "Vindt Mark het jammer dat hij laat is?",
+    "answer": "ja",
+    "scene": "A man stands at an empty bus stop with a hand on the back of his neck, a bus far down the road."
+   },
+   {
+    "text": [
+     "Piet hoort dat de les uitvalt.",
+     "Hij betreurt het niet."
+    ],
+    "question": "Vindt Piet het jammer?",
+    "answer": "nee",
+    "scene": "A boy at a kitchen table throws his arms up and grins while his school bag stays on the floor."
+   }
+  ]
+ },
+ {
+  "verb": "incasseren",
+  "sense": "geld in ontvangst nemen (to collect money)",
+  "gloss": "to collect (money that is owed)",
+  "forms": [
+   "incasseert",
+   "incasseren"
+  ],
+  "picture": "A shopkeeper behind a counter takes banknotes from a customer's open hand and puts them into a drawer.",
+  "mark": "The banknotes passing from one hand to the other.",
+  "alt": "Een winkelier achter een toonbank neemt bankbiljetten uit de open hand van een klant en legt ze in een lade.",
+  "note": "Wiktionary sense 1. The sense is receiving money that is owed.",
+  "examples": [
+   {
+    "text": [
+     "De eigenaar van het huis komt elke maand langs.",
+     "Mark geeft hem geld.",
+     "Hij incasseert de huur."
+    ],
+    "question": "Krijgt de eigenaar geld?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna verkoopt een bril aan een klant.",
+     "De klant betaalt later.",
+     "Anna incasseert nog niets."
+    ],
+    "question": "Heeft Anna het geld al?",
+    "answer": "nee",
+    "scene": "A woman holds out a pair of glasses across a counter to a customer who is looking in his empty wallet."
+   },
+   {
+    "text": [
+     "De voetbalclub stuurt een rekening naar alle ouders.",
+     "Els incasseert het geld."
+    ],
+    "question": "Krijgt Els geld van de ouders?",
+    "answer": "ja",
+    "scene": "A woman sits at a table with a stack of envelopes and a cash box while parents hand her money."
+   },
+   {
+    "text": [
+     "Sam wil geld van een vriend.",
+     "De vriend zegt: later.",
+     "Sam kan het nog niet incasseren."
+    ],
+    "question": "Heeft Sam het geld?",
+    "answer": "nee",
+    "scene": "One man holds out his hand to another who shows two empty pockets."
+   }
+  ]
+ },
+ {
+  "verb": "incasseren",
+  "sense": "(klappen, beledigingen) te verduren krijgen (to take criticism or a setback)",
+  "gloss": "to take (criticism, a setback)",
+  "forms": [
+   "incasseert",
+   "incasseren"
+  ],
+  "picture": "A man sits at a desk with his hands calm in his lap. A manager stands in front of him, talking with a stern face and one hand raised.",
+  "mark": "His calm hands and steady face while the other person talks.",
+  "alt": "Een man zit aan een bureau met rustige handen in zijn schoot. Een leidinggevende staat voor hem en praat met een strenge blik en een opgeheven hand.",
+  "note": "Wiktionary sense 2, limited to criticism and setbacks. Blows are left out as violent.",
+  "examples": [
+   {
+    "text": [
+     "De baas vindt het werk van Mark niet goed.",
+     "Mark incasseert de kritiek."
+    ],
+    "question": "Wordt Mark boos?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "Het team van Els verliest.",
+     "Zij incasseert de nederlaag goed."
+    ],
+    "question": "Is Els na de wedstrijd boos?",
+    "answer": "nee",
+    "scene": "A woman in a sports shirt walks across a pitch with a calm face, a ball under her arm."
+   },
+   {
+    "text": [
+     "Sam krijgt een slecht cijfer.",
+     "Hij kan dat niet goed incasseren."
+    ],
+    "question": "Wordt Sam boos?",
+    "answer": "ja",
+    "scene": "A boy stands at a desk with a flushed face; a book lies at his feet."
+   },
+   {
+    "text": [
+     "Anna krijgt veel kritiek op haar plan.",
+     "Zij incasseert het goed."
+    ],
+    "question": "Blijft Anna rustig?",
+    "answer": "ja",
+    "scene": "A woman stands at the front of a meeting room, people frowning at her, and she keeps standing straight."
+   }
+  ]
+ },
+ {
+  "verb": "pieken",
+  "sense": "uitzonderlijk goed presteren (to peak, to perform at one's best)",
+  "gloss": "to peak (perform best at the right moment)",
+  "forms": [
+   "piekt"
+  ],
+  "picture": "A runner crosses a finish line with both arms raised high. A thin tape stretches across the line in front of her chest.",
+  "mark": "The raised arms at the finish line.",
+  "alt": "Een hardloopster loopt met beide armen omhoog over een finishlijn. Een dun lint hangt voor haar borst over de lijn.",
+  "note": "Wiktionary sense 1 (sport). The sense of a sudden high value (a price that peaks) is left out; the learner needs the performance sense first.",
+  "examples": [
+   {
+    "text": [
+     "Els traint al maanden voor de grote wedstrijd.",
+     "Op de dag zelf piekt zij."
+    ],
+    "question": "Loopt Els die dag haar beste wedstrijd?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Jan is in de training heel snel.",
+     "Op de dag van de wedstrijd piekt hij niet."
+    ],
+    "question": "Loopt Jan die dag zijn beste wedstrijd?",
+    "answer": "nee",
+    "scene": "A tired runner bends over with his hands on his knees on a track, other runners already running ahead."
+   },
+   {
+    "text": [
+     "De zangeres is zenuwachtig voor het concert.",
+     "Op het podium piekt zij."
+    ],
+    "question": "Zingt zij op het podium beter dan ooit?",
+    "answer": "ja",
+    "scene": "A singer on a stage stands with her arms wide and her head up in front of a full hall."
+   },
+   {
+    "text": [
+     "Piet zwemt heel hard in maart.",
+     "Hij piekt te vroeg.",
+     "Zijn wedstrijd is in juli."
+    ],
+    "question": "Zwemt Piet in juli zijn beste tijd?",
+    "answer": "nee",
+    "scene": "A swimmer sits on the edge of a pool in summer, tired, while others swim lengths."
+   }
+  ]
+ },
+ {
+  "verb": "poseren",
+  "sense": "voor een kunstenaar model staan (to pose)",
+  "gloss": "to pose (for a photo or a painter)",
+  "forms": [
+   "poseert",
+   "poseren"
+  ],
+  "picture": "A woman stands still in front of a photographer, smiling at the camera. The photographer holds the camera up to his eye.",
+  "mark": "She stands still and looks into the camera.",
+  "alt": "Een vrouw staat stil voor een fotograaf en lacht naar de camera. De fotograaf houdt de camera voor zijn oog.",
+  "note": "Wiktionary sense 1 (also a photographer's model). The figurative sense (showing off) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Anna staat voor de fotograaf.",
+     "Zij poseert."
+    ],
+    "question": "Staat Anna stil voor de camera?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Een schilder maakt een portret van Piet.",
+     "Piet zit lang op een stoel en poseert."
+    ],
+    "question": "Mag Piet vrij door de kamer lopen?",
+    "answer": "nee",
+    "scene": "A man sits on a chair in an artist's studio while a painter works at an easel opposite him."
+   },
+   {
+    "text": [
+     "Sam speelt met zijn hond in het park.",
+     "De fotograaf wil een foto van hem maken.",
+     "Sam poseert niet."
+    ],
+    "question": "Staat Sam stil voor de camera?",
+    "answer": "nee",
+    "scene": "A boy throws a ball for a dog in a park while a photographer follows with a camera."
+   },
+   {
+    "text": [
+     "Mark en zijn familie staan bij de boom.",
+     "De fotograaf zegt: kijk naar mij.",
+     "Zij poseren."
+    ],
+    "question": "Staat de familie stil voor de foto?",
+    "answer": "ja",
+    "scene": "A family of five stands in a row by a tree, all looking ahead at a photographer."
+   }
+  ]
+ },
+ {
+  "verb": "aanschouwen",
+  "sense": "zien, gadeslaan (formal: to behold, to watch)",
+  "gloss": "to behold, to watch (formal)",
+  "forms": [
+   "aanschouwt"
+  ],
+  "picture": "A woman stands on a hill and looks out over a wide view with the sun low in the sky. Her hands hang still at her sides.",
+  "mark": "Her still pose and steady gaze at the wide view.",
+  "alt": "Een vrouw staat op een heuvel en kijkt uit over een wijds landschap met een lage zon. Haar handen hangen stil langs haar lichaam.",
+  "note": "Wiktionary sense 1 (formal). The verb is literary, so the examples use a calm scene of watching something big or beautiful.",
+  "examples": [
+   {
+    "text": [
+     "Eva staat op de heuvel.",
+     "De zon gaat onder.",
+     "Zij aanschouwt de lucht."
+    ],
+    "question": "Kijkt Eva naar de lucht?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Piet zit binnen met zijn rug naar het raam.",
+     "Buiten is een grote storm.",
+     "Hij aanschouwt de storm niet."
+    ],
+    "question": "Kijkt Piet naar de storm?",
+    "answer": "nee",
+    "scene": "A man sits at a table reading, his back to a window with dark clouds outside."
+   },
+   {
+    "text": [
+     "Het feest is bijna voorbij.",
+     "De kinderen zijn al thuis.",
+     "Zij aanschouwen het vuurwerk niet."
+    ],
+    "question": "Zien de kinderen het vuurwerk?",
+    "answer": "nee",
+    "scene": "Children sleep in beds in a dark room while a faint glow shows at the window."
+   },
+   {
+    "text": [
+     "Anna zit op het strand.",
+     "Zij aanschouwt de golven."
+    ],
+    "question": "Ziet Anna de golven?",
+    "answer": "ja",
+    "scene": "A woman sits on the sand with her knees up and looks out over the sea."
+   }
+  ]
+ },
+ {
+  "verb": "bekostigen",
+  "sense": "ervoor zorgen dat de kosten betaald worden (to pay for, to finance)",
+  "gloss": "to pay for, to finance",
+  "forms": [
+   "bekostigt",
+   "bekostigen"
+  ],
+  "picture": "A woman holds a banknote out to a younger man who stands in front of a bus. The man holds a bag with a travel ticket sticking out.",
+  "mark": "The note held out by one person for the other's trip.",
+  "alt": "Een vrouw houdt een bankbiljet uit naar een jongere man die voor een bus staat. De man houdt een tas vast.",
+  "note": "Wiktionary sense 1. The sense is paying for something that someone else uses.",
+  "examples": [
+   {
+    "text": [
+     "Sam gaat met de bus op reis.",
+     "Hij heeft weinig geld.",
+     "Zijn moeder bekostigt de reis."
+    ],
+    "question": "Betaalt de moeder van Sam de reis?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Het dak van de school is oud.",
+     "De gemeente bekostigt geen nieuw dak."
+    ],
+    "question": "Betaalt de gemeente een nieuw dak?",
+    "answer": "nee",
+    "scene": "Teachers look up at a leaking classroom ceiling with a bucket on the floor."
+   },
+   {
+    "text": [
+     "Jan wil studeren.",
+     "Zijn ouders bekostigen zijn studie."
+    ],
+    "question": "Betalen zijn ouders de studie?",
+    "answer": "ja",
+    "scene": "A young man packs books into a bag while his parents look on, smiling."
+   },
+   {
+    "text": [
+     "Eva wil een nieuwe fiets.",
+     "Niemand bekostigt hem.",
+     "Zij heeft zelf geen geld."
+    ],
+    "question": "Heeft Eva de nieuwe fiets al?",
+    "answer": "nee",
+    "scene": "A woman stands before a bicycle shop window, looking at a bicycle with her hands in her empty pockets."
+   }
+  ]
+ },
+ {
+  "verb": "debatteren",
+  "sense": "elkaars standpunten met argumenten bestrijden (to debate)",
+  "gloss": "to debate",
+  "forms": [
+   "debatteren"
+  ],
+  "picture": "Two people stand facing each other behind two small stands, each with one hand open as if explaining. A few people sit and listen.",
+  "mark": "Two people facing each other and speaking, with an audience listening.",
+  "alt": "Twee mensen staan tegenover elkaar achter twee kleine katheders en houden elk een hand open alsof zij iets uitleggen. Enkele mensen zitten te luisteren.",
+  "note": "Wiktionary sense 1. The sense is two sides giving reasons, so the examples keep it calm.",
+  "examples": [
+   {
+    "text": [
+     "Twee studenten staan voor de klas.",
+     "Eva vindt dat school later moet beginnen.",
+     "Jan vindt van niet.",
+     "Zij debatteren."
+    ],
+    "question": "Praten Eva en Jan over hun meningen?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Anna en Els zitten naast elkaar in de trein.",
+     "Zij debatteren niet."
+    ],
+    "question": "Praten zij over hun meningen?",
+    "answer": "nee",
+    "scene": "Two women sit side by side on a train seat, one looking out of the window, the other at her hands."
+   },
+   {
+    "text": [
+     "De gemeenteraad komt bij elkaar.",
+     "De partijen debatteren over het nieuwe park."
+    ],
+    "question": "Geven de partijen hun mening over het park?",
+    "answer": "ja",
+    "scene": "Council members sit around a horseshoe table and talk, some with a hand raised."
+   },
+   {
+    "text": [
+     "De leraar legt alles uit.",
+     "De leerlingen debatteren niet."
+    ],
+    "question": "Zeggen de leerlingen hun mening?",
+    "answer": "nee",
+    "scene": "A teacher speaks at the front of a class while the pupils sit quietly with their hands on their desks."
+   }
+  ]
+ },
+ {
+  "verb": "strekken",
+  "sense": "het zo ver mogelijk uitrekken in de lengte (to stretch out straight)",
+  "gloss": "to stretch, to straighten out",
+  "forms": [
+   "strekt",
+   "strekken"
+  ],
+  "picture": "A woman sits at a desk and leans back, lifting both arms straight up above her head. Her legs are pushed out under the desk.",
+  "mark": "Both arms held straight up above her head.",
+  "alt": "Een vrouw zit aan een bureau en leunt achterover. Zij houdt beide armen recht omhoog boven haar hoofd.",
+  "note": "Wiktionary sense 1. The sense ~ tot (serving as) is left out.",
+  "examples": [
+   {
+    "text": [
+     "Anna zit al lang achter de computer.",
+     "Zij leunt achterover en strekt haar armen."
+    ],
+    "question": "Zijn de armen van Anna recht?",
+    "answer": "ja"
+   },
+   {
+    "text": [
+     "Sam zit in de stoel met zijn knie bij zijn kin.",
+     "Hij strekt zijn been niet."
+    ],
+    "question": "Is zijn been recht?",
+    "answer": "nee",
+    "scene": "A boy sits curled up in an armchair with his knees against his chest."
+   },
+   {
+    "text": [
+     "Jan wil het boek bovenaan de plank pakken.",
+     "Hij strekt zijn arm omhoog."
+    ],
+    "question": "Is zijn arm recht?",
+    "answer": "ja",
+    "scene": "A man stands on his toes in front of a tall shelf with one arm held straight up."
+   },
+   {
+    "text": [
+     "Piet zit in de bus.",
+     "Zijn knie zit tegen de stoel voor hem.",
+     "Hij kan zijn been niet strekken."
+    ],
+    "question": "Is het been van Piet recht?",
+    "answer": "nee",
+    "scene": "A tall man sits in a bus seat with his knees pressed against the seat in front."
+   }
+  ]
+ },
+ {
+  "verb": "verwerpen",
+  "sense": "afkeuren, afwijzen (to reject)",
+  "gloss": "to reject (a plan, an offer)",
+  "forms": [
+   "verwerpt",
+   "verwerpen"
+  ],
+  "picture": "At a council table a man pushes a large drawing of a road away with the back of his hand. The members beside him shake their heads.",
+  "mark": "The drawing pushed away across the table.",
+  "alt": "Aan een vergadertafel schuift een man een grote tekening van een weg opzij met de rug van zijn hand. De mensen naast hem schudden hun hoofd.",
+  "note": "Wiktionary sense 1. The throwing sense 4 and the rare senses (wraken, verstoten) are left out.",
+  "examples": [
+   {
+    "text": [
+     "De gemeenteraad leest het plan voor een nieuwe weg.",
+     "De raad verwerpt het plan."
+    ],
+    "question": "Gaat het plan door?",
+    "answer": "nee"
+   },
+   {
+    "text": [
+     "De werknemers krijgen een voorstel van de baas.",
+     "Het salaris is te laag.",
+     "Zij verwerpen het voorstel."
+    ],
+    "question": "Zeggen de werknemers nee tegen het voorstel?",
+    "answer": "ja",
+    "scene": "A manager holds up a paper at the head of a canteen table; the workers around it shake their heads."
+   },
+   {
+    "text": [
+     "Eva heeft een idee voor de club.",
+     "De mensen van de club vinden het goed.",
+     "Zij verwerpen het idee niet."
+    ],
+    "question": "Gaat het idee van Eva door?",
+    "answer": "ja",
+    "scene": "A woman stands in a club room and the members around a table nod."
+   },
+   {
+    "text": [
+     "Mark doet een voorstel op de vergadering van de school.",
+     "De ouders verwerpen het voorstel."
+    ],
+    "question": "Gaat het voorstel van Mark door?",
+    "answer": "nee",
+    "scene": "A man stands at a meeting of parents in a school hall; the parents keep their arms folded and shake their heads."
+   }
+  ]
+ }
+]

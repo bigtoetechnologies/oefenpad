@@ -1,0 +1,540 @@
+{
+ "A0": [
+  {
+   "verb": "worden",
+   "rank": 35,
+   "gloss": "to be",
+   "type": "irregular",
+   "skip": "becoming is an arrow from one state to another and would show no person; any figure standing in two boxes would read as zijn or staan, and the change itself can"
+  },
+  {
+   "verb": "doen",
+   "rank": 48,
+   "gloss": "to do",
+   "type": "irregular",
+   "skip": "doing has no action of its own; the hammer-and-nail scene reads as maken or slaan, and no doen convention is on the closed list (review M5)."
+  },
+  {
+   "verb": "laten",
+   "rank": 84,
+   "gloss": "to let",
+   "type": "irregular",
+   "skip": "an auxiliary (laten zien, laten vallen) with no picture of its own; the box scene read as geven (review H10)."
+  }
+ ],
+ "A1": [
+  {
+   "verb": "ontstaan",
+   "rank": 637,
+   "gloss": "to withdraw",
+   "type": "irregular",
+   "skip": "a beginning out of nothing has no single picturable action; a flame, a chick from an egg or a sprouting seed each read as a literal object (branden, uitkomen, g"
+  },
+  {
+   "verb": "begrijpen",
+   "rank": 645,
+   "gloss": "to understand",
+   "type": "irregular",
+   "skip": "understanding has no single picturable action; the lightbulb bubble belongs to weten on the A0 page and the same head-and-bubble picture would turn into that ca"
+  },
+  {
+   "verb": "lijken",
+   "rank": 705,
+   "gloss": "to seem",
+   "type": "irregular",
+   "skip": "seeming is a judgement, not an action; the only honest pictogram is a comparison of two identical portraits, which is a sign rather than one moment of an action"
+  },
+  {
+   "verb": "voorzien",
+   "rank": 842,
+   "gloss": "to provide",
+   "type": "irregular",
+   "skip": "providing is giving plus a need, and the giving half would be the picture of geven or brengen on another page; nothing on the frame marks out who is being provi"
+  },
+  {
+   "verb": "proberen",
+   "rank": 354,
+   "gloss": "to try",
+   "type": "regular",
+   "skip": "the picture would be an adult forcing a key into a lock that does not fit, but that is the literal action of duwen and the strain is the key itself; a bar on a "
+  },
+  {
+   "verb": "stellen",
+   "rank": 367,
+   "gloss": "to put",
+   "type": "regular",
+   "skip": "posing a question is abstract and would reuse the speech bubbles of praten or the balance of a debate; the nearest literal sense, putting a box somewhere, is ex"
+  },
+  {
+   "verb": "veranderen",
+   "rank": 476,
+   "gloss": "to change",
+   "type": "regular",
+   "skip": "change can only be shown as a before and after of the same object, which needs two frames or letters; a person swapping one jacket for another is the single act"
+  },
+  {
+   "verb": "vormen",
+   "rank": 479,
+   "gloss": "to form",
+   "type": "regular",
+   "skip": "to form something reads either as making with the hands, which is maken on the A0 page, or as a hand at a potter's wheel, which is one object's action and not t"
+  },
+  {
+   "verb": "kennen",
+   "rank": 504,
+   "gloss": "to know",
+   "type": "regular",
+   "skip": "the scene relied on a face card as a symbol for knowing someone, which is not on the closed list (review M3)."
+  },
+  {
+   "verb": "noemen",
+   "rank": 506,
+   "gloss": "to name",
+   "type": "regular",
+   "skip": "to name something is spoken; any picture of it would be a speech bubble pointing at an object, which is the same mark as spreken or praten, and writing the word"
+  },
+  {
+   "verb": "leven",
+   "rank": 9168,
+   "gloss": "to live",
+   "type": "regular",
+   "skip": "being alive has no action; the heart and the pulse line are both symbols outside the closed list (same ruling as review M3)."
+  },
+  {
+   "verb": "gebeuren",
+   "rank": 570,
+   "gloss": "to happen",
+   "type": "regular",
+   "skip": "something happening has no single picturable action; a crashing pot, a burst tyre or a stumble would each read as that object's own action (vallen), and no allo"
+  },
+  {
+   "verb": "geloven",
+   "rank": 611,
+   "gloss": "to believe",
+   "type": "regular",
+   "skip": "the scene relied on a tick as a symbol for believing, which is not on the closed list and means wrong in several countries (review M3)."
+  },
+  {
+   "verb": "bereiken",
+   "rank": 621,
+   "gloss": "to reach",
+   "type": "regular",
+   "skip": "reaching a goal is abstract; the stair scene is stappen and no listed convention fits (review M9, H9)."
+  },
+  {
+   "verb": "hopen",
+   "rank": 725,
+   "gloss": "to hope",
+   "type": "regular",
+   "skip": "the scene relied on an umbrella as a symbol for hoping, which is not on the closed list of conventions (review M3)."
+  },
+  {
+   "verb": "prijzen",
+   "rank": 759,
+   "gloss": "a) to price b) to praise",
+   "type": "regular",
+   "skip": "to price something is the same mark as kosten on this page, a sign beside an object, and the word prijzen is mostly praise, which has no single picturable actio"
+  },
+  {
+   "verb": "reageren",
+   "rank": 950,
+   "gloss": "to react",
+   "type": "regular",
+   "skip": "reacting is a change of face in response to something, so the picture needs both a cause and a response, which is two moments or a comic pair; alone it is just "
+  },
+  {
+   "verb": "verbeteren",
+   "rank": 988,
+   "gloss": "to improve",
+   "type": "regular",
+   "skip": "improving is a before and after, the same object twice or a rising arrow, which needs numbers or two frames; a hand writing on paper is schrijven and a hand cro"
+  },
+  {
+   "verb": "verwachten",
+   "rank": 990,
+   "gloss": "to expect",
+   "type": "regular",
+   "skip": "expecting is inner; the scene was a person looking out, which is kijken (review M8)."
+  }
+ ],
+ "A2": [
+  {
+   "verb": "ervaren",
+   "rank": 1040,
+   "gloss": "to experience",
+   "type": "irregular",
+   "skip": "to experience something worth drawing needs a named event, such as a fall or a storm, and the drawing would read as that event; the inner half has no single pic"
+  },
+  {
+   "verb": "bewijzen",
+   "rank": 1180,
+   "gloss": "to prove",
+   "type": "irregular",
+   "skip": "proving is an argument landing, and a person adding up on an abacus would show the sum and not the proof; proving has no single action of its own."
+  },
+  {
+   "verb": "bespreken",
+   "rank": 1279,
+   "gloss": "to discuss",
+   "type": "irregular",
+   "skip": "discussing is talking over a subject; the best picture is two people with a bar each above the head, which is praten on the A1 page, and adding papers would onl"
+  },
+  {
+   "verb": "behouden",
+   "rank": 1379,
+   "gloss": "to keep",
+   "type": "irregular",
+   "skip": "keeping is houden, the same box held to the chest (review M8)."
+  },
+  {
+   "verb": "bestaan",
+   "rank": 9162,
+   "gloss": "to exist",
+   "type": "irregular",
+   "skip": "existing has no action and nothing to point at; the only honest picture would be a person standing alone, which is the picture of zijn on the A0 page, and no ot"
+  },
+  {
+   "verb": "lijden",
+   "rank": 1534,
+   "gloss": "to suffer",
+   "type": "irregular",
+   "skip": "suffering has no visible action of its own; a frowning face or a bandage on an arm is the picture of pijn or gewond rather than a verb."
+  },
+  {
+   "verb": "vermogen",
+   "rank": 1602,
+   "gloss": "a) power b) fortune",
+   "type": "irregular",
+   "skip": "a formal modal; the only picture would be the flexed arm of kunnen."
+  },
+  {
+   "verb": "overlijden",
+   "rank": 1622,
+   "gloss": "to die",
+   "type": "irregular",
+   "skip": "dying is drawn on the sterven card; a second deathbed would be the same picture."
+  },
+  {
+   "verb": "ondernemen",
+   "rank": 1656,
+   "gloss": "to undertake",
+   "type": "irregular",
+   "skip": "undertaking is abstract; any single action would be another verb."
+  },
+  {
+   "verb": "bedenken",
+   "rank": 1696,
+   "gloss": "to think (up)",
+   "type": "irregular",
+   "skip": "thinking up something new has no picture of its own; the bubble and the lightbulb belong to denken and weten on the A0 page and are banned at A2."
+  },
+  {
+   "verb": "treden",
+   "rank": 1747,
+   "gloss": "to step",
+   "type": "irregular",
+   "skip": "modern use is idiom (in werking treden, optreden); the stair scene is stappen (review H9)."
+  },
+  {
+   "verb": "raden",
+   "rank": 1801,
+   "gloss": "to guess",
+   "type": "irregular",
+   "skip": "guessing is an inner act; the closest visible act is asking, which is praten on another page, and the question mark in a cloud is an A0 mark."
+  },
+  {
+   "verb": "verslaan",
+   "rank": 1810,
+   "gloss": "to defeat",
+   "type": "irregular",
+   "skip": "defeating is the moment of winnen seen from the other side; same picture."
+  },
+  {
+   "verb": "verschijnen",
+   "rank": 1837,
+   "gloss": "to appear",
+   "type": "irregular",
+   "skip": "the same picture as a person stepping through a doorway (gaan) or walking out of mist (verdwijnen); the difference needs two frames."
+  },
+  {
+   "verb": "liegen",
+   "rank": 1852,
+   "gloss": "to lie",
+   "type": "irregular",
+   "skip": "there is no picture of its own that is not a speech bubble, which is praten on another page; a long nose or crossed fingers is a cartoon mark, not a scene."
+  },
+  {
+   "verb": "blijken",
+   "rank": 1877,
+   "gloss": "to prove",
+   "type": "irregular",
+   "skip": "turning out is a judgement about what something really was, which is idiom and not a scene; nothing visible separates it from vinden or denken."
+  },
+  {
+   "verb": "onderhouden",
+   "rank": 1889,
+   "gloss": "to maintain",
+   "type": "irregular",
+   "skip": "maintaining is a routine, and any single moment reads as repareren."
+  },
+  {
+   "verb": "verwijzen",
+   "rank": 2016,
+   "gloss": "to refer",
+   "type": "irregular",
+   "skip": "referring is abstract; the picture would be the pointing arm of wijzen."
+  },
+  {
+   "verb": "ontwerpen",
+   "rank": 2080,
+   "gloss": "to design",
+   "type": "irregular",
+   "skip": "designing at a drawing table is the picture of tekenen."
+  },
+  {
+   "verb": "verlopen",
+   "rank": 2088,
+   "gloss": "to go",
+   "type": "irregular",
+   "skip": "expiring or going a certain way is abstract; a date passing needs digits."
+  },
+  {
+   "verb": "besluiten",
+   "rank": 2178,
+   "gloss": "to decide",
+   "type": "irregular",
+   "skip": "a decision has no single picturable action; a fork in the road would read as kiezen and a gavel as rechtspreken."
+  },
+  {
+   "verb": "onthouden",
+   "rank": 2196,
+   "gloss": "to remember",
+   "type": "irregular",
+   "skip": "remembering is inner; any scene is an invented sign (review M9)."
+  },
+  {
+   "verb": "gelden",
+   "rank": 2219,
+   "gloss": "to apply",
+   "type": "irregular",
+   "skip": "a rule applying is idiom; a sign with a tick or a cross needs letters and a symbol, and neither is allowed on this page."
+  },
+  {
+   "verb": "laden",
+   "rank": 2224,
+   "gloss": "to load",
+   "type": "irregular",
+   "skip": "loading a van is the lossen picture with the direction reversed."
+  },
+  {
+   "verb": "vermijden",
+   "rank": 2241,
+   "gloss": "to avoid",
+   "type": "irregular",
+   "skip": "avoiding is turning away from one thing while aiming at the other, so it needs both the thing avoided and the goal; the only honest picture is a near-miss, whic"
+  },
+  {
+   "verb": "onderscheiden",
+   "rank": 2269,
+   "gloss": "to distinguish",
+   "type": "irregular",
+   "skip": "telling things apart is inner; the picture would be vergelijken."
+  },
+  {
+   "verb": "heten",
+   "rank": 2367,
+   "gloss": "to be called",
+   "type": "irregular",
+   "skip": "to be called is located in a name and a name is letters; writing the word in the drawing is forbidden."
+  },
+  {
+   "verb": "ontbreken",
+   "rank": 2372,
+   "gloss": "to lack",
+   "type": "irregular",
+   "skip": "something missing IS the empty place, and an empty place cannot be seen without the thing that should be there; the picture would show the object or its absence"
+  },
+  {
+   "verb": "verblijven",
+   "rank": 2418,
+   "gloss": "to stay",
+   "type": "irregular",
+   "skip": "staying somewhere is a state; the picture would be wonen or blijven."
+  },
+  {
+   "verb": "bestrijden",
+   "rank": 2426,
+   "gloss": "to dispute",
+   "type": "irregular",
+   "skip": "opposing something abstract has no visible action, and the literal sense is the fist fight already drawn for vechten on this page."
+  },
+  {
+   "verb": "verkrijgen",
+   "rank": 2466,
+   "gloss": "to obtain",
+   "type": "irregular",
+   "skip": "obtaining is krijgen in a formal register; same picture."
+  },
+  {
+   "verb": "melden",
+   "rank": 1007,
+   "gloss": "to report",
+   "type": "regular",
+   "skip": "reporting is speech; the scene reads as vertellen or praten (review M9)."
+  },
+  {
+   "verb": "hoeven",
+   "rank": 1064,
+   "gloss": "to need (to)",
+   "type": "regular",
+   "skip": "needing and not needing are modal meanings with no object in the world to draw; any picture of them would be a convention from the A0 and A1 brief, and those ar"
+  },
+  {
+   "verb": "organiseren",
+   "rank": 1070,
+   "gloss": "to organize",
+   "type": "regular",
+   "skip": "organising is abstract, and the scene needed numbered cards, which is text in the artwork (review H5, M9)."
+  },
+  {
+   "verb": "wensen",
+   "rank": 1078,
+   "gloss": "to wish",
+   "type": "regular",
+   "skip": "wishing is a private idea with no action; the birthday cake convention is idiom, and a clasped hands or candle picture would be the same wish token that hopen u"
+  },
+  {
+   "verb": "dienen",
+   "rank": 1088,
+   "gloss": "to serve (as)",
+   "type": "regular",
+   "skip": "serving as something or being of use is a relational meaning with no action of its own; a waiter carrying a tray would be the single picture of brengen or geven"
+  },
+  {
+   "verb": "ontwikkelen",
+   "rank": 1100,
+   "gloss": "to develop",
+   "type": "regular",
+   "skip": "developing is a slow change over time and has no single moment; any picture would need two frames or a before and after, and a person holding up a small seedlin"
+  },
+  {
+   "verb": "plaatsen",
+   "rank": 329,
+   "gloss": "to place",
+   "type": "regular",
+   "skip": "a synonym of zetten and leggen; the tree scene was planten (review M8)."
+  },
+  {
+   "verb": "verschillen",
+   "rank": 1136,
+   "gloss": "to differ",
+   "type": "regular",
+   "skip": "differing means comparing two things and reporting a difference, so the picture would be two objects plus an added comparison mark or number; the two-jars pictu"
+  },
+  {
+   "verb": "bepalen",
+   "rank": 1179,
+   "gloss": "to determine",
+   "type": "regular",
+   "skip": "determining is a judgement about what will happen and has no action in the world; a person marking one line on a chart would need a choice between objects, whic"
+  },
+  {
+   "verb": "betekenen",
+   "rank": 1205,
+   "gloss": "to mean",
+   "type": "regular",
+   "skip": "meaning is a link between a word and a thing and can only be drawn as a sign with an arrow or as lettering, both of which the brief forbids, and the sign would "
+  },
+  {
+   "verb": "grenzen",
+   "rank": 1209,
+   "gloss": "to border",
+   "type": "regular",
+   "skip": "bordering is a line between two areas and needs two named countries; without letters it would be an unexplained fence line, and every fence on these pages alrea"
+  },
+  {
+   "verb": "herinneren",
+   "rank": 1212,
+   "gloss": "to remember",
+   "type": "regular",
+   "skip": "remembering is a private act that can only be drawn with the thought bubble convention, which belongs to denken on the A0 page and is not allowed here."
+  },
+  {
+   "verb": "duren",
+   "rank": 1254,
+   "gloss": "to last",
+   "type": "regular",
+   "skip": "lasting is how long something takes and has no action; a person waiting under a clock is the picture of wachten on the A1 page, and a clock alone is an object, "
+  },
+  {
+   "verb": "creëren",
+   "rank": 1363,
+   "gloss": "to create",
+   "type": "regular",
+   "skip": "creating is a general word for making something new and would take the picture of maken or bouwen; any distinct scene would be a second verb on this page for th"
+  },
+  {
+   "verb": "regelen",
+   "rank": 1445,
+   "gloss": "to regulate, to arrange",
+   "type": "regular",
+   "skip": "arranging is the same office action as organiseren on this page; a second picture of it at this level would duplicate that scene, which the brief forbids."
+  },
+  {
+   "verb": "behandelen",
+   "rank": 1474,
+   "gloss": "to treat",
+   "type": "regular",
+   "skip": "treating is a sequence of care; the bandage is verbinden and the stethoscope is onderzoeken (review M8)."
+  },
+  {
+   "verb": "bevatten",
+   "rank": 1499,
+   "gloss": "to contain",
+   "type": "regular",
+   "skip": "containing is a state, not an action; an open box with things in it is a picture of hebben or of verzamelen, and an arrow into the box would be a symbol the bri"
+  },
+  {
+   "verb": "behoren",
+   "rank": 1522,
+   "gloss": "to belong",
+   "type": "regular",
+   "skip": "belonging is ownership or membership, which is a fixed relation and not an action; a name tag on a coat or a house key would need letters or would read as hebbe"
+  },
+  {
+   "verb": "kampen",
+   "rank": 1529,
+   "gloss": "to cope with, to struggle with",
+   "type": "regular",
+   "skip": "struggling with something is a state of trouble, not a pictureable action; the closest literal scene would be two people wrestling, which the brief would read a"
+  },
+  {
+   "verb": "overleven",
+   "rank": 1540,
+   "gloss": "to survive",
+   "type": "regular",
+   "skip": "surviving is only visible after a disaster and needs a context of ruin to make sense; a person alone with a torn coat at a wrecked building would read as a dest"
+  },
+  {
+   "verb": "ontdekken",
+   "rank": 1566,
+   "gloss": "to discover",
+   "type": "regular",
+   "skip": "the key found in the soil is the drawing of vinden (review M8)."
+  },
+  {
+   "verb": "getuigen",
+   "rank": 1584,
+   "gloss": "to witness",
+   "type": "regular",
+   "skip": "witnessing is the second person in a scene, so the picture would be an onlooker with no distinguishing mark; it would duplicate ontmoeten or aanvallen depending"
+  },
+  {
+   "verb": "accepteren",
+   "rank": 1606,
+   "gloss": "to accept",
+   "type": "regular",
+   "skip": "accepting is inner; a handshake or a hand taking something reads as afspreken or pakken."
+  }
+ ]
+}
