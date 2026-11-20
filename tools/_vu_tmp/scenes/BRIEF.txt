@@ -1,0 +1,88 @@
+VASTE UITDRUKKINGEN — SCENE BRIEF
+=================================
+
+Recreated on 2026-11-20 from tools/_bw_tmp/scenes/BRIEF.txt (the original authoring
+brief was lost) and adapted to fixed expressions (chunks). convert.py skips this file.
+
+Each card in Docs/vaste-uitdrukkingen/ stands for one Dutch fixed expression (chunk).
+The card is a picture brief: one drawing, in the same cobalt-on-white style as
+Docs/voorzetselpaden/ and Docs/werkwoorden/, that makes the chunk obvious.
+Chunks are learned as CONTRAST SETS: two to four chunks on one axis
+(op tijd / te laat). The set is what teaches, so the drawings in a set must be the
+SAME picture with ONE visible thing changed.
+
+Read first (paths relative to the repo root):
+  tools/_vu_tmp/clusters.txt             the sets, members, glosses and rank keys
+  tools/_vu_tmp/left-out.tsv             chunks removed on purpose; do not bring them back
+  Docs/werkwoorden/AGENTS.html           card conventions (what Must read / Avoid mean)
+  Docs/voorzetselpaden/a2-pairs.html     how paired frames share a fixed setting
+
+WHAT COUNTS AS A CHUNK
+----------------------
+- A chunk has a fixed form: no article (aan tafel, op zee), a frozen word (ter plekke,
+  te voet) or a preposition the learner cannot predict (op het platteland).
+- Not a chunk: free preposition-plus-noun combinations where any noun fits (in de trein,
+  zonder melk, voor het raam). They belong to the single-preposition cards in Voorzetselpaden.
+- Not a chunk: single words (naast, thuis, overdag, rechtop). They belong to Voorzetselpaden
+  or Bijwoorden. A partner that another family already draws is named with
+  '; xref=family:card-id' at the end of the cluster line, not drawn again.
+- No card repeats a Voorzetselpaden chunk, example sentence or scene (boarding a vehicle is
+  Voorzetselpaden stappen in / stappen uit; draw travel, not boarding). The checker tests chunks
+  and example sentences against the Voorzetselpaden pages.
+
+AUTHORING FORMAT (scenes/<group>.txt, '||' separators, one row per line)
+------------------------------------------------------------------------
+C||cluster||frame||sentence_nl||sentence_en
+K||id||scene||must||avoid||contrast||example_nl||example_en||alt||register||literal
+
+Then run, in this order:
+  python3 tools/_vu_tmp/convert.py                   # .txt -> .clusters.tsv / .cards.tsv
+  python3 tools/_vu_tmp/select.py                    # clusters.txt -> selection.json
+  python3 tools/build-vaste-uitdrukkingen-cards.py   # pages
+  python3 tools/check-vaste-uitdrukkingen-cards.py   # must report 0 errors
+
+Fields
+  cluster      the cluster id, exactly as in clusters.txt
+  frame        English. The FIXED part of every drawing in the set: same figure(s) or object,
+               same plain setting, same viewpoint, same size on the page. Then one final
+               sentence starting "Only ..." that names the single thing that changes.
+  sentence_nl  Dutch. ONE contrast sentence that uses all chunks of the set. Plain grammar.
+  sentence_en  English translation.
+  id           the member id from clusters.txt; it is also the png name.
+  scene        English, 25-75 words (the checker enforces it). Starts from the frame and states
+               the changed element. Name every object that must be visible. Any board, screen,
+               book or page in a scene is stated to be blank.
+  must         English. The one mark that must read at thumbnail size. One clause.
+  avoid        English. Three to five near misses separated by semicolons, each with the competing
+               chunk in brackets. The first item names a partner (or the cross-referenced card).
+  contrast     English. Starts "Pair with <partner ids>." Then ONE sentence naming the single point
+               of difference.
+  example_nl   Dutch. One natural sentence with the chunk in the sense drawn. Not the set sentence,
+               and not a sentence Voorzetselpaden already uses.
+  example_en   English translation.
+  alt          Dutch. One sentence for a screen reader that describes the picture. It never
+               contains the chunk, a form of it (any article or possessive in between), a partner
+               chunk, or the stem of a content word that only that member has (linkerkant ->
+               no "linker...", 's ochtends -> no "ochtend..."). A noun shared by the whole set
+               (tafel in aan / op / onder tafel) may be named.
+  register     neutral, spoken or formal. 's ochtends, 's avonds, met zijn tweeën and met zijn allen
+               are standard written Dutch: neutral. spoken is for chunks like in zijn eentje.
+  literal      literal, or "literal and figurative" when a common second sense exists
+               (hand in hand gaan met, alles op een rij zetten). Temporal or grammatical chunks
+               with one sense (voor het eerst, in plaats van) are literal.
+
+HARD RULES
+----------
+- Never colour as the carrier of meaning: nothing is "red" or "yellow". Light is drawn as a
+  lamp with rays or a sun, dark as hatching.
+- No text, numbers or writing inside the drawing: no signs, no clock faces, no sleep "Zzz"
+  bubbles, no arrows. Direction is shown by the way a body faces and which foot leads.
+- No souvenir Dutch imagery (windmills, clogs, tulips, canals, cheese).
+- Faces: emotions are shown with brows, eyes and mouth on a white outlined face; keep the same
+  face across a set unless the face is the thing that changes.
+- A chunk that cannot be shown in one picture (it needs a sequence, a sign or motion) is written
+  with scene "SKIP: <reason>" and the other fields "-"; the builder lists it on the overview.
+  Skip a set as a whole, never one half, so no drawn card loses its partner.
+- One sense per card. Do not use real brands, real people or religious symbols.
+- Dutch must be correct. If you are unsure of a form, choose a sentence that avoids the problem.
+- No tab character inside any field; no line breaks inside a field.

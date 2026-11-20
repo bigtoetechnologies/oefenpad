@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaste uitdrukkingen — B2</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Vaste uitdrukkingen — B2</h1>
+<p class="lead">Rarer chunks with one visible change: on stage or in the wings, trot and gallop, in step, single file.</p>
+<div class="sum"><span>4 contrast sets</span><span>8 chunks</span><span>frames #91–#98</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html" class="hier">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="toneel" data-band="b2"><h2><span class="woorden">op de planken · in de coulissen</span></h2><p class="as">where the actress stands · 2 cards</p><p class="zin">Eerst wacht de actrice in de coulissen, dan staat zij op de planken.<span class="en">First the actress waits in the wings, then she is on stage.</span></p><p class="frame"><strong>Fixed frame.</strong> a small theatre stage seen from the audience: a plain wooden stage floor, a plain curtain gathered at each side and one tall plain side flat at the right edge, the backs of three rows of seats in the foreground; one actress in a long plain coat; same stage, same size on the page. Only where the actress stands changes.</p><div class="kaarten"><article id="op-de-planken" class="kaart" data-id="op-de-planken" data-band="b2" data-kind="chunk" data-cluster="toneel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 91">#91</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op de planken">op de planken</h3>
+<p class="gloss">on the stage</p>
+<p class="vlaggen"><span>where the actress stands</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the actress stands in the middle of the stage floor facing the seats, one arm stretched out and her mouth open as if speaking; short rays from one lamp above fall on her. Behind the side flat at the right edge nobody is visible.</dd>
+<dt>Must read</dt><dd class="must">the actress in the middle of the stage, facing the seats.</dd>
+<dt>Avoid</dt><dd class="avoid">the actress half hidden behind the side flat (in de coulissen); an audience clapping (not the card); a singer at a microphone on a podium (not the card); a teacher in front of a class (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-coulissen">Pair with in-de-coulissen. The only difference is where the actress stands: in the middle of the stage facing the seats here, half hidden behind the side flat there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn oma stond vroeger op de planken.<br><span class="voorbeeld-en">My grandmother used to be an actress.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een actrice in een lange jas staat midden op een toneelvloer voor rijen stoelen en spreekt met een uitgestrekte arm.</dd>
+</dl>
+<p class="id">op-de-planken.png · B2 · toneel</p>
+</article>
+<article id="in-de-coulissen" class="kaart" data-id="in-de-coulissen" data-band="b2" data-kind="chunk" data-cluster="toneel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 92">#92</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de coulissen">in de coulissen</h3>
+<p class="gloss">in the wings</p>
+<p class="vlaggen"><span>where the actress stands</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the actress stands at the side behind the tall flat at the right edge, only half visible: one shoulder, one eye and one hand on the edge of the flat, peeking at the stage. The middle of the stage floor is empty and lit by short rays from one lamp above.</dd>
+<dt>Must read</dt><dd class="must">the actress half hidden behind the side flat, the stage empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the actress in the middle of the stage facing the seats (op de planken); a person hiding behind a curtain at home (not the card); a person at a mirror in a dressing room (not the card); a stagehand pulling a rope (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-de-planken">Pair with op-de-planken. The only difference is where the actress stands: half hidden behind the side flat here, in the middle of the stage facing the seats there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De zanger wacht zenuwachtig in de coulissen.<br><span class="voorbeeld-en">The singer waits nervously in the wings.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een actrice in een lange jas gluurt half verstopt achter een hoog zijscherm naar een leeg, verlicht toneel.</dd>
+</dl>
+<p class="id">in-de-coulissen.png · B2 · toneel</p>
+</article></div></section>
+<section class="cluster" data-cluster="paardengang" data-band="b2"><h2><span class="woorden">in draf · in galop</span></h2><p class="as">how fast the horse moves · 2 cards</p><p class="zin">Het paard loopt eerst in draf en gaat daarna in galop.<span class="en">The horse first trots and then breaks into a gallop.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain horse without saddle or rider on a flat sandy track, side view, moving to the right, a low wooden fence behind; same horse, same track, same size on the page. Only the horse's legs and body change.</p><div class="kaarten"><article id="in-draf" class="kaart" data-id="in-draf" data-band="b2" data-kind="chunk" data-cluster="paardengang" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 93">#93</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in draf">in draf</h3>
+<p class="gloss">at a trot</p>
+<p class="vlaggen"><span>how fast the horse moves</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the horse trots: the front leg on one side and the back leg on the other side are lifted and bent together, while the other two legs stand on the sand; the head is up, the neck arched, the tail hangs and one small puff of sand rises.</dd>
+<dt>Must read</dt><dd class="must">two diagonal legs lifted together and two on the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">all four legs stretched out and the body low (in galop); a horse standing on fenced grass (in de wei); a horse with a rider (te paard); a horse jumping a fence (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-galop">Pair with in-galop. The only difference is the stride: diagonal legs lifted in pairs with the head up here, all legs stretched out with the body low there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De pony komt in draf naar het hek.<br><span class="voorbeeld-en">The pony comes trotting to the gate.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een paard loopt over zand en tilt telkens een voorbeen en het schuin tegenovergestelde achterbeen tegelijk op.</dd>
+</dl>
+<p class="id">in-draf.png · B2 · paardengang</p>
+</article>
+<article id="in-galop" class="kaart" data-id="in-galop" data-band="b2" data-kind="chunk" data-cluster="paardengang" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 94">#94</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in galop">in galop</h3>
+<p class="gloss">at a gallop</p>
+<p class="vlaggen"><span>how fast the horse moves</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the horse gallops: its body is stretched long and low, both front legs reach far forward and both back legs push far back, all four hooves are off the sand, the mane and tail fly out behind and three puffs of sand rise.</dd>
+<dt>Must read</dt><dd class="must">a stretched low body with all four hooves off the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">diagonal legs lifted in pairs with the head up (in draf); a horse rearing on its back legs (not the card); a racehorse with a rider and a number cloth (not the card); a horse's head over a stable door (op stal).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-draf">Pair with in-draf. The only difference is the stride: all legs stretched out with the body low here, diagonal legs lifted in pairs with the head up there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De paarden gingen in galop over het strand.<br><span class="voorbeeld-en">The horses galloped along the beach.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een paard vliegt lang en laag gestrekt over het zand, met alle vier de hoeven van de grond en wapperende manen.</dd>
+</dl>
+<p class="id">in-galop.png · B2 · paardengang</p>
+</article></div></section>
+<section class="cluster" data-cluster="pas" data-band="b2"><h2><span class="woorden">in de pas · uit de pas</span></h2><p class="as">walking in step or out of it · 2 cards</p><p class="zin">Eerst loopt het kind in de pas, daarna loopt het uit de pas.<span class="en">First the child walks in step, then it walks out of step.</span></p><p class="frame"><strong>Fixed frame.</strong> four children in the same plain coats walking toward the viewer side by side in one wide row on a plain path, front view, each with one knee raised and the opposite arm swinging forward; same children, same path, same size on the page. Only which knee the third child from the left raises changes.</p><div class="kaarten"><article id="in-de-pas" class="kaart" data-id="in-de-pas" data-band="b2" data-kind="chunk" data-cluster="pas" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 95">#95</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de pas">in de pas</h3>
+<p class="gloss">in step</p>
+<p class="vlaggen"><span>walking in step or out of it</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">all four children raise the knee on the viewer's left at the same moment, bent to the same height, the other foot flat on the path and the opposite arm swinging forward, so the four bodies look like copies of one another. Nobody stumbles or turns round.</dd>
+<dt>Must read</dt><dd class="must">four children abreast, each with the same knee raised.</dd>
+<dt>Avoid</dt><dd class="avoid">the third child raising the other knee (uit de pas); four children in one line one behind the other (in ganzenpas); soldiers marching with rifles (not the card); children standing still side by side in a row (naast elkaar).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="uit-de-pas">Pair with uit-de-pas. The only difference is the third child's raised knee: the same knee as the other three here, the other knee there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De muzikanten lopen netjes in de pas.<br><span class="voorbeeld-en">The musicians walk neatly in step.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vier kinderen lopen in één brede rij naar je toe en tillen allemaal tegelijk dezelfde knie op.</dd>
+</dl>
+<p class="id">in-de-pas.png · B2 · pas</p>
+</article>
+<article id="uit-de-pas" class="kaart" data-id="uit-de-pas" data-band="b2" data-kind="chunk" data-cluster="pas" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 96">#96</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="uit de pas">uit de pas</h3>
+<p class="gloss">out of step</p>
+<p class="vlaggen"><span>walking in step or out of it</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">three children raise the knee on the viewer's left, but the third child from the left raises the other knee and swings the other arm forward, so its body is the mirror image of the other three. All four walk toward the viewer, and nobody stumbles or turns round.</dd>
+<dt>Must read</dt><dd class="must">one child with the opposite knee raised to the other three.</dd>
+<dt>Avoid</dt><dd class="avoid">all four children raising the same knee (in de pas); a child tripping and falling (not the card); a child walking the other way (not the card); a child standing still with both feet down (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-pas">Pair with in-de-pas. The only difference is the third child's raised knee: the other knee here, the same knee as the other three there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij loopt altijd een beetje uit de pas.<br><span class="voorbeeld-en">He is always a bit out of step.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vier kinderen lopen in één brede rij naar je toe; drie tillen dezelfde knie op, het derde kind juist de andere.</dd>
+</dl>
+<p class="id">uit-de-pas.png · B2 · pas</p>
+</article></div></section>
+<section class="cluster" data-cluster="groep-lopen" data-band="b2"><h2><span class="woorden">in ganzenpas · op een kluitje</span></h2><p class="as">how the children walk together · 2 cards</p><p class="zin">Eerst lopen de kinderen in ganzenpas, daarna lopen ze op een kluitje.<span class="en">First the children walk in single file, then they walk bunched together.</span></p><p class="frame"><strong>Fixed frame.</strong> five children in the same plain coats walking to the right along a narrow path through a plain field, seen from slightly above; same children, same path, same size on the page. Only how the five walk together changes.</p><div class="kaarten"><article id="in-ganzenpas" class="kaart" data-id="in-ganzenpas" data-band="b2" data-kind="chunk" data-cluster="groep-lopen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 97">#97</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in ganzenpas">in ganzenpas</h3>
+<p class="gloss">in single file</p>
+<p class="vlaggen"><span>how the children walk together</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the five children walk one behind the other in one straight line along the middle of the path, an equal small gap between each, all facing forward; nobody walks beside anybody else.</dd>
+<dt>Must read</dt><dd class="must">five children in one straight line, one behind the other.</dd>
+<dt>Avoid</dt><dd class="avoid">the five children pressed close together in one small group (op een kluitje); identical cups standing one behind the other (achter elkaar); soldiers marching with stiff straight legs (not the card); children holding hands in a circle (not the card); a queue at a counter (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-een-kluitje">Pair with op-een-kluitje. The only difference is how the children walk: one behind the other in a single line here, pressed close together in one group there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De eendjes zwemmen in ganzenpas achter hun moeder.<br><span class="voorbeeld-en">The ducklings swim in single file behind their mother.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf kinderen lopen op een pad in één rechte lijn, de een vlak na de ander.</dd>
+</dl>
+<p class="id">in-ganzenpas.png · B2 · groep-lopen</p>
+</article>
+<article id="op-een-kluitje" class="kaart" data-id="op-een-kluitje" data-band="b2" data-kind="chunk" data-cluster="groep-lopen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 98">#98</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op een kluitje">op een kluitje</h3>
+<p class="gloss">huddled together</p>
+<p class="vlaggen"><span>how the children walk together</span><span>B2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the five children walk pressed tightly together in one small group in the middle of the path, shoulders touching, some half hidden behind others, all facing forward; nobody walks alone in front or behind.</dd>
+<dt>Must read</dt><dd class="must">five children pressed close together in one small group.</dd>
+<dt>Avoid</dt><dd class="avoid">the five children in one straight line, one behind the other (in ganzenpas); children standing in a neat row side by side (naast elkaar); a crowd at a concert (not the card); children hugging (not the card); blocks pushed together in one cluster (bij elkaar, Bijwoorden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-ganzenpas">Pair with in-ganzenpas. The only difference is how the children walk: pressed close together in one group here, one behind the other in a single line there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De schapen staan op een kluitje bij het hek.<br><span class="voorbeeld-en">The sheep stand huddled together by the gate.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf kinderen lopen dicht tegen elkaar aan in één klein groepje midden op een pad.</dd>
+</dl>
+<p class="id">op-een-kluitje.png · B2 · groep-lopen</p>
+</article></div></section>
+</main>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaste uitdrukkingen — A0</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Vaste uitdrukkingen — A0</h1>
+<p class="lead">Time, school and work, and road vehicles: the chunks a learner needs in the first weeks.</p>
+<div class="sum"><span>3 contrast sets</span><span>7 chunks</span><span>frames #1–#7</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html" class="hier">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="tijdstip" data-band="a0"><h2><span class="woorden">op tijd · te laat</span></h2><p class="as">arriving relative to a departure · 2 cards</p><p class="zin">Anna staat op tijd bij de halte, maar Jan komt te laat.<span class="en">Anna is at the stop on time, but Jan arrives too late.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult with a small bag and a plain bus-stop post on a flat road line, side view, whole figure, same distance from the viewer, a plain low wall behind and an empty sky. Only the position of the bus relative to the adult changes.</p><div class="kaarten"><article id="op-tijd" class="kaart" data-id="op-tijd" data-band="a0" data-kind="chunk" data-cluster="tijdstip" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 1">#1</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op tijd">op tijd</h3>
+<p class="gloss">on time</p>
+<p class="vlaggen"><span>arriving relative to a departure</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">an adult with a small bag stands calmly beside a plain bus-stop post, side view, whole figure, while a plain bus pulls in and stops next to the post with its front door open. The adult got there first and is not hurrying; the road line is flat and the sky empty.</dd>
+<dt>Must read</dt><dd class="must">the calm adult at the post beside the open-doored bus.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult running after a bus pulling away (te laat); a bus driving past without stopping (not the card); an adult waiting alone on an empty road with no bus anywhere (not this set); a clock face (no text or numbers in the art).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="te-laat">Pair with te-laat. The only difference is the timing: the bus pulls in beside a calm adult here, and drives away from a running adult there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ben altijd op tijd.<br><span class="voorbeeld-en">I am always on time.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw met een tas staat rustig bij de halte terwijl de bus met open deur aankomt.</dd>
+</dl>
+<p class="id">op-tijd.png · A0 · tijdstip</p>
+</article>
+<article id="te-laat" class="kaart" data-id="te-laat" data-band="a0" data-kind="chunk" data-cluster="tijdstip" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 2">#2</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="te laat">te laat</h3>
+<p class="gloss">too late</p>
+<p class="vlaggen"><span>arriving relative to a departure</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">an adult with a small bag runs along the flat road line after a plain bus whose back end is already several metres from the stop and moving off, one arm stretched out toward it, mouth open. The bus-stop post stands empty beside the road, the sky is empty.</dd>
+<dt>Must read</dt><dd class="must">a runner reaching toward a bus that is already leaving.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult standing calmly as a bus arrives (op tijd); a person jogging for exercise with no bus in view (not the card); a bus parked at the stop with its door open (op tijd); an adult waving at a bus on a far road (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-tijd">Pair with op-tijd. The only difference is the timing: the bus drives away from a running adult here, and pulls in beside a calm adult there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij komt te laat voor de bus.<br><span class="voorbeeld-en">He is too late for the bus.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man rent met een tas achter een bus aan die wegrijdt.</dd>
+</dl>
+<p class="id">te-laat.png · A0 · tijdstip</p>
+</article></div></section>
+<section class="cluster" data-cluster="bestemming" data-band="a0"><h2><span class="woorden">op school · op het werk</span></h2><p class="as">where the adult is busy · 2 cards</p><p class="zin">Mijn zus is op school en mijn vader is op het werk.<span class="en">My sister is at school and my father is at work.</span></p><p class="frame"><strong>Fixed frame.</strong> the front wall of a plain building is cut away, and one adult in plain clothes sits whole-figure, side view, at a desk on a flat floor line, same adult and same size on the page. Only the room behind the cut-away wall changes: a classroom or an office.</p><div class="kaarten"><article id="op-school" class="kaart" data-id="op-school" data-band="a0" data-kind="chunk" data-cluster="bestemming" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 3">#3</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op school">op school</h3>
+<p class="gloss">at school</p>
+<p class="vlaggen"><span>where the adult is busy</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the cut-away wall shows a classroom: the adult sits at a small pupil's desk in the second of three rows of identical desks, facing a blank board on the wall with nothing on it, a pen in the hand and a blank open exercise book on the desk.</dd>
+<dt>Must read</dt><dd class="must">an adult at a pupil's desk among rows of desks, facing a blank board.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult at a single office desk with a blank screen (op het werk); an adult standing in front of the class as a teacher (not the card); a child at a desk (not the card); a playground (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-het-werk">Pair with op-het-werk. The only difference is the room: a pupil's desk among rows of desks facing a blank board here, a single office desk with a blank screen there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen zijn op school.<br><span class="voorbeeld-en">The children are at school.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit aan een tafeltje tussen rijen tafeltjes en kijkt naar een leeg bord.</dd>
+</dl>
+<p class="id">op-school.png · A0 · bestemming</p>
+</article>
+<article id="op-het-werk" class="kaart" data-id="op-het-werk" data-band="a0" data-kind="chunk" data-cluster="bestemming" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 4">#4</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op het werk">op het werk</h3>
+<p class="gloss">at work</p>
+<p class="vlaggen"><span>where the adult is busy</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the cut-away wall shows an office: the adult sits on a swivel chair at one large desk with a blank computer screen and a keyboard, a filing cabinet beside the desk and no other desk in the room. The adult types with both hands.</dd>
+<dt>Must read</dt><dd class="must">an adult typing at a single office desk with a blank screen.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult at a pupil's desk among rows of desks (op school); an adult at a shop counter (not the card); an adult at a kitchen table (not the card); a factory floor (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-school">Pair with op-school. The only difference is the room: a single office desk with a blank screen here, a pupil's desk among rows of desks facing a blank board there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn moeder is op het werk.<br><span class="voorbeeld-en">My mother is at work.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit op een draaistoel aan een bureau met een leeg computerscherm.</dd>
+</dl>
+<p class="id">op-het-werk.png · A0 · bestemming</p>
+</article></div></section>
+<section class="cluster" data-cluster="voertuig-weg" data-band="a0"><h2><span class="woorden">met de auto · met de bus · met de trein</span></h2><p class="as">which road vehicle · 3 cards</p><p class="zin">Wij gaan met de auto, jullie gaan met de bus en zij gaan met de trein.<span class="en">We go by car, you go by bus and they go by train.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes sits inside a moving road vehicle and is seen through its side window, the whole vehicle in side view on a flat road line, three short speed lines behind it, the vehicle filling the width of the picture. Only the kind of vehicle changes.</p><div class="kaarten"><article id="met-de-auto" class="kaart" data-id="met-de-auto" data-band="a0" data-kind="chunk" data-cluster="voertuig-weg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 5">#5</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de auto">met de auto</h3>
+<p class="gloss">by car</p>
+<p class="vlaggen"><span>which road vehicle</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits at the wheel of a plain small family car and is seen through the front side window, both hands on the steering wheel, the car driving along the road line with two wheels visible and three speed lines behind it. No other vehicle is in the picture.</dd>
+<dt>Must read</dt><dd class="must">an adult at the wheel of a small car with speed lines.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult seated by a window in a long vehicle with a row of windows (met de bus); an adult seated in a carriage on rails (met de trein); an adult loading a suitcase into a boot (not the card); a lorry (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-bus met-de-trein">Pair with met-de-bus and met-de-trein. The only difference is the vehicle: a small car with the adult at the wheel here, a long road bus or a carriage on rails there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij gaan met de auto naar zee.<br><span class="voorbeeld-en">We go to the sea by car.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit achter het stuur van een kleine personenwagen die over de weg rijdt.</dd>
+</dl>
+<p class="id">met-de-auto.png · A0 · voertuig-weg</p>
+</article>
+<article id="met-de-bus" class="kaart" data-id="met-de-bus" data-band="a0" data-kind="chunk" data-cluster="voertuig-weg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 6">#6</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de bus">met de bus</h3>
+<p class="gloss">by bus</p>
+<p class="vlaggen"><span>which road vehicle</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits on a seat behind the third of five equal windows of a long plain city bus driving along the road line, a driver at the front, two wheels visible and three speed lines behind the bus. The road has no rails and no wire above it.</dd>
+<dt>Must read</dt><dd class="must">a seated passenger in a long road vehicle with a row of windows.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult at the wheel of a small car (met de auto); an adult in a carriage on rails (met de trein); an adult stepping into a bus at a stop (not the card); a tram with an overhead wire (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-auto met-de-trein">Pair with met-de-auto and met-de-trein. The only difference is the vehicle: a long road bus with the adult as a passenger here, a small car or a carriage on rails there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ga met de bus naar school.<br><span class="voorbeeld-en">I go to school by bus.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit achter een raam van een lang voertuig met een rij ramen dat over de weg rijdt.</dd>
+</dl>
+<p class="id">met-de-bus.png · A0 · voertuig-weg</p>
+</article>
+<article id="met-de-trein" class="kaart" data-id="met-de-trein" data-band="a0" data-kind="chunk" data-cluster="voertuig-weg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 7">#7</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de trein">met de trein</h3>
+<p class="gloss">by train</p>
+<p class="vlaggen"><span>which road vehicle</span><span>A0</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits on a seat behind a window of a plain rail carriage moving along steel rails with sleepers, a line of identical carriages behind it, a wire above the roof and three speed lines behind the train. No road is in the picture.</dd>
+<dt>Must read</dt><dd class="must">a seated passenger in a carriage moving on rails.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult at the wheel of a small car (met de auto); an adult in a long road bus (met de bus); an adult stepping onto a carriage at a platform (not the card); a toy train (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-auto met-de-bus">Pair with met-de-auto and met-de-bus. The only difference is the vehicle: a carriage moving on rails here, a small car or a road bus there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij gaat met de trein naar haar werk.<br><span class="voorbeeld-en">She goes to work by train.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit achter een raam van een wagon die over het spoor rijdt.</dd>
+</dl>
+<p class="id">met-de-trein.png · A0 · voertuig-weg</p>
+</article></div></section>
+</main>
+</body>
+</html>

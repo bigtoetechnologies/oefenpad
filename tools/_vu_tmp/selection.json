@@ -1,0 +1,1394 @@
+{
+ "a0": [
+  {
+   "id": "tijdstip",
+   "axis": "arriving relative to a departure",
+   "band": "a0",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "op-tijd",
+     "lemma": "op tijd",
+     "gloss": "on time",
+     "keys": [
+      "tijd"
+     ],
+     "rank": 70
+    },
+    {
+     "id": "te-laat",
+     "lemma": "te laat",
+     "gloss": "too late",
+     "keys": [],
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "bestemming",
+   "axis": "where the adult is busy",
+   "band": "a0",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "op-school",
+     "lemma": "op school",
+     "gloss": "at school",
+     "keys": [
+      "school"
+     ],
+     "rank": 211
+    },
+    {
+     "id": "op-het-werk",
+     "lemma": "op het werk",
+     "gloss": "at work",
+     "keys": [
+      "werk"
+     ],
+     "rank": 106
+    }
+   ]
+  },
+  {
+   "id": "voertuig-weg",
+   "axis": "which road vehicle",
+   "band": "a0",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "met-de-auto",
+     "lemma": "met de auto",
+     "gloss": "by car",
+     "keys": [
+      "auto"
+     ],
+     "rank": 210
+    },
+    {
+     "id": "met-de-bus",
+     "lemma": "met de bus",
+     "gloss": "by bus",
+     "keys": [
+      "bus"
+     ],
+     "rank": 718
+    },
+    {
+     "id": "met-de-trein",
+     "lemma": "met de trein",
+     "gloss": "by train",
+     "keys": [
+      "trein"
+     ],
+     "rank": 791
+    }
+   ]
+  }
+ ],
+ "b1": [
+  {
+   "id": "opzet",
+   "axis": "deliberate or accidental",
+   "band": "b1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "met-opzet",
+     "lemma": "met opzet",
+     "gloss": "on purpose",
+     "keys": [
+      "opzet"
+     ],
+     "rank": 2081
+    },
+    {
+     "id": "per-ongeluk",
+     "lemma": "per ongeluk",
+     "gloss": "by accident",
+     "keys": [
+      "ongeluk"
+     ],
+     "rank": 878
+    }
+   ],
+   "override": "ongeluk (878) ranks the base word; met opzet and per ongeluk are B1 chunks"
+  },
+  {
+   "id": "wegtocht",
+   "axis": "arrived at the spot",
+   "band": "b1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "ter-plekke",
+     "lemma": "ter plekke",
+     "gloss": "on the spot",
+     "keys": [
+      "plek"
+     ],
+     "rank": 366
+    }
+   ],
+   "override": "plek (366) ranks the base word; ter plekke keeps an old case form and is a B1 chunk",
+   "xref": "bijwoorden:onderweg"
+  },
+  {
+   "id": "klok-draai",
+   "axis": "direction of turning (SKIP)",
+   "band": "b1",
+   "rank_band": "a2",
+   "members": [
+    {
+     "id": "met-de-klok-mee",
+     "lemma": "met de klok mee",
+     "gloss": "clockwise",
+     "keys": [
+      "klok"
+     ],
+     "rank": 1761
+    },
+    {
+     "id": "tegen-de-klok-in",
+     "lemma": "tegen de klok in",
+     "gloss": "anticlockwise",
+     "keys": [
+      "klok"
+     ],
+     "rank": 1761
+    }
+   ],
+   "override": "klok (1761) ranks the clock; the turning directions are a B1 pair (SKIP set)"
+  },
+  {
+   "id": "op-zijn-kop",
+   "axis": "upside down",
+   "band": "b1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "op-zijn-kop",
+     "lemma": "op zijn kop",
+     "gloss": "upside down",
+     "keys": [
+      "kop"
+     ],
+     "rank": 492
+    }
+   ],
+   "override": "kop (492) is ranked as head or cup, not as the chunk",
+   "xref": "bijwoorden:rechtop"
+  },
+  {
+   "id": "wind",
+   "axis": "riding with or against the wind",
+   "band": "b1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "met-de-wind-mee",
+     "lemma": "met de wind mee",
+     "gloss": "with the wind behind",
+     "keys": [
+      "wind"
+     ],
+     "rank": 911
+    },
+    {
+     "id": "tegen-de-wind-in",
+     "lemma": "tegen de wind in",
+     "gloss": "against the wind",
+     "keys": [
+      "wind"
+     ],
+     "rank": 911
+    }
+   ],
+   "override": "wind (911) ranks the weather word; riding with or against it is a B1 pair"
+  },
+  {
+   "id": "orde",
+   "axis": "tidy or jumbled",
+   "band": "b1",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "op-een-rij",
+     "lemma": "op een rij",
+     "gloss": "in a row",
+     "keys": [
+      "rij"
+     ],
+     "rank": 710
+    },
+    {
+     "id": "door-elkaar",
+     "lemma": "door elkaar",
+     "gloss": "jumbled up",
+     "keys": [
+      "elkaar"
+     ],
+     "rank": 120
+    }
+   ],
+   "override": "rij (710) and elkaar (120) are not the difficulty of op een rij and door elkaar"
+  },
+  {
+   "id": "delen",
+   "axis": "how an apple is divided",
+   "band": "b1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "in-tweeen",
+     "lemma": "in tweeën",
+     "gloss": "in two",
+     "keys": [],
+     "rank": null
+    },
+    {
+     "id": "in-stukjes",
+     "lemma": "in stukjes",
+     "gloss": "in little pieces",
+     "keys": [
+      "stuk"
+     ],
+     "rank": 356
+    }
+   ],
+   "override": "stuk (356) ranks the base word; in tweeën and in stukjes are B1 chunks"
+  },
+  {
+   "id": "paard-stal",
+   "axis": "where the horse is kept",
+   "band": "b1",
+   "rank_band": "b1",
+   "members": [
+    {
+     "id": "op-stal",
+     "lemma": "op stal",
+     "gloss": "in the stable (of animals)",
+     "keys": [
+      "stal"
+     ],
+     "rank": 2885
+    },
+    {
+     "id": "in-de-wei",
+     "lemma": "in de wei",
+     "gloss": "in the meadow",
+     "keys": [
+      "wei"
+     ],
+     "rank": 4131
+    }
+   ]
+  },
+  {
+   "id": "wal",
+   "axis": "on the shore beside the boat",
+   "band": "b1",
+   "rank_band": "b1",
+   "members": [
+    {
+     "id": "aan-wal",
+     "lemma": "aan wal",
+     "gloss": "ashore",
+     "keys": [
+      "wal"
+     ],
+     "rank": 3442
+    }
+   ],
+   "xref": "bijwoorden:aan-boord"
+  },
+  {
+   "id": "bloem-knop",
+   "axis": "the rose bush closed or open",
+   "band": "b1",
+   "rank_band": "a2",
+   "members": [
+    {
+     "id": "in-de-knop",
+     "lemma": "in de knop",
+     "gloss": "in bud",
+     "keys": [
+      "knop"
+     ],
+     "rank": 2118
+    },
+    {
+     "id": "in-bloei",
+     "lemma": "in bloei",
+     "gloss": "in bloom",
+     "keys": [
+      "bloei"
+     ],
+     "rank": 3909
+    }
+   ],
+   "override": "knop (2118) is ranked mostly as button or switch; the bud sense is rarer, so bloei (3909) places the set"
+  },
+  {
+   "id": "bocht",
+   "axis": "how the car takes the bend",
+   "band": "b1",
+   "rank_band": "b1",
+   "members": [
+    {
+     "id": "door-de-bocht-gaan",
+     "lemma": "door de bocht gaan",
+     "gloss": "take the bend",
+     "keys": [
+      "bocht"
+     ],
+     "rank": 2809
+    },
+    {
+     "id": "uit-de-bocht-vliegen",
+     "lemma": "uit de bocht vliegen",
+     "gloss": "skid off the road at a bend",
+     "keys": [
+      "bocht"
+     ],
+     "rank": 2809
+    }
+   ]
+  },
+  {
+   "id": "dier-wild",
+   "axis": "what surrounds the lion",
+   "band": "b1",
+   "rank_band": "a2",
+   "members": [
+    {
+     "id": "in-het-wild",
+     "lemma": "in het wild",
+     "gloss": "in the wild",
+     "keys": [
+      "wild"
+     ],
+     "rank": 1638
+    },
+    {
+     "id": "in-gevangenschap",
+     "lemma": "in gevangenschap",
+     "gloss": "in captivity",
+     "keys": [
+      "gevangenschap"
+     ],
+     "rank": 4215
+    }
+   ],
+   "override": "wild (1638) is ranked as the adjective; the noun in in het wild is rarer, so gevangenschap (4215) places the set"
+  },
+  {
+   "id": "meubel-onder",
+   "axis": "what the cupboard stands on",
+   "band": "b1",
+   "rank_band": "b1",
+   "members": [
+    {
+     "id": "op-wieltjes",
+     "lemma": "op wieltjes",
+     "gloss": "on castors, on wheels",
+     "keys": [
+      "wiel"
+     ],
+     "rank": 3445
+    },
+    {
+     "id": "op-pootjes",
+     "lemma": "op pootjes",
+     "gloss": "on little legs",
+     "keys": [
+      "poot"
+     ],
+     "rank": 4821
+    }
+   ]
+  },
+  {
+   "id": "schip",
+   "axis": "where the ship lies",
+   "band": "b1",
+   "rank_band": "b1",
+   "members": [
+    {
+     "id": "voor-anker",
+     "lemma": "voor anker",
+     "gloss": "at anchor",
+     "keys": [
+      "anker"
+     ],
+     "rank": 4906
+    },
+    {
+     "id": "aan-de-kade",
+     "lemma": "aan de kade",
+     "gloss": "alongside the quay",
+     "keys": [
+      "kade"
+     ],
+     "rank": 5475
+    }
+   ]
+  }
+ ],
+ "a2": [
+  {
+   "id": "plaats",
+   "axis": "replacing one thing with another (SKIP)",
+   "band": "a2",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "in-plaats-van",
+     "lemma": "in plaats van",
+     "gloss": "instead of",
+     "keys": [
+      "plaats"
+     ],
+     "rank": 116
+    }
+   ],
+   "override": "in plaats van is an abstract swap, though plaats is rank 116 (SKIP set)"
+  },
+  {
+   "id": "voertuig-lucht-water",
+   "axis": "boat or plane",
+   "band": "a2",
+   "rank_band": "a2",
+   "members": [
+    {
+     "id": "met-de-boot",
+     "lemma": "met de boot",
+     "gloss": "by boat",
+     "keys": [
+      "boot"
+     ],
+     "rank": 1086
+    },
+    {
+     "id": "met-het-vliegtuig",
+     "lemma": "met het vliegtuig",
+     "gloss": "by plane",
+     "keys": [
+      "vliegtuig"
+     ],
+     "rank": 1177
+    }
+   ]
+  },
+  {
+   "id": "volgorde",
+   "axis": "how identical things stand to one another",
+   "band": "a2",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "naast-elkaar",
+     "lemma": "naast elkaar",
+     "gloss": "side by side",
+     "keys": [
+      "elkaar"
+     ],
+     "rank": 120
+    },
+    {
+     "id": "achter-elkaar",
+     "lemma": "achter elkaar",
+     "gloss": "one behind the other",
+     "keys": [
+      "elkaar"
+     ],
+     "rank": 120
+    },
+    {
+     "id": "op-elkaar",
+     "lemma": "op elkaar",
+     "gloss": "on top of each other",
+     "keys": [
+      "elkaar"
+     ],
+     "rank": 120
+    }
+   ],
+   "override": "elkaar (120) is a pronoun; the spatial relations are harder than the word"
+  },
+  {
+   "id": "muur-plafond",
+   "axis": "wall or ceiling",
+   "band": "a2",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "aan-de-muur",
+     "lemma": "aan de muur",
+     "gloss": "on the wall",
+     "keys": [
+      "muur"
+     ],
+     "rank": 837
+    },
+    {
+     "id": "aan-het-plafond",
+     "lemma": "aan het plafond",
+     "gloss": "on the ceiling",
+     "keys": [
+      "plafond"
+     ],
+     "rank": 3487
+    }
+   ],
+   "override": "muur (837) would place it in A1; aan het plafond (plafond 3487) is the harder half"
+  },
+  {
+   "id": "samen-lopen",
+   "axis": "how two people link up",
+   "band": "a2",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "hand-in-hand",
+     "lemma": "hand in hand",
+     "gloss": "hand in hand",
+     "keys": [
+      "hand"
+     ],
+     "rank": 261
+    },
+    {
+     "id": "arm-in-arm",
+     "lemma": "arm in arm",
+     "gloss": "arm(noun) in arm",
+     "keys": [
+      "arm(noun)"
+     ],
+     "rank": 9643
+    }
+   ],
+   "override": "hand (261) would place it in A1; arm in arm (arm 9643) is the harder half"
+  },
+  {
+   "id": "voeten",
+   "axis": "what is on the feet",
+   "band": "a2",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "op-blote-voeten",
+     "lemma": "op blote voeten",
+     "gloss": "barefoot",
+     "keys": [
+      "voet"
+     ],
+     "rank": 993
+    },
+    {
+     "id": "op-sokken",
+     "lemma": "op sokken",
+     "gloss": "in socks",
+     "keys": [
+      "sok"
+     ],
+     "rank": 6338
+    }
+   ],
+   "override": "voet (993) would place it in A1; op sokken (sok 6338) is the harder half"
+  },
+  {
+   "id": "gezelschap",
+   "axis": "how many of the household sit on the bench",
+   "band": "a2",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "in-zijn-eentje",
+     "lemma": "in zijn eentje",
+     "gloss": "by himself",
+     "keys": [
+      "eentje"
+     ],
+     "rank": 1027
+    },
+    {
+     "id": "met-zijn-tweeen",
+     "lemma": "met zijn tweeën",
+     "gloss": "the two of them",
+     "keys": [
+      "twee"
+     ],
+     "rank": 56
+    },
+    {
+     "id": "met-zijn-allen",
+     "lemma": "met zijn allen",
+     "gloss": "all together",
+     "keys": [],
+     "rank": null
+    }
+   ],
+   "override": "twee is rank 56, but met zijn tweeën is not a first-weeks chunk"
+  },
+  {
+   "id": "stappen",
+   "axis": "crossing in steps or in one go",
+   "band": "a2",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "stap-voor-stap",
+     "lemma": "stap voor stap",
+     "gloss": "step by step",
+     "keys": [
+      "stap"
+     ],
+     "rank": 447
+    },
+    {
+     "id": "in-een-keer",
+     "lemma": "in één keer",
+     "gloss": "in one go",
+     "keys": [
+      "keer"
+     ],
+     "rank": 99
+    }
+   ],
+   "override": "stap (447) and keer (99, a function-like noun) understate a finer contrast"
+  },
+  {
+   "id": "beurt",
+   "axis": "taking turns or at once (SKIP)",
+   "band": "a2",
+   "rank_band": "a2",
+   "members": [
+    {
+     "id": "om-de-beurt",
+     "lemma": "om de beurt",
+     "gloss": "in turns",
+     "keys": [
+      "beurt"
+     ],
+     "rank": 1249
+    },
+    {
+     "id": "tegelijk",
+     "lemma": "tegelijk",
+     "gloss": "at the same time",
+     "keys": [
+      "tegelijk"
+     ],
+     "rank": 1514
+    }
+   ]
+  },
+  {
+   "id": "raam-kier",
+   "axis": "how far the window is open",
+   "band": "a2",
+   "rank_band": "b2",
+   "members": [
+    {
+     "id": "op-een-kier",
+     "lemma": "op een kier",
+     "gloss": "ajar",
+     "keys": [
+      "kier"
+     ],
+     "rank": 8337
+    },
+    {
+     "id": "wagenwijd-open",
+     "lemma": "wagenwijd open",
+     "gloss": "wide open",
+     "keys": [
+      "wagenwijd"
+     ],
+     "rank": null
+    }
+   ],
+   "everyday": "Lexicon: op een kier: kier niveau open, herkomst bijlage8, rank 8337; wagenwijd open: wagenwijd not in woorden.tsv. Basis: judgment, not lexicon data. Note: a window left ajar or thrown wide open is daily household talk."
+  },
+  {
+   "id": "pan-vuur",
+   "axis": "how hard the water boils",
+   "band": "a2",
+   "rank_band": "a2",
+   "members": [
+    {
+     "id": "aan-de-kook",
+     "lemma": "aan de kook",
+     "gloss": "on the boil",
+     "keys": [
+      "koken"
+     ],
+     "rank": 1316
+    },
+    {
+     "id": "op-een-laag-pitje",
+     "lemma": "op een laag pitje",
+     "gloss": "on a low heat",
+     "keys": [
+      "pitje"
+     ],
+     "rank": null
+    }
+   ],
+   "everyday": "Lexicon: aan de kook: koken niveau A1, top2000 1, herkomst bijlage8;spel:food, rank 1316; op een laag pitje: pitje not in woorden.tsv. Basis: judgment, not lexicon data. Note: water on the boil and a pan on a low flame are daily kitchen talk; the old upward move for the rarer pitje is withdrawn."
+  },
+  {
+   "id": "kleding",
+   "axis": "what the man is wearing",
+   "band": "a2",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "in-pyjama",
+     "lemma": "in pyjama",
+     "gloss": "in pyjamas",
+     "keys": [
+      "pyjama"
+     ],
+     "rank": 5871
+    },
+    {
+     "id": "in-pak",
+     "lemma": "in pak",
+     "gloss": "in a suit",
+     "keys": [
+      "pak"
+     ],
+     "rank": 984
+    }
+   ],
+   "override": "pak (984) would place it in A1, but in plus a bare garment is a productive pattern and pyjama (5871) is everyday vocabulary, so the set sits in A2, not B2"
+  }
+ ],
+ "a1": [
+  {
+   "id": "voetgangers",
+   "axis": "how a person travels by body or animal",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "te-voet",
+     "lemma": "te voet",
+     "gloss": "on foot",
+     "keys": [
+      "voet"
+     ],
+     "rank": 993
+    },
+    {
+     "id": "op-de-fiets",
+     "lemma": "op de fiets",
+     "gloss": "on the bike",
+     "keys": [
+      "fiets"
+     ],
+     "rank": 919
+    },
+    {
+     "id": "te-paard",
+     "lemma": "te paard",
+     "gloss": "on horseback",
+     "keys": [
+      "paard"
+     ],
+     "rank": 1167
+    }
+   ]
+  },
+  {
+   "id": "kant-links-rechts",
+   "axis": "left or right side",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "aan-de-linkerkant",
+     "lemma": "aan de linkerkant",
+     "gloss": "on the left-hand side",
+     "keys": [
+      "kant"
+     ],
+     "rank": 337
+    },
+    {
+     "id": "aan-de-rechterkant",
+     "lemma": "aan de rechterkant",
+     "gloss": "on the right-hand side",
+     "keys": [
+      "kant"
+     ],
+     "rank": 337
+    }
+   ]
+  },
+  {
+   "id": "kant-weg",
+   "axis": "at the edge or in the middle of the road",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "aan-de-kant",
+     "lemma": "aan de kant",
+     "gloss": "to the side",
+     "keys": [
+      "kant"
+     ],
+     "rank": 337
+    },
+    {
+     "id": "in-het-midden",
+     "lemma": "in het midden",
+     "gloss": "in the middle",
+     "keys": [],
+     "rank": null
+    }
+   ]
+  },
+  {
+   "id": "hoek-straat",
+   "axis": "at or behind a street corner",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "op-de-hoek",
+     "lemma": "op de hoek",
+     "gloss": "on the corner",
+     "keys": [
+      "hoek"
+     ],
+     "rank": 920
+    },
+    {
+     "id": "om-de-hoek",
+     "lemma": "om de hoek",
+     "gloss": "round the corner",
+     "keys": [
+      "hoek"
+     ],
+     "rank": 920
+    }
+   ]
+  },
+  {
+   "id": "trap",
+   "axis": "place or direction on the stairs",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "bovenaan-de-trap",
+     "lemma": "bovenaan de trap",
+     "gloss": "at the top of the stairs",
+     "keys": [
+      "trap"
+     ],
+     "rank": 1246
+    },
+    {
+     "id": "onderaan-de-trap",
+     "lemma": "onderaan de trap",
+     "gloss": "at the bottom of the stairs",
+     "keys": [
+      "trap"
+     ],
+     "rank": 1246
+    },
+    {
+     "id": "naar-boven",
+     "lemma": "naar boven",
+     "gloss": "upstairs / up",
+     "keys": [
+      "boven"
+     ],
+     "rank": 252
+    },
+    {
+     "id": "naar-beneden",
+     "lemma": "naar beneden",
+     "gloss": "downstairs / down",
+     "keys": [
+      "beneden"
+     ],
+     "rank": 958
+    }
+   ]
+  },
+  {
+   "id": "grond-lucht",
+   "axis": "on the ground or in the air",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "op-de-grond",
+     "lemma": "op de grond",
+     "gloss": "on the ground",
+     "keys": [
+      "grond"
+     ],
+     "rank": 420
+    },
+    {
+     "id": "in-de-lucht",
+     "lemma": "in de lucht",
+     "gloss": "in the air",
+     "keys": [
+      "lucht"
+     ],
+     "rank": 614
+    }
+   ]
+  },
+  {
+   "id": "tafel",
+   "axis": "where a child is, relative to a table",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "aan-tafel",
+     "lemma": "aan tafel",
+     "gloss": "at the table",
+     "keys": [
+      "tafel"
+     ],
+     "rank": 838
+    },
+    {
+     "id": "op-tafel",
+     "lemma": "op tafel",
+     "gloss": "on the table",
+     "keys": [
+      "tafel"
+     ],
+     "rank": 838
+    },
+    {
+     "id": "onder-tafel",
+     "lemma": "onder tafel",
+     "gloss": "under the table",
+     "keys": [
+      "tafel"
+     ],
+     "rank": 838
+    }
+   ]
+  },
+  {
+   "id": "bed",
+   "axis": "in bed or out of it",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "in-bed",
+     "lemma": "in bed",
+     "gloss": "in bed",
+     "keys": [
+      "bed"
+     ],
+     "rank": 452
+    },
+    {
+     "id": "uit-bed",
+     "lemma": "uit bed",
+     "gloss": "out of bed",
+     "keys": [
+      "bed"
+     ],
+     "rank": 452
+    }
+   ]
+  },
+  {
+   "id": "zee",
+   "axis": "coast or open water",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "aan-zee",
+     "lemma": "aan zee",
+     "gloss": "at the seaside",
+     "keys": [
+      "zee"
+     ],
+     "rank": 513
+    },
+    {
+     "id": "op-zee",
+     "lemma": "op zee",
+     "gloss": "at sea",
+     "keys": [
+      "zee"
+     ],
+     "rank": 513
+    }
+   ]
+  },
+  {
+   "id": "zon-schaduw",
+   "axis": "what is above the bench",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "in-de-zon",
+     "lemma": "in de zon",
+     "gloss": "in the sun",
+     "keys": [
+      "zon"
+     ],
+     "rank": 685
+    },
+    {
+     "id": "in-de-schaduw",
+     "lemma": "in de schaduw",
+     "gloss": "in the shade",
+     "keys": [
+      "schaduw"
+     ],
+     "rank": 2611
+    },
+    {
+     "id": "in-de-regen",
+     "lemma": "in de regen",
+     "gloss": "in the rain",
+     "keys": [
+      "regen"
+     ],
+     "rank": 969
+    }
+   ]
+  },
+  {
+   "id": "rug-buik",
+   "axis": "lying position",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "op-je-rug",
+     "lemma": "op je rug",
+     "gloss": "on one's back",
+     "keys": [
+      "rug"
+     ],
+     "rank": 787
+    },
+    {
+     "id": "op-je-buik",
+     "lemma": "op je buik",
+     "gloss": "on one's stomach",
+     "keys": [
+      "buik"
+     ],
+     "rank": 1699
+    }
+   ]
+  },
+  {
+   "id": "kind-dragen",
+   "axis": "how an adult has a small child with them",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "aan-de-hand-lopen",
+     "lemma": "aan de hand lopen",
+     "gloss": "walk holding someone's hand (also the idiom \"wat is er aan de hand?\", what is the matter?)",
+     "keys": [
+      "hand"
+     ],
+     "rank": 261
+    },
+    {
+     "id": "op-de-arm",
+     "lemma": "op de arm",
+     "gloss": "in one's arms",
+     "keys": [
+      "arm(noun)"
+     ],
+     "rank": 9643
+    },
+    {
+     "id": "op-schoot",
+     "lemma": "op schoot",
+     "gloss": "on one's lap",
+     "keys": [
+      "schoot"
+     ],
+     "rank": 2309
+    }
+   ]
+  },
+  {
+   "id": "armhouding",
+   "axis": "what the arms and hands do",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "met-de-armen-over-elkaar",
+     "lemma": "met de armen over elkaar",
+     "gloss": "with arms folded",
+     "keys": [
+      "arm(noun)"
+     ],
+     "rank": 9643
+    },
+    {
+     "id": "met-de-handen-omhoog",
+     "lemma": "met de handen omhoog",
+     "gloss": "with hands up",
+     "keys": [
+      "hand"
+     ],
+     "rank": 261
+    },
+    {
+     "id": "met-de-handen-in-de-zakken",
+     "lemma": "met de handen in de zakken",
+     "gloss": "with hands in pockets",
+     "keys": [
+      "hand"
+     ],
+     "rank": 261
+    }
+   ]
+  },
+  {
+   "id": "omgeving",
+   "axis": "the setting of the walk",
+   "band": "a1",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "in-de-stad",
+     "lemma": "in de stad",
+     "gloss": "in the city",
+     "keys": [
+      "stad"
+     ],
+     "rank": 139
+    },
+    {
+     "id": "op-het-platteland",
+     "lemma": "op het platteland",
+     "gloss": "in the countryside",
+     "keys": [
+      "platteland"
+     ],
+     "rank": 2880
+    },
+    {
+     "id": "in-de-bergen",
+     "lemma": "in de bergen",
+     "gloss": "in the mountains",
+     "keys": [
+      "berg"
+     ],
+     "rank": 1118
+    }
+   ],
+   "override": "stad is rank 139, but op het platteland and in de bergen are not A0 chunks"
+  },
+  {
+   "id": "ochtend-avond",
+   "axis": "morning or evening",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "ochtends",
+     "lemma": "'s ochtends",
+     "gloss": "in the morning",
+     "keys": [
+      "ochtend"
+     ],
+     "rank": 865
+    },
+    {
+     "id": "avonds",
+     "lemma": "'s avonds",
+     "gloss": "in the evening",
+     "keys": [
+      "avond"
+     ],
+     "rank": 388
+    }
+   ]
+  },
+  {
+   "id": "koop",
+   "axis": "for sale or to rent (SKIP)",
+   "band": "a1",
+   "rank_band": "a1",
+   "members": [
+    {
+     "id": "te-koop",
+     "lemma": "te koop",
+     "gloss": "for sale",
+     "keys": [
+      "koop"
+     ],
+     "rank": 800
+    },
+    {
+     "id": "te-huur",
+     "lemma": "te huur",
+     "gloss": "to rent",
+     "keys": [
+      "huur"
+     ],
+     "rank": 1616
+    }
+   ]
+  },
+  {
+   "id": "eerste",
+   "axis": "first time or last time (SKIP)",
+   "band": "a1",
+   "rank_band": "a0",
+   "members": [
+    {
+     "id": "voor-het-eerst",
+     "lemma": "voor het eerst",
+     "gloss": "for the first time",
+     "keys": [
+      "eerste"
+     ],
+     "rank": 59
+    },
+    {
+     "id": "voor-het-laatst",
+     "lemma": "voor het laatst",
+     "gloss": "for the last time",
+     "keys": [
+      "laatst"
+     ],
+     "rank": 1068
+    }
+   ],
+   "override": "eerste (59) is a numeral; voor het eerst and voor het laatst are A1 chunks (SKIP set)"
+  }
+ ],
+ "b2": [
+  {
+   "id": "toneel",
+   "axis": "where the actress stands",
+   "band": "b2",
+   "rank_band": "b1",
+   "members": [
+    {
+     "id": "op-de-planken",
+     "lemma": "op de planken",
+     "gloss": "on the stage",
+     "keys": [
+      "plank"
+     ],
+     "rank": 3303
+    },
+    {
+     "id": "in-de-coulissen",
+     "lemma": "in de coulissen",
+     "gloss": "in the wings",
+     "keys": [
+      "coulisse"
+     ],
+     "rank": null
+    }
+   ],
+   "override": "plank (3303) ranks the shelf or board; coulisse is not in the 10,000-lemma list and both chunks are literary"
+  },
+  {
+   "id": "paardengang",
+   "axis": "how fast the horse moves",
+   "band": "b2",
+   "rank_band": null,
+   "members": [
+    {
+     "id": "in-draf",
+     "lemma": "in draf",
+     "gloss": "at a trot",
+     "keys": [
+      "draf"
+     ],
+     "rank": null
+    },
+    {
+     "id": "in-galop",
+     "lemma": "in galop",
+     "gloss": "at a gallop",
+     "keys": [
+      "galop"
+     ],
+     "rank": null
+    }
+   ],
+   "override": "draf and galop are not in the 10,000-lemma list, so no rank places the set"
+  },
+  {
+   "id": "pas",
+   "axis": "walking in step or out of it",
+   "band": "b2",
+   "rank_band": "b2",
+   "members": [
+    {
+     "id": "in-de-pas",
+     "lemma": "in de pas",
+     "gloss": "in step",
+     "keys": [
+      "pas(noun)"
+     ],
+     "rank": 9688
+    },
+    {
+     "id": "uit-de-pas",
+     "lemma": "uit de pas",
+     "gloss": "out of step",
+     "keys": [
+      "pas(noun)"
+     ],
+     "rank": 9688
+    }
+   ]
+  },
+  {
+   "id": "groep-lopen",
+   "axis": "how the children walk together",
+   "band": "b2",
+   "rank_band": null,
+   "members": [
+    {
+     "id": "in-ganzenpas",
+     "lemma": "in ganzenpas",
+     "gloss": "in single file",
+     "keys": [
+      "ganzenpas"
+     ],
+     "rank": null
+    },
+    {
+     "id": "op-een-kluitje",
+     "lemma": "op een kluitje",
+     "gloss": "huddled together",
+     "keys": [
+      "kluitje"
+     ],
+     "rank": null
+    }
+   ],
+   "override": "ganzenpas and kluitje are not in the 10,000-lemma list, so no rank places the set"
+  }
+ ]
+}

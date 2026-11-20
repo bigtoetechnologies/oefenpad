@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaste uitdrukkingen — A1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Vaste uitdrukkingen — A1</h1>
+<p class="lead">Where things and people are: sides, corners, stairs, tables, beds, the sea, and who is by the hand.</p>
+<div class="sum"><span>15 contrast sets</span><span>38 chunks</span><span>frames #8–#45</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html" class="hier">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="voetgangers" data-band="a1"><h2><span class="woorden">te voet · op de fiets · te paard</span></h2><p class="as">how a person travels by body or animal · 3 cards</p><p class="zin">Zij gaat te voet, hij gaat op de fiets en ik ga te paard.<span class="en">She goes on foot, he goes by bike and I go on horseback.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult with a backpack, whole figure, side view, travelling along a flat path line from left to right toward a single distant tree, same distance from the viewer. Only the way the adult moves changes.</p><div class="kaarten"><article id="te-voet" class="kaart" data-id="te-voet" data-band="a1" data-kind="chunk" data-cluster="voetgangers" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 8">#8</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="te voet">te voet</h3>
+<p class="gloss">on foot</p>
+<p class="vlaggen"><span>how a person travels by body or animal</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult walks along the path, one foot lifted behind and the other flat on the ground, arms swinging, backpack straps visible, no vehicle and no animal anywhere in the picture. Small stones lie on the path beside the feet.</dd>
+<dt>Must read</dt><dd class="must">two feet walking, with no vehicle or animal.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult on a bicycle (op de fiets); an adult on a horse (te paard); a runner in sports clothes (not the card); an adult being carried (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-de-fiets te-paard">Pair with op-de-fiets and te-paard. The only difference is the way of travelling: walking on two feet here, pedalling a bicycle or sitting on a horse there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij gaan te voet naar school.<br><span class="voorbeeld-en">We walk to school.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw loopt met een rugzak over een pad, één been naar voren.</dd>
+</dl>
+<p class="id">te-voet.png · A1 · voetgangers</p>
+</article>
+<article id="op-de-fiets" class="kaart" data-id="op-de-fiets" data-band="a1" data-kind="chunk" data-cluster="voetgangers" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 9">#9</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op de fiets">op de fiets</h3>
+<p class="gloss">on the bike</p>
+<p class="vlaggen"><span>how a person travels by body or animal</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits upright on a plain bicycle with two wheels, both hands on the handlebar, one pedal at the lowest point, backpack on the back, moving along the path toward the tree. No animal is in the picture.</dd>
+<dt>Must read</dt><dd class="must">an adult on a two-wheeled bicycle with hands on the handlebar.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult walking beside a pushed bicycle (te voet); an adult on a horse (te paard); a motorbike (not the card); an adult on a scooter (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="te-voet te-paard">Pair with te-voet and te-paard. The only difference is the way of travelling: sitting on a bicycle here, walking on two feet or sitting on a horse there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kom op de fiets.<br><span class="voorbeeld-en">I come by bike.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit op een tweewieler en trapt, met een rugzak op.</dd>
+</dl>
+<p class="id">op-de-fiets.png · A1 · voetgangers</p>
+</article>
+<article id="te-paard" class="kaart" data-id="te-paard" data-band="a1" data-kind="chunk" data-cluster="voetgangers" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 10">#10</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="te paard">te paard</h3>
+<p class="gloss">on horseback</p>
+<p class="vlaggen"><span>how a person travels by body or animal</span><span>A1</span><span class="register">formal</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits in the saddle on a plain horse with both hands holding the reins, the horse walking with one front leg raised along the path toward the tree, the adult's backpack small behind the saddle. No bicycle is in the picture.</dd>
+<dt>Must read</dt><dd class="must">an adult sitting in a saddle on a horse.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult walking and leading a horse (te voet); an adult on a bicycle (op de fiets); a donkey with a load (not the card); a horse with a cart (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="te-voet op-de-fiets">Pair with te-voet and op-de-fiets. The only difference is the way of travelling: sitting on a horse here, walking on two feet or pedalling a bicycle there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij gaat te paard naar het bos.<br><span class="voorbeeld-en">She rides to the woods on horseback.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit in het zadel van een groot dier met lange manen.</dd>
+</dl>
+<p class="id">te-paard.png · A1 · voetgangers</p>
+</article></div></section>
+<section class="cluster" data-cluster="kant-links-rechts" data-band="a1"><h2><span class="woorden">aan de linkerkant · aan de rechterkant</span></h2><p class="as">left or right side · 2 cards</p><p class="zin">Het huis staat aan de linkerkant en de bakker zit aan de rechterkant.<span class="en">The house is on the left-hand side and the baker is on the right-hand side.</span></p><p class="frame"><strong>Fixed frame.</strong> the view from behind the handlebar of a bicycle, both grips and both hands visible at the bottom, a straight plain road narrowing to a point ahead, one small plain house with a pitched roof. Only the side of the road on which the house stands changes.</p><div class="kaarten"><article id="aan-de-linkerkant" class="kaart" data-id="aan-de-linkerkant" data-band="a1" data-kind="chunk" data-cluster="kant-links-rechts" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 11">#11</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de linkerkant">aan de linkerkant</h3>
+<p class="gloss">on the left-hand side</p>
+<p class="vlaggen"><span>left or right side</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the rider's two hands lie on the grips at the bottom of the picture, and the straight road runs ahead; the single small house stands beside the road on the same side as the rider's left hand. The other side of the road is empty.</dd>
+<dt>Must read</dt><dd class="must">a house on the side of the rider's left hand.</dd>
+<dt>Avoid</dt><dd class="avoid">a house on the side of the right hand (aan de rechterkant); houses on both sides of the road (not the card); a house straight ahead at the end of the road (not the card); a picture with no handlebar so that left and right are unclear.</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-rechterkant">Pair with aan-de-rechterkant. The only difference is the side: the house beside the left hand here, beside the right hand there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het huis staat aan de linkerkant.<br><span class="voorbeeld-en">The house is on the left-hand side.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser kijkt over zijn stuur een lange weg af; één huisje staat aan één kant, de andere kant is leeg.</dd>
+</dl>
+<p class="id">aan-de-linkerkant.png · A1 · kant-links-rechts</p>
+</article>
+<article id="aan-de-rechterkant" class="kaart" data-id="aan-de-rechterkant" data-band="a1" data-kind="chunk" data-cluster="kant-links-rechts" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 12">#12</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de rechterkant">aan de rechterkant</h3>
+<p class="gloss">on the right-hand side</p>
+<p class="vlaggen"><span>left or right side</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the rider's two hands lie on the grips at the bottom of the picture, and the straight road runs ahead; the single small house stands beside the road on the same side as the rider's right hand. The other side of the road is empty.</dd>
+<dt>Must read</dt><dd class="must">a house on the side of the rider's right hand.</dd>
+<dt>Avoid</dt><dd class="avoid">a house on the side of the left hand (aan de linkerkant); houses on both sides of the road (not the card); a house straight ahead at the end of the road (not the card); a picture with no handlebar so that left and right are unclear.</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-linkerkant">Pair with aan-de-linkerkant. The only difference is the side: the house beside the right hand here, beside the left hand there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De winkel is aan de rechterkant.<br><span class="voorbeeld-en">The shop is on the right-hand side.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser kijkt over zijn stuur een lange weg af; één huisje staat aan één kant, de andere kant is leeg.</dd>
+</dl>
+<p class="id">aan-de-rechterkant.png · A1 · kant-links-rechts</p>
+</article></div></section>
+<section class="cluster" data-cluster="kant-weg" data-band="a1"><h2><span class="woorden">aan de kant · in het midden</span></h2><p class="as">at the edge or in the middle of the road · 2 cards</p><p class="zin">Hij staat aan de kant, maar de hond staat in het midden van de weg.<span class="en">He stands to the side, but the dog stands in the middle of the road.</span></p><p class="frame"><strong>Fixed frame.</strong> a long straight plain road seen from the front and slightly above, two edge lines running to a point with a dashed centre line, one adult with a plain wheelbarrow, same size on the page. Only the place of the adult across the width of the road changes.</p><div class="kaarten"><article id="aan-de-kant" class="kaart" data-id="aan-de-kant" data-band="a1" data-kind="chunk" data-cluster="kant-weg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 13">#13</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de kant">aan de kant</h3>
+<p class="gloss">to the side</p>
+<p class="vlaggen"><span>at the edge or in the middle of the road</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands on the grass verge just outside the left edge line of the road, holding the wheelbarrow handles, one step away from the asphalt and looking along the road. The centre of the road is completely empty.</dd>
+<dt>Must read</dt><dd class="must">a person standing outside the edge line, with an empty road.</dd>
+<dt>Avoid</dt><dd class="avoid">a person standing on the dashed centre line (in het midden); a person walking along the middle of the road (not the card); a person crossing the road (not the card); a parked wheelbarrow with nobody there (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-het-midden">Pair with in-het-midden. The only difference is the adult's place across the road: outside the edge line here, on the centre line there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ga eens aan de kant!<br><span class="voorbeeld-en">Get out of the way!</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat met een kruiwagen in de berm naast een lange straat.</dd>
+</dl>
+<p class="id">aan-de-kant.png · A1 · kant-weg</p>
+</article>
+<article id="in-het-midden" class="kaart" data-id="in-het-midden" data-band="a1" data-kind="chunk" data-cluster="kant-weg" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 14">#14</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in het midden">in het midden</h3>
+<p class="gloss">in the middle</p>
+<p class="vlaggen"><span>at the edge or in the middle of the road</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands exactly on the dashed centre line of the road with the wheelbarrow, feet on the dashes, looking along the road. Both edge lines are the same distance away on either side and the verges are empty.</dd>
+<dt>Must read</dt><dd class="must">a person standing on the centre dashes between both edges.</dd>
+<dt>Avoid</dt><dd class="avoid">a person standing outside the edge line on the verge (aan de kant); a person walking along the edge of the road (not the card); a person lying down on the road (not the card); a car in the road (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-kant">Pair with aan-de-kant. The only difference is the adult's place across the road: on the centre line here, outside the edge line there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De tafel staat in het midden van de kamer.<br><span class="voorbeeld-en">The table is in the middle of the room.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat met een kruiwagen op het asfalt, even ver van beide randen.</dd>
+</dl>
+<p class="id">in-het-midden.png · A1 · kant-weg</p>
+</article></div></section>
+<section class="cluster" data-cluster="hoek-straat" data-band="a1"><h2><span class="woorden">op de hoek · om de hoek</span></h2><p class="as">at or behind a street corner · 2 cards</p><p class="zin">Ik sta op de hoek, maar mijn vriend loopt al om de hoek.<span class="en">I am standing on the corner, but my friend is already walking round the corner.</span></p><p class="frame"><strong>Fixed frame.</strong> two plain streets meeting at a right angle seen from slightly above, a plain row of houses along each street, one adult with a bag and, in every drawing, a second small figure waiting far down the first street and looking toward the corner, same size on the page. Only the place of the adult relative to the corner changes.</p><div class="kaarten"><article id="op-de-hoek" class="kaart" data-id="op-de-hoek" data-band="a1" data-kind="chunk" data-cluster="hoek-straat" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 15">#15</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op de hoek">op de hoek</h3>
+<p class="gloss">on the corner</p>
+<p class="vlaggen"><span>at or behind a street corner</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands exactly at the point where the two streets meet, with the corner house directly behind and the bag in one hand. One street runs to the left, the other to the bottom of the picture, and the small figure far down the first street can see the adult.</dd>
+<dt>Must read</dt><dd class="must">a person standing exactly where two streets meet.</dd>
+<dt>Avoid</dt><dd class="avoid">a person in the side street beyond the corner house (om de hoek); a person crossing the middle of a long straight street (not the card); a person inside a room corner (not the card); a person at a crossroads with four streets (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="om-de-hoek">Pair with om-de-hoek. The only difference is the adult's place: at the point where the streets meet here, a full street length into the side street there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij wonen op de hoek.<br><span class="voorbeeld-en">We live on the corner.</span></dd>
+<dt>Alt text</dt><dd class="alt">Op een kruising staat een vrouw precies bij het punt waar twee straten samenkomen.</dd>
+</dl>
+<p class="id">op-de-hoek.png · A1 · hoek-straat</p>
+</article>
+<article id="om-de-hoek" class="kaart" data-id="om-de-hoek" data-band="a1" data-kind="chunk" data-cluster="hoek-straat" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 16">#16</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="om de hoek">om de hoek</h3>
+<p class="gloss">round the corner</p>
+<p class="vlaggen"><span>at or behind a street corner</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult has already turned into the side street and stands a long way past the corner house, with the bag in one hand, out of sight of a second small figure who waits in the first street and looks toward the corner. The corner house is between them.</dd>
+<dt>Must read</dt><dd class="must">a person in the side street behind the corner house, hidden from another.</dd>
+<dt>Avoid</dt><dd class="avoid">a person standing at the corner point (op de hoek); a person hiding behind a tree (not the card); a person in the same long street as the watcher (not the card); two people meeting at the corner (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-de-hoek">Pair with op-de-hoek. The only difference is the adult's place: a full street length round the corner and hidden here, exactly at the corner point there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bakker is om de hoek.<br><span class="voorbeeld-en">The baker is round the corner.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee straten komen samen; een vrouw staat in de zijstraat, uit het zicht van een man die wacht in de eerste straat.</dd>
+</dl>
+<p class="id">om-de-hoek.png · A1 · hoek-straat</p>
+</article></div></section>
+<section class="cluster" data-cluster="trap" data-band="a1"><h2><span class="woorden">bovenaan de trap · onderaan de trap · naar boven · naar beneden</span></h2><p class="as">place or direction on the stairs · 4 cards</p><p class="zin">Ik sta onderaan de trap en ga naar boven, maar mijn zoon staat bovenaan de trap en komt naar beneden.<span class="en">I stand at the bottom of the stairs and go up, but my son stands at the top of the stairs and comes down.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult with a bag on or beside a plain straight staircase of seven steps with a handrail, seen from the side, a landing with a plain door at the top and a floor line at the bottom, same stair and same size on the page, no arrows. Only where the adult is and which way the body faces changes.</p><div class="kaarten"><article id="bovenaan-de-trap" class="kaart" data-id="bovenaan-de-trap" data-band="a1" data-kind="chunk" data-cluster="trap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 17">#17</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="bovenaan de trap">bovenaan de trap</h3>
+<p class="gloss">at the top of the stairs</p>
+<p class="vlaggen"><span>place or direction on the stairs</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands still with both feet together on the top landing beside the door, body turned to the viewer and one hand on the end of the handrail. All seven steps below are empty down to the floor line.</dd>
+<dt>Must read</dt><dd class="must">a person standing still on the top landing, every step below empty.</dd>
+<dt>Avoid</dt><dd class="avoid">a person standing still on the floor at the foot (onderaan de trap); a person halfway down facing the floor (not the card); a person halfway up facing the door (not the card); a person on a balcony (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="onderaan-de-trap naar-boven naar-beneden">Pair with onderaan-de-trap, naar-boven and naar-beneden. The only difference is the adult: standing still on the top landing here, standing still on the floor, or halfway up or down there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kat zit bovenaan de trap.<br><span class="voorbeeld-en">The cat is sitting at the top of the stairs.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat stil op de hoogste vloer naast een deur; alle treden lager zijn leeg.</dd>
+</dl>
+<p class="id">bovenaan-de-trap.png · A1 · trap</p>
+</article>
+<article id="onderaan-de-trap" class="kaart" data-id="onderaan-de-trap" data-band="a1" data-kind="chunk" data-cluster="trap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 18">#18</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="onderaan de trap">onderaan de trap</h3>
+<p class="gloss">at the bottom of the stairs</p>
+<p class="vlaggen"><span>place or direction on the stairs</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands still with both feet together on the floor line at the foot of the staircase, body turned to the viewer and one hand on the post of the handrail. All seven steps up to the landing and its door are empty.</dd>
+<dt>Must read</dt><dd class="must">a person standing still on the floor at the foot, every step empty.</dd>
+<dt>Avoid</dt><dd class="avoid">a person standing still on the top landing (bovenaan de trap); a person halfway up facing the door (not the card); a person halfway down facing the floor (not the card); a person sitting on the first step (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovenaan-de-trap naar-boven naar-beneden">Pair with bovenaan-de-trap, naar-boven and naar-beneden. The only difference is the adult: standing still on the floor here, standing still on the landing, or halfway up or down there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik wacht onderaan de trap.<br><span class="voorbeeld-en">I am waiting at the bottom of the stairs.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat stil op de vloer bij de eerste trede; de hele trap naast hem is leeg.</dd>
+</dl>
+<p class="id">onderaan-de-trap.png · A1 · trap</p>
+</article>
+<article id="naar-boven" class="kaart" data-id="naar-boven" data-band="a1" data-kind="chunk" data-cluster="trap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 19">#19</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="naar boven">naar boven</h3>
+<p class="gloss">upstairs / up</p>
+<p class="vlaggen"><span>place or direction on the stairs</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult is halfway up the stair on the third step, body and face turned up toward the landing and its door, the front foot lifted onto the fourth step and the free hand forward on the handrail. The landing and the floor are clear of people.</dd>
+<dt>Must read</dt><dd class="must">a person halfway up, facing the door at the top, front foot on a higher step.</dd>
+<dt>Avoid</dt><dd class="avoid">a person halfway down facing the floor with a foot lowered (naar beneden); a person standing still on the floor at the foot (not the card); a person standing still on the top landing (not the card); a person on a ladder (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovenaan-de-trap onderaan-de-trap naar-beneden">Pair with naar-beneden, bovenaan-de-trap and onderaan-de-trap. The only difference is the adult: halfway up and facing the door here, halfway down facing the floor, or standing still on the landing or on the floor there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik ga even naar boven.<br><span class="voorbeeld-en">I am just going upstairs.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw met een tas is halverwege de trap en zet haar voet op de volgende trede omhoog.</dd>
+</dl>
+<p class="id">naar-boven.png · A1 · trap</p>
+</article>
+<article id="naar-beneden" class="kaart" data-id="naar-beneden" data-band="a1" data-kind="chunk" data-cluster="trap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 20">#20</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="naar beneden">naar beneden</h3>
+<p class="gloss">downstairs / down</p>
+<p class="vlaggen"><span>place or direction on the stairs</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult is halfway down the stair on the fourth step, body and face turned down toward the floor, the front foot lowered onto the third step and the free hand on the handrail. The landing and its door are behind the adult and the floor is clear.</dd>
+<dt>Must read</dt><dd class="must">a person halfway down, facing the floor, front foot on a lower step.</dd>
+<dt>Avoid</dt><dd class="avoid">a person halfway up facing the door at the top (naar boven); a person standing still on the top landing (not the card); a person standing still on the floor at the foot (not the card); a person falling down the stairs (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="bovenaan-de-trap onderaan-de-trap naar-boven">Pair with naar-boven, bovenaan-de-trap and onderaan-de-trap. The only difference is the adult: halfway down and facing the floor here, halfway up facing the door, or standing still on the landing or on the floor there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Kom je straks naar beneden?<br><span class="voorbeeld-en">Are you coming downstairs later?</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man is halverwege de trap en zet zijn voet op de volgende trede omlaag.</dd>
+</dl>
+<p class="id">naar-beneden.png · A1 · trap</p>
+</article></div></section>
+<section class="cluster" data-cluster="grond-lucht" data-band="a1"><h2><span class="woorden">op de grond · in de lucht</span></h2><p class="as">on the ground or in the air · 2 cards</p><p class="zin">De bal ligt op de grond, maar de vogel vliegt in de lucht.<span class="en">The ball lies on the ground, but the bird flies in the air.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes stands whole-figure, side view, on a flat ground line beside a plain round ball, same distance from the viewer, plain low wall behind. Only the place of the ball changes.</p><div class="kaarten"><article id="op-de-grond" class="kaart" data-id="op-de-grond" data-band="a1" data-kind="chunk" data-cluster="grond-lucht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 21">#21</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op de grond">op de grond</h3>
+<p class="gloss">on the ground</p>
+<p class="vlaggen"><span>on the ground or in the air</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the ball lies still on the ground line beside the adult's foot, a small shadow line under it, and the adult looks down at it with hands on the hips. The sky above is completely empty.</dd>
+<dt>Must read</dt><dd class="must">a ball touching the ground line next to the shoe.</dd>
+<dt>Avoid</dt><dd class="avoid">a ball high above the adult's head with arcs (in de lucht); a ball in the adult's hands (not the card); a ball rolling with speed lines (not the card); a ball in a net (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-lucht">Pair with in-de-lucht. The only difference is the ball's place: touching the ground line at the foot here, high above the head with motion arcs there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De bal ligt op de grond.<br><span class="voorbeeld-en">The ball lies on the ground.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een jongen kijkt naar een bal die naast zijn schoenen ligt.</dd>
+</dl>
+<p class="id">op-de-grond.png · A1 · grond-lucht</p>
+</article>
+<article id="in-de-lucht" class="kaart" data-id="in-de-lucht" data-band="a1" data-kind="chunk" data-cluster="grond-lucht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 22">#22</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de lucht">in de lucht</h3>
+<p class="gloss">in the air</p>
+<p class="vlaggen"><span>on the ground or in the air</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the ball is high above the adult's head, twice the adult's height off the ground line, with three short motion arcs under it, and the adult looks up with one arm still raised after throwing. No ball is on the ground.</dd>
+<dt>Must read</dt><dd class="must">a ball high above the head, nowhere near the ground.</dd>
+<dt>Avoid</dt><dd class="avoid">a ball on the ground by the foot (op de grond); a ball in the adult's hands (not the card); a bird in the sky with no ball (not the card); a kite on a string (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-de-grond">Pair with op-de-grond. The only difference is the ball's place: high above the head with motion arcs here, touching the ground line at the foot there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De vogel is in de lucht.<br><span class="voorbeeld-en">The bird is in the air.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een jongen kijkt omhoog en steekt zijn arm in de hoogte terwijl een bal boven hem hangt.</dd>
+</dl>
+<p class="id">in-de-lucht.png · A1 · grond-lucht</p>
+</article></div></section>
+<section class="cluster" data-cluster="tafel" data-band="a1"><h2><span class="woorden">aan tafel · op tafel · onder tafel</span></h2><p class="as">where a child is, relative to a table · 3 cards</p><p class="zin">Het kind zit aan tafel, de kat zit onder tafel en de pop zit op tafel.<span class="en">The child sits at the table, the cat sits under the table and the doll sits on the table.</span></p><p class="frame"><strong>Fixed frame.</strong> one small child, whole figure, side view, beside a plain four-legged table and one plain chair on a flat ground line, same size on the page, plain wall behind. Only the child's place relative to the table changes.</p><div class="kaarten"><article id="aan-tafel" class="kaart" data-id="aan-tafel" data-band="a1" data-kind="chunk" data-cluster="tafel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 23">#23</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan tafel">aan tafel</h3>
+<p class="gloss">at the table</p>
+<p class="vlaggen"><span>where a child is, relative to a table</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the child sits upright on the chair pulled up to the table, both hands on the table edge, the legs under the table and the tabletop level with the chest. The tabletop itself is empty and the child looks ahead.</dd>
+<dt>Must read</dt><dd class="must">a child on the chair with hands on the table edge.</dd>
+<dt>Avoid</dt><dd class="avoid">a child standing on the tabletop (op tafel); a child crouching beneath the table (onder tafel); a child sitting on the floor away from the table (not the card); a child at a desk with a computer (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-tafel onder-tafel">Pair with op-tafel and onder-tafel. The only difference is the child's place: sitting on a chair at the table here, standing on the top or crouching beneath it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen zitten aan tafel.<br><span class="voorbeeld-en">The children are sitting at the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een jongen zit op een stoel voor een tafel en legt zijn handen op de rand.</dd>
+</dl>
+<p class="id">aan-tafel.png · A1 · tafel</p>
+</article>
+<article id="op-tafel" class="kaart" data-id="op-tafel" data-band="a1" data-kind="chunk" data-cluster="tafel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 24">#24</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op tafel">op tafel</h3>
+<p class="gloss">on the table</p>
+<p class="vlaggen"><span>where a child is, relative to a table</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the child stands on top of the tabletop in shoes with the arms out for balance, the head higher than the chair back, the chair empty beside the table and pushed back. The space under the table is empty.</dd>
+<dt>Must read</dt><dd class="must">a child standing on the tabletop above the chair.</dd>
+<dt>Avoid</dt><dd class="avoid">a child sitting on the chair at the table (aan tafel); a child hiding under the table (onder tafel); a plate on the table with no child (not the card); a child jumping off a wall (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-tafel onder-tafel">Pair with aan-tafel and onder-tafel. The only difference is the child's place: standing on the top of the table here, sitting at it or crouching under it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zet de borden maar op tafel.<br><span class="voorbeeld-en">Just put the plates on the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een meisje staat met haar armen uit elkaar op het blad van een tafel; de stoel ernaast is leeg.</dd>
+</dl>
+<p class="id">op-tafel.png · A1 · tafel</p>
+</article>
+<article id="onder-tafel" class="kaart" data-id="onder-tafel" data-band="a1" data-kind="chunk" data-cluster="tafel" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 25">#25</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="onder tafel">onder tafel</h3>
+<p class="gloss">under the table</p>
+<p class="vlaggen"><span>where a child is, relative to a table</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the child crouches beneath the table with knees up and arms around them, the head below the tabletop, the chair pushed back and empty. The tabletop above is empty and the legs of the table stand either side of the child.</dd>
+<dt>Must read</dt><dd class="must">a child crouching under the tabletop between the legs.</dd>
+<dt>Avoid</dt><dd class="avoid">a child sitting on the chair at the table (aan tafel); a child standing on the tabletop (op tafel); a dog sleeping under a table (not the card); a child under a bed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-tafel op-tafel">Pair with aan-tafel and op-tafel. The only difference is the child's place: crouching below the tabletop here, sitting at it or standing on it there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De hond slaapt onder tafel.<br><span class="voorbeeld-en">The dog sleeps under the table.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een jongen zit op de grond met zijn knieën omhoog tussen de poten van een tafel.</dd>
+</dl>
+<p class="id">onder-tafel.png · A1 · tafel</p>
+</article></div></section>
+<section class="cluster" data-cluster="bed" data-band="a1"><h2><span class="woorden">in bed · uit bed</span></h2><p class="as">in bed or out of it · 2 cards</p><p class="zin">De baby ligt in bed, maar de vader is al uit bed.<span class="en">The baby is in bed, but the father is already out of bed.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult, whole figure, side view, with a plain single bed with a headboard, a pillow and a blanket, same bed in the same place, plain wall behind. Only the adult's place relative to the bed changes.</p><div class="kaarten"><article id="in-bed" class="kaart" data-id="in-bed" data-band="a1" data-kind="chunk" data-cluster="bed" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 26">#26</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in bed">in bed</h3>
+<p class="gloss">in bed</p>
+<p class="vlaggen"><span>in bed or out of it</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult lies in the bed under the blanket with the head on the pillow, only the face and shoulders showing, eyes closed and a small curved line for a calm mouth. The blanket is pulled up to the chin.</dd>
+<dt>Must read</dt><dd class="must">a head on the pillow with a blanket up to the chin.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult standing beside the bed stretching (uit bed); an adult sitting on the edge of the bed (not the card); an adult asleep on the sofa (not the card); a made empty bed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="uit-bed">Pair with uit-bed. The only difference is the adult's place: lying under the blanket on the pillow here, standing next to the bed with the blanket thrown back there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De baby ligt in bed.<br><span class="voorbeeld-en">The baby is in bed.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw ligt met haar hoofd op een kussen onder een deken.</dd>
+</dl>
+<p class="id">in-bed.png · A1 · bed</p>
+</article>
+<article id="uit-bed" class="kaart" data-id="uit-bed" data-band="a1" data-kind="chunk" data-cluster="bed" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 27">#27</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="uit bed">uit bed</h3>
+<p class="gloss">out of bed</p>
+<p class="vlaggen"><span>in bed or out of it</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands beside the bed in pyjamas stretching both arms above the head with a yawn, the blanket thrown back in a heap and the pillow flat with a dent. Both feet are on the floor line.</dd>
+<dt>Must read</dt><dd class="must">a person standing next to a bed with the blanket thrown back.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult lying in the bed under the blanket (in bed); an adult climbing into the bed (not the card); an adult sitting on the edge of the bed (not the card); an adult making the bed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-bed">Pair with in-bed. The only difference is the adult's place: standing beside the bed with the blanket thrown back here, lying under the blanket on the pillow there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kom altijd laat uit bed.<br><span class="voorbeeld-en">I always get out of bed late.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat naast zijn lege bed en rekt zijn armen uit.</dd>
+</dl>
+<p class="id">uit-bed.png · A1 · bed</p>
+</article></div></section>
+<section class="cluster" data-cluster="zee" data-band="a1"><h2><span class="woorden">aan zee · op zee</span></h2><p class="as">coast or open water · 2 cards</p><p class="zin">Wij wonen aan zee, maar de vissers zijn op zee.<span class="en">We live by the sea, but the fishermen are at sea.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes with a towel over the shoulder, whole figure, side view, a long flat sea line behind drawn as horizontal lines, same size on the page. Only what the adult stands on changes: land at the water's edge or a boat far from land.</p><div class="kaarten"><article id="aan-zee" class="kaart" data-id="aan-zee" data-band="a1" data-kind="chunk" data-cluster="zee" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 28">#28</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan zee">aan zee</h3>
+<p class="gloss">at the seaside</p>
+<p class="vlaggen"><span>coast or open water</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands on a sandy beach drawn as a flat line with a few small dunes at the left, small wave edges rolling onto the sand at the feet, and a plain beach chair beside. Land fills the whole bottom of the picture and the sea lines lie ahead.</dd>
+<dt>Must read</dt><dd class="must">a person on sand with waves arriving at the feet.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult on a boat with only water all around (op zee); an adult swimming in the sea (not the card); an adult in a harbour with moored boats (not the card); an adult beside a lake (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-zee">Pair with op-zee. The only difference is what lies around the adult: sand and dunes under the feet here, only water in every direction there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij wonen al jaren aan zee.<br><span class="voorbeeld-en">They have lived by the sea for years.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw staat op het zand met een handdoek over haar schouder en golven aan haar voeten.</dd>
+</dl>
+<p class="id">aan-zee.png · A1 · zee</p>
+</article>
+<article id="op-zee" class="kaart" data-id="op-zee" data-band="a1" data-kind="chunk" data-cluster="zee" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 29">#29</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op zee">op zee</h3>
+<p class="gloss">at sea</p>
+<p class="vlaggen"><span>coast or open water</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands on the deck of a small plain fishing boat holding a rope, the hull riding the sea lines, and water drawn in every direction to a bare horizon with no land, no dune and no shore anywhere. A single gull circles above the mast.</dd>
+<dt>Must read</dt><dd class="must">a person on a boat with water and a bare horizon all round.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult on a beach with waves at the feet (aan zee); an adult in a boat on a small lake with a shore near (op het water); a ship docked in a harbour (not the card); a lighthouse on the horizon (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-zee">Pair with aan-zee. The only difference is what lies around the adult: only water to a bare horizon here, sand and dunes under the feet there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De vissers zijn op zee.<br><span class="voorbeeld-en">The fishermen are at sea.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat op het dek van een kleine boot en overal om hem heen is alleen maar golvend water.</dd>
+</dl>
+<p class="id">op-zee.png · A1 · zee</p>
+</article></div></section>
+<section class="cluster" data-cluster="zon-schaduw" data-band="a1"><h2><span class="woorden">in de zon · in de schaduw · in de regen</span></h2><p class="as">what is above the bench · 3 cards</p><p class="zin">Hij zit in de zon, zij zit in de schaduw en wij zitten in de regen.<span class="en">He sits in the sun, she sits in the shade and we sit in the rain.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult sits on a plain bench, whole figure, side view, on a flat ground line, plain background, same size on the page. Only what is above the bench changes.</p><div class="kaarten"><article id="in-de-zon" class="kaart" data-id="in-de-zon" data-band="a1" data-kind="chunk" data-cluster="zon-schaduw" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 30">#30</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de zon">in de zon</h3>
+<p class="gloss">in the sun</p>
+<p class="vlaggen"><span>what is above the bench</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">a large round sun with long straight rays stands high in the top corner of the picture and the adult on the bench squints with one hand shading the eyes, short sleeves, nothing overhead but sky. A small short shadow line lies under the bench.</dd>
+<dt>Must read</dt><dd class="must">a big sun with rays and a hand shading the eyes.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult under a tree on the same bench (in de schaduw); an adult under a rain cloud (in de regen); a sun at the horizon on its own (not the card); an adult with sunglasses on a beach (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-schaduw in-de-regen">Pair with in-de-schaduw and in-de-regen. The only difference is what is above the bench: a bare sky with a sun and rays here, a leafy tree or a rain cloud there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij zitten graag in de zon.<br><span class="voorbeeld-en">We like sitting in the sun.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit op een bankje met zijn hand boven zijn ogen en een grote bol met stralen boven zich.</dd>
+</dl>
+<p class="id">in-de-zon.png · A1 · zon-schaduw</p>
+</article>
+<article id="in-de-schaduw" class="kaart" data-id="in-de-schaduw" data-band="a1" data-kind="chunk" data-cluster="zon-schaduw" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 31">#31</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de schaduw">in de schaduw</h3>
+<p class="gloss">in the shade</p>
+<p class="vlaggen"><span>what is above the bench</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">a leafy tree stands behind the bench and a broad branch reaches over it, its crown drawn with a hatched shade pattern on the bench and the adult; the sun with rays is drawn small in the top corner beyond the leaves. The adult sits relaxed with the hands in the lap.</dd>
+<dt>Must read</dt><dd class="must">a bench under a branch, with hatching across the sitter.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult squinting in open sun (in de zon); an adult under a rain cloud (in de regen); a tree with no person (not the card); an adult under an umbrella (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-zon in-de-regen">Pair with in-de-zon and in-de-regen. The only difference is what is above the bench: a leafy branch with hatched shade here, a bare sky with a sun or a rain cloud there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het is koel in de schaduw.<br><span class="voorbeeld-en">It is cool in the shade.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit op een bankje onder de takken van een boom met gearceerde vlekken op haar jas.</dd>
+</dl>
+<p class="id">in-de-schaduw.png · A1 · zon-schaduw</p>
+</article>
+<article id="in-de-regen" class="kaart" data-id="in-de-regen" data-band="a1" data-kind="chunk" data-cluster="zon-schaduw" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 32">#32</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de regen">in de regen</h3>
+<p class="gloss">in the rain</p>
+<p class="vlaggen"><span>what is above the bench</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">a plain cloud outline hangs above the bench with rows of straight diagonal rain lines falling on the adult, who hunches with shoulders up and wet hair, no umbrella and no hat. Small puddle rings are drawn on the ground line.</dd>
+<dt>Must read</dt><dd class="must">straight rain lines falling on a hunched person.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult squinting in open sun (in de zon); an adult under a leafy tree (in de schaduw); an adult holding an umbrella (not the card); a cloud with no rain (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-zon in-de-schaduw">Pair with in-de-zon and in-de-schaduw. The only difference is what is above the bench: a cloud with rain lines falling on the sitter here, a bare sky with a sun or a leafy branch there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij fietst in de regen.<br><span class="voorbeeld-en">She cycles in the rain.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit gebogen op een bankje terwijl er lange schuine lijntjes uit een wolk op hem vallen.</dd>
+</dl>
+<p class="id">in-de-regen.png · A1 · zon-schaduw</p>
+</article></div></section>
+<section class="cluster" data-cluster="rug-buik" data-band="a1"><h2><span class="woorden">op je rug · op je buik</span></h2><p class="as">lying position · 2 cards</p><p class="zin">De baby ligt op zijn rug, maar de kat ligt op zijn buik.<span class="en">The baby lies on its back, but the cat lies on its stomach.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes lies whole-figure on a flat plain mat on the ground, seen from the side with the head toward the left, same size on the page, plain background. Only the way the body lies changes.</p><div class="kaarten"><article id="op-je-rug" class="kaart" data-id="op-je-rug" data-band="a1" data-kind="chunk" data-cluster="rug-buik" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 33">#33</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op je rug">op je rug</h3>
+<p class="gloss">on one's back</p>
+<p class="vlaggen"><span>lying position</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult lies face up with the back flat on the mat, arms along the sides, eyes looking at the sky and the nose pointing up, both knees slightly bent. The chest and the face are the highest points of the body.</dd>
+<dt>Must read</dt><dd class="must">a person lying face up with the chest toward the sky.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult lying face down with the head on folded arms (op je buik); an adult lying on one side (not the card); an adult sitting up (not the card); an adult asleep in a bed (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-je-buik">Pair with op-je-buik. The only difference is the body position: face up with the nose to the sky here, face down with the chest on the mat there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De baby ligt op zijn rug.<br><span class="voorbeeld-en">The baby is lying on its back.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man ligt languit op een matje en kijkt omhoog.</dd>
+</dl>
+<p class="id">op-je-rug.png · A1 · rug-buik</p>
+</article>
+<article id="op-je-buik" class="kaart" data-id="op-je-buik" data-band="a1" data-kind="chunk" data-cluster="rug-buik" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 34">#34</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op je buik">op je buik</h3>
+<p class="gloss">on one's stomach</p>
+<p class="vlaggen"><span>lying position</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult lies face down on the mat with the chest and stomach flat on it, the head turned sideways toward the viewer and resting on folded arms, the soles of both shoes pointing up. The back is the highest point of the body.</dd>
+<dt>Must read</dt><dd class="must">a person lying face down with the soles of the shoes up.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult lying face up with the chest to the sky (op je rug); an adult lying on one side (not the card); an adult doing a press-up (not the card); an adult crawling on hands and knees (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-je-rug">Pair with op-je-rug. The only difference is the body position: face down with the soles pointing up here, face up with the nose to the sky there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik slaap graag op mijn buik.<br><span class="voorbeeld-en">I like sleeping on my stomach.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw ligt op een matje met haar kin op haar armen en de zolen van haar schoenen omhoog.</dd>
+</dl>
+<p class="id">op-je-buik.png · A1 · rug-buik</p>
+</article></div></section>
+<section class="cluster" data-cluster="kind-dragen" data-band="a1"><h2><span class="woorden">aan de hand lopen · op de arm · op schoot</span></h2><p class="as">how an adult has a small child with them · 3 cards</p><p class="zin">Het jongetje loopt aan de hand van zijn vader, het meisje zit op de arm en de baby zit op schoot.<span class="en">The little boy walks holding his father's hand, the girl is carried in the arms and the baby sits on the lap.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult and one small child, both whole figures, side view, plain background, same sizes and same flat ground line. Only the way the child is with the adult changes.</p><div class="kaarten"><article id="aan-de-hand-lopen" class="kaart" data-id="aan-de-hand-lopen" data-band="a1" data-kind="chunk" data-cluster="kind-dragen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 35">#35</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de hand lopen">aan de hand lopen</h3>
+<p class="gloss">walk holding someone's hand (also the idiom "wat is er aan de hand?", what is the matter?)</p>
+<p class="vlaggen"><span>how an adult has a small child with them</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult and the child both walk upright along the ground line, the child's small hand held inside the adult's hand with the arms hanging between them, all four feet on the ground. The child looks up at the adult.</dd>
+<dt>Must read</dt><dd class="must">two walking figures with small hand held in big hand.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult holding the child up on one arm (op de arm); an adult sitting with the child on the lap (op schoot); two adults holding hands (not the card); a child walking alone (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-de-arm op-schoot">Pair with op-de-arm and op-schoot. The only difference is how the child is with the adult: walking on its own feet holding a hand here, carried or sitting on the lap there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn dochter wil altijd aan de hand lopen.<br><span class="voorbeeld-en">My daughter always wants to walk holding my hand.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw en een klein meisje wandelen naast elkaar en de kleine vingers zitten in de grote.</dd>
+</dl>
+<p class="id">aan-de-hand-lopen.png · A1 · kind-dragen</p>
+</article>
+<article id="op-de-arm" class="kaart" data-id="op-de-arm" data-band="a1" data-kind="chunk" data-cluster="kind-dragen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 36">#36</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op de arm">op de arm</h3>
+<p class="gloss">in one's arms</p>
+<p class="vlaggen"><span>how an adult has a small child with them</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands and holds the child high on one forearm against the chest, the child's feet hanging off the ground line and one small arm round the adult's neck. The adult's other arm is free and the child looks over the shoulder.</dd>
+<dt>Must read</dt><dd class="must">a child lifted off the ground on one arm.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult and child walking hand in hand (aan de hand lopen); an adult sitting with the child on the lap (op schoot); a child on the adult's shoulders (not the card); a child in a pram (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-hand-lopen op-schoot">Pair with aan-de-hand-lopen and op-schoot. The only difference is how the child is with the adult: lifted on one forearm with feet off the ground here, walking by the hand or sitting on a lap there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De moeder draagt het kind op de arm.<br><span class="voorbeeld-en">The mother carries the child in her arms.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat met een klein kind hoog tegen zijn borst, de voeten van het kind hangen in de lucht.</dd>
+</dl>
+<p class="id">op-de-arm.png · A1 · kind-dragen</p>
+</article>
+<article id="op-schoot" class="kaart" data-id="op-schoot" data-band="a1" data-kind="chunk" data-cluster="kind-dragen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 37">#37</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op schoot">op schoot</h3>
+<p class="gloss">on one's lap</p>
+<p class="vlaggen"><span>how an adult has a small child with them</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits on a plain chair facing sideways, with the child sitting on top of the adult's thighs, the child's feet dangling above the floor line and the adult's arm round its back. Both look ahead and nothing else is on the chair or the floor.</dd>
+<dt>Must read</dt><dd class="must">a child sitting on top of the adult's thighs on a chair.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult and child walking hand in hand (aan de hand lopen); an adult carrying the child while standing (op de arm); a child on its own chair (not the card); a child on a swing (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-hand-lopen op-de-arm">Pair with aan-de-hand-lopen and op-de-arm. The only difference is how the child is with the adult: sitting on the adult's thighs while the adult sits here, walking by the hand or lifted standing there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het kind zit op schoot.<br><span class="voorbeeld-en">The child is sitting on my lap.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit op een stoel met een kind op haar knieën.</dd>
+</dl>
+<p class="id">op-schoot.png · A1 · kind-dragen</p>
+</article></div></section>
+<section class="cluster" data-cluster="armhouding" data-band="a1"><h2><span class="woorden">met de armen over elkaar · met de handen omhoog · met de handen in de zakken</span></h2><p class="as">what the arms and hands do · 3 cards</p><p class="zin">Hij staat met de armen over elkaar, zij staat met de handen omhoog en ik sta met de handen in de zakken.<span class="en">He stands with arms folded, she stands with hands up and I stand with hands in my pockets.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult stands whole-figure, front view, on a flat ground line, plain trousers and plain top, the same calm face with relaxed brows and a small straight mouth in every drawing, same size on the page, plain background. Only what the arms and hands do changes.</p><div class="kaarten"><article id="met-de-armen-over-elkaar" class="kaart" data-id="met-de-armen-over-elkaar" data-band="a1" data-kind="chunk" data-cluster="armhouding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 38">#38</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de armen over elkaar">met de armen over elkaar</h3>
+<p class="gloss">with arms folded</p>
+<p class="vlaggen"><span>what the arms and hands do</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands with both forearms crossed in front of the chest, each hand tucked under the opposite upper arm, feet slightly apart, the face calm as in the frame. The shoulders are level and nothing is held.</dd>
+<dt>Must read</dt><dd class="must">two forearms crossed flat over the chest.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult with both hands high and open (met de handen omhoog); an adult with the hands pushed into the trouser pockets (met de handen in de zakken); an adult with the arms hanging at the sides (not the card); an adult hugging someone (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-handen-omhoog met-de-handen-in-de-zakken">Pair with met-de-handen-omhoog and met-de-handen-in-de-zakken. The only difference is the arms: crossed over the chest here, raised or hidden in pockets there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij staat met zijn armen over elkaar.<br><span class="voorbeeld-en">He is standing with his arms folded.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat recht voor je en kruist zijn onderarmen voor zijn borst.</dd>
+</dl>
+<p class="id">met-de-armen-over-elkaar.png · A1 · armhouding</p>
+</article>
+<article id="met-de-handen-omhoog" class="kaart" data-id="met-de-handen-omhoog" data-band="a1" data-kind="chunk" data-cluster="armhouding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 39">#39</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de handen omhoog">met de handen omhoog</h3>
+<p class="gloss">with hands up</p>
+<p class="vlaggen"><span>what the arms and hands do</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands with both arms stretched straight up beside the head, palms open and fingers spread, the face calm as in the frame. The feet stay flat on the ground line and nothing is held.</dd>
+<dt>Must read</dt><dd class="must">both open hands raised high above the head.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult with the arms crossed over the chest (met de armen over elkaar); an adult with the hands in the pockets (met de handen in de zakken); an adult waving one hand (not the card); an adult in a victory pose with fists (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-armen-over-elkaar met-de-handen-in-de-zakken">Pair with met-de-armen-over-elkaar and met-de-handen-in-de-zakken. The only difference is the arms: both raised with open palms here, crossed on the chest or hidden in pockets there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij staat met de handen omhoog.<br><span class="voorbeeld-en">She is standing with her hands up.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw strekt beide handen hoog boven haar hoofd met gespreide vingers.</dd>
+</dl>
+<p class="id">met-de-handen-omhoog.png · A1 · armhouding</p>
+</article>
+<article id="met-de-handen-in-de-zakken" class="kaart" data-id="met-de-handen-in-de-zakken" data-band="a1" data-kind="chunk" data-cluster="armhouding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 40">#40</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de handen in de zakken">met de handen in de zakken</h3>
+<p class="gloss">with hands in pockets</p>
+<p class="vlaggen"><span>what the arms and hands do</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands with both hands pushed deep into the trouser pockets so only the wrists and the thumbs show, the elbows slightly out, the head straight and the face calm as in the frame. The shoulders are level.</dd>
+<dt>Must read</dt><dd class="must">wrists disappearing into two trouser pockets.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult with the arms crossed over the chest (met de armen over elkaar); an adult with both hands raised high (met de handen omhoog); an adult with one hand in a coat pocket (not the card); an adult holding a bag (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-armen-over-elkaar met-de-handen-omhoog">Pair with met-de-armen-over-elkaar and met-de-handen-omhoog. The only difference is the arms: hands hidden in the pockets here, crossed on the chest or raised high there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij loopt met zijn handen in de zakken.<br><span class="voorbeeld-en">He walks with his hands in his pockets.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man staat ontspannen; zijn handen zijn niet te zien.</dd>
+</dl>
+<p class="id">met-de-handen-in-de-zakken.png · A1 · armhouding</p>
+</article></div></section>
+<section class="cluster" data-cluster="omgeving" data-band="a1"><h2><span class="woorden">in de stad · op het platteland · in de bergen</span></h2><p class="as">the setting of the walk · 3 cards</p><p class="zin">Wij wonen in de stad, onze oom woont op het platteland en jullie gaan in de bergen wandelen.<span class="en">We live in the city, our uncle lives in the countryside and you are going walking in the mountains.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult with a backpack, whole figure, side view, walking along a flat path line from left to right, same size on the page. Only the setting behind the adult changes.</p><div class="kaarten"><article id="in-de-stad" class="kaart" data-id="in-de-stad" data-band="a1" data-kind="chunk" data-cluster="omgeving" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 41">#41</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de stad">in de stad</h3>
+<p class="gloss">in the city</p>
+<p class="vlaggen"><span>the setting of the walk</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">behind the adult stand tall block buildings with grids of identical windows on both sides of the path, one street lamp and a plain kerb in front, a tram line crossing at the back. No field, hill or tree fills the background.</dd>
+<dt>Must read</dt><dd class="must">tall buildings with window grids all along the path.</dd>
+<dt>Avoid</dt><dd class="avoid">a flat field with a farm and furrows (op het platteland); three pointed mountain peaks (in de bergen); a single house in a garden (not the card); a village with a church (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-het-platteland in-de-bergen">Pair with op-het-platteland and in-de-bergen. The only difference is the setting: tall buildings and a street lamp here, fields with a farm or mountain peaks there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij werkt in de stad.<br><span class="voorbeeld-en">She works in the city.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een wandelaar loopt langs hoge gebouwen met veel ramen en een lantaarnpaal.</dd>
+</dl>
+<p class="id">in-de-stad.png · A1 · omgeving</p>
+</article>
+<article id="op-het-platteland" class="kaart" data-id="op-het-platteland" data-band="a1" data-kind="chunk" data-cluster="omgeving" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 42">#42</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op het platteland">op het platteland</h3>
+<p class="gloss">in the countryside</p>
+<p class="vlaggen"><span>the setting of the walk</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">behind the adult spreads a wide flat landscape with parallel furrow lines in a field, a farmhouse with a low barn and a single plain tree, the horizon low. No tall buildings and no peaks are in sight.</dd>
+<dt>Must read</dt><dd class="must">a flat field with furrows and a farm.</dd>
+<dt>Avoid</dt><dd class="avoid">tall block buildings along the path (in de stad); three pointed mountain peaks (in de bergen); a garden behind a fence (not the card); a forest of dense trees (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-stad in-de-bergen">Pair with in-de-stad and in-de-bergen. The only difference is the setting: flat furrowed fields with a farm here, tall buildings or mountain peaks there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn opa woont op het platteland.<br><span class="voorbeeld-en">My grandfather lives in the countryside.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een wandelaar loopt langs een kale vlakte met voren, een boerderij en een enkele boom.</dd>
+</dl>
+<p class="id">op-het-platteland.png · A1 · omgeving</p>
+</article>
+<article id="in-de-bergen" class="kaart" data-id="in-de-bergen" data-band="a1" data-kind="chunk" data-cluster="omgeving" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 43">#43</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de bergen">in de bergen</h3>
+<p class="gloss">in the mountains</p>
+<p class="vlaggen"><span>the setting of the walk</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">behind the adult rise three high pointed peaks with a jagged skyline, a steep slope with rocks, and the path winding uphill; a pair of walking sticks hangs on the backpack. No building or field is in sight.</dd>
+<dt>Must read</dt><dd class="must">three tall pointed peaks behind an uphill path.</dd>
+<dt>Avoid</dt><dd class="avoid">tall block buildings along the path (in de stad); a flat field with a farm (op het platteland); a single round hill (not the card); a cable car (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-stad op-het-platteland">Pair with in-de-stad and op-het-platteland. The only difference is the setting: pointed peaks and a steep path here, tall buildings or flat fields there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij wandelen in de bergen.<br><span class="voorbeeld-en">We are hiking in the mountains.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een wandelaar loopt een steil pad op, met drie scherpe toppen achter zich.</dd>
+</dl>
+<p class="id">in-de-bergen.png · A1 · omgeving</p>
+</article></div></section>
+<section class="cluster" data-cluster="ochtend-avond" data-band="a1"><h2><span class="woorden">'s ochtends · 's avonds</span></h2><p class="as">morning or evening · 2 cards</p><p class="zin">'s Ochtends drink ik koffie, maar 's avonds eet ik soep.<span class="en">In the morning I drink coffee, but in the evening I eat soup.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult, whole figure, side view, seated at a plain table with one cup on it, in a plain kitchen with one window on the left and a lamp above the table, same size on the page. Only the light changes: daylight at the window, or a dark window and a lit lamp.</p><div class="kaarten"><article id="ochtends" class="kaart" data-id="ochtends" data-band="a1" data-kind="chunk" data-cluster="ochtend-avond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 44">#44</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="&#x27;s ochtends">'s ochtends</h3>
+<p class="gloss">in the morning</p>
+<p class="vlaggen"><span>morning or evening</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">outside the window a half sun rises at the bottom edge of the window with short rays, the lamp above the table hangs unlit, and the adult sits at the table holding the cup in both hands. Nothing else is on the table and no moon or star is drawn.</dd>
+<dt>Must read</dt><dd class="must">a half sun at the window edge with the lamp unlit.</dd>
+<dt>Avoid</dt><dd class="avoid">the same window dark with the lamp lit (avonds); a full sun high in the window (not the card); an adult asleep in bed (not the card); a clock face (no numbers in the art).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="avonds">Pair with avonds. The only difference is the light: a rising half sun and an unlit lamp here, a dark window and a lit lamp there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">'s Ochtends drink ik thee.<br><span class="voorbeeld-en">In the morning I drink tea.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit met een kop aan tafel terwijl de zon net boven de rand van het raam uitkomt.</dd>
+</dl>
+<p class="id">ochtends.png · A1 · ochtend-avond</p>
+</article>
+<article id="avonds" class="kaart" data-id="avonds" data-band="a1" data-kind="chunk" data-cluster="ochtend-avond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 45">#45</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="&#x27;s avonds">'s avonds</h3>
+<p class="gloss">in the evening</p>
+<p class="vlaggen"><span>morning or evening</span><span>A1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the window is filled with plain dense hatching and shows no moon and no stars, the lamp above the table is lit with short rays, and the adult sits at the table holding the cup in both hands. Nothing else is on the table.</dd>
+<dt>Must read</dt><dd class="must">a dark hatched window and a lit lamp over the table.</dd>
+<dt>Avoid</dt><dd class="avoid">the same window with a rising half sun and the lamp unlit (ochtends); a crescent moon and stars, which mean night (not the card); an adult asleep in bed (not the card); a sunset over the sea (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="ochtends">Pair with ochtends. The only difference is the light: a dark window and a lit lamp here, a rising half sun and an unlit lamp there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">'s Avonds lees ik een boek.<br><span class="voorbeeld-en">In the evening I read a book.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit met een kop aan tafel onder een brandende lamp; het raam is donker.</dd>
+</dl>
+<p class="id">avonds.png · A1 · ochtend-avond</p>
+</article></div></section>
+</main>
+</body>
+</html>

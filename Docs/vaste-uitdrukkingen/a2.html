@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaste uitdrukkingen — A2</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Vaste uitdrukkingen — A2</h1>
+<p class="lead">Finer pairs: boat or plane, how things stand together, wall or ceiling, feet, numbers of people, steps, a window ajar, the pan on the boil, pyjamas or a suit.</p>
+<div class="sum"><span>10 contrast sets</span><span>22 chunks</span><span>frames #46–#67</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html" class="hier">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="voertuig-lucht-water" data-band="a2"><h2><span class="woorden">met de boot · met het vliegtuig</span></h2><p class="as">boat or plane · 2 cards</p><p class="zin">Wij gaan met de boot naar het eiland, maar zij reist met het vliegtuig.<span class="en">We go to the island by boat, but she travels by plane.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes with a small suitcase on the lap sits inside a moving vehicle and is seen side-on through its window or on its deck, three short speed lines behind it, the vehicle filling the width of the picture. Only the kind of vehicle changes.</p><div class="kaarten"><article id="met-de-boot" class="kaart" data-id="met-de-boot" data-band="a2" data-kind="chunk" data-cluster="voertuig-lucht-water" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 46">#46</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de boot">met de boot</h3>
+<p class="gloss">by boat</p>
+<p class="vlaggen"><span>boat or plane</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits on a bench on the open deck of a small plain ferry sailing on wave lines, seen side-on, the suitcase on the lap, a lifebuoy on the rail and three speed lines behind the hull. No wings, no runway and no quay are in the picture.</dd>
+<dt>Must read</dt><dd class="must">a seated adult on the deck of a ferry sailing on waves.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult behind a round window of a plane in the sky (met het vliegtuig); an adult in a rowing boat on a lake (not the card); an adult walking up a gangplank (not the card); a bridge over a river (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-het-vliegtuig">Pair with met-het-vliegtuig. The only difference is the vehicle: a ferry sailing on waves here, a plane flying in the sky there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij gaan met de boot.<br><span class="voorbeeld-en">We go by boat.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit met een koffer op het dek van een schip dat over de golven vaart.</dd>
+</dl>
+<p class="id">met-de-boot.png · A2 · voertuig-lucht-water</p>
+</article>
+<article id="met-het-vliegtuig" class="kaart" data-id="met-het-vliegtuig" data-band="a2" data-kind="chunk" data-cluster="voertuig-lucht-water" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 47">#47</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met het vliegtuig">met het vliegtuig</h3>
+<p class="gloss">by plane</p>
+<p class="vlaggen"><span>boat or plane</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult sits behind one of a row of small round windows of a plain passenger plane flying level in an empty sky, the suitcase on the lap, two wings, a tail fin, the wheels tucked away and three speed lines behind it. No water is in the picture.</dd>
+<dt>Must read</dt><dd class="must">a seated adult behind a round window of a plane in the sky.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult on the deck of a ferry on waves (met de boot); an adult climbing boarding steps (not the card); a helicopter (not the card); a hot-air balloon (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-boot">Pair with met-de-boot. The only difference is the vehicle: a plane flying in the sky here, a ferry sailing on waves there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij reist met het vliegtuig.<br><span class="voorbeeld-en">She travels by plane.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zit met een koffer achter een rond raampje van een toestel met vleugels hoog in de lucht.</dd>
+</dl>
+<p class="id">met-het-vliegtuig.png · A2 · voertuig-lucht-water</p>
+</article></div></section>
+<section class="cluster" data-cluster="volgorde" data-band="a2"><h2><span class="woorden">naast elkaar · achter elkaar · op elkaar</span></h2><p class="as">how identical things stand to one another · 3 cards</p><p class="zin">De kopjes staan naast elkaar, de auto's staan achter elkaar en de borden liggen op elkaar.<span class="en">The cups stand side by side, the cars stand one behind the other and the plates lie on top of each other.</span></p><p class="frame"><strong>Fixed frame.</strong> three identical plain cups drawn on a plain table, seen from slightly above and in front, same cup shape and size on the page, plain background. Only how the cups stand to one another changes.</p><div class="kaarten"><article id="naast-elkaar" class="kaart" data-id="naast-elkaar" data-band="a2" data-kind="chunk" data-cluster="volgorde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 48">#48</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="naast elkaar">naast elkaar</h3>
+<p class="gloss">side by side</p>
+<p class="vlaggen"><span>how identical things stand to one another</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the three cups stand in one straight horizontal line across the table from left to right, each a small gap from the next, all handles pointing the same way. No cup is in front of or on top of another.</dd>
+<dt>Must read</dt><dd class="must">three cups in a line from left to right.</dd>
+<dt>Avoid</dt><dd class="avoid">three cups in a column going away from the viewer (achter elkaar); three cups stacked in a tower (op elkaar); three cups scattered at random (not the card); three cups in a triangle (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="achter-elkaar op-elkaar">Pair with achter-elkaar and op-elkaar. The only difference is the arrangement: a row across the picture here, a column into the picture or a tower there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij lopen naast elkaar naar school.<br><span class="voorbeeld-en">We walk to school side by side.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke bekers staan in een rij van links naar rechts met kleine tussenruimtes.</dd>
+</dl>
+<p class="id">naast-elkaar.png · A2 · volgorde</p>
+</article>
+<article id="achter-elkaar" class="kaart" data-id="achter-elkaar" data-band="a2" data-kind="chunk" data-cluster="volgorde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 49">#49</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="achter elkaar">achter elkaar</h3>
+<p class="gloss">one behind the other</p>
+<p class="vlaggen"><span>how identical things stand to one another</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the three cups stand in one straight line that runs away from the viewer toward the back of the table, the nearest cup the largest and the farthest the smallest, each a small gap behind the previous. The line is the same width as one cup.</dd>
+<dt>Must read</dt><dd class="must">three cups going away into the picture, nearest largest.</dd>
+<dt>Avoid</dt><dd class="avoid">three cups in a line across the picture (naast elkaar); three cups stacked in a tower (op elkaar); three cups in a triangle (not the card); three cars driving in a line (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="naast-elkaar op-elkaar">Pair with naast-elkaar and op-elkaar. The only difference is the arrangement: a column into the picture here, a row across it or a tower there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De auto's rijden achter elkaar.<br><span class="voorbeeld-en">The cars drive one behind the other.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke bekers staan in een smalle rij die van de kijker af loopt, de dichtste het grootst.</dd>
+</dl>
+<p class="id">achter-elkaar.png · A2 · volgorde</p>
+</article>
+<article id="op-elkaar" class="kaart" data-id="op-elkaar" data-band="a2" data-kind="chunk" data-cluster="volgorde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 50">#50</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op elkaar">op elkaar</h3>
+<p class="gloss">on top of each other</p>
+<p class="vlaggen"><span>how identical things stand to one another</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the three cups are stacked in a tower, each one standing on top of the one below with the handles pointing the same way and the tower slightly wobbly, rising to three times the height of one cup. The table is otherwise empty.</dd>
+<dt>Must read</dt><dd class="must">three cups piled one on top of the other.</dd>
+<dt>Avoid</dt><dd class="avoid">three cups in a row across the table (naast elkaar); three cups in a column going away (achter elkaar); three cups in a heap fallen over (not the card); a cup on a shelf above another cup (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="naast-elkaar achter-elkaar">Pair with naast-elkaar and achter-elkaar. The only difference is the arrangement: a tower here, a row across or a column into the picture there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De borden staan op elkaar.<br><span class="voorbeeld-en">The plates are stacked on top of each other.</span></dd>
+<dt>Alt text</dt><dd class="alt">Drie gelijke bekers vormen een kleine toren op het tafelblad.</dd>
+</dl>
+<p class="id">op-elkaar.png · A2 · volgorde</p>
+</article></div></section>
+<section class="cluster" data-cluster="muur-plafond" data-band="a2"><h2><span class="woorden">aan de muur · aan het plafond</span></h2><p class="as">wall or ceiling · 2 cards</p><p class="zin">Bij ons hangt de lamp aan de muur, bij hen hangt hij aan het plafond.<span class="en">At our house the lamp hangs on the wall, at theirs it hangs from the ceiling.</span></p><p class="frame"><strong>Fixed frame.</strong> the front of a plain room corner, back wall in the middle, the ceiling line at the top and the floor line at the bottom, one plain round lamp with a small shade, same size on the page. Only the place where the lamp is fixed changes.</p><div class="kaarten"><article id="aan-de-muur" class="kaart" data-id="aan-de-muur" data-band="a2" data-kind="chunk" data-cluster="muur-plafond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 51">#51</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de muur">aan de muur</h3>
+<p class="gloss">on the wall</p>
+<p class="vlaggen"><span>wall or ceiling</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the round lamp is screwed to the back wall at eye height on a short bracket and sticks out a hand's length from the wall, a small switch beside it, with a lot of empty wall above it and the ceiling line well above the lamp.</dd>
+<dt>Must read</dt><dd class="must">a lamp fixed on a bracket to the wall at eye height.</dd>
+<dt>Avoid</dt><dd class="avoid">a lamp hanging on a cord from the ceiling (aan het plafond); a lamp standing on the floor (not the card); a lamp standing on a table (not the card); a framed picture on a wall (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-het-plafond">Pair with aan-het-plafond. The only difference is where the lamp is fixed: on a bracket at eye height on the wall here, on a cord from the ceiling line there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het schilderij hangt aan de muur.<br><span class="voorbeeld-en">The painting hangs on the wall.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lamp zit op ooghoogte op een steunplaatje vast tegen de achterwand van een kamer.</dd>
+</dl>
+<p class="id">aan-de-muur.png · A2 · muur-plafond</p>
+</article>
+<article id="aan-het-plafond" class="kaart" data-id="aan-het-plafond" data-band="a2" data-kind="chunk" data-cluster="muur-plafond" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 52">#52</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan het plafond">aan het plafond</h3>
+<p class="gloss">on the ceiling</p>
+<p class="vlaggen"><span>wall or ceiling</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the round lamp hangs from the ceiling line by a short cord, the shade directly below the ceiling and the whole back wall empty beneath it, with a small rose where the cord leaves the ceiling. No bracket or switch is drawn.</dd>
+<dt>Must read</dt><dd class="must">a lamp hanging on a cord from the ceiling line.</dd>
+<dt>Avoid</dt><dd class="avoid">a lamp fixed to the wall on a bracket (aan de muur); a lamp standing on the floor (not the card); a fan on the ceiling (not the card); a spider hanging from the ceiling (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-muur">Pair with aan-de-muur. The only difference is where the lamp is fixed: hanging from the ceiling line on a cord here, on a bracket at eye height on the wall there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Er zit een spin aan het plafond.<br><span class="voorbeeld-en">There is a spider on the ceiling.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een lamp hangt aan een kort koord vlak onder de bovenkant van een kamer, met een lege achterwand eronder.</dd>
+</dl>
+<p class="id">aan-het-plafond.png · A2 · muur-plafond</p>
+</article></div></section>
+<section class="cluster" data-cluster="samen-lopen" data-band="a2"><h2><span class="woorden">hand in hand · arm in arm</span></h2><p class="as">how two people link up · 2 cards</p><p class="zin">Zij lopen hand in hand, maar het oude paar loopt arm in arm.<span class="en">They walk hand in hand, but the old couple walks arm in arm.</span></p><p class="frame"><strong>Fixed frame.</strong> two adults in plain clothes walk side by side along a flat path line, whole figures, side view, same size on the page, plain background. Only the way they are linked changes.</p><div class="kaarten"><article id="hand-in-hand" class="kaart" data-id="hand-in-hand" data-band="a2" data-kind="chunk" data-cluster="samen-lopen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 53">#53</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="hand in hand">hand in hand</h3>
+<p class="gloss">hand in hand</p>
+<p class="vlaggen"><span>how two people link up</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the two adults walk close together, the near hand of one and the near hand of the other clasped together at hip height with the fingers laced, all other arms hanging free and swinging. Both look ahead along the path.</dd>
+<dt>Must read</dt><dd class="must">two hands clasped together at hip height.</dd>
+<dt>Avoid</dt><dd class="avoid">two adults with a forearm hooked through the other's elbow (arm in arm); two adults walking apart with no contact (not the card); two adults with arms round each other's shoulders (not the card); an adult holding a child's hand (aan de hand lopen).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="arm-in-arm">Pair with arm-in-arm. The only difference is the link: clasped hands at hip height here, a forearm hooked through the other's elbow there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij lopen hand in hand.<br><span class="voorbeeld-en">They are walking hand in hand.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee mensen lopen naast elkaar en hun vingers zijn in elkaar gevlochten.</dd>
+</dl>
+<p class="id">hand-in-hand.png · A2 · samen-lopen</p>
+</article>
+<article id="arm-in-arm" class="kaart" data-id="arm-in-arm" data-band="a2" data-kind="chunk" data-cluster="samen-lopen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 54">#54</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="arm in arm">arm in arm</h3>
+<p class="gloss">arm(noun) in arm</p>
+<p class="vlaggen"><span>how two people link up</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the two adults walk close together, the near arm of one bent at the elbow and hooked through the bent elbow of the other so that the forearms rest together at the waist, the free hands relaxed. Both look ahead along the path.</dd>
+<dt>Must read</dt><dd class="must">an elbow hooked through an elbow at the waist.</dd>
+<dt>Avoid</dt><dd class="avoid">two adults with clasped hands at hip height (hand in hand); two adults walking apart with no contact (not the card); two adults with arms round each other's shoulders (not the card); one adult supporting another who is hurt (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="hand-in-hand">Pair with hand-in-hand. The only difference is the link: a forearm hooked through the other's elbow here, clasped hands at hip height there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het oude paar loopt arm in arm.<br><span class="voorbeeld-en">The old couple walks arm in arm.</span></dd>
+<dt>Alt text</dt><dd class="alt">Twee mensen lopen dicht naast elkaar en haken hun gebogen ellebogen in elkaar.</dd>
+</dl>
+<p class="id">arm-in-arm.png · A2 · samen-lopen</p>
+</article></div></section>
+<section class="cluster" data-cluster="voeten" data-band="a2"><h2><span class="woorden">op blote voeten · op sokken</span></h2><p class="as">what is on the feet · 2 cards</p><p class="zin">Zij loopt op blote voeten, maar hij loopt op sokken.<span class="en">She walks barefoot, but he walks in socks.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult, whole figure, side view, standing on a plain wooden floor line with one foot slightly forward, plain wall behind, same size on the page. Only what is on the feet changes.</p><div class="kaarten"><article id="op-blote-voeten" class="kaart" data-id="op-blote-voeten" data-band="a2" data-kind="chunk" data-cluster="voeten" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 55">#55</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op blote voeten">op blote voeten</h3>
+<p class="gloss">barefoot</p>
+<p class="vlaggen"><span>what is on the feet</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">both feet are bare with five separate toes drawn on each, the ankles and heels visible, and a pair of shoes stands neatly by the wall behind. The adult tiptoes across the floor with a small smile.</dd>
+<dt>Must read</dt><dd class="must">five bare toes on each foot, shoes left by the wall.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult with ribbed knitted socks on the feet (op sokken); an adult with shoes on (not the card); an adult with sandals (not the card); an adult in a bath (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-sokken">Pair with op-sokken. The only difference is what is on the feet: bare toes here, plain knitted socks with a ribbed cuff there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij loopt op blote voeten.<br><span class="voorbeeld-en">She walks barefoot.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw loopt met zichtbare tenen over een houten vloer, haar schoenen staan bij de muur.</dd>
+</dl>
+<p class="id">op-blote-voeten.png · A2 · voeten</p>
+</article>
+<article id="op-sokken" class="kaart" data-id="op-sokken" data-band="a2" data-kind="chunk" data-cluster="voeten" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 56">#56</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op sokken">op sokken</h3>
+<p class="gloss">in socks</p>
+<p class="vlaggen"><span>what is on the feet</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">both feet are covered by plain knitted socks with a ribbed cuff at the ankle, no toes visible, and a pair of shoes stands neatly by the wall behind. The adult glides across the floor with a small smile.</dd>
+<dt>Must read</dt><dd class="must">plain knitted socks with ribbed cuffs, no toes showing.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult with bare toes on the floor (op blote voeten); an adult with slippers (not the card); an adult with shoes on (not the card); an adult in tights (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-blote-voeten">Pair with op-blote-voeten. The only difference is what is on the feet: plain knitted socks here, bare toes there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij loopt op sokken door de kamer.<br><span class="voorbeeld-en">He walks through the room in his socks.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man glijdt in gebreide kousen met een boord over een houten vloer, zijn schoenen staan bij de muur.</dd>
+</dl>
+<p class="id">op-sokken.png · A2 · voeten</p>
+</article></div></section>
+<section class="cluster" data-cluster="gezelschap" data-band="a2"><h2><span class="woorden">in zijn eentje · met zijn tweeën · met zijn allen</span></h2><p class="as">how many of the household sit on the bench · 3 cards</p><p class="zin">Hij woont in zijn eentje, wij eten met zijn tweeën en zij gaan met zijn allen naar het park.<span class="en">He lives by himself, we eat the two of us and they all go to the park together.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain park bench, side view, on a flat ground line, with a small plain house behind it whose front door stands open and whose two windows show the room; five adults belong to the house and all five are in every drawing. Only how many of them sit on the bench, and how many are still inside, changes.</p><div class="kaarten"><article id="in-zijn-eentje" class="kaart" data-id="in-zijn-eentje" data-band="a2" data-kind="chunk" data-cluster="gezelschap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 57">#57</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in zijn eentje">in zijn eentje</h3>
+<p class="gloss">by himself</p>
+<p class="vlaggen"><span>how many of the household sit on the bench</span><span>A2</span><span class="register">spoken</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">one adult sits in the middle of the long bench with both hands in the lap and empty seat left and right, while the other four adults stand inside the house, two at each window, looking out. The front door stands open and the doorway is empty.</dd>
+<dt>Must read</dt><dd class="must">one person on a long bench, four others still in the house.</dd>
+<dt>Avoid</dt><dd class="avoid">two adults sitting side by side on the bench (met zijn tweeën); five adults squeezed along the bench (met zijn allen); an adult lying on the bench (not the card); an empty bench (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-zijn-tweeen met-zijn-allen">Pair with met-zijn-tweeen and met-zijn-allen. The only difference is the number of people: one on the bench here, two or five there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij woont in zijn eentje.<br><span class="voorbeeld-en">He lives by himself.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zit midden op een lang bankje terwijl vier anderen uit de ramen van het huis kijken.</dd>
+</dl>
+<p class="id">in-zijn-eentje.png · A2 · gezelschap</p>
+</article>
+<article id="met-zijn-tweeen" class="kaart" data-id="met-zijn-tweeen" data-band="a2" data-kind="chunk" data-cluster="gezelschap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 58">#58</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met zijn tweeën">met zijn tweeën</h3>
+<p class="gloss">the two of them</p>
+<p class="vlaggen"><span>how many of the household sit on the bench</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">two adults sit side by side on the bench, shoulders close and turned slightly toward each other, one holding a small paper bag between them, while the other three adults stand inside the house at the two windows. The bench still shows an empty piece at each end.</dd>
+<dt>Must read</dt><dd class="must">two people close together on the bench, three others still in the house.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult alone on the bench (in zijn eentje); five adults squeezed along the bench (met zijn allen); two adults standing beside the bench (not the card); two adults on separate benches (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-zijn-eentje met-zijn-allen">Pair with in-zijn-eentje and met-zijn-allen. The only difference is the number of people: two on the bench here, one alone or five squeezed there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij eten met zijn tweeën.<br><span class="voorbeeld-en">The two of us eat.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man en een vrouw zitten dicht naast elkaar op een bankje en delen een papieren zak; drie anderen kijken uit het raam.</dd>
+</dl>
+<p class="id">met-zijn-tweeen.png · A2 · gezelschap</p>
+</article>
+<article id="met-zijn-allen" class="kaart" data-id="met-zijn-allen" data-band="a2" data-kind="chunk" data-cluster="gezelschap" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 59">#59</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met zijn allen">met zijn allen</h3>
+<p class="gloss">all together</p>
+<p class="vlaggen"><span>how many of the household sit on the bench</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">all five adults squeeze along the bench in one row with no gap, shoulders overlapping, every one smiling. The house behind them stands empty: both windows show an empty room and the open front door shows an empty doorway.</dd>
+<dt>Must read</dt><dd class="must">five people filling the whole bench, the house behind empty.</dd>
+<dt>Avoid</dt><dd class="avoid">one adult alone on the bench (in zijn eentje); two adults on the bench (met zijn tweeën); five adults standing in a group (not the card); a crowd of fifty (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-zijn-eentje met-zijn-tweeen">Pair with in-zijn-eentje and met-zijn-tweeen. The only difference is the number of people: five filling the bench here, one alone or two close there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij gaan met zijn allen naar het strand.<br><span class="voorbeeld-en">We all go to the beach together.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf mensen zitten lachend dicht tegen elkaar op een bankje; het huis achter hen is leeg.</dd>
+</dl>
+<p class="id">met-zijn-allen.png · A2 · gezelschap</p>
+</article></div></section>
+<section class="cluster" data-cluster="stappen" data-band="a2"><h2><span class="woorden">stap voor stap · in één keer</span></h2><p class="as">crossing in steps or in one go · 2 cards</p><p class="zin">Hij gaat stap voor stap over de stenen, maar zij springt in één keer over de beek.<span class="en">He crosses the stones step by step, but she jumps over the stream in one go.</span></p><p class="frame"><strong>Fixed frame.</strong> a plain narrow stream with five flat stepping stones in a row from the left bank to the right bank, one adult with a bag, side view, same stream and same size on the page. Only how the adult crosses changes.</p><div class="kaarten"><article id="stap-voor-stap" class="kaart" data-id="stap-voor-stap" data-band="a2" data-kind="chunk" data-cluster="stappen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 60">#60</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="stap voor stap">stap voor stap</h3>
+<p class="gloss">step by step</p>
+<p class="vlaggen"><span>crossing in steps or in one go</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult stands on the third of the five stepping stones with the back foot still on it and the front foot reaching toward the fourth stone, arms out for balance and the eyes on the next stone. The first two stones are behind and the fifth lies ahead.</dd>
+<dt>Must read</dt><dd class="must">a foot reaching from one stone to the next in a row.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult flying above the whole stream with feet off the ground (in één keer); an adult wading through the water (not the card); an adult on a bridge (not the card); an adult walking on a pavement (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-een-keer">Pair with in-een-keer. The only difference is the way of crossing: one foot on a stone and the other reaching for the next stone here, both feet in the air over the whole stream there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij loopt stap voor stap over de stenen.<br><span class="voorbeeld-en">She walks over the stones step by step.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man zet zijn voet op de derde van vijf platte stenen in een beek en reikt naar de volgende.</dd>
+</dl>
+<p class="id">stap-voor-stap.png · A2 · stappen</p>
+</article>
+<article id="in-een-keer" class="kaart" data-id="in-een-keer" data-band="a2" data-kind="chunk" data-cluster="stappen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 61">#61</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in één keer">in één keer</h3>
+<p class="gloss">in one go</p>
+<p class="vlaggen"><span>crossing in steps or in one go</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult is in mid-air high above the stream with both feet well off the ground and the knees bent, arms stretched out in front, the left bank just behind the back foot and the right bank ahead. The five stepping stones lie untouched below.</dd>
+<dt>Must read</dt><dd class="must">a person flying over the whole stream, five stones untouched below.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult with one foot on a stone reaching to the next (stap voor stap); an adult jumping on the spot (not the card); an adult diving into the water (not the card); an adult jumping over a fence (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="stap-voor-stap">Pair with stap-voor-stap. The only difference is the way of crossing: both feet in the air over the whole stream here, one foot on a stone and the other reaching for the next there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij springt in één keer over de sloot.<br><span class="voorbeeld-en">She jumps over the ditch in one go.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw zweeft met gebogen knieën boven een beek terwijl vijf stenen onaangeroerd onder haar liggen.</dd>
+</dl>
+<p class="id">in-een-keer.png · A2 · stappen</p>
+</article></div></section>
+<section class="cluster" data-cluster="raam-kier" data-band="a2"><h2><span class="woorden">op een kier · wagenwijd open</span></h2><p class="as">how far the window is open · 2 cards</p><p class="zin">Het raam staat op een kier, maar in de zomer staat het wagenwijd open.<span class="en">The window is ajar, but in summer it is wide open.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain window with one side-hung casement that opens inward, the common Dutch window, in a plain wall, seen from inside the room, a plain sill below and the handle on the free edge; same window, same wall, same size on the page. Only how far the casement stands into the room changes.</p><div class="kaarten"><article id="op-een-kier" class="kaart" data-id="op-een-kier" data-band="a2" data-kind="chunk" data-cluster="raam-kier" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 62">#62</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op een kier">op een kier</h3>
+<p class="gloss">ajar</p>
+<p class="vlaggen"><span>how far the window is open</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the casement is pulled into the room only a finger's width, so one thin dark gap runs down its free edge from top to bottom; the rest of the leaf still sits almost flush in the frame, and the handle is turned up.</dd>
+<dt>Must read</dt><dd class="must">one thin gap down the free edge of an almost shut window.</dd>
+<dt>Avoid</dt><dd class="avoid">the casement swung into the room as far as it goes (wagenwijd open); a window shut flush with no gap (dicht, Bijvoeglijke naamwoorden); a broken pane (not the card); an eye at a narrow gap (kijken door, Voorzetselpaden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="wagenwijd-open">Pair with wagenwijd-open. The only difference is the casement: in by one thin gap here, swung into the room as far as it goes there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zet het raam maar op een kier.<br><span class="voorbeeld-en">Just leave the window ajar.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een raam is bijna dicht: er loopt alleen een smalle donkere spleet langs de rand.</dd>
+</dl>
+<p class="id">op-een-kier.png · A2 · raam-kier</p>
+</article>
+<article id="wagenwijd-open" class="kaart" data-id="wagenwijd-open" data-band="a2" data-kind="chunk" data-cluster="raam-kier" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 63">#63</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="wagenwijd open">wagenwijd open</h3>
+<p class="gloss">wide open</p>
+<p class="vlaggen"><span>how far the window is open</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the casement is swung into the room as far as its hinges allow and stands at a right angle to the wall, so the whole leaf with its frame and handle shows clearly in front of the wall, and the empty opening beside it shows the sky outside.</dd>
+<dt>Must read</dt><dd class="must">the whole casement standing into the room at a right angle, the opening clear.</dd>
+<dt>Avoid</dt><dd class="avoid">the casement in by one thin gap (op een kier); a window with the glass missing (not the card); a person climbing through a window (not the card); a door swung wide (open, Bijvoeglijke naamwoorden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-een-kier">Pair with op-een-kier. The only difference is the casement: swung into the room as far as it goes here, in by one thin gap there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Bij deze hitte staan alle ramen wagenwijd open.<br><span class="voorbeeld-en">In this heat all the windows are wide open.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een raamvleugel is helemaal naar binnen gedraaid en staat haaks op de muur, zodat je door het hele kozijn de lucht ziet.</dd>
+</dl>
+<p class="id">wagenwijd-open.png · A2 · raam-kier</p>
+</article></div></section>
+<section class="cluster" data-cluster="pan-vuur" data-band="a2"><h2><span class="woorden">aan de kook · op een laag pitje</span></h2><p class="as">how hard the water boils · 2 cards</p><p class="zin">Eerst is de soep aan de kook, daarna staat hij op een laag pitje.<span class="en">First the soup is on the boil, then it is on a low heat.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain pan of water without a lid on one gas ring of a plain cooker, side view, nobody in the picture; same pan, same ring, same size on the page. Only the heat changes: the size of the flame, and what the water does with it.</p><div class="kaarten"><article id="aan-de-kook" class="kaart" data-id="aan-de-kook" data-band="a2" data-kind="chunk" data-cluster="pan-vuur" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 64">#64</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de kook">aan de kook</h3>
+<p class="gloss">on the boil</p>
+<p class="vlaggen"><span>how hard the water boils</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">under the pan a full ring of tall flames licks up the sides; the water inside rolls and heaves, large round domes bursting at its surface, and thick curls of steam rise high above the pan. Nothing spills over the rim.</dd>
+<dt>Must read</dt><dd class="must">tall flames, heaving water and thick steam.</dd>
+<dt>Avoid</dt><dd class="avoid">a tiny flame and almost still water (op een laag pitje); a pan boiling over onto the cooker (not the card); a person stirring a pan (koken, Werkwoorden); a kettle on a hob (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-een-laag-pitje">Pair with op-een-laag-pitje. The only difference is the heat: tall flames and rolling bubbles here, a tiny flame and almost still water there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Breng het water eerst aan de kook.<br><span class="voorbeeld-en">First bring the water to the boil.</span></dd>
+<dt>Alt text</dt><dd class="alt">Onder een pan water branden hoge vlammen; het water borrelt met grote bellen en er stijgt veel stoom op.</dd>
+</dl>
+<p class="id">aan-de-kook.png · A2 · pan-vuur</p>
+</article>
+<article id="op-een-laag-pitje" class="kaart" data-id="op-een-laag-pitje" data-band="a2" data-kind="chunk" data-cluster="pan-vuur" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 65">#65</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op een laag pitje">op een laag pitje</h3>
+<p class="gloss">on a low heat</p>
+<p class="vlaggen"><span>how hard the water boils</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">under the pan only a tiny ring of short flames burns, barely visible; the water inside lies almost still, with two or three tiny beads rising and one thin wisp of steam rising from the surface. Nothing spills over the rim.</dd>
+<dt>Must read</dt><dd class="must">a tiny flame and almost still water.</dd>
+<dt>Avoid</dt><dd class="avoid">tall flames, heaving water and thick steam (aan de kook); a cold pan on a cooker that is off (not the card); a candle flame (not the card); a pan inside an oven (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-kook">Pair with aan-de-kook. The only difference is the heat: a tiny flame and almost still water here, tall flames and rolling bubbles there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Laat de saus op een laag pitje staan.<br><span class="voorbeeld-en">Leave the sauce on a low heat.</span></dd>
+<dt>Alt text</dt><dd class="alt">Onder een pan water brandt een heel klein vlammetje; het water ligt bijna stil met een dun sliertje stoom.</dd>
+</dl>
+<p class="id">op-een-laag-pitje.png · A2 · pan-vuur</p>
+</article></div></section>
+<section class="cluster" data-cluster="kleding" data-band="a2"><h2><span class="woorden">in pyjama · in pak</span></h2><p class="as">what the man is wearing · 2 cards</p><p class="zin">Om zeven uur loopt hij nog in pyjama rond, om acht uur staat hij in pak bij de deur.<span class="en">At seven he is still walking around in his pyjamas, at eight he stands at the door in a suit.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult man standing in a plain hallway beside an empty coat hook and the closed front door, front view, holding one plain mug in one hand, the other hand hanging down; same man, same face and hair, same hallway, same size on the page. Only his clothes change.</p><div class="kaarten"><article id="in-pyjama" class="kaart" data-id="in-pyjama" data-band="a2" data-kind="chunk" data-cluster="kleding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 66">#66</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in pyjama">in pyjama</h3>
+<p class="gloss">in pyjamas</p>
+<p class="vlaggen"><span>what the man is wearing</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the man wears loose pyjamas with a pattern of thin stripes: a soft buttoned top with a round collar and long loose trousers; his feet are in plain slippers. The coat hook beside him is empty.</dd>
+<dt>Must read</dt><dd class="must">loose striped pyjamas with a soft round collar.</dd>
+<dt>Avoid</dt><dd class="avoid">a jacket with lapels over a shirt and tie (in pak); a bathrobe with a belt (not the card); a tracksuit (not the card); a person asleep in bed (in bed).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-pak">Pair with in-pak. The only difference is the clothes: loose striped pyjamas here, a jacket with a shirt and tie there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De kinderen ontbijten op zondag in pyjama.<br><span class="voorbeeld-en">On Sundays the children have breakfast in their pyjamas.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man in losse, gestreepte nachtkleding staat met een mok in de gang.</dd>
+</dl>
+<p class="id">in-pyjama.png · A2 · kleding</p>
+</article>
+<article id="in-pak" class="kaart" data-id="in-pak" data-band="a2" data-kind="chunk" data-cluster="kleding" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 67">#67</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in pak">in pak</h3>
+<p class="gloss">in a suit</p>
+<p class="vlaggen"><span>what the man is wearing</span><span>A2</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the man wears a plain dark suit: a jacket with lapels and two buttons done up, a shirt with a collar and a plain tie, long straight trousers; his feet are in plain slippers. The coat hook beside him is empty.</dd>
+<dt>Must read</dt><dd class="must">a jacket with lapels over a shirt and tie.</dd>
+<dt>Avoid</dt><dd class="avoid">loose striped pyjamas with a round collar (in pyjama); a uniform with a cap and badge (not the card); a coat over a jumper (not the card); a waiter with an apron (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-pyjama">Pair with in-pyjama. The only difference is the clothes: a jacket with a shirt and tie here, loose striped pyjamas there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Op de bruiloft komen alle mannen in pak.<br><span class="voorbeeld-en">At the wedding all the men come in suits.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man in een net jasje met overhemd en stropdas staat met een mok in de gang.</dd>
+</dl>
+<p class="id">in-pak.png · A2 · kleding</p>
+</article></div></section>
+</main>
+</body>
+</html>

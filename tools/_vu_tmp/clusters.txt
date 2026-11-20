@@ -1,0 +1,55 @@
+# cluster-id ; axis ; members id=chunk:gloss:rank-keys (keys = the content words whose rank sets the band) [; xref=family:card-id]
+# xref names a partner drawn in another family; the card then has no partner on this page and points there instead.
+# Removed chunks (single words, free combinations, duplicates) live in left-out.tsv, not here.
+tijdstip ; arriving relative to a departure ; op-tijd=op tijd:on time:tijd|te-laat=te laat:too late:
+opzet ; deliberate or accidental ; met-opzet=met opzet:on purpose:opzet|per-ongeluk=per ongeluk:by accident:ongeluk
+bestemming ; where the adult is busy ; op-school=op school:at school:school|op-het-werk=op het werk:at work:werk
+plaats ; replacing one thing with another (SKIP) ; in-plaats-van=in plaats van:instead of:plaats
+wegtocht ; arrived at the spot ; ter-plekke=ter plekke:on the spot:plek ; xref=bijwoorden:onderweg
+voetgangers ; how a person travels by body or animal ; te-voet=te voet:on foot:voet|op-de-fiets=op de fiets:on the bike:fiets|te-paard=te paard:on horseback:paard
+voertuig-weg ; which road vehicle ; met-de-auto=met de auto:by car:auto|met-de-bus=met de bus:by bus:bus|met-de-trein=met de trein:by train:trein
+voertuig-lucht-water ; boat or plane ; met-de-boot=met de boot:by boat:boot|met-het-vliegtuig=met het vliegtuig:by plane:vliegtuig
+volgorde ; how identical things stand to one another ; naast-elkaar=naast elkaar:side by side:elkaar|achter-elkaar=achter elkaar:one behind the other:elkaar|op-elkaar=op elkaar:on top of each other:elkaar
+kant-links-rechts ; left or right side ; aan-de-linkerkant=aan de linkerkant:on the left-hand side:kant|aan-de-rechterkant=aan de rechterkant:on the right-hand side:kant
+kant-weg ; at the edge or in the middle of the road ; aan-de-kant=aan de kant:to the side:kant|in-het-midden=in het midden:in the middle:
+hoek-straat ; at or behind a street corner ; op-de-hoek=op de hoek:on the corner:hoek|om-de-hoek=om de hoek:round the corner:hoek
+trap ; place or direction on the stairs ; bovenaan-de-trap=bovenaan de trap:at the top of the stairs:trap|onderaan-de-trap=onderaan de trap:at the bottom of the stairs:trap|naar-boven=naar boven:upstairs / up:boven|naar-beneden=naar beneden:downstairs / down:beneden
+grond-lucht ; on the ground or in the air ; op-de-grond=op de grond:on the ground:grond|in-de-lucht=in de lucht:in the air:lucht
+muur-plafond ; wall or ceiling ; aan-de-muur=aan de muur:on the wall:muur|aan-het-plafond=aan het plafond:on the ceiling:plafond
+tafel ; where a child is, relative to a table ; aan-tafel=aan tafel:at the table:tafel|op-tafel=op tafel:on the table:tafel|onder-tafel=onder tafel:under the table:tafel
+bed ; in bed or out of it ; in-bed=in bed:in bed:bed|uit-bed=uit bed:out of bed:bed
+zee ; coast or open water ; aan-zee=aan zee:at the seaside:zee|op-zee=op zee:at sea:zee
+zon-schaduw ; what is above the bench ; in-de-zon=in de zon:in the sun:zon|in-de-schaduw=in de schaduw:in the shade:schaduw|in-de-regen=in de regen:in the rain:regen
+rug-buik ; lying position ; op-je-rug=op je rug:on one's back:rug|op-je-buik=op je buik:on one's stomach:buik
+kind-dragen ; how an adult has a small child with them ; aan-de-hand-lopen=aan de hand lopen:walk holding someone's hand (also the idiom "wat is er aan de hand?", what is the matter?):hand|op-de-arm=op de arm:in one's arms:arm(noun)|op-schoot=op schoot:on one's lap:schoot
+samen-lopen ; how two people link up ; hand-in-hand=hand in hand:hand in hand:hand|arm-in-arm=arm in arm:arm(noun) in arm:arm(noun)
+armhouding ; what the arms and hands do ; met-de-armen-over-elkaar=met de armen over elkaar:with arms folded:arm(noun)|met-de-handen-omhoog=met de handen omhoog:with hands up:hand|met-de-handen-in-de-zakken=met de handen in de zakken:with hands in pockets:hand
+voeten ; what is on the feet ; op-blote-voeten=op blote voeten:barefoot:voet|op-sokken=op sokken:in socks:sok
+gezelschap ; how many of the household sit on the bench ; in-zijn-eentje=in zijn eentje:by himself:eentje|met-zijn-tweeen=met zijn tweeën:the two of them:twee|met-zijn-allen=met zijn allen:all together:
+omgeving ; the setting of the walk ; in-de-stad=in de stad:in the city:stad|op-het-platteland=op het platteland:in the countryside:platteland|in-de-bergen=in de bergen:in the mountains:berg
+ochtend-avond ; morning or evening ; ochtends='s ochtends:in the morning:ochtend|avonds='s avonds:in the evening:avond
+stappen ; crossing in steps or in one go ; stap-voor-stap=stap voor stap:step by step:stap|in-een-keer=in één keer:in one go:keer
+klok-draai ; direction of turning (SKIP) ; met-de-klok-mee=met de klok mee:clockwise:klok|tegen-de-klok-in=tegen de klok in:anticlockwise:klok
+op-zijn-kop ; upside down ; op-zijn-kop=op zijn kop:upside down:kop ; xref=bijwoorden:rechtop
+wind ; riding with or against the wind ; met-de-wind-mee=met de wind mee:with the wind behind:wind|tegen-de-wind-in=tegen de wind in:against the wind:wind
+orde ; tidy or jumbled ; op-een-rij=op een rij:in a row:rij|door-elkaar=door elkaar:jumbled up:elkaar
+delen ; how an apple is divided ; in-tweeen=in tweeën:in two:|in-stukjes=in stukjes:in little pieces:stuk
+beurt ; taking turns or at once (SKIP) ; om-de-beurt=om de beurt:in turns:beurt|tegelijk=tegelijk:at the same time:tegelijk
+koop ; for sale or to rent (SKIP) ; te-koop=te koop:for sale:koop|te-huur=te huur:to rent:huur
+eerste ; first time or last time (SKIP) ; voor-het-eerst=voor het eerst:for the first time:eerste|voor-het-laatst=voor het laatst:for the last time:laatst
+# in-de-wei is a free combination with an article, kept only as the standard opposite of op stal; a later cut of free combinations spares it.
+paard-stal ; where the horse is kept ; op-stal=op stal:in the stable (of animals):stal|in-de-wei=in de wei:in the meadow:wei
+wal ; on the shore beside the boat ; aan-wal=aan wal:ashore:wal ; xref=bijwoorden:aan-boord
+bloem-knop ; the rose bush closed or open ; in-de-knop=in de knop:in bud:knop|in-bloei=in bloei:in bloom:bloei
+bocht ; how the car takes the bend ; door-de-bocht-gaan=door de bocht gaan:take the bend:bocht|uit-de-bocht-vliegen=uit de bocht vliegen:skid off the road at a bend:bocht
+dier-wild ; what surrounds the lion ; in-het-wild=in het wild:in the wild:wild|in-gevangenschap=in gevangenschap:in captivity:gevangenschap
+toneel ; where the actress stands ; op-de-planken=op de planken:on the stage:plank|in-de-coulissen=in de coulissen:in the wings:coulisse
+meubel-onder ; what the cupboard stands on ; op-wieltjes=op wieltjes:on castors, on wheels:wiel|op-pootjes=op pootjes:on little legs:poot
+schip ; where the ship lies ; voor-anker=voor anker:at anchor:anker|aan-de-kade=aan de kade:alongside the quay:kade
+raam-kier ; how far the window is open ; op-een-kier=op een kier:ajar:kier|wagenwijd-open=wagenwijd open:wide open:wagenwijd
+pan-vuur ; how hard the water boils ; aan-de-kook=aan de kook:on the boil:koken|op-een-laag-pitje=op een laag pitje:on a low heat:pitje
+paardengang ; how fast the horse moves ; in-draf=in draf:at a trot:draf|in-galop=in galop:at a gallop:galop
+# pas: the B2 band rests on 'pas (noun)' at rank 9688 (zipf 1.51), a placeholder rank; B2 is right editorially for in de pas / uit de pas.
+pas ; walking in step or out of it ; in-de-pas=in de pas:in step:pas(noun)|uit-de-pas=uit de pas:out of step:pas(noun)
+kleding ; what the man is wearing ; in-pyjama=in pyjama:in pyjamas:pyjama|in-pak=in pak:in a suit:pak
+groep-lopen ; how the children walk together ; in-ganzenpas=in ganzenpas:in single file:ganzenpas|op-een-kluitje=op een kluitje:huddled together:kluitje

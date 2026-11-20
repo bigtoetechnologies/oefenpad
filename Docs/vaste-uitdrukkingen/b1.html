@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaste uitdrukkingen — B1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Vaste uitdrukkingen — B1</h1>
+<p class="lead">Intent, arriving, upside down, wind, tidiness, cutting, and the horse, the shore, the bend, the lion, the cupboard, the ship.</p>
+<div class="sum"><span>13 contrast sets</span><span>23 chunks</span><span>frames #68–#90</span><span>0 getekend</span></div>
+<nav class="banden"><a href="index.html">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html" class="hier">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<section class="cluster" data-cluster="opzet" data-band="b1"><h2><span class="woorden">met opzet · per ongeluk</span></h2><p class="as">deliberate or accidental · 2 cards</p><p class="zin">Hij gooit het glas met opzet om, maar zij stoot het per ongeluk om.<span class="en">He knocks the glass over on purpose, but she knocks it over by accident.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult in plain clothes stands whole-figure, side view, at a plain table with a single full glass standing on the table edge, same distance from the viewer, plain low wall behind. Only the adult's intent changes: a deliberate push or an accidental knock.</p><div class="kaarten"><article id="met-opzet" class="kaart" data-id="met-opzet" data-band="b1" data-kind="chunk" data-cluster="opzet" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 68">#68</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met opzet">met opzet</h3>
+<p class="gloss">on purpose</p>
+<p class="vlaggen"><span>deliberate or accidental</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult looks straight at the glass with narrowed eyes and a sly grin and pushes it off the table edge with one stretched finger, the glass already tipping and a few drops flying. The other hand rests on the hip and the head is turned toward the glass.</dd>
+<dt>Must read</dt><dd class="must">a sly face looking at the glass while one finger pushes it.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult whose elbow knocks the glass while looking away (per ongeluk); a glass thrown across the room by an angry adult (not the card); an adult catching a falling glass (not the card); a glass standing safely on the table (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="per-ongeluk">Pair with per-ongeluk. The only difference is the intent: eyes on the glass with a sly grin and a finger pushing here, eyes elsewhere with an elbow bumping there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij doet dat met opzet.<br><span class="voorbeeld-en">He does that on purpose.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man kijkt grijnzend naar een glas dat hij met zijn vinger van de tafelrand duwt.</dd>
+</dl>
+<p class="id">met-opzet.png · B1 · opzet</p>
+</article>
+<article id="per-ongeluk" class="kaart" data-id="per-ongeluk" data-band="b1" data-kind="chunk" data-cluster="opzet" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 69">#69</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="per ongeluk">per ongeluk</h3>
+<p class="gloss">by accident</p>
+<p class="vlaggen"><span>deliberate or accidental</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult is turned toward a window and does not see the glass; the elbow catches it and it tips off the table edge with a few drops flying. The face shows wide round eyes, raised brows and a round open mouth, one hand raised in surprise.</dd>
+<dt>Must read</dt><dd class="must">a surprised face turned away while an elbow bumps the glass.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult pushing the glass with a sly grin (met opzet); an angry adult sweeping the glass off (not the card); an adult carefully putting the glass down (not the card); an adult dropping the glass from a tray (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-opzet">Pair with met-opzet. The only difference is the intent: eyes elsewhere with an elbow bumping and a surprised face here, eyes on the glass with a sly grin there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Sorry, het was per ongeluk.<br><span class="voorbeeld-en">Sorry, it was an accident.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrouw kijkt naar buiten en stoot geschrokken met haar elleboog een glas om.</dd>
+</dl>
+<p class="id">per-ongeluk.png · B1 · opzet</p>
+</article></div></section>
+<section class="cluster" data-cluster="wegtocht" data-band="b1"><h2><span class="woorden">ter plekke</span></h2><p class="as">arrived at the spot · 1 cards</p><p class="zin">De monteur is onderweg, maar de dokter is al ter plekke.<span class="en">The mechanic is on the way, but the doctor is already on the spot.</span></p><p class="frame"><strong>Fixed frame.</strong> a flat road line with a plain car at the far right whose bonnet is open, and a plain van seen side-on, one mechanic with a toolbox, no other objects, same size of van on the page. Only where the van and the mechanic are relative to the car changes.</p><div class="kaarten"><article id="ter-plekke" class="kaart" data-id="ter-plekke" data-band="b1" data-kind="chunk" data-cluster="wegtocht" data-status="proposal" data-severity="" data-xref="bijwoorden:onderweg">
+<span class="framenummer" title="Frame 70">#70</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="ter plekke">ter plekke</h3>
+<p class="gloss">on the spot</p>
+<p class="vlaggen"><span>arrived at the spot</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the plain van stands right beside the car with the open bonnet, and the mechanic kneels at the engine with the toolbox open on the road next to the front wheel. The van door is open and no distance is left between van and car.</dd>
+<dt>Must read</dt><dd class="must">a mechanic kneeling at the open bonnet of the broken car.</dd>
+<dt>Avoid</dt><dd class="avoid">a van driving along the road far from the car (onderweg); a mechanic phoning from a desk (not the card); a van parked on its own with no car (not the card); a car being towed away (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="">Pair with onderweg, drawn in Bijwoorden and not here. This card shows the arrival only: the van parked against the broken car and the mechanic already at work.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De politie is snel ter plekke.<br><span class="voorbeeld-en">The police are quickly on the spot.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man met een gereedschapskist zit op zijn knieën bij een auto met open motorkap.</dd>
+</dl>
+<p class="id">ter-plekke.png · B1 · wegtocht</p>
+</article></div></section>
+<section class="cluster" data-cluster="op-zijn-kop" data-band="b1"><h2><span class="woorden">op zijn kop</span></h2><p class="as">upside down · 1 cards</p><p class="zin">Eerst staat de beker rechtop, maar nu staat hij op zijn kop.<span class="en">First the mug stands upright, but now it stands upside down.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain mug with a handle on a plain table, front view, plain wall behind, same size on the page. Only this card is drawn here: the mug upside down. Its upright partner rechtop is drawn in Bijwoorden.</p><div class="kaarten"><article id="op-zijn-kop" class="kaart" data-id="op-zijn-kop" data-band="b1" data-kind="chunk" data-cluster="op-zijn-kop" data-status="proposal" data-severity="" data-xref="bijwoorden:rechtop">
+<span class="framenummer" title="Frame 71">#71</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op zijn kop">op zijn kop</h3>
+<p class="gloss">upside down</p>
+<p class="vlaggen"><span>upside down</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the plain mug stands upside down on the table: its open mouth rests flat on the tabletop, its base points up at the ceiling and the handle sits on one side. The tabletop is dry and nothing else is on it.</dd>
+<dt>Must read</dt><dd class="must">a mug with its base up and its mouth on the table.</dd>
+<dt>Avoid</dt><dd class="avoid">a mug standing the right way up (rechtop); a mug lying on its side (not the card); a mug in the air tipping (not the card); a cup on a saucer upside down as a lid (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="">Pair with rechtop, drawn in Bijwoorden and not here. This card shows only the mug with its base up and its mouth on the table.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De emmer staat op zijn kop.<br><span class="voorbeeld-en">The bucket is standing upside down.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een beker staat met zijn bodem omhoog op het tafelblad.</dd>
+</dl>
+<p class="id">op-zijn-kop.png · B1 · op-zijn-kop</p>
+</article></div></section>
+<section class="cluster" data-cluster="wind" data-band="b1"><h2><span class="woorden">met de wind mee · tegen de wind in</span></h2><p class="as">riding with or against the wind · 2 cards</p><p class="zin">Met de wind mee fietsen we snel, maar tegen de wind in is het zwaar.<span class="en">With the wind behind us we cycle fast, but into the wind it is hard.</span></p><p class="frame"><strong>Fixed frame.</strong> one adult on a plain bicycle, side view, riding to the right along a flat road line, one plain tree beside the road, same size on the page. Only the direction of the wind relative to the rider changes, shown by long curved wind lines, the bend of the tree and the flap of the jacket.</p><div class="kaarten"><article id="met-de-wind-mee" class="kaart" data-id="met-de-wind-mee" data-band="b1" data-kind="chunk" data-cluster="wind" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 72">#72</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="met de wind mee">met de wind mee</h3>
+<p class="gloss">with the wind behind</p>
+<p class="vlaggen"><span>riding with or against the wind</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">long curved wind lines run from behind the rider toward the right, the same way as the bike is riding, the tree behind bends forward in that direction and the jacket flaps forward; the rider sits upright and relaxed, legs turning easily.</dd>
+<dt>Must read</dt><dd class="must">wind lines and a bent tree pushing the same way as the rider.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult leaning low into wind lines coming from the front (tegen de wind in); an adult on a bicycle in still air (not the card); an adult with an umbrella blown inside out (not the card); a sailing boat (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="tegen-de-wind-in">Pair with tegen-de-wind-in. The only difference is the wind: lines and a bent tree pushing the same way as the bike here, coming from the front against the rider there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Met de wind mee gaat het snel.<br><span class="voorbeeld-en">With the wind behind you it goes fast.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser zit rechtop terwijl lange golflijnen in dezelfde richting als hij door de lucht blazen.</dd>
+</dl>
+<p class="id">met-de-wind-mee.png · B1 · wind</p>
+</article>
+<article id="tegen-de-wind-in" class="kaart" data-id="tegen-de-wind-in" data-band="b1" data-kind="chunk" data-cluster="wind" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 73">#73</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="tegen de wind in">tegen de wind in</h3>
+<p class="gloss">against the wind</p>
+<p class="vlaggen"><span>riding with or against the wind</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">long curved wind lines run from the front of the rider toward the left, against the riding direction, the tree ahead bends back toward the rider and the jacket flaps backward; the rider leans low over the handlebar with the head down and the legs pushing hard.</dd>
+<dt>Must read</dt><dd class="must">wind lines coming head-on at a rider who is crouching low.</dd>
+<dt>Avoid</dt><dd class="avoid">an adult sitting upright with the wind lines pushing from behind (met de wind mee); an adult on a bicycle in still air (not the card); an adult walking in a storm (not the card); a kite flying (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="met-de-wind-mee">Pair with met-de-wind-mee. The only difference is the wind: lines and a bent tree coming from the front against the rider here, pushing the same way as the bike there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Tegen de wind in is het zwaar.<br><span class="voorbeeld-en">Into the wind it is hard.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een fietser buigt diep over zijn stuur terwijl lange golflijnen hem in zijn gezicht blazen.</dd>
+</dl>
+<p class="id">tegen-de-wind-in.png · B1 · wind</p>
+</article></div></section>
+<section class="cluster" data-cluster="orde" data-band="b1"><h2><span class="woorden">op een rij · door elkaar</span></h2><p class="as">tidy or jumbled · 2 cards</p><p class="zin">De blokken staan op een rij, maar later liggen ze door elkaar.<span class="en">The blocks stand in a row, but later they lie jumbled up.</span></p><p class="frame"><strong>Fixed frame.</strong> five plain wooden toy blocks of the same size, no letters or marks on them, lying on a plain table, front view, same blocks and same size on the page. Only how the blocks lie changes.</p><div class="kaarten"><article id="op-een-rij" class="kaart" data-id="op-een-rij" data-band="b1" data-kind="chunk" data-cluster="orde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 74">#74</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op een rij">op een rij</h3>
+<p class="gloss">in a row</p>
+<p class="vlaggen"><span>tidy or jumbled</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the five blocks stand in one perfectly straight line along the front edge of the table at equal gaps, all with the same side to the viewer and no block touching another or tilted. A thin straight line along the table edge is the reference.</dd>
+<dt>Must read</dt><dd class="must">five blocks in a perfectly straight line with equal gaps.</dd>
+<dt>Avoid</dt><dd class="avoid">the same blocks lying jumbled and overlapping (door elkaar); blocks stacked in a tower (not the card); blocks in two rows (not the card); a queue of people (in de rij).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="door-elkaar">Pair with door-elkaar. The only difference is the blocks: five straight in a neat row at equal gaps here, tilted and overlapping at random there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De boeken staan op een rij.<br><span class="voorbeeld-en">The books are standing in a row.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf houten blokken staan met gelijke tussenruimtes in een kaarsrechte lijn langs de rand van een tafel.</dd>
+</dl>
+<p class="id">op-een-rij.png · B1 · orde</p>
+</article>
+<article id="door-elkaar" class="kaart" data-id="door-elkaar" data-band="b1" data-kind="chunk" data-cluster="orde" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 75">#75</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="door elkaar">door elkaar</h3>
+<p class="gloss">jumbled up</p>
+<p class="vlaggen"><span>tidy or jumbled</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the five blocks lie in a jumble across the table: one tilted on its corner, two overlapping, one upside down and one fallen over the edge of the table, no line or order anywhere. A messy cluster fills the middle of the tabletop.</dd>
+<dt>Must read</dt><dd class="must">five blocks tilted, overlapping and scattered at random.</dd>
+<dt>Avoid</dt><dd class="avoid">the same blocks in a neat straight row (op een rij); blocks stacked in a tower (not the card); blocks all in a heap in one pile (not the card); blocks lined up on a shelf (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-een-rij">Pair with op-een-rij. The only difference is the blocks: tilted, overlapping and scattered at random here, five straight in a neat row at equal gaps there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn spullen liggen door elkaar.<br><span class="voorbeeld-en">My things are lying jumbled up.</span></dd>
+<dt>Alt text</dt><dd class="alt">Vijf houten blokken liggen scheef, half over de ander en verspreid over een tafel zonder enige orde.</dd>
+</dl>
+<p class="id">door-elkaar.png · B1 · orde</p>
+</article></div></section>
+<section class="cluster" data-cluster="delen" data-band="b1"><h2><span class="woorden">in tweeën · in stukjes</span></h2><p class="as">how an apple is divided · 2 cards</p><p class="zin">Hij snijdt de appel in tweeën, maar zij snijdt de appel in stukjes.<span class="en">He cuts the apple in two, but she cuts the apple into little pieces.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain whole round apple on a plain wooden board with a plain knife lying beside it, front view, same board and same size on the page. Only how the apple is cut changes.</p><div class="kaarten"><article id="in-tweeen" class="kaart" data-id="in-tweeen" data-band="b1" data-kind="chunk" data-cluster="delen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 76">#76</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in tweeën">in tweeën</h3>
+<p class="gloss">in two</p>
+<p class="vlaggen"><span>how an apple is divided</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the apple lies cut cleanly into two equal halves with the cut faces up, each showing the core and two seeds and the halves touching along one edge, and the knife lying beside with a small leaf. Only two shapes are on the wooden board.</dd>
+<dt>Must read</dt><dd class="must">two equal halves with cores and seeds showing.</dd>
+<dt>Avoid</dt><dd class="avoid">an apple cut into many little cubes (in stukjes); a whole apple with a bite out (not the card); an apple cut into four wedges (not the card); an apple with a knife stuck in it (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-stukjes">Pair with in-stukjes. The only difference is the cutting: two equal halves with cores showing here, a heap of many small cubes there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij snijdt de appel in tweeën.<br><span class="voorbeeld-en">He cuts the apple in two.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een gesneden vrucht ligt in gelijke helften met het klokhuis en de pitten zichtbaar.</dd>
+</dl>
+<p class="id">in-tweeen.png · B1 · delen</p>
+</article>
+<article id="in-stukjes" class="kaart" data-id="in-stukjes" data-band="b1" data-kind="chunk" data-cluster="delen" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 77">#77</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in stukjes">in stukjes</h3>
+<p class="gloss">in little pieces</p>
+<p class="vlaggen"><span>how an apple is divided</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the apple is cut into about twenty small cubes lying in a small heap in the middle of the wooden board, a few cubes rolled out to the sides, and the knife lies beside them with a small leaf. No half or core is visible.</dd>
+<dt>Must read</dt><dd class="must">a heap of many small apple cubes.</dd>
+<dt>Avoid</dt><dd class="avoid">an apple cut cleanly in two halves (in tweeën); a whole apple (not the card); an apple being peeled (not the card); an apple smashed to a pulp (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-tweeen">Pair with in-tweeen. The only difference is the cutting: a heap of many small cubes here, two equal halves with the core showing there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De moeder snijdt de appel in stukjes.<br><span class="voorbeeld-en">The mother cuts the apple into pieces.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrucht ligt in een kleine berg van tientallen kleine blokjes naast een mes.</dd>
+</dl>
+<p class="id">in-stukjes.png · B1 · delen</p>
+</article></div></section>
+<section class="cluster" data-cluster="paard-stal" data-band="b1"><h2><span class="woorden">op stal · in de wei</span></h2><p class="as">where the horse is kept · 2 cards</p><p class="zin">In de zomer staat het paard in de wei, in de winter staat het op stal.<span class="en">In summer the horse stands in the meadow, in winter it stands in the stable.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain horse, side view; behind it one small plain wooden stable with a two-part door, and beside the stable a meadow of short grass inside a low wooden fence; same horse, same stable, same fence, same size on the page. Only where the horse stands changes.</p><div class="kaarten"><article id="op-stal" class="kaart" data-id="op-stal" data-band="b1" data-kind="chunk" data-cluster="paard-stal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 78">#78</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op stal">op stal</h3>
+<p class="gloss">in the stable (of animals)</p>
+<p class="vlaggen"><span>where the horse is kept</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the horse is inside the stable: only its head and neck show over the closed lower half of the stable door, ears up and eyes open, while the fenced meadow beside the stable is empty grass. A little straw shows at the foot of the door.</dd>
+<dt>Must read</dt><dd class="must">only the horse's head over the stable's lower door, the meadow empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the whole horse standing on the grass inside the fence (in de wei); a horse with a rider on its back (te paard); a horse pulling a cart (not the card); a cow behind a gate (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-wei">Pair with in-de-wei. The only difference is where the horse is: inside the stable with only its head over the door here, out on the fenced grass there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De koeien staan vannacht op stal.<br><span class="voorbeeld-en">The cows are kept in the barn tonight.</span></dd>
+<dt>Alt text</dt><dd class="alt">Alleen het hoofd en de hals van een paard steken boven de onderdeur van een houten schuurtje uit; het grasveld met hek ernaast is leeg.</dd>
+</dl>
+<p class="id">op-stal.png · B1 · paard-stal</p>
+</article>
+<article id="in-de-wei" class="kaart" data-id="in-de-wei" data-band="b1" data-kind="chunk" data-cluster="paard-stal" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 79">#79</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de wei">in de wei</h3>
+<p class="gloss">in the meadow</p>
+<p class="vlaggen"><span>where the horse is kept</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the horse stands out on the grass inside the fence beside the stable, all four legs on the ground, head up and ears forward, tail hanging. The top half of the stable door stands open and the dark doorway behind it is empty.</dd>
+<dt>Must read</dt><dd class="must">the whole horse on the grass inside the fence, the stable doorway empty.</dd>
+<dt>Avoid</dt><dd class="avoid">only the horse's head over the stable's lower door (op stal); a horse with a rider on its back (te paard); cows with their heads down eating grass (grazen, Werkwoorden); a horse running across open land with no fence (not the card); one calm horse at a field fence with no stable, as a portrait (mak, Bijvoeglijke naamwoorden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-stal">Pair with op-stal. The only difference is where the horse is: out on the fenced grass here, inside the stable with only its head over the door there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het paard loopt de hele dag in de wei.<br><span class="voorbeeld-en">The horse is out in the meadow all day.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een paard staat met opgeheven hoofd op het gras binnen een houten hek, naast een schuurtje met een lege open deur.</dd>
+</dl>
+<p class="id">in-de-wei.png · B1 · paard-stal</p>
+</article></div></section>
+<section class="cluster" data-cluster="wal" data-band="b1"><h2><span class="woorden">aan wal</span></h2><p class="as">on the shore beside the boat · 1 cards</p><p class="zin">Hij stapt niet aan boord; hij blijft aan wal.<span class="en">He does not go on board; he stays ashore.</span></p><p class="frame"><strong>Fixed frame.</strong> one small plain motor boat floating on a calm lake, side view, right beside a low bank of short grass at the left, and one adult in a life jacket; same boat, same bank, same size on the page. Only where the adult stands changes: this card shows him on the bank, and its partner aan boord, the adult on the deck, is drawn in Bijwoorden.</p><div class="kaarten"><article id="aan-wal" class="kaart" data-id="aan-wal" data-band="b1" data-kind="chunk" data-cluster="wal" data-status="proposal" data-severity="" data-xref="bijwoorden:aan-boord">
+<span class="framenummer" title="Frame 80">#80</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan wal">aan wal</h3>
+<p class="gloss">ashore</p>
+<p class="vlaggen"><span>on the shore beside the boat</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the adult in the life jacket stands on the low grassy bank beside the floating boat, both feet on the grass, arms at his sides, looking at the water; the flat deck of the boat is empty. He is not stepping on or off, and no plank joins the bank to the boat.</dd>
+<dt>Must read</dt><dd class="must">the adult standing on the bank beside the boat, the deck empty.</dd>
+<dt>Avoid</dt><dd class="avoid">the adult standing on the deck with one hand on the rail (aan boord); a person stepping from the bank into the boat (stappen in, Voorzetselpaden); a person in the water beside the boat (overboord, Bijwoorden); a person fishing from the bank (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="">Pair with aan-boord, drawn in Bijwoorden and not here. This card shows only the adult on the grassy bank beside the boat, with the deck empty.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Na drie weken op zee gaat hij aan wal.<br><span class="voorbeeld-en">After three weeks at sea he goes ashore.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een man in een zwemvest staat op een oever met gras naast een motorbootje; het bootje zelf is leeg.</dd>
+</dl>
+<p class="id">aan-wal.png · B1 · wal</p>
+</article></div></section>
+<section class="cluster" data-cluster="bloem-knop" data-band="b1"><h2><span class="woorden">in de knop · in bloei</span></h2><p class="as">the rose bush closed or open · 2 cards</p><p class="zin">In mei staat de rozenstruik in de knop, in juni staat hij in bloei.<span class="en">In May the rose bush is in bud, in June it is in bloom.</span></p><p class="frame"><strong>Fixed frame.</strong> one small rose bush in a plain pot on a plain table, side view, five stems with leaves and a few thorns; same bush, same pot, same size on the page. Only the five flower heads change.</p><div class="kaarten"><article id="in-de-knop" class="kaart" data-id="in-de-knop" data-band="b1" data-kind="chunk" data-cluster="bloem-knop" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 81">#81</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in de knop">in de knop</h3>
+<p class="gloss">in bud</p>
+<p class="vlaggen"><span>the rose bush closed or open</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">each of the five stems ends in one closed bud: a small pointed oval wrapped tight in narrow sepals, no petal open and nothing hanging loose. The leaves and the thorns are the same as on the partner card, and the table around the pot is bare.</dd>
+<dt>Must read</dt><dd class="must">five tight pointed buds with no petal open.</dd>
+<dt>Avoid</dt><dd class="avoid">five wide open roses with layered petals (in bloei); a bare stem with no buds (not the card); fallen petals on the table (not the card); a single cut rose in a vase (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-bloei">Pair with in-bloei. The only difference is the flower heads: five tight closed buds here, five wide open roses there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De rozen staan al in de knop.<br><span class="voorbeeld-en">The roses are already in bud.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een rozenstruik in een pot heeft aan elk van de vijf stelen één klein, gesloten puntje.</dd>
+</dl>
+<p class="id">in-de-knop.png · B1 · bloem-knop</p>
+</article>
+<article id="in-bloei" class="kaart" data-id="in-bloei" data-band="b1" data-kind="chunk" data-cluster="bloem-knop" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 82">#82</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in bloei">in bloei</h3>
+<p class="gloss">in bloom</p>
+<p class="vlaggen"><span>the rose bush closed or open</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">each of the five stems ends in one wide open rose with layered rounded petals around a small centre, the outer petals curling outward. The leaves and the thorns are the same as on the partner card, no petal has fallen and the table around the pot is bare.</dd>
+<dt>Must read</dt><dd class="must">five wide open roses with layered petals.</dd>
+<dt>Avoid</dt><dd class="avoid">five tight closed buds (in de knop); a bunch of cut flowers in a vase (not the card); wilted heads hanging down (not the card); one flower on a single stem (bloem, Zelfstandige naamwoorden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-de-knop">Pair with in-de-knop. The only difference is the flower heads: five wide open roses here, five tight closed buds there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">In het voorjaar staan de appelbomen in bloei.<br><span class="voorbeeld-en">In spring the apple trees are in blossom.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een rozenstruik in een pot heeft aan elk van de vijf stelen een wijd open roos met veel ronde blaadjes.</dd>
+</dl>
+<p class="id">in-bloei.png · B1 · bloem-knop</p>
+</article></div></section>
+<section class="cluster" data-cluster="bocht" data-band="b1"><h2><span class="woorden">door de bocht gaan · uit de bocht vliegen</span></h2><p class="as">how the car takes the bend · 2 cards</p><p class="zin">De auto gaat netjes door de bocht, maar bij ijzel vliegt hij uit de bocht.<span class="en">The car takes the bend neatly, but on black ice it skids off the road at the bend.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain two-lane road curving to the right across the page, seen from slightly above, short grass beyond the outer edge of the curve, one small plain car; same road, same grass, same car, same size on the page. Only where the car is at the curve changes.</p><div class="kaarten"><article id="door-de-bocht-gaan" class="kaart" data-id="door-de-bocht-gaan" data-band="b1" data-kind="chunk" data-cluster="bocht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 83">#83</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="door de bocht gaan">door de bocht gaan</h3>
+<p class="gloss">take the bend</p>
+<p class="vlaggen"><span>how the car takes the bend</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the car is in the middle of the curve on its own side of the road, all four wheels on the asphalt and its nose turned to follow the curve; short speed lines run behind it along the road. The grass beyond the outer edge of the curve is smooth and untouched.</dd>
+<dt>Must read</dt><dd class="must">the car on the road, its nose following the curve.</dd>
+<dt>Avoid</dt><dd class="avoid">the car standing in the grass beyond the curve (uit de bocht vliegen); a car parked at the roadside (not the card); a car turning at a crossroads (not the card); a car on a straight road (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="uit-de-bocht-vliegen">Pair with uit-de-bocht-vliegen. The only difference is the car: on the road following the curve here, gone straight on into the grass there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Je moet langzaam door de bocht gaan.<br><span class="voorbeeld-en">You have to take the bend slowly.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een auto rijdt over het asfalt precies langs de kromming van de weg.</dd>
+</dl>
+<p class="id">door-de-bocht-gaan.png · B1 · bocht</p>
+</article>
+<article id="uit-de-bocht-vliegen" class="kaart" data-id="uit-de-bocht-vliegen" data-band="b1" data-kind="chunk" data-cluster="bocht" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 84">#84</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="uit de bocht vliegen">uit de bocht vliegen</h3>
+<p class="gloss">skid off the road at a bend</p>
+<p class="vlaggen"><span>how the car takes the bend</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal and figurative</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the car has left the road at the curve and gone straight on: it stands tilted in the grass beyond the outer edge, with two wheel tracks and two clumps of torn grass leading to it from the asphalt. The road through the curve is empty.</dd>
+<dt>Must read</dt><dd class="must">the car in the grass beyond the curve, tracks leading off the road.</dd>
+<dt>Avoid</dt><dd class="avoid">the car on the road following the curve (door de bocht gaan); a car upside down on its roof (op zijn kop); a car crashing into another car (not the card); a car parked neatly on a verge (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="door-de-bocht-gaan">Pair with door-de-bocht-gaan. The only difference is the car: gone straight on into the grass here, on the road following the curve there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Bij gladheid kun je uit de bocht vliegen.<br><span class="voorbeeld-en">On slippery roads you can skid off at a bend.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een auto staat scheef in het gras naast de kromming van de weg, met twee bandensporen vanaf het asfalt.</dd>
+</dl>
+<p class="id">uit-de-bocht-vliegen.png · B1 · bocht</p>
+</article></div></section>
+<section class="cluster" data-cluster="dier-wild" data-band="b1"><h2><span class="woorden">in het wild · in gevangenschap</span></h2><p class="as">what surrounds the lion · 2 cards</p><p class="zin">Vroeger leefde de leeuw in het wild, nu leeft hij in gevangenschap.<span class="en">The lion used to live in the wild, now it lives in captivity.</span></p><p class="frame"><strong>Fixed frame.</strong> one plain lion lying on one flat rock, side view, head up, one small tree beside the rock; same lion, same rock, same tree, same size on the page. Only whether a cage closes round the lion, the rock and the tree changes.</p><div class="kaarten"><article id="in-het-wild" class="kaart" data-id="in-het-wild" data-band="b1" data-kind="chunk" data-cluster="dier-wild" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 85">#85</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in het wild">in het wild</h3>
+<p class="gloss">in the wild</p>
+<p class="vlaggen"><span>what surrounds the lion</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">open grassland runs around the rock to a flat horizon, with two small distant trees and a few tufts of tall grass; nothing stands between the viewer and the lion. No fence, wall, bar or building is anywhere in the picture.</dd>
+<dt>Must read</dt><dd class="must">open grassland to the horizon with no fence anywhere.</dd>
+<dt>Avoid</dt><dd class="avoid">a cage of thick bars closed round the lion, the rock and the tree (in gevangenschap); a lion hunting another animal (not the card); a lion with a circus hoop (not the card); a pet cat in a garden (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-gevangenschap">Pair with in-gevangenschap. The only difference is whether a cage closes round the lion: nothing but open grassland here, a closed cage of bars there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Er leven nog maar weinig tijgers in het wild.<br><span class="voorbeeld-en">Only a few tigers still live in the wild.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een leeuw ligt op een rots in open grasland dat doorloopt tot aan de horizon.</dd>
+</dl>
+<p class="id">in-het-wild.png · B1 · dier-wild</p>
+</article>
+<article id="in-gevangenschap" class="kaart" data-id="in-gevangenschap" data-band="b1" data-kind="chunk" data-cluster="dier-wild" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 86">#86</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="in gevangenschap">in gevangenschap</h3>
+<p class="gloss">in captivity</p>
+<p class="vlaggen"><span>what surrounds the lion</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">a cage closes round the lion, the rock and the tree: a row of thick vertical bars runs across the front from the ground to a flat roof of bars, and a plain back wall stands where the horizon was, so no open land shows anywhere. The tree stands inside the cage.</dd>
+<dt>Must read</dt><dd class="must">thick bars in front and a back wall closing the lion in.</dd>
+<dt>Avoid</dt><dd class="avoid">open grassland with nothing round the rock (in het wild); a lion in a circus ring (not the card); a small cage for a bird (not the card); a person behind bars in a prison (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="in-het-wild">Pair with in-het-wild. The only difference is whether a cage closes round the lion: a closed cage of bars here, nothing but open grassland there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Deze olifant is in gevangenschap geboren.<br><span class="voorbeeld-en">This elephant was born in captivity.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een leeuw ligt op een rots in een kooi met dikke tralies aan de voorkant en een muur aan de achterkant.</dd>
+</dl>
+<p class="id">in-gevangenschap.png · B1 · dier-wild</p>
+</article></div></section>
+<section class="cluster" data-cluster="meubel-onder" data-band="b1"><h2><span class="woorden">op wieltjes · op pootjes</span></h2><p class="as">what the cupboard stands on · 2 cards</p><p class="zin">Het kastje stond eerst op pootjes, nu staat het op wieltjes.<span class="en">The cabinet used to stand on little legs, now it stands on wheels.</span></p><p class="frame"><strong>Fixed frame.</strong> one small plain wooden cupboard with two doors and one round knob on each, front view, on a plain floor against a plain wall; same cupboard, same size on the page. Only what is under the cupboard changes.</p><div class="kaarten"><article id="op-wieltjes" class="kaart" data-id="op-wieltjes" data-band="b1" data-kind="chunk" data-cluster="meubel-onder" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 87">#87</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op wieltjes">op wieltjes</h3>
+<p class="gloss">on castors, on wheels</p>
+<p class="vlaggen"><span>what the cupboard stands on</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">under each front corner of the cupboard sits one small castor wheel in a swivel holder, so a narrow gap shows between the cupboard and the floor; two short curved lines beside one wheel show that it can roll. Nothing else is under the cupboard.</dd>
+<dt>Must read</dt><dd class="must">small castor wheels under the corners.</dd>
+<dt>Avoid</dt><dd class="avoid">short straight legs under the corners (op pootjes); a cupboard standing flat on the floor (not the card); a trolley with a handle (not the card); a suitcase with wheels (koffer, Zelfstandige naamwoorden).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-pootjes">Pair with op-pootjes. The only difference is what is under the cupboard: small castor wheels here, short straight legs there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij duwt de kast op wieltjes naar de muur.<br><span class="voorbeeld-en">She pushes the cupboard on wheels to the wall.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kastje met twee deurtjes heeft onder elke hoek een klein draaibaar rolletje.</dd>
+</dl>
+<p class="id">op-wieltjes.png · B1 · meubel-onder</p>
+</article>
+<article id="op-pootjes" class="kaart" data-id="op-pootjes" data-band="b1" data-kind="chunk" data-cluster="meubel-onder" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 88">#88</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="op pootjes">op pootjes</h3>
+<p class="gloss">on little legs</p>
+<p class="vlaggen"><span>what the cupboard stands on</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">under each front corner of the cupboard stands one short straight wooden leg, slightly tapered toward the floor, so a narrow gap shows between the cupboard and the floor. The legs stand flat and still, and nothing else is under the cupboard.</dd>
+<dt>Must read</dt><dd class="must">short straight legs under the corners.</dd>
+<dt>Avoid</dt><dd class="avoid">small castor wheels under the corners (op wieltjes); a cupboard standing flat on the floor (not the card); a table with long legs (not the card); an animal standing on four legs (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="op-wieltjes">Pair with op-wieltjes. The only difference is what is under the cupboard: short straight legs here, small castor wheels there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het bankje staat op pootjes.<br><span class="voorbeeld-en">The little bench stands on legs.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een kastje met twee deurtjes staat op korte, rechte houten steuntjes die smaller worden naar de vloer.</dd>
+</dl>
+<p class="id">op-pootjes.png · B1 · meubel-onder</p>
+</article></div></section>
+<section class="cluster" data-cluster="schip" data-band="b1"><h2><span class="woorden">voor anker · aan de kade</span></h2><p class="as">where the ship lies · 2 cards</p><p class="zin">Het schip ligt eerst voor anker in de baai en daarna aan de kade.<span class="en">The ship first lies at anchor in the bay and then alongside the quay.</span></p><p class="frame"><strong>Fixed frame.</strong> one small plain cargo ship in a calm bay, side view, a straight stone quay with one bollard at the left edge of the page; same ship, same quay, same size on the page. Only where the ship lies changes.</p><div class="kaarten"><article id="voor-anker" class="kaart" data-id="voor-anker" data-band="b1" data-kind="chunk" data-cluster="schip" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 89">#89</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="voor anker">voor anker</h3>
+<p class="gloss">at anchor</p>
+<p class="vlaggen"><span>where the ship lies</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the ship lies out in the open water in the middle of the bay, well away from the quay; one straight chain runs from its bow down through the surface to an anchor resting on the bottom. The quay and the bollard at the left edge are empty.</dd>
+<dt>Must read</dt><dd class="must">the ship away from the quay with a chain down to an anchor.</dd>
+<dt>Avoid</dt><dd class="avoid">the ship tied with ropes alongside the quay (aan de kade); a sailing boat leaning in the wind (zeilen, Werkwoorden); a ship sinking (not the card); a rowing boat pulled up on a beach (not the card).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="aan-de-kade">Pair with aan-de-kade. The only difference is where the ship lies: out in the bay on its chain here, tied alongside the quay there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een groot schip ligt voor anker buiten de haven.<br><span class="voorbeeld-en">A large ship lies at anchor outside the harbour.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrachtschip ligt midden in een baai, met een ketting van de boeg naar de bodem; de stenen wal links is leeg.</dd>
+</dl>
+<p class="id">voor-anker.png · B1 · schip</p>
+</article>
+<article id="aan-de-kade" class="kaart" data-id="aan-de-kade" data-band="b1" data-kind="chunk" data-cluster="schip" data-status="proposal" data-severity="">
+<span class="framenummer" title="Frame 90">#90</span>
+<div class="geenbeeld">geen beeld</div>
+<h3 class="chunk" data-chunk="aan de kade">aan de kade</h3>
+<p class="gloss">alongside the quay</p>
+<p class="vlaggen"><span>where the ship lies</span><span>B1</span><span class="register">neutral</span><span class="betekenis">literal</span></p>
+<dl>
+<dt>Scene</dt><dd class="scene">the ship lies right alongside the quay at the left edge, its side against two round fenders, two ropes running from bow and stern to the bollard. No chain goes down into the water, and the middle of the bay is empty.</dd>
+<dt>Must read</dt><dd class="must">the ship side by side with the quay, held by ropes.</dd>
+<dt>Avoid</dt><dd class="avoid">the ship out in the bay on a chain (voor anker); a person stepping off the ship onto the quay (stappen uit, Voorzetselpaden); a ship in a dry dock (not the card); an adult standing on a bank beside a boat (aan wal).</dd>
+<dt>Contrast</dt><dd class="contrast-note" data-partner="voor-anker">Pair with voor-anker. The only difference is where the ship lies: tied alongside the quay here, out in the bay on its chain there.</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De veerboot ligt al aan de kade.<br><span class="voorbeeld-en">The ferry is already alongside the quay.</span></dd>
+<dt>Alt text</dt><dd class="alt">Een vrachtschip ligt met zijn zij tegen een stenen wal, vastgemaakt met twee touwen aan een paal.</dd>
+</dl>
+<p class="id">aan-de-kade.png · B1 · schip</p>
+</article></div></section>
+</main>
+</body>
+</html>

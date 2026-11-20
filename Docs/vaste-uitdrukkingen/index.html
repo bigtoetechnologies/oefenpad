@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vaste uitdrukkingen — overview</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Vaste uitdrukkingen — overview</h1>
+<p class="lead">One card per fixed expression, taught as contrast sets. Picture briefs only; no art yet.</p>
+
+<nav class="banden"><a href="index.html" class="hier">overview</a><a href="a0.html">A0</a><a href="a1.html">A1</a><a href="a2.html">A2</a><a href="b1.html">B1</a><a href="b2.html">B2</a></nav>
+</header>
+<main>
+<table><thead><tr><th>Band</th><th>Sets</th><th>Chunks</th><th>Frames</th><th>Content</th></tr></thead><tbody><tr><td><a href="a0.html">A0</a></td><td class="n">3</td><td class="n">7</td><td class="n">#1–#7</td><td class="blurb">Time, school and work, and road vehicles: the chunks a learner needs in the first weeks.</td></tr><tr><td><a href="a1.html">A1</a></td><td class="n">15</td><td class="n">38</td><td class="n">#8–#45</td><td class="blurb">Where things and people are: sides, corners, stairs, tables, beds, the sea, and who is by the hand.</td></tr><tr><td><a href="a2.html">A2</a></td><td class="n">10</td><td class="n">22</td><td class="n">#46–#67</td><td class="blurb">Finer pairs: boat or plane, how things stand together, wall or ceiling, feet, numbers of people, steps, a window ajar, the pan on the boil, pyjamas or a suit.</td></tr><tr><td><a href="b1.html">B1</a></td><td class="n">13</td><td class="n">23</td><td class="n">#68–#90</td><td class="blurb">Intent, arriving, upside down, wind, tidiness, cutting, and the horse, the shore, the bend, the lion, the cupboard, the ship.</td></tr><tr><td><a href="b2.html">B2</a></td><td class="n">4</td><td class="n">8</td><td class="n">#91–#98</td><td class="blurb">Rarer chunks with one visible change: on stage or in the wings, trot and gallop, in step, single file.</td></tr><tr class="totaal"><td>Total</td><td class="n">45</td><td class="n">98</td><td></td><td></td></tr></tbody></table>
+<div class="uitleg">
+<h2>How the cards work</h2>
+<p>Fixed expressions are taught in <strong>contrast sets</strong>: two to four chunks that one visible element separates
+(op tijd / te laat, aan zee / op zee). Every drawing in a set is the same picture with one thing changed, so the learner sees the pair, not the phrase.</p>
+<p>A card carries the chunk, an English gloss, the scene brief, the one mark that must read, the near misses, the contrast note naming its partner,
+an example sentence, the alt text, a register flag (neutral, spoken, formal) and a literal or figurative flag.
+Each set also carries a fixed frame and one Dutch sentence using every member.</p>
+<h2>What counts as a chunk here</h2>
+<p>A chunk has a fixed form: no article (<em>aan tafel</em>, <em>op zee</em>), a frozen word (<em>ter plekke</em>, <em>te voet</em>)
+or a preposition the learner cannot predict (<em>op het platteland</em>). Free preposition-plus-noun combinations, where any noun
+fits (<em>in de trein</em>, <em>zonder melk</em>), belong to the single-preposition cards in Voorzetselpaden, and single adverbs
+belong to Bijwoorden. Voorzetselpaden holds verb-plus-preposition chunks; no card here repeats one of its chunks, example sentences
+or scenes, and the checker tests that. Three cards have their partner drawn in Bijwoorden and point to it instead of drawing it twice.</p>
+<p>Chunks that need a sequence or a sign (om de beurt, voor het eerst, te koop) are written up as SKIP and listed below.</p>
+<h2>How a set was placed</h2>
+<p>The lexicon holds single words, so a chunk is ranked by its most frequent <em>content</em> word (<code>tools/lexicon/woorden-frequentie.tsv</code>:
+A0 up to 250, A1 251&ndash;1000, A2 1001&ndash;2500, B1 2501&ndash;5000, B2 5001&ndash;10000).
+Lexicon rows split by part of speech are keyed explicitly (<code>pas(noun)</code>, <code>arm(noun)</code>); a set whose content words are all
+missing from the 10,000-lemma list has no rank and is placed by an override. Prepositions and articles are left out on purpose: they would put every chunk in A0.
+A set sits in the band of its most frequent member. Banding is editorial, with frequency as a first pass: a rare second word
+(plafond, sok, arm) pulls a set up only where the overrides below say so, and sets keyed on a homograph or a pronoun
+(laat, kop, elkaar) are placed by hand. The overrides live in <code>OVERRIDE</code> in <code>tools/_vu_tmp/select.py</code>, each with its reason;
+the checker rejects an override that only repeats the band the ranks give:</p>
+<ul><li><code>bloem-knop</code> to B1: knop (2118) is ranked mostly as button or switch; the bud sense is rarer, so bloei (3909) places the set</li><li><code>delen</code> to B1: stuk (356) ranks the base word; in tweeën and in stukjes are B1 chunks</li><li><code>dier-wild</code> to B1: wild (1638) is ranked as the adjective; the noun in in het wild is rarer, so gevangenschap (4215) places the set</li><li><code>eerste</code> to A1: eerste (59) is a numeral; voor het eerst and voor het laatst are A1 chunks (SKIP set)</li><li><code>gezelschap</code> to A2: twee is rank 56, but met zijn tweeën is not a first-weeks chunk</li><li><code>groep-lopen</code> to B2: ganzenpas and kluitje are not in the 10,000-lemma list, so no rank places the set</li><li><code>kleding</code> to A2: pak (984) would place it in A1, but in plus a bare garment is a productive pattern and pyjama (5871) is everyday vocabulary, so the set sits in A2, not B2</li><li><code>klok-draai</code> to B1: klok (1761) ranks the clock; the turning directions are a B1 pair (SKIP set)</li><li><code>muur-plafond</code> to A2: muur (837) would place it in A1; aan het plafond (plafond 3487) is the harder half</li><li><code>omgeving</code> to A1: stad is rank 139, but op het platteland and in de bergen are not A0 chunks</li><li><code>op-zijn-kop</code> to B1: kop (492) is ranked as head or cup, not as the chunk</li><li><code>opzet</code> to B1: ongeluk (878) ranks the base word; met opzet and per ongeluk are B1 chunks</li><li><code>orde</code> to B1: rij (710) and elkaar (120) are not the difficulty of op een rij and door elkaar</li><li><code>paardengang</code> to B2: draf and galop are not in the 10,000-lemma list, so no rank places the set</li><li><code>plaats</code> to A2: in plaats van is an abstract swap, though plaats is rank 116 (SKIP set)</li><li><code>samen-lopen</code> to A2: hand (261) would place it in A1; arm in arm (arm 9643) is the harder half</li><li><code>stappen</code> to A2: stap (447) and keer (99, a function-like noun) understate a finer contrast</li><li><code>toneel</code> to B2: plank (3303) ranks the shelf or board; coulisse is not in the 10,000-lemma list and both chunks are literary</li><li><code>voeten</code> to A2: voet (993) would place it in A1; op sokken (sok 6338) is the harder half</li><li><code>volgorde</code> to A2: elkaar (120) is a pronoun; the spatial relations are harder than the word</li><li><code>wegtocht</code> to B1: plek (366) ranks the base word; ter plekke keeps an old case form and is a B1 chunk</li><li><code>wind</code> to B1: wind (911) ranks the weather word; riding with or against it is a B1 pair</li></ul>
+<p>Everyday items sit at the lowest sensible level, A2 at the highest, whatever the corpus rank of their words (decision of 20 November 2026).
+The sets below were moved down from B1 or B2 under that rule. The move is judgment, not lexicon data; each line gives every member's rank keys
+as the lexicon has them (<code>niveau</code>, <code>top2000</code> and <code>herkomst</code> from <code>tools/lexicon/woorden.tsv</code>, rank from
+<code>woorden-frequentie.tsv</code>), and the checker re-reads each fact. The entries live in <code>EVERYDAY</code> in <code>tools/_vu_tmp/select.py</code>,
+which also lists the B1 and B2 sets considered and kept.</p>
+<ul><li class="alledaags"><code>raam-kier</code> to A2: Lexicon: op een kier: kier niveau open, herkomst bijlage8, rank 8337; wagenwijd open: wagenwijd not in woorden.tsv. Basis: judgment, not lexicon data. Note: a window left ajar or thrown wide open is daily household talk.</li><li class="alledaags"><code>pan-vuur</code> to A2: Lexicon: aan de kook: koken niveau A1, top2000 1, herkomst bijlage8;spel:food, rank 1316; op een laag pitje: pitje not in woorden.tsv. Basis: judgment, not lexicon data. Note: water on the boil and a pan on a low flame are daily kitchen talk; the old upward move for the rarer pitje is withdrawn.</li></ul>
+<h2>Weakest pictures</h2>
+<p>Sets that lean on a small cue and need an artist's care: <code>ochtends</code>/<code>avonds</code> (half sun against a dark window and a lit lamp),
+the four stair cards (no arrows; the place on the stair and the way the body faces carry the meaning),
+<code>in-de-pas</code>/<code>uit-de-pas</code> (which knee one child of four raises, seen from the front) and <code>in-draf</code>/<code>in-galop</code> (the leg pattern of a moving horse).</p>
+<h2>B1 and B2 against the target</h2>
+<p>The target for the expansion of 20 November 2026 was at least 20 new contrast sets in B1 and 20 in B2.
+This family reached <strong>7 new sets in B1</strong> and <strong>4 in B2</strong>, so it is short by 13 and 16.</p>
+<table><thead><tr><th>Reason</th><th>What it removed</th></tr></thead><tbody>
+<tr><td>Only fixed chunks count</td><td>Free preposition-plus-noun combinations (in de kelder, op het terras) are out, and most fixed chunks with a literal picture are built on common nouns.</td></tr>
+<tr><td>Banding follows the commonest content word</td><td>Literal chunks such as in bad, binnen bereik, op je gemak and in de war rank in A1 or A2, so they cannot fill B1 or B2 without an override that the rule forbids.</td></tr>
+<tr><td>Other families draw the picture first</td><td>Kneeling, sitting cross-legged, sailing, a locked door, a level stick, a creased or ironed shirt, near and far, on board: listed below under chunks left out.</td></tr>
+<tr><td>No honest single picture</td><td>Sunrise against sunset, heads or tails, up and down, back and forth, and a breakdown against a tow.</td></tr>
+</tbody></table>
+<h2>Native check before art</h2><ul><li class="native"><code>door-de-bocht-gaan</code>: the figurative sense 'give in' is the reviewer's recollection, not verified; 'kort door de bocht' is certain</li><li class="native"><code>in-de-knop</code>: garden Dutch has both 'in de knop' and 'in knop'; if 'in knop' is the standard form, the chunk changes and loses its article like 'in bloei'</li><li class="native"><code>aan-de-kade</code>: a collocation rather than a frozen chunk; kept as the partner of voor anker</li></ul>
+<h2>Cards written up as SKIP</h2><ul><li><code>te-koop</code> (A1, koop): the meaning lives in a sign or a price board, and no text or numbers may appear in the art; a house alone shows nothing.</li><li><code>te-huur</code> (A1, koop): the meaning lives in a sign, and no text may appear in the art; the contrast with te koop cannot be drawn.</li><li><code>voor-het-eerst</code> (A1, eerste): first time needs a before and an after; a single picture shows no earlier occasion and no memory may be drawn as text.</li><li><code>voor-het-laatst</code> (A1, eerste): last time needs a sequence that has ended; a single picture cannot show that nothing follows.</li><li><code>in-plaats-van</code> (A2, plaats): replacement needs a before and an after; one picture of an apple and a pushed-away banana reads as a choice or as two fruits, not as one thing taking the place of another.</li><li><code>om-de-beurt</code> (A2, beurt): taking turns is alternation over time; one picture cannot show who went first or that the roles will swap.</li><li><code>tegelijk</code> (A2, beurt): at the same time is only meaningful against another moment; a single picture of two people acting looks the same as any pair.</li><li><code>met-de-klok-mee</code> (B1, klok-draai): the direction of turning needs motion, or arrows and a clock reference; a still runner seen from above shows no direction. Waits for animation.</li><li><code>tegen-de-klok-in</code> (B1, klok-draai): the direction of turning needs motion, or arrows and a clock reference; a still runner seen from above shows no direction. Waits for animation.</li></ul>
+<h2>Chunks left out</h2>
+<p>Removed after the review of 20 November 2026: single words drawn in another family, free combinations, and chunks whose only partner was removed.
+Rows marked "B1/B2 candidate" were considered for the B1 and B2 expansion and dropped for the reason given.</p>
+<ul><li class="weg"><code>naast</code> naast: a single preposition, not a chunk; duplicate of voorzetselpaden:naast (a2-plus)</li><li class="weg"><code>overdag</code> overdag: a single adverb; drawn in Bijwoorden (bijwoorden:overdag)</li><li class="weg"><code>nachts</code> 's nachts: a single adverb; drawn in Bijwoorden (bijwoorden:nachts)</li><li class="weg"><code>thuis</code> thuis: a single adverb; drawn in Bijwoorden (bijwoorden:thuis)</li><li class="weg"><code>onderweg</code> onderweg: a single adverb; drawn in Bijwoorden (bijwoorden:onderweg), cross-referenced from ter-plekke</li><li class="weg"><code>rechtop</code> rechtop: a single adverb; drawn in Bijwoorden (bijwoorden:rechtop), cross-referenced from op-zijn-kop</li><li class="weg"><code>aan-het-water</code> aan het water: free preposition-plus-noun combination; Voorzetselpaden single prepositions cover it</li><li class="weg"><code>in-het-water</code> in het water: free preposition-plus-noun combination</li><li class="weg"><code>op-het-water</code> op het water: free preposition-plus-noun combination</li><li class="weg"><code>onder-water</code> onder water: its three partners were free combinations, so no contrast set is left to draw it in</li><li class="weg"><code>uit-de-rij</code> uit de rij: free preposition-plus-noun combination</li><li class="weg"><code>in-de-rij</code> in de rij: its only partner (uit de rij) was a free combination, so no contrast set is left</li><li class="weg"><code>midden-op-de-weg</code> midden op de weg: free combination; replaced by the fixed chunk in het midden in the kant-weg set</li><li class="weg"><code>in-de-hoek</code> in de hoek: free preposition-plus-noun combination</li><li class="weg"><code>bij-het-raam</code> bij het raam: free preposition-plus-noun combination</li><li class="weg"><code>voor-de-deur</code> voor de deur: free combination; its sentence repeats Voorzetselpaden wachten voor</li><li class="weg"><code>achter-de-deur</code> achter de deur: free preposition-plus-noun combination</li><li class="weg"><code>in-de-deuropening</code> in de deuropening: free preposition-plus-noun combination</li><li class="weg"><code>in-de-trein</code> in de trein: free preposition-plus-noun combination</li><li class="weg"><code>uit-de-trein</code> uit de trein: free combination; same sentence and scene as Voorzetselpaden stappen uit</li><li class="weg"><code>op-het-perron</code> op het perron: its partners in de trein and uit de trein were free combinations, so no contrast set is left</li><li class="weg"><code>voor-het-raam</code> voor het raam: free combination; meaning depends on where the viewer stands</li><li class="weg"><code>achter-het-raam</code> achter het raam: free combination; meaning depends on where the viewer stands</li><li class="weg"><code>uit-het-raam</code> uit het raam: free combination; same sentence and scene as Voorzetselpaden kijken uit</li><li class="weg"><code>met-melk</code> met melk: free combination (melk set); absence of milk cannot be drawn</li><li class="weg"><code>zonder-melk</code> zonder melk: free combination; Voorzetselpaden zonder already has the coffee sentence</li><li class="weg"><code>met-bril</code> met bril: free preposition-plus-noun combination</li><li class="weg"><code>zonder-bril</code> zonder bril: free preposition-plus-noun combination</li><li class="weg"><code>met-de-ogen-open</code> met de ogen open: free combination</li><li class="weg"><code>met-de-ogen-dicht</code> met de ogen dicht: free combination</li><li class="weg"><code>aan-deze-kant</code> aan deze kant: free combination (deze replaces any determiner)</li><li class="weg"><code>aan-de-overkant</code> aan de overkant: its only partner (aan deze kant) was a free combination, so no contrast set is left</li><li class="weg"><code>op-de-top</code> op de top van de berg: free preposition-plus-noun combination</li><li class="weg"><code>aan-de-voet</code> aan de voet van de berg: its only partner (op de top) was a free combination, so no contrast set is left</li><li class="weg"><code>in-een-sprong</code> in één sprong: free combination; met één sprong is as common; replaced by in één keer</li><li class="weg"><code>op-je-hurken</code> op je hurken: B1/B2 candidate: its partners op je knieën and in kleermakerszit are the drawn Werkwoorden scenes knielen and mediteren</li><li class="weg"><code>op-je-knieen</code> op je knieën: B1/B2 candidate: same picture as the Werkwoorden card knielen</li><li class="weg"><code>in-kleermakerszit</code> in kleermakerszit: B1/B2 candidate: same picture as the Werkwoorden card mediteren</li><li class="weg"><code>onder-zeil</code> onder zeil: B1/B2 candidate: a boat under full sail is the Werkwoorden card zeilen</li><li class="weg"><code>aan-dek</code> aan dek: B1/B2 candidate: an adult on the deck is the Bijwoorden card aan-boord, so aan wal points there instead</li><li class="weg"><code>in-een-kring</code> in een kring: B1/B2 candidate: children sitting in a circle is the Voorzetselpaden scene binnen de cirkel</li><li class="weg"><code>op-slot</code> op slot: B1/B2 candidate: a locked door is the Scheidbare werkwoorden card afsluiten and the Zelfstandige naamwoorden card slot</li><li class="weg"><code>in-de-waterpas</code> in de waterpas: B1/B2 candidate: a stick lying dead level is the Bijvoeglijke naamwoorden card recht</li><li class="weg"><code>op-ooghoogte</code> op ooghoogte: B1/B2 candidate: its partner op kniehoogte is the Bijvoeglijke naamwoorden wall pair hoog/laag</li><li class="weg"><code>in-het-gips</code> in het gips: B1/B2 candidate: its partner in het verband is the Werkwoorden card verbinden, and verband (747) ranks the sense in verband met</li><li class="weg"><code>bij-kaarslicht</code> bij kaarslicht: B1/B2 candidate: a dark room with one light against a sunny window is the A1 pair 's ochtends / 's avonds again</li><li class="weg"><code>in-de-verte</code> in de verte: B1/B2 candidate: near and far are the Bijwoorden cards dichtbij and ver</li><li class="weg"><code>in-brand</code> in brand: B1/B2 candidate: a burning or ruined house is left out on purpose for learners who may have fled war</li><li class="weg"><code>met-pech</code> met pech: B1/B2 candidate: its partner op sleeptouw adds a second car and closes the bonnet, two changes at once</li><li class="weg"><code>bij-zonsondergang</code> bij zonsondergang: B1/B2 candidate: a sun on the horizon looks the same rising or setting, so it cannot contrast with bij zonsopgang</li><li class="weg"><code>kop-of-munt</code> kop of munt: B1/B2 candidate: the munt side of a coin is recognisable only by its numeral, and numerals are banned in art</li><li class="weg"><code>op-en-neer</code> op en neer: B1/B2 candidate: movement in two directions needs animation; a still with motion arcs is the Werkwoorden card schudden</li><li class="weg"><code>heen-en-weer</code> heen en weer: B1/B2 candidate: movement in two directions needs animation; a still picture shows one position</li><li class="weg"><code>in-de-plooi</code> in de plooi: B1/B2 candidate: a smooth shirt on a hanger is the Bijvoeglijke naamwoorden card gestreken (B2)</li><li class="weg"><code>in-de-kreukels</code> in de kreukels: B1/B2 candidate: a creased shirt on a hanger is the Bijvoeglijke naamwoorden card gekreukt (B2)</li><li class="weg"><code>aan-flarden</code> aan flarden: B1/B2 candidate: its partners in de plooi and in de kreukels are Bijvoeglijke naamwoorden cards, so no contrast set is left</li></ul>
+<h2>Tools</h2>
+<pre><code>python3 tools/_vu_tmp/convert.py       # scenes/*.txt to the TSVs
+python3 tools/_vu_tmp/select.py        # selection.json from clusters.txt
+python3 tools/build-vaste-uitdrukkingen-cards.py # the five band pages and this overview
+python3 tools/check-vaste-uitdrukkingen-cards.py # asserts ids, fields, pairs, alt leaks, cross-family duplicates</code></pre>
+</div>
+</main>
+</body>
+</html>
