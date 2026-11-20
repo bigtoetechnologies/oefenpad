@@ -57,6 +57,8 @@ OVERRIDE = {
     'rits':      ('a2', 'promoted', 'B2, no member ranked; zipping a coat up and down is daily dressing, like the jas set'),
     'tafel':     ('a2', 'promoted', 'B2 by afruimen 9345; laying and clearing the table happen at every meal'),
     'vaatwasser': ('a2', 'promoted', 'B2, no member ranked; loading and unloading the dishwasher is a daily household task, like the afwas set'),
+    'woordenboek': ('a2', 'promoted', 'B1 by opzoeken 2524; looking a word up and writing it down are what a learner does from the first lessons (owner ruling 20 November: everyday sets sit at A2 at the highest)'),
+    'brood':     ('a2', 'promoted', 'B1 by vasthouden 2770; passing bread along the table and holding it are language of every meal, like the bord and tafel sets (owner ruling 20 November)'),
     'doos':      ('b1', 'promoted', 'B2 by neerzetten 5342; lifting and putting down is work and moving language'),
     'pakket':    ('b1', 'promoted', 'B2 by afhalen 5645; posting and collecting parcels is a weekly task'),
     'blik':      ('b1', 'promoted', 'B2 by aankijken 5839; looking at someone and looking away is common in speech'),

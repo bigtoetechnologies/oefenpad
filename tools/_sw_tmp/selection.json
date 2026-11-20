@@ -523,6 +523,64 @@
    }
   },
   {
+   "id": "woordenboek",
+   "axis": "reading or writing",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "opzoeken",
+     "lemma": "opzoeken",
+     "gloss": "to look up",
+     "rank": 2524,
+     "separable": true
+    },
+    {
+     "id": "opschrijven",
+     "lemma": "opschrijven",
+     "gloss": "to write down",
+     "rank": 6485,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by opzoeken 2524; looking a word up and writing it down are what a learner does from the first lessons (owner ruling 20 November: everyday sets sit at A2 at the highest)",
+    "lexicon": "opzoeken niveau B1, herkomst bijlage8, rank 2524; opschrijven niveau A1, herkomst bijlage8, rank 6485",
+    "basis": "judgment"
+   }
+  },
+  {
+   "id": "brood",
+   "axis": "passing or holding",
+   "band": "a2",
+   "batch": 1,
+   "by_rank": "b1",
+   "members": [
+    {
+     "id": "doorgeven",
+     "lemma": "doorgeven",
+     "gloss": "to pass on",
+     "rank": 2816,
+     "separable": true
+    },
+    {
+     "id": "vasthouden",
+     "lemma": "vasthouden",
+     "gloss": "to hold on to",
+     "rank": 2770,
+     "separable": true
+    }
+   ],
+   "override": {
+    "kind": "promoted",
+    "reason": "B1 by vasthouden 2770; passing bread along the table and holding it are language of every meal, like the bord and tafel sets (owner ruling 20 November)",
+    "lexicon": "doorgeven niveau open, herkomst bijlage8, rank 2816; vasthouden niveau open, herkomst bijlage8, rank 2770",
+    "basis": "judgment"
+   }
+  },
+  {
    "id": "tent",
    "axis": "tent going up or coming down",
    "band": "a2",
@@ -1179,29 +1237,6 @@
    ]
   },
   {
-   "id": "woordenboek",
-   "axis": "reading or writing",
-   "band": "b1",
-   "batch": 1,
-   "by_rank": "b1",
-   "members": [
-    {
-     "id": "opzoeken",
-     "lemma": "opzoeken",
-     "gloss": "to look up",
-     "rank": 2524,
-     "separable": true
-    },
-    {
-     "id": "opschrijven",
-     "lemma": "opschrijven",
-     "gloss": "to write down",
-     "rank": 6485,
-     "separable": true
-    }
-   ]
-  },
-  {
    "id": "klas",
    "axis": "handing out or handing in",
    "band": "b1",
@@ -1243,29 +1278,6 @@
      "lemma": "loskoppelen",
      "gloss": "to disconnect",
      "rank": null,
-     "separable": true
-    }
-   ]
-  },
-  {
-   "id": "brood",
-   "axis": "passing or holding",
-   "band": "b1",
-   "batch": 1,
-   "by_rank": "b1",
-   "members": [
-    {
-     "id": "doorgeven",
-     "lemma": "doorgeven",
-     "gloss": "to pass on",
-     "rank": 2816,
-     "separable": true
-    },
-    {
-     "id": "vasthouden",
-     "lemma": "vasthouden",
-     "gloss": "to hold on to",
-     "rank": 2770,
      "separable": true
     }
    ]
