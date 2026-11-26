@@ -27,8 +27,10 @@ interface CategoryView {
   icon: string;
 }
 
+/* In a text round (a card-family category without pictures) the right-hand
+   panel holds English meanings: side 'image', face kind 'meaning', no picture. */
 interface CardFace {
-  kind: 'word' | 'image';
+  kind: 'word' | 'image' | 'meaning';
   word: string;
   imageUrl: string | null;
 }
@@ -44,6 +46,8 @@ interface MatchingCard {
 
 interface MatchingView {
   category: CategoryView;
+  /** Dutch word against English meaning; no pictures in this round. */
+  text?: boolean;
   pairs: number;
   moves: number;
   pairsLeft: number;
@@ -66,6 +70,8 @@ const STATS_KEY = 'oefenpad-koppelen-stats';
 const DEFAULT_PAIRS = 6;
 const MAX_COLUMNS = 3;
 const SMALL_TEXT_AT = 9;
+/** Past this length a text card (a phrase or an English meaning) drops to its smallest size. */
+const LONG_TEXT_AT = 24;
 const WRONG_SHAKE_MS = 350;
 const DENY_SHAKE_MS = 400;
 
@@ -454,7 +460,12 @@ export function MatchingGame() {
           <div className="card-back" />
           {faceUp ? (
             <div
-              className={`card-face${word.length > SMALL_TEXT_AT ? ' small-text' : ''}`}
+              className={[
+                'card-face',
+                word.length > SMALL_TEXT_AT ? 'small-text' : '',
+                card.face?.kind === 'meaning' ? 'meaning-text' : '',
+                word.length > LONG_TEXT_AT ? 'long-text' : '',
+              ].filter(Boolean).join(' ')}
               aria-hidden="true"
             >
               {card.side === 'image' && card.face?.imageUrl
@@ -502,7 +513,7 @@ export function MatchingGame() {
         <div className="trophy">
           <img src="/assets/logo/logo_128px.png" alt="Oefenpad" className="trophy-logo" />
         </div>
-        <p style={CONFIRM_TEXT_STYLE}>{t('cele-msg')}</p>
+        <p style={CONFIRM_TEXT_STYLE}>{t(view?.text ? 'cele-msg-text' : 'cele-msg')}</p>
         <div className="stats-row">
           <div className="stat">
             <div className="val">{moves}</div>
@@ -639,7 +650,7 @@ export function MatchingGame() {
           <span className="status-item">{`⏱ ${formatTime(seconds)}`}</span>
         </div>
 
-        <p className="hint">{t('hint')}</p>
+        <p className="hint">{t(view?.text ? 'hint-text' : 'hint')}</p>
 
         {roundError === null ? null : (
           <p className="hint" role="alert">

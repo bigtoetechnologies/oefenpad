@@ -207,6 +207,10 @@ button:focus-visible { outline: 3px solid var(--oranje); outline-offset: 2px; }
     padding: 4px; text-align: center; overflow-wrap: anywhere;
 }
 .card-face.small-text { font-size: 11px; }
+/* Tekstronde: Engelse betekenis in plaats van een plaatje. Lange glossen
+   breken af binnen de kaart; de vergroting toont altijd de hele tekst. */
+.card-face.meaning-text { text-transform: none; font-weight: 800; letter-spacing: 0; line-height: 1.15; hyphens: auto; }
+.card-face.long-text { font-size: 10px; line-height: 1.1; padding: 3px; }
 .match-card.flipped .card-face { outline-color: var(--kobalt); outline-width: 4px; outline-offset: -4px; }
 .match-card.matched .card-face { background: var(--kobalt); color: var(--papier); outline: 4px solid var(--kobalt); outline-offset: -4px; }
 .match-card.matched { animation: matchPop .35s ease; }

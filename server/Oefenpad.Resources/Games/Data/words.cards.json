@@ -1,0 +1,2653 @@
+{
+  "adverbs-a0": {
+    "label": {
+      "en": "Adverbs A0",
+      "nl": "Bijwoorden A0"
+    },
+    "icon": "🧭",
+    "words": [
+      {
+        "en": "also",
+        "nl": "OOK"
+      },
+      {
+        "en": "only",
+        "nl": "ALLEEN"
+      },
+      {
+        "en": "on",
+        "nl": "AAN"
+      },
+      {
+        "en": "off",
+        "nl": "UIT"
+      },
+      {
+        "en": "at home",
+        "nl": "THUIS"
+      },
+      {
+        "en": "on the way",
+        "nl": "ONDERWEG"
+      },
+      {
+        "en": "a lot",
+        "nl": "VEEL"
+      },
+      {
+        "en": "a little, few",
+        "nl": "WEINIG"
+      },
+      {
+        "en": "enough",
+        "nl": "GENOEG"
+      },
+      {
+        "en": "too many",
+        "nl": "TE VEEL"
+      },
+      {
+        "en": "finished",
+        "nl": "AF"
+      },
+      {
+        "en": "busy",
+        "nl": "BEZIG"
+      },
+      {
+        "en": "on board",
+        "nl": "AAN BOORD"
+      },
+      {
+        "en": "overboard",
+        "nl": "OVERBOORD"
+      }
+    ]
+  },
+  "adverbs-a1": {
+    "label": {
+      "en": "Adverbs A1",
+      "nl": "Bijwoorden A1"
+    },
+    "icon": "🧭",
+    "words": [
+      {
+        "en": "used up",
+        "nl": "OP"
+      },
+      {
+        "en": "left over",
+        "nl": "OVER"
+      },
+      {
+        "en": "upstairs",
+        "nl": "BOVEN"
+      },
+      {
+        "en": "downstairs",
+        "nl": "BENEDEN"
+      },
+      {
+        "en": "left",
+        "nl": "LINKS"
+      },
+      {
+        "en": "right",
+        "nl": "RECHTS"
+      },
+      {
+        "en": "everywhere",
+        "nl": "OVERAL"
+      },
+      {
+        "en": "nowhere",
+        "nl": "NERGENS"
+      },
+      {
+        "en": "inside (going in)",
+        "nl": "NAAR BINNEN"
+      },
+      {
+        "en": "outside (going out)",
+        "nl": "NAAR BUITEN"
+      },
+      {
+        "en": "more",
+        "nl": "MEER"
+      },
+      {
+        "en": "fewer",
+        "nl": "MINDER"
+      },
+      {
+        "en": "as many",
+        "nl": "EVENVEEL"
+      },
+      {
+        "en": "by day",
+        "nl": "OVERDAG"
+      }
+    ]
+  },
+  "adverbs-a2": {
+    "label": {
+      "en": "Adverbs A2",
+      "nl": "Bijwoorden A2"
+    },
+    "icon": "🧭",
+    "words": [
+      {
+        "en": "on target",
+        "nl": "RAAK"
+      },
+      {
+        "en": "off target",
+        "nl": "MIS"
+      },
+      {
+        "en": "up",
+        "nl": "OMHOOG"
+      },
+      {
+        "en": "down",
+        "nl": "OMLAAG"
+      },
+      {
+        "en": "forward",
+        "nl": "VOORUIT"
+      },
+      {
+        "en": "backward",
+        "nl": "ACHTERUIT"
+      },
+      {
+        "en": "straight on",
+        "nl": "RECHTDOOR"
+      },
+      {
+        "en": "turn left",
+        "nl": "LINKSAF"
+      },
+      {
+        "en": "turn right",
+        "nl": "RECHTSAF"
+      },
+      {
+        "en": "together (in one place)",
+        "nl": "BIJ ELKAAR"
+      },
+      {
+        "en": "separately",
+        "nl": "APART"
+      },
+      {
+        "en": "at the front",
+        "nl": "VOORAAN"
+      },
+      {
+        "en": "at the back",
+        "nl": "ACHTERAAN"
+      },
+      {
+        "en": "across (at a right angle)",
+        "nl": "DWARS"
+      },
+      {
+        "en": "slantwise, diagonally",
+        "nl": "SCHUIN"
+      },
+      {
+        "en": "next door",
+        "nl": "HIERNAAST"
+      },
+      {
+        "en": "further on",
+        "nl": "VERDEROP"
+      }
+    ]
+  },
+  "adverbs-b1": {
+    "label": {
+      "en": "Adverbs B1",
+      "nl": "Bijwoorden B1"
+    },
+    "icon": "🧭",
+    "words": [
+      {
+        "en": "at the top",
+        "nl": "BOVENAAN"
+      },
+      {
+        "en": "halfway",
+        "nl": "HALVERWEGE"
+      },
+      {
+        "en": "at the bottom",
+        "nl": "ONDERAAN"
+      },
+      {
+        "en": "in the front",
+        "nl": "VOORIN"
+      },
+      {
+        "en": "in the back",
+        "nl": "ACHTERIN"
+      },
+      {
+        "en": "in the middle",
+        "nl": "MIDDEN"
+      },
+      {
+        "en": "aside",
+        "nl": "OPZIJ"
+      },
+      {
+        "en": "upright",
+        "nl": "RECHTOP"
+      },
+      {
+        "en": "upside down",
+        "nl": "ONDERSTEBOVEN"
+      },
+      {
+        "en": "on the front (of a bike)",
+        "nl": "VOOROP"
+      },
+      {
+        "en": "on the back (of a bike)",
+        "nl": "ACHTEROP"
+      },
+      {
+        "en": "underground",
+        "nl": "ONDERGRONDS"
+      },
+      {
+        "en": "above ground",
+        "nl": "BOVENGRONDS"
+      },
+      {
+        "en": "on one's feet (not fallen)",
+        "nl": "OVEREIND"
+      },
+      {
+        "en": "(go) flying, slip and fall",
+        "nl": "ONDERUIT"
+      },
+      {
+        "en": "backward (leaning back)",
+        "nl": "ACHTEROVER"
+      },
+      {
+        "en": "forward (bending forward)",
+        "nl": "VOOROVER"
+      },
+      {
+        "en": "at the top (inside)",
+        "nl": "BOVENIN"
+      },
+      {
+        "en": "at the bottom (inside)",
+        "nl": "ONDERIN"
+      }
+    ]
+  },
+  "expressions-a0-a1": {
+    "label": {
+      "en": "Fixed expressions A0-A1",
+      "nl": "Vaste uitdrukkingen A0-A1"
+    },
+    "icon": "💬",
+    "words": [
+      {
+        "en": "on time",
+        "nl": "OP TIJD"
+      },
+      {
+        "en": "too late",
+        "nl": "TE LAAT"
+      },
+      {
+        "en": "at school",
+        "nl": "OP SCHOOL"
+      },
+      {
+        "en": "at work",
+        "nl": "OP HET WERK"
+      },
+      {
+        "en": "by car",
+        "nl": "MET DE AUTO"
+      },
+      {
+        "en": "by bus",
+        "nl": "MET DE BUS"
+      },
+      {
+        "en": "by train",
+        "nl": "MET DE TREIN"
+      },
+      {
+        "en": "on foot",
+        "nl": "TE VOET"
+      },
+      {
+        "en": "on the bike",
+        "nl": "OP DE FIETS"
+      },
+      {
+        "en": "on horseback",
+        "nl": "TE PAARD"
+      },
+      {
+        "en": "on the left-hand side",
+        "nl": "AAN DE LINKERKANT"
+      },
+      {
+        "en": "on the right-hand side",
+        "nl": "AAN DE RECHTERKANT"
+      },
+      {
+        "en": "to the side",
+        "nl": "AAN DE KANT"
+      },
+      {
+        "en": "in the middle",
+        "nl": "IN HET MIDDEN"
+      },
+      {
+        "en": "on the corner",
+        "nl": "OP DE HOEK"
+      },
+      {
+        "en": "round the corner",
+        "nl": "OM DE HOEK"
+      },
+      {
+        "en": "at the top of the stairs",
+        "nl": "BOVENAAN DE TRAP"
+      },
+      {
+        "en": "at the bottom of the stairs",
+        "nl": "ONDERAAN DE TRAP"
+      },
+      {
+        "en": "upstairs / up",
+        "nl": "NAAR BOVEN"
+      },
+      {
+        "en": "downstairs / down",
+        "nl": "NAAR BENEDEN"
+      },
+      {
+        "en": "on the ground",
+        "nl": "OP DE GROND"
+      },
+      {
+        "en": "in the air",
+        "nl": "IN DE LUCHT"
+      },
+      {
+        "en": "at the table",
+        "nl": "AAN TAFEL"
+      },
+      {
+        "en": "on the table",
+        "nl": "OP TAFEL"
+      },
+      {
+        "en": "under the table",
+        "nl": "ONDER TAFEL"
+      },
+      {
+        "en": "in bed",
+        "nl": "IN BED"
+      },
+      {
+        "en": "out of bed",
+        "nl": "UIT BED"
+      },
+      {
+        "en": "at the seaside",
+        "nl": "AAN ZEE"
+      },
+      {
+        "en": "at sea",
+        "nl": "OP ZEE"
+      },
+      {
+        "en": "in the sun",
+        "nl": "IN DE ZON"
+      },
+      {
+        "en": "in the shade",
+        "nl": "IN DE SCHADUW"
+      },
+      {
+        "en": "in the rain",
+        "nl": "IN DE REGEN"
+      },
+      {
+        "en": "on one's back",
+        "nl": "OP JE RUG"
+      },
+      {
+        "en": "on one's stomach",
+        "nl": "OP JE BUIK"
+      },
+      {
+        "en": "walk holding someone's hand (also the idiom \"wat is er aan de hand?\", what is the matter?)",
+        "nl": "AAN DE HAND LOPEN"
+      },
+      {
+        "en": "in one's arms",
+        "nl": "OP DE ARM"
+      },
+      {
+        "en": "on one's lap",
+        "nl": "OP SCHOOT"
+      },
+      {
+        "en": "with arms folded",
+        "nl": "MET DE ARMEN OVER ELKAAR"
+      },
+      {
+        "en": "with hands up",
+        "nl": "MET DE HANDEN OMHOOG"
+      },
+      {
+        "en": "with hands in pockets",
+        "nl": "MET DE HANDEN IN DE ZAKKEN"
+      },
+      {
+        "en": "in the city",
+        "nl": "IN DE STAD"
+      },
+      {
+        "en": "in the countryside",
+        "nl": "OP HET PLATTELAND"
+      },
+      {
+        "en": "in the mountains",
+        "nl": "IN DE BERGEN"
+      }
+    ]
+  },
+  "expressions-a2": {
+    "label": {
+      "en": "Fixed expressions A2",
+      "nl": "Vaste uitdrukkingen A2"
+    },
+    "icon": "💬",
+    "words": [
+      {
+        "en": "by boat",
+        "nl": "MET DE BOOT"
+      },
+      {
+        "en": "by plane",
+        "nl": "MET HET VLIEGTUIG"
+      },
+      {
+        "en": "side by side",
+        "nl": "NAAST ELKAAR"
+      },
+      {
+        "en": "one behind the other",
+        "nl": "ACHTER ELKAAR"
+      },
+      {
+        "en": "on top of each other",
+        "nl": "OP ELKAAR"
+      },
+      {
+        "en": "on the wall",
+        "nl": "AAN DE MUUR"
+      },
+      {
+        "en": "on the ceiling",
+        "nl": "AAN HET PLAFOND"
+      },
+      {
+        "en": "hand in hand",
+        "nl": "HAND IN HAND"
+      },
+      {
+        "en": "arm(noun) in arm",
+        "nl": "ARM IN ARM"
+      },
+      {
+        "en": "barefoot",
+        "nl": "OP BLOTE VOETEN"
+      },
+      {
+        "en": "in socks",
+        "nl": "OP SOKKEN"
+      },
+      {
+        "en": "by himself",
+        "nl": "IN ZIJN EENTJE"
+      },
+      {
+        "en": "the two of them",
+        "nl": "MET ZIJN TWEEEN"
+      },
+      {
+        "en": "all together",
+        "nl": "MET ZIJN ALLEN"
+      },
+      {
+        "en": "step by step",
+        "nl": "STAP VOOR STAP"
+      },
+      {
+        "en": "in one go",
+        "nl": "IN EEN KEER"
+      },
+      {
+        "en": "ajar",
+        "nl": "OP EEN KIER"
+      },
+      {
+        "en": "wide open",
+        "nl": "WAGENWIJD OPEN"
+      },
+      {
+        "en": "on the boil",
+        "nl": "AAN DE KOOK"
+      },
+      {
+        "en": "on a low heat",
+        "nl": "OP EEN LAAG PITJE"
+      },
+      {
+        "en": "in pyjamas",
+        "nl": "IN PYJAMA"
+      },
+      {
+        "en": "in a suit",
+        "nl": "IN PAK"
+      }
+    ]
+  },
+  "expressions-b1-b2": {
+    "label": {
+      "en": "Fixed expressions B1-B2",
+      "nl": "Vaste uitdrukkingen B1-B2"
+    },
+    "icon": "💬",
+    "words": [
+      {
+        "en": "on purpose",
+        "nl": "MET OPZET"
+      },
+      {
+        "en": "by accident",
+        "nl": "PER ONGELUK"
+      },
+      {
+        "en": "on the spot",
+        "nl": "TER PLEKKE"
+      },
+      {
+        "en": "upside down",
+        "nl": "OP ZIJN KOP"
+      },
+      {
+        "en": "with the wind behind",
+        "nl": "MET DE WIND MEE"
+      },
+      {
+        "en": "against the wind",
+        "nl": "TEGEN DE WIND IN"
+      },
+      {
+        "en": "in a row",
+        "nl": "OP EEN RIJ"
+      },
+      {
+        "en": "jumbled up",
+        "nl": "DOOR ELKAAR"
+      },
+      {
+        "en": "in two",
+        "nl": "IN TWEEEN"
+      },
+      {
+        "en": "in little pieces",
+        "nl": "IN STUKJES"
+      },
+      {
+        "en": "in the stable (of animals)",
+        "nl": "OP STAL"
+      },
+      {
+        "en": "in the meadow",
+        "nl": "IN DE WEI"
+      },
+      {
+        "en": "ashore",
+        "nl": "AAN WAL"
+      },
+      {
+        "en": "in bud",
+        "nl": "IN DE KNOP"
+      },
+      {
+        "en": "in bloom",
+        "nl": "IN BLOEI"
+      },
+      {
+        "en": "take the bend",
+        "nl": "DOOR DE BOCHT GAAN"
+      },
+      {
+        "en": "skid off the road at a bend",
+        "nl": "UIT DE BOCHT VLIEGEN"
+      },
+      {
+        "en": "in the wild",
+        "nl": "IN HET WILD"
+      },
+      {
+        "en": "in captivity",
+        "nl": "IN GEVANGENSCHAP"
+      },
+      {
+        "en": "on castors, on wheels",
+        "nl": "OP WIELTJES"
+      },
+      {
+        "en": "on little legs",
+        "nl": "OP POOTJES"
+      },
+      {
+        "en": "at anchor",
+        "nl": "VOOR ANKER"
+      },
+      {
+        "en": "alongside the quay",
+        "nl": "AAN DE KADE"
+      },
+      {
+        "en": "on the stage",
+        "nl": "OP DE PLANKEN"
+      },
+      {
+        "en": "in the wings",
+        "nl": "IN DE COULISSEN"
+      },
+      {
+        "en": "at a trot",
+        "nl": "IN DRAF"
+      },
+      {
+        "en": "at a gallop",
+        "nl": "IN GALOP"
+      },
+      {
+        "en": "in step",
+        "nl": "IN DE PAS"
+      },
+      {
+        "en": "out of step",
+        "nl": "UIT DE PAS"
+      },
+      {
+        "en": "in single file",
+        "nl": "IN GANZENPAS"
+      },
+      {
+        "en": "huddled together",
+        "nl": "OP EEN KLUITJE"
+      }
+    ]
+  },
+  "separable-a1": {
+    "label": {
+      "en": "Separable verbs A1",
+      "nl": "Scheidbare werkwoorden A1"
+    },
+    "icon": "🧩",
+    "words": [
+      {
+        "en": "to occur, to exist",
+        "nl": "VOORKOMEN"
+      },
+      {
+        "en": "to introduce (someone)",
+        "nl": "VOORSTELLEN"
+      },
+      {
+        "en": "to continue",
+        "nl": "DOORGAAN"
+      },
+      {
+        "en": "to solve",
+        "nl": "OPLOSSEN"
+      },
+      {
+        "en": "to record (audio, video)",
+        "nl": "OPNEMEN"
+      },
+      {
+        "en": "to attack",
+        "nl": "AANVALLEN"
+      },
+      {
+        "en": "to take part",
+        "nl": "MEEDOEN"
+      },
+      {
+        "en": "to deal with (met)",
+        "nl": "OMGAAN"
+      },
+      {
+        "en": "to contribute",
+        "nl": "BIJDRAGEN"
+      },
+      {
+        "en": "to work together",
+        "nl": "SAMENWERKEN"
+      },
+      {
+        "en": "to deploy, to use",
+        "nl": "INZETTEN"
+      },
+      {
+        "en": "to think (about)",
+        "nl": "NADENKEN"
+      },
+      {
+        "en": "to explain",
+        "nl": "UITLEGGEN"
+      },
+      {
+        "en": "to carry out",
+        "nl": "UITVOEREN"
+      },
+      {
+        "en": "to take part (aan)",
+        "nl": "DEELNEMEN"
+      },
+      {
+        "en": "to take place",
+        "nl": "PLAATSVINDEN"
+      },
+      {
+        "en": "to sign up (for)",
+        "nl": "AANMELDEN"
+      },
+      {
+        "en": "to tackle (a problem)",
+        "nl": "AANPAKKEN"
+      },
+      {
+        "en": "to give up",
+        "nl": "OPGEVEN"
+      },
+      {
+        "en": "to adjust, to adapt",
+        "nl": "AANPASSEN"
+      },
+      {
+        "en": "to indicate",
+        "nl": "AANGEVEN"
+      },
+      {
+        "en": "to matter; to break up (with)",
+        "nl": "UITMAKEN"
+      },
+      {
+        "en": "to prepare",
+        "nl": "VOORBEREIDEN"
+      },
+      {
+        "en": "to stop, to cease",
+        "nl": "OPHOUDEN"
+      },
+      {
+        "en": "to admit",
+        "nl": "TOEGEVEN"
+      },
+      {
+        "en": "to return",
+        "nl": "TERUGKEREN"
+      },
+      {
+        "en": "to come out (released)",
+        "nl": "UITKOMEN"
+      },
+      {
+        "en": "to draw up (a document)",
+        "nl": "OPSTELLEN"
+      },
+      {
+        "en": "to apply for (a document)",
+        "nl": "AANVRAGEN"
+      },
+      {
+        "en": "to go out (socially)",
+        "nl": "UITGAAN"
+      },
+      {
+        "en": "to come across (as)",
+        "nl": "OVERKOMEN"
+      },
+      {
+        "en": "to take over",
+        "nl": "OVERNEMEN"
+      },
+      {
+        "en": "to register, to enrol",
+        "nl": "INSCHRIJVEN"
+      },
+      {
+        "en": "to build up",
+        "nl": "OPBOUWEN"
+      },
+      {
+        "en": "to look forward to (naar)",
+        "nl": "UITZIEN"
+      },
+      {
+        "en": "to yield, to result in",
+        "nl": "OPLEVEREN"
+      },
+      {
+        "en": "to find out, to sort out",
+        "nl": "UITZOEKEN"
+      },
+      {
+        "en": "to realise",
+        "nl": "INZIEN"
+      },
+      {
+        "en": "to set (a device)",
+        "nl": "INSTELLEN"
+      },
+      {
+        "en": "to call on (people)",
+        "nl": "OPROEPEN"
+      },
+      {
+        "en": "to perform (on stage)",
+        "nl": "OPTREDEN"
+      },
+      {
+        "en": "to wait for",
+        "nl": "AFWACHTEN"
+      },
+      {
+        "en": "to submit (a document)",
+        "nl": "INDIENEN"
+      },
+      {
+        "en": "to spend (money)",
+        "nl": "UITGEVEN"
+      },
+      {
+        "en": "to spend (time)",
+        "nl": "DOORBRENGEN"
+      },
+      {
+        "en": "to decrease",
+        "nl": "AFNEMEN"
+      },
+      {
+        "en": "to wonder",
+        "nl": "AFVRAGEN"
+      },
+      {
+        "en": "to take (medicine)",
+        "nl": "INNEMEN"
+      },
+      {
+        "en": "to practise (a profession)",
+        "nl": "UITOEFENEN"
+      },
+      {
+        "en": "to take effect",
+        "nl": "INGAAN"
+      },
+      {
+        "en": "to allow",
+        "nl": "TOESTAAN"
+      },
+      {
+        "en": "to keep it up",
+        "nl": "VOLHOUDEN"
+      },
+      {
+        "en": "to keep on walking",
+        "nl": "DOORLOPEN"
+      },
+      {
+        "en": "to experience, to live through",
+        "nl": "MEEMAKEN"
+      },
+      {
+        "en": "to apply (a rule, method)",
+        "nl": "TOEPASSEN"
+      },
+      {
+        "en": "to walk up, to rise",
+        "nl": "OPLOPEN"
+      },
+      {
+        "en": "to release (a product)",
+        "nl": "UITBRENGEN"
+      },
+      {
+        "en": "to take (an exam), to cover",
+        "nl": "AFLEGGEN"
+      },
+      {
+        "en": "to arrange to meet",
+        "nl": "AFSPREKEN"
+      },
+      {
+        "en": "to enter (data), to introduce",
+        "nl": "INVOEREN"
+      },
+      {
+        "en": "to intervene",
+        "nl": "INGRIJPEN"
+      },
+      {
+        "en": "to lose weight",
+        "nl": "AFVALLEN"
+      },
+      {
+        "en": "to expand",
+        "nl": "UITBREIDEN"
+      },
+      {
+        "en": "to run into (someone)",
+        "nl": "TEGENKOMEN"
+      },
+      {
+        "en": "to run, to jog",
+        "nl": "HARDLOPEN"
+      },
+      {
+        "en": "to increase",
+        "nl": "TOENEMEN"
+      },
+      {
+        "en": "to pronounce",
+        "nl": "UITSPREKEN"
+      },
+      {
+        "en": "to finish (off)",
+        "nl": "AFMAKEN"
+      },
+      {
+        "en": "to use up, to draw up",
+        "nl": "OPMAKEN"
+      },
+      {
+        "en": "to abolish",
+        "nl": "AFSCHAFFEN"
+      },
+      {
+        "en": "to come in",
+        "nl": "BINNENKOMEN"
+      },
+      {
+        "en": "to get (something) ready",
+        "nl": "KLAARMAKEN"
+      },
+      {
+        "en": "to record, to fix in writing",
+        "nl": "VASTLEGGEN"
+      },
+      {
+        "en": "to cooperate, to help out",
+        "nl": "MEEWERKEN"
+      },
+      {
+        "en": "to address, to speak to",
+        "nl": "AANSPREKEN"
+      },
+      {
+        "en": "to resign, to step down",
+        "nl": "AFTREDEN"
+      },
+      {
+        "en": "to log in",
+        "nl": "INLOGGEN"
+      },
+      {
+        "en": "to get acquainted, to meet",
+        "nl": "KENNISMAKEN"
+      },
+      {
+        "en": "to grow up",
+        "nl": "OPGROEIEN"
+      },
+      {
+        "en": "to withdraw, to pull back",
+        "nl": "TERUGTREKKEN"
+      },
+      {
+        "en": "to invite",
+        "nl": "UITNODIGEN"
+      },
+      {
+        "en": "to pay attention",
+        "nl": "OPLETTEN"
+      },
+      {
+        "en": "to found, to establish",
+        "nl": "OPRICHTEN"
+      },
+      {
+        "en": "to create (an account)",
+        "nl": "AANMAKEN"
+      },
+      {
+        "en": "to babysit, to be careful",
+        "nl": "OPPASSEN"
+      },
+      {
+        "en": "to make use (of)",
+        "nl": "GEBRUIKMAKEN"
+      },
+      {
+        "en": "to come by, to drop in",
+        "nl": "LANGSKOMEN"
+      },
+      {
+        "en": "to cross (the street)",
+        "nl": "OVERSTEKEN"
+      },
+      {
+        "en": "to die out, to become extinct",
+        "nl": "UITSTERVEN"
+      },
+      {
+        "en": "to read aloud (to someone)",
+        "nl": "VOORLEZEN"
+      },
+      {
+        "en": "to keep track of",
+        "nl": "BIJHOUDEN"
+      },
+      {
+        "en": "to raise (a child)",
+        "nl": "OPVOEDEN"
+      },
+      {
+        "en": "to try out",
+        "nl": "UITPROBEREN"
+      },
+      {
+        "en": "to concern, to enter into",
+        "nl": "AANGAAN"
+      },
+      {
+        "en": "to arrest, to keep on",
+        "nl": "AANHOUDEN"
+      },
+      {
+        "en": "to impose",
+        "nl": "OPLEGGEN"
+      },
+      {
+        "en": "to establish, to determine",
+        "nl": "VASTSTELLEN"
+      },
+      {
+        "en": "to demonstrate, to prove",
+        "nl": "AANTONEN"
+      },
+      {
+        "en": "to look out, to watch out",
+        "nl": "UITKIJKEN"
+      },
+      {
+        "en": "to broadcast",
+        "nl": "UITZENDEN"
+      },
+      {
+        "en": "to build, to construct",
+        "nl": "AANLEGGEN"
+      },
+      {
+        "en": "to withdraw, to move in",
+        "nl": "INTREKKEN"
+      },
+      {
+        "en": "to charge (a battery)",
+        "nl": "OPLADEN"
+      },
+      {
+        "en": "to succeed, to follow (advice)",
+        "nl": "OPVOLGEN"
+      },
+      {
+        "en": "to catch, to take in",
+        "nl": "OPVANGEN"
+      },
+      {
+        "en": "to change (trains)",
+        "nl": "OVERSTAPPEN"
+      },
+      {
+        "en": "to skip, to miss out",
+        "nl": "OVERSLAAN"
+      },
+      {
+        "en": "to touch",
+        "nl": "AANRAKEN"
+      },
+      {
+        "en": "to recommend",
+        "nl": "AANRADEN"
+      },
+      {
+        "en": "to complete, to round off",
+        "nl": "AFRONDEN"
+      },
+      {
+        "en": "to join in, to play along",
+        "nl": "MEESPELEN"
+      },
+      {
+        "en": "to stand out, to be noticed",
+        "nl": "OPVALLEN"
+      },
+      {
+        "en": "to rise (sun)",
+        "nl": "OPGAAN"
+      },
+      {
+        "en": "to be stuck",
+        "nl": "VASTZITTEN"
+      },
+      {
+        "en": "to go off (alarm)",
+        "nl": "AFGAAN"
+      },
+      {
+        "en": "to live together",
+        "nl": "SAMENWONEN"
+      },
+      {
+        "en": "to pay the bill",
+        "nl": "AFREKENEN"
+      },
+      {
+        "en": "to send along (with someone)",
+        "nl": "MEEGEVEN"
+      },
+      {
+        "en": "to run over (time)",
+        "nl": "UITLOPEN"
+      }
+    ]
+  },
+  "separable-a2": {
+    "label": {
+      "en": "Separable verbs A2",
+      "nl": "Scheidbare werkwoorden A2"
+    },
+    "icon": "🧩",
+    "words": [
+      {
+        "en": "to switch on (a light)",
+        "nl": "AANDOEN"
+      },
+      {
+        "en": "to switch off (a light)",
+        "nl": "UITDOEN"
+      },
+      {
+        "en": "to turn on",
+        "nl": "AANZETTEN"
+      },
+      {
+        "en": "to turn off",
+        "nl": "UITZETTEN"
+      },
+      {
+        "en": "to open (a door)",
+        "nl": "OPENDOEN"
+      },
+      {
+        "en": "to close (a door)",
+        "nl": "DICHTDOEN"
+      },
+      {
+        "en": "to lock",
+        "nl": "AFSLUITEN"
+      },
+      {
+        "en": "to pack",
+        "nl": "INPAKKEN"
+      },
+      {
+        "en": "to unpack",
+        "nl": "UITPAKKEN"
+      },
+      {
+        "en": "to get in (a vehicle)",
+        "nl": "INSTAPPEN"
+      },
+      {
+        "en": "to get out, to get off",
+        "nl": "UITSTAPPEN"
+      },
+      {
+        "en": "to phone, to ring up",
+        "nl": "OPBELLEN"
+      },
+      {
+        "en": "to hang up (a phone)",
+        "nl": "OPHANGEN"
+      },
+      {
+        "en": "to arrive",
+        "nl": "AANKOMEN"
+      },
+      {
+        "en": "to drive off, to pull out",
+        "nl": "WEGRIJDEN"
+      },
+      {
+        "en": "to take along",
+        "nl": "MEENEMEN"
+      },
+      {
+        "en": "to leave behind",
+        "nl": "ACHTERLATEN"
+      },
+      {
+        "en": "to tidy up",
+        "nl": "OPRUIMEN"
+      },
+      {
+        "en": "to clean",
+        "nl": "SCHOONMAKEN"
+      },
+      {
+        "en": "to put on (clothes)",
+        "nl": "AANTREKKEN"
+      },
+      {
+        "en": "to take off (clothes)",
+        "nl": "UITTREKKEN"
+      },
+      {
+        "en": "to get up",
+        "nl": "OPSTAAN"
+      },
+      {
+        "en": "to sleep in",
+        "nl": "UITSLAPEN"
+      },
+      {
+        "en": "to pick up (a person)",
+        "nl": "OPHALEN"
+      },
+      {
+        "en": "to take away, to drop off",
+        "nl": "WEGBRENGEN"
+      },
+      {
+        "en": "to eat up",
+        "nl": "OPETEN"
+      },
+      {
+        "en": "to leave over",
+        "nl": "OVERLATEN"
+      },
+      {
+        "en": "to wash up",
+        "nl": "AFWASSEN"
+      },
+      {
+        "en": "to dry (dishes)",
+        "nl": "AFDROGEN"
+      },
+      {
+        "en": "to offer",
+        "nl": "AANBIEDEN"
+      },
+      {
+        "en": "to accept",
+        "nl": "AANNEMEN"
+      },
+      {
+        "en": "to go along",
+        "nl": "MEEGAAN"
+      },
+      {
+        "en": "to stay at home",
+        "nl": "THUISBLIJVEN"
+      },
+      {
+        "en": "to come home",
+        "nl": "THUISKOMEN"
+      },
+      {
+        "en": "to leave, to go away",
+        "nl": "WEGGAAN"
+      },
+      {
+        "en": "to turn on (a tap)",
+        "nl": "OPENDRAAIEN"
+      },
+      {
+        "en": "to turn off (a tap)",
+        "nl": "DICHTDRAAIEN"
+      },
+      {
+        "en": "to throw away",
+        "nl": "WEGGOOIEN"
+      },
+      {
+        "en": "to pick up (from the ground)",
+        "nl": "OPRAPEN"
+      },
+      {
+        "en": "to look up",
+        "nl": "OPZOEKEN"
+      },
+      {
+        "en": "to write down",
+        "nl": "OPSCHRIJVEN"
+      },
+      {
+        "en": "to pass on",
+        "nl": "DOORGEVEN"
+      },
+      {
+        "en": "to hold on to",
+        "nl": "VASTHOUDEN"
+      },
+      {
+        "en": "to put up (a tent)",
+        "nl": "OPZETTEN"
+      },
+      {
+        "en": "to take down (a tent)",
+        "nl": "AFBREKEN"
+      },
+      {
+        "en": "to check in",
+        "nl": "INCHECKEN"
+      },
+      {
+        "en": "to check out",
+        "nl": "UITCHECKEN"
+      },
+      {
+        "en": "to put on (a belt)",
+        "nl": "OMDOEN"
+      },
+      {
+        "en": "to undo, to unfasten",
+        "nl": "LOSMAKEN"
+      },
+      {
+        "en": "to set out",
+        "nl": "KLAARZETTEN"
+      },
+      {
+        "en": "to clear (the table)",
+        "nl": "AFRUIMEN"
+      },
+      {
+        "en": "to load (a dishwasher)",
+        "nl": "INRUIMEN"
+      },
+      {
+        "en": "to unload (a dishwasher)",
+        "nl": "UITRUIMEN"
+      },
+      {
+        "en": "to zip up",
+        "nl": "DICHTRITSEN"
+      },
+      {
+        "en": "to unzip",
+        "nl": "OPENRITSEN"
+      },
+      {
+        "en": "to allow, to admit",
+        "nl": "TOELATEN"
+      },
+      {
+        "en": "to keep busy",
+        "nl": "BEZIGHOUDEN"
+      },
+      {
+        "en": "to hire (in)",
+        "nl": "INHUREN"
+      },
+      {
+        "en": "to check, to mark",
+        "nl": "NAKIJKEN"
+      },
+      {
+        "en": "to put together, to compile",
+        "nl": "SAMENSTELLEN"
+      },
+      {
+        "en": "to gain (experience)",
+        "nl": "OPDOEN"
+      },
+      {
+        "en": "to pick up",
+        "nl": "OPPAKKEN"
+      },
+      {
+        "en": "to overtake (a vehicle)",
+        "nl": "INHALEN"
+      },
+      {
+        "en": "to postpone",
+        "nl": "UITSTELLEN"
+      },
+      {
+        "en": "to hand in; to hand over",
+        "nl": "AFGEVEN"
+      },
+      {
+        "en": "to teach",
+        "nl": "LESGEVEN"
+      },
+      {
+        "en": "to find (something lost)",
+        "nl": "TERUGVINDEN"
+      },
+      {
+        "en": "to switch off",
+        "nl": "UITSCHAKELEN"
+      },
+      {
+        "en": "to continue",
+        "nl": "VOORTZETTEN"
+      },
+      {
+        "en": "to distract",
+        "nl": "AFLEIDEN"
+      },
+      {
+        "en": "to play (a recording)",
+        "nl": "AFSPELEN"
+      },
+      {
+        "en": "to count down",
+        "nl": "AFTELLEN"
+      },
+      {
+        "en": "to attend (a meeting)",
+        "nl": "BIJWONEN"
+      },
+      {
+        "en": "to check; to verify",
+        "nl": "NAGAAN"
+      },
+      {
+        "en": "to keep (a promise)",
+        "nl": "NAKOMEN"
+      },
+      {
+        "en": "to abolish; to disband",
+        "nl": "OPHEFFEN"
+      },
+      {
+        "en": "to transfer (someone)",
+        "nl": "OVERBRENGEN"
+      },
+      {
+        "en": "to drive (a car)",
+        "nl": "AUTORIJDEN"
+      },
+      {
+        "en": "to drop off (someone)",
+        "nl": "AFZETTEN"
+      },
+      {
+        "en": "to start up (a computer)",
+        "nl": "OPSTARTEN"
+      },
+      {
+        "en": "to exchange",
+        "nl": "UITWISSELEN"
+      },
+      {
+        "en": "to show up",
+        "nl": "OPDAGEN"
+      },
+      {
+        "en": "to ring (phone)",
+        "nl": "OVERGAAN"
+      },
+      {
+        "en": "to dress (someone)",
+        "nl": "AANKLEDEN"
+      },
+      {
+        "en": "to gather; to meet",
+        "nl": "SAMENKOMEN"
+      },
+      {
+        "en": "to look back",
+        "nl": "TERUGKIJKEN"
+      },
+      {
+        "en": "to purchase",
+        "nl": "AANKOPEN"
+      },
+      {
+        "en": "to train (someone)",
+        "nl": "OPLEIDEN"
+      },
+      {
+        "en": "to sue; to press charges",
+        "nl": "AANKLAGEN"
+      },
+      {
+        "en": "to collapse",
+        "nl": "INSTORTEN"
+      },
+      {
+        "en": "to save (a file)",
+        "nl": "OPSLAAN"
+      },
+      {
+        "en": "to track down",
+        "nl": "OPSPOREN"
+      },
+      {
+        "en": "to agree; to match",
+        "nl": "OVEREENKOMEN"
+      },
+      {
+        "en": "to rule out",
+        "nl": "UITSLUITEN"
+      },
+      {
+        "en": "to convey; to display",
+        "nl": "WEERGEVEN"
+      },
+      {
+        "en": "to take away",
+        "nl": "WEGNEMEN"
+      },
+      {
+        "en": "to apply (paint)",
+        "nl": "AANBRENGEN"
+      },
+      {
+        "en": "to insist",
+        "nl": "AANDRINGEN"
+      },
+      {
+        "en": "to lose (something)",
+        "nl": "KWIJTRAKEN"
+      },
+      {
+        "en": "to put down",
+        "nl": "NEERLEGGEN"
+      },
+      {
+        "en": "to persuade",
+        "nl": "OVERHALEN"
+      },
+      {
+        "en": "to change clothes",
+        "nl": "OMKLEDEN"
+      },
+      {
+        "en": "to get up to (mischief)",
+        "nl": "UITHALEN"
+      },
+      {
+        "en": "to pick up (someone)",
+        "nl": "OPPIKKEN"
+      },
+      {
+        "en": "to pull away; to accelerate",
+        "nl": "OPTREKKEN"
+      },
+      {
+        "en": "to pay back",
+        "nl": "TERUGBETALEN"
+      },
+      {
+        "en": "to end; to expire",
+        "nl": "AFLOPEN"
+      },
+      {
+        "en": "to reject",
+        "nl": "AFWIJZEN"
+      },
+      {
+        "en": "to furnish (a room)",
+        "nl": "INRICHTEN"
+      },
+      {
+        "en": "to convert",
+        "nl": "OMZETTEN"
+      },
+      {
+        "en": "to vomit; to hand over",
+        "nl": "OVERGEVEN"
+      },
+      {
+        "en": "to go back",
+        "nl": "TERUGGAAN"
+      },
+      {
+        "en": "to walk (a dog)",
+        "nl": "UITLATEN"
+      },
+      {
+        "en": "to graduate",
+        "nl": "AFSTUDEREN"
+      },
+      {
+        "en": "to disappoint",
+        "nl": "TELEURSTELLEN"
+      },
+      {
+        "en": "to pick out",
+        "nl": "UITKIEZEN"
+      },
+      {
+        "en": "to refrain (from)",
+        "nl": "AFZIEN"
+      },
+      {
+        "en": "to notice",
+        "nl": "OPMERKEN"
+      },
+      {
+        "en": "to free up (time)",
+        "nl": "VRIJMAKEN"
+      },
+      {
+        "en": "to announce",
+        "nl": "AANKONDIGEN"
+      },
+      {
+        "en": "to get round to",
+        "nl": "TOEKOMEN"
+      }
+    ]
+  },
+  "separable-b1": {
+    "label": {
+      "en": "Separable verbs B1",
+      "nl": "Scheidbare werkwoorden B1"
+    },
+    "icon": "🧩",
+    "words": [
+      {
+        "en": "to send off",
+        "nl": "OPSTUREN"
+      },
+      {
+        "en": "to collect",
+        "nl": "AFHALEN"
+      },
+      {
+        "en": "to lift up",
+        "nl": "OPTILLEN"
+      },
+      {
+        "en": "to put down",
+        "nl": "NEERZETTEN"
+      },
+      {
+        "en": "to look at (a person)",
+        "nl": "AANKIJKEN"
+      },
+      {
+        "en": "to look away",
+        "nl": "WEGKIJKEN"
+      },
+      {
+        "en": "to demonstrate (show how)",
+        "nl": "VOORDOEN"
+      },
+      {
+        "en": "to copy",
+        "nl": "NADOEN"
+      },
+      {
+        "en": "to stand still",
+        "nl": "STILSTAAN"
+      },
+      {
+        "en": "to walk around",
+        "nl": "RONDLOPEN"
+      },
+      {
+        "en": "to hand out",
+        "nl": "UITDELEN"
+      },
+      {
+        "en": "to hand in",
+        "nl": "INLEVEREN"
+      },
+      {
+        "en": "to connect (plug in)",
+        "nl": "AANSLUITEN"
+      },
+      {
+        "en": "to disconnect",
+        "nl": "LOSKOPPELEN"
+      },
+      {
+        "en": "to grab hold of",
+        "nl": "VASTPAKKEN"
+      },
+      {
+        "en": "to let go",
+        "nl": "LOSLATEN"
+      },
+      {
+        "en": "to fill in (a form)",
+        "nl": "INVULLEN"
+      },
+      {
+        "en": "to cross out",
+        "nl": "DOORSTREPEN"
+      },
+      {
+        "en": "to run away, to run off",
+        "nl": "WEGLOPEN"
+      },
+      {
+        "en": "to come back",
+        "nl": "TERUGKOMEN"
+      },
+      {
+        "en": "to print",
+        "nl": "AFDRUKKEN"
+      },
+      {
+        "en": "to scan (in)",
+        "nl": "INSCANNEN"
+      },
+      {
+        "en": "to lock up, to shut in",
+        "nl": "OPSLUITEN"
+      },
+      {
+        "en": "to set free, to release",
+        "nl": "VRIJLATEN"
+      },
+      {
+        "en": "to come on as a substitute",
+        "nl": "INVALLEN"
+      },
+      {
+        "en": "to look on, to watch",
+        "nl": "TOEKIJKEN"
+      },
+      {
+        "en": "to hold back, to stop",
+        "nl": "TEGENHOUDEN"
+      },
+      {
+        "en": "to let through",
+        "nl": "DOORLATEN"
+      },
+      {
+        "en": "to put back",
+        "nl": "TERUGZETTEN"
+      },
+      {
+        "en": "to take away, to remove",
+        "nl": "WEGHALEN"
+      },
+      {
+        "en": "to add",
+        "nl": "TOEVOEGEN"
+      },
+      {
+        "en": "to stir",
+        "nl": "OMROEREN"
+      },
+      {
+        "en": "to point out; to appoint",
+        "nl": "AANWIJZEN"
+      },
+      {
+        "en": "to eavesdrop on",
+        "nl": "AFLUISTEREN"
+      },
+      {
+        "en": "to deduct; to subtract",
+        "nl": "AFTREKKEN"
+      },
+      {
+        "en": "to buy in (goods)",
+        "nl": "INKOPEN"
+      },
+      {
+        "en": "to cancel (a subscription)",
+        "nl": "OPZEGGEN"
+      },
+      {
+        "en": "to end up (somewhere)",
+        "nl": "TERECHTKOMEN"
+      },
+      {
+        "en": "to deliver",
+        "nl": "AFLEVEREN"
+      },
+      {
+        "en": "to hand over; to transfer",
+        "nl": "OVERDRAGEN"
+      },
+      {
+        "en": "to live up to (a promise)",
+        "nl": "WAARMAKEN"
+      },
+      {
+        "en": "to approve",
+        "nl": "GOEDKEUREN"
+      },
+      {
+        "en": "to stock up on; to smash in",
+        "nl": "INSLAAN"
+      },
+      {
+        "en": "to transfer (money)",
+        "nl": "OVERMAKEN"
+      },
+      {
+        "en": "to heat up (food)",
+        "nl": "OPWARMEN"
+      },
+      {
+        "en": "to award; to grant",
+        "nl": "TOEKENNEN"
+      },
+      {
+        "en": "to give up; to hand over",
+        "nl": "AFSTAAN"
+      },
+      {
+        "en": "to break down; to drop out",
+        "nl": "UITVALLEN"
+      },
+      {
+        "en": "to work out (in detail)",
+        "nl": "UITWERKEN"
+      },
+      {
+        "en": "to cheat (on a partner)",
+        "nl": "VREEMDGAAN"
+      },
+      {
+        "en": "to bring along",
+        "nl": "MEEBRENGEN"
+      },
+      {
+        "en": "to live together",
+        "nl": "SAMENLEVEN"
+      },
+      {
+        "en": "to breathe (in)",
+        "nl": "ADEMHALEN"
+      },
+      {
+        "en": "to cool down",
+        "nl": "AFKOELEN"
+      },
+      {
+        "en": "to do up; to fix up",
+        "nl": "OPKNAPPEN"
+      },
+      {
+        "en": "to hurry up",
+        "nl": "OPSCHIETEN"
+      },
+      {
+        "en": "to be off; to tolerate",
+        "nl": "UITSTAAN"
+      },
+      {
+        "en": "to cancel (an appointment)",
+        "nl": "AFZEGGEN"
+      },
+      {
+        "en": "to love",
+        "nl": "LIEFHEBBEN"
+      },
+      {
+        "en": "to pull down; to shoot down",
+        "nl": "NEERHALEN"
+      },
+      {
+        "en": "to challenge",
+        "nl": "UITDAGEN"
+      },
+      {
+        "en": "to come to; to recover",
+        "nl": "BIJKOMEN"
+      },
+      {
+        "en": "to implement (a change)",
+        "nl": "DOORVOEREN"
+      },
+      {
+        "en": "to halt; to discontinue",
+        "nl": "STOPZETTEN"
+      },
+      {
+        "en": "to give away",
+        "nl": "WEGGEVEN"
+      },
+      {
+        "en": "to purchase; to acquire",
+        "nl": "AANSCHAFFEN"
+      },
+      {
+        "en": "to wipe out; to eradicate",
+        "nl": "UITROEIEN"
+      },
+      {
+        "en": "to help out",
+        "nl": "MEEHELPEN"
+      },
+      {
+        "en": "to hang around",
+        "nl": "RONDHANGEN"
+      },
+      {
+        "en": "to reduce; to push back",
+        "nl": "TERUGDRINGEN"
+      },
+      {
+        "en": "to bother; to harass",
+        "nl": "LASTIGVALLEN"
+      },
+      {
+        "en": "to drop in; to burst in",
+        "nl": "BINNENVALLEN"
+      },
+      {
+        "en": "to persevere; to push through",
+        "nl": "DOORZETTEN"
+      },
+      {
+        "en": "to express (oneself)",
+        "nl": "UITDRUKKEN"
+      },
+      {
+        "en": "to assist; to support",
+        "nl": "BIJSTAAN"
+      },
+      {
+        "en": "to estimate; to assess",
+        "nl": "INSCHATTEN"
+      },
+      {
+        "en": "to turn up; to emerge",
+        "nl": "OPDUIKEN"
+      },
+      {
+        "en": "to shoot (dead); to fire off",
+        "nl": "AFSCHIETEN"
+      },
+      {
+        "en": "to overflow; to defect",
+        "nl": "OVERLOPEN"
+      },
+      {
+        "en": "to hang out (a flag)",
+        "nl": "UITHANGEN"
+      },
+      {
+        "en": "to enforce; to force through",
+        "nl": "AFDWINGEN"
+      },
+      {
+        "en": "to ride along",
+        "nl": "MEERIJDEN"
+      },
+      {
+        "en": "to drive around",
+        "nl": "RONDRIJDEN"
+      },
+      {
+        "en": "to die",
+        "nl": "DOODGAAN"
+      },
+      {
+        "en": "to forward",
+        "nl": "DOORSTUREN"
+      },
+      {
+        "en": "to think along",
+        "nl": "MEEDENKEN"
+      },
+      {
+        "en": "to shoot down",
+        "nl": "NEERSCHIETEN"
+      },
+      {
+        "en": "to outsource",
+        "nl": "UITBESTEDEN"
+      },
+      {
+        "en": "to come down (from)",
+        "nl": "AFKOMEN"
+      },
+      {
+        "en": "to relieve (take over from)",
+        "nl": "AFLOSSEN"
+      },
+      {
+        "en": "to bring in",
+        "nl": "BINNENHALEN"
+      },
+      {
+        "en": "to pursue (a goal)",
+        "nl": "NASTREVEN"
+      },
+      {
+        "en": "to step up, to increase",
+        "nl": "OPVOEREN"
+      },
+      {
+        "en": "to generate (energy)",
+        "nl": "OPWEKKEN"
+      },
+      {
+        "en": "to be left over",
+        "nl": "OVERBLIJVEN"
+      },
+      {
+        "en": "to send back",
+        "nl": "TERUGSTUREN"
+      },
+      {
+        "en": "to prescribe",
+        "nl": "VOORSCHRIJVEN"
+      },
+      {
+        "en": "to recommend",
+        "nl": "AANBEVELEN"
+      },
+      {
+        "en": "to teach, to instil (a skill)",
+        "nl": "AANLEREN"
+      },
+      {
+        "en": "to handle, to deal with",
+        "nl": "AFHANDELEN"
+      },
+      {
+        "en": "to go through, to review",
+        "nl": "DOORNEMEN"
+      },
+      {
+        "en": "to claim, to demand",
+        "nl": "OPEISEN"
+      },
+      {
+        "en": "to get back",
+        "nl": "TERUGKRIJGEN"
+      },
+      {
+        "en": "to counteract, to combat",
+        "nl": "TEGENGAAN"
+      },
+      {
+        "en": "to strike, to hit hard",
+        "nl": "TOESLAAN"
+      },
+      {
+        "en": "to talk (something) out; to finish speaking",
+        "nl": "UITPRATEN"
+      },
+      {
+        "en": "to result from",
+        "nl": "VOORTKOMEN"
+      },
+      {
+        "en": "to take office, to step up",
+        "nl": "AANTREDEN"
+      },
+      {
+        "en": "to inflict, to cause",
+        "nl": "TOEBRENGEN"
+      },
+      {
+        "en": "to watch, to supervise",
+        "nl": "TOEZIEN"
+      },
+      {
+        "en": "to break out",
+        "nl": "UITBREKEN"
+      },
+      {
+        "en": "to turn around; to reverse",
+        "nl": "OMKEREN"
+      },
+      {
+        "en": "to deviate (from)",
+        "nl": "AFWIJKEN"
+      },
+      {
+        "en": "to depend (on)",
+        "nl": "AFHANGEN"
+      },
+      {
+        "en": "to turn out better than feared",
+        "nl": "MEEVALLEN"
+      },
+      {
+        "en": "to disappoint",
+        "nl": "TEGENVALLEN"
+      },
+      {
+        "en": "to be given to take along",
+        "nl": "MEEKRIJGEN"
+      },
+      {
+        "en": "to sell out",
+        "nl": "UITVERKOPEN"
+      }
+    ]
+  },
+  "separable-b2": {
+    "label": {
+      "en": "Separable verbs B2",
+      "nl": "Scheidbare werkwoorden B2"
+    },
+    "icon": "🧩",
+    "words": [
+      {
+        "en": "to load",
+        "nl": "INLADEN"
+      },
+      {
+        "en": "to unload",
+        "nl": "UITLADEN"
+      },
+      {
+        "en": "to light",
+        "nl": "AANSTEKEN"
+      },
+      {
+        "en": "to blow out",
+        "nl": "UITBLAZEN"
+      },
+      {
+        "en": "to fold up",
+        "nl": "OPVOUWEN"
+      },
+      {
+        "en": "to unfold",
+        "nl": "UITVOUWEN"
+      },
+      {
+        "en": "to tie up",
+        "nl": "VASTBINDEN"
+      },
+      {
+        "en": "to untie",
+        "nl": "LOSBINDEN"
+      },
+      {
+        "en": "to fall over",
+        "nl": "OMVALLEN"
+      },
+      {
+        "en": "to knock over",
+        "nl": "OMGOOIEN"
+      },
+      {
+        "en": "to work on, to keep working",
+        "nl": "DOORWERKEN"
+      },
+      {
+        "en": "to rest",
+        "nl": "UITRUSTEN"
+      },
+      {
+        "en": "to breathe in",
+        "nl": "INADEMEN"
+      },
+      {
+        "en": "to hold (your breath)",
+        "nl": "INHOUDEN"
+      },
+      {
+        "en": "to breathe out",
+        "nl": "UITADEMEN"
+      },
+      {
+        "en": "to snatch, to take away",
+        "nl": "AFPAKKEN"
+      },
+      {
+        "en": "to give back",
+        "nl": "TERUGGEVEN"
+      },
+      {
+        "en": "to lend",
+        "nl": "UITLENEN"
+      },
+      {
+        "en": "to bring back",
+        "nl": "TERUGBRENGEN"
+      },
+      {
+        "en": "to cheer on",
+        "nl": "AANMOEDIGEN"
+      },
+      {
+        "en": "to boo",
+        "nl": "UITJOUWEN"
+      },
+      {
+        "en": "to drain",
+        "nl": "AFGIETEN"
+      },
+      {
+        "en": "to serve up",
+        "nl": "OPSCHEPPEN"
+      },
+      {
+        "en": "to stick out, to hold out",
+        "nl": "UITSTEKEN"
+      },
+      {
+        "en": "to invent",
+        "nl": "UITVINDEN"
+      },
+      {
+        "en": "to be released, to become available",
+        "nl": "VRIJKOMEN"
+      },
+      {
+        "en": "to be able to handle",
+        "nl": "AANKUNNEN"
+      },
+      {
+        "en": "to find, to come across",
+        "nl": "AANTREFFEN"
+      },
+      {
+        "en": "to top up, to supplement",
+        "nl": "AANVULLEN"
+      },
+      {
+        "en": "to switch on, to call in",
+        "nl": "INSCHAKELEN"
+      },
+      {
+        "en": "to have left over",
+        "nl": "OVERHOUDEN"
+      },
+      {
+        "en": "to pass, to go by",
+        "nl": "VOORBIJGAAN"
+      },
+      {
+        "en": "to finish off, to complete",
+        "nl": "AFWERKEN"
+      },
+      {
+        "en": "to be open",
+        "nl": "OPENSTAAN"
+      },
+      {
+        "en": "to merge, to go together",
+        "nl": "SAMENGAAN"
+      },
+      {
+        "en": "to stay behind",
+        "nl": "ACHTERBLIJVEN"
+      },
+      {
+        "en": "to light (a cigarette)",
+        "nl": "OPSTEKEN"
+      },
+      {
+        "en": "to put before, to submit",
+        "nl": "VOORLEGGEN"
+      },
+      {
+        "en": "to feel (a certain way)",
+        "nl": "AANVOELEN"
+      },
+      {
+        "en": "to announce",
+        "nl": "BEKENDMAKEN"
+      },
+      {
+        "en": "to proclaim, to declare",
+        "nl": "UITROEPEN"
+      },
+      {
+        "en": "to break in",
+        "nl": "INBREKEN"
+      },
+      {
+        "en": "to drop out, to fail",
+        "nl": "WEGVALLEN"
+      },
+      {
+        "en": "to cause (damage)",
+        "nl": "AANRICHTEN"
+      },
+      {
+        "en": "to appoint, to hire",
+        "nl": "AANSTELLEN"
+      },
+      {
+        "en": "to walk in",
+        "nl": "BINNENLOPEN"
+      },
+      {
+        "en": "to inform, to announce",
+        "nl": "MEEDELEN"
+      },
+      {
+        "en": "to grow into",
+        "nl": "UITGROEIEN"
+      },
+      {
+        "en": "to collect (donations)",
+        "nl": "INZAMELEN"
+      },
+      {
+        "en": "to leave behind, to bequeath",
+        "nl": "NALATEN"
+      },
+      {
+        "en": "to assign, to allocate",
+        "nl": "TOEWIJZEN"
+      },
+      {
+        "en": "to join (at a table)",
+        "nl": "AANSCHUIVEN"
+      },
+      {
+        "en": "to carry away, to drain",
+        "nl": "AFVOEREN"
+      },
+      {
+        "en": "to agree, to consent",
+        "nl": "INSTEMMEN"
+      },
+      {
+        "en": "to look along",
+        "nl": "MEEKIJKEN"
+      },
+      {
+        "en": "to coordinate, to tune",
+        "nl": "AFSTEMMEN"
+      },
+      {
+        "en": "to drop by, to walk up",
+        "nl": "AANLOPEN"
+      },
+      {
+        "en": "to be worried (about)",
+        "nl": "INZITTEN"
+      },
+      {
+        "en": "to go into hiding",
+        "nl": "ONDERDUIKEN"
+      },
+      {
+        "en": "to faint",
+        "nl": "FLAUWVALLEN"
+      },
+      {
+        "en": "to damage, to affect",
+        "nl": "AANTASTEN"
+      },
+      {
+        "en": "to take off (glasses, a hat)",
+        "nl": "AFDOEN"
+      },
+      {
+        "en": "to shoot dead",
+        "nl": "DOODSCHIETEN"
+      },
+      {
+        "en": "to put away, to store",
+        "nl": "OPBERGEN"
+      },
+      {
+        "en": "to summarize",
+        "nl": "SAMENVATTEN"
+      },
+      {
+        "en": "to reject, to disapprove of",
+        "nl": "AFKEUREN"
+      },
+      {
+        "en": "to explain, to clarify",
+        "nl": "TOELICHTEN"
+      },
+      {
+        "en": "to flush (a toilet)",
+        "nl": "DOORTREKKEN"
+      },
+      {
+        "en": "to impose, to force upon",
+        "nl": "OPDRINGEN"
+      },
+      {
+        "en": "to open",
+        "nl": "OPENMAKEN"
+      },
+      {
+        "en": "to look up (from)",
+        "nl": "OPKIJKEN"
+      },
+      {
+        "en": "to indicate, to point out",
+        "nl": "AANDUIDEN"
+      },
+      {
+        "en": "to cut off",
+        "nl": "AFSNIJDEN"
+      },
+      {
+        "en": "to open (by itself)",
+        "nl": "OPENGAAN"
+      },
+      {
+        "en": "to show, to turn out (research)",
+        "nl": "UITWIJZEN"
+      },
+      {
+        "en": "to put forward (an argument)",
+        "nl": "AANVOEREN"
+      },
+      {
+        "en": "to take (it) a certain way",
+        "nl": "OPVATTEN"
+      },
+      {
+        "en": "to run into, to hit",
+        "nl": "AANRIJDEN"
+      },
+      {
+        "en": "to go wrong",
+        "nl": "MISGAAN"
+      },
+      {
+        "en": "to catch on, be a hit",
+        "nl": "AANSLAAN"
+      },
+      {
+        "en": "to hand out, to present",
+        "nl": "UITREIKEN"
+      },
+      {
+        "en": "to house, to place",
+        "nl": "ONDERBRENGEN"
+      },
+      {
+        "en": "to divide, to classify",
+        "nl": "INDELEN"
+      },
+      {
+        "en": "to quote; to tighten",
+        "nl": "AANHALEN"
+      },
+      {
+        "en": "to calculate",
+        "nl": "UITREKENEN"
+      },
+      {
+        "en": "to throw off, to yield",
+        "nl": "AFWERPEN"
+      },
+      {
+        "en": "to alternate",
+        "nl": "AFWISSELEN"
+      },
+      {
+        "en": "to dawn, to begin (era)",
+        "nl": "AANBREKEN"
+      },
+      {
+        "en": "to die, to perish",
+        "nl": "OMKOMEN"
+      },
+      {
+        "en": "to come along",
+        "nl": "MEEKOMEN"
+      },
+      {
+        "en": "to extend, to expand",
+        "nl": "UITBOUWEN"
+      },
+      {
+        "en": "to let off (fireworks)",
+        "nl": "AFSTEKEN"
+      },
+      {
+        "en": "to amount to; to land",
+        "nl": "NEERKOMEN"
+      },
+      {
+        "en": "to pay out (money)",
+        "nl": "UITKEREN"
+      },
+      {
+        "en": "to dig up",
+        "nl": "OPGRAVEN"
+      },
+      {
+        "en": "to look back",
+        "nl": "TERUGBLIKKEN"
+      },
+      {
+        "en": "to call names, to abuse",
+        "nl": "UITSCHELDEN"
+      },
+      {
+        "en": "to chase away",
+        "nl": "WEGJAGEN"
+      },
+      {
+        "en": "to reassure",
+        "nl": "GERUSTSTELLEN"
+      },
+      {
+        "en": "to put away, to set aside",
+        "nl": "WEGLEGGEN"
+      },
+      {
+        "en": "to drop by",
+        "nl": "LANGSGAAN"
+      },
+      {
+        "en": "to go first, to take priority",
+        "nl": "VOORGAAN"
+      },
+      {
+        "en": "to refer onward",
+        "nl": "DOORVERWIJZEN"
+      },
+      {
+        "en": "to stretch out, to extend",
+        "nl": "UITSTREKKEN"
+      },
+      {
+        "en": "to look (like)",
+        "nl": "ERUITZIEN"
+      },
+      {
+        "en": "to turn out fine",
+        "nl": "GOEDKOMEN"
+      },
+      {
+        "en": "to open (up), to set open",
+        "nl": "OPENZETTEN"
+      },
+      {
+        "en": "to join in, to hook on",
+        "nl": "AANHAKEN"
+      },
+      {
+        "en": "to build in",
+        "nl": "INBOUWEN"
+      },
+      {
+        "en": "to precede",
+        "nl": "VOORAFGAAN"
+      },
+      {
+        "en": "to exhaust",
+        "nl": "UITPUTTEN"
+      },
+      {
+        "en": "to integrate (into society)",
+        "nl": "INBURGEREN"
+      },
+      {
+        "en": "to plan, to intend",
+        "nl": "VOORNEMEN"
+      },
+      {
+        "en": "to keep clean",
+        "nl": "SCHOONHOUDEN"
+      },
+      {
+        "en": "to be wearing",
+        "nl": "AANHEBBEN"
+      },
+      {
+        "en": "to slip away",
+        "nl": "WEGGLIJDEN"
+      },
+      {
+        "en": "to be able to go (to)",
+        "nl": "TERECHTKUNNEN"
+      },
+      {
+        "en": "to manage to finish (food)",
+        "nl": "OPKRIJGEN"
+      },
+      {
+        "en": "to creep in",
+        "nl": "INSLUIPEN"
+      },
+      {
+        "en": "to fall flat, to go down",
+        "nl": "ONDERUITGAAN"
+      }
+    ]
+  }
+}

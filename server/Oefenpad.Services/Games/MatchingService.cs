@@ -3,7 +3,8 @@ using System.Text.Json;
 namespace Oefenpad.Services.Games;
 
 /// <summary>
-/// Matching: one card from each panel, word against picture. The pairing table
+/// Matching: one card from each panel, word against picture or, in a
+/// text-only category, Dutch word against English meaning. The pairing table
 /// and the deck order live on the server; a card face is revealed only when
 /// the player asks for it.
 /// </summary>
@@ -11,6 +12,9 @@ public sealed class MatchingService : GameService
 {
     private const int MinimumPairs = 4;
     private const int MaximumWordLength = 12;
+
+    /// <summary>Text cards have no picture to share the face with; spaces count.</summary>
+    private const int MaximumTextWordLength = 24;
 
     private static readonly int[] PairOptions = { 4, 6, 8, 10, 12 };
 
@@ -44,14 +48,18 @@ public sealed class MatchingService : GameService
         var count = Math.Min(requested, pool.Count);
         if (count < MinimumPairs) count = MinimumPairs;
 
+        // A text pair keeps the panels' names: the "image" panel holds the
+        // English meaning, so its card carries that text and no picture.
+        var text = Content.IsTextOnly(category);
         var chosen = Shuffle(pool).Take(count).ToList();
         var cards = Shuffle(
             chosen.Select(p => new Card(p.Id, "word", p.Word, p.Image))
-                .Concat(chosen.Select(p => new Card(p.Id, "image", p.Word, p.Image))));
+                .Concat(chosen.Select(p => new Card(p.Id, "image", text ? p.Meaning! : p.Word, p.Image))));
 
         var state = new RoundState
         {
             Category = category,
+            Text = text,
             TotalPairs = count,
             Cards = cards
         };
@@ -134,6 +142,11 @@ public sealed class MatchingService : GameService
     {
         if (!Content.Categories.TryGetValue(category, out var cat)) return new List<Pair>();
 
+        if (cat.TextOnly)
+            return Content.TextPairs(category, MaximumTextWordLength)
+                .Select((p, i) => new Pair(i, p.Dutch, "", p.English))
+                .ToList();
+
         var seenImages = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var seenWords = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
         var pairs = new List<Pair>();
@@ -160,6 +173,7 @@ public sealed class MatchingService : GameService
             name = Content.CategoryName(state.Category),
             icon = Content.CategoryIcon(state.Category)
         },
+        text = state.Text,
         pairs = state.TotalPairs,
         moves = state.Moves,
         pairsLeft = state.TotalPairs - state.PairsFound,
@@ -172,20 +186,23 @@ public sealed class MatchingService : GameService
             face = card.Matched || state.FaceUp.Contains(i)
                 ? new
                 {
-                    kind = card.Side == "image" ? "image" : "word",
+                    kind = card.Side != "image" ? "word" : state.Text ? "meaning" : "image",
                     word = card.Word,
-                    imageUrl = card.Side == "image" ? "/assets/wordimages/" + card.Image : null
+                    imageUrl = card.Side == "image" && !state.Text ? "/assets/wordimages/" + card.Image : null
                 }
                 : null
         }).ToList()
     };
 
-    private sealed record Pair(int Id, string Word, string Image);
+    /// <param name="Meaning">The English meaning; set only for a text-only category.</param>
+    private sealed record Pair(int Id, string Word, string Image, string? Meaning = null);
 
     private sealed class RoundState
     {
         public string Category { get; set; } = "animals";
         public int TotalPairs { get; set; }
+        /// <summary>A text-only round: Dutch word against English meaning.</summary>
+        public bool Text { get; set; }
         public int PairsFound { get; set; }
         public int Moves { get; set; }
         public List<Card> Cards { get; set; } = new();

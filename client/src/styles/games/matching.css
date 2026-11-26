@@ -175,6 +175,8 @@
     padding: 4px; text-align: center; overflow-wrap: anywhere;
 }
 .game--matching .card-face.small-text { font-size: 11px; }
+.game--matching .card-face.meaning-text { text-transform: none; font-weight: 800; letter-spacing: 0; line-height: 1.15; hyphens: auto; }
+.game--matching .card-face.long-text { font-size: 10px; line-height: 1.1; padding: 3px; }
 .game--matching .match-card.flipped .card-face { outline-color: var(--kobalt); outline-width: 4px; outline-offset: -4px; }
 .game--matching .match-card.matched .card-face { background: var(--kobalt); color: var(--papier); outline: 4px solid var(--kobalt); outline-offset: -4px; }
 .game--matching .match-card.matched { animation: matchPop .35s ease; }

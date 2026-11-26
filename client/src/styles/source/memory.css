@@ -206,6 +206,10 @@ button:focus-visible { outline: 3px solid var(--oranje); outline-offset: 2px; }
 .card.flipped .card-face { outline-color: var(--kobalt); outline-width: 4px; outline-offset: -4px; }
 .card.matched .card-face { background: var(--kobalt); outline: 4px solid var(--kobalt); outline-offset: -4px; }
 .card.matched .card-word { color: var(--papier); }
+/* Tekstronde: woord tegen Engelse betekenis. Op een klein raster wordt de
+   tekst afgekapt; de vergroting bij het omdraaien toont hem altijd heel. */
+.memory-grid.text-round .card-word { font-size: clamp(8px, 1.6vw, 16px); overflow: hidden; max-height: 100%; overflow-wrap: anywhere; }
+.card-word.card-meaning { font-weight: 800; letter-spacing: 0; hyphens: auto; }
 .card.matched { animation: matchPop .35s ease; }
 .card.wrong .card-inner { animation: shakeX .4s ease; }
 .card.wrong .card-face { outline-color: var(--fout); outline-width: 4px; outline-offset: -4px; }

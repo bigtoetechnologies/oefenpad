@@ -17,9 +17,11 @@ import { useTimer } from '../../shared/useTimer';
 import { GameShell } from '../../site/GameShell';
 
 /* The round as the server renders it. A card the player has not turned
-   carries no face: the deck itself stays on the server. */
+   carries no face: the deck itself stays on the server. In a text round
+   (a card-family category without pictures) the partner of a Dutch word is
+   its English meaning, a card of kind 'meaning'. */
 interface CardFace {
-  kind: 'word' | 'image';
+  kind: 'word' | 'image' | 'meaning';
   word?: string;
   imageUrl?: string;
 }
@@ -40,6 +42,8 @@ interface MemoryCategory {
 interface MemoryView {
   category: MemoryCategory;
   level: string;
+  /** Dutch word against English meaning; no pictures in this round. */
+  text?: boolean;
   gridSize: number;
   pairs: number;
   moves: number;
@@ -107,7 +111,7 @@ function peel(view: MemoryView, keepBack: ReadonlySet<number>, base: MemoryView 
 function zoomContent(card: MemoryCard, showLabels: boolean): ZoomContent {
   const face = card.face;
   if (face === null) return { text: '' };
-  if (face.kind === 'word') return { text: face.word ?? '' };
+  if (face.kind !== 'image') return { text: face.word ?? '' };
   return {
     image: face.imageUrl ?? undefined,
     word: showLabels ? face.word ?? undefined : undefined,
@@ -500,7 +504,7 @@ export function MemoryGame() {
       {shown === null ? (
         loading && <p className="hint">Even laden…</p>
       ) : (
-        <div className="memory-grid" style={{ gridTemplateColumns: `repeat(${shown.gridSize}, 1fr)` }}>
+        <div className={`memory-grid${shown.text ? ' text-round' : ''}`} style={{ gridTemplateColumns: `repeat(${shown.gridSize}, 1fr)` }}>
           {Array.from({ length: shown.gridSize * shown.gridSize }, (_unused, index) => {
             const card = shownCard(index);
             const faceUp = card.matched || card.faceUp;
@@ -530,9 +534,13 @@ export function MemoryGame() {
                   <div className="card-back" />
                   <div className="card-face" aria-hidden={!faceUp}>
                     {!faceUp || card.face === null ? null
-                      : card.face.kind === 'word'
-                        ? <span className="card-word">{card.face.word}</span>
-                        : <WordImage src={card.face.imageUrl ?? ''} />}
+                      : card.face.kind === 'image'
+                        ? <WordImage src={card.face.imageUrl ?? ''} />
+                        : (
+                          <span className={`card-word${card.face.kind === 'meaning' ? ' card-meaning' : ''}`}>
+                            {card.face.word}
+                          </span>
+                        )}
                   </div>
                 </div>
               </button>

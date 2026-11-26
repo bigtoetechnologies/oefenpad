@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using Oefenpad.Resources.Games;
 
 namespace Oefenpad.Services.Games;
@@ -12,7 +13,7 @@ public sealed class GameContent
 
     public GameContent()
     {
-        Categories = GameData.Load<Dictionary<string, WordCategory>>("words");
+        Categories = LoadCategories();
         WordImages = GameData.Load<Dictionary<string, string>>("wordimages");
         Prepositions = GameData.Load<PrepositionsData>("prepositions");
         Verbs = GameData.Load<VerbsData>("verbs");
@@ -31,6 +32,10 @@ public sealed class GameContent
         ImageByFile = ImageItems.ToDictionary(x => x.File, StringComparer.OrdinalIgnoreCase);
     }
 
+    /// <summary>
+    /// Every word category: the picture banks of <c>words.json</c> first, then the
+    /// text-only categories of <c>words.cards.json</c> (<see cref="WordCategory.TextOnly"/>).
+    /// </summary>
     public IReadOnlyDictionary<string, WordCategory> Categories { get; }
 
     public IReadOnlyDictionary<string, string> WordImages { get; }
@@ -63,6 +68,37 @@ public sealed class GameContent
             ? name
             : key;
 
+    /// <summary>True for a category without pictures, built from the card families.</summary>
+    public bool IsTextOnly(string key) =>
+        Categories.TryGetValue(key, out var category) && category.TextOnly;
+
+    /// <summary>
+    /// Dutch word and English meaning pairs of a text-only category, with each
+    /// Dutch word and each English meaning used once. Empty for any other key.
+    /// </summary>
+    public IReadOnlyList<(string Dutch, string English)> TextPairs(string key, int maxDutchLength = int.MaxValue)
+    {
+        if (!Categories.TryGetValue(key, out var category) || !category.TextOnly)
+            return System.Array.Empty<(string, string)>();
+
+        var seenDutch = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var seenEnglish = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+        var pairs = new List<(string, string)>();
+
+        foreach (var entry in category.Words)
+        {
+            if (string.IsNullOrWhiteSpace(entry.Nl) || string.IsNullOrWhiteSpace(entry.En)) continue;
+            if (entry.Nl.Length > maxDutchLength) continue;
+            if (seenDutch.Contains(entry.Nl) || seenEnglish.Contains(entry.En)) continue;
+
+            seenDutch.Add(entry.Nl);
+            seenEnglish.Add(entry.En);
+            pairs.Add((entry.Nl, entry.En));
+        }
+
+        return pairs;
+    }
+
     public string CategoryIcon(string key) =>
         Categories.TryGetValue(key, out var category) && !string.IsNullOrWhiteSpace(category.Icon)
             ? category.Icon!
@@ -76,6 +112,8 @@ public sealed class GameContent
     {
         foreach (var (key, category) in Categories)
         {
+            if (requireImage && category.TextOnly) continue;
+
             var playable = category.Words.Count(w =>
                 !string.IsNullOrWhiteSpace(w.Nl) &&
                 (!requireImage || (!string.IsNullOrWhiteSpace(w.En) && WordImages.ContainsKey(w.En!))));
@@ -91,17 +129,45 @@ public sealed class GameContent
             : ImageItems.Where(x => x.Category == category);
 
     public string? ImageFor(WordEntry entry) =>
-        entry.Img is not null
+        entry.TextOnly
+            ? null
+            : entry.Img is not null
             ? entry.Img
             : entry.En is not null && WordImages.TryGetValue(entry.En, out var file)
                 ? file
                 : null;
+
+    /// <summary>
+    /// <c>words.json</c> as it always was, then <c>words.cards.json</c> marked
+    /// text-only. The two files never share a key: a duplicate would silently
+    /// hide one bank behind the other.
+    /// </summary>
+    private static Dictionary<string, WordCategory> LoadCategories()
+    {
+        var categories = GameData.Load<Dictionary<string, WordCategory>>("words");
+        if (!GameData.Exists("words.cards")) return categories;
+
+        foreach (var (key, category) in GameData.Load<Dictionary<string, WordCategory>>("words.cards"))
+        {
+            if (categories.ContainsKey(key))
+                throw new InvalidOperationException(
+                    $"Word category '{key}' is in both words.json and words.cards.json.");
+
+            category.TextOnly = true;
+            foreach (var entry in category.Words) entry.TextOnly = true;
+            categories[key] = category;
+        }
+
+        return categories;
+    }
 
     private List<ImageItem> BuildImageItems()
     {
         var byEnglish = new Dictionary<string, WordEntry>(StringComparer.Ordinal);
         foreach (var category in Categories.Values)
         {
+            if (category.TextOnly) continue;
+
             foreach (var entry in category.Words)
             {
                 if (entry.En is null || string.IsNullOrWhiteSpace(entry.Nl)) continue;
@@ -135,6 +201,10 @@ public sealed class WordCategory
     public string? Icon { get; set; }
     public Dictionary<string, string> Label { get; set; } = new();
     public List<WordEntry> Words { get; set; } = new();
+
+    /// <summary>No pictures: a card-family category from <c>words.cards.json</c>.</summary>
+    [JsonIgnore]
+    public bool TextOnly { get; set; }
 }
 
 public sealed class WordEntry
@@ -142,6 +212,10 @@ public sealed class WordEntry
     public string? En { get; set; }
     public string? Nl { get; set; }
     public string? Img { get; set; }
+
+    /// <summary>Belongs to a text-only category, so it never has a picture.</summary>
+    [JsonIgnore]
+    public bool TextOnly { get; set; }
 }
 
 /* ---------- prepositions ---------- */
@@ -305,4 +379,8 @@ public sealed class MetaData
     public int Frames { get; set; }
     public int Levels { get; set; }
     public int Reels { get; set; }
+
+    /// <summary>Categories and words in <c>words.cards.json</c>, counted apart from <see cref="Categories"/>.</summary>
+    public int CardCategories { get; set; }
+    public int CardWords { get; set; }
 }

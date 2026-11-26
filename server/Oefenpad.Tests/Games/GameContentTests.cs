@@ -19,8 +19,13 @@ public sealed class GameContentTests
     {
         var meta = _content.Meta;
 
-        _content.Categories.Should().HaveCount(meta.Categories);
-        _content.Categories.Values.Sum(c => c.Words.Count).Should().Be(meta.Words);
+        var words = _content.Categories.Values.Where(c => !c.TextOnly).ToList();
+        var cards = _content.Categories.Values.Where(c => c.TextOnly).ToList();
+
+        words.Should().HaveCount(meta.Categories);
+        words.Sum(c => c.Words.Count).Should().Be(meta.Words);
+        cards.Should().HaveCount(meta.CardCategories);
+        cards.Sum(c => c.Words.Count).Should().Be(meta.CardWords);
         _content.WordImages.Should().HaveCount(meta.WordImages);
         _content.Prepositions.Scenes.Should().HaveCount(meta.Scenes);
         _content.Prepositions.Frames.Should().HaveCount(meta.Frames);

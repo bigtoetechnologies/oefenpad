@@ -58,6 +58,9 @@ public sealed class WordSearchService : GameService
         "FLIKKER", "KLOOTZAK", "HUFFER", "SMEERLAP", "MIETJE", "PLEURIS", "TIEFUS", "POKKEN", "KANKER", "TRUT"
     };
 
+    /// <summary>Fewer candidates than this make a board that is not worth dealing.</summary>
+    private const int MinimumCandidates = 3;
+
     private const string FillerAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private const int MaxPlacementAttempts = 500;
 
@@ -225,6 +228,13 @@ public sealed class WordSearchService : GameService
 
     private Puzzle Generate(DifficultySpec spec, string category, string translateTo)
     {
+        // A known category with too few words for this level is refused with a
+        // reason, instead of quietly dealing a board from another category.
+        if (Content.Categories.TryGetValue(category, out var chosen) &&
+            CandidateWords(chosen, spec, translateTo).Count < MinimumCandidates)
+            throw new InvalidMoveException(
+                "Deze categorie heeft te weinig woorden voor dit niveau. Kies een ander niveau.");
+
         var puzzle = TryGenerate(spec, category, translateTo)
             ?? (category != DefaultCategory
                 ? TryGenerate(spec, DefaultCategory, translateTo)
