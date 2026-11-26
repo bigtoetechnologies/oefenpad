@@ -25,6 +25,7 @@ import html
 import json
 import os
 import sys
+import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TMP = os.path.join(ROOT, "tools", "_ww_tmp")
@@ -205,12 +206,19 @@ def page_key(band, reg):
     return f"{band.lower()}-{reg}"
 
 
+def slug_of(word):
+    """The card id: creëren -> creeren, and a second sense keeps its -sense tail.
+    Mirrors slug_of() in select.py; the scene rows are keyed by card id."""
+    plain = unicodedata.normalize("NFKD", word).encode("ascii", "ignore").decode()
+    return plain.lower().replace("'", "").replace(" ", "-")
+
+
 def load_scenes(key):
     path = os.path.join(SCENES, key + ".tsv")
     if not os.path.exists(path):
         return None
     rows = read_tsv(path)
-    return {r["verb"].strip(): r for r in rows}
+    return {slug_of(r["verb"].strip()): r for r in rows}
 
 
 def build():
@@ -245,13 +253,13 @@ def build():
             scenes = load_scenes(key)
             if scenes is None:
                 sys.exit(f"missing scene file: {SCENES}/{key}.tsv")
-            missing = [r["verb"] for r in rows if r["verb"] not in scenes]
+            missing = [r["slug"] for r in rows if r["slug"] not in scenes]
             if missing:
                 sys.exit(f"{key}: no scene for {', '.join(missing)}")
             scenes_by_key[key] = scenes
             kept[key] = []
             for r in rows:
-                scene = (scenes[r["verb"]].get("scene") or "").strip()
+                scene = (scenes[r["slug"]].get("scene") or "").strip()
                 if scene.upper().startswith("SKIP"):
                     skipped.append({
                         "verb": r["verb"], "band": r["band"],
@@ -269,7 +277,7 @@ def build():
         for reg in REGS:
             for r in kept[page_key(band, reg)]:
                 frame += 1
-                numbers[(r["band"], r["regularity"], r["verb"])] = frame
+                numbers[(r["band"], r["regularity"], r["slug"])] = frame
     total_frames = frame
 
     nav = ['<a href="index.html">overview</a>']
@@ -289,7 +297,7 @@ def build():
             scenes = scenes_by_key[key]
 
             cards = [
-                render_card(r, scenes[r["verb"]], numbers[(r["band"], r["regularity"], r["verb"])])
+                render_card(r, scenes[r["slug"]], numbers[(r["band"], r["regularity"], r["slug"])])
                 for r in rows
             ]
             page_skips = counts[key] - len(rows)
@@ -302,8 +310,8 @@ def build():
                 a = a.replace(f'href="{key}.html"', f'href="{key}.html" class="hier"')
                 navhtml.append(a)
 
-            first = numbers[(band, reg, rows[0]["verb"])]
-            last = numbers[(band, reg, rows[-1]["verb"])]
+            first = numbers[(band, reg, rows[0]["slug"])]
+            last = numbers[(band, reg, rows[-1]["slug"])]
             ranks = [r["rank"] for r in rows]
             html_out = []
             html_out.append("<!DOCTYPE html>")
@@ -318,7 +326,7 @@ def build():
             html_out.append("<header>")
             html_out.append(f"<h1>Werkwoorden — {band} · {LABEL[reg]}</h1>")
             html_out.append(f'<p class="lead">{esc(BAND_LEAD[band] + " " + PAGE_BLURB[reg])}</p>')
-            html_out.append('<p class="lead">One card per verb: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, a contrast note where a true pair exists, and the Dutch alt text. Sorted by lexicon frequency rank.</p>')
+            html_out.append('<p class="lead">One card per sense: the base form (irregular verbs also the past singular and perfect), the scene brief, the one mark that must read, the near misses, a contrast note where a true pair exists, and the Dutch alt text. A second sense that needs its own drawing has its own card, marked in brackets after the word. Sorted by lexicon frequency rank.</p>')
             html_out.append(
                 '<div class="sum">'
                 f'<span>{len(cards)} werkwoorden</span>'
@@ -398,6 +406,12 @@ def status_of(slug):
 STATUS_LABEL = {"proposal": "voorstel", "drawn": "getekend", "redraw": "opnieuw tekenen"}
 
 
+def shown_verb(r):
+    """The Dutch word as printed on the card.  A second sense adds its qualifier
+    in brackets, the way the Bijwoorden pages print alleen (enkel)."""
+    return r["verb"] if not r.get("sense") else f'{r["verb"]} ({r["sense"]})'
+
+
 def render_card(r, s, number):
     dom = r["domain"]
     lines = [
@@ -407,7 +421,7 @@ def render_card(r, s, number):
         f'<span class="framenummer" title="Frame {number}">#{number}</span>',
         (f'<img class="beeld" src="../../assets/verbs/{attr(r["slug"])}.png" alt="{attr(s["alt"].strip())}" loading="lazy">'
          if r["slug"] in DRAWN else '<div class="geenbeeld">geen beeld</div>'),
-        f'<h3 class="chunk">{esc(r["verb"])}</h3>',
+        f'<h3 class="chunk">{esc(shown_verb(r))}</h3>',
         f'<p class="gloss">{esc(r["gloss"])}</p>',
         '<p class="vlaggen">'
         f'<span>{LABEL[r["regularity"]]}</span><span>rang {r["rank"]}</span><span>{esc(dom)}</span>'
@@ -420,7 +434,7 @@ def render_card(r, s, number):
         f'<dt>Scene</dt><dd class="scene">{esc(s["scene"].strip())}</dd>',
         f'<dt>Must read</dt><dd class="must">{esc(s["must"].strip())}</dd>',
         f'<dt>Avoid</dt><dd class="avoid">{esc(s["avoid"].strip())}</dd>',
-        *contrast_lines(r["verb"]),
+        *(contrast_lines(r["verb"]) if not r.get("sense") else []),
         f'<dt>Alt text</dt><dd class="alt">{esc(s["alt"].strip())}</dd>',
         "</dl>",
         f'<p class="id">{esc(r["slug"])}.png · rang {r["rank"]} · {r["band"]} {LABEL[r["regularity"]]} · lexicon woorden.tsv</p>',
@@ -463,13 +477,13 @@ def shell(title, lead, body, current=None):
 
 def write_matrix(records, numbers):
     rows = []
-    ordered = sorted(records, key=lambda r: numbers[(r["band"], r["regularity"], r["verb"])])
+    ordered = sorted(records, key=lambda r: numbers[(r["band"], r["regularity"], r["slug"])])
     for r in ordered:
-        n = numbers[(r["band"], r["regularity"], r["verb"])]
+        n = numbers[(r["band"], r["regularity"], r["slug"])]
         rows.append(
             "<tr>"
             f'<td class="n">{n}</td>'
-            f'<td><a href="{page_key(r["band"], r["regularity"])}.html#{attr(r["slug"])}">{esc(r["verb"])}</a></td>'
+            f'<td><a href="{page_key(r["band"], r["regularity"])}.html#{attr(r["slug"])}">{esc(shown_verb(r))}</a></td>'
             f'<td>{esc(r["gloss"])}</td>'
             f'<td>{r["band"]}</td>'
             f'<td>{LABEL[r["regularity"]]}</td>'
@@ -493,7 +507,7 @@ def write_matrix(records, numbers):
         "</table>",
     ])
     with open(os.path.join(OUT, "matrix.html"), "w", encoding="utf-8", newline="\n") as fh:
-        fh.write(shell("Werkwoorden — matrix", "Every verb, its band, regularity, frequency rank and lexicon domain, in frame order.", body, "matrix"))
+        fh.write(shell("Werkwoorden — matrix", "Every card, its band, regularity, frequency rank and lexicon domain, in frame order.", body, "matrix"))
 
 
 def band_of(rank):
@@ -506,7 +520,7 @@ def band_of(rank):
 def override_rows(records):
     """Hand-set ranks, with the reason select.py gives for each."""
     rows = []
-    for r in sorted((r for r in records if r.get("rank_source") == "handmatig"), key=lambda r: r["rank"]):
+    for r in sorted((r for r in records if r.get("rank_source") == "handmatig" and not r.get("sense")), key=lambda r: r["rank"]):
         raw = r.get("raw_rank", 0)
         rows.append(
             "<tr>"
@@ -548,8 +562,8 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
             if not rows:
                 continue
             ranks = [r["rank"] for r in rows]
-            first = numbers[(band, reg, rows[0]["verb"])]
-            last = numbers[(band, reg, rows[-1]["verb"])]
+            first = numbers[(band, reg, rows[0]["slug"])]
+            last = numbers[(band, reg, rows[-1]["slug"])]
             lines.append(
                 "<tr>"
                 f'<td><a href="{key}.html">{band} · {LABEL[reg]}</a></td>'
@@ -598,12 +612,16 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
         "band page.</td></tr>",
         "</tbody></table>",
         "<h2>What these pages are</h2>",
-        "<p>One card per Dutch verb, in its base form. Each card carries a picture brief: "
+        "<p>One card per sense, in the verb's base form. Each card carries a picture brief: "
         "<em>Scene</em> (what is drawn), <em>Must read</em> (the one mark that has to be legible "
         "at thumbnail size), <em>Avoid</em> (the near-miss actions, each with the competing verb) "
         "and <em>Alt text</em> (Dutch, for a screen reader). The art is the Voorzetselpaden "
         "style: flat cobalt #2B50C8 on white, no text. The brief is in "
         "<a href=\"base-prompt.txt\">base-prompt.txt</a>.</p>",
+        "<p>A verb with a second sense that needs its own drawing gets a second card, printed with "
+        "the sense in brackets and filed under its own id: <code>dragen</code> (to carry) and "
+        "<code>dragen (kleding)</code> (to wear). The pair shows two different actions, so a game "
+        "must not serve both cards of a pair in one round.</p>",
         f"<p>{len(DRAWN)} of {total_frames} cards are drawn so far: a card counts as drawn when "
         "<code>assets/verbs/&lt;slug&gt;.png</code> exists, and the rest are proposals.</p>",
         "<p>Irregular cards also carry the forms a learner cannot predict: the past singular and the "
@@ -626,7 +644,9 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
         "a noun plural, or where wordfreq gave the verb row no score of its own, "
         "<code>select.py</code> sets the rank by hand. Each override moves the verb to another band; "
         "<code>check-verb-cards.py</code> fails one that does not. The ranks for noun plurals are "
-        "judgement, not a lemma count.</p>",
+        "judgement, not a lemma count. A second sense shares the rank of its base verb, because the "
+        "frequency list counts spellings and cannot separate senses; only one row of a pair is listed "
+        "here.</p>",
         "<table><thead><tr><th>Verb</th><th class='n'>Lexicon rank</th><th>Band</th>"
         "<th class='n'>Rank used</th><th>Band</th><th>Why</th></tr></thead><tbody>",
         "\n".join(override_rows(records)),
@@ -669,7 +689,7 @@ def write_index(pages, kept, numbers, skipped, backlog, total_frames, records):
     with open(os.path.join(OUT, "index.html"), "w", encoding="utf-8", newline="\n") as fh:
         fh.write(shell(
             "Werkwoorden — beeldplannen",
-            "One card per Dutch verb for every band from A0 to B2: the base form (irregular verbs add the past and perfect), a picture brief, and the frequency rank that put it there.",
+            "One card per sense for every band from A0 to B2: the base form (irregular verbs add the past and perfect), a picture brief, and the frequency rank that put it there.",
             body,
         ))
 
@@ -686,6 +706,7 @@ OVERLAP = [
     ("schommelen", "Voorzetselpaden", "vechten om (de schommel)"),
     ("zwaaien", "Voorzetselpaden", "zwaaien naar (four cards)"),
     ("ondertekenen", "Voorzetselpaden", "een contract ondertekenen met (five cards)"),
+    ("dragen (kleding)", "Scheidbare werkwoorden", "aantrekken, uittrekken"),
 ]
 
 

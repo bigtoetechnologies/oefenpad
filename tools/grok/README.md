@@ -69,3 +69,24 @@ request but the page's own, and the canvas is locked. Ask for the zip instead.
 The tool reads Grok's page by its button labels (`Send`, `Stop`,
 `Download <file>`, `Remove <file>`). If Grok renames them, `eval` is the way to
 look: `grok.py eval "document.title"` runs any JavaScript in the Grok tab.
+
+## Cheaper verb batches (werkwoorden)
+
+Keep one Grok chat for a whole run. The style text and the three references go in
+once; later batches send only the scenes.
+
+```sh
+grok.py verbprompt a0-irregular a0-regular a1-irregular a2-irregular --batch 1 > p1.txt   # full style text
+grok.py new && grok.py compose p1.txt && grok.py send
+grok.py verbprompt a2-irregular --batch 2 --follow > p2.txt       # scenes only
+grok.py compose p2.txt --no-refs && grok.py send                  # same chat, no new upload
+```
+
+| Flag | Use |
+|---|---|
+| `--follow` | later batch in the same chat: no style text |
+| `--refresh` | about every 3 batches: short style lock from `Docs/werkwoorden/style-lock.txt` |
+| `--avoid` | retries only; normal prompts leave out the Avoid lines |
+
+Pass several band pages to pool their undrawn cards into one batch. Retry with
+`--only <id> … --avoid --zip <new-name>` and name only what failed.

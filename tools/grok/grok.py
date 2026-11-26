@@ -5,12 +5,13 @@ Chrome must already be running with --remote-debugging-port (default 9333) and
 be signed in to grok.com; see README.md. Needs the websocket-client package.
 
     grok.py prompt BAND CHUNK [--only ID ...]    print a batch prompt built from the current cards
-    grok.py verbprompt PAGE [--batch N] [--size K]  print a prompt for one batch of werkwoorden cards
+    grok.py verbprompt PAGE... [--batch N] [--size K] [--follow|--refresh] [--avoid]\n                                               prompt for one batch of werkwoorden cards (--follow: no style text)
     grok.py new                                  open a fresh Grok chat
-    grok.py compose PROMPT [REF ...]             attach references, type the prompt
+    grok.py compose PROMPT [REF ...] [--no-refs] attach references (unless --no-refs), type the prompt
     grok.py send                                 press Send, print the chat URL
     grok.py wait ZIPNAME [--timeout S]           wait until that zip can be downloaded
     grok.py download ZIPNAME DEST                download the zip into DEST
+    grok.py usage                                print the weekly usage from Settings > Usage
     grok.py eval JS                              evaluate JavaScript in the Grok tab
 
 compose without REF attaches the three files in
@@ -108,23 +109,24 @@ def cmd_new(a):
 
 
 def cmd_compose(a):
-    refs = [Path(r).resolve() for r in a.refs] or sorted(
-        p for p in STYLE_A.glob("*.png"))
+    refs = [] if a.no_refs else ([Path(r).resolve() for r in a.refs] or sorted(
+        p for p in STYLE_A.glob("*.png")))
     for r in refs:
         if not r.is_file():
             sys.exit(f"missing reference: {r}")
     text = Path(a.prompt).read_text(encoding="utf-8")
     t = Tab()
-    root = t.call("DOM.getDocument", {"depth": 1})["root"]["nodeId"]
-    node = t.call("DOM.querySelector", {"nodeId": root, "selector": "input[type=file]"})["nodeId"]
-    t.call("DOM.setFileInputFiles", {"files": [str(r) for r in refs], "nodeId": node})
-    want = {f"Remove {r.name}" for r in refs}
-    for _ in range(40):
-        time.sleep(2)
-        if want <= set(json.loads(labels(t))):
-            break
-    else:
-        sys.exit("references did not finish uploading; nothing typed")
+    if refs:
+        root = t.call("DOM.getDocument", {"depth": 1})["root"]["nodeId"]
+        node = t.call("DOM.querySelector", {"nodeId": root, "selector": "input[type=file]"})["nodeId"]
+        t.call("DOM.setFileInputFiles", {"files": [str(r) for r in refs], "nodeId": node})
+        want = {f"Remove {r.name}" for r in refs}
+        for _ in range(40):
+            time.sleep(2)
+            if want <= set(json.loads(labels(t))):
+                break
+        else:
+            sys.exit("references did not finish uploading; nothing typed")
     t.js(f"(()=>{{{COMPOSER}.focus();return 1}})()")
     time.sleep(0.5)
     t.call("Input.insertText", {"text": text})
@@ -185,27 +187,50 @@ def cmd_download(a):
     sys.exit("download did not finish in 60 s")
 
 
+def cmd_usage(a):
+    """Read the weekly usage text from Grok's Settings > Usage (opens and leaves the dialog open)."""
+    t = Tab()
+    t.js("(()=>{const b=[...document.querySelectorAll('button')].find(x=>(x.getAttribute('aria-label')||'').startsWith('Account menu'));b&&b.click()})()")
+    time.sleep(2)
+    t.js("(()=>{const b=[...document.querySelectorAll('[role=menuitem],[data-radix-collection-item]')].find(x=>(x.innerText||'').trim()==='Settings');b&&b.click()})()")
+    time.sleep(2)
+    t.js("(()=>{const b=[...document.querySelectorAll('[role=dialog] button,[role=tab]')].find(x=>(x.innerText||'').trim()==='Usage');b&&b.click()})()")
+    time.sleep(3)
+    txt = t.js("(()=>{const d=document.querySelector('[role=dialog]');return d?d.innerText:''})()") or ""
+    import re as _re
+    m = _re.search(r"Weekly SuperGrok Limit\s*\n?\s*(\d+)%.*?Resets ([^\n]+).*?Imagine\s*\n?\s*(\d+)%.*?Chat\s*\n?\s*(\d+)%", txt, flags=_re.S)
+    print(f"weekly {m.group(1)}% used (imagine {m.group(3)}%, chat {m.group(4)}%), resets {m.group(2)}" if m else txt[:400])
+    t.call("Input.dispatchKeyEvent", {"type": "keyDown", "key": "Escape", "code": "Escape", "windowsVirtualKeyCode": 27})
+    t.call("Input.dispatchKeyEvent", {"type": "keyUp", "key": "Escape", "code": "Escape", "windowsVirtualKeyCode": 27})
+
+
 def cmd_eval(a):
     print(json.dumps(Tab().js(a.js), ensure_ascii=False))
 
 
 def cmd_verbprompt(a):
-    """Base prompt plus one batch of cards from a Docs/werkwoorden band page, e.g. a0-irregular."""
+    """Prompt for one batch of werkwoorden cards from one or more Docs/werkwoorden band pages.
+
+    Default: full style text (first message of a chat). --follow: no style text, for later batches
+    in the same chat. --refresh: short style lock. Avoid lines only with --avoid (retries).
+    """
     import re as _re, html as _html
-    page = ROOT / "Docs/werkwoorden" / (a.page.removesuffix(".html") + ".html")
-    text = page.read_text(encoding="utf-8")
     cards = []
-    for m in _re.finditer(r'<article id="([^"]+)".*?</article>', text, flags=_re.S):
-        blk = m.group(0)
-        if 'class="geenbeeld"' not in blk and not a.only:      # already drawn; --only redraws
-            continue
-        dd = {k: _html.unescape(v).strip() for k, v in _re.findall(r'<dd class="(\w+)">(.*?)</dd>', blk, flags=_re.S)}
-        verb = _html.unescape(_re.search(r'<h3 class="chunk">(.*?)</h3>', blk).group(1))
-        gloss = _html.unescape(_re.search(r'<p class="gloss">(.*?)</p>', blk).group(1))
-        cards.append({"id": m.group(1), "verb": verb, "gloss": gloss, **dd})
+    for pg in a.pages:
+        page = ROOT / "Docs/werkwoorden" / (pg.removesuffix(".html") + ".html")
+        text = page.read_text(encoding="utf-8")
+        for m in _re.finditer(r'<article id="([^"]+)".*?</article>', text, flags=_re.S):
+            blk = m.group(0)
+            if 'class="geenbeeld"' not in blk and not a.only:      # already drawn; --only redraws
+                continue
+            dd = {k: _html.unescape(v).strip() for k, v in _re.findall(r'<dd class="(\w+)">(.*?)</dd>', blk, flags=_re.S)}
+            verb = _html.unescape(_re.search(r'<h3 class="chunk">(.*?)</h3>', blk).group(1))
+            gloss = _html.unescape(_re.search(r'<p class="gloss">(.*?)</p>', blk).group(1))
+            cards.append({"id": m.group(1), "verb": verb, "gloss": gloss, **dd})
     if a.only:
         cards = [c for c in cards if c["id"] in a.only]
     else:
+        cards = [c for c in cards if c["id"] not in (a.skip or [])]
         cards = cards[(a.batch - 1) * a.size: a.batch * a.size]
     if not cards:
         sys.exit("no cards in that batch")
@@ -214,13 +239,24 @@ def cmd_verbprompt(a):
         return v if v[-1] in ".!?" else v + "."
     scenes = []
     for c in cards:
-        scenes.append(f"{c['id']}.png — {c['verb']} ({c['gloss']})\nScene: {sentence(c['scene'])}\n"
-                      f"Must read: {c['must']}\nAvoid: {c['avoid']}")
-    zipname = a.zip or f"oefenpad-ww-{a.page.removesuffix('.html')}-{a.batch}.zip"
-    base = (ROOT / "Docs/werkwoorden/base-prompt.txt").read_text(encoding="utf-8").rstrip()
-    print(base + "\n\nTHE SCENES\n" + "\n\n".join(scenes) +
-          f"\n\nDELIVERY\nReturn one zip named {zipname} containing exactly these files and nothing else:\n"
-          + ", ".join(c["id"] + ".png" for c in cards) + "\nAttach the zip to your reply.")
+        lines = [f"{c['id']}.png — {c['verb']} ({c['gloss']})", f"Scene: {sentence(c['scene'])}"]
+        if c.get("must"):
+            lines.append(f"Must read: {c['must']}")
+        if a.avoid and c.get("avoid"):
+            lines.append(f"Avoid: {c['avoid']}")
+        scenes.append("\n".join(lines))
+    tag = "+".join(p.removesuffix(".html") for p in a.pages)
+    zipname = a.zip or f"oefenpad-ww-{tag}-{a.batch}.zip"
+    d = ROOT / "Docs/werkwoorden"
+    if a.follow:
+        head = "Same style and rules as before, same attached references. Next batch, one drawing per scene."
+    elif a.refresh:
+        head = (d / "style-lock.txt").read_text(encoding="utf-8").rstrip()
+    else:
+        head = (d / "base-prompt.txt").read_text(encoding="utf-8").rstrip()
+    print(head + "\n\nSCENES\n" + "\n\n".join(scenes) +
+          f"\n\nOUTPUT\nOne zip named {zipname} with exactly: "
+          + ", ".join(c["id"] + ".png" for c in cards) + ". Attach it to your reply.")
 
 
 def main():
@@ -228,13 +264,18 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     p = sub.add_parser("prompt"); p.add_argument("band"); p.add_argument("chunk")
     p.add_argument("--only", nargs="+"); p.add_argument("--zip")
-    p = sub.add_parser("verbprompt"); p.add_argument("page"); p.add_argument("--batch", type=int, default=1)
+    p = sub.add_parser("verbprompt"); p.add_argument("pages", nargs="+"); p.add_argument("--batch", type=int, default=1)
     p.add_argument("--size", type=int, default=7); p.add_argument("--only", nargs="+"); p.add_argument("--zip")
+    p.add_argument("--follow", action="store_true"); p.add_argument("--refresh", action="store_true")
+    p.add_argument("--avoid", action="store_true")
+    p.add_argument("--skip", nargs="+", help="card ids to leave out (retries exhausted)")
     sub.add_parser("new")
     p = sub.add_parser("compose"); p.add_argument("prompt"); p.add_argument("refs", nargs="*")
+    p.add_argument("--no-refs", action="store_true", help="type only; references already in this chat")
     sub.add_parser("send")
     p = sub.add_parser("wait"); p.add_argument("zip"); p.add_argument("--timeout", type=int, default=2700)
     p = sub.add_parser("download"); p.add_argument("zip"); p.add_argument("dest")
+    sub.add_parser("usage")
     p = sub.add_parser("eval"); p.add_argument("js")
     a = ap.parse_args()
     globals()["cmd_" + a.cmd](a)

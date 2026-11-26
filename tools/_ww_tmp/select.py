@@ -208,8 +208,24 @@ DOMAIN = {
     "fluisteren": "Communication & language", "plakken": "Communication & language",
     "fluiten": "Arts & media", "toveren": "Arts & media", "fotograferen": "Arts & media", "rijgen": "Arts & media",
     "tanken": "Transport & travel", "remmen": "Transport & travel", "botsen": "Transport & travel", "blussen": "Work & jobs",
-    "pinnen": "Money & trade", "winkelen": "Money & trade",
+    	"pinnen": "Money & trade", "winkelen": "Money & trade",
 }
+
+
+# One card, one sense (decided 20 November 2026): a second sense of a verb that
+# already has a card is carded under <slug>-<sense>.  A sense earns a card only
+# when it has its own drawable action, its own English gloss, and no card of its
+# own in another family.  Band, rank and forms come from the base verb: the
+# frequency list counts spellings, so it cannot separate senses.  The scene rows
+# sit in tools/_ww_tmp/scenes/<page>.tsv under the card id.
+SECOND_SENSES = [
+	("dragen", "kleding", "to wear", "Clothing & appearance"),
+	("spelen", "muziek", "to play (an instrument)", "Arts & media"),
+	("kloppen", "eieren", "to beat (eggs)", "Food & drink"),
+	("bakken", "ei", "to fry", "Food & drink"),
+	("poetsen", "schoenen", "to polish", "Clothing & appearance"),
+	("schilderen", "muur", "to paint (a wall)", "House & home"),
+]
 
 
 def slug_of(word):
@@ -532,6 +548,17 @@ def main():
             "domain": v["domain"],
             "tier": v["tier"],
         })
+
+    # One card per sense: a second sense of a carded verb is written as its own
+    # record under <slug>-<sense>.  Band, rank and forms are the base verb's; the
+    # id, the gloss, the domain and the scene are the sense's own.  The scene row
+    # in the page TSV is keyed by the id, not by the verb.
+    for base, sense, gloss, dom in SECOND_SENSES:
+        src = next((r for r in records if r["verb"] == base), None)
+        if src is None:
+            sys.exit(f"second sense {base}-{sense}: {base} is not a card")
+        records.append({**src, "slug": f"{src['slug']}-{sense}",
+                        "gloss": gloss, "domain": dom, "sense": sense})
 
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "selection.json"), "w", encoding="utf-8") as fh:

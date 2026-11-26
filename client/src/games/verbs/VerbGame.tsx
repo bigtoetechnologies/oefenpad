@@ -26,6 +26,7 @@ interface DiscoverContent {
     image: SceneImage;
     verb: string;
     gloss: string;
+    example: string | null;
     forms: string[];
     regular: boolean;
   };
@@ -189,6 +190,7 @@ function renderStep(
           <p className="uitleg">{texts['discover-hint']}</p>
           <p className="zin">{card.verb}</p>
           <p className="betekenis" lang="en">{card.gloss}</p>
+          {card.example ? <p className="voorbeeld" lang="nl">{card.example}</p> : null}
           {card.forms.length === 0 ? null : (
             <p className="vorm" lang="nl">
               {`${texts['forms-label']}: ${card.forms.join(' · ')}`}

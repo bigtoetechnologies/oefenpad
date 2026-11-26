@@ -229,6 +229,8 @@ public sealed class VerbFrame
     public string? Past { get; set; }
     public string? Perfect { get; set; }
     public bool Regular { get; set; }
+    /// <summary>One Dutch sentence that uses the verb in this card's sense.</summary>
+    public string? Example { get; set; }
 }
 
 /* ---------- story machine ---------- */

@@ -7,10 +7,13 @@ Inputs
 Output
   server/Oefenpad.Resources/Games/Data/verbs.json
 
+  tools/_ww_tmp/examples.tsv     slug<TAB>example, one Dutch sentence per card
+
 Only cards that carry a drawing (an <img class="beeld">) are used. The game
-teaches what the verb means: one picture, the infinitive, the gloss and, for an
-irregular verb, the forms a learner must recognise. There is no example sentence
-and no grammar drill.
+teaches what the verb means: one picture, the infinitive, the gloss, one example
+sentence and, for an irregular verb, the forms a learner must recognise. There
+is no grammar drill. A second sense of a verb is its own card with its own slug
+and its own example.
 
 Run:  python tools/import-verb-game.py [--check]
 """
@@ -25,6 +28,7 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, "Docs", "werkwoorden")
 ART = os.path.join(ROOT, "assets", "verbs")
+EXAMPLES = os.path.join(ROOT, "tools", "_ww_tmp", "examples.tsv")
 OUT = os.path.join(ROOT, "server", "Oefenpad.Resources", "Games", "Data", "verbs.json")
 
 BANDS = ("a0", "a1", "a2", "b1", "b2")
@@ -45,6 +49,20 @@ def attr(attrs, name):
 def dd(body, cls):
     match = re.search(rf'<dd class="{cls}">(.*?)</dd>', body, re.S)
     return match.group(0) if match else ""
+
+
+def read_examples():
+    """slug -> example sentence, from tools/_ww_tmp/examples.tsv."""
+    out = {}
+    if not os.path.exists(EXAMPLES):
+        return out
+    with open(EXAMPLES, encoding="utf-8") as fh:
+        next(fh, None)
+        for line in fh:
+            parts = line.rstrip("\n").split("\t")
+            if len(parts) >= 2 and parts[1].strip():
+                out[parts[0].strip()] = parts[1].strip()
+    return out
 
 
 def read_cards():
@@ -90,14 +108,22 @@ def levels_for(cards):
 
     A trailing level of one would have nothing to choose between, so it is
     folded into the level before it. A level therefore holds four or five.
+    Two cards of the same verb are never in one level: a second sense is its own
+    card, and the pair would be each other's distractor.
     """
     levels = []
     for band in BANDS:
         rows = [c for c in cards if c["band"] == band]
         if not rows:
             continue
-        chunks = [rows[i:i + 4] for i in range(0, len(rows), 4)]
-        if len(chunks) > 1 and len(chunks[-1]) < 2:
+        chunks = []
+        for card in rows:
+            if (not chunks or len(chunks[-1]) == 4
+                    or any(c["verb"] == card["verb"] for c in chunks[-1])):
+                chunks.append([])
+            chunks[-1].append(card)
+        if (len(chunks) > 1 and len(chunks[-1]) < 2
+                and not {c["verb"] for c in chunks[-1]} & {c["verb"] for c in chunks[-2]}):
             chunks[-2].extend(chunks.pop())
         for number, chunk in enumerate(chunks, 1):
             levels.append({
@@ -115,6 +141,11 @@ def build():
         sys.exit("no drawn verb cards found")
 
     drawn = {c["id"] for c in cards}
+    examples = read_examples()
+    missing = [c["id"] for c in cards if c["id"] not in examples]
+    if missing:
+        print(f"{len(missing)} drawn cards have no example: {', '.join(missing[:12])}"
+              + (" ..." if len(missing) > 12 else ""))
     scenes = {}
     frames = []
     for card in cards:
@@ -135,6 +166,7 @@ def build():
             "past": card["past"],
             "perfect": card["perfect"],
             "regular": card["regular"],
+            "example": examples.get(card["id"]),
         })
 
     return {"scenes": scenes, "frames": frames, "levels": levels_for(cards)}

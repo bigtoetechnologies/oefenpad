@@ -52,6 +52,7 @@
 .game--verbs .zin {font-size:clamp(19px,2.4vw,27px);font-weight:800;letter-spacing:-.03em;text-align:center}
 .game--verbs .betekenis {font-size:14px;color:var(--grijs);text-align:center}
 .game--verbs .betekenis[lang="en"] {display:block}
+.game--verbs .voorbeeld {font-size:15px;font-style:italic;text-align:center}
 .game--verbs .vorm {
   font-size:13px;color:var(--grijs);text-align:center;
   border-top:var(--rand);padding-top:8px;

@@ -48,6 +48,14 @@ Asserts
   - a SKIP row may not give "two senses" as its reason (the family picks one
     sense and cards it), and a "Duplicate of <family>:<id>" reason must name a
     card that exists in that family
+  One card per sense (20 November 2026):
+  - a second sense of a carded verb is its own card, titled <verb> (<sense>) and
+    filed under <base id>-<sense>; it carries the base card's band and rank
+  - every sense card has its base card on the same page
+  - a verb's cards never share a gloss, a Must read or a Scene: the pair is two
+    different drawings, so the pair may not be served in one game round
+  - a sense card renders no Contrast field, and may name its own verb in Avoid
+    (that is how it points at the sibling card it must not be confused with)
 
 Run:  python3 tools/check-verb-cards.py
 """
@@ -117,6 +125,13 @@ def cards(path):
             }
         )
     return found, text
+
+
+def split_label(label):
+    """dragen (kleding) -> ("dragen", "kleding").  A second sense carries its
+    qualifier in brackets, the way the Bijwoorden pages print alleen (enkel)."""
+    m = re.match(r"^(.+?) \(([a-z]+)\)$", label)
+    return (m.group(1), m.group(2)) if m else (label, "")
 
 
 VERBS = {r["verb"] for r in json.load(open(os.path.join(TMP, "selection.json"), encoding="utf-8"))}
@@ -262,11 +277,13 @@ def negated(text, start):
     return any(NEG_RE.fullmatch(w.strip(",.;:")) for w in before)
 
 
-def content_checks(key, c, verb):
+def content_checks(key, c, verb, sense=""):
     dd = c["dd"]
     for tok in alt_leaks(verb, dd.get("alt", "")):
         err(f"{key}: {verb} alt uses a form of its own verb: {tok}")
-    if re.search(r"\(" + re.escape(verb) + r"\)", dd.get("avoid", "")):
+    # A sense card points at its own sibling card, which is the same verb; that
+    # is the one case where naming its own verb in Avoid is not a tautology.
+    if not sense and re.search(r"\(" + re.escape(verb) + r"\)", dd.get("avoid", "")):
         err(f"{key}: {verb} Avoid names its own verb as the competitor")
     strict = err if key in LENGTH_STRICT else warn
     for m in COLOUR_RE.finditer(dd.get("avoid", "")):
@@ -310,6 +327,7 @@ for band in BANDS:
 seen = {}
 by_page = {}
 glosses = {}
+card_meta = []
 for band in BANDS:
     for reg in REGS:
         key = page_key(band, reg)
@@ -330,10 +348,14 @@ for band in BANDS:
             for field in ("scene", "must", "avoid", "alt"):
                 if not c["dd"].get(field):
                     err(f"{key}: {c['data_id']} missing {field}")
-            verb = html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1))
+            verb, sense = split_label(html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1)))
             gloss = html.unescape(re.search(r'<p class="gloss">(.*?)</p>', c["block"]).group(1))
             glosses.setdefault(gloss, []).append(verb)
-            content_checks(key, c, verb)
+            card_meta.append({
+                "key": key, "id": c["data_id"], "verb": verb, "sense": sense,
+                "gloss": gloss, "dd": c["dd"],
+            })
+            content_checks(key, c, verb, sense)
             if key.endswith("irregular"):
                 f = FORMS.get(verb)
                 m = re.search(r'<span class="imp"[^>]*>(.*?)</span><span class="perf"[^>]*>(.*?)</span>', c["block"])
@@ -370,9 +392,11 @@ for verb, c in CONTRASTS.items():
 
 for key, (found, _t) in by_page.items():
     for c in found:
-        verb = html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1))
+        verb, sense = split_label(html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1)))
         shown = re.search(r'<dd class="contrast-note" data-partner="([^"]*)">(.*?)</dd>', c["block"], re.S)
-        want = CONTRASTS.get(verb)
+        # contrasts.tsv names a verb, so it belongs to the base card; a sense card
+        # is told apart from its sibling by the drawings, not by a contrast note.
+        want = None if sense else CONTRASTS.get(verb)
         if want and not shown:
             err(f"{key}: {verb} has a contrast row but no Contrast field")
         elif want and shown:
@@ -383,9 +407,37 @@ for key, (found, _t) in by_page.items():
         elif not want and shown:
             err(f"{key}: {verb} renders a Contrast field with no contrasts.tsv row")
 
+# 7b. One card per sense: a verb may carry several cards, and then the pair must
+# be two different drawings, filed under <base id>-<sense> beside its base card.
+by_verb = {}
+for m in card_meta:
+    by_verb.setdefault(m["verb"], []).append(m)
+for verb, group in by_verb.items():
+    if len(group) < 2:
+        continue
+    for i in range(len(group)):
+        for j in range(i + 1, len(group)):
+            a, b = group[i], group[j]
+            same = [f for f in ("must", "scene") if a["dd"].get(f) == b["dd"].get(f)]
+            if a["gloss"] == b["gloss"]:
+                same.append("gloss")
+            for field in same:
+                err(f"{a['id']} and {b['id']} share the same {field}: two senses need two drawings")
+    bases = [m for m in group if not m["sense"]]
+    if not bases:
+        err(f"{group[0]['key']}: {verb} has only sense cards; the base sense needs its own card")
+        continue
+    for m in group:
+        if not m["sense"]:
+            continue
+        if m["key"] not in {b["key"] for b in bases}:
+            err(f"{m['id']}: a sense card sits on {m['key']}, away from its base card")
+        if m["id"] not in {f"{b['id']}-{m['sense']}" for b in bases}:
+            err(f"{m['id']}: a sense card's id must be its base card's id plus -{m['sense']}")
+
 # A form of another B1/B2 card in an alt text (review L2: leunt on duwen, buigt
 # on ontwijken).  Warning only: the word may be the honest description.
-late = [(key, c, html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1)))
+late = [(key, c, split_label(html.unescape(re.search(r'<h3 class="chunk">(.*?)</h3>', c["block"]).group(1)))[0])
         for key, (found, _t) in by_page.items() if key[:2] in ("b1", "b2") for c in found]
 late_verbs = {v for _k, _c, v in late}
 for key, c, verb in late:

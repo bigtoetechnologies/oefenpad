@@ -255,6 +255,7 @@ public sealed class VerbService : GameService
                 ["image"] = Image(frame.Scene),
                 ["verb"] = frame.Verb,
                 ["gloss"] = frame.Gloss,
+                ["example"] = frame.Example,
                 ["forms"] = forms,
                 ["regular"] = frame.Regular
             }
