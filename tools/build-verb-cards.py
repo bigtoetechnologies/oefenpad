@@ -129,6 +129,7 @@ main{padding:18px 24px 56px}
 .kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
 .framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
 .gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.voorbeeld-en{color:var(--grijs);font-size:13px}
 .vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
 .vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
 .vormen .imp::before{content:"verleden"}
@@ -213,12 +214,28 @@ def slug_of(word):
     return plain.lower().replace("'", "").replace(" ", "-")
 
 
+_SCENES_ALL = {}
+
+
 def load_scenes(key):
-    path = os.path.join(SCENES, key + ".tsv")
-    if not os.path.exists(path):
-        return None
-    rows = read_tsv(path)
-    return {slug_of(r["verb"].strip()): r for r in rows}
+    """Scene rows for every band page, keyed by card id.
+
+    The lookup is by card id across all ten scene files, so moving a verb to
+    another band (select.py) never means moving its row: the band decides the
+    page, the scene file only holds the brief, the alt text and the example.
+    """
+    if not _SCENES_ALL:
+        for band in BANDS:
+            for reg in REGS:
+                path = os.path.join(SCENES, page_key(band, reg) + ".tsv")
+                if not os.path.exists(path):
+                    continue
+                for r in read_tsv(path):
+                    slug = slug_of(r["verb"].strip())
+                    if slug in _SCENES_ALL:
+                        sys.exit(f"scene row for {slug} is in two scene files")
+                    _SCENES_ALL[slug] = r
+    return _SCENES_ALL
 
 
 def build():
@@ -412,6 +429,15 @@ def shown_verb(r):
     return r["verb"] if not r.get("sense") else f'{r["verb"]} ({r["sense"]})'
 
 
+def example_lines(s):
+    """One Dutch sentence with its English translation, same markup as the other families."""
+    nl, en = (s.get("example_nl") or "").strip(), (s.get("example_en") or "").strip()
+    if not nl:
+        return []
+    return [f'<dt>Example</dt><dd class="voorbeeld-nl">{esc(nl)}'
+            f'<br><span class="voorbeeld-en">{esc(en)}</span></dd>']
+
+
 def render_card(r, s, number):
     dom = r["domain"]
     lines = [
@@ -436,6 +462,7 @@ def render_card(r, s, number):
         f'<dt>Avoid</dt><dd class="avoid">{esc(s["avoid"].strip())}</dd>',
         *(contrast_lines(r["verb"]) if not r.get("sense") else []),
         f'<dt>Alt text</dt><dd class="alt">{esc(s["alt"].strip())}</dd>',
+        *example_lines(s),
         "</dl>",
         f'<p class="id">{esc(r["slug"])}.png · rang {r["rank"]} · {r["band"]} {LABEL[r["regularity"]]} · lexicon woorden.tsv</p>',
         "</article>",

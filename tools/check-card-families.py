@@ -27,7 +27,7 @@ This checker reads the built pages and asserts, per card:
     Vaste uitdrukkingen also carry a register and a literal flag
 
   Werkwoorden
-    no Example, Build or Check question (a card teaches what the verb means)
+    Example has a Dutch sentence and an English gloss; no Build or Check question
     Contrast is optional; when present it must name a card in this family
     and be reciprocal.  A partner may sit in another band.
 
@@ -194,7 +194,8 @@ def main():
     for c in ww:
         for label in ("Scene", "Must read", "Avoid", "Alt text"):
             need(c, "werkwoorden", label)
-        for label in ("Example", "Build", "Check question"):
+        check_example("werkwoorden", c)
+        for label in ("Build", "Check question"):
             if label in c["fields"]:
                 err(f"werkwoorden/{c['page']}: {c['id']} carries {label}, which verb cards do not")
         if c["partners"]:

@@ -231,6 +231,8 @@ public sealed class VerbFrame
     public bool Regular { get; set; }
     /// <summary>One Dutch sentence that uses the verb in this card's sense.</summary>
     public string? Example { get; set; }
+    /// <summary>English translation of <see cref="Example"/>.</summary>
+    public string? ExampleEn { get; set; }
 }
 
 /* ---------- story machine ---------- */

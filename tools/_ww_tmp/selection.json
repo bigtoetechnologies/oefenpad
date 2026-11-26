@@ -420,7 +420,7 @@
     "tier": "A1"
   },
   {
-    "band": "A0",
+    "band": "A2",
     "regularity": "regular",
     "verb": "zorgen",
     "slug": "zorgen",
@@ -462,7 +462,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "brengen",
     "slug": "brengen",
@@ -476,7 +476,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "horen",
     "slug": "horen",
@@ -490,7 +490,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "zetten",
     "slug": "zetten",
@@ -504,7 +504,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "wachten",
     "slug": "wachten",
@@ -518,7 +518,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "lopen",
     "slug": "lopen",
@@ -532,7 +532,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "mogen",
     "slug": "mogen",
@@ -546,7 +546,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "beginnen",
     "slug": "beginnen",
@@ -560,7 +560,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "zoeken",
     "slug": "zoeken",
@@ -574,7 +574,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "halen",
     "slug": "halen",
@@ -588,7 +588,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "lezen",
     "slug": "lezen",
@@ -616,7 +616,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "praten",
     "slug": "praten",
@@ -630,7 +630,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "liggen",
     "slug": "liggen",
@@ -644,7 +644,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "volgen",
     "slug": "volgen",
@@ -686,7 +686,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "kopen",
     "slug": "kopen",
@@ -700,7 +700,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "betalen",
     "slug": "betalen",
@@ -714,7 +714,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "vergeten",
     "slug": "vergeten",
@@ -728,7 +728,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "vertellen",
     "slug": "vertellen",
@@ -742,7 +742,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "B1",
     "regularity": "regular",
     "verb": "leiden",
     "slug": "leiden",
@@ -756,7 +756,7 @@
     "tier": "open"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "vallen",
     "slug": "vallen",
@@ -770,7 +770,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "kosten",
     "slug": "kosten",
@@ -784,7 +784,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "wonen",
     "slug": "wonen",
@@ -798,7 +798,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "rijden",
     "slug": "rijden",
@@ -840,7 +840,7 @@
     "tier": "open"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "stoppen",
     "slug": "stoppen",
@@ -882,7 +882,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "kiezen",
     "slug": "kiezen",
@@ -896,7 +896,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "schrijven",
     "slug": "schrijven",
@@ -1050,7 +1050,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "genieten",
     "slug": "genieten",
@@ -1134,7 +1134,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "bieden",
     "slug": "bieden",
@@ -1162,7 +1162,7 @@
     "tier": "open"
   },
   {
-    "band": "A1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "verlaten",
     "slug": "verlaten",
@@ -1176,7 +1176,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "drinken",
     "slug": "drinken",
@@ -1190,7 +1190,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "B1",
     "regularity": "regular",
     "verb": "beschermen",
     "slug": "beschermen",
@@ -1302,7 +1302,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "slaan",
     "slug": "slaan",
@@ -1316,7 +1316,7 @@
     "tier": "open"
   },
   {
-    "band": "A1",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "vervangen",
     "slug": "vervangen",
@@ -1330,7 +1330,7 @@
     "tier": "open"
   },
   {
-    "band": "A1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "voeren",
     "slug": "voeren",
@@ -1358,7 +1358,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "verdienen",
     "slug": "verdienen",
@@ -1428,7 +1428,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "redden",
     "slug": "redden",
@@ -1442,7 +1442,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "onderzoeken",
     "slug": "onderzoeken",
@@ -1484,7 +1484,7 @@
     "tier": "A1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "lachen",
     "slug": "lachen",
@@ -1568,7 +1568,7 @@
     "tier": "B1"
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "regular",
     "verb": "dromen",
     "slug": "dromen",
@@ -1638,7 +1638,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "kleuren",
     "slug": "kleuren",
@@ -1652,12 +1652,12 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "missen",
     "slug": "missen",
     "lexeme": "missen",
-    "gloss": "to miss",
+    "gloss": "to miss (a bus)",
     "rank": 1046,
     "rank_source": "rang",
     "raw_rank": 1046,
@@ -1736,7 +1736,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "dansen",
     "slug": "dansen",
@@ -1834,7 +1834,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B2",
     "regularity": "regular",
     "verb": "leveren",
     "slug": "leveren",
@@ -1876,7 +1876,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B2",
     "regularity": "regular",
     "verb": "verwijderen",
     "slug": "verwijderen",
@@ -1890,7 +1890,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "begraven",
     "slug": "begraven",
@@ -2002,7 +2002,7 @@
     "tier": "A1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "groeien",
     "slug": "groeien",
@@ -2030,7 +2030,7 @@
     "tier": "A1"
   },
   {
-    "band": "A2",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "roepen",
     "slug": "roepen",
@@ -2044,7 +2044,7 @@
     "tier": "A1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "sterven",
     "slug": "sterven",
@@ -2072,7 +2072,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "controleren",
     "slug": "controleren",
@@ -2086,7 +2086,7 @@
     "tier": "A1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "gooien",
     "slug": "gooien",
@@ -2114,7 +2114,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "trouwen",
     "slug": "trouwen",
@@ -2142,7 +2142,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A0",
     "regularity": "regular",
     "verb": "fietsen",
     "slug": "fietsen",
@@ -2156,7 +2156,7 @@
     "tier": "A1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "koken",
     "slug": "koken",
@@ -2184,7 +2184,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "openen",
     "slug": "openen",
@@ -2198,7 +2198,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "planten",
     "slug": "planten",
@@ -2217,7 +2217,7 @@
     "verb": "starten",
     "slug": "starten",
     "lexeme": "starten",
-    "gloss": "to start (an engine)",
+    "gloss": "to start (a race)",
     "rank": 1328,
     "rank_source": "rang",
     "raw_rank": 1328,
@@ -2226,7 +2226,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "tekenen",
     "slug": "tekenen",
@@ -2240,7 +2240,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "zwemmen",
     "slug": "zwemmen",
@@ -2268,7 +2268,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "vissen",
     "slug": "vissen",
@@ -2296,7 +2296,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "bewegen",
     "slug": "bewegen",
@@ -2310,7 +2310,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "vertrekken",
     "slug": "vertrekken",
@@ -2338,7 +2338,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "stemmen",
     "slug": "stemmen",
@@ -2352,7 +2352,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "bestellen",
     "slug": "bestellen",
@@ -2366,7 +2366,7 @@
     "tier": "A1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "testen",
     "slug": "testen",
@@ -2380,7 +2380,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "lossen",
     "slug": "lossen",
@@ -2408,7 +2408,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "vluchten",
     "slug": "vluchten",
@@ -2450,7 +2450,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "verzamelen",
     "slug": "verzamelen",
@@ -2562,7 +2562,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "herstellen",
     "slug": "herstellen",
@@ -2590,7 +2590,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "studeren",
     "slug": "studeren",
@@ -2618,7 +2618,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "steunen",
     "slug": "steunen",
@@ -2632,7 +2632,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "plannen",
     "slug": "plannen",
@@ -2674,7 +2674,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "huilen",
     "slug": "huilen",
@@ -2716,7 +2716,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "rekenen",
     "slug": "rekenen",
@@ -2744,7 +2744,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B2",
     "regularity": "regular",
     "verb": "ondersteunen",
     "slug": "ondersteunen",
@@ -2758,7 +2758,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "roken",
     "slug": "roken",
@@ -2772,7 +2772,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "vangen",
     "slug": "vangen",
@@ -2814,7 +2814,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "breken",
     "slug": "breken",
@@ -2828,7 +2828,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "keren",
     "slug": "keren",
@@ -2856,7 +2856,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "springen",
     "slug": "springen",
@@ -2926,7 +2926,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "ontsnappen",
     "slug": "ontsnappen",
@@ -2940,7 +2940,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "sporten",
     "slug": "sporten",
@@ -2954,7 +2954,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "vergelijken",
     "slug": "vergelijken",
@@ -2968,7 +2968,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "wandelen",
     "slug": "wandelen",
@@ -2996,7 +2996,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "kussen",
     "slug": "kussen",
@@ -3024,7 +3024,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "verhuizen",
     "slug": "verhuizen",
@@ -3080,7 +3080,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "negeren",
     "slug": "negeren",
@@ -3150,7 +3150,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "rollen",
     "slug": "rollen",
@@ -3164,7 +3164,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "tellen",
     "slug": "tellen",
@@ -3262,7 +3262,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "rennen",
     "slug": "rennen",
@@ -3346,7 +3346,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "zwijgen",
     "slug": "zwijgen",
@@ -3360,7 +3360,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "schreeuwen",
     "slug": "schreeuwen",
@@ -3836,7 +3836,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B2",
     "regularity": "regular",
     "verb": "verplaatsen",
     "slug": "verplaatsen",
@@ -3850,7 +3850,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "weigeren",
     "slug": "weigeren",
@@ -3892,7 +3892,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B2",
     "regularity": "regular",
     "verb": "wisselen",
     "slug": "wisselen",
@@ -3948,7 +3948,7 @@
     "tier": "B1"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "rusten",
     "slug": "rusten",
@@ -3976,7 +3976,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "trappen",
     "slug": "trappen",
@@ -4004,7 +4004,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "duiken",
     "slug": "duiken",
@@ -4018,7 +4018,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "scoren",
     "slug": "scoren",
@@ -4102,7 +4102,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "filmen",
     "slug": "filmen",
@@ -4144,7 +4144,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "wassen",
     "slug": "wassen",
@@ -4172,7 +4172,7 @@
     "tier": "open"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "kloppen",
     "slug": "kloppen",
@@ -4200,7 +4200,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "bakken",
     "slug": "bakken",
@@ -4228,7 +4228,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "regular",
     "verb": "proeven",
     "slug": "proeven",
@@ -4242,7 +4242,7 @@
     "tier": "A1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "stijgen",
     "slug": "stijgen",
@@ -4284,7 +4284,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "arresteren",
     "slug": "arresteren",
@@ -4298,7 +4298,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "beschrijven",
     "slug": "beschrijven",
@@ -4368,7 +4368,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "regular",
     "verb": "huren",
     "slug": "huren",
@@ -4494,7 +4494,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "waarschuwen",
     "slug": "waarschuwen",
@@ -4550,7 +4550,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "snijden",
     "slug": "snijden",
@@ -4606,7 +4606,7 @@
     "tier": "A1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "bladeren",
     "slug": "bladeren",
@@ -4634,7 +4634,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "stelen",
     "slug": "stelen",
@@ -4662,7 +4662,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "grijpen",
     "slug": "grijpen",
@@ -4676,7 +4676,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "presenteren",
     "slug": "presenteren",
@@ -4690,7 +4690,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "schilderen",
     "slug": "schilderen",
@@ -4704,7 +4704,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "typen",
     "slug": "typen",
@@ -4746,7 +4746,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "klappen",
     "slug": "klappen",
@@ -4900,7 +4900,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "straffen",
     "slug": "straffen",
@@ -5026,7 +5026,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "verbieden",
     "slug": "verbieden",
@@ -5040,7 +5040,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "verbranden",
     "slug": "verbranden",
@@ -5054,7 +5054,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "verdelen",
     "slug": "verdelen",
@@ -5110,7 +5110,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "registreren",
     "slug": "registreren",
@@ -5124,7 +5124,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "schatten",
     "slug": "schatten",
@@ -5138,7 +5138,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "stromen",
     "slug": "stromen",
@@ -5152,7 +5152,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "verstaan",
     "slug": "verstaan",
@@ -5222,7 +5222,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "duwen",
     "slug": "duwen",
@@ -5376,7 +5376,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "parkeren",
     "slug": "parkeren",
@@ -5502,7 +5502,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "douchen",
     "slug": "douchen",
@@ -5516,7 +5516,7 @@
     "tier": ""
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "drijven",
     "slug": "drijven",
@@ -5530,7 +5530,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "ruimen",
     "slug": "ruimen",
@@ -5558,7 +5558,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "voeden",
     "slug": "voeden",
@@ -5572,7 +5572,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "winkelen",
     "slug": "winkelen",
@@ -5614,7 +5614,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "ruiken",
     "slug": "ruiken",
@@ -5628,7 +5628,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "regular",
     "verb": "ruilen",
     "slug": "ruilen",
@@ -5712,7 +5712,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "klimmen",
     "slug": "klimmen",
@@ -5754,7 +5754,7 @@
     "tier": ""
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "schakelen",
     "slug": "schakelen",
@@ -5810,7 +5810,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "repareren",
     "slug": "repareren",
@@ -5880,7 +5880,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "regular",
     "verb": "zoenen",
     "slug": "zoenen",
@@ -5922,7 +5922,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "schijnen",
     "slug": "schijnen",
@@ -5950,7 +5950,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "dringen",
     "slug": "dringen",
@@ -6132,7 +6132,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "voetballen",
     "slug": "voetballen",
@@ -6146,7 +6146,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "fotograferen",
     "slug": "fotograferen",
@@ -6314,7 +6314,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "plakken",
     "slug": "plakken",
@@ -6328,7 +6328,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "schaatsen",
     "slug": "schaatsen",
@@ -6342,7 +6342,7 @@
     "tier": ""
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "schuiven",
     "slug": "schuiven",
@@ -6384,7 +6384,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "verwelkomen",
     "slug": "verwelkomen",
@@ -6468,7 +6468,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "knippen",
     "slug": "knippen",
@@ -6664,7 +6664,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "schenken",
     "slug": "schenken",
@@ -6790,7 +6790,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "regular",
     "verb": "regenen",
     "slug": "regenen",
@@ -6832,7 +6832,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "zinken",
     "slug": "zinken",
@@ -6860,7 +6860,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "binden",
     "slug": "binden",
@@ -7014,7 +7014,7 @@
     "tier": "A1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "scheren",
     "slug": "scheren",
@@ -7056,7 +7056,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "zuigen",
     "slug": "zuigen",
@@ -7112,7 +7112,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "bijten",
     "slug": "bijten",
@@ -7168,7 +7168,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "plukken",
     "slug": "plukken",
@@ -7378,7 +7378,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "likken",
     "slug": "likken",
@@ -7448,7 +7448,7 @@
     "tier": "A1"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "dekken",
     "slug": "dekken",
@@ -7546,7 +7546,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "stoten",
     "slug": "stoten",
@@ -7714,7 +7714,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "irregular",
     "verb": "spuiten",
     "slug": "spuiten",
@@ -7770,7 +7770,7 @@
     "tier": ""
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "mengen",
     "slug": "mengen",
@@ -7784,7 +7784,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "slopen",
     "slug": "slopen",
@@ -7798,7 +7798,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "vegen",
     "slug": "vegen",
@@ -7924,7 +7924,7 @@
     "tier": "open"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "poetsen",
     "slug": "poetsen",
@@ -8064,7 +8064,7 @@
     "tier": ""
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "isoleren",
     "slug": "isoleren",
@@ -8078,7 +8078,7 @@
     "tier": "B1"
   },
   {
-    "band": "B1",
+    "band": "B2",
     "regularity": "regular",
     "verb": "kraken",
     "slug": "kraken",
@@ -8582,7 +8582,7 @@
     "tier": "B1"
   },
   {
-    "band": "B2",
+    "band": "A1",
     "regularity": "regular",
     "verb": "krabben",
     "slug": "krabben",
@@ -8596,7 +8596,7 @@
     "tier": "A1"
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "regular",
     "verb": "smeren",
     "slug": "smeren",
@@ -8680,7 +8680,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "regular",
     "verb": "knuffelen",
     "slug": "knuffelen",
@@ -8722,7 +8722,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "schoppen",
     "slug": "schoppen",
@@ -8764,7 +8764,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "persen",
     "slug": "persen",
@@ -8778,7 +8778,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "smelten",
     "slug": "smelten",
@@ -8806,7 +8806,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "regular",
     "verb": "drogen",
     "slug": "drogen",
@@ -8848,7 +8848,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "strijken",
     "slug": "strijken",
@@ -8862,7 +8862,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "fluiten",
     "slug": "fluiten",
@@ -9058,7 +9058,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "regular",
     "verb": "zweten",
     "slug": "zweten",
@@ -9212,7 +9212,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "regular",
     "verb": "hoesten",
     "slug": "hoesten",
@@ -9674,7 +9674,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "A2",
     "regularity": "irregular",
     "verb": "glijden",
     "slug": "glijden",
@@ -9996,7 +9996,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "tanken",
     "slug": "tanken",
@@ -10010,7 +10010,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "tillen",
     "slug": "tillen",
@@ -10416,7 +10416,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "bloeden",
     "slug": "bloeden",
@@ -10654,7 +10654,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "pinnen",
     "slug": "pinnen",
@@ -12180,7 +12180,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "schillen",
     "slug": "schillen",
@@ -12446,7 +12446,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "vouwen",
     "slug": "vouwen",
@@ -12502,7 +12502,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "irregular",
     "verb": "waaien",
     "slug": "waaien",
@@ -12796,7 +12796,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "blaffen",
     "slug": "blaffen",
@@ -12866,7 +12866,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "roeren",
     "slug": "roeren",
@@ -13762,7 +13762,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "fluisteren",
     "slug": "fluisteren",
@@ -13930,7 +13930,7 @@
     "tier": "open"
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "schommelen",
     "slug": "schommelen",
@@ -14126,7 +14126,7 @@
     "tier": ""
   },
   {
-    "band": "B2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "gapen",
     "slug": "gapen",
@@ -15498,7 +15498,7 @@
     "tier": ""
   },
   {
-    "band": "A1",
+    "band": "A0",
     "regularity": "irregular",
     "verb": "dragen",
     "slug": "dragen-kleding",
@@ -15528,7 +15528,7 @@
     "sense": "muziek"
   },
   {
-    "band": "A2",
+    "band": "B1",
     "regularity": "regular",
     "verb": "kloppen",
     "slug": "kloppen-eieren",
@@ -15543,7 +15543,7 @@
     "sense": "eieren"
   },
   {
-    "band": "B1",
+    "band": "A1",
     "regularity": "irregular",
     "verb": "bakken",
     "slug": "bakken-ei",
@@ -15558,7 +15558,7 @@
     "sense": "ei"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "poetsen",
     "slug": "poetsen-schoenen",
@@ -15573,7 +15573,7 @@
     "sense": "schoenen"
   },
   {
-    "band": "B1",
+    "band": "A2",
     "regularity": "regular",
     "verb": "schilderen",
     "slug": "schilderen-muur",
@@ -15586,5 +15586,215 @@
     "domain": "House & home",
     "tier": "B1",
     "sense": "muur"
+  },
+  {
+    "band": "A0",
+    "regularity": "irregular",
+    "verb": "houden",
+    "slug": "houden-van",
+    "lexeme": "houden",
+    "gloss": "to love",
+    "rank": 142,
+    "rank_source": "rang",
+    "raw_rank": 142,
+    "rank_reason": "",
+    "domain": "Movement & position",
+    "tier": "A1",
+    "sense": "van"
+  },
+  {
+    "band": "A0",
+    "regularity": "regular",
+    "verb": "zetten",
+    "slug": "zetten-koffie",
+    "lexeme": "zetten",
+    "gloss": "to make (coffee, tea)",
+    "rank": 271,
+    "rank_source": "rang",
+    "raw_rank": 271,
+    "rank_reason": "",
+    "domain": "Movement & position",
+    "tier": "A1",
+    "sense": "koffie"
+  },
+  {
+    "band": "A0",
+    "regularity": "regular",
+    "verb": "bellen",
+    "slug": "bellen-deur",
+    "lexeme": "bellen",
+    "gloss": "to ring (a doorbell)",
+    "rank": 735,
+    "rank_source": "rang",
+    "raw_rank": 735,
+    "rank_reason": "",
+    "domain": "Communication & language",
+    "tier": "A1",
+    "sense": "deur"
+  },
+  {
+    "band": "A0",
+    "regularity": "regular",
+    "verb": "stoppen",
+    "slug": "stoppen-tas",
+    "lexeme": "stoppen",
+    "gloss": "to put (into)",
+    "rank": 488,
+    "rank_source": "rang",
+    "raw_rank": 488,
+    "rank_reason": "",
+    "domain": "Movement & position",
+    "tier": "A1",
+    "sense": "tas"
+  },
+  {
+    "band": "A1",
+    "regularity": "irregular",
+    "verb": "schijnen",
+    "slug": "schijnen-zon",
+    "lexeme": "schijnen",
+    "gloss": "to shine (sun)",
+    "rank": 3438,
+    "rank_source": "rang",
+    "raw_rank": 3438,
+    "rank_reason": "",
+    "domain": "Abstract & general",
+    "tier": "A1",
+    "sense": "zon"
+  },
+  {
+    "band": "A1",
+    "regularity": "irregular",
+    "verb": "verliezen",
+    "slug": "verliezen-sleutels",
+    "lexeme": "verliezen",
+    "gloss": "to lose (an object)",
+    "rank": 841,
+    "rank_source": "rang",
+    "raw_rank": 841,
+    "rank_reason": "",
+    "domain": "Abstract & general",
+    "tier": "A1",
+    "sense": "sleutels"
+  },
+  {
+    "band": "A1",
+    "regularity": "regular",
+    "verb": "missen",
+    "slug": "missen-doel",
+    "lexeme": "missen",
+    "gloss": "to miss (a target)",
+    "rank": 1046,
+    "rank_source": "rang",
+    "raw_rank": 1046,
+    "rank_reason": "",
+    "domain": "Abstract & general",
+    "tier": "A1",
+    "sense": "doel"
+  },
+  {
+    "band": "A1",
+    "regularity": "regular",
+    "verb": "missen",
+    "slug": "missen-persoon",
+    "lexeme": "missen",
+    "gloss": "to miss (someone)",
+    "rank": 1046,
+    "rank_source": "rang",
+    "raw_rank": 1046,
+    "rank_reason": "",
+    "domain": "Abstract & general",
+    "tier": "A1",
+    "sense": "persoon"
+  },
+  {
+    "band": "A1",
+    "regularity": "regular",
+    "verb": "koken",
+    "slug": "koken-water",
+    "lexeme": "koken",
+    "gloss": "to boil",
+    "rank": 1316,
+    "rank_source": "rang",
+    "raw_rank": 1316,
+    "rank_reason": "",
+    "domain": "Food & drink",
+    "tier": "A1",
+    "sense": "water"
+  },
+  {
+    "band": "A1",
+    "regularity": "regular",
+    "verb": "zakken",
+    "slug": "zakken-examen",
+    "lexeme": "zakken",
+    "gloss": "to fail (an exam)",
+    "rank": 1519,
+    "rank_source": "rang",
+    "raw_rank": 1519,
+    "rank_reason": "",
+    "domain": "Movement & position",
+    "tier": "open",
+    "sense": "examen"
+  },
+  {
+    "band": "A1",
+    "regularity": "regular",
+    "verb": "drukken",
+    "slug": "drukken-knop",
+    "lexeme": "drukken",
+    "gloss": "to press",
+    "rank": 1880,
+    "rank_source": "rang",
+    "raw_rank": 1880,
+    "rank_reason": "",
+    "domain": "Abstract & general",
+    "tier": "open",
+    "sense": "knop"
+  },
+  {
+    "band": "A2",
+    "regularity": "regular",
+    "verb": "zwaaien",
+    "slug": "zwaaien-hand",
+    "lexeme": "zwaaien",
+    "gloss": "to wave (goodbye)",
+    "rank": 4135,
+    "rank_source": "rang",
+    "raw_rank": 4135,
+    "rank_reason": "",
+    "domain": "Movement & position",
+    "tier": "open",
+    "sense": "hand"
+  },
+  {
+    "band": "A2",
+    "regularity": "regular",
+    "verb": "schudden",
+    "slug": "schudden-hand",
+    "lexeme": "schudden",
+    "gloss": "to shake hands",
+    "rank": 3070,
+    "rank_source": "rang",
+    "raw_rank": 3070,
+    "rank_reason": "",
+    "domain": "Movement & position",
+    "tier": "open",
+    "sense": "hand"
+  },
+  {
+    "band": "A2",
+    "regularity": "irregular",
+    "verb": "schenken",
+    "slug": "schenken-drank",
+    "lexeme": "schenken",
+    "gloss": "to pour (a drink)",
+    "rank": 3894,
+    "rank_source": "rang",
+    "raw_rank": 3894,
+    "rank_reason": "",
+    "domain": "Money & trade",
+    "tier": "open",
+    "sense": "drank"
   }
 ]

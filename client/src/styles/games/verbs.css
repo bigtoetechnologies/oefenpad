@@ -53,6 +53,7 @@
 .game--verbs .betekenis {font-size:14px;color:var(--grijs);text-align:center}
 .game--verbs .betekenis[lang="en"] {display:block}
 .game--verbs .voorbeeld {font-size:15px;font-style:italic;text-align:center}
+.game--verbs .voorbeeld-en {display:block;font-size:13px;font-style:normal;color:var(--grijs)}
 .game--verbs .vorm {
   font-size:13px;color:var(--grijs);text-align:center;
   border-top:var(--rand);padding-top:8px;

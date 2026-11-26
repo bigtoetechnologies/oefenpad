@@ -7,7 +7,7 @@ Inputs
 Output
   server/Oefenpad.Resources/Games/Data/verbs.json
 
-  tools/_ww_tmp/examples.tsv     slug<TAB>example, one Dutch sentence per card
+  (the example sentence and its English translation are read from each card)
 
 Only cards that carry a drawing (an <img class="beeld">) are used. The game
 teaches what the verb means: one picture, the infinitive, the gloss, one example
@@ -28,7 +28,6 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOCS = os.path.join(ROOT, "Docs", "werkwoorden")
 ART = os.path.join(ROOT, "assets", "verbs")
-EXAMPLES = os.path.join(ROOT, "tools", "_ww_tmp", "examples.tsv")
 OUT = os.path.join(ROOT, "server", "Oefenpad.Resources", "Games", "Data", "verbs.json")
 
 BANDS = ("a0", "a1", "a2", "b1", "b2")
@@ -49,20 +48,6 @@ def attr(attrs, name):
 def dd(body, cls):
     match = re.search(rf'<dd class="{cls}">(.*?)</dd>', body, re.S)
     return match.group(0) if match else ""
-
-
-def read_examples():
-    """slug -> example sentence, from tools/_ww_tmp/examples.tsv."""
-    out = {}
-    if not os.path.exists(EXAMPLES):
-        return out
-    with open(EXAMPLES, encoding="utf-8") as fh:
-        next(fh, None)
-        for line in fh:
-            parts = line.rstrip("\n").split("\t")
-            if len(parts) >= 2 and parts[1].strip():
-                out[parts[0].strip()] = parts[1].strip()
-    return out
 
 
 def read_cards():
@@ -88,6 +73,8 @@ def read_cards():
                 alt = attr(re.search(r'<img class="beeld"([^>]*)>', body).group(1), "alt")
                 past = re.search(r'<span class="imp"[^>]*>(.*?)</span>', body, re.S)
                 perfect = re.search(r'<span class="perf"[^>]*>(.*?)</span>', body, re.S)
+                ex_nl = re.search(r'<dd class="voorbeeld-nl">(.*?)<br>', body, re.S)
+                ex_en = re.search(r'<span class="voorbeeld-en">(.*?)</span>', body, re.S)
                 partner = re.search(r'data-partner="([^"]*)"', dd(body, "contrast-note"))
                 cards.append({
                     "id": slug,
@@ -99,6 +86,8 @@ def read_cards():
                     "perfect": text(perfect.group(1)) if perfect else None,
                     "regular": not bool(past or perfect),
                     "partner": html.unescape(partner.group(1)) if partner else None,
+                    "example": text(ex_nl.group(1)) if ex_nl else None,
+                    "example_en": text(ex_en.group(1)) if ex_en else None,
                 })
     return cards
 
@@ -141,8 +130,7 @@ def build():
         sys.exit("no drawn verb cards found")
 
     drawn = {c["id"] for c in cards}
-    examples = read_examples()
-    missing = [c["id"] for c in cards if c["id"] not in examples]
+    missing = [c["id"] for c in cards if not c["example"]]
     if missing:
         print(f"{len(missing)} drawn cards have no example: {', '.join(missing[:12])}"
               + (" ..." if len(missing) > 12 else ""))
@@ -166,7 +154,8 @@ def build():
             "past": card["past"],
             "perfect": card["perfect"],
             "regular": card["regular"],
-            "example": examples.get(card["id"]),
+            "example": card["example"],
+            "exampleEn": card["example_en"],
         })
 
     return {"scenes": scenes, "frames": frames, "levels": levels_for(cards)}

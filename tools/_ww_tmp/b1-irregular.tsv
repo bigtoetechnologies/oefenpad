@@ -1,18 +1,20 @@
 verb	slug	gloss	rank	domain
-bakken	bakken	to bake	2510	Food & drink
-stijgen	stijgen	to rise	2531	Movement & position
+bieden	bieden	to offer	657	Money & trade
+vervangen	vervangen	to replace	776	Abstract & general
+begraven	begraven	to bury	1178	Abstract & general
+sterven	sterven	to die	1269	Body & health
+bewegen	bewegen	to move	1381	Movement & position
+vergelijken	vergelijken	to compare	1774	Thought & knowledge
+zwijgen	zwijgen	to be silent	2020	Communication & language
+duiken	duiken	to dive	2397	Sport & games
 verbinden	verbinden	to bandage	2534	Abstract & general
-beschrijven	beschrijven	to describe	2554	Communication & language
 strijden	strijden	to fight	2576	Abstract & general
 verzinnen	verzinnen	to invent	2581	Thought & knowledge
 voldoen	voldoen	to satisfy, to fulfil	2583	Abstract & general
 dwingen	dwingen	to force	2634	Abstract & general
 scheiden	scheiden	to separate	2649	People & relations
 ondergaan	ondergaan	to undergo	2680	Abstract & general
-snijden	snijden	to cut, to slice	2685	Food & drink
 jagen	jagen	to hunt	2709	Animals
-stelen	stelen	to steal	2724	Character & behaviour
-grijpen	grijpen	to seize	2750	Abstract & general
 overwegen	overwegen	to consider	2837	Thought & knowledge
 meten	meten	to measure	2873	Quantity & measure
 vergeven	vergeven	to forgive	2893	Character & behaviour
@@ -21,23 +23,15 @@ betrekken	betrekken	to involve	2905	Abstract & general
 treffen	treffen	to hit, to strike	2939	Abstract & general
 bevallen	bevallen	to please	2950	Body & health
 klinken	klinken	to sound	2967	Abstract & general
-verbieden	verbieden	to prohibit	2983	Abstract & general
 genezen	genezen	to cure	2997	Body & health
 graven	graven	to dig	3000	Movement & position
-verstaan	verstaan	to understand (what is said)	3035	Thought & knowledge
 verdragen	verdragen	to bear	3080	Animals
 blazen	blazen	to blow	3140	Abstract & general
 bevelen	bevelen	to order, to command	3186	Communication & language
-drijven	drijven	to float	3191	Abstract & general
 bezitten	bezitten	to possess	3227	Abstract & general
-ruiken	ruiken	to smell	3255	Body & health
 verzoeken	verzoeken	to request	3268	Communication & language
-klimmen	klimmen	to climb	3293	Movement & position
 begaan	begaan	to commit	3322	Abstract & general
-schijnen	schijnen	to shine	3438	Abstract & general
-dringen	dringen	to push in (a queue)	3463	Movement & position
 schrikken	schrikken	to be frightened	3490	Emotion & feeling
-schuiven	schuiven	to slide (something), to push	3691	Movement & position
 kruipen	kruipen	to crawl	3727	Abstract & general
 overvallen	overvallen	to raid, to hold up	3780	Law & conflict
 verraden	verraden	to betray	3802	Character & behaviour
@@ -45,26 +39,20 @@ zenden	zenden	to send	3806	Movement & position
 betreden	betreden	to enter	3815	Movement & position
 werpen	werpen	to throw	3865	Movement & position
 doorstaan	doorstaan	to endure	3874	Abstract & general
-schenken	schenken	to donate	3894	Money & trade
 wijken	wijken	to give way	4000	Abstract & general
-zinken	zinken	to sink	4023	Movement & position
-binden	binden	to bind	4031	Abstract & general
 omgeven	omgeven	to surround	4109	Abstract & general
-scheren	scheren	to shave	4118	Body & health
 spinnen	spinnen	to spin (thread); to purr	4120	Animals
-zuigen	zuigen	to suck	4134	Abstract & general
 bedragen	bedragen	to amount (to)	4138	Quantity & measure
-bijten	bijten	to bite	4142	Animals
 buigen	buigen	to bend	4144	Movement & position
 overwinnen	overwinnen	to overcome	4232	Abstract & general
 doorbreken	doorbreken	to break through	4250	Time
 ontkomen	ontkomen	to escape	4346	Movement & position
 heffen	heffen	to raise, to levy	4393	House & home
-stoten	stoten	to bump, to knock	4418	Abstract & general
 wijten	wijten	to blame	4493	Character & behaviour
 ontbijten	ontbijten	to have breakfast	4566	Food & drink
-spuiten	spuiten	to squirt, to spray	4575	Abstract & general
 ontslaan	ontslaan	to dismiss (from a job)	4688	Work & jobs
 begeven	begeven	to give way, to break down	4788	Time
 verwijten	verwijten	to blame	4837	Character & behaviour
-bakken	bakken-ei	to fry	2510	Food & drink
+smelten	smelten	to melt	5357	Nature & weather
+vouwen	vouwen	to fold	7773	House & home
+waaien	waaien	to blow (wind)	7791	Nature & weather

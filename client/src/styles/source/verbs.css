@@ -88,6 +88,7 @@ body{background:var(--papier);color:var(--inkt)}
    Nederlands, dus die regel zou de vertaling hier wegvallen. */
 .betekenis[lang="en"]{display:block}
 .voorbeeld{font-size:15px;font-style:italic;text-align:center}
+.voorbeeld-en{display:block;font-size:13px;font-style:normal;color:var(--grijs)}
 .vorm{
   font-size:13px;color:var(--grijs);text-align:center;
   border-top:var(--rand);padding-top:8px;

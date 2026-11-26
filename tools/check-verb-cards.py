@@ -85,12 +85,35 @@ warnings = []
 LENGTH_STRICT = {"b1-regular", "b2-irregular", "b2-regular"}
 
 
+def _strict_cards():
+    """Card ids written in the B1/B2 pass, found by the band their lexicon rank
+    gives (the band before the 26 Nov 2026 re-spread).  Strictness follows the
+    card, not the page it now sits on, so a card moved to another band is held
+    to the rules it was reviewed under."""
+    out = set()
+    with open(os.path.join(TMP, "selection.json"), encoding="utf-8") as fh:
+        for r in json.load(fh):
+            rank = r["rank"]
+            band = next((b for b, top in (("a0", 250), ("a1", 1000), ("a2", 2500),
+                                          ("b1", 5000), ("b2", 10000)) if rank <= top), None)
+            if band and f"{band}-{r['regularity']}" in LENGTH_STRICT:
+                out.add(r["slug"])
+    return out
+
+
 def warn(msg):
     warnings.append(msg)
 
 
 def page_key(band, reg):
     return f"{band.lower()}-{reg}"
+
+
+def slug_of(word):
+    """Same card id as select.py and build-verb-cards.py."""
+    import unicodedata
+    plain = unicodedata.normalize("NFKD", word).encode("ascii", "ignore").decode()
+    return plain.lower().replace("'", "").replace(" ", "-")
 
 
 def read_tsv(path):
@@ -285,7 +308,7 @@ def content_checks(key, c, verb, sense=""):
     # is the one case where naming its own verb in Avoid is not a tautology.
     if not sense and re.search(r"\(" + re.escape(verb) + r"\)", dd.get("avoid", "")):
         err(f"{key}: {verb} Avoid names its own verb as the competitor")
-    strict = err if key in LENGTH_STRICT else warn
+    strict = err if c["data_id"] in STRICT_CARDS else warn
     for m in COLOUR_RE.finditer(dd.get("avoid", "")):
         strict(f"{key}: {verb} avoid names a colour: {m.group(0)}")
     for m in COLOUR_NL_RE.finditer(dd.get("alt", "")):
@@ -306,7 +329,7 @@ def content_checks(key, c, verb, sense=""):
             err(f"{key}: {verb} {field} has souvenir or religious imagery: {m.group(0)}")
     # Length rules are enforced on the pages written or extended in the B1/B2
     # pass; older pages only warn, because their cards stay as reviewed.
-    report = err if key in LENGTH_STRICT else warn
+    report = err if c["data_id"] in STRICT_CARDS else warn
     if len(dd.get("scene", "").split()) < 30:
         report(f"{key}: {verb} scene is under 30 words; the brief asks for 35-55")
     if len(dd.get("alt", "").split()) > 20:
@@ -316,13 +339,22 @@ def content_checks(key, c, verb, sense=""):
 
 
 # 1. Load pages, check ids, fields, frame sequence.
-expected = {}
+# A card sits on the page of its band (selection.json); its scene row can be in
+# any scene file, so the lookup is by card id.
+STRICT_CARDS = _strict_cards()
+_scene_rows = {}
 for band in BANDS:
     for reg in REGS:
-        key = page_key(band, reg)
-        rows = read_tsv(os.path.join(SCENES, key + ".tsv"))
-        kept = [r for r in rows if not (r["scene"] or "").strip().upper().startswith("SKIP")]
-        expected[key] = len(kept)
+        path = os.path.join(SCENES, page_key(band, reg) + ".tsv")
+        if os.path.exists(path):
+            for r in read_tsv(path):
+                _scene_rows[slug_of(r["verb"].strip())] = r
+expected = {page_key(b, g): 0 for b in BANDS for g in REGS}
+with open(os.path.join(TMP, "selection.json"), encoding="utf-8") as fh:
+    for r in json.load(fh):
+        row = _scene_rows.get(r["slug"])
+        if row and not (row["scene"] or "").strip().upper().startswith("SKIP"):
+            expected[page_key(r["band"], r["regularity"])] += 1
 
 seen = {}
 by_page = {}
@@ -430,8 +462,9 @@ for verb, group in by_verb.items():
     for m in group:
         if not m["sense"]:
             continue
-        if m["key"] not in {b["key"] for b in bases}:
-            err(f"{m['id']}: a sense card sits on {m['key']}, away from its base card")
+        # A sense card sits in the band where its own sense is most common
+        # (26 Nov 2026); it only needs a base card of the same verb somewhere.
+        pass
         if m["id"] not in {f"{b['id']}-{m['sense']}" for b in bases}:
             err(f"{m['id']}: a sense card's id must be its base card's id plus -{m['sense']}")
 

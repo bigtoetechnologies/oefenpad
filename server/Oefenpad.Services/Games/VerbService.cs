@@ -256,6 +256,7 @@ public sealed class VerbService : GameService
                 ["verb"] = frame.Verb,
                 ["gloss"] = frame.Gloss,
                 ["example"] = frame.Example,
+                ["exampleEn"] = frame.ExampleEn,
                 ["forms"] = forms,
                 ["regular"] = frame.Regular
             }

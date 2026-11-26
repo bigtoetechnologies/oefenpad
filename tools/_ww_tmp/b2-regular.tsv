@@ -1,4 +1,24 @@
 verb	slug	gloss	rank	domain
+leveren	leveren	to supply	1129	Money & trade
+verwijderen	verwijderen	to remove	1138	Movement & position
+ondersteunen	ondersteunen	to support (help)	1658	Character & behaviour
+verplaatsen	verplaatsen	to move (an object)	2320	Movement & position
+wisselen	wisselen	to exchange	2353	Abstract & general
+arresteren	arresteren	to arrest	2551	Law & conflict
+waarschuwen	waarschuwen	to warn	2656	Communication & language
+presenteren	presenteren	to present	2765	Communication & language
+straffen	straffen	to punish	2937	Abstract & general
+verdelen	verdelen	to divide	2985	Movement & position
+registreren	registreren	to register	3022	Society & politics
+schatten	schatten	to estimate	3023	Quantity & measure
+stromen	stromen	to flow	3026	Movement & position
+ruimen	ruimen	to clear (snow, rubble)	3212	Nature & weather
+voeden	voeden	to feed (a baby)	3219	Food & drink
+schakelen	schakelen	to change gear	3308	Transport & travel
+verwelkomen	verwelkomen	to welcome	3702	People & relations
+slopen	slopen	to demolish	4632	Technology & tools
+isoleren	isoleren	to insulate	4806	House & home
+kraken	kraken	to crack (a nut)	4809	Food & drink
 onthullen	onthullen	to reveal	5014	Abstract & general
 solliciteren	solliciteren	to apply	5025	Work & jobs
 stichten	stichten	to found, to start	5027	Time
@@ -14,21 +34,15 @@ verstoppen	verstoppen	to hide	5161	Abstract & general
 voortbestaan	voortbestaan	to continue to exist	5164	Abstract & general
 bezichtigen	bezichtigen	to behold	5180	Abstract & general
 introduceren	introduceren	to introduce	5201	Communication & language
-krabben	krabben	to scratch	5204	Body & health
-smeren	smeren	to spread (butter)	5227	Food & drink
 voltooien	voltooien	to complete	5233	Abstract & general
 beluisteren	beluisteren	to listen	5246	Communication & language
 bewerkstelligen	bewerkstelligen	to bring about, to realize	5248	Abstract & general
 gillen	gillen	to scream	5263	Abstract & general
 importeren	importeren	to import	5268	Abstract & general
-knuffelen	knuffelen	to cuddle	5272	People & relations
 kopiëren	kopieren	to copy	5275	Abstract & general
 riskeren	riskeren	to risk	5290	Abstract & general
-schoppen	schoppen	to kick	5293	Movement & position
 stormen	stormen	to be stormy	5299	Nature & weather
 trillen	trillen	to tremble, to shake	5306	Emotion & feeling
-persen	persen	to squeeze (juice)	5351	Food & drink
-drogen	drogen	to dry	5389	House & home
 haken	haken	to catch, to hook	5394	Movement & position
 overnachten	overnachten	to stay overnight, spend the night	5417	Time
 gehoorzamen	gehoorzamen	to obey	5465	Character & behaviour
@@ -43,7 +57,6 @@ kweken	kweken	to cultivate, to grow	5550	Plants & farming
 omarmen	omarmen	to embrace, to put arms around	5558	Body & health
 printen	printen	to print	5569	Abstract & general
 zuiveren	zuiveren	to cleanse, purify	5586	Abstract & general
-zweten	zweten	to sweat	5587	Body & health
 bundelen	bundelen	to bundle	5597	Abstract & general
 evacueren	evacueren	to evacuate, to empty out	5601	Abstract & general
 luiden	luiden	to read, to be	5618	Communication & language
@@ -51,7 +64,6 @@ offeren	offeren	to sacrifice	5622	Religion & belief
 storen	storen	to disturb	5632	Abstract & general
 wijden	wijden	to devote	5641	Abstract & general
 fungeren	fungeren	to function	5653	Abstract & general
-hoesten	hoesten	to cough	5663	Body & health
 mislukken	mislukken	to fail	5675	Abstract & general
 omzeilen	omzeilen	to get around, bypass	5677	Movement & position
 presteren	presteren	to achieve	5683	Abstract & general
@@ -96,8 +108,6 @@ omvatten	omvatten	to include	6182	Abstract & general
 ontvluchten	ontvluchten	to flee	6183	Movement & position
 reiken	reiken	to reach (for)	6190	Movement & position
 stikken	stikken	to choke	6195	Abstract & general
-tanken	tanken	to fill up (fuel)	6199	Transport & travel
-tillen	tillen	to lift	6204	Movement & position
 verhuren	verhuren	to let	6208	Abstract & general
 verkeren	verkeren	to be	6209	Abstract & general
 verklappen	verklappen	to give away, reveal	6210	Movement & position
@@ -124,7 +134,6 @@ vergaderen	vergaderen	to meet	6352	People & relations
 vernielen	vernielen	to destroy	6354	Abstract & general
 adverteren	adverteren	to advertise, to place an advertisement	6364	Places & geography
 bekleden	bekleden	to occupy	6370	Work & jobs
-bloeden	bloeden	to bleed	6371	Body & health
 ontploffen	ontploffen	to explode	6401	Abstract & general
 toveren	toveren	to do magic	6415	Arts & media
 troosten	troosten	to comfort	6417	Emotion & feeling
@@ -137,7 +146,6 @@ corrigeren	corrigeren	to correct	6530	Abstract & general
 lusten	lusten	to like	6550	People & relations
 misleiden	misleiden	to mislead	6554	Abstract & general
 noteren	noteren	to note	6558	Money & trade
-pinnen	pinnen	to pay by card	6567	Money & trade
 runnen	runnen	to run	6575	Movement & position
 streamen	streamen	stream	6576	Nature & weather
 citeren	citeren	to quote	6592	Abstract & general
@@ -230,7 +238,6 @@ witwassen	witwassen	to wash up, clean especially with a whitening agent	7520	Bod
 exporteren	exporteren	to export	7538	Abstract & general
 ontcijferen	ontcijferen	to decipher, figure out	7570	Quantity & measure
 profileren	profileren	to present an image of oneself	7581	Time
-schillen	schillen	to peel	7584	Food & drink
 trachten	trachten	to attempt	7600	Abstract & general
 verbreden	verbreden	to broaden, widen	7603	Abstract & general
 behartigen	behartigen	to look after, serve, study, promote, be watchful of [a person's interests], have [a person's interests] at heart, take to heart	7619	Education & learning
@@ -265,11 +272,9 @@ veronderstellen	veronderstellen	to suppose	7896	Abstract & general
 verpakken	verpakken	to pack, to package	7897	House & home
 knutselen	knutselen	to do crafts	7903	Abstract & general
 piepen	piepen	to squeak	7909	Abstract & general
-blaffen	blaffen	to bark	7922	Animals
 schitteren	schitteren	to shine	7937	Abstract & general
 permitteren	permitteren	to afford	7948	Abstract & general
 promoveren	promoveren	promoted	7949	Abstract & general
-roeren	roeren	to stir	7950	Food & drink
 dwalen	dwalen	to wander	7960	Abstract & general
 flitsen	flitsen	to flash	7961	Abstract & general
 hinderen	hinderen	to impede, to hinder	7968	Abstract & general
@@ -324,7 +329,6 @@ brullen	brullen	to roar	8333	Animals
 knielen	knielen	to kneel	8338	Movement & position
 specialiseren	specialiseren	to specialize	8344	Abstract & general
 berusten	berusten	to resign oneself to	8346	Abstract & general
-fluisteren	fluisteren	to whisper	8347	Communication & language
 neigen	neigen	to incline	8349	Abstract & general
 ordenen	ordenen	to organise	8350	Abstract & general
 struikelen	struikelen	to trip	8374	Movement & position
@@ -333,7 +337,6 @@ vergen	vergen	to require	8390	Abstract & general
 wapperen	wapperen	to blow	8411	Abstract & general
 afbeelden	afbeelden	to depict	8425	Abstract & general
 glippen	glippen	to slip	8430	Abstract & general
-schommelen	schommelen	to swing (on a swing)	8438	Movement & position
 zuchten	zuchten	to sigh	8443	Emotion & feeling
 beschilderen	beschilderen	to paint	8449	House & home
 huwen	huwen	to marry	8461	People & relations
@@ -344,7 +347,6 @@ relativeren	relativeren	to put in perspective	8521	Movement & position
 strelen	strelen	to stroke	8522	Body & health
 wankelen	wankelen	to stagger	8525	Abstract & general
 declareren	declareren	to claim (the costs)	8527	Law & conflict
-gapen	gapen	to yawn	8529	Body & health
 kreunen	kreunen	to groan	8534	Abstract & general
 loeren	loeren	to peek	8535	Abstract & general
 mopperen	mopperen	to grumble	8536	Abstract & general

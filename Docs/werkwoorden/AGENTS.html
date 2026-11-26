@@ -232,12 +232,13 @@ them; change the source and rebuild.</p>
 <p>A verb game ships from these pages. <code>tools/import-verb-game.py</code> reads only cards that
 carry <code>class="beeld"</code>, groups the drawn verbs into levels of four or five, and writes
 <code>verbs.json</code>. The game shows one picture per verb, its infinitive and gloss, and the
-past/perfect for an irregular verb and one example sentence (tools/_ww_tmp/examples.tsv, decided 26 November 2026),
+past/perfect for an irregular verb and one example sentence with its English translation (on the card, decided 26 November 2026),
 then asks which picture belongs to the verb. There is no conjugation drill: the forms are vocabulary to recognise.
-A verb with two senses that need two pictures has two cards in one level (missen: target, person); the game never
-uses two cards of the same verb as each other's distractor.</p>
+A verb with two senses that need two pictures has two cards, each in the band where its own sense is most common (missen: bus, target, person); the game never
+uses two cards of the same verb in one level.
+Bands since 26 November 2026 follow tools/_ww_tmp/bands.tsv (lexicon level, then rank, then how concrete the action is), not the rank alone; a card keeps its slug and its drawing when its band changes.</p>
 <h2 id="the-card">The card</h2>
-<p>One card per verb, in the base form. The game card carries one example sentence (examples.tsv, not shown on this page). There is deliberately no
+<p>One card per verb, in the base form. Each card carries one example sentence with an English translation (the example_nl and example_en columns of the scene file, decided 26 November 2026). There is deliberately no
 <code>Build</code> and no <code>Check question</code>: the card teaches what the verb means.</p>
 <p><strong>Contrast is optional (decided 20 November 2026).</strong> A contrast note appears only where a
 second verb shares the drawing and differs in one visible point, and the pair is written both ways in

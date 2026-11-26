@@ -77,7 +77,7 @@ GLOSS = {
     "scheppen": "to scoop, to shovel",
     "scheiden": "to separate",
     "schijnen": "to shine",
-    "missen": "to miss",
+    "missen": "to miss (a bus)",
     "passen": "to try on / to fit",
     "verbinden": "to bandage",
     "stijgen": "to rise",
@@ -93,7 +93,7 @@ GLOSS = {
     "pakken": "to grab",
     "roepen": "to call (out)",
     "beginnen": "to begin",
-    "starten": "to start (an engine)",
+    "starten": "to start (a race)",
     "varen": "to sail (a boat, a ferry)",
     "zeilen": "to sail (with a sail)",
     "stappen": "to step",
@@ -225,7 +225,40 @@ SECOND_SENSES = [
 	("bakken", "ei", "to fry", "Food & drink"),
 	("poetsen", "schoenen", "to polish", "Clothing & appearance"),
 	("schilderen", "muur", "to paint (a wall)", "House & home"),
+	# 26 Nov 2026: the commoner or very different sense of a verb that already
+	# has a card for its other sense.  Domain None = the base verb's domain.
+	("houden", "van", "to love", None),
+	("zetten", "koffie", "to make (coffee, tea)", None),
+	("bellen", "deur", "to ring (a doorbell)", None),
+	("stoppen", "tas", "to put (into)", None),
+	("schijnen", "zon", "to shine (sun)", None),
+	("verliezen", "sleutels", "to lose (an object)", None),
+	("missen", "doel", "to miss (a target)", None),
+	("missen", "persoon", "to miss (someone)", None),
+	("koken", "water", "to boil", None),
+	("zakken", "examen", "to fail (an exam)", None),
+	("drukken", "knop", "to press", None),
+	("zwaaien", "hand", "to wave (goodbye)", None),
+	("schudden", "hand", "to shake hands", None),
+	("schenken", "drank", "to pour (a drink)", None),
 ]
+
+
+def load_band_overrides():
+    """slug -> band, from bands.tsv (26 Nov 2026 re-spread).
+
+    The lexicon rank alone put abstract verbs in the early bands and left A0 with
+    six regular verbs.  bands.tsv places a card by lexicon level, then rank, then
+    how concrete and everyday the action is; a card not listed keeps the band
+    its rank gives.  Slugs and drawings never change."""
+    path = os.path.join(HERE, "bands.tsv")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        return {r["slug"]: r["band"] for r in csv.DictReader(fh, delimiter="\t")}
+
+
+BAND_OVERRIDE = load_band_overrides()
 
 
 def slug_of(word):
@@ -535,7 +568,7 @@ def main():
     for v in sorted(selected, key=lambda v: (v["rank"])):
         b = band(v)
         records.append({
-            "band": b,
+            "band": BAND_OVERRIDE.get(v["slug"], b),
             "regularity": "irregular" if v["irregular"] else "regular",
             "verb": v["key"],
             "slug": v["slug"],
@@ -557,8 +590,9 @@ def main():
         src = next((r for r in records if r["verb"] == base), None)
         if src is None:
             sys.exit(f"second sense {base}-{sense}: {base} is not a card")
-        records.append({**src, "slug": f"{src['slug']}-{sense}",
-                        "gloss": gloss, "domain": dom, "sense": sense})
+        slug = f"{src['slug']}-{sense}"
+        records.append({**src, "slug": slug, "band": BAND_OVERRIDE.get(slug, src["band"]),
+                        "gloss": gloss, "domain": dom or src["domain"], "sense": sense})
 
     os.makedirs(OUT, exist_ok=True)
     with open(os.path.join(OUT, "selection.json"), "w", encoding="utf-8") as fh:

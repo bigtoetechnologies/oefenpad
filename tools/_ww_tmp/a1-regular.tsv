@@ -1,21 +1,9 @@
 verb	slug	gloss	rank	domain
-horen	horen	to hear	262	Abstract & general
-zetten	zetten	to put (upright)	271	Movement & position
-wachten	wachten	to wait	277	Time
-halen	halen	to fetch	306	Abstract & general
 delen	delen	to share	323	Money & trade
-praten	praten	to talk	327	Communication & language
-volgen	volgen	to follow	335	Movement & position
 proberen	proberen	to try	354	Abstract & general
 stellen	stellen	to put / to pose	367	Movement & position
-betalen	betalen	to pay	389	Money & trade
-vertellen	vertellen	to tell	415	Communication & language
-leiden	leiden	to lead	423	Abstract & general
-kosten	kosten	to cost	450	Money & trade
-wonen	wonen	to live (reside)	451	House & home
 veranderen	veranderen	to change	476	Abstract & general
 vormen	vormen	to form	479	Communication & language
-stoppen	stoppen	to stop	488	Movement & position
 kennen	kennen	to know (a person, a place)	504	Thought & knowledge
 noemen	noemen	to name	506	Abstract & general
 sturen	sturen	to send	532	Movement & position
@@ -27,18 +15,48 @@ geloven	geloven	to believe	611	Thought & knowledge
 pakken	pakken	to grab	616	Abstract & general
 bereiken	bereiken	to reach	621	Abstract & general
 bouwen	bouwen	to build	658	Abstract & general
-beschermen	beschermen	to protect	687	Abstract & general
 hopen	hopen	to hope	725	Emotion & feeling
 luisteren	luisteren	to listen	726	Communication & language
 bellen	bellen	to call (by phone)	735	Communication & language
 prijzen	prijzen	to price	759	Money & trade
-voeren	voeren	to feed (animals)	777	Movement & position
 stappen	stappen	to step	790	Movement & position
-verdienen	verdienen	to earn	805	Abstract & general
 reizen	reizen	to travel	853	Transport & travel
-redden	redden	to save (rescue)	879	Abstract & general
 vieren	vieren	to celebrate	931	People & relations
 reageren	reageren	to react	950	Abstract & general
 verbeteren	verbeteren	to improve	988	Abstract & general
 verwachten	verwachten	to expect	990	Abstract & general
-dromen	dromen	to dream	1000	Body & health
+kleuren	kleuren	to colour	1044	Arts & media
+missen	missen	to miss (a bus)	1046	Abstract & general
+dansen	dansen	to dance	1087	Arts & media
+groeien	groeien	to grow	1233	Plants & farming
+controleren	controleren	to check	1285	Thought & knowledge
+gooien	gooien	to throw	1288	Movement & position
+trouwen	trouwen	to marry	1300	People & relations
+koken	koken	to cook	1316	Food & drink
+openen	openen	to open	1320	Movement & position
+planten	planten	to plant	1321	Plants & farming
+tekenen	tekenen	to draw	1329	Arts & media
+vissen	vissen	to fish	1373	Animals
+bestellen	bestellen	to order	1405	Communication & language
+studeren	studeren	to study	1575	Education & learning
+huilen	huilen	to cry	1615	Emotion & feeling
+roken	roken	to smoke	1664	Abstract & general
+sporten	sporten	to play sport, to exercise	1771	Sport & games
+wandelen	wandelen	to go for a walk	1780	Movement & position
+kussen	kussen	to kiss (on the cheek)	1800	Abstract & general
+verhuizen	verhuizen	to move (house)	1809	House & home
+rollen	rollen	to roll	1895	Food & drink
+tellen	tellen	to count (things)	1896	Quantity & measure
+rennen	rennen	to run	1942	Movement & position
+schreeuwen	schreeuwen	to shout	2050	Communication & language
+proeven	proeven	to taste	2528	Food & drink
+huren	huren	to rent	2600	House & home
+ruilen	ruilen	to swap	3256	People & relations
+zoenen	zoenen	to kiss	3364	People & relations
+regenen	regenen	to rain	4003	Nature & weather
+krabben	krabben	to scratch	5204	Body & health
+missen	missen-doel	to miss (a target)	1046	Abstract & general
+missen	missen-persoon	to miss (someone)	1046	Abstract & general
+koken	koken-water	to boil	1316	Food & drink
+zakken	zakken-examen	to fail (an exam)	1519	Movement & position
+drukken	drukken-knop	to press	1880	Abstract & general

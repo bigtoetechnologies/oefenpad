@@ -1,17 +1,11 @@
-# Sense requests (26 Nov 2026) — not yet applied
+# Sense cards (26 Nov 2026) — rows added, drawings still to make
 
-Held back because the drawing thread owns selection.json, scenes/*.tsv and the band pages.
-Apply with select.py / scenes/a2-regular.tsv, then rerun build-verb-cards.py,
-import-verb-game.py, and add examples.tsv rows for the new slugs.
+The 14 second-sense cards and the rewritten `starten` are in select.py (SECOND_SENSES, GLOSS),
+bands.tsv and scenes/*.tsv, and appear on the band pages as "geen beeld".
 
-| slug | verb | sense | gloss | scene brief |
-|---|---|---|---|---|
-| missen (exists, drawn) | missen | bus | to miss (a bus) | keep as drawn |
-| missen-doel | missen | doel | to miss (a target) | adult just released an arrow/ball; it passes beside a clearly marked target, which is untouched |
-| missen-persoon | missen | persoon | to miss (someone) | adult alone at a table by a window, looking at a framed photo of another person, with an empty second chair |
-| starten (rewrite brief) | starten | — | to start (a race) | adult crouched in sprint starting position on starting blocks, hands on the line, head down, track ahead |
+| slug | status |
+|---|---|
+| houden-van, zetten-koffie, bellen-deur, stoppen-tas, schijnen-zon, verliezen-sleutels, missen-doel, missen-persoon, koken-water, zakken-examen, drukken-knop, zwaaien-hand, schudden-hand, schenken-drank | new, need a drawing in assets/verbs/<slug>.png |
+| starten | brief now the race sense; assets/verbs/starten.png is the old key-in-ignition drawing and is listed in redraw.tsv |
 
-Notes
-- starten currently reads "to start (an engine)" with a car-interior brief and has no drawing.
-  Replace it with the race brief above; opstarten stays the engine/computer verb.
-- Same-verb cards never share a level (importer already enforces this).
+The game importer skips cards without a drawing, so the new cards appear in the game once drawn.
