@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scheidbare werkwoorden — tekstkaarten A1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.voorbeeld-en{color:var(--grijs);font-size:13px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+.contrast-note{border-left:3px solid var(--kobalt);padding-left:8px}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Scheidbare werkwoorden — tekstkaarten A1</h1>
+<p class="lead">The first separable verbs: daily routine and the most common ones. 121 text cards: infinitive, English gloss, split form, perfect and one example sentence with its translation. No picture brief.</p>
+
+<nav class="banden"><a href="index.html">overview</a><a href="tekst-a1.html" class="hier">tekst A1</a><a href="tekst-a2.html">tekst A2</a><a href="tekst-b1.html">tekst B1</a><a href="tekst-b2.html">tekst B2</a></nav>
+</header>
+<main>
+<div class="kaarten">
+<article id="mee-eten" class="kaart" data-id="mee-eten" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 1">#1</span>
+<h3 class="chunk">mee-eten</h3>
+<p class="gloss">to join in a meal</p>
+<p class="vlaggen"><span>A1</span><span>rang 259</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">eet ... mee</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Eet je vanavond bij ons mee?<br><span class="voorbeeld-en">Are you eating with us tonight?</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft meegegeten</dd>
+</dl>
+<p class="id">mee-eten · A1 · rang 259</p>
+</article>
+<article id="voorkomen" class="kaart" data-id="voorkomen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 2">#2</span>
+<h3 class="chunk">voorkomen</h3>
+<p class="gloss">to occur, to exist</p>
+<p class="vlaggen"><span>A1</span><span>rang 478</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kom ... voor</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dit probleem komt in veel steden voor.<br><span class="voorbeeld-en">This problem occurs in many cities.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is voorgekomen</dd>
+</dl>
+<p class="id">voorkomen · A1 · rang 478</p>
+</article>
+<article id="voorstellen" class="kaart" data-id="voorstellen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 3">#3</span>
+<h3 class="chunk">voorstellen</h3>
+<p class="gloss">to introduce (someone)</p>
+<p class="vlaggen"><span>A1</span><span>rang 898</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">stel ... voor</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik stel mijn collega aan jou voor.<br><span class="voorbeeld-en">I introduce my colleague to you.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft voorgesteld</dd>
+</dl>
+<p class="id">voorstellen · A1 · rang 898</p>
+</article>
+<article id="doorgaan" class="kaart" data-id="doorgaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 4">#4</span>
+<h3 class="chunk">doorgaan</h3>
+<p class="gloss">to continue</p>
+<p class="vlaggen"><span>A1</span><span>rang 1286</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... door</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het feest gaat ondanks de regen gewoon door.<br><span class="voorbeeld-en">The party just goes ahead despite the rain.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is doorgegaan</dd>
+</dl>
+<p class="id">doorgaan · A1 · rang 1286</p>
+</article>
+<article id="oplossen" class="kaart" data-id="oplossen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 5">#5</span>
+<h3 class="chunk">oplossen</h3>
+<p class="gloss">to solve</p>
+<p class="vlaggen"><span>A1</span><span>rang 1294</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">los ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Samen lossen we het probleem snel op.<br><span class="voorbeeld-en">Together we solve the problem quickly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgelost</dd>
+</dl>
+<p class="id">oplossen · A1 · rang 1294</p>
+</article>
+<article id="opnemen" class="kaart" data-id="opnemen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 6">#6</span>
+<h3 class="chunk">opnemen</h3>
+<p class="gloss">to record (audio, video)</p>
+<p class="vlaggen"><span>A1</span><span>rang 1353</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">neem ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik neem het gesprek op mijn telefoon op.<br><span class="voorbeeld-en">I record the conversation on my phone.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgenomen</dd>
+</dl>
+<p class="id">opnemen · A1 · rang 1353</p>
+</article>
+<article id="aanvallen" class="kaart" data-id="aanvallen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 7">#7</span>
+<h3 class="chunk">aanvallen</h3>
+<p class="gloss">to attack</p>
+<p class="vlaggen"><span>A1</span><span>rang 1376</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">val ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De hond valt de postbode aan.<br><span class="voorbeeld-en">The dog attacks the postman.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangevallen</dd>
+</dl>
+<p class="id">aanvallen · A1 · rang 1376</p>
+</article>
+<article id="meedoen" class="kaart" data-id="meedoen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 8">#8</span>
+<h3 class="chunk">meedoen</h3>
+<p class="gloss">to take part</p>
+<p class="vlaggen"><span>A1</span><span>rang 1416</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">doe ... mee</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Doe je morgen ook mee met het spel?<br><span class="voorbeeld-en">Are you joining in the game tomorrow too?</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft meegedaan</dd>
+</dl>
+<p class="id">meedoen · A1 · rang 1416</p>
+</article>
+<article id="omgaan" class="kaart" data-id="omgaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 9">#9</span>
+<h3 class="chunk">omgaan</h3>
+<p class="gloss">to deal with (met)</p>
+<p class="vlaggen"><span>A1</span><span>rang 1485</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... om</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hoe ga jij met stress om?<br><span class="voorbeeld-en">How do you deal with stress?</span></dd>
+<dt>Perfect</dt><dd class="perfect">is omgegaan</dd>
+</dl>
+<p class="id">omgaan · A1 · rang 1485</p>
+</article>
+<article id="bijdragen" class="kaart" data-id="bijdragen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 10">#10</span>
+<h3 class="chunk">bijdragen</h3>
+<p class="gloss">to contribute</p>
+<p class="vlaggen"><span>A1</span><span>rang 1500</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">draag ... bij</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Iedereen draagt een beetje aan het feest bij.<br><span class="voorbeeld-en">Everyone contributes a little to the party.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft bijgedragen</dd>
+</dl>
+<p class="id">bijdragen · A1 · rang 1500</p>
+</article>
+<article id="samenwerken" class="kaart" data-id="samenwerken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 11">#11</span>
+<h3 class="chunk">samenwerken</h3>
+<p class="gloss">to work together</p>
+<p class="vlaggen"><span>A1</span><span>rang 1593</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">werk ... samen</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij werken al jaren goed samen.<br><span class="voorbeeld-en">We have worked well together for years.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft samengewerkt</dd>
+</dl>
+<p class="id">samenwerken · A1 · rang 1593</p>
+</article>
+<article id="inzetten" class="kaart" data-id="inzetten" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 12">#12</span>
+<h3 class="chunk">inzetten</h3>
+<p class="gloss">to deploy, to use</p>
+<p class="vlaggen"><span>A1</span><span>rang 1617</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">zet ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De gemeente zet meer bussen in.<br><span class="voorbeeld-en">The municipality is deploying more buses.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingezet</dd>
+</dl>
+<p class="id">inzetten · A1 · rang 1617</p>
+</article>
+<article id="nadenken" class="kaart" data-id="nadenken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 13">#13</span>
+<h3 class="chunk">nadenken</h3>
+<p class="gloss">to think (about)</p>
+<p class="vlaggen"><span>A1</span><span>rang 1717</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">denk ... na</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik denk nog even over je vraag na.<br><span class="voorbeeld-en">I will think about your question a bit longer.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft nagedacht</dd>
+</dl>
+<p class="id">nadenken · A1 · rang 1717</p>
+</article>
+<article id="uitleggen" class="kaart" data-id="uitleggen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 14">#14</span>
+<h3 class="chunk">uitleggen</h3>
+<p class="gloss">to explain</p>
+<p class="vlaggen"><span>A1</span><span>rang 1807</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">leg ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De leraar legt de regel nog een keer uit.<br><span class="voorbeeld-en">The teacher explains the rule once more.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgelegd</dd>
+</dl>
+<p class="id">uitleggen · A1 · rang 1807</p>
+</article>
+<article id="uitvoeren" class="kaart" data-id="uitvoeren" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 15">#15</span>
+<h3 class="chunk">uitvoeren</h3>
+<p class="gloss">to carry out</p>
+<p class="vlaggen"><span>A1</span><span>rang 1833</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">voer ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De monteur voert de reparatie vandaag uit.<br><span class="voorbeeld-en">The mechanic carries out the repair today.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgevoerd</dd>
+</dl>
+<p class="id">uitvoeren · A1 · rang 1833</p>
+</article>
+<article id="deelnemen" class="kaart" data-id="deelnemen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 16">#16</span>
+<h3 class="chunk">deelnemen</h3>
+<p class="gloss">to take part (aan)</p>
+<p class="vlaggen"><span>A1</span><span>rang 1845</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">neem ... deel</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij nemen aan de cursus deel.<br><span class="voorbeeld-en">They take part in the course.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft deelgenomen</dd>
+</dl>
+<p class="id">deelnemen · A1 · rang 1845</p>
+</article>
+<article id="plaatsvinden" class="kaart" data-id="plaatsvinden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 17">#17</span>
+<h3 class="chunk">plaatsvinden</h3>
+<p class="gloss">to take place</p>
+<p class="vlaggen"><span>A1</span><span>rang 1857</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">vind ... plaats</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De les vindt elke dinsdag in dat lokaal plaats.<br><span class="voorbeeld-en">The lesson takes place in that room every Tuesday.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft plaatsgevonden</dd>
+</dl>
+<p class="id">plaatsvinden · A1 · rang 1857</p>
+</article>
+<article id="aanmelden" class="kaart" data-id="aanmelden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 18">#18</span>
+<h3 class="chunk">aanmelden</h3>
+<p class="gloss">to sign up (for)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2021</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">meld ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik meld me vandaag voor de cursus aan.<br><span class="voorbeeld-en">I am signing up for the course today.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangemeld</dd>
+</dl>
+<p class="id">aanmelden · A1 · rang 2021</p>
+</article>
+<article id="aanpakken" class="kaart" data-id="aanpakken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 19">#19</span>
+<h3 class="chunk">aanpakken</h3>
+<p class="gloss">to tackle (a problem)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2096</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">pak ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">We pakken het probleem samen aan.<br><span class="voorbeeld-en">We tackle the problem together.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangepakt</dd>
+</dl>
+<p class="id">aanpakken · A1 · rang 2096</p>
+</article>
+<article id="opgeven" class="kaart" data-id="opgeven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 20">#20</span>
+<h3 class="chunk">opgeven</h3>
+<p class="gloss">to give up</p>
+<p class="vlaggen"><span>A1</span><span>rang 2230</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">geef ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik geef het niet zomaar op.<br><span class="voorbeeld-en">I do not just give up.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgegeven</dd>
+</dl>
+<p class="id">opgeven · A1 · rang 2230</p>
+</article>
+<article id="aanpassen" class="kaart" data-id="aanpassen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 21">#21</span>
+<h3 class="chunk">aanpassen</h3>
+<p class="gloss">to adjust, to adapt</p>
+<p class="vlaggen"><span>A1</span><span>rang 2245</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">pas ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik pas het recept een beetje aan.<br><span class="voorbeeld-en">I adjust the recipe a little.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangepast</dd>
+</dl>
+<p class="id">aanpassen · A1 · rang 2245</p>
+</article>
+<article id="aangeven" class="kaart" data-id="aangeven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 22">#22</span>
+<h3 class="chunk">aangeven</h3>
+<p class="gloss">to indicate</p>
+<p class="vlaggen"><span>A1</span><span>rang 2325</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">geef ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De pijl geeft de richting aan.<br><span class="voorbeeld-en">The arrow indicates the direction.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangegeven</dd>
+</dl>
+<p class="id">aangeven · A1 · rang 2325</p>
+</article>
+<article id="uitmaken" class="kaart" data-id="uitmaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 23">#23</span>
+<h3 class="chunk">uitmaken</h3>
+<p class="gloss">to matter; to break up (with)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2347</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het maakt mij niet uit waar we eten.<br><span class="voorbeeld-en">It does not matter to me where we eat.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgemaakt</dd>
+</dl>
+<p class="id">uitmaken · A1 · rang 2347</p>
+</article>
+<article id="voorbereiden" class="kaart" data-id="voorbereiden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 24">#24</span>
+<h3 class="chunk">voorbereiden</h3>
+<p class="gloss">to prepare</p>
+<p class="vlaggen"><span>A1</span><span>rang 2350</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">bereid ... voor</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik bereid me goed op het examen voor.<br><span class="voorbeeld-en">I prepare well for the exam.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft voorbereid</dd>
+</dl>
+<p class="id">voorbereiden · A1 · rang 2350</p>
+</article>
+<article id="ophouden" class="kaart" data-id="ophouden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 25">#25</span>
+<h3 class="chunk">ophouden</h3>
+<p class="gloss">to stop, to cease</p>
+<p class="vlaggen"><span>A1</span><span>rang 2373</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">houd ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De regen houdt maar niet op.<br><span class="voorbeeld-en">The rain just does not stop.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is opgehouden</dd>
+</dl>
+<p class="id">ophouden · A1 · rang 2373</p>
+</article>
+<article id="toegeven" class="kaart" data-id="toegeven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 26">#26</span>
+<h3 class="chunk">toegeven</h3>
+<p class="gloss">to admit</p>
+<p class="vlaggen"><span>A1</span><span>rang 2381</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">geef ... toe</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik geef graag toe dat ik fout zat.<br><span class="voorbeeld-en">I gladly admit that I was wrong.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft toegegeven</dd>
+</dl>
+<p class="id">toegeven · A1 · rang 2381</p>
+</article>
+<article id="terugkeren" class="kaart" data-id="terugkeren" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 27">#27</span>
+<h3 class="chunk">terugkeren</h3>
+<p class="gloss">to return</p>
+<p class="vlaggen"><span>A1</span><span>rang 2413</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">keer ... terug</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn vader keert morgen uit Spanje terug.<br><span class="voorbeeld-en">My father returns from Spain tomorrow.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is teruggekeerd</dd>
+</dl>
+<p class="id">terugkeren · A1 · rang 2413</p>
+</article>
+<article id="uitkomen" class="kaart" data-id="uitkomen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 28">#28</span>
+<h3 class="chunk">uitkomen</h3>
+<p class="gloss">to come out (released)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2417</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kom ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De nieuwe film komt volgende week uit.<br><span class="voorbeeld-en">The new film comes out next week.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is uitgekomen</dd>
+</dl>
+<p class="id">uitkomen · A1 · rang 2417</p>
+</article>
+<article id="opstellen" class="kaart" data-id="opstellen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 29">#29</span>
+<h3 class="chunk">opstellen</h3>
+<p class="gloss">to draw up (a document)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2452</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">stel ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij stellen samen een lijst op.<br><span class="voorbeeld-en">Together we draw up a list.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgesteld</dd>
+</dl>
+<p class="id">opstellen · A1 · rang 2452</p>
+</article>
+<article id="aanvragen" class="kaart" data-id="aanvragen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 30">#30</span>
+<h3 class="chunk">aanvragen</h3>
+<p class="gloss">to apply for (a document)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2547</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">vraag ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik vraag een nieuw paspoort aan.<br><span class="voorbeeld-en">I am applying for a new passport.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangevraagd</dd>
+</dl>
+<p class="id">aanvragen · A1 · rang 2547</p>
+</article>
+<article id="uitgaan" class="kaart" data-id="uitgaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 31">#31</span>
+<h3 class="chunk">uitgaan</h3>
+<p class="gloss">to go out (socially)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2578</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij gaan zaterdagavond met vrienden uit.<br><span class="voorbeeld-en">We are going out with friends on Saturday evening.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is uitgegaan</dd>
+</dl>
+<p class="id">uitgaan · A1 · rang 2578</p>
+</article>
+<article id="overkomen" class="kaart" data-id="overkomen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 32">#32</span>
+<h3 class="chunk">overkomen</h3>
+<p class="gloss">to come across (as)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2607</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kom ... over</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij komt altijd erg vriendelijk over.<br><span class="voorbeeld-en">He always comes across as very friendly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is overgekomen</dd>
+</dl>
+<p class="id">overkomen · A1 · rang 2607</p>
+</article>
+<article id="overnemen" class="kaart" data-id="overnemen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 33">#33</span>
+<h3 class="chunk">overnemen</h3>
+<p class="gloss">to take over</p>
+<p class="vlaggen"><span>A1</span><span>rang 2608</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">neem ... over</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik neem het werk van mijn collega over.<br><span class="voorbeeld-en">I take over my colleague's work.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft overgenomen</dd>
+</dl>
+<p class="id">overnemen · A1 · rang 2608</p>
+</article>
+<article id="inschrijven" class="kaart" data-id="inschrijven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 34">#34</span>
+<h3 class="chunk">inschrijven</h3>
+<p class="gloss">to register, to enrol</p>
+<p class="vlaggen"><span>A1</span><span>rang 2753</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">schrijf ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik schrijf me voor de cursus in.<br><span class="voorbeeld-en">I am enrolling for the course.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingeschreven</dd>
+</dl>
+<p class="id">inschrijven · A1 · rang 2753</p>
+</article>
+<article id="opbouwen" class="kaart" data-id="opbouwen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 35">#35</span>
+<h3 class="chunk">opbouwen</h3>
+<p class="gloss">to build up</p>
+<p class="vlaggen"><span>A1</span><span>rang 2761</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">bouw ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze bouwen een nieuw leven in Utrecht op.<br><span class="voorbeeld-en">They are building up a new life in Utrecht.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgebouwd</dd>
+</dl>
+<p class="id">opbouwen · A1 · rang 2761</p>
+</article>
+<article id="uitzien" class="kaart" data-id="uitzien" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 36">#36</span>
+<h3 class="chunk">uitzien</h3>
+<p class="gloss">to look forward to (naar)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2769</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">zie ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik zie erg naar de zomer uit.<br><span class="voorbeeld-en">I am really looking forward to the summer.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgezien</dd>
+</dl>
+<p class="id">uitzien · A1 · rang 2769</p>
+</article>
+<article id="opleveren" class="kaart" data-id="opleveren" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 37">#37</span>
+<h3 class="chunk">opleveren</h3>
+<p class="gloss">to yield, to result in</p>
+<p class="vlaggen"><span>A1</span><span>rang 2836</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">lever ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het project levert veel geld op.<br><span class="voorbeeld-en">The project yields a lot of money.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgeleverd</dd>
+</dl>
+<p class="id">opleveren · A1 · rang 2836</p>
+</article>
+<article id="uitzoeken" class="kaart" data-id="uitzoeken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 38">#38</span>
+<h3 class="chunk">uitzoeken</h3>
+<p class="gloss">to find out, to sort out</p>
+<p class="vlaggen"><span>A1</span><span>rang 2844</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">zoek ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik zoek het vanmiddag voor je uit.<br><span class="voorbeeld-en">I will find it out for you this afternoon.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgezocht</dd>
+</dl>
+<p class="id">uitzoeken · A1 · rang 2844</p>
+</article>
+<article id="inzien" class="kaart" data-id="inzien" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 39">#39</span>
+<h3 class="chunk">inzien</h3>
+<p class="gloss">to realise</p>
+<p class="vlaggen"><span>A1</span><span>rang 2867</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">zie ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik zie mijn fout nu wel in.<br><span class="voorbeeld-en">I do see my mistake now.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingezien</dd>
+</dl>
+<p class="id">inzien · A1 · rang 2867</p>
+</article>
+<article id="instellen" class="kaart" data-id="instellen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 40">#40</span>
+<h3 class="chunk">instellen</h3>
+<p class="gloss">to set (a device)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2965</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">stel ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik stel de wekker op zeven uur in.<br><span class="voorbeeld-en">I set the alarm clock for seven o'clock.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingesteld</dd>
+</dl>
+<p class="id">instellen · A1 · rang 2965</p>
+</article>
+<article id="oproepen" class="kaart" data-id="oproepen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 41">#41</span>
+<h3 class="chunk">oproepen</h3>
+<p class="gloss">to call on (people)</p>
+<p class="vlaggen"><span>A1</span><span>rang 2971</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">roep ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De burgemeester roept de inwoners tot kalmte op.<br><span class="voorbeeld-en">The mayor calls on the residents to stay calm.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgeroepen</dd>
+</dl>
+<p class="id">oproepen · A1 · rang 2971</p>
+</article>
+<article id="optreden" class="kaart" data-id="optreden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 42">#42</span>
+<h3 class="chunk">optreden</h3>
+<p class="gloss">to perform (on stage)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3000</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">treed ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De band treedt zaterdag in ons dorp op.<br><span class="voorbeeld-en">The band performs in our village on Saturday.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is opgetreden</dd>
+</dl>
+<p class="id">optreden · A1 · rang 3000</p>
+</article>
+<article id="afwachten" class="kaart" data-id="afwachten" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 43">#43</span>
+<h3 class="chunk">afwachten</h3>
+<p class="gloss">to wait for</p>
+<p class="vlaggen"><span>A1</span><span>rang 3045</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">wacht ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik wacht het antwoord rustig af.<br><span class="voorbeeld-en">I calmly wait for the answer.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgewacht</dd>
+</dl>
+<p class="id">afwachten · A1 · rang 3045</p>
+</article>
+<article id="indienen" class="kaart" data-id="indienen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 44">#44</span>
+<h3 class="chunk">indienen</h3>
+<p class="gloss">to submit (a document)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3060</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">dien ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze dient de aanvraag vandaag in.<br><span class="voorbeeld-en">She submits the application today.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingediend</dd>
+</dl>
+<p class="id">indienen · A1 · rang 3060</p>
+</article>
+<article id="uitgeven" class="kaart" data-id="uitgeven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 45">#45</span>
+<h3 class="chunk">uitgeven</h3>
+<p class="gloss">to spend (money)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3076</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">geef ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij geeft veel geld aan kleren uit.<br><span class="voorbeeld-en">He spends a lot of money on clothes.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgegeven</dd>
+</dl>
+<p class="id">uitgeven · A1 · rang 3076</p>
+</article>
+<article id="doorbrengen" class="kaart" data-id="doorbrengen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 46">#46</span>
+<h3 class="chunk">doorbrengen</h3>
+<p class="gloss">to spend (time)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3099</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">breng ... door</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij brengen de zomer in Frankrijk door.<br><span class="voorbeeld-en">We spend the summer in France.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft doorgebracht</dd>
+</dl>
+<p class="id">doorbrengen · A1 · rang 3099</p>
+</article>
+<article id="afnemen" class="kaart" data-id="afnemen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 47">#47</span>
+<h3 class="chunk">afnemen</h3>
+<p class="gloss">to decrease</p>
+<p class="vlaggen"><span>A1</span><span>rang 3135</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">neem ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het aantal bezoekers neemt elk jaar af.<br><span class="voorbeeld-en">The number of visitors decreases every year.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is afgenomen</dd>
+</dl>
+<p class="id">afnemen · A1 · rang 3135</p>
+</article>
+<article id="afvragen" class="kaart" data-id="afvragen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 48">#48</span>
+<h3 class="chunk">afvragen</h3>
+<p class="gloss">to wonder</p>
+<p class="vlaggen"><span>A1</span><span>rang 3136</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">vraag me ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik vraag me af waar hij is.<br><span class="voorbeeld-en">I wonder where he is.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgevraagd</dd>
+</dl>
+<p class="id">afvragen · A1 · rang 3136</p>
+</article>
+<article id="innemen" class="kaart" data-id="innemen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 49">#49</span>
+<h3 class="chunk">innemen</h3>
+<p class="gloss">to take (medicine)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3201</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">neem ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik neem elke ochtend een pil in.<br><span class="voorbeeld-en">I take a pill every morning.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingenomen</dd>
+</dl>
+<p class="id">innemen · A1 · rang 3201</p>
+</article>
+<article id="uitoefenen" class="kaart" data-id="uitoefenen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 50">#50</span>
+<h3 class="chunk">uitoefenen</h3>
+<p class="gloss">to practise (a profession)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3263</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">oefen ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij oefent het beroep van arts uit.<br><span class="voorbeeld-en">She practises the profession of doctor.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgeoefend</dd>
+</dl>
+<p class="id">uitoefenen · A1 · rang 3263</p>
+</article>
+<article id="ingaan" class="kaart" data-id="ingaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 51">#51</span>
+<h3 class="chunk">ingaan</h3>
+<p class="gloss">to take effect</p>
+<p class="vlaggen"><span>A1</span><span>rang 3291</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De nieuwe regels gaan morgen in.<br><span class="voorbeeld-en">The new rules take effect tomorrow.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is ingegaan</dd>
+</dl>
+<p class="id">ingaan · A1 · rang 3291</p>
+</article>
+<article id="toestaan" class="kaart" data-id="toestaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 52">#52</span>
+<h3 class="chunk">toestaan</h3>
+<p class="gloss">to allow</p>
+<p class="vlaggen"><span>A1</span><span>rang 3311</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">sta ... toe</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De school staat geen telefoons in de klas toe.<br><span class="voorbeeld-en">The school does not allow phones in class.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft toegestaan</dd>
+</dl>
+<p class="id">toestaan · A1 · rang 3311</p>
+</article>
+<article id="volhouden" class="kaart" data-id="volhouden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 53">#53</span>
+<h3 class="chunk">volhouden</h3>
+<p class="gloss">to keep it up</p>
+<p class="vlaggen"><span>A1</span><span>rang 3313</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">houd ... vol</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik houd het niet langer vol.<br><span class="voorbeeld-en">I cannot keep this up any longer.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft volgehouden</dd>
+</dl>
+<p class="id">volhouden · A1 · rang 3313</p>
+</article>
+<article id="doorlopen" class="kaart" data-id="doorlopen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 54">#54</span>
+<h3 class="chunk">doorlopen</h3>
+<p class="gloss">to keep on walking</p>
+<p class="vlaggen"><span>A1</span><span>rang 3329</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">loop ... door</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik loop even door naar de bushalte.<br><span class="voorbeeld-en">I will keep walking to the bus stop.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is doorgelopen</dd>
+</dl>
+<p class="id">doorlopen · A1 · rang 3329</p>
+</article>
+<article id="meemaken" class="kaart" data-id="meemaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 55">#55</span>
+<h3 class="chunk">meemaken</h3>
+<p class="gloss">to experience, to live through</p>
+<p class="vlaggen"><span>A1</span><span>rang 3341</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... mee</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik maak op mijn werk veel mee.<br><span class="voorbeeld-en">I experience a lot at work.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft meegemaakt</dd>
+</dl>
+<p class="id">meemaken · A1 · rang 3341</p>
+</article>
+<article id="toepassen" class="kaart" data-id="toepassen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 56">#56</span>
+<h3 class="chunk">toepassen</h3>
+<p class="gloss">to apply (a rule, method)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3356</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">pas ... toe</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De leraar past een nieuwe methode toe.<br><span class="voorbeeld-en">The teacher applies a new method.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft toegepast</dd>
+</dl>
+<p class="id">toepassen · A1 · rang 3356</p>
+</article>
+<article id="oplopen" class="kaart" data-id="oplopen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 57">#57</span>
+<h3 class="chunk">oplopen</h3>
+<p class="gloss">to walk up, to rise</p>
+<p class="vlaggen"><span>A1</span><span>rang 3431</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">loop ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De spanning loopt steeds verder op.<br><span class="voorbeeld-en">The tension keeps rising.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is opgelopen</dd>
+</dl>
+<p class="id">oplopen · A1 · rang 3431</p>
+</article>
+<article id="uitbrengen" class="kaart" data-id="uitbrengen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 58">#58</span>
+<h3 class="chunk">uitbrengen</h3>
+<p class="gloss">to release (a product)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3441</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">breng ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het bedrijf brengt volgende week een nieuwe telefoon uit.<br><span class="voorbeeld-en">The company releases a new phone next week.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgebracht</dd>
+</dl>
+<p class="id">uitbrengen · A1 · rang 3441</p>
+</article>
+<article id="afleggen" class="kaart" data-id="afleggen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 59">#59</span>
+<h3 class="chunk">afleggen</h3>
+<p class="gloss">to take (an exam), to cover</p>
+<p class="vlaggen"><span>A1</span><span>rang 3514</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">leg ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij legt vandaag zijn rijexamen af.<br><span class="voorbeeld-en">He takes his driving test today.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgelegd</dd>
+</dl>
+<p class="id">afleggen · A1 · rang 3514</p>
+</article>
+<article id="afspreken" class="kaart" data-id="afspreken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 60">#60</span>
+<h3 class="chunk">afspreken</h3>
+<p class="gloss">to arrange to meet</p>
+<p class="vlaggen"><span>A1</span><span>rang 3515</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">spreek ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij spreken zaterdag om tien uur af.<br><span class="voorbeeld-en">We are meeting on Saturday at ten.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgesproken</dd>
+</dl>
+<p class="id">afspreken · A1 · rang 3515</p>
+</article>
+<article id="invoeren" class="kaart" data-id="invoeren" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 61">#61</span>
+<h3 class="chunk">invoeren</h3>
+<p class="gloss">to enter (data), to introduce</p>
+<p class="vlaggen"><span>A1</span><span>rang 3532</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">voer ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze voert haar gegevens in het formulier in.<br><span class="voorbeeld-en">She enters her details in the form.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingevoerd</dd>
+</dl>
+<p class="id">invoeren · A1 · rang 3532</p>
+</article>
+<article id="ingrijpen" class="kaart" data-id="ingrijpen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 62">#62</span>
+<h3 class="chunk">ingrijpen</h3>
+<p class="gloss">to intervene</p>
+<p class="vlaggen"><span>A1</span><span>rang 3572</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">grijp ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De politie grijpt snel in.<br><span class="voorbeeld-en">The police intervene quickly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingegrepen</dd>
+</dl>
+<p class="id">ingrijpen · A1 · rang 3572</p>
+</article>
+<article id="na-apen" class="kaart" data-id="na-apen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 63">#63</span>
+<h3 class="chunk">na-apen</h3>
+<p class="gloss">to ape, to copy</p>
+<p class="vlaggen"><span>A1</span><span>rang 3582</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">aap ... na</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het kind aapt zijn grote broer na.<br><span class="voorbeeld-en">The child copies his big brother.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft nageaapt</dd>
+</dl>
+<p class="id">na-apen · A1 · rang 3582</p>
+</article>
+<article id="afvallen" class="kaart" data-id="afvallen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 64">#64</span>
+<h3 class="chunk">afvallen</h3>
+<p class="gloss">to lose weight</p>
+<p class="vlaggen"><span>A1</span><span>rang 3605</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">val ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij valt dit jaar tien kilo af.<br><span class="voorbeeld-en">He is losing ten kilos this year.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is afgevallen</dd>
+</dl>
+<p class="id">afvallen · A1 · rang 3605</p>
+</article>
+<article id="uitbreiden" class="kaart" data-id="uitbreiden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 65">#65</span>
+<h3 class="chunk">uitbreiden</h3>
+<p class="gloss">to expand</p>
+<p class="vlaggen"><span>A1</span><span>rang 3650</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">breid ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het bedrijf breidt volgend jaar uit.<br><span class="voorbeeld-en">The company expands next year.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgebreid</dd>
+</dl>
+<p class="id">uitbreiden · A1 · rang 3650</p>
+</article>
+<article id="tegenkomen" class="kaart" data-id="tegenkomen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 66">#66</span>
+<h3 class="chunk">tegenkomen</h3>
+<p class="gloss">to run into (someone)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3696</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kom ... tegen</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kom mijn buurman vaak in de supermarkt tegen.<br><span class="voorbeeld-en">I often run into my neighbour in the supermarket.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is tegengekomen</dd>
+</dl>
+<p class="id">tegenkomen · A1 · rang 3696</p>
+</article>
+<article id="hardlopen" class="kaart" data-id="hardlopen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 67">#67</span>
+<h3 class="chunk">hardlopen</h3>
+<p class="gloss">to run, to jog</p>
+<p class="vlaggen"><span>A1</span><span>rang 3765</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">loop ... hard</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik loop elke zondag een uur hard.<br><span class="voorbeeld-en">I run for an hour every Sunday.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is hardgelopen</dd>
+</dl>
+<p class="id">hardlopen · A1 · rang 3765</p>
+</article>
+<article id="toenemen" class="kaart" data-id="toenemen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 68">#68</span>
+<h3 class="chunk">toenemen</h3>
+<p class="gloss">to increase</p>
+<p class="vlaggen"><span>A1</span><span>rang 3799</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">neem ... toe</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het verkeer neemt in de winter toe.<br><span class="voorbeeld-en">Traffic increases in winter.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is toegenomen</dd>
+</dl>
+<p class="id">toenemen · A1 · rang 3799</p>
+</article>
+<article id="uitspreken" class="kaart" data-id="uitspreken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 69">#69</span>
+<h3 class="chunk">uitspreken</h3>
+<p class="gloss">to pronounce</p>
+<p class="vlaggen"><span>A1</span><span>rang 3801</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">spreek ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze spreekt zijn achternaam goed uit.<br><span class="voorbeeld-en">She pronounces his surname well.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgesproken</dd>
+</dl>
+<p class="id">uitspreken · A1 · rang 3801</p>
+</article>
+<article id="afmaken" class="kaart" data-id="afmaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 70">#70</span>
+<h3 class="chunk">afmaken</h3>
+<p class="gloss">to finish (off)</p>
+<p class="vlaggen"><span>A1</span><span>rang 3812</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik maak mijn huiswerk eerst af.<br><span class="voorbeeld-en">I finish my homework first.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgemaakt</dd>
+</dl>
+<p class="id">afmaken · A1 · rang 3812</p>
+</article>
+<article id="opmaken" class="kaart" data-id="opmaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 71">#71</span>
+<h3 class="chunk">opmaken</h3>
+<p class="gloss">to use up, to draw up</p>
+<p class="vlaggen"><span>A1</span><span>rang 3845</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De agent maakt een rapport op.<br><span class="voorbeeld-en">The officer draws up a report.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgemaakt</dd>
+</dl>
+<p class="id">opmaken · A1 · rang 3845</p>
+</article>
+<article id="afschaffen" class="kaart" data-id="afschaffen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 72">#72</span>
+<h3 class="chunk">afschaffen</h3>
+<p class="gloss">to abolish</p>
+<p class="vlaggen"><span>A1</span><span>rang 3868</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">schaf ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De regering schaft die belasting af.<br><span class="voorbeeld-en">The government abolishes that tax.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgeschaft</dd>
+</dl>
+<p class="id">afschaffen · A1 · rang 3868</p>
+</article>
+<article id="binnenkomen" class="kaart" data-id="binnenkomen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 73">#73</span>
+<h3 class="chunk">binnenkomen</h3>
+<p class="gloss">to come in</p>
+<p class="vlaggen"><span>A1</span><span>rang 3873</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kom ... binnen</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De gasten komen om acht uur binnen.<br><span class="voorbeeld-en">The guests come in at eight o'clock.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is binnengekomen</dd>
+</dl>
+<p class="id">binnenkomen · A1 · rang 3873</p>
+</article>
+<article id="klaarmaken" class="kaart" data-id="klaarmaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 74">#74</span>
+<h3 class="chunk">klaarmaken</h3>
+<p class="gloss">to get (something) ready</p>
+<p class="vlaggen"><span>A1</span><span>rang 3879</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... klaar</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik maak het avondeten om zes uur klaar.<br><span class="voorbeeld-en">I get dinner ready at six o'clock.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft klaargemaakt</dd>
+</dl>
+<p class="id">klaarmaken · A1 · rang 3879</p>
+</article>
+<article id="vastleggen" class="kaart" data-id="vastleggen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 75">#75</span>
+<h3 class="chunk">vastleggen</h3>
+<p class="gloss">to record, to fix in writing</p>
+<p class="vlaggen"><span>A1</span><span>rang 3959</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">leg ... vast</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">We leggen de afspraken op papier vast.<br><span class="voorbeeld-en">We put the agreements down on paper.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft vastgelegd</dd>
+</dl>
+<p class="id">vastleggen · A1 · rang 3959</p>
+</article>
+<article id="meewerken" class="kaart" data-id="meewerken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 76">#76</span>
+<h3 class="chunk">meewerken</h3>
+<p class="gloss">to cooperate, to help out</p>
+<p class="vlaggen"><span>A1</span><span>rang 3992</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">werk ... mee</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij werkt niet graag aan het project mee.<br><span class="voorbeeld-en">He does not like to cooperate on the project.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft meegewerkt</dd>
+</dl>
+<p class="id">meewerken · A1 · rang 3992</p>
+</article>
+<article id="aanspreken" class="kaart" data-id="aanspreken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 77">#77</span>
+<h3 class="chunk">aanspreken</h3>
+<p class="gloss">to address, to speak to</p>
+<p class="vlaggen"><span>A1</span><span>rang 4026</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">spreek ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze spreekt een vreemde op straat aan.<br><span class="voorbeeld-en">She speaks to a stranger in the street.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangesproken</dd>
+</dl>
+<p class="id">aanspreken · A1 · rang 4026</p>
+</article>
+<article id="aftreden" class="kaart" data-id="aftreden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 78">#78</span>
+<h3 class="chunk">aftreden</h3>
+<p class="gloss">to resign, to step down</p>
+<p class="vlaggen"><span>A1</span><span>rang 4028</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">treed ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De minister treedt na de ophef af.<br><span class="voorbeeld-en">The minister resigns after the uproar.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is afgetreden</dd>
+</dl>
+<p class="id">aftreden · A1 · rang 4028</p>
+</article>
+<article id="inloggen" class="kaart" data-id="inloggen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 79">#79</span>
+<h3 class="chunk">inloggen</h3>
+<p class="gloss">to log in</p>
+<p class="vlaggen"><span>A1</span><span>rang 4161</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">log ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik log met mijn wachtwoord in.<br><span class="voorbeeld-en">I log in with my password.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ingelogd</dd>
+</dl>
+<p class="id">inloggen · A1 · rang 4161</p>
+</article>
+<article id="kennismaken" class="kaart" data-id="kennismaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 80">#80</span>
+<h3 class="chunk">kennismaken</h3>
+<p class="gloss">to get acquainted, to meet</p>
+<p class="vlaggen"><span>A1</span><span>rang 4164</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... kennis</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik maak morgen kennis met mijn nieuwe collega.<br><span class="voorbeeld-en">I meet my new colleague tomorrow.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft kennisgemaakt</dd>
+</dl>
+<p class="id">kennismaken · A1 · rang 4164</p>
+</article>
+<article id="opgroeien" class="kaart" data-id="opgroeien" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 81">#81</span>
+<h3 class="chunk">opgroeien</h3>
+<p class="gloss">to grow up</p>
+<p class="vlaggen"><span>A1</span><span>rang 4173</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">groei ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij groeit in een klein dorp op.<br><span class="voorbeeld-en">He grows up in a small village.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is opgegroeid</dd>
+</dl>
+<p class="id">opgroeien · A1 · rang 4173</p>
+</article>
+<article id="terugtrekken" class="kaart" data-id="terugtrekken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 82">#82</span>
+<h3 class="chunk">terugtrekken</h3>
+<p class="gloss">to withdraw, to pull back</p>
+<p class="vlaggen"><span>A1</span><span>rang 4188</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">trek ... terug</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het leger trekt zijn troepen terug.<br><span class="voorbeeld-en">The army pulls its troops back.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft teruggetrokken</dd>
+</dl>
+<p class="id">terugtrekken · A1 · rang 4188</p>
+</article>
+<article id="uitnodigen" class="kaart" data-id="uitnodigen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 83">#83</span>
+<h3 class="chunk">uitnodigen</h3>
+<p class="gloss">to invite</p>
+<p class="vlaggen"><span>A1</span><span>rang 4190</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">nodig ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik nodig mijn buren voor het feest uit.<br><span class="voorbeeld-en">I am inviting my neighbours to the party.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgenodigd</dd>
+</dl>
+<p class="id">uitnodigen · A1 · rang 4190</p>
+</article>
+<article id="opletten" class="kaart" data-id="opletten" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 84">#84</span>
+<h3 class="chunk">opletten</h3>
+<p class="gloss">to pay attention</p>
+<p class="vlaggen"><span>A1</span><span>rang 4229</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">let ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Let je wel op in de les?<br><span class="voorbeeld-en">Do you pay attention in class?</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgelet</dd>
+</dl>
+<p class="id">opletten · A1 · rang 4229</p>
+</article>
+<article id="oprichten" class="kaart" data-id="oprichten" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 85">#85</span>
+<h3 class="chunk">oprichten</h3>
+<p class="gloss">to found, to establish</p>
+<p class="vlaggen"><span>A1</span><span>rang 4230</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">richt ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze richten samen een eigen bedrijf op.<br><span class="voorbeeld-en">They set up their own company together.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgericht</dd>
+</dl>
+<p class="id">oprichten · A1 · rang 4230</p>
+</article>
+<article id="aanmaken" class="kaart" data-id="aanmaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 86">#86</span>
+<h3 class="chunk">aanmaken</h3>
+<p class="gloss">to create (an account)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4244</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik maak een nieuw account aan.<br><span class="voorbeeld-en">I create a new account.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangemaakt</dd>
+</dl>
+<p class="id">aanmaken · A1 · rang 4244</p>
+</article>
+<article id="oppassen" class="kaart" data-id="oppassen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 87">#87</span>
+<h3 class="chunk">oppassen</h3>
+<p class="gloss">to babysit, to be careful</p>
+<p class="vlaggen"><span>A1</span><span>rang 4279</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">pas ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij past vanavond op de kinderen op.<br><span class="voorbeeld-en">She is babysitting the children tonight.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgepast</dd>
+</dl>
+<p class="id">oppassen · A1 · rang 4279</p>
+</article>
+<article id="gebruikmaken" class="kaart" data-id="gebruikmaken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 88">#88</span>
+<h3 class="chunk">gebruikmaken</h3>
+<p class="gloss">to make use (of)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4326</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">maak ... gebruik</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij maken vaak gebruik van de bus.<br><span class="voorbeeld-en">We often make use of the bus.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft gebruikgemaakt</dd>
+</dl>
+<p class="id">gebruikmaken · A1 · rang 4326</p>
+</article>
+<article id="langskomen" class="kaart" data-id="langskomen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 89">#89</span>
+<h3 class="chunk">langskomen</h3>
+<p class="gloss">to come by, to drop in</p>
+<p class="vlaggen"><span>A1</span><span>rang 4338</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kom ... langs</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn buurman komt vanavond even langs.<br><span class="voorbeeld-en">My neighbour is dropping by tonight.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is langsgekomen</dd>
+</dl>
+<p class="id">langskomen · A1 · rang 4338</p>
+</article>
+<article id="oversteken" class="kaart" data-id="oversteken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 90">#90</span>
+<h3 class="chunk">oversteken</h3>
+<p class="gloss">to cross (the street)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4347</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">steek ... over</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Kinderen steken hier de straat veilig over.<br><span class="voorbeeld-en">Children cross the street safely here.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is overgestoken</dd>
+</dl>
+<p class="id">oversteken · A1 · rang 4347</p>
+</article>
+<article id="uitsterven" class="kaart" data-id="uitsterven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 91">#91</span>
+<h3 class="chunk">uitsterven</h3>
+<p class="gloss">to die out, to become extinct</p>
+<p class="vlaggen"><span>A1</span><span>rang 4362</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">sterf ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Veel diersoorten sterven snel uit.<br><span class="voorbeeld-en">Many animal species die out quickly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is uitgestorven</dd>
+</dl>
+<p class="id">uitsterven · A1 · rang 4362</p>
+</article>
+<article id="voorlezen" class="kaart" data-id="voorlezen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 92">#92</span>
+<h3 class="chunk">voorlezen</h3>
+<p class="gloss">to read aloud (to someone)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4369</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">lees ... voor</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mama leest elke avond een verhaal voor.<br><span class="voorbeeld-en">Mum reads a story aloud every evening.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft voorgelezen</dd>
+</dl>
+<p class="id">voorlezen · A1 · rang 4369</p>
+</article>
+<article id="bijhouden" class="kaart" data-id="bijhouden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 93">#93</span>
+<h3 class="chunk">bijhouden</h3>
+<p class="gloss">to keep track of</p>
+<p class="vlaggen"><span>A1</span><span>rang 4381</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">houd ... bij</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik houd mijn uitgaven in een app bij.<br><span class="voorbeeld-en">I keep track of my spending in an app.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft bijgehouden</dd>
+</dl>
+<p class="id">bijhouden · A1 · rang 4381</p>
+</article>
+<article id="opvoeden" class="kaart" data-id="opvoeden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 94">#94</span>
+<h3 class="chunk">opvoeden</h3>
+<p class="gloss">to raise (a child)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4411</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">voed ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze voeden hun kinderen streng op.<br><span class="voorbeeld-en">They raise their children strictly.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgevoed</dd>
+</dl>
+<p class="id">opvoeden · A1 · rang 4411</p>
+</article>
+<article id="uitproberen" class="kaart" data-id="uitproberen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 95">#95</span>
+<h3 class="chunk">uitproberen</h3>
+<p class="gloss">to try out</p>
+<p class="vlaggen"><span>A1</span><span>rang 4422</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">probeer ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik probeer het nieuwe recept vanavond uit.<br><span class="voorbeeld-en">I am trying out the new recipe tonight.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgeprobeerd</dd>
+</dl>
+<p class="id">uitproberen · A1 · rang 4422</p>
+</article>
+<article id="aangaan" class="kaart" data-id="aangaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 96">#96</span>
+<h3 class="chunk">aangaan</h3>
+<p class="gloss">to concern, to enter into</p>
+<p class="vlaggen"><span>A1</span><span>rang 4431</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dat gaat jou helemaal niets aan.<br><span class="voorbeeld-en">That is none of your business.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is aangegaan</dd>
+</dl>
+<p class="id">aangaan · A1 · rang 4431</p>
+</article>
+<article id="aanhouden" class="kaart" data-id="aanhouden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 97">#97</span>
+<h3 class="chunk">aanhouden</h3>
+<p class="gloss">to arrest, to keep on</p>
+<p class="vlaggen"><span>A1</span><span>rang 4432</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">houd ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De politie houdt de dief aan.<br><span class="voorbeeld-en">The police arrest the thief.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangehouden</dd>
+</dl>
+<p class="id">aanhouden · A1 · rang 4432</p>
+</article>
+<article id="opleggen" class="kaart" data-id="opleggen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 98">#98</span>
+<h3 class="chunk">opleggen</h3>
+<p class="gloss">to impose</p>
+<p class="vlaggen"><span>A1</span><span>rang 4471</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">leg ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De rechter legt een boete op.<br><span class="voorbeeld-en">The judge imposes a fine.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgelegd</dd>
+</dl>
+<p class="id">opleggen · A1 · rang 4471</p>
+</article>
+<article id="vaststellen" class="kaart" data-id="vaststellen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 99">#99</span>
+<h3 class="chunk">vaststellen</h3>
+<p class="gloss">to establish, to determine</p>
+<p class="vlaggen"><span>A1</span><span>rang 4486</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">stel ... vast</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De arts stelt de oorzaak vast.<br><span class="voorbeeld-en">The doctor determines the cause.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft vastgesteld</dd>
+</dl>
+<p class="id">vaststellen · A1 · rang 4486</p>
+</article>
+<article id="aantonen" class="kaart" data-id="aantonen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 100">#100</span>
+<h3 class="chunk">aantonen</h3>
+<p class="gloss">to demonstrate, to prove</p>
+<p class="vlaggen"><span>A1</span><span>rang 4495</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">toon ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het onderzoek toont het verband duidelijk aan.<br><span class="voorbeeld-en">The study clearly demonstrates the link.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangetoond</dd>
+</dl>
+<p class="id">aantonen · A1 · rang 4495</p>
+</article>
+<article id="uitkijken" class="kaart" data-id="uitkijken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 101">#101</span>
+<h3 class="chunk">uitkijken</h3>
+<p class="gloss">to look out, to watch out</p>
+<p class="vlaggen"><span>A1</span><span>rang 4530</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">kijk ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik kijk goed uit bij het oversteken.<br><span class="voorbeeld-en">I watch out carefully when crossing.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgekeken</dd>
+</dl>
+<p class="id">uitkijken · A1 · rang 4530</p>
+</article>
+<article id="uitzenden" class="kaart" data-id="uitzenden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 102">#102</span>
+<h3 class="chunk">uitzenden</h3>
+<p class="gloss">to broadcast</p>
+<p class="vlaggen"><span>A1</span><span>rang 4532</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">zend ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De omroep zendt de wedstrijd live uit.<br><span class="voorbeeld-en">The broadcaster airs the match live.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft uitgezonden</dd>
+</dl>
+<p class="id">uitzenden · A1 · rang 4532</p>
+</article>
+<article id="aanleggen" class="kaart" data-id="aanleggen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 103">#103</span>
+<h3 class="chunk">aanleggen</h3>
+<p class="gloss">to build, to construct</p>
+<p class="vlaggen"><span>A1</span><span>rang 4539</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">leg ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De gemeente legt een nieuw fietspad aan.<br><span class="voorbeeld-en">The council builds a new cycle path.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangelegd</dd>
+</dl>
+<p class="id">aanleggen · A1 · rang 4539</p>
+</article>
+<article id="intrekken" class="kaart" data-id="intrekken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 104">#104</span>
+<h3 class="chunk">intrekken</h3>
+<p class="gloss">to withdraw, to move in</p>
+<p class="vlaggen"><span>A1</span><span>rang 4557</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">trek ... in</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij trekt zijn klacht weer in.<br><span class="voorbeeld-en">He withdraws his complaint again.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft/is ingetrokken</dd>
+</dl>
+<p class="id">intrekken · A1 · rang 4557</p>
+</article>
+<article id="opladen" class="kaart" data-id="opladen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 105">#105</span>
+<h3 class="chunk">opladen</h3>
+<p class="gloss">to charge (a battery)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4567</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">laad ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik laad mijn telefoon elke nacht op.<br><span class="voorbeeld-en">I charge my phone every night.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgeladen</dd>
+</dl>
+<p class="id">opladen · A1 · rang 4567</p>
+</article>
+<article id="opvolgen" class="kaart" data-id="opvolgen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 106">#106</span>
+<h3 class="chunk">opvolgen</h3>
+<p class="gloss">to succeed, to follow (advice)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4568</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">volg ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij volgt zijn vader als directeur op.<br><span class="voorbeeld-en">He succeeds his father as director.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgevolgd</dd>
+</dl>
+<p class="id">opvolgen · A1 · rang 4568</p>
+</article>
+<article id="opvangen" class="kaart" data-id="opvangen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 107">#107</span>
+<h3 class="chunk">opvangen</h3>
+<p class="gloss">to catch, to take in</p>
+<p class="vlaggen"><span>A1</span><span>rang 4624</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">vang ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ze vangt de bal met één hand op.<br><span class="voorbeeld-en">She catches the ball with one hand.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft opgevangen</dd>
+</dl>
+<p class="id">opvangen · A1 · rang 4624</p>
+</article>
+<article id="overstappen" class="kaart" data-id="overstappen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 108">#108</span>
+<h3 class="chunk">overstappen</h3>
+<p class="gloss">to change (trains)</p>
+<p class="vlaggen"><span>A1</span><span>rang 4625</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">stap ... over</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">We stappen in Utrecht over.<br><span class="voorbeeld-en">We change trains in Utrecht.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is overgestapt</dd>
+</dl>
+<p class="id">overstappen · A1 · rang 4625</p>
+</article>
+<article id="overslaan" class="kaart" data-id="overslaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 109">#109</span>
+<h3 class="chunk">overslaan</h3>
+<p class="gloss">to skip, to miss out</p>
+<p class="vlaggen"><span>A1</span><span>rang 5017</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">sla ... over</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik sla vandaag het ontbijt over.<br><span class="voorbeeld-en">I am skipping breakfast today.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft overgeslagen</dd>
+</dl>
+<p class="id">overslaan · A1 · rang 5017</p>
+</article>
+<article id="aanraken" class="kaart" data-id="aanraken" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 110">#110</span>
+<h3 class="chunk">aanraken</h3>
+<p class="gloss">to touch</p>
+<p class="vlaggen"><span>A1</span><span>rang 5104</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">raak ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het kind raakt de hete kachel aan.<br><span class="voorbeeld-en">The child touches the hot stove.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangeraakt</dd>
+</dl>
+<p class="id">aanraken · A1 · rang 5104</p>
+</article>
+<article id="aanraden" class="kaart" data-id="aanraden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 111">#111</span>
+<h3 class="chunk">aanraden</h3>
+<p class="gloss">to recommend</p>
+<p class="vlaggen"><span>A1</span><span>rang 5173</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">raad ... aan</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn dokter raadt deze zalf aan.<br><span class="voorbeeld-en">My doctor recommends this ointment.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft aangeraden</dd>
+</dl>
+<p class="id">aanraden · A1 · rang 5173</p>
+</article>
+<article id="afronden" class="kaart" data-id="afronden" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 112">#112</span>
+<h3 class="chunk">afronden</h3>
+<p class="gloss">to complete, to round off</p>
+<p class="vlaggen"><span>A1</span><span>rang 5375</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">rond ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Hij rondt zijn studie volgend jaar af.<br><span class="voorbeeld-en">He completes his studies next year.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgerond</dd>
+</dl>
+<p class="id">afronden · A1 · rang 5375</p>
+</article>
+<article id="meespelen" class="kaart" data-id="meespelen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 113">#113</span>
+<h3 class="chunk">meespelen</h3>
+<p class="gloss">to join in, to play along</p>
+<p class="vlaggen"><span>A1</span><span>rang 5407</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">speel ... mee</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik speel zaterdag mee in het team.<br><span class="voorbeeld-en">I play in the team on Saturday.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft meegespeeld</dd>
+</dl>
+<p class="id">meespelen · A1 · rang 5407</p>
+</article>
+<article id="opvallen" class="kaart" data-id="opvallen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 114">#114</span>
+<h3 class="chunk">opvallen</h3>
+<p class="gloss">to stand out, to be noticed</p>
+<p class="vlaggen"><span>A1</span><span>rang 5495</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">val ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zijn rode jas valt meteen op.<br><span class="voorbeeld-en">His red coat stands out immediately.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is opgevallen</dd>
+</dl>
+<p class="id">opvallen · A1 · rang 5495</p>
+</article>
+<article id="opgaan" class="kaart" data-id="opgaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 115">#115</span>
+<h3 class="chunk">opgaan</h3>
+<p class="gloss">to rise (sun)</p>
+<p class="vlaggen"><span>A1</span><span>rang 5561</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... op</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De zon gaat in juni vroeg op.<br><span class="voorbeeld-en">The sun rises early in June.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is opgegaan</dd>
+</dl>
+<p class="id">opgaan · A1 · rang 5561</p>
+</article>
+<article id="vastzitten" class="kaart" data-id="vastzitten" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 116">#116</span>
+<h3 class="chunk">vastzitten</h3>
+<p class="gloss">to be stuck</p>
+<p class="vlaggen"><span>A1</span><span>rang 5701</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">zit ... vast</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn auto zit in de modder vast.<br><span class="voorbeeld-en">My car is stuck in the mud.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft vastgezeten</dd>
+</dl>
+<p class="id">vastzitten · A1 · rang 5701</p>
+</article>
+<article id="afgaan" class="kaart" data-id="afgaan" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 117">#117</span>
+<h3 class="chunk">afgaan</h3>
+<p class="gloss">to go off (alarm)</p>
+<p class="vlaggen"><span>A1</span><span>rang 5840</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">ga ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het alarm gaat midden in de nacht af.<br><span class="voorbeeld-en">The alarm goes off in the middle of the night.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is afgegaan</dd>
+</dl>
+<p class="id">afgaan · A1 · rang 5840</p>
+</article>
+<article id="samenwonen" class="kaart" data-id="samenwonen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 118">#118</span>
+<h3 class="chunk">samenwonen</h3>
+<p class="gloss">to live together</p>
+<p class="vlaggen"><span>A1</span><span>rang 5873</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">woon ... samen</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Mijn zus woont al jaren met haar vriend samen.<br><span class="voorbeeld-en">My sister has lived with her boyfriend for years.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft samengewoond</dd>
+</dl>
+<p class="id">samenwonen · A1 · rang 5873</p>
+</article>
+<article id="afrekenen" class="kaart" data-id="afrekenen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 119">#119</span>
+<h3 class="chunk">afrekenen</h3>
+<p class="gloss">to pay the bill</p>
+<p class="vlaggen"><span>A1</span><span>rang 5902</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">reken ... af</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Wij rekenen aan de kassa af.<br><span class="voorbeeld-en">We pay at the checkout.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft afgerekend</dd>
+</dl>
+<p class="id">afrekenen · A1 · rang 5902</p>
+</article>
+<article id="meegeven" class="kaart" data-id="meegeven" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 120">#120</span>
+<h3 class="chunk">meegeven</h3>
+<p class="gloss">to send along (with someone)</p>
+<p class="vlaggen"><span>A1</span><span>rang 7930</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">geef ... mee</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Ik geef mijn zoon een lunchpakket mee.<br><span class="voorbeeld-en">I give my son a packed lunch to take along.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft meegegeven</dd>
+</dl>
+<p class="id">meegeven · A1 · rang 7930</p>
+</article>
+<article id="uitlopen" class="kaart" data-id="uitlopen" data-band="a1" data-kind="separable-verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 121">#121</span>
+<h3 class="chunk">uitlopen</h3>
+<p class="gloss">to run over (time)</p>
+<p class="vlaggen"><span>A1</span><span>rang 8047</span><span>tekstkaart</span></p>
+<dl>
+<dt>Split form</dt><dd class="split">loop ... uit</dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De vergadering loopt een kwartier uit.<br><span class="voorbeeld-en">The meeting runs over by a quarter of an hour.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is uitgelopen</dd>
+</dl>
+<p class="id">uitlopen · A1 · rang 8047</p>
+</article>
+</div>
+</main>
+</body>
+</html>

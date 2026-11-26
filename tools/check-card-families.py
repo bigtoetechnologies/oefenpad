@@ -104,6 +104,7 @@ def cards(family):
                 "block": block,
                 "fields": fields,
                 "partners": partner.group(1).split() if partner else [],
+                "text": 'data-kind="separable-verb-text"' in block,
                 "has_en": 'class="voorbeeld-en"' in block,
                 "has_register": 'class="register"' in block,
                 "has_literal": 'class="betekenis"' in block,
@@ -169,6 +170,11 @@ def main():
                    "bijwoorden", "scheidbare-werkwoorden", "vaste-uitdrukkingen"):
         found = cards(family)
         for c in found:
+            if c["text"]:
+                # A text card (separable verbs without a picture) has no scene brief
+                # and no contrast; it is checked for gloss, split form, perfect, example.
+                check_example(family, c)
+                continue
             for label in ("Scene", "Must read", "Avoid", "Alt text", "Contrast"):
                 need(c, family, label)
             check_example(family, c)

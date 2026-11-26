@@ -1,0 +1,6607 @@
+{
+  "scenes": {},
+  "frames": [
+    {
+      "id": "mee-eten",
+      "verb": "mee-eten",
+      "gloss": "to join in a meal",
+      "band": "a1",
+      "split": "eet ... mee",
+      "perfect": "heeft meegegeten",
+      "example": "Eet je vanavond bij ons mee?",
+      "exampleEn": "Are you eating with us tonight?",
+      "scene": null
+    },
+    {
+      "id": "voorkomen",
+      "verb": "voorkomen",
+      "gloss": "to occur, to exist",
+      "band": "a1",
+      "split": "kom ... voor",
+      "perfect": "is voorgekomen",
+      "example": "Dit probleem komt in veel steden voor.",
+      "exampleEn": "This problem occurs in many cities.",
+      "scene": null
+    },
+    {
+      "id": "voorstellen",
+      "verb": "voorstellen",
+      "gloss": "to introduce (someone)",
+      "band": "a1",
+      "split": "stel ... voor",
+      "perfect": "heeft voorgesteld",
+      "example": "Ik stel mijn collega aan jou voor.",
+      "exampleEn": "I introduce my colleague to you.",
+      "scene": null
+    },
+    {
+      "id": "doorgaan",
+      "verb": "doorgaan",
+      "gloss": "to continue",
+      "band": "a1",
+      "split": "ga ... door",
+      "perfect": "is doorgegaan",
+      "example": "Het feest gaat ondanks de regen gewoon door.",
+      "exampleEn": "The party just goes ahead despite the rain.",
+      "scene": null
+    },
+    {
+      "id": "oplossen",
+      "verb": "oplossen",
+      "gloss": "to solve",
+      "band": "a1",
+      "split": "los ... op",
+      "perfect": "heeft opgelost",
+      "example": "Samen lossen we het probleem snel op.",
+      "exampleEn": "Together we solve the problem quickly.",
+      "scene": null
+    },
+    {
+      "id": "opnemen",
+      "verb": "opnemen",
+      "gloss": "to record (audio, video)",
+      "band": "a1",
+      "split": "neem ... op",
+      "perfect": "heeft opgenomen",
+      "example": "Ik neem het gesprek op mijn telefoon op.",
+      "exampleEn": "I record the conversation on my phone.",
+      "scene": null
+    },
+    {
+      "id": "aanvallen",
+      "verb": "aanvallen",
+      "gloss": "to attack",
+      "band": "a1",
+      "split": "val ... aan",
+      "perfect": "heeft aangevallen",
+      "example": "De hond valt de postbode aan.",
+      "exampleEn": "The dog attacks the postman.",
+      "scene": null
+    },
+    {
+      "id": "meedoen",
+      "verb": "meedoen",
+      "gloss": "to take part",
+      "band": "a1",
+      "split": "doe ... mee",
+      "perfect": "heeft meegedaan",
+      "example": "Doe je morgen ook mee met het spel?",
+      "exampleEn": "Are you joining in the game tomorrow too?",
+      "scene": null
+    },
+    {
+      "id": "omgaan",
+      "verb": "omgaan",
+      "gloss": "to deal with (met)",
+      "band": "a1",
+      "split": "ga ... om",
+      "perfect": "is omgegaan",
+      "example": "Hoe ga jij met stress om?",
+      "exampleEn": "How do you deal with stress?",
+      "scene": null
+    },
+    {
+      "id": "bijdragen",
+      "verb": "bijdragen",
+      "gloss": "to contribute",
+      "band": "a1",
+      "split": "draag ... bij",
+      "perfect": "heeft bijgedragen",
+      "example": "Iedereen draagt een beetje aan het feest bij.",
+      "exampleEn": "Everyone contributes a little to the party.",
+      "scene": null
+    },
+    {
+      "id": "samenwerken",
+      "verb": "samenwerken",
+      "gloss": "to work together",
+      "band": "a1",
+      "split": "werk ... samen",
+      "perfect": "heeft samengewerkt",
+      "example": "Wij werken al jaren goed samen.",
+      "exampleEn": "We have worked well together for years.",
+      "scene": null
+    },
+    {
+      "id": "inzetten",
+      "verb": "inzetten",
+      "gloss": "to deploy, to use",
+      "band": "a1",
+      "split": "zet ... in",
+      "perfect": "heeft ingezet",
+      "example": "De gemeente zet meer bussen in.",
+      "exampleEn": "The municipality is deploying more buses.",
+      "scene": null
+    },
+    {
+      "id": "nadenken",
+      "verb": "nadenken",
+      "gloss": "to think (about)",
+      "band": "a1",
+      "split": "denk ... na",
+      "perfect": "heeft nagedacht",
+      "example": "Ik denk nog even over je vraag na.",
+      "exampleEn": "I will think about your question a bit longer.",
+      "scene": null
+    },
+    {
+      "id": "uitleggen",
+      "verb": "uitleggen",
+      "gloss": "to explain",
+      "band": "a1",
+      "split": "leg ... uit",
+      "perfect": "heeft uitgelegd",
+      "example": "De leraar legt de regel nog een keer uit.",
+      "exampleEn": "The teacher explains the rule once more.",
+      "scene": null
+    },
+    {
+      "id": "uitvoeren",
+      "verb": "uitvoeren",
+      "gloss": "to carry out",
+      "band": "a1",
+      "split": "voer ... uit",
+      "perfect": "heeft uitgevoerd",
+      "example": "De monteur voert de reparatie vandaag uit.",
+      "exampleEn": "The mechanic carries out the repair today.",
+      "scene": null
+    },
+    {
+      "id": "deelnemen",
+      "verb": "deelnemen",
+      "gloss": "to take part (aan)",
+      "band": "a1",
+      "split": "neem ... deel",
+      "perfect": "heeft deelgenomen",
+      "example": "Zij nemen aan de cursus deel.",
+      "exampleEn": "They take part in the course.",
+      "scene": null
+    },
+    {
+      "id": "plaatsvinden",
+      "verb": "plaatsvinden",
+      "gloss": "to take place",
+      "band": "a1",
+      "split": "vind ... plaats",
+      "perfect": "heeft plaatsgevonden",
+      "example": "De les vindt elke dinsdag in dat lokaal plaats.",
+      "exampleEn": "The lesson takes place in that room every Tuesday.",
+      "scene": null
+    },
+    {
+      "id": "aanmelden",
+      "verb": "aanmelden",
+      "gloss": "to sign up (for)",
+      "band": "a1",
+      "split": "meld ... aan",
+      "perfect": "heeft aangemeld",
+      "example": "Ik meld me vandaag voor de cursus aan.",
+      "exampleEn": "I am signing up for the course today.",
+      "scene": null
+    },
+    {
+      "id": "aanpakken",
+      "verb": "aanpakken",
+      "gloss": "to tackle (a problem)",
+      "band": "a1",
+      "split": "pak ... aan",
+      "perfect": "heeft aangepakt",
+      "example": "We pakken het probleem samen aan.",
+      "exampleEn": "We tackle the problem together.",
+      "scene": null
+    },
+    {
+      "id": "opgeven",
+      "verb": "opgeven",
+      "gloss": "to give up",
+      "band": "a1",
+      "split": "geef ... op",
+      "perfect": "heeft opgegeven",
+      "example": "Ik geef het niet zomaar op.",
+      "exampleEn": "I do not just give up.",
+      "scene": null
+    },
+    {
+      "id": "aanpassen",
+      "verb": "aanpassen",
+      "gloss": "to adjust, to adapt",
+      "band": "a1",
+      "split": "pas ... aan",
+      "perfect": "heeft aangepast",
+      "example": "Ik pas het recept een beetje aan.",
+      "exampleEn": "I adjust the recipe a little.",
+      "scene": null
+    },
+    {
+      "id": "aangeven",
+      "verb": "aangeven",
+      "gloss": "to indicate",
+      "band": "a1",
+      "split": "geef ... aan",
+      "perfect": "heeft aangegeven",
+      "example": "De pijl geeft de richting aan.",
+      "exampleEn": "The arrow indicates the direction.",
+      "scene": null
+    },
+    {
+      "id": "uitmaken",
+      "verb": "uitmaken",
+      "gloss": "to matter; to break up (with)",
+      "band": "a1",
+      "split": "maak ... uit",
+      "perfect": "heeft uitgemaakt",
+      "example": "Het maakt mij niet uit waar we eten.",
+      "exampleEn": "It does not matter to me where we eat.",
+      "scene": null
+    },
+    {
+      "id": "voorbereiden",
+      "verb": "voorbereiden",
+      "gloss": "to prepare",
+      "band": "a1",
+      "split": "bereid ... voor",
+      "perfect": "heeft voorbereid",
+      "example": "Ik bereid me goed op het examen voor.",
+      "exampleEn": "I prepare well for the exam.",
+      "scene": null
+    },
+    {
+      "id": "ophouden",
+      "verb": "ophouden",
+      "gloss": "to stop, to cease",
+      "band": "a1",
+      "split": "houd ... op",
+      "perfect": "heeft/is opgehouden",
+      "example": "De regen houdt maar niet op.",
+      "exampleEn": "The rain just does not stop.",
+      "scene": null
+    },
+    {
+      "id": "toegeven",
+      "verb": "toegeven",
+      "gloss": "to admit",
+      "band": "a1",
+      "split": "geef ... toe",
+      "perfect": "heeft toegegeven",
+      "example": "Ik geef graag toe dat ik fout zat.",
+      "exampleEn": "I gladly admit that I was wrong.",
+      "scene": null
+    },
+    {
+      "id": "terugkeren",
+      "verb": "terugkeren",
+      "gloss": "to return",
+      "band": "a1",
+      "split": "keer ... terug",
+      "perfect": "is teruggekeerd",
+      "example": "Mijn vader keert morgen uit Spanje terug.",
+      "exampleEn": "My father returns from Spain tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "uitkomen",
+      "verb": "uitkomen",
+      "gloss": "to come out (released)",
+      "band": "a1",
+      "split": "kom ... uit",
+      "perfect": "is uitgekomen",
+      "example": "De nieuwe film komt volgende week uit.",
+      "exampleEn": "The new film comes out next week.",
+      "scene": null
+    },
+    {
+      "id": "opstellen",
+      "verb": "opstellen",
+      "gloss": "to draw up (a document)",
+      "band": "a1",
+      "split": "stel ... op",
+      "perfect": "heeft opgesteld",
+      "example": "Wij stellen samen een lijst op.",
+      "exampleEn": "Together we draw up a list.",
+      "scene": null
+    },
+    {
+      "id": "aanvragen",
+      "verb": "aanvragen",
+      "gloss": "to apply for (a document)",
+      "band": "a1",
+      "split": "vraag ... aan",
+      "perfect": "heeft aangevraagd",
+      "example": "Ik vraag een nieuw paspoort aan.",
+      "exampleEn": "I am applying for a new passport.",
+      "scene": null
+    },
+    {
+      "id": "uitgaan",
+      "verb": "uitgaan",
+      "gloss": "to go out (socially)",
+      "band": "a1",
+      "split": "ga ... uit",
+      "perfect": "is uitgegaan",
+      "example": "Wij gaan zaterdagavond met vrienden uit.",
+      "exampleEn": "We are going out with friends on Saturday evening.",
+      "scene": null
+    },
+    {
+      "id": "overkomen",
+      "verb": "overkomen",
+      "gloss": "to come across (as)",
+      "band": "a1",
+      "split": "kom ... over",
+      "perfect": "is overgekomen",
+      "example": "Hij komt altijd erg vriendelijk over.",
+      "exampleEn": "He always comes across as very friendly.",
+      "scene": null
+    },
+    {
+      "id": "overnemen",
+      "verb": "overnemen",
+      "gloss": "to take over",
+      "band": "a1",
+      "split": "neem ... over",
+      "perfect": "heeft overgenomen",
+      "example": "Ik neem het werk van mijn collega over.",
+      "exampleEn": "I take over my colleague's work.",
+      "scene": null
+    },
+    {
+      "id": "inschrijven",
+      "verb": "inschrijven",
+      "gloss": "to register, to enrol",
+      "band": "a1",
+      "split": "schrijf ... in",
+      "perfect": "heeft ingeschreven",
+      "example": "Ik schrijf me voor de cursus in.",
+      "exampleEn": "I am enrolling for the course.",
+      "scene": null
+    },
+    {
+      "id": "opbouwen",
+      "verb": "opbouwen",
+      "gloss": "to build up",
+      "band": "a1",
+      "split": "bouw ... op",
+      "perfect": "heeft opgebouwd",
+      "example": "Ze bouwen een nieuw leven in Utrecht op.",
+      "exampleEn": "They are building up a new life in Utrecht.",
+      "scene": null
+    },
+    {
+      "id": "uitzien",
+      "verb": "uitzien",
+      "gloss": "to look forward to (naar)",
+      "band": "a1",
+      "split": "zie ... uit",
+      "perfect": "heeft uitgezien",
+      "example": "Ik zie erg naar de zomer uit.",
+      "exampleEn": "I am really looking forward to the summer.",
+      "scene": null
+    },
+    {
+      "id": "opleveren",
+      "verb": "opleveren",
+      "gloss": "to yield, to result in",
+      "band": "a1",
+      "split": "lever ... op",
+      "perfect": "heeft opgeleverd",
+      "example": "Het project levert veel geld op.",
+      "exampleEn": "The project yields a lot of money.",
+      "scene": null
+    },
+    {
+      "id": "uitzoeken",
+      "verb": "uitzoeken",
+      "gloss": "to find out, to sort out",
+      "band": "a1",
+      "split": "zoek ... uit",
+      "perfect": "heeft uitgezocht",
+      "example": "Ik zoek het vanmiddag voor je uit.",
+      "exampleEn": "I will find it out for you this afternoon.",
+      "scene": null
+    },
+    {
+      "id": "inzien",
+      "verb": "inzien",
+      "gloss": "to realise",
+      "band": "a1",
+      "split": "zie ... in",
+      "perfect": "heeft ingezien",
+      "example": "Ik zie mijn fout nu wel in.",
+      "exampleEn": "I do see my mistake now.",
+      "scene": null
+    },
+    {
+      "id": "instellen",
+      "verb": "instellen",
+      "gloss": "to set (a device)",
+      "band": "a1",
+      "split": "stel ... in",
+      "perfect": "heeft ingesteld",
+      "example": "Ik stel de wekker op zeven uur in.",
+      "exampleEn": "I set the alarm clock for seven o'clock.",
+      "scene": null
+    },
+    {
+      "id": "oproepen",
+      "verb": "oproepen",
+      "gloss": "to call on (people)",
+      "band": "a1",
+      "split": "roep ... op",
+      "perfect": "heeft opgeroepen",
+      "example": "De burgemeester roept de inwoners tot kalmte op.",
+      "exampleEn": "The mayor calls on the residents to stay calm.",
+      "scene": null
+    },
+    {
+      "id": "optreden",
+      "verb": "optreden",
+      "gloss": "to perform (on stage)",
+      "band": "a1",
+      "split": "treed ... op",
+      "perfect": "heeft/is opgetreden",
+      "example": "De band treedt zaterdag in ons dorp op.",
+      "exampleEn": "The band performs in our village on Saturday.",
+      "scene": null
+    },
+    {
+      "id": "afwachten",
+      "verb": "afwachten",
+      "gloss": "to wait for",
+      "band": "a1",
+      "split": "wacht ... af",
+      "perfect": "heeft afgewacht",
+      "example": "Ik wacht het antwoord rustig af.",
+      "exampleEn": "I calmly wait for the answer.",
+      "scene": null
+    },
+    {
+      "id": "indienen",
+      "verb": "indienen",
+      "gloss": "to submit (a document)",
+      "band": "a1",
+      "split": "dien ... in",
+      "perfect": "heeft ingediend",
+      "example": "Ze dient de aanvraag vandaag in.",
+      "exampleEn": "She submits the application today.",
+      "scene": null
+    },
+    {
+      "id": "uitgeven",
+      "verb": "uitgeven",
+      "gloss": "to spend (money)",
+      "band": "a1",
+      "split": "geef ... uit",
+      "perfect": "heeft uitgegeven",
+      "example": "Hij geeft veel geld aan kleren uit.",
+      "exampleEn": "He spends a lot of money on clothes.",
+      "scene": null
+    },
+    {
+      "id": "doorbrengen",
+      "verb": "doorbrengen",
+      "gloss": "to spend (time)",
+      "band": "a1",
+      "split": "breng ... door",
+      "perfect": "heeft doorgebracht",
+      "example": "Wij brengen de zomer in Frankrijk door.",
+      "exampleEn": "We spend the summer in France.",
+      "scene": null
+    },
+    {
+      "id": "afnemen",
+      "verb": "afnemen",
+      "gloss": "to decrease",
+      "band": "a1",
+      "split": "neem ... af",
+      "perfect": "is afgenomen",
+      "example": "Het aantal bezoekers neemt elk jaar af.",
+      "exampleEn": "The number of visitors decreases every year.",
+      "scene": null
+    },
+    {
+      "id": "afvragen",
+      "verb": "afvragen",
+      "gloss": "to wonder",
+      "band": "a1",
+      "split": "vraag me ... af",
+      "perfect": "heeft afgevraagd",
+      "example": "Ik vraag me af waar hij is.",
+      "exampleEn": "I wonder where he is.",
+      "scene": null
+    },
+    {
+      "id": "innemen",
+      "verb": "innemen",
+      "gloss": "to take (medicine)",
+      "band": "a1",
+      "split": "neem ... in",
+      "perfect": "heeft ingenomen",
+      "example": "Ik neem elke ochtend een pil in.",
+      "exampleEn": "I take a pill every morning.",
+      "scene": null
+    },
+    {
+      "id": "uitoefenen",
+      "verb": "uitoefenen",
+      "gloss": "to practise (a profession)",
+      "band": "a1",
+      "split": "oefen ... uit",
+      "perfect": "heeft uitgeoefend",
+      "example": "Zij oefent het beroep van arts uit.",
+      "exampleEn": "She practises the profession of doctor.",
+      "scene": null
+    },
+    {
+      "id": "ingaan",
+      "verb": "ingaan",
+      "gloss": "to take effect",
+      "band": "a1",
+      "split": "ga ... in",
+      "perfect": "is ingegaan",
+      "example": "De nieuwe regels gaan morgen in.",
+      "exampleEn": "The new rules take effect tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "toestaan",
+      "verb": "toestaan",
+      "gloss": "to allow",
+      "band": "a1",
+      "split": "sta ... toe",
+      "perfect": "heeft toegestaan",
+      "example": "De school staat geen telefoons in de klas toe.",
+      "exampleEn": "The school does not allow phones in class.",
+      "scene": null
+    },
+    {
+      "id": "volhouden",
+      "verb": "volhouden",
+      "gloss": "to keep it up",
+      "band": "a1",
+      "split": "houd ... vol",
+      "perfect": "heeft volgehouden",
+      "example": "Ik houd het niet langer vol.",
+      "exampleEn": "I cannot keep this up any longer.",
+      "scene": null
+    },
+    {
+      "id": "doorlopen",
+      "verb": "doorlopen",
+      "gloss": "to keep on walking",
+      "band": "a1",
+      "split": "loop ... door",
+      "perfect": "is doorgelopen",
+      "example": "Ik loop even door naar de bushalte.",
+      "exampleEn": "I will keep walking to the bus stop.",
+      "scene": null
+    },
+    {
+      "id": "meemaken",
+      "verb": "meemaken",
+      "gloss": "to experience, to live through",
+      "band": "a1",
+      "split": "maak ... mee",
+      "perfect": "heeft meegemaakt",
+      "example": "Ik maak op mijn werk veel mee.",
+      "exampleEn": "I experience a lot at work.",
+      "scene": null
+    },
+    {
+      "id": "toepassen",
+      "verb": "toepassen",
+      "gloss": "to apply (a rule, method)",
+      "band": "a1",
+      "split": "pas ... toe",
+      "perfect": "heeft toegepast",
+      "example": "De leraar past een nieuwe methode toe.",
+      "exampleEn": "The teacher applies a new method.",
+      "scene": null
+    },
+    {
+      "id": "oplopen",
+      "verb": "oplopen",
+      "gloss": "to walk up, to rise",
+      "band": "a1",
+      "split": "loop ... op",
+      "perfect": "heeft/is opgelopen",
+      "example": "De spanning loopt steeds verder op.",
+      "exampleEn": "The tension keeps rising.",
+      "scene": null
+    },
+    {
+      "id": "uitbrengen",
+      "verb": "uitbrengen",
+      "gloss": "to release (a product)",
+      "band": "a1",
+      "split": "breng ... uit",
+      "perfect": "heeft uitgebracht",
+      "example": "Het bedrijf brengt volgende week een nieuwe telefoon uit.",
+      "exampleEn": "The company releases a new phone next week.",
+      "scene": null
+    },
+    {
+      "id": "afleggen",
+      "verb": "afleggen",
+      "gloss": "to take (an exam), to cover",
+      "band": "a1",
+      "split": "leg ... af",
+      "perfect": "heeft afgelegd",
+      "example": "Hij legt vandaag zijn rijexamen af.",
+      "exampleEn": "He takes his driving test today.",
+      "scene": null
+    },
+    {
+      "id": "afspreken",
+      "verb": "afspreken",
+      "gloss": "to arrange to meet",
+      "band": "a1",
+      "split": "spreek ... af",
+      "perfect": "heeft afgesproken",
+      "example": "Wij spreken zaterdag om tien uur af.",
+      "exampleEn": "We are meeting on Saturday at ten.",
+      "scene": null
+    },
+    {
+      "id": "invoeren",
+      "verb": "invoeren",
+      "gloss": "to enter (data), to introduce",
+      "band": "a1",
+      "split": "voer ... in",
+      "perfect": "heeft ingevoerd",
+      "example": "Ze voert haar gegevens in het formulier in.",
+      "exampleEn": "She enters her details in the form.",
+      "scene": null
+    },
+    {
+      "id": "ingrijpen",
+      "verb": "ingrijpen",
+      "gloss": "to intervene",
+      "band": "a1",
+      "split": "grijp ... in",
+      "perfect": "heeft ingegrepen",
+      "example": "De politie grijpt snel in.",
+      "exampleEn": "The police intervene quickly.",
+      "scene": null
+    },
+    {
+      "id": "na-apen",
+      "verb": "na-apen",
+      "gloss": "to ape, to copy",
+      "band": "a1",
+      "split": "aap ... na",
+      "perfect": "heeft nageaapt",
+      "example": "Het kind aapt zijn grote broer na.",
+      "exampleEn": "The child copies his big brother.",
+      "scene": null
+    },
+    {
+      "id": "afvallen",
+      "verb": "afvallen",
+      "gloss": "to lose weight",
+      "band": "a1",
+      "split": "val ... af",
+      "perfect": "is afgevallen",
+      "example": "Hij valt dit jaar tien kilo af.",
+      "exampleEn": "He is losing ten kilos this year.",
+      "scene": null
+    },
+    {
+      "id": "uitbreiden",
+      "verb": "uitbreiden",
+      "gloss": "to expand",
+      "band": "a1",
+      "split": "breid ... uit",
+      "perfect": "heeft uitgebreid",
+      "example": "Het bedrijf breidt volgend jaar uit.",
+      "exampleEn": "The company expands next year.",
+      "scene": null
+    },
+    {
+      "id": "tegenkomen",
+      "verb": "tegenkomen",
+      "gloss": "to run into (someone)",
+      "band": "a1",
+      "split": "kom ... tegen",
+      "perfect": "is tegengekomen",
+      "example": "Ik kom mijn buurman vaak in de supermarkt tegen.",
+      "exampleEn": "I often run into my neighbour in the supermarket.",
+      "scene": null
+    },
+    {
+      "id": "hardlopen",
+      "verb": "hardlopen",
+      "gloss": "to run, to jog",
+      "band": "a1",
+      "split": "loop ... hard",
+      "perfect": "heeft/is hardgelopen",
+      "example": "Ik loop elke zondag een uur hard.",
+      "exampleEn": "I run for an hour every Sunday.",
+      "scene": null
+    },
+    {
+      "id": "toenemen",
+      "verb": "toenemen",
+      "gloss": "to increase",
+      "band": "a1",
+      "split": "neem ... toe",
+      "perfect": "is toegenomen",
+      "example": "Het verkeer neemt in de winter toe.",
+      "exampleEn": "Traffic increases in winter.",
+      "scene": null
+    },
+    {
+      "id": "uitspreken",
+      "verb": "uitspreken",
+      "gloss": "to pronounce",
+      "band": "a1",
+      "split": "spreek ... uit",
+      "perfect": "heeft uitgesproken",
+      "example": "Ze spreekt zijn achternaam goed uit.",
+      "exampleEn": "She pronounces his surname well.",
+      "scene": null
+    },
+    {
+      "id": "afmaken",
+      "verb": "afmaken",
+      "gloss": "to finish (off)",
+      "band": "a1",
+      "split": "maak ... af",
+      "perfect": "heeft afgemaakt",
+      "example": "Ik maak mijn huiswerk eerst af.",
+      "exampleEn": "I finish my homework first.",
+      "scene": null
+    },
+    {
+      "id": "opmaken",
+      "verb": "opmaken",
+      "gloss": "to use up, to draw up",
+      "band": "a1",
+      "split": "maak ... op",
+      "perfect": "heeft opgemaakt",
+      "example": "De agent maakt een rapport op.",
+      "exampleEn": "The officer draws up a report.",
+      "scene": null
+    },
+    {
+      "id": "afschaffen",
+      "verb": "afschaffen",
+      "gloss": "to abolish",
+      "band": "a1",
+      "split": "schaf ... af",
+      "perfect": "heeft afgeschaft",
+      "example": "De regering schaft die belasting af.",
+      "exampleEn": "The government abolishes that tax.",
+      "scene": null
+    },
+    {
+      "id": "binnenkomen",
+      "verb": "binnenkomen",
+      "gloss": "to come in",
+      "band": "a1",
+      "split": "kom ... binnen",
+      "perfect": "is binnengekomen",
+      "example": "De gasten komen om acht uur binnen.",
+      "exampleEn": "The guests come in at eight o'clock.",
+      "scene": null
+    },
+    {
+      "id": "klaarmaken",
+      "verb": "klaarmaken",
+      "gloss": "to get (something) ready",
+      "band": "a1",
+      "split": "maak ... klaar",
+      "perfect": "heeft klaargemaakt",
+      "example": "Ik maak het avondeten om zes uur klaar.",
+      "exampleEn": "I get dinner ready at six o'clock.",
+      "scene": null
+    },
+    {
+      "id": "vastleggen",
+      "verb": "vastleggen",
+      "gloss": "to record, to fix in writing",
+      "band": "a1",
+      "split": "leg ... vast",
+      "perfect": "heeft vastgelegd",
+      "example": "We leggen de afspraken op papier vast.",
+      "exampleEn": "We put the agreements down on paper.",
+      "scene": null
+    },
+    {
+      "id": "meewerken",
+      "verb": "meewerken",
+      "gloss": "to cooperate, to help out",
+      "band": "a1",
+      "split": "werk ... mee",
+      "perfect": "heeft meegewerkt",
+      "example": "Hij werkt niet graag aan het project mee.",
+      "exampleEn": "He does not like to cooperate on the project.",
+      "scene": null
+    },
+    {
+      "id": "aanspreken",
+      "verb": "aanspreken",
+      "gloss": "to address, to speak to",
+      "band": "a1",
+      "split": "spreek ... aan",
+      "perfect": "heeft aangesproken",
+      "example": "Ze spreekt een vreemde op straat aan.",
+      "exampleEn": "She speaks to a stranger in the street.",
+      "scene": null
+    },
+    {
+      "id": "aftreden",
+      "verb": "aftreden",
+      "gloss": "to resign, to step down",
+      "band": "a1",
+      "split": "treed ... af",
+      "perfect": "is afgetreden",
+      "example": "De minister treedt na de ophef af.",
+      "exampleEn": "The minister resigns after the uproar.",
+      "scene": null
+    },
+    {
+      "id": "inloggen",
+      "verb": "inloggen",
+      "gloss": "to log in",
+      "band": "a1",
+      "split": "log ... in",
+      "perfect": "heeft ingelogd",
+      "example": "Ik log met mijn wachtwoord in.",
+      "exampleEn": "I log in with my password.",
+      "scene": null
+    },
+    {
+      "id": "kennismaken",
+      "verb": "kennismaken",
+      "gloss": "to get acquainted, to meet",
+      "band": "a1",
+      "split": "maak ... kennis",
+      "perfect": "heeft kennisgemaakt",
+      "example": "Ik maak morgen kennis met mijn nieuwe collega.",
+      "exampleEn": "I meet my new colleague tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "opgroeien",
+      "verb": "opgroeien",
+      "gloss": "to grow up",
+      "band": "a1",
+      "split": "groei ... op",
+      "perfect": "is opgegroeid",
+      "example": "Hij groeit in een klein dorp op.",
+      "exampleEn": "He grows up in a small village.",
+      "scene": null
+    },
+    {
+      "id": "terugtrekken",
+      "verb": "terugtrekken",
+      "gloss": "to withdraw, to pull back",
+      "band": "a1",
+      "split": "trek ... terug",
+      "perfect": "heeft teruggetrokken",
+      "example": "Het leger trekt zijn troepen terug.",
+      "exampleEn": "The army pulls its troops back.",
+      "scene": null
+    },
+    {
+      "id": "uitnodigen",
+      "verb": "uitnodigen",
+      "gloss": "to invite",
+      "band": "a1",
+      "split": "nodig ... uit",
+      "perfect": "heeft uitgenodigd",
+      "example": "Ik nodig mijn buren voor het feest uit.",
+      "exampleEn": "I am inviting my neighbours to the party.",
+      "scene": null
+    },
+    {
+      "id": "opletten",
+      "verb": "opletten",
+      "gloss": "to pay attention",
+      "band": "a1",
+      "split": "let ... op",
+      "perfect": "heeft opgelet",
+      "example": "Let je wel op in de les?",
+      "exampleEn": "Do you pay attention in class?",
+      "scene": null
+    },
+    {
+      "id": "oprichten",
+      "verb": "oprichten",
+      "gloss": "to found, to establish",
+      "band": "a1",
+      "split": "richt ... op",
+      "perfect": "heeft opgericht",
+      "example": "Ze richten samen een eigen bedrijf op.",
+      "exampleEn": "They set up their own company together.",
+      "scene": null
+    },
+    {
+      "id": "aanmaken",
+      "verb": "aanmaken",
+      "gloss": "to create (an account)",
+      "band": "a1",
+      "split": "maak ... aan",
+      "perfect": "heeft aangemaakt",
+      "example": "Ik maak een nieuw account aan.",
+      "exampleEn": "I create a new account.",
+      "scene": null
+    },
+    {
+      "id": "oppassen",
+      "verb": "oppassen",
+      "gloss": "to babysit, to be careful",
+      "band": "a1",
+      "split": "pas ... op",
+      "perfect": "heeft opgepast",
+      "example": "Zij past vanavond op de kinderen op.",
+      "exampleEn": "She is babysitting the children tonight.",
+      "scene": null
+    },
+    {
+      "id": "gebruikmaken",
+      "verb": "gebruikmaken",
+      "gloss": "to make use (of)",
+      "band": "a1",
+      "split": "maak ... gebruik",
+      "perfect": "heeft gebruikgemaakt",
+      "example": "Wij maken vaak gebruik van de bus.",
+      "exampleEn": "We often make use of the bus.",
+      "scene": null
+    },
+    {
+      "id": "langskomen",
+      "verb": "langskomen",
+      "gloss": "to come by, to drop in",
+      "band": "a1",
+      "split": "kom ... langs",
+      "perfect": "is langsgekomen",
+      "example": "Mijn buurman komt vanavond even langs.",
+      "exampleEn": "My neighbour is dropping by tonight.",
+      "scene": null
+    },
+    {
+      "id": "oversteken",
+      "verb": "oversteken",
+      "gloss": "to cross (the street)",
+      "band": "a1",
+      "split": "steek ... over",
+      "perfect": "heeft/is overgestoken",
+      "example": "Kinderen steken hier de straat veilig over.",
+      "exampleEn": "Children cross the street safely here.",
+      "scene": null
+    },
+    {
+      "id": "uitsterven",
+      "verb": "uitsterven",
+      "gloss": "to die out, to become extinct",
+      "band": "a1",
+      "split": "sterf ... uit",
+      "perfect": "is uitgestorven",
+      "example": "Veel diersoorten sterven snel uit.",
+      "exampleEn": "Many animal species die out quickly.",
+      "scene": null
+    },
+    {
+      "id": "voorlezen",
+      "verb": "voorlezen",
+      "gloss": "to read aloud (to someone)",
+      "band": "a1",
+      "split": "lees ... voor",
+      "perfect": "heeft voorgelezen",
+      "example": "Mama leest elke avond een verhaal voor.",
+      "exampleEn": "Mum reads a story aloud every evening.",
+      "scene": null
+    },
+    {
+      "id": "bijhouden",
+      "verb": "bijhouden",
+      "gloss": "to keep track of",
+      "band": "a1",
+      "split": "houd ... bij",
+      "perfect": "heeft bijgehouden",
+      "example": "Ik houd mijn uitgaven in een app bij.",
+      "exampleEn": "I keep track of my spending in an app.",
+      "scene": null
+    },
+    {
+      "id": "opvoeden",
+      "verb": "opvoeden",
+      "gloss": "to raise (a child)",
+      "band": "a1",
+      "split": "voed ... op",
+      "perfect": "heeft opgevoed",
+      "example": "Ze voeden hun kinderen streng op.",
+      "exampleEn": "They raise their children strictly.",
+      "scene": null
+    },
+    {
+      "id": "uitproberen",
+      "verb": "uitproberen",
+      "gloss": "to try out",
+      "band": "a1",
+      "split": "probeer ... uit",
+      "perfect": "heeft uitgeprobeerd",
+      "example": "Ik probeer het nieuwe recept vanavond uit.",
+      "exampleEn": "I am trying out the new recipe tonight.",
+      "scene": null
+    },
+    {
+      "id": "aangaan",
+      "verb": "aangaan",
+      "gloss": "to concern, to enter into",
+      "band": "a1",
+      "split": "ga ... aan",
+      "perfect": "heeft/is aangegaan",
+      "example": "Dat gaat jou helemaal niets aan.",
+      "exampleEn": "That is none of your business.",
+      "scene": null
+    },
+    {
+      "id": "aanhouden",
+      "verb": "aanhouden",
+      "gloss": "to arrest, to keep on",
+      "band": "a1",
+      "split": "houd ... aan",
+      "perfect": "heeft aangehouden",
+      "example": "De politie houdt de dief aan.",
+      "exampleEn": "The police arrest the thief.",
+      "scene": null
+    },
+    {
+      "id": "opleggen",
+      "verb": "opleggen",
+      "gloss": "to impose",
+      "band": "a1",
+      "split": "leg ... op",
+      "perfect": "heeft opgelegd",
+      "example": "De rechter legt een boete op.",
+      "exampleEn": "The judge imposes a fine.",
+      "scene": null
+    },
+    {
+      "id": "vaststellen",
+      "verb": "vaststellen",
+      "gloss": "to establish, to determine",
+      "band": "a1",
+      "split": "stel ... vast",
+      "perfect": "heeft vastgesteld",
+      "example": "De arts stelt de oorzaak vast.",
+      "exampleEn": "The doctor determines the cause.",
+      "scene": null
+    },
+    {
+      "id": "aantonen",
+      "verb": "aantonen",
+      "gloss": "to demonstrate, to prove",
+      "band": "a1",
+      "split": "toon ... aan",
+      "perfect": "heeft aangetoond",
+      "example": "Het onderzoek toont het verband duidelijk aan.",
+      "exampleEn": "The study clearly demonstrates the link.",
+      "scene": null
+    },
+    {
+      "id": "uitkijken",
+      "verb": "uitkijken",
+      "gloss": "to look out, to watch out",
+      "band": "a1",
+      "split": "kijk ... uit",
+      "perfect": "heeft uitgekeken",
+      "example": "Ik kijk goed uit bij het oversteken.",
+      "exampleEn": "I watch out carefully when crossing.",
+      "scene": null
+    },
+    {
+      "id": "uitzenden",
+      "verb": "uitzenden",
+      "gloss": "to broadcast",
+      "band": "a1",
+      "split": "zend ... uit",
+      "perfect": "heeft uitgezonden",
+      "example": "De omroep zendt de wedstrijd live uit.",
+      "exampleEn": "The broadcaster airs the match live.",
+      "scene": null
+    },
+    {
+      "id": "aanleggen",
+      "verb": "aanleggen",
+      "gloss": "to build, to construct",
+      "band": "a1",
+      "split": "leg ... aan",
+      "perfect": "heeft aangelegd",
+      "example": "De gemeente legt een nieuw fietspad aan.",
+      "exampleEn": "The council builds a new cycle path.",
+      "scene": null
+    },
+    {
+      "id": "intrekken",
+      "verb": "intrekken",
+      "gloss": "to withdraw, to move in",
+      "band": "a1",
+      "split": "trek ... in",
+      "perfect": "heeft/is ingetrokken",
+      "example": "Hij trekt zijn klacht weer in.",
+      "exampleEn": "He withdraws his complaint again.",
+      "scene": null
+    },
+    {
+      "id": "opladen",
+      "verb": "opladen",
+      "gloss": "to charge (a battery)",
+      "band": "a1",
+      "split": "laad ... op",
+      "perfect": "heeft opgeladen",
+      "example": "Ik laad mijn telefoon elke nacht op.",
+      "exampleEn": "I charge my phone every night.",
+      "scene": null
+    },
+    {
+      "id": "opvolgen",
+      "verb": "opvolgen",
+      "gloss": "to succeed, to follow (advice)",
+      "band": "a1",
+      "split": "volg ... op",
+      "perfect": "heeft opgevolgd",
+      "example": "Hij volgt zijn vader als directeur op.",
+      "exampleEn": "He succeeds his father as director.",
+      "scene": null
+    },
+    {
+      "id": "opvangen",
+      "verb": "opvangen",
+      "gloss": "to catch, to take in",
+      "band": "a1",
+      "split": "vang ... op",
+      "perfect": "heeft opgevangen",
+      "example": "Ze vangt de bal met één hand op.",
+      "exampleEn": "She catches the ball with one hand.",
+      "scene": null
+    },
+    {
+      "id": "overstappen",
+      "verb": "overstappen",
+      "gloss": "to change (trains)",
+      "band": "a1",
+      "split": "stap ... over",
+      "perfect": "is overgestapt",
+      "example": "We stappen in Utrecht over.",
+      "exampleEn": "We change trains in Utrecht.",
+      "scene": null
+    },
+    {
+      "id": "overslaan",
+      "verb": "overslaan",
+      "gloss": "to skip, to miss out",
+      "band": "a1",
+      "split": "sla ... over",
+      "perfect": "heeft overgeslagen",
+      "example": "Ik sla vandaag het ontbijt over.",
+      "exampleEn": "I am skipping breakfast today.",
+      "scene": null
+    },
+    {
+      "id": "aanraken",
+      "verb": "aanraken",
+      "gloss": "to touch",
+      "band": "a1",
+      "split": "raak ... aan",
+      "perfect": "heeft aangeraakt",
+      "example": "Het kind raakt de hete kachel aan.",
+      "exampleEn": "The child touches the hot stove.",
+      "scene": null
+    },
+    {
+      "id": "aanraden",
+      "verb": "aanraden",
+      "gloss": "to recommend",
+      "band": "a1",
+      "split": "raad ... aan",
+      "perfect": "heeft aangeraden",
+      "example": "Mijn dokter raadt deze zalf aan.",
+      "exampleEn": "My doctor recommends this ointment.",
+      "scene": null
+    },
+    {
+      "id": "afronden",
+      "verb": "afronden",
+      "gloss": "to complete, to round off",
+      "band": "a1",
+      "split": "rond ... af",
+      "perfect": "heeft afgerond",
+      "example": "Hij rondt zijn studie volgend jaar af.",
+      "exampleEn": "He completes his studies next year.",
+      "scene": null
+    },
+    {
+      "id": "meespelen",
+      "verb": "meespelen",
+      "gloss": "to join in, to play along",
+      "band": "a1",
+      "split": "speel ... mee",
+      "perfect": "heeft meegespeeld",
+      "example": "Ik speel zaterdag mee in het team.",
+      "exampleEn": "I play in the team on Saturday.",
+      "scene": null
+    },
+    {
+      "id": "opvallen",
+      "verb": "opvallen",
+      "gloss": "to stand out, to be noticed",
+      "band": "a1",
+      "split": "val ... op",
+      "perfect": "is opgevallen",
+      "example": "Zijn rode jas valt meteen op.",
+      "exampleEn": "His red coat stands out immediately.",
+      "scene": null
+    },
+    {
+      "id": "opgaan",
+      "verb": "opgaan",
+      "gloss": "to rise (sun)",
+      "band": "a1",
+      "split": "ga ... op",
+      "perfect": "is opgegaan",
+      "example": "De zon gaat in juni vroeg op.",
+      "exampleEn": "The sun rises early in June.",
+      "scene": null
+    },
+    {
+      "id": "vastzitten",
+      "verb": "vastzitten",
+      "gloss": "to be stuck",
+      "band": "a1",
+      "split": "zit ... vast",
+      "perfect": "heeft vastgezeten",
+      "example": "Mijn auto zit in de modder vast.",
+      "exampleEn": "My car is stuck in the mud.",
+      "scene": null
+    },
+    {
+      "id": "afgaan",
+      "verb": "afgaan",
+      "gloss": "to go off (alarm)",
+      "band": "a1",
+      "split": "ga ... af",
+      "perfect": "is afgegaan",
+      "example": "Het alarm gaat midden in de nacht af.",
+      "exampleEn": "The alarm goes off in the middle of the night.",
+      "scene": null
+    },
+    {
+      "id": "samenwonen",
+      "verb": "samenwonen",
+      "gloss": "to live together",
+      "band": "a1",
+      "split": "woon ... samen",
+      "perfect": "heeft samengewoond",
+      "example": "Mijn zus woont al jaren met haar vriend samen.",
+      "exampleEn": "My sister has lived with her boyfriend for years.",
+      "scene": null
+    },
+    {
+      "id": "afrekenen",
+      "verb": "afrekenen",
+      "gloss": "to pay the bill",
+      "band": "a1",
+      "split": "reken ... af",
+      "perfect": "heeft afgerekend",
+      "example": "Wij rekenen aan de kassa af.",
+      "exampleEn": "We pay at the checkout.",
+      "scene": null
+    },
+    {
+      "id": "meegeven",
+      "verb": "meegeven",
+      "gloss": "to send along (with someone)",
+      "band": "a1",
+      "split": "geef ... mee",
+      "perfect": "heeft meegegeven",
+      "example": "Ik geef mijn zoon een lunchpakket mee.",
+      "exampleEn": "I give my son a packed lunch to take along.",
+      "scene": null
+    },
+    {
+      "id": "uitlopen",
+      "verb": "uitlopen",
+      "gloss": "to run over (time)",
+      "band": "a1",
+      "split": "loop ... uit",
+      "perfect": "is uitgelopen",
+      "example": "De vergadering loopt een kwartier uit.",
+      "exampleEn": "The meeting runs over by a quarter of an hour.",
+      "scene": null
+    },
+    {
+      "id": "aandoen",
+      "verb": "aandoen",
+      "gloss": "to switch on (a light)",
+      "band": "a2",
+      "split": "doe ... aan",
+      "perfect": "heeft aangedaan",
+      "example": "Ik doe de lamp aan.",
+      "exampleEn": "I switch on the lamp.",
+      "scene": null
+    },
+    {
+      "id": "uitdoen",
+      "verb": "uitdoen",
+      "gloss": "to switch off (a light)",
+      "band": "a2",
+      "split": "doe ... uit",
+      "perfect": "heeft uitgedaan",
+      "example": "Ik doe de lamp uit.",
+      "exampleEn": "I switch off the lamp.",
+      "scene": null
+    },
+    {
+      "id": "aanzetten",
+      "verb": "aanzetten",
+      "gloss": "to turn on",
+      "band": "a2",
+      "split": "zet ... aan",
+      "perfect": "heeft aangezet",
+      "example": "Ik zet de radio aan.",
+      "exampleEn": "I turn on the radio.",
+      "scene": null
+    },
+    {
+      "id": "uitzetten",
+      "verb": "uitzetten",
+      "gloss": "to turn off",
+      "band": "a2",
+      "split": "zet ... uit",
+      "perfect": "heeft uitgezet",
+      "example": "Ik zet de radio uit.",
+      "exampleEn": "I turn off the radio.",
+      "scene": null
+    },
+    {
+      "id": "opendoen",
+      "verb": "opendoen",
+      "gloss": "to open (a door)",
+      "band": "a2",
+      "split": "doe ... open",
+      "perfect": "heeft opengedaan",
+      "example": "Ik doe de deur open.",
+      "exampleEn": "I open the door.",
+      "scene": null
+    },
+    {
+      "id": "dichtdoen",
+      "verb": "dichtdoen",
+      "gloss": "to close (a door)",
+      "band": "a2",
+      "split": "doe ... dicht",
+      "perfect": "heeft dichtgedaan",
+      "example": "Ik doe de deur dicht.",
+      "exampleEn": "I close the door.",
+      "scene": null
+    },
+    {
+      "id": "afsluiten",
+      "verb": "afsluiten",
+      "gloss": "to lock",
+      "band": "a2",
+      "split": "sluit ... af",
+      "perfect": "heeft afgesloten",
+      "example": "Ik sluit de deur af.",
+      "exampleEn": "I lock the door.",
+      "scene": null
+    },
+    {
+      "id": "inpakken",
+      "verb": "inpakken",
+      "gloss": "to pack",
+      "band": "a2",
+      "split": "pak ... in",
+      "perfect": "heeft ingepakt",
+      "example": "Ik pak mijn koffer in.",
+      "exampleEn": "I pack my suitcase.",
+      "scene": null
+    },
+    {
+      "id": "uitpakken",
+      "verb": "uitpakken",
+      "gloss": "to unpack",
+      "band": "a2",
+      "split": "pak ... uit",
+      "perfect": "heeft uitgepakt",
+      "example": "Ik pak mijn koffer uit.",
+      "exampleEn": "I unpack my suitcase.",
+      "scene": null
+    },
+    {
+      "id": "instappen",
+      "verb": "instappen",
+      "gloss": "to get in (a vehicle)",
+      "band": "a2",
+      "split": "stap ... in",
+      "perfect": "is ingestapt",
+      "example": "Ik stap bij de halte in.",
+      "exampleEn": "I get on at the stop.",
+      "scene": null
+    },
+    {
+      "id": "uitstappen",
+      "verb": "uitstappen",
+      "gloss": "to get out, to get off",
+      "band": "a2",
+      "split": "stap ... uit",
+      "perfect": "is uitgestapt",
+      "example": "Ik stap bij het station uit.",
+      "exampleEn": "I get off at the station.",
+      "scene": null
+    },
+    {
+      "id": "opbellen",
+      "verb": "opbellen",
+      "gloss": "to phone, to ring up",
+      "band": "a2",
+      "split": "bel ... op",
+      "perfect": "heeft opgebeld",
+      "example": "Ik bel mijn vader op.",
+      "exampleEn": "I phone my father.",
+      "scene": null
+    },
+    {
+      "id": "ophangen",
+      "verb": "ophangen",
+      "gloss": "to hang up (a phone)",
+      "band": "a2",
+      "split": "hang ... op",
+      "perfect": "heeft opgehangen",
+      "example": "Na het gesprek hang ik op.",
+      "exampleEn": "After the call I hang up.",
+      "scene": null
+    },
+    {
+      "id": "aankomen",
+      "verb": "aankomen",
+      "gloss": "to arrive",
+      "band": "a2",
+      "split": "komt ... aan",
+      "perfect": "is aangekomen",
+      "example": "De trein komt om tien uur aan.",
+      "exampleEn": "The train arrives at ten o'clock.",
+      "scene": null
+    },
+    {
+      "id": "wegrijden",
+      "verb": "wegrijden",
+      "gloss": "to drive off, to pull out",
+      "band": "a2",
+      "split": "rijdt ... weg",
+      "perfect": "is weggereden",
+      "example": "De trein rijdt om elf uur weg.",
+      "exampleEn": "The train drives off at eleven o'clock.",
+      "scene": null
+    },
+    {
+      "id": "meenemen",
+      "verb": "meenemen",
+      "gloss": "to take along",
+      "band": "a2",
+      "split": "neem ... mee",
+      "perfect": "heeft meegenomen",
+      "example": "Ik neem mijn paraplu mee.",
+      "exampleEn": "I take my umbrella with me.",
+      "scene": null
+    },
+    {
+      "id": "achterlaten",
+      "verb": "achterlaten",
+      "gloss": "to leave behind",
+      "band": "a2",
+      "split": "laat ... achter",
+      "perfect": "heeft achtergelaten",
+      "example": "Ik laat mijn paraplu thuis achter.",
+      "exampleEn": "I leave my umbrella at home.",
+      "scene": null
+    },
+    {
+      "id": "opruimen",
+      "verb": "opruimen",
+      "gloss": "to tidy up",
+      "band": "a2",
+      "split": "ruim ... op",
+      "perfect": "heeft opgeruimd",
+      "example": "Ik ruim mijn kamer op.",
+      "exampleEn": "I tidy my room.",
+      "scene": null
+    },
+    {
+      "id": "schoonmaken",
+      "verb": "schoonmaken",
+      "gloss": "to clean",
+      "band": "a2",
+      "split": "maak ... schoon",
+      "perfect": "heeft schoongemaakt",
+      "example": "Ik maak de vloer schoon.",
+      "exampleEn": "I clean the floor.",
+      "scene": null
+    },
+    {
+      "id": "aantrekken",
+      "verb": "aantrekken",
+      "gloss": "to put on (clothes)",
+      "band": "a2",
+      "split": "trek ... aan",
+      "perfect": "heeft aangetrokken",
+      "example": "Ik trek mijn jas aan.",
+      "exampleEn": "I put on my coat.",
+      "scene": null
+    },
+    {
+      "id": "uittrekken",
+      "verb": "uittrekken",
+      "gloss": "to take off (clothes)",
+      "band": "a2",
+      "split": "trek ... uit",
+      "perfect": "heeft uitgetrokken",
+      "example": "Ik trek mijn jas uit.",
+      "exampleEn": "I take off my coat.",
+      "scene": null
+    },
+    {
+      "id": "opstaan",
+      "verb": "opstaan",
+      "gloss": "to get up",
+      "band": "a2",
+      "split": "sta ... op",
+      "perfect": "is opgestaan",
+      "example": "Ik sta om zeven uur op.",
+      "exampleEn": "I get up at seven o'clock.",
+      "scene": null
+    },
+    {
+      "id": "uitslapen",
+      "verb": "uitslapen",
+      "gloss": "to sleep in",
+      "band": "a2",
+      "split": "slaap ... uit",
+      "perfect": "heeft uitgeslapen",
+      "example": "Op zondag slaap ik uit.",
+      "exampleEn": "On Sunday I sleep in.",
+      "scene": null
+    },
+    {
+      "id": "ophalen",
+      "verb": "ophalen",
+      "gloss": "to pick up (a person)",
+      "band": "a2",
+      "split": "haal ... op",
+      "perfect": "heeft opgehaald",
+      "example": "Ik haal mijn zoon van school op.",
+      "exampleEn": "I pick up my son from school.",
+      "scene": null
+    },
+    {
+      "id": "wegbrengen",
+      "verb": "wegbrengen",
+      "gloss": "to take away, to drop off",
+      "band": "a2",
+      "split": "breng ... weg",
+      "perfect": "heeft weggebracht",
+      "example": "'s Ochtends breng ik hem weg.",
+      "exampleEn": "In the morning I take him there.",
+      "scene": null
+    },
+    {
+      "id": "opeten",
+      "verb": "opeten",
+      "gloss": "to eat up",
+      "band": "a2",
+      "split": "eet ... op",
+      "perfect": "heeft opgegeten",
+      "example": "Ik eet alles op.",
+      "exampleEn": "I eat everything up.",
+      "scene": null
+    },
+    {
+      "id": "overlaten",
+      "verb": "overlaten",
+      "gloss": "to leave over",
+      "band": "a2",
+      "split": "laat ... over",
+      "perfect": "heeft overgelaten",
+      "example": "Ik laat wat groente over.",
+      "exampleEn": "I leave some vegetables.",
+      "scene": null
+    },
+    {
+      "id": "afwassen",
+      "verb": "afwassen",
+      "gloss": "to wash up",
+      "band": "a2",
+      "split": "was ... af",
+      "perfect": "heeft afgewassen",
+      "example": "Ik was elke avond af.",
+      "exampleEn": "I wash up every evening.",
+      "scene": null
+    },
+    {
+      "id": "afdrogen",
+      "verb": "afdrogen",
+      "gloss": "to dry (dishes)",
+      "band": "a2",
+      "split": "droog ... af",
+      "perfect": "heeft afgedroogd",
+      "example": "Ik droog de borden af.",
+      "exampleEn": "I dry the plates.",
+      "scene": null
+    },
+    {
+      "id": "aanbieden",
+      "verb": "aanbieden",
+      "gloss": "to offer",
+      "band": "a2",
+      "split": "bied ... aan",
+      "perfect": "heeft aangeboden",
+      "example": "Ik bied mijn vriend een cadeau aan.",
+      "exampleEn": "I offer my friend a present.",
+      "scene": null
+    },
+    {
+      "id": "aannemen",
+      "verb": "aannemen",
+      "gloss": "to accept",
+      "band": "a2",
+      "split": "neem ... aan",
+      "perfect": "heeft aangenomen",
+      "example": "Ik neem het cadeau aan.",
+      "exampleEn": "I accept the present.",
+      "scene": null
+    },
+    {
+      "id": "meegaan",
+      "verb": "meegaan",
+      "gloss": "to go along",
+      "band": "a2",
+      "split": "ga ... mee",
+      "perfect": "is meegegaan",
+      "example": "Ik ga met mijn vriend mee.",
+      "exampleEn": "I go along with my friend.",
+      "scene": null
+    },
+    {
+      "id": "thuisblijven",
+      "verb": "thuisblijven",
+      "gloss": "to stay at home",
+      "band": "a2",
+      "split": "blijf ... thuis",
+      "perfect": "is thuisgebleven",
+      "example": "Ik blijf vandaag thuis.",
+      "exampleEn": "I am staying at home today.",
+      "scene": null
+    },
+    {
+      "id": "thuiskomen",
+      "verb": "thuiskomen",
+      "gloss": "to come home",
+      "band": "a2",
+      "split": "kom ... thuis",
+      "perfect": "is thuisgekomen",
+      "example": "Ik kom om zes uur thuis.",
+      "exampleEn": "I come home at six o'clock.",
+      "scene": null
+    },
+    {
+      "id": "weggaan",
+      "verb": "weggaan",
+      "gloss": "to leave, to go away",
+      "band": "a2",
+      "split": "ga ... weg",
+      "perfect": "is weggegaan",
+      "example": "Ik ga om zeven uur weg.",
+      "exampleEn": "I leave at seven o'clock.",
+      "scene": null
+    },
+    {
+      "id": "opendraaien",
+      "verb": "opendraaien",
+      "gloss": "to turn on (a tap)",
+      "band": "a2",
+      "split": "draai ... open",
+      "perfect": "heeft opengedraaid",
+      "example": "Ik draai de kraan open.",
+      "exampleEn": "I turn on the tap.",
+      "scene": null
+    },
+    {
+      "id": "dichtdraaien",
+      "verb": "dichtdraaien",
+      "gloss": "to turn off (a tap)",
+      "band": "a2",
+      "split": "draai ... dicht",
+      "perfect": "heeft dichtgedraaid",
+      "example": "Ik draai de kraan dicht.",
+      "exampleEn": "I turn off the tap.",
+      "scene": null
+    },
+    {
+      "id": "weggooien",
+      "verb": "weggooien",
+      "gloss": "to throw away",
+      "band": "a2",
+      "split": "gooi ... weg",
+      "perfect": "heeft weggegooid",
+      "example": "Ik gooi het papier weg.",
+      "exampleEn": "I throw away the paper.",
+      "scene": null
+    },
+    {
+      "id": "oprapen",
+      "verb": "oprapen",
+      "gloss": "to pick up (from the ground)",
+      "band": "a2",
+      "split": "raap ... op",
+      "perfect": "heeft opgeraapt",
+      "example": "Ik raap het papier op.",
+      "exampleEn": "I pick up the paper.",
+      "scene": null
+    },
+    {
+      "id": "opzoeken",
+      "verb": "opzoeken",
+      "gloss": "to look up",
+      "band": "a2",
+      "split": "zoek ... op",
+      "perfect": "heeft opgezocht",
+      "example": "Ik zoek het woord op.",
+      "exampleEn": "I look up the word.",
+      "scene": null
+    },
+    {
+      "id": "opschrijven",
+      "verb": "opschrijven",
+      "gloss": "to write down",
+      "band": "a2",
+      "split": "schrijf ... op",
+      "perfect": "heeft opgeschreven",
+      "example": "Ik schrijf het woord op.",
+      "exampleEn": "I write the word down.",
+      "scene": null
+    },
+    {
+      "id": "doorgeven",
+      "verb": "doorgeven",
+      "gloss": "to pass on",
+      "band": "a2",
+      "split": "geef ... door",
+      "perfect": "heeft doorgegeven",
+      "example": "Ik geef het brood door.",
+      "exampleEn": "I pass on the bread.",
+      "scene": null
+    },
+    {
+      "id": "vasthouden",
+      "verb": "vasthouden",
+      "gloss": "to hold on to",
+      "band": "a2",
+      "split": "houd ... vast",
+      "perfect": "heeft vastgehouden",
+      "example": "Ik houd het brood vast.",
+      "exampleEn": "I hold on to the bread.",
+      "scene": null
+    },
+    {
+      "id": "opzetten",
+      "verb": "opzetten",
+      "gloss": "to put up (a tent)",
+      "band": "a2",
+      "split": "zet ... op",
+      "perfect": "heeft opgezet",
+      "example": "Ik zet de tent snel op.",
+      "exampleEn": "I put up the tent quickly.",
+      "scene": null
+    },
+    {
+      "id": "afbreken",
+      "verb": "afbreken",
+      "gloss": "to take down (a tent)",
+      "band": "a2",
+      "split": "breek ... af",
+      "perfect": "heeft afgebroken",
+      "example": "Ik breek de tent morgen af.",
+      "exampleEn": "I'll take the tent down tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "inchecken",
+      "verb": "inchecken",
+      "gloss": "to check in",
+      "band": "a2",
+      "split": "check ... in",
+      "perfect": "heeft ingecheckt",
+      "example": "Bij het poortje check ik in.",
+      "exampleEn": "I check in at the gate.",
+      "scene": null
+    },
+    {
+      "id": "uitchecken",
+      "verb": "uitchecken",
+      "gloss": "to check out",
+      "band": "a2",
+      "split": "check ... uit",
+      "perfect": "heeft uitgecheckt",
+      "example": "Op het station check ik uit.",
+      "exampleEn": "I check out at the station.",
+      "scene": null
+    },
+    {
+      "id": "omdoen",
+      "verb": "omdoen",
+      "gloss": "to put on (a belt)",
+      "band": "a2",
+      "split": "doe ... om",
+      "perfect": "heeft omgedaan",
+      "example": "In de auto doe ik mijn gordel om.",
+      "exampleEn": "In the car I put on my seat belt.",
+      "scene": null
+    },
+    {
+      "id": "losmaken",
+      "verb": "losmaken",
+      "gloss": "to undo, to unfasten",
+      "band": "a2",
+      "split": "maak ... los",
+      "perfect": "heeft losgemaakt",
+      "example": "Bij aankomst maak ik mijn gordel los.",
+      "exampleEn": "On arrival I undo my seat belt.",
+      "scene": null
+    },
+    {
+      "id": "klaarzetten",
+      "verb": "klaarzetten",
+      "gloss": "to set out",
+      "band": "a2",
+      "split": "zet ... klaar",
+      "perfect": "heeft klaargezet",
+      "example": "Ik zet de borden alvast klaar.",
+      "exampleEn": "I set out the plates in advance.",
+      "scene": null
+    },
+    {
+      "id": "afruimen",
+      "verb": "afruimen",
+      "gloss": "to clear (the table)",
+      "band": "a2",
+      "split": "ruim ... af",
+      "perfect": "heeft afgeruimd",
+      "example": "Na het eten ruim ik de tafel af.",
+      "exampleEn": "After the meal I clear the table.",
+      "scene": null
+    },
+    {
+      "id": "inruimen",
+      "verb": "inruimen",
+      "gloss": "to load (a dishwasher)",
+      "band": "a2",
+      "split": "ruim ... in",
+      "perfect": "heeft ingeruimd",
+      "example": "Na het eten ruim ik de vaatwasser in.",
+      "exampleEn": "After dinner I load the dishwasher.",
+      "scene": null
+    },
+    {
+      "id": "uitruimen",
+      "verb": "uitruimen",
+      "gloss": "to unload (a dishwasher)",
+      "band": "a2",
+      "split": "ruim ... uit",
+      "perfect": "heeft uitgeruimd",
+      "example": "Elke ochtend ruim ik de vaatwasser uit.",
+      "exampleEn": "Every morning I unload the dishwasher.",
+      "scene": null
+    },
+    {
+      "id": "dichtritsen",
+      "verb": "dichtritsen",
+      "gloss": "to zip up",
+      "band": "a2",
+      "split": "rits ... dicht",
+      "perfect": "heeft dichtgeritst",
+      "example": "Buiten rits ik mijn jas dicht.",
+      "exampleEn": "Outside I zip up my coat.",
+      "scene": null
+    },
+    {
+      "id": "openritsen",
+      "verb": "openritsen",
+      "gloss": "to unzip",
+      "band": "a2",
+      "split": "rits ... open",
+      "perfect": "heeft opengeritst",
+      "example": "Binnen rits ik mijn jas open.",
+      "exampleEn": "Indoors I unzip my coat.",
+      "scene": null
+    },
+    {
+      "id": "toelaten",
+      "verb": "toelaten",
+      "gloss": "to allow, to admit",
+      "band": "a2",
+      "split": "laat ... toe",
+      "perfect": "heeft toegelaten",
+      "example": "De portier laat niemand zonder kaartje toe.",
+      "exampleEn": "The doorman admits nobody without a ticket.",
+      "scene": null
+    },
+    {
+      "id": "bezighouden",
+      "verb": "bezighouden",
+      "gloss": "to keep busy",
+      "band": "a2",
+      "split": "houd ... bezig",
+      "perfect": "heeft beziggehouden",
+      "example": "Ik houd me graag met tuinieren bezig.",
+      "exampleEn": "I like to keep myself busy with gardening.",
+      "scene": null
+    },
+    {
+      "id": "inhuren",
+      "verb": "inhuren",
+      "gloss": "to hire (in)",
+      "band": "a2",
+      "split": "huur ... in",
+      "perfect": "heeft ingehuurd",
+      "example": "Het bedrijf huurt extra personeel in.",
+      "exampleEn": "The company hires extra staff.",
+      "scene": null
+    },
+    {
+      "id": "nakijken",
+      "verb": "nakijken",
+      "gloss": "to check, to mark",
+      "band": "a2",
+      "split": "kijk ... na",
+      "perfect": "heeft nagekeken",
+      "example": "De leraar kijkt de toetsen na.",
+      "exampleEn": "The teacher marks the tests.",
+      "scene": null
+    },
+    {
+      "id": "samenstellen",
+      "verb": "samenstellen",
+      "gloss": "to put together, to compile",
+      "band": "a2",
+      "split": "stel ... samen",
+      "perfect": "heeft samengesteld",
+      "example": "Zij stelt een lijst met namen samen.",
+      "exampleEn": "She compiles a list of names.",
+      "scene": null
+    },
+    {
+      "id": "opdoen",
+      "verb": "opdoen",
+      "gloss": "to gain (experience)",
+      "band": "a2",
+      "split": "doe ... op",
+      "perfect": "heeft opgedaan",
+      "example": "Ik doe veel ervaring op tijdens mijn stage.",
+      "exampleEn": "I gain a lot of experience during my internship.",
+      "scene": null
+    },
+    {
+      "id": "oppakken",
+      "verb": "oppakken",
+      "gloss": "to pick up",
+      "band": "a2",
+      "split": "pak ... op",
+      "perfect": "heeft opgepakt",
+      "example": "Ik pak de tas van de grond op.",
+      "exampleEn": "I pick the bag up off the floor.",
+      "scene": null
+    },
+    {
+      "id": "inhalen",
+      "verb": "inhalen",
+      "gloss": "to overtake (a vehicle)",
+      "band": "a2",
+      "split": "haal ... in",
+      "perfect": "heeft ingehaald",
+      "example": "De auto haalt de vrachtwagen links in.",
+      "exampleEn": "The car overtakes the lorry on the left.",
+      "scene": null
+    },
+    {
+      "id": "uitstellen",
+      "verb": "uitstellen",
+      "gloss": "to postpone",
+      "band": "a2",
+      "split": "stel ... uit",
+      "perfect": "heeft uitgesteld",
+      "example": "Wij stellen de vergadering tot morgen uit.",
+      "exampleEn": "We are postponing the meeting until tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "afgeven",
+      "verb": "afgeven",
+      "gloss": "to hand in; to hand over",
+      "band": "a2",
+      "split": "geef ... af",
+      "perfect": "heeft afgegeven",
+      "example": "Ik geef mijn sleutel bij de balie af.",
+      "exampleEn": "I hand my key in at the desk.",
+      "scene": null
+    },
+    {
+      "id": "lesgeven",
+      "verb": "lesgeven",
+      "gloss": "to teach",
+      "band": "a2",
+      "split": "geef ... les",
+      "perfect": "heeft lesgegeven",
+      "example": "Zij geeft op een basisschool les.",
+      "exampleEn": "She teaches at a primary school.",
+      "scene": null
+    },
+    {
+      "id": "terugvinden",
+      "verb": "terugvinden",
+      "gloss": "to find (something lost)",
+      "band": "a2",
+      "split": "vind ... terug",
+      "perfect": "heeft teruggevonden",
+      "example": "Ik vind mijn sleutels nergens terug.",
+      "exampleEn": "I cannot find my keys anywhere.",
+      "scene": null
+    },
+    {
+      "id": "uitschakelen",
+      "verb": "uitschakelen",
+      "gloss": "to switch off",
+      "band": "a2",
+      "split": "schakel ... uit",
+      "perfect": "heeft uitgeschakeld",
+      "example": "Ik schakel de computer altijd om tien uur uit.",
+      "exampleEn": "I always switch the computer off at ten.",
+      "scene": null
+    },
+    {
+      "id": "voortzetten",
+      "verb": "voortzetten",
+      "gloss": "to continue",
+      "band": "a2",
+      "split": "zet ... voort",
+      "perfect": "heeft voortgezet",
+      "example": "Zij zetten hun gesprek na de pauze voort.",
+      "exampleEn": "They continue their conversation after the break.",
+      "scene": null
+    },
+    {
+      "id": "afleiden",
+      "verb": "afleiden",
+      "gloss": "to distract",
+      "band": "a2",
+      "split": "leid ... af",
+      "perfect": "heeft afgeleid",
+      "example": "De televisie leidt mij steeds af.",
+      "exampleEn": "The television keeps distracting me.",
+      "scene": null
+    },
+    {
+      "id": "afspelen",
+      "verb": "afspelen",
+      "gloss": "to play (a recording)",
+      "band": "a2",
+      "split": "speel ... af",
+      "perfect": "heeft afgespeeld",
+      "example": "Ik speel het liedje nog een keer af.",
+      "exampleEn": "I play the song once more.",
+      "scene": null
+    },
+    {
+      "id": "aftellen",
+      "verb": "aftellen",
+      "gloss": "to count down",
+      "band": "a2",
+      "split": "tel ... af",
+      "perfect": "heeft afgeteld",
+      "example": "De kinderen tellen de dagen tot de vakantie af.",
+      "exampleEn": "The children count down the days to the holiday.",
+      "scene": null
+    },
+    {
+      "id": "bijwonen",
+      "verb": "bijwonen",
+      "gloss": "to attend (a meeting)",
+      "band": "a2",
+      "split": "woon ... bij",
+      "perfect": "heeft bijgewoond",
+      "example": "Ik woon morgen de vergadering bij.",
+      "exampleEn": "I am attending the meeting tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "nagaan",
+      "verb": "nagaan",
+      "gloss": "to check; to verify",
+      "band": "a2",
+      "split": "ga ... na",
+      "perfect": "heeft nagegaan",
+      "example": "Ik ga na of de winkel open is.",
+      "exampleEn": "I check whether the shop is open.",
+      "scene": null
+    },
+    {
+      "id": "nakomen",
+      "verb": "nakomen",
+      "gloss": "to keep (a promise)",
+      "band": "a2",
+      "split": "kom ... na",
+      "perfect": "is nagekomen",
+      "example": "Hij komt zijn belofte niet na.",
+      "exampleEn": "He does not keep his promise.",
+      "scene": null
+    },
+    {
+      "id": "opheffen",
+      "verb": "opheffen",
+      "gloss": "to abolish; to disband",
+      "band": "a2",
+      "split": "hef ... op",
+      "perfect": "heeft opgeheven",
+      "example": "De gemeente heft de oude regel op.",
+      "exampleEn": "The council abolishes the old rule.",
+      "scene": null
+    },
+    {
+      "id": "overbrengen",
+      "verb": "overbrengen",
+      "gloss": "to transfer (someone)",
+      "band": "a2",
+      "split": "breng ... over",
+      "perfect": "heeft overgebracht",
+      "example": "Ze brengen de patiënt naar een ander ziekenhuis over.",
+      "exampleEn": "They transfer the patient to another hospital.",
+      "scene": null
+    },
+    {
+      "id": "autorijden",
+      "verb": "autorijden",
+      "gloss": "to drive (a car)",
+      "band": "a2",
+      "split": "rijd ... auto",
+      "perfect": "heeft autogereden",
+      "example": "Mijn vader rijdt elke dag auto naar zijn werk.",
+      "exampleEn": "My father drives to work every day.",
+      "scene": null
+    },
+    {
+      "id": "afzetten",
+      "verb": "afzetten",
+      "gloss": "to drop off (someone)",
+      "band": "a2",
+      "split": "zet ... af",
+      "perfect": "heeft afgezet",
+      "example": "Ik zet mijn dochter bij school af.",
+      "exampleEn": "I drop my daughter off at school.",
+      "scene": null
+    },
+    {
+      "id": "opstarten",
+      "verb": "opstarten",
+      "gloss": "to start up (a computer)",
+      "band": "a2",
+      "split": "start ... op",
+      "perfect": "heeft opgestart",
+      "example": "Ik start mijn laptop altijd eerst op.",
+      "exampleEn": "I always start up my laptop first.",
+      "scene": null
+    },
+    {
+      "id": "uitwisselen",
+      "verb": "uitwisselen",
+      "gloss": "to exchange",
+      "band": "a2",
+      "split": "wissel ... uit",
+      "perfect": "heeft uitgewisseld",
+      "example": "Wij wisselen onze telefoonnummers met elkaar uit.",
+      "exampleEn": "We exchange phone numbers with each other.",
+      "scene": null
+    },
+    {
+      "id": "opdagen",
+      "verb": "opdagen",
+      "gloss": "to show up",
+      "band": "a2",
+      "split": "daag ... op",
+      "perfect": "is opgedaagd",
+      "example": "Hij daagt altijd te laat op.",
+      "exampleEn": "He always shows up too late.",
+      "scene": null
+    },
+    {
+      "id": "overgaan",
+      "verb": "overgaan",
+      "gloss": "to ring (phone)",
+      "band": "a2",
+      "split": "ga ... over",
+      "perfect": "is overgegaan",
+      "example": "De telefoon gaat drie keer over.",
+      "exampleEn": "The phone rings three times.",
+      "scene": null
+    },
+    {
+      "id": "aankleden",
+      "verb": "aankleden",
+      "gloss": "to dress (someone)",
+      "band": "a2",
+      "split": "kleed ... aan",
+      "perfect": "heeft aangekleed",
+      "example": "Ik kleed mijn zoon elke ochtend aan.",
+      "exampleEn": "I dress my son every morning.",
+      "scene": null
+    },
+    {
+      "id": "samenkomen",
+      "verb": "samenkomen",
+      "gloss": "to gather; to meet",
+      "band": "a2",
+      "split": "kom ... samen",
+      "perfect": "is samengekomen",
+      "example": "De buren komen elke vrijdag bij ons samen.",
+      "exampleEn": "The neighbours gather at our place every Friday.",
+      "scene": null
+    },
+    {
+      "id": "terugkijken",
+      "verb": "terugkijken",
+      "gloss": "to look back",
+      "band": "a2",
+      "split": "kijk ... terug",
+      "perfect": "heeft teruggekeken",
+      "example": "Ik kijk graag terug op die zomer.",
+      "exampleEn": "I like looking back on that summer.",
+      "scene": null
+    },
+    {
+      "id": "aankopen",
+      "verb": "aankopen",
+      "gloss": "to purchase",
+      "band": "a2",
+      "split": "koop ... aan",
+      "perfect": "heeft aangekocht",
+      "example": "De school koopt nieuwe computers aan.",
+      "exampleEn": "The school purchases new computers.",
+      "scene": null
+    },
+    {
+      "id": "opleiden",
+      "verb": "opleiden",
+      "gloss": "to train (someone)",
+      "band": "a2",
+      "split": "leid ... op",
+      "perfect": "heeft opgeleid",
+      "example": "Het bedrijf leidt nieuwe medewerkers zelf op.",
+      "exampleEn": "The company trains new staff itself.",
+      "scene": null
+    },
+    {
+      "id": "aanklagen",
+      "verb": "aanklagen",
+      "gloss": "to sue; to press charges",
+      "band": "a2",
+      "split": "klaag ... aan",
+      "perfect": "heeft aangeklaagd",
+      "example": "Zij klaagt de bank wegens fraude aan.",
+      "exampleEn": "She is suing the bank for fraud.",
+      "scene": null
+    },
+    {
+      "id": "instorten",
+      "verb": "instorten",
+      "gloss": "to collapse",
+      "band": "a2",
+      "split": "stort ... in",
+      "perfect": "is ingestort",
+      "example": "Het oude dak stort tijdens de storm in.",
+      "exampleEn": "The old roof collapses during the storm.",
+      "scene": null
+    },
+    {
+      "id": "opslaan",
+      "verb": "opslaan",
+      "gloss": "to save (a file)",
+      "band": "a2",
+      "split": "sla ... op",
+      "perfect": "heeft opgeslagen",
+      "example": "Ik sla het bestand op mijn laptop op.",
+      "exampleEn": "I save the file on my laptop.",
+      "scene": null
+    },
+    {
+      "id": "opsporen",
+      "verb": "opsporen",
+      "gloss": "to track down",
+      "band": "a2",
+      "split": "spoor ... op",
+      "perfect": "heeft opgespoord",
+      "example": "De politie spoort de dief snel op.",
+      "exampleEn": "The police track the thief down quickly.",
+      "scene": null
+    },
+    {
+      "id": "overeenkomen",
+      "verb": "overeenkomen",
+      "gloss": "to agree; to match",
+      "band": "a2",
+      "split": "kom ... overeen",
+      "perfect": "is overeengekomen",
+      "example": "Wij komen een datum voor de afspraak overeen.",
+      "exampleEn": "We agree on a date for the appointment.",
+      "scene": null
+    },
+    {
+      "id": "uitsluiten",
+      "verb": "uitsluiten",
+      "gloss": "to rule out",
+      "band": "a2",
+      "split": "sluit ... uit",
+      "perfect": "heeft uitgesloten",
+      "example": "Ik sluit een fout van de bank niet uit.",
+      "exampleEn": "I do not rule out a mistake by the bank.",
+      "scene": null
+    },
+    {
+      "id": "weergeven",
+      "verb": "weergeven",
+      "gloss": "to convey; to display",
+      "band": "a2",
+      "split": "geef ... weer",
+      "perfect": "heeft weergegeven",
+      "example": "Deze foto geeft de sfeer goed weer.",
+      "exampleEn": "This photo conveys the atmosphere well.",
+      "scene": null
+    },
+    {
+      "id": "wegnemen",
+      "verb": "wegnemen",
+      "gloss": "to take away",
+      "band": "a2",
+      "split": "neem ... weg",
+      "perfect": "heeft weggenomen",
+      "example": "De leraar neemt mijn telefoon even weg.",
+      "exampleEn": "The teacher takes my phone away for a moment.",
+      "scene": null
+    },
+    {
+      "id": "aanbrengen",
+      "verb": "aanbrengen",
+      "gloss": "to apply (paint)",
+      "band": "a2",
+      "split": "breng ... aan",
+      "perfect": "heeft aangebracht",
+      "example": "Ik breng een laag verf op de muur aan.",
+      "exampleEn": "I apply a coat of paint to the wall.",
+      "scene": null
+    },
+    {
+      "id": "aandringen",
+      "verb": "aandringen",
+      "gloss": "to insist",
+      "band": "a2",
+      "split": "dring ... aan",
+      "perfect": "heeft aangedrongen",
+      "example": "Mijn moeder dringt op een bezoek aan.",
+      "exampleEn": "My mother insists on a visit.",
+      "scene": null
+    },
+    {
+      "id": "kwijtraken",
+      "verb": "kwijtraken",
+      "gloss": "to lose (something)",
+      "band": "a2",
+      "split": "raak ... kwijt",
+      "perfect": "is kwijtgeraakt",
+      "example": "Ik raak mijn sleutels altijd kwijt.",
+      "exampleEn": "I always lose my keys.",
+      "scene": null
+    },
+    {
+      "id": "neerleggen",
+      "verb": "neerleggen",
+      "gloss": "to put down",
+      "band": "a2",
+      "split": "leg ... neer",
+      "perfect": "heeft neergelegd",
+      "example": "Ik leg mijn tas op de stoel neer.",
+      "exampleEn": "I put my bag down on the chair.",
+      "scene": null
+    },
+    {
+      "id": "overhalen",
+      "verb": "overhalen",
+      "gloss": "to persuade",
+      "band": "a2",
+      "split": "haal ... over",
+      "perfect": "heeft overgehaald",
+      "example": "Hij haalt me over om te komen.",
+      "exampleEn": "He persuades me to come.",
+      "scene": null
+    },
+    {
+      "id": "omkleden",
+      "verb": "omkleden",
+      "gloss": "to change clothes",
+      "band": "a2",
+      "split": "kleed ... om",
+      "perfect": "heeft omgekleed",
+      "example": "Ik kleed me na het werk om.",
+      "exampleEn": "I change clothes after work.",
+      "scene": null
+    },
+    {
+      "id": "uithalen",
+      "verb": "uithalen",
+      "gloss": "to get up to (mischief)",
+      "band": "a2",
+      "split": "haal ... uit",
+      "perfect": "heeft uitgehaald",
+      "example": "De kinderen halen weer kattenkwaad uit.",
+      "exampleEn": "The children are up to mischief again.",
+      "scene": null
+    },
+    {
+      "id": "oppikken",
+      "verb": "oppikken",
+      "gloss": "to pick up (someone)",
+      "band": "a2",
+      "split": "pik ... op",
+      "perfect": "heeft opgepikt",
+      "example": "Ik pik je om zeven uur bij het station op.",
+      "exampleEn": "I will pick you up at the station at seven.",
+      "scene": null
+    },
+    {
+      "id": "optrekken",
+      "verb": "optrekken",
+      "gloss": "to pull away; to accelerate",
+      "band": "a2",
+      "split": "trek ... op",
+      "perfect": "heeft opgetrokken",
+      "example": "De auto trekt bij het stoplicht snel op.",
+      "exampleEn": "The car accelerates quickly at the light.",
+      "scene": null
+    },
+    {
+      "id": "terugbetalen",
+      "verb": "terugbetalen",
+      "gloss": "to pay back",
+      "band": "a2",
+      "split": "betaal ... terug",
+      "perfect": "heeft terugbetaald",
+      "example": "Ik betaal je het geld morgen terug.",
+      "exampleEn": "I will pay you the money back tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "aflopen",
+      "verb": "aflopen",
+      "gloss": "to end; to expire",
+      "band": "a2",
+      "split": "loop ... af",
+      "perfect": "is afgelopen",
+      "example": "Mijn abonnement loopt volgende maand af.",
+      "exampleEn": "My subscription expires next month.",
+      "scene": null
+    },
+    {
+      "id": "afwijzen",
+      "verb": "afwijzen",
+      "gloss": "to reject",
+      "band": "a2",
+      "split": "wijs ... af",
+      "perfect": "heeft afgewezen",
+      "example": "De bank wijst mijn aanvraag af.",
+      "exampleEn": "The bank rejects my application.",
+      "scene": null
+    },
+    {
+      "id": "inrichten",
+      "verb": "inrichten",
+      "gloss": "to furnish (a room)",
+      "band": "a2",
+      "split": "richt ... in",
+      "perfect": "heeft ingericht",
+      "example": "Wij richten de woonkamer gezellig in.",
+      "exampleEn": "We are furnishing the living room cosily.",
+      "scene": null
+    },
+    {
+      "id": "omzetten",
+      "verb": "omzetten",
+      "gloss": "to convert",
+      "band": "a2",
+      "split": "zet ... om",
+      "perfect": "heeft omgezet",
+      "example": "Ik zet de tekst in een pdf om.",
+      "exampleEn": "I convert the text into a PDF.",
+      "scene": null
+    },
+    {
+      "id": "overgeven",
+      "verb": "overgeven",
+      "gloss": "to vomit; to hand over",
+      "band": "a2",
+      "split": "geef ... over",
+      "perfect": "heeft overgegeven",
+      "example": "Het kind geeft in de auto over.",
+      "exampleEn": "The child vomits in the car.",
+      "scene": null
+    },
+    {
+      "id": "teruggaan",
+      "verb": "teruggaan",
+      "gloss": "to go back",
+      "band": "a2",
+      "split": "ga ... terug",
+      "perfect": "is teruggegaan",
+      "example": "Wij gaan morgen weer terug naar Utrecht.",
+      "exampleEn": "We go back to Utrecht tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "uitlaten",
+      "verb": "uitlaten",
+      "gloss": "to walk (a dog)",
+      "band": "a2",
+      "split": "laat ... uit",
+      "perfect": "heeft uitgelaten",
+      "example": "Ik laat de hond elke ochtend uit.",
+      "exampleEn": "I walk the dog every morning.",
+      "scene": null
+    },
+    {
+      "id": "afstuderen",
+      "verb": "afstuderen",
+      "gloss": "to graduate",
+      "band": "a2",
+      "split": "studeer ... af",
+      "perfect": "is afgestudeerd",
+      "example": "Zij studeert volgend jaar af.",
+      "exampleEn": "She graduates next year.",
+      "scene": null
+    },
+    {
+      "id": "teleurstellen",
+      "verb": "teleurstellen",
+      "gloss": "to disappoint",
+      "band": "a2",
+      "split": "stel ... teleur",
+      "perfect": "heeft teleurgesteld",
+      "example": "Hij stelt zijn ouders erg teleur.",
+      "exampleEn": "He disappoints his parents badly.",
+      "scene": null
+    },
+    {
+      "id": "uitkiezen",
+      "verb": "uitkiezen",
+      "gloss": "to pick out",
+      "band": "a2",
+      "split": "kies ... uit",
+      "perfect": "heeft uitgekozen",
+      "example": "Ik kies een mooie jurk voor het feest uit.",
+      "exampleEn": "I pick out a nice dress for the party.",
+      "scene": null
+    },
+    {
+      "id": "afzien",
+      "verb": "afzien",
+      "gloss": "to refrain (from)",
+      "band": "a2",
+      "split": "zie ... af",
+      "perfect": "heeft afgezien",
+      "example": "Wij zien van een verhuizing af.",
+      "exampleEn": "We are refraining from moving house.",
+      "scene": null
+    },
+    {
+      "id": "opmerken",
+      "verb": "opmerken",
+      "gloss": "to notice",
+      "band": "a2",
+      "split": "merk ... op",
+      "perfect": "heeft opgemerkt",
+      "example": "Ik merk een fout in de tekst op.",
+      "exampleEn": "I notice a mistake in the text.",
+      "scene": null
+    },
+    {
+      "id": "vrijmaken",
+      "verb": "vrijmaken",
+      "gloss": "to free up (time)",
+      "band": "a2",
+      "split": "maak ... vrij",
+      "perfect": "heeft vrijgemaakt",
+      "example": "Ik maak vrijdagmiddag tijd voor je vrij.",
+      "exampleEn": "I am freeing up time for you on Friday afternoon.",
+      "scene": null
+    },
+    {
+      "id": "aankondigen",
+      "verb": "aankondigen",
+      "gloss": "to announce",
+      "band": "a2",
+      "split": "kondig ... aan",
+      "perfect": "heeft aangekondigd",
+      "example": "De burgemeester kondigt een nieuw plan aan.",
+      "exampleEn": "The mayor announces a new plan.",
+      "scene": null
+    },
+    {
+      "id": "toekomen",
+      "verb": "toekomen",
+      "gloss": "to get round to",
+      "band": "a2",
+      "split": "kom ... toe",
+      "perfect": "is toegekomen",
+      "example": "Ik kom er vandaag niet aan toe.",
+      "exampleEn": "I do not get round to it today.",
+      "scene": null
+    },
+    {
+      "id": "opsturen",
+      "verb": "opsturen",
+      "gloss": "to send off",
+      "band": "b1",
+      "split": "stuur ... op",
+      "perfect": "heeft opgestuurd",
+      "example": "Ik stuur het pakket op.",
+      "exampleEn": "I send off the parcel.",
+      "scene": null
+    },
+    {
+      "id": "afhalen",
+      "verb": "afhalen",
+      "gloss": "to collect",
+      "band": "b1",
+      "split": "haal ... af",
+      "perfect": "heeft afgehaald",
+      "example": "Ik haal het pakket af.",
+      "exampleEn": "I collect the parcel.",
+      "scene": null
+    },
+    {
+      "id": "optillen",
+      "verb": "optillen",
+      "gloss": "to lift up",
+      "band": "b1",
+      "split": "til ... op",
+      "perfect": "heeft opgetild",
+      "example": "Ik til de doos op.",
+      "exampleEn": "I lift up the box.",
+      "scene": null
+    },
+    {
+      "id": "neerzetten",
+      "verb": "neerzetten",
+      "gloss": "to put down",
+      "band": "b1",
+      "split": "zet ... neer",
+      "perfect": "heeft neergezet",
+      "example": "Ik zet de doos op tafel neer.",
+      "exampleEn": "I put the box down on the table.",
+      "scene": null
+    },
+    {
+      "id": "aankijken",
+      "verb": "aankijken",
+      "gloss": "to look at (a person)",
+      "band": "b1",
+      "split": "kijk ... aan",
+      "perfect": "heeft aangekeken",
+      "example": "Ik kijk mijn buurman aan.",
+      "exampleEn": "I look at my neighbour.",
+      "scene": null
+    },
+    {
+      "id": "wegkijken",
+      "verb": "wegkijken",
+      "gloss": "to look away",
+      "band": "b1",
+      "split": "kijk ... weg",
+      "perfect": "heeft weggekeken",
+      "example": "Ik kijk snel weg.",
+      "exampleEn": "I quickly look away.",
+      "scene": null
+    },
+    {
+      "id": "voordoen",
+      "verb": "voordoen",
+      "gloss": "to demonstrate (show how)",
+      "band": "b1",
+      "split": "doe ... voor",
+      "perfect": "heeft voorgedaan",
+      "example": "Ik doe de beweging voor.",
+      "exampleEn": "I show the movement.",
+      "scene": null
+    },
+    {
+      "id": "nadoen",
+      "verb": "nadoen",
+      "gloss": "to copy",
+      "band": "b1",
+      "split": "doet ... na",
+      "perfect": "heeft nagedaan",
+      "example": "Het kind doet de juf na.",
+      "exampleEn": "The child copies the teacher.",
+      "scene": null
+    },
+    {
+      "id": "stilstaan",
+      "verb": "stilstaan",
+      "gloss": "to stand still",
+      "band": "b1",
+      "split": "sta ... stil",
+      "perfect": "heeft stilgestaan",
+      "example": "Ik sta even stil.",
+      "exampleEn": "I stand still for a moment.",
+      "scene": null
+    },
+    {
+      "id": "rondlopen",
+      "verb": "rondlopen",
+      "gloss": "to walk around",
+      "band": "b1",
+      "split": "loop ... rond",
+      "perfect": "heeft rondgelopen",
+      "example": "Ik loop in de kamer rond.",
+      "exampleEn": "I walk around in the room.",
+      "scene": null
+    },
+    {
+      "id": "uitdelen",
+      "verb": "uitdelen",
+      "gloss": "to hand out",
+      "band": "b1",
+      "split": "deel ... uit",
+      "perfect": "heeft uitgedeeld",
+      "example": "Ik deel de toets uit.",
+      "exampleEn": "I hand out the test.",
+      "scene": null
+    },
+    {
+      "id": "inleveren",
+      "verb": "inleveren",
+      "gloss": "to hand in",
+      "band": "b1",
+      "split": "lever ... in",
+      "perfect": "heeft ingeleverd",
+      "example": "Ik lever de toets in.",
+      "exampleEn": "I hand in the test.",
+      "scene": null
+    },
+    {
+      "id": "aansluiten",
+      "verb": "aansluiten",
+      "gloss": "to connect (plug in)",
+      "band": "b1",
+      "split": "sluit ... aan",
+      "perfect": "heeft aangesloten",
+      "example": "Ik sluit de laptop aan.",
+      "exampleEn": "I plug in the laptop.",
+      "scene": null
+    },
+    {
+      "id": "loskoppelen",
+      "verb": "loskoppelen",
+      "gloss": "to disconnect",
+      "band": "b1",
+      "split": "koppel ... los",
+      "perfect": "heeft losgekoppeld",
+      "example": "Ik koppel de laptop los.",
+      "exampleEn": "I unplug the laptop.",
+      "scene": null
+    },
+    {
+      "id": "vastpakken",
+      "verb": "vastpakken",
+      "gloss": "to grab hold of",
+      "band": "b1",
+      "split": "pak ... vast",
+      "perfect": "heeft vastgepakt",
+      "example": "Ik pak de stang stevig vast.",
+      "exampleEn": "I grab the bar firmly.",
+      "scene": null
+    },
+    {
+      "id": "loslaten",
+      "verb": "loslaten",
+      "gloss": "to let go",
+      "band": "b1",
+      "split": "laat ... los",
+      "perfect": "heeft losgelaten",
+      "example": "Ik laat de stang voorzichtig los.",
+      "exampleEn": "I carefully let go of the bar.",
+      "scene": null
+    },
+    {
+      "id": "invullen",
+      "verb": "invullen",
+      "gloss": "to fill in (a form)",
+      "band": "b1",
+      "split": "vul ... in",
+      "perfect": "heeft ingevuld",
+      "example": "Ik vul het formulier helemaal in.",
+      "exampleEn": "I fill in the whole form.",
+      "scene": null
+    },
+    {
+      "id": "doorstrepen",
+      "verb": "doorstrepen",
+      "gloss": "to cross out",
+      "band": "b1",
+      "split": "streep ... door",
+      "perfect": "heeft doorgestreept",
+      "example": "Ik streep een fout snel door.",
+      "exampleEn": "I quickly cross out a mistake.",
+      "scene": null
+    },
+    {
+      "id": "weglopen",
+      "verb": "weglopen",
+      "gloss": "to run away, to run off",
+      "band": "b1",
+      "split": "loopt ... weg",
+      "perfect": "is weggelopen",
+      "example": "Onze hond loopt steeds weg.",
+      "exampleEn": "Our dog keeps running off.",
+      "scene": null
+    },
+    {
+      "id": "terugkomen",
+      "verb": "terugkomen",
+      "gloss": "to come back",
+      "band": "b1",
+      "split": "komt ... terug",
+      "perfect": "is teruggekomen",
+      "example": "Onze hond komt altijd snel terug.",
+      "exampleEn": "Our dog always comes back quickly.",
+      "scene": null
+    },
+    {
+      "id": "afdrukken",
+      "verb": "afdrukken",
+      "gloss": "to print",
+      "band": "b1",
+      "split": "druk ... af",
+      "perfect": "heeft afgedrukt",
+      "example": "Ik druk de brief even af.",
+      "exampleEn": "I quickly print the letter.",
+      "scene": null
+    },
+    {
+      "id": "inscannen",
+      "verb": "inscannen",
+      "gloss": "to scan (in)",
+      "band": "b1",
+      "split": "scan ... in",
+      "perfect": "heeft ingescand",
+      "example": "Ik scan mijn paspoort even in.",
+      "exampleEn": "I quickly scan my passport.",
+      "scene": null
+    },
+    {
+      "id": "opsluiten",
+      "verb": "opsluiten",
+      "gloss": "to lock up, to shut in",
+      "band": "b1",
+      "split": "sluit ... op",
+      "perfect": "heeft opgesloten",
+      "example": "Ik sluit de vogel 's nachts op.",
+      "exampleEn": "I shut the bird in at night.",
+      "scene": null
+    },
+    {
+      "id": "vrijlaten",
+      "verb": "vrijlaten",
+      "gloss": "to set free, to release",
+      "band": "b1",
+      "split": "laat ... vrij",
+      "perfect": "heeft vrijgelaten",
+      "example": "Ik laat de vogel buiten vrij.",
+      "exampleEn": "I let the bird go outside.",
+      "scene": null
+    },
+    {
+      "id": "invallen",
+      "verb": "invallen",
+      "gloss": "to come on as a substitute",
+      "band": "b1",
+      "split": "val ... in",
+      "perfect": "is ingevallen",
+      "example": "In de tweede helft val ik in.",
+      "exampleEn": "I come on as a substitute in the second half.",
+      "scene": null
+    },
+    {
+      "id": "toekijken",
+      "verb": "toekijken",
+      "gloss": "to look on, to watch",
+      "band": "b1",
+      "split": "kijk ... toe",
+      "perfect": "heeft toegekeken",
+      "example": "Vandaag kijk ik alleen maar toe.",
+      "exampleEn": "Today I only watch.",
+      "scene": null
+    },
+    {
+      "id": "tegenhouden",
+      "verb": "tegenhouden",
+      "gloss": "to hold back, to stop",
+      "band": "b1",
+      "split": "houd ... tegen",
+      "perfect": "heeft tegengehouden",
+      "example": "Ik houd de hond bij het hek tegen.",
+      "exampleEn": "I hold the dog back at the gate.",
+      "scene": null
+    },
+    {
+      "id": "doorlaten",
+      "verb": "doorlaten",
+      "gloss": "to let through",
+      "band": "b1",
+      "split": "laat ... door",
+      "perfect": "heeft doorgelaten",
+      "example": "Bij het hek laat ik de hond door.",
+      "exampleEn": "At the gate I let the dog through.",
+      "scene": null
+    },
+    {
+      "id": "terugzetten",
+      "verb": "terugzetten",
+      "gloss": "to put back",
+      "band": "b1",
+      "split": "zet ... terug",
+      "perfect": "heeft teruggezet",
+      "example": "Ik zet de stoel netjes terug.",
+      "exampleEn": "I put the chair back neatly.",
+      "scene": null
+    },
+    {
+      "id": "weghalen",
+      "verb": "weghalen",
+      "gloss": "to take away, to remove",
+      "band": "b1",
+      "split": "haal ... weg",
+      "perfect": "heeft weggehaald",
+      "example": "Ik haal die oude stoel weg.",
+      "exampleEn": "I take that old chair away.",
+      "scene": null
+    },
+    {
+      "id": "toevoegen",
+      "verb": "toevoegen",
+      "gloss": "to add",
+      "band": "b1",
+      "split": "voeg ... toe",
+      "perfect": "heeft toegevoegd",
+      "example": "Ik voeg een schepje suiker toe.",
+      "exampleEn": "I add a spoonful of sugar.",
+      "scene": null
+    },
+    {
+      "id": "omroeren",
+      "verb": "omroeren",
+      "gloss": "to stir",
+      "band": "b1",
+      "split": "roer ... om",
+      "perfect": "heeft omgeroerd",
+      "example": "Ik roer de koffie even om.",
+      "exampleEn": "I give the coffee a stir.",
+      "scene": null
+    },
+    {
+      "id": "aanwijzen",
+      "verb": "aanwijzen",
+      "gloss": "to point out; to appoint",
+      "band": "b1",
+      "split": "wijs ... aan",
+      "perfect": "heeft aangewezen",
+      "example": "De leraar wijst een leerling aan.",
+      "exampleEn": "The teacher picks out a pupil.",
+      "scene": null
+    },
+    {
+      "id": "afluisteren",
+      "verb": "afluisteren",
+      "gloss": "to eavesdrop on",
+      "band": "b1",
+      "split": "luister ... af",
+      "perfect": "heeft afgeluisterd",
+      "example": "De buurman luistert ons gesprek af.",
+      "exampleEn": "The neighbour is listening in on our conversation.",
+      "scene": null
+    },
+    {
+      "id": "aftrekken",
+      "verb": "aftrekken",
+      "gloss": "to deduct; to subtract",
+      "band": "b1",
+      "split": "trek ... af",
+      "perfect": "heeft afgetrokken",
+      "example": "De bank trekt de kosten van mijn salaris af.",
+      "exampleEn": "The bank deducts the costs from my salary.",
+      "scene": null
+    },
+    {
+      "id": "inkopen",
+      "verb": "inkopen",
+      "gloss": "to buy in (goods)",
+      "band": "b1",
+      "split": "koop ... in",
+      "perfect": "heeft ingekocht",
+      "example": "De winkel koopt veel goederen in.",
+      "exampleEn": "The shop buys in a lot of goods.",
+      "scene": null
+    },
+    {
+      "id": "opzeggen",
+      "verb": "opzeggen",
+      "gloss": "to cancel (a subscription)",
+      "band": "b1",
+      "split": "zeg ... op",
+      "perfect": "heeft opgezegd",
+      "example": "Ik zeg mijn abonnement per januari op.",
+      "exampleEn": "I am cancelling my subscription from January.",
+      "scene": null
+    },
+    {
+      "id": "terechtkomen",
+      "verb": "terechtkomen",
+      "gloss": "to end up (somewhere)",
+      "band": "b1",
+      "split": "kom ... terecht",
+      "perfect": "is terechtgekomen",
+      "example": "Mijn pakket komt vaak bij de buren terecht.",
+      "exampleEn": "My parcel often ends up at the neighbours.",
+      "scene": null
+    },
+    {
+      "id": "afleveren",
+      "verb": "afleveren",
+      "gloss": "to deliver",
+      "band": "b1",
+      "split": "lever ... af",
+      "perfect": "heeft afgeleverd",
+      "example": "De koerier levert het pakket morgen af.",
+      "exampleEn": "The courier delivers the parcel tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "overdragen",
+      "verb": "overdragen",
+      "gloss": "to hand over; to transfer",
+      "band": "b1",
+      "split": "draag ... over",
+      "perfect": "heeft overgedragen",
+      "example": "Ik draag de sleutels aan mijn opvolger over.",
+      "exampleEn": "I am handing the keys over to my successor.",
+      "scene": null
+    },
+    {
+      "id": "waarmaken",
+      "verb": "waarmaken",
+      "gloss": "to live up to (a promise)",
+      "band": "b1",
+      "split": "maak ... waar",
+      "perfect": "heeft waargemaakt",
+      "example": "Hij maakt zijn belofte niet waar.",
+      "exampleEn": "He does not live up to his promise.",
+      "scene": null
+    },
+    {
+      "id": "goedkeuren",
+      "verb": "goedkeuren",
+      "gloss": "to approve",
+      "band": "b1",
+      "split": "keur ... goed",
+      "perfect": "heeft goedgekeurd",
+      "example": "De baas keurt mijn verlofaanvraag goed.",
+      "exampleEn": "The boss approves my leave request.",
+      "scene": null
+    },
+    {
+      "id": "inslaan",
+      "verb": "inslaan",
+      "gloss": "to stock up on; to smash in",
+      "band": "b1",
+      "split": "sla ... in",
+      "perfect": "heeft ingeslagen",
+      "example": "We slaan genoeg eten in voor het weekend.",
+      "exampleEn": "We are stocking up on enough food for the weekend.",
+      "scene": null
+    },
+    {
+      "id": "overmaken",
+      "verb": "overmaken",
+      "gloss": "to transfer (money)",
+      "band": "b1",
+      "split": "maak ... over",
+      "perfect": "heeft overgemaakt",
+      "example": "Ik maak het geld vandaag naar jou over.",
+      "exampleEn": "I am transferring the money to you today.",
+      "scene": null
+    },
+    {
+      "id": "opwarmen",
+      "verb": "opwarmen",
+      "gloss": "to heat up (food)",
+      "band": "b1",
+      "split": "warm ... op",
+      "perfect": "heeft opgewarmd",
+      "example": "Ik warm de soep even in de magnetron op.",
+      "exampleEn": "I heat the soup up in the microwave.",
+      "scene": null
+    },
+    {
+      "id": "toekennen",
+      "verb": "toekennen",
+      "gloss": "to award; to grant",
+      "band": "b1",
+      "split": "ken ... toe",
+      "perfect": "heeft toegekend",
+      "example": "De gemeente kent hem een uitkering toe.",
+      "exampleEn": "The municipality grants him a benefit.",
+      "scene": null
+    },
+    {
+      "id": "afstaan",
+      "verb": "afstaan",
+      "gloss": "to give up; to hand over",
+      "band": "b1",
+      "split": "sta ... af",
+      "perfect": "heeft afgestaan",
+      "example": "Zij staat haar plek in de trein aan hem af.",
+      "exampleEn": "She gives up her seat on the train to him.",
+      "scene": null
+    },
+    {
+      "id": "uitvallen",
+      "verb": "uitvallen",
+      "gloss": "to break down; to drop out",
+      "band": "b1",
+      "split": "val ... uit",
+      "perfect": "is uitgevallen",
+      "example": "Vanochtend valt de stroom plotseling uit.",
+      "exampleEn": "This morning the power suddenly fails.",
+      "scene": null
+    },
+    {
+      "id": "uitwerken",
+      "verb": "uitwerken",
+      "gloss": "to work out (in detail)",
+      "band": "b1",
+      "split": "werk ... uit",
+      "perfect": "heeft uitgewerkt",
+      "example": "Ze werkt haar plan in detail uit.",
+      "exampleEn": "She works out her plan in detail.",
+      "scene": null
+    },
+    {
+      "id": "vreemdgaan",
+      "verb": "vreemdgaan",
+      "gloss": "to cheat (on a partner)",
+      "band": "b1",
+      "split": "ga ... vreemd",
+      "perfect": "is vreemdgegaan",
+      "example": "Hij gaat vreemd en liegt erover.",
+      "exampleEn": "He cheats and lies about it.",
+      "scene": null
+    },
+    {
+      "id": "meebrengen",
+      "verb": "meebrengen",
+      "gloss": "to bring along",
+      "band": "b1",
+      "split": "breng ... mee",
+      "perfect": "heeft meegebracht",
+      "example": "Ik breng morgen taart voor iedereen mee.",
+      "exampleEn": "I am bringing cake for everyone tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "samenleven",
+      "verb": "samenleven",
+      "gloss": "to live together",
+      "band": "b1",
+      "split": "leef ... samen",
+      "perfect": "heeft samengeleefd",
+      "example": "Ze leven al tien jaar samen.",
+      "exampleEn": "They have lived together for ten years.",
+      "scene": null
+    },
+    {
+      "id": "ademhalen",
+      "verb": "ademhalen",
+      "gloss": "to breathe (in)",
+      "band": "b1",
+      "split": "haal ... adem",
+      "perfect": "heeft ademgehaald",
+      "example": "Hij haalt diep adem en springt.",
+      "exampleEn": "He takes a deep breath and jumps.",
+      "scene": null
+    },
+    {
+      "id": "afkoelen",
+      "verb": "afkoelen",
+      "gloss": "to cool down",
+      "band": "b1",
+      "split": "koel ... af",
+      "perfect": "is/heeft afgekoeld",
+      "example": "Het water koelt langzaam af.",
+      "exampleEn": "The water slowly cools down.",
+      "scene": null
+    },
+    {
+      "id": "opknappen",
+      "verb": "opknappen",
+      "gloss": "to do up; to fix up",
+      "band": "b1",
+      "split": "knap ... op",
+      "perfect": "heeft opgeknapt",
+      "example": "Wij knappen het oude huisje zelf op.",
+      "exampleEn": "We are doing up the old house ourselves.",
+      "scene": null
+    },
+    {
+      "id": "opschieten",
+      "verb": "opschieten",
+      "gloss": "to hurry up",
+      "band": "b1",
+      "split": "schiet ... op",
+      "perfect": "is opgeschoten",
+      "example": "Schiet nu op, anders komen we te laat.",
+      "exampleEn": "Hurry up now, or we will be late.",
+      "scene": null
+    },
+    {
+      "id": "uitstaan",
+      "verb": "uitstaan",
+      "gloss": "to be off; to tolerate",
+      "band": "b1",
+      "split": "sta ... uit",
+      "perfect": "heeft uitgestaan",
+      "example": "De verwarming staat al uren uit.",
+      "exampleEn": "The heating has been off for hours.",
+      "scene": null
+    },
+    {
+      "id": "afzeggen",
+      "verb": "afzeggen",
+      "gloss": "to cancel (an appointment)",
+      "band": "b1",
+      "split": "zeg ... af",
+      "perfect": "heeft afgezegd",
+      "example": "Ik zeg onze afspraak voor morgen af.",
+      "exampleEn": "I am cancelling our appointment for tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "liefhebben",
+      "verb": "liefhebben",
+      "gloss": "to love",
+      "band": "b1",
+      "split": "heb ... lief",
+      "perfect": "heeft liefgehad",
+      "example": "Ik heb mijn kleine zusje heel lief.",
+      "exampleEn": "I love my little sister very much.",
+      "scene": null
+    },
+    {
+      "id": "neerhalen",
+      "verb": "neerhalen",
+      "gloss": "to pull down; to shoot down",
+      "band": "b1",
+      "split": "haal ... neer",
+      "perfect": "heeft neergehaald",
+      "example": "De arbeiders halen de oude schutting neer.",
+      "exampleEn": "The workers pull down the old fence.",
+      "scene": null
+    },
+    {
+      "id": "uitdagen",
+      "verb": "uitdagen",
+      "gloss": "to challenge",
+      "band": "b1",
+      "split": "daag ... uit",
+      "perfect": "heeft uitgedaagd",
+      "example": "Hij daagt me uit voor een potje schaken.",
+      "exampleEn": "He challenges me to a game of chess.",
+      "scene": null
+    },
+    {
+      "id": "bijkomen",
+      "verb": "bijkomen",
+      "gloss": "to come to; to recover",
+      "band": "b1",
+      "split": "kom ... bij",
+      "perfect": "is bijgekomen",
+      "example": "Na de schrik kom ik langzaam bij.",
+      "exampleEn": "After the shock I slowly come round.",
+      "scene": null
+    },
+    {
+      "id": "doorvoeren",
+      "verb": "doorvoeren",
+      "gloss": "to implement (a change)",
+      "band": "b1",
+      "split": "voer ... door",
+      "perfect": "heeft doorgevoerd",
+      "example": "Het bedrijf voert nieuwe regels door.",
+      "exampleEn": "The company implements new rules.",
+      "scene": null
+    },
+    {
+      "id": "stopzetten",
+      "verb": "stopzetten",
+      "gloss": "to halt; to discontinue",
+      "band": "b1",
+      "split": "zet ... stop",
+      "perfect": "heeft stopgezet",
+      "example": "De fabriek zet de productie volgende week stop.",
+      "exampleEn": "The factory halts production next week.",
+      "scene": null
+    },
+    {
+      "id": "weggeven",
+      "verb": "weggeven",
+      "gloss": "to give away",
+      "band": "b1",
+      "split": "geef ... weg",
+      "perfect": "heeft weggegeven",
+      "example": "Ik geef mijn oude fiets gratis weg.",
+      "exampleEn": "I am giving my old bike away for free.",
+      "scene": null
+    },
+    {
+      "id": "aanschaffen",
+      "verb": "aanschaffen",
+      "gloss": "to purchase; to acquire",
+      "band": "b1",
+      "split": "schaf ... aan",
+      "perfect": "heeft aangeschaft",
+      "example": "Wij schaffen volgend jaar een nieuwe auto aan.",
+      "exampleEn": "We are buying a new car next year.",
+      "scene": null
+    },
+    {
+      "id": "uitroeien",
+      "verb": "uitroeien",
+      "gloss": "to wipe out; to eradicate",
+      "band": "b1",
+      "split": "roei ... uit",
+      "perfect": "heeft uitgeroeid",
+      "example": "Ze roeien het onkruid in de tuin uit.",
+      "exampleEn": "They wipe out the weeds in the garden.",
+      "scene": null
+    },
+    {
+      "id": "meehelpen",
+      "verb": "meehelpen",
+      "gloss": "to help out",
+      "band": "b1",
+      "split": "help ... mee",
+      "perfect": "heeft meegeholpen",
+      "example": "De kinderen helpen vandaag in de keuken mee.",
+      "exampleEn": "The children help out in the kitchen today.",
+      "scene": null
+    },
+    {
+      "id": "rondhangen",
+      "verb": "rondhangen",
+      "gloss": "to hang around",
+      "band": "b1",
+      "split": "hang ... rond",
+      "perfect": "heeft rondgehangen",
+      "example": "De jongens hangen de hele middag op straat rond.",
+      "exampleEn": "The boys hang around in the street all afternoon.",
+      "scene": null
+    },
+    {
+      "id": "terugdringen",
+      "verb": "terugdringen",
+      "gloss": "to reduce; to push back",
+      "band": "b1",
+      "split": "dring ... terug",
+      "perfect": "heeft teruggedrongen",
+      "example": "De overheid dringt de uitstoot terug.",
+      "exampleEn": "The government reduces emissions.",
+      "scene": null
+    },
+    {
+      "id": "lastigvallen",
+      "verb": "lastigvallen",
+      "gloss": "to bother; to harass",
+      "band": "b1",
+      "split": "val ... lastig",
+      "perfect": "heeft lastiggevallen",
+      "example": "Hij valt me steeds met vragen lastig.",
+      "exampleEn": "He keeps bothering me with questions.",
+      "scene": null
+    },
+    {
+      "id": "binnenvallen",
+      "verb": "binnenvallen",
+      "gloss": "to drop in; to burst in",
+      "band": "b1",
+      "split": "val ... binnen",
+      "perfect": "is binnengevallen",
+      "example": "Mijn zus valt vaak ineens bij ons binnen.",
+      "exampleEn": "My sister often suddenly drops in on us.",
+      "scene": null
+    },
+    {
+      "id": "doorzetten",
+      "verb": "doorzetten",
+      "gloss": "to persevere; to push through",
+      "band": "b1",
+      "split": "zet ... door",
+      "perfect": "heeft doorgezet",
+      "example": "Hij zet door en haalt zijn diploma.",
+      "exampleEn": "He perseveres and gets his diploma.",
+      "scene": null
+    },
+    {
+      "id": "uitdrukken",
+      "verb": "uitdrukken",
+      "gloss": "to express (oneself)",
+      "band": "b1",
+      "split": "druk ... uit",
+      "perfect": "heeft uitgedrukt",
+      "example": "Zij drukt zich heel duidelijk uit.",
+      "exampleEn": "She expresses herself very clearly.",
+      "scene": null
+    },
+    {
+      "id": "bijstaan",
+      "verb": "bijstaan",
+      "gloss": "to assist; to support",
+      "band": "b1",
+      "split": "sta ... bij",
+      "perfect": "heeft bijgestaan",
+      "example": "Zijn vrienden staan hem in moeilijke tijden bij.",
+      "exampleEn": "His friends support him in difficult times.",
+      "scene": null
+    },
+    {
+      "id": "inschatten",
+      "verb": "inschatten",
+      "gloss": "to estimate; to assess",
+      "band": "b1",
+      "split": "schat ... in",
+      "perfect": "heeft ingeschat",
+      "example": "Ik schat de kosten op duizend euro in.",
+      "exampleEn": "I estimate the costs at a thousand euros.",
+      "scene": null
+    },
+    {
+      "id": "opduiken",
+      "verb": "opduiken",
+      "gloss": "to turn up; to emerge",
+      "band": "b1",
+      "split": "duik ... op",
+      "perfect": "is opgedoken",
+      "example": "Mijn oude sleutels duiken ineens weer op.",
+      "exampleEn": "My old keys suddenly turn up again.",
+      "scene": null
+    },
+    {
+      "id": "afschieten",
+      "verb": "afschieten",
+      "gloss": "to shoot (dead); to fire off",
+      "band": "b1",
+      "split": "schiet ... af",
+      "perfect": "heeft afgeschoten",
+      "example": "De jager schiet een haas af.",
+      "exampleEn": "The hunter shoots a hare.",
+      "scene": null
+    },
+    {
+      "id": "overlopen",
+      "verb": "overlopen",
+      "gloss": "to overflow; to defect",
+      "band": "b1",
+      "split": "loop ... over",
+      "perfect": "is overgelopen",
+      "example": "De badkuip loopt bijna over.",
+      "exampleEn": "The bathtub is almost overflowing.",
+      "scene": null
+    },
+    {
+      "id": "uithangen",
+      "verb": "uithangen",
+      "gloss": "to hang out (a flag)",
+      "band": "b1",
+      "split": "hang ... uit",
+      "perfect": "heeft uitgehangen",
+      "example": "Op Koningsdag hangen wij de vlag uit.",
+      "exampleEn": "On King's Day we hang out the flag.",
+      "scene": null
+    },
+    {
+      "id": "afdwingen",
+      "verb": "afdwingen",
+      "gloss": "to enforce; to force through",
+      "band": "b1",
+      "split": "dwing ... af",
+      "perfect": "heeft afgedwongen",
+      "example": "De vakbond dwingt hogere lonen af.",
+      "exampleEn": "The union forces through higher wages.",
+      "scene": null
+    },
+    {
+      "id": "meerijden",
+      "verb": "meerijden",
+      "gloss": "to ride along",
+      "band": "b1",
+      "split": "rijd ... mee",
+      "perfect": "is meegereden",
+      "example": "Ik rijd morgen met mijn collega mee.",
+      "exampleEn": "I am riding along with my colleague tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "rondrijden",
+      "verb": "rondrijden",
+      "gloss": "to drive around",
+      "band": "b1",
+      "split": "rijd ... rond",
+      "perfect": "heeft/is rondgereden",
+      "example": "We rijden een uur in de stad rond.",
+      "exampleEn": "We drive around town for an hour.",
+      "scene": null
+    },
+    {
+      "id": "doodgaan",
+      "verb": "doodgaan",
+      "gloss": "to die",
+      "band": "b1",
+      "split": "ga ... dood",
+      "perfect": "is doodgegaan",
+      "example": "Zonder water gaat de plant dood.",
+      "exampleEn": "Without water the plant dies.",
+      "scene": null
+    },
+    {
+      "id": "doorsturen",
+      "verb": "doorsturen",
+      "gloss": "to forward",
+      "band": "b1",
+      "split": "stuur ... door",
+      "perfect": "heeft doorgestuurd",
+      "example": "Ik stuur je de mail meteen door.",
+      "exampleEn": "I will forward you the email right away.",
+      "scene": null
+    },
+    {
+      "id": "meedenken",
+      "verb": "meedenken",
+      "gloss": "to think along",
+      "band": "b1",
+      "split": "denk ... mee",
+      "perfect": "heeft meegedacht",
+      "example": "Ze denkt graag met ons mee.",
+      "exampleEn": "She likes to think along with us.",
+      "scene": null
+    },
+    {
+      "id": "neerschieten",
+      "verb": "neerschieten",
+      "gloss": "to shoot down",
+      "band": "b1",
+      "split": "schiet ... neer",
+      "perfect": "heeft neergeschoten",
+      "example": "De jager schiet de vogel neer.",
+      "exampleEn": "The hunter shoots the bird down.",
+      "scene": null
+    },
+    {
+      "id": "uitbesteden",
+      "verb": "uitbesteden",
+      "gloss": "to outsource",
+      "band": "b1",
+      "split": "besteed ... uit",
+      "perfect": "heeft uitbesteed",
+      "example": "Het bedrijf besteedt het werk uit.",
+      "exampleEn": "The company outsources the work.",
+      "scene": null
+    },
+    {
+      "id": "afkomen",
+      "verb": "afkomen",
+      "gloss": "to come down (from)",
+      "band": "b1",
+      "split": "kom ... af",
+      "perfect": "is afgekomen",
+      "example": "Ze komt langzaam de trap af.",
+      "exampleEn": "She slowly comes down the stairs.",
+      "scene": null
+    },
+    {
+      "id": "aflossen",
+      "verb": "aflossen",
+      "gloss": "to relieve (take over from)",
+      "band": "b1",
+      "split": "los ... af",
+      "perfect": "heeft afgelost",
+      "example": "Mijn collega lost mij om vijf uur af.",
+      "exampleEn": "My colleague relieves me at five o'clock.",
+      "scene": null
+    },
+    {
+      "id": "binnenhalen",
+      "verb": "binnenhalen",
+      "gloss": "to bring in",
+      "band": "b1",
+      "split": "haal ... binnen",
+      "perfect": "heeft binnengehaald",
+      "example": "Ik haal de was snel binnen.",
+      "exampleEn": "I quickly bring the laundry in.",
+      "scene": null
+    },
+    {
+      "id": "nastreven",
+      "verb": "nastreven",
+      "gloss": "to pursue (a goal)",
+      "band": "b1",
+      "split": "streef ... na",
+      "perfect": "heeft nagestreefd",
+      "example": "Hij streeft een mooi doel na.",
+      "exampleEn": "He pursues a worthy goal.",
+      "scene": null
+    },
+    {
+      "id": "opvoeren",
+      "verb": "opvoeren",
+      "gloss": "to step up, to increase",
+      "band": "b1",
+      "split": "voer ... op",
+      "perfect": "heeft opgevoerd",
+      "example": "De baas voert de druk op.",
+      "exampleEn": "The boss increases the pressure.",
+      "scene": null
+    },
+    {
+      "id": "opwekken",
+      "verb": "opwekken",
+      "gloss": "to generate (energy)",
+      "band": "b1",
+      "split": "wek ... op",
+      "perfect": "heeft opgewekt",
+      "example": "Zonnepanelen wekken stroom op.",
+      "exampleEn": "Solar panels generate electricity.",
+      "scene": null
+    },
+    {
+      "id": "overblijven",
+      "verb": "overblijven",
+      "gloss": "to be left over",
+      "band": "b1",
+      "split": "blijf ... over",
+      "perfect": "is overgebleven",
+      "example": "Er blijft niets van de taart over.",
+      "exampleEn": "Nothing is left of the cake.",
+      "scene": null
+    },
+    {
+      "id": "terugsturen",
+      "verb": "terugsturen",
+      "gloss": "to send back",
+      "band": "b1",
+      "split": "stuur ... terug",
+      "perfect": "heeft teruggestuurd",
+      "example": "Ik stuur het pakket morgen terug.",
+      "exampleEn": "I will send the parcel back tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "voorschrijven",
+      "verb": "voorschrijven",
+      "gloss": "to prescribe",
+      "band": "b1",
+      "split": "schrijf ... voor",
+      "perfect": "heeft voorgeschreven",
+      "example": "De huisarts schrijft mij pillen voor.",
+      "exampleEn": "The doctor prescribes me pills.",
+      "scene": null
+    },
+    {
+      "id": "aanbevelen",
+      "verb": "aanbevelen",
+      "gloss": "to recommend",
+      "band": "b1",
+      "split": "beveel ... aan",
+      "perfect": "heeft aanbevolen",
+      "example": "Ik beveel dit restaurant sterk aan.",
+      "exampleEn": "I strongly recommend this restaurant.",
+      "scene": null
+    },
+    {
+      "id": "aanleren",
+      "verb": "aanleren",
+      "gloss": "to teach, to instil (a skill)",
+      "band": "b1",
+      "split": "leer ... aan",
+      "perfect": "heeft aangeleerd",
+      "example": "Hij leert zijn hond nieuwe trucs aan.",
+      "exampleEn": "He teaches his dog new tricks.",
+      "scene": null
+    },
+    {
+      "id": "afhandelen",
+      "verb": "afhandelen",
+      "gloss": "to handle, to deal with",
+      "band": "b1",
+      "split": "handel ... af",
+      "perfect": "heeft afgehandeld",
+      "example": "De medewerker handelt de klacht snel af.",
+      "exampleEn": "The employee deals with the complaint quickly.",
+      "scene": null
+    },
+    {
+      "id": "doornemen",
+      "verb": "doornemen",
+      "gloss": "to go through, to review",
+      "band": "b1",
+      "split": "neem ... door",
+      "perfect": "heeft doorgenomen",
+      "example": "We nemen het plan samen door.",
+      "exampleEn": "We go through the plan together.",
+      "scene": null
+    },
+    {
+      "id": "opeisen",
+      "verb": "opeisen",
+      "gloss": "to claim, to demand",
+      "band": "b1",
+      "split": "eis ... op",
+      "perfect": "heeft opgeëist",
+      "example": "Hij eist zijn deel van de erfenis op.",
+      "exampleEn": "He claims his share of the inheritance.",
+      "scene": null
+    },
+    {
+      "id": "terugkrijgen",
+      "verb": "terugkrijgen",
+      "gloss": "to get back",
+      "band": "b1",
+      "split": "krijg ... terug",
+      "perfect": "heeft teruggekregen",
+      "example": "Ik krijg mijn geld morgen terug.",
+      "exampleEn": "I get my money back tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "tegengaan",
+      "verb": "tegengaan",
+      "gloss": "to counteract, to combat",
+      "band": "b1",
+      "split": "ga ... tegen",
+      "perfect": "heeft tegengegaan",
+      "example": "De gemeente gaat de overlast tegen.",
+      "exampleEn": "The municipality combats the nuisance.",
+      "scene": null
+    },
+    {
+      "id": "toeslaan",
+      "verb": "toeslaan",
+      "gloss": "to strike, to hit hard",
+      "band": "b1",
+      "split": "sla ... toe",
+      "perfect": "heeft toegeslagen",
+      "example": "De dief slaat midden in de nacht toe.",
+      "exampleEn": "The thief strikes in the middle of the night.",
+      "scene": null
+    },
+    {
+      "id": "uitpraten",
+      "verb": "uitpraten",
+      "gloss": "to talk (something) out; to finish speaking",
+      "band": "b1",
+      "split": "praat ... uit",
+      "perfect": "heeft uitgepraat",
+      "example": "We praten de ruzie vanavond uit.",
+      "exampleEn": "We are talking the argument through tonight.",
+      "scene": null
+    },
+    {
+      "id": "voortkomen",
+      "verb": "voortkomen",
+      "gloss": "to result from",
+      "band": "b1",
+      "split": "kom ... voort",
+      "perfect": "is voortgekomen",
+      "example": "Dit probleem komt voort uit slechte planning.",
+      "exampleEn": "This problem results from poor planning.",
+      "scene": null
+    },
+    {
+      "id": "aantreden",
+      "verb": "aantreden",
+      "gloss": "to take office, to step up",
+      "band": "b1",
+      "split": "treed ... aan",
+      "perfect": "is aangetreden",
+      "example": "De nieuwe directeur treedt volgende week aan.",
+      "exampleEn": "The new director takes office next week.",
+      "scene": null
+    },
+    {
+      "id": "toebrengen",
+      "verb": "toebrengen",
+      "gloss": "to inflict, to cause",
+      "band": "b1",
+      "split": "breng ... toe",
+      "perfect": "heeft toegebracht",
+      "example": "Hij brengt zijn tegenstander een zware nederlaag toe.",
+      "exampleEn": "He inflicts a heavy defeat on his opponent.",
+      "scene": null
+    },
+    {
+      "id": "toezien",
+      "verb": "toezien",
+      "gloss": "to watch, to supervise",
+      "band": "b1",
+      "split": "zie ... toe",
+      "perfect": "heeft toegezien",
+      "example": "Ik zie toe hoe ze koken.",
+      "exampleEn": "I watch as they cook.",
+      "scene": null
+    },
+    {
+      "id": "uitbreken",
+      "verb": "uitbreken",
+      "gloss": "to break out",
+      "band": "b1",
+      "split": "breek ... uit",
+      "perfect": "is uitgebroken",
+      "example": "Er breekt brand uit in de stad.",
+      "exampleEn": "A fire breaks out in the city.",
+      "scene": null
+    },
+    {
+      "id": "omkeren",
+      "verb": "omkeren",
+      "gloss": "to turn around; to reverse",
+      "band": "b1",
+      "split": "keer ... om",
+      "perfect": "heeft/is omgekeerd",
+      "example": "Bij de brug keert de bus om.",
+      "exampleEn": "The bus turns around at the bridge.",
+      "scene": null
+    },
+    {
+      "id": "afwijken",
+      "verb": "afwijken",
+      "gloss": "to deviate (from)",
+      "band": "b1",
+      "split": "wijk ... af",
+      "perfect": "is afgeweken",
+      "example": "Dit plan wijkt sterk van het vorige af.",
+      "exampleEn": "This plan deviates strongly from the previous one.",
+      "scene": null
+    },
+    {
+      "id": "afhangen",
+      "verb": "afhangen",
+      "gloss": "to depend (on)",
+      "band": "b1",
+      "split": "hang ... af",
+      "perfect": "heeft afgehangen",
+      "example": "Dat hangt van het weer af.",
+      "exampleEn": "That depends on the weather.",
+      "scene": null
+    },
+    {
+      "id": "meevallen",
+      "verb": "meevallen",
+      "gloss": "to turn out better than feared",
+      "band": "b1",
+      "split": "val ... mee",
+      "perfect": "is meegevallen",
+      "example": "De toets valt me best mee.",
+      "exampleEn": "The test is not as bad as I feared.",
+      "scene": null
+    },
+    {
+      "id": "tegenvallen",
+      "verb": "tegenvallen",
+      "gloss": "to disappoint",
+      "band": "b1",
+      "split": "val ... tegen",
+      "perfect": "is tegengevallen",
+      "example": "Het eten valt me erg tegen.",
+      "exampleEn": "The food disappoints me a lot.",
+      "scene": null
+    },
+    {
+      "id": "meekrijgen",
+      "verb": "meekrijgen",
+      "gloss": "to be given to take along",
+      "band": "b1",
+      "split": "krijg ... mee",
+      "perfect": "heeft meegekregen",
+      "example": "Mijn zoon krijgt een lunch mee naar school.",
+      "exampleEn": "My son gets a packed lunch to take to school.",
+      "scene": null
+    },
+    {
+      "id": "uitverkopen",
+      "verb": "uitverkopen",
+      "gloss": "to sell out",
+      "band": "b1",
+      "split": "verkoop ... uit",
+      "perfect": "heeft uitverkocht",
+      "example": "De bakker verkoopt zijn brood snel uit.",
+      "exampleEn": "The baker sells out of his bread quickly.",
+      "scene": null
+    },
+    {
+      "id": "inladen",
+      "verb": "inladen",
+      "gloss": "to load",
+      "band": "b2",
+      "split": "laad ... in",
+      "perfect": "heeft ingeladen",
+      "example": "Ik laad de dozen in.",
+      "exampleEn": "I load the boxes.",
+      "scene": null
+    },
+    {
+      "id": "uitladen",
+      "verb": "uitladen",
+      "gloss": "to unload",
+      "band": "b2",
+      "split": "laad ... uit",
+      "perfect": "heeft uitgeladen",
+      "example": "Ik laad de dozen bij de winkel uit.",
+      "exampleEn": "I unload the boxes at the shop.",
+      "scene": null
+    },
+    {
+      "id": "aansteken",
+      "verb": "aansteken",
+      "gloss": "to light",
+      "band": "b2",
+      "split": "steek ... aan",
+      "perfect": "heeft aangestoken",
+      "example": "Ik steek de kaars aan.",
+      "exampleEn": "I light the candle.",
+      "scene": null
+    },
+    {
+      "id": "uitblazen",
+      "verb": "uitblazen",
+      "gloss": "to blow out",
+      "band": "b2",
+      "split": "blaas ... uit",
+      "perfect": "heeft uitgeblazen",
+      "example": "Ik blaas de kaars uit.",
+      "exampleEn": "I blow out the candle.",
+      "scene": null
+    },
+    {
+      "id": "opvouwen",
+      "verb": "opvouwen",
+      "gloss": "to fold up",
+      "band": "b2",
+      "split": "vouw ... op",
+      "perfect": "heeft opgevouwen",
+      "example": "Ik vouw de kaart op.",
+      "exampleEn": "I fold up the map.",
+      "scene": null
+    },
+    {
+      "id": "uitvouwen",
+      "verb": "uitvouwen",
+      "gloss": "to unfold",
+      "band": "b2",
+      "split": "vouw ... uit",
+      "perfect": "heeft uitgevouwen",
+      "example": "Ik vouw de kaart uit.",
+      "exampleEn": "I unfold the map.",
+      "scene": null
+    },
+    {
+      "id": "vastbinden",
+      "verb": "vastbinden",
+      "gloss": "to tie up",
+      "band": "b2",
+      "split": "bind ... vast",
+      "perfect": "heeft vastgebonden",
+      "example": "Ik bind de boot vast.",
+      "exampleEn": "I tie up the boat.",
+      "scene": null
+    },
+    {
+      "id": "losbinden",
+      "verb": "losbinden",
+      "gloss": "to untie",
+      "band": "b2",
+      "split": "bind ... los",
+      "perfect": "heeft losgebonden",
+      "example": "Ik bind de boot los.",
+      "exampleEn": "I untie the boat.",
+      "scene": null
+    },
+    {
+      "id": "omvallen",
+      "verb": "omvallen",
+      "gloss": "to fall over",
+      "band": "b2",
+      "split": "valt ... om",
+      "perfect": "is omgevallen",
+      "example": "De vaas valt om.",
+      "exampleEn": "The vase falls over.",
+      "scene": null
+    },
+    {
+      "id": "omgooien",
+      "verb": "omgooien",
+      "gloss": "to knock over",
+      "band": "b2",
+      "split": "gooi ... om",
+      "perfect": "heeft omgegooid",
+      "example": "Ik gooi de vaas om.",
+      "exampleEn": "I knock over the vase.",
+      "scene": null
+    },
+    {
+      "id": "doorwerken",
+      "verb": "doorwerken",
+      "gloss": "to work on, to keep working",
+      "band": "b2",
+      "split": "werk ... door",
+      "perfect": "heeft doorgewerkt",
+      "example": "Ik werk vanavond door.",
+      "exampleEn": "I keep working this evening.",
+      "scene": null
+    },
+    {
+      "id": "uitrusten",
+      "verb": "uitrusten",
+      "gloss": "to rest",
+      "band": "b2",
+      "split": "rust ... uit",
+      "perfect": "heeft uitgerust",
+      "example": "Ik rust even uit.",
+      "exampleEn": "I rest for a moment.",
+      "scene": null
+    },
+    {
+      "id": "inademen",
+      "verb": "inademen",
+      "gloss": "to breathe in",
+      "band": "b2",
+      "split": "adem ... in",
+      "perfect": "heeft ingeademd",
+      "example": "Ik adem rustig door mijn neus in.",
+      "exampleEn": "I breathe in calmly through my nose.",
+      "scene": null
+    },
+    {
+      "id": "inhouden",
+      "verb": "inhouden",
+      "gloss": "to hold (your breath)",
+      "band": "b2",
+      "split": "houd ... in",
+      "perfect": "heeft ingehouden",
+      "example": "Ik houd mijn adem even in.",
+      "exampleEn": "I hold my breath for a moment.",
+      "scene": null
+    },
+    {
+      "id": "uitademen",
+      "verb": "uitademen",
+      "gloss": "to breathe out",
+      "band": "b2",
+      "split": "adem ... uit",
+      "perfect": "heeft uitgeademd",
+      "example": "Ik adem langzaam door mijn mond uit.",
+      "exampleEn": "I breathe out slowly through my mouth.",
+      "scene": null
+    },
+    {
+      "id": "afpakken",
+      "verb": "afpakken",
+      "gloss": "to snatch, to take away",
+      "band": "b2",
+      "split": "pak ... af",
+      "perfect": "heeft afgepakt",
+      "example": "Ik pak de knuffel van mijn broer af.",
+      "exampleEn": "I take the teddy away from my brother.",
+      "scene": null
+    },
+    {
+      "id": "teruggeven",
+      "verb": "teruggeven",
+      "gloss": "to give back",
+      "band": "b2",
+      "split": "geef ... terug",
+      "perfect": "heeft teruggegeven",
+      "example": "Ik geef de knuffel aan mijn broer terug.",
+      "exampleEn": "I give the teddy back to my brother.",
+      "scene": null
+    },
+    {
+      "id": "uitlenen",
+      "verb": "uitlenen",
+      "gloss": "to lend",
+      "band": "b2",
+      "split": "leent ... uit",
+      "perfect": "heeft uitgeleend",
+      "example": "De bibliotheek leent ook tijdschriften uit.",
+      "exampleEn": "The library also lends out magazines.",
+      "scene": null
+    },
+    {
+      "id": "terugbrengen",
+      "verb": "terugbrengen",
+      "gloss": "to bring back",
+      "band": "b2",
+      "split": "breng ... terug",
+      "perfect": "heeft teruggebracht",
+      "example": "Ik breng het boek op tijd terug.",
+      "exampleEn": "I bring the book back on time.",
+      "scene": null
+    },
+    {
+      "id": "aanmoedigen",
+      "verb": "aanmoedigen",
+      "gloss": "to cheer on",
+      "band": "b2",
+      "split": "moedig ... aan",
+      "perfect": "heeft aangemoedigd",
+      "example": "Ik moedig mijn zus luid aan.",
+      "exampleEn": "I cheer my sister on loudly.",
+      "scene": null
+    },
+    {
+      "id": "uitjouwen",
+      "verb": "uitjouwen",
+      "gloss": "to boo",
+      "band": "b2",
+      "split": "jouwt ... uit",
+      "perfect": "heeft uitgejouwd",
+      "example": "Het publiek jouwt de speler uit.",
+      "exampleEn": "The crowd boos the player.",
+      "scene": null
+    },
+    {
+      "id": "afgieten",
+      "verb": "afgieten",
+      "gloss": "to drain",
+      "band": "b2",
+      "split": "giet ... af",
+      "perfect": "heeft afgegoten",
+      "example": "Ik giet de pasta voorzichtig af.",
+      "exampleEn": "I carefully drain the pasta.",
+      "scene": null
+    },
+    {
+      "id": "opscheppen",
+      "verb": "opscheppen",
+      "gloss": "to serve up",
+      "band": "b2",
+      "split": "schep ... op",
+      "perfect": "heeft opgeschept",
+      "example": "Ik schep voor iedereen pasta op.",
+      "exampleEn": "I serve up pasta for everyone.",
+      "scene": null
+    },
+    {
+      "id": "uitsteken",
+      "verb": "uitsteken",
+      "gloss": "to stick out, to hold out",
+      "band": "b2",
+      "split": "steek ... uit",
+      "perfect": "heeft uitgestoken",
+      "example": "Hij steekt zijn hand uit.",
+      "exampleEn": "He holds out his hand.",
+      "scene": null
+    },
+    {
+      "id": "uitvinden",
+      "verb": "uitvinden",
+      "gloss": "to invent",
+      "band": "b2",
+      "split": "vind ... uit",
+      "perfect": "heeft uitgevonden",
+      "example": "Hij vindt een nieuwe machine uit.",
+      "exampleEn": "He invents a new machine.",
+      "scene": null
+    },
+    {
+      "id": "vrijkomen",
+      "verb": "vrijkomen",
+      "gloss": "to be released, to become available",
+      "band": "b2",
+      "split": "kom ... vrij",
+      "perfect": "is vrijgekomen",
+      "example": "Er komt volgende maand een huis vrij.",
+      "exampleEn": "A house becomes available next month.",
+      "scene": null
+    },
+    {
+      "id": "aankunnen",
+      "verb": "aankunnen",
+      "gloss": "to be able to handle",
+      "band": "b2",
+      "split": "kan ... aan",
+      "perfect": "heeft aangekund",
+      "example": "Ik kan die baan wel aan.",
+      "exampleEn": "I can handle that job.",
+      "scene": null
+    },
+    {
+      "id": "aantreffen",
+      "verb": "aantreffen",
+      "gloss": "to find, to come across",
+      "band": "b2",
+      "split": "tref ... aan",
+      "perfect": "heeft aangetroffen",
+      "example": "De politie treft de man thuis aan.",
+      "exampleEn": "The police find the man at home.",
+      "scene": null
+    },
+    {
+      "id": "aanvullen",
+      "verb": "aanvullen",
+      "gloss": "to top up, to supplement",
+      "band": "b2",
+      "split": "vul ... aan",
+      "perfect": "heeft aangevuld",
+      "example": "Ik vul de voorraad vandaag aan.",
+      "exampleEn": "I top up the stock today.",
+      "scene": null
+    },
+    {
+      "id": "inschakelen",
+      "verb": "inschakelen",
+      "gloss": "to switch on, to call in",
+      "band": "b2",
+      "split": "schakel ... in",
+      "perfect": "heeft ingeschakeld",
+      "example": "Ik schakel de lamp in.",
+      "exampleEn": "I switch the lamp on.",
+      "scene": null
+    },
+    {
+      "id": "overhouden",
+      "verb": "overhouden",
+      "gloss": "to have left over",
+      "band": "b2",
+      "split": "houd ... over",
+      "perfect": "heeft overgehouden",
+      "example": "Ik houd elke maand geld over.",
+      "exampleEn": "I have money left over every month.",
+      "scene": null
+    },
+    {
+      "id": "voorbijgaan",
+      "verb": "voorbijgaan",
+      "gloss": "to pass, to go by",
+      "band": "b2",
+      "split": "ga ... voorbij",
+      "perfect": "is voorbijgegaan",
+      "example": "De bus gaat zo voorbij.",
+      "exampleEn": "The bus will pass by in a moment.",
+      "scene": null
+    },
+    {
+      "id": "afwerken",
+      "verb": "afwerken",
+      "gloss": "to finish off, to complete",
+      "band": "b2",
+      "split": "werk ... af",
+      "perfect": "heeft afgewerkt",
+      "example": "Hij werkt de badkamer netjes af.",
+      "exampleEn": "He finishes the bathroom neatly.",
+      "scene": null
+    },
+    {
+      "id": "openstaan",
+      "verb": "openstaan",
+      "gloss": "to be open",
+      "band": "b2",
+      "split": "sta ... open",
+      "perfect": "heeft opengestaan",
+      "example": "De deur staat de hele dag open.",
+      "exampleEn": "The door is open all day.",
+      "scene": null
+    },
+    {
+      "id": "samengaan",
+      "verb": "samengaan",
+      "gloss": "to merge, to go together",
+      "band": "b2",
+      "split": "ga ... samen",
+      "perfect": "is samengegaan",
+      "example": "Twee banken gaan volgend jaar samen.",
+      "exampleEn": "Two banks merge next year.",
+      "scene": null
+    },
+    {
+      "id": "achterblijven",
+      "verb": "achterblijven",
+      "gloss": "to stay behind",
+      "band": "b2",
+      "split": "blijf ... achter",
+      "perfect": "is achtergebleven",
+      "example": "Mijn broer blijft in Utrecht achter.",
+      "exampleEn": "My brother stays behind in Utrecht.",
+      "scene": null
+    },
+    {
+      "id": "opsteken",
+      "verb": "opsteken",
+      "gloss": "to light (a cigarette)",
+      "band": "b2",
+      "split": "steek ... op",
+      "perfect": "heeft opgestoken",
+      "example": "Hij steekt buiten een sigaret op.",
+      "exampleEn": "He lights a cigarette outside.",
+      "scene": null
+    },
+    {
+      "id": "voorleggen",
+      "verb": "voorleggen",
+      "gloss": "to put before, to submit",
+      "band": "b2",
+      "split": "leg ... voor",
+      "perfect": "heeft voorgelegd",
+      "example": "Ik leg het plan aan de baas voor.",
+      "exampleEn": "I submit the plan to the boss.",
+      "scene": null
+    },
+    {
+      "id": "aanvoelen",
+      "verb": "aanvoelen",
+      "gloss": "to feel (a certain way)",
+      "band": "b2",
+      "split": "voel ... aan",
+      "perfect": "heeft aangevoeld",
+      "example": "Deze trui voelt heel zacht aan.",
+      "exampleEn": "This sweater feels very soft.",
+      "scene": null
+    },
+    {
+      "id": "bekendmaken",
+      "verb": "bekendmaken",
+      "gloss": "to announce",
+      "band": "b2",
+      "split": "maak ... bekend",
+      "perfect": "heeft bekendgemaakt",
+      "example": "De school maakt de uitslag morgen bekend.",
+      "exampleEn": "The school announces the result tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "uitroepen",
+      "verb": "uitroepen",
+      "gloss": "to proclaim, to declare",
+      "band": "b2",
+      "split": "roep ... uit",
+      "perfect": "heeft uitgeroepen",
+      "example": "De burgemeester roept de noodtoestand uit.",
+      "exampleEn": "The mayor declares a state of emergency.",
+      "scene": null
+    },
+    {
+      "id": "inbreken",
+      "verb": "inbreken",
+      "gloss": "to break in",
+      "band": "b2",
+      "split": "breek ... in",
+      "perfect": "heeft ingebroken",
+      "example": "Een dief breekt in het huis in.",
+      "exampleEn": "A thief breaks into the house.",
+      "scene": null
+    },
+    {
+      "id": "wegvallen",
+      "verb": "wegvallen",
+      "gloss": "to drop out, to fail",
+      "band": "b2",
+      "split": "val ... weg",
+      "perfect": "is weggevallen",
+      "example": "De stroom valt vaak weg.",
+      "exampleEn": "The power often cuts out.",
+      "scene": null
+    },
+    {
+      "id": "aanrichten",
+      "verb": "aanrichten",
+      "gloss": "to cause (damage)",
+      "band": "b2",
+      "split": "richt ... aan",
+      "perfect": "heeft aangericht",
+      "example": "De storm richt veel schade aan.",
+      "exampleEn": "The storm causes a lot of damage.",
+      "scene": null
+    },
+    {
+      "id": "aanstellen",
+      "verb": "aanstellen",
+      "gloss": "to appoint, to hire",
+      "band": "b2",
+      "split": "stel ... aan",
+      "perfect": "heeft aangesteld",
+      "example": "Het bedrijf stelt een nieuwe manager aan.",
+      "exampleEn": "The company appoints a new manager.",
+      "scene": null
+    },
+    {
+      "id": "binnenlopen",
+      "verb": "binnenlopen",
+      "gloss": "to walk in",
+      "band": "b2",
+      "split": "loop ... binnen",
+      "perfect": "is binnengelopen",
+      "example": "Een klant loopt de winkel binnen.",
+      "exampleEn": "A customer walks into the shop.",
+      "scene": null
+    },
+    {
+      "id": "meedelen",
+      "verb": "meedelen",
+      "gloss": "to inform, to announce",
+      "band": "b2",
+      "split": "deel ... mee",
+      "perfect": "heeft meegedeeld",
+      "example": "Ik deel u mee dat de les vervalt.",
+      "exampleEn": "I inform you that the class is cancelled.",
+      "scene": null
+    },
+    {
+      "id": "uitgroeien",
+      "verb": "uitgroeien",
+      "gloss": "to grow into",
+      "band": "b2",
+      "split": "groei ... uit",
+      "perfect": "is uitgegroeid",
+      "example": "Het dorp groeit uit tot een stad.",
+      "exampleEn": "The village grows into a city.",
+      "scene": null
+    },
+    {
+      "id": "inzamelen",
+      "verb": "inzamelen",
+      "gloss": "to collect (donations)",
+      "band": "b2",
+      "split": "zamel ... in",
+      "perfect": "heeft ingezameld",
+      "example": "Wij zamelen oude kleren in.",
+      "exampleEn": "We collect old clothes.",
+      "scene": null
+    },
+    {
+      "id": "nalaten",
+      "verb": "nalaten",
+      "gloss": "to leave behind, to bequeath",
+      "band": "b2",
+      "split": "laat ... na",
+      "perfect": "heeft nagelaten",
+      "example": "Hij laat zijn kinderen veel geld na.",
+      "exampleEn": "He leaves his children a lot of money.",
+      "scene": null
+    },
+    {
+      "id": "toewijzen",
+      "verb": "toewijzen",
+      "gloss": "to assign, to allocate",
+      "band": "b2",
+      "split": "wijs ... toe",
+      "perfect": "heeft toegewezen",
+      "example": "De gemeente wijst ons een huis toe.",
+      "exampleEn": "The municipality allocates us a house.",
+      "scene": null
+    },
+    {
+      "id": "aanschuiven",
+      "verb": "aanschuiven",
+      "gloss": "to join (at a table)",
+      "band": "b2",
+      "split": "schuif ... aan",
+      "perfect": "is aangeschoven",
+      "example": "Ik schuif bij jullie aan.",
+      "exampleEn": "I will join you at the table.",
+      "scene": null
+    },
+    {
+      "id": "afvoeren",
+      "verb": "afvoeren",
+      "gloss": "to carry away, to drain",
+      "band": "b2",
+      "split": "voer ... af",
+      "perfect": "heeft afgevoerd",
+      "example": "De buis voert het regenwater af.",
+      "exampleEn": "The pipe carries the rainwater away.",
+      "scene": null
+    },
+    {
+      "id": "instemmen",
+      "verb": "instemmen",
+      "gloss": "to agree, to consent",
+      "band": "b2",
+      "split": "stem ... in",
+      "perfect": "heeft ingestemd",
+      "example": "Ik stem met het plan in.",
+      "exampleEn": "I agree to the plan.",
+      "scene": null
+    },
+    {
+      "id": "meekijken",
+      "verb": "meekijken",
+      "gloss": "to look along",
+      "band": "b2",
+      "split": "kijk ... mee",
+      "perfect": "heeft meegekeken",
+      "example": "Mijn zus kijkt even met me mee.",
+      "exampleEn": "My sister is looking at it with me for a moment.",
+      "scene": null
+    },
+    {
+      "id": "afstemmen",
+      "verb": "afstemmen",
+      "gloss": "to coordinate, to tune",
+      "band": "b2",
+      "split": "stem ... af",
+      "perfect": "heeft afgestemd",
+      "example": "We stemmen de planning op elkaar af.",
+      "exampleEn": "We coordinate the schedules with each other.",
+      "scene": null
+    },
+    {
+      "id": "aanlopen",
+      "verb": "aanlopen",
+      "gloss": "to drop by, to walk up",
+      "band": "b2",
+      "split": "loop ... aan",
+      "perfect": "is aangelopen",
+      "example": "Ik loop morgen even bij je aan.",
+      "exampleEn": "I will drop by your place tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "inzitten",
+      "verb": "inzitten",
+      "gloss": "to be worried (about)",
+      "band": "b2",
+      "split": "zit ... in",
+      "perfect": "heeft ingezeten",
+      "example": "Ze zit erg met haar examen in.",
+      "exampleEn": "She is very worried about her exam.",
+      "scene": null
+    },
+    {
+      "id": "onderduiken",
+      "verb": "onderduiken",
+      "gloss": "to go into hiding",
+      "band": "b2",
+      "split": "duik ... onder",
+      "perfect": "is ondergedoken",
+      "example": "Hij duikt in een klein dorp onder.",
+      "exampleEn": "He goes into hiding in a small village.",
+      "scene": null
+    },
+    {
+      "id": "flauwvallen",
+      "verb": "flauwvallen",
+      "gloss": "to faint",
+      "band": "b2",
+      "split": "val ... flauw",
+      "perfect": "is flauwgevallen",
+      "example": "Ze valt van de hitte flauw.",
+      "exampleEn": "She faints from the heat.",
+      "scene": null
+    },
+    {
+      "id": "aantasten",
+      "verb": "aantasten",
+      "gloss": "to damage, to affect",
+      "band": "b2",
+      "split": "tast ... aan",
+      "perfect": "heeft aangetast",
+      "example": "Zuur tast het metaal aan.",
+      "exampleEn": "Acid damages the metal.",
+      "scene": null
+    },
+    {
+      "id": "afdoen",
+      "verb": "afdoen",
+      "gloss": "to take off (glasses, a hat)",
+      "band": "b2",
+      "split": "doe ... af",
+      "perfect": "heeft afgedaan",
+      "example": "Ik doe mijn bril af.",
+      "exampleEn": "I take off my glasses.",
+      "scene": null
+    },
+    {
+      "id": "doodschieten",
+      "verb": "doodschieten",
+      "gloss": "to shoot dead",
+      "band": "b2",
+      "split": "schiet ... dood",
+      "perfect": "heeft doodgeschoten",
+      "example": "De jager schiet het wilde zwijn dood.",
+      "exampleEn": "The hunter shoots the wild boar dead.",
+      "scene": null
+    },
+    {
+      "id": "opbergen",
+      "verb": "opbergen",
+      "gloss": "to put away, to store",
+      "band": "b2",
+      "split": "berg ... op",
+      "perfect": "heeft opgeborgen",
+      "example": "Ik berg de koffers op zolder op.",
+      "exampleEn": "I store the suitcases in the attic.",
+      "scene": null
+    },
+    {
+      "id": "samenvatten",
+      "verb": "samenvatten",
+      "gloss": "to summarize",
+      "band": "b2",
+      "split": "vat ... samen",
+      "perfect": "heeft samengevat",
+      "example": "Ik vat het verhaal kort samen.",
+      "exampleEn": "I summarize the story briefly.",
+      "scene": null
+    },
+    {
+      "id": "afkeuren",
+      "verb": "afkeuren",
+      "gloss": "to reject, to disapprove of",
+      "band": "b2",
+      "split": "keur ... af",
+      "perfect": "heeft afgekeurd",
+      "example": "De monteur keurt mijn auto af.",
+      "exampleEn": "The mechanic rejects my car.",
+      "scene": null
+    },
+    {
+      "id": "toelichten",
+      "verb": "toelichten",
+      "gloss": "to explain, to clarify",
+      "band": "b2",
+      "split": "licht ... toe",
+      "perfect": "heeft toegelicht",
+      "example": "De docent licht de regels toe.",
+      "exampleEn": "The teacher explains the rules.",
+      "scene": null
+    },
+    {
+      "id": "doortrekken",
+      "verb": "doortrekken",
+      "gloss": "to flush (a toilet)",
+      "band": "b2",
+      "split": "trek ... door",
+      "perfect": "heeft doorgetrokken",
+      "example": "Hij trekt de wc niet door.",
+      "exampleEn": "He does not flush the toilet.",
+      "scene": null
+    },
+    {
+      "id": "opdringen",
+      "verb": "opdringen",
+      "gloss": "to impose, to force upon",
+      "band": "b2",
+      "split": "dring ... op",
+      "perfect": "heeft opgedrongen",
+      "example": "Hij dringt zijn mening altijd aan ons op.",
+      "exampleEn": "He always forces his opinion on us.",
+      "scene": null
+    },
+    {
+      "id": "openmaken",
+      "verb": "openmaken",
+      "gloss": "to open",
+      "band": "b2",
+      "split": "maak ... open",
+      "perfect": "heeft opengemaakt",
+      "example": "Ik maak de deur voor je open.",
+      "exampleEn": "I open the door for you.",
+      "scene": null
+    },
+    {
+      "id": "opkijken",
+      "verb": "opkijken",
+      "gloss": "to look up (from)",
+      "band": "b2",
+      "split": "kijk ... op",
+      "perfect": "heeft opgekeken",
+      "example": "Ze kijkt even van haar boek op.",
+      "exampleEn": "She looks up from her book for a moment.",
+      "scene": null
+    },
+    {
+      "id": "aanduiden",
+      "verb": "aanduiden",
+      "gloss": "to indicate, to point out",
+      "band": "b2",
+      "split": "duid ... aan",
+      "perfect": "heeft aangeduid",
+      "example": "De pijl duidt de uitgang aan.",
+      "exampleEn": "The arrow indicates the exit.",
+      "scene": null
+    },
+    {
+      "id": "afsnijden",
+      "verb": "afsnijden",
+      "gloss": "to cut off",
+      "band": "b2",
+      "split": "snijd ... af",
+      "perfect": "heeft afgesneden",
+      "example": "Ik snijd een stuk brood af.",
+      "exampleEn": "I cut off a piece of bread.",
+      "scene": null
+    },
+    {
+      "id": "opengaan",
+      "verb": "opengaan",
+      "gloss": "to open (by itself)",
+      "band": "b2",
+      "split": "ga ... open",
+      "perfect": "is opengegaan",
+      "example": "De deur gaat langzaam open.",
+      "exampleEn": "The door slowly opens.",
+      "scene": null
+    },
+    {
+      "id": "uitwijzen",
+      "verb": "uitwijzen",
+      "gloss": "to show, to turn out (research)",
+      "band": "b2",
+      "split": "wijs ... uit",
+      "perfect": "heeft uitgewezen",
+      "example": "Het onderzoek wijst uit dat het werkt.",
+      "exampleEn": "The research shows that it works.",
+      "scene": null
+    },
+    {
+      "id": "aanvoeren",
+      "verb": "aanvoeren",
+      "gloss": "to put forward (an argument)",
+      "band": "b2",
+      "split": "voer ... aan",
+      "perfect": "heeft aangevoerd",
+      "example": "Hij voert een goede reden aan.",
+      "exampleEn": "He puts forward a good reason.",
+      "scene": null
+    },
+    {
+      "id": "opvatten",
+      "verb": "opvatten",
+      "gloss": "to take (it) a certain way",
+      "band": "b2",
+      "split": "vat ... op",
+      "perfect": "heeft opgevat",
+      "example": "Ze vat mijn grap verkeerd op.",
+      "exampleEn": "She takes my joke the wrong way.",
+      "scene": null
+    },
+    {
+      "id": "aanrijden",
+      "verb": "aanrijden",
+      "gloss": "to run into, to hit",
+      "band": "b2",
+      "split": "rijd ... aan",
+      "perfect": "heeft aangereden",
+      "example": "De bestelwagen rijdt een fietser aan.",
+      "exampleEn": "The van hits a cyclist.",
+      "scene": null
+    },
+    {
+      "id": "misgaan",
+      "verb": "misgaan",
+      "gloss": "to go wrong",
+      "band": "b2",
+      "split": "ga ... mis",
+      "perfect": "is misgegaan",
+      "example": "Er gaat vaak iets mis.",
+      "exampleEn": "Something often goes wrong.",
+      "scene": null
+    },
+    {
+      "id": "aanslaan",
+      "verb": "aanslaan",
+      "gloss": "to catch on, be a hit",
+      "band": "b2",
+      "split": "sla ... aan",
+      "perfect": "heeft aangeslagen",
+      "example": "Het nieuwe programma slaat goed aan.",
+      "exampleEn": "The new programme is catching on well.",
+      "scene": null
+    },
+    {
+      "id": "uitreiken",
+      "verb": "uitreiken",
+      "gloss": "to hand out, to present",
+      "band": "b2",
+      "split": "reik ... uit",
+      "perfect": "heeft uitgereikt",
+      "example": "De burgemeester reikt de prijzen uit.",
+      "exampleEn": "The mayor hands out the prizes.",
+      "scene": null
+    },
+    {
+      "id": "onderbrengen",
+      "verb": "onderbrengen",
+      "gloss": "to house, to place",
+      "band": "b2",
+      "split": "breng ... onder",
+      "perfect": "heeft ondergebracht",
+      "example": "Wij brengen de gasten in een hotel onder.",
+      "exampleEn": "We put the guests up in a hotel.",
+      "scene": null
+    },
+    {
+      "id": "indelen",
+      "verb": "indelen",
+      "gloss": "to divide, to classify",
+      "band": "b2",
+      "split": "deel ... in",
+      "perfect": "heeft ingedeeld",
+      "example": "De juf deelt de kinderen in groepen in.",
+      "exampleEn": "The teacher divides the children into groups.",
+      "scene": null
+    },
+    {
+      "id": "aanhalen",
+      "verb": "aanhalen",
+      "gloss": "to quote; to tighten",
+      "band": "b2",
+      "split": "haal ... aan",
+      "perfect": "heeft aangehaald",
+      "example": "Ze haalt een bekend gezegde aan.",
+      "exampleEn": "She quotes a well-known saying.",
+      "scene": null
+    },
+    {
+      "id": "uitrekenen",
+      "verb": "uitrekenen",
+      "gloss": "to calculate",
+      "band": "b2",
+      "split": "reken ... uit",
+      "perfect": "heeft uitgerekend",
+      "example": "Ik reken de prijs even uit.",
+      "exampleEn": "I calculate the price quickly.",
+      "scene": null
+    },
+    {
+      "id": "afwerpen",
+      "verb": "afwerpen",
+      "gloss": "to throw off, to yield",
+      "band": "b2",
+      "split": "werp ... af",
+      "perfect": "heeft afgeworpen",
+      "example": "De winkel werpt weinig winst af.",
+      "exampleEn": "The shop yields little profit.",
+      "scene": null
+    },
+    {
+      "id": "afwisselen",
+      "verb": "afwisselen",
+      "gloss": "to alternate",
+      "band": "b2",
+      "split": "wissel ... af",
+      "perfect": "heeft afgewisseld",
+      "example": "Wij wisselen elkaar bij het rijden af.",
+      "exampleEn": "We take turns driving.",
+      "scene": null
+    },
+    {
+      "id": "aanbreken",
+      "verb": "aanbreken",
+      "gloss": "to dawn, to begin (era)",
+      "band": "b2",
+      "split": "breek ... aan",
+      "perfect": "is aangebroken",
+      "example": "Een nieuwe tijd breekt aan.",
+      "exampleEn": "A new era begins.",
+      "scene": null
+    },
+    {
+      "id": "omkomen",
+      "verb": "omkomen",
+      "gloss": "to die, to perish",
+      "band": "b2",
+      "split": "kom ... om",
+      "perfect": "is omgekomen",
+      "example": "Bij het ongeluk komen drie mensen om.",
+      "exampleEn": "Three people die in the accident.",
+      "scene": null
+    },
+    {
+      "id": "meekomen",
+      "verb": "meekomen",
+      "gloss": "to come along",
+      "band": "b2",
+      "split": "kom ... mee",
+      "perfect": "is meegekomen",
+      "example": "Kom je vanavond ook mee?",
+      "exampleEn": "Are you coming along tonight too?",
+      "scene": null
+    },
+    {
+      "id": "uitbouwen",
+      "verb": "uitbouwen",
+      "gloss": "to extend, to expand",
+      "band": "b2",
+      "split": "bouw ... uit",
+      "perfect": "heeft uitgebouwd",
+      "example": "Wij bouwen de keuken uit.",
+      "exampleEn": "We are extending the kitchen.",
+      "scene": null
+    },
+    {
+      "id": "afsteken",
+      "verb": "afsteken",
+      "gloss": "to let off (fireworks)",
+      "band": "b2",
+      "split": "steek ... af",
+      "perfect": "heeft afgestoken",
+      "example": "Wij steken om middernacht vuurwerk af.",
+      "exampleEn": "We set off fireworks at midnight.",
+      "scene": null
+    },
+    {
+      "id": "neerkomen",
+      "verb": "neerkomen",
+      "gloss": "to amount to; to land",
+      "band": "b2",
+      "split": "kom ... neer",
+      "perfect": "is neergekomen",
+      "example": "Het komt op hetzelfde neer.",
+      "exampleEn": "It comes down to the same thing.",
+      "scene": null
+    },
+    {
+      "id": "uitkeren",
+      "verb": "uitkeren",
+      "gloss": "to pay out (money)",
+      "band": "b2",
+      "split": "keer ... uit",
+      "perfect": "heeft uitgekeerd",
+      "example": "De verzekering keert het bedrag uit.",
+      "exampleEn": "The insurance pays out the amount.",
+      "scene": null
+    },
+    {
+      "id": "opgraven",
+      "verb": "opgraven",
+      "gloss": "to dig up",
+      "band": "b2",
+      "split": "graaf ... op",
+      "perfect": "heeft opgegraven",
+      "example": "De hond graaft een bot op.",
+      "exampleEn": "The dog digs up a bone.",
+      "scene": null
+    },
+    {
+      "id": "terugblikken",
+      "verb": "terugblikken",
+      "gloss": "to look back",
+      "band": "b2",
+      "split": "blik ... terug",
+      "perfect": "heeft teruggeblikt",
+      "example": "Wij blikken op het jaar terug.",
+      "exampleEn": "We look back on the year.",
+      "scene": null
+    },
+    {
+      "id": "uitschelden",
+      "verb": "uitschelden",
+      "gloss": "to call names, to abuse",
+      "band": "b2",
+      "split": "scheld ... uit",
+      "perfect": "heeft uitgescholden",
+      "example": "Ze schelden de scheidsrechter uit.",
+      "exampleEn": "They shout abuse at the referee.",
+      "scene": null
+    },
+    {
+      "id": "wegjagen",
+      "verb": "wegjagen",
+      "gloss": "to chase away",
+      "band": "b2",
+      "split": "jaag ... weg",
+      "perfect": "heeft weggejaagd",
+      "example": "Ik jaag de kat uit de tuin weg.",
+      "exampleEn": "I chase the cat out of the garden.",
+      "scene": null
+    },
+    {
+      "id": "geruststellen",
+      "verb": "geruststellen",
+      "gloss": "to reassure",
+      "band": "b2",
+      "split": "stel ... gerust",
+      "perfect": "heeft gerustgesteld",
+      "example": "Ik stel mijn moeder meteen gerust.",
+      "exampleEn": "I reassure my mother straight away.",
+      "scene": null
+    },
+    {
+      "id": "wegleggen",
+      "verb": "wegleggen",
+      "gloss": "to put away, to set aside",
+      "band": "b2",
+      "split": "leg ... weg",
+      "perfect": "heeft weggelegd",
+      "example": "Ik leg mijn telefoon even weg.",
+      "exampleEn": "I put my phone away for a moment.",
+      "scene": null
+    },
+    {
+      "id": "langsgaan",
+      "verb": "langsgaan",
+      "gloss": "to drop by",
+      "band": "b2",
+      "split": "ga ... langs",
+      "perfect": "is langsgegaan",
+      "example": "Ik ga morgen bij mijn oma langs.",
+      "exampleEn": "I am dropping by my grandma's tomorrow.",
+      "scene": null
+    },
+    {
+      "id": "voorgaan",
+      "verb": "voorgaan",
+      "gloss": "to go first, to take priority",
+      "band": "b2",
+      "split": "ga ... voor",
+      "perfect": "is voorgegaan",
+      "example": "Gaat u maar voor, mevrouw.",
+      "exampleEn": "Please go ahead, madam.",
+      "scene": null
+    },
+    {
+      "id": "doorverwijzen",
+      "verb": "doorverwijzen",
+      "gloss": "to refer onward",
+      "band": "b2",
+      "split": "verwijs ... door",
+      "perfect": "heeft doorverwezen",
+      "example": "De huisarts verwijst me naar een specialist door.",
+      "exampleEn": "The GP refers me on to a specialist.",
+      "scene": null
+    },
+    {
+      "id": "uitstrekken",
+      "verb": "uitstrekken",
+      "gloss": "to stretch out, to extend",
+      "band": "b2",
+      "split": "strek ... uit",
+      "perfect": "heeft uitgestrekt",
+      "example": "Hij strekt zijn arm naar me uit.",
+      "exampleEn": "He stretches his arm out to me.",
+      "scene": null
+    },
+    {
+      "id": "eruitzien",
+      "verb": "eruitzien",
+      "gloss": "to look (like)",
+      "band": "b2",
+      "split": "zie er ... uit",
+      "perfect": "heeft eruitgezien",
+      "example": "Je ziet er vandaag moe uit.",
+      "exampleEn": "You look tired today.",
+      "scene": null
+    },
+    {
+      "id": "goedkomen",
+      "verb": "goedkomen",
+      "gloss": "to turn out fine",
+      "band": "b2",
+      "split": "kom ... goed",
+      "perfect": "is goedgekomen",
+      "example": "Het komt wel goed.",
+      "exampleEn": "It will turn out fine.",
+      "scene": null
+    },
+    {
+      "id": "openzetten",
+      "verb": "openzetten",
+      "gloss": "to open (up), to set open",
+      "band": "b2",
+      "split": "zet ... open",
+      "perfect": "heeft opengezet",
+      "example": "Ik zet het raam open.",
+      "exampleEn": "I open the window.",
+      "scene": null
+    },
+    {
+      "id": "aanhaken",
+      "verb": "aanhaken",
+      "gloss": "to join in, to hook on",
+      "band": "b2",
+      "split": "haak ... aan",
+      "perfect": "is/heeft aangehaakt",
+      "example": "Hij haakt bij het gesprek aan.",
+      "exampleEn": "He joins in on the conversation.",
+      "scene": null
+    },
+    {
+      "id": "inbouwen",
+      "verb": "inbouwen",
+      "gloss": "to build in",
+      "band": "b2",
+      "split": "bouw ... in",
+      "perfect": "heeft ingebouwd",
+      "example": "De timmerman bouwt een kast in.",
+      "exampleEn": "The carpenter builds in a cupboard.",
+      "scene": null
+    },
+    {
+      "id": "voorafgaan",
+      "verb": "voorafgaan",
+      "gloss": "to precede",
+      "band": "b2",
+      "split": "ga ... vooraf",
+      "perfect": "is voorafgegaan",
+      "example": "Een korte inleiding gaat aan de les vooraf.",
+      "exampleEn": "A short introduction precedes the lesson.",
+      "scene": null
+    },
+    {
+      "id": "uitputten",
+      "verb": "uitputten",
+      "gloss": "to exhaust",
+      "band": "b2",
+      "split": "put ... uit",
+      "perfect": "heeft uitgeput",
+      "example": "Het werk put mij helemaal uit.",
+      "exampleEn": "The work completely exhausts me.",
+      "scene": null
+    },
+    {
+      "id": "inburgeren",
+      "verb": "inburgeren",
+      "gloss": "to integrate (into society)",
+      "band": "b2",
+      "split": "burger ... in",
+      "perfect": "is ingeburgerd",
+      "example": "Veel nieuwkomers burgeren hier snel in.",
+      "exampleEn": "Many newcomers integrate quickly here.",
+      "scene": null
+    },
+    {
+      "id": "voornemen",
+      "verb": "voornemen",
+      "gloss": "to plan, to intend",
+      "band": "b2",
+      "split": "neem me ... voor",
+      "perfect": "heeft voorgenomen",
+      "example": "Ik neem me voor vaker te sporten.",
+      "exampleEn": "I plan to exercise more often.",
+      "scene": null
+    },
+    {
+      "id": "schoonhouden",
+      "verb": "schoonhouden",
+      "gloss": "to keep clean",
+      "band": "b2",
+      "split": "houd ... schoon",
+      "perfect": "heeft schoongehouden",
+      "example": "Ik houd de keuken altijd schoon.",
+      "exampleEn": "I always keep the kitchen clean.",
+      "scene": null
+    },
+    {
+      "id": "aanhebben",
+      "verb": "aanhebben",
+      "gloss": "to be wearing",
+      "band": "b2",
+      "split": "heb ... aan",
+      "perfect": "heeft aangehad",
+      "example": "Ik heb vandaag een blauwe trui aan.",
+      "exampleEn": "I am wearing a blue jumper today.",
+      "scene": null
+    },
+    {
+      "id": "wegglijden",
+      "verb": "wegglijden",
+      "gloss": "to slip away",
+      "band": "b2",
+      "split": "glijd ... weg",
+      "perfect": "is weggegleden",
+      "example": "De zeep glijdt uit mijn handen weg.",
+      "exampleEn": "The soap slips out of my hands.",
+      "scene": null
+    },
+    {
+      "id": "terechtkunnen",
+      "verb": "terechtkunnen",
+      "gloss": "to be able to go (to)",
+      "band": "b2",
+      "split": "kan ... terecht",
+      "perfect": "heeft terechtgekund",
+      "example": "Je kunt hier altijd voor hulp terecht.",
+      "exampleEn": "You can always come here for help.",
+      "scene": null
+    },
+    {
+      "id": "opkrijgen",
+      "verb": "opkrijgen",
+      "gloss": "to manage to finish (food)",
+      "band": "b2",
+      "split": "krijg ... op",
+      "perfect": "heeft opgekregen",
+      "example": "Ik krijg mijn bord niet op.",
+      "exampleEn": "I cannot finish my plate.",
+      "scene": null
+    },
+    {
+      "id": "insluipen",
+      "verb": "insluipen",
+      "gloss": "to creep in",
+      "band": "b2",
+      "split": "sluip ... in",
+      "perfect": "is ingeslopen",
+      "example": "Er sluipt een fout in de tekst in.",
+      "exampleEn": "A mistake creeps into the text.",
+      "scene": null
+    },
+    {
+      "id": "onderuitgaan",
+      "verb": "onderuitgaan",
+      "gloss": "to fall flat, to go down",
+      "band": "b2",
+      "split": "ga ... onderuit",
+      "perfect": "is onderuitgegaan",
+      "example": "Hij gaat op het ijs onderuit.",
+      "exampleEn": "He slips and falls on the ice.",
+      "scene": null
+    }
+  ],
+  "levels": [
+    {
+      "id": "a1-1",
+      "name": "A1 · 1",
+      "band": "a1",
+      "frames": [
+        "mee-eten",
+        "voorkomen",
+        "voorstellen",
+        "doorgaan"
+      ]
+    },
+    {
+      "id": "a1-2",
+      "name": "A1 · 2",
+      "band": "a1",
+      "frames": [
+        "oplossen",
+        "opnemen",
+        "aanvallen",
+        "meedoen"
+      ]
+    },
+    {
+      "id": "a1-3",
+      "name": "A1 · 3",
+      "band": "a1",
+      "frames": [
+        "omgaan",
+        "bijdragen",
+        "samenwerken",
+        "inzetten"
+      ]
+    },
+    {
+      "id": "a1-4",
+      "name": "A1 · 4",
+      "band": "a1",
+      "frames": [
+        "nadenken",
+        "uitleggen",
+        "uitvoeren",
+        "deelnemen"
+      ]
+    },
+    {
+      "id": "a1-5",
+      "name": "A1 · 5",
+      "band": "a1",
+      "frames": [
+        "plaatsvinden",
+        "aanmelden",
+        "aanpakken",
+        "opgeven"
+      ]
+    },
+    {
+      "id": "a1-6",
+      "name": "A1 · 6",
+      "band": "a1",
+      "frames": [
+        "aanpassen",
+        "aangeven",
+        "uitmaken",
+        "voorbereiden"
+      ]
+    },
+    {
+      "id": "a1-7",
+      "name": "A1 · 7",
+      "band": "a1",
+      "frames": [
+        "ophouden",
+        "toegeven",
+        "terugkeren",
+        "uitkomen"
+      ]
+    },
+    {
+      "id": "a1-8",
+      "name": "A1 · 8",
+      "band": "a1",
+      "frames": [
+        "opstellen",
+        "aanvragen",
+        "uitgaan",
+        "overkomen"
+      ]
+    },
+    {
+      "id": "a1-9",
+      "name": "A1 · 9",
+      "band": "a1",
+      "frames": [
+        "overnemen",
+        "inschrijven",
+        "opbouwen",
+        "uitzien"
+      ]
+    },
+    {
+      "id": "a1-10",
+      "name": "A1 · 10",
+      "band": "a1",
+      "frames": [
+        "opleveren",
+        "uitzoeken",
+        "inzien",
+        "instellen"
+      ]
+    },
+    {
+      "id": "a1-11",
+      "name": "A1 · 11",
+      "band": "a1",
+      "frames": [
+        "oproepen",
+        "optreden",
+        "afwachten",
+        "indienen"
+      ]
+    },
+    {
+      "id": "a1-12",
+      "name": "A1 · 12",
+      "band": "a1",
+      "frames": [
+        "uitgeven",
+        "doorbrengen",
+        "afnemen",
+        "afvragen"
+      ]
+    },
+    {
+      "id": "a1-13",
+      "name": "A1 · 13",
+      "band": "a1",
+      "frames": [
+        "innemen",
+        "uitoefenen",
+        "ingaan",
+        "toestaan"
+      ]
+    },
+    {
+      "id": "a1-14",
+      "name": "A1 · 14",
+      "band": "a1",
+      "frames": [
+        "volhouden",
+        "doorlopen",
+        "meemaken",
+        "toepassen"
+      ]
+    },
+    {
+      "id": "a1-15",
+      "name": "A1 · 15",
+      "band": "a1",
+      "frames": [
+        "oplopen",
+        "uitbrengen",
+        "afleggen",
+        "afspreken"
+      ]
+    },
+    {
+      "id": "a1-16",
+      "name": "A1 · 16",
+      "band": "a1",
+      "frames": [
+        "invoeren",
+        "ingrijpen",
+        "na-apen",
+        "afvallen"
+      ]
+    },
+    {
+      "id": "a1-17",
+      "name": "A1 · 17",
+      "band": "a1",
+      "frames": [
+        "uitbreiden",
+        "tegenkomen",
+        "hardlopen",
+        "toenemen"
+      ]
+    },
+    {
+      "id": "a1-18",
+      "name": "A1 · 18",
+      "band": "a1",
+      "frames": [
+        "uitspreken",
+        "afmaken",
+        "opmaken",
+        "afschaffen"
+      ]
+    },
+    {
+      "id": "a1-19",
+      "name": "A1 · 19",
+      "band": "a1",
+      "frames": [
+        "binnenkomen",
+        "klaarmaken",
+        "vastleggen",
+        "meewerken"
+      ]
+    },
+    {
+      "id": "a1-20",
+      "name": "A1 · 20",
+      "band": "a1",
+      "frames": [
+        "aanspreken",
+        "aftreden",
+        "inloggen",
+        "kennismaken"
+      ]
+    },
+    {
+      "id": "a1-21",
+      "name": "A1 · 21",
+      "band": "a1",
+      "frames": [
+        "opgroeien",
+        "terugtrekken",
+        "uitnodigen",
+        "opletten"
+      ]
+    },
+    {
+      "id": "a1-22",
+      "name": "A1 · 22",
+      "band": "a1",
+      "frames": [
+        "oprichten",
+        "aanmaken",
+        "oppassen",
+        "gebruikmaken"
+      ]
+    },
+    {
+      "id": "a1-23",
+      "name": "A1 · 23",
+      "band": "a1",
+      "frames": [
+        "langskomen",
+        "oversteken",
+        "uitsterven",
+        "voorlezen"
+      ]
+    },
+    {
+      "id": "a1-24",
+      "name": "A1 · 24",
+      "band": "a1",
+      "frames": [
+        "bijhouden",
+        "opvoeden",
+        "uitproberen",
+        "aangaan"
+      ]
+    },
+    {
+      "id": "a1-25",
+      "name": "A1 · 25",
+      "band": "a1",
+      "frames": [
+        "aanhouden",
+        "opleggen",
+        "vaststellen",
+        "aantonen"
+      ]
+    },
+    {
+      "id": "a1-26",
+      "name": "A1 · 26",
+      "band": "a1",
+      "frames": [
+        "uitkijken",
+        "uitzenden",
+        "aanleggen",
+        "intrekken"
+      ]
+    },
+    {
+      "id": "a1-27",
+      "name": "A1 · 27",
+      "band": "a1",
+      "frames": [
+        "opladen",
+        "opvolgen",
+        "opvangen",
+        "overstappen"
+      ]
+    },
+    {
+      "id": "a1-28",
+      "name": "A1 · 28",
+      "band": "a1",
+      "frames": [
+        "overslaan",
+        "aanraken",
+        "aanraden",
+        "afronden"
+      ]
+    },
+    {
+      "id": "a1-29",
+      "name": "A1 · 29",
+      "band": "a1",
+      "frames": [
+        "meespelen",
+        "opvallen",
+        "opgaan",
+        "vastzitten"
+      ]
+    },
+    {
+      "id": "a1-30",
+      "name": "A1 · 30",
+      "band": "a1",
+      "frames": [
+        "afgaan",
+        "samenwonen",
+        "afrekenen",
+        "meegeven",
+        "uitlopen"
+      ]
+    },
+    {
+      "id": "a2-1",
+      "name": "A2 · 1",
+      "band": "a2",
+      "frames": [
+        "aandoen",
+        "uitdoen",
+        "aanzetten",
+        "uitzetten"
+      ]
+    },
+    {
+      "id": "a2-2",
+      "name": "A2 · 2",
+      "band": "a2",
+      "frames": [
+        "opendoen",
+        "dichtdoen",
+        "afsluiten",
+        "inpakken"
+      ]
+    },
+    {
+      "id": "a2-3",
+      "name": "A2 · 3",
+      "band": "a2",
+      "frames": [
+        "uitpakken",
+        "instappen",
+        "uitstappen",
+        "opbellen"
+      ]
+    },
+    {
+      "id": "a2-4",
+      "name": "A2 · 4",
+      "band": "a2",
+      "frames": [
+        "ophangen",
+        "aankomen",
+        "wegrijden",
+        "meenemen"
+      ]
+    },
+    {
+      "id": "a2-5",
+      "name": "A2 · 5",
+      "band": "a2",
+      "frames": [
+        "achterlaten",
+        "opruimen",
+        "schoonmaken",
+        "aantrekken"
+      ]
+    },
+    {
+      "id": "a2-6",
+      "name": "A2 · 6",
+      "band": "a2",
+      "frames": [
+        "uittrekken",
+        "opstaan",
+        "uitslapen",
+        "ophalen"
+      ]
+    },
+    {
+      "id": "a2-7",
+      "name": "A2 · 7",
+      "band": "a2",
+      "frames": [
+        "wegbrengen",
+        "opeten",
+        "overlaten",
+        "afwassen"
+      ]
+    },
+    {
+      "id": "a2-8",
+      "name": "A2 · 8",
+      "band": "a2",
+      "frames": [
+        "afdrogen",
+        "aanbieden",
+        "aannemen",
+        "meegaan"
+      ]
+    },
+    {
+      "id": "a2-9",
+      "name": "A2 · 9",
+      "band": "a2",
+      "frames": [
+        "thuisblijven",
+        "thuiskomen",
+        "weggaan",
+        "opendraaien"
+      ]
+    },
+    {
+      "id": "a2-10",
+      "name": "A2 · 10",
+      "band": "a2",
+      "frames": [
+        "dichtdraaien",
+        "weggooien",
+        "oprapen",
+        "opzoeken"
+      ]
+    },
+    {
+      "id": "a2-11",
+      "name": "A2 · 11",
+      "band": "a2",
+      "frames": [
+        "opschrijven",
+        "doorgeven",
+        "vasthouden",
+        "opzetten"
+      ]
+    },
+    {
+      "id": "a2-12",
+      "name": "A2 · 12",
+      "band": "a2",
+      "frames": [
+        "afbreken",
+        "inchecken",
+        "uitchecken",
+        "omdoen"
+      ]
+    },
+    {
+      "id": "a2-13",
+      "name": "A2 · 13",
+      "band": "a2",
+      "frames": [
+        "losmaken",
+        "klaarzetten",
+        "afruimen",
+        "inruimen"
+      ]
+    },
+    {
+      "id": "a2-14",
+      "name": "A2 · 14",
+      "band": "a2",
+      "frames": [
+        "uitruimen",
+        "dichtritsen",
+        "openritsen",
+        "toelaten"
+      ]
+    },
+    {
+      "id": "a2-15",
+      "name": "A2 · 15",
+      "band": "a2",
+      "frames": [
+        "bezighouden",
+        "inhuren",
+        "nakijken",
+        "samenstellen"
+      ]
+    },
+    {
+      "id": "a2-16",
+      "name": "A2 · 16",
+      "band": "a2",
+      "frames": [
+        "opdoen",
+        "oppakken",
+        "inhalen",
+        "uitstellen"
+      ]
+    },
+    {
+      "id": "a2-17",
+      "name": "A2 · 17",
+      "band": "a2",
+      "frames": [
+        "afgeven",
+        "lesgeven",
+        "terugvinden",
+        "uitschakelen"
+      ]
+    },
+    {
+      "id": "a2-18",
+      "name": "A2 · 18",
+      "band": "a2",
+      "frames": [
+        "voortzetten",
+        "afleiden",
+        "afspelen",
+        "aftellen"
+      ]
+    },
+    {
+      "id": "a2-19",
+      "name": "A2 · 19",
+      "band": "a2",
+      "frames": [
+        "bijwonen",
+        "nagaan",
+        "nakomen",
+        "opheffen"
+      ]
+    },
+    {
+      "id": "a2-20",
+      "name": "A2 · 20",
+      "band": "a2",
+      "frames": [
+        "overbrengen",
+        "autorijden",
+        "afzetten",
+        "opstarten"
+      ]
+    },
+    {
+      "id": "a2-21",
+      "name": "A2 · 21",
+      "band": "a2",
+      "frames": [
+        "uitwisselen",
+        "opdagen",
+        "overgaan",
+        "aankleden"
+      ]
+    },
+    {
+      "id": "a2-22",
+      "name": "A2 · 22",
+      "band": "a2",
+      "frames": [
+        "samenkomen",
+        "terugkijken",
+        "aankopen",
+        "opleiden"
+      ]
+    },
+    {
+      "id": "a2-23",
+      "name": "A2 · 23",
+      "band": "a2",
+      "frames": [
+        "aanklagen",
+        "instorten",
+        "opslaan",
+        "opsporen"
+      ]
+    },
+    {
+      "id": "a2-24",
+      "name": "A2 · 24",
+      "band": "a2",
+      "frames": [
+        "overeenkomen",
+        "uitsluiten",
+        "weergeven",
+        "wegnemen"
+      ]
+    },
+    {
+      "id": "a2-25",
+      "name": "A2 · 25",
+      "band": "a2",
+      "frames": [
+        "aanbrengen",
+        "aandringen",
+        "kwijtraken",
+        "neerleggen"
+      ]
+    },
+    {
+      "id": "a2-26",
+      "name": "A2 · 26",
+      "band": "a2",
+      "frames": [
+        "overhalen",
+        "omkleden",
+        "uithalen",
+        "oppikken"
+      ]
+    },
+    {
+      "id": "a2-27",
+      "name": "A2 · 27",
+      "band": "a2",
+      "frames": [
+        "optrekken",
+        "terugbetalen",
+        "aflopen",
+        "afwijzen"
+      ]
+    },
+    {
+      "id": "a2-28",
+      "name": "A2 · 28",
+      "band": "a2",
+      "frames": [
+        "inrichten",
+        "omzetten",
+        "overgeven",
+        "teruggaan"
+      ]
+    },
+    {
+      "id": "a2-29",
+      "name": "A2 · 29",
+      "band": "a2",
+      "frames": [
+        "uitlaten",
+        "afstuderen",
+        "teleurstellen",
+        "uitkiezen"
+      ]
+    },
+    {
+      "id": "a2-30",
+      "name": "A2 · 30",
+      "band": "a2",
+      "frames": [
+        "afzien",
+        "opmerken",
+        "vrijmaken",
+        "aankondigen",
+        "toekomen"
+      ]
+    },
+    {
+      "id": "b1-1",
+      "name": "B1 · 1",
+      "band": "b1",
+      "frames": [
+        "opsturen",
+        "afhalen",
+        "optillen",
+        "neerzetten"
+      ]
+    },
+    {
+      "id": "b1-2",
+      "name": "B1 · 2",
+      "band": "b1",
+      "frames": [
+        "aankijken",
+        "wegkijken",
+        "voordoen",
+        "nadoen"
+      ]
+    },
+    {
+      "id": "b1-3",
+      "name": "B1 · 3",
+      "band": "b1",
+      "frames": [
+        "stilstaan",
+        "rondlopen",
+        "uitdelen",
+        "inleveren"
+      ]
+    },
+    {
+      "id": "b1-4",
+      "name": "B1 · 4",
+      "band": "b1",
+      "frames": [
+        "aansluiten",
+        "loskoppelen",
+        "vastpakken",
+        "loslaten"
+      ]
+    },
+    {
+      "id": "b1-5",
+      "name": "B1 · 5",
+      "band": "b1",
+      "frames": [
+        "invullen",
+        "doorstrepen",
+        "weglopen",
+        "terugkomen"
+      ]
+    },
+    {
+      "id": "b1-6",
+      "name": "B1 · 6",
+      "band": "b1",
+      "frames": [
+        "afdrukken",
+        "inscannen",
+        "opsluiten",
+        "vrijlaten"
+      ]
+    },
+    {
+      "id": "b1-7",
+      "name": "B1 · 7",
+      "band": "b1",
+      "frames": [
+        "invallen",
+        "toekijken",
+        "tegenhouden",
+        "doorlaten"
+      ]
+    },
+    {
+      "id": "b1-8",
+      "name": "B1 · 8",
+      "band": "b1",
+      "frames": [
+        "terugzetten",
+        "weghalen",
+        "toevoegen",
+        "omroeren"
+      ]
+    },
+    {
+      "id": "b1-9",
+      "name": "B1 · 9",
+      "band": "b1",
+      "frames": [
+        "aanwijzen",
+        "afluisteren",
+        "aftrekken",
+        "inkopen"
+      ]
+    },
+    {
+      "id": "b1-10",
+      "name": "B1 · 10",
+      "band": "b1",
+      "frames": [
+        "opzeggen",
+        "terechtkomen",
+        "afleveren",
+        "overdragen"
+      ]
+    },
+    {
+      "id": "b1-11",
+      "name": "B1 · 11",
+      "band": "b1",
+      "frames": [
+        "waarmaken",
+        "goedkeuren",
+        "inslaan",
+        "overmaken"
+      ]
+    },
+    {
+      "id": "b1-12",
+      "name": "B1 · 12",
+      "band": "b1",
+      "frames": [
+        "opwarmen",
+        "toekennen",
+        "afstaan",
+        "uitvallen"
+      ]
+    },
+    {
+      "id": "b1-13",
+      "name": "B1 · 13",
+      "band": "b1",
+      "frames": [
+        "uitwerken",
+        "vreemdgaan",
+        "meebrengen",
+        "samenleven"
+      ]
+    },
+    {
+      "id": "b1-14",
+      "name": "B1 · 14",
+      "band": "b1",
+      "frames": [
+        "ademhalen",
+        "afkoelen",
+        "opknappen",
+        "opschieten"
+      ]
+    },
+    {
+      "id": "b1-15",
+      "name": "B1 · 15",
+      "band": "b1",
+      "frames": [
+        "uitstaan",
+        "afzeggen",
+        "liefhebben",
+        "neerhalen"
+      ]
+    },
+    {
+      "id": "b1-16",
+      "name": "B1 · 16",
+      "band": "b1",
+      "frames": [
+        "uitdagen",
+        "bijkomen",
+        "doorvoeren",
+        "stopzetten"
+      ]
+    },
+    {
+      "id": "b1-17",
+      "name": "B1 · 17",
+      "band": "b1",
+      "frames": [
+        "weggeven",
+        "aanschaffen",
+        "uitroeien",
+        "meehelpen"
+      ]
+    },
+    {
+      "id": "b1-18",
+      "name": "B1 · 18",
+      "band": "b1",
+      "frames": [
+        "rondhangen",
+        "terugdringen",
+        "lastigvallen",
+        "binnenvallen"
+      ]
+    },
+    {
+      "id": "b1-19",
+      "name": "B1 · 19",
+      "band": "b1",
+      "frames": [
+        "doorzetten",
+        "uitdrukken",
+        "bijstaan",
+        "inschatten"
+      ]
+    },
+    {
+      "id": "b1-20",
+      "name": "B1 · 20",
+      "band": "b1",
+      "frames": [
+        "opduiken",
+        "afschieten",
+        "overlopen",
+        "uithangen"
+      ]
+    },
+    {
+      "id": "b1-21",
+      "name": "B1 · 21",
+      "band": "b1",
+      "frames": [
+        "afdwingen",
+        "meerijden",
+        "rondrijden",
+        "doodgaan"
+      ]
+    },
+    {
+      "id": "b1-22",
+      "name": "B1 · 22",
+      "band": "b1",
+      "frames": [
+        "doorsturen",
+        "meedenken",
+        "neerschieten",
+        "uitbesteden"
+      ]
+    },
+    {
+      "id": "b1-23",
+      "name": "B1 · 23",
+      "band": "b1",
+      "frames": [
+        "afkomen",
+        "aflossen",
+        "binnenhalen",
+        "nastreven"
+      ]
+    },
+    {
+      "id": "b1-24",
+      "name": "B1 · 24",
+      "band": "b1",
+      "frames": [
+        "opvoeren",
+        "opwekken",
+        "overblijven",
+        "terugsturen"
+      ]
+    },
+    {
+      "id": "b1-25",
+      "name": "B1 · 25",
+      "band": "b1",
+      "frames": [
+        "voorschrijven",
+        "aanbevelen",
+        "aanleren",
+        "afhandelen"
+      ]
+    },
+    {
+      "id": "b1-26",
+      "name": "B1 · 26",
+      "band": "b1",
+      "frames": [
+        "doornemen",
+        "opeisen",
+        "terugkrijgen",
+        "tegengaan"
+      ]
+    },
+    {
+      "id": "b1-27",
+      "name": "B1 · 27",
+      "band": "b1",
+      "frames": [
+        "toeslaan",
+        "uitpraten",
+        "voortkomen",
+        "aantreden"
+      ]
+    },
+    {
+      "id": "b1-28",
+      "name": "B1 · 28",
+      "band": "b1",
+      "frames": [
+        "toebrengen",
+        "toezien",
+        "uitbreken",
+        "omkeren"
+      ]
+    },
+    {
+      "id": "b1-29",
+      "name": "B1 · 29",
+      "band": "b1",
+      "frames": [
+        "afwijken",
+        "afhangen",
+        "meevallen",
+        "tegenvallen"
+      ]
+    },
+    {
+      "id": "b1-30",
+      "name": "B1 · 30",
+      "band": "b1",
+      "frames": [
+        "meekrijgen",
+        "uitverkopen"
+      ]
+    },
+    {
+      "id": "b2-1",
+      "name": "B2 · 1",
+      "band": "b2",
+      "frames": [
+        "inladen",
+        "uitladen",
+        "aansteken",
+        "uitblazen"
+      ]
+    },
+    {
+      "id": "b2-2",
+      "name": "B2 · 2",
+      "band": "b2",
+      "frames": [
+        "opvouwen",
+        "uitvouwen",
+        "vastbinden",
+        "losbinden"
+      ]
+    },
+    {
+      "id": "b2-3",
+      "name": "B2 · 3",
+      "band": "b2",
+      "frames": [
+        "omvallen",
+        "omgooien",
+        "doorwerken",
+        "uitrusten"
+      ]
+    },
+    {
+      "id": "b2-4",
+      "name": "B2 · 4",
+      "band": "b2",
+      "frames": [
+        "inademen",
+        "inhouden",
+        "uitademen",
+        "afpakken"
+      ]
+    },
+    {
+      "id": "b2-5",
+      "name": "B2 · 5",
+      "band": "b2",
+      "frames": [
+        "teruggeven",
+        "uitlenen",
+        "terugbrengen",
+        "aanmoedigen"
+      ]
+    },
+    {
+      "id": "b2-6",
+      "name": "B2 · 6",
+      "band": "b2",
+      "frames": [
+        "uitjouwen",
+        "afgieten",
+        "opscheppen",
+        "uitsteken"
+      ]
+    },
+    {
+      "id": "b2-7",
+      "name": "B2 · 7",
+      "band": "b2",
+      "frames": [
+        "uitvinden",
+        "vrijkomen",
+        "aankunnen",
+        "aantreffen"
+      ]
+    },
+    {
+      "id": "b2-8",
+      "name": "B2 · 8",
+      "band": "b2",
+      "frames": [
+        "aanvullen",
+        "inschakelen",
+        "overhouden",
+        "voorbijgaan"
+      ]
+    },
+    {
+      "id": "b2-9",
+      "name": "B2 · 9",
+      "band": "b2",
+      "frames": [
+        "afwerken",
+        "openstaan",
+        "samengaan",
+        "achterblijven"
+      ]
+    },
+    {
+      "id": "b2-10",
+      "name": "B2 · 10",
+      "band": "b2",
+      "frames": [
+        "opsteken",
+        "voorleggen",
+        "aanvoelen",
+        "bekendmaken"
+      ]
+    },
+    {
+      "id": "b2-11",
+      "name": "B2 · 11",
+      "band": "b2",
+      "frames": [
+        "uitroepen",
+        "inbreken",
+        "wegvallen",
+        "aanrichten"
+      ]
+    },
+    {
+      "id": "b2-12",
+      "name": "B2 · 12",
+      "band": "b2",
+      "frames": [
+        "aanstellen",
+        "binnenlopen",
+        "meedelen",
+        "uitgroeien"
+      ]
+    },
+    {
+      "id": "b2-13",
+      "name": "B2 · 13",
+      "band": "b2",
+      "frames": [
+        "inzamelen",
+        "nalaten",
+        "toewijzen",
+        "aanschuiven"
+      ]
+    },
+    {
+      "id": "b2-14",
+      "name": "B2 · 14",
+      "band": "b2",
+      "frames": [
+        "afvoeren",
+        "instemmen",
+        "meekijken",
+        "afstemmen"
+      ]
+    },
+    {
+      "id": "b2-15",
+      "name": "B2 · 15",
+      "band": "b2",
+      "frames": [
+        "aanlopen",
+        "inzitten",
+        "onderduiken",
+        "flauwvallen"
+      ]
+    },
+    {
+      "id": "b2-16",
+      "name": "B2 · 16",
+      "band": "b2",
+      "frames": [
+        "aantasten",
+        "afdoen",
+        "doodschieten",
+        "opbergen"
+      ]
+    },
+    {
+      "id": "b2-17",
+      "name": "B2 · 17",
+      "band": "b2",
+      "frames": [
+        "samenvatten",
+        "afkeuren",
+        "toelichten",
+        "doortrekken"
+      ]
+    },
+    {
+      "id": "b2-18",
+      "name": "B2 · 18",
+      "band": "b2",
+      "frames": [
+        "opdringen",
+        "openmaken",
+        "opkijken",
+        "aanduiden"
+      ]
+    },
+    {
+      "id": "b2-19",
+      "name": "B2 · 19",
+      "band": "b2",
+      "frames": [
+        "afsnijden",
+        "opengaan",
+        "uitwijzen",
+        "aanvoeren"
+      ]
+    },
+    {
+      "id": "b2-20",
+      "name": "B2 · 20",
+      "band": "b2",
+      "frames": [
+        "opvatten",
+        "aanrijden",
+        "misgaan",
+        "aanslaan"
+      ]
+    },
+    {
+      "id": "b2-21",
+      "name": "B2 · 21",
+      "band": "b2",
+      "frames": [
+        "uitreiken",
+        "onderbrengen",
+        "indelen",
+        "aanhalen"
+      ]
+    },
+    {
+      "id": "b2-22",
+      "name": "B2 · 22",
+      "band": "b2",
+      "frames": [
+        "uitrekenen",
+        "afwerpen",
+        "afwisselen",
+        "aanbreken"
+      ]
+    },
+    {
+      "id": "b2-23",
+      "name": "B2 · 23",
+      "band": "b2",
+      "frames": [
+        "omkomen",
+        "meekomen",
+        "uitbouwen",
+        "afsteken"
+      ]
+    },
+    {
+      "id": "b2-24",
+      "name": "B2 · 24",
+      "band": "b2",
+      "frames": [
+        "neerkomen",
+        "uitkeren",
+        "opgraven",
+        "terugblikken"
+      ]
+    },
+    {
+      "id": "b2-25",
+      "name": "B2 · 25",
+      "band": "b2",
+      "frames": [
+        "uitschelden",
+        "wegjagen",
+        "geruststellen",
+        "wegleggen"
+      ]
+    },
+    {
+      "id": "b2-26",
+      "name": "B2 · 26",
+      "band": "b2",
+      "frames": [
+        "langsgaan",
+        "voorgaan",
+        "doorverwijzen",
+        "uitstrekken"
+      ]
+    },
+    {
+      "id": "b2-27",
+      "name": "B2 · 27",
+      "band": "b2",
+      "frames": [
+        "eruitzien",
+        "goedkomen",
+        "openzetten",
+        "aanhaken"
+      ]
+    },
+    {
+      "id": "b2-28",
+      "name": "B2 · 28",
+      "band": "b2",
+      "frames": [
+        "inbouwen",
+        "voorafgaan",
+        "uitputten",
+        "inburgeren"
+      ]
+    },
+    {
+      "id": "b2-29",
+      "name": "B2 · 29",
+      "band": "b2",
+      "frames": [
+        "voornemen",
+        "schoonhouden",
+        "aanhebben",
+        "wegglijden"
+      ]
+    },
+    {
+      "id": "b2-30",
+      "name": "B2 · 30",
+      "band": "b2",
+      "frames": [
+        "terechtkunnen",
+        "opkrijgen",
+        "insluipen",
+        "onderuitgaan"
+      ]
+    }
+  ]
+}

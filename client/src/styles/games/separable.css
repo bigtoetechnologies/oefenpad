@@ -1,0 +1,178 @@
+/* Generated from src/styles/source/separable.css by scripts/scope-css.mjs.
+   Scoped to .game--separable; edit the source and rerun the script. */
+
+.game--separable { --ruimte:clamp(12px,1.8vw,20px); }
+@media(min-height:520px){
+.game--separable .vel {height:100dvh;min-height:0}
+.game--separable .app-container {min-height:0;overflow-y:auto}
+}
+.game--separable .app-container {
+  width:100%;max-width:720px;flex:1;display:flex;flex-direction:column;align-items:stretch;
+  margin:0 auto;padding:0 0 24px;position:relative;
+}
+.game--separable .spel-kop {margin-bottom:0;padding-top:clamp(14px,1.8vw,26px)}
+.game--separable .spel-kop .stand {gap:8px}
+.game--separable .btn-icon {
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  background:var(--papier);color:var(--inkt);border:0;border-radius:0;font-size:18px;font-weight:900;
+  text-decoration:none;cursor:pointer;box-shadow:inset 0 0 0 2px var(--inkt);
+}
+.game--separable .btn-icon:hover {background:var(--raster-zacht)}
+.game--separable .btn-icon--tekst {width:auto;padding:0 12px;font-size:13px;font-weight:800;letter-spacing:-.01em}
+.game--separable .tagline {margin:0;max-width:46ch;text-align:right}
+.game--separable .spel-kop + .app-container {margin-top:clamp(14px,1.8vw,26px)}
+.game--separable .stoppen {
+  display:grid;grid-auto-flow:column;grid-auto-columns:1fr;list-style:none;margin:0 0 var(--ruimte);
+  padding:0;border:var(--rand-hard);
+}
+.game--separable .stoppen li {
+  padding:9px 6px;font-size:12px;font-weight:800;letter-spacing:-.01em;text-align:center;
+  border-right:var(--rand);color:var(--grijs);
+}
+.game--separable .stoppen li:last-child {border-right:0}
+.game--separable .stoppen li[data-staat="geweest"] {color:var(--inkt)}
+.game--separable .stoppen li[data-staat="nu"] {background:var(--oranje);color:#fff;border-color:var(--oranje)}
+.game--separable .scherm {flex:1;min-height:0;display:flex;flex-direction:column;align-items:stretch;justify-content:center;justify-content:safe center}
+.game--separable .vraag {
+  font-size:clamp(20px,2.6vw,30px);font-weight:900;letter-spacing:-.035em;line-height:1.12;
+  margin:0;
+}
+.game--separable .app-container > .vraag {margin-bottom:8px}
+.game--separable .chunk {border-bottom:3px solid var(--kobalt)}
+.game--separable .uitleg {font-size:14px;font-weight:500;color:var(--grijs);margin:0}
+.game--separable .uitleg em {font-style:normal;font-weight:700;color:var(--inkt)}
+.game--separable .vlak {display:flex;flex-direction:column;gap:var(--ruimte);flex:1;min-height:0}
+.game--separable .beeldvak {height:min(38vh,300px);display:flex;align-items:center;justify-content:center}
+.game--separable .beeldvak .beeld {height:100%;width:100%}
+.game--separable .tekst {display:flex;flex-direction:column;gap:var(--ruimte);min-height:0}
+.game--separable .tekst > * {margin:0}
+.game--separable .beeld {
+  display:block;width:100%;height:100%;object-fit:contain;
+}
+.game--separable .zin {font-size:clamp(19px,2.4vw,27px);font-weight:800;letter-spacing:-.03em;text-align:center}
+.game--separable .betekenis {font-size:14px;color:var(--grijs);text-align:center}
+.game--separable .betekenis[lang="en"] {display:block}
+.game--separable .voorbeeld {font-size:15px;font-style:italic;text-align:center}
+.game--separable .voorbeeld-en {display:block;font-size:13px;font-style:normal;color:var(--grijs)}
+.game--separable .vorm {
+  font-size:13px;color:var(--grijs);text-align:center;
+  border-top:var(--rand);padding-top:8px;
+}
+.game--separable .vormen {
+  display:grid;grid-template-columns:1fr 1fr;gap:0;margin:0;
+  border-top:var(--rand);border-bottom:var(--rand);
+}
+.game--separable .vormen > div {padding:8px 6px;text-align:center}
+.game--separable .vormen > div + div {border-left:var(--rand)}
+.game--separable .vormen dt {font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--grijs)}
+.game--separable .vormen dd {margin:2px 0 0;font-size:clamp(16px,1.8vw,19px);font-weight:800;letter-spacing:-.02em}
+.game--separable .vormen:empty {display:none}
+.game--separable .opties {display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.game--separable .keuze-knop {
+  padding:16px 10px;border:0;font:inherit;font-weight:900;font-size:clamp(15px,1.6vw,18px);
+  letter-spacing:-.02em;cursor:pointer;background:var(--papier);color:var(--inkt);
+  box-shadow:inset 0 0 0 2px var(--inkt);transition:background .15s;
+}
+.game--separable .keuze-knop:hover:not(:disabled) {background:var(--raster-zacht)}
+.game--separable .keuze-knop:focus-visible {outline:3px solid var(--oranje);outline-offset:2px}
+.game--separable .keuze-knop:disabled {cursor:default}
+.game--separable .keuze-knop.goed {background:var(--goed);color:#fff;box-shadow:none}
+.game--separable .keuze-knop.fout {background:var(--fout);color:#fff;box-shadow:none}
+.game--separable .keuze-knop[lang="en"] {display:block;font-weight:800}
+.game--separable .terug {
+  margin:var(--ruimte) 0 0;padding:12px 14px;border-left:6px solid var(--kobalt);
+  background:var(--raster-zacht);font-size:15px;font-weight:600;line-height:1.4;
+}
+.game--separable .terug.goed {border-left-color:var(--goed)}
+.game--separable .terug.fout {border-left-color:var(--fout)}
+.game--separable .terug b {font-weight:800}
+.game--separable .verder {display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.game--separable .terug .verder {margin-top:12px}
+.game--separable .verder .knop {background:var(--kobalt);color:var(--papier);box-shadow:none}
+.game--separable .verder .knop:hover {background:var(--kobalt-diep)}
+.game--separable .verder .teller {font-size:13px;font-weight:700;color:var(--grijs);font-variant-numeric:tabular-nums}
+@keyframes terug-op{from{transform:translateY(14px);opacity:.65}to{transform:none;opacity:1}}
+@media(prefers-reduced-motion:no-preference){
+.game--separable .terug {animation:terug-op .18s ease-out}
+}
+.game--separable .niveaus {display:grid;gap:0;border-top:var(--rand-hard);border-left:var(--rand-hard);margin-bottom:var(--ruimte)}
+.game--separable .band-kop {
+  grid-column:1/-1;margin:0;padding:12px 16px 8px;background:var(--raster-zacht);
+  font-size:12px;font-weight:900;letter-spacing:.14em;color:var(--grijs);
+  border-right:var(--rand-hard);border-bottom:var(--rand-hard);
+}
+.game--separable .niveau {
+  display:flex;align-items:center;gap:14px;padding:14px 16px;cursor:pointer;
+  background:var(--papier);color:var(--inkt);border:0;border-right:var(--rand-hard);
+  border-bottom:var(--rand-hard);font:inherit;text-align:left;transition:background .15s;
+}
+.game--separable .niveau:hover {background:var(--raster-zacht)}
+.game--separable .niveau:focus-visible {outline:3px solid var(--oranje);outline-offset:-3px}
+.game--separable .niveau .nr {font-size:22px;font-weight:900;color:var(--kobalt);letter-spacing:-.04em;min-width:1.4em}
+.game--separable .niveau .wat {font-size:clamp(17px,1.9vw,21px);font-weight:800;letter-spacing:-.03em;flex:1}
+.game--separable .niveau .onder {display:block;font-size:13px;font-weight:500;color:var(--grijs);margin-top:2px}
+.game--separable .niveau .gehaald {font-size:13px;font-weight:800;color:var(--kobalt);font-variant-numeric:tabular-nums;white-space:nowrap}
+.game--separable .niveau.is-dicht {cursor:default;background:var(--papier);color:var(--zacht)}
+.game--separable .niveau.is-dicht:hover {background:var(--papier)}
+.game--separable .niveau.is-dicht .nr {color:var(--zacht)}
+.game--separable .niveau.is-dicht .wat {font-weight:700}
+.game--separable .niveau .slot {font-size:18px;filter:grayscale(1);opacity:.7}
+.game--separable .niveau .dicht-link {font-size:13px;font-weight:800;color:var(--kobalt);white-space:nowrap}
+.game--separable .klaar {text-align:center;padding-top:var(--ruimte)}
+.game--separable .klaar .score {font-size:clamp(52px,9vw,92px);font-weight:900;letter-spacing:-.055em;line-height:.9;color:var(--kobalt)}
+.game--separable .klaar .van {font-size:14px;font-weight:700;color:var(--grijs);margin:6px 0 var(--ruimte)}
+.game--separable .klaar .knop {margin:0 auto}
+@media(min-width:800px) and (min-height:520px){
+.game--separable .app-container {max-width:min(1040px,100%)}
+.game--separable .vlak {
+    display:grid;
+    grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);
+    grid-template-areas:"beeld tekst" "beeld verder";
+    column-gap:clamp(22px,2.6vw,40px);row-gap:var(--ruimte);
+    height:auto;flex:none;
+  }
+.game--separable .beeldvak {grid-area:beeld;grid-row:1 / span 2;align-self:center;min-height:0;width:100%}
+.game--separable .beeldvak {height:min(52vh,430px)}
+.game--separable .vlak--na .beeldvak {height:min(32vh,300px)}
+.game--separable .vlak--tekst {
+    grid-template-columns:minmax(0,1fr);grid-template-areas:"tekst" "verder";
+    max-width:640px;width:100%;margin:0 auto;
+  }
+.game--separable .tekst {grid-area:tekst;align-self:center}
+.game--separable .verder {grid-area:verder;align-self:start}
+.game--separable .niveaus {grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:799px), (max-height:519px){
+.game--separable .vlak {justify-content:center;justify-content:safe center}
+.game--separable .vlak--na {padding-bottom:calc(var(--terug-hoogte,0px) + 4px)}
+.game--separable .vlak--na > .verder {display:none}
+.game--separable .vlak--na .tekst {flex-shrink:0}
+.game--separable .beeldvak {height:auto;flex:1 1 180px;min-height:0;max-height:min(52vh,430px)}
+.game--separable .vlak--na .beeldvak {height:min(24vh,200px);flex:0 1 auto}
+.game--separable .beeldvak {transition:height .18s ease}
+.game--separable .vlak .terug {
+    position:fixed;left:0;right:0;bottom:0;z-index:30;
+    max-height:min(68dvh,520px);overflow-y:auto;
+    margin:0;padding:14px clamp(14px,4vw,22px) calc(14px + env(safe-area-inset-bottom));
+    border-left:0;border-top:6px solid var(--kobalt);
+    background:var(--papier);box-shadow:0 -1px 0 var(--rand);
+  }
+.game--separable .vlak .terug.goed {border-top-color:var(--goed);border-left-color:var(--goed)}
+.game--separable .vlak .terug.fout {border-top-color:var(--fout);border-left-color:var(--fout)}
+}
+@media(min-width:800px) and (max-height:820px){
+.game--separable .spel-kop {padding-top:10px}
+.game--separable .vlak .terug {padding:10px 12px}
+}
+@media(max-width:560px){
+.game--separable .stoppen li {font-size:10.5px;padding:8px 3px}
+.game--separable .tagline {display:none}
+.game--separable .zin {font-size:clamp(18px,5vw,22px)}
+.game--separable .vraag {font-size:clamp(18px,5vw,22px)}
+.game--separable .opties {grid-template-columns:1fr}
+}
+.game--separable .basis {margin-top:calc(var(--ruimte) * 1.4);border-top:var(--rand);padding-top:12px}
+.game--separable .basis summary {cursor:pointer;font-size:13px;font-weight:800;letter-spacing:.02em;color:var(--grijs)}
+.game--separable .basis summary:focus-visible {outline:3px solid var(--oranje);outline-offset:2px}
+.game--separable .basis .uitleg {margin:8px 0 10px}
+.game--separable .basis .niveaus {margin-bottom:0}

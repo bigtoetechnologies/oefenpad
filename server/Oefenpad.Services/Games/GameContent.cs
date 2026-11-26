@@ -16,11 +16,12 @@ public sealed class GameContent
         WordImages = GameData.Load<Dictionary<string, string>>("wordimages");
         Prepositions = GameData.Load<PrepositionsData>("prepositions");
         Verbs = GameData.Load<VerbsData>("verbs");
+        Separable = GameData.Load<SeparableData>("separable");
         Reels = GameData.Load<List<Reel>>("reels");
         Meta = GameData.Load<MetaData>("meta");
 
         _texts = new Dictionary<string, IReadOnlyDictionary<string, string>>(StringComparer.OrdinalIgnoreCase);
-        foreach (var game in new[] { "hangman", "memory", "matching", "wordsearch", "prepositions", "verbs", "storymachine" })
+        foreach (var game in new[] { "hangman", "memory", "matching", "wordsearch", "prepositions", "verbs", "separable", "storymachine" })
         {
             if (GameData.Exists($"texts.{game}"))
                 _texts[game] = GameData.Load<Dictionary<string, string>>($"texts.{game}");
@@ -37,6 +38,8 @@ public sealed class GameContent
     public PrepositionsData Prepositions { get; }
 
     public VerbsData Verbs { get; }
+
+    public SeparableData Separable { get; }
 
     public IReadOnlyList<Reel> Reels { get; }
 
@@ -233,6 +236,35 @@ public sealed class VerbFrame
     public string? Example { get; set; }
     /// <summary>English translation of <see cref="Example"/>.</summary>
     public string? ExampleEn { get; set; }
+}
+
+/* ---------- separable verbs ---------- */
+
+/// <summary>
+/// Scheidbare werkwoorden. Text-first: most cards have no drawing, so
+/// <see cref="SeparableFrame.Scene"/> is null unless one exists in
+/// <see cref="Scenes"/>.
+/// </summary>
+public sealed class SeparableData
+{
+    public Dictionary<string, Scene> Scenes { get; set; } = new();
+    public List<SeparableFrame> Frames { get; set; } = new();
+    public List<Level> Levels { get; set; } = new();
+}
+
+/// <summary>One separable verb with its split form, perfect and one example.</summary>
+public sealed class SeparableFrame
+{
+    public string Id { get; set; } = "";
+    public string Verb { get; set; } = "";
+    public string Gloss { get; set; } = "";
+    public string Band { get; set; } = "";
+    /// <summary>The verb as it splits in a main clause, e.g. <c>doe ... aan</c>.</summary>
+    public string? Split { get; set; }
+    public string? Perfect { get; set; }
+    public string? Example { get; set; }
+    public string? ExampleEn { get; set; }
+    public string? Scene { get; set; }
 }
 
 /* ---------- story machine ---------- */

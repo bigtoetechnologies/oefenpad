@@ -34,7 +34,7 @@ public sealed class GameContentTests
         foreach (var game in new[]
                  {
                      "hangman", "memory", "matching", "wordsearch",
-                     "prepositions", "verbs", "storymachine"
+                     "prepositions", "verbs", "separable", "storymachine"
                  })
         {
             var texts = _content.Texts(game);
@@ -104,6 +104,42 @@ public sealed class GameContentTests
             // The generator writes both forms or neither: a regular verb has no
             // past/perfect line, an irregular one has the pair.
             (frame.Past is null).Should().Be(frame.Perfect is null, $"{frame.Id} has half a forms pair");
+        }
+    }
+
+    [Fact]
+    public void Every_separable_level_points_at_known_frames_of_its_band()
+    {
+        var frames = _content.Separable.Frames.ToDictionary(f => f.Id);
+        _content.Separable.Levels.Should().NotBeEmpty();
+
+        foreach (var level in _content.Separable.Levels)
+        {
+            level.Frames.Should().NotBeEmpty();
+            foreach (var id in level.Frames)
+            {
+                frames.Should().ContainKey(id);
+                frames[id].Band.Should().Be(level.Band, $"{id} sits in {level.Id}");
+            }
+        }
+    }
+
+    [Fact]
+    public void Every_separable_frame_has_its_forms_and_an_example()
+    {
+        foreach (var frame in _content.Separable.Frames)
+        {
+            frame.Verb.Should().NotBeNullOrWhiteSpace();
+            frame.Gloss.Should().NotBeNullOrWhiteSpace();
+            frame.Band.Should().NotBeNullOrWhiteSpace();
+            frame.Split.Should().NotBeNullOrWhiteSpace($"{frame.Id} needs its split form");
+            frame.Perfect.Should().NotBeNullOrWhiteSpace($"{frame.Id} needs its perfect");
+            frame.Example.Should().NotBeNullOrWhiteSpace($"{frame.Id} needs an example");
+            frame.ExampleEn.Should().NotBeNullOrWhiteSpace($"{frame.Id} needs the example's translation");
+
+            // A scene is optional, but one that is named must exist.
+            if (frame.Scene is not null)
+                _content.Separable.Scenes.Should().ContainKey(frame.Scene);
         }
     }
 

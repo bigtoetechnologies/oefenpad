@@ -7,6 +7,7 @@ import { WordSearchGame } from './games/wordsearch/WordSearchGame';
 import { StoryMachineGame } from './games/storymachine/StoryMachineGame';
 import { PrepositionsGame } from './games/prepositions/PrepositionsGame';
 import { VerbGame } from './games/verbs/VerbGame';
+import { SeparableGame } from './games/separable/SeparableGame';
 
 export function App() {
   return (
@@ -20,6 +21,7 @@ export function App() {
         <Route path="/storymachine" element={<StoryMachineGame />} />
         <Route path="/prepositions" element={<PrepositionsGame />} />
         <Route path="/verbs" element={<VerbGame />} />
+        <Route path="/separable" element={<SeparableGame />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>

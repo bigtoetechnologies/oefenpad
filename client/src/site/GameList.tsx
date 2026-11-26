@@ -51,6 +51,12 @@ const GAMES: GameEntry[] = [
     about: 'Eén beeld per werkwoord. Kies het juiste beeld.',
     kind: 'Betekenis',
   },
+  {
+    route: '/separable',
+    name: 'Scheidbare werkwoorden',
+    about: 'Opbellen, aandoen, meenemen: zie hoe ze splitsen en wat ze betekenen.',
+    kind: 'Betekenis',
+  },
 ];
 
 /** The SPA's own index, for anyone who lands on /spelen/ directly. */

@@ -29,7 +29,8 @@ const games = [
     ['wordsearch', 'wordsearch'],
     ['storymachine', 'storymachine'],
     ['prepositions', 'prepositions'],
-    ['verbs', 'verbs']
+    ['verbs', 'verbs'],
+    ['separable', 'separable']
 ];
 
 /* These belong to the shared page shell, not to one game. The universal

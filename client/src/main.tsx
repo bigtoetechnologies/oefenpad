@@ -9,6 +9,7 @@ import './styles/games/wordsearch.css';
 import './styles/games/storymachine.css';
 import './styles/games/prepositions.css';
 import './styles/games/verbs.css';
+import './styles/games/separable.css';
 
 const root = document.getElementById('root');
 if (!root) throw new Error('Missing #root');
