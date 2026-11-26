@@ -2649,5 +2649,6280 @@
         "nl": "ONDERUITGAAN"
       }
     ]
+  },
+  "nouns-home": {
+    "label": {
+      "en": "Home",
+      "nl": "Huis & wonen"
+    },
+    "icon": "🏠",
+    "words": [
+      {
+        "en": "house",
+        "nl": "HUIS"
+      },
+      {
+        "en": "houses",
+        "nl": "HUIZEN"
+      },
+      {
+        "en": "sofa",
+        "nl": "BANK"
+      },
+      {
+        "en": "desk",
+        "nl": "BUREAU"
+      },
+      {
+        "en": "roof",
+        "nl": "DAK"
+      },
+      {
+        "en": "door",
+        "nl": "DEUR"
+      },
+      {
+        "en": "garage",
+        "nl": "GARAGE"
+      },
+      {
+        "en": "shed",
+        "nl": "HOK"
+      },
+      {
+        "en": "room, living room",
+        "nl": "KAMER"
+      },
+      {
+        "en": "kitchen",
+        "nl": "KEUKEN"
+      },
+      {
+        "en": "window",
+        "nl": "RAAM"
+      },
+      {
+        "en": "chair",
+        "nl": "STOEL"
+      },
+      {
+        "en": "table",
+        "nl": "TAFEL"
+      },
+      {
+        "en": "garden",
+        "nl": "TUIN"
+      },
+      {
+        "en": "bathroom",
+        "nl": "BADKAMER"
+      },
+      {
+        "en": "balcony",
+        "nl": "BALKON"
+      },
+      {
+        "en": "broom",
+        "nl": "BEZEM"
+      },
+      {
+        "en": "duvet",
+        "nl": "DEKBED"
+      },
+      {
+        "en": "blanket",
+        "nl": "DEKEN"
+      },
+      {
+        "en": "doorway",
+        "nl": "DEUROPENING"
+      },
+      {
+        "en": "shower",
+        "nl": "DOUCHE"
+      },
+      {
+        "en": "façade",
+        "nl": "GEVEL"
+      },
+      {
+        "en": "sink",
+        "nl": "GOOTSTEEN"
+      },
+      {
+        "en": "curtain",
+        "nl": "GORDIJN"
+      },
+      {
+        "en": "hall",
+        "nl": "HAL"
+      },
+      {
+        "en": "towel",
+        "nl": "HANDDOEK"
+      },
+      {
+        "en": "candle",
+        "nl": "KAARS"
+      },
+      {
+        "en": "greenhouse",
+        "nl": "KAS"
+      },
+      {
+        "en": "cupboard",
+        "nl": "KAST"
+      },
+      {
+        "en": "ladder",
+        "nl": "LADDER"
+      },
+      {
+        "en": "drawer",
+        "nl": "LADE"
+      },
+      {
+        "en": "sheet (bed)",
+        "nl": "LAKEN"
+      },
+      {
+        "en": "lamp",
+        "nl": "LAMP"
+      },
+      {
+        "en": "radiator",
+        "nl": "RADIATOR"
+      },
+      {
+        "en": "switch",
+        "nl": "SCHAKELAAR"
+      },
+      {
+        "en": "shed, barn",
+        "nl": "SCHUUR"
+      },
+      {
+        "en": "bedroom",
+        "nl": "SLAAPKAMER"
+      },
+      {
+        "en": "key",
+        "nl": "SLEUTEL"
+      },
+      {
+        "en": "lock",
+        "nl": "SLOT"
+      },
+      {
+        "en": "vacuum cleaner",
+        "nl": "STOFZUIGER"
+      },
+      {
+        "en": "socket, power point",
+        "nl": "STOPCONTACT"
+      },
+      {
+        "en": "carpet",
+        "nl": "TAPIJT"
+      },
+      {
+        "en": "terrace, patio",
+        "nl": "TERRAS"
+      },
+      {
+        "en": "thermostat",
+        "nl": "THERMOSTAAT"
+      },
+      {
+        "en": "stairs",
+        "nl": "TRAP"
+      },
+      {
+        "en": "display cabinet",
+        "nl": "VITRINE"
+      },
+      {
+        "en": "floor",
+        "nl": "VLOER"
+      },
+      {
+        "en": "toilet",
+        "nl": "WC"
+      },
+      {
+        "en": "living room",
+        "nl": "WOONKAMER"
+      },
+      {
+        "en": "soap",
+        "nl": "ZEEP"
+      },
+      {
+        "en": "bench",
+        "nl": "BANKJE"
+      },
+      {
+        "en": "fence, railings, gate",
+        "nl": "HEK"
+      },
+      {
+        "en": "cellar, basement",
+        "nl": "KELDER"
+      },
+      {
+        "en": "pouffe",
+        "nl": "POEF"
+      },
+      {
+        "en": "board fence",
+        "nl": "SCHUTTING"
+      },
+      {
+        "en": "throne",
+        "nl": "TROON"
+      },
+      {
+        "en": "attic, loft",
+        "nl": "ZOLDER"
+      },
+      {
+        "en": "greenhouse",
+        "nl": "BROEIKAS"
+      },
+      {
+        "en": "doorknob",
+        "nl": "DEURKNOP"
+      },
+      {
+        "en": "divan",
+        "nl": "DIVAN"
+      },
+      {
+        "en": "armchair",
+        "nl": "FAUTEUIL"
+      },
+      {
+        "en": "futon",
+        "nl": "FUTON"
+      },
+      {
+        "en": "latch",
+        "nl": "GRENDEL"
+      },
+      {
+        "en": "fireplace",
+        "nl": "HAARD"
+      },
+      {
+        "en": "pillow",
+        "nl": "HOOFDKUSSEN"
+      },
+      {
+        "en": "loft bed",
+        "nl": "HOOGSLAPER"
+      },
+      {
+        "en": "closet",
+        "nl": "INBOUWKAST"
+      },
+      {
+        "en": "stove, heater",
+        "nl": "KACHEL"
+      },
+      {
+        "en": "cupboard",
+        "nl": "KEUKENKAST"
+      },
+      {
+        "en": "mosquito net",
+        "nl": "KLAMBOE"
+      },
+      {
+        "en": "window frame",
+        "nl": "KOZIJN"
+      },
+      {
+        "en": "stool",
+        "nl": "KRUK"
+      },
+      {
+        "en": "street lamp",
+        "nl": "LANTAARNPAAL"
+      },
+      {
+        "en": "crib",
+        "nl": "LEDIKANT"
+      },
+      {
+        "en": "oil lamp",
+        "nl": "OLIELAMP"
+      },
+      {
+        "en": "fireplace",
+        "nl": "OPENHAARD"
+      },
+      {
+        "en": "pergola",
+        "nl": "PERGOLA"
+      },
+      {
+        "en": "window pane",
+        "nl": "RUIT"
+      },
+      {
+        "en": "hinge",
+        "nl": "SCHARNIER"
+      },
+      {
+        "en": "chimney",
+        "nl": "SCHOORSTEEN"
+      },
+      {
+        "en": "bunk bed",
+        "nl": "STAPELBED"
+      },
+      {
+        "en": "terrarium",
+        "nl": "TERRARIUM"
+      },
+      {
+        "en": "windowsill",
+        "nl": "VENSTERBANK"
+      },
+      {
+        "en": "cradle, cot",
+        "nl": "WIEG"
+      }
+    ]
+  },
+  "nouns-food": {
+    "label": {
+      "en": "Food & kitchen",
+      "nl": "Eten & keuken"
+    },
+    "icon": "🍎",
+    "words": [
+      {
+        "en": "bowl",
+        "nl": "KOM"
+      },
+      {
+        "en": "grater",
+        "nl": "RASP"
+      },
+      {
+        "en": "ladle",
+        "nl": "SOEPLEPEL"
+      },
+      {
+        "en": "bagel",
+        "nl": "BAGEL"
+      },
+      {
+        "en": "blender",
+        "nl": "BLENDER"
+      },
+      {
+        "en": "plate",
+        "nl": "BORD"
+      },
+      {
+        "en": "sandwich",
+        "nl": "BOTERHAM"
+      },
+      {
+        "en": "bread",
+        "nl": "BROOD"
+      },
+      {
+        "en": "toaster",
+        "nl": "BROODROOSTER"
+      },
+      {
+        "en": "sponge cake",
+        "nl": "CAKE"
+      },
+      {
+        "en": "egg",
+        "nl": "EI"
+      },
+      {
+        "en": "eggs",
+        "nl": "EIEREN"
+      },
+      {
+        "en": "stove",
+        "nl": "FORNUIS"
+      },
+      {
+        "en": "whisk",
+        "nl": "GARDE"
+      },
+      {
+        "en": "kettle",
+        "nl": "KETEL"
+      },
+      {
+        "en": "frying pan",
+        "nl": "KOEKENPAN"
+      },
+      {
+        "en": "biscuit, cookie",
+        "nl": "KOEKJE"
+      },
+      {
+        "en": "refrigerator",
+        "nl": "KOELKAST"
+      },
+      {
+        "en": "hob, cooktop",
+        "nl": "KOOKPLAAT"
+      },
+      {
+        "en": "spoon",
+        "nl": "LEPEL"
+      },
+      {
+        "en": "meal",
+        "nl": "MAALTIJD"
+      },
+      {
+        "en": "microwave oven",
+        "nl": "MAGNETRON"
+      },
+      {
+        "en": "menu",
+        "nl": "MENU"
+      },
+      {
+        "en": "knife",
+        "nl": "MES"
+      },
+      {
+        "en": "muffin",
+        "nl": "MUFFIN"
+      },
+      {
+        "en": "oven",
+        "nl": "OVEN"
+      },
+      {
+        "en": "saucepan",
+        "nl": "PAN"
+      },
+      {
+        "en": "pasta",
+        "nl": "PASTA"
+      },
+      {
+        "en": "peppermint",
+        "nl": "PEPERMUNT"
+      },
+      {
+        "en": "pint, glass of beer",
+        "nl": "PINT"
+      },
+      {
+        "en": "pizza",
+        "nl": "PIZZA"
+      },
+      {
+        "en": "slice",
+        "nl": "PLAK"
+      },
+      {
+        "en": "cooking pot",
+        "nl": "POT"
+      },
+      {
+        "en": "risotto",
+        "nl": "RISOTTO"
+      },
+      {
+        "en": "salad",
+        "nl": "SALADE"
+      },
+      {
+        "en": "dish, serving bowl",
+        "nl": "SCHAAL"
+      },
+      {
+        "en": "soup",
+        "nl": "SOEP"
+      },
+      {
+        "en": "spatula",
+        "nl": "SPATEL"
+      },
+      {
+        "en": "saucepan",
+        "nl": "STEELPAN"
+      },
+      {
+        "en": "sugar",
+        "nl": "SUIKER"
+      },
+      {
+        "en": "cake",
+        "nl": "TAART"
+      },
+      {
+        "en": "toast",
+        "nl": "TOAST"
+      },
+      {
+        "en": "fork",
+        "nl": "VORK"
+      },
+      {
+        "en": "freezer",
+        "nl": "VRIEZER"
+      },
+      {
+        "en": "waffle",
+        "nl": "WAFEL"
+      },
+      {
+        "en": "kettle",
+        "nl": "WATERKOKER"
+      },
+      {
+        "en": "sausage",
+        "nl": "WORST"
+      },
+      {
+        "en": "hive",
+        "nl": "BIJENKORF"
+      },
+      {
+        "en": "praline",
+        "nl": "BONBON"
+      },
+      {
+        "en": "crisps",
+        "nl": "CHIPS"
+      },
+      {
+        "en": "honey",
+        "nl": "HONING"
+      },
+      {
+        "en": "bean",
+        "nl": "BOON"
+      },
+      {
+        "en": "brownie",
+        "nl": "BROWNIE"
+      },
+      {
+        "en": "chilli",
+        "nl": "CHILIPEPER"
+      },
+      {
+        "en": "doughnut",
+        "nl": "DONUT"
+      },
+      {
+        "en": "chips",
+        "nl": "FRIETJE"
+      },
+      {
+        "en": "meatball",
+        "nl": "GEHAKTBAL"
+      },
+      {
+        "en": "grain",
+        "nl": "GRAAN"
+      },
+      {
+        "en": "biscuit",
+        "nl": "KAAKJE"
+      },
+      {
+        "en": "chewing gum",
+        "nl": "KAUWGOM"
+      },
+      {
+        "en": "cookie, biscuit",
+        "nl": "KOEK"
+      },
+      {
+        "en": "clove",
+        "nl": "KRUIDNAGEL"
+      },
+      {
+        "en": "lentil",
+        "nl": "LINZE"
+      },
+      {
+        "en": "mussels",
+        "nl": "MOSSELEN"
+      },
+      {
+        "en": "noodle",
+        "nl": "NOEDEL"
+      },
+      {
+        "en": "deep-fried bun",
+        "nl": "OLIEBOL"
+      },
+      {
+        "en": "omelet",
+        "nl": "OMELET"
+      },
+      {
+        "en": "paella",
+        "nl": "PAELLA"
+      },
+      {
+        "en": "pancake",
+        "nl": "PANNENKOEK"
+      },
+      {
+        "en": "pudding",
+        "nl": "PUDDING"
+      },
+      {
+        "en": "colander",
+        "nl": "VERGIET"
+      },
+      {
+        "en": "yogurt",
+        "nl": "YOGHURT"
+      },
+      {
+        "en": "sieve",
+        "nl": "ZEEF"
+      }
+    ]
+  },
+  "nouns-produce": {
+    "label": {
+      "en": "Fruit & vegetables",
+      "nl": "Fruit & groente"
+    },
+    "icon": "🥕",
+    "words": [
+      {
+        "en": "apple",
+        "nl": "APPEL"
+      },
+      {
+        "en": "pear",
+        "nl": "PEER"
+      },
+      {
+        "en": "strawberry",
+        "nl": "AARDBEI"
+      },
+      {
+        "en": "almond",
+        "nl": "AMANDEL"
+      },
+      {
+        "en": "banana",
+        "nl": "BANAAN"
+      },
+      {
+        "en": "lemon",
+        "nl": "CITROEN"
+      },
+      {
+        "en": "pea",
+        "nl": "ERWT"
+      },
+      {
+        "en": "raspberry",
+        "nl": "FRAMBOOS"
+      },
+      {
+        "en": "cherry",
+        "nl": "KERS"
+      },
+      {
+        "en": "mango",
+        "nl": "MANGO"
+      },
+      {
+        "en": "melon",
+        "nl": "MELOEN"
+      },
+      {
+        "en": "bell pepper",
+        "nl": "PAPRIKA"
+      },
+      {
+        "en": "parsnip",
+        "nl": "PASTINAAK"
+      },
+      {
+        "en": "peanut",
+        "nl": "PINDA"
+      },
+      {
+        "en": "pumpkin",
+        "nl": "POMPOEN"
+      },
+      {
+        "en": "leek",
+        "nl": "PREI"
+      },
+      {
+        "en": "radish",
+        "nl": "RADIJS"
+      },
+      {
+        "en": "orange (fruit)",
+        "nl": "SINAASAPPEL"
+      },
+      {
+        "en": "tomato",
+        "nl": "TOMAAT"
+      },
+      {
+        "en": "walnut",
+        "nl": "WALNOOT"
+      },
+      {
+        "en": "pineapple",
+        "nl": "ANANAS"
+      },
+      {
+        "en": "endive",
+        "nl": "ANDIJVIE"
+      },
+      {
+        "en": "beet",
+        "nl": "BIET"
+      },
+      {
+        "en": "cauliflower",
+        "nl": "BLOEMKOOL"
+      },
+      {
+        "en": "blueberry",
+        "nl": "BOSBES"
+      },
+      {
+        "en": "date",
+        "nl": "DADEL"
+      },
+      {
+        "en": "grape",
+        "nl": "DRUIF"
+      },
+      {
+        "en": "prune",
+        "nl": "GEDROOGDE PRUIM"
+      },
+      {
+        "en": "guava",
+        "nl": "GUAVE"
+      },
+      {
+        "en": "kiwi",
+        "nl": "KIWI"
+      },
+      {
+        "en": "coconut",
+        "nl": "KOKOSNOOT"
+      },
+      {
+        "en": "cucumber",
+        "nl": "KOMKOMMER"
+      },
+      {
+        "en": "cabbage",
+        "nl": "KOOL"
+      },
+      {
+        "en": "lime",
+        "nl": "LIMOEN"
+      },
+      {
+        "en": "lychee",
+        "nl": "LYCHEE"
+      },
+      {
+        "en": "olive",
+        "nl": "OLIJF"
+      },
+      {
+        "en": "papaya",
+        "nl": "PAPAJA"
+      },
+      {
+        "en": "peach",
+        "nl": "PERZIK"
+      },
+      {
+        "en": "plum",
+        "nl": "PRUIM"
+      },
+      {
+        "en": "raisin",
+        "nl": "ROZIJN"
+      },
+      {
+        "en": "fig",
+        "nl": "VIJG"
+      }
+    ]
+  },
+  "nouns-drinks": {
+    "label": {
+      "en": "Drinks",
+      "nl": "Drinken"
+    },
+    "icon": "🥤",
+    "words": [
+      {
+        "en": "soda",
+        "nl": "FRISDRANK"
+      },
+      {
+        "en": "water",
+        "nl": "WATER"
+      },
+      {
+        "en": "coffee",
+        "nl": "KOFFIE"
+      },
+      {
+        "en": "juice",
+        "nl": "SAP"
+      },
+      {
+        "en": "mug, beaker",
+        "nl": "BEKER"
+      },
+      {
+        "en": "beer",
+        "nl": "BIER"
+      },
+      {
+        "en": "champagne",
+        "nl": "CHAMPAGNE"
+      },
+      {
+        "en": "glass",
+        "nl": "GLAS"
+      },
+      {
+        "en": "glasses",
+        "nl": "GLAZEN"
+      },
+      {
+        "en": "Gouda",
+        "nl": "GOUDA"
+      },
+      {
+        "en": "coffee vending machine",
+        "nl": "KOFFIEAUTOMAAT"
+      },
+      {
+        "en": "coffee maker",
+        "nl": "KOFFIEZETAPPARAAT"
+      },
+      {
+        "en": "cup",
+        "nl": "KOPJE"
+      },
+      {
+        "en": "wine",
+        "nl": "WIJN"
+      },
+      {
+        "en": "cola",
+        "nl": "COLA"
+      },
+      {
+        "en": "energy drink",
+        "nl": "ENERGIEDRANKJE"
+      },
+      {
+        "en": "chocolate milk",
+        "nl": "CHOCOLADEMELK"
+      },
+      {
+        "en": "cognac",
+        "nl": "COGNAC"
+      }
+    ]
+  },
+  "nouns-clothes": {
+    "label": {
+      "en": "Clothes & jewellery",
+      "nl": "Kleding & sieraden"
+    },
+    "icon": "👕",
+    "words": [
+      {
+        "en": "boot",
+        "nl": "LAARS"
+      },
+      {
+        "en": "shoe",
+        "nl": "SCHOEN"
+      },
+      {
+        "en": "blazer",
+        "nl": "BLAZER"
+      },
+      {
+        "en": "blouse",
+        "nl": "BLOES"
+      },
+      {
+        "en": "glasses",
+        "nl": "BRIL"
+      },
+      {
+        "en": "trousers",
+        "nl": "BROEK"
+      },
+      {
+        "en": "glove",
+        "nl": "HANDSCHOEN"
+      },
+      {
+        "en": "vest",
+        "nl": "HEMD"
+      },
+      {
+        "en": "hat",
+        "nl": "HOED"
+      },
+      {
+        "en": "jacket",
+        "nl": "JACK"
+      },
+      {
+        "en": "coat",
+        "nl": "JAS"
+      },
+      {
+        "en": "dress",
+        "nl": "JURK"
+      },
+      {
+        "en": "suitcase",
+        "nl": "KOFFER"
+      },
+      {
+        "en": "stocking",
+        "nl": "KOUS"
+      },
+      {
+        "en": "woolly hat, beanie",
+        "nl": "MUTS"
+      },
+      {
+        "en": "underpants",
+        "nl": "ONDERBROEK"
+      },
+      {
+        "en": "tights",
+        "nl": "PANTY"
+      },
+      {
+        "en": "cap",
+        "nl": "PET"
+      },
+      {
+        "en": "ring",
+        "nl": "RING"
+      },
+      {
+        "en": "skirt",
+        "nl": "ROK"
+      },
+      {
+        "en": "sandal",
+        "nl": "SANDAAL"
+      },
+      {
+        "en": "shirt",
+        "nl": "SHIRT"
+      },
+      {
+        "en": "scarf",
+        "nl": "SJAAL"
+      },
+      {
+        "en": "flip-flop",
+        "nl": "SLIPPER"
+      },
+      {
+        "en": "sock",
+        "nl": "SOK"
+      },
+      {
+        "en": "jeans",
+        "nl": "SPIJKERBROEK"
+      },
+      {
+        "en": "necktie",
+        "nl": "STROPDAS"
+      },
+      {
+        "en": "bag",
+        "nl": "TAS"
+      },
+      {
+        "en": "tiara",
+        "nl": "TIARA"
+      },
+      {
+        "en": "jumper",
+        "nl": "TRUI"
+      },
+      {
+        "en": "uniform",
+        "nl": "UNIFORM"
+      },
+      {
+        "en": "sunglasses",
+        "nl": "ZONNEBRIL"
+      },
+      {
+        "en": "bracelet",
+        "nl": "ARMBAND"
+      },
+      {
+        "en": "vest",
+        "nl": "GILET"
+      },
+      {
+        "en": "heel",
+        "nl": "HAK"
+      },
+      {
+        "en": "suit of armor",
+        "nl": "HARNAS"
+      },
+      {
+        "en": "headscarf",
+        "nl": "HOOFDDOEK"
+      },
+      {
+        "en": "jacket",
+        "nl": "JASJE"
+      },
+      {
+        "en": "necklace, chain",
+        "nl": "KETTING"
+      },
+      {
+        "en": "button (on clothes)",
+        "nl": "KNOOP"
+      },
+      {
+        "en": "crown",
+        "nl": "KROON"
+      },
+      {
+        "en": "rag",
+        "nl": "LAP"
+      },
+      {
+        "en": "ribbon",
+        "nl": "LINT"
+      },
+      {
+        "en": "needle",
+        "nl": "NAALD"
+      },
+      {
+        "en": "pearl",
+        "nl": "PAREL"
+      },
+      {
+        "en": "platform",
+        "nl": "PLATEAUZOOL"
+      },
+      {
+        "en": "zip",
+        "nl": "RITS"
+      },
+      {
+        "en": "emerald",
+        "nl": "SMARAGD"
+      },
+      {
+        "en": "pin",
+        "nl": "SPELD"
+      },
+      {
+        "en": "handkerchief",
+        "nl": "ZAKDOEK"
+      },
+      {
+        "en": "brooch",
+        "nl": "BROCHE"
+      },
+      {
+        "en": "cape",
+        "nl": "CAPE"
+      },
+      {
+        "en": "cardigan",
+        "nl": "CARDIGAN"
+      },
+      {
+        "en": "hoodie",
+        "nl": "HOODIE"
+      },
+      {
+        "en": "kimono",
+        "nl": "KIMONO"
+      },
+      {
+        "en": "collar",
+        "nl": "KRAAG"
+      },
+      {
+        "en": "loafer",
+        "nl": "LOAFER"
+      },
+      {
+        "en": "sleeve",
+        "nl": "MOUW"
+      },
+      {
+        "en": "mule",
+        "nl": "MULE"
+      },
+      {
+        "en": "earring",
+        "nl": "OORBEL"
+      },
+      {
+        "en": "parka",
+        "nl": "PARKA"
+      },
+      {
+        "en": "poncho",
+        "nl": "PONCHO"
+      },
+      {
+        "en": "apron",
+        "nl": "SCHORT"
+      },
+      {
+        "en": "veil",
+        "nl": "SLUIER"
+      },
+      {
+        "en": "sneaker",
+        "nl": "SNEAKER"
+      },
+      {
+        "en": "trench",
+        "nl": "TRENCHCOAT"
+      }
+    ]
+  },
+  "nouns-body": {
+    "label": {
+      "en": "Body & care",
+      "nl": "Lichaam & verzorging"
+    },
+    "icon": "🧍",
+    "words": [
+      {
+        "en": "back of the head",
+        "nl": "ACHTERHOOFD"
+      },
+      {
+        "en": "arm",
+        "nl": "ARM"
+      },
+      {
+        "en": "leg",
+        "nl": "BEEN"
+      },
+      {
+        "en": "mouth (of an animal)",
+        "nl": "BEK"
+      },
+      {
+        "en": "legs",
+        "nl": "BENEN"
+      },
+      {
+        "en": "face",
+        "nl": "GEZICHT"
+      },
+      {
+        "en": "hand",
+        "nl": "HAND"
+      },
+      {
+        "en": "heart",
+        "nl": "HART"
+      },
+      {
+        "en": "head",
+        "nl": "HOOFD"
+      },
+      {
+        "en": "left hand",
+        "nl": "LINKERHAND"
+      },
+      {
+        "en": "lung",
+        "nl": "LONG"
+      },
+      {
+        "en": "mouth",
+        "nl": "MOND"
+      },
+      {
+        "en": "nose",
+        "nl": "NEUS"
+      },
+      {
+        "en": "eye",
+        "nl": "OOG"
+      },
+      {
+        "en": "ear",
+        "nl": "OOR"
+      },
+      {
+        "en": "foot",
+        "nl": "VOET"
+      },
+      {
+        "en": "chest",
+        "nl": "BORST"
+      },
+      {
+        "en": "belly",
+        "nl": "BUIK"
+      },
+      {
+        "en": "cream",
+        "nl": "CREME"
+      },
+      {
+        "en": "deodorant",
+        "nl": "DEO"
+      },
+      {
+        "en": "thumb",
+        "nl": "DUIM"
+      },
+      {
+        "en": "elbow",
+        "nl": "ELLEBOOG"
+      },
+      {
+        "en": "ankle",
+        "nl": "ENKEL"
+      },
+      {
+        "en": "neck (throat)",
+        "nl": "HALS"
+      },
+      {
+        "en": "hip",
+        "nl": "HEUP"
+      },
+      {
+        "en": "comb",
+        "nl": "KAM"
+      },
+      {
+        "en": "throat",
+        "nl": "KEEL"
+      },
+      {
+        "en": "knee",
+        "nl": "KNIE"
+      },
+      {
+        "en": "bottom",
+        "nl": "KONT"
+      },
+      {
+        "en": "lip",
+        "nl": "LIP"
+      },
+      {
+        "en": "stomach",
+        "nl": "MAAG"
+      },
+      {
+        "en": "neck (back of the neck)",
+        "nl": "NEK"
+      },
+      {
+        "en": "oil",
+        "nl": "OLIE"
+      },
+      {
+        "en": "perfume",
+        "nl": "PARFUM"
+      },
+      {
+        "en": "little finger",
+        "nl": "PINK"
+      },
+      {
+        "en": "wrist",
+        "nl": "POLS"
+      },
+      {
+        "en": "shoulder",
+        "nl": "SCHOUDER"
+      },
+      {
+        "en": "shampoo",
+        "nl": "SHAMPOO"
+      },
+      {
+        "en": "tooth",
+        "nl": "TAND"
+      },
+      {
+        "en": "toothbrush",
+        "nl": "TANDENBORSTEL"
+      },
+      {
+        "en": "tongue",
+        "nl": "TONG"
+      },
+      {
+        "en": "tube",
+        "nl": "TUBE"
+      },
+      {
+        "en": "finger",
+        "nl": "VINGER"
+      },
+      {
+        "en": "fingertip",
+        "nl": "VINGERTOP"
+      },
+      {
+        "en": "fist",
+        "nl": "VUIST"
+      },
+      {
+        "en": "cotton wool",
+        "nl": "WATTEN"
+      },
+      {
+        "en": "index finger",
+        "nl": "WIJSVINGER"
+      },
+      {
+        "en": "beard",
+        "nl": "BAARD"
+      },
+      {
+        "en": "thigh",
+        "nl": "DIJ"
+      },
+      {
+        "en": "denture, set of teeth",
+        "nl": "GEBIT"
+      },
+      {
+        "en": "hairstyle",
+        "nl": "KAPSEL"
+      },
+      {
+        "en": "chin",
+        "nl": "KIN"
+      },
+      {
+        "en": "pram, pushchair",
+        "nl": "KINDERWAGEN"
+      },
+      {
+        "en": "sticking plaster",
+        "nl": "PLEISTER"
+      },
+      {
+        "en": "wheelchair",
+        "nl": "ROLSTOEL"
+      },
+      {
+        "en": "vertebral column",
+        "nl": "RUGGENGRAAT"
+      },
+      {
+        "en": "skull",
+        "nl": "SCHEDEL"
+      },
+      {
+        "en": "skeleton",
+        "nl": "SKELET"
+      },
+      {
+        "en": "moustache",
+        "nl": "SNOR"
+      },
+      {
+        "en": "toe",
+        "nl": "TEEN"
+      },
+      {
+        "en": "forehead",
+        "nl": "VOORHOOFD"
+      },
+      {
+        "en": "cheek",
+        "nl": "WANG"
+      },
+      {
+        "en": "wound",
+        "nl": "WOND"
+      },
+      {
+        "en": "intestine",
+        "nl": "DARM"
+      },
+      {
+        "en": "face",
+        "nl": "GELAAT"
+      },
+      {
+        "en": "kidney",
+        "nl": "NIER"
+      },
+      {
+        "en": "eyebrow",
+        "nl": "WENKBRAUW"
+      }
+    ]
+  },
+  "nouns-people": {
+    "label": {
+      "en": "People & family",
+      "nl": "Mensen & familie"
+    },
+    "icon": "👪",
+    "words": [
+      {
+        "en": "man",
+        "nl": "MAN"
+      },
+      {
+        "en": "woman",
+        "nl": "VROUW"
+      },
+      {
+        "en": "baby",
+        "nl": "BABY"
+      },
+      {
+        "en": "lady",
+        "nl": "DAME"
+      },
+      {
+        "en": "angel",
+        "nl": "ENGEL"
+      },
+      {
+        "en": "young man",
+        "nl": "JONGEMAN"
+      },
+      {
+        "en": "boy",
+        "nl": "JONGEN"
+      },
+      {
+        "en": "child",
+        "nl": "KIND"
+      },
+      {
+        "en": "children",
+        "nl": "KINDEREN"
+      },
+      {
+        "en": "infant",
+        "nl": "KLEUTER"
+      },
+      {
+        "en": "king",
+        "nl": "KONING"
+      },
+      {
+        "en": "girl",
+        "nl": "MEISJE"
+      },
+      {
+        "en": "grandma",
+        "nl": "OMA"
+      },
+      {
+        "en": "couple",
+        "nl": "ECHTPAAR"
+      },
+      {
+        "en": "grandmother",
+        "nl": "GROOTMOEDER"
+      },
+      {
+        "en": "grandpa",
+        "nl": "OPA"
+      },
+      {
+        "en": "daddy",
+        "nl": "PAPA"
+      },
+      {
+        "en": "pope",
+        "nl": "PAUS"
+      },
+      {
+        "en": "priest",
+        "nl": "PRIESTER"
+      },
+      {
+        "en": "prince",
+        "nl": "PRINS"
+      },
+      {
+        "en": "princess",
+        "nl": "PRINSES"
+      },
+      {
+        "en": "gladiator",
+        "nl": "GLADIATOR"
+      },
+      {
+        "en": "musketeer",
+        "nl": "MUSKETIER"
+      },
+      {
+        "en": "knight",
+        "nl": "RIDDER"
+      },
+      {
+        "en": "pharaoh",
+        "nl": "FARAO"
+      },
+      {
+        "en": "samurai",
+        "nl": "SAMOERAI"
+      },
+      {
+        "en": "viking",
+        "nl": "VIKING"
+      }
+    ]
+  },
+  "nouns-jobs": {
+    "label": {
+      "en": "Jobs",
+      "nl": "Beroepen"
+    },
+    "icon": "👷",
+    "words": [
+      {
+        "en": "baker",
+        "nl": "BAKKER"
+      },
+      {
+        "en": "farmer",
+        "nl": "BOER"
+      },
+      {
+        "en": "driver",
+        "nl": "CHAUFFEUR"
+      },
+      {
+        "en": "goalkeeper",
+        "nl": "DOELMAN"
+      },
+      {
+        "en": "doctor, GP",
+        "nl": "DOKTER"
+      },
+      {
+        "en": "vicar",
+        "nl": "DOMINEE"
+      },
+      {
+        "en": "cyclist",
+        "nl": "FIETSER"
+      },
+      {
+        "en": "photographer",
+        "nl": "FOTOGRAAF"
+      },
+      {
+        "en": "journalist",
+        "nl": "JOURNALIST"
+      },
+      {
+        "en": "captain",
+        "nl": "KAPITEIN"
+      },
+      {
+        "en": "hairdresser",
+        "nl": "KAPPER"
+      },
+      {
+        "en": "cook",
+        "nl": "KOK"
+      },
+      {
+        "en": "artist",
+        "nl": "KUNSTENAAR"
+      },
+      {
+        "en": "mariner, sailor",
+        "nl": "MATROOS"
+      },
+      {
+        "en": "nun",
+        "nl": "NON"
+      },
+      {
+        "en": "soldier",
+        "nl": "SOLDAAT"
+      },
+      {
+        "en": "football player",
+        "nl": "VOETBALLER"
+      },
+      {
+        "en": "pharmacist",
+        "nl": "APOTHEKER"
+      },
+      {
+        "en": "fireman",
+        "nl": "BRANDWEERMAN"
+      },
+      {
+        "en": "shepherd",
+        "nl": "HERDER"
+      },
+      {
+        "en": "monk",
+        "nl": "MONNIK"
+      },
+      {
+        "en": "rider",
+        "nl": "RUITER"
+      },
+      {
+        "en": "dentist",
+        "nl": "TANDARTS"
+      },
+      {
+        "en": "gardener",
+        "nl": "TUINMAN"
+      },
+      {
+        "en": "nurse",
+        "nl": "VERPLEEGKUNDIGE"
+      },
+      {
+        "en": "nurse",
+        "nl": "VERPLEEGSTER"
+      },
+      {
+        "en": "astronaut",
+        "nl": "ASTRONAUT"
+      },
+      {
+        "en": "bus driver",
+        "nl": "BUSCHAUFFEUR"
+      },
+      {
+        "en": "diver",
+        "nl": "DUIKER"
+      },
+      {
+        "en": "electrician",
+        "nl": "ELEKTRICIEN"
+      },
+      {
+        "en": "bicycle repairman",
+        "nl": "FIETSENMAKER"
+      },
+      {
+        "en": "window cleaner",
+        "nl": "GLAZENWASSER"
+      },
+      {
+        "en": "tailor",
+        "nl": "KLEERMAKER"
+      },
+      {
+        "en": "welder",
+        "nl": "LASSER"
+      },
+      {
+        "en": "teller, ticket clerk",
+        "nl": "LOKETTIST"
+      },
+      {
+        "en": "mason, bricklayer",
+        "nl": "METSELAAR"
+      },
+      {
+        "en": "miner",
+        "nl": "MIJNWERKER"
+      },
+      {
+        "en": "waiter",
+        "nl": "OBER"
+      },
+      {
+        "en": "pirate",
+        "nl": "PIRAAT"
+      },
+      {
+        "en": "postperson, mail carrier",
+        "nl": "POSTBODE"
+      },
+      {
+        "en": "potter",
+        "nl": "POTTENBAKKER"
+      },
+      {
+        "en": "receptionist",
+        "nl": "RECEPTIONISTE"
+      },
+      {
+        "en": "waitress",
+        "nl": "SERVEERSTER"
+      },
+      {
+        "en": "stewardess, air hostess",
+        "nl": "STEWARDESS"
+      },
+      {
+        "en": "lifeguard",
+        "nl": "STRANDWACHT"
+      },
+      {
+        "en": "paver",
+        "nl": "STRATENMAKER"
+      },
+      {
+        "en": "carpenter",
+        "nl": "TIMMERMAN"
+      },
+      {
+        "en": "saleswoman",
+        "nl": "VERKOOPSTER"
+      }
+    ]
+  },
+  "nouns-pets": {
+    "label": {
+      "en": "Pets & farm",
+      "nl": "Huis- & boerderijdieren"
+    },
+    "icon": "🐄",
+    "words": [
+      {
+        "en": "dog",
+        "nl": "HOND"
+      },
+      {
+        "en": "cat",
+        "nl": "KAT"
+      },
+      {
+        "en": "cow",
+        "nl": "KOE"
+      },
+      {
+        "en": "sheep",
+        "nl": "SCHAAP"
+      },
+      {
+        "en": "pig",
+        "nl": "VARKEN"
+      },
+      {
+        "en": "piglet",
+        "nl": "BIG"
+      },
+      {
+        "en": "camel",
+        "nl": "KAMEEL"
+      },
+      {
+        "en": "mouse",
+        "nl": "MUIS"
+      },
+      {
+        "en": "mice",
+        "nl": "MUIZEN"
+      },
+      {
+        "en": "horse",
+        "nl": "PAARD"
+      },
+      {
+        "en": "wild boar",
+        "nl": "ZWIJN"
+      },
+      {
+        "en": "donkey",
+        "nl": "EZEL"
+      },
+      {
+        "en": "hare",
+        "nl": "HAAS"
+      },
+      {
+        "en": "rabbit",
+        "nl": "KONIJN"
+      },
+      {
+        "en": "cage",
+        "nl": "KOOI"
+      },
+      {
+        "en": "nest",
+        "nl": "NEST"
+      },
+      {
+        "en": "pony",
+        "nl": "PONY"
+      },
+      {
+        "en": "ram",
+        "nl": "RAM"
+      },
+      {
+        "en": "ibex",
+        "nl": "STEENBOK"
+      },
+      {
+        "en": "bull",
+        "nl": "STIER"
+      },
+      {
+        "en": "goat",
+        "nl": "GEIT"
+      },
+      {
+        "en": "gerbil",
+        "nl": "GERBIL"
+      },
+      {
+        "en": "hamster",
+        "nl": "HAMSTER"
+      },
+      {
+        "en": "deer",
+        "nl": "HERT"
+      },
+      {
+        "en": "cow, bull or ox (one animal)",
+        "nl": "RUND"
+      },
+      {
+        "en": "cattle",
+        "nl": "RUNDEREN"
+      }
+    ]
+  },
+  "nouns-wild": {
+    "label": {
+      "en": "Wild animals",
+      "nl": "Wilde dieren"
+    },
+    "icon": "🦁",
+    "words": [
+      {
+        "en": "bear",
+        "nl": "BEER"
+      },
+      {
+        "en": "fox",
+        "nl": "VOS"
+      },
+      {
+        "en": "wild boar",
+        "nl": "WILDZWIJN"
+      },
+      {
+        "en": "wolf",
+        "nl": "WOLF"
+      },
+      {
+        "en": "jaguar",
+        "nl": "JAGUAR"
+      },
+      {
+        "en": "frog",
+        "nl": "KIKKER"
+      },
+      {
+        "en": "rhinoceros",
+        "nl": "NEUSHOORN"
+      },
+      {
+        "en": "elephant",
+        "nl": "OLIFANT"
+      },
+      {
+        "en": "path",
+        "nl": "PAD"
+      },
+      {
+        "en": "rat",
+        "nl": "RAT"
+      },
+      {
+        "en": "tortoise, turtle",
+        "nl": "SCHILDPAD"
+      },
+      {
+        "en": "snake",
+        "nl": "SLANG"
+      },
+      {
+        "en": "tiger",
+        "nl": "TIJGER"
+      },
+      {
+        "en": "vole",
+        "nl": "WOELMUIS"
+      },
+      {
+        "en": "adder",
+        "nl": "ADDER"
+      },
+      {
+        "en": "alpaca",
+        "nl": "ALPACA"
+      },
+      {
+        "en": "anaconda",
+        "nl": "ANACONDA"
+      },
+      {
+        "en": "antelope",
+        "nl": "ANTILOPE"
+      },
+      {
+        "en": "eagle",
+        "nl": "AREND"
+      },
+      {
+        "en": "baboon",
+        "nl": "BAVIAAN"
+      },
+      {
+        "en": "beaver",
+        "nl": "BEVER"
+      },
+      {
+        "en": "bullfrog",
+        "nl": "BRULKIKKER"
+      },
+      {
+        "en": "buffalo",
+        "nl": "BUFFEL"
+      },
+      {
+        "en": "polecat",
+        "nl": "BUNZING"
+      },
+      {
+        "en": "cheetah",
+        "nl": "CHEETA"
+      },
+      {
+        "en": "chimp",
+        "nl": "CHIMPANSEE"
+      },
+      {
+        "en": "cobra",
+        "nl": "COBRA"
+      },
+      {
+        "en": "diprotodon",
+        "nl": "DIPROTODON"
+      },
+      {
+        "en": "squirrel",
+        "nl": "EEKHOORN"
+      },
+      {
+        "en": "hedgehog",
+        "nl": "EGEL"
+      },
+      {
+        "en": "ferret",
+        "nl": "FRET"
+      },
+      {
+        "en": "gazelle",
+        "nl": "GAZELLE"
+      },
+      {
+        "en": "gecko",
+        "nl": "GEKKO"
+      },
+      {
+        "en": "chamois",
+        "nl": "GEMS"
+      },
+      {
+        "en": "gibbon",
+        "nl": "GIBBON"
+      },
+      {
+        "en": "gorilla",
+        "nl": "GORILLA"
+      },
+      {
+        "en": "lizard",
+        "nl": "HAGEDIS"
+      },
+      {
+        "en": "stoat",
+        "nl": "HERMELIJN"
+      },
+      {
+        "en": "yak",
+        "nl": "JAK"
+      },
+      {
+        "en": "chameleon",
+        "nl": "KAMELEON"
+      },
+      {
+        "en": "newt",
+        "nl": "KAMSALAMANDER"
+      },
+      {
+        "en": "kangaroo",
+        "nl": "KANGOEROE"
+      },
+      {
+        "en": "caribou",
+        "nl": "KARIBOE"
+      },
+      {
+        "en": "koala",
+        "nl": "KOALA"
+      },
+      {
+        "en": "crocodile",
+        "nl": "KROKODIL"
+      },
+      {
+        "en": "iguana",
+        "nl": "LEGUAAN"
+      },
+      {
+        "en": "lynx",
+        "nl": "LYNX"
+      },
+      {
+        "en": "marmot",
+        "nl": "MARMOT"
+      },
+      {
+        "en": "marten",
+        "nl": "MARTER"
+      },
+      {
+        "en": "musk ox",
+        "nl": "MUSKUSOS"
+      },
+      {
+        "en": "mink",
+        "nl": "NERTS"
+      },
+      {
+        "en": "orang-utan",
+        "nl": "ORANGOETAN"
+      },
+      {
+        "en": "otter",
+        "nl": "OTTER"
+      },
+      {
+        "en": "panther",
+        "nl": "PANTER"
+      },
+      {
+        "en": "cougar",
+        "nl": "POEMA"
+      },
+      {
+        "en": "puff adder",
+        "nl": "POFADDER"
+      },
+      {
+        "en": "python",
+        "nl": "PYTHON"
+      },
+      {
+        "en": "giant deer",
+        "nl": "REUZENHERT"
+      },
+      {
+        "en": "salamander",
+        "nl": "SALAMANDER"
+      },
+      {
+        "en": "monitor lizard",
+        "nl": "VARAAN"
+      },
+      {
+        "en": "platypus",
+        "nl": "VOGELBEKDIER"
+      },
+      {
+        "en": "wallaby",
+        "nl": "WALLABY"
+      },
+      {
+        "en": "raccoon",
+        "nl": "WASBEER"
+      },
+      {
+        "en": "wombat",
+        "nl": "WOMBAT"
+      }
+    ]
+  },
+  "nouns-insects": {
+    "label": {
+      "en": "Insects & bugs",
+      "nl": "Insecten & kleine beesten"
+    },
+    "icon": "🐛",
+    "words": [
+      {
+        "en": "jaw",
+        "nl": "KAAK"
+      },
+      {
+        "en": "moth",
+        "nl": "MOT"
+      },
+      {
+        "en": "mosquito",
+        "nl": "MUG"
+      },
+      {
+        "en": "spider",
+        "nl": "SPIN"
+      },
+      {
+        "en": "fly",
+        "nl": "VLIEG"
+      },
+      {
+        "en": "butterfly",
+        "nl": "VLINDER"
+      },
+      {
+        "en": "antenna",
+        "nl": "VOELSPRIET"
+      },
+      {
+        "en": "wasp",
+        "nl": "WESP"
+      },
+      {
+        "en": "aphid",
+        "nl": "BLADLUIS"
+      },
+      {
+        "en": "cocoon",
+        "nl": "COCON"
+      },
+      {
+        "en": "centipede",
+        "nl": "DUIZENDPOOT"
+      },
+      {
+        "en": "fruitfly",
+        "nl": "FRUITVLIEG"
+      },
+      {
+        "en": "housefly",
+        "nl": "HUISVLIEG"
+      },
+      {
+        "en": "insect",
+        "nl": "INSECT"
+      },
+      {
+        "en": "cockroach",
+        "nl": "KAKKERLAK"
+      },
+      {
+        "en": "beetle",
+        "nl": "KEVER"
+      },
+      {
+        "en": "crab spider",
+        "nl": "KRABSPIN"
+      },
+      {
+        "en": "cricket (insect)",
+        "nl": "KREKEL"
+      },
+      {
+        "en": "larva",
+        "nl": "LARVE"
+      },
+      {
+        "en": "dragonfly",
+        "nl": "LIBEL"
+      },
+      {
+        "en": "dung beetle",
+        "nl": "MESTKEVER"
+      },
+      {
+        "en": "ant",
+        "nl": "MIER"
+      },
+      {
+        "en": "millipede",
+        "nl": "MILJOENPOOT"
+      },
+      {
+        "en": "earwig",
+        "nl": "OORWORM"
+      },
+      {
+        "en": "caterpillar",
+        "nl": "RUPS"
+      },
+      {
+        "en": "scarab",
+        "nl": "SCARABEE"
+      },
+      {
+        "en": "scorpion",
+        "nl": "SCHORPIOEN"
+      },
+      {
+        "en": "snail",
+        "nl": "SLAK"
+      },
+      {
+        "en": "grasshopper",
+        "nl": "SPRINKHAAN"
+      },
+      {
+        "en": "tarantula",
+        "nl": "TARANTULA"
+      },
+      {
+        "en": "tick",
+        "nl": "TEEK"
+      },
+      {
+        "en": "stag beetle",
+        "nl": "VLIEGENDHERT"
+      },
+      {
+        "en": "flea",
+        "nl": "VLO"
+      },
+      {
+        "en": "damselfly",
+        "nl": "WATERJUFFER"
+      },
+      {
+        "en": "orb weaver",
+        "nl": "WIELWEBSPIN"
+      },
+      {
+        "en": "black widow",
+        "nl": "ZWARTEWEDUWE"
+      }
+    ]
+  },
+  "nouns-birds": {
+    "label": {
+      "en": "Birds",
+      "nl": "Vogels"
+    },
+    "icon": "🐦",
+    "words": [
+      {
+        "en": "tit, small bird",
+        "nl": "MEES"
+      },
+      {
+        "en": "fish",
+        "nl": "VIS"
+      },
+      {
+        "en": "bird",
+        "nl": "VOGEL"
+      },
+      {
+        "en": "condor",
+        "nl": "CONDOR"
+      },
+      {
+        "en": "pigeon",
+        "nl": "DUIF"
+      },
+      {
+        "en": "duck",
+        "nl": "EEND"
+      },
+      {
+        "en": "peacock",
+        "nl": "PAUW"
+      },
+      {
+        "en": "leg, paw (of an animal)",
+        "nl": "POOT"
+      },
+      {
+        "en": "raven",
+        "nl": "RAAF"
+      },
+      {
+        "en": "tail",
+        "nl": "STAART"
+      },
+      {
+        "en": "falcon",
+        "nl": "VALK"
+      },
+      {
+        "en": "wing",
+        "nl": "VLEUGEL"
+      },
+      {
+        "en": "swan",
+        "nl": "ZWAAN"
+      },
+      {
+        "en": "cormorant",
+        "nl": "AALSCHOLVER"
+      },
+      {
+        "en": "eagle",
+        "nl": "ADELAAR"
+      },
+      {
+        "en": "albatross",
+        "nl": "ALBATROS"
+      },
+      {
+        "en": "macaw",
+        "nl": "ARA"
+      },
+      {
+        "en": "magpie",
+        "nl": "EKSTER"
+      },
+      {
+        "en": "emu",
+        "nl": "EMOE"
+      },
+      {
+        "en": "flamingo",
+        "nl": "FLAMINGO"
+      },
+      {
+        "en": "gannet",
+        "nl": "JANVANGENT"
+      },
+      {
+        "en": "cuckoo",
+        "nl": "KOEKOEK"
+      },
+      {
+        "en": "crane",
+        "nl": "KRAANVOGEL"
+      },
+      {
+        "en": "blackbird",
+        "nl": "MEREL"
+      },
+      {
+        "en": "stork",
+        "nl": "OOIEVAAR"
+      },
+      {
+        "en": "parrot",
+        "nl": "PAPEGAAI"
+      },
+      {
+        "en": "puffin",
+        "nl": "PAPEGAAIDUIKER"
+      },
+      {
+        "en": "pelican",
+        "nl": "PELIKAAN"
+      },
+      {
+        "en": "heron",
+        "nl": "REIGER"
+      },
+      {
+        "en": "robin",
+        "nl": "ROODBORST"
+      },
+      {
+        "en": "ostrich",
+        "nl": "STRUISVOGEL"
+      },
+      {
+        "en": "toucan",
+        "nl": "TOEKAN"
+      },
+      {
+        "en": "owl",
+        "nl": "UIL"
+      },
+      {
+        "en": "bat",
+        "nl": "VLEERMUIS"
+      }
+    ]
+  },
+  "nouns-birdsea": {
+    "label": {
+      "en": "Sea life",
+      "nl": "Zeedieren"
+    },
+    "icon": "🐟",
+    "words": [
+      {
+        "en": "dolphin",
+        "nl": "DOLFIJN"
+      },
+      {
+        "en": "trout",
+        "nl": "FOREL"
+      },
+      {
+        "en": "shark",
+        "nl": "HAAI"
+      },
+      {
+        "en": "salmon",
+        "nl": "ZALM"
+      },
+      {
+        "en": "anchovy",
+        "nl": "ANSJOVIS"
+      },
+      {
+        "en": "barracuda",
+        "nl": "BARRACUDA"
+      },
+      {
+        "en": "beluga",
+        "nl": "BELOEGA"
+      },
+      {
+        "en": "dugong",
+        "nl": "DOEJONG"
+      },
+      {
+        "en": "shrimp",
+        "nl": "GARNAAL"
+      },
+      {
+        "en": "herring",
+        "nl": "HARING"
+      },
+      {
+        "en": "squid",
+        "nl": "INKTVIS"
+      },
+      {
+        "en": "cod",
+        "nl": "KABELJAUW"
+      },
+      {
+        "en": "gill",
+        "nl": "KIEUW"
+      },
+      {
+        "en": "crab",
+        "nl": "KRAB"
+      },
+      {
+        "en": "lobster",
+        "nl": "KREEFT"
+      },
+      {
+        "en": "jellyfish",
+        "nl": "KWAL"
+      },
+      {
+        "en": "manatee",
+        "nl": "LAMANTIJN"
+      },
+      {
+        "en": "mackerel",
+        "nl": "MAKREEL"
+      },
+      {
+        "en": "catfish",
+        "nl": "MEERVAL"
+      },
+      {
+        "en": "mussel",
+        "nl": "MOSSEL"
+      },
+      {
+        "en": "narwhal",
+        "nl": "NARWAL"
+      },
+      {
+        "en": "nautilus",
+        "nl": "NAUTILUS"
+      },
+      {
+        "en": "octopus",
+        "nl": "OCTOPUS"
+      },
+      {
+        "en": "oyster",
+        "nl": "OESTER"
+      },
+      {
+        "en": "orca",
+        "nl": "ORKA"
+      },
+      {
+        "en": "eel",
+        "nl": "PALING"
+      },
+      {
+        "en": "sperm whale",
+        "nl": "POTVIS"
+      },
+      {
+        "en": "ray",
+        "nl": "ROG"
+      },
+      {
+        "en": "haddock",
+        "nl": "SCHELVIS"
+      },
+      {
+        "en": "scale",
+        "nl": "SCHUB"
+      },
+      {
+        "en": "pike",
+        "nl": "SNOEK"
+      },
+      {
+        "en": "sponge",
+        "nl": "SPONS"
+      },
+      {
+        "en": "tentacle",
+        "nl": "TENTAKEL"
+      },
+      {
+        "en": "tuna",
+        "nl": "TONIJN"
+      },
+      {
+        "en": "clam",
+        "nl": "VENUSSCHELP"
+      },
+      {
+        "en": "fin",
+        "nl": "VIN"
+      },
+      {
+        "en": "walrus",
+        "nl": "WALRUS"
+      },
+      {
+        "en": "anemone",
+        "nl": "ZEEANEMOON"
+      },
+      {
+        "en": "seal",
+        "nl": "ZEEHOND"
+      },
+      {
+        "en": "cuttlefish",
+        "nl": "ZEEKAT"
+      },
+      {
+        "en": "seahorse",
+        "nl": "ZEEPAARD"
+      },
+      {
+        "en": "barnacle",
+        "nl": "ZEEPOK"
+      },
+      {
+        "en": "sea turtle",
+        "nl": "ZEESCHILDPAD"
+      },
+      {
+        "en": "starfish",
+        "nl": "ZEESTER"
+      },
+      {
+        "en": "sucker",
+        "nl": "ZUIGNAP"
+      },
+      {
+        "en": "swordfish",
+        "nl": "ZWAARDVIS"
+      }
+    ]
+  },
+  "nouns-fantasy": {
+    "label": {
+      "en": "Fantasy & dinosaurs",
+      "nl": "Fantasie & dino's"
+    },
+    "icon": "🦖",
+    "words": [
+      {
+        "en": "centaur",
+        "nl": "CENTAUR"
+      },
+      {
+        "en": "cyclops",
+        "nl": "CYCLOOP"
+      },
+      {
+        "en": "dragon",
+        "nl": "DRAAK"
+      },
+      {
+        "en": "devil",
+        "nl": "DUIVEL"
+      },
+      {
+        "en": "griffin",
+        "nl": "GRIFFIOEN"
+      },
+      {
+        "en": "witch",
+        "nl": "HEKS"
+      },
+      {
+        "en": "warrior",
+        "nl": "KRIJGER"
+      },
+      {
+        "en": "giant",
+        "nl": "REUS"
+      },
+      {
+        "en": "ghost",
+        "nl": "SPOOK"
+      },
+      {
+        "en": "allosaurus",
+        "nl": "ALLOSAURUS"
+      },
+      {
+        "en": "ankylosaurus",
+        "nl": "ANKYLOSAURUS"
+      },
+      {
+        "en": "archaeopteryx",
+        "nl": "ARCHEOPTERYX"
+      },
+      {
+        "en": "brachiosaurus",
+        "nl": "BRACHIOSAURUS"
+      },
+      {
+        "en": "thylacine",
+        "nl": "BUIDELWOLF"
+      },
+      {
+        "en": "carnotaurus",
+        "nl": "CARNOTAURUS"
+      },
+      {
+        "en": "compsognathus",
+        "nl": "COMPSOGNATHUS"
+      },
+      {
+        "en": "corythosaurus",
+        "nl": "CORYTHOSAURUS"
+      },
+      {
+        "en": "deinonychus",
+        "nl": "DEINONYCHUS"
+      },
+      {
+        "en": "diplodocus",
+        "nl": "DIPLODOCUS"
+      },
+      {
+        "en": "dromaeosaur",
+        "nl": "DROMAEOSAURUS"
+      },
+      {
+        "en": "druid",
+        "nl": "DRUIDE"
+      },
+      {
+        "en": "dwarf",
+        "nl": "DWERG"
+      },
+      {
+        "en": "edmontosaurus",
+        "nl": "EDMONTOSAURUS"
+      },
+      {
+        "en": "unicorn",
+        "nl": "EENHOORN"
+      },
+      {
+        "en": "fairy",
+        "nl": "FEE"
+      },
+      {
+        "en": "phoenix",
+        "nl": "FENIKS"
+      },
+      {
+        "en": "gigantosaurus",
+        "nl": "GIGANTOSAURUS"
+      },
+      {
+        "en": "glyptodon",
+        "nl": "GLYPTODON"
+      },
+      {
+        "en": "hadrosaur",
+        "nl": "HADROSAURUS"
+      },
+      {
+        "en": "stallion",
+        "nl": "HENGST"
+      },
+      {
+        "en": "hypsilophodon",
+        "nl": "HYPSILOPHODON"
+      },
+      {
+        "en": "iguanodon",
+        "nl": "IGUANODON"
+      },
+      {
+        "en": "gnome",
+        "nl": "KABOUTER"
+      },
+      {
+        "en": "lambeosaurus",
+        "nl": "LAMBEOSAURUS"
+      },
+      {
+        "en": "maiasaura",
+        "nl": "MAIASAURA"
+      },
+      {
+        "en": "mammoth",
+        "nl": "MAMMOET"
+      },
+      {
+        "en": "mastodon",
+        "nl": "MASTODONT"
+      },
+      {
+        "en": "megalodon",
+        "nl": "MEGALODON"
+      },
+      {
+        "en": "giant ground sloth",
+        "nl": "MEGATHERIUM"
+      },
+      {
+        "en": "microraptor",
+        "nl": "MICRORAPTOR"
+      },
+      {
+        "en": "mosasaur",
+        "nl": "MOSASAURUS"
+      },
+      {
+        "en": "oviraptor",
+        "nl": "OVIRAPTOR"
+      },
+      {
+        "en": "plesiosaur",
+        "nl": "PLESIOSAURUS"
+      },
+      {
+        "en": "protoceratops",
+        "nl": "PROTOCERATOPS"
+      },
+      {
+        "en": "pteranodon",
+        "nl": "PTERANODON"
+      },
+      {
+        "en": "pterodactyl",
+        "nl": "PTERODACTYLUS"
+      },
+      {
+        "en": "satyr",
+        "nl": "SATER"
+      },
+      {
+        "en": "sphinx",
+        "nl": "SFINX"
+      },
+      {
+        "en": "smilodon",
+        "nl": "SMILODON"
+      },
+      {
+        "en": "spinosaurus",
+        "nl": "SPINOSAURUS"
+      },
+      {
+        "en": "dome-headed dinosaur",
+        "nl": "STEGOCERAS"
+      },
+      {
+        "en": "stegosaurus",
+        "nl": "STEGOSAURUS"
+      },
+      {
+        "en": "superhero",
+        "nl": "SUPERHELD"
+      },
+      {
+        "en": "wizard",
+        "nl": "TOVENAAR"
+      },
+      {
+        "en": "T. rex",
+        "nl": "TREX"
+      },
+      {
+        "en": "triceratops",
+        "nl": "TRICERATOPS"
+      },
+      {
+        "en": "tyrannosaur",
+        "nl": "TYRANNOSAURUS"
+      },
+      {
+        "en": "vampire",
+        "nl": "VAMPIER"
+      },
+      {
+        "en": "velociraptor",
+        "nl": "VELOCIRAPTOR"
+      }
+    ]
+  },
+  "nouns-nature": {
+    "label": {
+      "en": "Landscape & nature",
+      "nl": "Landschap & natuur"
+    },
+    "icon": "🏔️",
+    "words": [
+      {
+        "en": "archipelago",
+        "nl": "ARCHIPEL"
+      },
+      {
+        "en": "forest",
+        "nl": "BOS"
+      },
+      {
+        "en": "island",
+        "nl": "EILAND"
+      },
+      {
+        "en": "oasis",
+        "nl": "OASE"
+      },
+      {
+        "en": "park",
+        "nl": "PARK"
+      },
+      {
+        "en": "river",
+        "nl": "RIVIER"
+      },
+      {
+        "en": "pavement",
+        "nl": "STOEP"
+      },
+      {
+        "en": "beach",
+        "nl": "STRAND"
+      },
+      {
+        "en": "fire",
+        "nl": "VUUR"
+      },
+      {
+        "en": "pasture, field",
+        "nl": "WEI"
+      },
+      {
+        "en": "bay",
+        "nl": "BAAI"
+      },
+      {
+        "en": "mountain",
+        "nl": "BERG"
+      },
+      {
+        "en": "dike",
+        "nl": "DIJK"
+      },
+      {
+        "en": "cycle lane",
+        "nl": "FIETSPAD"
+      },
+      {
+        "en": "fjord",
+        "nl": "FJORD"
+      },
+      {
+        "en": "grass",
+        "nl": "GRAS"
+      },
+      {
+        "en": "hill",
+        "nl": "HEUVEL"
+      },
+      {
+        "en": "channel",
+        "nl": "KANAAL"
+      },
+      {
+        "en": "coast",
+        "nl": "KUST"
+      },
+      {
+        "en": "ocean",
+        "nl": "OCEAAN"
+      },
+      {
+        "en": "bank",
+        "nl": "OEVER"
+      },
+      {
+        "en": "low-lying land enclosed by dikes",
+        "nl": "POLDER"
+      },
+      {
+        "en": "ditch",
+        "nl": "SLOOT"
+      },
+      {
+        "en": "valley",
+        "nl": "VALLEI"
+      },
+      {
+        "en": "field",
+        "nl": "AKKER"
+      },
+      {
+        "en": "alpine meadow",
+        "nl": "ALPENWEIDE"
+      },
+      {
+        "en": "stream, brook",
+        "nl": "BEEK"
+      },
+      {
+        "en": "cemetery",
+        "nl": "BEGRAAFPLAATS"
+      },
+      {
+        "en": "canyon, gorge",
+        "nl": "CANYON"
+      },
+      {
+        "en": "valley",
+        "nl": "DAL"
+      },
+      {
+        "en": "fountain",
+        "nl": "FONTEIN"
+      },
+      {
+        "en": "mountain range",
+        "nl": "GEBERGTE"
+      },
+      {
+        "en": "heath",
+        "nl": "HEIDE"
+      },
+      {
+        "en": "slope",
+        "nl": "HELLING"
+      },
+      {
+        "en": "jungle",
+        "nl": "JUNGLE"
+      },
+      {
+        "en": "coastline",
+        "nl": "KUSTLIJN"
+      },
+      {
+        "en": "marsh, swamp",
+        "nl": "MOERAS"
+      },
+      {
+        "en": "nature reserve",
+        "nl": "NATUURGEBIED"
+      },
+      {
+        "en": "peak",
+        "nl": "PIEK"
+      },
+      {
+        "en": "plateau",
+        "nl": "PLATEAU"
+      },
+      {
+        "en": "pond, pool",
+        "nl": "POEL"
+      },
+      {
+        "en": "prairie",
+        "nl": "PRAIRIE"
+      },
+      {
+        "en": "ravine",
+        "nl": "RAVIJN"
+      },
+      {
+        "en": "ring waterway around a town centre",
+        "nl": "SINGEL"
+      },
+      {
+        "en": "mesa",
+        "nl": "TAFELBERG"
+      },
+      {
+        "en": "fen, small shallow lake",
+        "nl": "VEN"
+      },
+      {
+        "en": "pond",
+        "nl": "VIJVER"
+      },
+      {
+        "en": "volcano",
+        "nl": "VULKAAN"
+      },
+      {
+        "en": "wall, rock face",
+        "nl": "WAND"
+      },
+      {
+        "en": "desert",
+        "nl": "WOESTIJN"
+      },
+      {
+        "en": "forest, woods",
+        "nl": "WOUD"
+      },
+      {
+        "en": "abyss",
+        "nl": "AFGROND"
+      },
+      {
+        "en": "atoll",
+        "nl": "ATOL"
+      },
+      {
+        "en": "ridge",
+        "nl": "BERGKAM"
+      },
+      {
+        "en": "mountain pass",
+        "nl": "BERGPAS"
+      },
+      {
+        "en": "orchard",
+        "nl": "BOOMGAARD"
+      },
+      {
+        "en": "grove, small wood",
+        "nl": "BOSJE"
+      },
+      {
+        "en": "fossil",
+        "nl": "FOSSIEL"
+      },
+      {
+        "en": "cliff",
+        "nl": "KLIF"
+      },
+      {
+        "en": "crystal",
+        "nl": "KRISTAL"
+      },
+      {
+        "en": "pit, hole",
+        "nl": "KUIL"
+      },
+      {
+        "en": "vegetable garden, kitchen garden",
+        "nl": "MOESTUIN"
+      },
+      {
+        "en": "pumice",
+        "nl": "PUIMSTEEN"
+      },
+      {
+        "en": "reef",
+        "nl": "RIF"
+      },
+      {
+        "en": "boulder",
+        "nl": "ROTSBLOK"
+      },
+      {
+        "en": "savanna",
+        "nl": "SAVANNE"
+      },
+      {
+        "en": "steppe",
+        "nl": "STEPPE"
+      },
+      {
+        "en": "tundra",
+        "nl": "TOENDRA"
+      },
+      {
+        "en": "plain",
+        "nl": "VLAKTE"
+      },
+      {
+        "en": "waterfall",
+        "nl": "WATERVAL"
+      },
+      {
+        "en": "meadow",
+        "nl": "WEIDE"
+      },
+      {
+        "en": "meadow",
+        "nl": "WEILAND"
+      },
+      {
+        "en": "vineyard",
+        "nl": "WIJNGAARD"
+      }
+    ]
+  },
+  "nouns-plants": {
+    "label": {
+      "en": "Plants & flowers",
+      "nl": "Planten & bloemen"
+    },
+    "icon": "🌷",
+    "words": [
+      {
+        "en": "leaf",
+        "nl": "BLAD"
+      },
+      {
+        "en": "flower",
+        "nl": "BLOEM"
+      },
+      {
+        "en": "tree",
+        "nl": "BOOM"
+      },
+      {
+        "en": "hedge",
+        "nl": "HAAG"
+      },
+      {
+        "en": "shrub",
+        "nl": "HEESTER"
+      },
+      {
+        "en": "marjoram",
+        "nl": "MARJOLEIN"
+      },
+      {
+        "en": "leaves",
+        "nl": "BLADEREN"
+      },
+      {
+        "en": "petal",
+        "nl": "BLOEMBLAADJE"
+      },
+      {
+        "en": "iris",
+        "nl": "IRIS"
+      },
+      {
+        "en": "orchid",
+        "nl": "ORCHIDEE"
+      },
+      {
+        "en": "peony",
+        "nl": "PIOEN"
+      },
+      {
+        "en": "rose",
+        "nl": "ROOS"
+      },
+      {
+        "en": "stem",
+        "nl": "STENGEL"
+      },
+      {
+        "en": "seed",
+        "nl": "ZAAD"
+      },
+      {
+        "en": "columbine",
+        "nl": "AKELEI"
+      },
+      {
+        "en": "anemone",
+        "nl": "ANEMOON"
+      },
+      {
+        "en": "carnation",
+        "nl": "ANJER"
+      },
+      {
+        "en": "aster",
+        "nl": "ASTER"
+      },
+      {
+        "en": "azalea",
+        "nl": "AZALEA"
+      },
+      {
+        "en": "rush",
+        "nl": "BIES"
+      },
+      {
+        "en": "wisteria",
+        "nl": "BLAUWEREGEN"
+      },
+      {
+        "en": "blossom",
+        "nl": "BLOESEM"
+      },
+      {
+        "en": "bouquet",
+        "nl": "BOEKET"
+      },
+      {
+        "en": "bonsai",
+        "nl": "BONSAI"
+      },
+      {
+        "en": "bluebell",
+        "nl": "BOSHYACINT"
+      },
+      {
+        "en": "buttercup",
+        "nl": "BOTERBLOEM"
+      },
+      {
+        "en": "bougainvillea",
+        "nl": "BOUGAINVILLEA"
+      },
+      {
+        "en": "bramble",
+        "nl": "BRAAMSTRUIK"
+      },
+      {
+        "en": "nettle",
+        "nl": "BRANDNETEL"
+      },
+      {
+        "en": "cactus",
+        "nl": "CACTUS"
+      },
+      {
+        "en": "camellia",
+        "nl": "CAMELLIA"
+      },
+      {
+        "en": "chrysanthemum",
+        "nl": "CHRYSANT"
+      },
+      {
+        "en": "clematis",
+        "nl": "CLEMATIS"
+      },
+      {
+        "en": "dahlia",
+        "nl": "DAHLIA"
+      },
+      {
+        "en": "foxglove",
+        "nl": "DIGITALIS"
+      },
+      {
+        "en": "thistle",
+        "nl": "DISTEL"
+      },
+      {
+        "en": "phlox",
+        "nl": "FLOKS"
+      },
+      {
+        "en": "gardenia",
+        "nl": "GARDENIA"
+      },
+      {
+        "en": "geranium",
+        "nl": "GERANIUM"
+      },
+      {
+        "en": "marigold",
+        "nl": "GOUDSBLOEM"
+      },
+      {
+        "en": "hibiscus",
+        "nl": "HIBISCUS"
+      },
+      {
+        "en": "hydrangea",
+        "nl": "HORTENSIA"
+      },
+      {
+        "en": "holly",
+        "nl": "HULST"
+      },
+      {
+        "en": "hyacinth",
+        "nl": "HYACINT"
+      },
+      {
+        "en": "jasmine",
+        "nl": "JASMIJN"
+      },
+      {
+        "en": "juniper",
+        "nl": "JENEVERBES"
+      },
+      {
+        "en": "poppy",
+        "nl": "KLAPROOS"
+      },
+      {
+        "en": "clover",
+        "nl": "KLAVER"
+      },
+      {
+        "en": "ivy",
+        "nl": "KLIMOP"
+      },
+      {
+        "en": "crocus",
+        "nl": "KROKUS"
+      },
+      {
+        "en": "lavender",
+        "nl": "LAVENDEL"
+      },
+      {
+        "en": "snapdragon",
+        "nl": "LEEUWENBEK"
+      },
+      {
+        "en": "lily",
+        "nl": "LELIE"
+      },
+      {
+        "en": "rowan",
+        "nl": "LIJSTERBES"
+      },
+      {
+        "en": "linden",
+        "nl": "LINDE"
+      },
+      {
+        "en": "lotus",
+        "nl": "LOTUS"
+      },
+      {
+        "en": "lupin",
+        "nl": "LUPINE"
+      },
+      {
+        "en": "daisy",
+        "nl": "MADELIEF"
+      },
+      {
+        "en": "magnolia",
+        "nl": "MAGNOLIA"
+      },
+      {
+        "en": "oxeye daisy",
+        "nl": "MARGRIET"
+      },
+      {
+        "en": "hawthorn",
+        "nl": "MEIDOORN"
+      },
+      {
+        "en": "delphinium",
+        "nl": "MONNIKSKAP"
+      },
+      {
+        "en": "moss",
+        "nl": "MOS"
+      },
+      {
+        "en": "daffodil",
+        "nl": "NARCIS"
+      },
+      {
+        "en": "petunia",
+        "nl": "PETUNIA"
+      },
+      {
+        "en": "larkspur",
+        "nl": "RIDDERSPOOR"
+      },
+      {
+        "en": "reed",
+        "nl": "RIET"
+      },
+      {
+        "en": "lilac",
+        "nl": "SERING"
+      },
+      {
+        "en": "primrose",
+        "nl": "SLEUTELBLOEM"
+      },
+      {
+        "en": "hollyhock",
+        "nl": "STOKROOS"
+      },
+      {
+        "en": "violet",
+        "nl": "VIOOLTJE"
+      },
+      {
+        "en": "zinnia",
+        "nl": "ZINNIA"
+      },
+      {
+        "en": "sunflower",
+        "nl": "ZONNEBLOEM"
+      }
+    ]
+  },
+  "nouns-trees": {
+    "label": {
+      "en": "Trees",
+      "nl": "Bomen"
+    },
+    "icon": "🌳",
+    "words": [
+      {
+        "en": "cedar",
+        "nl": "CEDER"
+      },
+      {
+        "en": "cypress",
+        "nl": "CYPRES"
+      },
+      {
+        "en": "pine",
+        "nl": "DEN"
+      },
+      {
+        "en": "trees",
+        "nl": "BOMEN"
+      },
+      {
+        "en": "tree",
+        "nl": "BOOM"
+      },
+      {
+        "en": "trunk",
+        "nl": "STAM"
+      },
+      {
+        "en": "branch",
+        "nl": "TAK"
+      },
+      {
+        "en": "root",
+        "nl": "WORTEL"
+      },
+      {
+        "en": "acacia",
+        "nl": "ACACIA"
+      },
+      {
+        "en": "baobab",
+        "nl": "BAOBAB"
+      },
+      {
+        "en": "birch",
+        "nl": "BERK"
+      },
+      {
+        "en": "beech",
+        "nl": "BEUK"
+      },
+      {
+        "en": "oak",
+        "nl": "EIK"
+      },
+      {
+        "en": "maple",
+        "nl": "ESDOORN"
+      },
+      {
+        "en": "eucalyptus",
+        "nl": "EUCALYPTUS"
+      },
+      {
+        "en": "elm",
+        "nl": "IEP"
+      },
+      {
+        "en": "larch",
+        "nl": "LARIX"
+      },
+      {
+        "en": "lime tree",
+        "nl": "LIND"
+      },
+      {
+        "en": "deciduous tree",
+        "nl": "LOOFBOOM"
+      },
+      {
+        "en": "conifer",
+        "nl": "NAALDBOOM"
+      },
+      {
+        "en": "sycamore",
+        "nl": "PLATAAN"
+      },
+      {
+        "en": "poplar",
+        "nl": "POPULIER"
+      },
+      {
+        "en": "sequoia",
+        "nl": "SEQUOIA"
+      },
+      {
+        "en": "spruce",
+        "nl": "SPAR"
+      },
+      {
+        "en": "yew",
+        "nl": "TAXUS"
+      },
+      {
+        "en": "willow",
+        "nl": "WILG"
+      }
+    ]
+  },
+  "nouns-weather": {
+    "label": {
+      "en": "Weather, water & sky",
+      "nl": "Weer, water & lucht"
+    },
+    "icon": "⛅",
+    "words": [
+      {
+        "en": "fire",
+        "nl": "BRAND"
+      },
+      {
+        "en": "explosion",
+        "nl": "EXPLOSIE"
+      },
+      {
+        "en": "moon",
+        "nl": "MAAN"
+      },
+      {
+        "en": "puddle",
+        "nl": "PLAS"
+      },
+      {
+        "en": "rain",
+        "nl": "REGEN"
+      },
+      {
+        "en": "star",
+        "nl": "STER"
+      },
+      {
+        "en": "sea",
+        "nl": "ZEE"
+      },
+      {
+        "en": "sun",
+        "nl": "ZON"
+      },
+      {
+        "en": "comet",
+        "nl": "KOMEET"
+      },
+      {
+        "en": "planet",
+        "nl": "PLANEET"
+      },
+      {
+        "en": "rainbow",
+        "nl": "REGENBOOG"
+      },
+      {
+        "en": "storm",
+        "nl": "STORM"
+      },
+      {
+        "en": "sunrise",
+        "nl": "ZONSOPGANG"
+      },
+      {
+        "en": "drop",
+        "nl": "DRUPPEL"
+      },
+      {
+        "en": "rain shower",
+        "nl": "REGENBUI"
+      },
+      {
+        "en": "blizzard",
+        "nl": "SNEEUWSTORM"
+      },
+      {
+        "en": "flame",
+        "nl": "VLAM"
+      },
+      {
+        "en": "cloud",
+        "nl": "WOLK"
+      },
+      {
+        "en": "geyser",
+        "nl": "GEISER"
+      },
+      {
+        "en": "glacier",
+        "nl": "GLETSJER"
+      },
+      {
+        "en": "lava",
+        "nl": "LAVA"
+      },
+      {
+        "en": "tornado",
+        "nl": "TORNADO"
+      },
+      {
+        "en": "sandstorm",
+        "nl": "ZANDSTORM"
+      }
+    ]
+  },
+  "nouns-travel": {
+    "label": {
+      "en": "Travel & transport",
+      "nl": "Reizen & vervoer"
+    },
+    "icon": "🚗",
+    "words": [
+      {
+        "en": "car",
+        "nl": "AUTO"
+      },
+      {
+        "en": "bus",
+        "nl": "BUS"
+      },
+      {
+        "en": "bicycle",
+        "nl": "FIETS"
+      },
+      {
+        "en": "boat",
+        "nl": "BOOT"
+      },
+      {
+        "en": "ships",
+        "nl": "SCHEPEN"
+      },
+      {
+        "en": "ship",
+        "nl": "SCHIP"
+      },
+      {
+        "en": "station",
+        "nl": "STATION"
+      },
+      {
+        "en": "handlebars",
+        "nl": "STUUR"
+      },
+      {
+        "en": "taxi",
+        "nl": "TAXI"
+      },
+      {
+        "en": "tram",
+        "nl": "TRAM"
+      },
+      {
+        "en": "pedal",
+        "nl": "TRAPPER"
+      },
+      {
+        "en": "train",
+        "nl": "TREIN"
+      },
+      {
+        "en": "airport",
+        "nl": "VLIEGVELD"
+      },
+      {
+        "en": "saddle",
+        "nl": "ZADEL"
+      },
+      {
+        "en": "ambulance",
+        "nl": "AMBULANCE"
+      },
+      {
+        "en": "bus stop",
+        "nl": "BUSHALTE"
+      },
+      {
+        "en": "bus station",
+        "nl": "BUSSTATION"
+      },
+      {
+        "en": "dock",
+        "nl": "DOK"
+      },
+      {
+        "en": "stop",
+        "nl": "HALTE"
+      },
+      {
+        "en": "harbour",
+        "nl": "HAVEN"
+      },
+      {
+        "en": "metro",
+        "nl": "METRO"
+      },
+      {
+        "en": "motorcycle",
+        "nl": "MOTORFIETS"
+      },
+      {
+        "en": "packet, parcel",
+        "nl": "PAKKET"
+      },
+      {
+        "en": "passenger car",
+        "nl": "PERSONENAUTO"
+      },
+      {
+        "en": "backpack",
+        "nl": "RUGZAK"
+      },
+      {
+        "en": "railway",
+        "nl": "SPOORWEG"
+      },
+      {
+        "en": "car battery",
+        "nl": "ACCU"
+      },
+      {
+        "en": "anchor",
+        "nl": "ANKER"
+      },
+      {
+        "en": "luggage carrier",
+        "nl": "BAGAGEDRAGER"
+      },
+      {
+        "en": "van, delivery van",
+        "nl": "BESTELWAGEN"
+      },
+      {
+        "en": "capsule",
+        "nl": "CAPSULE"
+      },
+      {
+        "en": "drone",
+        "nl": "DRONE"
+      },
+      {
+        "en": "helicopter",
+        "nl": "HELIKOPTER"
+      },
+      {
+        "en": "marina",
+        "nl": "JACHTHAVEN"
+      },
+      {
+        "en": "mast",
+        "nl": "MAST"
+      },
+      {
+        "en": "car bonnet",
+        "nl": "MOTORKAP"
+      },
+      {
+        "en": "mountain bike",
+        "nl": "MOUNTAINBIKE"
+      },
+      {
+        "en": "pier",
+        "nl": "PIER"
+      },
+      {
+        "en": "rocket",
+        "nl": "RAKET"
+      },
+      {
+        "en": "brake",
+        "nl": "REM"
+      },
+      {
+        "en": "space shuttle",
+        "nl": "RUIMTEVEER"
+      },
+      {
+        "en": "windscreen, windshield",
+        "nl": "VOORRUIT"
+      },
+      {
+        "en": "lorry, truck",
+        "nl": "VRACHTWAGEN"
+      },
+      {
+        "en": "sail",
+        "nl": "ZEIL"
+      },
+      {
+        "en": "barge",
+        "nl": "AAKSCHUIT"
+      },
+      {
+        "en": "buoy",
+        "nl": "BOEI"
+      },
+      {
+        "en": "catamaran",
+        "nl": "CATAMARAN"
+      },
+      {
+        "en": "submarine",
+        "nl": "DUIKBOOT"
+      },
+      {
+        "en": "toolbox",
+        "nl": "GEREEDSCHAPSKIST"
+      },
+      {
+        "en": "globe",
+        "nl": "GLOBE"
+      },
+      {
+        "en": "gondola",
+        "nl": "GONDEL"
+      },
+      {
+        "en": "helicopter, chopper",
+        "nl": "HELI"
+      },
+      {
+        "en": "clipper",
+        "nl": "KLIPPER"
+      },
+      {
+        "en": "coach, carriage",
+        "nl": "KOETS"
+      },
+      {
+        "en": "compass",
+        "nl": "KOMPAS"
+      },
+      {
+        "en": "wheelbarrow",
+        "nl": "KRUIWAGEN"
+      },
+      {
+        "en": "periscope",
+        "nl": "PERISCOOP"
+      },
+      {
+        "en": "schooner",
+        "nl": "SCHOENER"
+      },
+      {
+        "en": "tractor",
+        "nl": "TRACTOR"
+      },
+      {
+        "en": "trawler",
+        "nl": "TREILER"
+      },
+      {
+        "en": "ferry",
+        "nl": "VEERBOOT"
+      },
+      {
+        "en": "lighthouse",
+        "nl": "VUURTOREN"
+      }
+    ]
+  },
+  "nouns-tools": {
+    "label": {
+      "en": "Tools & things",
+      "nl": "Gereedschap & spullen"
+    },
+    "icon": "🔧",
+    "words": [
+      {
+        "en": "world",
+        "nl": "WERELD"
+      },
+      {
+        "en": "wheel",
+        "nl": "WIEL"
+      },
+      {
+        "en": "bell",
+        "nl": "BEL"
+      },
+      {
+        "en": "coin",
+        "nl": "MUNT"
+      },
+      {
+        "en": "brick",
+        "nl": "BAKSTEEN"
+      },
+      {
+        "en": "block",
+        "nl": "BLOK"
+      },
+      {
+        "en": "bomb",
+        "nl": "BOM"
+      },
+      {
+        "en": "credit card",
+        "nl": "CREDITCARD"
+      },
+      {
+        "en": "box",
+        "nl": "DOOS"
+      },
+      {
+        "en": "bucket",
+        "nl": "EMMER"
+      },
+      {
+        "en": "watch",
+        "nl": "HORLOGE"
+      },
+      {
+        "en": "children's book",
+        "nl": "KINDERBOEK"
+      },
+      {
+        "en": "chest",
+        "nl": "KIST"
+      },
+      {
+        "en": "clock",
+        "nl": "KLOK"
+      },
+      {
+        "en": "bullet",
+        "nl": "KOGEL"
+      },
+      {
+        "en": "tap",
+        "nl": "KRAAN"
+      },
+      {
+        "en": "basket",
+        "nl": "MAND"
+      },
+      {
+        "en": "charger",
+        "nl": "OPLADER"
+      },
+      {
+        "en": "beam",
+        "nl": "BALK"
+      },
+      {
+        "en": "crack",
+        "nl": "BARST"
+      },
+      {
+        "en": "axe",
+        "nl": "BIJL"
+      },
+      {
+        "en": "tube",
+        "nl": "BUIS"
+      },
+      {
+        "en": "thorn",
+        "nl": "DOORN"
+      },
+      {
+        "en": "thread, wire",
+        "nl": "DRAAD"
+      },
+      {
+        "en": "rifle",
+        "nl": "GEWEER"
+      },
+      {
+        "en": "hammer",
+        "nl": "HAMER"
+      },
+      {
+        "en": "cable",
+        "nl": "KABEL"
+      },
+      {
+        "en": "cannon",
+        "nl": "KANON"
+      },
+      {
+        "en": "slat, thin bar",
+        "nl": "LAT"
+      },
+      {
+        "en": "pole",
+        "nl": "PAAL"
+      },
+      {
+        "en": "armor",
+        "nl": "PANTSER"
+      },
+      {
+        "en": "parachute",
+        "nl": "PARACHUTE"
+      },
+      {
+        "en": "umbrella",
+        "nl": "PARAPLU"
+      },
+      {
+        "en": "pistol",
+        "nl": "PISTOOL"
+      },
+      {
+        "en": "plank, board",
+        "nl": "PLANK"
+      },
+      {
+        "en": "rack",
+        "nl": "REK"
+      },
+      {
+        "en": "crack, tear",
+        "nl": "SCHEUR"
+      },
+      {
+        "en": "shield",
+        "nl": "SCHILD"
+      },
+      {
+        "en": "cigar",
+        "nl": "SIGAAR"
+      },
+      {
+        "en": "cigarette",
+        "nl": "SIGARET"
+      },
+      {
+        "en": "spear",
+        "nl": "SPEER"
+      },
+      {
+        "en": "stick",
+        "nl": "STOK"
+      },
+      {
+        "en": "pliers",
+        "nl": "TANG"
+      },
+      {
+        "en": "tile",
+        "nl": "TEGEL"
+      },
+      {
+        "en": "rope",
+        "nl": "TOUW"
+      },
+      {
+        "en": "saw",
+        "nl": "ZAAG"
+      },
+      {
+        "en": "sword",
+        "nl": "ZWAARD"
+      },
+      {
+        "en": "drill",
+        "nl": "BOORMACHINE"
+      },
+      {
+        "en": "rake",
+        "nl": "HARK"
+      },
+      {
+        "en": "paintbrush (wide)",
+        "nl": "KWAST"
+      },
+      {
+        "en": "tape measure",
+        "nl": "MEETLINT"
+      },
+      {
+        "en": "spanner, wrench",
+        "nl": "MOERSLEUTEL"
+      },
+      {
+        "en": "artist's brush",
+        "nl": "PENSEEL"
+      },
+      {
+        "en": "scissors",
+        "nl": "SCHAAR"
+      },
+      {
+        "en": "treasure chest",
+        "nl": "SCHATKIST"
+      },
+      {
+        "en": "shovel, spade",
+        "nl": "SCHEP"
+      },
+      {
+        "en": "screw",
+        "nl": "SCHROEF"
+      },
+      {
+        "en": "screwdriver",
+        "nl": "SCHROEVENDRAAIER"
+      },
+      {
+        "en": "sander",
+        "nl": "SCHUURMACHINE"
+      },
+      {
+        "en": "nail",
+        "nl": "SPIJKER"
+      },
+      {
+        "en": "thermometer",
+        "nl": "THERMOMETER"
+      },
+      {
+        "en": "paint roller",
+        "nl": "VERFROLLER"
+      },
+      {
+        "en": "rubbish bin, trashcan",
+        "nl": "VUILNISBAK"
+      }
+    ]
+  },
+  "nouns-school": {
+    "label": {
+      "en": "School, office & shapes",
+      "nl": "School, kantoor & vormen"
+    },
+    "icon": "📚",
+    "words": [
+      {
+        "en": "photo",
+        "nl": "FOTO"
+      },
+      {
+        "en": "graph",
+        "nl": "GRAFIEK"
+      },
+      {
+        "en": "ball",
+        "nl": "BAL"
+      },
+      {
+        "en": "book",
+        "nl": "BOEK"
+      },
+      {
+        "en": "newspaper",
+        "nl": "KRANT"
+      },
+      {
+        "en": "arrow",
+        "nl": "PIJL"
+      },
+      {
+        "en": "gift",
+        "nl": "CADEAU"
+      },
+      {
+        "en": "CD",
+        "nl": "CD"
+      },
+      {
+        "en": "circle",
+        "nl": "CIRKEL"
+      },
+      {
+        "en": "daily newspaper",
+        "nl": "DAGBLAD"
+      },
+      {
+        "en": "diploma",
+        "nl": "DIPLOMA"
+      },
+      {
+        "en": "document",
+        "nl": "DOCUMENT"
+      },
+      {
+        "en": "triangle",
+        "nl": "DRIEHOEK"
+      },
+      {
+        "en": "envelope",
+        "nl": "ENVELOP"
+      },
+      {
+        "en": "label",
+        "nl": "ETIKET"
+      },
+      {
+        "en": "leaflet",
+        "nl": "FOLDER"
+      },
+      {
+        "en": "ticket",
+        "nl": "KAARTJE"
+      },
+      {
+        "en": "cross",
+        "nl": "KRUIS"
+      },
+      {
+        "en": "folder",
+        "nl": "MAP"
+      },
+      {
+        "en": "paperback",
+        "nl": "PAPERBACK"
+      },
+      {
+        "en": "paper",
+        "nl": "PAPIER"
+      },
+      {
+        "en": "passport",
+        "nl": "PASPOORT"
+      },
+      {
+        "en": "pen",
+        "nl": "PEN"
+      },
+      {
+        "en": "poster",
+        "nl": "POSTER"
+      },
+      {
+        "en": "pencil",
+        "nl": "POTLOOD"
+      },
+      {
+        "en": "driving licence",
+        "nl": "RIJBEWIJS"
+      },
+      {
+        "en": "painting",
+        "nl": "SCHILDERIJ"
+      },
+      {
+        "en": "ticket",
+        "nl": "TICKET"
+      },
+      {
+        "en": "magazine",
+        "nl": "TIJDSCHRIFT"
+      },
+      {
+        "en": "dictionary",
+        "nl": "WOORDENBOEK"
+      },
+      {
+        "en": "diamond",
+        "nl": "DIAMANT"
+      },
+      {
+        "en": "quill",
+        "nl": "GANZENVEER"
+      },
+      {
+        "en": "hemisphere",
+        "nl": "HALFROND"
+      },
+      {
+        "en": "ink",
+        "nl": "INKT"
+      },
+      {
+        "en": "cube",
+        "nl": "KUBUS"
+      },
+      {
+        "en": "stamp",
+        "nl": "STEMPEL"
+      },
+      {
+        "en": "dot",
+        "nl": "STIP"
+      },
+      {
+        "en": "stripe",
+        "nl": "STREEP"
+      },
+      {
+        "en": "stain",
+        "nl": "VLEK"
+      },
+      {
+        "en": "photo album",
+        "nl": "FOTOALBUM"
+      },
+      {
+        "en": "cookbook",
+        "nl": "KOOKBOEK"
+      },
+      {
+        "en": "curl",
+        "nl": "KRUL"
+      },
+      {
+        "en": "loop",
+        "nl": "LUS"
+      },
+      {
+        "en": "spiral",
+        "nl": "SPIRAAL"
+      }
+    ]
+  },
+  "nouns-tech": {
+    "label": {
+      "en": "Technology",
+      "nl": "Techniek & apparaten"
+    },
+    "icon": "💻",
+    "words": [
+      {
+        "en": "speaker",
+        "nl": "BOX"
+      },
+      {
+        "en": "camera",
+        "nl": "CAMERA"
+      },
+      {
+        "en": "computer",
+        "nl": "COMPUTER"
+      },
+      {
+        "en": "radio",
+        "nl": "RADIO"
+      },
+      {
+        "en": "tablet",
+        "nl": "TABLET"
+      },
+      {
+        "en": "telephone",
+        "nl": "TELEFOON"
+      },
+      {
+        "en": "television",
+        "nl": "TELEVISIE"
+      },
+      {
+        "en": "remote control",
+        "nl": "AFSTANDSBEDIENING"
+      },
+      {
+        "en": "screen",
+        "nl": "BEELDSCHERM"
+      },
+      {
+        "en": "computer screen",
+        "nl": "COMPUTERSCHERM"
+      },
+      {
+        "en": "camera",
+        "nl": "FOTOTOESTEL"
+      },
+      {
+        "en": "mobile phone",
+        "nl": "GSM"
+      },
+      {
+        "en": "magnifying glass",
+        "nl": "LOEP"
+      },
+      {
+        "en": "magazine",
+        "nl": "MAGAZINE"
+      },
+      {
+        "en": "personal computer",
+        "nl": "PC"
+      },
+      {
+        "en": "cord",
+        "nl": "SNOER"
+      },
+      {
+        "en": "extension",
+        "nl": "VERLENGSNOER"
+      },
+      {
+        "en": "antenna",
+        "nl": "ANTENNE"
+      },
+      {
+        "en": "battery",
+        "nl": "BATTERIJ"
+      },
+      {
+        "en": "lens",
+        "nl": "LENS"
+      },
+      {
+        "en": "monitor",
+        "nl": "MONITOR"
+      },
+      {
+        "en": "prism",
+        "nl": "PRISMA"
+      },
+      {
+        "en": "processor",
+        "nl": "PROCESSOR"
+      },
+      {
+        "en": "router",
+        "nl": "ROUTER"
+      },
+      {
+        "en": "satellite",
+        "nl": "SATELLIET"
+      },
+      {
+        "en": "keyboard",
+        "nl": "TOETSENBORD"
+      },
+      {
+        "en": "reel",
+        "nl": "FILMROL"
+      },
+      {
+        "en": "printer",
+        "nl": "PRINTER"
+      },
+      {
+        "en": "projector",
+        "nl": "PROJECTOR"
+      },
+      {
+        "en": "scanner",
+        "nl": "SCANNER"
+      }
+    ]
+  },
+  "nouns-music": {
+    "label": {
+      "en": "Music",
+      "nl": "Muziek"
+    },
+    "icon": "🎸",
+    "words": [
+      {
+        "en": "dancer",
+        "nl": "DANSER"
+      },
+      {
+        "en": "guitar",
+        "nl": "GITAAR"
+      },
+      {
+        "en": "headphones",
+        "nl": "KOPTELEFOON"
+      },
+      {
+        "en": "microphone",
+        "nl": "MICROFOON"
+      },
+      {
+        "en": "musician",
+        "nl": "MUZIKANT"
+      },
+      {
+        "en": "ukulele",
+        "nl": "UKELELE"
+      },
+      {
+        "en": "singer",
+        "nl": "ZANGER"
+      },
+      {
+        "en": "flute",
+        "nl": "FLUIT"
+      },
+      {
+        "en": "clarinet",
+        "nl": "KLARINET"
+      },
+      {
+        "en": "organ (instrument)",
+        "nl": "ORGEL"
+      },
+      {
+        "en": "piano",
+        "nl": "PIANO"
+      },
+      {
+        "en": "viola",
+        "nl": "ALTVIOOL"
+      },
+      {
+        "en": "banjo",
+        "nl": "BANJO"
+      },
+      {
+        "en": "cello",
+        "nl": "CELLO"
+      },
+      {
+        "en": "zither",
+        "nl": "CITER"
+      },
+      {
+        "en": "bagpipe",
+        "nl": "DOEDELZAK"
+      },
+      {
+        "en": "bassoon",
+        "nl": "FAGOT"
+      },
+      {
+        "en": "harp",
+        "nl": "HARP"
+      },
+      {
+        "en": "oboe",
+        "nl": "HOBO"
+      },
+      {
+        "en": "speaker",
+        "nl": "LUIDSPREKER"
+      },
+      {
+        "en": "mandolin",
+        "nl": "MANDOLINE"
+      },
+      {
+        "en": "marimba",
+        "nl": "MARIMBA"
+      },
+      {
+        "en": "metronome",
+        "nl": "METRONOOM"
+      },
+      {
+        "en": "harmonica",
+        "nl": "MONDHARMONICA"
+      },
+      {
+        "en": "timpani",
+        "nl": "PAUKEN"
+      },
+      {
+        "en": "sitar",
+        "nl": "SITAR"
+      },
+      {
+        "en": "tuning fork",
+        "nl": "STEMVORK"
+      },
+      {
+        "en": "tambourine",
+        "nl": "TAMBOERIJN"
+      },
+      {
+        "en": "trombone",
+        "nl": "TROMBONE"
+      },
+      {
+        "en": "drum",
+        "nl": "TROMMEL"
+      },
+      {
+        "en": "trumpet",
+        "nl": "TROMPET"
+      },
+      {
+        "en": "amplifier",
+        "nl": "VERSTERKER"
+      },
+      {
+        "en": "violin",
+        "nl": "VIOOL"
+      },
+      {
+        "en": "xylophone",
+        "nl": "XYLOFOON"
+      }
+    ]
+  },
+  "nouns-leisure": {
+    "label": {
+      "en": "Sport & leisure",
+      "nl": "Sport & vrije tijd"
+    },
+    "icon": "⚽",
+    "words": [
+      {
+        "en": "arena",
+        "nl": "ARENA"
+      },
+      {
+        "en": "field",
+        "nl": "VELD"
+      },
+      {
+        "en": "track",
+        "nl": "ATLETIEKBAAN"
+      },
+      {
+        "en": "collage",
+        "nl": "COLLAGE"
+      },
+      {
+        "en": "queen",
+        "nl": "KONINGIN"
+      },
+      {
+        "en": "landscape",
+        "nl": "LANDSCHAP"
+      },
+      {
+        "en": "medal",
+        "nl": "MEDAILLE"
+      },
+      {
+        "en": "pawn",
+        "nl": "PION"
+      },
+      {
+        "en": "doll",
+        "nl": "POP"
+      },
+      {
+        "en": "rattle",
+        "nl": "RAMMELAAR"
+      },
+      {
+        "en": "sketch",
+        "nl": "SCHETS"
+      },
+      {
+        "en": "stadium",
+        "nl": "STADION"
+      },
+      {
+        "en": "spinning top",
+        "nl": "TOL"
+      },
+      {
+        "en": "trophy",
+        "nl": "TROFEE"
+      },
+      {
+        "en": "swimming pool",
+        "nl": "ZWEMBAD"
+      },
+      {
+        "en": "balloon",
+        "nl": "BALLON"
+      },
+      {
+        "en": "basketball",
+        "nl": "BASKETBAL"
+      },
+      {
+        "en": "clown",
+        "nl": "CLOWN"
+      },
+      {
+        "en": "zoo",
+        "nl": "DIERENTUIN"
+      },
+      {
+        "en": "maze",
+        "nl": "DOOLHOF"
+      },
+      {
+        "en": "magician",
+        "nl": "GOOCHELAAR"
+      },
+      {
+        "en": "helmet",
+        "nl": "HELM"
+      },
+      {
+        "en": "juggler",
+        "nl": "JONGLEUR"
+      },
+      {
+        "en": "climbing harness",
+        "nl": "KLIMGORDEL"
+      },
+      {
+        "en": "theme park",
+        "nl": "PRETPARK"
+      },
+      {
+        "en": "playground",
+        "nl": "SPEELTUIN"
+      },
+      {
+        "en": "rollercoaster",
+        "nl": "ACHTBAAN"
+      },
+      {
+        "en": "flipper",
+        "nl": "FLIPPER"
+      },
+      {
+        "en": "ice rink",
+        "nl": "IJSBAAN"
+      },
+      {
+        "en": "kayak",
+        "nl": "KAJAK"
+      },
+      {
+        "en": "canoe",
+        "nl": "KANO"
+      },
+      {
+        "en": "carabiner",
+        "nl": "KARABIJNHAAK"
+      },
+      {
+        "en": "pulley",
+        "nl": "KATROL"
+      },
+      {
+        "en": "palette",
+        "nl": "PALET"
+      },
+      {
+        "en": "paddle",
+        "nl": "PEDDEL"
+      },
+      {
+        "en": "ice axe",
+        "nl": "PICKEL"
+      },
+      {
+        "en": "ski slope",
+        "nl": "PISTE"
+      },
+      {
+        "en": "racket",
+        "nl": "RACKET"
+      },
+      {
+        "en": "spaceship",
+        "nl": "RUIMTESCHIP"
+      },
+      {
+        "en": "skate",
+        "nl": "SCHAATS"
+      },
+      {
+        "en": "skater, ice-skater",
+        "nl": "SCHAATSER"
+      },
+      {
+        "en": "easel",
+        "nl": "SCHILDERSEZEL"
+      },
+      {
+        "en": "snorkel",
+        "nl": "SNORKEL"
+      },
+      {
+        "en": "crampon",
+        "nl": "STIJGIJZER"
+      },
+      {
+        "en": "telescope",
+        "nl": "TELESCOOP"
+      },
+      {
+        "en": "binoculars",
+        "nl": "VERREKIJKER"
+      },
+      {
+        "en": "swimming goggles",
+        "nl": "ZWEMBRIL"
+      },
+      {
+        "en": "swimmer",
+        "nl": "ZWEMMER"
+      }
+    ]
+  },
+  "nouns-town": {
+    "label": {
+      "en": "Town & shops",
+      "nl": "Stad & winkels"
+    },
+    "icon": "🏙️",
+    "words": [
+      {
+        "en": "village",
+        "nl": "DORP"
+      },
+      {
+        "en": "runway",
+        "nl": "LANDINGSBAAN"
+      },
+      {
+        "en": "motorway",
+        "nl": "SNELWEG"
+      },
+      {
+        "en": "city",
+        "nl": "STAD"
+      },
+      {
+        "en": "path",
+        "nl": "WEG"
+      },
+      {
+        "en": "bridge",
+        "nl": "BRUG"
+      },
+      {
+        "en": "market",
+        "nl": "MARKT"
+      },
+      {
+        "en": "underpass",
+        "nl": "ONDERDOORGANG"
+      },
+      {
+        "en": "square",
+        "nl": "PLEIN"
+      },
+      {
+        "en": "banner",
+        "nl": "SPANDOEK"
+      },
+      {
+        "en": "street",
+        "nl": "STRAAT"
+      },
+      {
+        "en": "tunnel",
+        "nl": "TUNNEL"
+      },
+      {
+        "en": "flag",
+        "nl": "VLAG"
+      },
+      {
+        "en": "bakery",
+        "nl": "BAKKERIJ"
+      },
+      {
+        "en": "library",
+        "nl": "BIBLIOTHEEK"
+      },
+      {
+        "en": "cinema",
+        "nl": "BIOSCOOP"
+      },
+      {
+        "en": "waste bin",
+        "nl": "CONTAINER"
+      },
+      {
+        "en": "crossroads, junction",
+        "nl": "KRUISPUNT"
+      },
+      {
+        "en": "waste bin, wastebasket",
+        "nl": "PRULLENBAK"
+      },
+      {
+        "en": "roundabout",
+        "nl": "ROTONDE"
+      },
+      {
+        "en": "town hall",
+        "nl": "STADHUIS"
+      },
+      {
+        "en": "supermarket",
+        "nl": "SUPERMARKT"
+      },
+      {
+        "en": "theatre",
+        "nl": "THEATER"
+      },
+      {
+        "en": "pharmacy",
+        "nl": "APOTHEEK"
+      },
+      {
+        "en": "freeway",
+        "nl": "AUTOWEG"
+      },
+      {
+        "en": "bank card",
+        "nl": "BANKPAS"
+      },
+      {
+        "en": "boulevard",
+        "nl": "BOULEVARD"
+      },
+      {
+        "en": "guilder",
+        "nl": "GULDEN"
+      },
+      {
+        "en": "jewel",
+        "nl": "JUWEEL"
+      },
+      {
+        "en": "jeweler",
+        "nl": "JUWELIER"
+      },
+      {
+        "en": "cash desk",
+        "nl": "KASSA"
+      },
+      {
+        "en": "avenue",
+        "nl": "LAAN"
+      },
+      {
+        "en": "ticket window",
+        "nl": "LOKET"
+      },
+      {
+        "en": "police station",
+        "nl": "POLITIEBUREAU"
+      },
+      {
+        "en": "national road",
+        "nl": "RIJKSWEG"
+      },
+      {
+        "en": "railway line",
+        "nl": "SPOORLIJN"
+      },
+      {
+        "en": "counter",
+        "nl": "TOONBANK"
+      },
+      {
+        "en": "courtyard",
+        "nl": "BINNENPLAATS"
+      },
+      {
+        "en": "brasserie",
+        "nl": "BRASSERIE"
+      },
+      {
+        "en": "letterbox",
+        "nl": "BRIEVENBUS"
+      },
+      {
+        "en": "main road",
+        "nl": "HOOFDWEG"
+      },
+      {
+        "en": "hair salon",
+        "nl": "KAPSALON"
+      },
+      {
+        "en": "driveway",
+        "nl": "OPRIT"
+      },
+      {
+        "en": "level crossing",
+        "nl": "OVERWEG"
+      },
+      {
+        "en": "coin, medal",
+        "nl": "PENNING"
+      },
+      {
+        "en": "post office",
+        "nl": "POSTKANTOOR"
+      },
+      {
+        "en": "postage stamp",
+        "nl": "POSTZEGEL"
+      },
+      {
+        "en": "theatre",
+        "nl": "SCHOUWBURG"
+      },
+      {
+        "en": "ballot box",
+        "nl": "STEMBUS"
+      },
+      {
+        "en": "synagogue",
+        "nl": "SYNAGOGE"
+      },
+      {
+        "en": "filling station, petrol station",
+        "nl": "TANKSTATION"
+      }
+    ]
+  },
+  "nouns-buildings": {
+    "label": {
+      "en": "Buildings",
+      "nl": "Gebouwen"
+    },
+    "icon": "🏰",
+    "words": [
+      {
+        "en": "flat, block of flats",
+        "nl": "FLAT"
+      },
+      {
+        "en": "house",
+        "nl": "HUIS"
+      },
+      {
+        "en": "restaurant",
+        "nl": "RESTAURANT"
+      },
+      {
+        "en": "school",
+        "nl": "SCHOOL"
+      },
+      {
+        "en": "shop",
+        "nl": "WINKEL"
+      },
+      {
+        "en": "local government offices",
+        "nl": "GEMEENTEHUIS"
+      },
+      {
+        "en": "hotel",
+        "nl": "HOTEL"
+      },
+      {
+        "en": "hut",
+        "nl": "HUT"
+      },
+      {
+        "en": "office",
+        "nl": "KANTOOR"
+      },
+      {
+        "en": "chapel",
+        "nl": "KAPEL"
+      },
+      {
+        "en": "cathedral",
+        "nl": "KATHEDRAAL"
+      },
+      {
+        "en": "church",
+        "nl": "KERK"
+      },
+      {
+        "en": "monument",
+        "nl": "MONUMENT"
+      },
+      {
+        "en": "wall",
+        "nl": "MUUR"
+      },
+      {
+        "en": "tower",
+        "nl": "TOREN"
+      },
+      {
+        "en": "house",
+        "nl": "WONING"
+      },
+      {
+        "en": "hospital",
+        "nl": "ZIEKENHUIS"
+      },
+      {
+        "en": "apartment",
+        "nl": "APPARTEMENT"
+      },
+      {
+        "en": "farm",
+        "nl": "BOERDERIJ"
+      },
+      {
+        "en": "factory",
+        "nl": "FABRIEK"
+      },
+      {
+        "en": "grave",
+        "nl": "GRAF"
+      },
+      {
+        "en": "cave",
+        "nl": "GROT"
+      },
+      {
+        "en": "tavern",
+        "nl": "HERBERG"
+      },
+      {
+        "en": "dolmen",
+        "nl": "HUNEBED"
+      },
+      {
+        "en": "castle",
+        "nl": "KASTEEL"
+      },
+      {
+        "en": "monastery",
+        "nl": "KLOOSTER"
+      },
+      {
+        "en": "lift",
+        "nl": "LIFT"
+      },
+      {
+        "en": "mosque",
+        "nl": "MOSKEE"
+      },
+      {
+        "en": "obelisk",
+        "nl": "OBELISK"
+      },
+      {
+        "en": "palace",
+        "nl": "PALEIS"
+      },
+      {
+        "en": "pyramid",
+        "nl": "PIRAMIDE"
+      },
+      {
+        "en": "gate",
+        "nl": "POORT"
+      },
+      {
+        "en": "ruin",
+        "nl": "RUINE"
+      },
+      {
+        "en": "stable",
+        "nl": "STAL"
+      },
+      {
+        "en": "temple",
+        "nl": "TEMPEL"
+      },
+      {
+        "en": "tent",
+        "nl": "TENT"
+      },
+      {
+        "en": "villa",
+        "nl": "VILLA"
+      },
+      {
+        "en": "front door",
+        "nl": "VOORDEUR"
+      },
+      {
+        "en": "department store",
+        "nl": "WARENHUIS"
+      },
+      {
+        "en": "castle, fortress",
+        "nl": "BURG"
+      },
+      {
+        "en": "tall townhouse, imposing",
+        "nl": "HERENHUIS"
+      },
+      {
+        "en": "nuclear power plant",
+        "nl": "KERNCENTRALE"
+      },
+      {
+        "en": "parking garage",
+        "nl": "PARKEERGARAGE"
+      },
+      {
+        "en": "statue",
+        "nl": "STANDBEELD"
+      },
+      {
+        "en": "totem",
+        "nl": "TOTEM"
+      },
+      {
+        "en": "residential building, house",
+        "nl": "WOONHUIS"
+      },
+      {
+        "en": "abbey",
+        "nl": "ABDIJ"
+      },
+      {
+        "en": "apartment complex",
+        "nl": "APPARTEMENTENCOMPLEX"
+      },
+      {
+        "en": "building site",
+        "nl": "BOUWPLAATS"
+      },
+      {
+        "en": "citadel, castle",
+        "nl": "BURCHT"
+      },
+      {
+        "en": "yard",
+        "nl": "ERF"
+      },
+      {
+        "en": "gravestone",
+        "nl": "GRAFSTEEN"
+      },
+      {
+        "en": "cuneiform tablet",
+        "nl": "KLEITABLET"
+      },
+      {
+        "en": "nursery school",
+        "nl": "KLEUTERSCHOOL"
+      },
+      {
+        "en": "dome, cupola",
+        "nl": "KOEPEL"
+      },
+      {
+        "en": "column",
+        "nl": "KOLOM"
+      },
+      {
+        "en": "country house",
+        "nl": "LANDHUIS"
+      },
+      {
+        "en": "mosaic",
+        "nl": "MOZAIEK"
+      },
+      {
+        "en": "warehouse",
+        "nl": "PAKHUIS"
+      },
+      {
+        "en": "pavilion",
+        "nl": "PAVILJOEN"
+      },
+      {
+        "en": "holiday home",
+        "nl": "VAKANTIEHUIS"
+      },
+      {
+        "en": "veranda",
+        "nl": "VERANDA"
+      },
+      {
+        "en": "fortification",
+        "nl": "VESTING"
+      },
+      {
+        "en": "viaduct",
+        "nl": "VIADUCT"
+      }
+    ]
+  },
+  "adjectives-size": {
+    "label": {
+      "en": "Size & distance",
+      "nl": "Maat & afstand"
+    },
+    "icon": "📏",
+    "words": [
+      {
+        "en": "big",
+        "nl": "GROOT"
+      },
+      {
+        "en": "small",
+        "nl": "KLEIN"
+      },
+      {
+        "en": "short",
+        "nl": "KORT"
+      },
+      {
+        "en": "long",
+        "nl": "LANG"
+      },
+      {
+        "en": "remote",
+        "nl": "AFGELEGEN"
+      },
+      {
+        "en": "central",
+        "nl": "CENTRAAL"
+      },
+      {
+        "en": "near",
+        "nl": "DICHTBIJ"
+      },
+      {
+        "en": "high",
+        "nl": "HOOG"
+      },
+      {
+        "en": "cramped",
+        "nl": "KRAP"
+      },
+      {
+        "en": "low",
+        "nl": "LAAG"
+      },
+      {
+        "en": "spacious",
+        "nl": "RUIM"
+      },
+      {
+        "en": "far",
+        "nl": "VER"
+      },
+      {
+        "en": "wide",
+        "nl": "BREED"
+      },
+      {
+        "en": "deep",
+        "nl": "DIEP"
+      },
+      {
+        "en": "thick",
+        "nl": "DIK"
+      },
+      {
+        "en": "thin",
+        "nl": "DUN"
+      },
+      {
+        "en": "shallow",
+        "nl": "ONDIEP"
+      },
+      {
+        "en": "narrow",
+        "nl": "SMAL"
+      },
+      {
+        "en": "back, rear",
+        "nl": "ACHTERSTE"
+      },
+      {
+        "en": "sturdy, hefty",
+        "nl": "FORS"
+      },
+      {
+        "en": "slim",
+        "nl": "SLANK"
+      },
+      {
+        "en": "front",
+        "nl": "VOORSTE"
+      },
+      {
+        "en": "sparse",
+        "nl": "SCHAARS"
+      },
+      {
+        "en": "numerous",
+        "nl": "TALRIJK"
+      }
+    ]
+  },
+  "adjectives-shape": {
+    "label": {
+      "en": "Shape & direction",
+      "nl": "Vorm & richting"
+    },
+    "icon": "🔷",
+    "words": [
+      {
+        "en": "bulging, rounded",
+        "nl": "BOL"
+      },
+      {
+        "en": "flat (not rounded)",
+        "nl": "PLAT"
+      },
+      {
+        "en": "tight",
+        "nl": "STRAK"
+      },
+      {
+        "en": "loose, baggy",
+        "nl": "WIJD"
+      },
+      {
+        "en": "bent, curved",
+        "nl": "KROM"
+      },
+      {
+        "en": "straight",
+        "nl": "RECHT"
+      },
+      {
+        "en": "round",
+        "nl": "ROND"
+      },
+      {
+        "en": "square",
+        "nl": "VIERKANT"
+      },
+      {
+        "en": "at right angles",
+        "nl": "HAAKS"
+      },
+      {
+        "en": "hollow",
+        "nl": "HOL"
+      },
+      {
+        "en": "horizontal",
+        "nl": "HORIZONTAAL"
+      },
+      {
+        "en": "solid (not hollow)",
+        "nl": "MASSIEF"
+      },
+      {
+        "en": "slanting",
+        "nl": "SCHUIN"
+      },
+      {
+        "en": "steep",
+        "nl": "STEIL"
+      },
+      {
+        "en": "vertical",
+        "nl": "VERTICAAL"
+      },
+      {
+        "en": "level (ground)",
+        "nl": "VLAK"
+      }
+    ]
+  },
+  "adjectives-looks": {
+    "label": {
+      "en": "Looks & patterns",
+      "nl": "Uiterlijk & patronen"
+    },
+    "icon": "🎨",
+    "words": [
+      {
+        "en": "ugly",
+        "nl": "LELIJK"
+      },
+      {
+        "en": "beautiful",
+        "nl": "MOOI"
+      },
+      {
+        "en": "antique",
+        "nl": "ANTIEK"
+      },
+      {
+        "en": "dark",
+        "nl": "DONKER"
+      },
+      {
+        "en": "glass",
+        "nl": "GLAZEN"
+      },
+      {
+        "en": "wooden",
+        "nl": "HOUTEN"
+      },
+      {
+        "en": "iron",
+        "nl": "IJZEREN"
+      },
+      {
+        "en": "light, bright",
+        "nl": "LICHT"
+      },
+      {
+        "en": "metal",
+        "nl": "METALEN"
+      },
+      {
+        "en": "modern",
+        "nl": "MODERN"
+      },
+      {
+        "en": "stone",
+        "nl": "STENEN"
+      },
+      {
+        "en": "acoustic",
+        "nl": "AKOESTISCH"
+      },
+      {
+        "en": "electric",
+        "nl": "ELEKTRISCH"
+      },
+      {
+        "en": "festive",
+        "nl": "FEESTELIJK"
+      },
+      {
+        "en": "checked",
+        "nl": "GERUIT"
+      },
+      {
+        "en": "dotted",
+        "nl": "GESTIPPELD"
+      },
+      {
+        "en": "striped",
+        "nl": "GESTREEPT"
+      },
+      {
+        "en": "bare",
+        "nl": "KAAL"
+      },
+      {
+        "en": "see-through",
+        "nl": "DOORZICHTIG"
+      },
+      {
+        "en": "opaque",
+        "nl": "ONDOORZICHTIG"
+      }
+    ]
+  },
+  "adjectives-feelings": {
+    "label": {
+      "en": "Feelings",
+      "nl": "Gevoelens"
+    },
+    "icon": "😊",
+    "words": [
+      {
+        "en": "happy",
+        "nl": "BLIJ"
+      },
+      {
+        "en": "angry",
+        "nl": "BOOS"
+      },
+      {
+        "en": "fit",
+        "nl": "FIT"
+      },
+      {
+        "en": "tired",
+        "nl": "MOE"
+      },
+      {
+        "en": "sleepy",
+        "nl": "SLAPERIG"
+      },
+      {
+        "en": "sad",
+        "nl": "VERDRIETIG"
+      },
+      {
+        "en": "awake",
+        "nl": "WAKKER"
+      },
+      {
+        "en": "afraid",
+        "nl": "BANG"
+      },
+      {
+        "en": "brave",
+        "nl": "DAPPER"
+      },
+      {
+        "en": "lonely",
+        "nl": "EENZAAM"
+      },
+      {
+        "en": "tense",
+        "nl": "GESPANNEN"
+      },
+      {
+        "en": "cosy, sociable",
+        "nl": "GEZELLIG"
+      },
+      {
+        "en": "dissatisfied",
+        "nl": "ONTEVREDEN"
+      },
+      {
+        "en": "relaxed",
+        "nl": "ONTSPANNEN"
+      },
+      {
+        "en": "satisfied",
+        "nl": "TEVREDEN"
+      },
+      {
+        "en": "cheeky",
+        "nl": "BRUTAAL"
+      },
+      {
+        "en": "energetic",
+        "nl": "ENERGIEK"
+      },
+      {
+        "en": "calm",
+        "nl": "KALM"
+      },
+      {
+        "en": "exhausted",
+        "nl": "UITGEPUT"
+      },
+      {
+        "en": "shy",
+        "nl": "VERLEGEN"
+      },
+      {
+        "en": "nervous",
+        "nl": "ZENUWACHTIG"
+      }
+    ]
+  },
+  "adjectives-character": {
+    "label": {
+      "en": "Character",
+      "nl": "Karakter & gedrag"
+    },
+    "icon": "🧠",
+    "words": [
+      {
+        "en": "busy",
+        "nl": "BEZIG"
+      },
+      {
+        "en": "fair (an even share)",
+        "nl": "EERLIJK"
+      },
+      {
+        "en": "lazy",
+        "nl": "LUI"
+      },
+      {
+        "en": "unfair (an uneven share)",
+        "nl": "ONEERLIJK"
+      },
+      {
+        "en": "neat, tidy",
+        "nl": "KEURIG"
+      },
+      {
+        "en": "messy",
+        "nl": "ROMMELIG"
+      },
+      {
+        "en": "polite",
+        "nl": "BELEEFD"
+      },
+      {
+        "en": "good, well-behaved",
+        "nl": "BRAAF"
+      },
+      {
+        "en": "patient",
+        "nl": "GEDULDIG"
+      },
+      {
+        "en": "rude",
+        "nl": "ONBELEEFD"
+      },
+      {
+        "en": "impatient",
+        "nl": "ONGEDULDIG"
+      },
+      {
+        "en": "sloppy, careless",
+        "nl": "SLORDIG"
+      },
+      {
+        "en": "naughty",
+        "nl": "STOUT"
+      },
+      {
+        "en": "careful",
+        "nl": "ZORGVULDIG"
+      },
+      {
+        "en": "aggressive",
+        "nl": "AGRESSIEF"
+      },
+      {
+        "en": "obedient",
+        "nl": "GEHOORZAAM"
+      },
+      {
+        "en": "stingy",
+        "nl": "GIERIG"
+      },
+      {
+        "en": "stubborn",
+        "nl": "KOPPIG"
+      },
+      {
+        "en": "tame, docile",
+        "nl": "MAK"
+      },
+      {
+        "en": "generous",
+        "nl": "VRIJGEVIG"
+      }
+    ]
+  },
+  "adjectives-taste": {
+    "label": {
+      "en": "Taste & touch",
+      "nl": "Smaak & gevoel"
+    },
+    "icon": "👅",
+    "words": [
+      {
+        "en": "fine",
+        "nl": "FIJN"
+      },
+      {
+        "en": "coarse",
+        "nl": "GROF"
+      },
+      {
+        "en": "hard",
+        "nl": "HARD"
+      },
+      {
+        "en": "soft",
+        "nl": "ZACHT"
+      },
+      {
+        "en": "blunt",
+        "nl": "BOT"
+      },
+      {
+        "en": "bland",
+        "nl": "FLAUW"
+      },
+      {
+        "en": "boiled",
+        "nl": "GEKOOKT"
+      },
+      {
+        "en": "spicy, hot",
+        "nl": "PITTIG"
+      },
+      {
+        "en": "raw",
+        "nl": "RAUW"
+      },
+      {
+        "en": "sharp",
+        "nl": "SCHERP"
+      },
+      {
+        "en": "sweet",
+        "nl": "ZOET"
+      },
+      {
+        "en": "sour",
+        "nl": "ZUUR"
+      },
+      {
+        "en": "comfortable",
+        "nl": "COMFORTABEL"
+      },
+      {
+        "en": "smooth",
+        "nl": "GLAD"
+      },
+      {
+        "en": "uncomfortable",
+        "nl": "ONGEMAKKELIJK"
+      },
+      {
+        "en": "rough",
+        "nl": "RUW"
+      },
+      {
+        "en": "crispy, crunchy",
+        "nl": "KNAPPERIG"
+      },
+      {
+        "en": "lean",
+        "nl": "MAGER"
+      },
+      {
+        "en": "limp, soggy",
+        "nl": "SLAP"
+      },
+      {
+        "en": "fatty",
+        "nl": "VET"
+      }
+    ]
+  },
+  "adjectives-condition": {
+    "label": {
+      "en": "Condition & quality",
+      "nl": "Toestand & kwaliteit"
+    },
+    "icon": "✅",
+    "words": [
+      {
+        "en": "closed",
+        "nl": "DICHT"
+      },
+      {
+        "en": "open",
+        "nl": "OPEN"
+      },
+      {
+        "en": "poor",
+        "nl": "ARM"
+      },
+      {
+        "en": "dry",
+        "nl": "DROOG"
+      },
+      {
+        "en": "expensive",
+        "nl": "DUUR"
+      },
+      {
+        "en": "cheap",
+        "nl": "GOEDKOOP"
+      },
+      {
+        "en": "empty",
+        "nl": "LEEG"
+      },
+      {
+        "en": "wet",
+        "nl": "NAT"
+      },
+      {
+        "en": "rich",
+        "nl": "RIJK"
+      },
+      {
+        "en": "clean",
+        "nl": "SCHOON"
+      },
+      {
+        "en": "full",
+        "nl": "VOL"
+      },
+      {
+        "en": "dirty",
+        "nl": "VUIL"
+      },
+      {
+        "en": "present",
+        "nl": "AANWEZIG"
+      },
+      {
+        "en": "absent",
+        "nl": "AFWEZIG"
+      },
+      {
+        "en": "damaged",
+        "nl": "BESCHADIGD"
+      },
+      {
+        "en": "complete",
+        "nl": "COMPLEET"
+      },
+      {
+        "en": "intact",
+        "nl": "GAAF"
+      },
+      {
+        "en": "partial",
+        "nl": "GEDEELTELIJK"
+      },
+      {
+        "en": "whole",
+        "nl": "HEEL"
+      },
+      {
+        "en": "complicated",
+        "nl": "INGEWIKKELD"
+      },
+      {
+        "en": "broken",
+        "nl": "KAPOT"
+      },
+      {
+        "en": "rotten",
+        "nl": "ROT"
+      },
+      {
+        "en": "simple",
+        "nl": "SIMPEL"
+      },
+      {
+        "en": "sturdy, firm",
+        "nl": "STEVIG"
+      },
+      {
+        "en": "fresh",
+        "nl": "VERS"
+      },
+      {
+        "en": "wobbly",
+        "nl": "WANKEL"
+      },
+      {
+        "en": "brand new",
+        "nl": "GLOEDNIEUW"
+      },
+      {
+        "en": "leaky",
+        "nl": "LEK"
+      },
+      {
+        "en": "supple, flexible",
+        "nl": "SOEPEL"
+      },
+      {
+        "en": "stiff",
+        "nl": "STIJF"
+      },
+      {
+        "en": "worn out",
+        "nl": "VERSLETEN"
+      },
+      {
+        "en": "watertight",
+        "nl": "WATERDICHT"
+      },
+      {
+        "en": "creased, crumpled",
+        "nl": "GEKREUKT"
+      },
+      {
+        "en": "ironed",
+        "nl": "GESTREKEN"
+      },
+      {
+        "en": "deflated",
+        "nl": "LEEGGELOPEN"
+      },
+      {
+        "en": "pumped up",
+        "nl": "OPGEPOMPT"
+      },
+      {
+        "en": "rolled up (rug, mat)",
+        "nl": "OPGEROLD"
+      },
+      {
+        "en": "rolled out",
+        "nl": "UITGEROLD"
+      },
+      {
+        "en": "solid (not liquid)",
+        "nl": "VAST"
+      },
+      {
+        "en": "liquid",
+        "nl": "VLOEIBAAR"
+      }
+    ]
+  },
+  "adjectives-life": {
+    "label": {
+      "en": "Life & time",
+      "nl": "Leven & tijd"
+    },
+    "icon": "⏰",
+    "words": [
+      {
+        "en": "late (too late)",
+        "nl": "LAAT"
+      },
+      {
+        "en": "slow",
+        "nl": "LANGZAAM"
+      },
+      {
+        "en": "new",
+        "nl": "NIEUW"
+      },
+      {
+        "en": "old (thing)",
+        "nl": "OUD"
+      },
+      {
+        "en": "fast",
+        "nl": "SNEL"
+      },
+      {
+        "en": "early",
+        "nl": "VROEG"
+      },
+      {
+        "en": "busy, crowded",
+        "nl": "DRUK"
+      },
+      {
+        "en": "dangerous",
+        "nl": "GEVAARLIJK"
+      },
+      {
+        "en": "healthy",
+        "nl": "GEZOND"
+      },
+      {
+        "en": "young",
+        "nl": "JONG"
+      },
+      {
+        "en": "light (not heavy)",
+        "nl": "LICHT"
+      },
+      {
+        "en": "quiet (not busy)",
+        "nl": "RUSTIG"
+      },
+      {
+        "en": "strong",
+        "nl": "STERK"
+      },
+      {
+        "en": "safe",
+        "nl": "VEILIG"
+      },
+      {
+        "en": "ill",
+        "nl": "ZIEK"
+      },
+      {
+        "en": "heavy",
+        "nl": "ZWAAR"
+      },
+      {
+        "en": "weak",
+        "nl": "ZWAK"
+      },
+      {
+        "en": "elderly",
+        "nl": "BEJAARD"
+      },
+      {
+        "en": "dead",
+        "nl": "DOOD"
+      },
+      {
+        "en": "injured",
+        "nl": "GEWOND"
+      },
+      {
+        "en": "alive",
+        "nl": "LEVEND"
+      },
+      {
+        "en": "slightly injured",
+        "nl": "LICHTGEWOND"
+      },
+      {
+        "en": "newborn",
+        "nl": "PASGEBOREN"
+      },
+      {
+        "en": "adult",
+        "nl": "VOLWASSEN"
+      },
+      {
+        "en": "seriously injured",
+        "nl": "ZWAARGEWOND"
+      },
+      {
+        "en": "quick, brisk",
+        "nl": "RAP"
+      },
+      {
+        "en": "lightning-fast",
+        "nl": "RAZENDSNEL"
+      },
+      {
+        "en": "slow, sluggish",
+        "nl": "TRAAG"
+      }
+    ]
+  },
+  "adjectives-weather": {
+    "label": {
+      "en": "Weather & nature",
+      "nl": "Weer & natuur"
+    },
+    "icon": "🌦️",
+    "words": [
+      {
+        "en": "cloudy",
+        "nl": "BEWOLKT"
+      },
+      {
+        "en": "hot",
+        "nl": "HEET"
+      },
+      {
+        "en": "cold",
+        "nl": "KOUD"
+      },
+      {
+        "en": "warm",
+        "nl": "WARM"
+      },
+      {
+        "en": "sunny",
+        "nl": "ZONNIG"
+      },
+      {
+        "en": "stuffy",
+        "nl": "BENAUWD"
+      },
+      {
+        "en": "fresh (air)",
+        "nl": "FRIS"
+      },
+      {
+        "en": "loud (formal)",
+        "nl": "LUID"
+      },
+      {
+        "en": "silent, quiet (no sound)",
+        "nl": "STIL"
+      },
+      {
+        "en": "windy",
+        "nl": "WINDERIG"
+      },
+      {
+        "en": "still, without wind",
+        "nl": "WINDSTIL"
+      },
+      {
+        "en": "polluted",
+        "nl": "VERVUILD"
+      },
+      {
+        "en": "calm, peaceful",
+        "nl": "VREDIG"
+      },
+      {
+        "en": "rough, wild",
+        "nl": "WOEST"
+      },
+      {
+        "en": "pure, clean (water)",
+        "nl": "ZUIVER"
+      },
+      {
+        "en": "frozen",
+        "nl": "BEVROREN"
+      },
+      {
+        "en": "barren, parched",
+        "nl": "DOR"
+      },
+      {
+        "en": "ice-cold",
+        "nl": "IJSKOUD"
+      },
+      {
+        "en": "lukewarm",
+        "nl": "LAUW"
+      },
+      {
+        "en": "thawed",
+        "nl": "ONTDOOID"
+      },
+      {
+        "en": "fertile",
+        "nl": "VRUCHTBAAR"
+      }
+    ]
   }
 }

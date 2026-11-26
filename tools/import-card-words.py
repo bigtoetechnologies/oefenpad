@@ -205,7 +205,7 @@ def build(families):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--check", action="store_true", help="report, write nothing")
-    parser.add_argument("--families", default="bijwoorden,vaste-uitdrukkingen,scheidbare-werkwoorden")
+    parser.add_argument("--families", default="bijwoorden,vaste-uitdrukkingen,scheidbare-werkwoorden,zelfstandige-naamwoorden,bijvoeglijke-naamwoorden")
     args = parser.parse_args()
     families = [f for f in args.families.split(",") if f]
     for f in families:
