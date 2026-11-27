@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Werkwoorden — gebruikskaarten B1</title>
+<style>
+:root{
+  --kobalt:#2B50C8; --papier:#fff; --inkt:#111; --grijs:#666; --lijn:#d9deea;
+  --rood:#b3261e; --oranje:#b36b00; --letter:"Archivo",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--papier);color:var(--inkt);font-family:var(--letter);line-height:1.45}
+a{color:var(--kobalt)}
+header{padding:26px 24px 16px;border-bottom:2px solid var(--kobalt)}
+h1{margin:0 0 4px;font-size:clamp(22px,3.4vw,34px);letter-spacing:-.02em}
+.lead{margin:0;color:var(--grijs);max-width:80ch}
+.lead+.lead{margin-top:4px}
+.sum{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sum span{border:1px solid var(--lijn);border-radius:999px;padding:4px 10px;font-size:13px}
+.sum span.waarschuwing{border-color:var(--rood);color:var(--rood)}
+nav.banden{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+nav.banden a{border:1px solid var(--lijn);border-radius:999px;padding:3px 10px;text-decoration:none}
+nav.banden a.hier{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+main{padding:18px 24px 56px}
+.kaarten{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:14px;margin-top:12px}
+.kaart{position:relative;border:1px solid var(--lijn);border-radius:12px;padding:14px;break-inside:avoid;display:flex;flex-direction:column}
+.beeld{display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px}
+.geenbeeld{border:1px dashed var(--lijn);border-radius:8px;color:var(--grijs);font-size:12px;
+  text-align:center;padding:26px 8px;margin:0 auto 10px;max-width:170px}
+.kaart h3{margin:0;font-size:18px;letter-spacing:-.01em}
+.framenummer{position:absolute;top:8px;right:10px;font:700 11px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--kobalt);background:var(--papier);border:1px solid var(--lijn);border-radius:999px;padding:1px 7px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.gloss{margin:2px 0 8px;color:var(--grijs);font-size:14px}
+.voorbeeld-en{color:var(--grijs);font-size:13px}
+.vormen{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 9px;font-size:13px;font-weight:600;color:var(--kobalt)}
+.vormen span::before{font-weight:400;color:var(--grijs);margin-right:5px}
+.vormen .imp::before{content:"verleden"}
+.vormen .perf::before{content:"perfectum"}
+.vlaggen{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 9px}
+.vlaggen span{border:1px solid var(--lijn);border-radius:999px;padding:1px 8px;font-size:11px;color:var(--grijs)}
+.vlaggen span.getekend{border-color:var(--kobalt);color:var(--kobalt)}
+.vlaggen span.opnieuw{border-color:var(--rood);color:var(--rood)}
+.vlaggen span.inspel{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+.contrast-note{border-left:3px solid var(--kobalt);padding-left:8px}
+dl{margin:0;font-size:14px}
+dt{margin-top:9px;color:var(--grijs);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
+dd{margin:2px 0 0}
+.kaart code{background:#eef1f8;padding:0 3px;border-radius:3px;font-size:.92em}
+.id{color:var(--grijs);font-size:11px;margin-top:auto;padding-top:9px;font-family:ui-monospace,monospace}
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px;font-size:13px}
+.filters button{border:1px solid var(--lijn);border-radius:999px;padding:3px 11px;background:none;
+  font-family:inherit;font-size:13px;cursor:pointer}
+.filters button[aria-pressed=true]{background:var(--kobalt);color:#fff;border-color:var(--kobalt)}
+@media print{
+  header{padding:0 0 10px} main{padding:0} .filters,nav.banden{display:none}
+  .kaarten{grid-template-columns:repeat(3,1fr);gap:9px}
+  .kaart{page-break-inside:avoid;padding:9px} body{font-size:11px}
+}
+.sectiekop{margin:34px 0 0;padding-top:14px;border-top:3px solid var(--kobalt)}
+.sectiekop h2{margin:0;font-size:23px}
+.sectiekop p{margin:4px 0 0;color:var(--grijs);max-width:85ch;font-size:14px}
+table{border-collapse:collapse;width:100%;margin-top:16px;font-size:14px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--lijn);vertical-align:top}
+th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--grijs)}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.blurb{color:var(--grijs);max-width:44ch}
+td.mono{font-family:ui-monospace,monospace;font-size:12px;color:var(--grijs)}
+tr.totaal td{font-weight:700;border-top:2px solid var(--kobalt);border-bottom:none}
+.uitleg{max-width:80ch;margin-top:22px}
+.uitleg h2{font-size:17px;margin:20px 0 6px}
+.uitleg p{margin:6px 0}
+.uitleg code{background:#f6f7fb;padding:1px 5px;border-radius:4px}
+.uitleg li{margin:4px 0}
+
+.cluster{margin-top:30px;padding-top:14px;border-top:3px solid var(--kobalt)}
+.cluster h2{margin:0;font-size:23px;letter-spacing:-.01em}
+.cluster h2 .woorden{color:var(--kobalt)}
+.cluster .as{margin:2px 0 0;color:var(--grijs);font-size:13px;text-transform:uppercase;letter-spacing:.05em}
+.cluster .zin{margin:10px 0 0;max-width:80ch;font-size:16px}
+.cluster .zin .en{color:var(--grijs);font-size:14px;display:block}
+.cluster .frame{margin:8px 0 0;max-width:85ch;font-size:14px;color:var(--grijs)}
+.contrast dd{border-left:3px solid var(--kobalt);padding-left:8px}
+.voorbeeld .en{color:var(--grijs);display:block;font-size:13px}
+</style>
+</head>
+<body>
+<header>
+<h1>Werkwoorden — gebruikskaarten B1</h1>
+<p class="lead">Abstract verbs that need a context: opinions, work, news and formal speech. 10 usage cards: gloss, a short passage with its translation, typical combinations, the perfect and one more example. No picture brief.</p>
+
+<nav class="banden"><a href="tekst-b1.html" class="hier">tekst B1</a><a href="tekst-b2.html">tekst B2</a></nav>
+</header>
+<main>
+<div class="kaarten">
+<article id="stellen" class="kaart" data-id="stellen" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 1">#1</span>
+<h3 class="chunk">stellen</h3>
+<p class="gloss">to put, to set</p>
+<p class="vlaggen"><span>B1</span><span>rang 367</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Tijdens de persconferentie stelde een journalist een lastige vraag. De minister had zijn glas op tafel gesteld en moest even nadenken voordat hij antwoordde.<br><span class="voorbeeld-en">During the press conference a journalist asked a difficult question. The minister had put his glass on the table and had to think for a moment before he answered.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>een vraag stellen = to ask a question</li><li>de wekker op zeven uur stellen = to set the alarm for seven o'clock</li><li>een doel stellen = to set a goal</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Zij stelt de verwarming op twintig graden.<br><span class="voorbeeld-en">She sets the heating to twenty degrees.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft gesteld</dd>
+</dl>
+<p class="id">stellen · B1 · rang 367</p>
+</article>
+<article id="lijken" class="kaart" data-id="lijken" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 2">#2</span>
+<h3 class="chunk">lijken</h3>
+<p class="gloss">to seem</p>
+<p class="vlaggen"><span>B1</span><span>rang 705</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Het leek eerst een gewone dag op kantoor. Mijn collega lijkt sterk op zijn vader, maar hij lijkt niet zo streng te zijn.<br><span class="voorbeeld-en">At first it seemed like an ordinary day at the office. My colleague looks a lot like his father, but he does not seem to be as strict.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>het lijkt me goed = it seems good to me</li><li>lijken op iemand = to resemble someone</li><li>het lijkt erop dat = it looks as if</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dat lijkt me een goed idee.<br><span class="voorbeeld-en">That seems like a good idea to me.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft geleken</dd>
+</dl>
+<p class="id">lijken · B1 · rang 705</p>
+</article>
+<article id="ervaren" class="kaart" data-id="ervaren" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 3">#3</span>
+<h3 class="chunk">ervaren</h3>
+<p class="gloss">to experience</p>
+<p class="vlaggen"><span>B1</span><span>rang 1040</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Na drie jaar als verpleegster heeft Sanne veel ervaren. Ze ervaart haar werk als zwaar maar mooi, en ze is nu een ervaren collega die nieuwe mensen kan helpen.<br><span class="voorbeeld-en">After three years as a nurse, Sanne has experienced a lot. She finds her work hard but beautiful, and she is now an experienced colleague who can help new people.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>iets als positief ervaren = to experience something as positive</li><li>pijn ervaren = to feel pain</li><li>een ervaren chauffeur = an experienced driver</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Veel mensen ervaren stress voor een examen.<br><span class="voorbeeld-en">Many people feel stress before an exam.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft ervaren</dd>
+</dl>
+<p class="id">ervaren · B1 · rang 1040</p>
+</article>
+<article id="hoeven" class="kaart" data-id="hoeven" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 4">#4</span>
+<h3 class="chunk">hoeven</h3>
+<p class="gloss">to need to</p>
+<p class="vlaggen"><span>B1</span><span>rang 1064</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Je hoeft morgen niet te komen, want de les valt uit. Je hoeft ook geen boek mee te nemen. Ik hoefde gisteren zelf ook niet te werken.<br><span class="voorbeeld-en">You do not have to come tomorrow, because the lesson is cancelled. You do not need to bring a book either. I did not have to work yesterday myself either.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>niet hoeven te + infinitief = not to have to</li><li>Dat hoeft niet. = That is not necessary.</li><li>geen haast hoeven te hebben = not to need to hurry</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Je hoeft niet te bellen, een bericht is genoeg.<br><span class="voorbeeld-en">You do not need to call, a message is enough.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft gehoeven</dd>
+</dl>
+<p class="id">hoeven · B1 · rang 1064</p>
+</article>
+<article id="dienen" class="kaart" data-id="dienen" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 5">#5</span>
+<h3 class="chunk">dienen</h3>
+<p class="gloss">to serve, to have to</p>
+<p class="vlaggen"><span>B1</span><span>rang 1088</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Bezoekers dienen zich bij de receptie te melden. Een oude fabriek dient nu als museum, want de stad vond het gebouw te mooi om te slopen.<br><span class="voorbeeld-en">Visitors must report to reception. An old factory now serves as a museum, because the city thought the building was too beautiful to demolish.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>dienen te melden = to be required to report</li><li>dienen als = to serve as</li><li>ergens toe dienen = to serve a purpose</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Deze kamer dient als opslagruimte.<br><span class="voorbeeld-en">This room serves as a storage space.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft gediend</dd>
+</dl>
+<p class="id">dienen · B1 · rang 1088</p>
+</article>
+<article id="betekenen" class="kaart" data-id="betekenen" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 6">#6</span>
+<h3 class="chunk">betekenen</h3>
+<p class="gloss">to mean</p>
+<p class="vlaggen"><span>B1</span><span>rang 1205</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Wat betekent dit woord? Het betekent bijna, zei de leraar, maar in de vorige zin heeft het iets anders betekend. Voor mij betekent deze baan veel, want ik kan er eindelijk zelf geld mee verdienen.<br><span class="voorbeeld-en">What does this word mean? It means almost, said the teacher, but in the previous sentence it meant something else. This job means a lot to me, because I can finally earn my own money with it.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>veel betekenen voor = to mean a lot to</li><li>Wat betekent ...? = What does ... mean?</li><li>betekenen dat = to mean that</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Een rood licht betekent dat je moet stoppen.<br><span class="voorbeeld-en">A red light means that you have to stop.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft betekend</dd>
+</dl>
+<p class="id">betekenen · B1 · rang 1205</p>
+</article>
+<article id="blijken" class="kaart" data-id="blijken" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 7">#7</span>
+<h3 class="chunk">blijken</h3>
+<p class="gloss">to turn out</p>
+<p class="vlaggen"><span>B1</span><span>rang 1877</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Het gerucht blijkt niet waar te zijn. Uit onderzoek is gebleken dat veel mensen te weinig slapen. Later bleek dat de trein gewoon te laat was.<br><span class="voorbeeld-en">The rumour turns out not to be true. Research has shown that many people sleep too little. Later it emerged that the train was simply late.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>blijken te zijn = to turn out to be</li><li>Uit ... blijkt dat = It appears from ... that</li><li>Het bleek dat = It turned out that</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">De test bleek makkelijker dan gedacht.<br><span class="voorbeeld-en">The test turned out to be easier than expected.</span></dd>
+<dt>Perfect</dt><dd class="perfect">is gebleken</dd>
+</dl>
+<p class="id">blijken · B1 · rang 1877</p>
+</article>
+<article id="schelen" class="kaart" data-id="schelen" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 8">#8</span>
+<h3 class="chunk">schelen</h3>
+<p class="gloss">to matter, to differ</p>
+<p class="vlaggen"><span>B1</span><span>rang 2504</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">'Wat scheelt er?' vroeg de huisarts aan het jongetje. 'Mijn buik doet pijn', zei hij. Zijn moeder vertelde dat hij al een week niet at. Het scheelt veel als hij goed slaapt, zei ze, want dan is hij overdag vrolijker.<br><span class="voorbeeld-en">'What is the matter?' the doctor asked the little boy. 'My tummy hurts,' he said. His mother explained that he had not been eating for a week. It makes a big difference when he sleeps well, she said, because then he is more cheerful during the day.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>Wat scheelt er? = What is the matter?</li><li>het scheelt veel = it makes a big difference</li><li>het scheelt niet veel = it is a close thing</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Het scheelt maar twee euro.<br><span class="voorbeeld-en">The difference is only two euros.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft gescheeld</dd>
+</dl>
+<p class="id">schelen · B1 · rang 2504</p>
+</article>
+<article id="interesseren" class="kaart" data-id="interesseren" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 9">#9</span>
+<h3 class="chunk">interesseren</h3>
+<p class="gloss">to interest</p>
+<p class="vlaggen"><span>B1</span><span>rang 6466</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Politiek interesseert mij niet zo, maar mijn zus is er erg in geïnteresseerd. Zij heeft me al vaak proberen te interesseren voor de verkiezingen. Wat interesseert jou eigenlijk?<br><span class="voorbeeld-en">Politics does not interest me much, but my sister is very interested in it. She has often tried to get me interested in the elections. What actually interests you?</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>geïnteresseerd zijn in = to be interested in</li><li>zich interesseren voor = to take an interest in</li><li>iemand interesseren voor = to get someone interested in</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dat onderwerp interesseert me niet.<br><span class="voorbeeld-en">That subject does not interest me.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft geïnteresseerd</dd>
+</dl>
+<p class="id">interesseren · B1 · rang 6466</p>
+</article>
+<article id="bestaan" class="kaart" data-id="bestaan" data-band="B1" data-kind="verb-text" data-status="text" data-severity="">
+<span class="framenummer" title="Frame 10">#10</span>
+<h3 class="chunk">bestaan</h3>
+<p class="gloss">to exist</p>
+<p class="vlaggen"><span>B1</span><span>rang 9162</span><span>gebruikskaart</span></p>
+<dl>
+<dt>In use</dt><dd class="passage-nl">Dit restaurant bestaat al honderd jaar. Het menu bestaat uit vijf gerechten, en zo'n kleine zaak kan alleen bestaan dankzij trouwe klanten.<br><span class="voorbeeld-en">This restaurant has existed for a hundred years. The menu consists of five dishes, and such a small business can only survive thanks to loyal customers.</span></dd>
+<dt>Combinations</dt><dd class="combinaties"><ul><li>bestaan uit = to consist of</li><li>al jaren bestaan = to have existed for years</li><li>er bestaat geen twijfel = there is no doubt</li></ul></dd>
+<dt>Example</dt><dd class="voorbeeld-nl">Dat bedrijf bestaat niet meer.<br><span class="voorbeeld-en">That company no longer exists.</span></dd>
+<dt>Perfect</dt><dd class="perfect">heeft bestaan</dd>
+</dl>
+<p class="id">bestaan · B1 · rang 9162</p>
+</article>
+</div>
+</main>
+</body>
+</html>

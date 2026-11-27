@@ -20,14 +20,14 @@ bepalen	bepalen	to determine	1179	Abstract & general
 antwoorden	antwoorden	to answer	1203	Communication & language
 betekenen	betekenen	to mean	1205	Communication & language
 grenzen	grenzen	to border	1209	Places & geography
-herinneren	herinneren	to remember	1212	Thought & knowledge
+herinneren	herinneren	to remind	1212	Thought & knowledge
 duren	duren	to last	1254	Time
 landen	landen	to land	1300	Transport & travel
 ontmoeten	ontmoeten	to meet	1319	People & relations
 starten	starten	to start (a race)	1328	Time
 creëren	creeren	to create	1363	Abstract & general
 regelen	regelen	to arrange	1445	Abstract & general
-behandelen	behandelen	to treat	1474	Abstract & general
+behandelen	behandelen	to treat (a patient)	1474	Abstract & general
 bevatten	bevatten	to contain	1499	Abstract & general
 boeken	boeken	to book	1500	Arts & media
 zakken	zakken	to drop	1519	Movement & position
@@ -35,9 +35,9 @@ behoren	behoren	to belong	1522	Abstract & general
 kampen	kampen	to struggle	1529	Abstract & general
 overleven	overleven	to survive	1540	Abstract & general
 ontdekken	ontdekken	to discover	1566	Thought & knowledge
-getuigen	getuigen	to witness	1584	Law & conflict
+getuigen	getuigen	to testify	1584	Law & conflict
 accepteren	accepteren	to accept	1606	Abstract & general
-oefenen	oefenen	to practise, to exercise	1620	Education & learning
+oefenen	oefenen	to practise	1620	Education & learning
 klagen	klagen	to complain	1683	Law & conflict
 merken	merken	to notice	1714	Thought & knowledge
 kenmerken	kenmerken	to characterize	1739	Abstract & general
@@ -45,7 +45,7 @@ realiseren	realiseren	to realize	1745	Thought & knowledge
 verdedigen	verdedigen	to defend	1748	Abstract & general
 investeren	investeren	to invest	1794	Money & trade
 veroorzaken	veroorzaken	to cause	1865	Abstract & general
-drukken	drukken	to print	1880	Abstract & general
+drukken	drukken	to print (typeset)	1880	Abstract & general
 trainen	trainen	to train	1898	Sport & games
 eisen	eisen	to demand	1900	Money & trade
 verklaren	verklaren	to explain	1900	Communication & language
@@ -53,9 +53,9 @@ bezorgen	bezorgen	to deliver	1904	Abstract & general
 vullen	vullen	to fill	1923	Society & politics
 bedanken	bedanken	to thank	1949	Communication & language
 overtuigen	overtuigen	to convince	1976	Abstract & general
-voegen	voegen	to add	1984	Abstract & general
+voegen	voegen	to add, to join	1984	Abstract & general
 lukken	lukken	to succeed	2007	Abstract & general
-verhogen	verhogen	to increase	2057	Quantity & measure
+verhogen	verhogen	to raise	2057	Quantity & measure
 beantwoorden	beantwoorden	to answer	2064	Communication & language
 downloaden	downloaden	to download	2069	Technology & tools
 versterken	versterken	to strengthen	2090	Abstract & general
@@ -70,15 +70,15 @@ vergroten	vergroten	to enlarge	2137	Abstract & general
 vernietigen	vernietigen	to destroy	2138	Abstract & general
 informeren	informeren	to inform	2155	Communication & language
 bevestigen	bevestigen	to confirm	2180	Abstract & general
-bewaren	bewaren	to keep	2181	Abstract & general
+bewaren	bewaren	to keep, to store	2181	Abstract & general
 produceren	produceren	to produce	2200	Abstract & general
 herkennen	herkennen	to recognize	2222	Abstract & general
 verspreiden	verspreiden	to spread	2242	Abstract & general
-slagen	slagen	to succeed	2276	Abstract & general
+slagen	slagen	to succeed, to pass	2276	Abstract & general
 beperken	beperken	to limit	2285	Abstract & general
 besparen	besparen	to save	2287	Money & trade
 communiceren	communiceren	to communicate	2289	Abstract & general
-danken	danken	to thank, to owe	2333	Communication & language
+danken	danken	to thank	2333	Communication & language
 plegen	plegen	to commit	2343	Abstract & general
 beslissen	beslissen	to decide	2356	Thought & knowledge
 streven	streven	to pursue, to strive (for)	2377	Abstract & general
@@ -106,6 +106,7 @@ knippen	knippen	to cut (with scissors)	3769	House & home
 plukken	plukken	to pick (fruit)	4175	Plants & farming
 likken	likken	to lick	4266	Food & drink
 dekken	dekken	to set (the table)	4319	House & home
+vervelen	vervelen	to be bored	4368	Emotion & feeling
 mengen	mengen	to mix	4612	Food & drink
 vegen	vegen	to sweep	4638	House & home
 poetsen	poetsen	to brush (teeth)	4693	House & home
@@ -114,7 +115,13 @@ knuffelen	knuffelen	to cuddle	5272	People & relations
 drogen	drogen	to dry	5389	House & home
 zweten	zweten	to sweat	5587	Body & health
 hoesten	hoesten	to cough	5663	Body & health
+amuseren	amuseren	to amuse	8031	Abstract & general
+bukken	bukken	to stoop	8034	Movement & position
 poetsen	poetsen-schoenen	to polish	4693	Clothing & appearance
 schilderen	schilderen-muur	to paint (a wall)	2767	House & home
 zwaaien	zwaaien-hand	to wave (goodbye)	4135	Movement & position
 schudden	schudden-hand	to shake hands	3070	Movement & position
+lenen	lenen-uit	to lend	2121	Money & trade
+herinneren	herinneren-aan	to remind (someone of)	1212	Thought & knowledge
+behandelen	behandelen-onderwerp	to deal with (a topic), to cover	1474	Abstract & general
+bevestigen	bevestigen-vast	to attach, to fasten	2180	Abstract & general

@@ -48,6 +48,19 @@ GLOSS = {
     "bezorgen": "to deliver", "wandelen": "to go for a walk", "verplaatsen": "to move (an object)",
     "ondersteunen": "to support (help)", "rekenen": "to calculate", "tellen": "to count (things)",
     "kussen": "to kiss (on the cheek)", "branden": "to burn (a fire)", "trappen": "to kick (a can, a ball)",
+    # Gloss fixes, 26 Nov 2026 (lexicon glosses were wrong; found in the skipped-verb triage).
+    "heersen": "to reign, to prevail", "verkeren": "to be in a state, to mix with",
+    "incasseren": "to collect (money), to take a blow", "promoveren": "to gain a doctorate, to be promoted",
+    # Gloss qualifiers, 27 Nov 2026 (two cards shared one English gloss after the relaxed-rule cards were added).
+    "resteren": "to be left over", "bewerken": "to edit, to work on", "bespelen": "to play (a piano, a stage)",
+    "prijken": "to be displayed proudly", "runnen": "to run (a business)", "vertonen": "to show (screen, display)",
+    "innen": "to collect (a payment)", "mislukken": "to fail (go wrong)", "verstrekken": "to provide (hand out)",
+    "verstoren": "to disrupt", "beletten": "to prevent (forbid, block)", "overheersen": "to dominate (rule over)",
+    "pogen": "to strive, to try hard",
+    "bekomen": "to agree with (food)", "hernemen": "to take again (retake)",
+    "vernemen": "to hear (learn of)", "ontgaan": "to escape (notice)", "bedwingen": "to restrain (subdue)",
+    "witwassen": "to launder money", "verpesten": "to spoil", "ontbinden": "to dissolve",
+    "betrappen": "to catch (in the act)",
     "ontsnappen": "to escape",  # the lexicon gloss 'to relax' is a data error
 
     # Fix pass 3, 20 Nov 2026: the carded sense of a former "two senses" SKIP.
@@ -241,7 +254,48 @@ SECOND_SENSES = [
 	("zwaaien", "hand", "to wave (goodbye)", None),
 	("schudden", "hand", "to shake hands", None),
 	("schenken", "drank", "to pour (a drink)", None),
+	# 27 Nov 2026: second senses found while carding the verbs that had no card.
+	("lenen", "uit", "to lend", None),
+	("verzekeren", "gerust", "to assure", None),
+	("storten", "afval", "to tip (waste)", None),
+	("verzetten", "afspraak", "to reschedule", None),
+	("overvallen", "verrassen", "to catch off guard", None),
+	("overleggen", "document", "to present (a document)", None),
+	("prikken", "datum", "to set a date", None),
+	("schokken", "schrik", "to shock", None),
+	("betogen", "argument", "to argue (a case)", None),
+	("verdringen", "gevoel", "to repress (a feeling)", None),
+	("laten", "knippen", "to have done (hair cut)", None),
+	("demonstreren", "uitleg", "to demonstrate", None),
+	("verbouwen", "gewas", "to grow (crops)", None),
+	("stormen", "rennen", "to rush", None),
+	("verkiezen", "stem", "to elect", None),
+	("beleggen", "vergadering", "to convene (a meeting)", None),
+	("zweren", "wond", "to fester", None),
+	("verschuiven", "uitstellen", "to postpone", None),
+	("treffen", "ontmoeten", "to meet up", None),
+	("boeien", "handboeien", "to handcuff", None),
+	("bedienen", "machine", "to run (a machine)", None),
+	("besturen", "leiden", "to govern, to run", None),
+	("scheppen", "maken", "to bring into being", None),
+	("verlichten", "ontlasten", "to relieve", None),
+	("haken", "vast", "to hook, to catch", None),
+	("razen", "storm", "to howl (storm)", None),
+	("herinneren", "aan", "to remind (someone of)", None),
+	("behandelen", "onderwerp", "to deal with (a topic), to cover", None),
+	("bevestigen", "vast", "to attach, to fasten", None),
+	("lichten", "anker", "to lift (an anchor), to weigh", None),
+	("bevallen", "bevalt", "to please, to suit", None),
+	("vestigen", "aandacht", "to draw (attention) to", None),
+	("kappen", "stoppen", "to quit, to stop", None),
+	("hechten", "aan", "to be attached to", None),
+	("sneuvelen", "breken", "to break, to smash (of things)", None),
+	("brommen", "cel", "to serve time (in jail)", None),
 ]
+
+
+# 27 Nov 2026: reflexive or hyphenated verbs that now have a scene brief; they are cards, not backlog.
+FORCE_IN = {"schamen", "de-installeren", "concentreren", "spannen", "verschuilen", "verzoenen", "wildkamperen", "haasten", "amuseren", "verontschuldigen", "omringen", "wagen", "rekken", "verheugen", "bukken", "beklagen", "bemoeien", "vervelen", "ergeren", "gedragen", "veroorloven", "weerzien", "wapenen", "bevinden", "wildplukken", "vergissen", "verbeelden"}
 
 
 def load_band_overrides():
@@ -264,6 +318,18 @@ BAND_OVERRIDE = load_band_overrides()
 def slug_of(word):
     plain = unicodedata.normalize("NFKD", word).encode("ascii", "ignore").decode()
     return plain.lower().replace("'", "").replace(" ", "-")
+
+
+def _load_new_glosses():
+    """glosses.tsv: the gloss that goes with a new scene brief; overrides GLOSS for the verbs it lists."""
+    path = os.path.join(HERE, "glosses.tsv")
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as fh:
+            for r in csv.DictReader(fh, delimiter="	"):
+                GLOSS[r["verb"]] = r["gloss"]
+
+
+_load_new_glosses()
 
 
 def short_gloss(en, word=""):
@@ -502,6 +568,8 @@ def main():
         v["odd"] = key in odd
 
     def usable(v):
+        if slug_of(v["key"]) in FORCE_IN:
+            return True
         return not (v["separable"] or v["reflexive"] or v["sensitive"] or v["odd"])
 
     def band(v):

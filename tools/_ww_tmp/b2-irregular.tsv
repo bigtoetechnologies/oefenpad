@@ -6,85 +6,91 @@ verbieden	verbieden	to prohibit	2983	Abstract & general
 drijven	drijven	to float	3191	Abstract & general
 dringen	dringen	to push in (a queue)	3463	Movement & position
 schuiven	schuiven	to slide (something), to push	3691	Movement & position
-schenken	schenken	to donate	3894	Money & trade
+schenken	schenken	to give as a gift	3894	Money & trade
 zinken	zinken	to sink	4023	Movement & position
 binden	binden	to bind	4031	Abstract & general
 zuigen	zuigen	to suck	4134	Abstract & general
 stoten	stoten	to bump, to knock	4418	Abstract & general
 spuiten	spuiten	to squirt, to spray	4575	Abstract & general
-krimpen	krimpen	to shrink, crimp	5003	Abstract & general
-verbreken	verbreken	to break up/off	5035	Time
+krimpen	krimpen	to shrink	5003	Abstract & general
+verbreken	verbreken	to break off	5035	Time
 herdenken	herdenken	to remember, to commemorate	5059	Thought & knowledge
 ontwijken	ontwijken	to dodge	5080	Movement & position
-omschrijven	omschrijven	to describe	5139	Communication & language
-beklimmen	beklimmen	to climb	5381	Movement & position
+omschrijven	omschrijven	to paraphrase	5139	Communication & language
+beklimmen	beklimmen	to scale	5381	Movement & position
+spannen	spannen	to tense, to tighten	5425	Abstract & general
 bezien	bezien	to see	5524	Abstract & general
 bedriegen	bedriegen	to cheat	5591	Character & behaviour
 overdrijven	overdrijven	to exaggerate	5625	Abstract & general
-verdrijven	verdrijven	to expel	5636	Abstract & general
+verdrijven	verdrijven	to drive away	5636	Abstract & general
 ontdoen	ontdoen	to remove, to discard	5679	Movement & position
-schelden	schelden	to curse	5687	Religion & belief
+schelden	schelden	to swear at, to call names	5687	Religion & belief
 schuilen	schuilen	to shelter	5688	Nature & weather
 verwerven	verwerven	to acquire	5706	Abstract & general
 weerhouden	weerhouden	to withhold	5710	Abstract & general
 gieten	gieten	to pour	5799	Plants & farming
-verzenden	verzenden	to send, to ship	5836	Transport & travel
+verzenden	verzenden	to send, to dispatch	5836	Transport & travel
 betreffen	betreffen	to concern	5843	Abstract & general
-beladen	beladen	to burden, to charge, to lade, to freight, to load, to encumber	5908	Transport & travel
+beladen	beladen	to fill with cargo	5908	Transport & travel
 onderbreken	onderbreken	to interrupt	5947	Abstract & general
 ondervinden	ondervinden	to experience	6243	Abstract & general
 doorzoeken	doorzoeken	to search through	6298	Thought & knowledge
 knijpen	knijpen	to pinch	6468	People & relations
 vergaan	vergaan	to perish	6507	Abstract & general
-zweren	zweren	to swear	6518	Abstract & general
-barsten	barsten	to crack	6523	Abstract & general
+zweren	zweren	to swear (an oath)	6518	Abstract & general
+barsten	barsten	to crack, to burst	6523	Abstract & general
 overschrijden	overschrijden	to exceed, to step over	6625	House & home
 schenden	schenden	to harm	6633	Abstract & general
 wrijven	wrijven	to rub	6657	Body & health
 overtreffen	overtreffen	to surpass	6783	Abstract & general
-bekomen	bekomen	to recover	6894	Body & health
+bekomen	bekomen	to agree with (food)	6894	Body & health
 ontnemen	ontnemen	to deprive	6925	Abstract & general
 verhelpen	verhelpen	to solve, to fix	6942	Thought & knowledge
-onderwijzen	onderwijzen	to teach, to educate	7083	Education & learning
+onderwijzen	onderwijzen	to teach	7083	Education & learning
 verkiezen	verkiezen	to prefer	7186	Society & politics
 verzwijgen	verzwijgen	to keep silent about, to conceal	7188	Communication & language
 volbrengen	volbrengen	to accomplish	7191	Abstract & general
 verjagen	verjagen	to chase away	7415	Plants & farming
-bedwingen	bedwingen	to suppress	7438	Abstract & general
+bedwingen	bedwingen	to restrain (subdue)	7438	Abstract & general
 bevriezen	bevriezen	to freeze	7440	Abstract & general
-ontbinden	ontbinden	to unbind	7493	Abstract & general
-verschuiven	verschuiven	to move	7517	Movement & position
+ontbinden	ontbinden	to dissolve	7493	Abstract & general
+verschuiven	verschuiven	to shift	7517	Movement & position
 stinken	stinken	to stink	7589	Body & health
+weerzien	weerzien	to see again	7611	Abstract & general
 verwerpen	verwerpen	to reject	7769	Abstract & general
 verworden	verworden	to become corrupt	7771	Law & conflict
 doordringen	doordringen	to penetrate	7781	Abstract & general
-ondervragen	ondervragen	to interrogate, to question	7861	Communication & language
-ontgaan	ontgaan	to escape	7862	Movement & position
+ondervragen	ondervragen	to interrogate	7861	Communication & language
+ontgaan	ontgaan	to escape (notice)	7862	Movement & position
 overzien	overzien	to overlook	7908	Abstract & general
 volstaan	volstaan	to suffice	7940	Abstract & general
-vernemen	vernemen	to learn	7981	Education & learning
-gedenken	gedenken	to remember	8038	Thought & knowledge
-slijten	slijten	to wear (out)	8077	Clothing & appearance
-blinken	blinken	to shine	8180	Abstract & general
-zwerven	zwerven	to wander	8205	Abstract & general
-verdringen	verdringen	to push away	8241	Movement & position
+vernemen	vernemen	to hear (learn of)	7981	Education & learning
+gedenken	gedenken	to commemorate	8038	Thought & knowledge
+slijten	slijten	to wear out	8077	Clothing & appearance
+blinken	blinken	to gleam, to shine	8180	Abstract & general
+zwerven	zwerven	to wander, to roam	8205	Abstract & general
+verdringen	verdringen	to push aside, to repress	8241	Movement & position
 rijzen	rijzen	to rise, to arise	8272	Quantity & measure
-smijten	smijten	to throw, to fling	8291	Movement & position
-braden	braden	roast	8331	Food & drink
+smijten	smijten	to fling, to hurl	8291	Movement & position
+braden	braden	to roast	8331	Food & drink
 sluipen	sluipen	to sneak	8408	Movement & position
-bederven	bederven	to rot	8413	Abstract & general
+bederven	bederven	to ruin	8413	Abstract & general
 behangen	behangen	to wallpaper	8414	House & home
 verstrijken	verstrijken	to go by	8441	Movement & position
 beslaan	beslaan	to cover	8471	Abstract & general
-glimmen	glimmen	to glow, to shine	8475	Abstract & general
+glimmen	glimmen	to glimmer, to glow	8475	Abstract & general
 voltrekken	voltrekken	to take place | to celebrate	8606	People & relations
 wringen	wringen	to wring (out)	8616	House & home
 zwellen	zwellen	to swell	8750	Abstract & general
-verdenken	verdenken	to suspect	8781	Law & conflict
+verdenken	verdenken	to suspect (someone of)	8781	Law & conflict
 bezweren	bezweren	to swear	8980	Abstract & general
 rijgen	rijgen	to thread (beads)	9014	Arts & media
-verschieten	verschieten	to go pale	9030	Movement & position
+verschieten	verschieten	to turn pale	9030	Movement & position
 druipen	druipen	to drip	9044	House & home
-hernemen	hernemen	to resume	9093	Work & jobs
-verzinken	verzinken	to sink	9296	House & home
+hernemen	hernemen	to take again (retake)	9093	Work & jobs
+verzinken	verzinken	to be engulfed	9296	House & home
 spijten	spijten	to regret	9722	Emotion & feeling
+verdringen	verdringen-gevoel	to repress (a feeling)	8241	Movement & position
+verkiezen	verkiezen-stem	to elect	7186	Society & politics
+zweren	zweren-wond	to fester	6518	Abstract & general
+verschuiven	verschuiven-uitstellen	to postpone	7517	Movement & position

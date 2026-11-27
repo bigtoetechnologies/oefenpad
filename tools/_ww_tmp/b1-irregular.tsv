@@ -4,11 +4,13 @@ vervangen	vervangen	to replace	776	Abstract & general
 begraven	begraven	to bury	1178	Abstract & general
 sterven	sterven	to die	1269	Body & health
 bewegen	bewegen	to move	1381	Movement & position
+gedragen	gedragen	to behave	1433	Character & behaviour
+bevinden	bevinden	to be located	1581	Abstract & general
 vergelijken	vergelijken	to compare	1774	Thought & knowledge
 zwijgen	zwijgen	to be silent	2020	Communication & language
 duiken	duiken	to dive	2397	Sport & games
 verbinden	verbinden	to bandage	2534	Abstract & general
-strijden	strijden	to fight	2576	Abstract & general
+strijden	strijden	to fight, to compete	2576	Abstract & general
 verzinnen	verzinnen	to invent	2581	Thought & knowledge
 voldoen	voldoen	to satisfy, to fulfil	2583	Abstract & general
 dwingen	dwingen	to force	2634	Abstract & general
@@ -20,24 +22,24 @@ meten	meten	to measure	2873	Quantity & measure
 vergeven	vergeven	to forgive	2893	Character & behaviour
 vervallen	vervallen	to disappear	2895	Abstract & general
 betrekken	betrekken	to involve	2905	Abstract & general
-treffen	treffen	to hit, to strike	2939	Abstract & general
-bevallen	bevallen	to please	2950	Body & health
-klinken	klinken	to sound	2967	Abstract & general
-genezen	genezen	to cure	2997	Body & health
+treffen	treffen	to run into	2939	Abstract & general
+bevallen	bevallen	to give birth	2950	Body & health
+klinken	klinken	to clink	2967	Abstract & general
+genezen	genezen	to heal	2997	Body & health
 graven	graven	to dig	3000	Movement & position
 verdragen	verdragen	to bear	3080	Animals
 blazen	blazen	to blow	3140	Abstract & general
-bevelen	bevelen	to order, to command	3186	Communication & language
-bezitten	bezitten	to possess	3227	Abstract & general
+bevelen	bevelen	to command	3186	Communication & language
+bezitten	bezitten	to own	3227	Abstract & general
 verzoeken	verzoeken	to request	3268	Communication & language
 begaan	begaan	to commit	3322	Abstract & general
 schrikken	schrikken	to be frightened	3490	Emotion & feeling
 kruipen	kruipen	to crawl	3727	Abstract & general
 overvallen	overvallen	to raid, to hold up	3780	Law & conflict
 verraden	verraden	to betray	3802	Character & behaviour
-zenden	zenden	to send	3806	Movement & position
+zenden	zenden	to transmit	3806	Movement & position
 betreden	betreden	to enter	3815	Movement & position
-werpen	werpen	to throw	3865	Movement & position
+werpen	werpen	to hurl	3865	Movement & position
 doorstaan	doorstaan	to endure	3874	Abstract & general
 wijken	wijken	to give way	4000	Abstract & general
 omgeven	omgeven	to surround	4109	Abstract & general
@@ -46,13 +48,17 @@ bedragen	bedragen	to amount (to)	4138	Quantity & measure
 buigen	buigen	to bend	4144	Movement & position
 overwinnen	overwinnen	to overcome	4232	Abstract & general
 doorbreken	doorbreken	to break through	4250	Time
-ontkomen	ontkomen	to escape	4346	Movement & position
+ontkomen	ontkomen	to get away from	4346	Movement & position
 heffen	heffen	to raise, to levy	4393	House & home
 wijten	wijten	to blame	4493	Character & behaviour
 ontbijten	ontbijten	to have breakfast	4566	Food & drink
 ontslaan	ontslaan	to dismiss (from a job)	4688	Work & jobs
 begeven	begeven	to give way, to break down	4788	Time
-verwijten	verwijten	to blame	4837	Character & behaviour
+verwijten	verwijten	to reproach	4837	Character & behaviour
 smelten	smelten	to melt	5357	Nature & weather
 vouwen	vouwen	to fold	7773	House & home
 waaien	waaien	to blow (wind)	7791	Nature & weather
+verschuilen	verschuilen	to hide oneself	7956	Abstract & general
+overvallen	overvallen-verrassen	to catch off guard	3780	Law & conflict
+treffen	treffen-ontmoeten	to meet up	2939	Abstract & general
+bevallen	bevallen-bevalt	to please, to suit	2950	Body & health

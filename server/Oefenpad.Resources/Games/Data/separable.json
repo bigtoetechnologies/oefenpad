@@ -1938,6 +1938,17 @@
       "scene": null
     },
     {
+      "id": "zichomdraaien",
+      "verb": "zich omdraaien",
+      "gloss": "to turn around",
+      "band": "a2",
+      "split": "draai ... om",
+      "perfect": "heeft zich omgedraaid",
+      "example": "Ze draait zich om en lacht naar mij.",
+      "exampleEn": "She turns around and smiles at me.",
+      "scene": null
+    },
+    {
       "id": "toelaten",
       "verb": "toelaten",
       "gloss": "to allow, to admit",
@@ -2664,6 +2675,17 @@
       "scene": null
     },
     {
+      "id": "oppompen",
+      "verb": "oppompen",
+      "gloss": "to pump up",
+      "band": "a2",
+      "split": "pomp ... op",
+      "perfect": "heeft opgepompd",
+      "example": "Ik pomp mijn fietsband op.",
+      "exampleEn": "I pump up my bicycle tyre.",
+      "scene": null
+    },
+    {
       "id": "opsturen",
       "verb": "opsturen",
       "gloss": "to send off",
@@ -3057,6 +3079,17 @@
       "perfect": "heeft ingekocht",
       "example": "De winkel koopt veel goederen in.",
       "exampleEn": "The shop buys in a lot of goods.",
+      "scene": null
+    },
+    {
+      "id": "opstappen",
+      "verb": "opstappen",
+      "gloss": "to get on, to leave",
+      "band": "b1",
+      "split": "stap ... op",
+      "perfect": "is opgestapt",
+      "example": "Ik stap bij de volgende halte op.",
+      "exampleEn": "I get on at the next stop.",
       "scene": null
     },
     {
@@ -3464,6 +3497,17 @@
       "perfect": "heeft doorgezet",
       "example": "Hij zet door en haalt zijn diploma.",
       "exampleEn": "He perseveres and gets his diploma.",
+      "scene": null
+    },
+    {
+      "id": "opstijgen",
+      "verb": "opstijgen",
+      "gloss": "to take off",
+      "band": "b1",
+      "split": "stijg ... op",
+      "perfect": "is opgestegen",
+      "example": "Het vliegtuig stijgt over tien minuten op.",
+      "exampleEn": "The plane takes off in ten minutes.",
       "scene": null
     },
     {
@@ -3940,6 +3984,17 @@
       "scene": null
     },
     {
+      "id": "zichopwinden",
+      "verb": "zich opwinden",
+      "gloss": "to get worked up",
+      "band": "b1",
+      "split": "wind ... op",
+      "perfect": "heeft zich opgewonden",
+      "example": "Hij windt zich op over het slechte nieuws.",
+      "exampleEn": "He gets worked up about the bad news.",
+      "scene": null
+    },
+    {
       "id": "meekrijgen",
       "verb": "meekrijgen",
       "gloss": "to be given to take along",
@@ -4212,6 +4267,72 @@
       "perfect": "heeft opgeschept",
       "example": "Ik schep voor iedereen pasta op.",
       "exampleEn": "I serve up pasta for everyone.",
+      "scene": null
+    },
+    {
+      "id": "opkomen",
+      "verb": "opkomen",
+      "gloss": "to come up",
+      "band": "b2",
+      "split": "kom ... op",
+      "perfect": "is opgekomen",
+      "example": "De zon komt om zes uur op.",
+      "exampleEn": "The sun comes up at six o'clock.",
+      "scene": null
+    },
+    {
+      "id": "doorbreken",
+      "verb": "doorbreken",
+      "gloss": "to break through",
+      "band": "b2",
+      "split": "breek ... door",
+      "perfect": "is doorgebroken",
+      "example": "Na de regen breekt de zon door.",
+      "exampleEn": "After the rain the sun breaks through.",
+      "scene": null
+    },
+    {
+      "id": "toedoen",
+      "verb": "toedoen",
+      "gloss": "to add, to do to",
+      "band": "b2",
+      "split": "doe ... toe",
+      "perfect": "heeft toegedaan",
+      "example": "Hij doet er niets aan toe.",
+      "exampleEn": "He adds nothing to it.",
+      "scene": null
+    },
+    {
+      "id": "waarnemen",
+      "verb": "waarnemen",
+      "gloss": "to perceive, to stand in for",
+      "band": "b2",
+      "split": "neem ... waar",
+      "perfect": "heeft waargenomen",
+      "example": "Zij neemt vandaag de dokter waar.",
+      "exampleEn": "She is standing in for the doctor today.",
+      "scene": null
+    },
+    {
+      "id": "toebehoren",
+      "verb": "toebehoren",
+      "gloss": "to belong to",
+      "band": "b2",
+      "split": "behoor ... toe",
+      "perfect": "heeft toebehoord",
+      "example": "Dit land behoort aan niemand toe.",
+      "exampleEn": "This land belongs to no one.",
+      "scene": null
+    },
+    {
+      "id": "witwassen",
+      "verb": "witwassen",
+      "gloss": "to launder (money)",
+      "band": "b2",
+      "split": "was ... wit",
+      "perfect": "heeft witgewassen",
+      "example": "De bende wast het geld wit.",
+      "exampleEn": "The gang launders the money.",
       "scene": null
     },
     {
@@ -5765,7 +5886,7 @@
         "uitruimen",
         "dichtritsen",
         "openritsen",
-        "toelaten"
+        "zichomdraaien"
       ]
     },
     {
@@ -5773,10 +5894,10 @@
       "name": "A2 · 15",
       "band": "a2",
       "frames": [
+        "toelaten",
         "bezighouden",
         "inhuren",
-        "nakijken",
-        "samenstellen"
+        "nakijken"
       ]
     },
     {
@@ -5784,10 +5905,10 @@
       "name": "A2 · 16",
       "band": "a2",
       "frames": [
+        "samenstellen",
         "opdoen",
         "oppakken",
-        "inhalen",
-        "uitstellen"
+        "inhalen"
       ]
     },
     {
@@ -5795,10 +5916,10 @@
       "name": "A2 · 17",
       "band": "a2",
       "frames": [
+        "uitstellen",
         "afgeven",
         "lesgeven",
-        "terugvinden",
-        "uitschakelen"
+        "terugvinden"
       ]
     },
     {
@@ -5806,10 +5927,10 @@
       "name": "A2 · 18",
       "band": "a2",
       "frames": [
+        "uitschakelen",
         "voortzetten",
         "afleiden",
-        "afspelen",
-        "aftellen"
+        "afspelen"
       ]
     },
     {
@@ -5817,10 +5938,10 @@
       "name": "A2 · 19",
       "band": "a2",
       "frames": [
+        "aftellen",
         "bijwonen",
         "nagaan",
-        "nakomen",
-        "opheffen"
+        "nakomen"
       ]
     },
     {
@@ -5828,10 +5949,10 @@
       "name": "A2 · 20",
       "band": "a2",
       "frames": [
+        "opheffen",
         "overbrengen",
         "autorijden",
-        "afzetten",
-        "opstarten"
+        "afzetten"
       ]
     },
     {
@@ -5839,10 +5960,10 @@
       "name": "A2 · 21",
       "band": "a2",
       "frames": [
+        "opstarten",
         "uitwisselen",
         "opdagen",
-        "overgaan",
-        "aankleden"
+        "overgaan"
       ]
     },
     {
@@ -5850,10 +5971,10 @@
       "name": "A2 · 22",
       "band": "a2",
       "frames": [
+        "aankleden",
         "samenkomen",
         "terugkijken",
-        "aankopen",
-        "opleiden"
+        "aankopen"
       ]
     },
     {
@@ -5861,10 +5982,10 @@
       "name": "A2 · 23",
       "band": "a2",
       "frames": [
+        "opleiden",
         "aanklagen",
         "instorten",
-        "opslaan",
-        "opsporen"
+        "opslaan"
       ]
     },
     {
@@ -5872,10 +5993,10 @@
       "name": "A2 · 24",
       "band": "a2",
       "frames": [
+        "opsporen",
         "overeenkomen",
         "uitsluiten",
-        "weergeven",
-        "wegnemen"
+        "weergeven"
       ]
     },
     {
@@ -5883,10 +6004,10 @@
       "name": "A2 · 25",
       "band": "a2",
       "frames": [
+        "wegnemen",
         "aanbrengen",
         "aandringen",
-        "kwijtraken",
-        "neerleggen"
+        "kwijtraken"
       ]
     },
     {
@@ -5894,10 +6015,10 @@
       "name": "A2 · 26",
       "band": "a2",
       "frames": [
+        "neerleggen",
         "overhalen",
         "omkleden",
-        "uithalen",
-        "oppikken"
+        "uithalen"
       ]
     },
     {
@@ -5905,10 +6026,10 @@
       "name": "A2 · 27",
       "band": "a2",
       "frames": [
+        "oppikken",
         "optrekken",
         "terugbetalen",
-        "aflopen",
-        "afwijzen"
+        "aflopen"
       ]
     },
     {
@@ -5916,10 +6037,10 @@
       "name": "A2 · 28",
       "band": "a2",
       "frames": [
+        "afwijzen",
         "inrichten",
         "omzetten",
-        "overgeven",
-        "teruggaan"
+        "overgeven"
       ]
     },
     {
@@ -5927,10 +6048,10 @@
       "name": "A2 · 29",
       "band": "a2",
       "frames": [
+        "teruggaan",
         "uitlaten",
         "afstuderen",
-        "teleurstellen",
-        "uitkiezen"
+        "teleurstellen"
       ]
     },
     {
@@ -5938,11 +6059,20 @@
       "name": "A2 · 30",
       "band": "a2",
       "frames": [
+        "uitkiezen",
         "afzien",
         "opmerken",
-        "vrijmaken",
+        "vrijmaken"
+      ]
+    },
+    {
+      "id": "a2-31",
+      "name": "A2 · 31",
+      "band": "a2",
+      "frames": [
         "aankondigen",
-        "toekomen"
+        "toekomen",
+        "oppompen"
       ]
     },
     {
@@ -6049,10 +6179,10 @@
       "name": "B1 · 10",
       "band": "b1",
       "frames": [
+        "opstappen",
         "opzeggen",
         "terechtkomen",
-        "afleveren",
-        "overdragen"
+        "afleveren"
       ]
     },
     {
@@ -6060,10 +6190,10 @@
       "name": "B1 · 11",
       "band": "b1",
       "frames": [
+        "overdragen",
         "waarmaken",
         "goedkeuren",
-        "inslaan",
-        "overmaken"
+        "inslaan"
       ]
     },
     {
@@ -6071,10 +6201,10 @@
       "name": "B1 · 12",
       "band": "b1",
       "frames": [
+        "overmaken",
         "opwarmen",
         "toekennen",
-        "afstaan",
-        "uitvallen"
+        "afstaan"
       ]
     },
     {
@@ -6082,10 +6212,10 @@
       "name": "B1 · 13",
       "band": "b1",
       "frames": [
+        "uitvallen",
         "uitwerken",
         "vreemdgaan",
-        "meebrengen",
-        "samenleven"
+        "meebrengen"
       ]
     },
     {
@@ -6093,10 +6223,10 @@
       "name": "B1 · 14",
       "band": "b1",
       "frames": [
+        "samenleven",
         "ademhalen",
         "afkoelen",
-        "opknappen",
-        "opschieten"
+        "opknappen"
       ]
     },
     {
@@ -6104,10 +6234,10 @@
       "name": "B1 · 15",
       "band": "b1",
       "frames": [
+        "opschieten",
         "uitstaan",
         "afzeggen",
-        "liefhebben",
-        "neerhalen"
+        "liefhebben"
       ]
     },
     {
@@ -6115,10 +6245,10 @@
       "name": "B1 · 16",
       "band": "b1",
       "frames": [
+        "neerhalen",
         "uitdagen",
         "bijkomen",
-        "doorvoeren",
-        "stopzetten"
+        "doorvoeren"
       ]
     },
     {
@@ -6126,10 +6256,10 @@
       "name": "B1 · 17",
       "band": "b1",
       "frames": [
+        "stopzetten",
         "weggeven",
         "aanschaffen",
-        "uitroeien",
-        "meehelpen"
+        "uitroeien"
       ]
     },
     {
@@ -6137,10 +6267,10 @@
       "name": "B1 · 18",
       "band": "b1",
       "frames": [
+        "meehelpen",
         "rondhangen",
         "terugdringen",
-        "lastigvallen",
-        "binnenvallen"
+        "lastigvallen"
       ]
     },
     {
@@ -6148,10 +6278,10 @@
       "name": "B1 · 19",
       "band": "b1",
       "frames": [
+        "binnenvallen",
         "doorzetten",
-        "uitdrukken",
-        "bijstaan",
-        "inschatten"
+        "opstijgen",
+        "uitdrukken"
       ]
     },
     {
@@ -6159,10 +6289,10 @@
       "name": "B1 · 20",
       "band": "b1",
       "frames": [
+        "bijstaan",
+        "inschatten",
         "opduiken",
-        "afschieten",
-        "overlopen",
-        "uithangen"
+        "afschieten"
       ]
     },
     {
@@ -6170,10 +6300,10 @@
       "name": "B1 · 21",
       "band": "b1",
       "frames": [
+        "overlopen",
+        "uithangen",
         "afdwingen",
-        "meerijden",
-        "rondrijden",
-        "doodgaan"
+        "meerijden"
       ]
     },
     {
@@ -6181,10 +6311,10 @@
       "name": "B1 · 22",
       "band": "b1",
       "frames": [
+        "rondrijden",
+        "doodgaan",
         "doorsturen",
-        "meedenken",
-        "neerschieten",
-        "uitbesteden"
+        "meedenken"
       ]
     },
     {
@@ -6192,10 +6322,10 @@
       "name": "B1 · 23",
       "band": "b1",
       "frames": [
+        "neerschieten",
+        "uitbesteden",
         "afkomen",
-        "aflossen",
-        "binnenhalen",
-        "nastreven"
+        "aflossen"
       ]
     },
     {
@@ -6203,10 +6333,10 @@
       "name": "B1 · 24",
       "band": "b1",
       "frames": [
+        "binnenhalen",
+        "nastreven",
         "opvoeren",
-        "opwekken",
-        "overblijven",
-        "terugsturen"
+        "opwekken"
       ]
     },
     {
@@ -6214,10 +6344,10 @@
       "name": "B1 · 25",
       "band": "b1",
       "frames": [
+        "overblijven",
+        "terugsturen",
         "voorschrijven",
-        "aanbevelen",
-        "aanleren",
-        "afhandelen"
+        "aanbevelen"
       ]
     },
     {
@@ -6225,10 +6355,10 @@
       "name": "B1 · 26",
       "band": "b1",
       "frames": [
+        "aanleren",
+        "afhandelen",
         "doornemen",
-        "opeisen",
-        "terugkrijgen",
-        "tegengaan"
+        "opeisen"
       ]
     },
     {
@@ -6236,10 +6366,10 @@
       "name": "B1 · 27",
       "band": "b1",
       "frames": [
+        "terugkrijgen",
+        "tegengaan",
         "toeslaan",
-        "uitpraten",
-        "voortkomen",
-        "aantreden"
+        "uitpraten"
       ]
     },
     {
@@ -6247,10 +6377,10 @@
       "name": "B1 · 28",
       "band": "b1",
       "frames": [
+        "voortkomen",
+        "aantreden",
         "toebrengen",
-        "toezien",
-        "uitbreken",
-        "omkeren"
+        "toezien"
       ]
     },
     {
@@ -6258,10 +6388,10 @@
       "name": "B1 · 29",
       "band": "b1",
       "frames": [
+        "uitbreken",
+        "omkeren",
         "afwijken",
-        "afhangen",
-        "meevallen",
-        "tegenvallen"
+        "afhangen"
       ]
     },
     {
@@ -6269,6 +6399,9 @@
       "name": "B1 · 30",
       "band": "b1",
       "frames": [
+        "meevallen",
+        "tegenvallen",
+        "zichopwinden",
         "meekrijgen",
         "uitverkopen"
       ]
@@ -6336,7 +6469,7 @@
         "uitjouwen",
         "afgieten",
         "opscheppen",
-        "uitsteken"
+        "opkomen"
       ]
     },
     {
@@ -6344,10 +6477,10 @@
       "name": "B2 · 7",
       "band": "b2",
       "frames": [
-        "uitvinden",
-        "vrijkomen",
-        "aankunnen",
-        "aantreffen"
+        "doorbreken",
+        "toedoen",
+        "waarnemen",
+        "toebehoren"
       ]
     },
     {
@@ -6355,10 +6488,10 @@
       "name": "B2 · 8",
       "band": "b2",
       "frames": [
-        "aanvullen",
-        "inschakelen",
-        "overhouden",
-        "voorbijgaan"
+        "witwassen",
+        "uitsteken",
+        "uitvinden",
+        "vrijkomen"
       ]
     },
     {
@@ -6366,10 +6499,10 @@
       "name": "B2 · 9",
       "band": "b2",
       "frames": [
-        "afwerken",
-        "openstaan",
-        "samengaan",
-        "achterblijven"
+        "aankunnen",
+        "aantreffen",
+        "aanvullen",
+        "inschakelen"
       ]
     },
     {
@@ -6377,10 +6510,10 @@
       "name": "B2 · 10",
       "band": "b2",
       "frames": [
-        "opsteken",
-        "voorleggen",
-        "aanvoelen",
-        "bekendmaken"
+        "overhouden",
+        "voorbijgaan",
+        "afwerken",
+        "openstaan"
       ]
     },
     {
@@ -6388,10 +6521,10 @@
       "name": "B2 · 11",
       "band": "b2",
       "frames": [
-        "uitroepen",
-        "inbreken",
-        "wegvallen",
-        "aanrichten"
+        "samengaan",
+        "achterblijven",
+        "opsteken",
+        "voorleggen"
       ]
     },
     {
@@ -6399,10 +6532,10 @@
       "name": "B2 · 12",
       "band": "b2",
       "frames": [
-        "aanstellen",
-        "binnenlopen",
-        "meedelen",
-        "uitgroeien"
+        "aanvoelen",
+        "bekendmaken",
+        "uitroepen",
+        "inbreken"
       ]
     },
     {
@@ -6410,10 +6543,10 @@
       "name": "B2 · 13",
       "band": "b2",
       "frames": [
-        "inzamelen",
-        "nalaten",
-        "toewijzen",
-        "aanschuiven"
+        "wegvallen",
+        "aanrichten",
+        "aanstellen",
+        "binnenlopen"
       ]
     },
     {
@@ -6421,10 +6554,10 @@
       "name": "B2 · 14",
       "band": "b2",
       "frames": [
-        "afvoeren",
-        "instemmen",
-        "meekijken",
-        "afstemmen"
+        "meedelen",
+        "uitgroeien",
+        "inzamelen",
+        "nalaten"
       ]
     },
     {
@@ -6432,10 +6565,10 @@
       "name": "B2 · 15",
       "band": "b2",
       "frames": [
-        "aanlopen",
-        "inzitten",
-        "onderduiken",
-        "flauwvallen"
+        "toewijzen",
+        "aanschuiven",
+        "afvoeren",
+        "instemmen"
       ]
     },
     {
@@ -6443,10 +6576,10 @@
       "name": "B2 · 16",
       "band": "b2",
       "frames": [
-        "aantasten",
-        "afdoen",
-        "doodschieten",
-        "opbergen"
+        "meekijken",
+        "afstemmen",
+        "aanlopen",
+        "inzitten"
       ]
     },
     {
@@ -6454,10 +6587,10 @@
       "name": "B2 · 17",
       "band": "b2",
       "frames": [
-        "samenvatten",
-        "afkeuren",
-        "toelichten",
-        "doortrekken"
+        "onderduiken",
+        "flauwvallen",
+        "aantasten",
+        "afdoen"
       ]
     },
     {
@@ -6465,10 +6598,10 @@
       "name": "B2 · 18",
       "band": "b2",
       "frames": [
-        "opdringen",
-        "openmaken",
-        "opkijken",
-        "aanduiden"
+        "doodschieten",
+        "opbergen",
+        "samenvatten",
+        "afkeuren"
       ]
     },
     {
@@ -6476,10 +6609,10 @@
       "name": "B2 · 19",
       "band": "b2",
       "frames": [
-        "afsnijden",
-        "opengaan",
-        "uitwijzen",
-        "aanvoeren"
+        "toelichten",
+        "doortrekken",
+        "opdringen",
+        "openmaken"
       ]
     },
     {
@@ -6487,10 +6620,10 @@
       "name": "B2 · 20",
       "band": "b2",
       "frames": [
-        "opvatten",
-        "aanrijden",
-        "misgaan",
-        "aanslaan"
+        "opkijken",
+        "aanduiden",
+        "afsnijden",
+        "opengaan"
       ]
     },
     {
@@ -6498,10 +6631,10 @@
       "name": "B2 · 21",
       "band": "b2",
       "frames": [
-        "uitreiken",
-        "onderbrengen",
-        "indelen",
-        "aanhalen"
+        "uitwijzen",
+        "aanvoeren",
+        "opvatten",
+        "aanrijden"
       ]
     },
     {
@@ -6509,10 +6642,10 @@
       "name": "B2 · 22",
       "band": "b2",
       "frames": [
-        "uitrekenen",
-        "afwerpen",
-        "afwisselen",
-        "aanbreken"
+        "misgaan",
+        "aanslaan",
+        "uitreiken",
+        "onderbrengen"
       ]
     },
     {
@@ -6520,10 +6653,10 @@
       "name": "B2 · 23",
       "band": "b2",
       "frames": [
-        "omkomen",
-        "meekomen",
-        "uitbouwen",
-        "afsteken"
+        "indelen",
+        "aanhalen",
+        "uitrekenen",
+        "afwerpen"
       ]
     },
     {
@@ -6531,10 +6664,10 @@
       "name": "B2 · 24",
       "band": "b2",
       "frames": [
-        "neerkomen",
-        "uitkeren",
-        "opgraven",
-        "terugblikken"
+        "afwisselen",
+        "aanbreken",
+        "omkomen",
+        "meekomen"
       ]
     },
     {
@@ -6542,10 +6675,10 @@
       "name": "B2 · 25",
       "band": "b2",
       "frames": [
-        "uitschelden",
-        "wegjagen",
-        "geruststellen",
-        "wegleggen"
+        "uitbouwen",
+        "afsteken",
+        "neerkomen",
+        "uitkeren"
       ]
     },
     {
@@ -6553,10 +6686,10 @@
       "name": "B2 · 26",
       "band": "b2",
       "frames": [
-        "langsgaan",
-        "voorgaan",
-        "doorverwijzen",
-        "uitstrekken"
+        "opgraven",
+        "terugblikken",
+        "uitschelden",
+        "wegjagen"
       ]
     },
     {
@@ -6564,10 +6697,10 @@
       "name": "B2 · 27",
       "band": "b2",
       "frames": [
-        "eruitzien",
-        "goedkomen",
-        "openzetten",
-        "aanhaken"
+        "geruststellen",
+        "wegleggen",
+        "langsgaan",
+        "voorgaan"
       ]
     },
     {
@@ -6575,10 +6708,10 @@
       "name": "B2 · 28",
       "band": "b2",
       "frames": [
-        "inbouwen",
-        "voorafgaan",
-        "uitputten",
-        "inburgeren"
+        "doorverwijzen",
+        "uitstrekken",
+        "eruitzien",
+        "goedkomen"
       ]
     },
     {
@@ -6586,10 +6719,10 @@
       "name": "B2 · 29",
       "band": "b2",
       "frames": [
-        "voornemen",
-        "schoonhouden",
-        "aanhebben",
-        "wegglijden"
+        "openzetten",
+        "aanhaken",
+        "inbouwen",
+        "voorafgaan"
       ]
     },
     {
@@ -6597,8 +6730,28 @@
       "name": "B2 · 30",
       "band": "b2",
       "frames": [
+        "uitputten",
+        "inburgeren",
+        "voornemen",
+        "schoonhouden"
+      ]
+    },
+    {
+      "id": "b2-31",
+      "name": "B2 · 31",
+      "band": "b2",
+      "frames": [
+        "aanhebben",
+        "wegglijden",
         "terechtkunnen",
-        "opkrijgen",
+        "opkrijgen"
+      ]
+    },
+    {
+      "id": "b2-32",
+      "name": "B2 · 32",
+      "band": "b2",
+      "frames": [
         "insluipen",
         "onderuitgaan"
       ]

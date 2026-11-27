@@ -350,6 +350,7 @@ HEAD_OK = {
     "terugkomen": "Voorzetselpaden terugkomen op is to return to a subject; here a dog comes back",
     "afstappen": "Voorzetselpaden afstappen van is to abandon an idea; here a rider gets off a bike",
     "opscheppen": "Voorzetselpaden opscheppen over is to boast; here pasta is served",
+    "ondergaan": "Werkwoorden usage card ondergaan is the inseparable to undergo; here the sun sets (dropped)",
 }
 for i, (b, c, m) in expected.items():
     lem = m["lemma"]
