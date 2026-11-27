@@ -242,7 +242,6 @@ SECOND_SENSES = [
 	# has a card for its other sense.  Domain None = the base verb's domain.
 	("houden", "van", "to love", None),
 	("zetten", "koffie", "to make (coffee, tea)", None),
-	("bellen", "deur", "to ring (a doorbell)", None),
 	("stoppen", "tas", "to put (into)", None),
 	("schijnen", "zon", "to shine (sun)", None),
 	("verliezen", "sleutels", "to lose (an object)", None),

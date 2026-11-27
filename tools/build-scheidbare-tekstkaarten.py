@@ -48,12 +48,22 @@ def load_family_module():
     return mod
 
 
+def picture(row):
+    """A drawing, when assets/verbs/<id>.png exists and the row has an alt text."""
+    alt = (row.get("alt") or "").strip()
+    if not alt or not os.path.exists(os.path.join(ROOT, "assets", "verbs", row["id"] + ".png")):
+        return None
+    return (f'<img class="beeld" src="../../assets/verbs/{attr(row["id"])}.png" alt="{attr(alt)}" loading="lazy" '
+            'style="display:block;width:100%;max-width:170px;height:auto;margin:0 auto 10px">')
+
+
 def render(row, number):
     cid = row["id"]
-    return "\n".join([
+    return "\n".join(x for x in [
         f'<article id="{attr(cid)}" class="kaart" data-id="{attr(cid)}" data-band="{row["band"]}" '
         f'data-kind="separable-verb-text" data-status="text" data-severity="">',
         f'<span class="framenummer" title="Frame {number}">#{number}</span>',
+        picture(row),
         f'<h3 class="chunk">{esc(row["lemma"])}</h3>',
         f'<p class="gloss">{esc(row["gloss"])}</p>',
         f'<p class="vlaggen"><span>{row["band"].upper()}</span><span>rang {esc(row["rank"])}</span>'
@@ -66,7 +76,7 @@ def render(row, number):
         "</dl>",
         f'<p class="id">{esc(cid)} · {row["band"].upper()} · rang {esc(row["rank"])}</p>',
         "</article>",
-    ])
+    ] if x is not None)
 
 
 def main():

@@ -1,5 +1,10 @@
 {
-  "scenes": {},
+  "scenes": {
+    "aanbellen": {
+      "file": "verbs/aanbellen.png",
+      "alt": "Iemand drukt met één vinger op een rond knopje naast een gesloten voordeur."
+    }
+  },
   "frames": [
     {
       "id": "mee-eten",
@@ -3368,6 +3373,17 @@
       "scene": null
     },
     {
+      "id": "aanbellen",
+      "verb": "aanbellen",
+      "gloss": "to ring the doorbell",
+      "band": "b1",
+      "split": "bel ... aan",
+      "perfect": "heeft aangebeld",
+      "example": "Ik bel bij de buren aan.",
+      "exampleEn": "I ring the neighbours' doorbell.",
+      "scene": "aanbellen"
+    },
+    {
       "id": "bijkomen",
       "verb": "bijkomen",
       "gloss": "to come to; to recover",
@@ -6247,8 +6263,8 @@
       "frames": [
         "neerhalen",
         "uitdagen",
-        "bijkomen",
-        "doorvoeren"
+        "aanbellen",
+        "bijkomen"
       ]
     },
     {
@@ -6256,10 +6272,10 @@
       "name": "B1 · 17",
       "band": "b1",
       "frames": [
+        "doorvoeren",
         "stopzetten",
         "weggeven",
-        "aanschaffen",
-        "uitroeien"
+        "aanschaffen"
       ]
     },
     {
@@ -6267,10 +6283,10 @@
       "name": "B1 · 18",
       "band": "b1",
       "frames": [
+        "uitroeien",
         "meehelpen",
         "rondhangen",
-        "terugdringen",
-        "lastigvallen"
+        "terugdringen"
       ]
     },
     {
@@ -6278,10 +6294,10 @@
       "name": "B1 · 19",
       "band": "b1",
       "frames": [
+        "lastigvallen",
         "binnenvallen",
         "doorzetten",
-        "opstijgen",
-        "uitdrukken"
+        "opstijgen"
       ]
     },
     {
@@ -6289,10 +6305,10 @@
       "name": "B1 · 20",
       "band": "b1",
       "frames": [
+        "uitdrukken",
         "bijstaan",
         "inschatten",
-        "opduiken",
-        "afschieten"
+        "opduiken"
       ]
     },
     {
@@ -6300,10 +6316,10 @@
       "name": "B1 · 21",
       "band": "b1",
       "frames": [
+        "afschieten",
         "overlopen",
         "uithangen",
-        "afdwingen",
-        "meerijden"
+        "afdwingen"
       ]
     },
     {
@@ -6311,10 +6327,10 @@
       "name": "B1 · 22",
       "band": "b1",
       "frames": [
+        "meerijden",
         "rondrijden",
         "doodgaan",
-        "doorsturen",
-        "meedenken"
+        "doorsturen"
       ]
     },
     {
@@ -6322,10 +6338,10 @@
       "name": "B1 · 23",
       "band": "b1",
       "frames": [
+        "meedenken",
         "neerschieten",
         "uitbesteden",
-        "afkomen",
-        "aflossen"
+        "afkomen"
       ]
     },
     {
@@ -6333,10 +6349,10 @@
       "name": "B1 · 24",
       "band": "b1",
       "frames": [
+        "aflossen",
         "binnenhalen",
         "nastreven",
-        "opvoeren",
-        "opwekken"
+        "opvoeren"
       ]
     },
     {
@@ -6344,10 +6360,10 @@
       "name": "B1 · 25",
       "band": "b1",
       "frames": [
+        "opwekken",
         "overblijven",
         "terugsturen",
-        "voorschrijven",
-        "aanbevelen"
+        "voorschrijven"
       ]
     },
     {
@@ -6355,10 +6371,10 @@
       "name": "B1 · 26",
       "band": "b1",
       "frames": [
+        "aanbevelen",
         "aanleren",
         "afhandelen",
-        "doornemen",
-        "opeisen"
+        "doornemen"
       ]
     },
     {
@@ -6366,10 +6382,10 @@
       "name": "B1 · 27",
       "band": "b1",
       "frames": [
+        "opeisen",
         "terugkrijgen",
         "tegengaan",
-        "toeslaan",
-        "uitpraten"
+        "toeslaan"
       ]
     },
     {
@@ -6377,10 +6393,10 @@
       "name": "B1 · 28",
       "band": "b1",
       "frames": [
+        "uitpraten",
         "voortkomen",
         "aantreden",
-        "toebrengen",
-        "toezien"
+        "toebrengen"
       ]
     },
     {
@@ -6388,10 +6404,10 @@
       "name": "B1 · 29",
       "band": "b1",
       "frames": [
+        "toezien",
         "uitbreken",
         "omkeren",
-        "afwijken",
-        "afhangen"
+        "afwijken"
       ]
     },
     {
@@ -6399,9 +6415,17 @@
       "name": "B1 · 30",
       "band": "b1",
       "frames": [
+        "afhangen",
         "meevallen",
         "tegenvallen",
-        "zichopwinden",
+        "zichopwinden"
+      ]
+    },
+    {
+      "id": "b1-31",
+      "name": "B1 · 31",
+      "band": "b1",
+      "frames": [
         "meekrijgen",
         "uitverkopen"
       ]

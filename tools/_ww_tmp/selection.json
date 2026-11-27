@@ -5801,13 +5801,13 @@
     "verb": "respecteren",
     "slug": "respecteren",
     "lexeme": "respecteren",
-    "gloss": "to respect",
+    "gloss": "respectively",
     "rank": 3305,
     "rank_source": "rang",
     "raw_rank": 3305,
     "rank_reason": "",
     "domain": "Character & behaviour",
-    "tier": ""
+    "tier": "open"
   },
   {
     "band": "B2",
@@ -8439,7 +8439,7 @@
     "raw_rank": 5003,
     "rank_reason": "",
     "domain": "Abstract & general",
-    "tier": ""
+    "tier": "open"
   },
   {
     "band": "B2",
@@ -8619,20 +8619,6 @@
     "rank": 5134,
     "rank_source": "rang",
     "raw_rank": 5134,
-    "rank_reason": "",
-    "domain": "Abstract & general",
-    "tier": "open"
-  },
-  {
-    "band": "B2",
-    "regularity": "regular",
-    "verb": "misbruiken",
-    "slug": "misbruiken",
-    "lexeme": "misbruiken",
-    "gloss": "abuse",
-    "rank": 5136,
-    "rank_source": "rang",
-    "raw_rank": 5136,
     "rank_reason": "",
     "domain": "Abstract & general",
     "tier": "open"
@@ -15668,9 +15654,9 @@
   {
     "band": "B2",
     "regularity": "regular",
-    "verb": "verifieren",
+    "verb": "verifiëren",
     "slug": "verifieren",
-    "lexeme": "verifieren",
+    "lexeme": "verifiëren",
     "gloss": "authenticate",
     "rank": 9377,
     "rank_source": "rang",
@@ -15850,6 +15836,20 @@
   {
     "band": "B2",
     "regularity": "regular",
+    "verb": "misbruiken",
+    "slug": "misbruiken",
+    "lexeme": "misbruiken",
+    "gloss": "abuse",
+    "rank": 9909,
+    "rank_source": "rang",
+    "raw_rank": 9909,
+    "rank_reason": "",
+    "domain": "Abstract & general",
+    "tier": "open"
+  },
+  {
+    "band": "B2",
+    "regularity": "regular",
     "verb": "volleyen",
     "slug": "volleyen",
     "lexeme": "volleyen",
@@ -15994,21 +15994,6 @@
     "domain": "Movement & position",
     "tier": "A1",
     "sense": "koffie"
-  },
-  {
-    "band": "A0",
-    "regularity": "regular",
-    "verb": "bellen",
-    "slug": "bellen-deur",
-    "lexeme": "bellen",
-    "gloss": "to ring (a doorbell)",
-    "rank": 735,
-    "rank_source": "rang",
-    "raw_rank": 735,
-    "rank_reason": "",
-    "domain": "Communication & language",
-    "tier": "A1",
-    "sense": "deur"
   },
   {
     "band": "A0",
